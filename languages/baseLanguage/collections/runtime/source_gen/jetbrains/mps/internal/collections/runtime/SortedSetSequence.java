@@ -14,66 +14,53 @@ import java.util.Collection;
 
 public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISortedSetSequence<T>, SortedSet<T>, Serializable {
   private static final long serialVersionUID = 5639537706255994099L;
-
   protected SortedSetSequence(SortedSet<T> set) {
     super(set);
   }
-
   @Override
   public T first() {
     return getSet().first();
   }
-
   @Override
   public T last() {
     return getSet().last();
   }
-
   @Override
   public ISortedSetSequence<T> headSet(T toElement) {
     return SortedSetSequence.fromSet(getSet().headSet(toElement));
   }
-
   @Override
   public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
     return SortedSetSequence.fromSet(getSet().subSet(fromElement, toElement));
   }
-
   @Override
   public ISortedSetSequence<T> tailSet(T fromElement) {
     return SortedSetSequence.fromSet(getSet().tailSet(fromElement));
   }
-
   @Override
   public Comparator<? super T> comparator() {
     return getSet().comparator();
   }
-
   @Override
   public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
     return (ISortedSetSequence<T>) super.addSequence(seq);
   }
-
   @Override
   public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
     return (ISortedSetSequence<T>) super.removeSequence(seq);
   }
-
   @Override
   public ISortedSetSequence<T> asUnmodifiable() {
     return new SortedSetSequence<T>(Collections.unmodifiableSortedSet(getSet()));
   }
-
   @Override
   public ISortedSetSequence<T> asSynchronized() {
     return new SortedSetSequence<T>(CollectionUtils.synchronizedSortedSet(getSet()));
   }
-
   @Override
   protected SortedSet<T> getSet() {
     return (SortedSet<T>) super.getSet();
   }
-
   public static <U> ISortedSetSequence<U> fromArray(U... array) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (array == null) {
@@ -82,7 +69,6 @@ public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISor
     }
     return SortedSetSequence.fromSetAndArray(new TreeSet<U>(), array);
   }
-
   public static <U> ISortedSetSequence<U> fromSet(SortedSet<U> set) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (set == null) {
@@ -94,7 +80,6 @@ public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISor
     }
     return new SortedSetSequence<U>(set);
   }
-
   public static <U> ISortedSetSequence<U> fromSetAndArray(SortedSet<U> set, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -130,7 +115,6 @@ public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISor
     }
     return new SortedSetSequence<U>(set);
   }
-
   public static <U> ISortedSetSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -160,7 +144,6 @@ public class SortedSetSequence<T> extends AbstractSetSequence<T> implements ISor
     }
     return new SortedSetSequence<U>(set);
   }
-
   public static <U> ISortedSetSequence<U> fromSetWithValues(SortedSet<U> set, Iterable<U> it) {
     SortedSet<U> tmp = set;
     if (Sequence.USE_NULL_SEQUENCE) {

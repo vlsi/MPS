@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class XmlElement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isMultiline_8886258982030574875(SNode thisNode) {
     boolean multiline = false;
     for (SNode n : SLinkOperations.getTargets(thisNode, "content", true)) {

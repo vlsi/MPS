@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReplaceBlock_BehaviorDescriptor extends Closure_BehaviorDescriptor {
   public ReplaceBlock_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ReplaceBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock";

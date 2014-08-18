@@ -21,68 +21,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class convert_to_unrestricted_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public convert_to_unrestricted_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
   public String getPresentation() {
     return "convert_to_unrestricted";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.closures.intentions.convert_to_unrestricted_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.closures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229783473290");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convert_to_unrestricted_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Unrestricted Function Type";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode uft = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType");
       List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
@@ -95,7 +80,6 @@ public class convert_to_unrestricted_Intention implements IntentionFactory {
         ListSequence.fromList(SLinkOperations.getTargets(uft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return convert_to_unrestricted_Intention.this;
     }

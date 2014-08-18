@@ -6,7 +6,6 @@ package jetbrains.mps.lang.generator.generationContext.behavior;
 public class GenerationContextOp_VarRef_BehaviorDescriptor extends GenerationContextOp_Base_BehaviorDescriptor {
   public GenerationContextOp_VarRef_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef";

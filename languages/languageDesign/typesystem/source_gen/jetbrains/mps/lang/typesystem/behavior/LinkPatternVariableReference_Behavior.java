@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LinkPatternVariableReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_abxcdef_1225210740874(SNode thisNode, @Deprecated Object o) {
   }
 }

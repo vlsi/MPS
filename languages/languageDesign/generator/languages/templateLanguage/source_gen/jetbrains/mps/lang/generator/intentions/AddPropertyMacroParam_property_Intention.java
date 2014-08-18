@@ -27,53 +27,42 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public class AddPropertyMacroParam_property_Intention implements IntentionFactory {
   public AddPropertyMacroParam_property_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddPropertyMacroParam_property";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.AddPropertyMacroParam_property_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     return EditingUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595522621");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
@@ -84,7 +73,6 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     }
     return list;
   }
-
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
     if (sourceNode == null) {
@@ -111,18 +99,14 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     }
     return result;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
-
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Property Macro: node." + BehaviorReflection.invokeVirtual(String.class, myParameter, "virtual_getPresentation_1213877396640", new Object[]{}) + " (property)";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode propertyMacro = EditingUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       SNode propertyValue = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", null);
@@ -138,7 +122,6 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, propertyMacro, SelectionManager.FIRST_CELL, 0);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddPropertyMacroParam_property_Intention.this;
     }

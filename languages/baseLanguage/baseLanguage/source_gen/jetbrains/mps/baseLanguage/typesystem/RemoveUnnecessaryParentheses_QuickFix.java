@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveUnnecessaryParentheses_QuickFix extends QuickFix_Runtime {
   public RemoveUnnecessaryParentheses_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove Unnecessary Parentheses";
   }
-
   public void execute(SNode node) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]), "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{})) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(((SNode) RemoveUnnecessaryParentheses_QuickFix.this.getField("bottomLineParens")[0]), "expression", true));

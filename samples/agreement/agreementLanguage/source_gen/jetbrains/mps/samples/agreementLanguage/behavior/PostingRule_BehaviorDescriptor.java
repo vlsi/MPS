@@ -7,7 +7,6 @@ import jetbrains.mps.samples.formulaLanguage.behavior.Formula_BehaviorDescriptor
 public class PostingRule_BehaviorDescriptor extends Formula_BehaviorDescriptor {
   public PostingRule_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.PostingRule";

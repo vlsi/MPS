@@ -25,7 +25,6 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
   public ExternalViewFigure_Constraints() {
     super("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigure");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -34,7 +33,6 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -43,7 +41,6 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -52,7 +49,6 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -61,7 +57,6 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8qo5s5_a0a0a0a0a1a0b0a1a2;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ExternalViewClassifierScope(_context.getModel());
@@ -71,6 +66,5 @@ public class ExternalViewFigure_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_8qo5s5_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)", "5422656561917972552");
 }

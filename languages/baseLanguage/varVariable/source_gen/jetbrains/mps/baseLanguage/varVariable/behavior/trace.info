@@ -4,10 +4,10 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="VarVariableDeclaration_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,22,0" name="jetbrains.mps.baseLanguage.varVariable.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)/8425555512443914486">

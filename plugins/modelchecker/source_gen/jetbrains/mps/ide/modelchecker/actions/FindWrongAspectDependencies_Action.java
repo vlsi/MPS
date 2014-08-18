@@ -31,18 +31,15 @@ import org.apache.log4j.LogManager;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public FindWrongAspectDependencies_Action() {
     super("Find Wrong Aspect Dependencies", "Finds wrong references between core, editor and workbench", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -53,7 +50,6 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +64,6 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
@@ -83,7 +78,6 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ boolean needsProcessing(SModel model, final Map<String, Object> _params) {
     if (!(SModelStereotype.isUserModel(model))) {
       return false;
@@ -96,6 +90,5 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     }
     return false;
   }
-
   protected static Logger LOG = LogManager.getLogger(FindWrongAspectDependencies_Action.class);
 }

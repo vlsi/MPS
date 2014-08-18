@@ -18,18 +18,15 @@ import org.apache.log4j.LogManager;
 
 public class PrintDFAResult_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PrintDFAResult_Action() {
     super("Print DFA", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -40,7 +37,6 @@ public class PrintDFAResult_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class PrintDFAResult_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -67,6 +62,5 @@ public class PrintDFAResult_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PrintDFAResult_Action.class);
 }

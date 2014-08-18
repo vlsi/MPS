@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ITestable_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return false;
   }

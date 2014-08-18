@@ -7,9 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public abstract class ISelector<T, S> implements _FunctionTypes._return_P1_E0<S, T> {
   public ISelector() {
   }
-
   public abstract S select(T t);
-
   public S invoke(T t) {
     return select(t);
   }

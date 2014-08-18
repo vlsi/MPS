@@ -16,10 +16,8 @@ public abstract class AbstractSearchScope implements ISearchScope {
       return true;
     }
   };
-
   public AbstractSearchScope() {
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     return new IReferenceInfoResolver() {
@@ -37,13 +35,11 @@ public abstract class AbstractSearchScope implements ISearchScope {
       }
     };
   }
-
   @NotNull
   @Override
   public final List<SNode> getNodes() {
     return getNodes(TRUE_CONDITION);
   }
-
   @Override
   public boolean isInScope(final SNode node) {
     return getNodes(new Condition<SNode>() {

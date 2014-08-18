@@ -14,12 +14,10 @@ public class RunConfigurationCreator_Constraints extends BaseConstraintsDescript
   public RunConfigurationCreator_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.RunConfigurationCreator");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class RunConfigurationCreator_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart", false, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "7952658987872188457");
 }

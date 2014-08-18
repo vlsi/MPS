@@ -33,11 +33,9 @@ public class IfMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_t4g6n2_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_t4g6n2_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_t4g6n2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_a");
@@ -48,7 +46,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_a0");
@@ -59,7 +56,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$IF$");
     editorCell.setCellId("Constant_t4g6n2_a0a");
@@ -74,19 +70,15 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IfMacro_Editor.IfMacro_component_cellMenu_t4g6n2_a0a0a()}));
     return editorCell;
   }
-
   public static class IfMacro_component_cellMenu_t4g6n2_a0a0a implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
-
     public IfMacro_component_cellMenu_t4g6n2_a0a0a() {
       this.myComponent = new replace_node_macro();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createComponent_t4g6n2_b0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     Style style = new StyleImpl();
@@ -94,18 +86,15 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_t4g6n2_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_t4g6n2_a2a0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
-
   private EditorCell createCollection_t4g6n2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_b0");
@@ -117,11 +106,9 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_t4g6n2_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_t4g6n2_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "alternativeConsequence", true) != null);
   }
-
   private EditorCell createConstant_t4g6n2_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ELSE$");
     editorCell.setCellId("Constant_t4g6n2_a1a");
@@ -131,7 +118,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_t4g6n2_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("alternativeConsequence");
@@ -155,7 +141,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_a_0");
@@ -168,7 +153,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_t4g6n2_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "if-macro");
     editorCell.setCellId("Constant_t4g6n2_a0");
@@ -180,7 +164,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_t4g6n2_b0");
@@ -190,7 +173,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_c0");
@@ -204,7 +186,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_t4g6n2_d2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_a2a");
@@ -216,14 +197,12 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_t4g6n2_c0c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_t4g6n2_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b0c0");
@@ -233,7 +212,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_t4g6n2_c0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -252,7 +230,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_b2a");
@@ -264,14 +241,12 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_t4g6n2_c1c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_t4g6n2_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b1c0");
@@ -281,7 +256,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_t4g6n2_c1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mappingLabel");
@@ -303,20 +277,16 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_t4g6n2_a2b2a extends InlineCellProvider {
     public _Inline_t4g6n2_a2b2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_t4g6n2_a0c1c0(editorContext, node);
     }
-
     private EditorCell createProperty_t4g6n2_a0c1c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -339,7 +309,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_t4g6n2_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_c2a");
@@ -351,7 +320,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_t4g6n2_c2c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "condition");
     editorCell.setCellId("Constant_t4g6n2_a2c0");
@@ -361,7 +329,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_b2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b2c0");
@@ -371,7 +338,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_t4g6n2_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("conditionFunction");
@@ -394,7 +360,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_t4g6n2_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_t4g6n2_d2a");
@@ -406,7 +371,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_t4g6n2_c3c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_a3c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "alternative");
     editorCell.setCellId("Constant_t4g6n2_a3c0");
@@ -416,7 +380,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_t4g6n2_b3c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_t4g6n2_b3c0");
@@ -426,7 +389,6 @@ public class IfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_t4g6n2_c3c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("alternativeConsequence");

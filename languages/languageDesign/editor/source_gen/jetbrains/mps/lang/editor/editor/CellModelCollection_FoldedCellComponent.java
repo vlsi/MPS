@@ -21,11 +21,9 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9yikpc_a(editorContext, node);
   }
-
   private EditorCell createCollection_9yikpc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_9yikpc_a");
@@ -36,7 +34,6 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
     editorCell.addEditorCell(this.createRefNode_9yikpc_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_9yikpc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/folded cell:");
     editorCell.setCellId("Constant_9yikpc_a0");
@@ -46,7 +43,6 @@ public class CellModelCollection_FoldedCellComponent implements ConceptEditorCom
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_9yikpc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("foldedCellModel");

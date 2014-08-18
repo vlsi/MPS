@@ -19,14 +19,11 @@ public class PerformanceMessenger {
   private Map<String, Long> mySingleValues = new LinkedHashMap<String, Long>();
   private Map<String, Long[]> myPercentValues = new LinkedHashMap<String, Long[]>();
   private static PerformanceMessenger INSTANCE = new PerformanceMessenger();
-
   public PerformanceMessenger() {
   }
-
   public static PerformanceMessenger getInstance() {
     return INSTANCE;
   }
-
   public synchronized void report(String key, long value) {
     Assert.assertFalse(myPercentValues.containsKey(key));
     Long l = mySingleValues.remove(key);
@@ -35,7 +32,6 @@ public class PerformanceMessenger {
     }
     mySingleValues.put(key, value);
   }
-
   public synchronized void reportPercent(String key, long amount, long total) {
     Assert.assertFalse(mySingleValues.containsKey(key));
     Long[] l = myPercentValues.get(key);
@@ -46,7 +42,6 @@ public class PerformanceMessenger {
       myPercentValues.put(key, new Long[]{amount, total});
     }
   }
-
   public synchronized void generateReport() {
     try {
       File file = new File(System.getProperty("user.dir") + "/teamcity-info.xml");

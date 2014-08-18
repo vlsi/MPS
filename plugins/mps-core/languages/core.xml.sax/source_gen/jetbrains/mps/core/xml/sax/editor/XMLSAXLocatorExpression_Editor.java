@@ -18,7 +18,6 @@ public class XMLSAXLocatorExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_4uaul4_a(editorContext, node);
   }
-
   private EditorCell createConstant_4uaul4_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "locator");
     editorCell.setCellId("Constant_4uaul4_a");

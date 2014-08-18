@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExtensionFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ExtensionFunction_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ExtensionFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionFunction";

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class HashMapCreator_DataFlow extends DataFlowBuilder {
   public HashMapCreator_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "initializer", true));

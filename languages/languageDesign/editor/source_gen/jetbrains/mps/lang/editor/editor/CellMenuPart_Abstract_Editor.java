@@ -16,7 +16,6 @@ public class CellMenuPart_Abstract_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_7tiwfz_a(editorContext, node);
   }
-
   private EditorCell createError_7tiwfz_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose menu part>");
     editorCell.setCellId("Error_7tiwfz_a");

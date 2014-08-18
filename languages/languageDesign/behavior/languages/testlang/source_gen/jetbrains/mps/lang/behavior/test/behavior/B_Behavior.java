@@ -10,23 +10,18 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 public class B_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_virtualMethod_4731970554577218058(SNode thisNode, String in, int dummy) {
     return "B";
   }
-
   public static String call_nonVirtualMethod_4731970554577218075(SNode thisNode, String in, int dummy) {
     return "B";
   }
-
   public static String virtual_virtualMethod_4731970554577185009(SNode thisNode, String in, int dummy) {
     return "B";
   }
-
   public static String virtual_staticVirtualMethod_4731970554577185580(SAbstractConcept thisConcept, String in, int dummy) {
     return "B";
   }
-
   public static void call_doInvokeAll_4731970554577222218(SNode thisNode) {
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});

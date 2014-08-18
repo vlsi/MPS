@@ -34,16 +34,13 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.ResizableContentVi
 
 public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_pr685x_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_pr685x_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new CoreThrought_diagram_Editor.BlockCellImpl_pr685x_a(editorContext, node);
     editorCell.setCellId("DiagramNode_pr685x_a");
@@ -51,19 +48,16 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_pr685x_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_pr685x_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_pr685x_a1a;
     private final PropertyMapperCell<String> myPropertyCell_pr685x_a2a;
-
     private BlockCellImpl_pr685x_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_pr685x_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -74,7 +68,6 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -85,7 +78,6 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
         }
-
         protected void setModelPropertyValueImpl(String value) {
           SPropertyOperations.set(node, "name", value);
         }
@@ -94,14 +86,12 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
       myPropertyCell_pr685x_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pr685x_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_pr685x_a0a.synchronize();
       myPropertyCell_pr685x_a1a.synchronize();
       myPropertyCell_pr685x_a2a.synchronize();
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -174,7 +164,6 @@ public class CoreThrought_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

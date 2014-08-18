@@ -21,71 +21,55 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceWithFieldReference_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceWithFieldReference_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguageInternal.structure.ConstantValue";
   }
-
   public String getPresentation() {
     return "ReplaceWithFieldReference";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithFieldReference_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguageInternal";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)", "5332097447638335653");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceWithFieldReference_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with Field Reference";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ref = _quotation_createNode_6kpc5h_a0a0a(SLinkOperations.getTarget(node, "constant", false));
       SNodeOperations.replaceWithAnother(node, ref);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithFieldReference_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_6kpc5h_a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

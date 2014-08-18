@@ -19,22 +19,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Deprecated
 public abstract class AbstractClassifiersScope extends AbstractSearchScope implements IClassifiersSearchScope {
   private int myConstraint;
-
   @Deprecated
   protected AbstractClassifiersScope(int constraint) {
     this.myConstraint = constraint;
   }
-
   public int getConstraint() {
     return this.myConstraint;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
     return this.getNodesFormClassifiersList(getClassifiers(), this.myConstraint, condition);
   }
-
   protected List<SNode> getNodesFormClassifiersList(List<SNode> classifiers, int constraint, Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
     if (constraint == 0) {
@@ -109,7 +105,6 @@ public abstract class AbstractClassifiersScope extends AbstractSearchScope imple
     }
     return result;
   }
-
   @Override
   public List<SNode> getClassifierNodes() {
     return getClassifiers();

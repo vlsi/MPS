@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildLayout_ExportAsJavaLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;

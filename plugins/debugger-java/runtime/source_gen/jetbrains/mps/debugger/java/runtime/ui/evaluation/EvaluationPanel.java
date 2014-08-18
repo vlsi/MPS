@@ -29,7 +29,6 @@ public class EvaluationPanel extends EvaluationUi {
   private final IEvaluationContainer myEvaluationModel;
   private final Highlighter myHighlighter;
   private volatile boolean myIsDisposed = false;
-
   public EvaluationPanel(Project project, @NotNull DebugSession session, IEvaluationContainer evaluationModel, boolean autoUpdate) {
     super(session, autoUpdate);
     myHighlighter = project.getComponent(Highlighter.class);
@@ -77,11 +76,9 @@ public class EvaluationPanel extends EvaluationUi {
 
     myHighlighter.addAdditionalEditor(myEditor.getEditor());
   }
-
   public IEvaluationContainer getEvaluationContainer() {
     return myEvaluationModel;
   }
-
   @Override
   public void dispose() {
     ApplicationManager.getApplication().assertIsDispatchThread();
@@ -93,12 +90,10 @@ public class EvaluationPanel extends EvaluationUi {
     myHighlighter.removeAdditionalEditor(myEditor.getEditor());
     myEditor.disposeEditor();
   }
-
   @Override
   public void evaluate() {
     evaluate(myEvaluationModel);
   }
-
   private void updateGenerationResultTab(final SNode generatedResult) {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       public void run() {
@@ -119,7 +114,6 @@ public class EvaluationPanel extends EvaluationUi {
       }
     }, ModalityState.NON_MODAL);
   }
-
   @Override
   protected void update() {
     myEvaluationModel.updateState();

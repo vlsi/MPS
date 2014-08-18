@@ -7,7 +7,6 @@ public class TestClass {
   public int i = 0;
   public Object obj = new TestClass();
   public boolean bool;
-
   public TestClass() {
   }
 }

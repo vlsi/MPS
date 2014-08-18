@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 public class TypeExtension_BehaviorDescriptor extends BaseExtensionMethodContainer_BehaviorDescriptor {
   public TypeExtension_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension";

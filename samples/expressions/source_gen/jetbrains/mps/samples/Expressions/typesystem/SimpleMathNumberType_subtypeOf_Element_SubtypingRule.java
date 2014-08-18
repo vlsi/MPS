@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class SimpleMathNumberType_subtypeOf_Element_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathNumberType_subtypeOf_Element_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode numberType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return createSimpleMathElementType_wcy28w_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode createSimpleMathElementType_wcy28w_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", null, false);

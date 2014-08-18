@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class CellKeyMapKeystroke_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getKeyStroke_1213877273475(SNode thisNode) {
     String result = "";
     String modifiers = SPropertyOperations.getString(thisNode, "modifiers");

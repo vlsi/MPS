@@ -13,15 +13,12 @@ public enum Feedback {
   message("message", "MESSAGE");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Feedback> getConstants() {
     List<Feedback> list = ListSequence.fromList(new LinkedList<Feedback>());
     ListSequence.fromList(list).addElement(Feedback.info);
@@ -30,11 +27,9 @@ public enum Feedback {
     ListSequence.fromList(list).addElement(Feedback.message);
     return list;
   }
-
   public static Feedback getDefault() {
     return Feedback.info;
   }
-
   public static Feedback parseValue(String value) {
     if (value == null) {
       return Feedback.getDefault();
@@ -53,14 +48,11 @@ public enum Feedback {
     }
     return Feedback.getDefault();
   }
-
   private String myValue;
-
   Feedback(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

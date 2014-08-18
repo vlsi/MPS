@@ -21,11 +21,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class PositionProvider implements ProjectComponent {
   private final Project myProject;
   private final Map<String, List<IPositionProvider>> myKeysToProviders = MapSequence.fromMap(new LinkedHashMap<String, List<IPositionProvider>>(16, (float) 0.75, false));
-
   public PositionProvider(Project project) {
     myProject = project;
   }
-
   @Nullable
   public SourcePosition getPosition(@Nullable ILocation location, @NotNull final AbstractDebugSession session) {
     for (String key : MapSequence.fromMap(myKeysToProviders).keySet()) {
@@ -43,7 +41,6 @@ public class PositionProvider implements ProjectComponent {
     }
     return null;
   }
-
   @Nullable
   public SourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber, @NotNull final AbstractDebugSession session) {
     for (String key : MapSequence.fromMap(myKeysToProviders).keySet()) {
@@ -61,7 +58,6 @@ public class PositionProvider implements ProjectComponent {
     }
     return null;
   }
-
   public void addProvider(@NotNull IPositionProvider provider, @NonNls String key) {
     List<IPositionProvider> providersForKey = MapSequence.fromMap(myKeysToProviders).get(key);
     if (providersForKey == null) {
@@ -70,7 +66,6 @@ public class PositionProvider implements ProjectComponent {
     }
     ListSequence.fromList(providersForKey).insertElement(0, provider);
   }
-
   public boolean removeProvider(@NotNull IPositionProvider provider) {
     for (List<IPositionProvider> providerList : Sequence.fromIterable(MapSequence.fromMap(myKeysToProviders).values())) {
       if (ListSequence.fromList(providerList).removeElement(provider) != null) {
@@ -79,33 +74,27 @@ public class PositionProvider implements ProjectComponent {
     }
     return false;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
     addProvider(new NodePositionProvider(), NodeSourcePosition.class.getName());
     addProvider(new TextPositionProvider(myProject), TextSourcePosition.class.getName());
   }
-
   @Override
   public void disposeComponent() {
     MapSequence.fromMap(myKeysToProviders).clear();
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Position Provider";
   }
-
   public static PositionProvider getInstance(Project project) {
     return project.getComponent(PositionProvider.class);
   }

@@ -10,7 +10,6 @@ public class SimpleBlock extends AbstractBlock {
   public SimpleBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
     super(x, y, width, height, source, caption, ruleNodeReference);
   }
-
   @Override
   public void paintBlock(Graphics g) {
     g.setColor(Color.WHITE);

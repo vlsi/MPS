@@ -14,34 +14,26 @@ public class DeleteNoWait {
     editorCell.setAction(CellActionType.DELETE, new DeleteNoWait.DeleteNoWait_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteNoWait.DeleteNoWait_BACKSPACE(node));
   }
-
   public static class DeleteNoWait_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteNoWait_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "nowait", "" + (false));
     }
   }
-
   public static class DeleteNoWait_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteNoWait_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "nowait", "" + (false));
     }

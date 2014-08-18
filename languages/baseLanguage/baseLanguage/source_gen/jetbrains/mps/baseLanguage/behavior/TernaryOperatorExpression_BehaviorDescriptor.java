@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class TernaryOperatorExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public TernaryOperatorExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";

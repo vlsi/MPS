@@ -7,19 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class QueryFunction_Color_BehaviorDescriptor extends QueryFunction_StyleParameter_BehaviorDescriptor implements IQueryFunction_Color_BehaviorDescriptor {
   public QueryFunction_Color_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_Color_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return IQueryFunction_Color_Behavior.virtual_getRGBValue_1225468086082(thisNode);
   }
-
   public boolean virtual_isFunction_1225463329531(SNode thisNode) {
     return IQueryFunction_Color_Behavior.virtual_isFunction_1225463329531(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_Color";

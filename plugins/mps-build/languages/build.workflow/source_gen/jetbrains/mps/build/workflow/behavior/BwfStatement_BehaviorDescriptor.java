@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BwfStatement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BwfStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfStatement";

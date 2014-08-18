@@ -14,34 +14,26 @@ public class delConnector {
     editorCell.setAction(CellActionType.DELETE, new delConnector.delConnector_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delConnector.delConnector_BACKSPACE(node));
   }
-
   public static class delConnector_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delConnector_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class delConnector_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delConnector_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }

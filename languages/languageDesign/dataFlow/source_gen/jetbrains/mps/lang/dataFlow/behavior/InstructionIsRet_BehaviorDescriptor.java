@@ -6,7 +6,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class InstructionIsRet_BehaviorDescriptor extends BooleanInstructionOperation_BehaviorDescriptor {
   public InstructionIsRet_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet";

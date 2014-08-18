@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class MathSymbol_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MathSymbol_BehaviorDescriptor() {
   }
-
   public String virtual_getOpName_1262430001741497894(SConcept thisConcept) {
     return MathSymbol_Behavior.virtual_getOpName_1262430001741497894(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MathSymbol";

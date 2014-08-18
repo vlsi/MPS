@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

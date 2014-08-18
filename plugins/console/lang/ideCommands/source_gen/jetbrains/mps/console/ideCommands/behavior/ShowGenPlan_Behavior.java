@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class ShowGenPlan_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "targetModel", true)) == null) {
       return;

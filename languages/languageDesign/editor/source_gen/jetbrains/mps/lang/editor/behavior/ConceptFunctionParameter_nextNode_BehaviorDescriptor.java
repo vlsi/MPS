@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class ConceptFunctionParameter_nextNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_nextNode_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode";

@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QueryFunction_ParametersList_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.ParametersInformationQuery", false, false);
     SNode expectedType = SLinkOperations.getTarget(ancestor, "type", true);
@@ -25,14 +24,12 @@ public class QueryFunction_ParametersList_Behavior {
     }
     return _quotation_createNode_1gao1h_a3a0(expectedType);
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "4203201205844553978"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1161622981231"));
     return result;
   }
-
   private static SNode _quotation_createNode_1gao1h_a0a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -42,7 +39,6 @@ public class QueryFunction_ParametersList_Behavior {
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_1gao1h_a3a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

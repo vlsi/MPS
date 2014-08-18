@@ -45,7 +45,6 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class CommandUtil {
 
-
   public static Iterable<SNode> nodes(ConsoleScope scope) {
     return Sequence.fromIterable(models(scope)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
@@ -54,8 +53,6 @@ public class CommandUtil {
     });
   }
 
-
-
   public static Iterable<SReference> references(ConsoleScope scope) {
     return Sequence.fromIterable(nodes(scope)).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
@@ -63,8 +60,6 @@ public class CommandUtil {
       }
     });
   }
-
-
 
   public static Iterable<SModel> models(ConsoleScope scope) {
     Iterable<SModel> allModels = scope.getSearchScope().getModels();
@@ -75,8 +70,6 @@ public class CommandUtil {
     }));
   }
 
-
-
   public static Iterable<SModule> modules(ConsoleScope scope) {
     Iterable<SModule> allModules = scope.getSearchScope().getModules();
     return (scope.includeReadOnly() ? allModules : Sequence.fromIterable(allModules).where(new IWhereFilter<SModule>() {
@@ -86,23 +79,17 @@ public class CommandUtil {
     }));
   }
 
-
-
   public static Collection<SReference> usages(ConsoleScope scope, SNode node) {
     // todo: readOnly 
     Collection<SReference> result = FindUsagesManager.getInstance().findUsages(scope.getSearchScope(), Collections.<SNode>singleton(node), new EmptyProgressMonitor());
     return result;
   }
 
-
-
   public static Collection<SNode> instances(ConsoleScope scope, String conceptName) {
     // todo: readOnly 
     SAbstractConcept c = SConceptRepository.getInstance().getConcept(conceptName);
     return FindUsagesManager.getInstance().findInstances(scope.getSearchScope(), Collections.singleton(c), false, new EmptyProgressMonitor());
   }
-
-
 
   public static void show(Project p, SearchResults results) {
     try {
@@ -114,16 +101,12 @@ public class CommandUtil {
     }
   }
 
-
-
   public static void printClosure(ConsoleStream console, _FunctionTypes._void_P0_E0 closure, String text) {
     SNode nodeWithClosure = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeWithClosure", null);
     SPropertyOperations.set(nodeWithClosure, "text", text);
     ClosureHoldingNodeUtil.getInstance().register(nodeWithClosure, closure);
     console.addNode(nodeWithClosure);
   }
-
-
 
   public static void printSequence(ConsoleStream console, final Project project, final _FunctionTypes._return_P0_E0<? extends SearchResults> results, int resultsCount, String resultDescription) {
     if (resultsCount == 0) {
@@ -136,8 +119,6 @@ public class CommandUtil {
       }, resultsCount + " " + resultDescription);
     }
   }
-
-
 
   public static SearchResults nodesToResults(Iterable<SNodeReference> nodes, final SRepository repository) {
     final SearchResults<SNode> res = new SearchResults<SNode>();
@@ -153,8 +134,6 @@ public class CommandUtil {
     return res;
   }
 
-
-
   public static SearchResults modelsToResults(Iterable<SModelReference> models, final SRepository repository) {
     final SearchResults<SModel> res = new SearchResults<SModel>();
     Sequence.fromIterable(models).where(new IWhereFilter<SModelReference>() {
@@ -168,8 +147,6 @@ public class CommandUtil {
     });
     return res;
   }
-
-
 
   public static SearchResults modulesToResults(Iterable<SModuleReference> modules, final SRepository repository) {
     final SearchResults<SModule> res = new SearchResults<SModule>();
@@ -185,33 +162,24 @@ public class CommandUtil {
     return res;
   }
 
-
-
   public static SNodeReference getNodeReference(SNode aNode) {
     return check_1pinza_a0a52(aNode);
   }
-
   public static SNodeReference getReferenceReference(SReference aReference) {
     return check_1pinza_a0a62(check_1pinza_a0a0ab(aReference));
   }
-
   public static SModelReference getModelReference(SModel aModel) {
     return check_1pinza_a0a72(aModel);
   }
-
   public static SModuleReference getModuleReference(SModule aModule) {
     return check_1pinza_a0a82(aModule);
   }
-
-
 
   public static void addNodeReference(ConsoleStream console, SNode target) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.console.base.structure.NodeReferencePresentation", null);
     SLinkOperations.setTarget(node, "target", target, false);
     console.addNode(node);
   }
-
-
 
   public static void registerAnalyzeStacktraceDialogClosure(ConsoleContext context, ConsoleStream console, Throwable exception) {
     StringWriter writer = new StringWriter();
@@ -223,104 +191,87 @@ public class CommandUtil {
     console.addNode(exceptionHolder);
   }
 
-
-
   public static ConsoleScope createConsoleScope(@Nullable final SearchScope searchScope, final boolean includeReadOnly, final ConsoleContext context) {
     return new ConsoleScope() {
 
       private SearchScope mySearchScope = (searchScope == null ? new ProjectScope(context.getProject()) : searchScope);
 
-
       public SearchScope getSearchScope() {
         return mySearchScope;
       }
-
       public boolean includeReadOnly() {
         return includeReadOnly;
       }
     };
   }
 
-
   protected static Logger LOG = LogManager.getLogger(CommandUtil.class);
-
   private static UsagesViewTool check_1pinza_a0a0a0n(com.intellij.openapi.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getComponent(UsagesViewTool.class);
     }
     return null;
   }
-
   private static SNode check_1pinza_a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SNode check_1pinza_a0a0a0a0a0b0t(SNodeReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SModel check_1pinza_a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SModel check_1pinza_a0a0a0a0a0b0v(SModelReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SModule check_1pinza_a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SModule check_1pinza_a0a0a0a0a0b0x(SModuleReference checkedDotOperand, SRepository repository) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(repository);
     }
     return null;
   }
-
   private static SNodeReference check_1pinza_a0a52(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-
   private static SNodeReference check_1pinza_a0a62(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-
   private static SNode check_1pinza_a0a0ab(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSourceNode();
     }
     return null;
   }
-
   private static SModelReference check_1pinza_a0a72(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();
     }
     return null;
   }
-
   private static SModuleReference check_1pinza_a0a82(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();

@@ -13,7 +13,6 @@ public class FindUsages_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FindUsages_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FindUsages_ActionGroup";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
-
   public FindUsages_ActionGroup() {
     super("FindUsages", ID);
     this.setIsInternal(false);

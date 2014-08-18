@@ -15,5 +15,4 @@ public class workflowStyles_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(new Color(3158064)));
   }
 
-
 }

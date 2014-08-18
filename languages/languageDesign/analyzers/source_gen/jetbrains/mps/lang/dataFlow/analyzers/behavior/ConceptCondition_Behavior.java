@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ConceptCondition_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
   }

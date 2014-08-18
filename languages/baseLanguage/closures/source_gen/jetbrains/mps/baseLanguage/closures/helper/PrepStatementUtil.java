@@ -14,12 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PrepStatementUtil {
   private PrepStatementUtil.Context ctx;
   private ITemplateGenerator generator;
-
   private PrepStatementUtil(ITemplateGenerator generator) {
     this.ctx = new PrepStatementUtil.Context();
     this.generator = generator;
   }
-
   private void prepTopStatementList(TemplateQueryContext genContext, SNode slist) {
     int beginLabel = this.ctx.label;
     int endLabel = this.ctx.incrementLabel();
@@ -27,7 +25,6 @@ public class PrepStatementUtil {
     Values.CLOSURE_DATA.set(genContext, slist, data);
     this.prepStatementList(genContext, slist);
   }
-
   private int prepStatementList(TemplateQueryContext genContext, SNode slist) {
     boolean labelAutoIncremented = true;
     int label = this.ctx.incrementLabel();
@@ -40,7 +37,6 @@ public class PrepStatementUtil {
     }
     return label;
   }
-
   private int prepStatement(TemplateQueryContext genContext, SNode stmt, int label) {
     if (SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement")) {
       return this.prepWhileStatement(genContext, SNodeOperations.cast(stmt, "jetbrains.mps.baseLanguage.structure.WhileStatement"), label);
@@ -77,7 +73,6 @@ public class PrepStatementUtil {
     }
     return label;
   }
-
   private int prepWhileStatement(TemplateQueryContext genContext, SNode wstmt, int label) {
     int beginLabel = label;
     int blockLabel = this.ctx.incrementLabel();
@@ -90,7 +85,6 @@ public class PrepStatementUtil {
     this.prepStatementList(genContext, SLinkOperations.getTarget(wstmt, "body", true));
     return nextLabel;
   }
-
   private int prepDoWhileStatement(TemplateQueryContext genContext, SNode dwstmt, int label) {
     int beginLabel = label;
     int condLabel = this.ctx.incrementLabel();
@@ -103,7 +97,6 @@ public class PrepStatementUtil {
     this.prepStatementList(genContext, SLinkOperations.getTarget(dwstmt, "body", true));
     return nextLabel;
   }
-
   private int prepForStatement(TemplateQueryContext genContext, SNode fstmt, int label) {
     int beginLabel = label;
     this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, "variable", true));
@@ -119,7 +112,6 @@ public class PrepStatementUtil {
     this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
   }
-
   private int prepForeachStatement(TemplateQueryContext genContext, SNode fstmt, int label) {
     int beginLabel = label;
     this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(fstmt, "variable", true));
@@ -134,7 +126,6 @@ public class PrepStatementUtil {
     this.prepStatementList(genContext, SLinkOperations.getTarget(fstmt, "body", true));
     return nextLabel;
   }
-
   private int prepIfStatement(TemplateQueryContext genContext, SNode ifstmt, int label) {
     int beginLabel = label;
     int ifTrueLabel = this.ctx.incrementLabel();
@@ -173,7 +164,6 @@ public class PrepStatementUtil {
     }
     return nextLabel;
   }
-
   private int prepSwitchStatement(TemplateQueryContext genContext, SNode sstmt, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, sstmt);
@@ -204,7 +194,6 @@ public class PrepStatementUtil {
     }
     return nextLabel;
   }
-
   private int prepYieldStatement(TemplateQueryContext genContext, SNode ystmt, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, ystmt);
@@ -212,7 +201,6 @@ public class PrepStatementUtil {
     Values.CLOSURE_DATA.set(genContext, ystmt, data);
     return nextLabel;
   }
-
   private void prepBreakStatement(TemplateQueryContext genContext, SNode bstmt) {
     int brLabel = -1;
     SNode node = bstmt;
@@ -228,7 +216,6 @@ public class PrepStatementUtil {
     Object data = new Integer[]{brLabel};
     Values.CLOSURE_DATA.set(genContext, bstmt, data);
   }
-
   private void prepContinueStatement(TemplateQueryContext genContext, SNode cstmt) {
     int conLabel = -1;
     SNode node = cstmt;
@@ -244,7 +231,6 @@ public class PrepStatementUtil {
     Object data = new Integer[]{conLabel};
     Values.CLOSURE_DATA.set(genContext, cstmt, data);
   }
-
   private int prepBlockStatement(TemplateQueryContext genContext, SNode bs, int label) {
     int beginLabel = label;
     int nextLabel = this.calcNextLabel(genContext, bs);
@@ -256,19 +242,16 @@ public class PrepStatementUtil {
     Values.CLOSURE_DATA.set(genContext, bs, data);
     return tmp;
   }
-
   private int prepLocalvariableDeclarationStatement(TemplateQueryContext genContext, SNode lstmt, int label) {
     int nextLabel = this.ctx.incrementLabel();
     Values.CLOSURE_DATA.set(genContext, lstmt, label);
     this.prepLocalVariableDeclaration(genContext, SLinkOperations.getTarget(lstmt, "localVariableDeclaration", true));
     return nextLabel;
   }
-
   private void prepLocalVariableDeclaration(TemplateQueryContext genContext, SNode lvd) {
     String name = "_" + this.ctx.label + "_" + SPropertyOperations.getString(lvd, "name");
     Values.CLOSURE_DATA.set(genContext, lvd, name);
   }
-
   private int calcNextLabel(TemplateQueryContext genContext, SNode cstmt) {
     if (SNodeOperations.isInstanceOf(cstmt, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       SNode topIfStmt = SNodeOperations.cast(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.IfStatement");
@@ -288,19 +271,15 @@ public class PrepStatementUtil {
     }
     return this.ctx.incrementLabel();
   }
-
   public static void prepStatementList(TemplateQueryContext genContext, SNode slist, ITemplateGenerator generator) {
     PrepStatementUtil psu = new PrepStatementUtil(generator);
     psu.prepTopStatementList(genContext, slist);
   }
-
   private static class Context {
     public int label;
-
     public Context() {
       this.label = 0;
     }
-
     public int incrementLabel() {
       this.label = this.label + 1;
       return this.label;

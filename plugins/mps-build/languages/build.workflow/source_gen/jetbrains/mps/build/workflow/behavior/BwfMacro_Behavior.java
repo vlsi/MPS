@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BwfMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return 30;
   }

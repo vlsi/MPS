@@ -16,25 +16,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ErrorInfoExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ErrorInfoExpression_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode errorInfoExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!((SNodeOperations.getAncestor(errorInfoExpression, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(errorInfoExpression, "error info expression allowed only inside replacement rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1201618438931", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

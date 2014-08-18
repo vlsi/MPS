@@ -5,32 +5,32 @@
   <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696290">
     <file name="ReaderStrategy.java">
       <node id="3515521059660696292" at="7,0,9,0" concept="0" trace="ReaderStrategy#(Ljava/lang/String;Ljava/lang/Class;)V" />
-      <node id="3515521059660696300" at="10,0,12,0" concept="1" trace="AddFieldExtractor#(IILjava/lang/String;)V" />
+      <node id="3515521059660696300" at="9,0,11,0" concept="1" trace="AddFieldExtractor#(IILjava/lang/String;)V" />
       <scope id="3515521059660696299" at="7,64,7,64" />
-      <scope id="3515521059660696309" at="10,66,10,66" />
+      <scope id="3515521059660696309" at="9,66,9,66" />
       <scope id="3515521059660696292" at="7,0,9,0">
         <var name="mappingCode" id="3515521059660696295" />
         <var name="targetClass" id="3515521059660696297" />
       </scope>
-      <scope id="3515521059660696300" at="10,0,12,0">
+      <scope id="3515521059660696300" at="9,0,11,0">
         <var name="end" id="3515521059660696305" />
         <var name="name" id="3515521059660696307" />
         <var name="start" id="3515521059660696303" />
       </scope>
-      <unit id="3515521059660696290" at="6,0,13,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
+      <unit id="3515521059660696290" at="6,0,12,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
     </file>
   </root>
   <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696316">
     <file name="Reader.java">
       <node id="3515521059660696318" at="7,0,9,0" concept="0" trace="Reader#()V" />
-      <node id="3515521059660696322" at="10,0,12,0" concept="1" trace="AddStrategy#(Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;)V" />
+      <node id="3515521059660696322" at="9,0,11,0" concept="1" trace="AddStrategy#(Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;)V" />
       <scope id="3515521059660696321" at="7,19,7,19" />
-      <scope id="3515521059660696327" at="10,52,10,52" />
+      <scope id="3515521059660696327" at="9,52,9,52" />
       <scope id="3515521059660696318" at="7,0,9,0" />
-      <scope id="3515521059660696322" at="10,0,12,0">
+      <scope id="3515521059660696322" at="9,0,11,0">
         <var name="strategy" id="3515521059660696325" />
       </scope>
-      <unit id="3515521059660696316" at="6,0,13,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />
+      <unit id="3515521059660696316" at="6,0,12,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />
     </file>
   </root>
 </debug-info>

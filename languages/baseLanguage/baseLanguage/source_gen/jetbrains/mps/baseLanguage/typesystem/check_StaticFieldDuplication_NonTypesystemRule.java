@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StaticFieldDuplication_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StaticFieldDuplication_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode decl, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (CheckingUtil.isFieldDuplicated(decl)) {
       {
@@ -27,18 +26,15 @@ public class check_StaticFieldDuplication_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

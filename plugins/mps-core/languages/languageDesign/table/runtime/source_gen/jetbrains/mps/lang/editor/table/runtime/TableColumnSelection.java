@@ -30,7 +30,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
   private int myColumnNumber;
   private EditorCell_Table myTableCell;
   private static Map<CellActionType, _FunctionTypes._void_P0_E0> actionMap = MapSequence.fromMap(new HashMap<CellActionType, _FunctionTypes._void_P0_E0>());
-
   public TableColumnSelection(@NotNull EditorComponent editorComponent, Map<String, String> properties, CellInfo cellInfo) throws SelectionStoreException, SelectionRestoreException {
     super(editorComponent);
     if (cellInfo == null) {
@@ -52,7 +51,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     initSelectedCells();
     initActionMap();
   }
-
   public TableColumnSelection(@NotNull EditorComponent editorComponent, @NotNull EditorCell_Table tableCell, int columnNumber) {
     super(editorComponent);
     myTableCell = tableCell;
@@ -62,11 +60,9 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     initSelectedCells();
     initActionMap();
   }
-
   private void initSelectedCells() {
     setSelectedCells(myTableCell.getColumnCells(myColumnNumber));
   }
-
   private void initActionMap() {
     MapSequence.fromMap(actionMap).put(CellActionType.SELECT_UP, new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -81,7 +77,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     });
     MapSequence.fromMap(actionMap).put(CellActionType.PASTE, null);
   }
-
   @Override
   public boolean isSame(Selection another) {
     if (this == another) {
@@ -96,7 +91,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     }
     return myColumnNumber == that.myColumnNumber;
   }
-
   @Override
   public SelectionInfo getSelectionInfo() throws SelectionStoreException {
     SelectionInfoImpl selectionInto = new SelectionInfoImpl(this.getClass().getName(), "jetbrains.mps.lang.editor.table.runtime");
@@ -104,12 +98,10 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     selectionInto.getPropertiesMap().put(COLUMN_NUMBER_PROPERTY, Integer.toString(myColumnNumber));
     return selectionInto;
   }
-
   @Override
   public boolean canExecuteAction(CellActionType type) {
     return MapSequence.fromMap(actionMap).containsKey(type) || super.canExecuteAction(type);
   }
-
   @Override
   public void executeAction(CellActionType type) {
     if (MapSequence.fromMap(actionMap).containsKey(type)) {
@@ -120,11 +112,9 @@ public class TableColumnSelection extends AbstractMultipleSelection {
       super.executeAction(type);
     }
   }
-
   private void copyNodes() {
     CopyPasteManagerEx.getInstanceEx().setContents(new SNodeTransferable(Collections.<SNode>emptyList(), renderText().getText()));
   }
-
   private TextBuilder renderText() {
     TextBuilder result = jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
     for (EditorCell cell : getSelectedCells()) {
@@ -132,7 +122,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     }
     return result;
   }
-
   private void selectUp() {
     EditorCell cell = getCellToSelectUp();
     if (cell == null) {
@@ -141,7 +130,6 @@ public class TableColumnSelection extends AbstractMultipleSelection {
     SelectionManager selectionManager = getEditorComponent().getSelectionManager();
     selectionManager.pushSelection(selectionManager.createSelection(cell));
   }
-
   private EditorCell getCellToSelectUp() {
     for (EditorCell_Collection cell = myTableCell; cell != null; cell = cell.getParent()) {
       if (cell.isSelectable()) {

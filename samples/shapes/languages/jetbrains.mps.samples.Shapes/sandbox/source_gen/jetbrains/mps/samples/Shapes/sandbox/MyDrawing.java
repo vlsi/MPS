@@ -22,7 +22,6 @@ public class MyDrawing extends JFrame {
     }
   };
 
-
   private void initialize() {
     this.setTitle("MyDrawing");
     this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -31,8 +30,6 @@ public class MyDrawing extends JFrame {
     this.pack();
     this.setVisible(true);
   }
-
-
 
   public static void main(String[] args) {
     MyDrawing canvas = new MyDrawing();

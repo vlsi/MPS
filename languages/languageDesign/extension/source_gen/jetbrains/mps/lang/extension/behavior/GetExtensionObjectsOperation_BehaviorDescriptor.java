@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.AbstractOperation_BehaviorDescriptor;
 public class GetExtensionObjectsOperation_BehaviorDescriptor extends AbstractOperation_BehaviorDescriptor {
   public GetExtensionObjectsOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.extension.structure.GetExtensionObjectsOperation";

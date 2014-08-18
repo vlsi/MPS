@@ -8,14 +8,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildMps_IdeaPlugin_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     if ("containerName".equals(role)) {
       return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
     }
     return !(propertyValue.contains("$"));
   }
-
   public static SNode call_getProject_1224588814562002122(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.build.structure.BuildProject");
   }

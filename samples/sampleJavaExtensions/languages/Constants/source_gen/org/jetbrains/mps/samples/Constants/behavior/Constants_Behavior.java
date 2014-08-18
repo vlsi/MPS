@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class Constants_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "org.jetbrains.mps.samples.Constants.structure.Constant")) {
       SimpleRoleScope forNamedElements = SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("org.jetbrains.mps.samples.Constants.structure.Constants", "constants"));

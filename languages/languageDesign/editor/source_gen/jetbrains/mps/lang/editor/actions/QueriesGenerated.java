@@ -54,7 +54,6 @@ public class QueriesGenerated {
       SPropertyOperations.set(_context.getNewNode(), "readOnly", "" + (true));
     }
   }
-
   public static void nodeFactory_NodeSetup_CellModel_Collection_1159287296419(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
       EditorCellModel_Behavior.call_setSelectable_1241444765326(_context.getNewNode(), false);
@@ -70,14 +69,12 @@ public class QueriesGenerated {
       }
     }
   }
-
   public static void nodeFactory_NodeSetup_CellModel_Alternation_1165441265076(final IOperationContext operationContext, final NodeSetupContext _context) {
     SPropertyOperations.set(_context.getNewNode(), "vertical", "" + (true));
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
       SLinkOperations.setTarget(_context.getNewNode(), "ifTrueCellModel", SNodeOperations.copyNode(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_CellModel_RefNodeList_1239813377369(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
       if (SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.editor.structure.CellModel_Collection"), "cellLayout", true) != null) {
@@ -85,55 +82,46 @@ public class QueriesGenerated {
       }
     }
   }
-
   public static void nodeFactory_NodeSetup_ColorStyleClassItem_1222177342205(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem")) {
       SPropertyOperations.set(_context.getNewNode(), "color", SPropertyOperations.getString_def(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), "color", null));
       SLinkOperations.setTarget(_context.getNewNode(), "query", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.ColorStyleClassItem"), "query", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_BooleanStyleSheetItem_1222178769289(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem")) {
       SPropertyOperations.set(_context.getNewNode(), "flag", "" + (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "flag")));
     }
   }
-
   public static void nodeFactory_NodeSetup_FloatStyleClassItem_1222178992988(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem")) {
       SPropertyOperations.set(_context.getNewNode(), "value", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.FloatStyleClassItem"), "value"));
     }
   }
-
   public static void nodeFactory_NodeSetup_AttributeStyleClassItem_4088952938557967593(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem")) {
       SLinkOperations.setTarget(_context.getNewNode(), "query", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem"), "query", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894656684(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199894693230(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
     return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199894924671(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199894948366(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
     return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "reference", "reference");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellMenuPart_Abstract_1199895015795(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
@@ -142,12 +130,10 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_CellMenuPart_Abstract_1199895015796(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     SNode editedFeature = CellMenuUtil.getEditedFeature(_context.getParentNode());
     return SNodeOperations.isInstanceOf(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration") && SPropertyOperations.hasValue(SNodeOperations.cast(editedFeature, "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "metaClass", "aggregation", "reference");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellModel_1177585776510(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -160,15 +146,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "collection (vertical)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -188,15 +171,12 @@ public class QueriesGenerated {
             }
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "collection (vertical)";
           }
-
           public String getMatchingText(String pattern) {
             return "[/";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -213,15 +193,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "collection (horizontal)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -241,15 +218,12 @@ public class QueriesGenerated {
             }
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "collection (horizontal)";
           }
-
           public String getMatchingText(String pattern) {
             return "[>";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -266,15 +240,12 @@ public class QueriesGenerated {
             SNodeFactoryOperations.setNewChild(result, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "collection (indent)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -294,15 +265,12 @@ public class QueriesGenerated {
             }
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "collection (indent)";
           }
-
           public String getMatchingText(String pattern) {
             return "[-";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -319,15 +287,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "child node cell list (indent)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -344,15 +309,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "child node cell (indent)";
           }
-
           public String getMatchingText(String pattern) {
             return "(-";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -369,15 +331,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "child node cell list (vertical)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -397,15 +356,12 @@ public class QueriesGenerated {
             }
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "child node cell list (vertical)";
           }
-
           public String getMatchingText(String pattern) {
             return "(/";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -422,15 +378,12 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "cellLayout", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "child node cell list (horizontal)";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -450,15 +403,12 @@ public class QueriesGenerated {
             }
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "child node cell list (horizontal)";
           }
-
           public String getMatchingText(String pattern) {
             return "(>";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -473,15 +423,12 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", _context.getCurrentTargetNode());
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "referent node cell";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -496,15 +443,12 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_RefNode", _context.getCurrentTargetNode());
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "child node cell";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -519,15 +463,12 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Property", _context.getCurrentTargetNode());
           }
-
           public String getDescriptionText(String pattern) {
             return "";
           }
-
           public String getMatchingText(String pattern) {
             return "property";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -543,15 +484,12 @@ public class QueriesGenerated {
             SNode result = SNodeFactoryOperations.createNewNode(model, "jetbrains.mps.lang.editor.structure.CellModel_Alternation", _context.getCurrentTargetNode());
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "alternation";
           }
-
           public String getMatchingText(String pattern) {
             return "if";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -568,23 +506,18 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "\"", "\""));
             return result;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.startsWith("\"");
           }
-
           public String getDescriptionText(String pattern) {
             return "constant";
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -601,23 +534,18 @@ public class QueriesGenerated {
             SPropertyOperations.set(constant, "text", NameUtil.stripQuotes(pattern, "\"", "\""));
             return constant;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return !(pattern.equals("[-") || pattern.equals("[/") || pattern.equals("[>") || pattern.startsWith("\"") || pattern.startsWith("<choose cell model>"));
           }
-
           public String getDescriptionText(String pattern) {
             return "make constant";
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -634,23 +562,18 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "text", NameUtil.stripQuotes(pattern, "!", "!"));
             return result;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.startsWith("!");
           }
-
           public String getDescriptionText(String pattern) {
             return "Error label";
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -686,11 +609,9 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(component, "editorComponent", (item), false);
                 return component;
               }
-
               public String getMatchingText(String pattern) {
                 return "#" + SPropertyOperations.getString((item), "name") + "#";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -701,7 +622,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_CellActionMapItem_1185874474095(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -721,15 +641,12 @@ public class QueriesGenerated {
                 SPropertyOperations.set(newNode, "actionId", SPropertyOperations.getString((item), "internalValue"));
                 return newNode;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "externalValue");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return "";
               }
@@ -740,7 +657,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_226730285127010424(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -781,7 +697,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ContextHintsSpecification_6150987479537022552(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -818,7 +733,6 @@ public class QueriesGenerated {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryHintsSpecification"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractCellSelector_2162403111526915073(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellIdReferenceSelector"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
@@ -830,24 +744,19 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IdSelector", null);
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
             return "\"<cell ID>\"".startsWith(pattern);
           }
-
           public String getDescriptionText(String pattern) {
             return "with spdcified string cell id";
           }
-
           public String getMatchingText(String pattern) {
             return "\"<custom cell ID>\"";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -871,7 +780,6 @@ public class QueriesGenerated {
                 SPropertyOperations.set(result, "cellId", SEnumOperations.getEnumMemberValue((item)));
                 return result;
               }
-
               public String getDescriptionText(String pattern) {
                 return SEnumOperations.getEnumMemberValue((item)) + " cell";
               }
@@ -888,24 +796,19 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PropertyDeclarationCellSelector", null);
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
             return "{<property>}".startsWith(pattern) || "{ ".startsWith(pattern);
           }
-
           public String getDescriptionText(String pattern) {
             return "representing specified property declaration";
           }
-
           public String getMatchingText(String pattern) {
             return "{<property>}";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -920,24 +823,19 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PropertyExpressionCellSelector", null);
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             // ignoring "strictly" parameter to be able to immediately substitute any sub-string of specified string 
             return "{#<property>}".startsWith(pattern);
           }
-
           public String getDescriptionText(String pattern) {
             return "representing property declaration specified by expression";
           }
-
           public String getMatchingText(String pattern) {
             return "{#<property>}";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -946,7 +844,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellId_4323500428127332368(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -959,15 +856,12 @@ public class QueriesGenerated {
             SPropertyOperations.set(cellId, "name", pattern);
             return cellId;
           }
-
           public String getDescriptionText(String pattern) {
             return "custom cell id";
           }
-
           public String getMatchingText(String pattern) {
             return ((pattern == null || pattern.length() == 0) ? "\"id\"" : pattern);
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -976,11 +870,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_EditorCellId_4323500428127345618(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return _context.getCurrentTargetNode() == null;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_StyleClassReferenceList_2491174914161947403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -992,11 +884,9 @@ public class QueriesGenerated {
           private SNode wrapNode(SNode nodeToWrap, SModel model, @Nullable EditorContext editorContext) {
             return createStyleClassReferenceList_vu8rqe_a0a0a0a(Sequence.<SNode>singleton(nodeToWrap));
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -1009,7 +899,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1948540814637841122(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), _context.getSourceNode()) {
@@ -1018,19 +907,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "cellSelector", true);
       }
-
       public String getMatchingText(String pattern) {
         return ",";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify cell to select";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1045,19 +930,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "cellSelector", true);
       }
-
       public String getMatchingText(String pattern) {
         return "cell";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify cell to select";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1068,11 +949,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2162403111527377304(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation") && SNodeOperations.getContainingLinkDeclaration(_context.getSourceNode()) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "editorContext");
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_AbstractCellSelector_3604384757222897925(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
@@ -1081,19 +960,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "selectionStart", true);
       }
-
       public String getMatchingText(String pattern) {
         return ",";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify selection start position";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1108,19 +983,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "selectionStart", true);
       }
-
       public String getMatchingText(String pattern) {
         return "selectionStart";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify selection start position";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1131,11 +1002,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractCellSelector_3604384757222901473(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation");
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_2701921320710615736(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
@@ -1144,19 +1013,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "selectionEnd", true);
       }
-
       public String getMatchingText(String pattern) {
         return ",";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify selection end position";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1171,19 +1036,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(selectInEditorOperation, "selectionEnd", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
         return SLinkOperations.getTarget(selectInEditorOperation, "selectionEnd", true);
       }
-
       public String getMatchingText(String pattern) {
         return "selectionEnd";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "specify selection end position";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1194,26 +1055,21 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2701921320710620070(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.lang.editor.structure.SelectInEditorOperation"), "selectionEnd", true) == null && SNodeOperations.getContainingLinkDeclaration(_context.getSourceNode()) == SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.structure.SelectInEditorOperation", "selectionStart");
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_StyleClass_3383245079143155344(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClass"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         return SLinkOperations.setTarget(_context.getSourceNode(), "dominates", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.DominatesRecord", null), true);
       }
-
       public String getMatchingText(String pattern) {
         return "dominates";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1224,22 +1080,18 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_StyleSheetClass_3383245079143186822(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheetClass"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "extendedClass", "jetbrains.mps.lang.editor.structure.StyleSheetClassReference");
       }
-
       public String getMatchingText(String pattern) {
         return "extends";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1250,22 +1102,18 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ApplyStyleClassCondition_2491174914176590340(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         return SNodeFactoryOperations.setNewChild(_context.getSourceNode(), "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
       }
-
       public String getMatchingText(String pattern) {
         return "condition";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -1276,7 +1124,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   private static SNode createStyleClassReferenceList_vu8rqe_a0a0a0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassReferenceList", null, false);

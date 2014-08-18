@@ -14,7 +14,6 @@ import java.util.Iterator;
 public abstract class ModelCheckerController {
   public ModelCheckerController() {
   }
-
   public void process(final ProgressMonitor promon, final Collection<ModelCheckerIssue> issues) {
     promon.start("", CollectionSequence.fromCollection(issues).count());
 
@@ -46,6 +45,5 @@ public abstract class ModelCheckerController {
       }
     }
   }
-
   public abstract void runCommand(Runnable cmd);
 }

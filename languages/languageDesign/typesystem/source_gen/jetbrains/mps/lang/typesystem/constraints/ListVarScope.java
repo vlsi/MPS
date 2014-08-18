@@ -16,7 +16,6 @@ public class ListVarScope extends SearchScopeWithNode {
   public ListVarScope(SNode enclosingNode) {
     super(enclosingNode);
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

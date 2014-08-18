@@ -22,7 +22,6 @@ public class Children {
     int count3 = ((List<SNode>) statements).size();
     ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).clear();
   }
-
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
@@ -40,7 +39,6 @@ public class Children {
       ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
     }
   }
-
   public void accessToChildren_3(SNode statement) {
     List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
@@ -59,7 +57,6 @@ public class Children {
     SNode aConcept = null;
     SNodeOperations.getDescendants(statement, NameUtil.nodeFQName(aConcept), false, new String[]{});
   }
-
   public void accessToChildren_4(SNode statement) {
     List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant", "jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});

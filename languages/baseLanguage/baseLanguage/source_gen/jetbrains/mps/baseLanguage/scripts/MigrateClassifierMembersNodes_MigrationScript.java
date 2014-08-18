@@ -20,22 +20,18 @@ public class MigrateClassifierMembersNodes_MigrationScript extends BaseMigration
       public String getName() {
         return "Use member role for classifier members (classifier nodes)";
       }
-
       public String getAdditionalInfo() {
         return "Use member role for classifier members (classifier nodes)";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.Classifier";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass") && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass")) {
           return false;
         }
         return ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).count() != Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(node)).count();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         Iterable<SNode> members = Classifier_Behavior.call_members_1465982738252129704(node);
         for (SNode member : Sequence.fromIterable(members)) {
@@ -47,7 +43,6 @@ public class MigrateClassifierMembersNodes_MigrationScript extends BaseMigration
           ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(member);
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

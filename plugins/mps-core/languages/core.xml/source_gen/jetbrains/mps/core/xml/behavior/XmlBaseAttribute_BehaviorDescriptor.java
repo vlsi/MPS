@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class XmlBaseAttribute_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public XmlBaseAttribute_BehaviorDescriptor() {
   }
-
   public boolean virtual_isMultiline_3080189811177259788(SNode thisNode) {
     return XmlBaseAttribute_Behavior.virtual_isMultiline_3080189811177259788(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlBaseAttribute";

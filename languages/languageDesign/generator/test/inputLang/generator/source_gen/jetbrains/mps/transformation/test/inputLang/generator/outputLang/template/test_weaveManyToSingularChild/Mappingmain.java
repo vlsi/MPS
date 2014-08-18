@@ -29,127 +29,99 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateRootMappingRule> rootRules;
   private final Collection<TemplateWeavingRule> weavings;
   private final TemplateModel myModel;
-
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
     weavings = TemplateUtil.<TemplateWeavingRule>asCollection(new Mappingmain.WeavingRule0());
   }
-
   public String getName() {
     return "main";
   }
-
   public TemplateModel getModel() {
     return this.myModel;
   }
-
   public SNodeReference getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738629621");
   }
-
   public boolean isApplicable(ITemplateGenerator generator) {
     return true;
   }
-
   public Collection<TemplateReductionRule> getReductionRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateRootMappingRule> getRootRules() {
     return rootRules;
   }
-
   public Collection<TemplateWeavingRule> getWeavingRules() {
     return weavings;
   }
-
   public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPostScripts() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPreScripts() {
     return Collections.emptySet();
   }
-
   public boolean isTopPriority() {
     return false;
   }
-
   public class RootMappingRule0 implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
-
     public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1q;
     }
-
     public boolean applyToInheritors() {
       return false;
     }
-
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
     }
-
     public boolean keepSourceRoot() {
       return false;
     }
-
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       if (!(QueriesGenerated.baseMappingRule_Condition_1218738676457(new MapRootRuleContext(context, getRuleNode())))) {
         return false;
       }
       return true;
     }
-
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new Templatemap__outputNode().apply(environment, context);
       return result;
     }
   }
-
   public class WeavingRule0 implements TemplateWeavingRule {
     public WeavingRule0() {
     }
-
     public SNodeReference getRuleNode() {
       return weavingRule_417xrn_a0a1r;
     }
-
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A";
     }
-
     public boolean applyToInheritors() {
       return false;
     }
-
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       if (!(QueriesGenerated.baseMappingRule_Condition_1218738876108(new WeavingMappingRuleContext(context, weavingRule_417xrn_a0a1r)))) {
         return false;
       }
       return true;
     }
-
     public SNode getContextNode(TemplateExecutionEnvironment environment, TemplateContext context) {
       return QueriesGenerated.weaving_MappingRule_ContextNodeQuery_1218738863685(new WeavingMappingRuleContext(context, getRuleNode()));
     }
-
     public boolean apply(final TemplateExecutionEnvironment environment, final TemplateContext context, final SNode outputContextNode) throws GenerationException {
       Collection<SNode> tlist1 = new Templateweave__InputNode__A().weave(environment, context, outputContextNode);
       return tlist1 != null && !(tlist1.isEmpty());
     }
   }
-
   private static SNodePointer rootMappingRule_417xrn_a0a1q = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738658950");
   private static SNodePointer weavingRule_417xrn_a0a1r = new SNodePointer("r:00000000-0000-4000-0000-011c895905fa(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_weaveManyToSingularChild@generator)", "1218738863683");
 }

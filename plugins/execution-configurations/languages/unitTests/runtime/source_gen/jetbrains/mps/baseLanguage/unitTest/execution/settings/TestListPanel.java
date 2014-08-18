@@ -30,23 +30,19 @@ import com.intellij.openapi.project.Project;
 public class TestListPanel extends ListPanel<ITestNodeWrapper> {
   private boolean myIsTestMethods;
 
-
   @Nullable
   @Override
   protected ITestNodeWrapper wrap(SNode node) {
     return TestNodeWrapperFactory.tryToWrap(node);
   }
-
   @Override
   protected SNodeReference unwrap(ITestNodeWrapper element) {
     return element.getNodePointer();
   }
-
   @Override
   protected String getFqName(ITestNodeWrapper element) {
     return element.getCachedFqName();
   }
-
   @Override
   protected void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
@@ -96,8 +92,6 @@ public class TestListPanel extends ListPanel<ITestNodeWrapper> {
       });
     }
   }
-
-
 
   public TestListPanel(Project project, boolean isTestMethods) {
     super("Tests");

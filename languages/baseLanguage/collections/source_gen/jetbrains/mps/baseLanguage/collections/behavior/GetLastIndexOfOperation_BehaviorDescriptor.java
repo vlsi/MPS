@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class GetLastIndexOfOperation_BehaviorDescriptor extends SingleArgumentSequenceOperation_BehaviorDescriptor {
   public GetLastIndexOfOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetLastIndexOfOperation";

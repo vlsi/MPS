@@ -22,16 +22,13 @@ public class DiagramPalette extends JPanel {
 
   private DiagramCell myDiagramCell;
   private ToggleAction mySelectedToggleAction;
-
   public DiagramPalette(DiagramCell diagramCell) {
     super(new GridLayoutManager(1, 1));
     myDiagramCell = diagramCell;
   }
-
   public DiagramCell getDiagramCell() {
     return myDiagramCell;
   }
-
   protected void unselectActionWhichWasSelected(AnAction actionWhisIsSelected) {
     if (actionWhisIsSelected instanceof ToggleAction) {
       if (mySelectedToggleAction != actionWhisIsSelected) {
@@ -42,30 +39,25 @@ public class DiagramPalette extends JPanel {
       unselectActionWhichWasSelected();
     }
   }
-
   protected void unselectActionWhichWasSelected() {
     check_1eehpg_a0a7(mySelectedToggleAction);
     mySelectedToggleAction = null;
   }
-
   protected void addPaletteElement(PaletteElement element) {
     myMainActionGroup.add(PaletteElementFactory.createPaletteElementAdapter(this, element));
   }
-
   protected void createPalette() {
     GridConstraints gridConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTH, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
     ActionToolbar myToolbar = new DiagramPaletteActionToolbar(ActionPlaces.UNKNOWN, myMainActionGroup, false, DataManager.getInstance(), ActionManagerEx.getInstanceEx(), KeymapManagerEx.getInstanceEx());
     JComponent actionPanel = myToolbar.getComponent();
     add(actionPanel, gridConstraints);
   }
-
   private static void check_1eehpg_a0a0a0a6(ToggleAction checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setSelected(null, false);
     }
 
   }
-
   private static void check_1eehpg_a0a7(ToggleAction checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setSelected(null, false);

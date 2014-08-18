@@ -15,34 +15,26 @@ public class DeleteLogicalOperator {
     editorCell.setAction(CellActionType.DELETE, new DeleteLogicalOperator.DeleteLogicalOperator_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteLogicalOperator.DeleteLogicalOperator_BACKSPACE(node));
   }
-
   public static class DeleteLogicalOperator_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteLogicalOperator_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "left", true));
     }
   }
-
   public static class DeleteLogicalOperator_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteLogicalOperator_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "left", true));
     }

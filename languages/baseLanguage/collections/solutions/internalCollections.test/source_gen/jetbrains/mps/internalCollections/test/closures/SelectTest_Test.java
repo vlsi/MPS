@@ -29,7 +29,6 @@ public class SelectTest_Test extends Util_Test {
     });
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
   }
-
   public void test_selectMethod2() throws Exception {
     int a = Character.valueOf('a').charValue();
     Iterable<Integer> input = Arrays.asList(a, a + 1, a + 2, a + 3, a + 4);
@@ -41,7 +40,6 @@ public class SelectTest_Test extends Util_Test {
     });
     this.assertIterableEquals(Arrays.asList("a", "b", "c", "d", "e"), test.toIterable());
   }
-
   public void test_selectorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     ISelector<Integer, Integer> selector = new ISelector<Integer, Integer>() {
@@ -52,7 +50,6 @@ public class SelectTest_Test extends Util_Test {
     ISequence<Integer> test = seq.select(selector);
     this.assertIterableEquals(Arrays.asList(2, 6, 6, 12, 10), test.toIterable());
   }
-
   public void test_selectOperation() throws Exception {
     this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
@@ -66,7 +63,6 @@ public class SelectTest_Test extends Util_Test {
     };
     this.assertIterableEquals(this.expectEven10(), Sequence.fromIterable(this.input5()).select(cl));
   }
-
   public void test_legacySelector() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
@@ -75,7 +71,6 @@ public class SelectTest_Test extends Util_Test {
     });
     this.assertIterableEquals(this.expectEven10(), test);
   }
-
   public void test_selectMany() throws Exception {
     final List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
@@ -84,7 +79,6 @@ public class SelectTest_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -123,7 +117,6 @@ __switch__:
     });
     Assert.assertEquals(list, Sequence.fromIterable(result).first());
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer i) {
@@ -131,7 +124,6 @@ __switch__:
       }
     }).iterator(), 2, 4, 6);
   }
-
   public void test_selectAdvancesTooEarly() throws Exception {
     final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
     final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
@@ -150,7 +142,6 @@ __switch__:
     });
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 11, 11, 11, 11, 11, 11, 11, 11, 11), plusten);
   }
-
   public void test_ofType() throws Exception {
     List<Object> lo = ListSequence.fromListAndArray(new ArrayList<Object>(), 1, "foo", Boolean.TRUE, -1L, "bar", ListSequence.fromListAndArray(new ArrayList<String>(), "baz"));
     Iterable<String> seqs = ListSequence.fromList(lo).ofType(String.class);
@@ -160,7 +151,6 @@ __switch__:
     Assert.assertTrue(ListSequence.fromList(lo).ofType(Boolean.class).count() == 1);
     Assert.assertTrue(ListSequence.fromList(lo).ofType(Float.class).isEmpty());
   }
-
   public void test_mps19134() throws Exception {
     // testing compilation 
     ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 111, 112, 113)).translate(new ITranslator2<Integer, String>() {

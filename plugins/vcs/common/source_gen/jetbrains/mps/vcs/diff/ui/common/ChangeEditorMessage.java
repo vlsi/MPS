@@ -48,37 +48,30 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   private ModelChange myChange;
   private ChangeEditorMessage.ConflictChecker myConflictsChecker;
   private boolean myHighlighted;
-
   protected ChangeEditorMessage(SNode node, MessageTarget target, EditorMessageOwner owner, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
     super(node, MessageStatus.OK, target, null, "", owner);
     myChange = change;
     myConflictsChecker = conflictChecker;
     myHighlighted = highlighted;
   }
-
   public boolean isConflicted() {
     return myConflictsChecker != null && myConflictsChecker.isChangeConflicted(myChange);
   }
-
   @Override
   public boolean showInGutter() {
     return false;
   }
-
   @Override
   public Color getColor() {
     return ChangeColors.get((isConflicted() ? ChangeType.CONFLICTED : myChange.getType()));
   }
-
   public ModelChange getChange() {
     return myChange;
   }
-
   @Override
   public boolean isBackground() {
     return true;
   }
-
   private boolean isDirectCell(EditorCell cell) {
     // Return true if and only if this cell should be painted, not only set in frame 
     if (cell == null) {
@@ -90,7 +83,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       return !(cell instanceof EditorCell_Collection) && isNameCell(cell) == (myMessageTarget.getTarget() == MessageTargetEnum.PROPERTY && NAME_PROPERTY.equals(myMessageTarget.getRole()));
     }
   }
-
   @Override
   public void paint(Graphics graphics, EditorComponent editor, jetbrains.mps.nodeEditor.cells.EditorCell cell) {
     if (!(myHighlighted)) {
@@ -109,7 +101,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       }
     }
   }
-
   @Override
   public EditorCell getCell(EditorComponent editor) {
     EditorCell cell = super.getCell(editor);
@@ -121,18 +112,15 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }
     return cell;
   }
-
   @Override
   public boolean acceptCell(EditorCell cell, EditorComponent component) {
     EditorCell superCell = super.getCell(component);
     return isNameCell(cell) && !(isDirectCell(cell)) && superCell != null && cell.isBig() || super.acceptCell(cell, component);
   }
-
   private boolean isNameCell(EditorCell cell) {
     PropertyAccessor pa = as_myu41h_a0a0a41(check_myu41h_a0a0a41((as_myu41h_a0a0a0a0a41(cell, EditorCell_Property.class))), PropertyAccessor.class);
     return getNode() == check_myu41h_a0a1a41(pa) && NAME_PROPERTY.equals(check_myu41h_a0a0b0o(pa));
   }
-
   private void repaintConflictedMessages(Graphics graphics, EditorCell cell) {
     // This is a workaround for case when any change message is going to be painted over 
     // "conflicted" red frame. In this case, we repaint conflicted red frame again 
@@ -148,7 +136,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       }
     }
   }
-
   private void drawDeletedChild(Graphics graphics, EditorCell cell) {
     if (myMessageTarget.getRole().equals(cell.getRole())) {
       int index = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
@@ -168,7 +155,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       }
     }
   }
-
   private void drawHorizontalLine(Graphics graphics, EditorCell_Collection collectionCell, EditorCell childCell) {
     int y;
     if (childCell != null) {
@@ -179,7 +165,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     graphics.setColor(getColor());
     graphics.drawLine(collectionCell.getX(), y, collectionCell.getRight(), y);
   }
-
   private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, EditorCell cell) {
     int x;
     EditorCell childCell;
@@ -202,7 +187,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y1 - 2, y1 - 5, y1 - 5}, 3);
     graphics.drawPolygon(new int[]{x, x - 3, x + 3}, new int[]{y2 + 2, y2 + 5, y2 + 5}, 3);
   }
-
   private boolean isIndirectRoot(final EditorComponent editor) {
     final Wrappers._boolean res = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -212,7 +196,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
     }));
     return res.value;
   }
-
   private Rectangle getFirstPseudoLineBounds(EditorComponent editor) {
     Iterable<EditorCell> leafCells = new _FunctionTypes._return_P1_E0<Iterable<EditorCell>, EditorCell>() {
       public Iterable<EditorCell> invoke(final EditorCell cell) {
@@ -220,7 +203,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
           public Iterator<EditorCell> iterator() {
             return new YieldingIterator<EditorCell>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -285,7 +267,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private EditorCell _4_child;
               private Iterator<EditorCell> _4_child_it;
               private EditorCell _7__yield_myu41h_a0a0a0a0a0a02;
@@ -306,7 +287,6 @@ __switch__:
       }
     }).toGenericArray(EditorCell.class));
   }
-
   public Bounds getBounds(final EditorComponent editor) {
     if (myMessageTarget.getTarget() != MessageTargetEnum.DELETED_CHILD) {
       if (isIndirectRoot(editor)) {
@@ -337,7 +317,6 @@ __switch__:
       }
     }
   }
-
   private Bounds getBoundsForChild(EditorCell_Collection cell, int index) {
     EditorCell childCell = getChildCell(cell, index);
 
@@ -353,25 +332,20 @@ __switch__:
     }
     return new Bounds(minY, maxY);
   }
-
   private Bounds getBoundsSuper(EditorComponent component) {
     return new Bounds(super.getStart(component), super.getStart(component) + super.getHeight(component));
   }
-
   @Override
   public int getStart(jetbrains.mps.openapi.editor.EditorComponent component) {
     return (int) getBounds(((EditorComponent) component)).start();
   }
-
   @Override
   public int getHeight(jetbrains.mps.openapi.editor.EditorComponent component) {
     return getBounds(((EditorComponent) component)).length();
   }
-
   public void setHighlighted(boolean highlighted) {
     myHighlighted = highlighted;
   }
-
   private static boolean hasChildrenWithDifferentNode(EditorCell cell) {
     if (cell instanceof EditorCell_Collection) {
       final EditorCell_Collection collectionCell = (EditorCell_Collection) cell;
@@ -384,11 +358,9 @@ __switch__:
       return false;
     }
   }
-
   private static boolean isVertical(EditorCell cell) {
     return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
   }
-
   private static EditorCell getChildCell(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {
     if (nodeIndex == -1) {
       return null;
@@ -411,45 +383,37 @@ __switch__:
     }
     return null;
   }
-
   public static interface ConflictChecker {
     public boolean isChangeConflicted(ModelChange change);
   }
-
   protected static Logger LOG = LogManager.getLogger(ChangeEditorMessage.class);
-
   private static ModelAccessor check_myu41h_a0a0a41(EditorCell_Property checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelAccessor();
     }
     return null;
   }
-
   private static SNode check_myu41h_a0a1a41(PropertyAccessor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }
     return null;
   }
-
   private static String check_myu41h_a0a0b0o(PropertyAccessor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPropertyName();
     }
     return null;
   }
-
   private static SNode check_myu41h_a0a0a0a0a0b0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
     }
     return null;
   }
-
   private static <T> T as_myu41h_a0a0a41(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_myu41h_a0a0a0a0a41(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

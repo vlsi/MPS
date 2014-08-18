@@ -35,7 +35,6 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tclrnl_a(editorContext, node);
   }
-
   private EditorCell createCollection_tclrnl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tclrnl_a");
@@ -48,7 +47,6 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_tclrnl_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_tclrnl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -57,20 +55,16 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildInputFolders_Editor.ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_tclrnl_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildSourceSetContainer"));
   }
-
   public static class ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildInputResourceSet_cellMenu_tclrnl_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildInputResourceSet";
     }
   }
-
   private EditorCell createConstant_tclrnl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_tclrnl_b0");
@@ -80,7 +74,6 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tclrnl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("dir");
@@ -103,7 +96,6 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNodeList_tclrnl_d0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildInputFolders_Editor.selectorsListHandler_tclrnl_d0(node, "selectors", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -115,34 +107,28 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class selectorsListHandler_tclrnl_d0 extends RefNodeListHandler {
     public selectorsListHandler_tclrnl_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_tclrnl_a3a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -155,7 +141,6 @@ public class BuildInputFolders_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_tclrnl_a3a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_tclrnl_a3a");

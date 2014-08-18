@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class AbstractClassifierReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AbstractClassifierReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference";

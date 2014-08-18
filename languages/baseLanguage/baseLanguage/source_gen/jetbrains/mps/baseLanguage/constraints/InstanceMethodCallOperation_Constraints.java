@@ -28,7 +28,6 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
   public InstanceMethodCallOperation_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -37,7 +36,6 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -46,7 +44,6 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -66,6 +63,5 @@ public class InstanceMethodCallOperation_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   private static SNodePointer breakingNode_w9prmd_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137224");
 }

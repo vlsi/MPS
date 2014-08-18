@@ -15,34 +15,26 @@ public class delete_denominator {
     editorCell.setAction(CellActionType.DELETE, new delete_denominator.delete_denominator_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_denominator.delete_denominator_BACKSPACE(node));
   }
-
   public static class delete_denominator_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_denominator_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "numerator", true));
     }
   }
-
   public static class delete_denominator_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_denominator_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "numerator", true));
     }

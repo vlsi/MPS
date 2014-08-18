@@ -15,30 +15,25 @@ import org.apache.log4j.LogManager;
 /*package*/ class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
   private SimpleCommandQueue myCommandQueue;
-
   public CurrentDifferenceBroadcaster(SimpleCommandQueue commandQueue) {
     myCommandQueue = commandQueue;
   }
-
   public void addDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).addElement(listener);
     }
   }
-
   public void removeDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     synchronized (myListeners) {
       ListSequence.fromList(myListeners).removeElement(listener);
     }
   }
-
   @NotNull
   private List<CurrentDifferenceListener> copyListeners() {
     synchronized (myListeners) {
       return ListSequence.fromListWithValues(new ArrayList<CurrentDifferenceListener>(), myListeners);
     }
   }
-
   private void fireEvent(String name, _FunctionTypes._void_P1_E0<? super CurrentDifferenceListener> task) {
     myCommandQueue.assertSoftlyIsCommandThread();
     for (CurrentDifferenceListener listener : ListSequence.fromList(copyListeners())) {
@@ -52,7 +47,6 @@ import org.apache.log4j.LogManager;
       }
     }
   }
-
   @Override
   public void changeAdded(@NotNull final ModelChange change) {
     fireEvent("changeAdded", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
@@ -61,7 +55,6 @@ import org.apache.log4j.LogManager;
       }
     });
   }
-
   @Override
   public void changeRemoved(@NotNull final ModelChange change) {
     fireEvent("changeRemoved", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
@@ -70,7 +63,6 @@ import org.apache.log4j.LogManager;
       }
     });
   }
-
   @Override
   public void changeUpdateStarted() {
     fireEvent("changeUpdateStarted", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
@@ -79,7 +71,6 @@ import org.apache.log4j.LogManager;
       }
     });
   }
-
   @Override
   public void changeUpdateFinished() {
     fireEvent("changeUpdateFinished", new _FunctionTypes._void_P1_E0<CurrentDifferenceListener>() {
@@ -88,6 +79,5 @@ import org.apache.log4j.LogManager;
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(CurrentDifferenceBroadcaster.class);
 }

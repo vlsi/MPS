@@ -9,14 +9,11 @@ import jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.baseLanguage.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new FindNotMigratableLinks_Action());
@@ -25,7 +22,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new AnalyzersActions_ActionGroup());
     addGroup(new FindNotMigratableLinksGroup_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindNotMigratableLinksGroup_ActionGroup.ID, FlyingActions_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzersActions_ActionGroup.ID, DFAActions_ActionGroup.ID, null);

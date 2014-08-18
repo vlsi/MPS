@@ -47,14 +47,12 @@ public class CoreMakeTask {
   private final MakeSequence myMakeSequence;
   private final IScriptController myController;
   private final IMessageHandler myMessageHandler;
-
   public CoreMakeTask(@NotNull String scriptName, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh) {
     myScrName = scriptName;
     myMakeSequence = makeSeq;
     myController = ctl;
     myMessageHandler = mh;
   }
-
   public void run(@NotNull ProgressMonitor monitor) {
     try {
       doRun(monitor);
@@ -66,7 +64,6 @@ public class CoreMakeTask {
       }
     }
   }
-
   protected void doRun(final ProgressMonitor monitor) {
     final Map<ITarget.Name, Long> timeStatistic = MapSequence.fromMap(new HashMap<ITarget.Name, Long>());
 
@@ -150,13 +147,10 @@ public class CoreMakeTask {
       monitor.done();
     }
   }
-
   protected void displayInfo(String info) {
   }
-
   protected void aboutToStart() {
   }
-
   protected void reconcile() {
     if (this.myResult == null) {
       String msg = this.myScrName + " aborted";
@@ -170,15 +164,12 @@ public class CoreMakeTask {
       displayInfo(msg);
     }
   }
-
   public IMessageHandler getMessageHandler() {
     return myMessageHandler;
   }
-
   public IResult getResult() {
     return myResult;
   }
-
   public static class RelayingLoggingHandler extends MPSAppenderBase {
     private static Tuples._2<ThreadGroup, IMessageHandler> GROUP_HANDLER;
     private ThreadLocal<IMessageHandler> messageHandler = new ThreadLocal<IMessageHandler>() {
@@ -187,18 +178,15 @@ public class CoreMakeTask {
         return (CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._0() == Thread.currentThread().getThreadGroup() ? CoreMakeTask.RelayingLoggingHandler.GROUP_HANDLER._1() : null);
       }
     };
-
     public RelayingLoggingHandler(IMessageHandler mh) {
       this.messageHandler.set(mh);
       GROUP_HANDLER = MultiTuple.<ThreadGroup,IMessageHandler>from(Thread.currentThread().getThreadGroup(), mh);
       this.register();
     }
-
     public void dispose() {
       this.unregister();
       messageHandler.remove();
     }
-
     @Override
     protected void append(@NotNull Priority priority, @NotNull String categoryName, @NotNull String messageText, @Nullable Throwable throwable, @Nullable Object object) {
       IMessageHandler mh = messageHandler.get();

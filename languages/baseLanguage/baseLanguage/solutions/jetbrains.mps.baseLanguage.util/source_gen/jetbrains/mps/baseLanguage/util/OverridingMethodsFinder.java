@@ -29,12 +29,9 @@ import java.util.LinkedHashSet;
 public class OverridingMethodsFinder {
   private Map<SNode, Set<Tuples._2<SNode, SNode>>> myOverridingToOverridenMethodsMap = MapSequence.fromMap(new HashMap<SNode, Set<Tuples._2<SNode, SNode>>>());
 
-
   public OverridingMethodsFinder(SNode container) {
     this(container, getInstanceMethods(container));
   }
-
-
 
   public OverridingMethodsFinder(SNode container, SNode enumConstant) {
     Iterable<SNode> result = SLinkOperations.getTargets(enumConstant, "method", true);
@@ -54,8 +51,6 @@ public class OverridingMethodsFinder {
     }
   }
 
-
-
   public OverridingMethodsFinder(SNode container, Iterable<SNode> methods) {
     Map<String, Set<SNode>> nameToMethodsMap = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (SNode methodToCheck : Sequence.fromIterable(methods).where(new IWhereFilter<SNode>() {
@@ -70,16 +65,12 @@ public class OverridingMethodsFinder {
     }
   }
 
-
-
   public Set<SNode> getOverridingMethods() {
     return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).keySet();
   }
-
   public Set<Tuples._2<SNode, SNode>> getOverridenMethods(SNode overridingMethod) {
     return MapSequence.fromMap(this.myOverridingToOverridenMethodsMap).get(overridingMethod);
   }
-
   private void collectOverridingMethodsInClassifierHierarchy(final SNode classifier, final Map<String, Set<SNode>> nameToMethodsMap, final Set<SNode> visitedClassifiers) {
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode clazz = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -122,7 +113,6 @@ public class OverridingMethodsFinder {
       });
     }
   }
-
   private void collectOverridingMethods(final SNode classifier, final SNode superClassifier, Map<String, Set<SNode>> nameToMethodsMap, Set<SNode> visitedClassifiers) {
     Map<String, Set<SNode>> methodNameToMethodMapCopy = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
     for (String methodName : MapSequence.fromMap(nameToMethodsMap).keySet()) {
@@ -156,13 +146,9 @@ public class OverridingMethodsFinder {
     }
   }
 
-
-
   private boolean isVisiblePackagePrivateMethod(SNode superClassifier, SNode classifier) {
     return VisibilityUtil.packageName(classifier).equals(VisibilityUtil.packageName(superClassifier));
   }
-
-
 
   public static Iterable<SNode> getInstanceMethods(SNode containingClassifier) {
     Iterable<SNode> result = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), containingClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{});
@@ -173,22 +159,18 @@ public class OverridingMethodsFinder {
     }
     return result;
   }
-
   public static boolean canOverride(SNode method) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmptyString(SPropertyOperations.getString(method, "name"));
   }
-
   public static boolean canBeOverriden(SNode method) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmptyString(SPropertyOperations.getString(method, "name"));
   }
-
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
     if (!(MapSequence.fromMap(map).containsKey(key))) {
       MapSequence.fromMap(map).put(key, SetSequence.fromSet(new LinkedHashSet<V>()));
     }
     return MapSequence.fromMap(map).get(key);
   }
-
   private static boolean addIfNotContains(Set<SNode> classifierSet, SNode classifier) {
     if (!(SetSequence.fromSet(classifierSet).contains(classifier))) {
       SetSequence.fromSet(classifierSet).addElement(classifier);
@@ -196,7 +178,6 @@ public class OverridingMethodsFinder {
     }
     return false;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

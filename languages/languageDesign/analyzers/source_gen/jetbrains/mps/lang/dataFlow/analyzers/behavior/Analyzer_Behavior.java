@@ -14,11 +14,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class Analyzer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getAnalyzerRunnerName_178770917832626025(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "AnalyzerRunner";
   }
-
   public static String call_getAnalyzerRunnerFqName_178770917832652115(SNode thisNode) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
     if (longName.equals("")) {
@@ -26,11 +24,9 @@ public class Analyzer_Behavior {
     }
     return longName + "." + Analyzer_Behavior.call_getAnalyzerRunnerName_178770917832626025(thisNode);
   }
-
   public static String call_getAnalyzerName_178770917832626046(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "Analyzer";
   }
-
   public static List<SNode> call_getRules_4130591939054429267(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode rule : SModelOperations.getRootsIncludingImported(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule")) {

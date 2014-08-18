@@ -6,19 +6,15 @@ package jetbrains.mps.debug.api;
 public abstract class SessionChangeAdapter implements SessionChangeListener {
   public SessionChangeAdapter() {
   }
-
   @Override
   public void stateChanged(AbstractDebugSession session) {
   }
-
   @Override
   public void paused(AbstractDebugSession session) {
   }
-
   @Override
   public void resumed(AbstractDebugSession session) {
   }
-
   @Override
   public void muted(AbstractDebugSession session) {
   }

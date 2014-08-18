@@ -73,11 +73,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1205921340852(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ThisClassifierExpression_1219068300355(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -95,15 +93,12 @@ public class QueriesGenerated {
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), expr);
               return expr;
             }
-
             public String getMatchingText(String pattern) {
               return (item) + ".";
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -117,7 +112,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ThisClassifierExpression_1219068300393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "classifier", false) == null);
   }

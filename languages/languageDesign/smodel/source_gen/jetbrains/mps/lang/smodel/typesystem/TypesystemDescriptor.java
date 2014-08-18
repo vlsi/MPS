@@ -547,7 +547,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(contextNode, "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
           return concept == variable;
         }
-
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
         }
@@ -566,7 +565,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
           SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(contextNode, "jetbrains.mps.lang.smodel.structure.SConceptType"), "conceptDeclaraton", false);
           return concept == variable;
         }
-
         public SNode convert(SNode contextNode, String role, SNode variable, boolean isAggregation) {
           return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626");
         }

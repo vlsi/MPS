@@ -14,41 +14,33 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public InternalClassifierType_subtypeOf_InternalClassifierType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false);
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
   }

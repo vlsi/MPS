@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class TreeMapCreator_BehaviorDescriptor extends HashMapCreator_BehaviorDescriptor {
   public TreeMapCreator_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
     return TreeMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator";

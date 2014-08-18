@@ -54,7 +54,6 @@ public abstract class MigrationScriptsView implements ResultsListener {
   private final Project myProject;
   private InlineProgressIndicator myIndicator;
   private MigrationScriptsController myController;
-
   public MigrationScriptsView(MigrationScriptFinder finder, IResultProvider provider, SearchQuery query, MigrationScriptsTool tool, Project project) {
     myProject = project;
     if (!(ThreadUtils.isEventDispatchThread())) {
@@ -102,15 +101,12 @@ public abstract class MigrationScriptsView implements ResultsListener {
       }
     };
   }
-
   public UsagesView getUsagesView() {
     return myUsagesView;
   }
-
   public JComponent getComponent() {
     return myMainPanel;
   }
-
   @Override
   public void resultsChanged(IFinder finder) {
     SwingUtilities.invokeLater(new Runnable() {
@@ -120,9 +116,7 @@ public abstract class MigrationScriptsView implements ResultsListener {
       }
     });
   }
-
   public abstract void close();
-
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
@@ -130,22 +124,18 @@ public abstract class MigrationScriptsView implements ResultsListener {
       public String getTitle() {
         return "Applying Migrations";
       }
-
       @Override
       public String getCancelText() {
         return null;
       }
-
       @Override
       public String getCancelTooltipText() {
         return null;
       }
-
       @Override
       public boolean isCancellable() {
         return false;
       }
-
       @NonNls
       @Override
       public String getProcessId() {
@@ -153,11 +143,9 @@ public abstract class MigrationScriptsView implements ResultsListener {
       }
     };
   }
-
   private MPSProject getMPSProject() {
     return (myProject != null ? myProject.getComponent(MPSProject.class) : null);
   }
-
   private void applyMigrations() {
     ThreadUtils.assertEDT();
 
@@ -193,7 +181,6 @@ public abstract class MigrationScriptsView implements ResultsListener {
     // execute the process on a pooled thread 
     ((ApplicationEx) ApplicationManagerEx.getApplicationEx()).runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), myProject, getComponent(), task.getCancelText());
   }
-
   private void checkMigrationResults() {
     final MigrationScriptFinder newFinder = new MigrationScriptFinder(myFinder.getScripts(), myFinder.getOperationContext());
     getMPSProject().getModelAccess().runReadInEDT(new Runnable() {
@@ -216,7 +203,6 @@ public abstract class MigrationScriptsView implements ResultsListener {
       }
     });
   }
-
   private JButton createShowInNewTabButton(final MigrationScriptFinder finder, final IResultProvider provider, final SearchQuery query) {
     JButton button = new JButton("Show in New Tab");
     button.addActionListener(new ActionListener() {
@@ -233,7 +219,6 @@ public abstract class MigrationScriptsView implements ResultsListener {
     });
     return button;
   }
-
   private void updateControls(boolean applyButtonEnabled, JComponent... statusComponents) {
     myApplyButton.setEnabled(applyButtonEnabled);
     if (statusComponents != null) {

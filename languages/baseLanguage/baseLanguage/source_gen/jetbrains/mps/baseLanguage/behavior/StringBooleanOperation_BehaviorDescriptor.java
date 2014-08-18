@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class StringBooleanOperation_BehaviorDescriptor extends BaseStringOperation_BehaviorDescriptor {
   public StringBooleanOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StringBooleanOperation";

@@ -7,46 +7,46 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:5dd83915-41f7-4078-8c06-e9d19fdeceb5(jetbrains.mps.core.baseLanguage.constructors.sandbox.test2)/3391577739832808340">
     <file name="test.java">
-      <node id="3391577739832808402" at="11,42,12,86" concept="2" />
-      <node id="3391577739832808424" at="12,86,13,26" concept="1" />
+      <node id="3391577739832808402" at="10,42,11,86" concept="2" />
+      <node id="3391577739832808424" at="11,86,12,26" concept="1" />
       <node id="3391577739832808342" at="8,0,10,0" concept="0" trace="test#()V" />
-      <node id="3391577739832808354" at="11,0,15,0" concept="4" trace="main#([Ljava/lang/String;)V" />
+      <node id="3391577739832808354" at="10,0,14,0" concept="4" trace="main#([Ljava/lang/String;)V" />
       <scope id="3391577739832808345" at="8,17,8,17" />
       <scope id="3391577739832808342" at="8,0,10,0" />
-      <scope id="3391577739832808357" at="11,42,13,26">
+      <scope id="3391577739832808357" at="10,42,12,26">
         <var name="r" id="3391577739832808403" />
       </scope>
-      <scope id="3391577739832808354" at="11,0,15,0">
+      <scope id="3391577739832808354" at="10,0,14,0">
         <var name="args" id="3391577739832809137" />
       </scope>
-      <unit id="3391577739832808340" at="7,0,16,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.test" />
+      <unit id="3391577739832808340" at="7,0,15,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.test" />
     </file>
   </root>
   <root nodeRef="r:5dd83915-41f7-4078-8c06-e9d19fdeceb5(jetbrains.mps.core.baseLanguage.constructors.sandbox.test2)/4413962600136177711">
     <file name="Rectangle.java">
-      <node id="4413962600136180687" at="12,51,13,36" concept="3" />
-      <node id="4413962600136184983" at="16,77,17,30" concept="2" />
-      <node id="4413962600136184990" at="17,30,18,30" concept="2" />
-      <node id="4413962600136184964" at="18,30,19,88" concept="3" />
+      <node id="4413962600136180687" at="11,51,12,36" concept="3" />
+      <node id="4413962600136184983" at="14,77,15,30" concept="2" />
+      <node id="4413962600136184990" at="15,30,16,30" concept="2" />
+      <node id="4413962600136184964" at="16,30,17,88" concept="3" />
       <node id="4413962600136177711" at="9,0,11,0" concept="0" trace="Rectangle#()V" />
-      <node id="4413962600136177711" at="12,0,15,0" concept="4" trace="Point#(DD)Ljava/awt/geom/Point2D;" />
-      <node id="4413962600136177711" at="16,0,21,0" concept="4" trace="Rectangle#(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Rectangle2D;" />
+      <node id="4413962600136177711" at="11,0,14,0" concept="4" trace="Point#(DD)Ljava/awt/geom/Point2D;" />
+      <node id="4413962600136177711" at="14,0,19,0" concept="4" trace="Rectangle#(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Rectangle2D;" />
       <scope id="4413962600136177711" at="9,22,9,22" />
-      <scope id="4413962600136177715" at="12,51,13,36" />
+      <scope id="4413962600136177715" at="11,51,12,36" />
       <scope id="4413962600136177711" at="9,0,11,0" />
-      <scope id="4413962600136177711" at="12,0,15,0">
+      <scope id="4413962600136177711" at="11,0,14,0">
         <var name="x" id="4413962600136180681" />
         <var name="y" id="4413962600136180683" />
       </scope>
-      <scope id="4413962600136184956" at="16,77,19,88">
+      <scope id="4413962600136184956" at="14,77,17,88">
         <var name="x" id="4413962600136184984" />
         <var name="y" id="4413962600136184991" />
       </scope>
-      <scope id="4413962600136177711" at="16,0,21,0">
+      <scope id="4413962600136177711" at="14,0,19,0">
         <var name="bottomright" id="4413962600136184960" />
         <var name="topleft" id="4413962600136184958" />
       </scope>
-      <unit id="4413962600136177711" at="8,0,22,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
+      <unit id="4413962600136177711" at="8,0,20,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
     </file>
   </root>
 </debug-info>

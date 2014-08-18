@@ -22,7 +22,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_42nz3b_a(editorContext, node);
   }
-
   private EditorCell createCollection_42nz3b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_42nz3b_a");
@@ -42,7 +41,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_42nz3b_m0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_42nz3b_a0");
@@ -53,7 +51,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operator");
     editorCell.setCellId("Constant_42nz3b_b0");
@@ -63,7 +60,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_42nz3b_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operator");
@@ -83,7 +79,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_42nz3b_d0");
@@ -94,7 +89,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_42nz3b_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftType");
@@ -114,7 +108,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_42nz3b_f0");
@@ -124,7 +117,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_42nz3b_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightType");
@@ -144,7 +136,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_42nz3b_h0");
@@ -155,14 +146,12 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_42nz3b_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_42nz3b_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("returnType");
@@ -185,14 +174,12 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_42nz3b_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "commutative:");
     editorCell.setCellId("Constant_42nz3b_k0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_42nz3b_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("commutative");
@@ -213,7 +200,6 @@ public class OverloadedBinaryOperator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_42nz3b_m0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component");
     Style style = new StyleImpl();

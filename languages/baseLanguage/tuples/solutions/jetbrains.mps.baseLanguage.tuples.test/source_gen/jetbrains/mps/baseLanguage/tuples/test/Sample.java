@@ -9,28 +9,22 @@ public class Sample extends MultiTuple._1<Integer> implements ISample {
   public Sample() {
     super();
   }
-
   public Sample(Integer i) {
     super(i);
   }
-
   public Integer i(Integer value) {
     return super._0(value);
   }
-
   public Integer i() {
     return super._0();
   }
-
   @SuppressWarnings(value = "unchecked")
   public Sample assignFrom(Tuples._1<Integer> from) {
     return (Sample) super.assign(from);
   }
-
   public String getSample() {
     return "<" + (int) this.i() + ">";
   }
-
   public int get() {
     return (int) this.i();
   }

@@ -31,16 +31,13 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramConnector_z1vupn_a(editorContext, node);
   }
-
   private EditorCell createDiagramConnector_z1vupn_a(final EditorContext editorContext, final SNode node) {
     final ConnectorCell editorCell = new ConnectorInstance_diagram_Editor.ConnectorCellImpl_z1vupn_a(editorContext, node);
     editorCell.setCellId("DiagramConnector_z1vupn_a");
@@ -48,16 +45,13 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
     ConnectorActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   public class ConnectorCellImpl_z1vupn_a extends ConnectorCell {
     protected Property<Tuples._2<SNode, SNode>> myInputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
     protected Property<Tuples._2<SNode, SNode>> myOutputPort = new ValueProperty<Tuples._2<SNode, SNode>>();
-
     private ConnectorCellImpl_z1vupn_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public Mapper<SNode, PolyLineConnection> createMapper() {
       return new Mapper<SNode, PolyLineConnection>(getSNode(), createConnection()) {
         @Override
@@ -68,7 +62,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
             public void set(Tuples._2<SNode, SNode> port) {
               getTarget().toView().set(getTargetView(port));
             }
-
             private View getTargetView(Tuples._2<SNode, SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -89,7 +82,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
                 getTarget().toView().set(null);
               }
             }
-
             private View getTargetView(Tuples._2<SNode, SNode> port) {
               Mapper<? super SNode, ?> descendantMapper = getParent().getDescendantMapper(port._0());
               if (descendantMapper == null) {
@@ -140,8 +132,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
       };
     }
 
-
-
     public Mapper<SNode, ConnectorDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, ConnectorDecoratorView>(getSNode(), createConnectorDecoratorView()) {
         @Override
@@ -163,7 +153,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     private ConnectorDecoratorView createConnectorDecoratorView() {
       ConnectorDecoratorView connectorDecoratorView = new ConnectorDecoratorView();
       DiagramCell diagramCell = getDiagramCell();
@@ -179,13 +168,10 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
     }
 
 
-
-
     public void synchronize() {
       myInputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "source", true), "metaPort", false)));
       myOutputPort.set(MultiTuple.<SNode,SNode>from(SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "block", false), SLinkOperations.getTarget(SLinkOperations.getTarget(getSNode(), "target", true), "metaPort", false)));
     }
-
     private PolyLineConnection createConnection() {
       PolyLineConnection connection = new PolyLineConnection();
       configureView(connection.view(), new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -196,7 +182,6 @@ public class ConnectorInstance_diagram_Editor extends DefaultNodeEditor {
 
       return connection;
     }
-
 
 
   }

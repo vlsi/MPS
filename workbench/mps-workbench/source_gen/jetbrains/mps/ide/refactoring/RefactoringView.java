@@ -16,26 +16,21 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public class RefactoringView extends TabbedUsagesTool {
   private List<RefactoringViewItemImpl> myRefactoringViews = new ArrayList<RefactoringViewItemImpl>();
-
   protected RefactoringView(Project project) {
     super(project, "RefactoringView", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
   }
-
   @Override
   protected UsagesView getUsagesView(int index) {
     return myRefactoringViews.get(index).getUsagesView();
   }
-
   @Override
   protected void onRemove(int index) {
     myRefactoringViews.remove(index);
   }
-
   @Override
   protected boolean forceCloseOnReload() {
     return true;
   }
-
   public void showRefactoringView(RefactoringContext refactoringContext, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
@@ -43,7 +38,6 @@ public class RefactoringView extends TabbedUsagesTool {
     refactoringViewItem.initUsagesView();
     openTool(true);
   }
-
   public void showRefactoringView(Project p, @NotNull RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate, String name) {
     RefactoringViewItemImpl refactoringViewItem = new RefactoringView.MyRefactoringViewItem(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     myRefactoringViews.add(refactoringViewItem);
@@ -51,20 +45,16 @@ public class RefactoringView extends TabbedUsagesTool {
     refactoringViewItem.initUsagesView();
     openTool(true);
   }
-
   public int getPriority() {
     return -1;
   }
-
   private class MyRefactoringViewItem extends RefactoringViewItemImpl {
     public MyRefactoringViewItem(RefactoringContext refactoringContext, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
       super(refactoringContext, refactoringViewAction, searchResults, hasModelsToGenerate);
     }
-
     public MyRefactoringViewItem(Project p, RefactoringViewAction refactoringViewAction, SearchResults searchResults, boolean hasModelsToGenerate) {
       super(p, refactoringViewAction, searchResults, hasModelsToGenerate);
     }
-
     @Override
     public void close() {
       int index = myRefactoringViews.indexOf(this);

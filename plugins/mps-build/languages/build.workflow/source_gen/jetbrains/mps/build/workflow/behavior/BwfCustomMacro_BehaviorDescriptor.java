@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BwfCustomMacro_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor {
   public BwfCustomMacro_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return BwfCustomMacro_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfCustomMacro";

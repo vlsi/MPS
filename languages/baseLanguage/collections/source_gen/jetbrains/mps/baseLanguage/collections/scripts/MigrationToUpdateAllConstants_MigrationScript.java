@@ -15,23 +15,18 @@ public class MigrationToUpdateAllConstants_MigrationScript extends BaseMigration
       public String getName() {
         return "Re-inserts the AllConstants concept to fix the missing value property";
       }
-
       public String getAdditionalInfo() {
         return "Re-inserts the AllConstants concept to fix the missing value property";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.collections.structure.AllConstant";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return node.getProperty("value") != null;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.collections.structure.AllConstant");
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

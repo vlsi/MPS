@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ClosureControlStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ClosureControlStatement_InferenceRule() {
   }
-
   public void applyRule(final SNode ccs, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ControlMethodUtil.Info cmuInfo = ControlMethodUtil.analyze(SLinkOperations.getTarget(ccs, "controlMethod", false));
     if (!(cmuInfo != null)) {
@@ -74,18 +73,15 @@ public class typeof_ClosureControlStatement_InferenceRule extends AbstractInfere
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

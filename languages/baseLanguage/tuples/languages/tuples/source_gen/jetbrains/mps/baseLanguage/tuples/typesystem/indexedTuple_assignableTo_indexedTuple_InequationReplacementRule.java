@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public indexedTuple_assignableTo_indexedTuple_InequationReplacementRule() {
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -51,7 +50,6 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (!(ListSequence.fromList(SLinkOperations.getTargets(subtype, "componentType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(supertype, "componentType", true)).count())) {
@@ -76,29 +74,24 @@ public class indexedTuple_assignableTo_indexedTuple_InequationReplacementRule ex
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType";
   }

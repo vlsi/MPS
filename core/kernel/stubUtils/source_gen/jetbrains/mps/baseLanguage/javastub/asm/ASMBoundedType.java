@@ -5,18 +5,14 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 
 public abstract class ASMBoundedType extends ASMType {
   private ASMType myBound;
-
   public ASMBoundedType(ASMType bound) {
     myBound = bound;
   }
-
   public ASMType getBound() {
     return myBound;
   }
-
   public void setBound(ASMType bound) {
     myBound = bound;
   }
-
 
 }

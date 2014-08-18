@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SLinkListAccess_InferenceRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
     if (linkDecl == null) {
@@ -28,22 +27,18 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1206103737722", true), (SNode) _quotation_createNode_9w5j2j_a0c0b(SLinkOperations.getTarget(linkDecl, "target", false)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_9w5j2j_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

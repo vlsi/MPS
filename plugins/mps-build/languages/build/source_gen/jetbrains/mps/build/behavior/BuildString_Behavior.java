@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BuildString_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getText_4380385936562005550(SNode thisNode, MacroHelper helper) {
     StringBuilder sb = new StringBuilder();
     for (SNode n : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parts", true))) {

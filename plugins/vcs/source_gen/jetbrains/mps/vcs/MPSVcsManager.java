@@ -59,13 +59,11 @@ public class MPSVcsManager implements ProjectComponent {
   };
   private MPSVcsManager.MyFileStatusListener myFileStatusListener = new MPSVcsManager.MyFileStatusListener();
   private MessageBusConnection myMessageBusConnection;
-
   public MPSVcsManager(Project project, ProjectLevelVcsManager manager, ChangeListManager clmanager) {
     myProject = project;
     myManager = manager;
     myChangeListManager = clmanager;
   }
-
   public boolean isInConflict(final VirtualFile vfile) {
     AbstractVcs vcs = myManager.getVcsFor(vfile);
     if (vcs == null) {
@@ -85,7 +83,6 @@ public class MPSVcsManager implements ProjectComponent {
     }
     return builder.isInConflict();
   }
-
   @Override
   public void projectOpened() {
     if (ApplicationManager.getApplication().isUnitTestMode() || myProject.isDefault()) {
@@ -105,34 +102,28 @@ public class MPSVcsManager implements ProjectComponent {
     }
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
   }
-
   @Override
   public void projectClosed() {
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     check_2eqssr_a1a21(myMessageBusConnection);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "VCS Manager";
   }
-
   public boolean isChangeListManagerInitialized() {
     return myChangeListManagerInitialized;
   }
-
   @Override
   public void initComponent() {
     myChangeListManager.addChangeListListener(myChangeListUpdateListener);
   }
-
   @Override
   public void disposeComponent() {
     myChangeListManager.removeChangeListListener(myChangeListUpdateListener);
   }
-
   private void checkIfProjectIsConflicting() {
     FileStatus currentStatus = FileStatusManager.getInstance(myProject).getStatus(myProject.getProjectFile());
     if (currentStatus != myLastProjectStatus) {
@@ -145,89 +136,70 @@ public class MPSVcsManager implements ProjectComponent {
       myLastProjectStatus = currentStatus;
     }
   }
-
   public List<VirtualFile> getUnversionedFilesFromChangeListManager() {
     return ChangeListManagerImpl.getInstanceImpl(myProject).getUnversionedFiles();
   }
-
   public static MPSVcsManager getInstance(@NotNull Project project) {
     return project.getComponent(MPSVcsManager.class);
   }
-
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
     public StubChangeListManagerGate() {
     }
-
     @Override
     public FileStatus getStatus(File file) {
       return null;
     }
-
     @Override
     public void setDefaultChangeList(@NotNull String string) {
     }
-
     @Override
     public List<LocalChangeList> getListsCopy() {
       return null;
     }
-
     @Nullable
     @Override
     public LocalChangeList findChangeList(String name) {
       return null;
     }
-
     @Override
     public LocalChangeList addChangeList(String name, String comment) {
       return null;
     }
-
     @Override
     public LocalChangeList findOrCreateList(String name, String comment) {
       return null;
     }
-
     @Override
     public void editComment(String name, String comment) {
     }
-
     @Override
     public void editName(String oldName, String newName) {
     }
-
     @Override
     public void moveChanges(String toList, Collection<Change> changes) {
     }
-
     @Override
     public void setListsToDisappear(Collection<String> names) {
     }
-
     @Override
     public FileStatus getStatus(VirtualFile virtualFile) {
       return FileStatus.NOT_CHANGED;
     }
   }
-
   private static class MyChangelistBuilder extends EmptyChangelistBuilder {
     private final VirtualFile myVirtualFile;
     private boolean myIsMergedWithConflict;
-
     public MyChangelistBuilder(VirtualFile vfile) {
       myVirtualFile = vfile;
     }
-
     @Override
     public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
-
     @Override
     public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
       processChange(change, vcsKey);
     }
-
     @Override
     public void processChange(Change change, VcsKey vcsKey) {
       if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
@@ -239,21 +211,17 @@ public class MPSVcsManager implements ProjectComponent {
         }
       }
     }
-
     public boolean isInConflict() {
       return myIsMergedWithConflict;
     }
   }
-
   public class MyFileStatusListener implements FileStatusListener {
     private MyFileStatusListener() {
     }
-
     @Override
     public void fileStatusesChanged() {
       checkIfProjectIsConflicting();
     }
-
     @Override
     public void fileStatusChanged(@NotNull VirtualFile file) {
       if (file.equals(myProject.getProjectFile())) {
@@ -261,7 +229,6 @@ public class MPSVcsManager implements ProjectComponent {
       }
     }
   }
-
   private static void check_2eqssr_a1a21(MessageBusConnection checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.disconnect();

@@ -23,11 +23,9 @@ public class VectorType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b50r53_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b50r53_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_b50r53_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b50r53_a");
@@ -41,7 +39,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_b50r53_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_b50r53_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vector");
     editorCell.setCellId("Constant_b50r53_a0");
@@ -51,7 +48,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_b50r53_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_b50r53_b0");
@@ -62,7 +58,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_b50r53_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");
@@ -82,7 +77,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_b50r53_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b50r53_d0");
@@ -93,11 +87,9 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_b50r53_b3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_b50r53_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger(node, "height") > 0;
   }
-
   private EditorCell createConstant_b50r53_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_b50r53_a3a");
@@ -107,7 +99,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_b50r53_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("height");
@@ -126,7 +117,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_b50r53_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_b50r53_e0");
@@ -136,7 +126,6 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_b50r53_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b50r53_a_0");
@@ -147,14 +136,12 @@ public class VectorType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_b50r53_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_b50r53_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height");
     editorCell.setCellId("Constant_b50r53_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_b50r53_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("height");
@@ -176,14 +163,12 @@ public class VectorType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_b50r53_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "elementType");
     editorCell.setCellId("Constant_b50r53_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_b50r53_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("elementType");

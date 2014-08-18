@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor extends BuildLayout_CopyProcessor_BehaviorDescriptor {
   public BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor() {
   }
-
   public Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode) {
     return BuildLayout_ToBinaryCopyProcessor_Behavior.virtual_getTaskArguments_7918752904805535914(thisNode);
   }
-
   public String virtual_getTaskName_1330375798060763184(SNode thisNode) {
     return BuildLayout_ToBinaryCopyProcessor_Behavior.virtual_getTaskName_1330375798060763184(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor";

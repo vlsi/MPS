@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class SimpleBuilders_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isDescendant_5199967550912479710(SNode thisNode, SNode b) {
     if (thisNode == b) {
       return true;
@@ -23,7 +22,6 @@ public class SimpleBuilders_Behavior {
     }
     return SimpleBuilders_Behavior.call_isDescendant_5199967550912479710(SLinkOperations.getTarget(thisNode, "extendsBuilder", false), b);
   }
-
   public static List<SNode> call_getDescendands_5199967550912479741(SNode thisNode, SModel context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode sb : SModelOperations.getRootsIncludingImported(context, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders")) {
@@ -33,7 +31,6 @@ public class SimpleBuilders_Behavior {
     }
     return result;
   }
-
   public static List<SNode> call_getAncestors_6211769134875410554(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;

@@ -27,11 +27,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ou8udj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ou8udj_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_ou8udj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_a");
@@ -51,7 +49,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ou8udj_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ou8udj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_a0");
@@ -62,11 +59,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ou8udj_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_ou8udj_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
   private EditorCell createProperty_ou8udj_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
@@ -88,7 +83,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b0a");
@@ -99,7 +93,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ou8udj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_b0");
@@ -110,11 +103,9 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ou8udj_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_ou8udj_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
-
   private EditorCell createRefNode_ou8udj_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");
@@ -134,7 +125,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b1a");
@@ -145,7 +135,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
     editorCell.setCellId("Constant_ou8udj_c0");
@@ -159,43 +148,34 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WhileStatement_Editor.ReplaceWith_IfStatement_cellMenu_ou8udj_a0c0(), new WhileStatement_Editor.ReplaceWith_DoWhileStatement_cellMenu_ou8udj_b0c0(), new WhileStatement_Editor.ReplaceWith_ForStatement_cellMenu_ou8udj_c0c0(), new WhileStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_ou8udj_d0c0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_IfStatement_cellMenu_ou8udj_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_IfStatement_cellMenu_ou8udj_a0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.IfStatement";
     }
   }
-
   public static class ReplaceWith_DoWhileStatement_cellMenu_ou8udj_b0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_DoWhileStatement_cellMenu_ou8udj_b0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
     }
   }
-
   public static class ReplaceWith_ForStatement_cellMenu_ou8udj_c0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ForStatement_cellMenu_ou8udj_c0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ForStatement";
     }
   }
-
   public static class ReplaceWith_ForeachStatement_cellMenu_ou8udj_d0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ForeachStatement_cellMenu_ou8udj_d0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
     }
   }
-
   private EditorCell createConstant_ou8udj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ou8udj_d0");
@@ -205,7 +185,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ou8udj_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -225,7 +204,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ou8udj_f0");
@@ -235,7 +213,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ou8udj_g0");
@@ -246,7 +223,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ou8udj_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -270,7 +246,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ou8udj_i0");
@@ -281,7 +256,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ou8udj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ou8udj_a_0");
@@ -291,7 +265,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ou8udj_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_ou8udj_a0");
@@ -301,7 +274,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ou8udj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ou8udj_b0");
@@ -312,7 +284,6 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ou8udj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");

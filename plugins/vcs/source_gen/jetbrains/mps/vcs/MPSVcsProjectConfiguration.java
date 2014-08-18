@@ -17,25 +17,20 @@ import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
 })
 public class MPSVcsProjectConfiguration extends AbstractProjectComponent implements PersistentStateComponent<MPSVcsProjectConfiguration.MyState> {
   private MPSVcsProjectConfiguration.MyState myState = new MPSVcsProjectConfiguration.MyState();
-
   protected MPSVcsProjectConfiguration(Project project) {
     super(project);
   }
-
   @Override
   public MPSVcsProjectConfiguration.MyState getState() {
     return myState;
   }
-
   @Override
   public void loadState(MPSVcsProjectConfiguration.MyState state) {
     myState = state;
   }
-
   public boolean isIgnoreGeneratedFiles() {
     return myState.myIgnoreGeneratedFiles;
   }
-
   public void setIgnoreGeneratedFiles(boolean ignoreGeneratedFiles) {
     if (myState.myIgnoreGeneratedFiles != ignoreGeneratedFiles) {
       myState.myIgnoreGeneratedFiles = ignoreGeneratedFiles;
@@ -51,21 +46,16 @@ public class MPSVcsProjectConfiguration extends AbstractProjectComponent impleme
       });
     }
   }
-
   public static MPSVcsProjectConfiguration getInstance(Project project) {
     return project.getComponent(MPSVcsProjectConfiguration.class);
   }
-
   public static class MyState {
     private boolean myIgnoreGeneratedFiles;
-
     public MyState() {
     }
-
     public boolean isIgnoreGeneratedFiles() {
       return myIgnoreGeneratedFiles;
     }
-
     public void setIgnoreGeneratedFiles(boolean ignoreGeneratedFiles) {
       myIgnoreGeneratedFiles = ignoreGeneratedFiles;
     }

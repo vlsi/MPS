@@ -16,72 +16,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddCustomLocationJavaJar_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddCustomLocationJavaJar_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.build.structure.BuildSource_JavaJar";
   }
-
   public String getPresentation() {
     return "AddCustomLocationJavaJar";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.build.intentions.AddCustomLocationJavaJar_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.build";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customLocation", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:9e44d7c5-70f5-4986-acea-57d3ad3ce28f(jetbrains.mps.build.intentions)", "8706695667516275787");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddCustomLocationJavaJar_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Override jar location";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setNewChild(node, "customLocation", "jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef");
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddCustomLocationJavaJar_Intention.this;
     }

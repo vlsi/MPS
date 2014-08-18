@@ -8,28 +8,23 @@ import org.jetbrains.annotations.Nullable;
 
 public class PropertyFeature extends AbstractNodeFeature {
   private String myPropertyName;
-
   public PropertyFeature(@NotNull SNodeReference nodePointer, @NotNull String propertyName) {
     super(nodePointer);
     myPropertyName = propertyName;
   }
-
   @NotNull
   public String getPropertyName() {
     return myPropertyName;
   }
-
   @Nullable
   @Override
   public Feature getParent() {
     return new PropertiesFeature(getNodePointer());
   }
-
   @Override
   public boolean equals(Object object) {
     return super.equals(object) && this.myPropertyName.equals(((PropertyFeature) object).myPropertyName);
   }
-
   @Override
   @NotNull
   public String toString() {

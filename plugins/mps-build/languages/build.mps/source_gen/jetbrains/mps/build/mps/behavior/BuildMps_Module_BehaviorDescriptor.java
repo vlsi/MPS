@@ -11,15 +11,12 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 public abstract class BuildMps_Module_BehaviorDescriptor extends BuildMps_AbstractModule_BehaviorDescriptor implements BuildSource_CompilablePart_BehaviorDescriptor, BuildExternalDependency_BehaviorDescriptor {
   public BuildMps_Module_BehaviorDescriptor() {
   }
-
   public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BuildMps_Module_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
-
   public boolean virtual_isCompilable_7454762407073969360(SNode thisNode) {
     return BuildMps_Module_Behavior.virtual_isCompilable_7454762407073969360(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_Module";

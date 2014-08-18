@@ -2,22 +2,22 @@
 <debug-info>
   <root>
     <file name="Text_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.sampleXML.behavior.Text_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.sampleXML.behavior.Text_BehaviorDescriptor" />
     </file>
     <file name="ElementPart_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.sampleXML.behavior.ElementPart_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.sampleXML.behavior.ElementPart_BehaviorDescriptor" />
     </file>
     <file name="Document_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.sampleXML.behavior.Document_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.sampleXML.behavior.Document_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,30,0" name="jetbrains.mps.sampleXML.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,28,0" name="jetbrains.mps.sampleXML.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Attribute_BehaviorDescriptor.java">
-      <unit at="11,0,24,0" name="jetbrains.mps.sampleXML.behavior.Attribute_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.sampleXML.behavior.Attribute_BehaviorDescriptor" />
     </file>
     <file name="Element_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.sampleXML.behavior.Element_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.sampleXML.behavior.Element_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

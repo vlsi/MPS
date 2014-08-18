@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class ConnectionEnd_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConnectionEnd_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ConnectionEnd";

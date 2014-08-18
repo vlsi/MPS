@@ -14,81 +14,83 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.ExecutionException;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import java.util.List;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.project.ProjectHelper;
-import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.baseLanguage.unitTest.execution.client.Junit_Command;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
-import com.intellij.execution.ui.ConsoleView;
-import jetbrains.mps.execution.api.configurations.ConsoleCreator;
-import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
+import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import com.intellij.execution.process.ProcessListener;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.UnitTestProcessListener;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionResult;
 import jetbrains.mps.execution.api.configurations.DefaultExecutionConsole;
 import jetbrains.mps.debug.api.run.IDebuggerConfiguration;
+import jetbrains.mps.debug.api.IDebuggerSettings;
+import jetbrains.mps.debugger.java.api.settings.LocalConnectionSettings;
+import jetbrains.mps.debug.api.IDebugger;
+import jetbrains.mps.debug.api.Debuggers;
 import com.intellij.execution.executors.DefaultRunExecutor;
-import com.intellij.execution.executors.DefaultDebugExecutor;
 
 public class JUnitTests_Configuration_RunProfileState extends DebuggerRunProfileState implements RunProfileState {
   @NotNull
   private final JUnitTests_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public JUnitTests_Configuration_RunProfileState(@NotNull JUnitTests_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-    List<ITestNodeWrapper> nodeWrappers = ListSequence.fromList(myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project))).toListSequence();
-
-    final ProcessHandler process = new Junit_Command().setDebuggerSettings_String(myDebuggerSettings.getCommandLine(true)).createProcess(nodeWrappers, myRunConfiguration.getJavaRunParameters().getJavaRunParameters());
-
-    TestRunState runState = new TestRunState(nodeWrappers);
+    JUnitSettings_Configuration jUnitSettings = myRunConfiguration.getJUnitSettings();
+    boolean debugExecutor = executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID);
+    jUnitSettings.setDebug(debugExecutor);
+    List<ITestNodeWrapper> testNodes = jUnitSettings.getTests(ProjectHelper.toMPSProject(project));
+    TestRunState runState = new TestRunState(testNodes);
     TestEventsDispatcher eventsDispatcher = new TestEventsDispatcher(runState);
-    ConsoleView console = ConsoleCreator.createConsoleView(project, false);
-    console.addMessageFilter(new StandaloneMPSStackTraceFilter(project));
-    final UnitTestViewComponent viewComponent = new UnitTestViewComponent(project, new ProjectOperationContext(ProjectHelper.toMPSProject(project)), console, runState, new _FunctionTypes._void_P0_E0() {
+    jetbrains.mps.execution.configurations.implementation.plugin.plugin.Executor processExecutor;
+    if (jUnitSettings.canLightExecute(testNodes)) {
+      processExecutor = new JUnitLightExecutor(testNodes, eventsDispatcher);
+    } else {
+      processExecutor = new JUnitExecutor(project, executor, jUnitSettings, myDebuggerSettings, myRunConfiguration.getJavaRunParameters(), testNodes);
+    }
+    ProcessHandler process = processExecutor.execute();
+    final UnitTestViewComponent testViewComponent = myRunConfiguration.createTestViewComponent(runState, process);
+    ProcessListener listener = new UnitTestProcessListener(eventsDispatcher);
+    _FunctionTypes._void_P0_E0 disposeHandler = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        if (process != null) {
-          process.destroyProcess();
-        }
+        testViewComponent.dispose();
       }
-    });
-
+    };
     {
       ProcessHandler _processHandler = process;
-      _processHandler.addProcessListener(new UnitTestProcessListener(eventsDispatcher));
-      return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(viewComponent, new _FunctionTypes._void_P0_E0() {
-        public void invoke() {
-          viewComponent.dispose();
-        }
-      }));
+      _processHandler.addProcessListener(listener);
+      return new DefaultExecutionResult(_processHandler, new DefaultExecutionConsole(testViewComponent, disposeHandler));
     }
   }
-
   @NotNull
   public IDebuggerConfiguration getDebuggerConfiguration() {
-    return Junit_Command.getDebuggerConfiguration();
+    return new IDebuggerConfiguration() {
+      @Nullable
+      public IDebuggerSettings createDebuggerSettings() {
+        return new LocalConnectionSettings(true);
+      }
+      public IDebugger getDebugger() {
+        return Debuggers.getInstance().getDebuggerByName("Java");
+      }
+    };
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

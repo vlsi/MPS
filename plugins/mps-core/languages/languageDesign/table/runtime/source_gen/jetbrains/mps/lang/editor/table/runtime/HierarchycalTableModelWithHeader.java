@@ -14,14 +14,12 @@ import java.util.List;
 
 public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
   private SNode myHeaderColumnsLinkDeclaration;
-
   public HierarchycalTableModelWithHeader(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration, @NotNull SNode headerCellsLinkDeclaration) {
     super(tableNode, rowsLinkDeclaration, cellsLinkDeclaration);
     myHeaderColumnsLinkDeclaration = headerCellsLinkDeclaration;
     assert ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SNodeOperations.getConceptDeclaration(getTableNode()))).contains(myHeaderColumnsLinkDeclaration);
     assert ListSequence.fromList(getHeaderColumns()).count() == getColumnCount();
   }
-
   @Override
   public SNode getValueAt(int row, int column) {
     assert row >= 0;
@@ -31,12 +29,10 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
     }
     return super.getValueAt(row - 1, column);
   }
-
   @Override
   public int getRowCount() {
     return super.getRowCount() + 1;
   }
-
   @Override
   public void deleteRow(int rowNumber) {
     if (rowNumber == 0) {
@@ -45,7 +41,6 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
     }
     super.deleteRow(rowNumber - 1);
   }
-
   @Override
   public void insertRow(int rowNumber) {
     if (rowNumber == 0) {
@@ -54,19 +49,16 @@ public class HierarchycalTableModelWithHeader extends HierarchycalTableModel {
     }
     super.insertRow(rowNumber - 1);
   }
-
   @Override
   public void deleteColumn(int columnNumber) {
     deleteElementAt(getHeaderColumns(), columnNumber);
     super.deleteColumn(columnNumber);
   }
-
   @Override
   public void insertColumn(int columnNumber) {
     Utils.insertElementAt(getHeaderColumns(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myHeaderColumnsLinkDeclaration, "target", false)), null), columnNumber);
     super.insertColumn(columnNumber);
   }
-
   private List<SNode> getHeaderColumns() {
     return SNodeOperations.getChildren(getTableNode(), myHeaderColumnsLinkDeclaration);
   }

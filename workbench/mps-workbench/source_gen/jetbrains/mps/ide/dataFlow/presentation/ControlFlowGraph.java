@@ -28,13 +28,11 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
   /*package*/ int myMaxLineIndentLeft;
   private int myWidth;
   private int myHeight;
-
   public ControlFlowGraph(IProgram<T> program, IGraphCreator<T> graphCreator) {
     this.myProgram = program;
     this.myGraphCreator = graphCreator;
     ControlFlowGraph.this.buildBlocks();
   }
-
   public void buildBlocks() {
     Map<IInstruction<T>, IBlock> instructionToBlock = new HashMap<IInstruction<T>, IBlock>();
     for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
@@ -51,7 +49,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
       block.setSucc(succ);
     }
   }
-
   public void paint(Graphics g) {
     for (IBlock block : this.myBlocks) {
       block.paint(g);
@@ -65,11 +62,9 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
       arrowHead.paint(g);
     }
   }
-
   public void setComponent(Component component) {
     this.myComponent = component;
   }
-
   public void relayout() {
     this.myLines.clear();
     this.myArrowHeads.clear();
@@ -107,7 +102,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     this.myWidth = MARGIN_X * 2 + maxWidth + (this.myMaxLineIndentRight + this.myMaxLineIndentLeft) * LINE_SEGMENT_SIZE;
     this.myHeight = y + MARGIN_Y;
   }
-
   private void shiftLeft(int indent) {
     for (IBlock block : this.myBlocks) {
       block.setX(block.getX() + indent);
@@ -119,7 +113,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
       line.shiftLeft(indent);
     }
   }
-
   private void createAdditionalLine(IBlock startBlock, IBlock endBlock) {
     int startIndex = this.myBlocks.indexOf(startBlock);
     int endIndex = this.myBlocks.indexOf(endBlock);
@@ -160,7 +153,6 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
       this.myArrowHeads.add(new ArrowHead(endBlockExit, endBlockLevel, ArrowHeadDirection.RIGHT));
     }
   }
-
   private boolean canBeAdded(int first, int last, int i) {
     FreeZone freeZone = this.myFreeZoneMap.get(i);
     if (freeZone == null) {
@@ -170,33 +162,27 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
     boolean canBeAdded = freeZone.canBeAdded(first, last);
     return canBeAdded;
   }
-
   private void createSimpleLine(IBlock block, IBlock nextBlock) {
     int x = block.getX() + block.getWidth() / 2;
     this.myLines.add(new Line(block.getY() + block.getHeight(), nextBlock.getY(), x, LineDirection.VERTICAL));
     this.myArrowHeads.add(new ArrowHead(x, nextBlock.getY(), ArrowHeadDirection.DOWN));
   }
-
   public int getWidth() {
     return this.myWidth;
   }
-
   public int getHeight() {
     return this.myHeight;
   }
-
   public void addBlockListener(IBlockListener listener) {
     for (IBlock block : this.myBlocks) {
       block.addBlockListener(listener);
     }
   }
-
   public void removeBlockListener(IBlockListener listener) {
     for (IBlock block : this.myBlocks) {
       block.removeBlockListener(listener);
     }
   }
-
   public void processMousePressed(MouseEvent event) {
     for (IBlock block : this.myBlocks) {
       if (block.processMousePressed(event)) {

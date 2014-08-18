@@ -8,22 +8,17 @@ import java.util.LinkedList;
 
 public abstract class GeneratedInstruction extends Instruction {
   protected List myParameters = new LinkedList();
-
   public GeneratedInstruction() {
   }
-
   public List getParameters() {
     return myParameters;
   }
-
   public Object getParameter(int index) {
     return myParameters.get(index);
   }
-
   public Object getParameter() {
     return getParameter(0);
   }
-
   public void addParameter(Object p) {
     myParameters.add(p);
   }

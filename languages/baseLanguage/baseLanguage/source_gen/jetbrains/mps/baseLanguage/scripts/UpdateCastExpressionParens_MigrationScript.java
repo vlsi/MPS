@@ -18,25 +18,20 @@ public class UpdateCastExpressionParens_MigrationScript extends BaseMigrationScr
       public String getName() {
         return "Find CastExpressions with required but missing parens around their nested expressions and add them";
       }
-
       public String getAdditionalInfo() {
         return "Find CastExpressions with required but missing parens around their nested expressions and add them";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.CastExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) && PrecedenceUtil.needsParensAroundCastExpression(node);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode expression = SLinkOperations.getTarget(node, "expression", true);
         SNode result = SNodeFactoryOperations.replaceWithNewChild(expression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
         SLinkOperations.setTarget(result, "expression", expression, true);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

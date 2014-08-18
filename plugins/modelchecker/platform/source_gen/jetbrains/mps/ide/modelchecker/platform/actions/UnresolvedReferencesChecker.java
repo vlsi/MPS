@@ -28,7 +28,6 @@ import jetbrains.mps.project.AbstractModule;
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(final SModel model, ProgressMonitor monitor, final SRepository repository) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
@@ -95,21 +94,18 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     monitor.done();
     return results;
   }
-
   private static SModuleReference check_xiru3y_a0f0f0i0c0e0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
-
   private static SModule check_xiru3y_a0a5a5a8a2a4a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_xiru3y_a0i0f0i0c0e0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class NodeBuilderList_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public NodeBuilderList_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderList";

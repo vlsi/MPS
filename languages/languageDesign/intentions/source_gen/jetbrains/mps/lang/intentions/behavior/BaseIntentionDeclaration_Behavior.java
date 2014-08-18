@@ -16,25 +16,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BaseIntentionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getGeneratedName_6263518417926802289(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Intention";
   }
-
   public static String call_getConceptName_6263518417926802300(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   @Deprecated
   public static boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
     // Was deprecated in MPS 3.0 should be removed after MPS 3.0 
     return false;
   }
-
   public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     return BehaviorReflection.invokeSuper((Class<List<PropertyReference>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy", "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{});
   }
-
   public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(SLinkOperations.getTarget(thisNode, "descriptionFunction", true)))) {
       return null;
@@ -51,11 +46,9 @@ public class BaseIntentionDeclaration_Behavior {
     }
     return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "forConcept", false);
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "forConcept", baseConcept, false);
   }

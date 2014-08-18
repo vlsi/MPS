@@ -8,7 +8,6 @@ import com.intellij.openapi.project.Project;
 public class ConsoleCreator {
   public ConsoleCreator() {
   }
-
   public static ConsoleViewImpl createConsoleView(Project project, boolean viewer) {
     ConsoleViewImpl result = new ConsoleViewImpl(project, viewer);
     result.setHelpId("reference.dialogs.debugview.consoletab");

@@ -32,7 +32,6 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       @Override
       public void onFrameDeactivated() {
       }
-
       @Override
       public void onFrameActivated() {
         ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -75,18 +74,15 @@ public class ModelFocusSynchronizer implements ApplicationComponent {
       }
     });
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return getClass().getName();
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }

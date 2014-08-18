@@ -20,7 +20,6 @@ public class _Enum_Measure_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class _Enum_Measure_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     _Enum_Measure constant = _Enum_Measure.parseValue(value);
     if (constant != null) {

@@ -31,11 +31,9 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c6z1wa_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c6z1wa_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_c6z1wa_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c6z1wa_a");
@@ -46,7 +44,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c6z1wa_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_c6z1wa_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -55,7 +52,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_c6z1wa_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_c6z1wa_b0");
@@ -65,7 +61,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c6z1wa_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -84,36 +79,28 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public ModuleReferenceExpression_generic_cellMenu_c6z1wa_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return BehaviorReflection.invokeVirtual((Class<List<SModule>>) ((Class) Object.class), node, "virtual_getVisibleModules_4040588429969394404", new Object[]{});
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModule) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SModule parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "moduleId", parameterObject.getModuleReference().getModuleId().toString());
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SModule) parameterObject);
     }
-
     public String getMatchingText_internal(SModule parameterObject) {
       return parameterObject.getModuleName();
     }
   }
-
   private EditorCell createConstant_c6z1wa_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_c6z1wa_d0");
@@ -123,7 +110,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c6z1wa_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c6z1wa_a_0");
@@ -132,7 +118,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_c6z1wa_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c6z1wa_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module uid");
     editorCell.setCellId("Constant_c6z1wa_a0");
@@ -142,7 +127,6 @@ public class ModuleReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c6z1wa_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("moduleId");

@@ -14,10 +14,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class MakeSequence {
   private Iterable<Cluster> myClusters;
-
   public MakeSequence() {
   }
-
   public void prepareClusters(final Iterable<? extends IResource> inputRes) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -26,7 +24,6 @@ public class MakeSequence {
       }
     });
   }
-
   public void prepareScipts(@Nullable final IScript defaultScript, @Nullable final MakeSession makeSession) {
     Sequence.fromIterable(myClusters).visitAll(new IVisitor<Cluster>() {
       public void visit(Cluster cluster) {
@@ -40,18 +37,14 @@ public class MakeSequence {
     });
   }
 
-
-
   @Deprecated
   public Iterable<Cluster> getClusters() {
     // this method is for transition period only, and will be removed afterwards 
     return myClusters;
   }
-
   public int steps() {
     return Sequence.fromIterable(myClusters).count();
   }
-
   public void iterate(_FunctionTypes._return_P2_E0<? extends Boolean, ? super IScript, ? super Iterable<IResource>> iterator) {
     // iterator accepts script and resources to be processed by the script, and returns false to stop 
     for (Cluster c : myClusters) {

@@ -8,12 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class NodeRuleReference {
   private SNode ruleNode;
 
-
   public NodeRuleReference(SNode ruleNode) {
     this.ruleNode = ruleNode;
   }
-
-
 
   public RuleType getType() {
     if (isTypeSystem()) {
@@ -27,23 +24,16 @@ public class NodeRuleReference {
     }
   }
 
-
-
   private boolean isTypeSystem() {
     return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement");
   }
-
-
 
   private boolean isConstraints() {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(ruleNode), "jetbrains.mps.lang.constraints.structure.ConceptConstraints");
   }
 
-
-
   private boolean isMessageStatement() {
     return SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.typesystem.structure.MessageStatement");
   }
-
 
 }

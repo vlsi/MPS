@@ -6,7 +6,6 @@ package jetbrains.mps.samples.agreementLanguage.behavior;
 public class Date_Past_BehaviorDescriptor extends Date_BehaviorDescriptor {
   public Date_Past_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.Date_Past";

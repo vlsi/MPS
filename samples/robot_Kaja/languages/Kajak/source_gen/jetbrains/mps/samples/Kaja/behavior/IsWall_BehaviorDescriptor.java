@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class IsWall_BehaviorDescriptor extends LogicalExpression_BehaviorDescriptor {
   public IsWall_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.IsWall";

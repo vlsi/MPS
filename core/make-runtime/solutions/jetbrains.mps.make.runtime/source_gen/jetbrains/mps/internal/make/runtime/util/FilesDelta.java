@@ -20,34 +20,27 @@ public class FilesDelta implements IDelta {
   private static Logger LOG = LogManager.getLogger(FilesDelta.class);
   private Map<IFile, FilesDelta.Status> files = MapSequence.fromMap(new HashMap<IFile, FilesDelta.Status>());
   private String key;
-
   public FilesDelta(IFile dir) {
     this.key = "(IFile)" + DirUtil.asDir(DirUtil.straighten(DirUtil.urlToPath(dir.getPath())));
   }
-
   private FilesDelta(FilesDelta copyFrom) {
     this.key = copyFrom.key;
     MapSequence.fromMap(this.files).putAll(copyFrom.files);
   }
-
   public void written(IFile file) {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.WRITTEN);
   }
-
   public void kept(IFile file) {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.KEPT);
   }
-
   public void deleted(IFile file) {
     MapSequence.fromMap(files).put(file, FilesDelta.Status.DELETED);
   }
-
   public void stale(IFile file) {
     if (!(MapSequence.fromMap(files).containsKey(file))) {
       MapSequence.fromMap(files).put(file, FilesDelta.Status.STALE);
     }
   }
-
   @Override
   public boolean reconcile() {
     return acceptVisitor(new FilesDelta.Visitor() {
@@ -63,7 +56,6 @@ public class FilesDelta implements IDelta {
       }
     });
   }
-
   @Override
   public boolean acceptVisitor(IDeltaVisitor visitor) {
     if (!(visitor instanceof FilesDelta.Visitor)) {
@@ -71,7 +63,6 @@ public class FilesDelta implements IDelta {
     }
     return acceptFilesVisitor(((FilesDelta.Visitor) visitor));
   }
-
   @Override
   public IDelta merge(IDelta toMerge) {
     if (!(toMerge instanceof FilesDelta)) {
@@ -82,7 +73,6 @@ public class FilesDelta implements IDelta {
     }
     return new FilesDelta(this).copy((FilesDelta) toMerge);
   }
-
   private boolean acceptFilesVisitor(final FilesDelta.Visitor visitor) {
     MapSequence.fromMap(files).visitAll(new IVisitor<IMapping<IFile, FilesDelta.Status>>() {
       public void visit(IMapping<IFile, FilesDelta.Status> m) {
@@ -97,7 +87,6 @@ public class FilesDelta implements IDelta {
     });
     return true;
   }
-
   private FilesDelta copy(FilesDelta that) {
     // provided there's this.contains(that) call before copy() 
     // DirUtil.startsWith(that, this) == true 
@@ -132,7 +121,6 @@ public class FilesDelta implements IDelta {
     }
     return this;
   }
-
   @Override
   public boolean contains(IDelta other) {
     if (!(other instanceof FilesDelta)) {
@@ -144,24 +132,19 @@ public class FilesDelta implements IDelta {
     }
     return DirUtil.startsWith(that.key, this.key);
   }
-
   public static class Visitor implements IDeltaVisitor {
     public Visitor() {
     }
-
     public boolean acceptWritten(IFile file) {
       return true;
     }
-
     public boolean acceptKept(IFile file) {
       return true;
     }
-
     public boolean acceptDeleted(IFile file) {
       return true;
     }
   }
-
   public   /**
    * DELETED are files explicitly requested to be removed
    * STALE are files that are likely to need removal, unless there's another subsequent 

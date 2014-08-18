@@ -38,41 +38,31 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 public class CopyPluginXml_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.plugin.CopyPluginXml");
-
   public CopyPluginXml_Facet() {
     ListSequence.fromList(targets).addElement(new CopyPluginXml_Facet.Target_copyPluginXml());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen")});
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new CopyPluginXml_Facet.TargetProperties();
   }
-
   public static class Target_copyPluginXml implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
-
     public Target_copyPluginXml() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -135,57 +125,44 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(TResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -193,47 +170,37 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 10;
     }
-
     public static CopyPluginXml_Facet.Target_copyPluginXml.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, CopyPluginXml_Facet.Target_copyPluginXml.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._1<String> {
       public Parameters() {
         super();
       }
-
       public Parameters(String pluginRoot) {
         super(pluginRoot);
       }
-
       public String pluginRoot(String value) {
         return super._0(value);
       }
-
       public String pluginRoot() {
         return super._0();
       }
-
       @SuppressWarnings(value = "unchecked")
       public CopyPluginXml_Facet.Target_copyPluginXml.Parameters assignFrom(Tuples._1<String> from) {
         return (CopyPluginXml_Facet.Target_copyPluginXml.Parameters) super.assign(from);
       }
     }
-
     private static boolean eq_mk86fn_a0a0a0a0a0b0b0b0c0a0c0a2a0a0a0a2j(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.plugin.CopyPluginXml.copyPluginXml");
@@ -243,7 +210,6 @@ public class CopyPluginXml_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {

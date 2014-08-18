@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class RightTransformActionDeprecated_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public RightTransformActionDeprecated_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode cellActionMapItem, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.hasValue(cellActionMapItem, "actionId", "right_transform_action_id", "right_transform_action_id")) {
       {
@@ -25,18 +24,15 @@ public class RightTransformActionDeprecated_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.CellActionMapItem";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

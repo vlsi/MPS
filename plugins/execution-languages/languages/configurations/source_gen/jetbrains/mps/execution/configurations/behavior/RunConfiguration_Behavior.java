@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class RunConfiguration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @Nullable
   public static SNode call_getExecutor_3754890006475713427(final SNode thisNode) {
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor")).findFirst(new IWhereFilter<SNode>() {
@@ -23,18 +22,15 @@ public class RunConfiguration_Behavior {
       }
     });
   }
-
   public static boolean call_isForeign_4042467058397504911(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "configurationKind", false) == null)) {
       return false;
     }
     return neq_g3syr7_a0b0c(SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "configurationKind", false)), SNodeOperations.getModel(thisNode));
   }
-
   public static String call_getGeneratedFactoryName_2256484787298832736(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{}) + "_Factory";
   }
-
   private static boolean neq_g3syr7_a0b0c(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

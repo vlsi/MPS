@@ -22,7 +22,6 @@ import org.apache.log4j.LogManager;
 public class DevkitDescriptorPersistence {
   private DevkitDescriptorPersistence() {
   }
-
   public static DevkitDescriptor loadDevKitDescriptor(IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
@@ -64,7 +63,6 @@ public class DevkitDescriptorPersistence {
       throw new ModuleReadException(e);
     }
   }
-
   public static void saveDevKitDescriptor(IFile file, final DevkitDescriptor descriptor) {
     Element root = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
@@ -136,6 +134,5 @@ public class DevkitDescriptorPersistence {
 
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-
   protected static Logger LOG = LogManager.getLogger(DevkitDescriptorPersistence.class);
 }

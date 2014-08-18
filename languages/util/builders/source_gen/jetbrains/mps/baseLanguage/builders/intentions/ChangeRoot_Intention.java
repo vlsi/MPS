@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeRoot_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangeRoot_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration";
   }
-
   public String getPresentation() {
     return "ChangeRoot";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.builders.intentions.ChangeRoot_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.builders";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)", "5219429592916269568");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeRoot_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "root") ? "Make Non Root" : "Make Root");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "root", "" + (!(SPropertyOperations.getBoolean(node, "root"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangeRoot_Intention.this;
     }

@@ -1,35 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5xj7qnx2dnmu8exvbhx9pm1get3icaq">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-c2cu5q17oietqpl7o5hkr9qwtia8l0n" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="1560298786499490203" name="ListAddAction" hash="9twy1ksszy61pa5jylre61es84jlie7">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="ListAddAction.java" />
-  </source>
-  <source id="1560298786499490464" name="BaseAddAction" hash="9c8p985v8km0nbmmihchthy152zg8r5">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <file name="BaseAddAction.java" />
-  </source>
-  <source id="1560298786499493326" name="TableAddAction" hash="clushkuoy3xoewnmdceb0wp7js3gyqd">
-    <file name="TableAddAction.java" />
-  </source>
-  <source id="1560298786499493338" name="ListRemoveAction" hash="azrp5emn4pzsj4a8jamtfk2yok0vtxm">
-    <file name="ListRemoveAction.java" />
-  </source>
-  <source id="1560298786499494244" name="BaseValidatedAction" hash="-54mpxvdfhr0zcuf8dtyx611yxymuzzs">
-    <file name="BaseValidatedAction.java" />
-  </source>
-  <source id="1560298786499495342" name="TableRemoveAction" hash="-66kpn9g7341uwpbvgemw3451co8z1gm">
-    <file name="TableRemoveAction.java" />
-  </source>
-  <source id="1560298786499497503" name="ListEditAction" hash="84lwwg9v0binayuo2lrb5udz5r3oc71">
-    <file name="ListEditAction.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-5xj7qnx2dnmu8exvbhx9pm1get3icaq" />
 

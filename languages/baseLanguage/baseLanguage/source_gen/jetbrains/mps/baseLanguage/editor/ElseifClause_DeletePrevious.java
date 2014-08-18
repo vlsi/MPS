@@ -15,22 +15,17 @@ public class ElseifClause_DeletePrevious {
     editorCell.setAction(CellActionType.DELETE, new ElseifClause_DeletePrevious.ElseifClause_DeletePrevious_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ElseifClause_DeletePrevious.ElseifClause_DeletePrevious_BACKSPACE(node));
   }
-
   public static class ElseifClause_DeletePrevious_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ElseifClause_DeletePrevious_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete previous if there is one or current ";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((SNodeOperations.getPrevSibling(node) != null)) {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));
@@ -44,22 +39,17 @@ public class ElseifClause_DeletePrevious {
       }
     }
   }
-
   public static class ElseifClause_DeletePrevious_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ElseifClause_DeletePrevious_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete previous if there is one or current ";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((SNodeOperations.getPrevSibling(node) != null)) {
         SNodeOperations.deleteNode(SNodeOperations.getPrevSibling(node));

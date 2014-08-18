@@ -18,15 +18,12 @@ import org.apache.log4j.LogManager;
 public class AntSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private AntSettings_Configuration.MyState myState = new AntSettings_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -34,31 +31,24 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public boolean getUseOtherAntLocation() {
     return myState.myUseOtherAntLocation;
   }
-
   public String getOtherAntLocation() {
     return myState.myOtherAntLocation;
   }
-
   public String getAntOptions() {
     return myState.myAntOptions;
   }
-
   public void setUseOtherAntLocation(boolean value) {
     myState.myUseOtherAntLocation = value;
   }
-
   public void setOtherAntLocation(String value) {
     myState.myOtherAntLocation = value;
   }
-
   public void setAntOptions(String value) {
     myState.myAntOptions = value;
   }
-
   @Override
   public AntSettings_Configuration clone() {
     AntSettings_Configuration clone = null;
@@ -73,15 +63,12 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
     }
     return clone;
   }
-
   public class MyState {
     public boolean myUseOtherAntLocation;
     public String myOtherAntLocation;
     public String myAntOptions;
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       AntSettings_Configuration.MyState state = new AntSettings_Configuration.MyState();
@@ -91,26 +78,20 @@ public class AntSettings_Configuration implements IPersistentConfiguration, ITem
       return state;
     }
   }
-
   public AntSettings_Configuration() {
   }
-
   private SettingsEditorEx<AntSettings_Configuration> myEditorEx;
-
   public AntSettings_Configuration createCloneTemplate() {
     return new AntSettings_Configuration();
   }
-
   public AntSettings_Configuration_Editor getEditor() {
     return new AntSettings_Configuration_Editor();
   }
-
   public SettingsEditorEx<AntSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(AntSettings_Configuration.class);
 }

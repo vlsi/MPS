@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.Language;
 public class AddExtendedLanguage_QuickFix extends QuickFix_Runtime {
   public AddExtendedLanguage_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Add language " + ((Language) AddExtendedLanguage_QuickFix.this.getField("extLang")[0]) + " to extended languages";
   }
-
   public void execute(SNode node) {
     ((Language) AddExtendedLanguage_QuickFix.this.getField("lang")[0]).addExtendedLanguage(((Language) AddExtendedLanguage_QuickFix.this.getField("extLang")[0]).getModuleReference());
   }

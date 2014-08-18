@@ -15,7 +15,6 @@ public class BooleanStyleSheetItem_Behavior {
     }
     SPropertyOperations.set(thisNode, "flag", "" + (!(sa.combine(null, null))));
   }
-
   public static boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return true;
   }

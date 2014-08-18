@@ -48,28 +48,23 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
   private BaseValidatedAction myEditAction;
   private ValidateableBoundPanel.MyValidator myValidator = new ValidateableBoundPanel.MyValidator();
   private boolean myInitialized = false;
-
   public ValidateableBoundPanel(final IBindedDialog owner, String caption, @NotNull final List<T> list) {
     myOwner = owner;
     myCaption = caption;
     myList = list;
   }
-
   public void setAddAction(BaseValidatedAction action) {
     assertNotInitialized();
     myAddAction = action;
   }
-
   public void setRemoveAction(BaseValidatedAction action) {
     assertNotInitialized();
     myRemoveAction = action;
   }
-
   public void setEditAction(BaseValidatedAction action) {
     assertNotInitialized();
     myEditAction = action;
   }
-
   public void setChooser(final Computable<T> chooser) {
     assertNotInitialized();
     myMultipleChooser = false;
@@ -84,39 +79,32 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
       }
     };
   }
-
   public void setMultipleChooser(Computable<List<T>> chooser) {
     assertNotInitialized();
     myMultipleChooser = true;
     myChooser = chooser;
   }
-
   public void setCellRenderer(DefaultListCellRenderer cellRenderer) {
     assertNotInitialized();
     myCellRenderer = cellRenderer;
   }
-
   @Override
   public void setTransferHandler(TransferHandler transferHandler) {
     assertNotInitialized();
     myTransferHandler = transferHandler;
   }
-
   public void setObjectValidator(Validator objectValidator) {
     assertNotInitialized();
     myObjectValidator = objectValidator;
   }
-
   public void setCanRemoveCondition(Condition<T> canRemoveCondition) {
     assertNotInitialized();
     myCanRemoveCondition = (canRemoveCondition != null ? canRemoveCondition : Condition.TRUE_CONDITION);
   }
-
   public void setAllowRemoveAnyway(boolean allowRemoveAnyway) {
     assertNotInitialized();
     myAllowRemoveAnyway = allowRemoveAnyway;
   }
-
   public void init() {
     myInitialized = true;
     setBorder(new TitledBorder(myCaption));
@@ -136,11 +124,9 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     add(comp, BorderLayout.CENTER);
     myValidator.run();
   }
-
   protected boolean multipleChooserSet() {
     return myMultipleChooser == Boolean.TRUE;
   }
-
   protected String removeSelectedWithCheck() {
     StringBuilder errorMessage = new StringBuilder();
 
@@ -167,7 +153,6 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     }
     return errorMessage.toString();
   }
-
   protected void removeSelected() {
     int[] indices = getSelectedIndices();
     Arrays.sort(indices);
@@ -176,7 +161,6 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     }
 
   }
-
   private JComponent createActionsComponent() {
     if (myMultipleChooser != null) {
       if (myAddAction == null) {
@@ -207,23 +191,16 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     return toolbar.getComponent();
   }
-
   private void assertNotInitialized() {
     assert !(myInitialized);
   }
-
   protected abstract BaseValidatedAction createAddAction(Computable<List<T>> chooser);
-
   protected abstract BaseValidatedAction createRemoveAction();
-
   protected abstract JComponent initUIComponentAndBinding();
-
   protected abstract int[] getSelectedIndices();
-
   private class MyValidator implements Runnable {
     private MyValidator() {
     }
-
     @Override
     public void run() {
       if (myObjectValidator == null) {
@@ -244,11 +221,9 @@ public abstract class ValidateableBoundPanel<T> extends JPanel {
       ValidateableBoundPanel.this.repaint();
     }
   }
-
   private class MyKeyAdapter extends KeyAdapter {
     private MyKeyAdapter() {
     }
-
     @Override
     public void keyPressed(KeyEvent e) {
       if (e.getKeyCode() == KeyEvent.VK_INSERT) {

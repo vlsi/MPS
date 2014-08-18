@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ConstraintFunction_ReferentSetHandler_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ConstraintFunction_ReferentSetHandler_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return ConstraintFunction_ReferentSetHandler_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler";

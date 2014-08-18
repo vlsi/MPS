@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveUnusedMethod_QuickFix extends QuickFix_Runtime {
   public RemoveUnusedMethod_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove method";
   }
-
   public void execute(SNode node) {
     SNodeOperations.detachNode(node);
   }

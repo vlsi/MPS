@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class TemplateFragment_ContextNodeQuery_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public TemplateFragment_ContextNodeQuery_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return TemplateFragment_ContextNodeQuery_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return TemplateFragment_ContextNodeQuery_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return TemplateFragment_ContextNodeQuery_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery";

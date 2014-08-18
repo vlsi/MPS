@@ -10,31 +10,24 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public DotExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return DotExpression_Behavior.virtual_allowsNullOperand_4585239809762176541(thisNode);
   }
-
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return DotExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
-
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return DotExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }
-
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return DotExpression_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return DotExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return DotExpression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DotExpression";

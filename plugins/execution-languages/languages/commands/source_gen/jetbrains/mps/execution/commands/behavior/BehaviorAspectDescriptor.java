@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 12:
@@ -66,6 +65,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.execution.commands.structure.BuilderBlockStatement", "jetbrains.mps.execution.commands.structure.BuilderParameter", "jetbrains.mps.execution.commands.structure.CommandBuilderExpression", "jetbrains.mps.execution.commands.structure.CommandDebuggerOperation", "jetbrains.mps.execution.commands.structure.CommandDeclaration", "jetbrains.mps.execution.commands.structure.CommandMethod", "jetbrains.mps.execution.commands.structure.CommandParameterAssignment", "jetbrains.mps.execution.commands.structure.CommandParameterReference", "jetbrains.mps.execution.commands.structure.CommandPartLengthOperation", "jetbrains.mps.execution.commands.structure.CommandPartToListOperation", "jetbrains.mps.execution.commands.structure.CommandProcessType", "jetbrains.mps.execution.commands.structure.CommandReferenceExpression", "jetbrains.mps.execution.commands.structure.CommandType", "jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.ExecuteCommandPart", "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration", "jetbrains.mps.execution.commands.structure.KeyValueCommandPart", "jetbrains.mps.execution.commands.structure.ListCommandPart", "jetbrains.mps.execution.commands.structure.NewProcessBuilderExpression", "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType", "jetbrains.mps.execution.commands.structure.ProcessType", "jetbrains.mps.execution.commands.structure.PropertyCommandPart", "jetbrains.mps.execution.commands.structure.RedirectOutputExpression", "jetbrains.mps.execution.commands.structure.ReportExecutionError", "jetbrains.mps.execution.commands.structure.StartAndWaitOperation"};
 }

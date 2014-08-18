@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MultipleForeachLoop_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public MultipleForeachLoop_BehaviorDescriptor() {
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return MultipleForeachLoop_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop";

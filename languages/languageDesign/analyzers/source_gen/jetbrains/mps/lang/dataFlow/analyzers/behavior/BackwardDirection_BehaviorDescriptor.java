@@ -6,7 +6,6 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 public class BackwardDirection_BehaviorDescriptor extends AnalysisDirection_BehaviorDescriptor {
   public BackwardDirection_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection";

@@ -19,38 +19,29 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class Typesystem_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Type;
-
   public Typesystem_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Typesystem";
   }
-
   public Character getShortcutChar() {
     return 'T';
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new Typesystem_Order().compare(this, descriptor);
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     List<SNode> rules = GoToRulesHelper.getRules(node, true);
     return ListSequence.fromList(rules).sort(new Comparator<SNode>() {
@@ -82,15 +73,12 @@ public class Typesystem_TabDescriptor extends RelationDescriptor {
       }
     }, false).toListSequence();
   }
-
   public boolean isSingle() {
     return false;
   }
-
   public List<SNode> getConcepts(final SNode node) {
     return ConceptEditorHelper.getAvailableConceptAspects(LanguageAspect.TYPESYSTEM, node);
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     return ConceptEditorHelper.createNewConceptAspectInstance(LanguageAspect.TYPESYSTEM, node, concept);
   }

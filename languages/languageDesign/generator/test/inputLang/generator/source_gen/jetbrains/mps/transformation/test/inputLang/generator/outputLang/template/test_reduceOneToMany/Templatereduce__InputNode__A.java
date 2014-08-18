@@ -22,11 +22,9 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingAware {
   public Templatereduce__InputNode__A() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100167");
   }
-
   protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final List<SNode> tlist1 = new ArrayList<SNode>();
     final Iterable<SNode> loopList1 = QueriesGenerated.sourceNodesQuery_3893401255414161783(new SourceSubstituteMacroNodesContext(context, loopMacroRef_b8tv7e_b0a0a1a2));
@@ -47,7 +45,6 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     }
     return tlist1;
   }
-
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode3 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
@@ -57,7 +54,6 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     }
     return tnode3;
   }
-
   protected Collection<SNode> applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist4 = null;
     try {
@@ -70,7 +66,6 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     }
     return tlist4;
   }
-
   protected Collection<SNode> applyPart3(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist5 = null;
     try {
@@ -92,11 +87,9 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     }
     return tlist5;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context), applyPart2(environment, context), applyPart3(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     Collection<SNode> tlistpart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_b8tv7e_a0b0h;
@@ -118,7 +111,6 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     }
     return TemplateUtil.asList(tlistpart0, tnodepart1, tlistpart2, tlistpart3);
   }
-
   private static SNodePointer loopMacroRef_b8tv7e_b0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414161782");
   private static SNodePointer templateSwitchNodeNoInput_b8tv7e_a0a0a0a0b0f = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   private static SNodePointer weaveTfConst_b8tv7e_a0b0h = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414100173");

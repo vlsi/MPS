@@ -27,35 +27,28 @@ public class ArrayWrapperFactory extends ValueWrapperFactory {
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return value instanceof IArrayValueProxy && !(value instanceof INullValueProxy);
   }
-
   @Override
   public String getWrappedType() {
     return "[" + EvaluationUtils.JAVA_LANG_OBJECT;
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new ArrayWrapperFactory.JavaArrayValue((IArrayValueProxy) value, threadReference);
   }
-
   @Override
   public String getName() {
     return "Array";
   }
-
   private static class JavaArrayValue extends ValueWrapper<IArrayValueProxy> {
     private static final int MAX_ARRAY_VALUES = 100;
     private final boolean myIsStructure;
-
     public JavaArrayValue(IArrayValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
       myIsStructure = myValue.getLength() > 0;
     }
-
     @Override
     public boolean isStructure() {
       return myIsStructure;
     }
-
     @Override
     public List<IWatchable> getSubvaluesImpl() {
       List<IWatchable> watchables = new ArrayList<IWatchable>();
@@ -74,43 +67,35 @@ public class ArrayWrapperFactory extends ValueWrapperFactory {
       return watchables;
     }
   }
-
   private static class JavaArrayItemWatchable extends JavaWatchable implements IWatchable {
     private final ArrayReference myArray;
     private final int myIndex;
     private final JavaValue myValue;
-
     public JavaArrayItemWatchable(ArrayReference arrayReference, int index, ThreadReference threadReference) {
       super(threadReference);
       myArray = arrayReference;
       myIndex = index;
       myValue = CustomViewersManager.getInstance().fromJdi(myArray.getValue(myIndex), myThreadReference);
     }
-
     public ArrayReference getArray() {
       return myArray;
     }
-
     @Override
     public String getName() {
       return "[" + myIndex + "]";
     }
-
     @Override
     public IValue getValue() {
       return myValue;
     }
-
     @Override
     public Icon getPresentationIcon() {
       return myValue.getPresentationIcon();
     }
-
     @Override
     public SNode getNode() {
       return null;
     }
-
     @Override
     public WatchablesCategory getCategory() {
       return WatchablesCategory.NONE;

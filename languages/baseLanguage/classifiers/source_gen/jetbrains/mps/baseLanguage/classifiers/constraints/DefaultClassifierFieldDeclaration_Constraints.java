@@ -14,12 +14,10 @@ public class DefaultClassifierFieldDeclaration_Constraints extends BaseConstrain
   public DefaultClassifierFieldDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class DefaultClassifierFieldDeclaration_Constraints extends BaseConstrain
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", true, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "4448365440080463939");
 }

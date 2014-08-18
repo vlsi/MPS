@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class Dispose_Function_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "dispose");
   }
-
   public static SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return null;
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }

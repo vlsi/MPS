@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class TraceMessage_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public TraceMessage_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.TraceMessage";

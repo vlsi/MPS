@@ -26,12 +26,10 @@ import org.junit.runners.model.Statement;
  */
 public class TeamCityParameterized extends ParentRunner<Runner> {
   private final List<Runner> children;
-
   public TeamCityParameterized(Class<?> klass, RunnerBuilder builder) throws Throwable {
     super(klass);
     children = createChildRunners(klass, builder);
   }
-
   private List<Runner> createChildRunners(Class<?> klass, RunnerBuilder builder) throws Throwable {
     List<Runner> runners = new ArrayList<Runner>();
     List<Object[]> parametersList = getParametersList(getTestClass());
@@ -41,15 +39,12 @@ public class TeamCityParameterized extends ParentRunner<Runner> {
     }
     return runners;
   }
-
   protected List<Runner> getChildren() {
     return children;
   }
-
   protected Description describeChild(Runner child) {
     return child.getDescription();
   }
-
   protected void runChild(Runner runner, RunNotifier notifier) {
     WatchingRunNotifier runNotifier = new WatchingRunNotifier(notifier);
     try {
@@ -60,12 +55,10 @@ public class TeamCityParameterized extends ParentRunner<Runner> {
       runNotifier.dispose();
     }
   }
-
   @SuppressWarnings("unchecked")
   private static List<Object[]> getParametersList(TestClass klass) throws Throwable {
     return (List<Object[]>) getParametersMethod(klass).invokeExplosively(null);
   }
-
   private static FrameworkMethod getParametersMethod(TestClass testClass) throws Exception {
     List<FrameworkMethod> methods = testClass.getAnnotatedMethods(Parameterized.Parameters.class);
     for (FrameworkMethod each : methods) {
@@ -76,22 +69,18 @@ public class TeamCityParameterized extends ParentRunner<Runner> {
     }
     throw new Exception("No public static parameters method on class " + testClass.getName());
   }
-
   private class TestClassRunnerForParameters extends BlockJUnit4ClassRunner {
     private final int fParameterSetNumber;
     private final List<Object[]> fParameterList;
-
     /*package*/ TestClassRunnerForParameters(Class<?> type, List<Object[]> parameterList, int i) throws InitializationError {
       super(type);
       fParameterList = parameterList;
       fParameterSetNumber = i;
     }
-
     @Override
     public Object createTest() throws Exception {
       return getTestClass().getOnlyConstructor().newInstance(computeParams());
     }
-
     private Object[] computeParams() throws Exception {
       try {
         return fParameterList.get(fParameterSetNumber);
@@ -99,23 +88,19 @@ public class TeamCityParameterized extends ParentRunner<Runner> {
         throw new Exception(String.format("%s.%s() must return a Collection of arrays.", getTestClass().getName(), TeamCityParameterized.getParametersMethod(getTestClass()).getName()));
       }
     }
-
     @Override
     protected String getName() {
       Object firstArg = fParameterList.get(fParameterSetNumber)[0];
       return String.format("%s", String.valueOf(firstArg));
     }
-
     @Override
     protected String testName(final FrameworkMethod method) {
       return String.format("%s (%s)", method.getName(), fParameterList.get(fParameterSetNumber)[0]);
     }
-
     @Override
     protected void validateConstructor(List<Throwable> errors) {
       validateOnlyOneConstructor(errors);
     }
-
     @Override
     protected Statement classBlock(RunNotifier notifier) {
       return childrenInvoker(notifier);

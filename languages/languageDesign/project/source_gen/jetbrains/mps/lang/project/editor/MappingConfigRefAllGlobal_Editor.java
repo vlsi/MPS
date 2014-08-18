@@ -15,7 +15,6 @@ public class MappingConfigRefAllGlobal_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pzksw5_a(editorContext, node);
   }
-
   private EditorCell createCollection_pzksw5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pzksw5_a");
@@ -23,7 +22,6 @@ public class MappingConfigRefAllGlobal_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pzksw5_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pzksw5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "all global");
     editorCell.setCellId("Constant_pzksw5_a0");

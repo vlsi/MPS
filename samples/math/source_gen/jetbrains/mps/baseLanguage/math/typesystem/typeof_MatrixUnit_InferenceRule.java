@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_MatrixUnit_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MatrixUnit_InferenceRule() {
   }
-
   public void applyRule(final SNode unit, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = unit;
@@ -21,18 +20,15 @@ public class typeof_MatrixUnit_InferenceRule extends AbstractInferenceRule_Runti
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629041165485", true), (SNode) MathTypeUtil.qMatrix(MathTypeUtil.qInt), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixUnit";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

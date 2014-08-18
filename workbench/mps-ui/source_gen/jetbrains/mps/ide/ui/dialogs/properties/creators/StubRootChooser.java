@@ -22,13 +22,11 @@ public class StubRootChooser implements Computable<List<String>> {
   private Component myComponent;
   private List<ModelRootDescriptor> myRoots;
   private boolean myJavaOnly;
-
   public StubRootChooser(Component component, List<ModelRootDescriptor> roots, boolean javaOnly) {
     myComponent = component;
     myRoots = roots;
     myJavaOnly = javaOnly;
   }
-
   @Override
   public List<String> compute() {
     TreeFileChooser chooser = new TreeFileChooser();

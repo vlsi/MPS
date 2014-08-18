@@ -20,7 +20,6 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ss2pef_a(editorContext, node);
   }
-
   private EditorCell createCollection_ss2pef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ss2pef_a");
@@ -31,7 +30,6 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createRefNode_ss2pef_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ss2pef_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mergeNode");
     editorCell.setCellId("Constant_ss2pef_a0");
@@ -41,7 +39,6 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ss2pef_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("whatToMove");
@@ -61,7 +58,6 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ss2pef_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_ss2pef_c0");
@@ -71,7 +67,6 @@ public class MergeNodeWithAnotherNodeExpression_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ss2pef_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("destination");

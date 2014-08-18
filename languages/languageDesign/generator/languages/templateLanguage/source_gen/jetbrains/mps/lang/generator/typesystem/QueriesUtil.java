@@ -27,7 +27,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueriesUtil {
   public QueriesUtil() {
   }
-
   @InferenceMethod
   public static void equate_templateFunction_inputNodeType(final TypeCheckingContext typeCheckingContext, SNode contextNode, SNode InputNodeType) {
     SNode enclosingMacro = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.lang.generator.structure.PropertyMacro", "jetbrains.mps.lang.generator.structure.ReferenceMacro", "jetbrains.mps.lang.generator.structure.NodeMacro"}, false, false);
@@ -69,7 +68,6 @@ public class QueriesUtil {
       typeCheckingContext.createEquation((SNode) _quotation_createNode_w9106s_a0e0b(applicableConcept), (SNode) InputNodeType, _info_12389875345);
     }
   }
-
   public static SNode getEnclosing_SourceSubstituteMacro(SNode node, SNode currMacroNode) {
     if (node == null) {
       return null;
@@ -105,7 +103,6 @@ public class QueriesUtil {
     }
     return getEnclosing_SourceSubstituteMacro(SNodeOperations.getParent(node), null);
   }
-
   public static SNode getEnclosing_TemplateFragment(SNode node) {
     //  find first ancestor (inclusive) which has a template fragment attribute 
     Iterable<SNode> TFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).translate(new ITranslator2<SNode, SNode>() {
@@ -114,7 +111,6 @@ public class QueriesUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -159,7 +155,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private SNode _5_TF;
             };
           }
@@ -168,7 +163,6 @@ __switch__:
     });
     return Sequence.fromIterable(TFs).first();
   }
-
   @InferenceMethod
   /*package*/ static void equate_outputNodeType_fromSourceQuery(final TypeCheckingContext typeCheckingContext, final SNode query, final SNode TypeToEquate) {
     if (query == null) {
@@ -191,7 +185,6 @@ __switch__:
       typeCheckingContext.createEquation((SNode) TypeToEquate, (SNode) _quotation_createNode_w9106s_a0d0e(typeCheckingContext.getRepresentative(Concept_typevar_1226671834537)), _info_12389875345);
     }
   }
-
   public static SNode getOutputNodeType_fromSourceQuery(SNode query) {
     if (query == null) {
       return _quotation_createNode_w9106s_a0a0a5();
@@ -216,7 +209,6 @@ __switch__:
     }
     return _quotation_createNode_w9106s_a3a5();
   }
-
   private static SNode _quotation_createNode_w9106s_a0e0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -224,14 +216,12 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_w9106s_a0a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_w9106s_a0c0e(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -249,7 +239,6 @@ __switch__:
     quotedNode_3.addChild("argument", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_w9106s_a0d0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -257,14 +246,12 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_w9106s_a0a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_w9106s_a0a2a5(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -272,7 +259,6 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_w9106s_a3a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

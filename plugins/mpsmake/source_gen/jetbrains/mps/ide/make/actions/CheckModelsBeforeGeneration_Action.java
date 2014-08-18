@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CheckModelsBeforeGeneration_Action() {
     super("Check Models Before Generation", "Check models for errors before generation", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -46,7 +43,6 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IModifiableGenerationSettings settings = GenerationSettings.getInstance();
@@ -57,6 +53,5 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CheckModelsBeforeGeneration_Action.class);
 }

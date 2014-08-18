@@ -32,11 +32,9 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_iwpawc_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_iwpawc_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_iwpawc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_a");
@@ -45,7 +43,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_iwpawc_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$INSERT$");
     editorCell.setCellId("Constant_iwpawc_a0");
@@ -60,24 +57,19 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InsertMacro_Editor.InsertMacro_component_cellMenu_iwpawc_a0a0()}));
     return editorCell;
   }
-
   public static class InsertMacro_component_cellMenu_iwpawc_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
-
     public InsertMacro_component_cellMenu_iwpawc_a0a0() {
       this.myComponent = new replace_node_macro();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createComponent_iwpawc_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     return editorCell;
   }
-
   private EditorCell createCollection_iwpawc_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_a_0");
@@ -90,7 +82,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_iwpawc_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "insert node macro");
     editorCell.setCellId("Constant_iwpawc_a0_0");
@@ -102,7 +93,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_iwpawc_b0");
@@ -112,7 +102,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_iwpawc_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_c0");
@@ -125,7 +114,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_iwpawc_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_iwpawc_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_a2a");
@@ -137,14 +125,12 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_iwpawc_c0c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_iwpawc_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b0c0");
@@ -154,7 +140,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_iwpawc_c0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -173,7 +158,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_iwpawc_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_b2a");
@@ -185,14 +169,12 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_iwpawc_c1c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_iwpawc_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b1c0");
@@ -202,7 +184,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_iwpawc_c1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mappingLabel");
@@ -224,20 +205,16 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_iwpawc_a2b2a extends InlineCellProvider {
     public _Inline_iwpawc_a2b2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_iwpawc_a0c1c0(editorContext, node);
     }
-
     private EditorCell createProperty_iwpawc_a0c1c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -260,7 +237,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_iwpawc_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iwpawc_c2a");
@@ -272,7 +248,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_iwpawc_c2c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "output node");
     editorCell.setCellId("Constant_iwpawc_a2c0");
@@ -282,7 +257,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_iwpawc_b2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_iwpawc_b2c0");
@@ -292,7 +266,6 @@ public class InsertMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_iwpawc_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createNodeQuery");

@@ -12,19 +12,15 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class StyleAttributeDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getModuleName_3982520150138520052(SNode thisNode) {
     return SNodeOperations.getModel(thisNode).getModule().getModuleName();
   }
-
   public static SNode virtual_getDefaultValue_7677730757102472473(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "defaultValue", true);
   }
-
   public static SNode virtual_getType_7677730757102475082(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "valueType", true);
   }
-
   public static SNode call_getClassifierType_6029276237639807717(SNode thisNode) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_7677730757102475082", new Object[]{}), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
   }

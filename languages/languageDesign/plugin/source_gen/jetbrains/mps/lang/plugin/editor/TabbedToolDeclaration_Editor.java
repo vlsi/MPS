@@ -42,7 +42,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_txf5qz_a(editorContext, node);
   }
-
   private EditorCell createCollection_txf5qz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_a");
@@ -57,7 +56,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_a0");
@@ -70,7 +68,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_a0a");
@@ -78,7 +75,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_txf5qz_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tabbed tool");
     editorCell.setCellId("Constant_txf5qz_a0a0");
@@ -88,7 +84,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_txf5qz_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -110,7 +105,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_txf5qz_b0a");
@@ -122,11 +116,9 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_txf5qz_a1a0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
-
   private EditorCell createCollection_txf5qz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_b0");
@@ -137,12 +129,10 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_txf5qz_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_txf5qz_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_b1a");
@@ -163,7 +153,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_txf5qz_l1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_a1b0");
@@ -174,7 +163,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_txf5qz_b0b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "caption:");
     editorCell.setCellId("Constant_txf5qz_a0b1a");
@@ -184,7 +172,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_txf5qz_b0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("caption");
@@ -203,7 +190,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_b1b0");
@@ -217,7 +203,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number:");
     editorCell.setCellId("Constant_txf5qz_a1b1a");
@@ -227,7 +212,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_txf5qz_b1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("number");
@@ -246,7 +230,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_c1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_c1b1a");
@@ -259,11 +242,9 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_txf5qz_d2b1b0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_txf5qz_a2b1b0(SNode node, EditorContext editorContext) {
     return BaseToolDeclaration_Behavior.call_hasNumber_6547237850567463455(node);
   }
-
   private EditorCell createConstant_txf5qz_a2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_txf5qz_a2b1b0");
@@ -274,7 +255,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_b2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show keystroke: ");
     editorCell.setCellId("Constant_txf5qz_b2b1b0");
@@ -285,16 +265,13 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_txf5qz_c2b1b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return "Alt-" + SPropertyOperations.getString(node, "number");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -308,7 +285,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_d2b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_txf5qz_d2b1b0");
@@ -320,7 +296,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_c1b0");
@@ -331,7 +306,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_txf5qz_b2b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_a2b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_txf5qz_a2b1a");
@@ -342,7 +316,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_txf5qz_b2b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toolIcon");
@@ -362,7 +335,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_txf5qz_d1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_txf5qz_d1b0");
@@ -373,7 +345,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_txf5qz_b3b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position:");
     editorCell.setCellId("Constant_txf5qz_a3b1a");
@@ -384,7 +355,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_txf5qz_b3b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("position");
@@ -402,14 +372,12 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_txf5qz_e1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_txf5qz_f1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new TabbedToolDeclaration_Editor.fieldDeclarationListHandler_txf5qz_f1b0(node, "fieldDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -417,34 +385,28 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class fieldDeclarationListHandler_txf5qz_f1b0 extends RefNodeListHandler {
     public fieldDeclarationListHandler_txf5qz_f1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_txf5qz_a5b1a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -457,7 +419,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_txf5qz_a5b1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no tool fields>");
       editorCell.setCellId("Constant_txf5qz_a5b1a");
@@ -468,14 +429,12 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_txf5qz_g1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_txf5qz_g1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_txf5qz_h1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toolInitBlock");
@@ -495,14 +454,12 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_i1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_txf5qz_i1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_txf5qz_j1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toolDisposeBlock");
@@ -522,14 +479,12 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_txf5qz_k1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_txf5qz_k1b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_txf5qz_l1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new TabbedToolDeclaration_Editor.methodDeclarationListHandler_txf5qz_l1b0(node, "methodDeclaration", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -537,30 +492,25 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class methodDeclarationListHandler_txf5qz_l1b0 extends RefNodeListHandler {
     public methodDeclarationListHandler_txf5qz_l1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -574,7 +524,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
@@ -588,7 +537,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_txf5qz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_txf5qz_c0");
@@ -600,7 +548,6 @@ public class TabbedToolDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_txf5qz_a2a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }

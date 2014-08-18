@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class InlineTagCommentLinePart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBegining) {
     int index = SNodeOperations.getIndexInParent(thisNode);
     SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");

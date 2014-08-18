@@ -15,34 +15,26 @@ public class _Interface_Extends_Delete {
     editorCell.setAction(CellActionType.DELETE, new _Interface_Extends_Delete._Interface_Extends_Delete_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new _Interface_Extends_Delete._Interface_Extends_Delete_BACKSPACE(node));
   }
-
   public static class _Interface_Extends_Delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public _Interface_Extends_Delete_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).clear();
     }
   }
-
   public static class _Interface_Extends_Delete_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public _Interface_Extends_Delete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).clear();
     }

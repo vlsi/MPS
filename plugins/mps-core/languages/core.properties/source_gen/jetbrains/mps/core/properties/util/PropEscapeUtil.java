@@ -5,18 +5,14 @@ package jetbrains.mps.core.properties.util;
 
 public class PropEscapeUtil {
   private static final char[] hexDigit = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
-
   public PropEscapeUtil() {
   }
-
   public static String escapeKey(String text) {
     return (text == null ? "" : escape(text, true, true));
   }
-
   public static String escapeValue(String text) {
     return (text == null ? "" : escape(text, false, true));
   }
-
   private static String escape(String text, boolean escapeSpace, boolean escapeUnicode) {
     int len = text.length();
     int bufLen = len * 2;
@@ -86,11 +82,9 @@ public class PropEscapeUtil {
     }
     return outBuffer.toString();
   }
-
   private static char toHex(int nibble) {
     return PropEscapeUtil.hexDigit[(nibble & 15)];
   }
-
   public static String escapeComment(String text) {
     int len = text.length();
     int bufLen = len * 2;

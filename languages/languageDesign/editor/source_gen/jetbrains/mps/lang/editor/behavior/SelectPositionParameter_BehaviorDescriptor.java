@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class SelectPositionParameter_BehaviorDescriptor extends SelectParameter_BehaviorDescriptor {
   public SelectPositionParameter_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.SelectPositionParameter";

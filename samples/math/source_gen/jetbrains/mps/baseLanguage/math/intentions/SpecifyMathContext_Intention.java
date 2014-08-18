@@ -17,72 +17,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SpecifyMathContext_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SpecifyMathContext_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
   }
-
   public String getPresentation() {
     return "SpecifyMathContext";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.math.intentions.SpecifyMathContext_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.math";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return MathUtil.applicable(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1238402928175");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SpecifyMathContext_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Explicitly specify math context for operation with big decimals";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, MathUtil.convert2(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation")));
     }
-
     public IntentionDescriptor getDescriptor() {
       return SpecifyMathContext_Intention.this;
     }

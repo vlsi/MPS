@@ -13,7 +13,6 @@ public class GeneratorNewActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(GeneratorNewActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.GeneratorNewActions_ActionGroup";
   public static final String LABEL_ID_newModel = ID + "newModel";
-
   public GeneratorNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);

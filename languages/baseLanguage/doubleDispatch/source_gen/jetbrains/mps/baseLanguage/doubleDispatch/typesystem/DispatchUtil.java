@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SReference;
 public class DispatchUtil {
   public DispatchUtil() {
   }
-
   public static SNode getParamClass(SNode method) {
     return SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   public static boolean isReadyMethod(SNode method) {
     return SPropertyOperations.getString(method, "name") != null && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -36,7 +34,6 @@ public class DispatchUtil {
       }
     });
   }
-
   public static Iterable<SNode> ancestors(final SNode arg, boolean concreteFirst) {
     // true for baseLanguage, 
     // for smodel it would be node<BaseConcept> 
@@ -48,7 +45,6 @@ public class DispatchUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -108,7 +104,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private SNode _3_cl;
             };
           }
@@ -124,7 +119,6 @@ __switch__:
       return ListSequence.fromList(Sequence.fromIterable(classes).toListSequence()).reversedList();
     }
   }
-
   public static boolean isParent(SNode base, SNode clas) {
 
     if (1 < 0) {
@@ -139,7 +133,6 @@ __switch__:
     return Sequence.fromIterable(ancestors(clas, true)).contains(base);
 
   }
-
   private static SNode _quotation_createNode_pzuztq_a0a0c0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

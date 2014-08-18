@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class StarRegexp_BehaviorDescriptor extends UnaryRegexp_BehaviorDescriptor {
   public StarRegexp_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.StarRegexp";

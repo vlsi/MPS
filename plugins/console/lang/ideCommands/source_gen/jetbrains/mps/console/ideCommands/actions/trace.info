@@ -8,13 +8,13 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="47,34,57,7" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated$1" />
-      <unit at="25,0,74,0" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
+      <unit at="44,34,54,7" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated$1" />
+      <unit at="25,0,70,0" name="jetbrains.mps.console.ideCommands.actions.QueriesGenerated" />
     </file>
     <file name="PasteWrappers.java">
-      <unit at="17,49,31,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
-      <unit at="32,49,46,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
-      <unit at="14,0,50,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
+      <unit at="17,49,29,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$1" />
+      <unit at="30,49,42,5" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers$2" />
+      <unit at="14,0,46,0" name="jetbrains.mps.console.ideCommands.actions.PasteWrappers" />
     </file>
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/2087237500476328199">
@@ -30,12 +30,12 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/5308946314782063423">
     <file name="QueriesGenerated.java">
-      <node id="5308946314782064317" at="31,124,32,225" concept="1" />
-      <node id="5308946314782063429" at="30,151,33,5" concept="2" />
-      <node id="5308946314782063425" at="30,0,35,0" concept="5" trace="nodeFactory_NodeSetup_AbsractMake_5308946314782063425#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
-      <scope id="5308946314782063430" at="31,124,32,225" />
-      <scope id="5308946314782063426" at="30,151,33,5" />
-      <scope id="5308946314782063425" at="30,0,35,0">
+      <node id="5308946314782064317" at="30,124,31,225" concept="1" />
+      <node id="5308946314782063429" at="29,151,32,5" concept="2" />
+      <node id="5308946314782063425" at="29,0,34,0" concept="5" trace="nodeFactory_NodeSetup_AbsractMake_5308946314782063425#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSetupContext;)V" />
+      <scope id="5308946314782063430" at="30,124,31,225" />
+      <scope id="5308946314782063426" at="29,151,32,5" />
+      <scope id="5308946314782063425" at="29,0,34,0">
         <var name="_context" id="5308946314782063425" />
         <var name="operationContext" id="5308946314782063425" />
       </scope>
@@ -43,50 +43,50 @@
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/5932042262275855252">
     <file name="QueriesGenerated.java">
-      <node id="1926293835606250097" at="49,125,50,173" concept="3" />
-      <node id="1926293835606288372" at="51,158,52,27" concept="4" />
-      <node id="1926293835606292566" at="54,11,55,22" concept="4" />
-      <node id="1926293835606285046" at="64,59,65,63" concept="3" />
-      <node id="1926293835606285046" at="65,63,66,30" concept="3" />
-      <node id="1926293835606285046" at="66,30,67,30" concept="3" />
-      <node id="1926293835606285046" at="67,30,68,148" concept="1" />
-      <node id="1926293835606285046" at="68,148,69,133" concept="1" />
-      <node id="1926293835606285046" at="69,133,70,55" concept="1" />
-      <node id="1926293835606285046" at="70,55,71,24" concept="4" />
-      <node id="1926293835606285046" at="68,148,70,55" concept="0" />
-      <node id="1926293835606285046" at="68,148,70,55" concept="0" />
-      <node id="1926293835606259868" at="50,173,53,13" concept="2" />
-      <node id="1926293835606285046" at="67,30,70,55" concept="0" />
-      <node id="1926293835606285046" at="67,30,70,55" concept="0" />
-      <node id="1926293835606179774" at="48,43,54,11" concept="2" />
-      <node id="1926293835606285046" at="64,0,73,0" concept="5" trace="_quotation_createNode_b0a1a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1926293835606259871" at="51,158,52,27" />
-      <scope id="1926293835606285046" at="68,148,70,55" />
-      <scope id="1926293835606285046" at="67,30,70,55" />
-      <scope id="1926293835606179775" at="49,125,53,13">
+      <node id="1926293835606250097" at="46,125,47,173" concept="3" />
+      <node id="1926293835606288372" at="48,158,49,27" concept="4" />
+      <node id="1926293835606292566" at="51,11,52,22" concept="4" />
+      <node id="1926293835606285046" at="60,59,61,63" concept="3" />
+      <node id="1926293835606285046" at="61,63,62,30" concept="3" />
+      <node id="1926293835606285046" at="62,30,63,30" concept="3" />
+      <node id="1926293835606285046" at="63,30,64,148" concept="1" />
+      <node id="1926293835606285046" at="64,148,65,133" concept="1" />
+      <node id="1926293835606285046" at="65,133,66,55" concept="1" />
+      <node id="1926293835606285046" at="66,55,67,24" concept="4" />
+      <node id="1926293835606285046" at="64,148,66,55" concept="0" />
+      <node id="1926293835606285046" at="64,148,66,55" concept="0" />
+      <node id="1926293835606259868" at="47,173,50,13" concept="2" />
+      <node id="1926293835606285046" at="63,30,66,55" concept="0" />
+      <node id="1926293835606285046" at="63,30,66,55" concept="0" />
+      <node id="1926293835606179774" at="45,43,51,11" concept="2" />
+      <node id="1926293835606285046" at="60,0,69,0" concept="5" trace="_quotation_createNode_b0a1a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1926293835606259871" at="48,158,49,27" />
+      <scope id="1926293835606285046" at="64,148,66,55" />
+      <scope id="1926293835606285046" at="63,30,66,55" />
+      <scope id="1926293835606179775" at="46,125,50,13">
         <var name="operand" id="1926293835606250100" />
       </scope>
-      <scope id="5932042262275855362" at="48,43,55,22" />
-      <scope id="1926293835606285046" at="64,59,71,24">
+      <scope id="5932042262275855362" at="45,43,52,22" />
+      <scope id="1926293835606285046" at="60,59,67,24">
         <var name="facade" id="1926293835606285046" />
         <var name="quotedNode_1" id="1926293835606285046" />
         <var name="quotedNode_2" id="1926293835606285046" />
       </scope>
-      <scope id="1926293835606285046" at="64,0,73,0" />
+      <scope id="1926293835606285046" at="60,0,69,0" />
     </file>
   </root>
   <root nodeRef="r:02073207-e767-4759-a6fd-2e43f805a438(jetbrains.mps.console.ideCommands.actions)/6961633949328001911">
     <file name="PasteWrappers.java">
-      <node id="6961633949329748703" at="26,55,27,133" concept="3" />
-      <node id="6961633949329748709" at="27,133,28,84" concept="1" />
-      <node id="6961633949329748715" at="28,84,29,22" concept="4" />
-      <node id="6961633949328078376" at="41,55,42,133" concept="3" />
-      <node id="6961633949328086842" at="42,133,43,84" concept="1" />
-      <node id="6961633949328133481" at="43,84,44,22" concept="4" />
-      <scope id="6961633949329748702" at="26,55,29,22">
+      <node id="6961633949329748703" at="24,55,25,133" concept="3" />
+      <node id="6961633949329748709" at="25,133,26,84" concept="1" />
+      <node id="6961633949329748715" at="26,84,27,22" concept="4" />
+      <node id="6961633949328078376" at="37,55,38,133" concept="3" />
+      <node id="6961633949328086842" at="38,133,39,84" concept="1" />
+      <node id="6961633949328133481" at="39,84,40,22" concept="4" />
+      <scope id="6961633949329748702" at="24,55,27,22">
         <var name="result" id="6961633949329748704" />
       </scope>
-      <scope id="6961633949328073115" at="41,55,44,22">
+      <scope id="6961633949328073115" at="37,55,40,22">
         <var name="result" id="6961633949328078379" />
       </scope>
     </file>

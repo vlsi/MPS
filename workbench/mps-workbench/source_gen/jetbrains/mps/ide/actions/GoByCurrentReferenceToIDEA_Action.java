@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoByCurrentReferenceToIDEA_Action() {
     super("Open Declaration in IDEA", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode targetNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("cell")));
     if (targetNode == null) {
@@ -57,7 +54,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     String stubSter = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     return eq_xgilk9_a0f0d(stubSter, targetSter);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -71,7 +67,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -100,7 +95,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.definition");
@@ -135,7 +129,6 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       }
     }
   }
-
   private boolean navigateToJavaStub(@NotNull String projectPath, SNode targetNode, final Map<String, Object> _params) {
     SModelReference ref = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(targetNode).getReference();
     boolean isClassifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -180,15 +173,12 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     }
     return false;
   }
-
   private String getClassifierName(SNode targetNode, SModelReference ref, final Map<String, Object> _params) {
     SNode classifier = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     assert classifier != null;
     return SModelStereotype.withoutStereotype(ref.getModelName()) + "." + SPropertyOperations.getString(classifier, "name");
   }
-
   protected static Logger LOG = LogManager.getLogger(GoByCurrentReferenceToIDEA_Action.class);
-
   private static boolean eq_xgilk9_a0f0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

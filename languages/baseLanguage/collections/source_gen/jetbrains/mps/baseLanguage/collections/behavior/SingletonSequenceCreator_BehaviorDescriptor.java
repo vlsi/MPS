@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class SingletonSequenceCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public SingletonSequenceCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator";

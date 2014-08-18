@@ -21,16 +21,13 @@ public class CellModel_Component_KeyMap extends KeyMapImpl {
     action = new CellModel_Component_KeyMap.CellModel_Component_KeyMap_Action0();
     this.putAction("ctrl+alt", "VK_N", action);
   }
-
   public static class CellModel_Component_KeyMap_Action0 extends KeyMapActionImpl {
     public CellModel_Component_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -45,16 +42,13 @@ public class CellModel_Component_KeyMap extends KeyMapImpl {
       }
       return true;
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeOperations.replaceWithAnother(node, SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "editorComponent", false), "cellModel", true)));
     }
-
     public String getKeyStroke() {
       return "ctrl alt N";
     }

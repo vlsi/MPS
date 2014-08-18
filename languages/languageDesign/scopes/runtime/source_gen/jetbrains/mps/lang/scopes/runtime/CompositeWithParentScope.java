@@ -16,15 +16,12 @@ public class CompositeWithParentScope {
     Scope nextScope = Scope.getScope(Scope.parent(node), node, kind);
     return (nextScope == null ? original : new CompositeScope(original, nextScope));
   }
-
   public static Scope from(Iterable<SNode> elements, SNode node, SNode kind) {
     return (elements != null ? from(new NamedElementsScope(elements), node, kind) : parentScope(node, kind));
   }
-
   public static Scope from(SNode element, SNode node, SNode kind) {
     return ((element != null) ? from(new NamedElementsScope(element), node, kind) : parentScope(node, kind));
   }
-
   public static Scope fromLink(SNode link, SNode node, SNode kind) {
     return from(new SimpleRoleScope(node, link, BehaviorReflection.invokeVirtual(String.class, kind, "virtual_getFqName_1213877404258", new Object[]{})) {
       @Override
@@ -33,7 +30,6 @@ public class CompositeWithParentScope {
       }
     }, node, kind);
   }
-
   public static Scope parentScope(SNode node, SNode kind) {
     return Scope.getScope(Scope.parent(node), node, kind);
   }

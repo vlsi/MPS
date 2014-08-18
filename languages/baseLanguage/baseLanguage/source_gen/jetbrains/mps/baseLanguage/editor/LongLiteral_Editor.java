@@ -20,7 +20,6 @@ public class LongLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_ey2x64_a(editorContext, node);
   }
-
   private EditorCell createProperty_ey2x64_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");

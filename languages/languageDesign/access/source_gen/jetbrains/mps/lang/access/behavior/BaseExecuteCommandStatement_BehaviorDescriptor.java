@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class BaseExecuteCommandStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public BaseExecuteCommandStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement";

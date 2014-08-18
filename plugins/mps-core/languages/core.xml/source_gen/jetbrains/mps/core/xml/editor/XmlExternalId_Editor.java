@@ -26,7 +26,6 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_dsthrr_a(editorContext, node);
   }
-
   private EditorCell createCollection_dsthrr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dsthrr_a");
@@ -35,7 +34,6 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_dsthrr_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_dsthrr_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlExternalId_Editor.renderingCondition_dsthrr_a0a(node, editorContext);
@@ -47,11 +45,9 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_dsthrr_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isPublic");
   }
-
   private EditorCell createCollection_dsthrr_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_dsthrr_a0a");
@@ -59,7 +55,6 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_dsthrr_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_dsthrr_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "PUBLIC");
     editorCell.setCellId("Constant_dsthrr_a0a0");
@@ -70,19 +65,15 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a0()}));
     return editorCell;
   }
-
   public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a0 implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
-
     public XmlExternalId_component_cellMenu_dsthrr_a0a0a0() {
       this.myComponent = new ExternalIdMenu();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createProperty_dsthrr_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("publicId");
@@ -104,7 +95,6 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_dsthrr_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "SYSTEM");
     editorCell.setCellId("Constant_dsthrr_a0a");
@@ -115,19 +105,15 @@ public class XmlExternalId_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new XmlExternalId_Editor.XmlExternalId_component_cellMenu_dsthrr_a0a0a()}));
     return editorCell;
   }
-
   public static class XmlExternalId_component_cellMenu_dsthrr_a0a0a implements SubstituteInfoPartExt {
     private ExternalIdMenu myComponent;
-
     public XmlExternalId_component_cellMenu_dsthrr_a0a0a() {
       this.myComponent = new ExternalIdMenu();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createProperty_dsthrr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("systemId");

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.actions.behavior;
 public abstract class SubstituteMenuPart_BehaviorDescriptor extends MenuPart_BehaviorDescriptor {
   public SubstituteMenuPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SubstituteMenuPart";

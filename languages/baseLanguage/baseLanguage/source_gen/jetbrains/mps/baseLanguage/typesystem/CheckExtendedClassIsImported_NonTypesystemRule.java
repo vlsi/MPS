@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CheckExtendedClassIsImported_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckExtendedClassIsImported_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classifierType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
     if (classifier == null) {
@@ -47,18 +46,15 @@ public class CheckExtendedClassIsImported_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

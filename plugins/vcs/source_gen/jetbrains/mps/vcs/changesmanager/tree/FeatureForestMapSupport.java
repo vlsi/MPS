@@ -37,27 +37,22 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
   private Map<ModelChange, Feature[]> myChangeToFeaturesMap = MapSequence.fromMap(new HashMap<ModelChange, Feature[]>());
   private CurrentDifferenceRegistry myCurrentDifferenceRegistry;
   private FeatureForestMapSupport.MyListener myListener = new FeatureForestMapSupport.MyListener();
-
   public FeatureForestMapSupport(Project project, CurrentDifferenceRegistry currentDifferenceRegistry) {
     super(project);
     myCurrentDifferenceRegistry = currentDifferenceRegistry;
   }
-
   @Override
   public void initComponent() {
     myCurrentDifferenceRegistry.addGlobalDifferenceListener(myListener);
   }
-
   @Override
   public void disposeComponent() {
     myCurrentDifferenceRegistry.removeGlobalDifferenceListener(myListener);
   }
-
   @NotNull
   public FeatureForestMap<ModelChange> getMap() {
     return myMap;
   }
-
   private static Feature[] getFeaturesForChange(@NotNull ModelChange change) {
     ModelAccess.assertLegalRead();
     List<Feature> result = ListSequence.fromList(new ArrayList<Feature>());
@@ -90,11 +85,9 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
     }
     return ListSequence.fromList(result).toGenericArray(Feature.class);
   }
-
   private class MyListener extends CurrentDifferenceAdapter {
     public MyListener() {
     }
-
     @Override
     public void changeAdded(@NotNull final ModelChange change) {
       ModelAccess.instance().runReadAction(new Runnable() {
@@ -107,7 +100,6 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
         }
       });
     }
-
     @Override
     public void changeRemoved(@NotNull ModelChange change) {
       Sequence.fromIterable(Sequence.fromArray(MapSequence.fromMap(myChangeToFeaturesMap).get(change))).visitAll(new IVisitor<Feature>() {

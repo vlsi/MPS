@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class LanguageDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isLanguageAspectEmpty_3064888218669923940(SNode thisNode, LanguageAspect languageAspect, TemplateQueryContext genContext) {
     SModuleReference ref = PersistenceFacade.getInstance().createModuleReference(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{}));
     Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);

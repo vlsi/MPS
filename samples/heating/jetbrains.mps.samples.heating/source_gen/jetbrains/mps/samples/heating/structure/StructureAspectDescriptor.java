@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -39,6 +38,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.heating.structure.Applicability", "jetbrains.mps.samples.heating.structure.ChangeEvent", "jetbrains.mps.samples.heating.structure.DailyPlan", "jetbrains.mps.samples.heating.structure.DailyPlanReference", "jetbrains.mps.samples.heating.structure.DayRange", "jetbrains.mps.samples.heating.structure.HeatingPlan", "jetbrains.mps.samples.heating.structure.NotSpecified", "jetbrains.mps.samples.heating.structure.Slot", "jetbrains.mps.samples.heating.structure.SpecificDay", "jetbrains.mps.samples.heating.structure.WeekDays", "jetbrains.mps.samples.heating.structure.WeekendDay"};
 }

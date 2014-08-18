@@ -27,7 +27,6 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nyg1sl_a(editorContext, node);
   }
-
   private EditorCell createCollection_nyg1sl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nyg1sl_a");
@@ -43,7 +42,6 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nyg1sl_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_nyg1sl_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("configuration");
@@ -65,20 +63,16 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_nyg1sl_a0a extends InlineCellProvider {
     public _Inline_nyg1sl_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_nyg1sl_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_nyg1sl_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -101,11 +95,9 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private static boolean renderingCondition_nyg1sl_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "configuration", false) == null) || (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) == null);
   }
-
   private EditorCell createRefCell_nyg1sl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("configuration");
@@ -127,20 +119,16 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_nyg1sl_a1a extends InlineCellProvider {
     public _Inline_nyg1sl_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_nyg1sl_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_nyg1sl_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -163,11 +151,9 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private static boolean renderingCondition_nyg1sl_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "configuration", false) != null) && (AttributeOperations.getAttribute(SLinkOperations.getTarget(node, "configuration", false), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.execution.settings.structure.DeprecatedAnnotation")) != null);
   }
-
   private EditorCell createConstant_nyg1sl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_nyg1sl_c0");
@@ -177,7 +163,6 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nyg1sl_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("configurationName");
@@ -197,7 +182,6 @@ public class RunConfigurationCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nyg1sl_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_nyg1sl_e0");

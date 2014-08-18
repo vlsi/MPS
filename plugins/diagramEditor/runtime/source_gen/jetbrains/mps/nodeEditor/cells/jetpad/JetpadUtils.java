@@ -23,11 +23,9 @@ public class JetpadUtils {
   public static final ViewPropertySpec<Boolean> CONNECTABLE = new ViewPropertySpec<Boolean>("connectable");
   public static final ViewPropertySpec<Boolean> CONNECTION_SOURCE = new ViewPropertySpec<Boolean>("connectionSource");
 
-
   public static Color toAwtColor(jetbrains.jetpad.values.Color color) {
     return new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha());
   }
-
   public static Iterable<View> getAllChildren(@NotNull View view) {
     List<View> result = ListSequence.fromList(new LinkedList<View>());
     Queue<View> viewQueue = QueueSequence.fromQueue(new LinkedList<View>());

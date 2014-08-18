@@ -18,21 +18,17 @@ import jetbrains.mps.smodel.SReference;
 public class ActionDataParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "key", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
   }
-
   public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "key", false);
   }
-
   public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "virtual_getOperationConcept_3044950653914717125", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1217252428768"));
     return result;
   }
-
   public static String call_getDescription_47694270442103157(SAbstractConcept thisConcept, SNode parameterObject) {
     SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "annotation", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -52,7 +48,6 @@ public class ActionDataParameterDeclaration_Behavior {
     }
     return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(value, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
   }
-
   private static SNode _quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

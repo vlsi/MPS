@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class EditorPopupEx_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(EditorPopupEx_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.EditorPopupEx_ActionGroup";
-
   public EditorPopupEx_ActionGroup() {
     super("EditorPopupEx", ID);
     this.setIsInternal(false);

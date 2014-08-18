@@ -10,19 +10,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class QueryFunction_ReturnSmallPart_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_ReturnSmallPart_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return QueryFunction_ReturnSmallPart_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_ReturnSmallPart_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return QueryFunction_ReturnSmallPart_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.QueryFunction_ReturnSmallPart";

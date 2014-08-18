@@ -19,13 +19,11 @@ public class MyActionGroup implements PaletteActionGroup {
   private DiagramCell myDiagramCell;
   private String myText;
 
-
   public MyActionGroup(Iterable<SNode> nodes, DiagramCell diagramCell, SNode container, SNode containingLink, String text) {
     myNodes = nodes;
     myDiagramCell = diagramCell;
     myText = text;
   }
-
   @Override
   public PaletteElement[] getElements() {
     final List<PaletteElement> paletteElements = ListSequence.fromList(new ArrayList<PaletteElement>());
@@ -38,15 +36,12 @@ public class MyActionGroup implements PaletteActionGroup {
     }
     return ListSequence.fromList(paletteElements).toGenericArray(PaletteElement.class);
   }
-
   public boolean isPopup() {
     return true;
   }
-
   public Icon getIcon() {
     return null;
   }
-
   public String getText() {
     return myText;
   }

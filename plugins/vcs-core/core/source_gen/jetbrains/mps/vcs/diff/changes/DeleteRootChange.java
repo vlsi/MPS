@@ -9,41 +9,34 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class DeleteRootChange extends ModelChange {
   private SNodeId myNodeId;
-
   public DeleteRootChange(ChangeSet changeSet, SNodeId nodeId) {
     super(changeSet);
     myNodeId = nodeId;
   }
-
   @NotNull
   @Override
   public SNodeId getRootId() {
     return myNodeId;
   }
-
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     assert model.getNode(myNodeId) != null;
     model.getNode(myNodeId).delete();
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
     return new AddRootChange(getChangeSet().getOppositeChangeSet(), myNodeId);
   }
-
   @NotNull
   @Override
   public ChangeType getType() {
     return ChangeType.DELETE;
   }
-
   @Override
   public String toString() {
     return "Delete root " + myNodeId;
   }
-
   @Override
   public String getDescription() {
     return "Deleted root #" + myNodeId;

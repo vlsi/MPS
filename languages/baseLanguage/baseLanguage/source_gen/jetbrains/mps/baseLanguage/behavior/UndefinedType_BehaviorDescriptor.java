@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class UndefinedType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public UndefinedType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UndefinedType";

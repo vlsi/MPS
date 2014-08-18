@@ -23,18 +23,15 @@ import org.apache.log4j.LogManager;
 
 public class ReloadAll_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Refresh;
-
   public ReloadAll_Action() {
     super("Reload All Classes", "Reload all MPS classes", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -45,7 +42,6 @@ public class ReloadAll_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class ReloadAll_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProgressManager.getInstance().run(new Task.Modal(((Project) MapSequence.fromMap(_params).get("project")), "Reloading Classes", false) {
@@ -75,6 +70,5 @@ public class ReloadAll_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReloadAll_Action.class);
 }

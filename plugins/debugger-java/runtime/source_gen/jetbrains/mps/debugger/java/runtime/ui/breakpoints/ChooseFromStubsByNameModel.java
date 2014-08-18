@@ -29,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 
 /*package*/ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
   private final Map<String, List<NavigationParticipant.NavigationTarget>> myPossibleNodes = new LinkedHashMap<String, List<NavigationParticipant.NavigationTarget>>();
-
   /*package*/ ChooseFromStubsByNameModel(Project p) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -53,9 +52,7 @@ import org.jetbrains.annotations.NotNull;
       }
     });
   }
-
   protected abstract boolean isValid(SNode node);
-
   private boolean isValidClassifier(final NavigationParticipant.NavigationTarget descriptor) {
     final Wrappers._boolean result = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -66,11 +63,9 @@ import org.jetbrains.annotations.NotNull;
     });
     return result.value;
   }
-
   private String getName(NavigationParticipant.NavigationTarget descriptor) {
     return descriptor.getPresentation();
   }
-
   private String getNamespace(NavigationParticipant.NavigationTarget descriptor) {
     SModelReference modelReference = descriptor.getNodeReference().getModelReference();
     if (modelReference != null) {
@@ -78,41 +73,33 @@ import org.jetbrains.annotations.NotNull;
     }
     return null;
   }
-
   @Override
   public String getPromptText() {
     return null;
   }
-
   @Override
   public String getNotInMessage() {
     return null;
   }
-
   @Override
   public String getNotFoundMessage() {
     return null;
   }
-
   @Override
   public String getCheckBoxName() {
     return null;
   }
-
   @Override
   public char getCheckBoxMnemonic() {
     return (char) 0;
   }
-
   @Override
   public boolean loadInitialCheckBoxState() {
     return false;
   }
-
   @Override
   public void saveInitialCheckBoxState(boolean state) {
   }
-
   @Override
   public ListCellRenderer getListCellRenderer() {
     ListCellRendererWrapper wrapper = new ListCellRendererWrapper<Object>() {
@@ -128,12 +115,10 @@ import org.jetbrains.annotations.NotNull;
     };
     return wrapper;
   }
-
   @Override
   public String[] getNames(boolean checkBoxState) {
     return myPossibleNodes.keySet().toArray(new String[myPossibleNodes.size()]);
   }
-
   @Override
   public Object[] getElementsByName(String name, boolean checkBoxState, String pattern) {
     List<NavigationParticipant.NavigationTarget> descriptors = new ArrayList<NavigationParticipant.NavigationTarget>();
@@ -145,18 +130,15 @@ import org.jetbrains.annotations.NotNull;
     }
     return descriptors.toArray(new NavigationParticipant.NavigationTarget[descriptors.size()]);
   }
-
   @Override
   public String getElementName(Object element) {
     return getName((NavigationParticipant.NavigationTarget) element);
   }
-
   @NotNull
   @Override
   public String[] getSeparators() {
     return new String[]{"."};
   }
-
   @Override
   public String getFullName(Object element) {
     NavigationParticipant.NavigationTarget navTarget = (NavigationParticipant.NavigationTarget) element;
@@ -167,12 +149,10 @@ import org.jetbrains.annotations.NotNull;
     }
     return namespace + "." + name;
   }
-
   @Override
   public String getHelpId() {
     return null;
   }
-
   @Override
   public boolean useMiddleMatching() {
     return true;

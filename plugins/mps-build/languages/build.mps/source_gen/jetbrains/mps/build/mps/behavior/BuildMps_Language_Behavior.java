@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildMps_Language_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getGenerator_1517654889524434844(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "generator", true) != null)) {
       return SLinkOperations.getTarget(thisNode, "generator", true);

@@ -7,15 +7,12 @@ public enum Keys {
   WRAPPED_WITH_MAP_SEQUENCE("wrapped_with_map_sequence");
 
   private String name;
-
   Keys(String name) {
     this.name = PREFIX(name);
   }
-
   public String compose(Object o) {
     return this.name + "." + String.valueOf(o);
   }
-
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.collections.generator." + str;
   }

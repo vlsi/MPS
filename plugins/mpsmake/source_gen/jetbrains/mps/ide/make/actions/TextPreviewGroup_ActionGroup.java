@@ -13,7 +13,6 @@ public class TextPreviewGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(TextPreviewGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup";
   public static final String LABEL_ID_other = ID + "other";
-
   public TextPreviewGroup_ActionGroup() {
     super("TextPreviewGroup", ID);
     this.setIsInternal(false);

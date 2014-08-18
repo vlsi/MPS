@@ -15,34 +15,26 @@ public class IMethodCall_DeleteTypeArguments {
     editorCell.setAction(CellActionType.DELETE, new IMethodCall_DeleteTypeArguments.IMethodCall_DeleteTypeArguments_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new IMethodCall_DeleteTypeArguments.IMethodCall_DeleteTypeArguments_BACKSPACE(node));
   }
-
   public static class IMethodCall_DeleteTypeArguments_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IMethodCall_DeleteTypeArguments_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).clear();
     }
   }
-
   public static class IMethodCall_DeleteTypeArguments_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IMethodCall_DeleteTypeArguments_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).clear();
     }

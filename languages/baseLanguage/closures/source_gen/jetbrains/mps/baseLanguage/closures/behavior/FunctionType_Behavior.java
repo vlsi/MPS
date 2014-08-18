@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class FunctionType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
@@ -36,15 +35,12 @@ public class FunctionType_Behavior {
     sb.append("=>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "resultType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return Arrays.asList("function");
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_ksvwin_a0a2();
   }
-
   public static String virtual_getRuntimeSignature_1213877404927(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null)) {
@@ -56,11 +52,9 @@ public class FunctionType_Behavior {
     sb.append("_E").append(ListSequence.fromList(FunctionType_Behavior.call_getNormalizedThrowsTypes_3448422702164385781(thisNode)).count());
     return sb.toString();
   }
-
   public static String virtual_getRuntimeClassName_1230472987259(SNode thisNode) {
     return "_FunctionTypes";
   }
-
   public static SNode virtual_getResultType_1230475757059(SNode thisNode) {
     SNode rt = SLinkOperations.getTarget(thisNode, "resultType", true);
     rt = FunctionType_Behavior.call_unmeet_1237318764946(thisNode, SNodeOperations.copyNode(rt));
@@ -72,7 +66,6 @@ public class FunctionType_Behavior {
     }
     return SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.Type");
   }
-
   public static SNode call_unmeet_1237318764946(SNode thisNode, SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
@@ -96,11 +89,9 @@ with_meet:
     }
     return tmp;
   }
-
   public static SNode virtual_getTerminateType_1232032188607(SNode thisNode) {
     return null;
   }
-
   public static SNode call_getDeclarationRuntimeType_1230319610063(SNode thisNode) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
     SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
@@ -127,7 +118,6 @@ with_meet:
     }
     return ct;
   }
-
   public static SNode call_getRuntimeType_1230319150573(SNode thisNode) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
     SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
@@ -154,7 +144,6 @@ with_meet:
     }
     return ct;
   }
-
   public static SNode call_getDeclarationRuntimeType_811905832257074290(SNode thisNode, SNode sample) {
     String rtCls = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeClassName_1230472987259", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRuntimeSignature_1213877404927", new Object[]{});
     SNode ice = MapSequence.fromMap(RuntimeUtils.getStaticRuntimeClassifier()).get(rtCls);
@@ -189,15 +178,12 @@ with_meet:
     }
     return ct;
   }
-
   public static SNode call_getNormalizedReturnType_1213877405252(SNode thisNode) {
     return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{}) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getResultType_1230475757059", new Object[]{})) : _quotation_createNode_ksvwin_a0a0l());
   }
-
   public static SNode call_getNormalizedTerminateType_1232036646585(SNode thisNode) {
     return ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{}) != null) ? ClassifierTypeUtil.getTypeCoercedToClassifierType(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTerminateType_1232032188607", new Object[]{})) : _quotation_createNode_ksvwin_a0a0m());
   }
-
   public static List<SNode> call_getNormalizedThrowsTypes_3448422702164385781(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> visited = new ArrayList<SNode>();
@@ -222,7 +208,6 @@ with_throws:
     ListSequence.fromList(result).addSequence(ListSequence.fromList(visited));
     return result;
   }
-
   public static SNode call_getNormalizedSequenceParameterReturnType_1213877405260(SNode thisNode) {
     {
       IMatchingPattern pattern_ksvwin_a0o = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
@@ -234,7 +219,6 @@ with_throws:
     }
     return null;
   }
-
   public static List<SNode> call_getNormalizedParameterTypes_1213877405276(SNode thisNode) {
     List<SNode> resList = ListSequence.fromList(new ArrayList<SNode>());
     List<SNode> paramTypes = SLinkOperations.getTargets(thisNode, "parameterType", true);
@@ -246,7 +230,6 @@ with_throws:
     }
     return resList;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -254,7 +237,6 @@ with_throws:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0a3a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -262,14 +244,12 @@ with_throws:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ksvwin_a1a1a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0d0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -277,7 +257,6 @@ with_throws:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0d0j(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -285,7 +264,6 @@ with_throws:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0d0k(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -293,21 +271,18 @@ with_throws:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0a0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0a0m() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ksvwin_a0a0a0a1a2a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

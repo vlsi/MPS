@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class CheckedDotExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_hasLocalContextInside_3674434577577159922(SNode thisNode) {
     if (ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.ThisExpression", false, new String[]{})).isNotEmpty()) {
       return true;
@@ -27,11 +26,9 @@ public class CheckedDotExpression_Behavior {
     // todo: VariableReference on FieldDeclaration? 
     return false;
   }
-
   public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return false;
   }

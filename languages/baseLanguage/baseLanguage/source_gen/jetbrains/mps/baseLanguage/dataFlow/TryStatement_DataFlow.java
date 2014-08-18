@@ -13,7 +13,6 @@ import jetbrains.mps.lang.dataFlow.framework.InstructionUtil;
 public class TryStatement_DataFlow extends DataFlowBuilder {
   public TryStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitTry("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206957590308");
     for (SNode c : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {

@@ -20,11 +20,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 public class TupleIntefaceUtils {
   public TupleIntefaceUtils() {
   }
-
   public static boolean isTupleInterface(SNode ifc) {
     return ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty();
   }
-
   public static List<Property> analyzeTupleInterface(SNode ifc) {
     List<Property> accessors = ListSequence.fromList(new ArrayList<Property>());
     List<Property> mutators = ListSequence.fromList(new ArrayList<Property>());
@@ -72,40 +70,31 @@ public class TupleIntefaceUtils {
     }
     return result;
   }
-
   public static class Property extends MultiTuple._3<Boolean, String, SNode> {
     public Property() {
       super();
     }
-
     public Property(Boolean isfinal, String name, SNode type) {
       super(isfinal, name, type);
     }
-
     public Boolean isfinal(Boolean value) {
       return super._0(value);
     }
-
     public String name(String value) {
       return super._1(value);
     }
-
     public SNode type(SNode value) {
       return super._2(value);
     }
-
     public Boolean isfinal() {
       return super._0();
     }
-
     public String name() {
       return super._1();
     }
-
     public SNode type() {
       return super._2();
     }
-
     @SuppressWarnings(value = "unchecked")
     public TupleIntefaceUtils.Property assignFrom(Tuples._3<Boolean, String, SNode> from) {
       return (TupleIntefaceUtils.Property) super.assign(from);

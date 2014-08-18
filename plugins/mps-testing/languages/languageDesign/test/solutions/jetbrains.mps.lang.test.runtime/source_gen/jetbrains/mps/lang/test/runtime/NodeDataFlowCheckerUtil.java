@@ -23,11 +23,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class NodeDataFlowCheckerUtil {
 
-
   public NodeDataFlowCheckerUtil() {
   }
-
-
 
   public static void checkDataFlow(final SNode node) {
     Program program = DataFlowManager.getInstance().buildProgramFor(node);
@@ -72,6 +69,5 @@ public class NodeDataFlowCheckerUtil {
       }
     }
   }
-
 
 }

@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveSlot_QuickFix extends QuickFix_Runtime {
   public RemoveSlot_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove the event";
   }
-
   public void execute(SNode node) {
     SNodeOperations.detachNode(node);
   }

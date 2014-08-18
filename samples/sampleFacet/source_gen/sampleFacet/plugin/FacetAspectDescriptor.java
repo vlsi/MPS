@@ -9,11 +9,9 @@ import jetbrains.mps.make.facet.IFacetManifest;
 
 public class FacetAspectDescriptor extends DescriptorProvider<FacetDescriptor> implements MakeAspectDescriptor {
   private final IFacetManifest myManifest;
-
   public FacetAspectDescriptor() {
     myManifest = new FacetManifest();
   }
-
   public FacetDescriptor getDescriptor(String conceptFqName) {
     return new FacetDescriptor() {
       public IFacetManifest getManifest() {
@@ -21,7 +19,6 @@ public class FacetAspectDescriptor extends DescriptorProvider<FacetDescriptor> i
       }
     };
   }
-
   @Override
   public IFacetManifest getManifest() {
     return myManifest;

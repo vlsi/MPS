@@ -11,11 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class FixMethodSignature_QuickFix extends QuickFix_Runtime {
   public FixMethodSignature_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Fix Method Signature";
   }
-
   public void execute(SNode node) {
     SLinkOperations.setTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "returnType", true)), true);
     int paramCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) FixMethodSignature_QuickFix.this.getField("conceptMethod")[0]), "overriddenMethod", false), "parameter", true)).count();

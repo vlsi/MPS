@@ -10,35 +10,27 @@ import jetbrains.mps.build.util.UnpackHelper;
 public abstract class BuildLayout_Node_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements BuildLayout_PathElement_BehaviorDescriptor {
   public BuildLayout_Node_BehaviorDescriptor() {
   }
-
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildLayout_Node_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
-
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     return BuildLayout_Node_Behavior.virtual_exports_6547494638219603457(thisNode, artifactId);
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BuildLayout_Node_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   public boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return BuildLayout_Node_Behavior.virtual_isFile_1368030936106753986(thisNode);
   }
-
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return BuildLayout_Node_Behavior.virtual_isFolder_1368030936106753980(thisNode);
   }
-
   public String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return BuildLayout_Node_Behavior.virtual_location_7117056644539862594(thisNode, helper, artifactId);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildLayout_Node_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_Node";

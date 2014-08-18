@@ -7,20 +7,15 @@ import java.util.Arrays;
 
 public class MPS_17338 {
 
-
   public static class Map {
     public List<MPS_17338.Point> getAllPoints() {
       return Arrays.asList(new MPS_17338.Point[]{new MPS_17338.Point()});
     }
   }
 
-
-
   public static class Point {
     public static class Block {
     }
-
-
 
     public MPS_17338.Point.Block getBlock() {
       return new MPS_17338.Point.Block();

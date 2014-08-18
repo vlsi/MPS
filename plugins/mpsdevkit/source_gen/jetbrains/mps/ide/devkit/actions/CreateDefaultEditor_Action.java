@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class CreateDefaultEditor_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CreateDefaultEditor_Action() {
     super("Generate Default Editor (Expression-like)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     if (conceptDeclaration == null || SPropertyOperations.getBoolean(conceptDeclaration, "abstract") || SPropertyOperations.getString(conceptDeclaration, "name") == null) {
@@ -63,7 +60,6 @@ public class CreateDefaultEditor_Action extends BaseAction {
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -77,7 +73,6 @@ public class CreateDefaultEditor_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -101,7 +96,6 @@ public class CreateDefaultEditor_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode conceptDeclaration = SNodeOperations.as(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
@@ -119,9 +113,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CreateDefaultEditor_Action.class);
-
   private static boolean eq_e50aup_a0d0a0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildInputFolders_BehaviorDescriptor extends BuildInputFolderSet_BehaviorDescriptor {
   public BuildInputFolders_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildInputFolders";

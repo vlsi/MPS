@@ -10,137 +10,137 @@
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499489453">
     <file name="EditableStringDescriptor.java">
       <node id="1560298786499489465" at="11,74,12,31" concept="6" />
-      <node id="1560298786499489473" at="16,41,17,51" concept="5" />
+      <node id="1560298786499489473" at="15,41,16,51" concept="5" />
       <node id="1560298786499489456" at="11,0,14,0" concept="0" trace="EditableStringDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499489469" at="15,0,19,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="1560298786499489469" at="14,0,18,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
       <scope id="1560298786499489464" at="11,74,12,31" />
-      <scope id="1560298786499489472" at="16,41,17,51" />
+      <scope id="1560298786499489472" at="15,41,16,51" />
       <scope id="1560298786499489456" at="11,0,14,0">
         <var name="header" id="1560298786499489460" />
         <var name="name" id="1560298786499489458" />
         <var name="width" id="1560298786499489462" />
       </scope>
-      <scope id="1560298786499489469" at="15,0,19,0" />
-      <unit id="1560298786499489453" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
+      <scope id="1560298786499489469" at="14,0,18,0" />
+      <unit id="1560298786499489453" at="10,0,19,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491464">
     <file name="StringPathDescriptor.java">
       <node id="1560298786499491476" at="11,70,12,31" concept="6" />
-      <node id="1560298786499491484" at="16,45,17,61" concept="5" />
+      <node id="1560298786499491484" at="15,45,16,61" concept="5" />
       <node id="1560298786499491467" at="11,0,14,0" concept="0" trace="StringPathDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499491480" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="1560298786499491480" at="14,0,18,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
       <scope id="1560298786499491475" at="11,70,12,31" />
-      <scope id="1560298786499491483" at="16,45,17,61" />
+      <scope id="1560298786499491483" at="15,45,16,61" />
       <scope id="1560298786499491467" at="11,0,14,0">
         <var name="header" id="1560298786499491471" />
         <var name="name" id="1560298786499491469" />
         <var name="width" id="1560298786499491473" />
       </scope>
-      <scope id="1560298786499491480" at="15,0,19,0" />
-      <unit id="1560298786499491464" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
+      <scope id="1560298786499491480" at="14,0,18,0" />
+      <unit id="1560298786499491464" at="10,0,19,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491489">
     <file name="BooleanDescriptor.java">
       <node id="1560298786499491501" at="13,67,14,31" concept="6" />
-      <node id="1560298786499491509" at="18,45,19,58" concept="5" />
-      <node id="1560298786499491518" at="23,41,24,31" concept="5" />
+      <node id="1560298786499491509" at="17,45,18,58" concept="5" />
+      <node id="1560298786499491518" at="21,41,22,31" concept="5" />
       <node id="1560298786499491492" at="13,0,16,0" concept="0" trace="BooleanDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499491505" at="17,0,21,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <node id="1560298786499491514" at="22,0,26,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="1560298786499491505" at="16,0,20,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="1560298786499491514" at="20,0,24,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
       <scope id="1560298786499491500" at="13,67,14,31" />
-      <scope id="1560298786499491508" at="18,45,19,58" />
-      <scope id="1560298786499491517" at="23,41,24,31" />
+      <scope id="1560298786499491508" at="17,45,18,58" />
+      <scope id="1560298786499491517" at="21,41,22,31" />
       <scope id="1560298786499491492" at="13,0,16,0">
         <var name="header" id="1560298786499491496" />
         <var name="name" id="1560298786499491494" />
         <var name="width" id="1560298786499491498" />
       </scope>
-      <scope id="1560298786499491505" at="17,0,21,0" />
-      <scope id="1560298786499491514" at="22,0,26,0" />
-      <unit id="1560298786499491489" at="12,0,27,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor" />
+      <scope id="1560298786499491505" at="16,0,20,0" />
+      <scope id="1560298786499491514" at="20,0,24,0" />
+      <unit id="1560298786499491489" at="12,0,25,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499493471">
     <file name="ModuleDescriptor.java">
       <node id="1560298786499493483" at="11,66,12,31" concept="6" />
-      <node id="1560298786499493491" at="16,45,17,67" concept="5" />
+      <node id="1560298786499493491" at="15,45,16,67" concept="5" />
       <node id="1560298786499493474" at="11,0,14,0" concept="0" trace="ModuleDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499493487" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="1560298786499493487" at="14,0,18,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
       <scope id="1560298786499493482" at="11,66,12,31" />
-      <scope id="1560298786499493490" at="16,45,17,67" />
+      <scope id="1560298786499493490" at="15,45,16,67" />
       <scope id="1560298786499493474" at="11,0,14,0">
         <var name="header" id="1560298786499493478" />
         <var name="name" id="1560298786499493476" />
         <var name="width" id="1560298786499493480" />
       </scope>
-      <scope id="1560298786499493487" at="15,0,19,0" />
-      <unit id="1560298786499493471" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
+      <scope id="1560298786499493487" at="14,0,18,0" />
+      <unit id="1560298786499493471" at="10,0,19,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499494704">
     <file name="ManagerDescriptor.java">
       <node id="1560298786499494707" at="14,0,15,0" concept="2" trace="myOwner" />
-      <node id="1560298786499494721" at="16,88,17,31" concept="6" />
-      <node id="1560298786499494725" at="17,31,18,20" concept="1" />
-      <node id="1560298786499494735" at="22,41,23,40" concept="5" />
-      <node id="1560298786499494745" at="27,45,28,58" concept="5" />
-      <node id="1560298786499494710" at="16,0,20,0" concept="0" trace="ManagerDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499494731" at="21,0,25,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-      <node id="1560298786499494741" at="26,0,30,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <scope id="1560298786499494734" at="22,41,23,40" />
-      <scope id="1560298786499494744" at="27,45,28,58" />
-      <scope id="1560298786499494720" at="16,88,18,20" />
-      <scope id="1560298786499494710" at="16,0,20,0">
+      <node id="1560298786499494721" at="15,88,16,31" concept="6" />
+      <node id="1560298786499494725" at="16,31,17,20" concept="1" />
+      <node id="1560298786499494735" at="20,41,21,40" concept="5" />
+      <node id="1560298786499494745" at="24,45,25,58" concept="5" />
+      <node id="1560298786499494710" at="15,0,19,0" concept="0" trace="ManagerDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499494731" at="19,0,23,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="1560298786499494741" at="23,0,27,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499494734" at="20,41,21,40" />
+      <scope id="1560298786499494744" at="24,45,25,58" />
+      <scope id="1560298786499494720" at="15,88,17,20" />
+      <scope id="1560298786499494710" at="15,0,19,0">
         <var name="header" id="1560298786499494716" />
         <var name="name" id="1560298786499494714" />
         <var name="owner" id="1560298786499494712" />
         <var name="width" id="1560298786499494718" />
       </scope>
-      <scope id="1560298786499494731" at="21,0,25,0" />
-      <scope id="1560298786499494741" at="26,0,30,0" />
-      <unit id="1560298786499494704" at="13,0,31,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
+      <scope id="1560298786499494731" at="19,0,23,0" />
+      <scope id="1560298786499494741" at="23,0,27,0" />
+      <unit id="1560298786499494704" at="13,0,28,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499495292">
     <file name="DepDescriptor.java">
       <node id="1560298786499495295" at="12,0,13,0" concept="2" trace="myOwner" />
-      <node id="1560298786499495309" at="14,84,15,31" concept="6" />
-      <node id="1560298786499495313" at="15,31,16,20" concept="1" />
-      <node id="1560298786499495323" at="20,45,21,92" concept="4" />
-      <node id="1560298786499495338" at="21,92,22,45" concept="5" />
-      <node id="1560298786499495298" at="14,0,18,0" concept="0" trace="DepDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499495319" at="19,0,24,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <scope id="1560298786499495308" at="14,84,16,20" />
-      <scope id="1560298786499495322" at="20,45,22,45">
+      <node id="1560298786499495309" at="13,84,14,31" concept="6" />
+      <node id="1560298786499495313" at="14,31,15,20" concept="1" />
+      <node id="1560298786499495323" at="18,45,19,92" concept="4" />
+      <node id="1560298786499495338" at="19,92,20,45" concept="5" />
+      <node id="1560298786499495298" at="13,0,17,0" concept="0" trace="DepDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499495319" at="17,0,22,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499495308" at="13,84,15,20" />
+      <scope id="1560298786499495322" at="18,45,20,45">
         <var name="renderer" id="1560298786499495324" />
       </scope>
-      <scope id="1560298786499495298" at="14,0,18,0">
+      <scope id="1560298786499495298" at="13,0,17,0">
         <var name="header" id="1560298786499495304" />
         <var name="name" id="1560298786499495302" />
         <var name="owner" id="1560298786499495300" />
         <var name="width" id="1560298786499495306" />
       </scope>
-      <scope id="1560298786499495319" at="19,0,24,0" />
-      <unit id="1560298786499495292" at="11,0,25,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
+      <scope id="1560298786499495319" at="17,0,22,0" />
+      <unit id="1560298786499495292" at="11,0,23,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
     </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499497407">
     <file name="ModelDescriptor.java">
       <node id="1560298786499497419" at="11,65,12,31" concept="6" />
-      <node id="1560298786499497427" at="16,45,17,66" concept="5" />
+      <node id="1560298786499497427" at="15,45,16,66" concept="5" />
       <node id="1560298786499497410" at="11,0,14,0" concept="0" trace="ModelDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="1560298786499497423" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="1560298786499497423" at="14,0,18,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
       <scope id="1560298786499497418" at="11,65,12,31" />
-      <scope id="1560298786499497426" at="16,45,17,66" />
+      <scope id="1560298786499497426" at="15,45,16,66" />
       <scope id="1560298786499497410" at="11,0,14,0">
         <var name="header" id="1560298786499497414" />
         <var name="name" id="1560298786499497412" />
         <var name="width" id="1560298786499497416" />
       </scope>
-      <scope id="1560298786499497423" at="15,0,19,0" />
-      <unit id="1560298786499497407" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
+      <scope id="1560298786499497423" at="14,0,18,0" />
+      <unit id="1560298786499497407" at="10,0,19,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
     </file>
   </root>
 </debug-info>

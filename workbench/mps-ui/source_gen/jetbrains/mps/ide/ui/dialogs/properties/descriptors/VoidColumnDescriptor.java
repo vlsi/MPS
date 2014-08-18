@@ -9,12 +9,10 @@ public class VoidColumnDescriptor extends ColumnDescriptor {
   public VoidColumnDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return null;
   }
-
   @Override
   public TableCellEditor createEditor() {
     return null;

@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class PersistentConfigurationTemplate_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_3swbqk_a0a0(thisNode);
   }
-
   private static SNode _quotation_createNode_3swbqk_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

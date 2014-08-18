@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ModelCheckerUtils {
   private ModelCheckerUtils() {
   }
-
   public static List<SModel> getModelDescriptors(SModule module) {
     List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
     for (SModel modelDescriptor : Sequence.fromIterable(module.getModels())) {
@@ -40,7 +39,6 @@ public class ModelCheckerUtils {
     }
     return modelDescrpitors;
   }
-
   public static List<SModel> getModelDescriptors(Iterable<? extends SModule> modules) {
     List<SModel> modelDescrpitors = ListSequence.fromList(new ArrayList<SModel>());
     for (SModule module : Sequence.fromIterable(modules)) {
@@ -48,11 +46,9 @@ public class ModelCheckerUtils {
     }
     return modelDescrpitors;
   }
-
   public static List<SModel> getModelDescriptors(Project project) {
     return getModelDescriptors(project.getModules());
   }
-
   public static int getIssueCountForSeverity(SearchResults<ModelCheckerIssue> issues, String severity) {
     if (severity == null) {
       return 0;
@@ -65,7 +61,6 @@ public class ModelCheckerUtils {
     }
     return issueCount;
   }
-
   public static boolean isDeclaredLink(SNode linkDeclaration, boolean child) {
     return ((linkDeclaration != null) && child ? SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") : SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference"));
   }

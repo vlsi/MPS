@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class XmlProlog_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public XmlProlog_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlProlog";

@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BwfTaskLibrary_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BwfTaskLibrary_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode lib, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Set<SNode> libsSet = new LinkedHashSet<SNode>();
     libsSet.add(lib);
@@ -43,18 +42,15 @@ public class check_BwfTaskLibrary_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.workflow.structure.BwfTaskLibrary";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

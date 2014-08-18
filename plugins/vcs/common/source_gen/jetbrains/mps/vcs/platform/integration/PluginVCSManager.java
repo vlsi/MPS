@@ -11,10 +11,8 @@ import org.jetbrains.annotations.NotNull;
 public class PluginVCSManager implements ApplicationComponent {
 
   private ModelStorageProblemsListener resolver = new ModelStorageProblemsListener();
-
   public PluginVCSManager() {
   }
-
   @Override
   public void initComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -23,7 +21,6 @@ public class PluginVCSManager implements ApplicationComponent {
       }
     });
   }
-
   @Override
   public void disposeComponent() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -32,7 +29,6 @@ public class PluginVCSManager implements ApplicationComponent {
       }
     });
   }
-
   @NonNls
   @NotNull
   @Override

@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 /*package*/ class MatchIteration {
   public MatchIteration() {
   }
-
   /*package*/ void forEachMatch() {
     String test = "239 239 239";
     {
@@ -19,6 +18,5 @@ import java.util.regex.Matcher;
       }
     }
   }
-
   private static Pattern REGEXP_m02t0c_a0a0b0b = Pattern.compile("(\\d+)", 0);
 }

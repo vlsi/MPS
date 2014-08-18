@@ -11,33 +11,27 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class char_compatibleWith_byte_ComparisonRule extends ComparisonRule_Runtime {
   public char_compatibleWith_byte_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.structure.CharType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ByteType";
   }

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuilderStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLeaf_932644095877881871(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "builder", true), "virtual_isLeaf_7057666463730595159", new Object[]{});
   }

@@ -25,7 +25,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gjcmhj_a(editorContext, node);
   }
-
   private EditorCell createCollection_gjcmhj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_a");
@@ -41,7 +40,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gjcmhj_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_gjcmhj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_a0");
@@ -49,7 +47,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_gjcmhj_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replacement rule");
     editorCell.setCellId("Constant_gjcmhj_a0a");
@@ -59,7 +56,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gjcmhj_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -77,7 +73,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_gjcmhj_b0");
@@ -87,7 +82,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gjcmhj_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_c0");
@@ -97,7 +91,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gjcmhj_d2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for ");
     editorCell.setCellId("Constant_gjcmhj_a2a");
@@ -107,7 +100,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gjcmhj_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableNode");
@@ -127,14 +119,12 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<:");
     editorCell.setCellId("Constant_gjcmhj_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gjcmhj_d2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("supertypeNode");
@@ -154,7 +144,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_gjcmhj_d0");
@@ -164,7 +153,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gjcmhj_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_e0");
@@ -175,7 +163,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gjcmhj_b4a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom condition:");
     editorCell.setCellId("Constant_gjcmhj_a4a");
@@ -185,7 +172,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gjcmhj_b4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicableClause");
@@ -205,7 +191,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_gjcmhj_f0");
@@ -215,7 +200,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gjcmhj_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_g0");
@@ -223,7 +207,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gjcmhj_b6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
     editorCell.setCellId("Constant_gjcmhj_a6a");
@@ -235,7 +218,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_b6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_gjcmhj_b6a");
@@ -246,7 +228,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gjcmhj_h0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gjcmhj_h0");
@@ -254,12 +235,10 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gjcmhj_b7a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_gjcmhj_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_gjcmhj_b7a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -279,7 +258,6 @@ public class InequationReplacementRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gjcmhj_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_gjcmhj_i0");

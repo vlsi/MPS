@@ -15,12 +15,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ConceptHierarchyTree extends AbstractHierarchyTree {
   private LanguageHierarchyCache myCache;
-
   public ConceptHierarchyTree(LanguageHierarchyCache cache, AbstractHierarchyView abstractHierarchyView, boolean isParentHierarchy) {
     super(abstractHierarchyView, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", isParentHierarchy);
     myCache = cache;
   }
-
   @Override
   protected Set<SNode> getParents(SNode node, Set<SNode> visited) throws CircularHierarchyException {
     if (visited.contains(node)) {
@@ -34,7 +32,6 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     }
     return result;
   }
-
   @Override
   protected SNode getParent(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
@@ -48,7 +45,6 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
       return null;
     }
   }
-
   @Override
   protected Set<SNode> getDescendants(SNode conceptDeclaration, Set<SNode> visited) throws CircularHierarchyException {
     if (visited.contains(conceptDeclaration)) {
@@ -61,7 +57,6 @@ public class ConceptHierarchyTree extends AbstractHierarchyTree {
     }
     return result;
   }
-
   @Override
   protected String noNodeString() {
     return "(no concept)";

@@ -19,11 +19,9 @@ public class NamedBoxFigure extends BoxFigure {
 
   private TextCell myCell = new TextCell();
 
-
   public NamedBoxFigure() {
     this(new NamedBoxFigure.NamedBoxFigureMapperFactory());
   }
-
   public NamedBoxFigure(NamedBoxFigure.NamedBoxFigureMapperFactory factory) {
     CellView cellView = new CellView();
     // <node> 
@@ -35,30 +33,24 @@ public class NamedBoxFigure extends BoxFigure {
       factory.createMapper(this).attachRoot();
     }
   }
-
   public Property<String> nameText() {
     return myCell.text();
   }
-
-
 
   private static class NamedBoxFigureMapperFactory implements MapperFactory<NamedBoxFigure, NamedBoxFigure> {
     public Mapper<? extends NamedBoxFigure, ? extends NamedBoxFigure> createMapper(NamedBoxFigure figure) {
       return new NamedBoxFigure.NamedBoxFigureMapper<NamedBoxFigure>(figure);
     }
   }
-
   protected static class NamedBoxFigureMapper<T extends NamedBoxFigure> extends BoxFigure.BoxFigureMapper<T> {
     protected NamedBoxFigureMapper(T figure) {
       super(figure);
     }
-
     @Override
     protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
       super.registerSynchronizers(configuration);
       configuration.add(Synchronizers.forProperty(getSource().editable, new WritableProperty<Boolean>() {
         private Registration myRegistration;
-
         public void set(Boolean editable) {
           if (editable) {
             myRegistration = getSource().myCell.addTrait(TextEditing.textEditing());

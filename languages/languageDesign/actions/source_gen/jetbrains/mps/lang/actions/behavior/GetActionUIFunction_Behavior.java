@@ -10,11 +10,9 @@ import jetbrains.mps.smodel.SReference;
 public class GetActionUIFunction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_mmgly4_a0a0();
   }
-
   private static SNode _quotation_createNode_mmgly4_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

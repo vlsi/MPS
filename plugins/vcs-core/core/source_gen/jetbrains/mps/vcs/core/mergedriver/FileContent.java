@@ -14,7 +14,6 @@ public class FileContent {
   private final File file;
   private byte[] data;
 
-
   public FileContent(File file) throws IOException {
     this.file = file;
     InputStream stream = new FileInputStream(file);
@@ -25,19 +24,13 @@ public class FileContent {
     }
   }
 
-
-
   public File getFile() {
     return file;
   }
 
-
-
   public byte[] getData() {
     return data;
   }
-
-
 
   public InputStream openInputStream() {
     return new ByteArrayInputStream(data);

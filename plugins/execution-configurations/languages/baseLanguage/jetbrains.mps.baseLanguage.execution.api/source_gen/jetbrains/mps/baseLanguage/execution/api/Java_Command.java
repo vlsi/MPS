@@ -60,59 +60,50 @@ public class Java_Command {
   private List<String> myClassPath_ListString = ListSequence.fromList(new ArrayList<String>());
   private String myDebuggerSettings_String;
   private CommandPart myVirtualMachineParameter_ProcessBuilderCommandPart;
-
   public Java_Command() {
   }
-
   public Java_Command setWorkingDirectory_File(File workingDirectory) {
     if (workingDirectory != null) {
       myWorkingDirectory_File = workingDirectory;
     }
     return this;
   }
-
   public Java_Command setJrePath_String(String jrePath) {
     if (jrePath != null) {
       myJrePath_String = jrePath;
     }
     return this;
   }
-
   public Java_Command setProgramParameter_String(String programParameter) {
     if (programParameter != null) {
       myProgramParameter_String = programParameter;
     }
     return this;
   }
-
   public Java_Command setVirtualMachineParameter_String(String virtualMachineParameter) {
     if (virtualMachineParameter != null) {
       myVirtualMachineParameter_String = virtualMachineParameter;
     }
     return this;
   }
-
   public Java_Command setClassPath_ListString(List<String> classPath) {
     if (classPath != null) {
       myClassPath_ListString = classPath;
     }
     return this;
   }
-
   public Java_Command setDebuggerSettings_String(String debuggerSettings) {
     if (debuggerSettings != null) {
       myDebuggerSettings_String = debuggerSettings;
     }
     return this;
   }
-
   public Java_Command setVirtualMachineParameter_ProcessBuilderCommandPart(CommandPart virtualMachineParameter) {
     if (virtualMachineParameter != null) {
       myVirtualMachineParameter_ProcessBuilderCommandPart = virtualMachineParameter;
     }
     return this;
   }
-
   public ProcessHandler createProcess(String className) throws ExecutionException {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(className, ListSequence.fromList(myClassPath_ListString).select(new ISelector<String, File>() {
       public File select(String it) {
@@ -123,11 +114,9 @@ public class Java_Command {
       }
     }).toListSequence());
   }
-
   public ProcessHandler createProcess(String className, List<File> classPath) throws ExecutionException {
     return new Java_Command().setWorkingDirectory_File(myWorkingDirectory_File).setJrePath_String(myJrePath_String).setVirtualMachineParameter_ProcessBuilderCommandPart(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myVirtualMachineParameter_String))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), myProgramParameter_String)), className, classPath);
   }
-
   public ProcessHandler createProcess(CommandPart programParameter, String className, List<File> classPath) throws ExecutionException {
     File java = Java_Command.getJavaCommand(myJrePath_String);
     if ((className == null || className.length() == 0)) {
@@ -155,7 +144,6 @@ public class Java_Command {
       return new ProcessHandlerBuilder().append(java).append(myVirtualMachineParameter_ProcessBuilderCommandPart).append(myDebuggerSettings_String).append(new KeyValueCommandPart("-" + "classpath", new ListCommandPart(classPath, File.pathSeparator))).append(className).append(programParameter).build(myWorkingDirectory_File);
     }
   }
-
   public ProcessHandler createProcess(final SNodeReference nodePointer) throws ExecutionException {
     final Wrappers._T<SModule> module = new Wrappers._T<SModule>(null);
     final Wrappers._T<String> text = new Wrappers._T<String>();
@@ -174,19 +162,15 @@ public class Java_Command {
 
     return new Java_Command().setJrePath_String(myJrePath_String).setWorkingDirectory_File(myWorkingDirectory_File).setProgramParameter_String(myProgramParameter_String).setVirtualMachineParameter_String(myVirtualMachineParameter_String).setClassPath_ListString(Java_Command.getClasspath(module.value)).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(Java_Command.getClassName(nodePointer));
   }
-
   public ProcessHandler createProcess(JavaRunParameters runParameters, SNodeReference nodePointer) throws ExecutionException {
     return new Java_Command().setJrePath_String(check_yvpt_a0a0a0e(runParameters)).setProgramParameter_String(check_yvpt_a2a0a0e(runParameters)).setVirtualMachineParameter_String(check_yvpt_a3a0a0e(runParameters)).setWorkingDirectory_File((isEmptyString(check_yvpt_a0a4a0a0e(runParameters)) ? null : new File(check_yvpt_a0a0e0a0a4(runParameters)))).setDebuggerSettings_String(myDebuggerSettings_String).createProcess(nodePointer);
   }
-
   public static IDebugger getDebugger() {
     return getDebuggerConfiguration().getDebugger();
   }
-
   public static boolean isUnitNode(SNode node) {
     return isNotEmptyString(Java_Command.getClassName(node));
   }
-
   private static String getClassName(SNode node) {
     SModel model = SNodeOperations.getModel(node);
     if (model == null) {
@@ -215,7 +199,6 @@ public class Java_Command {
       }
     }
   }
-
   private static String getClassName(final SNodeReference node) {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -228,18 +211,15 @@ public class Java_Command {
     });
     return className.value;
   }
-
   private static int getMaxCommandLine() {
     // the command line limit on win is 32767 characters 
     // (see http://blogs.msdn.com/b/oldnewthing/archive/2003/12/10/56028.aspx) 
     // we set the limit to 16384 (half as many) just in case 
     return 16384;
   }
-
   public static List<String> getClasspath(SNode node) {
     return Java_Command.getClasspath(SNodeOperations.getModel(node).getModule());
   }
-
   public static List<String> getClasspath(final SModule module) {
     final Wrappers._T<Set<String>> classpath = new Wrappers._T<Set<String>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -250,7 +230,6 @@ public class Java_Command {
     });
     return new ArrayList<String>(classpath.value);
   }
-
   public static List<String> getClasspath(SModule module, boolean withDependencies) {
     if (withDependencies) {
       return Java_Command.getClasspath(module);
@@ -258,7 +237,6 @@ public class Java_Command {
       return new ArrayList<String>(module.getFacet(JavaModuleFacet.class).getClassPath());
     }
   }
-
   private static List<String> getClassRunnerClassPath() {
     return ModelAccess.instance().runReadAction(new Computable<List<String>>() {
       public List<String> compute() {
@@ -266,7 +244,6 @@ public class Java_Command {
       }
     });
   }
-
   public static File getJavaCommand(@Nullable String javaHome) throws ExecutionException {
     if ((javaHome == null || javaHome.length() == 0) || !(new File(javaHome).exists())) {
       javaHome = Java_Command.getJdkHome();
@@ -276,7 +253,6 @@ public class Java_Command {
     }
     return new File(Java_Command.getJavaCommandPath(javaHome));
   }
-
   public static String getJavaCommandPath(String javaHome) {
     String result = javaHome + File.separator + "bin" + File.separator;
     String java = "java";
@@ -290,7 +266,6 @@ public class Java_Command {
     }
     return result;
   }
-
   public static List<String> getJavaHomes() {
     String systemJavaHome = SystemProperties.getJavaHome();
     List<String> homes = ListSequence.fromList(new LinkedList<String>());
@@ -304,7 +279,6 @@ public class Java_Command {
     ListSequence.fromList(homes).addElement(systemJavaHome);
     return homes;
   }
-
   public static String getJdkHome() {
     List<String> homes = Java_Command.getJavaHomes();
     for (String javaHome : homes) {
@@ -314,14 +288,12 @@ public class Java_Command {
     }
     return null;
   }
-
   public static String protect(String result) {
     if (result.contains(" ")) {
       return "\"" + result + "\"";
     }
     return result;
   }
-
   private static File writeToTmpFile(Iterable<String> text) throws FileNotFoundException {
     File tmpFile = FileUtil.createTmpFile();
     tmpFile.deleteOnExit();
@@ -333,85 +305,72 @@ public class Java_Command {
     writer.close();
     return tmpFile;
   }
-
   public static IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
       @Nullable
       public IDebuggerSettings createDebuggerSettings() {
         return new LocalConnectionSettings(true);
       }
-
       public IDebugger getDebugger() {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
   }
-
   protected static Logger LOG = LogManager.getLogger(Java_Command.class);
-
   private static int check_yvpt_a0c0a2(CommandPart checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLength();
     }
     return 0;
   }
-
   private static SModule check_yvpt_a0a0a2a0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModel check_yvpt_a0a0a0c0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-
   private static SNode check_yvpt_a0a0a0a2a0d(SNodeReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
-
   private static String check_yvpt_a0a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAlternativeJre();
     }
     return null;
   }
-
   private static String check_yvpt_a2a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.programParameters();
     }
     return null;
   }
-
   private static String check_yvpt_a3a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.vmOptions();
     }
     return null;
   }
-
   private static String check_yvpt_a0a0e0a0a4(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
-
   private static String check_yvpt_a0a4a0a0e(JavaRunParameters checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.workingDirectory();
     }
     return null;
   }
-
   private static SNode _quotation_createNode_yvpt_a0a0a0a0a0b0a0a1a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -439,19 +398,15 @@ public class Java_Command {
     quotedNode_1.addChild("parameter", quotedNode_5);
     return quotedNode_1;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-
   private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_kk96hj_a0a0a0a0a1a0a0b0a2a22_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -52,11 +52,9 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected IOperationContext myContext;
   public JScrollPane myScrollPane;
   private OccurenceNavigatorSupport myOccurenceNavigator;
-
   public AbstractHierarchyView(Project project, String id, int number, Icon icon) {
     super(project, id, number, icon, ToolWindowAnchor.RIGHT, true);
   }
-
   @Override
   public void disposeComponent() {
     if (myHierarchyTree == null) {
@@ -64,7 +62,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     }
     myHierarchyTree.dispose();
   }
-
   @Override
   protected void createTool() {
     myHierarchyTree = createHierarchyTree(false);
@@ -96,12 +93,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr.value);
         return (n.canNavigate() ? n : null);
       }
-
       @Override
       public String getPreviousOccurenceActionName() {
         return UsageViewBundle.message("action.previous.occurrence");
       }
-
       @Override
       public String getNextOccurenceActionName() {
         return UsageViewBundle.message("action.next.occurrence");
@@ -122,13 +117,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     });
   }
-
   protected abstract AbstractHierarchyTree createHierarchyTree(boolean isParentHierarchy);
-
   public void openNode(SNode node, IOperationContext context) {
     NavigationSupport.getInstance().openNode(context, node, true, true);
   }
-
   protected DefaultActionGroup createButtonsGroup() {
     GroupedToggleAction childrenAction = new GroupedToggleAction("Children Hierarchy", "Show children hierarchy", Icons.CHILDREN_ICON, true) {
       @Override
@@ -149,12 +141,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     toggleGroup.add(parentAction);
     ToggleAction thisModelAction = new ToggleAction("Only This Model", "Show hierarchy only for model", Icons.THIS_MODEL_ICON) {
       private boolean mySelected = false;
-
       @Override
       public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
-
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
@@ -163,12 +153,10 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     };
     ToggleAction generatorModelsAction = new ToggleAction("Show Generator Classes", "Show classes from generator models in hierarchy", Icons.GENERATOR_ICON) {
       private boolean mySelected = false;
-
       @Override
       public boolean isSelected(AnActionEvent e) {
         return mySelected;
       }
-
       @Override
       public void setSelected(AnActionEvent e, boolean state) {
         mySelected = state;
@@ -195,7 +183,6 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     };
     return ActionUtils.groupFromActions(childrenAction, parentAction, thisModelAction, generatorModelsAction, expandAllAction, collapseAllAction, refreshAction, createCloseAction());
   }
-
   public void showItemInHierarchy(SNode node, IOperationContext _context) {
     myHierarchyTree.setOperationContext(_context);
     myContext = _context;
@@ -217,21 +204,17 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
     });
   }
-
   protected boolean isTreeInfinite() {
     return false;
   }
-
   @Override
   public JComponent getComponent() {
     return myComponent;
   }
-
   public class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     public RootPanel() {
       super(new BorderLayout());
     }
-
     @Nullable
     public Object getData(@NonNls String id) {
       if (PlatformDataKeys.HELP_ID.is(id)) {
@@ -239,32 +222,26 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
       }
       return null;
     }
-
     @Override
     public String getPreviousOccurenceActionName() {
       return (myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "");
     }
-
     @Override
     public String getNextOccurenceActionName() {
       return (myOccurenceNavigator != null ? myOccurenceNavigator.getNextOccurenceActionName() : "");
     }
-
     @Override
     public OccurenceNavigator.OccurenceInfo goPreviousOccurence() {
       return (myOccurenceNavigator != null ? myOccurenceNavigator.goPreviousOccurence() : null);
     }
-
     @Override
     public OccurenceNavigator.OccurenceInfo goNextOccurence() {
       return (myOccurenceNavigator != null ? myOccurenceNavigator.goNextOccurence() : null);
     }
-
     @Override
     public boolean hasPreviousOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasPreviousOccurence();
     }
-
     @Override
     public boolean hasNextOccurence() {
       return myOccurenceNavigator != null && myOccurenceNavigator.hasNextOccurence();

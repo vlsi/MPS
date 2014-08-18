@@ -24,38 +24,27 @@ public class ReloadSession {
   private boolean myEmpty = true;
   private AtomicInteger myEmployCount = new AtomicInteger(0);
 
-
   public ReloadSession(Iterable<ReloadListener> listeners) {
     ListSequence.fromList(myListeners).addSequence(Sequence.fromIterable(listeners));
   }
 
-
-
   /*package*/ boolean isBeingEmployed() {
     return myEmployCount.get() > 0;
   }
-
-
 
   /*package*/ void incEmployCount() {
     int count = myEmployCount.incrementAndGet();
     assert count >= 0;
   }
 
-
-
   /*package*/ void decEmployCount() {
     int count = myEmployCount.decrementAndGet();
     assert count >= 0;
   }
 
-
-
   /*package*/ boolean isEmpty() {
     return myEmpty;
   }
-
-
 
   /*package*/ boolean wantsToShowProgress() {
     // if at least one participant wants to show, we say that all reload session wants 
@@ -66,8 +55,6 @@ public class ReloadSession {
     });
   }
 
-
-
   /*package*/ void updateStatus() {
     this.myEmpty = Sequence.fromIterable(getParticipants()).all(new IWhereFilter<ReloadParticipant>() {
       public boolean accept(ReloadParticipant it) {
@@ -75,8 +62,6 @@ public class ReloadSession {
       }
     });
   }
-
-
 
   /*package*/ void doReload(final ProgressMonitor monitor) {
     assert !(myReloaded) : "Contract: do not call doReload twice on one reload session";
@@ -102,14 +87,10 @@ public class ReloadSession {
     }
   }
 
-
-
   /*package*/ void clear() {
     ListSequence.fromList(myListeners).clear();
     MapSequence.fromMap(myParticipants).clear();
   }
-
-
 
   /*package*/ <T extends ReloadParticipant> T getParticipant(Class<T> participantClass) {
     ReloadParticipant p = MapSequence.fromMap(myParticipants).get(participantClass);
@@ -124,23 +105,18 @@ public class ReloadSession {
     return (T) p;
   }
 
-
-
   private Iterable<ReloadParticipant> getParticipants() {
     return MapSequence.fromMap(myParticipants).values();
   }
-
   private void fireReloadStarted() {
     for (ReloadListener rl : myListeners) {
       rl.reloadStarted();
     }
   }
-
   private void fireReloadFinished() {
     for (ReloadListener rl : myListeners) {
       rl.reloadFinished();
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReloadSession.class);
 }

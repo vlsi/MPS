@@ -6,6 +6,8 @@ import org.apache.log4j.AppenderSkeleton;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.openapi.util.Pair;
+import org.apache.log4j.Level;
+import org.apache.log4j.varia.LevelRangeFilter;
 import org.apache.log4j.spi.LoggingEvent;
 import java.util.Arrays;
 import org.apache.log4j.Priority;
@@ -18,10 +20,11 @@ public class CachingAppender extends AppenderSkeleton implements Output {
   private List<String> messages = new ArrayList<String>();
   private List<Pair<Integer, String>> expectedEvents = new ArrayList<Pair<Integer, String>>();
   private List<Pair<Integer, String>> receivedExpectedEvents = new ArrayList<Pair<Integer, String>>();
-
-  public CachingAppender() {
+  public CachingAppender(Level watchLevel) {
+    final LevelRangeFilter newFilter = new LevelRangeFilter();
+    newFilter.setLevelMin(watchLevel);
+    this.addFilter(newFilter);
   }
-
   @Override
   protected void append(LoggingEvent loggingEvent) {
     if (!(isExpected(loggingEvent))) {
@@ -35,7 +38,6 @@ public class CachingAppender extends AppenderSkeleton implements Output {
       }
     }
   }
-
   private boolean isExpected(LoggingEvent event) {
     for (Pair<Integer, String> pr : expectedEvents) {
       if (event.level.isGreaterOrEqual(Priority.toPriority(pr.first))) {
@@ -47,17 +49,14 @@ public class CachingAppender extends AppenderSkeleton implements Output {
     }
     return false;
   }
-
   @Override
   public boolean isNotEmpty() {
     return events > 0;
   }
-
   @Override
   public String getDescription() {
     return events + " events";
   }
-
   @Override
   public String getText() {
     StringBuilder sb = new StringBuilder();
@@ -70,16 +69,13 @@ public class CachingAppender extends AppenderSkeleton implements Output {
     sb.append("\n");
     return sb.toString();
   }
-
   @Override
   public void close() {
   }
-
   @Override
   public boolean requiresLayout() {
     return false;
   }
-
   public void sealEvents() {
     List<Pair<Integer, String>> list = new ArrayList<Pair<Integer, String>>(expectedEvents);
     list.removeAll(receivedExpectedEvents);
@@ -88,7 +84,6 @@ public class CachingAppender extends AppenderSkeleton implements Output {
       messages.add("MISSING: " + pr.second);
     }
   }
-
   public void expectEvent(int level, String text) {
     expectedEvents.add(new Pair<Integer, String>(level, text));
   }

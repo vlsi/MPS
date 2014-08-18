@@ -21,7 +21,6 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 public class ArtifactsRelativePathHelper {
   private VisibleArtifacts artifacts;
   private Map<SNode, String> prefixes = MapSequence.fromMap(new HashMap<SNode, String>());
-
   public ArtifactsRelativePathHelper(VisibleArtifacts output, SNode anchor) {
     this.artifacts = output;
 
@@ -46,7 +45,6 @@ public class ArtifactsRelativePathHelper {
       sb.append("../");
     }
   }
-
   public String getRelativePath(SNode node) throws ArtifactsRelativePathHelper.RelativePathException {
     Stack<SNode> names = new Stack<SNode>();
     names.push(node);
@@ -75,7 +73,6 @@ public class ArtifactsRelativePathHelper {
     }
     return result.toString();
   }
-
   private String getNodeName(SNode node, boolean isLast) throws ArtifactsRelativePathHelper.RelativePathException {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_Folder")) {
       return getBSName(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_Folder"), "containerName", true));
@@ -91,7 +88,6 @@ public class ArtifactsRelativePathHelper {
     }
     throw new ArtifactsRelativePathHelper.RelativePathException("cannot build relative path for " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name"));
   }
-
   private String getBSName(SNode string) throws ArtifactsRelativePathHelper.RelativePathException {
     if (ListSequence.fromList(SLinkOperations.getTargets(string, "parts", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -106,7 +102,6 @@ public class ArtifactsRelativePathHelper {
       }
     }), " ");
   }
-
   private boolean equalFolders(SNode left, SNode right) {
     if (SNodeOperations.getParent(left) != SNodeOperations.getParent(right)) {
       return false;
@@ -124,13 +119,11 @@ public class ArtifactsRelativePathHelper {
     }
     return false;
   }
-
   public static class RelativePathException extends Exception {
     public RelativePathException(String p0) {
       super(p0);
     }
   }
-
   private static boolean eq_fa9ylc_a0a0b0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

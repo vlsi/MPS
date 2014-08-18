@@ -14,18 +14,14 @@ public class AddPosition {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new AddPosition.AddPosition_RIGHT_TRANSFORM(node));
   }
-
   public static class AddPosition_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AddPosition_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "position", true) == null) {
         SLinkOperations.setTarget(node, "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);

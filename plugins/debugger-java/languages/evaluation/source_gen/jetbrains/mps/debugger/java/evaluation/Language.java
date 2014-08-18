@@ -19,25 +19,20 @@ import jetbrains.mps.debugger.java.evaluation.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "7da4580f-9d75-4603-8162-51a896d78375(jetbrains.mps.debugger.java.evaluation)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.debugger.java.evaluation";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "c6bda6e2-9c37-4cbb-9e2c-bb38ed451c7e(jetbrains.mps.debugger.java.evaluation#1620955434532134778)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

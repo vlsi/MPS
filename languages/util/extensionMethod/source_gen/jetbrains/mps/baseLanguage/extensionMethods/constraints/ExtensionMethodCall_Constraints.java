@@ -35,7 +35,6 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
   public ExtensionMethodCall_Constraints() {
     super("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -44,7 +43,6 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -77,7 +75,6 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
                 }
                 return ListSequence.fromListWithValues(new ArrayList<SNode>(), result);
               }
-
               @Override
               public boolean isInScope(SNode node) {
                 SNode extMethod = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration");
@@ -89,7 +86,6 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
 
 
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1;
@@ -99,6 +95,5 @@ public class ExtensionMethodCall_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_1t8qmy_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "7997068947889524884");
 }

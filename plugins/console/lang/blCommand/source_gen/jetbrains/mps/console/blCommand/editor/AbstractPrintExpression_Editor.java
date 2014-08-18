@@ -20,7 +20,6 @@ public class AbstractPrintExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9ckmec_a(editorContext, node);
   }
-
   private EditorCell createCollection_9ckmec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9ckmec_a");
@@ -29,23 +28,19 @@ public class AbstractPrintExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_9ckmec_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_9ckmec_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     AbstractPrintExpression_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractPrintExpression_Editor.ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractPrintExpression_cellMenu_9ckmec_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression";
     }
   }
-
   private EditorCell createRefNode_9ckmec_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("object");

@@ -32,23 +32,19 @@ import com.sun.jdi.request.EventRequest;
 public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpoint, JavaBreakpointKind> {
   public JavaBreakpointsProvider() {
   }
-
   @NotNull
   @Override
   public List<JavaBreakpointKind> getAllKinds() {
     return Arrays.asList(JavaBreakpointKind.values());
   }
-
   @Override
   public boolean canCreateFromUi(@NotNull JavaBreakpointKind kind) {
     return kind.equals(JavaBreakpointKind.EXCEPTION_BREAKPOINT);
   }
-
   @Override
   public boolean canCreateFromNode(@NotNull JavaBreakpointKind kind) {
     return kind.equals(JavaBreakpointKind.LINE_BREAKPOINT) || kind.equals(JavaBreakpointKind.FIELD_BREAKPOINT);
   }
-
   @Override
   public JavaBreakpoint createFromUi(@NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
@@ -64,7 +60,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
     }
   }
-
   @Override
   public ILocationBreakpoint createFromNode(@NotNull SNode node, @NotNull JavaBreakpointKind kind, Project project) {
     switch (kind) {
@@ -76,12 +71,10 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
         throw new IllegalArgumentException("Cannot create breakpoint for " + kind);
     }
   }
-
   @Override
   public IBreakpointPropertiesUi<JavaBreakpoint> createPropertiesEditor(@NotNull final JavaBreakpointKind kind) {
     return new JavaBreakpointsProvider.MyIBreakpointPropertiesUi();
   }
-
   @Override
   @Nullable
   public JavaBreakpoint loadFromState(Element state, JavaBreakpointKind kind, final Project project) {
@@ -89,7 +82,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     javaBreakpoint.addBreakpointListener(BreakpointsIconCache.getInstance(project).getBreakpointListener());
     return javaBreakpoint;
   }
-
   private JavaBreakpoint loadFromStateInternal(Element state, JavaBreakpointKind kind, Project project) {
     switch (kind) {
       case LINE_BREAKPOINT:
@@ -136,7 +128,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     }
     return null;
   }
-
   @Override
   @Nullable
   public Element saveToState(@NotNull JavaBreakpoint breakpoint) {
@@ -158,24 +149,19 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
     }
     return null;
   }
-
   @Override
   public Icon getIcon(@NotNull JavaBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     return BreakpointsIconCache.getInstance(breakpoint.getProject()).getIcon(breakpoint, session);
   }
-
   public void init() {
   }
-
   public void dispose() {
   }
-
   private static class MyIBreakpointPropertiesUi implements IBreakpointPropertiesUi<JavaBreakpoint> {
     private JavaBreakpoint myBreakpoint;
     private final JPanel myMainPanel;
     private final JCheckBox myLogMessageButton;
     private final JRadioButton[] myButtons = new JRadioButton[JavaBreakpointsProvider.MyIBreakpointPropertiesUi.SuspendPolicy.values().length];
-
     public MyIBreakpointPropertiesUi() {
       JPanel suspendPanel = new JPanel(new FlowLayout(FlowLayout.LEADING));
       suspendPanel.setBorder(new TitledBorder("Suspend policy"));
@@ -210,7 +196,6 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       myMainPanel.add(suspendPanel);
       myMainPanel.add(actionPanel);
     }
-
     @Override
     public void setBreakpoint(JavaBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
@@ -222,23 +207,19 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       }
       myLogMessageButton.setSelected(myBreakpoint.isLogMessage());
     }
-
     @Override
     public JComponent getMainComponent() {
       return myMainPanel;
     }
-
     private static     enum SuspendPolicy {
       ALL(EventRequest.SUSPEND_ALL),
       NONE(EventRequest.SUSPEND_NONE),
       THREAD(EventRequest.SUSPEND_EVENT_THREAD);
 
       private final int myValue;
-
       SuspendPolicy(int value) {
         myValue = value;
       }
-
       public String getName() {
         return this.name().substring(0, 1) + this.name().toLowerCase().substring(1);
       }

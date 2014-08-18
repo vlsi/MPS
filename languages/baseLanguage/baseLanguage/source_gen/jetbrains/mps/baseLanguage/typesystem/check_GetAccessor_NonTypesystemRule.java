@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_GetAccessor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_GetAccessor_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode getAccessor, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SNodeOperations.getDescendants(getAccessor, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).visitAll(new IVisitor<SNode>() {
       public void visit(SNode methodCall) {
@@ -32,18 +31,15 @@ public class check_GetAccessor_NonTypesystemRule extends AbstractNonTypesystemRu
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.GetAccessor";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

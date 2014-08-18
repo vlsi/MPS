@@ -6,12 +6,10 @@ package jetbrains.mps.samples.formulaLanguage.api;
 public class MultiplyOperation implements Function<Double> {
   private Function<Double> myLeftOperand;
   private Function<Double> myRightOperand;
-
   public MultiplyOperation(Function<Double> leftOperand, Function<Double> rightOperand) {
     myLeftOperand = leftOperand;
     myRightOperand = rightOperand;
   }
-
   @Override
   public Double compute(Object parm) {
     Double num1 = myLeftOperand.compute(parm);

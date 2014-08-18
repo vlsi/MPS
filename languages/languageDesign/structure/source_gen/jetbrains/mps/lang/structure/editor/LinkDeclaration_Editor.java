@@ -48,11 +48,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6h6dhy_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6h6dhy_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_6h6dhy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a");
@@ -62,7 +60,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_6h6dhy_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createTransactionalProperty_6h6dhy_a0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("role");
@@ -72,7 +69,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         public void doCommit(final String oldValue, final String newValue) {
           this.doCommitImpl(oldValue, newValue);
         }
-
         public void doCommitImpl(final String oldValue, final String newValue) {
           if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
             public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
@@ -107,11 +103,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class LinkDeclaration_null_postfixCellMenu_6h6dhy_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public LinkDeclaration_null_postfixCellMenu_6h6dhy_a0a0() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "target", false) != null)) {
@@ -121,14 +115,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return postfixes;
     }
   }
-
   private EditorCell createConstant_6h6dhy_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_6h6dhy_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_6h6dhy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_c0");
@@ -152,7 +144,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_6h6dhy_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("target");
@@ -174,20 +165,16 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_6h6dhy_a0c0 extends InlineCellProvider {
     public _Inline_6h6dhy_a0c0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_6h6dhy_a0a2a(editorContext, node);
     }
-
     private EditorCell createProperty_6h6dhy_a0a2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -210,7 +197,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_6h6dhy_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_6h6dhy_b2a");
@@ -223,7 +209,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6h6dhy_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("sourceCardinality");
@@ -244,15 +229,12 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_6h6dhy_a2c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) == null;
   }
-
   public static class LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c2a extends AbstractCellMenuPart_PropertyValues {
     public LinkDeclaration_sourceCardinality_cellMenu_6h6dhy_a0c2a() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       if (SPropertyOperations.hasValue(node, "metaClass", "aggregation", "reference")) {
@@ -266,16 +248,13 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return result;
     }
   }
-
   private EditorCell createReadOnlyModelAccessor_6h6dhy_d2a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SEnumOperations.getEnumMemberName(SModelUtil.getGenuineLinkSourceCardinality(node));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -289,11 +268,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean renderingCondition_6h6dhy_a3c0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "specializedLink", false) != null;
   }
-
   private EditorCell createConstant_6h6dhy_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_6h6dhy_e2a");
@@ -305,7 +282,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_6h6dhy_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_f2a");
@@ -316,11 +292,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_6h6dhy_b5c0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_6h6dhy_a5c0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "specializedLink", false) != null);
   }
-
   private EditorCell createConstant_6h6dhy_a5c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specializes:");
     editorCell.setCellId("Constant_6h6dhy_a5c0");
@@ -330,7 +304,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_6h6dhy_b5c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("specializedLink");
@@ -352,20 +325,16 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_6h6dhy_a1f2a extends InlineCellProvider {
     public _Inline_6h6dhy_a1f2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_6h6dhy_a0b5c0(editorContext, node);
     }
-
     private EditorCell createProperty_6h6dhy_a0b5c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -385,7 +354,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_6h6dhy_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered");
     editorCell.setCellId("Constant_6h6dhy_g2a");
@@ -395,11 +363,9 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_6h6dhy_a6c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "unordered");
   }
-
   private EditorCell createCollection_6h6dhy_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6h6dhy_a_0");
@@ -408,7 +374,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_6h6dhy_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6h6dhy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unordered:");
     editorCell.setCellId("Constant_6h6dhy_a0");
@@ -418,7 +383,6 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6h6dhy_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("unordered");

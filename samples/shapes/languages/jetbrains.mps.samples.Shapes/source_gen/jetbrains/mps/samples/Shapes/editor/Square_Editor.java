@@ -20,7 +20,6 @@ public class Square_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gaismf_a(editorContext, node);
   }
-
   private EditorCell createCollection_gaismf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gaismf_a");
@@ -35,7 +34,6 @@ public class Square_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_gaismf_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gaismf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
     editorCell.setCellId("Constant_gaismf_a0");
@@ -45,14 +43,12 @@ public class Square_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gaismf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x:");
     editorCell.setCellId("Constant_gaismf_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gaismf_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("upperLeftX");
@@ -70,14 +66,12 @@ public class Square_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gaismf_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y:");
     editorCell.setCellId("Constant_gaismf_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gaismf_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("upperLeftY");
@@ -95,14 +89,12 @@ public class Square_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gaismf_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "size:");
     editorCell.setCellId("Constant_gaismf_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gaismf_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("size");
@@ -120,7 +112,6 @@ public class Square_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_gaismf_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.samples.Shapes.editor.ShapeColor");
     return editorCell;

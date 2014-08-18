@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class PullUpMethod_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PullUpMethod_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.PullUpMethod";

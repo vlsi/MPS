@@ -26,11 +26,9 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3ei7nb_a(editorContext, node);
   }
-
   private EditorCell createCollection_3ei7nb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_3ei7nb_a");
@@ -39,14 +37,12 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_3ei7nb_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3ei7nb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ei7nb_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_3ei7nb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3ei7nb_b0");
@@ -58,28 +54,24 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_3ei7nb_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3ei7nb_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_3ei7nb_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_3ei7nb_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ei7nb_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_3ei7nb_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description");
     editorCell.setCellId("Constant_3ei7nb_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_3ei7nb_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_3ei7nb_c0");
@@ -91,7 +83,6 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_3ei7nb_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_3ei7nb_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("labelDeclaration");
@@ -113,20 +104,16 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   public static class _Inline_3ei7nb_a0c0 extends InlineCellProvider {
     public _Inline_3ei7nb_a0c0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_3ei7nb_a0a2a(editorContext, node);
     }
-
     private EditorCell createProperty_3ei7nb_a0a2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -149,14 +136,12 @@ public class MappingRuleCommonFields implements ConceptEditorComponent {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_3ei7nb_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_3ei7nb_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_3ei7nb_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");

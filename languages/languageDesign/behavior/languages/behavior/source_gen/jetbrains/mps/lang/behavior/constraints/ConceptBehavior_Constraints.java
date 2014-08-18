@@ -22,12 +22,10 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
   public ConceptBehavior_Constraints() {
     super("jetbrains.mps.lang.behavior.structure.ConceptBehavior");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -38,7 +36,6 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -47,7 +44,6 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -64,10 +60,8 @@ public class ConceptBehavior_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.BEHAVIOR.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1227088888254");
 }

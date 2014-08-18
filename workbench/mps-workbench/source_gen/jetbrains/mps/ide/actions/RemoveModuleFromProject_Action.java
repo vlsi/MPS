@@ -28,18 +28,15 @@ import org.apache.log4j.LogManager;
 
 public class RemoveModuleFromProject_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RemoveModuleFromProject_Action() {
     super("Remove from Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
     if (module == null) {
@@ -47,7 +44,6 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     }
     return ((MPSProject) MapSequence.fromMap(_params).get("mpsproject")).isProjectModule(module);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -61,7 +57,6 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -80,7 +75,6 @@ public class RemoveModuleFromProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SModule module = ((IOperationContext) MapSequence.fromMap(_params).get("context")).getModule();
@@ -90,7 +84,6 @@ public class RemoveModuleFromProject_Action extends BaseAction {
           setTitle("Remove Module From Project");
           init();
         }
-
         @Nullable
         @Override
         protected JComponent createCenterPanel() {
@@ -114,6 +107,5 @@ public class RemoveModuleFromProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RemoveModuleFromProject_Action.class);
 }

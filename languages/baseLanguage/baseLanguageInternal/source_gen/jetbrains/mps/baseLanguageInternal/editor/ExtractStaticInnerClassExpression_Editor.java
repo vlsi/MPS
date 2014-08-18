@@ -24,11 +24,9 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_azestd_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_azestd_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_azestd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_a");
@@ -41,7 +39,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createConstant_azestd_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_azestd_a0");
@@ -51,7 +48,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_azestd_b0");
@@ -61,7 +57,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_azestd_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_azestd_c0");
@@ -71,7 +66,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createRefNode_azestd_a2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_azestd_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("innerClass");
@@ -91,7 +85,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_azestd_d0");
@@ -102,7 +95,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_azestd_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("inner");
@@ -122,7 +114,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_azestd_f0");
@@ -132,7 +123,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_azestd_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_azestd_a_0");
@@ -141,7 +131,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createCollection_azestd_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_azestd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_a0");
@@ -152,14 +141,12 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createProperty_azestd_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "non static");
     editorCell.setCellId("Constant_azestd_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_azestd_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("nonStatic");
@@ -177,7 +164,6 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_azestd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_azestd_b0");
@@ -188,14 +174,12 @@ public class ExtractStaticInnerClassExpression_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createProperty_azestd_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_azestd_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make unique");
     editorCell.setCellId("Constant_azestd_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_azestd_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("makeUnique");

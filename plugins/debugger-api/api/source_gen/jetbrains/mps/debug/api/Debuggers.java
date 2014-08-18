@@ -14,30 +14,24 @@ import com.intellij.openapi.application.ApplicationManager;
 public class Debuggers implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(Debuggers.class);
   private final List<IDebugger> myDebuggers = new ArrayList<IDebugger>();
-
   public Debuggers() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Debuggers";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   public void registerDebugger(@NotNull IDebugger debugger) {
     synchronized (myDebuggers) {
       myDebuggers.add(debugger);
     }
   }
-
   public void unRegisterDebugger(@NotNull IDebugger debugger) {
     boolean removed;
     synchronized (myDebuggers) {
@@ -47,7 +41,6 @@ public class Debuggers implements ApplicationComponent {
       LOG.warn("Debugger " + debugger.getName() + " was not registered.");
     }
   }
-
   public List<IDebugger> getDebuggers() {
     synchronized (myDebuggers) {
       List<IDebugger> debuggers;
@@ -55,7 +48,6 @@ public class Debuggers implements ApplicationComponent {
       return debuggers;
     }
   }
-
   @Nullable
   public IDebugger getDebuggerByName(@NotNull String name) {
     for (IDebugger debugger : getDebuggers()) {
@@ -65,7 +57,6 @@ public class Debuggers implements ApplicationComponent {
     }
     return null;
   }
-
   @NotNull
   public IDebugger getDebuggerByNameSafe(@NotNull String name) throws DebuggerNotPresentException {
     IDebugger debugger = getDebuggerByName(name);
@@ -74,7 +65,6 @@ public class Debuggers implements ApplicationComponent {
     }
     throw new DebuggerNotPresentException("Cannot find debugger " + name);
   }
-
   public static Debuggers getInstance() {
     return ApplicationManager.getApplication().getComponent(Debuggers.class);
   }

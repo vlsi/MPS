@@ -20,7 +20,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class LoggingGenerationUtil {
   public LoggingGenerationUtil() {
   }
-
   public static SNode toPlus(List<SNode> textExpressions) {
     SNode result = null;
     if (ListSequence.fromList(textExpressions).isNotEmpty()) {
@@ -31,7 +30,6 @@ public class LoggingGenerationUtil {
     }
     return result;
   }
-
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
     for (SNode logStatement : ListSequence.fromList(SNodeOperations.getDescendants(contextNode, "jetbrains.mps.baseLanguage.logging.structure.LogStatement", false, new String[]{}))) {
       Scope scope = ScopeUtils.parentScope(logStatement, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
@@ -47,7 +45,6 @@ public class LoggingGenerationUtil {
 
     return baseName;
   }
-
   private static SNode _quotation_createNode_gd2srw_a0a0b0b0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_TernaryOperatorExpression_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode ternaryOperatorExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(ternaryOperatorExpression), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       {
@@ -42,22 +41,18 @@ public class check_TernaryOperatorExpression_NonTypesystemRule extends AbstractN
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_r4e9e1_a0a1a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

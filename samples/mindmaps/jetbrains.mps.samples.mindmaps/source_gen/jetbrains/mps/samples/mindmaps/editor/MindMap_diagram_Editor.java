@@ -48,16 +48,13 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTrai
 
 public class MindMap_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_e8klwn_a(editorContext, node);
   }
-
   private EditorCell createCollection_e8klwn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCanBeSynchronized(true);
@@ -69,14 +66,12 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createDiagram_e8klwn_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_e8klwn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Mind map");
     editorCell.setCellId("Constant_e8klwn_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_e8klwn_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -97,7 +92,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_e8klwn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_e8klwn_c0");
@@ -107,13 +101,11 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createDiagram_e8klwn_d0(EditorContext editorContext, SNode node) {
     DiagramCell editorCell = new MindMap_diagram_Editor.DiagramCellImpl_e8klwn_d0(editorContext, node);
     editorCell.setCellId("Diagram_e8klwn_d0");
     return editorCell;
   }
-
   private class DiagramCellImpl_e8klwn_d0 extends DiagramCell {
     private DiagramCellImpl_e8klwn_d0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
@@ -136,8 +128,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-
-
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Thought"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "thoughts"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
@@ -146,7 +136,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
         }
       })};
     }
-
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.mindmaps.structure.Relationship"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.mindmaps.structure.MindMap", "relationships"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
@@ -159,7 +148,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
         }
       })};
     }
-
     public Mapper<SNode, DiagramView> createMapper(SNode node) {
       return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
         @Override
@@ -200,7 +188,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
       return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
@@ -219,7 +206,6 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public void synchronize() {
       Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
@@ -230,12 +216,10 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }
-
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
     }
-
     private class DiagramPaletteImpl_e8klwn_a3a extends DiagramPalette {
       private DiagramPaletteImpl_e8klwn_a3a(DiagramCell diagramCell) {
         super(diagramCell);
@@ -250,18 +234,15 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
             return "Thought";
           }
 
-
         });
         addPaletteElement(new DiagramTraitButton(diagramCell));
         createPalette();
       }
     }
   }
-
   private static boolean neq_e8klwn_a0a0a0a0d1a2a0a1a0i(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_e8klwn_a0a0a0a0d0a0a0d8(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

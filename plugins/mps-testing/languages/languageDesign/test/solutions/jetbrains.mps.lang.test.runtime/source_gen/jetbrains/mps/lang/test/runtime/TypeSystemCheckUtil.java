@@ -17,7 +17,6 @@ import jetbrains.mps.newTypesystem.test.StateMatcher;
 public class TypeSystemCheckUtil {
   public TypeSystemCheckUtil() {
   }
-
   public static void checkGenerationMode(SNode node) {
     TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     typeCheckingContext.checkRoot(true);
@@ -31,7 +30,6 @@ public class TypeSystemCheckUtil {
       Assert.assertTrue(TypesUtil.match(type1, type2));
     }
   }
-
   public static void checkRollBacks(SNode node) {
     TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getContainingRoot());
     State state = typeCheckingContext.getState();

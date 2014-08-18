@@ -14,14 +14,12 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
   private SModel myModel;
   private MoveNodesDialog.ModelFilter myFilter;
   protected Object mySelectedObject;
-
   public MoveNodesDialog(@NotNull Project project, SModel model) {
     super(project);
     myModel = model;
     init();
     setTitle(REFACTORING_NAME + " " + "nodes");
   }
-
   @Override
   protected void doRefactoringAction() {
     Object selectedObject = myChooser.getSelectedObject();
@@ -30,7 +28,6 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
       super.doRefactoringAction();
     }
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -39,41 +36,33 @@ public class MoveNodesDialog extends ModelOrNodeChooserDialog {
     centerPanel.setPreferredSize(new Dimension(400, 900));
     return centerPanel;
   }
-
   public void setFilter(MoveNodesDialog.ModelFilter filter) {
     myFilter = filter;
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   public static Object getSelectedObject(@NotNull Project project, SModel model) {
     MoveNodesDialog dialog = new MoveNodesDialog(project, model);
     dialog.show();
     return dialog.mySelectedObject;
   }
-
   public static Object getSelectedObject(@NotNull Project project, SModel model, MoveNodesDialog.ModelFilter filter) {
     MoveNodesDialog dialog = new MoveNodesDialog(project, model);
     dialog.setFilter(filter);
     dialog.show();
     return dialog.mySelectedObject;
   }
-
   public static abstract class ModelFilter extends ModelOrNodeChooserDialog.Filter {
     public ModelFilter() {
     }
-
     public ModelFilter(String errorMessage) {
       super(errorMessage);
     }
-
     public abstract boolean check(Object selectedObject, SModel model);
-
     private boolean checkForObject(Object selectedObject, SModel model, JComponent component) {
       if (!(check(selectedObject, model))) {
         showError("Nodes can't be moved", component);

@@ -20,71 +20,55 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceWithConstantValue_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceWithConstantValue_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
   }
-
   public String getPresentation() {
     return "ReplaceWithConstantValue";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguageInternal.intentions.ReplaceWithConstantValue_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguageInternal";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:f0d79467-678d-44a3-9372-d1b2fb477d99(jetbrains.mps.baseLanguageInternal.intentions)", "5332097447638335764");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceWithConstantValue_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with Constant Value";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode constantValue = _quotation_createNode_y7ts2x_a0a0a(SLinkOperations.getTarget(node, "variableDeclaration", false));
       SNodeOperations.replaceWithAnother(node, constantValue);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceWithConstantValue_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_y7ts2x_a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

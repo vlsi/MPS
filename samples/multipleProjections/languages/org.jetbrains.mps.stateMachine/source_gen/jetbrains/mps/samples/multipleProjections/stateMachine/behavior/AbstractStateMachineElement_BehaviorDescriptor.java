@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class AbstractStateMachineElement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AbstractStateMachineElement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.structure.AbstractStateMachineElement";

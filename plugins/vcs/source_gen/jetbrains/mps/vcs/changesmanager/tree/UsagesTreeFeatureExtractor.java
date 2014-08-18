@@ -19,7 +19,6 @@ import jetbrains.mps.ide.findusages.view.treeholder.tree.DataNode;
 public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
   public UsagesTreeFeatureExtractor() {
   }
-
   @Nullable
   @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {
@@ -39,7 +38,6 @@ public class UsagesTreeFeatureExtractor implements TreeNodeFeatureExtractor {
     }
     return null;
   }
-
   private static BaseNodeData check_f7pfq7_a0a0a0b(DataNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getData();

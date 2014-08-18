@@ -10,63 +10,63 @@
   <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499489240">
     <file name="BooleanEditor.java">
       <node id="1560298786499490391" at="12,26,13,29" concept="6" />
-      <node id="1560298786499490409" at="16,118,17,16" concept="5" />
-      <node id="1560298786499490425" at="21,135,22,113" concept="4" />
-      <node id="1560298786499490436" at="22,113,23,60" concept="1" />
-      <node id="1560298786499490443" at="23,60,24,60" concept="1" />
-      <node id="1560298786499490450" at="24,60,25,78" concept="1" />
-      <node id="1560298786499490462" at="25,78,26,21" concept="5" />
+      <node id="1560298786499490409" at="15,118,16,16" concept="5" />
+      <node id="1560298786499490425" at="19,135,20,113" concept="4" />
+      <node id="1560298786499490436" at="20,113,21,60" concept="1" />
+      <node id="1560298786499490443" at="21,60,22,60" concept="1" />
+      <node id="1560298786499490450" at="22,60,23,78" concept="1" />
+      <node id="1560298786499490462" at="23,78,24,21" concept="5" />
       <node id="1560298786499490388" at="12,0,15,0" concept="0" trace="BooleanEditor#()V" />
-      <node id="1560298786499490395" at="16,0,19,0" concept="3" trace="isEnabledFor#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Z" />
-      <node id="1560298786499490411" at="20,0,28,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <node id="1560298786499490395" at="15,0,18,0" concept="3" trace="isEnabledFor#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Z" />
+      <node id="1560298786499490411" at="18,0,26,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
       <scope id="1560298786499490390" at="12,26,13,29" />
-      <scope id="1560298786499490408" at="16,118,17,16" />
+      <scope id="1560298786499490408" at="15,118,16,16" />
       <scope id="1560298786499490388" at="12,0,15,0" />
-      <scope id="1560298786499490395" at="16,0,19,0">
+      <scope id="1560298786499490395" at="15,0,18,0">
         <var name="column" id="1560298786499490406" />
         <var name="isSelected" id="1560298786499490402" />
         <var name="row" id="1560298786499490404" />
         <var name="table" id="1560298786499490398" />
         <var name="value" id="1560298786499490400" />
       </scope>
-      <scope id="1560298786499490424" at="21,135,26,21">
+      <scope id="1560298786499490424" at="19,135,24,21">
         <var name="component" id="1560298786499490426" />
       </scope>
-      <scope id="1560298786499490411" at="20,0,28,0">
+      <scope id="1560298786499490411" at="18,0,26,0">
         <var name="column" id="1560298786499490422" />
         <var name="isSelected" id="1560298786499490418" />
         <var name="row" id="1560298786499490420" />
         <var name="table" id="1560298786499490414" />
         <var name="value" id="1560298786499490416" />
       </scope>
-      <unit id="1560298786499489240" at="11,0,29,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
+      <unit id="1560298786499489240" at="11,0,27,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
     </file>
   </root>
   <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499490028">
     <file name="ModuleEditor.java">
       <node id="1560298786499490031" at="12,0,13,0" concept="2" trace="myTextField" />
-      <node id="1560298786499490037" at="14,25,15,28" concept="6" />
-      <node id="1560298786499490040" at="15,28,16,52" concept="1" />
-      <node id="1560298786499490048" at="16,52,17,33" concept="1" />
-      <node id="1560298786499490059" at="21,38,22,33" concept="5" />
-      <node id="1560298786499490079" at="26,135,27,67" concept="1" />
-      <node id="1560298786499490091" at="27,67,28,84" concept="5" />
-      <node id="1560298786499490055" at="20,0,24,0" concept="3" trace="getCellEditorValue#()Ljava/lang/Object;" />
-      <node id="1560298786499490034" at="14,0,19,0" concept="0" trace="ModuleEditor#()V" />
-      <node id="1560298786499490065" at="25,0,30,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
-      <scope id="1560298786499490058" at="21,38,22,33" />
-      <scope id="1560298786499490078" at="26,135,28,84" />
-      <scope id="1560298786499490036" at="14,25,17,33" />
-      <scope id="1560298786499490055" at="20,0,24,0" />
-      <scope id="1560298786499490034" at="14,0,19,0" />
-      <scope id="1560298786499490065" at="25,0,30,0">
+      <node id="1560298786499490037" at="13,25,14,28" concept="6" />
+      <node id="1560298786499490040" at="14,28,15,52" concept="1" />
+      <node id="1560298786499490048" at="15,52,16,33" concept="1" />
+      <node id="1560298786499490059" at="19,38,20,33" concept="5" />
+      <node id="1560298786499490079" at="23,135,24,67" concept="1" />
+      <node id="1560298786499490091" at="24,67,25,84" concept="5" />
+      <node id="1560298786499490055" at="18,0,22,0" concept="3" trace="getCellEditorValue#()Ljava/lang/Object;" />
+      <node id="1560298786499490034" at="13,0,18,0" concept="0" trace="ModuleEditor#()V" />
+      <node id="1560298786499490065" at="22,0,27,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <scope id="1560298786499490058" at="19,38,20,33" />
+      <scope id="1560298786499490078" at="23,135,25,84" />
+      <scope id="1560298786499490036" at="13,25,16,33" />
+      <scope id="1560298786499490055" at="18,0,22,0" />
+      <scope id="1560298786499490034" at="13,0,18,0" />
+      <scope id="1560298786499490065" at="22,0,27,0">
         <var name="column" id="1560298786499490076" />
         <var name="isSelected" id="1560298786499490072" />
         <var name="row" id="1560298786499490074" />
         <var name="table" id="1560298786499490068" />
         <var name="value" id="1560298786499490070" />
       </scope>
-      <unit id="1560298786499490028" at="11,0,31,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
+      <unit id="1560298786499490028" at="11,0,28,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
     </file>
   </root>
 </debug-info>

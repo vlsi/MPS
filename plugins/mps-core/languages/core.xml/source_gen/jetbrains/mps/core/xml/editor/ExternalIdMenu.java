@@ -18,27 +18,22 @@ public class ExternalIdMenu extends AbstractCellMenuComponent {
   public ExternalIdMenu() {
     super(new SubstituteInfoPartExt[]{new ExternalIdMenu.XmlExternalId_generic_cellMenu_kwmulu_a0()});
   }
-
   public static class XmlExternalId_generic_cellMenu_kwmulu_a0 extends AbstractCellMenuPart_Generic_Group {
     public XmlExternalId_generic_cellMenu_kwmulu_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isPublic")) {
         return ListSequence.fromListAndArray(new ArrayList<String>(), "SYSTEM");
       }
       return ListSequence.fromListAndArray(new ArrayList<String>(), "PUBLIC");
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "isPublic", "" + (!(SPropertyOperations.getBoolean(node, "isPublic"))));
       editorContext.selectWRTFocusPolicy(node);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

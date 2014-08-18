@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CellMenuDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getEditedFeature_1220342015727(SNode thisNode) {
     SNode owner = SNodeOperations.getAncestorWhereConceptInList(thisNode, new String[]{"jetbrains.mps.lang.editor.structure.EditorCellModel", "jetbrains.mps.lang.editor.structure.CellMenuComponent"}, false, false);
     if (SNodeOperations.isInstanceOf(owner, "jetbrains.mps.lang.editor.structure.CellModel_WithRole")) {

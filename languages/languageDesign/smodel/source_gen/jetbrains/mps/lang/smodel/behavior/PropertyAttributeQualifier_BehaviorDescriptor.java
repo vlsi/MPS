@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PropertyAttributeQualifier_BehaviorDescriptor extends AttributeQualifier_BehaviorDescriptor {
   public PropertyAttributeQualifier_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return PropertyAttributeQualifier_Behavior.virtual_getTargetConcept_6407023681583066586(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.PropertyAttributeQualifier";

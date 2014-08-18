@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class replaceNode_QuickFix extends QuickFix_Runtime {
   public replaceNode_QuickFix() {
   }
-
   public void execute(SNode node) {
     // FIXME split into specific quick fixes 
     SNodeOperations.replaceWithAnother(node, ((SNode) replaceNode_QuickFix.this.getField("newNode")[0]));

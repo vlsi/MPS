@@ -13,7 +13,6 @@ public class EnumValuesExpression_Constraints extends BaseConstraintsDescriptor 
   public EnumValuesExpression_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.EnumValuesExpression");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,7 +21,6 @@ public class EnumValuesExpression_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";

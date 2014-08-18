@@ -21,72 +21,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateInitializer_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateInitializer_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
   }
-
   public String getPresentation() {
     return "CreateInitializer";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.CreateInitializer_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initializer", true) == null) && ((SLinkOperations.getTarget(node, "initSize", true) == null) || !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_hasInitSize_1262430001741497996", new Object[]{})));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "1206658014161");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateInitializer_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Initializer";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(node, "initializer", "jetbrains.mps.baseLanguage.collections.structure.MapInitializer");
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateInitializer_Intention.this;
     }

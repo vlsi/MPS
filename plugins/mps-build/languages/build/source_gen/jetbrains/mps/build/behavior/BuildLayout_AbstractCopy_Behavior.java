@@ -12,7 +12,6 @@ import jetbrains.mps.build.util.LocalSourcePathArtifact;
 public class BuildLayout_AbstractCopy_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       SNode parent = helper.parent(thisNode);
@@ -27,11 +26,9 @@ public class BuildLayout_AbstractCopy_Behavior {
       }
     }
   }
-
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile");
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       SNode path = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "fileset", true), "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true);
@@ -48,7 +45,6 @@ public class BuildLayout_AbstractCopy_Behavior {
     }
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_appendName_1368030936106665465", new Object[]{parent, sb});
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;
@@ -73,11 +69,9 @@ public class BuildLayout_AbstractCopy_Behavior {
     }
     return false;
   }
-
   private static boolean eq_cz5gmx_a0a0d0b0a0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_cz5gmx_a0a0d0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

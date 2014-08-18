@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_BeforeTaskCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_BeforeTaskCall_InferenceRule() {
   }
-
   public void applyRule(final SNode beforeTaskCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> declaredParameters = SLinkOperations.getTargets(SLinkOperations.getTarget(beforeTaskCall, "beforeTask", false), "parameter", true);
     if (ListSequence.fromList(SLinkOperations.getTargets(beforeTaskCall, "parameter", true)).count() != ListSequence.fromList(declaredParameters).count()) {
@@ -36,18 +35,15 @@ public class typeof_BeforeTaskCall_InferenceRule extends AbstractInferenceRule_R
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.configurations.structure.BeforeTaskCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

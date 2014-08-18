@@ -9,23 +9,18 @@ import jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor;
 public abstract class DebugProcessAdapter implements DebugProcessListener {
   public DebugProcessAdapter() {
   }
-
   @Override
   public void connectorIsReady() {
   }
-
   @Override
   public void resumed(@NotNull Context suspendContext) {
   }
-
   @Override
   public void paused(@NotNull Context suspendContext) {
   }
-
   @Override
   public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
   }
-
   @Override
   public void processAttached(@NotNull EventsProcessor process) {
   }

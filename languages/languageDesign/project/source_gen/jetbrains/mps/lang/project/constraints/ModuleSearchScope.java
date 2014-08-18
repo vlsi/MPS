@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class ModuleSearchScope extends AbstractSearchScope {
   public ModuleSearchScope() {
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

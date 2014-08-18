@@ -15,11 +15,9 @@ public class BitemporalCollectionTester extends TestCase {
   private MfDate myJul15 = new MfDate(1996, 7, 15);
   private MfDate myAug1 = new MfDate(1996, 8, 1);
   private MfDate myAug10 = new MfDate(1996, 8, 10);
-
   public BitemporalCollectionTester(String name) {
     super(name);
   }
-
   @Override
   public void setUp() {
     MfDate.setToday(new MfDate(1996, 1, 1));
@@ -29,7 +27,6 @@ public class BitemporalCollectionTester extends TestCase {
     mySubject.put(new MfDate(1996, 7, 4), myFranklin);
     MfDate.setToday(new MfDate(2000, 9, 11));
   }
-
   public void testSimpleBitemporal() {
     Assert.assertEquals("jul1 as at aug 1", myWorcester, mySubject.get(myJul1, myAug1));
     Assert.assertEquals("jul1 as at aug 10", myWorcester, mySubject.get(myJul1, myAug10));
@@ -38,7 +35,6 @@ public class BitemporalCollectionTester extends TestCase {
     Assert.assertEquals("jul15 as at aug 10", myFranklin, mySubject.get(myJul15, myAug10));
     Assert.assertEquals("jul15 as at now", myFranklin, mySubject.get(myJul15));
   }
-
   public void testSingleTemporal2() {
     mySubject = new BitemporalCollection();
     String Franklin963 = "963 Franklin St";
@@ -50,7 +46,6 @@ public class BitemporalCollectionTester extends TestCase {
     Assert.assertEquals(Damon15, mySubject.get(new MfDate(1998, 8, 23)));
     Assert.assertEquals(Damon15, mySubject.get());
   }
-
   public static void main(String[] args) {
     TestRunner.run(new TestSuite(BitemporalCollectionTester.class));
   }

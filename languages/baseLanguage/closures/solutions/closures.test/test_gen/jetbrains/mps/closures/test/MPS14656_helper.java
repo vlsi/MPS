@@ -9,7 +9,6 @@ import java.io.File;
 public class MPS14656_helper {
   public MPS14656_helper() {
   }
-
   public static void valid() throws Exception {
     run(new _FunctionTypes._void_P0_E1<IOException>() {
       public void invoke() throws IOException {
@@ -17,7 +16,6 @@ public class MPS14656_helper {
       }
     });
   }
-
   public static void invalid() throws Exception {
     run(new _FunctionTypes._void_P0_E1<IOException>() {
       public void invoke() throws IOException {
@@ -25,7 +23,6 @@ public class MPS14656_helper {
       }
     });
   }
-
   public static void run(_FunctionTypes._void_P0_E1<? extends Exception> f) throws Exception {
     f.invoke();
   }

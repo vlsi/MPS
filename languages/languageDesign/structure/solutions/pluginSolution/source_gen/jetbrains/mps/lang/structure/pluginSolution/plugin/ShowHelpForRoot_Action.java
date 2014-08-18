@@ -18,22 +18,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowHelpForRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowHelpForRoot_Action() {
     super("Show Help for Root", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return HelpHelper.helpForRootIsAvailable(((SNode) MapSequence.fromMap(_params).get("node"))) && HelpHelper.getDefaultHelpFor(((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node"))) != HelpHelper.HelpType.ROOT_NODE;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +43,6 @@ public class ShowHelpForRoot_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -65,7 +60,6 @@ public class ShowHelpForRoot_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       HelpHelper.showHelpForRoot(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -75,6 +69,5 @@ public class ShowHelpForRoot_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowHelpForRoot_Action.class);
 }

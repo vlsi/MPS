@@ -20,22 +20,18 @@ import org.apache.log4j.LogManager;
 
 public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ExecuteActionAttachedToCurrentNode_Action() {
     super("Execute Attached Action", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return SNodeOperations.isInstanceOf(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.console.base.structure.IActionHolder") && BehaviorReflection.invokeVirtual(Boolean.TYPE, ((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtual_canExecute_3282455643657932881", new Object[]{});
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -49,7 +45,6 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,7 +59,6 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       BehaviorReflection.invokeVirtual(Void.class, (SNodeOperations.cast(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.console.base.structure.IActionHolder")), "virtual_execute_8517397753922085153", new Object[]{((Project) MapSequence.fromMap(_params).get("project"))});
@@ -74,6 +68,5 @@ public class ExecuteActionAttachedToCurrentNode_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ExecuteActionAttachedToCurrentNode_Action.class);
 }

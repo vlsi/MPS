@@ -25,7 +25,6 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
   public NamedTupleComponentReference_Constraints() {
     super("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -47,7 +45,6 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a1;
@@ -57,6 +54,5 @@ public class NamedTupleComponentReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_2jtvdm_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239575924538");
 }

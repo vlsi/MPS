@@ -16,19 +16,16 @@ import org.apache.log4j.LogManager;
 
 public class Find_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public Find_Action() {
     super("Find...", "Find a string in active editor", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
     this.setMnemonic("f".charAt(0));
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -39,7 +36,6 @@ public class Find_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class Find_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getSearchPanel().activate();
@@ -66,6 +61,5 @@ public class Find_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(Find_Action.class);
 }

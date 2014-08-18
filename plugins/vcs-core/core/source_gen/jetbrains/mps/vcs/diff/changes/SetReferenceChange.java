@@ -20,7 +20,6 @@ public class SetReferenceChange extends NodeChange {
   private SNodeId myTargetNodeId;
   private String myResolveInfo;
   private boolean myResolveInfoOnly;
-
   public SetReferenceChange(@NotNull ChangeSet changeSet, @NotNull SNodeId sourceNodeId, @NotNull String role, @Nullable SModelReference targetModelReference, @Nullable SNodeId targetNodeId, @Nullable String resolveInfo) {
     super(changeSet, sourceNodeId);
     myRole = role;
@@ -33,27 +32,22 @@ public class SetReferenceChange extends NodeChange {
     SReference oldRef = check_mgdhcs_a0i0f(changeSet.getOldModel().getNode(getAffectedNodeId()), myRole, this);
     myResolveInfoOnly = eq_mgdhcs_a0a0a9a5(check_mgdhcs_a0a0a9a5(oldRef), targetModelReference) && eq_mgdhcs_a0a0a9a5_0(check_mgdhcs_a0a0a9a5_0(oldRef), targetNodeId) && targetNodeId != null;
   }
-
   @NotNull
   public String getRole() {
     return myRole;
   }
-
   @Nullable
   public SModelReference getTargetModelReference() {
     return myTargetModelReference;
   }
-
   @Nullable
   public SNodeId getTargetNodeId() {
     return myTargetNodeId;
   }
-
   @Nullable
   public String getResolveInfo() {
     return myResolveInfo;
   }
-
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNode(getAffectedNodeId());
@@ -72,18 +66,15 @@ public class SetReferenceChange extends NodeChange {
       node.setReference(reference.getRole(), reference);
     }
   }
-
   @Override
   public boolean isNonConflicting() {
     return myResolveInfoOnly;
   }
-
   @Override
   public String toString() {
     String targetString = (myTargetModelReference == null ? "" + myTargetNodeId : String.format("%s|%s", myTargetModelReference, myTargetNodeId));
     return String.format("Set reference in role %s for node %s to %s [resolveInfo=%s]", myRole, getAffectedNodeId(), targetString, myResolveInfo);
   }
-
   @Override
   public String getDescription() {
     // TODO consider dynamic references 
@@ -125,7 +116,6 @@ public class SetReferenceChange extends NodeChange {
       return String.format("Changed %s reference %s from\n  %s\n  to\n  %s", myRole, what, formatRef.invoke(oldRef), formatRef.invoke(newRef));
     }
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
@@ -140,69 +130,57 @@ public class SetReferenceChange extends NodeChange {
 
     return new SetReferenceChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), getRole(), targetModel, check_mgdhcs_e0a6a41(ref), check_mgdhcs_f0a6a41(((jetbrains.mps.smodel.SReference) ref)));
   }
-
   private static SReference check_mgdhcs_a0i0f(SNode checkedDotOperand, String myRole, SetReferenceChange checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference(myRole);
     }
     return null;
   }
-
   private static SModelReference check_mgdhcs_a0a0a9a5(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
   private static SNodeId check_mgdhcs_a0a0a9a5_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
-
   private static SModelReference check_mgdhcs_a0d0o(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
   private static SNodeId check_mgdhcs_e0a6a41(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
-
   private static String check_mgdhcs_f0a6a41(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
-
   private static boolean eq_mgdhcs_a0a0a9a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_mgdhcs_a0a0a9a5_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_mgdhcs_a0h0n(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_mgdhcs_a0i0n(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_mgdhcs_a0j0n(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_mgdhcs_a0e0o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

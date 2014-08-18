@@ -23,19 +23,16 @@ import org.apache.log4j.LogManager;
 public class ViewAs_Action extends BaseAction {
   private static final Icon ICON = null;
   private ValueWrapperFactory factory;
-
   public ViewAs_Action(ValueWrapperFactory factory_par) {
     super("View With Factory", "", ICON);
     this.factory = factory_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -50,7 +47,6 @@ public class ViewAs_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,7 +57,6 @@ public class ViewAs_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
@@ -75,7 +70,6 @@ public class ViewAs_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -85,10 +79,8 @@ public class ViewAs_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String factory_State(ValueWrapperFactory object) {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
-
   protected static Logger LOG = LogManager.getLogger(ViewAs_Action.class);
 }

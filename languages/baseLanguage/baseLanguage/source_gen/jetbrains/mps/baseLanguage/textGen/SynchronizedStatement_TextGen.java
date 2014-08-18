@@ -41,6 +41,5 @@ public class SynchronizedStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SynchronizedStatement_TextGen.class);
 }

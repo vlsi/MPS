@@ -9,40 +9,40 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)/7048923897762709721">
     <file name="Flags.java">
       <node id="7048923897762709793" at="11,0,12,0" concept="2" trace="name" />
-      <node id="7048923897762709749" at="16,32,17,35" concept="1" />
-      <node id="7048923897762709760" at="20,33,21,35" concept="1" />
-      <node id="7048923897762709774" at="24,40,25,44" concept="4" />
-      <node id="7048923897762709786" at="28,28,29,21" concept="4" />
-      <node id="7048923897762709733" at="32,44,33,64" concept="4" />
-      <node id="7048923897762709723" at="13,0,15,0" concept="0" trace="Flags#(Ljava/lang/String;)V" />
-      <node id="7048923897762709743" at="16,0,19,0" concept="3" trace="flag#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7048923897762709756" at="20,0,23,0" concept="3" trace="clear#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7048923897762709769" at="24,0,27,0" concept="3" trace="isFlagged#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7048923897762709783" at="28,0,31,0" concept="3" trace="toString#()Ljava/lang/String;" />
-      <node id="7048923897762709730" at="32,0,35,0" concept="5" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="7048923897762709726" at="13,22,13,22" />
-      <scope id="7048923897762709748" at="16,32,17,35" />
-      <scope id="7048923897762709759" at="20,33,21,35" />
-      <scope id="7048923897762709773" at="24,40,25,44" />
-      <scope id="7048923897762709785" at="28,28,29,21" />
-      <scope id="7048923897762709732" at="32,44,33,64" />
-      <scope id="7048923897762709723" at="13,0,15,0">
+      <node id="7048923897762709749" at="14,32,15,35" concept="1" />
+      <node id="7048923897762709760" at="17,33,18,35" concept="1" />
+      <node id="7048923897762709774" at="20,40,21,44" concept="4" />
+      <node id="7048923897762709786" at="23,28,24,21" concept="4" />
+      <node id="7048923897762709733" at="26,44,27,64" concept="4" />
+      <node id="7048923897762709723" at="12,0,14,0" concept="0" trace="Flags#(Ljava/lang/String;)V" />
+      <node id="7048923897762709743" at="14,0,17,0" concept="3" trace="flag#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7048923897762709756" at="17,0,20,0" concept="3" trace="clear#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7048923897762709769" at="20,0,23,0" concept="3" trace="isFlagged#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7048923897762709783" at="23,0,26,0" concept="3" trace="toString#()Ljava/lang/String;" />
+      <node id="7048923897762709730" at="26,0,29,0" concept="5" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="7048923897762709726" at="12,22,12,22" />
+      <scope id="7048923897762709748" at="14,32,15,35" />
+      <scope id="7048923897762709759" at="17,33,18,35" />
+      <scope id="7048923897762709773" at="20,40,21,44" />
+      <scope id="7048923897762709785" at="23,28,24,21" />
+      <scope id="7048923897762709732" at="26,44,27,64" />
+      <scope id="7048923897762709723" at="12,0,14,0">
         <var name="name" id="7048923897762709727" />
       </scope>
-      <scope id="7048923897762709743" at="16,0,19,0">
+      <scope id="7048923897762709743" at="14,0,17,0">
         <var name="node" id="7048923897762709744" />
       </scope>
-      <scope id="7048923897762709756" at="20,0,23,0">
+      <scope id="7048923897762709756" at="17,0,20,0">
         <var name="node" id="7048923897762709767" />
       </scope>
-      <scope id="7048923897762709769" at="24,0,27,0">
+      <scope id="7048923897762709769" at="20,0,23,0">
         <var name="node" id="7048923897762709770" />
       </scope>
-      <scope id="7048923897762709783" at="28,0,31,0" />
-      <scope id="7048923897762709730" at="32,0,35,0">
+      <scope id="7048923897762709783" at="23,0,26,0" />
+      <scope id="7048923897762709730" at="26,0,29,0">
         <var name="str" id="7048923897762709738" />
       </scope>
-      <unit id="7048923897762709721" at="7,0,36,0" name="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
+      <unit id="7048923897762709721" at="7,0,30,0" name="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
     </file>
   </root>
 </debug-info>

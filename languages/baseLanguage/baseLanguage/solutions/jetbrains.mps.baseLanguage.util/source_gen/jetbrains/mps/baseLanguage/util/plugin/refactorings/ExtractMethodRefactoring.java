@@ -31,12 +31,10 @@ public abstract class ExtractMethodRefactoring {
   protected ExtractMethodRefactoringAnalyzer myAnalyzer;
   private IStaticContainerProcessor myStaticContainer;
   protected List<MethodMatch> myMatches;
-
   public ExtractMethodRefactoring(ExtractMethodRefactoringParameters parameters) {
     this.myParameters = parameters;
     this.myAnalyzer = parameters.getAnalyzer();
   }
-
   @NotNull
   public SNode doRefactor() {
     SNode body = createMethodBody();
@@ -53,11 +51,8 @@ public abstract class ExtractMethodRefactoring {
     MethodOptimizer.optimize(body);
     return newMethod;
   }
-
   protected abstract SNode createMethodBody();
-
   public abstract void replaceMatch(MethodMatch match, SNode methodDeclaration);
-
   protected MethodMatch createMatch(List<SNode> nodes, Map<SNode, SNode> inputMapping, List<SNode> parametersOrder) {
     MethodMatch match = new MethodMatch(parametersOrder);
     for (SNode node : ListSequence.fromList(nodes)) {
@@ -68,7 +63,6 @@ public abstract class ExtractMethodRefactoring {
     }
     return match;
   }
-
   protected SNode createNewMethod(SNode returnType, List<SNode> params, SNode body) {
     SNode myMethod;
     if (this.myStaticContainer != null) {
@@ -85,7 +79,6 @@ public abstract class ExtractMethodRefactoring {
     this.correctThrowsList(myMethod);
     return myMethod;
   }
-
   private void correctThrowsList(SNode method) {
     List<SNode> throwables = new ArrayList<SNode>();
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true))) {
@@ -97,7 +90,6 @@ public abstract class ExtractMethodRefactoring {
       }
     }));
   }
-
   protected void createNewDeclarations(SNode method) {
     Map<SNode, List<SNode>> mapping = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     for (SNode reference : ListSequence.fromList(SNodeOperations.getDescendants(method, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{}))) {
@@ -121,7 +113,6 @@ public abstract class ExtractMethodRefactoring {
       }
     }
   }
-
   protected SNode fillBaseMethodDeclaration(SNode declaration, SNode returnType, List<SNode> params, SNode body) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.IVisible")) {
       SNode visibleDeclaration = SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.IVisible");
@@ -134,7 +125,6 @@ public abstract class ExtractMethodRefactoring {
     SLinkOperations.setTarget(methodDeclaration, "body", body, true);
     return methodDeclaration;
   }
-
   protected void addMethod(SNode node) {
     if (this.myStaticContainer == null) {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
@@ -143,7 +133,6 @@ public abstract class ExtractMethodRefactoring {
       this.myStaticContainer.addMethod(node);
     }
   }
-
   protected Map<SNode, SNode> createInputParameters(SNode body, List<SNode> parameters) {
     Map<SNode, SNode> result = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (MethodParameter methodParameter : ListSequence.fromList(this.myParameters.getParameters())) {
@@ -160,14 +149,12 @@ public abstract class ExtractMethodRefactoring {
     }
     return result;
   }
-
   public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_jq3ovj_a0a0a1a51(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
-
   public Map<SNode, SNode> createInputVaryablesMapping(Map<SNode, SNode> variableDeclarationToParameter, List<SNode> nodes) {
     Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode node : ListSequence.fromList(nodes)) {
@@ -188,11 +175,9 @@ public abstract class ExtractMethodRefactoring {
     }
     return mapping;
   }
-
   protected SNode createReference(SNode variable) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), variable, "virtual_createReference_1213877517482", new Object[]{});
   }
-
   protected List<SNode> createCallParameters() {
     List<SNode> result = new ArrayList<SNode>();
     for (MethodParameter parameter : ListSequence.fromList(this.myParameters.getParameters())) {
@@ -202,7 +187,6 @@ public abstract class ExtractMethodRefactoring {
     }
     return result;
   }
-
   protected SNode createMethodCall(SNode methodDeclaration, List<SNode> parameters) {
     if (this.myStaticContainer == null) {
       IExtractMethodRefactoringProcessor processor = this.myAnalyzer.getExtractMethodReafactoringProcessor();
@@ -211,11 +195,9 @@ public abstract class ExtractMethodRefactoring {
       return this.myStaticContainer.createMethodCall(methodDeclaration, parameters);
     }
   }
-
   public SNode createMethodCall(MethodMatch match, SNode methodDeclaration) {
     return this.createMethodCall(methodDeclaration, match.getCallParameters());
   }
-
   public void setStaticContainer(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       this.myStaticContainer = new ClassStaticContainerProcessor(node);
@@ -226,7 +208,6 @@ public abstract class ExtractMethodRefactoring {
       throw new IllegalArgumentException();
     }
   }
-
   public Set<SNode> getOutputReferences() {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     List<SNode> outputVariables = myParameters.getAnalyzer().getOutputVariables();
@@ -239,26 +220,20 @@ public abstract class ExtractMethodRefactoring {
     }
     return result;
   }
-
   public List<MethodMatch> getMatches() {
     return this.myMatches;
   }
-
   public ExtractMethodRefactoringAnalyzer getAnalyzer() {
     return myParameters.getAnalyzer();
   }
-
   @Nullable
   public abstract SNode getMethodType();
-
   public boolean canBeStatic() {
     return this.myAnalyzer.canBeStatic();
   }
-
   public boolean shouldBeStatic() {
     return this.myAnalyzer.shouldBeStatic();
   }
-
   private static SNode _quotation_createNode_jq3ovj_a0a0a0a0c0k(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -266,7 +241,6 @@ public abstract class ExtractMethodRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_jq3ovj_a0a0c0l(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -279,7 +253,6 @@ public abstract class ExtractMethodRefactoring {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_jq3ovj_a0a1a2a11(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -292,7 +265,6 @@ public abstract class ExtractMethodRefactoring {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_jq3ovj_a0a0a1a51(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

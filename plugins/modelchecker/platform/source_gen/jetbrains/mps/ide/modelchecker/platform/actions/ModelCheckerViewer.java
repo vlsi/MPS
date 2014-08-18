@@ -63,7 +63,6 @@ public abstract class ModelCheckerViewer extends JPanel {
   private Icon myTabIcon;
   private JButton myFixButton;
   private String myCheckProgressTitle = "Checking...";
-
   public ModelCheckerViewer(Project project, IOperationContext operationContext) {
     myProject = project;
     myOperationContext = operationContext;
@@ -77,12 +76,10 @@ public abstract class ModelCheckerViewer extends JPanel {
       public void close() {
         ModelCheckerViewer.this.close();
       }
-
       @Override
       protected String getRerunSearchTooltip() {
         return "Recheck";
       }
-
       @Override
       protected String getSearchProgressTitle() {
         return myCheckProgressTitle;
@@ -104,9 +101,7 @@ public abstract class ModelCheckerViewer extends JPanel {
     buttonPanel.add(myFixButton);
     add(buttonPanel, BorderLayout.SOUTH);
   }
-
   protected abstract void close();
-
   public void performQuickFixes() {
     // Ask if need to fix 
 
@@ -149,7 +144,6 @@ public abstract class ModelCheckerViewer extends JPanel {
       runCheck();
     }
   }
-
   private List<ModelCheckerIssue> getIssuesToFix() {
     final Set<SNodeReference> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodeReference>(), myUsagesView.getIncludedResultNodes());
     return ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
@@ -162,7 +156,6 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
     }).toListSequence();
   }
-
   private void runCheck() {
     try {
       ProgressManager.getInstance().run(new Task.Modal(myProject, myCheckProgressTitle, true) {
@@ -176,7 +169,6 @@ public abstract class ModelCheckerViewer extends JPanel {
     }
 
   }
-
   public void prepareAndCheckModules(List<SModule> modules, String taskTargetTitle, Icon taskIcon) {
     IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
     SearchQuery searchQuery = new SearchQuery(new ModulesHolder(ListSequence.fromList(modules).toListSequence(), myOperationContext), myProject.getComponent(MPSProject.class).getScope());
@@ -187,7 +179,6 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     runCheck();
   }
-
   public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon, ModelCheckerIssueFinder issueFinder) {
     IResultProvider resultProvider = FindUtils.makeProvider(issueFinder);
     SearchQuery searchQuery = new SearchQuery(new ModelsHolder(ListSequence.fromList(modelDescriptors).select(new ISelector<SModel, SModelReference>() {
@@ -202,47 +193,37 @@ public abstract class ModelCheckerViewer extends JPanel {
 
     runCheck();
   }
-
   public void prepareAndCheckModels(List<SModel> modelDescriptors, String taskTargetTitle, Icon taskIcon) {
     prepareAndCheckModels(modelDescriptors, taskTargetTitle, taskIcon, new ModelCheckerIssueFinder());
   }
-
   public void setTabProperties(String title, Icon icon) {
     myTabTitle = title;
     myTabIcon = icon;
   }
-
   public void dispose() {
     myUsagesView.dispose();
   }
-
   public String getTabTitle() {
     return myTabTitle;
   }
-
   public Icon getTabIcon() {
     return myTabIcon;
   }
-
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myUsagesView.getSearchResults();
   }
-
   public static class MyNodeRepresentator implements INodeRepresentator<ModelCheckerIssue> {
     public MyNodeRepresentator() {
     }
-
     @Override
     public String getResultsText(TextOptions options) {
       int size = options.mySubresultsCount;
       return "<strong>" + NameUtil.formatNumericalString(size, "issue") + " found</strong>";
     }
-
     @Override
     public Icon getResultsIcon() {
       return IdeIcons.CLOSED_FOLDER;
     }
-
     @Override
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
@@ -251,7 +232,6 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
       return "<strong>" + category + counter + "</strong>";
     }
-
     @Override
     public Icon getCategoryIcon(String category) {
       if ((category != null && category.length() > 0)) {
@@ -265,22 +245,18 @@ public abstract class ModelCheckerViewer extends JPanel {
       }
       return IdeIcons.CLOSED_FOLDER;
     }
-
     @NotNull
     @Override
     public String getPresentation(ModelCheckerIssue issue) {
       return StringUtil.escapeXml(issue.getMessage());
     }
-
     @Override
     public List<CategoryKind> getCategoryKinds() {
       return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
     }
-
     @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
-
     @Override
     public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }

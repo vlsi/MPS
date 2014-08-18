@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckExcessTypeCasts_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), SLinkOperations.getTarget(expr, "type", true), false)) {
       // TODO: typecase may not be superfluous in a type inference context (MPS-15011) 
@@ -33,18 +32,15 @@ public class CheckExcessTypeCasts_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

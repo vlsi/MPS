@@ -11,7 +11,6 @@ import git4idea.commands.GitCommand;
 public class GitUtils {
   private GitUtils() {
   }
-
   public static void uncommmit(Project project, VirtualFile gitRoot) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, gitRoot, GitCommand.RESET);
     h.addParameters("--mixed", "HEAD^");

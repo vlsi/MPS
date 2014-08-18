@@ -4,44 +4,44 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="StateMachineTestMethod_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTestMethod_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTestMethod_BehaviorDescriptor" />
     </file>
     <file name="HandleEvent_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.HandleEvent_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.HandleEvent_BehaviorDescriptor" />
     </file>
     <file name="StateMachine_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachine_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachine_BehaviorDescriptor" />
     </file>
     <file name="Event_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Event_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Event_BehaviorDescriptor" />
     </file>
     <file name="State_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.State_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.State_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,34,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Transition_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Transition_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.Transition_BehaviorDescriptor" />
     </file>
     <file name="StateMachineTest_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:bf569071-47c0-4c8e-8820-c63d5ff55ed1(jetbrains.mps.samples.secretCompartmentLanguage.behavior)/3191472212106638383">
     <file name="StateMachineTest_Behavior.java">
-      <node id="1197251292013" at="13,79,14,121" concept="0" />
+      <node id="1197251292013" at="12,79,13,121" concept="0" />
       <node id="3191472212106638383" at="10,0,12,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3191472212106638383" at="13,0,16,0" concept="1" trace="call_getStateMachineName_1197251245696#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3191472212106638383" at="12,0,15,0" concept="1" trace="call_getStateMachineName_1197251245696#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="3191472212106638385" at="10,43,10,43" />
-      <scope id="1197251245698" at="13,79,14,121" />
+      <scope id="1197251245698" at="12,79,13,121" />
       <scope id="3191472212106638383" at="10,0,12,0">
         <var name="thisNode" id="3191472212106638383" />
       </scope>
-      <scope id="3191472212106638383" at="13,0,16,0">
+      <scope id="3191472212106638383" at="12,0,15,0">
         <var name="thisNode" id="3191472212106638383" />
       </scope>
-      <unit id="3191472212106638383" at="9,0,17,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_Behavior" />
+      <unit id="3191472212106638383" at="9,0,16,0" name="jetbrains.mps.samples.secretCompartmentLanguage.behavior.StateMachineTest_Behavior" />
     </file>
   </root>
 </debug-info>

@@ -8,11 +8,9 @@ import junit.textui.TestRunner;
 
 public abstract class TemporalCollectionTester extends TestCase {
   protected TemporalCollection mySubject;
-
   public TemporalCollectionTester(String name) {
     super(name);
   }
-
   @Override
   public void setUp() {
     createSubject();
@@ -21,9 +19,7 @@ public abstract class TemporalCollectionTester extends TestCase {
     mySubject.put(new MfDate(1999, 10, 1), "oct-nov");
     mySubject.put(new MfDate(1999, 12, 30), "after dec ish");
   }
-
   protected abstract void createSubject();
-
   public void testInitial() {
     try {
       mySubject.get(1999, 7, 31);
@@ -31,21 +27,18 @@ public abstract class TemporalCollectionTester extends TestCase {
     } catch (Exception correctResponse) {
     }
   }
-
   public void testOneDate() {
     mySubject = new SingleTemporalCollection();
     mySubject.put(new MfDate(1999, 9, 1), "sep");
     Assert.assertEquals("sep", mySubject.get(1999, 9, 1));
     Assert.assertEquals("sep", mySubject.get(2000, 8, 29));
   }
-
   public void testSimple() {
     Assert.assertEquals("oct-nov", mySubject.get(1999, 10, 1));
     Assert.assertEquals("oct-nov", mySubject.get(1999, 12, 29));
     Assert.assertEquals("after dec ish", mySubject.get(1999, 12, 30));
     Assert.assertEquals("after dec ish", mySubject.get(2000, 11, 1));
   }
-
   public void testTooEarly() {
     try {
       mySubject.get(1999, 7, 31);
@@ -53,7 +46,6 @@ public abstract class TemporalCollectionTester extends TestCase {
     } catch (IllegalArgumentException e) {
     }
   }
-
   public void testSimpleChange() {
     mySubject.put(new MfDate(1999, 7, 1), "jul");
     Assert.assertEquals("jul", mySubject.get(1999, 7, 1));
@@ -63,7 +55,6 @@ public abstract class TemporalCollectionTester extends TestCase {
     Assert.assertEquals("after dec ish", mySubject.get(1999, 12, 30));
     Assert.assertEquals("after dec ish", mySubject.get(2000, 11, 1));
   }
-
   public static void main(String[] ignore) {
     String[] args = {"mf.TemporalCollectionTester"};
     TestRunner.main(args);

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class SimpleMathIntegerType_BehaviorDescriptor extends SimpleMathType_BehaviorDescriptor {
   public SimpleMathIntegerType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType";

@@ -13,7 +13,6 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
   private DiffEditor myLeftEditor;
   private DiffEditor myRightEditor;
   private ChangeSet myChangeSet;
-
   public DiffChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, @NotNull ChangeSet changeSet, @NotNull DiffEditor leftEditor, @NotNull DiffEditor rightEditor, boolean inspector) {
     super(conflictChecker, inspector, false);
     myLeftEditor = leftEditor;
@@ -29,35 +28,29 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
       myRightEditor.getInspector().addRebuildListener(rebuildListener);
     }
   }
-
   @NotNull
   @Override
   public EditorComponent getLeftComponent() {
     return myLeftEditor.getEditorComponent(myInspector);
   }
-
   @NotNull
   @Override
   public EditorComponent getRightComponent() {
     return myRightEditor.getEditorComponent(myInspector);
   }
-
   @Override
   protected List<ChangeEditorMessage> getLeftMessages(ModelChange change) {
     return myLeftEditor.getMessagesForChange(change);
   }
-
   @Override
   protected List<ChangeEditorMessage> getRightMessages(ModelChange change) {
     return myRightEditor.getMessagesForChange(change);
   }
-
   @Nullable
   @Override
   protected ChangeSet getChangeSet() {
     return myChangeSet;
   }
-
   public void setChangeSet(ChangeSet changeSet) {
     myChangeSet = changeSet;
   }

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RunConfigurationCreator_DataFlow extends DataFlowBuilder {
   public RunConfigurationCreator_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "configuration", false), "r:a2b2ec6f-979b-40b3-95b7-73340d2d1923(jetbrains.mps.execution.configurations.dataFlow)/3665474332687279477");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "configurationName", true));

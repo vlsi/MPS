@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_SLinkListAccess_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SLinkListAccess_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode linkDecl = SLinkOperations.getTarget(op, "link", false);
     if (linkDecl == null) {
@@ -33,18 +32,15 @@ public class check_SLinkListAccess_NonTypesystemRule extends AbstractNonTypesyst
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(op, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1226070777621", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

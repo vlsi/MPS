@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ParenthesisedExpressionSurroundedWithParentheses_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ParenthesisedExpressionSurroundedWithParentheses_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode parenthesizedExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(parenthesizedExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parenthesizedExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parenthesizedExpression), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"))) {
       SNode currentParent = parenthesizedExpression;
@@ -37,18 +36,15 @@ public class check_ParenthesisedExpressionSurroundedWithParentheses_NonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

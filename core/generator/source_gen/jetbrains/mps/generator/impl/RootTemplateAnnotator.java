@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class RootTemplateAnnotator implements CoreComponent {
   public RootTemplateAnnotator(GlobalSModelEventsManager dep) {
   }
-
   @Override
   public void init() {
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(new SModelAdapter() {
@@ -37,18 +36,15 @@ public class RootTemplateAnnotator implements CoreComponent {
       }
     });
   }
-
   @Override
   public void dispose() {
   }
-
   private static SModule check_epzavk_a0a0a0b0a0a0a0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_epzavk_a0a0a0b0a0a0a0a0b_0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

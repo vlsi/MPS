@@ -25,7 +25,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class QueriesUtil {
   private static Object CELL_READABLE_ID = new Object();
-
   public static SNode getGeneratedClassByAncestor(SNode inputNode, final TemplateQueryContext genctx) {
     List<SNode> ancestors = SNodeOperations.getAncestors(inputNode, null, false);
     Iterable<SNode> outputClasses = ListSequence.fromList(ancestors).translate(new ITranslator2<SNode, SNode>() {
@@ -34,7 +33,6 @@ public class QueriesUtil {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -79,7 +77,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private SNode _5_output;
             };
           }
@@ -88,7 +85,6 @@ __switch__:
     });
     return Sequence.fromIterable(outputClasses).first();
   }
-
   public static String keyMapActionClassName(SNode keyMapItem) {
     SNode keyMapDeclaration = SNodeOperations.cast(SNodeOperations.getParent(keyMapItem), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration");
     int index = 0;
@@ -100,7 +96,6 @@ __switch__:
     }
     return SPropertyOperations.getString(keyMapDeclaration, "name") + "_Action" + index;
   }
-
   public static String getUnicName(String name, SNode root, TemplateQueryContext context) {
     SNode bigCell = root;
     Set<String> namesSet = ((Set<String>) context.getStepObject(bigCell));
@@ -117,7 +112,6 @@ __switch__:
     SetSequence.fromSet(namesSet).addElement(result);
     return result;
   }
-
   public static boolean requiresAutoDeletableStyleAddition(SNode inlineEditorComponent) {
     SNode cellModel_refCell = SNodeOperations.as(SNodeOperations.getParent(inlineEditorComponent), "jetbrains.mps.lang.editor.structure.CellModel_RefCell");
     if (cellModel_refCell == null) {
@@ -145,7 +139,6 @@ __switch__:
 
     return false;
   }
-
   private static boolean hasUserDefinedStyle(SNode cellModel, final SNode styleClassConcept) {
     if (ListSequence.fromList(SLinkOperations.getTargets(cellModel, "styleItem", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

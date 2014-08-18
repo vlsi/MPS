@@ -10,13 +10,11 @@ public class ModelFeature extends Feature {
   public ModelFeature(@NotNull SModelReference modelReference) {
     super(modelReference);
   }
-
   @Nullable
   @Override
   public Feature getParent() {
     return null;
   }
-
   @NotNull
   @Override
   public String toString() {

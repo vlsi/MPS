@@ -25,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
   private List<AnAction> myChildren = ListSequence.fromList(new ArrayList<AnAction>());
   private AnAction mySelectedAction;
 
-
   public PopupPaletteActionGroupAdapter(final DiagramPalette palette, PaletteActionGroup group) {
     super(group.getText(), group.getText(), group.getIcon());
     assert group.isPopup();
@@ -34,13 +33,10 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
     myPalette = palette;
   }
 
-
-
   @NotNull
   public AnAction[] getChildren(@Nullable AnActionEvent event) {
     return ListSequence.fromList(myChildren).toGenericArray(AnAction.class);
   }
-
   public void updateChildren() {
     myChildren = Sequence.fromIterable(Sequence.fromArray(myPaletteActionGroup.getElements())).select(new ISelector<PaletteElement, AnAction>() {
       public AnAction select(PaletteElement element) {
@@ -57,12 +53,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
       }
     });
   }
-
   public void removeChildren() {
     ListSequence.fromList(myChildren).clear();
   }
-
-
 
   @Override
   public void update(AnActionEvent event) {
@@ -75,7 +68,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
       event.getPresentation().putClientProperty(SELECTED_PROPERTY, false);
     }
   }
-
   /*package*/ void setSelectedAction(AnAction action) {
     mySelectedAction = action;
   }

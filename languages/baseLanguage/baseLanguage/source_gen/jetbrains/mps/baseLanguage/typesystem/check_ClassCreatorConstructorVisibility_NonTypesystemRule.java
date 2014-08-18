@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ClassCreatorConstructorVisibility_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassCreatorConstructorVisibility_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(classCreator, "baseMethodDeclaration", false) == null)) {
       return;
@@ -38,18 +37,15 @@ public class check_ClassCreatorConstructorVisibility_NonTypesystemRule extends A
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classCreator, "The constructor has " + visibilityName + " access", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6880273274245694012", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

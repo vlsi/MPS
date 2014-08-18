@@ -12,12 +12,10 @@ import jetbrains.mps.smodel.SReference;
 public class WatchableListType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     BehaviorReflection.invokeVirtual(Void.class, createClassifierType_za89pk_a0b0a(), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
   }
-
   private static SNode createClassifierType_za89pk_a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);

@@ -7,7 +7,6 @@ import jetbrains.mps.console.base.behavior.GeneratedCommand_BehaviorDescriptor;
 public class Execute_BehaviorDescriptor extends GeneratedCommand_BehaviorDescriptor {
   public Execute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.scripts.structure.Execute";

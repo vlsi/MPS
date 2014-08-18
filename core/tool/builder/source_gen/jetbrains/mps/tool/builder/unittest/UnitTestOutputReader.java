@@ -20,7 +20,6 @@ public class UnitTestOutputReader {
   private StringBuffer myLastError = new StringBuffer();
   private String myLastMessage = "";
   private String myCurrentlyRunningTest;
-
   public UnitTestOutputReader(@NotNull Process unitTestProcess, @NotNull UnitTestListener unitTestListener) {
     myUnitTestProcess = unitTestProcess;
     myUnitTestListener = unitTestListener;
@@ -38,7 +37,6 @@ public class UnitTestOutputReader {
     };
     myOutputWriter = new BufferedWriter(new OutputStreamWriter(myUnitTestProcess.getOutputStream()));
   }
-
   private void parseMessage(@NotNull String text, boolean error) {
     String textTrimmed = text.trim();
     if (text.startsWith(UnitTestRunner.START_TEST_PREFIX)) {
@@ -70,18 +68,15 @@ public class UnitTestOutputReader {
       myUnitTestListener.logMessage(text);
     }
   }
-
   private void saveLastTestIfNecessary() {
     if (myCurrentlyRunningTest != null) {
       myUnitTestListener.testFinished(myCurrentlyRunningTest);
       myCurrentlyRunningTest = null;
     }
   }
-
   private String removeTag(String text, String prefix) {
     return text.substring(prefix.length());
   }
-
   public int start() {
     myInputReader.start();
     myErrorReader.start();
@@ -94,14 +89,11 @@ public class UnitTestOutputReader {
     }
     return -1;
   }
-
   private static abstract class BaseOutputReader extends Thread {
     private InputStream myIs;
-
     public BaseOutputReader(InputStream is) {
       this.myIs = is;
     }
-
     @Override
     public void run() {
       Scanner s = new Scanner(this.myIs);
@@ -113,7 +105,6 @@ public class UnitTestOutputReader {
         LogManager.getLogger(UnitTestOutputReader.class).error("Error in BaseOutputReader", e);
       }
     }
-
     protected abstract void addMessage(String message);
   }
 }

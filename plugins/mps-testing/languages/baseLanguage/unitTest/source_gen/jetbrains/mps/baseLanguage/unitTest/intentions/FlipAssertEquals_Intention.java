@@ -17,68 +17,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class FlipAssertEquals_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public FlipAssertEquals_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert";
   }
-
   public String getPresentation() {
     return "FlipAssertEquals";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.unitTest";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "7523560072226634120");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FlipAssertEquals_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Flip Assert Statement";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode expected = SLinkOperations.getTarget(node, "expected", true);
       SNode actual = SLinkOperations.getTarget(node, "actual", true);
       SLinkOperations.setTarget(node, "expected", SNodeOperations.copyNode(actual), true);
       SLinkOperations.setTarget(node, "actual", SNodeOperations.copyNode(expected), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return FlipAssertEquals_Intention.this;
     }

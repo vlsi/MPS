@@ -11,15 +11,12 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 public class SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {
   public SideTransformHintSubstituteActionsBuilder_BehaviorDescriptor() {
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return SideTransformHintSubstituteActionsBuilder_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder";

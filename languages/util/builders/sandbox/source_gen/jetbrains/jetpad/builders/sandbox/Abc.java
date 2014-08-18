@@ -15,7 +15,6 @@ public class Abc {
       }
     }.invoke();
   }
-
   public void aaa() {
     new _FunctionTypes._return_P0_E0<Node>() {
       public Node invoke() {

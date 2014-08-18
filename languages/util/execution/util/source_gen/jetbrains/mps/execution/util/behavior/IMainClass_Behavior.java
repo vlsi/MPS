@@ -10,15 +10,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class IMainClass_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getUnitName_4666195181811081431(SNode thisNode) {
     return Sequence.fromIterable(((Iterable<String>) TraceInfo.unitNames(thisNode))).first();
   }
-
   public static boolean virtual_isNodeRunnable_4666195181811081448(SNode thisNode) {
     return isNotEmptyString(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getUnitName_4666195181811081431", new Object[]{}));
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

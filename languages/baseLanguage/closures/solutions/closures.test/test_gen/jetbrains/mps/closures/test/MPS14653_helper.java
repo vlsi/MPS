@@ -7,11 +7,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class MPS14653_helper {
   public MPS14653_helper() {
   }
-
   public static class Context<T extends Exception> {
     public Context() {
     }
-
     public _FunctionTypes._void_P0_E1<? extends T> getFunction() {
       return (_FunctionTypes._void_P0_E1<? extends T>) new _FunctionTypes._void_P0_E1<Exception>() {
         public void invoke() throws Exception {
@@ -19,7 +17,6 @@ public class MPS14653_helper {
         }
       };
     }
-
     public void acceptFunction(_FunctionTypes._void_P0_E1<? extends T> fun) throws T {
       fun.invoke();
     }

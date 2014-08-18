@@ -11,1091 +11,1091 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root>
     <file name="NegativeLookAheadRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookAheadRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookAheadRegexp_BehaviorDescriptor" />
     </file>
     <file name="ParensRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_BehaviorDescriptor" />
     </file>
     <file name="NegativeLookBehindRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookBehindRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeLookBehindRegexp_BehaviorDescriptor" />
     </file>
     <file name="OrRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_BehaviorDescriptor" />
     </file>
     <file name="RegexpUsingConstruction_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpUsingConstruction_BehaviorDescriptor" />
     </file>
     <file name="MatchRegexpStatement_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpStatement_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpStatement_BehaviorDescriptor" />
     </file>
     <file name="LookRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_BehaviorDescriptor" />
     </file>
     <file name="FindMatchExpression_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchExpression_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchExpression_BehaviorDescriptor" />
     </file>
     <file name="MatchVariableReferenceRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_BehaviorDescriptor" />
     </file>
     <file name="LazyQuestionRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyQuestionRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyQuestionRegexp_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,124,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,122,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ReplaceRegexpOperation_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor" />
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_BehaviorDescriptor" />
     </file>
     <file name="MatchVariableReferenceReplacement_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_BehaviorDescriptor" />
     </file>
     <file name="LineStartRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineStartRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineStartRegexp_BehaviorDescriptor" />
     </file>
     <file name="DotRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.DotRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.DotRegexp_BehaviorDescriptor" />
     </file>
     <file name="MatchRegexpExpression_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpExpression_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpExpression_BehaviorDescriptor" />
     </file>
     <file name="LiteralReplacement_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_BehaviorDescriptor" />
     </file>
     <file name="PositiveLookAheadRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookAheadRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookAheadRegexp_BehaviorDescriptor" />
     </file>
     <file name="PositiveSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveSymbolClassRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveSymbolClassRegexp_BehaviorDescriptor" />
     </file>
     <file name="IntervalSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_BehaviorDescriptor" />
     </file>
     <file name="RegexpExpression_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpExpression_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpExpression_BehaviorDescriptor" />
     </file>
     <file name="ForEachMatchStatement_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ForEachMatchStatement_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ForEachMatchStatement_BehaviorDescriptor" />
     </file>
     <file name="PredefinedSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_BehaviorDescriptor" />
     </file>
     <file name="MatchRegexpOperation_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpOperation_BehaviorDescriptor" />
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchRegexpOperation_BehaviorDescriptor" />
     </file>
     <file name="LazyStarRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyStarRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyStarRegexp_BehaviorDescriptor" />
     </file>
     <file name="Regexp_BehaviorDescriptor.java">
-      <unit at="9,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor" />
+      <unit at="9,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_BehaviorDescriptor" />
     </file>
     <file name="NTimesRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_BehaviorDescriptor" />
     </file>
     <file name="PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor" />
     </file>
     <file name="StringLiteralRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_BehaviorDescriptor" />
     </file>
     <file name="NegativeSymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeSymbolClassRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NegativeSymbolClassRegexp_BehaviorDescriptor" />
     </file>
     <file name="QuestionRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.QuestionRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.QuestionRegexp_BehaviorDescriptor" />
     </file>
     <file name="UnicodeCharacterRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_BehaviorDescriptor" />
     </file>
     <file name="PositiveLookBehindRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookBehindRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PositiveLookBehindRegexp_BehaviorDescriptor" />
     </file>
     <file name="FindMatchStatement_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchStatement_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FindMatchStatement_BehaviorDescriptor" />
     </file>
     <file name="AtLeastNTimesRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_BehaviorDescriptor" />
     </file>
     <file name="LineEndRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineEndRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LineEndRegexp_BehaviorDescriptor" />
     </file>
     <file name="Regexps_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexps_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexps_BehaviorDescriptor" />
     </file>
     <file name="Replacement_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_BehaviorDescriptor" />
     </file>
     <file name="StarRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StarRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StarRegexp_BehaviorDescriptor" />
     </file>
     <file name="LazyPlusRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyPlusRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LazyPlusRegexp_BehaviorDescriptor" />
     </file>
     <file name="SymbolClassRegexpAndPart_BehaviorDescriptor.java">
       <unit at="7,0,10,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexpAndPart_BehaviorDescriptor" />
     </file>
     <file name="IntersectionSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_BehaviorDescriptor" />
     </file>
     <file name="BinaryRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BinaryRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.BinaryRegexp_BehaviorDescriptor" />
     </file>
     <file name="UnaryRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_BehaviorDescriptor" />
     </file>
     <file name="RegexpDeclarationReferenceRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_BehaviorDescriptor" />
     </file>
     <file name="SymbolClassRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_BehaviorDescriptor" />
     </file>
     <file name="ReplaceWithRegexpOperation_BehaviorDescriptor.java">
-      <unit at="11,0,40,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpOperation_BehaviorDescriptor" />
+      <unit at="11,0,34,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpOperation_BehaviorDescriptor" />
     </file>
     <file name="PlusRegexp_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PlusRegexp_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PlusRegexp_BehaviorDescriptor" />
     </file>
     <file name="SeqRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_BehaviorDescriptor" />
+      <unit at="8,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_BehaviorDescriptor" />
     </file>
     <file name="PredefinedSymbolClassDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassDeclaration_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassDeclaration_BehaviorDescriptor" />
     </file>
     <file name="CharacterSymbolClassPart_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_BehaviorDescriptor" />
     </file>
     <file name="InlineRegexpExpression_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.InlineRegexpExpression_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.InlineRegexpExpression_BehaviorDescriptor" />
     </file>
     <file name="PredefinedSymbolClasses_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClasses_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClasses_BehaviorDescriptor" />
     </file>
     <file name="ReplaceBlock_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_BehaviorDescriptor" />
     </file>
     <file name="ReplaceWithRegexpExpression_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpExpression_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceWithRegexpExpression_BehaviorDescriptor" />
     </file>
     <file name="MatchParensRegexp_BehaviorDescriptor.java">
-      <unit at="13,0,38,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_BehaviorDescriptor" />
+      <unit at="13,0,33,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_BehaviorDescriptor" />
     </file>
     <file name="SplitOperation_BehaviorDescriptor.java">
-      <unit at="12,0,41,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitOperation_BehaviorDescriptor" />
+      <unit at="12,0,35,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitOperation_BehaviorDescriptor" />
     </file>
     <file name="RegexpDeclaration_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclaration_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclaration_BehaviorDescriptor" />
     </file>
     <file name="FromNToMTimesRegexp_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_BehaviorDescriptor" />
     </file>
     <file name="SplitExpression_BehaviorDescriptor.java">
-      <unit at="8,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitExpression_BehaviorDescriptor" />
+      <unit at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SplitExpression_BehaviorDescriptor" />
     </file>
     <file name="MatchVariableReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReference_BehaviorDescriptor" />
     </file>
     <file name="SymbolClassPart_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877429450">
     <file name="Regexp_Behavior.java">
-      <node id="1223362844538" at="19,130,20,179" concept="6" />
-      <node id="1223362855008" at="21,5,22,20" concept="6" />
-      <node id="1222864750014" at="25,71,26,200" concept="6" />
-      <node id="1222432449456" at="29,90,30,106" concept="6" />
-      <node id="1222433811275" at="33,73,34,27" concept="6" />
-      <node id="1222857399071" at="37,92,38,31" concept="6" />
-      <node id="1222857244355" at="41,74,42,34" concept="6" />
-      <node id="1353467374624660345" at="46,45,47,15" concept="6" />
-      <node id="1353467374624660238" at="48,5,49,43" concept="5" />
-      <node id="1353467374624660281" at="50,42,51,27" concept="5" />
-      <node id="8330008649152995803" at="52,34,53,24" concept="1" />
-      <node id="1353467374624660320" at="54,7,55,19" concept="1" />
-      <node id="1353467374624660247" at="56,5,57,25" concept="6" />
-      <node id="1353467374623880344" at="60,85,61,17" concept="6" />
-      <node id="4759120547781297404" at="66,285,67,21" concept="6" />
-      <node id="4759120547781297306" at="69,5,70,16" concept="6" />
+      <node id="1223362844538" at="18,130,19,179" concept="6" />
+      <node id="1223362855008" at="20,5,21,20" concept="6" />
+      <node id="1222864750014" at="23,71,24,200" concept="6" />
+      <node id="1222432449456" at="26,90,27,106" concept="6" />
+      <node id="1222433811275" at="29,73,30,27" concept="6" />
+      <node id="1222857399071" at="32,92,33,31" concept="6" />
+      <node id="1222857244355" at="35,74,36,34" concept="6" />
+      <node id="1353467374624660345" at="39,45,40,15" concept="6" />
+      <node id="1353467374624660238" at="41,5,42,43" concept="5" />
+      <node id="1353467374624660281" at="43,42,44,27" concept="5" />
+      <node id="8330008649152995803" at="45,34,46,24" concept="1" />
+      <node id="1353467374624660320" at="47,7,48,19" concept="1" />
+      <node id="1353467374624660247" at="49,5,50,25" concept="6" />
+      <node id="1353467374623880344" at="52,85,53,17" concept="6" />
+      <node id="4759120547781297404" at="57,285,58,21" concept="6" />
+      <node id="4759120547781297306" at="60,5,61,16" concept="6" />
       <node id="1213877429450" at="15,0,17,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1223362833710" at="18,76,21,5" concept="4" />
-      <node id="1213877429450" at="25,0,28,0" concept="7" trace="virtual_toString_1213877429451#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1213877429450" at="29,0,32,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1213877429450" at="33,0,36,0" concept="7" trace="call_par_1222433790846#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1213877429450" at="37,0,40,0" concept="7" trace="call_checkStringForUnicode_1222857160881#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="1213877429450" at="41,0,44,0" concept="7" trace="call_quote_1222857178958#(Lorg/jetbrains/mps/openapi/model/SNode;C)Ljava/lang/String;" />
-      <node id="1353467374624660330" at="45,82,48,5" concept="4" />
-      <node id="8330008649152995755" at="51,27,54,7" concept="4" />
-      <node id="1213877429450" at="60,0,63,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="4759120547781297365" at="65,82,68,7" concept="4" />
-      <node id="4759120547781297356" at="64,77,69,5" concept="3" />
-      <node id="1213877429450" at="18,0,24,0" concept="7" trace="call_getTopLevelRegexp_1223362823237#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1353467374624660259" at="49,43,56,5" concept="2" />
-      <node id="1213877429450" at="64,0,72,0" concept="7" trace="virtual_isValid_4759120547781297301#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1213877429450" at="45,0,59,0" concept="7" trace="call_escape_1353467374624660231#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1223362833710" at="17,76,20,5" concept="4" />
+      <node id="1213877429450" at="23,0,26,0" concept="7" trace="virtual_toString_1213877429451#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1213877429450" at="26,0,29,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1213877429450" at="29,0,32,0" concept="7" trace="call_par_1222433790846#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1213877429450" at="32,0,35,0" concept="7" trace="call_checkStringForUnicode_1222857160881#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="1213877429450" at="35,0,38,0" concept="7" trace="call_quote_1222857178958#(Lorg/jetbrains/mps/openapi/model/SNode;C)Ljava/lang/String;" />
+      <node id="1353467374624660330" at="38,82,41,5" concept="4" />
+      <node id="8330008649152995755" at="44,27,47,7" concept="4" />
+      <node id="1213877429450" at="52,0,55,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4759120547781297365" at="56,82,59,7" concept="4" />
+      <node id="4759120547781297356" at="55,77,60,5" concept="3" />
+      <node id="1213877429450" at="17,0,23,0" concept="7" trace="call_getTopLevelRegexp_1223362823237#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1353467374624660259" at="42,43,49,5" concept="2" />
+      <node id="1213877429450" at="55,0,63,0" concept="7" trace="virtual_isValid_4759120547781297301#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1213877429450" at="38,0,52,0" concept="7" trace="call_escape_1353467374624660231#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1213877429460" at="15,43,15,43" />
-      <scope id="1223362833712" at="19,130,20,179" />
-      <scope id="1213877429453" at="25,71,26,200" />
-      <scope id="1222432436329" at="29,90,30,106" />
-      <scope id="1222433790849" at="33,73,34,27" />
-      <scope id="1222857160884" at="37,92,38,31" />
-      <scope id="1222857178961" at="41,74,42,34" />
-      <scope id="1353467374624660331" at="46,45,47,15" />
-      <scope id="8330008649152995756" at="52,34,53,24" />
-      <scope id="1353467374623880341" at="60,85,61,17" />
-      <scope id="4759120547781297367" at="66,285,67,21" />
+      <scope id="1223362833712" at="18,130,19,179" />
+      <scope id="1213877429453" at="23,71,24,200" />
+      <scope id="1222432436329" at="26,90,27,106" />
+      <scope id="1222433790849" at="29,73,30,27" />
+      <scope id="1222857160884" at="32,92,33,31" />
+      <scope id="1222857178961" at="35,74,36,34" />
+      <scope id="1353467374624660331" at="39,45,40,15" />
+      <scope id="8330008649152995756" at="45,34,46,24" />
+      <scope id="1353467374623880341" at="52,85,53,17" />
+      <scope id="4759120547781297367" at="57,285,58,21" />
       <scope id="1213877429450" at="15,0,17,0">
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1213877429450" at="25,0,28,0">
+      <scope id="1213877429450" at="23,0,26,0">
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1213877429450" at="29,0,32,0">
+      <scope id="1213877429450" at="26,0,29,0">
         <var name="thisNode" id="1213877429450" />
         <var name="vars" id="1222860889564" />
       </scope>
-      <scope id="1213877429450" at="33,0,36,0">
+      <scope id="1213877429450" at="29,0,32,0">
         <var name="s" id="1222433807664" />
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1213877429450" at="37,0,40,0">
+      <scope id="1213877429450" at="32,0,35,0">
         <var name="s" id="1222857225250" />
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1213877429450" at="41,0,44,0">
+      <scope id="1213877429450" at="35,0,38,0">
         <var name="ch" id="1222857212132" />
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1213877429450" at="60,0,63,0">
+      <scope id="1213877429450" at="52,0,55,0">
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="4759120547781297359" at="65,82,68,7" />
-      <scope id="1223362823240" at="18,76,22,20" />
-      <scope id="1353467374624660260" at="50,42,55,19">
+      <scope id="4759120547781297359" at="56,82,59,7" />
+      <scope id="1223362823240" at="17,76,21,20" />
+      <scope id="1353467374624660260" at="43,42,48,19">
         <var name="c" id="1353467374624660282" />
       </scope>
-      <scope id="4759120547781297356" at="64,77,69,5">
+      <scope id="4759120547781297356" at="55,77,60,5">
         <var name="n" id="4759120547781297357" />
       </scope>
-      <scope id="1213877429450" at="18,0,24,0">
+      <scope id="1213877429450" at="17,0,23,0">
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="4759120547781297304" at="64,77,70,16" />
-      <scope id="1353467374624660259" at="49,43,56,5">
+      <scope id="4759120547781297304" at="55,77,61,16" />
+      <scope id="1353467374624660259" at="42,43,49,5">
         <var name="i" id="1353467374624660262" />
       </scope>
-      <scope id="1213877429450" at="64,0,72,0">
+      <scope id="1213877429450" at="55,0,63,0">
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <scope id="1353467374624660234" at="45,82,57,25">
+      <scope id="1353467374624660234" at="38,82,50,25">
         <var name="sb" id="1353467374624660239" />
       </scope>
-      <scope id="1213877429450" at="45,0,59,0">
+      <scope id="1213877429450" at="38,0,52,0">
         <var name="s" id="1353467374624660236" />
         <var name="thisNode" id="1213877429450" />
       </scope>
-      <unit id="1213877429450" at="14,0,73,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
+      <unit id="1213877429450" at="14,0,64,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Regexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877475221">
     <file name="MatchParensRegexp_Behavior.java">
-      <node id="1222856845886" at="16,90,17,53" concept="1" />
-      <node id="1222435316154" at="17,53,18,178" concept="6" />
-      <node id="1223362558349" at="21,65,22,28" concept="5" />
-      <node id="1223362558375" at="22,28,23,52" concept="5" />
-      <node id="1223362558381" at="23,52,24,176" concept="1" />
-      <node id="1223362558391" at="24,176,25,65" concept="6" />
-      <node id="4204903511793603848" at="28,70,29,46" concept="8" />
+      <node id="1222856845886" at="15,90,16,53" concept="1" />
+      <node id="1222435316154" at="16,53,17,178" concept="6" />
+      <node id="1223362558349" at="19,65,20,28" concept="5" />
+      <node id="1223362558375" at="20,28,21,52" concept="5" />
+      <node id="1223362558381" at="21,52,22,176" concept="1" />
+      <node id="1223362558391" at="22,176,23,65" concept="6" />
+      <node id="4204903511793603848" at="25,70,26,46" concept="8" />
       <node id="1213877475221" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877475221" at="28,0,31,0" concept="7" trace="virtual_getValue_1224857430232#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1213877475221" at="16,0,20,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1213877475221" at="21,0,27,0" concept="7" trace="call_getIndex_1223361984345#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <node id="1213877475221" at="25,0,28,0" concept="7" trace="virtual_getValue_1224857430232#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877475221" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1213877475221" at="19,0,25,0" concept="7" trace="call_getIndex_1223361984345#(Lorg/jetbrains/mps/openapi/model/SNode;)I" />
       <scope id="1213877475255" at="13,43,13,43" />
-      <scope id="4204903511793602686" at="28,70,29,46" />
+      <scope id="4204903511793602686" at="25,70,26,46" />
       <scope id="1213877475221" at="13,0,15,0">
         <var name="thisNode" id="1213877475221" />
       </scope>
-      <scope id="1222435297324" at="16,90,18,178" />
-      <scope id="1213877475221" at="28,0,31,0">
+      <scope id="1222435297324" at="15,90,17,178" />
+      <scope id="1213877475221" at="25,0,28,0">
         <var name="thisNode" id="1213877475221" />
       </scope>
-      <scope id="1213877475221" at="16,0,20,0">
+      <scope id="1213877475221" at="15,0,19,0">
         <var name="thisNode" id="1213877475221" />
         <var name="vars" id="1222866421155" />
       </scope>
-      <scope id="1223361984348" at="21,65,25,65">
+      <scope id="1223361984348" at="19,65,23,65">
         <var name="parens" id="1223362558350" />
         <var name="parensList" id="1223362558376" />
       </scope>
-      <scope id="1213877475221" at="21,0,27,0">
+      <scope id="1213877475221" at="19,0,25,0">
         <var name="thisNode" id="1213877475221" />
       </scope>
-      <unit id="1213877475221" at="12,0,32,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_Behavior" />
+      <unit id="1213877475221" at="12,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchParensRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1213877492182">
     <file name="MatchVariableReferenceRegexp_Behavior.java">
-      <node id="1222610383089" at="14,90,15,113" concept="6" />
+      <node id="1222610383089" at="13,90,14,113" concept="6" />
       <node id="1213877492182" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877492182" at="14,0,17,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1213877492182" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1213877492184" at="11,43,11,43" />
-      <scope id="1222610343968" at="14,90,15,113" />
+      <scope id="1222610343968" at="13,90,14,113" />
       <scope id="1213877492182" at="11,0,13,0">
         <var name="thisNode" id="1213877492182" />
       </scope>
-      <scope id="1213877492182" at="14,0,17,0">
+      <scope id="1213877492182" at="13,0,16,0">
         <var name="thisNode" id="1213877492182" />
         <var name="vars" id="1222866497877" />
       </scope>
-      <unit id="1213877492182" at="10,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
+      <unit id="1213877492182" at="10,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222431791866">
     <file name="StringLiteralRegexp_Behavior.java">
-      <node id="1222433006828" at="17,90,18,133" concept="6" />
-      <node id="4759120547781297328" at="22,73,23,19" concept="6" />
-      <node id="4759120547781297335" at="24,5,25,141" concept="6" />
-      <node id="8330008649152995376" at="28,84,29,43" concept="5" />
-      <node id="8330008649152995383" at="30,42,31,27" concept="5" />
-      <node id="8330008649152995399" at="32,22,33,21" concept="1" />
-      <node id="8330008649152995406" at="34,32,35,22" concept="6" />
-      <node id="8330008649152995414" at="36,9,37,24" concept="1" />
-      <node id="8330008649152995423" at="38,23,39,23" concept="1" />
-      <node id="8330008649152995432" at="41,36,42,26" concept="6" />
-      <node id="8330008649152995440" at="43,13,44,28" concept="1" />
-      <node id="8330008649152995449" at="45,264,46,26" concept="6" />
-      <node id="8330008649152995456" at="47,13,48,25" concept="1" />
-      <node id="8330008649152995474" at="50,42,51,23" concept="1" />
-      <node id="8330008649152995483" at="53,36,54,26" concept="6" />
-      <node id="8330008649152995491" at="55,13,56,28" concept="1" />
-      <node id="8330008649152995500" at="57,42,58,26" concept="6" />
-      <node id="8330008649152995505" at="59,13,60,25" concept="1" />
-      <node id="8330008649152995522" at="62,116,63,23" concept="1" />
-      <node id="8330008649152995560" at="64,16,65,22" concept="6" />
-      <node id="8330008649152995396" at="67,26,68,20" concept="6" />
-      <node id="8330008649152995572" at="70,167,71,26" concept="1" />
-      <node id="8330008649152995580" at="72,9,73,21" concept="1" />
-      <node id="8330008649152995587" at="74,14,75,25" concept="1" />
-      <node id="8330008649152995592" at="75,25,76,45" concept="5" />
-      <node id="8330008649152995598" at="76,45,77,56" concept="1" />
-      <node id="8330008649152995620" at="79,5,80,25" concept="6" />
-      <node id="8949395081772969916" at="83,98,84,84" concept="6" />
-      <node id="4759120547781297334" at="87,52,88,44" concept="6" />
+      <node id="1222433006828" at="16,90,17,133" concept="6" />
+      <node id="4759120547781297328" at="20,73,21,19" concept="6" />
+      <node id="4759120547781297335" at="22,5,23,141" concept="6" />
+      <node id="8330008649152995376" at="25,84,26,43" concept="5" />
+      <node id="8330008649152995383" at="27,42,28,27" concept="5" />
+      <node id="8330008649152995399" at="29,22,30,21" concept="1" />
+      <node id="8330008649152995406" at="31,32,32,22" concept="6" />
+      <node id="8330008649152995414" at="33,9,34,24" concept="1" />
+      <node id="8330008649152995423" at="35,23,36,23" concept="1" />
+      <node id="8330008649152995432" at="38,36,39,26" concept="6" />
+      <node id="8330008649152995440" at="40,13,41,28" concept="1" />
+      <node id="8330008649152995449" at="42,264,43,26" concept="6" />
+      <node id="8330008649152995456" at="44,13,45,25" concept="1" />
+      <node id="8330008649152995474" at="47,42,48,23" concept="1" />
+      <node id="8330008649152995483" at="50,36,51,26" concept="6" />
+      <node id="8330008649152995491" at="52,13,53,28" concept="1" />
+      <node id="8330008649152995500" at="54,42,55,26" concept="6" />
+      <node id="8330008649152995505" at="56,13,57,25" concept="1" />
+      <node id="8330008649152995522" at="59,116,60,23" concept="1" />
+      <node id="8330008649152995560" at="61,16,62,22" concept="6" />
+      <node id="8330008649152995396" at="64,26,65,20" concept="6" />
+      <node id="8330008649152995572" at="67,167,68,26" concept="1" />
+      <node id="8330008649152995580" at="69,9,70,21" concept="1" />
+      <node id="8330008649152995587" at="71,14,72,25" concept="1" />
+      <node id="8330008649152995592" at="72,25,73,45" concept="5" />
+      <node id="8330008649152995598" at="73,45,74,56" concept="1" />
+      <node id="8330008649152995620" at="76,5,77,25" concept="6" />
+      <node id="8949395081772969916" at="79,98,80,84" concept="6" />
+      <node id="4759120547781297334" at="82,52,83,44" concept="6" />
       <node id="1222431791866" at="14,0,16,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8330008649152995558" at="64,14,66,9" concept="0" />
-      <node id="1222431791866" at="17,0,20,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="4759120547781297326" at="21,77,24,5" concept="4" />
-      <node id="8330008649152995404" at="33,21,36,9" concept="4" />
-      <node id="8330008649152995430" at="40,39,43,13" concept="4" />
-      <node id="8330008649152995447" at="44,28,47,13" concept="4" />
-      <node id="8330008649152995481" at="52,39,55,13" concept="4" />
-      <node id="8330008649152995498" at="56,28,59,13" concept="4" />
-      <node id="8330008649152995570" at="69,27,72,9" concept="4" />
-      <node id="1222431791866" at="83,0,86,0" concept="7" trace="call_isHexChar_8949395081772969908#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;C)Z" />
-      <node id="4759120547781297334" at="87,0,90,0" concept="7" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="8330008649152995585" at="74,12,78,7" concept="0" />
-      <node id="1222431791866" at="21,0,27,0" concept="7" trace="virtual_isValid_4759120547781297301#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8330008649152995428" at="39,23,49,11" concept="2" />
-      <node id="8330008649152995479" at="51,23,61,11" concept="2" />
-      <node id="8330008649152995421" at="37,24,66,9" concept="4" />
-      <node id="8330008649152995390" at="31,27,78,7" concept="4" />
-      <node id="8330008649152995381" at="29,43,79,5" concept="2" />
-      <node id="1222431791866" at="28,0,82,0" concept="7" trace="call_toRegexp_8330008649152995372#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8330008649152995558" at="61,14,63,9" concept="0" />
+      <node id="1222431791866" at="16,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="4759120547781297326" at="19,77,22,5" concept="4" />
+      <node id="8330008649152995404" at="30,21,33,9" concept="4" />
+      <node id="8330008649152995430" at="37,39,40,13" concept="4" />
+      <node id="8330008649152995447" at="41,28,44,13" concept="4" />
+      <node id="8330008649152995481" at="49,39,52,13" concept="4" />
+      <node id="8330008649152995498" at="53,28,56,13" concept="4" />
+      <node id="8330008649152995570" at="66,27,69,9" concept="4" />
+      <node id="1222431791866" at="79,0,82,0" concept="7" trace="call_isHexChar_8949395081772969908#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;C)Z" />
+      <node id="4759120547781297334" at="82,0,85,0" concept="7" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="8330008649152995585" at="71,12,75,7" concept="0" />
+      <node id="1222431791866" at="19,0,25,0" concept="7" trace="virtual_isValid_4759120547781297301#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8330008649152995428" at="36,23,46,11" concept="2" />
+      <node id="8330008649152995479" at="48,23,58,11" concept="2" />
+      <node id="8330008649152995421" at="34,24,63,9" concept="4" />
+      <node id="8330008649152995390" at="28,27,75,7" concept="4" />
+      <node id="8330008649152995381" at="26,43,76,5" concept="2" />
+      <node id="1222431791866" at="25,0,79,0" concept="7" trace="call_toRegexp_8330008649152995372#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1222431791868" at="14,43,14,43" />
-      <scope id="1222431822201" at="17,90,18,133" />
-      <scope id="4759120547781297327" at="22,73,23,19" />
-      <scope id="8330008649152995405" at="34,32,35,22" />
-      <scope id="8330008649152995431" at="41,36,42,26" />
-      <scope id="8330008649152995448" at="45,264,46,26" />
-      <scope id="8330008649152995482" at="53,36,54,26" />
-      <scope id="8330008649152995499" at="57,42,58,26" />
-      <scope id="8330008649152995521" at="62,116,63,23" />
-      <scope id="8330008649152995559" at="64,16,65,22" />
-      <scope id="8330008649152995395" at="67,26,68,20" />
-      <scope id="8330008649152995571" at="70,167,71,26" />
-      <scope id="8949395081772969911" at="83,98,84,84" />
-      <scope id="4759120547781297334" at="87,52,88,44" />
+      <scope id="1222431822201" at="16,90,17,133" />
+      <scope id="4759120547781297327" at="20,73,21,19" />
+      <scope id="8330008649152995405" at="31,32,32,22" />
+      <scope id="8330008649152995431" at="38,36,39,26" />
+      <scope id="8330008649152995448" at="42,264,43,26" />
+      <scope id="8330008649152995482" at="50,36,51,26" />
+      <scope id="8330008649152995499" at="54,42,55,26" />
+      <scope id="8330008649152995521" at="59,116,60,23" />
+      <scope id="8330008649152995559" at="61,16,62,22" />
+      <scope id="8330008649152995395" at="64,26,65,20" />
+      <scope id="8330008649152995571" at="67,167,68,26" />
+      <scope id="8949395081772969911" at="79,98,80,84" />
+      <scope id="4759120547781297334" at="82,52,83,44" />
       <scope id="1222431791866" at="14,0,16,0">
         <var name="thisNode" id="1222431791866" />
       </scope>
-      <scope id="1222431791866" at="17,0,20,0">
+      <scope id="1222431791866" at="16,0,19,0">
         <var name="thisNode" id="1222431791866" />
         <var name="vars" id="1222866480957" />
       </scope>
-      <scope id="8330008649152995586" at="74,14,77,56">
+      <scope id="8330008649152995586" at="71,14,74,56">
         <var name="val" id="8330008649152995593" />
       </scope>
-      <scope id="1222431791866" at="83,0,86,0">
+      <scope id="1222431791866" at="79,0,82,0">
         <var name="c" id="8949395081772969913" />
         <var name="thisConcept" id="1222431791866" />
       </scope>
-      <scope id="4759120547781297334" at="87,0,90,0">
+      <scope id="4759120547781297334" at="82,0,85,0">
         <var name="str" id="4759120547781297334" />
       </scope>
-      <scope id="4759120547781297315" at="21,77,25,141" />
-      <scope id="8330008649152995569" at="69,27,73,21" />
-      <scope id="1222431791866" at="21,0,27,0">
+      <scope id="4759120547781297315" at="19,77,23,141" />
+      <scope id="8330008649152995569" at="66,27,70,21" />
+      <scope id="1222431791866" at="19,0,25,0">
         <var name="thisNode" id="1222431791866" />
       </scope>
-      <scope id="8330008649152995429" at="40,39,48,25" />
-      <scope id="8330008649152995480" at="52,39,60,25" />
-      <scope id="8330008649152995428" at="39,23,49,11">
+      <scope id="8330008649152995429" at="37,39,45,25" />
+      <scope id="8330008649152995480" at="49,39,57,25" />
+      <scope id="8330008649152995428" at="36,23,46,11">
         <var name="e" id="8330008649152995461" />
       </scope>
-      <scope id="8330008649152995479" at="51,23,61,11">
+      <scope id="8330008649152995479" at="48,23,58,11">
         <var name="e" id="8330008649152995510" />
       </scope>
-      <scope id="8330008649152995422" at="38,23,49,11" />
-      <scope id="8330008649152995473" at="50,42,61,11" />
-      <scope id="8330008649152995398" at="32,22,66,9" />
-      <scope id="8330008649152995382" at="30,42,78,7">
+      <scope id="8330008649152995422" at="35,23,46,11" />
+      <scope id="8330008649152995473" at="47,42,58,11" />
+      <scope id="8330008649152995398" at="29,22,63,9" />
+      <scope id="8330008649152995382" at="27,42,75,7">
         <var name="c" id="8330008649152995384" />
       </scope>
-      <scope id="8330008649152995381" at="29,43,79,5">
+      <scope id="8330008649152995381" at="26,43,76,5">
         <var name="i" id="8330008649152995610" />
       </scope>
-      <scope id="8330008649152995375" at="28,84,80,25">
+      <scope id="8330008649152995375" at="25,84,77,25">
         <var name="sb" id="8330008649152995377" />
       </scope>
-      <scope id="1222431791866" at="28,0,82,0">
+      <scope id="1222431791866" at="25,0,79,0">
         <var name="s" id="8330008649152995624" />
         <var name="thisNode" id="1222431791866" />
       </scope>
-      <unit id="1222431791866" at="13,0,91,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
+      <unit id="1222431791866" at="13,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.StringLiteralRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433039738">
     <file name="UnicodeCharacterRegexp_Behavior.java">
-      <node id="1222433063059" at="13,90,14,67" concept="6" />
+      <node id="1222433063059" at="12,90,13,67" concept="6" />
       <node id="1222433039738" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222433039738" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222433039738" at="12,0,15,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222433039740" at="10,43,10,43" />
-      <scope id="1222433041603" at="13,90,14,67" />
+      <scope id="1222433041603" at="12,90,13,67" />
       <scope id="1222433039738" at="10,0,12,0">
         <var name="thisNode" id="1222433039738" />
       </scope>
-      <scope id="1222433039738" at="13,0,16,0">
+      <scope id="1222433039738" at="12,0,15,0">
         <var name="thisNode" id="1222433039738" />
         <var name="vars" id="1222866493733" />
       </scope>
-      <unit id="1222433039738" at="9,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
+      <unit id="1222433039738" at="9,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnicodeCharacterRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433139931">
     <file name="PredefinedSymbolClassRegexp_Behavior.java">
-      <node id="1222433158002" at="14,90,15,108" concept="6" />
+      <node id="1222433158002" at="13,90,14,108" concept="6" />
       <node id="1222433139931" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222433139931" at="14,0,17,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222433139931" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222433139933" at="11,43,11,43" />
-      <scope id="1222433142250" at="14,90,15,108" />
+      <scope id="1222433142250" at="13,90,14,108" />
       <scope id="1222433139931" at="11,0,13,0">
         <var name="thisNode" id="1222433139931" />
       </scope>
-      <scope id="1222433139931" at="14,0,17,0">
+      <scope id="1222433139931" at="13,0,16,0">
         <var name="thisNode" id="1222433139931" />
         <var name="vars" id="1222866462253" />
       </scope>
-      <unit id="1222433139931" at="10,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
+      <unit id="1222433139931" at="10,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222433930821">
     <file name="OrRegexp_Behavior.java">
-      <node id="8330008649153448487" at="15,90,16,330" concept="5" />
-      <node id="1222434808099" at="16,330,17,138" concept="6" />
-      <node id="1353467374623956032" at="20,85,21,16" concept="6" />
-      <node id="1353467374623956863" at="24,80,25,134" concept="6" />
+      <node id="8330008649153448487" at="14,90,15,330" concept="5" />
+      <node id="1222434808099" at="15,330,16,138" concept="6" />
+      <node id="1353467374623956032" at="18,85,19,16" concept="6" />
+      <node id="1353467374623956863" at="21,80,22,134" concept="6" />
       <node id="1222433930821" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222433930821" at="20,0,23,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1222433930821" at="24,0,27,0" concept="7" trace="call_inParentheses_1353467374623956858#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1222433930821" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222433930821" at="18,0,21,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1222433930821" at="21,0,24,0" concept="7" trace="call_inParentheses_1353467374623956858#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1222433930821" at="14,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222433930823" at="12,43,12,43" />
-      <scope id="1353467374623956025" at="20,85,21,16" />
-      <scope id="1353467374623956861" at="24,80,25,134" />
+      <scope id="1353467374623956025" at="18,85,19,16" />
+      <scope id="1353467374623956861" at="21,80,22,134" />
       <scope id="1222433930821" at="12,0,14,0">
         <var name="thisNode" id="1222433930821" />
       </scope>
-      <scope id="1222434354401" at="15,90,17,138">
+      <scope id="1222434354401" at="14,90,16,138">
         <var name="s" id="8330008649153448488" />
       </scope>
-      <scope id="1222433930821" at="20,0,23,0">
+      <scope id="1222433930821" at="18,0,21,0">
         <var name="thisNode" id="1222433930821" />
       </scope>
-      <scope id="1222433930821" at="24,0,27,0">
+      <scope id="1222433930821" at="21,0,24,0">
         <var name="thisNode" id="1222433930821" />
       </scope>
-      <scope id="1222433930821" at="15,0,19,0">
+      <scope id="1222433930821" at="14,0,18,0">
         <var name="thisNode" id="1222433930821" />
         <var name="vars" id="1222866446397" />
       </scope>
-      <unit id="1222433930821" at="11,0,28,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
+      <unit id="1222433930821" at="11,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.OrRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222434887346">
     <file name="ParensRegexp_Behavior.java">
-      <node id="1222435148313" at="14,90,15,214" concept="6" />
+      <node id="1222435148313" at="13,90,14,214" concept="6" />
       <node id="1222434887346" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222434887346" at="14,0,17,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222434887346" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222434887348" at="11,43,11,43" />
-      <scope id="1222434892306" at="14,90,15,214" />
+      <scope id="1222434892306" at="13,90,14,214" />
       <scope id="1222434887346" at="11,0,13,0">
         <var name="thisNode" id="1222434887346" />
       </scope>
-      <scope id="1222434887346" at="14,0,17,0">
+      <scope id="1222434887346" at="13,0,16,0">
         <var name="thisNode" id="1222434887346" />
         <var name="vars" id="1222866452808" />
       </scope>
-      <unit id="1222434887346" at="10,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
+      <unit id="1222434887346" at="10,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ParensRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222436753891">
     <file name="SeqRegexp_Behavior.java">
-      <node id="1222436787296" at="14,90,15,320" concept="6" />
-      <node id="1353467374623955989" at="18,85,19,16" concept="6" />
+      <node id="1222436787296" at="13,90,14,320" concept="6" />
+      <node id="1353467374623955989" at="16,85,17,16" concept="6" />
       <node id="1222436753891" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222436753891" at="14,0,17,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222436753891" at="18,0,21,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1222436753891" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222436753891" at="16,0,19,0" concept="7" trace="virtual_needParentheses_1353467374623880338#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1222436753893" at="11,43,11,43" />
-      <scope id="1222436755350" at="14,90,15,320" />
-      <scope id="1353467374623955982" at="18,85,19,16" />
+      <scope id="1222436755350" at="13,90,14,320" />
+      <scope id="1353467374623955982" at="16,85,17,16" />
       <scope id="1222436753891" at="11,0,13,0">
         <var name="thisNode" id="1222436753891" />
       </scope>
-      <scope id="1222436753891" at="14,0,17,0">
+      <scope id="1222436753891" at="13,0,16,0">
         <var name="thisNode" id="1222436753891" />
         <var name="vars" id="1222867079492" />
       </scope>
-      <scope id="1222436753891" at="18,0,21,0">
+      <scope id="1222436753891" at="16,0,19,0">
         <var name="thisNode" id="1222436753891" />
       </scope>
-      <unit id="1222436753891" at="10,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
+      <unit id="1222436753891" at="10,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SeqRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437176020">
     <file name="RegexpDeclarationReferenceRegexp_Behavior.java">
-      <node id="1222437228567" at="14,90,15,260" concept="6" />
+      <node id="1222437228567" at="13,90,14,260" concept="6" />
       <node id="1222437176020" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222437176020" at="14,0,17,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222437176020" at="13,0,16,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222437176022" at="11,43,11,43" />
-      <scope id="1222437178339" at="14,90,15,260" />
+      <scope id="1222437178339" at="13,90,14,260" />
       <scope id="1222437176020" at="11,0,13,0">
         <var name="thisNode" id="1222437176020" />
       </scope>
-      <scope id="1222437176020" at="14,0,17,0">
+      <scope id="1222437176020" at="13,0,16,0">
         <var name="thisNode" id="1222437176020" />
         <var name="vars" id="1222866470558" />
       </scope>
-      <unit id="1222437176020" at="10,0,18,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
+      <unit id="1222437176020" at="10,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.RegexpDeclarationReferenceRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222437727387">
     <file name="NTimesRegexp_Behavior.java">
-      <node id="8330008649153449204" at="15,90,16,170" concept="5" />
-      <node id="1222437763293" at="16,170,17,203" concept="6" />
+      <node id="8330008649153449204" at="14,90,15,170" concept="5" />
+      <node id="1222437763293" at="15,170,16,203" concept="6" />
       <node id="1222437727387" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222437727387" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222437727387" at="14,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222437727389" at="12,43,12,43" />
       <scope id="1222437727387" at="12,0,14,0">
         <var name="thisNode" id="1222437727387" />
       </scope>
-      <scope id="1222437729034" at="15,90,17,203">
+      <scope id="1222437729034" at="14,90,16,203">
         <var name="s" id="8330008649153449205" />
       </scope>
-      <scope id="1222437727387" at="15,0,19,0">
+      <scope id="1222437727387" at="14,0,18,0">
         <var name="thisNode" id="1222437727387" />
         <var name="vars" id="1222866430112" />
       </scope>
-      <unit id="1222437727387" at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
+      <unit id="1222437727387" at="11,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.NTimesRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609599871">
     <file name="AtLeastNTimesRegexp_Behavior.java">
-      <node id="8330008649153448568" at="15,90,16,170" concept="5" />
-      <node id="1222609647354" at="16,170,17,204" concept="6" />
+      <node id="8330008649153448568" at="14,90,15,170" concept="5" />
+      <node id="1222609647354" at="15,170,16,204" concept="6" />
       <node id="1222609599871" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222609599871" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222609599871" at="14,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222609599873" at="12,43,12,43" />
       <scope id="1222609599871" at="12,0,14,0">
         <var name="thisNode" id="1222609599871" />
       </scope>
-      <scope id="1222609601611" at="15,90,17,204">
+      <scope id="1222609601611" at="14,90,16,204">
         <var name="s" id="8330008649153448569" />
       </scope>
-      <scope id="1222609599871" at="15,0,19,0">
+      <scope id="1222609599871" at="14,0,18,0">
         <var name="thisNode" id="1222609599871" />
         <var name="vars" id="1222866299064" />
       </scope>
-      <unit id="1222609599871" at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
+      <unit id="1222609599871" at="11,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.AtLeastNTimesRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222609846769">
     <file name="FromNToMTimesRegexp_Behavior.java">
-      <node id="8330008649153448599" at="15,90,16,170" concept="5" />
-      <node id="1353467374626527608" at="16,170,17,257" concept="6" />
+      <node id="8330008649153448599" at="14,90,15,170" concept="5" />
+      <node id="1353467374626527608" at="15,170,16,257" concept="6" />
       <node id="1222609846769" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222609846769" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222609846769" at="14,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222609846771" at="12,43,12,43" />
       <scope id="1222609846769" at="12,0,14,0">
         <var name="thisNode" id="1222609846769" />
       </scope>
-      <scope id="1353467374626527599" at="15,90,17,257">
+      <scope id="1353467374626527599" at="14,90,16,257">
         <var name="s" id="8330008649153448600" />
       </scope>
-      <scope id="1222609846769" at="15,0,19,0">
+      <scope id="1222609846769" at="14,0,18,0">
         <var name="thisNode" id="1222609846769" />
         <var name="vars" id="1353467374626527600" />
       </scope>
-      <unit id="1222609846769" at="11,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
+      <unit id="1222609846769" at="11,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.FromNToMTimesRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222857576752">
     <file name="SymbolClassRegexp_Behavior.java">
-      <node id="8173814113624650645" at="16,90,17,133" concept="6" />
-      <node id="8173814113624650634" at="20,86,21,236" concept="6" />
-      <node id="1222857817731" at="24,92,25,47" concept="5" />
-      <node id="8173814113624650664" at="26,30,27,139" concept="1" />
-      <node id="1222860537181" at="28,5,29,29" concept="6" />
+      <node id="8173814113624650645" at="15,90,16,133" concept="6" />
+      <node id="8173814113624650634" at="18,86,19,236" concept="6" />
+      <node id="1222857817731" at="21,92,22,47" concept="5" />
+      <node id="8173814113624650664" at="23,30,24,139" concept="1" />
+      <node id="1222860537181" at="25,5,26,29" concept="6" />
       <node id="1222857576752" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222857576752" at="16,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
-      <node id="1222857576752" at="20,0,23,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1222857827442" at="25,47,28,5" concept="3" />
-      <node id="1222857576752" at="24,0,31,0" concept="7" trace="call_partsToString_1222857748873#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222857576752" at="15,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222857576752" at="18,0,21,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1222857827442" at="22,47,25,5" concept="3" />
+      <node id="1222857576752" at="21,0,28,0" concept="7" trace="call_partsToString_1222857748873#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222857576754" at="13,43,13,43" />
-      <scope id="1222857578602" at="16,90,17,133" />
-      <scope id="8173814113624650629" at="20,86,21,236" />
-      <scope id="1222857827443" at="26,30,27,139" />
+      <scope id="1222857578602" at="15,90,16,133" />
+      <scope id="8173814113624650629" at="18,86,19,236" />
+      <scope id="1222857827443" at="23,30,24,139" />
       <scope id="1222857576752" at="13,0,15,0">
         <var name="thisNode" id="1222857576752" />
       </scope>
-      <scope id="1222857576752" at="16,0,19,0">
+      <scope id="1222857576752" at="15,0,18,0">
         <var name="thisNode" id="1222857576752" />
         <var name="vars" id="1222866488791" />
       </scope>
-      <scope id="1222857576752" at="20,0,23,0">
+      <scope id="1222857576752" at="18,0,21,0">
         <var name="thisNode" id="1222857576752" />
       </scope>
-      <scope id="1222857827442" at="25,47,28,5">
+      <scope id="1222857827442" at="22,47,25,5">
         <var name="part" id="1222857827446" />
       </scope>
-      <scope id="1222857748876" at="24,92,29,29">
+      <scope id="1222857748876" at="21,92,26,29">
         <var name="result" id="1222857817732" />
       </scope>
-      <scope id="1222857576752" at="24,0,31,0">
+      <scope id="1222857576752" at="21,0,28,0">
         <var name="parts" id="1222859816327" />
         <var name="thisNode" id="1222857576752" />
       </scope>
-      <unit id="1222857576752" at="12,0,32,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" />
+      <unit id="1222857576752" at="12,0,29,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222861534672">
     <file name="LookRegexp_Behavior.java">
-      <node id="1222861557760" at="16,90,17,269" concept="6" />
+      <node id="1222861557760" at="15,90,16,269" concept="6" />
       <node id="1222861534672" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222861534672" at="16,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222861534672" at="15,0,18,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222861534674" at="13,43,13,43" />
-      <scope id="1222861536256" at="16,90,17,269" />
+      <scope id="1222861536256" at="15,90,16,269" />
       <scope id="1222861534672" at="13,0,15,0">
         <var name="thisNode" id="1222861534672" />
       </scope>
-      <scope id="1222861534672" at="16,0,19,0">
+      <scope id="1222861534672" at="15,0,18,0">
         <var name="thisNode" id="1222861534672" />
         <var name="vars" id="1222866415951" />
       </scope>
-      <unit id="1222861534672" at="12,0,20,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
+      <unit id="1222861534672" at="12,0,19,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LookRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/1222867682828">
     <file name="UnaryRegexp_Behavior.java">
-      <node id="8330008649153448539" at="16,90,17,170" concept="5" />
-      <node id="1222867684396" at="17,170,18,240" concept="6" />
-      <node id="1353467374623956749" at="21,80,22,245" concept="6" />
+      <node id="8330008649153448539" at="15,90,16,170" concept="5" />
+      <node id="1222867684396" at="16,170,17,240" concept="6" />
+      <node id="1353467374623956749" at="19,80,20,245" concept="6" />
       <node id="1222867682828" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1222867682828" at="21,0,24,0" concept="7" trace="call_inParentheses_1353467374623956744#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1222867682828" at="16,0,20,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
+      <node id="1222867682828" at="19,0,22,0" concept="7" trace="call_inParentheses_1353467374623956744#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1222867682828" at="15,0,19,0" concept="7" trace="virtual_getString_1222432436326#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/lang/String;" />
       <scope id="1222867682830" at="13,43,13,43" />
-      <scope id="1353467374623956747" at="21,80,22,245" />
+      <scope id="1353467374623956747" at="19,80,20,245" />
       <scope id="1222867682828" at="13,0,15,0">
         <var name="thisNode" id="1222867682828" />
       </scope>
-      <scope id="1222867684395" at="16,90,18,240">
+      <scope id="1222867684395" at="15,90,17,240">
         <var name="s" id="8330008649153448540" />
       </scope>
-      <scope id="1222867682828" at="21,0,24,0">
+      <scope id="1222867682828" at="19,0,22,0">
         <var name="thisNode" id="1222867682828" />
       </scope>
-      <scope id="1222867682828" at="16,0,20,0">
+      <scope id="1222867682828" at="15,0,19,0">
         <var name="thisNode" id="1222867682828" />
         <var name="vars" id="1222867684408" />
       </scope>
-      <unit id="1222867682828" at="12,0,25,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
+      <unit id="1222867682828" at="12,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.UnaryRegexp_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137207004">
     <file name="ReplaceRegexpOperation_Behavior.java">
-      <node id="3796137614137207012" at="13,86,14,43" concept="5" />
-      <node id="4161170987575526839" at="16,26,17,178" concept="1" />
-      <node id="3796137614137210642" at="19,5,20,25" concept="6" />
+      <node id="3796137614137207012" at="12,86,13,43" concept="5" />
+      <node id="4161170987575526839" at="15,26,16,178" concept="1" />
+      <node id="3796137614137210642" at="18,5,19,25" concept="6" />
       <node id="3796137614137207004" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="4161170987575526829" at="15,81,18,7" concept="4" />
-      <node id="3796137614137210650" at="14,43,19,5" concept="3" />
-      <node id="3796137614137207004" at="13,0,22,0" concept="7" trace="call_getReplacementString_3796137614137207007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4161170987575526829" at="14,81,17,7" concept="4" />
+      <node id="3796137614137210650" at="13,43,18,5" concept="3" />
+      <node id="3796137614137207004" at="12,0,21,0" concept="7" trace="call_getReplacementString_3796137614137207007#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="3796137614137207006" at="10,43,10,43" />
-      <scope id="4161170987575526830" at="16,26,17,178" />
+      <scope id="4161170987575526830" at="15,26,16,178" />
       <scope id="3796137614137207004" at="10,0,12,0">
         <var name="thisNode" id="3796137614137207004" />
       </scope>
-      <scope id="3796137614137210651" at="15,81,18,7" />
-      <scope id="3796137614137210650" at="14,43,19,5">
+      <scope id="3796137614137210651" at="14,81,17,7" />
+      <scope id="3796137614137210650" at="13,43,18,5">
         <var name="rep" id="3796137614137210654" />
       </scope>
-      <scope id="3796137614137207010" at="13,86,20,25">
+      <scope id="3796137614137207010" at="12,86,19,25">
         <var name="sb" id="3796137614137207013" />
       </scope>
-      <scope id="3796137614137207004" at="13,0,22,0">
+      <scope id="3796137614137207004" at="12,0,21,0">
         <var name="thisNode" id="3796137614137207004" />
       </scope>
-      <unit id="3796137614137207004" at="9,0,23,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
+      <unit id="3796137614137207004" at="9,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceRegexpOperation_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538899">
     <file name="Replacement_Behavior.java">
-      <node id="4161170987575807315" at="11,91,12,14" concept="6" />
+      <node id="4161170987575807315" at="10,91,11,14" concept="6" />
       <node id="3796137614137538899" at="8,0,10,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3796137614137538899" at="11,0,14,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3796137614137538899" at="10,0,13,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="3796137614137538901" at="8,43,8,43" />
-      <scope id="3796137614137538907" at="11,91,12,14" />
+      <scope id="3796137614137538907" at="10,91,11,14" />
       <scope id="3796137614137538899" at="8,0,10,0">
         <var name="thisNode" id="3796137614137538899" />
       </scope>
-      <scope id="3796137614137538899" at="11,0,14,0">
+      <scope id="3796137614137538899" at="10,0,13,0">
         <var name="search" id="3796137614137538909" />
         <var name="thisNode" id="3796137614137538899" />
       </scope>
-      <unit id="3796137614137538899" at="7,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
+      <unit id="3796137614137538899" at="7,0,14,0" name="jetbrains.mps.baseLanguage.regexp.behavior.Replacement_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137538913">
     <file name="LiteralReplacement_Behavior.java">
-      <node id="3796137614137565914" at="15,91,16,132" concept="6" />
-      <node id="3796137614137567971" at="20,73,21,19" concept="6" />
-      <node id="3796137614137567976" at="22,5,23,140" concept="6" />
-      <node id="3796137614137565590" at="26,84,27,43" concept="5" />
-      <node id="3796137614137565597" at="28,42,29,27" concept="5" />
-      <node id="3796137614137565613" at="30,22,31,21" concept="1" />
-      <node id="3796137614137565620" at="32,32,33,22" concept="6" />
-      <node id="3796137614137565628" at="34,9,35,24" concept="1" />
-      <node id="3796137614137565637" at="36,23,37,23" concept="1" />
-      <node id="3796137614137565646" at="39,36,40,26" concept="6" />
-      <node id="3796137614137565654" at="41,13,42,28" concept="1" />
-      <node id="3796137614137565663" at="43,264,44,26" concept="6" />
-      <node id="3796137614137565670" at="45,13,46,25" concept="1" />
-      <node id="3796137614137565688" at="48,42,49,23" concept="1" />
-      <node id="3796137614137565697" at="51,36,52,26" concept="6" />
-      <node id="3796137614137565705" at="53,13,54,28" concept="1" />
-      <node id="3796137614137565714" at="55,42,56,26" concept="6" />
-      <node id="3796137614137565719" at="57,13,58,25" concept="1" />
-      <node id="3796137614137565736" at="60,103,61,23" concept="1" />
-      <node id="8942139995509155626" at="62,31,63,30" concept="1" />
-      <node id="3796137614137565774" at="64,16,65,22" concept="6" />
-      <node id="3796137614137565610" at="67,26,68,20" concept="6" />
-      <node id="3796137614137565786" at="70,23,71,26" concept="1" />
-      <node id="8942139995508725295" at="71,26,72,26" concept="1" />
-      <node id="8942139995509155642" at="73,30,74,26" concept="1" />
-      <node id="3796137614137565842" at="75,9,76,21" concept="1" />
-      <node id="3796137614137565849" at="77,14,78,25" concept="1" />
-      <node id="3796137614137565854" at="78,25,79,45" concept="5" />
-      <node id="3796137614137565860" at="79,45,80,56" concept="1" />
-      <node id="3796137614137565882" at="82,5,83,25" concept="6" />
-      <node id="3796137614137567970" at="86,52,87,44" concept="6" />
+      <node id="3796137614137565914" at="14,91,15,132" concept="6" />
+      <node id="3796137614137567971" at="18,73,19,19" concept="6" />
+      <node id="3796137614137567976" at="20,5,21,140" concept="6" />
+      <node id="3796137614137565590" at="23,84,24,43" concept="5" />
+      <node id="3796137614137565597" at="25,42,26,27" concept="5" />
+      <node id="3796137614137565613" at="27,22,28,21" concept="1" />
+      <node id="3796137614137565620" at="29,32,30,22" concept="6" />
+      <node id="3796137614137565628" at="31,9,32,24" concept="1" />
+      <node id="3796137614137565637" at="33,23,34,23" concept="1" />
+      <node id="3796137614137565646" at="36,36,37,26" concept="6" />
+      <node id="3796137614137565654" at="38,13,39,28" concept="1" />
+      <node id="3796137614137565663" at="40,264,41,26" concept="6" />
+      <node id="3796137614137565670" at="42,13,43,25" concept="1" />
+      <node id="3796137614137565688" at="45,42,46,23" concept="1" />
+      <node id="3796137614137565697" at="48,36,49,26" concept="6" />
+      <node id="3796137614137565705" at="50,13,51,28" concept="1" />
+      <node id="3796137614137565714" at="52,42,53,26" concept="6" />
+      <node id="3796137614137565719" at="54,13,55,25" concept="1" />
+      <node id="3796137614137565736" at="57,103,58,23" concept="1" />
+      <node id="8942139995509155626" at="59,31,60,30" concept="1" />
+      <node id="3796137614137565774" at="61,16,62,22" concept="6" />
+      <node id="3796137614137565610" at="64,26,65,20" concept="6" />
+      <node id="3796137614137565786" at="67,23,68,26" concept="1" />
+      <node id="8942139995508725295" at="68,26,69,26" concept="1" />
+      <node id="8942139995509155642" at="70,30,71,26" concept="1" />
+      <node id="3796137614137565842" at="72,9,73,21" concept="1" />
+      <node id="3796137614137565849" at="74,14,75,25" concept="1" />
+      <node id="3796137614137565854" at="75,25,76,45" concept="5" />
+      <node id="3796137614137565860" at="76,45,77,56" concept="1" />
+      <node id="3796137614137565882" at="79,5,80,25" concept="6" />
+      <node id="3796137614137567970" at="82,52,83,44" concept="6" />
       <node id="3796137614137538913" at="12,0,14,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3796137614137565772" at="64,14,66,9" concept="0" />
-      <node id="3796137614137538913" at="15,0,18,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="3796137614137567957" at="19,74,22,5" concept="4" />
-      <node id="3796137614137565618" at="31,21,34,9" concept="4" />
-      <node id="3796137614137565644" at="38,39,41,13" concept="4" />
-      <node id="3796137614137565661" at="42,28,45,13" concept="4" />
-      <node id="3796137614137565695" at="50,39,53,13" concept="4" />
-      <node id="3796137614137565712" at="54,28,57,13" concept="4" />
-      <node id="3796137614137567970" at="86,0,89,0" concept="7" trace="isEmptyString#(Ljava/lang/String;)Z" />
-      <node id="3796137614137565847" at="77,12,81,7" concept="0" />
-      <node id="3796137614137538913" at="19,0,25,0" concept="7" trace="call_isValid_3796137614137567952#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="3796137614137565784" at="69,27,75,9" concept="4" />
-      <node id="3796137614137565642" at="37,23,47,11" concept="2" />
-      <node id="3796137614137565693" at="49,23,59,11" concept="2" />
-      <node id="3796137614137565635" at="35,24,66,9" concept="4" />
-      <node id="3796137614137565604" at="29,27,81,7" concept="4" />
-      <node id="3796137614137565595" at="27,43,82,5" concept="2" />
-      <node id="3796137614137538913" at="26,0,85,0" concept="7" trace="call_toRegexp_3796137614137565586#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3796137614137565772" at="61,14,63,9" concept="0" />
+      <node id="3796137614137538913" at="14,0,17,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3796137614137567957" at="17,74,20,5" concept="4" />
+      <node id="3796137614137565618" at="28,21,31,9" concept="4" />
+      <node id="3796137614137565644" at="35,39,38,13" concept="4" />
+      <node id="3796137614137565661" at="39,28,42,13" concept="4" />
+      <node id="3796137614137565695" at="47,39,50,13" concept="4" />
+      <node id="3796137614137565712" at="51,28,54,13" concept="4" />
+      <node id="3796137614137567970" at="82,0,85,0" concept="7" trace="isEmptyString#(Ljava/lang/String;)Z" />
+      <node id="3796137614137565847" at="74,12,78,7" concept="0" />
+      <node id="3796137614137538913" at="17,0,23,0" concept="7" trace="call_isValid_3796137614137567952#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3796137614137565784" at="66,27,72,9" concept="4" />
+      <node id="3796137614137565642" at="34,23,44,11" concept="2" />
+      <node id="3796137614137565693" at="46,23,56,11" concept="2" />
+      <node id="3796137614137565635" at="32,24,63,9" concept="4" />
+      <node id="3796137614137565604" at="26,27,78,7" concept="4" />
+      <node id="3796137614137565595" at="24,43,79,5" concept="2" />
+      <node id="3796137614137538913" at="23,0,82,0" concept="7" trace="call_toRegexp_3796137614137565586#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="3796137614137538915" at="12,43,12,43" />
-      <scope id="3796137614137538918" at="15,91,16,132" />
-      <scope id="3796137614137567959" at="20,73,21,19" />
-      <scope id="3796137614137565619" at="32,32,33,22" />
-      <scope id="3796137614137565645" at="39,36,40,26" />
-      <scope id="3796137614137565662" at="43,264,44,26" />
-      <scope id="3796137614137565696" at="51,36,52,26" />
-      <scope id="3796137614137565713" at="55,42,56,26" />
-      <scope id="3796137614137565735" at="60,103,61,23" />
-      <scope id="8942139995509155620" at="62,31,63,30" />
-      <scope id="3796137614137565773" at="64,16,65,22" />
-      <scope id="3796137614137565609" at="67,26,68,20" />
-      <scope id="8942139995509155636" at="73,30,74,26" />
-      <scope id="3796137614137567970" at="86,52,87,44" />
+      <scope id="3796137614137538918" at="14,91,15,132" />
+      <scope id="3796137614137567959" at="18,73,19,19" />
+      <scope id="3796137614137565619" at="29,32,30,22" />
+      <scope id="3796137614137565645" at="36,36,37,26" />
+      <scope id="3796137614137565662" at="40,264,41,26" />
+      <scope id="3796137614137565696" at="48,36,49,26" />
+      <scope id="3796137614137565713" at="52,42,53,26" />
+      <scope id="3796137614137565735" at="57,103,58,23" />
+      <scope id="8942139995509155620" at="59,31,60,30" />
+      <scope id="3796137614137565773" at="61,16,62,22" />
+      <scope id="3796137614137565609" at="64,26,65,20" />
+      <scope id="8942139995509155636" at="70,30,71,26" />
+      <scope id="3796137614137567970" at="82,52,83,44" />
       <scope id="3796137614137538913" at="12,0,14,0">
         <var name="thisNode" id="3796137614137538913" />
       </scope>
-      <scope id="3796137614137565785" at="70,23,72,26" />
-      <scope id="3796137614137538913" at="15,0,18,0">
+      <scope id="3796137614137565785" at="67,23,69,26" />
+      <scope id="3796137614137538913" at="14,0,17,0">
         <var name="search" id="3796137614137538919" />
         <var name="thisNode" id="3796137614137538913" />
       </scope>
-      <scope id="3796137614137565848" at="77,14,80,56">
+      <scope id="3796137614137565848" at="74,14,77,56">
         <var name="val" id="3796137614137565855" />
       </scope>
-      <scope id="3796137614137567970" at="86,0,89,0">
+      <scope id="3796137614137567970" at="82,0,85,0">
         <var name="str" id="3796137614137567970" />
       </scope>
-      <scope id="3796137614137567955" at="19,74,23,140" />
-      <scope id="3796137614137538913" at="19,0,25,0">
+      <scope id="3796137614137567955" at="17,74,21,140" />
+      <scope id="3796137614137538913" at="17,0,23,0">
         <var name="thisNode" id="3796137614137538913" />
       </scope>
-      <scope id="3796137614137565783" at="69,27,76,21" />
-      <scope id="3796137614137565643" at="38,39,46,25" />
-      <scope id="3796137614137565694" at="50,39,58,25" />
-      <scope id="3796137614137565642" at="37,23,47,11">
+      <scope id="3796137614137565783" at="66,27,73,21" />
+      <scope id="3796137614137565643" at="35,39,43,25" />
+      <scope id="3796137614137565694" at="47,39,55,25" />
+      <scope id="3796137614137565642" at="34,23,44,11">
         <var name="e" id="3796137614137565675" />
       </scope>
-      <scope id="3796137614137565693" at="49,23,59,11">
+      <scope id="3796137614137565693" at="46,23,56,11">
         <var name="e" id="3796137614137565724" />
       </scope>
-      <scope id="3796137614137565636" at="36,23,47,11" />
-      <scope id="3796137614137565687" at="48,42,59,11" />
-      <scope id="3796137614137565612" at="30,22,66,9" />
-      <scope id="3796137614137565596" at="28,42,81,7">
+      <scope id="3796137614137565636" at="33,23,44,11" />
+      <scope id="3796137614137565687" at="45,42,56,11" />
+      <scope id="3796137614137565612" at="27,22,63,9" />
+      <scope id="3796137614137565596" at="25,42,78,7">
         <var name="c" id="3796137614137565598" />
       </scope>
-      <scope id="3796137614137565595" at="27,43,82,5">
+      <scope id="3796137614137565595" at="24,43,79,5">
         <var name="i" id="3796137614137565872" />
       </scope>
-      <scope id="3796137614137565589" at="26,84,83,25">
+      <scope id="3796137614137565589" at="23,84,80,25">
         <var name="sb" id="3796137614137565591" />
       </scope>
-      <scope id="3796137614137538913" at="26,0,85,0">
+      <scope id="3796137614137538913" at="23,0,82,0">
         <var name="s" id="3796137614137565886" />
         <var name="thisNode" id="3796137614137538913" />
       </scope>
-      <unit id="3796137614137538913" at="11,0,90,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
+      <unit id="3796137614137538913" at="11,0,86,0" name="jetbrains.mps.baseLanguage.regexp.behavior.LiteralReplacement_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/3796137614137539492">
     <file name="MatchVariableReferenceReplacement_Behavior.java">
-      <node id="3796137614137539498" at="16,91,17,46" concept="5" />
-      <node id="3796137614137539504" at="17,46,18,114" concept="1" />
-      <node id="3796137614137539509" at="18,114,19,112" concept="6" />
+      <node id="3796137614137539498" at="15,91,16,46" concept="5" />
+      <node id="3796137614137539504" at="16,46,17,114" concept="1" />
+      <node id="3796137614137539509" at="17,114,18,112" concept="6" />
       <node id="3796137614137539492" at="13,0,15,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3796137614137539492" at="16,0,21,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3796137614137539492" at="15,0,20,0" concept="7" trace="virtual_toString_3796137614137538905#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="3796137614137539494" at="13,43,13,43" />
       <scope id="3796137614137539492" at="13,0,15,0">
         <var name="thisNode" id="3796137614137539492" />
       </scope>
-      <scope id="3796137614137539497" at="16,91,19,112">
+      <scope id="3796137614137539497" at="15,91,18,112">
         <var name="vars" id="3796137614137539499" />
       </scope>
-      <scope id="3796137614137539492" at="16,0,21,0">
+      <scope id="3796137614137539492" at="15,0,20,0">
         <var name="search" id="3796137614137539521" />
         <var name="thisNode" id="3796137614137539492" />
       </scope>
-      <unit id="3796137614137539492" at="12,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
+      <unit id="3796137614137539492" at="12,0,21,0" name="jetbrains.mps.baseLanguage.regexp.behavior.MatchVariableReferenceReplacement_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/658365993682020152">
     <file name="ReplaceBlock_Behavior.java">
-      <node id="658365993682022010" at="13,83,14,47" concept="6" />
-      <node id="658365993682022006" at="17,60,18,63" concept="5" />
-      <node id="658365993682022006" at="18,63,19,30" concept="5" />
-      <node id="658365993682022006" at="19,30,20,134" concept="0" />
-      <node id="658365993682022006" at="19,30,20,134" concept="0" />
-      <node id="658365993682022006" at="19,30,20,134" concept="1" />
-      <node id="658365993682022006" at="20,134,21,24" concept="6" />
+      <node id="658365993682022010" at="12,83,13,47" concept="6" />
+      <node id="658365993682022006" at="15,60,16,63" concept="5" />
+      <node id="658365993682022006" at="16,63,17,30" concept="5" />
+      <node id="658365993682022006" at="17,30,18,134" concept="0" />
+      <node id="658365993682022006" at="17,30,18,134" concept="0" />
+      <node id="658365993682022006" at="17,30,18,134" concept="1" />
+      <node id="658365993682022006" at="18,134,19,24" concept="6" />
       <node id="658365993682020152" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="658365993682020152" at="13,0,16,0" concept="7" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="658365993682022006" at="17,0,23,0" concept="7" trace="_quotation_createNode_tprwlo_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="658365993682020152" at="12,0,15,0" concept="7" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="658365993682022006" at="15,0,21,0" concept="7" trace="_quotation_createNode_tprwlo_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="658365993682020154" at="10,43,10,43" />
-      <scope id="658365993682022009" at="13,83,14,47" />
-      <scope id="658365993682022006" at="19,30,20,134" />
+      <scope id="658365993682022009" at="12,83,13,47" />
+      <scope id="658365993682022006" at="17,30,18,134" />
       <scope id="658365993682020152" at="10,0,12,0">
         <var name="thisNode" id="658365993682020152" />
       </scope>
-      <scope id="658365993682020152" at="13,0,16,0">
+      <scope id="658365993682020152" at="12,0,15,0">
         <var name="thisNode" id="658365993682020152" />
       </scope>
-      <scope id="658365993682022006" at="17,60,21,24">
+      <scope id="658365993682022006" at="15,60,19,24">
         <var name="facade" id="658365993682022006" />
         <var name="quotedNode_1" id="658365993682022006" />
       </scope>
-      <scope id="658365993682022006" at="17,0,23,0" />
-      <unit id="658365993682020152" at="9,0,24,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_Behavior" />
+      <scope id="658365993682022006" at="15,0,21,0" />
+      <unit id="658365993682020152" at="9,0,22,0" name="jetbrains.mps.baseLanguage.regexp.behavior.ReplaceBlock_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637182">
     <file name="SymbolClassPart_Behavior.java">
-      <node id="8173814113624732623" at="14,88,15,43" concept="5" />
-      <node id="8173814113624732628" at="15,43,16,14" concept="5" />
-      <node id="8173814113624732632" at="16,14,17,25" concept="5" />
-      <node id="8173814113624732648" at="18,20,19,19" concept="1" />
-      <node id="8173814113624732655" at="20,30,21,20" concept="6" />
-      <node id="8173814113624732663" at="22,7,23,22" concept="1" />
-      <node id="8173814113624732672" at="24,21,25,21" concept="1" />
-      <node id="8173814113624732681" at="27,34,28,24" concept="6" />
-      <node id="8173814113624732689" at="29,11,30,26" concept="1" />
-      <node id="8173814113624732698" at="31,262,32,24" concept="6" />
-      <node id="8173814113624732705" at="33,11,34,23" concept="1" />
-      <node id="8173814113624732723" at="36,40,37,21" concept="1" />
-      <node id="8173814113624732732" at="39,34,40,24" concept="6" />
-      <node id="8173814113624732740" at="41,11,42,26" concept="1" />
-      <node id="8173814113624732749" at="43,40,44,24" concept="6" />
-      <node id="8173814113624732754" at="45,11,46,23" concept="1" />
-      <node id="8173814113624732771" at="48,114,49,21" concept="1" />
-      <node id="8173814113624732809" at="50,14,51,20" concept="6" />
-      <node id="8173814113624732645" at="53,24,54,18" concept="6" />
-      <node id="8173814113624732821" at="56,177,57,24" concept="1" />
-      <node id="8173814113624732877" at="58,7,59,19" concept="1" />
-      <node id="8173814113624732884" at="60,12,61,23" concept="1" />
-      <node id="8173814113624732889" at="61,23,62,43" concept="5" />
-      <node id="8173814113624732895" at="62,43,63,54" concept="1" />
-      <node id="8173814113624732907" at="64,5,65,8" concept="1" />
-      <node id="8173814113624732912" at="66,26,67,18" concept="6" />
-      <node id="8173814113624732919" at="68,5,69,25" concept="6" />
-      <node id="8173814113624732931" at="72,86,73,93" concept="5" />
-      <node id="8173814113624732959" at="75,27,76,22" concept="6" />
-      <node id="8173814113624732969" at="77,7,78,19" concept="6" />
-      <node id="8173814113624732939" at="79,5,80,15" concept="6" />
+      <node id="8173814113624732623" at="13,88,14,43" concept="5" />
+      <node id="8173814113624732628" at="14,43,15,14" concept="5" />
+      <node id="8173814113624732632" at="15,14,16,25" concept="5" />
+      <node id="8173814113624732648" at="17,20,18,19" concept="1" />
+      <node id="8173814113624732655" at="19,30,20,20" concept="6" />
+      <node id="8173814113624732663" at="21,7,22,22" concept="1" />
+      <node id="8173814113624732672" at="23,21,24,21" concept="1" />
+      <node id="8173814113624732681" at="26,34,27,24" concept="6" />
+      <node id="8173814113624732689" at="28,11,29,26" concept="1" />
+      <node id="8173814113624732698" at="30,262,31,24" concept="6" />
+      <node id="8173814113624732705" at="32,11,33,23" concept="1" />
+      <node id="8173814113624732723" at="35,40,36,21" concept="1" />
+      <node id="8173814113624732732" at="38,34,39,24" concept="6" />
+      <node id="8173814113624732740" at="40,11,41,26" concept="1" />
+      <node id="8173814113624732749" at="42,40,43,24" concept="6" />
+      <node id="8173814113624732754" at="44,11,45,23" concept="1" />
+      <node id="8173814113624732771" at="47,114,48,21" concept="1" />
+      <node id="8173814113624732809" at="49,14,50,20" concept="6" />
+      <node id="8173814113624732645" at="52,24,53,18" concept="6" />
+      <node id="8173814113624732821" at="55,177,56,24" concept="1" />
+      <node id="8173814113624732877" at="57,7,58,19" concept="1" />
+      <node id="8173814113624732884" at="59,12,60,23" concept="1" />
+      <node id="8173814113624732889" at="60,23,61,43" concept="5" />
+      <node id="8173814113624732895" at="61,43,62,54" concept="1" />
+      <node id="8173814113624732907" at="63,5,64,8" concept="1" />
+      <node id="8173814113624732912" at="65,26,66,18" concept="6" />
+      <node id="8173814113624732919" at="67,5,68,25" concept="6" />
+      <node id="8173814113624732931" at="70,86,71,93" concept="5" />
+      <node id="8173814113624732959" at="73,27,74,22" concept="6" />
+      <node id="8173814113624732969" at="75,7,76,19" concept="6" />
+      <node id="8173814113624732939" at="77,5,78,15" concept="6" />
       <node id="8173814113624637182" at="11,0,13,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624732807" at="50,12,52,7" concept="0" />
-      <node id="8173814113624732653" at="19,19,22,7" concept="4" />
-      <node id="8173814113624732679" at="26,37,29,11" concept="4" />
-      <node id="8173814113624732696" at="30,26,33,11" concept="4" />
-      <node id="8173814113624732730" at="38,37,41,11" concept="4" />
-      <node id="8173814113624732747" at="42,26,45,11" concept="4" />
-      <node id="8173814113624732819" at="55,25,58,7" concept="4" />
-      <node id="8173814113624732910" at="65,8,68,5" concept="4" />
-      <node id="8173814113624732950" at="74,22,77,7" concept="4" />
-      <node id="8173814113624732882" at="60,10,64,5" concept="0" />
-      <node id="8173814113624732941" at="73,93,79,5" concept="4" />
-      <node id="8173814113624732677" at="25,21,35,9" concept="2" />
-      <node id="8173814113624732728" at="37,21,47,9" concept="2" />
-      <node id="8173814113624637182" at="72,0,82,0" concept="7" trace="call_escapeChar_8173814113624637238#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="8173814113624732670" at="23,22,52,7" concept="4" />
-      <node id="8173814113624732639" at="17,25,64,5" concept="4" />
-      <node id="8173814113624637182" at="14,0,71,0" concept="7" trace="call_validateChar_8173814113624732613#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8173814113624732807" at="49,12,51,7" concept="0" />
+      <node id="8173814113624732653" at="18,19,21,7" concept="4" />
+      <node id="8173814113624732679" at="25,37,28,11" concept="4" />
+      <node id="8173814113624732696" at="29,26,32,11" concept="4" />
+      <node id="8173814113624732730" at="37,37,40,11" concept="4" />
+      <node id="8173814113624732747" at="41,26,44,11" concept="4" />
+      <node id="8173814113624732819" at="54,25,57,7" concept="4" />
+      <node id="8173814113624732910" at="64,8,67,5" concept="4" />
+      <node id="8173814113624732950" at="72,22,75,7" concept="4" />
+      <node id="8173814113624732882" at="59,10,63,5" concept="0" />
+      <node id="8173814113624732941" at="71,93,77,5" concept="4" />
+      <node id="8173814113624732677" at="24,21,34,9" concept="2" />
+      <node id="8173814113624732728" at="36,21,46,9" concept="2" />
+      <node id="8173814113624637182" at="70,0,80,0" concept="7" trace="call_escapeChar_8173814113624637238#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8173814113624732670" at="22,22,51,7" concept="4" />
+      <node id="8173814113624732639" at="16,25,63,5" concept="4" />
+      <node id="8173814113624637182" at="13,0,70,0" concept="7" trace="call_validateChar_8173814113624732613#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="8173814113624637184" at="11,43,11,43" />
-      <scope id="8173814113624732654" at="20,30,21,20" />
-      <scope id="8173814113624732680" at="27,34,28,24" />
-      <scope id="8173814113624732697" at="31,262,32,24" />
-      <scope id="8173814113624732731" at="39,34,40,24" />
-      <scope id="8173814113624732748" at="43,40,44,24" />
-      <scope id="8173814113624732770" at="48,114,49,21" />
-      <scope id="8173814113624732808" at="50,14,51,20" />
-      <scope id="8173814113624732644" at="53,24,54,18" />
-      <scope id="8173814113624732820" at="56,177,57,24" />
-      <scope id="8173814113624732911" at="66,26,67,18" />
-      <scope id="8173814113624732951" at="75,27,76,22" />
+      <scope id="8173814113624732654" at="19,30,20,20" />
+      <scope id="8173814113624732680" at="26,34,27,24" />
+      <scope id="8173814113624732697" at="30,262,31,24" />
+      <scope id="8173814113624732731" at="38,34,39,24" />
+      <scope id="8173814113624732748" at="42,40,43,24" />
+      <scope id="8173814113624732770" at="47,114,48,21" />
+      <scope id="8173814113624732808" at="49,14,50,20" />
+      <scope id="8173814113624732644" at="52,24,53,18" />
+      <scope id="8173814113624732820" at="55,177,56,24" />
+      <scope id="8173814113624732911" at="65,26,66,18" />
+      <scope id="8173814113624732951" at="73,27,74,22" />
       <scope id="8173814113624637182" at="11,0,13,0">
         <var name="thisNode" id="8173814113624637182" />
       </scope>
-      <scope id="8173814113624732883" at="60,12,63,54">
+      <scope id="8173814113624732883" at="59,12,62,54">
         <var name="val" id="8173814113624732890" />
       </scope>
-      <scope id="8173814113624732818" at="55,25,59,19" />
-      <scope id="8173814113624732942" at="74,22,78,19" />
-      <scope id="8173814113624732678" at="26,37,34,23" />
-      <scope id="8173814113624732729" at="38,37,46,23" />
-      <scope id="8173814113624637241" at="72,86,80,15">
+      <scope id="8173814113624732818" at="54,25,58,19" />
+      <scope id="8173814113624732942" at="72,22,76,19" />
+      <scope id="8173814113624732678" at="25,37,33,23" />
+      <scope id="8173814113624732729" at="37,37,45,23" />
+      <scope id="8173814113624637241" at="70,86,78,15">
         <var name="res" id="8173814113624732934" />
       </scope>
-      <scope id="8173814113624732677" at="25,21,35,9">
+      <scope id="8173814113624732677" at="24,21,34,9">
         <var name="e" id="8173814113624732710" />
       </scope>
-      <scope id="8173814113624732728" at="37,21,47,9">
+      <scope id="8173814113624732728" at="36,21,46,9">
         <var name="e" id="8173814113624732759" />
       </scope>
-      <scope id="8173814113624637182" at="72,0,82,0">
+      <scope id="8173814113624637182" at="70,0,80,0">
         <var name="s" id="8173814113624637538" />
         <var name="thisNode" id="8173814113624637182" />
       </scope>
-      <scope id="8173814113624732671" at="24,21,35,9" />
-      <scope id="8173814113624732722" at="36,40,47,9" />
-      <scope id="8173814113624732647" at="18,20,52,7" />
-      <scope id="8173814113624732616" at="14,88,69,25">
+      <scope id="8173814113624732671" at="23,21,34,9" />
+      <scope id="8173814113624732722" at="35,40,46,9" />
+      <scope id="8173814113624732647" at="17,20,51,7" />
+      <scope id="8173814113624732616" at="13,88,68,25">
         <var name="c" id="8173814113624732633" />
         <var name="i" id="8173814113624732629" />
         <var name="sb" id="8173814113624732624" />
       </scope>
-      <scope id="8173814113624637182" at="14,0,71,0">
+      <scope id="8173814113624637182" at="13,0,70,0">
         <var name="s" id="8173814113624732924" />
         <var name="thisNode" id="8173814113624637182" />
       </scope>
-      <unit id="8173814113624637182" at="10,0,83,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_Behavior" />
+      <unit id="8173814113624637182" at="10,0,81,0" name="jetbrains.mps.baseLanguage.regexp.behavior.SymbolClassPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637190">
     <file name="PredefinedSymbolClassSymbolClassPart_Behavior.java">
-      <node id="8173814113624650548" at="13,86,14,108" concept="6" />
+      <node id="8173814113624650548" at="12,86,13,108" concept="6" />
       <node id="8173814113624637190" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624637190" at="13,0,16,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8173814113624637190" at="12,0,15,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8173814113624637192" at="10,43,10,43" />
-      <scope id="8173814113624650546" at="13,86,14,108" />
+      <scope id="8173814113624650546" at="12,86,13,108" />
       <scope id="8173814113624637190" at="10,0,12,0">
         <var name="thisNode" id="8173814113624637190" />
       </scope>
-      <scope id="8173814113624637190" at="13,0,16,0">
+      <scope id="8173814113624637190" at="12,0,15,0">
         <var name="thisNode" id="8173814113624637190" />
       </scope>
-      <unit id="8173814113624637190" at="9,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
+      <unit id="8173814113624637190" at="9,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.PredefinedSymbolClassSymbolClassPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637220">
     <file name="IntervalSymbolClassPart_Behavior.java">
-      <node id="8173814113624650558" at="12,86,13,259" concept="6" />
+      <node id="8173814113624650558" at="11,86,12,259" concept="6" />
       <node id="8173814113624637220" at="9,0,11,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624637220" at="12,0,15,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8173814113624637220" at="11,0,14,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8173814113624637222" at="9,43,9,43" />
-      <scope id="8173814113624650556" at="12,86,13,259" />
+      <scope id="8173814113624650556" at="11,86,12,259" />
       <scope id="8173814113624637220" at="9,0,11,0">
         <var name="thisNode" id="8173814113624637220" />
       </scope>
-      <scope id="8173814113624637220" at="12,0,15,0">
+      <scope id="8173814113624637220" at="11,0,14,0">
         <var name="thisNode" id="8173814113624637220" />
       </scope>
-      <unit id="8173814113624637220" at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
+      <unit id="8173814113624637220" at="8,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntervalSymbolClassPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637890">
     <file name="IntersectionSymbolClassPart_Behavior.java">
-      <node id="8173814113625142905" at="13,86,14,347" concept="6" />
+      <node id="8173814113625142905" at="12,86,13,347" concept="6" />
       <node id="8173814113624637890" at="10,0,12,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624637890" at="13,0,16,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8173814113624637890" at="12,0,15,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8173814113624637892" at="10,43,10,43" />
-      <scope id="8173814113624650587" at="13,86,14,347" />
+      <scope id="8173814113624650587" at="12,86,13,347" />
       <scope id="8173814113624637890" at="10,0,12,0">
         <var name="thisNode" id="8173814113624637890" />
       </scope>
-      <scope id="8173814113624637890" at="13,0,16,0">
+      <scope id="8173814113624637890" at="12,0,15,0">
         <var name="thisNode" id="8173814113624637890" />
       </scope>
-      <unit id="8173814113624637890" at="9,0,17,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
+      <unit id="8173814113624637890" at="9,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.IntersectionSymbolClassPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624637901">
     <file name="CharacterSymbolClassPart_Behavior.java">
-      <node id="8173814113624650578" at="12,86,13,136" concept="6" />
+      <node id="8173814113624650578" at="11,86,12,136" concept="6" />
       <node id="8173814113624637901" at="9,0,11,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8173814113624637901" at="12,0,15,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8173814113624637901" at="11,0,14,0" concept="7" trace="virtual_getRepresentation_8173814113624650482#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8173814113624637903" at="9,43,9,43" />
-      <scope id="8173814113624650576" at="12,86,13,136" />
+      <scope id="8173814113624650576" at="11,86,12,136" />
       <scope id="8173814113624637901" at="9,0,11,0">
         <var name="thisNode" id="8173814113624637901" />
       </scope>
-      <scope id="8173814113624637901" at="12,0,15,0">
+      <scope id="8173814113624637901" at="11,0,14,0">
         <var name="thisNode" id="8173814113624637901" />
       </scope>
-      <unit id="8173814113624637901" at="8,0,16,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
+      <unit id="8173814113624637901" at="8,0,15,0" name="jetbrains.mps.baseLanguage.regexp.behavior.CharacterSymbolClassPart_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590514(jetbrains.mps.baseLanguage.regexp.behavior)/8173814113624650479">

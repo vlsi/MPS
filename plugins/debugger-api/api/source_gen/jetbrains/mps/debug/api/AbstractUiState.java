@@ -18,26 +18,18 @@ import org.apache.log4j.LogManager;
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
   protected final AbstractDebugSession myAbstractDebugSession;
-
   protected AbstractUiState(AbstractDebugSession session) {
     myAbstractDebugSession = session;
   }
-
   @Nullable
   public abstract IThread getThread();
-
   @NotNull
   public abstract List<? extends IThread> getThreads();
-
   @Nullable
   public abstract IStackFrame getStackFrame();
-
   public abstract boolean isPausedOnBreakpoint();
-
   protected abstract AbstractUiState selectThreadInternal(@Nullable IThread thread);
-
   protected abstract AbstractUiState selectFrameInternal(int frame);
-
   protected int findStackFrameIndex() {
     IThread thread = getThread();
     if (thread == null) {
@@ -48,21 +40,18 @@ public abstract class AbstractUiState {
     }
     return NO_FRAME;
   }
-
   public void selectThread(@Nullable IThread thread) {
     AbstractUiState newState = selectThreadInternal(thread);
     if (newState != this) {
       myAbstractDebugSession.trySetState(this, newState);
     }
   }
-
   public void selectFrame(int frame) {
     AbstractUiState newState = selectFrameInternal(frame);
     if (newState != this) {
       myAbstractDebugSession.trySetState(this, newState);
     }
   }
-
   @NotNull
   public List<IStackFrame> getStackFrames() {
     IThread thread = getThread();
@@ -71,7 +60,6 @@ public abstract class AbstractUiState {
     }
     return Collections.emptyList();
   }
-
   public int getStackFramesCount() {
     IThread thread = getThread();
     if (thread != null) {
@@ -79,7 +67,6 @@ public abstract class AbstractUiState {
     }
     return 0;
   }
-
   @Nullable
   public IStackFrame getStackFrame(int index) {
     assert index >= 0;
@@ -89,7 +76,6 @@ public abstract class AbstractUiState {
     }
     return frames.get(index);
   }
-
   @NotNull
   public List<IWatchable> getWatchables() {
     IStackFrame stackFrame = getStackFrame();
@@ -98,7 +84,6 @@ public abstract class AbstractUiState {
     }
     return Collections.emptyList();
   }
-
   /**
    * It it a fact that we can not run evaluation (i.e. whatever code that executes something on virtual machine under debug) in EDT since it can and will slow down or even freeze ui.
    * And we also should have a list of threads on the virtual machine that do evaluation in order to skip events from them in the vm manager thread
@@ -121,6 +106,5 @@ public abstract class AbstractUiState {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(AbstractUiState.class);
 }

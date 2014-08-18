@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SReference;
 public class BuildJavaPlugin_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaOptions")) {
       return ScopeUtil.where(new SimpleRoleScope(SNodeOperations.getParent(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), "jetbrains.mps.build.structure.BuildSource_JavaOptions") {
@@ -50,7 +49,6 @@ public class BuildJavaPlugin_Behavior {
 
     return null;
   }
-
   public static Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.structure.BuildSource_CompilablePart")) {
       return DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind);
@@ -58,18 +56,15 @@ public class BuildJavaPlugin_Behavior {
 
     return null;
   }
-
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(createBwfTaskLibraryDependency_bn484n_a0a0a0c(), "target", false));
   }
-
   private static SNode createBwfTaskLibraryDependency_bn484n_a0a0a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskLibraryDependency", null, false);
     n1.setReference("target", SReference.create("target", n1, facade.createModelReference("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), facade.createNodeId("7306485738221408314")));
     return n1;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

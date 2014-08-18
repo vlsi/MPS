@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IncompleteMemberDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "static");
   }

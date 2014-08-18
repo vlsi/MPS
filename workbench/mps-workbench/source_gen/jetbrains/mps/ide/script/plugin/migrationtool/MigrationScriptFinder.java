@@ -32,12 +32,10 @@ public class MigrationScriptFinder implements IFinder {
   private SearchResults<SNode> myResults;
   private Map<SearchResult<SNode>, AbstractMigrationRefactoring> myMigrationBySearchResult = new IdentityHashMap<SearchResult<SNode>, AbstractMigrationRefactoring>();
   private List<ResultsListener> myResultsListeners = Collections.synchronizedList(new ArrayList<ResultsListener>());
-
   public MigrationScriptFinder(List<SNodeReference> scripts, IOperationContext context) {
     myScripts = scripts;
     myOperationContext = context;
   }
-
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     myResults = new SearchResults<SNode>();
@@ -76,31 +74,24 @@ public class MigrationScriptFinder implements IFinder {
       monitor.done();
     }
   }
-
   public AbstractMigrationRefactoring getRefactoring(SearchResult<SNode> searchResult) {
     return myMigrationBySearchResult.get(searchResult);
   }
-
   public SearchResults<SNode> getLastSearchResults() {
     return myResults;
   }
-
   public List<SNodeReference> getScripts() {
     return myScripts;
   }
-
   public IOperationContext getOperationContext() {
     return myOperationContext;
   }
-
   public void addResultsListener(ResultsListener listener) {
     myResultsListeners.add(listener);
   }
-
   public void removeResultsListener(ResultsListener listener) {
     myResultsListeners.remove(listener);
   }
-
   private void fireResultsChanged() {
     for (ResultsListener rl : new ArrayList<ResultsListener>(myResultsListeners)) {
       rl.resultsChanged(this);

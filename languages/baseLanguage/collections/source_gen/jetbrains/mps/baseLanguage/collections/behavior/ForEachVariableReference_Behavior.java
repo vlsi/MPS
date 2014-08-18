@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ForEachVariableReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getVariable_1023687332192481693(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "variable", false);
   }

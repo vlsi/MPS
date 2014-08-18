@@ -31,11 +31,9 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavingAware {
   public Templatereduce__NodeBuilderNode() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709776");
   }
-
   protected Collection<SNode> applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     Collection<SNode> tlist1 = null;
     final Object varValue1 = QueriesGenerated.insertMacro_varValue_429601079676845415(new TemplateVarContext(context, varMacroRef_g27wod_b0a0a1a2));
@@ -105,11 +103,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           public Object resolve(SNode outputNode, TemplateContext context) {
                             return QueriesGenerated.referenceMacro_GetReferent_429601079676782068(new ReferenceMacroContext(context, tnode11, referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0b0e0b0d0d0b0e0c, "variableDeclaration"));
                           }
-
                           public String getDefaultResolveInfo() {
                             return "param1";
                           }
-
                           public SNodeReference getTemplateNode() {
                             return referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0b0e0b0d0d0b0e0c;
                           }
@@ -169,7 +165,6 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
     tlist1 = TemplateUtil.singletonList(tnode2);
     return tlist1;
   }
-
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode16 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
     try {
@@ -336,11 +331,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   public Object resolve(SNode outputNode, TemplateContext context) {
                                     return QueriesGenerated.referenceMacro_GetReferent_3143347504358680260(new ReferenceMacroContext(context, tnode36, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0d0b0c0b0b0d0c0c0b0b0b0d, "variableDeclaration"));
                                   }
-
                                   public String getDefaultResolveInfo() {
                                     return "param1";
                                   }
-
                                   public SNodeReference getTemplateNode() {
                                     return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0d0b0c0b0b0d0c0c0b0b0b0d;
                                   }
@@ -886,11 +879,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   public Object resolve(SNode outputNode, TemplateContext context) {
                                     return QueriesGenerated.referenceMacro_GetReferent_429601079676787208(new ReferenceMacroContext(context, tnode89, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0g0b0b0b0d, "variableDeclaration"));
                                   }
-
                                   public String getDefaultResolveInfo() {
                                     return "param1";
                                   }
-
                                   public SNodeReference getTemplateNode() {
                                     return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0g0b0b0b0d;
                                   }
@@ -1012,11 +1003,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                   public Object resolve(SNode outputNode, TemplateContext context) {
                                     return QueriesGenerated.referenceMacro_GetReferent_429601079676787538(new ReferenceMacroContext(context, tnode100, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0h0b0b0b0d, "variableDeclaration"));
                                   }
-
                                   public String getDefaultResolveInfo() {
                                     return "param1";
                                   }
-
                                   public SNodeReference getTemplateNode() {
                                     return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0b0c0b0b0d0c0h0b0b0b0d;
                                   }
@@ -1209,11 +1198,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                           public Object resolve(SNode outputNode, TemplateContext context) {
                             return QueriesGenerated.referenceMacro_GetReferent_429601079676787973(new ReferenceMacroContext(context, tnode116, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0d0c0i0b0b0b0d, "variableDeclaration"));
                           }
-
                           public String getDefaultResolveInfo() {
                             return "param1";
                           }
-
                           public SNodeReference getTemplateNode() {
                             return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0d0d0c0i0b0b0b0d;
                           }
@@ -1302,11 +1289,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 public Object resolve(SNode outputNode, TemplateContext context) {
                                   return QueriesGenerated.referenceMacro_GetReferent_429601079677083064(new ReferenceMacroContext(context, tnode126, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0j0b0b0b0d, "variableDeclaration"));
                                 }
-
                                 public String getDefaultResolveInfo() {
                                   return "_node_";
                                 }
-
                                 public SNodeReference getTemplateNode() {
                                   return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0j0b0b0b0d;
                                 }
@@ -1365,11 +1350,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                     public Object resolve(SNode outputNode, TemplateContext context) {
                                       return QueriesGenerated.referenceMacro_GetReferent_429601079676789933(new ReferenceMacroContext(context, tnode131, referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0d0b0c0b0b0d0h0c0j0b0b0b0d, "variableDeclaration"));
                                     }
-
                                     public String getDefaultResolveInfo() {
                                       return "param1";
                                     }
-
                                     public SNodeReference getTemplateNode() {
                                       return referenceMacro_g27wod_c0a0a0a0a0a0b0b0c0b0d0b0c0b0b0d0h0c0j0b0b0b0d;
                                     }
@@ -1490,11 +1473,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                               public Object resolve(SNode outputNode, TemplateContext context) {
                                 return QueriesGenerated.referenceMacro_GetReferent_429601079676846587(new ReferenceMacroContext(context, tnode142, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0c0l0b0b0b0d, "variableDeclaration"));
                               }
-
                               public String getDefaultResolveInfo() {
                                 return "_node_";
                               }
-
                               public SNodeReference getTemplateNode() {
                                 return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0c0l0b0b0b0d;
                               }
@@ -1568,11 +1549,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 public Object resolve(SNode outputNode, TemplateContext context) {
                                   return QueriesGenerated.referenceMacro_GetReferent_429601079677082939(new ReferenceMacroContext(context, tnode150, referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0m0b0b0b0d, "variableDeclaration"));
                                 }
-
                                 public String getDefaultResolveInfo() {
                                   return "_node_";
                                 }
-
                                 public SNodeReference getTemplateNode() {
                                   return referenceMacro_g27wod_c0a0a0a0a0a0b0b0b0b0b0b0b0d0h0c0m0b0b0b0d;
                                 }
@@ -1616,11 +1595,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
                                 public Object resolve(SNode outputNode, TemplateContext context) {
                                   return QueriesGenerated.referenceMacro_GetReferent_429601079676846089(new ReferenceMacroContext(context, tnode153, referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0h0c0m0b0b0b0d, "variableDeclaration"));
                                 }
-
                                 public String getDefaultResolveInfo() {
                                   return "_node_";
                                 }
-
                                 public SNodeReference getTemplateNode() {
                                   return referenceMacro_g27wod_c0a0a0a0a0a0b0b0d0b0c0b0b0d0h0c0m0b0b0b0d;
                                 }
@@ -1673,11 +1650,9 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
     }
     return tnode16;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     Collection<SNode> tlistpart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_g27wod_a0b0f;
@@ -1689,7 +1664,6 @@ public class Templatereduce__NodeBuilderNode implements TemplateDeclarationWeavi
     environment.weaveNode(outputContextNode, "statement", tnodepart1, weaveTf1, context.getInput());
     return TemplateUtil.asList(tlistpart0, tnodepart1);
   }
-
   private static SNodePointer varMacroRef_g27wod_b0a0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676845414");
   private static SNodePointer propertyMacro_g27wod_c0a0c0b0d0b0e0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676781979");
   private static SNodePointer propertyMacro_g27wod_c0a0c0b0b0d0b0d0d0b0e0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676781345");

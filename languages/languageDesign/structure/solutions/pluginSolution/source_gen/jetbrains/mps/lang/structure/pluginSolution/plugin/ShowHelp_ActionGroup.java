@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class ShowHelp_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ShowHelp_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.structure.pluginSolution.plugin.ShowHelp_ActionGroup";
-
   public ShowHelp_ActionGroup() {
     super("ShowHelp", ID);
     this.setIsInternal(false);

@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class CustomContainersUtil {
   public CustomContainersUtil() {
   }
-
   public static Iterable<SNode> containerCreators(SModel model, final SNode type) {
     return (Iterable<SNode>) ((SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(type), "jetbrains.mps.baseLanguage.collections.structure.MapType") ? Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode ccd) {
@@ -57,7 +56,6 @@ with_ctParams:
       }
     })));
   }
-
   public static Iterable<SNode> containerDeclarations(SModel model, final SNode type) {
     return ListSequence.fromList(CollectionsLanguage.getInstance().getCustomContainersRegistry().accessibleCustomContainerDeclarations(model)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode ccd) {

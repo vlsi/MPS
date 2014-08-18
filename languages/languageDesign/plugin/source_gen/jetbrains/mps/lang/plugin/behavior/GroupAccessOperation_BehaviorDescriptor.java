@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class GroupAccessOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public GroupAccessOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.GroupAccessOperation";

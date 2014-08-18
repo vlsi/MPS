@@ -23,7 +23,6 @@ public class ProgressLine extends JPanel implements TestView {
   private final JLabel myStateLabel = new JLabel("Starting...");
   private boolean myTestsBuilt = false;
   private TestRunState myState;
-
   public ProgressLine(TestRunState testState) {
     super(new GridLayout(1, 2));
     myState = testState;
@@ -35,56 +34,54 @@ public class ProgressLine extends JPanel implements TestView {
     myTestsBuilt = true;
     init();
   }
-
   @Override
   public void update() {
     if (myState.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(myState.getKey())) {
       return;
     }
-    final int defectedTests = myState.getDefectTests();
+    final int defectedTests = myState.getFailedTests();
     final int totalTests = myState.getTotalTests();
-    final int complitedTests = myState.getCompletedTests();
+    final int completedTests = myState.getCompletedTests();
     final String testName = myState.getCurrentMethod();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        updateProgressBar(defectedTests, totalTests, complitedTests);
-        updateLabel(defectedTests, totalTests, complitedTests, testName);
+        updateProgressBar(defectedTests, totalTests, completedTests);
+        updateLabel(defectedTests, totalTests, completedTests, testName);
       }
     });
   }
-
   @Override
   public void init() {
   }
-
-  private void updateProgressBar(int defected, int total, int complited) {
+  private void updateProgressBar(int defected, int total, int completed) {
     if (defected > 0) {
       myProgressBar.setColor(ColorProgressBar.RED);
-    } else if (myState.isTerminated() && !(total == complited)) {
+    } else if (myState.isTerminated() && !(total == completed)) {
       myProgressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      myProgressBar.setFraction((double) complited / (double) total);
+      myProgressBar.setFraction(completed * 1. / total);
     }
   }
-
-  private void updateLabel(int defected, int total, int complited, String testName) {
+  private void updateLabel(int defected, int total, int completed, String testName) {
     StringBuilder sb = new StringBuilder();
-    if (total == complited || testName == null) {
-      sb.append(" Done: " + complited + " of " + total + " ");
+    boolean done = total == completed || testName == null;
+    boolean terminated = myState.isTerminated();
+    if (done) {
+      sb.append(" Done: " + completed + " of " + total + " ");
       testName = "";
-    } else if (myState.isTerminated()) {
-      sb.append(" Terminated: " + complited + " of " + total + " ");
+    } else if (terminated) {
+      sb.append(" Terminated: " + completed + " of " + total + " ");
       testName = "";
     }
     if (defected > 0) {
       sb.append(" Failed: " + defected);
-    } else if (sb.length() == 0) {
-      sb.append(" Running: " + complited + " of " + total);
+    }
+    if (!(terminated) && !(done)) {
+      sb.append(" Running: " + completed + " of " + total);
     }
     myStateLabel.setText(sb + "  " + testName);
   }
-
   public ProcessListener getProcessListener() {
     return new ProcessAdapter() {
       @Override

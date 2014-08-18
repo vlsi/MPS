@@ -19,11 +19,9 @@ import jetbrains.mps.smodel.SReference;
 public class CollectionType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
@@ -41,30 +39,24 @@ public class CollectionType_Behavior {
     }
     return variableSuffixes;
   }
-
   public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return true;
   }
-
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     return null;
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_tehk2k_a0a5();
   }
-
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.QueueType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName)) {
       return false;
     }
     return true;
   }
-
   private static SNode _quotation_createNode_tehk2k_a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

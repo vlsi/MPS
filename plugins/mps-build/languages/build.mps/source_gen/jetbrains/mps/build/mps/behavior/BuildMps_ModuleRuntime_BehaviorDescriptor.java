@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildMps_ModuleRuntime_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildMps_ModuleRuntime_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_ModuleRuntime";

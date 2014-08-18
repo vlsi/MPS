@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BwfMacroListImport_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor {
   public BwfMacroListImport_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return BwfMacroListImport_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfMacroListImport";

@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class PersistentConfigurationIsPersistentConfiguration_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public PersistentConfigurationIsPersistentConfiguration_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode persistentConfigurationType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_jh4ubp_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfigurationType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode _quotation_createNode_jh4ubp_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

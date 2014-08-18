@@ -30,11 +30,9 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cuzp02_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cuzp02_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_cuzp02_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cuzp02_a");
@@ -44,7 +42,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cuzp02_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_cuzp02_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -65,7 +62,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_cuzp02_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_cuzp02_b0");
@@ -77,7 +73,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cuzp02_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
@@ -99,7 +94,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_cuzp02_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cuzp02_a_0");
@@ -110,7 +104,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_cuzp02_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cuzp02_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "key:");
     editorCell.setCellId("Constant_cuzp02_a0");
@@ -121,16 +114,13 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_cuzp02_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return PropEscapeUtil.escapeKey(SPropertyOperations.getString(node, "name"));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -143,7 +133,6 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_cuzp02_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value:");
     editorCell.setCellId("Constant_cuzp02_c0");
@@ -154,16 +143,13 @@ public class PropertiesDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_cuzp02_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return PropEscapeUtil.escapeValue(SPropertyOperations.getString(node, "value"));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

@@ -8,26 +8,21 @@ public class DoubleRange {
   private double myEnd;
   private boolean myStartIncluded;
   private boolean myEndIncluded;
-
   public DoubleRange(double start, double end) {
     this(start, true, end, true);
   }
-
   public DoubleRange(double start, boolean isStartIncluded, double end, boolean isEndIncluded) {
     this.myStart = start;
     this.myStartIncluded = isStartIncluded;
     this.myEnd = end;
     this.myEndIncluded = isEndIncluded;
   }
-
   public double getEnd() {
     return myEnd;
   }
-
   public double getStart() {
     return myStart;
   }
-
   public boolean includes(double arg) {
     if (arg < myStart || arg > myEnd) {
       return false;
@@ -44,11 +39,9 @@ public class DoubleRange {
     assert false : "unreachable";
     return false;
   }
-
   public boolean isEmpty() {
     return myStart > myEnd;
   }
-
   public boolean overlaps(DoubleRange arg) {
     if (myStart == arg.myEnd) {
       return myStartIncluded && arg.myEndIncluded;
@@ -58,15 +51,12 @@ public class DoubleRange {
     }
     return (arg.includes(myStart) || arg.includes(myEnd) || this.includes(arg));
   }
-
   public boolean includes(DoubleRange arg) {
     return this.includes(arg.myStart) && this.includes(arg.myEnd);
   }
-
   public static DoubleRange upTo(double end) {
     return new DoubleRange(Double.NEGATIVE_INFINITY, end);
   }
-
   public static DoubleRange andMore(double start) {
     return new DoubleRange(start, Double.POSITIVE_INFINITY);
   }

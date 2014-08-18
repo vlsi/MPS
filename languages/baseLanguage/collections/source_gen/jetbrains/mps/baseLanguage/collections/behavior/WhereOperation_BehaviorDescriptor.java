@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class WhereOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public WhereOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return WhereOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.WhereOperation";

@@ -32,12 +32,10 @@ import java.util.List;
   };
   @NotNull
   private SNode myTopConcept;
-
   protected ConceptAndSuperConceptsCache(Object key, SNode topConcept) {
     super(key);
     myTopConcept = topConcept;
   }
-
   @Override
   public Set<SModel> getDependsOnModels(Object element) {
     Set<SModel> dependsOnModel = new HashSet<SModel>();
@@ -53,49 +51,40 @@ import java.util.List;
     }
     return dependsOnModel;
   }
-
   private String getAssertionMessage(Object element, SNode concept) {
     String conceptFQName = NameUtil.nodeFQName(concept);
     SNode conceptFromModelUtil = SModelUtil.findConceptDeclaration(conceptFQName);
     SAbstractConcept sconcept = SConceptRepository.getInstance().getConcept(conceptFQName);
     return "Model descriptor is null for concept: " + concept + "(" + System.identityHashCode(concept) + ")  same concept from SModelUtil: " + conceptFromModelUtil + "(" + System.identityHashCode(conceptFromModelUtil) + ") same concept from SConceptRepository:" + sconcept + "(" + System.identityHashCode(sconcept) + "), element: " + element + "(" + System.identityHashCode(element) + "), myTopConcept: " + myTopConcept + "(" + System.identityHashCode(myTopConcept) + ")";
   }
-
   @NotNull
   public SNode getTopConcept() {
     return myTopConcept;
   }
-
   public SNode[] getConcepts() {
     Datasets.ConceptsDataSet dataSet = (Datasets.ConceptsDataSet) getDataSet(Datasets.ConceptsDataSet.ID, Datasets.CONCEPTS_CACHE_CREATOR);
     return dataSet.getConcepts();
   }
-
   public SNode getPropertyDeclarationByName(String name) {
     Datasets.PropertyDeclarationsDataSet dataSet = (Datasets.PropertyDeclarationsDataSet) getDataSet(Datasets.PropertyDeclarationsDataSet.ID, Datasets.PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarationByName(name);
   }
-
   public List<SNode> getPropertyDeclarations() {
     Datasets.PropertyDeclarationsDataSet dataSet = (Datasets.PropertyDeclarationsDataSet) getDataSet(Datasets.PropertyDeclarationsDataSet.ID, Datasets.PROPDECL_CACHE_CREATOR);
     return dataSet.getPropertyDeclarations();
   }
-
   public SNode getLinkDeclarationByRole(String role) {
     Datasets.LinkDeclarationsDataSet dataSet = (Datasets.LinkDeclarationsDataSet) getDataSet(Datasets.LinkDeclarationsDataSet.ID, Datasets.LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationByRole(role);
   }
-
   public SNode getMostSpecificLinkDeclarationByRole(String role) {
     Datasets.LinkDeclarationsDataSet dataSet = (Datasets.LinkDeclarationsDataSet) getDataSet(Datasets.LinkDeclarationsDataSet.ID, Datasets.LINKDECL_CACHE_CREATOR);
     return dataSet.getMostSpecificLinkDeclarationByRole(role);
   }
-
   public List<SNode> getLinkDeclarationsExcludingOverridden() {
     Datasets.LinkDeclarationsDataSet dataSet = (Datasets.LinkDeclarationsDataSet) getDataSet(Datasets.LinkDeclarationsDataSet.ID, Datasets.LINKDECL_CACHE_CREATOR);
     return dataSet.getLinkDeclarationsExcludingOverridden();
   }
-
   public static ConceptAndSuperConceptsCache getInstance(SNode topConcept) {
     if (topConcept == null) {
       return null;

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConstructorInvocationStatementHasConstructor_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode constructorInvocation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(constructorInvocation, "baseMethodDeclaration", false) == null)) {
       SNode referent = constructorInvocation.getReferenceTarget("constructorDeclaration");
@@ -41,18 +40,15 @@ public class check_ConstructorInvocationStatementHasConstructor_NonTypesystemRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

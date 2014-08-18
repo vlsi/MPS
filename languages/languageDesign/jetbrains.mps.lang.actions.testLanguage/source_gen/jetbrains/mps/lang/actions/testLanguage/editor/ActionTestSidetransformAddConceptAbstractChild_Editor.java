@@ -19,7 +19,6 @@ public class ActionTestSidetransformAddConceptAbstractChild_Editor extends Defau
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4fzsyb_a(editorContext, node);
   }
-
   private EditorCell createCollection_4fzsyb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4fzsyb_a");
@@ -27,7 +26,6 @@ public class ActionTestSidetransformAddConceptAbstractChild_Editor extends Defau
     editorCell.addEditorCell(this.createConstant_4fzsyb_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4fzsyb_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sidetransform abstract child add concept");
     editorCell.setCellId("Constant_4fzsyb_a0");

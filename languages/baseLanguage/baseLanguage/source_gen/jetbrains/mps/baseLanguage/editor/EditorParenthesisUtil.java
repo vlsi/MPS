@@ -15,8 +15,6 @@ public class EditorParenthesisUtil {
   public EditorParenthesisUtil() {
   }
 
-
-
   public static void moveParenthesisToTheRightOrLeft(SNode expr, EditorContext context, boolean toRight) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return;
@@ -60,7 +58,6 @@ public class EditorParenthesisUtil {
     ParenthesisUtil.checkOperationWRTPriority(binOpCheck);
     selectNode(context, expr, toRight);
   }
-
   private static void selectNode(EditorContext context, SNode expr, boolean selectLastLeaf) {
     context.flushEvents();
     EditorComponent component = context.getEditorComponent();
@@ -71,7 +68,6 @@ public class EditorParenthesisUtil {
       component.changeSelection(cell);
     }
   }
-
   public static void moveParenthesisToTheLeftOrRightInside(SNode expr, EditorContext context, boolean toRight) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(expr, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return;
@@ -90,7 +86,6 @@ public class EditorParenthesisUtil {
     ParenthesisUtil.checkOperationWRTPriority(binOp);
     selectNode(context, expr, false);
   }
-
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return root;
@@ -98,8 +93,6 @@ public class EditorParenthesisUtil {
     SNode binOp = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     return findRightmostOrLeftmostLeafExpression((rightmost ? SLinkOperations.getTarget(binOp, "rightExpression", true) : SLinkOperations.getTarget(binOp, "leftExpression", true)), rightmost);
   }
-
-
 
   public static SNode findRightmostOrLeftmostLeafExpressionIgnoringParens(SNode root, boolean rightmost) {
     SNode currentRoot = root;

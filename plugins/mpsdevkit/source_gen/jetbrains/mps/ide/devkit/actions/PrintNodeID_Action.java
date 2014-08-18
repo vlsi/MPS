@@ -16,18 +16,15 @@ import org.apache.log4j.LogManager;
 
 public class PrintNodeID_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PrintNodeID_Action() {
     super("Print Node ID To System.out", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -38,7 +35,6 @@ public class PrintNodeID_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -49,7 +45,6 @@ public class PrintNodeID_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       System.out.println("ID = " + ((SNode) MapSequence.fromMap(_params).get("node")).getNodeId().toString());
@@ -59,6 +54,5 @@ public class PrintNodeID_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PrintNodeID_Action.class);
 }

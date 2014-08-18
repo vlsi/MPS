@@ -18,18 +18,14 @@ public class AnonymousClass_CurlyBraces {
     editorCell.setAction(CellActionType.DELETE, new AnonymousClass_CurlyBraces.AnonymousClass_CurlyBraces_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new AnonymousClass_CurlyBraces.AnonymousClass_CurlyBraces_BACKSPACE(node));
   }
-
   public static class AnonymousClass_CurlyBraces_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AnonymousClass_CurlyBraces_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
         SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
@@ -50,18 +46,14 @@ public class AnonymousClass_CurlyBraces {
       }
     }
   }
-
   public static class AnonymousClass_CurlyBraces_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AnonymousClass_CurlyBraces_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
         SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");

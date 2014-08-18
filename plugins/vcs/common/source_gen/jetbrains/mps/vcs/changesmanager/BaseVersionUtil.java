@@ -33,11 +33,9 @@ import org.apache.log4j.LogManager;
 public class BaseVersionUtil {
   private BaseVersionUtil() {
   }
-
   public static boolean isAddedFileStatus(@NotNull FileStatus status) {
     return status == FileStatus.ADDED || status == FileStatus.UNKNOWN || status == FileStatus.IGNORED;
   }
-
   @Nullable
   public static Object getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
@@ -73,7 +71,6 @@ public class BaseVersionUtil {
       return null;
     }
   }
-
   @Nullable
   public static SModel getBaseVersionModel(SModel model, Project project) {
     DataSource ds = model.getSource();
@@ -118,6 +115,5 @@ public class BaseVersionUtil {
     }
     return null;
   }
-
   protected static Logger LOG = LogManager.getLogger(BaseVersionUtil.class);
 }

@@ -25,12 +25,10 @@ public class DependencyTree extends MPSTree {
   private DependencyViewerScope myScope;
   private Project myProject;
   private DependenciesPanel myParent;
-
   public DependencyTree(DependenciesPanel parent) {
     myParent = parent;
     addTreeSelectionListener(new DependencyTree.MyTreeSelectionListener());
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     TextMPSTreeNode root = new TextMPSTreeNode("root", null);
@@ -49,22 +47,18 @@ public class DependencyTree extends MPSTree {
     setShowsRootHandles(true);
     return root;
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     return null;
   }
-
   public void setContent(DependencyViewerScope scope, Project project) {
     myScope = scope;
     myProject = project;
     rebuildLater();
   }
-
   public class MyTreeSelectionListener implements TreeSelectionListener {
     public MyTreeSelectionListener() {
     }
-
     @Override
     public void valueChanged(TreeSelectionEvent event) {
       final TreePath[] paths = getSelectionPaths();

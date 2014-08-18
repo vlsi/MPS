@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CalcClassifiersInRootsStatistic_Action() {
     super("Calc classifiers in roots statistic", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -55,7 +52,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +62,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._int rootsCount = new Wrappers._int(0);
@@ -139,7 +134,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ List<SNode> calcAllClassifierTypesInRoot(SNode rootNode, final Map<String, Object> _params) {
     TypeCheckingContext context = TypeContextManager.getInstance().createTypeCheckingContext(rootNode);
     context.checkRoot();
@@ -155,7 +149,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
     return result;
   }
-
   /*package*/ List<SNode> calcAllMembersOfClassifiers(Iterable<SNode> classifiers, final Map<String, Object> _params) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
 
@@ -169,7 +162,6 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
 
     return result;
   }
-
   /*package*/ long calculateElapsedTime(_FunctionTypes._void_P0_E0 toRun, final Map<String, Object> _params) {
     long startTime = System.currentTimeMillis();
     try {
@@ -180,6 +172,5 @@ public class CalcClassifiersInRootsStatistic_Action extends BaseAction {
       return System.currentTimeMillis() - startTime;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CalcClassifiersInRootsStatistic_Action.class);
 }

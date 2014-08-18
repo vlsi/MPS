@@ -20,7 +20,6 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
   public AnalyzerRunnerCreator_Constraints() {
     super("jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -29,7 +28,6 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -38,7 +36,6 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getRootsIncludingImported(_context.getModel(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a1;
@@ -48,6 +45,5 @@ public class AnalyzerRunnerCreator_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_3xwrd2_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "178770917832460639");
 }

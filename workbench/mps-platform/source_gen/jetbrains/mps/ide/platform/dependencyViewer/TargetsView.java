@@ -33,7 +33,6 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class TargetsView extends UsagesView {
   private DependenciesPanel myParent;
-
   public TargetsView(Project project, DependenciesPanel parent) {
     super(project, new ViewOptions(true, true, false, false, false, false));
     UsagesTree usagesTree = getTreeComponent().getTree();
@@ -43,18 +42,15 @@ public class TargetsView extends UsagesView {
     usagesTree.setSelectionRow(0);
     usagesTree.setShowPopupMenu(false);
   }
-
   @Override
   public void close() {
   }
-
   public void selectModule(SModule module) {
     MPSTreeNode node = findModule(module);
     if (node != null) {
       getTreeComponent().getTree().selectNode(node);
     }
   }
-
   private MPSTreeNode findModule(SModule module) {
     UsagesTree usagesTree = getTreeComponent().getTree();
     Enumeration nodes = usagesTree.getRootNode().breadthFirstEnumeration();
@@ -75,16 +71,13 @@ public class TargetsView extends UsagesView {
     }
     return null;
   }
-
   public class MyTreeSelectionListener implements TreeSelectionListener {
     private UsagesTree myTree;
     private DependenciesPanel myDependenciesComponent;
-
     public MyTreeSelectionListener(UsagesTree tree, DependenciesPanel parent) {
       myTree = tree;
       myDependenciesComponent = parent;
     }
-
     @Override
     public void valueChanged(TreeSelectionEvent event) {
       final TreePath[] paths = myTree.getSelectionPaths();
@@ -115,31 +108,25 @@ public class TargetsView extends UsagesView {
       myDependenciesComponent.updateReferencesView(scope);
     }
   }
-
   public class MyNodeRepresentator implements INodeRepresentator<SNode> {
     public MyNodeRepresentator() {
     }
-
     @Override
     public List<CategoryKind> getCategoryKinds() {
       return Collections.emptyList();
     }
-
     @Override
     public Icon getCategoryIcon(String string) {
       return null;
     }
-
     @Override
     public String getCategoryText(TextOptions options, String string, boolean b) {
       return "Targets";
     }
-
     @Override
     public Icon getResultsIcon() {
       return IdeIcons.REFERENCE_ICON;
     }
-
     @Override
     public String getResultsText(TextOptions options) {
       String presentation = myParent.getCurrentScope().getPresentation();
@@ -149,34 +136,27 @@ public class TargetsView extends UsagesView {
 
       return ((myParent.isMeta() ? "Used languages in " : "Dependencies of ")) + presentation;
     }
-
     @NotNull
     @Override
     public String getPresentation(SNode node) {
       return node.getPresentation();
     }
-
     @Override
     public void read(Element element, jetbrains.mps.project.Project project) throws CantLoadSomethingException {
     }
-
     @Override
     public void write(Element element, jetbrains.mps.project.Project project) throws CantSaveSomethingException {
     }
   }
-
   private static <T> T as_w7qo2b_a0a0a2a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_w7qo2b_a0a0a0a1a2a0a0a0a0a3a3f(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_w7qo2b_a0a0a0a2a2a0a0a0a0a3a3f(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_w7qo2b_a0a0a0a3a2a0a0a0a0a3a3f(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

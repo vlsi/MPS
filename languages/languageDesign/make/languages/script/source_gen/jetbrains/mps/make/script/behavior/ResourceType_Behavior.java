@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ResourceType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     String param = ((SLinkOperations.getTarget(thisNode, "classifierType", true) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifierType", true), "virtual_getPresentation_1213877396640", new Object[]{}) : "");
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + param + ">";

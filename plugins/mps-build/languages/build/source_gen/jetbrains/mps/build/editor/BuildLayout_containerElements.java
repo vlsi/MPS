@@ -29,11 +29,9 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hdw7mg_a(editorContext, node);
   }
-
   private EditorCell createCollection_hdw7mg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hdw7mg_a");
@@ -46,7 +44,6 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createRefNodeList_hdw7mg_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildLayout_containerElements.childrenListHandler_hdw7mg_a0(node, "children", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -57,34 +54,28 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class childrenListHandler_hdw7mg_a0 extends RefNodeListHandler {
     public childrenListHandler_hdw7mg_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_hdw7mg_a0a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -97,7 +88,6 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
         }
       }
     }
-
     private EditorCell createConstant_hdw7mg_a0a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_hdw7mg_a0a");
@@ -108,14 +98,12 @@ public class BuildLayout_containerElements implements ConceptEditorComponent {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_hdw7mg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_hdw7mg_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_hdw7mg_a1a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(node, "children", true)).last(), "jetbrains.mps.build.structure.BuildLayout_AbstractContainer"));
   }

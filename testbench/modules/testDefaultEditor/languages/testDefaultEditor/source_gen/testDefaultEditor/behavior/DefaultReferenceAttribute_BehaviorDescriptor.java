@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 public class DefaultReferenceAttribute_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor {
   public DefaultReferenceAttribute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testDefaultEditor.structure.DefaultReferenceAttribute";

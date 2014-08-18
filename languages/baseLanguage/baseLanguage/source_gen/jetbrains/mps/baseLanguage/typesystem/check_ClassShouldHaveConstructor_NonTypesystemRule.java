@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ClassShouldHaveConstructor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassShouldHaveConstructor_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.IAnonymousClass") || SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       if (!(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
@@ -30,18 +29,15 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

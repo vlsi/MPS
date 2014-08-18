@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class ClassReference_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ClassReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.ClassReference";

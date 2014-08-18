@@ -18,11 +18,9 @@ public class TransientModelsNotification implements ProjectComponent {
   private TransientModelBallonDisplayer myDisplayer;
   private StatusBar myStatusBar;
   private TransientModelsWidget myWidget;
-
   public TransientModelsNotification(Project project) {
     myProject = project;
   }
-
   @Override
   public void projectOpened() {
     myStatusBar = WindowManager.getInstance().getStatusBar(myProject);
@@ -33,28 +31,23 @@ public class TransientModelsNotification implements ProjectComponent {
     myDisplayer = new TransientModelBallonDisplayer(myProject, myWidget);
     myDisplayer.init();
   }
-
   @Override
   public void projectClosed() {
     myStatusBar.removeWidget(myWidget.ID());
     Disposer.dispose(myDisplayer);
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Transient Models Notification";
   }
-
   public static void updateWidgets() {
     for (TransientModelsWidget widget : Sequence.fromIterable(Sequence.fromArray(ProjectManager.getInstance().getOpenProjects())).select(new ISelector<Project, TransientModelsWidget>() {
       public TransientModelsWidget select(Project it) {
@@ -64,7 +57,6 @@ public class TransientModelsNotification implements ProjectComponent {
       widget.update();
     }
   }
-
   public static TransientModelsNotification getInstance(Project project) {
     return project.getComponent(TransientModelsNotification.class);
   }

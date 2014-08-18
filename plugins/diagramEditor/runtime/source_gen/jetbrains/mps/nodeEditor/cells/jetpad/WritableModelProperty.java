@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.UndoRunnable;
 public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> implements Property<T> {
   private String myCommandId;
   private Project myProject;
-
   public WritableModelProperty(String commandId, Project project) {
     myCommandId = commandId;
     myProject = project;
@@ -21,7 +20,6 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
       }
     });
   }
-
   protected void safeSetModelPropertyValue(final T t) {
     myProject.getModelAccess().executeCommand(new UndoRunnable.Base(null, myCommandId) {
       public void run() {
@@ -29,6 +27,5 @@ public abstract class WritableModelProperty<T> extends ReadableModelProperty<T> 
       }
     });
   }
-
   protected abstract void setModelPropertyValue(T value);
 }

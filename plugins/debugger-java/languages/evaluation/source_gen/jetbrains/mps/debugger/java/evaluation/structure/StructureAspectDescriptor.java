@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -46,6 +45,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", "jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", "jetbrains.mps.debugger.java.evaluation.structure.Evaluator", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression", "jetbrains.mps.debugger.java.evaluation.structure.GenerationHelperAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.IEvaluatorConcept", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable", "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation", "jetbrains.mps.debugger.java.evaluation.structure.UnitNode", "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"};
 }

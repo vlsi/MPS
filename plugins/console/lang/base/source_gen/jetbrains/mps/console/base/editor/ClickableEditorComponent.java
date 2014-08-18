@@ -24,11 +24,9 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_k1kh9z_a(editorContext, node);
   }
-
   private EditorCell createProperty_k1kh9z_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -50,7 +48,6 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_k1kh9z_a0a(EditorContext editorContext, SNode node) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{})) {
       return MPSColors.DARK_BLUE;
@@ -58,7 +55,6 @@ public class ClickableEditorComponent implements ConceptEditorComponent {
       return MPSColors.GRAY;
     }
   }
-
   private static boolean _StyleParameter_QueryFunction_k1kh9z_a1a(EditorContext editorContext, SNode node) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
   }

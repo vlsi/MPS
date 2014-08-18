@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class ReplaceClassAntiquotationWithClassifierType_QuickFix extends QuickFix_Runtime {
   public ReplaceClassAntiquotationWithClassifierType_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Replace antiquotation with classifier type with reference antiquotation";
   }
-
   public void execute(SNode node) {
     SNode expression = SLinkOperations.getTarget(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]), "expression", true);
     SNode parent = SNodeOperations.getParent(((SNode) ReplaceClassAntiquotationWithClassifierType_QuickFix.this.getField("antiquotation")[0]));

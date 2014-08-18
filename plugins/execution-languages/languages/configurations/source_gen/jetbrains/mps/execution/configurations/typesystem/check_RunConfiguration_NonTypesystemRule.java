@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_RunConfiguration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_RunConfiguration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode runConfiguration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((RunConfiguration_Behavior.call_getExecutor_3754890006475713427(runConfiguration) == null)) {
       {
@@ -25,18 +24,15 @@ public class check_RunConfiguration_NonTypesystemRule extends AbstractNonTypesys
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.configurations.structure.RunConfiguration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -31,11 +31,9 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationWeavingAware {
   public TemplateNodeBuilder__to__methodCall() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295242");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression");
     try {
@@ -229,11 +227,9 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
                         public Object resolve(SNode outputNode, TemplateContext context) {
                           return QueriesGenerated.referenceMacro_GetReferent_429601079676882571(new ReferenceMacroContext(context, tnode24, referenceMacro_7ucwoc_c0a0a0a0a0a0b0b0b0b0e0b0f0b0b0b0c, "variableDeclaration"));
                         }
-
                         public String getDefaultResolveInfo() {
                           return "result";
                         }
-
                         public SNodeReference getTemplateNode() {
                           return referenceMacro_7ucwoc_c0a0a0a0a0a0b0b0b0b0e0b0f0b0b0b0c;
                         }
@@ -302,18 +298,15 @@ public class TemplateNodeBuilder__to__methodCall implements TemplateDeclarationW
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_7ucwoc_a0b0e;
     environment.weaveNode(outputContextNode, "contentNode", tnodepart0, weaveTf0, context.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer propertyMacro_7ucwoc_c0a0c0b0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709623");
   private static SNodePointer varMacroRef_7ucwoc_b0a0a1a2a1a1a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676965907");
   private static SNodePointer loopMacroRef_7ucwoc_b0a0a4a2a1a1a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676965954");

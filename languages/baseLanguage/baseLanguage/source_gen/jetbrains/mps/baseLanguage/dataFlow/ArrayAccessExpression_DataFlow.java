@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ArrayAccessExpression_DataFlow extends DataFlowBuilder {
   public ArrayAccessExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "index", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "array", true));

@@ -6,16 +6,13 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 public class ASMEnumValue {
   private ASMType myType;
   private String myConstant;
-
   /*package*/ ASMEnumValue(String type, String name) {
     myType = TypeUtil.fromDescriptor(type);
     myConstant = name;
   }
-
   public ASMType getType() {
     return myType;
   }
-
   public String getConstant() {
     return myConstant;
   }

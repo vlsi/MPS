@@ -43,15 +43,12 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
   private ModuleOutputPaths myOutputPaths;
   private ReducedGenerationWorker.MyForeignRootPaths myForeignRootPaths;
   private OutputPathRedirects myOutputRedirects;
-
   public ReducedGenerationWorker(Script whatToDo) {
     super(whatToDo);
   }
-
   public ReducedGenerationWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
-
   @Override
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     ProjectOperationContext ctx = new ProjectOperationContext(project);
@@ -111,12 +108,10 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       myErrors.add(e.toString());
     }
   }
-
   @Override
   protected void showStatistic() {
     // do nothing 
   }
-
   @Override
   protected Iterable<MResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
@@ -135,16 +130,13 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       }
     });
   }
-
   @Override
   protected void make() {
     // we do not need make in ReducedGenerationWorker 
   }
-
   @Override
   protected void makeProject() {
   }
-
   @Override
   protected void setupEnvironment() {
     super.setupEnvironment();
@@ -159,15 +151,12 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
       }
     });
   }
-
   public static void main(String[] args) {
     MpsWorker mpsWorker = new ReducedGenerationWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
-
   private static class MyForeignRootPaths {
     private String[] rootPaths;
-
     public MyForeignRootPaths(Iterable<String> foreignRoots) {
       this.rootPaths = Sequence.fromIterable(foreignRoots).select(new ISelector<String, String>() {
         public String select(String dir) {
@@ -179,7 +168,6 @@ public class ReducedGenerationWorker extends BaseGeneratorWorker {
         }
       }, true).toGenericArray(String.class);
     }
-
     public String findForeignPrefix(String path) {
       int idx = DirUtil.findPrefixAsDir(path, rootPaths);
       return (idx >= 0 ? rootPaths[idx] : null);

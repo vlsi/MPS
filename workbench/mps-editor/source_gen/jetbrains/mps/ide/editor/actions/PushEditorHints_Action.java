@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class PushEditorHints_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PushEditorHints_Action() {
     super("Push Editor Hints", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class PushEditorHints_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +63,6 @@ public class PushEditorHints_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final EditorComponent component = ((EditorComponent) ((Editor) MapSequence.fromMap(_params).get("editor")).getCurrentEditorComponent());
@@ -90,6 +84,5 @@ public class PushEditorHints_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PushEditorHints_Action.class);
 }

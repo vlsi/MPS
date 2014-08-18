@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public abstract class AbstractCellSelector_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public AbstractCellSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractCellSelector";

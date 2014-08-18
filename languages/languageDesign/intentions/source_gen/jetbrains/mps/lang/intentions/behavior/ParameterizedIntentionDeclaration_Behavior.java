@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ParameterizedIntentionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
     return true;
   }

@@ -21,7 +21,6 @@ import org.jetbrains.annotations.Nullable;
 public class JavaExportUtil {
   public JavaExportUtil() {
   }
-
   public static void requireLibrary(final VisibleArtifacts artifacts, SNode library, SNode contextNode, final RequiredDependenciesBuilder builder) {
     if (SNodeOperations.getContainingRoot(library) == SNodeOperations.getContainingRoot(contextNode)) {
       return;
@@ -99,7 +98,6 @@ public class JavaExportUtil {
       }
     }
   }
-
   public static void requireModule(VisibleArtifacts artifacts, SNode module, SNode contextNode, RequiredDependenciesBuilder builder) {
 
     SNode target = SNodeOperations.as(artifacts.toOriginalNode(module), "jetbrains.mps.build.structure.BuildSource_JavaModule");
@@ -166,7 +164,6 @@ public class JavaExportUtil {
       artifacts.needsFetch(contextNode);
     }
   }
-
   @Nullable
   public static Tuples._2<SNode, Boolean> requireJar(VisibleArtifacts artifacts, SNode jar, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(jar) == SNodeOperations.getContainingRoot(contextNode)) {
@@ -192,7 +189,6 @@ public class JavaExportUtil {
     }
     return MultiTuple.<SNode,Boolean>from(artifact, withContent);
   }
-
   @Nullable
   public static SNode requireJarFolder(VisibleArtifacts artifacts, SNode jarFolder, SNode contextNode) {
     if (SNodeOperations.getContainingRoot(jarFolder) == SNodeOperations.getContainingRoot(contextNode)) {
@@ -213,7 +209,6 @@ public class JavaExportUtil {
     return artifact;
 
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

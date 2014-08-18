@@ -10,11 +10,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class User {
   public User() {
   }
-
   public String getName() {
     return "aaaaa";
   }
-
   public void test() {
     Library l = new Library();
     final boolean res = false;
@@ -26,7 +24,6 @@ public class User {
     l.invoke();
     Tuples._2<Boolean, String> s = l.getFirst();
   }
-
   public void testRename2() {
   }
 }

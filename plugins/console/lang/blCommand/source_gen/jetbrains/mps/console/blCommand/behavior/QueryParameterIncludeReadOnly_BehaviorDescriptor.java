@@ -6,7 +6,6 @@ package jetbrains.mps.console.blCommand.behavior;
 public class QueryParameterIncludeReadOnly_BehaviorDescriptor extends QueryParameter_BehaviorDescriptor {
   public QueryParameterIncludeReadOnly_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly";

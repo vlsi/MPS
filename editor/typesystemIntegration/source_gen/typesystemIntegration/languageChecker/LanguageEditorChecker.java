@@ -108,7 +108,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   };
 
   private RefScopeCheckerInEditor myScopeChecker;
-
   public LanguageEditorChecker() {
     SetSequence.fromSet(myRules).addElement(new ConstraintsChecker());
     SetSequence.fromSet(myRules).addElement(myScopeChecker = new RefScopeCheckerInEditor());
@@ -117,7 +116,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
 
     SModelRepository.getInstance().addModelRepositoryListener(this.myRepositoryListener);
   }
-
   @Override
   protected void doDispose() {
     Sequence.fromIterable(MapSequence.fromMap(myEditorComponentToErrorMap).values()).visitAll(new IVisitor<LanguageErrorsComponent>() {
@@ -140,20 +138,16 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     super.doDispose();
   }
-
   private void removeModelListener(SModel model) {
     ((SModelInternal) model).removeModelListener(myModelListener);
   }
-
   private void addModelListener(SModel modelDescriptor) {
     ((SModelInternal) modelDescriptor).addModelListener(myModelListener);
   }
-
   @Override
   protected boolean areMessagesChanged() {
     return myMessagesChanged;
   }
-
   @Override
   protected boolean isLaterThan(BaseEditorChecker checker) {
     if (checker instanceof TypesEditorChecker) {
@@ -164,12 +158,10 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
     return false;
   }
-
   @Override
   protected boolean hasDramaticalEvent(List<SModelEvent> list) {
     return true;
   }
-
   @Override
   protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
@@ -179,7 +171,6 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       }
     });
   }
-
   private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
@@ -309,24 +300,20 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     }
     return result;
   }
-
   private boolean shouldRunQuickFixs(SModel model, boolean inspector) {
     if (inspector || !(model instanceof EditableSModel) || model instanceof TransientSModel) {
       return false;
     }
     return EditorSettings.getInstance().isAutoQuickFix() || myForceRunQuickFixes;
   }
-
   @Override
   protected void clear(SNode node, EditorComponent component) {
     MapSequence.fromMap(myEditorComponentToErrorMap).get(component).clear();
   }
-
   @Override
   protected void resetCheckerState() {
     myForceRunQuickFixes = true;
     super.resetCheckerState();
   }
-
   protected static Logger LOG = LogManager.getLogger(LanguageEditorChecker.class);
 }

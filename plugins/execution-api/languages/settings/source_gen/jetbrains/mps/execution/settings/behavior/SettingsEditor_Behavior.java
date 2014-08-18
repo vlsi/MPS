@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SettingsEditor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getDeclaredOperations_946964771156067031(SNode thisNode) {
     return SNodeOperations.getDescendants(thisNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", false, new String[]{});
   }

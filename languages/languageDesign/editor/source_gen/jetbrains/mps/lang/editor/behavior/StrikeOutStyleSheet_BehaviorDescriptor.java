@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class StrikeOutStyleSheet_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public StrikeOutStyleSheet_BehaviorDescriptor() {
   }
-
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StrikeOutStyleSheet_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
-
   public boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return StrikeOutStyleSheet_Behavior.virtual_useQuery_1223387362946(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet";

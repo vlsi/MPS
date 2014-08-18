@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_GenerationContextOp_PatternRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_GenerationContextOp_PatternRef_InferenceRule() {
   }
-
   public void applyRule(final SNode generationContextOp_PatternRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = generationContextOp_PatternRef;
@@ -22,18 +21,15 @@ public class typeof_GenerationContextOp_PatternRef_InferenceRule extends Abstrac
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "4589968773278182934", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(generationContextOp_PatternRef, "patternVarDecl", false), "r:00000000-0000-4000-0000-011c895902f1(jetbrains.mps.lang.generator.generationContext.typesystem)", "4589968773278182929", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -58,22 +58,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelLinkMap fieldlinkMap;
   private Boolean fieldhasRefactorings;
   private boolean fieldhasSkippedNodes;
-
   public ModelReader8Handler(boolean interfaceOnly, boolean stripImplementation, SModelHeader header) {
     fieldinterfaceOnly = interfaceOnly;
     fieldstripImplementation = stripImplementation;
     fieldheader = header;
   }
-
   public ModelLoadResult getResult() {
     return myResult;
   }
-
   @Override
   public void setDocumentLocator(Locator locator) {
     myLocator = locator;
   }
-
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader8Handler.ElementHandler) null : myHandlersStack.peek());
@@ -81,7 +77,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
-
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
     ModelReader8Handler.ElementHandler current = myHandlersStack.pop();
@@ -96,7 +91,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
     }
   }
-
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     ModelReader8Handler.ElementHandler current = (myHandlersStack.empty() ? (ModelReader8Handler.ElementHandler) null : myHandlersStack.peek());
@@ -128,47 +122,36 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
     myHandlersStack.push(current);
     myValues.push(result);
   }
-
   private static interface ChildHandler {
     public void apply(Object resultObject, Object value) throws SAXException;
   }
-
   private class ElementHandler {
     private ElementHandler() {
     }
-
     protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
-
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
-
     protected ModelReader8Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
-
     protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
-
     protected String[] requiredAttributes() {
       return ModelReader8Handler.EMPTY_ARRAY;
     }
-
     protected void validate(Object resultObject) throws SAXException {
     }
   }
-
   public class ModelElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"modelUID"};
-
     public ModelElementHandler() {
     }
-
     @Override
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       fieldmodel = new DefaultSModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("modelUID")));
@@ -179,12 +162,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldlinkMap = new ModelLinkMap(fieldmodel);
       return new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       ModelLoadResult result = (ModelLoadResult) resultObject;
@@ -217,7 +198,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected ModelReader8Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
@@ -280,38 +260,31 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private boolean checkroot_1768088633166530069(Object resultObject, Attributes attrs) {
       return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo")));
     }
-
     private void handleChild_286176397450364079(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
       fieldmodel.addLanguage(child);
     }
-
     private void handleChild_286176397450364090(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
       fieldmodel.addEngagedOnGenerationLanguage(child);
     }
-
     private void handleChild_286176397450364101(Object resultObject, Object value) throws SAXException {
       SModuleReference child = (SModuleReference) value;
       fieldmodel.addDevKit(child);
     }
-
     private void handleChild_286176397450364112(Object resultObject, Object value) throws SAXException {
       String[] child = (String[]) value;
       fieldhelper.addImportToModel(fieldmodel, child[0], child[1], (child[2] != null ? Integer.parseInt(child[2]) : -1), child[3] != null);
     }
-
     private void handleChild_1361478912184551722(Object resultObject, Object value) throws SAXException {
       SNode child = (SNode) value;
       if (child != null) {
         fieldmodel.addRootNode(child);
       }
     }
-
     private void handleChild_1768088633166523070(Object resultObject, Object value) throws SAXException {
       Tuples._3<String, String, String> child = (Tuples._3<String, String, String>) value;
       if (fieldhelper.isImplementationWithStubNode(child._1())) {
@@ -322,14 +295,12 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       fieldhasSkippedNodes = true;
     }
-
     @Override
     protected void validate(Object resultObject) throws SAXException {
       if (!(validateInternal((ModelLoadResult) resultObject))) {
         throw new SAXParseException("missing tags", null);
       }
     }
-
     private boolean validateInternal(ModelLoadResult result) throws SAXException {
       new StructureModificationProcessor(fieldlinkMap, fieldmodel).updateModelOnLoad();
       fieldlinkMap.fillModelEnvironmentInfo();
@@ -337,23 +308,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       return true;
     }
   }
-
   public class PersistenceElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"version"};
-
     public PersistenceElementHandler() {
     }
-
     @Override
     protected Integer createObject(Attributes attrs) throws SAXException {
       return Integer.parseInt(attrs.getValue("version"));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Integer result = (Integer) resultObject;
@@ -363,23 +329,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class Module_referenceElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"namespace"};
-
     public Module_referenceElementHandler() {
     }
-
     @Override
     protected SModuleReference createObject(Attributes attrs) throws SAXException {
       return PersistenceFacade.getInstance().createModuleReference(attrs.getValue("namespace"));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SModuleReference result = (SModuleReference) resultObject;
@@ -389,23 +350,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class ImportElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "modelUID"};
-
     public ImportElementHandler() {
     }
-
     @Override
     protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("index"), attrs.getValue("modelUID"), attrs.getValue("version"), null};
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
@@ -425,13 +381,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class NodeElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type", "nodeInfo"};
-
     public NodeElementHandler() {
     }
-
     @Override
     protected SNode createObject(Attributes attrs) throws SAXException {
       Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readNodeInfo(attrs.getValue("nodeInfo"));
@@ -452,12 +405,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldlinkMap.addNodeMetainfo(parsed._0(), parsed._1(), (boolean) parsed._2(), result);
       return result;
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
@@ -489,7 +440,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected ModelReader8Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
@@ -530,7 +480,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private boolean checknode_1910945748547288250(Object resultObject, Attributes attrs) {
       SNode result = (SNode) resultObject;
       if (fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo"))) {
@@ -538,7 +487,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       return !(result instanceof InterfaceSNode) || fieldhelper.isInterfaceNode(attrs.getValue("nodeInfo"));
     }
-
     private void handleChild_286176397450364265(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       String[] child = (String[]) value;
@@ -547,7 +495,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         fieldlinkMap.addNameLocation(fieldhelper.readLinkId(child[2]), result, child[0]);
       }
     }
-
     private void handleChild_286176397450364288(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       String[] child = (String[]) value;
@@ -564,7 +511,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       result.setReference(ref.getRole(), ref);
       fieldlinkMap.addRoleLocation(fieldhelper.readLinkId(child[3]), ref);
     }
-
     private void handleChild_286176397450364333(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       SNode child = (SNode) value;
@@ -573,7 +519,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
         child.putUserObject("role", null);
       }
     }
-
     private void handleChild_1910945748545948896(Object resultObject, Object value) throws SAXException {
       SNode result = (SNode) resultObject;
       Tuples._3<String, String, String> child = (Tuples._3<String, String, String>) value;
@@ -591,18 +536,14 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
     }
   }
-
   public class IgnoredNodeElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public IgnoredNodeElementHandler() {
     }
-
     @Override
     protected Tuples._3<String, String, String> createObject(Attributes attrs) throws SAXException {
       return MultiTuple.<String,String,String>from(attrs.getValue("role"), attrs.getValue("nodeInfo"), attrs.getValue("type"));
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Tuples._3<String, String, String> result = (Tuples._3<String, String, String>) resultObject;
@@ -626,7 +567,6 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected ModelReader8Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
@@ -644,23 +584,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       return super.createChild(resultObject, tagName, attrs);
     }
   }
-
   public class PropertyElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
-
     public PropertyElementHandler() {
     }
-
     @Override
     protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("name"), null, null};
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
@@ -678,13 +613,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class IgnoredPropertyElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public IgnoredPropertyElementHandler() {
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       if ("name".equals(name)) {
@@ -699,23 +631,18 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class LinkElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role", "targetNodeId"};
-
     public LinkElementHandler() {
     }
-
     @Override
     protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("role"), attrs.getValue("targetNodeId"), null, null};
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
@@ -736,13 +663,10 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class IgnoredLinkElementHandler extends ModelReader8Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public IgnoredLinkElementHandler() {
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       if ("role".equals(name)) {
@@ -760,6 +684,5 @@ public class ModelReader8Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ModelReader8Handler.class);
 }

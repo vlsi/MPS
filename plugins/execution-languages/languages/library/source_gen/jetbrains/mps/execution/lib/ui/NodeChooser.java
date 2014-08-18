@@ -40,7 +40,6 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
   @Nullable
   private SNodeReference myNodePointer;
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
-
   public NodeChooser() {
     addActionListener(new ActionListener() {
       @Override
@@ -107,17 +106,12 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
       }
     });
   }
-
   protected abstract Iterable<SNode> findNodes(SModel model, String fqName);
-
   protected abstract Iterable<SModel> getModels(String model);
-
   protected abstract List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor);
-
   public SNode getNode() {
     return check_qnl8bg_a0a6(((SNodePointer) this.myNodePointer), this);
   }
-
   public void setNode(SNode node) {
     if (check_qnl8bg_a0a0h(((SNodePointer) this.myNodePointer), this) == node) {
       return;
@@ -135,7 +129,6 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
     }
     this.fireNodeChanged();
   }
-
   public String getFqName(SNode node) {
     String modelName = SNodeOperations.getModel(node).getModelName();
 
@@ -151,11 +144,9 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
     }
     return modelName + "." + nodeName;
   }
-
   public void addNodeChangeListener(@NotNull _FunctionTypes._void_P1_E0<? super SNode> listener) {
     ListSequence.fromList(this.myListeners).addElement(listener);
   }
-
   private void fireNodeChanged() {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<_FunctionTypes._void_P1_E0<? super SNode>>() {
       public void visit(_FunctionTypes._void_P1_E0<? super SNode> it) {
@@ -163,27 +154,23 @@ public abstract class NodeChooser extends TextFieldWithBrowseButton.NoPathComple
       }
     });
   }
-
   @Override
   public void dispose() {
     super.dispose();
     ListSequence.fromList(myListeners).clear();
   }
-
   private static SNode check_qnl8bg_a0a6(SNodePointer checkedDotOperand, NodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
-
   private static SNode check_qnl8bg_a0a0h(SNodePointer checkedDotOperand, NodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }
-
   private static SNode check_qnl8bg_a0a0a0a0a0k(SNodePointer checkedDotOperand, NodeChooser checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());

@@ -21,25 +21,20 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 public class ActionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getGeneratedName_1213877371942(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_Action";
   }
-
   public static String call_getGeneratedClassFQName_1213877371952(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ActionDeclaration_Behavior.call_getGeneratedName_1213877371942(thisNode);
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
     SLinkOperations.setTarget(type, "action", thisNode, false);
     return type;
   }
-
   public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.MethodDeclaration")) {
       SNode baseActionType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getNode("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)", "~BaseAction"), "virtual_getThisType_7405920559687254782", new Object[]{});

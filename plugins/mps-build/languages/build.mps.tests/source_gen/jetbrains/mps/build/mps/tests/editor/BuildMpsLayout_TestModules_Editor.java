@@ -31,11 +31,9 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_aky039_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_aky039_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_aky039_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aky039_a");
@@ -46,7 +44,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_aky039_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_aky039_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test modules configuration");
     editorCell.setCellId("Constant_aky039_a0");
@@ -56,7 +53,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aky039_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -77,7 +73,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_aky039_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aky039_c0");
@@ -88,7 +83,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_aky039_a2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_aky039_a2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildMpsLayout_TestModules_Editor.modulesListHandler_aky039_a2a(node, "modules", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -99,30 +93,25 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class modulesListHandler_aky039_a2a extends RefNodeListHandler {
     public modulesListHandler_aky039_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -136,14 +125,12 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_aky039_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_aky039_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_aky039_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_aky039_a_0");
@@ -151,7 +138,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_aky039_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_aky039_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aky039_a0");
@@ -163,7 +149,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_aky039_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_aky039_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "halt on failure");
     editorCell.setCellId("Constant_aky039_a0a");
@@ -173,7 +158,6 @@ public class BuildMpsLayout_TestModules_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_aky039_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("haltonfailure");

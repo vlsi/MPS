@@ -14,11 +14,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CanCreateFunction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508731"));
@@ -27,11 +25,9 @@ public class CanCreateFunction_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508743"));
     return result;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_wcu5l2_a0a2();
   }
-
   private static SNode _quotation_createNode_wcu5l2_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

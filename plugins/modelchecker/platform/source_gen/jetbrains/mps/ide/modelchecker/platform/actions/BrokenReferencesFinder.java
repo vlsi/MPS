@@ -9,7 +9,6 @@ import java.util.ArrayList;
 public class BrokenReferencesFinder extends ModelCheckerIssueFinder {
   public BrokenReferencesFinder() {
   }
-
   @Override
   protected List<SpecificChecker> getSpecificCheckers() {
     return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new UnresolvedReferencesChecker());

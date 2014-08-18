@@ -20,69 +20,54 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateListPattern_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateListPattern_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
-
   public String getPresentation() {
     return "CreateListPattern";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.pattern.intentions.CreateListPattern_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.pattern";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
     return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(currentNode) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "3514655265371785881");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateListPattern_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create List Pattern";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
       List<SNode> siblings = SNodeOperations.getAllSiblings(currentNode, false);
@@ -91,7 +76,6 @@ public class CreateListPattern_Intention implements IntentionFactory {
         SNodeOperations.deleteNode(sibling);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateListPattern_Intention.this;
     }

@@ -21,7 +21,6 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hcif3v_a(editorContext, node);
   }
-
   private EditorCell createCollection_hcif3v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hcif3v_a");
@@ -32,7 +31,6 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_hcif3v_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_hcif3v_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -40,7 +38,6 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_hcif3v_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_hcif3v_b0");
@@ -50,7 +47,6 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hcif3v_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("requestedConcept");
@@ -70,7 +66,6 @@ public class OfConceptOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_hcif3v_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_hcif3v_d0");

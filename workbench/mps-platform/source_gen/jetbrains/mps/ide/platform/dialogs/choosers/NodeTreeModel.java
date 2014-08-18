@@ -29,45 +29,35 @@ import jetbrains.mps.workbench.choose.nodes.NodePresentation;
 
 public abstract class NodeTreeModel implements TreeModel {
   private static SNodeReference FAKE_ROOT = new SNodePointer(null);
-
   public NodeTreeModel() {
   }
-
   public abstract SNodeReference[] getRootNodes();
-
   public abstract SNodeReference[] getChildren(SNodeReference node);
-
   @NotNull
   @Override
   public Grouper[] getGroupers() {
     return Grouper.EMPTY_ARRAY;
   }
-
   @NotNull
   @Override
   public Sorter[] getSorters() {
     return Sorter.EMPTY_ARRAY;
   }
-
   @NotNull
   @Override
   public Filter[] getFilters() {
     return Filter.EMPTY_ARRAY;
   }
-
   @NotNull
   @Override
   public StructureViewTreeElement getRoot() {
     return new NodeTreeModel.NodeTreeElement(NodeTreeModel.FAKE_ROOT);
   }
-
   private class NodeTreeElement implements StructureViewTreeElement {
     private final SNodeReference myNode;
-
     public NodeTreeElement(SNodeReference node) {
       this.myNode = node;
     }
-
     @Override
     public TreeElement[] getChildren() {
       SNodeReference[] children = ((myNode == NodeTreeModel.FAKE_ROOT) ? NodeTreeModel.this.getRootNodes() : NodeTreeModel.this.getChildren(myNode));
@@ -79,12 +69,10 @@ public abstract class NodeTreeModel implements TreeModel {
 
       return childrenElements;
     }
-
     @Override
     public Object getValue() {
       return myNode;
     }
-
     @Override
     public ItemPresentation getPresentation() {
       return ModelAccess.instance().runReadAction(new Computable<ItemPresentation>() {
@@ -94,7 +82,6 @@ public abstract class NodeTreeModel implements TreeModel {
         }
       });
     }
-
     @Override
     public void navigate(boolean b) {
       DataManager.getInstance().getDataContextFromFocus().doWhenDone(new AsyncResult.Handler<DataContext>() {
@@ -125,23 +112,19 @@ public abstract class NodeTreeModel implements TreeModel {
         }
       });
     }
-
     @Override
     public boolean canNavigate() {
       return true;
     }
-
     @Override
     public boolean canNavigateToSource() {
       return true;
     }
   }
-
   protected static class NodeTreeElementPresentation extends NodePresentation {
     public NodeTreeElementPresentation(SNodeReference node) {
       super(((SNodePointer) node).resolve(MPSModuleRepository.getInstance()));
     }
-
     @Override
     public String doGetLocationString() {
       return null;

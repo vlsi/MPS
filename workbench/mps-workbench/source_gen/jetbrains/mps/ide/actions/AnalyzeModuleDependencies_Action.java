@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowModuleDependencies;
-
   public AnalyzeModuleDependencies_Action() {
     super("Analyze Module Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -41,7 +38,6 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModuleDependenies_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class);
@@ -68,6 +63,5 @@ public class AnalyzeModuleDependencies_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AnalyzeModuleDependencies_Action.class);
 }

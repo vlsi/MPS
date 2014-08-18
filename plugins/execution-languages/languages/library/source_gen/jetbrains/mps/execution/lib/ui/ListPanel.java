@@ -50,7 +50,6 @@ public abstract class ListPanel<T> extends JPanel {
   protected Project myProject;
   private final String myTitle;
   private boolean isEditable = true;
-
   public ListPanel(String title) {
     myTitle = title;
 
@@ -72,39 +71,29 @@ public abstract class ListPanel<T> extends JPanel {
     this.add(new JBLabel(myTitle + ":"), LayoutUtil.createLabelConstraints(0));
     this.add(mainPanel, LayoutUtil.createPanelConstraints(1));
   }
-
   protected abstract T wrap(SNode node);
-
   protected abstract SNodeReference unwrap(T element);
-
   protected abstract String getFqName(T element);
-
   protected abstract void collectCandidates();
-
   public void addItem(T item) {
     ListSequence.fromList(myValues).addElement(item);
     myListComponent.updateUI();
   }
-
   public void addActionListener(ActionListener listener) {
     myListener = listener;
   }
-
   public List<T> getItems() {
     return myValues;
   }
-
   public void clear() {
     ListSequence.fromList(myValues).clear();
     myListComponent.updateUI();
   }
-
   public void setData(List<? extends T> data) {
     ListSequence.fromList(myValues).clear();
     ListSequence.fromList(myValues).addSequence(ListSequence.fromList(data));
     myListComponent.updateUI();
   }
-
   private List<SNodeReference> getCandidates() {
     boolean needsUpdate;
     synchronized (myLock) {
@@ -129,43 +118,34 @@ public abstract class ListPanel<T> extends JPanel {
       }).toListSequence();
     }
   }
-
   public void setProject(Project project) {
     myProject = project;
   }
-
   public void setEditable(boolean editable) {
     isEditable = editable;
   }
-
   public NodeChooserDialog createNodeChooserDialog(List<SNodeReference> nodesList) {
     return new NodeChooserDialog(myProject, nodesList);
   }
-
   private class MyAbstractListModel extends AbstractListModel {
     public MyAbstractListModel() {
     }
-
     @Override
     public Object getElementAt(int p0) {
       return getFqName(ListSequence.fromList(ListPanel.this.myValues).getElement(p0));
     }
-
     @Override
     public int getSize() {
       return ListSequence.fromList(ListPanel.this.myValues).count();
     }
-
     public void fireSomethingChanged() {
       fireContentsChanged(this, 0, ListSequence.fromList(myValues).count());
     }
   }
-
   private class MyListAddAction extends ListAddAction {
     public MyListAddAction(JList list) {
       super(list);
     }
-
     @Override
     protected int doAdd(AnActionEvent p0) {
       List<SNodeReference> nodesList = getCandidates();
@@ -194,19 +174,16 @@ public abstract class ListPanel<T> extends JPanel {
       ListPanel.this.myListModel.fireSomethingChanged();
       return ListSequence.fromList(ListPanel.this.myValues).indexOf(wrapper.value);
     }
-
     @Override
     public void update(AnActionEvent event) {
       event.getPresentation().setEnabled(isEditable);
       super.update(event);
     }
   }
-
   private class MyListRemoveAction extends ListRemoveAction {
     public MyListRemoveAction(JList list) {
       super(list);
     }
-
     @Override
     protected void doRemove(AnActionEvent p0) {
       for (Object value : ListPanel.this.myListComponent.getSelectedValues()) {
@@ -229,7 +206,6 @@ public abstract class ListPanel<T> extends JPanel {
       ListPanel.this.myListComponent.updateUI();
       ListPanel.this.myListModel.fireSomethingChanged();
     }
-
     @Override
     public void update(AnActionEvent event) {
       event.getPresentation().setEnabled(isEditable);

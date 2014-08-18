@@ -14,19 +14,16 @@ public class PriorityRuleDescriptor extends VoidColumnDescriptor {
   private final Generator myGenerator;
   private final List<SModuleReference> myDepGenerators;
   private final boolean myLeft;
-
   public PriorityRuleDescriptor(Generator generator, List<SModuleReference> depGenerators, boolean left, String name, String header, int width) {
     super(name, header, width);
     myGenerator = generator;
     myDepGenerators = depGenerators;
     myLeft = left;
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new RuleOperandRenderer();
   }
-
   @Override
   public TableCellEditor createEditor() {
     return new RuleOperandEditor(myGenerator, myDepGenerators, myLeft);

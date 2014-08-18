@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> ifs = new ArrayList<SNode>();
     for (SNode i : SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "implements", true)) {
@@ -27,18 +26,15 @@ public class NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule extends S
     }
     return ifs;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }

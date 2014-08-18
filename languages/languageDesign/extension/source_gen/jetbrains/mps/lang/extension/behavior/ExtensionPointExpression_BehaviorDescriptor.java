@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExtensionPointExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ExtensionPointExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ExtensionPointExpression_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionPointExpression";

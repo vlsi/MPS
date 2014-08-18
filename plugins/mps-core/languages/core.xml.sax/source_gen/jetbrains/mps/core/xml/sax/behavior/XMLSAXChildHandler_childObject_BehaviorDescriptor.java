@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class XMLSAXChildHandler_childObject_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public XMLSAXChildHandler_childObject_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject";

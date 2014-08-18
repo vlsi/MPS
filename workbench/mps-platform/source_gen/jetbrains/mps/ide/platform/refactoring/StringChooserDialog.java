@@ -20,7 +20,6 @@ public class StringChooserDialog extends RefactoringDialog {
   protected JLabel myLabel = new JLabel();
   protected JTextField myTextField = new JTextField();
   protected String myResultString;
-
   public StringChooserDialog(@NotNull Project project, String title, String labelText, String initialValue) {
     super(project, true);
     setTitle(title);
@@ -33,18 +32,15 @@ public class StringChooserDialog extends RefactoringDialog {
     myLabel.setText(labelText);
     setHorizontalStretch(2.0f);
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return null;
   }
-
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myTextField;
   }
-
   @Override
   protected JComponent createNorthPanel() {
     this.myPanel = new JPanel(new GridBagLayout());
@@ -73,21 +69,17 @@ public class StringChooserDialog extends RefactoringDialog {
     return myPanel;
 
   }
-
   public String getResultString() {
     return myResultString;
   }
-
   protected String getCurrentValue() {
     return this.myTextField.getText();
   }
-
   @Override
   protected void doRefactoringAction() {
     myResultString = this.myTextField.getText();
     super.doRefactoringAction();
   }
-
   public static String getString(Project project, String title, String labelText, String initialValue) {
     StringChooserDialog dialog = new StringChooserDialog(project, title, labelText, initialValue);
     dialog.show();

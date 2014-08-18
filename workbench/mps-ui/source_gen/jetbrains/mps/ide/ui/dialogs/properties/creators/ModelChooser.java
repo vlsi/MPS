@@ -15,7 +15,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 public class ModelChooser implements Computable<List<SModelReference>> {
   public ModelChooser() {
   }
-
   @Override
   public List<SModelReference> compute() {
     List<SModelReference> models = ModelAccess.instance().runReadAction(new Computable<List<SModelReference>>() {

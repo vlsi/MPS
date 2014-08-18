@@ -36,10 +36,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class ModulesClusterizer {
   private static Logger LOG = LogManager.getLogger(ModulesCluster.class);
-
   public ModulesClusterizer() {
   }
-
   public Iterable<Cluster> clusterize(Iterable<? extends IResource> res) {
     final Iterable<MResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
@@ -79,8 +77,6 @@ public class ModulesClusterizer {
     return result;
   }
 
-
-
   private static Iterable<String> allUsedLangNamespaces(Iterable<MResource> cluster) {
     return allNamespaces(Sequence.fromIterable(cluster).select(new ISelector<MResource, SModule>() {
       public SModule select(MResource r) {
@@ -88,7 +84,6 @@ public class ModulesClusterizer {
       }
     }));
   }
-
   private static Iterable<String> allNamespaces(Iterable<SModule> modules) {
     final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
     Set<GeneratorRuntime> seen = SetSequence.fromSet(new HashSet<GeneratorRuntime>());

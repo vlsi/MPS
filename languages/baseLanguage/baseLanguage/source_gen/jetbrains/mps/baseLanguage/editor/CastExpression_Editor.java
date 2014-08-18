@@ -19,7 +19,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_k71s56_a(editorContext, node);
   }
-
   private EditorCell createCollection_k71s56_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k71s56_a");
@@ -28,7 +27,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_k71s56_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_k71s56_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k71s56_a0");
@@ -39,7 +37,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_k71s56_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_k71s56_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("leftParen");
@@ -49,7 +46,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_k71s56_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -70,7 +66,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_k71s56_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("rightParen");
@@ -80,7 +75,6 @@ public class CastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_k71s56_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");

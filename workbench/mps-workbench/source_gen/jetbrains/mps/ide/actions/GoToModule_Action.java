@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class GoToModule_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToModule_Action() {
     super("Go to Module", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -55,7 +52,6 @@ public class GoToModule_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = event.getData(PlatformDataKeys.PROJECT);
@@ -74,7 +70,6 @@ public class GoToModule_Action extends BaseAction {
             }
           };
         }
-
         @Override
         public SModuleReference[] find(SearchScope scope) {
           List<SModuleReference> modules = new ArrayList<SModuleReference>();
@@ -96,6 +91,5 @@ public class GoToModule_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToModule_Action.class);
 }

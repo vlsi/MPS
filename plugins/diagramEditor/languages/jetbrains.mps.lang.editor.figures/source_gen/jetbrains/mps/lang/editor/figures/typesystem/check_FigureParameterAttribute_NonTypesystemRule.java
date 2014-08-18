@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_FigureParameterAttribute_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_FigureParameterAttribute_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode figureParameterAttribute, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), figureParameterAttribute, "virtual_getParameterMember_5422656561931910498", new Object[]{}), "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       {
@@ -27,18 +26,15 @@ public class check_FigureParameterAttribute_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

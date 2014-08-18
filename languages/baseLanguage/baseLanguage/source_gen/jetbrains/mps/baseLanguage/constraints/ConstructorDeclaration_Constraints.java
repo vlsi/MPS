@@ -19,12 +19,10 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
   public ConstructorDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -35,7 +33,6 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -44,7 +41,6 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -56,7 +52,6 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "nestedName";
@@ -68,7 +63,6 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
@@ -77,10 +71,8 @@ public class ConstructorDeclaration_Constraints extends BaseConstraintsDescripto
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.core.structure.IResolveInfo");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1213107437659");
 }

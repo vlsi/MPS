@@ -35,10 +35,8 @@ public abstract class KajaFrame {
   private Icon karelIconSouth;
   private Icon karelIconWest;
   private boolean stopped = false;
-
   public KajaFrame() {
   }
-
   public final void initializeComponents() {
     try {
       UIManager.setLookAndFeel(new MetalLookAndFeel());
@@ -71,26 +69,20 @@ public abstract class KajaFrame {
     frame.pack();
     updateUI();
   }
-
   public final void run() {
     perform();
   }
-
   protected abstract void perform();
-
   public void reportError(String msg) {
     JOptionPane.showMessageDialog(canvas, msg, "Error", JOptionPane.ERROR_MESSAGE);
     stop();
   }
-
   public void trace(String msg) {
     JOptionPane.showMessageDialog(canvas, msg, "Trace", JOptionPane.INFORMATION_MESSAGE);
   }
-
   protected Cell getCurrentCell() {
     return world[row][col];
   }
-
   protected Cell getNextCell() {
     switch (direction) {
       case north:
@@ -105,7 +97,6 @@ public abstract class KajaFrame {
         return null;
     }
   }
-
   protected void moveKaja() {
     if (stopped) {
       return;
@@ -128,7 +119,6 @@ public abstract class KajaFrame {
     getCurrentCell().setKaja();
     updateUI();
   }
-
   protected void turnLeft() {
     if (stopped) {
       return;
@@ -149,11 +139,9 @@ public abstract class KajaFrame {
     }
     updateUI();
   }
-
   protected boolean canMove() {
     return !(getNextCell().isWall());
   }
-
   protected void addMark() {
     if (stopped) {
       return;
@@ -161,7 +149,6 @@ public abstract class KajaFrame {
     getCurrentCell().addMark();
     updateUI();
   }
-
   protected void removeMark() {
     if (stopped) {
       return;
@@ -169,50 +156,40 @@ public abstract class KajaFrame {
     getCurrentCell().removeMark();
     updateUI();
   }
-
   protected boolean isWall() {
     return getNextCell().isWall();
   }
-
   protected boolean isMark() {
     return getCurrentCell().getMarks() > 0;
   }
-
   protected boolean isMark(int row, int col) {
     return world[row][col].getMarks() > 0;
   }
-
   protected boolean heading(Direction direction) {
     return this.direction == direction;
   }
-
   protected boolean isFull() {
     return getCurrentCell().getMarks() == 8;
   }
-
   protected boolean isFull(int row, int col) {
     return world[row][col].getMarks() == 8;
   }
-
   protected void pause() {
     try {
       Thread.sleep(500);
     } catch (InterruptedException e) {
     }
   }
-
   protected void minipause() {
     try {
       Thread.sleep(50);
     } catch (InterruptedException e) {
     }
   }
-
   protected void stop() {
     stopped = true;
     updateUI();
   }
-
   protected void addMark(int row, int col) {
     if (stopped) {
       return;
@@ -220,7 +197,6 @@ public abstract class KajaFrame {
     world[row][col].addMark();
     updateUI();
   }
-
   protected void removeMark(int row, int col) {
     if (stopped) {
       return;
@@ -228,7 +204,6 @@ public abstract class KajaFrame {
     world[row][col].removeMark();
     updateUI();
   }
-
   protected void addWall(int row, int col) {
     if (stopped) {
       return;
@@ -236,7 +211,6 @@ public abstract class KajaFrame {
     world[row][col].setWall();
     updateUI();
   }
-
   protected void removeWall(int row, int col) {
     if (stopped) {
       return;
@@ -244,15 +218,12 @@ public abstract class KajaFrame {
     world[row][col].unsetWall();
     updateUI();
   }
-
   protected boolean isAllowedRow(int row) {
     return row > 0 && row < HEIGHT - 1;
   }
-
   protected boolean isAllowedCol(int col) {
     return col > 0 && col < WIDTH - 1;
   }
-
   private void updateUI() {
     for (int i = 0; i < HEIGHT; i++) {
       for (int j = 0; j < WIDTH; j++) {

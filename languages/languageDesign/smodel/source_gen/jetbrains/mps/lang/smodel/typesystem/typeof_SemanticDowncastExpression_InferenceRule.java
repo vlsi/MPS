@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SemanticDowncastExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(expr, "leftExpression", true) != null)) {
       final SNode LeftType_typevar_1186060911559 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -85,22 +84,18 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_kyl6z5_a0a0a0d0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -108,7 +103,6 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SModel")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_kyl6z5_a0a0a0a3a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -116,7 +110,6 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SNode")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_kyl6z5_a0a0a0a0d0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -124,7 +117,6 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SNode")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_kyl6z5_a0a0a0a0a0a3a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -136,7 +128,6 @@ public class typeof_SemanticDowncastExpression_InferenceRule extends AbstractInf
     quotedNode_2.addChild("parameter", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_kyl6z5_a0a0a0a0a0d0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

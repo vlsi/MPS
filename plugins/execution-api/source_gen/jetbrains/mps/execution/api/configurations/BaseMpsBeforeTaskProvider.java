@@ -22,28 +22,22 @@ import org.apache.log4j.LogManager;
 public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTaskProvider<T> {
   private final String myName;
   private final String myAlias;
-
   public BaseMpsBeforeTaskProvider(String name) {
     this(name, name);
   }
-
   public BaseMpsBeforeTaskProvider(String name, String alias) {
     myName = name;
     myAlias = alias;
   }
-
   protected abstract T createTaskImpl();
-
   @Override
   public String getName() {
     return myAlias;
   }
-
   @Override
   public String getDescription(T task) {
     return myAlias;
   }
-
   @Override
   public T createTask(RunConfiguration runConfiguration) {
     if (hasExecuteMethod(runConfiguration)) {
@@ -51,7 +45,6 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     return null;
   }
-
   private boolean hasExecuteMethod(RunConfiguration runConfiguration) {
     try {
       if (getMethod(runConfiguration) != null) {
@@ -61,7 +54,6 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     return false;
   }
-
   @Override
   public boolean executeTask(DataContext context, RunConfiguration configuration, ExecutionEnvironment env, T task) {
     if (!(configure(configuration, task))) {
@@ -76,7 +68,6 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     return false;
   }
-
   private boolean configure(RunConfiguration runConfiguration, T task) {
     try {
       Method method = getMethod(runConfiguration);
@@ -106,45 +97,35 @@ public abstract class BaseMpsBeforeTaskProvider<T extends BaseMpsBeforeTaskProvi
     }
     return false;
   }
-
   private Method getMethod(RunConfiguration configuration) throws NoSuchMethodException {
     return configuration.getClass().getMethod(getCreateMethodName(myName));
   }
-
   @Override
   public boolean isConfigurable() {
     return false;
   }
-
   @Override
   public boolean configureTask(RunConfiguration runConfiguration, T task) {
     return hasExecuteMethod(runConfiguration);
   }
-
   @Override
   public boolean canExecuteTask(RunConfiguration configuration, T task) {
     return true;
   }
-
   public static String getCreateMethodName(String name) {
     return "create" + name.replace(" ", "") + "Task";
   }
-
   public static String getConfigureMethodName() {
     return "configure";
   }
-
   public static abstract class BaseMpsBeforeRunTask<T extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask> extends BeforeRunTask<T> {
     public BaseMpsBeforeRunTask(@NotNull Key<T> providerId) {
       super(providerId);
       setEnabled(true);
     }
-
     public abstract boolean execute(Project project, ExecutionEnvironment environment);
   }
-
   protected static Logger LOG = LogManager.getLogger(BaseMpsBeforeTaskProvider.class);
-
   private static boolean eq_xh6sei_a0a0a0a0a0a3a0a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

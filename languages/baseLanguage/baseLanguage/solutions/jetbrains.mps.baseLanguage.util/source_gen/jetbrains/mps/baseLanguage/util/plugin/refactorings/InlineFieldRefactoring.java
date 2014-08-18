@@ -13,10 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public abstract class InlineFieldRefactoring {
   public InlineFieldRefactoring() {
   }
-
   public abstract SNode doRefactoring();
-
-
 
   public Iterable<SNode> findAllReferences(final SNode variable) {
     return ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(variable), "jetbrains.mps.baseLanguage.structure.VariableReference")).where(new IWhereFilter<SNode>() {
@@ -25,7 +22,6 @@ public abstract class InlineFieldRefactoring {
       }
     });
   }
-
   public Iterable<SNode> findAllReferenceOperations(final SNode variable) {
     return ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(variable), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -34,15 +30,11 @@ public abstract class InlineFieldRefactoring {
     });
   }
 
-
-
   public void optimizeDeclaration(SNode variable) {
     if (Sequence.fromIterable(findAllReferences(variable)).isEmpty() && Sequence.fromIterable(findAllReferenceOperations(variable)).isEmpty()) {
       SNodeOperations.deleteNode(variable);
     }
   }
-
-
 
   public static InlineFieldRefactoring createRefactoring(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {

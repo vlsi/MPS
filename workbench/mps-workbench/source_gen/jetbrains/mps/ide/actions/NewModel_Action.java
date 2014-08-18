@@ -34,18 +34,15 @@ import org.apache.log4j.LogManager;
 
 public class NewModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
-
   public NewModel_Action() {
     super("Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
@@ -62,7 +59,6 @@ public class NewModel_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -76,7 +72,6 @@ public class NewModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -103,7 +98,6 @@ public class NewModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       if (!(((SModule) MapSequence.fromMap(_params).get("module")).getModelRoots().iterator().hasNext())) {
@@ -140,7 +134,6 @@ public class NewModel_Action extends BaseAction {
       }
     }
   }
-
   private StereotypeProvider getStereotypeProvider(final Map<String, Object> _params) {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("treeNode")).getParent();
     while (parent != null) {
@@ -151,7 +144,6 @@ public class NewModel_Action extends BaseAction {
     }
     return null;
   }
-
   protected String getStereotype(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
       return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).getStereotype();
@@ -163,7 +155,6 @@ public class NewModel_Action extends BaseAction {
     }
     return null;
   }
-
   protected boolean isStrict(final Map<String, Object> _params) {
     if (((TreeNode) MapSequence.fromMap(_params).get("treeNode")) instanceof StereotypeProvider) {
       return ((StereotypeProvider) ((TreeNode) MapSequence.fromMap(_params).get("treeNode"))).isStrict();
@@ -175,7 +166,6 @@ public class NewModel_Action extends BaseAction {
     }
     return false;
   }
-
   protected String getNamespace(final Map<String, Object> _params) {
     if (((SModule) MapSequence.fromMap(_params).get("module")) instanceof Generator) {
       Generator gen = (Generator) ((SModule) MapSequence.fromMap(_params).get("module"));
@@ -189,6 +179,5 @@ public class NewModel_Action extends BaseAction {
     }
     return ((SModule) MapSequence.fromMap(_params).get("module")).getModuleName();
   }
-
   protected static Logger LOG = LogManager.getLogger(NewModel_Action.class);
 }

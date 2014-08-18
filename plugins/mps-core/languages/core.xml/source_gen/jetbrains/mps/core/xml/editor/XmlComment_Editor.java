@@ -27,7 +27,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5fx40y_a(editorContext, node);
   }
-
   private EditorCell createCollection_5fx40y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5fx40y_a");
@@ -37,7 +36,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5fx40y_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5fx40y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<!--");
     editorCell.setCellId("Constant_5fx40y_a0");
@@ -48,11 +46,9 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_5fx40y_a0a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
-
   private EditorCell createAlternation_5fx40y_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlComment_Editor.renderingCondition_5fx40y_a1a(node, editorContext);
@@ -64,18 +60,15 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_5fx40y_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "lines", true)).count() <= 1;
   }
-
   private EditorCell createCollection_5fx40y_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5fx40y_a1a");
     editorCell.addEditorCell(this.createRefNodeList_5fx40y_a0b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_5fx40y_a0b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlComment_Editor.linesListHandler_5fx40y_a0b0(node, "lines", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -83,34 +76,28 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class linesListHandler_5fx40y_a0b0 extends RefNodeListHandler {
     public linesListHandler_5fx40y_a0b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_5fx40y_a0a1a(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -123,7 +110,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_5fx40y_a0a1a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_5fx40y_a0a1a");
@@ -134,7 +120,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_5fx40y_a1a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5fx40y_a1a_0");
@@ -144,7 +129,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_5fx40y_a0b0_0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_5fx40y_a0b0_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlComment_Editor.linesListHandler_5fx40y_a0b0_0(node, "lines", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -156,30 +140,25 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class linesListHandler_5fx40y_a0b0_0 extends RefNodeListHandler {
     public linesListHandler_5fx40y_a0b0_0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -193,7 +172,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_5fx40y_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_5fx40y_c0");
@@ -204,7 +182,6 @@ public class XmlComment_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_5fx40y_a0c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }

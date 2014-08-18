@@ -14,15 +14,12 @@ public enum PrecisionSetting {
   UNLIMITED("UNLIMITED", 4);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<PrecisionSetting> getConstants() {
     List<PrecisionSetting> list = ListSequence.fromList(new LinkedList<PrecisionSetting>());
     ListSequence.fromList(list).addElement(PrecisionSetting.CUSTOM);
@@ -32,11 +29,9 @@ public enum PrecisionSetting {
     ListSequence.fromList(list).addElement(PrecisionSetting.UNLIMITED);
     return list;
   }
-
   public static PrecisionSetting getDefault() {
     return PrecisionSetting.CUSTOM;
   }
-
   public static PrecisionSetting parseValue(String value) {
     if (value == null) {
       return PrecisionSetting.getDefault();
@@ -58,14 +53,11 @@ public enum PrecisionSetting {
     }
     return PrecisionSetting.getDefault();
   }
-
   private int myValue;
-
   PrecisionSetting(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

@@ -18,7 +18,6 @@ public class MoveUpDialog extends RefactoringDialog {
   private NodeHierarchyChooser myPanel;
   private SNode myConcept;
   private String myNodeType;
-
   public MoveUpDialog(@NotNull Project project, SNode target, String nodeType) {
     super(project, true);
     this.myTarget = target;
@@ -27,7 +26,6 @@ public class MoveUpDialog extends RefactoringDialog {
     setTitle(REFACTORING_NAME + " " + nodeType);
 
   }
-
   @Override
   protected void doRefactoringAction() {
     Object treeNode = this.myPanel.getSelectedObject();
@@ -40,14 +38,12 @@ public class MoveUpDialog extends RefactoringDialog {
     this.myConcept = (SNode) result;
     super.doRefactoringAction();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     this.myPanel = new NodeHierarchyChooser(this.myTarget);
     return myPanel;
   }
-
   public static SNode getConcept(@NotNull Project project, SNode target, String nodeType) {
     MoveUpDialog dialog = new MoveUpDialog(project, target, nodeType);
     dialog.show();

@@ -28,18 +28,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class EditorActionUtils {
   public EditorActionUtils() {
   }
-
   /*package*/ static boolean isReadonlyActionEnabled(EditorComponent editorComponent) {
     return editorComponent.isFocusOwner() && !(editorComponent.getNodeSubstituteChooser().isVisible()) && editorComponent.getSelectionManager().getSelection() != null;
   }
-
   public static boolean isWriteActionEnabled(EditorComponent editorComponent, Iterable<EditorCell> changingCells) {
     if (!(isReadonlyActionEnabled(editorComponent))) {
       return false;
     }
     return !(ReadOnlyUtil.isCellsReadOnlyInEditor(editorComponent, changingCells));
   }
-
   /*package*/ static EditorCell getEditorCellToInsert(EditorComponent editorComponent) {
     Selection selection = editorComponent.getSelectionManager().getSelection();
     // TODO: remove this limitation 
@@ -53,7 +50,6 @@ public class EditorActionUtils {
     EditorCell editorCell = iterator.next();
     return (editorCell instanceof EditorCell_Component ? null : editorCell);
   }
-
   /**
    * Should be executed inside read action
    */
@@ -78,7 +74,6 @@ public class EditorActionUtils {
     }
     actionHandler.executeAction(cell, CellActionType.INSERT);
   }
-
   public static EditorCell getSiblingCollectionForInsert(@NotNull EditorCell cell, boolean forward) {
     // TODO FIXME rewrite without hasSingleRolesAtLeftBoundary, cleanup ChildrenCollectionFinder 
     EditorCell nextLeaf = (forward ? CellTraversalUtil.getNextLeaf(cell) : CellTraversalUtil.getPrevLeaf(cell));
@@ -89,7 +84,6 @@ public class EditorActionUtils {
     }
     return null;
   }
-
   /**
    * Should be executed inside read action
    */
@@ -115,7 +109,6 @@ public class EditorActionUtils {
 
     actionHandler.executeAction(cell, CellActionType.INSERT_BEFORE);
   }
-
   /*package*/ static void runEditorComponentAction(EditorComponent editorComponent, CellActionType actionType) {
     CellAction action = editorComponent.getComponentAction(CellActionType.UP);
     EditorContext editorContext = editorComponent.getEditorContext();
@@ -123,7 +116,6 @@ public class EditorActionUtils {
       action.execute(editorContext);
     }
   }
-
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding
    * child collection below the cell returned from cell.getNextLeaf() or we should go on and insert
@@ -156,7 +148,6 @@ public class EditorActionUtils {
     }
     return true;
   }
-
   /**
    * We can use this method to determine if we should redispatch insert event to the corresponding
    * child collection below the cell returned from cell.getPrevLeaf() or we should go on and insert
@@ -189,17 +180,14 @@ public class EditorActionUtils {
     }
     return true;
   }
-
   public static boolean isOnLeftBoundary(EditorCell cell) {
     EditorCell prevLeaf = CellTraversalUtil.getPrevLeaf(cell);
     return prevLeaf == null || prevLeaf.getSNode() != cell.getSNode();
   }
-
   public static boolean isOnRightBoundary(EditorCell cell) {
     EditorCell nextLeaf = CellTraversalUtil.getNextLeaf(cell);
     return nextLeaf == null || nextLeaf.getSNode() != cell.getSNode();
   }
-
   private static boolean hasSingleRole(final EditorCell cell) {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -210,7 +198,6 @@ public class EditorActionUtils {
     });
     return result[0];
   }
-
   private static boolean isLinkCollection(EditorCell cell) {
     return cell.getRole() != null;
   }

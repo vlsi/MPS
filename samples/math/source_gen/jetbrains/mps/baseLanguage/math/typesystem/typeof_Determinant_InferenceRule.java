@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_Determinant_InferenceRule() {
   }
-
   public void applyRule(final SNode determinant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       final SNode detmat = typeCheckingContext.typeOf(SLinkOperations.getTarget(determinant, "param", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299969866", true);
@@ -40,18 +39,15 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6955172009299968733", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.Determinant";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

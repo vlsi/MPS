@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildStringNotEmpty_BehaviorDescriptor extends BuildString_BehaviorDescriptor {
   public BuildStringNotEmpty_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildStringNotEmpty";

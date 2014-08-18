@@ -6,7 +6,6 @@ package jetbrains.mps.lang.quotation.behavior;
 public class NodeBuilderInitLink_BehaviorDescriptor extends NodeBuilderInitPart_BehaviorDescriptor {
   public NodeBuilderInitLink_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink";

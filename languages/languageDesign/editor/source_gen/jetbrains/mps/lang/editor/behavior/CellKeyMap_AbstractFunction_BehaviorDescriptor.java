@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class CellKeyMap_AbstractFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public CellKeyMap_AbstractFunction_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return CellKeyMap_AbstractFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction";

@@ -34,7 +34,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_x378ek_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_x378ek_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new NodeWithName_Editor.BlockCellImpl_x378ek_a(editorContext, node);
     editorCell.setCellId("DiagramNode_x378ek_a");
@@ -42,7 +41,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_x378ek_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_x378ek_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_x378ek_a1a;
@@ -50,14 +48,12 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
     private final PropertyMapperCell<Integer> myPropertyCell_x378ek_a3a;
     private final PropertyMapperCell<Integer> myPropertyCell_x378ek_a4a;
     private final PropertyMapperCell<String> myPropertyCell_x378ek_a5a;
-
     private BlockCellImpl_x378ek_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_x378ek_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -68,7 +64,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -79,7 +74,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "width", "" + (value));
         }
@@ -90,7 +84,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "height", "" + (value));
         }
@@ -101,7 +94,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "lineWidth");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "lineWidth", "" + (value));
         }
@@ -112,7 +104,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
         }
-
         protected void setModelPropertyValueImpl(String value) {
           SPropertyOperations.set(node, "name", value);
         }
@@ -121,7 +112,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
       myPropertyCell_x378ek_a5a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_x378ek_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_x378ek_a0a.synchronize();
@@ -131,7 +121,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
       myPropertyCell_x378ek_a4a.synchronize();
       myPropertyCell_x378ek_a5a.synchronize();
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -207,7 +196,6 @@ public class NodeWithName_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

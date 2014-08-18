@@ -8,7 +8,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class CaseInsensitiveStringComparison {
   public CaseInsensitiveStringComparison() {
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <T> int compare(T a, T b, @AdapterClass(value = "ISelector") _FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super T> selector) {
     if (a == b) {

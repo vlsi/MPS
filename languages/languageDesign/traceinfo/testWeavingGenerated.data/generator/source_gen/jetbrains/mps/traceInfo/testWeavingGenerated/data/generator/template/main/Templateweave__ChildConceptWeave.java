@@ -22,11 +22,9 @@ import java.util.Collection;
 public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeavingAware {
   public Templateweave__ChildConceptWeave() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522510");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -151,18 +149,15 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_asyc93_a0b0e;
     environment.weaveNode(outputContextNode, "member", tnodepart0, weaveTf0, context.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer propertyMacro_asyc93_c0a0c0b0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522554");
   private static SNodePointer propertyMacro_asyc93_c0a0c0b0b0b0b0c0b0c0b0b0b0b0b0e0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008526317");
   private static SNodePointer weaveTfConst_asyc93_a0b0e = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008522553");

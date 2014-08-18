@@ -23,11 +23,9 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qyv4ec_a(editorContext, node);
   }
-
   private EditorCell createCollection_qyv4ec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qyv4ec_a");
@@ -38,7 +36,6 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createRefNode_qyv4ec_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qyv4ec_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with tool");
     editorCell.setCellId("Constant_qyv4ec_a0");
@@ -48,7 +45,6 @@ public class StartProcessWithTool_Component implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_qyv4ec_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tool");

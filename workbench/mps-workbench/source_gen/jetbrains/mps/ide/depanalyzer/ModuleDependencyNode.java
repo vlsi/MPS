@@ -15,7 +15,6 @@ public class ModuleDependencyNode extends MPSTreeNode {
   private Iterable<DepPath> myCycles;
   private final SModule myModule;
   private final boolean myIsUsedLang;
-
   /*package*/ ModuleDependencyNode(SModule module, Iterable<DepLink> relations, boolean isUsedLanguage) {
     // module serves as dependency target (dependencies are captured with relations sequence) 
     super(Sequence.fromIterable(relations).toListSequence(), null);
@@ -25,35 +24,28 @@ public class ModuleDependencyNode extends MPSTreeNode {
     setText(module.getModuleName());
     setNodeIdentifier(module.getModuleName());
   }
-
   public SModule getModule() {
     return myModule;
   }
-
   /**
    * Module associated with this node might be target of few dependencies of the initial module.
    */
   /*package*/ Iterable<DepLink> getCapturedDependencies() {
     return (Iterable<DepLink>) getUserObject();
   }
-
   public boolean isUsedLanguage() {
     return myIsUsedLang;
   }
-
   /*package*/ void setCycles(Iterable<DepPath> cycles) {
     myCycles = cycles;
   }
-
   public boolean isCyclic() {
     return Sequence.fromIterable(myCycles).isNotEmpty();
   }
-
   @Override
   public boolean isLeaf() {
     return !(isCyclic());
   }
-
   @Override
   protected void doInit() {
     DependencyTree tree = (DependencyTree) getTree();
@@ -70,17 +62,14 @@ public class ModuleDependencyNode extends MPSTreeNode {
     }
     myInitialized = true;
   }
-
   @Override
   public boolean isInitialized() {
     return myInitialized;
   }
-
   @Override
   public void doubleClick() {
     ProjectPane.getInstance(check_lba8jw_a0a0a31(((DependencyTree) getTree()), this)).selectModule(getModule(), false);
   }
-
   private static Project check_lba8jw_a0a0a31(DependencyTree checkedDotOperand, ModuleDependencyNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();

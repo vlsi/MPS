@@ -14,7 +14,6 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
   public ModelReferenceExpression_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.ModelReferenceExpression");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "fqName";
@@ -35,7 +33,6 @@ public class ModelReferenceExpression_Constraints extends BaseConstraintsDescrip
     });
     return properties;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

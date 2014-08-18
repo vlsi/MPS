@@ -24,7 +24,6 @@ public class JavaImport_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cbnorm_a(editorContext, node);
   }
-
   private EditorCell createCollection_cbnorm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cbnorm_a");
@@ -34,7 +33,6 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAlternation_cbnorm_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_cbnorm_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -43,7 +41,6 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_cbnorm_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tokens");
@@ -61,7 +58,6 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createAlternation_cbnorm_c0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = JavaImport_Editor.renderingCondition_cbnorm_a2a(node, editorContext);
@@ -73,11 +69,9 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_cbnorm_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "onDemand");
   }
-
   private EditorCell createConstant_cbnorm_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".*");
     editorCell.setCellId("Constant_cbnorm_a2a");
@@ -87,7 +81,6 @@ public class JavaImport_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createEmpty_cbnorm_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));

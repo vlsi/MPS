@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_OrderConstraints_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_OrderConstraints_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode c, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SNodeOperations.getParent(c) == null)) {
       return;
@@ -30,18 +29,15 @@ public class check_OrderConstraints_NonTypesystemRule extends AbstractNonTypesys
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(c, "order does not contain current tab", "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "1499919975383986350", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.plugin.structure.OrderConstraints";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

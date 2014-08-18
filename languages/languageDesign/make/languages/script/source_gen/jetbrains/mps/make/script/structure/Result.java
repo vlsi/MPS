@@ -11,26 +11,21 @@ public enum Result {
   failure("failure", "FAILURE");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Result> getConstants() {
     List<Result> list = ListSequence.fromList(new LinkedList<Result>());
     ListSequence.fromList(list).addElement(Result.success);
     ListSequence.fromList(list).addElement(Result.failure);
     return list;
   }
-
   public static Result getDefault() {
     return Result.success;
   }
-
   public static Result parseValue(String value) {
     if (value == null) {
       return Result.getDefault();
@@ -43,14 +38,11 @@ public enum Result {
     }
     return Result.getDefault();
   }
-
   private String myValue;
-
   Result(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -17,73 +17,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeOneLiner_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeOneLiner_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public String getPresentation() {
     return "MakeOneLiner";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.MakeOneLiner_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(IfStatement_Behavior.call_isGuardIf_1237547453258(node)) && !(SPropertyOperations.getBoolean(node, "forceOneLine"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4467513934994688403");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeOneLiner_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Make One Liner";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "forceMultiLine", "" + (false));
       SPropertyOperations.set(node, "forceOneLine", "" + (true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeOneLiner_Intention.this;
     }

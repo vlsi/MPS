@@ -23,7 +23,6 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
   public XMLSAXFieldReference_Constraints() {
     super("jetbrains.mps.core.xml.sax.structure.XMLSAXFieldReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -45,7 +43,6 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
             }
             return null;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ar46fh_a0a1a0a0a1a0b0a1a1;
@@ -55,6 +52,5 @@ public class XMLSAXFieldReference_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_ar46fh_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140741");
 }

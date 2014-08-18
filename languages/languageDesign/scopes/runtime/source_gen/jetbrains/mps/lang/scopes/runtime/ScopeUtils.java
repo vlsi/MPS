@@ -9,22 +9,18 @@ import jetbrains.mps.scope.Scope;
 public class ScopeUtils {
   private ScopeUtils() {
   }
-
   public static boolean comeFrom(String expectedRole, SNode thisNode, SNode child) {
     while ((child != null) && SNodeOperations.getParent(child) != thisNode) {
       child = SNodeOperations.getParent(child);
     }
     return (child != null) && expectedRole.equals(child.getRoleInParent());
   }
-
   public static boolean comeFrom(String expectedRole, SNode thisNode, String role, int index) {
     return expectedRole.equals(role);
   }
-
   public static Scope parentScope(SNode node, SNode kind) {
     return Scope.getScope(Scope.parent(node), node, kind);
   }
-
   public static Scope lazyParentScope(SNode node, SNode kind) {
     return new LazyParentScope(node, kind);
   }

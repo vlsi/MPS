@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 public class DiagramElementBLQuery_BehaviorDescriptor extends DiagramElement_BehaviorDescriptor {
   public DiagramElementBLQuery_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery";

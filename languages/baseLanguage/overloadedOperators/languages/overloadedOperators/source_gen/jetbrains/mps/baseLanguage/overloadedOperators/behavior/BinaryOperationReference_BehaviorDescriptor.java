@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 public class BinaryOperationReference_BehaviorDescriptor extends Operator_BehaviorDescriptor {
   public BinaryOperationReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference";

@@ -16,16 +16,12 @@ public abstract class SubconceptsScope extends Scope {
   protected SNode concept;
   protected SModel model;
 
-
   public SubconceptsScope(SNode concept, SModel model) {
     this.concept = concept;
     this.model = model;
   }
 
-
-
   public abstract String getName(SNode child);
-
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     SConceptOperations.getAllSubConcepts(concept, model);
     Iterable<SNode> seq = SConceptOperations.getAllSubConcepts(concept, model);
@@ -39,7 +35,6 @@ public abstract class SubconceptsScope extends Scope {
       }
     });
   }
-
   @Nullable
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     SNode result = null;
@@ -55,7 +50,6 @@ public abstract class SubconceptsScope extends Scope {
     }
     return result;
   }
-
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     String result = getName(node);

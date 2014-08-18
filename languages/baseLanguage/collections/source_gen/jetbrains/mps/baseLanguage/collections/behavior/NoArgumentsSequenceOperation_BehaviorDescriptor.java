@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class NoArgumentsSequenceOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public NoArgumentsSequenceOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation";

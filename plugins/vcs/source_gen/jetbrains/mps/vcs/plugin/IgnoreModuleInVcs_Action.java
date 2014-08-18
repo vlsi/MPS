@@ -24,18 +24,15 @@ import org.apache.log4j.LogManager;
 
 public class IgnoreModuleInVcs_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public IgnoreModuleInVcs_Action() {
     super("Ignore Module...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +49,6 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -67,7 +63,6 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
@@ -78,6 +73,5 @@ public class IgnoreModuleInVcs_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(IgnoreModuleInVcs_Action.class);
 }

@@ -13,12 +13,10 @@ public class InternalSuperMethodCallOperation_Constraints extends BaseConstraint
   public InternalSuperMethodCallOperation_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -29,11 +27,9 @@ public class InternalSuperMethodCallOperation_Constraints extends BaseConstraint
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     // override IOperation.canBeChild 
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "3731567766880819184");
 }

@@ -9,11 +9,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class BuildMpsLayout_TestModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
     return SLinkOperations.getTarget(thisNode, "module", false) == module;
   }
-
   public static Iterable<SNode> virtual_getModules_4560297596904469651(SNode thisNode) {
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(thisNode, "module", false));
   }

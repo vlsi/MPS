@@ -15,7 +15,6 @@ public class AbstractRunConfigurationExecutor_Constraints extends BaseConstraint
   public AbstractRunConfigurationExecutor_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class AbstractRunConfigurationExecutor_Constraints extends BaseConstraint
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

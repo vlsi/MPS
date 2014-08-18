@@ -20,30 +20,24 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   private DefaultOptionsContainer myDefaultOptions = null;
   private Project myProject;
   private Element myState;
-
   public DefaultSearchOptionsComponent(Project project, StartupModuleMaker maker) {
     myProject = project;
   }
-
   public DefaultOptionsContainer getDefaultOptions() {
     return myDefaultOptions;
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return DefaultSearchOptionsComponent.class.getSimpleName();
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @Override
   public Element getState() {
     if (myDefaultOptions == null) {
@@ -52,7 +46,6 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     myState = myDefaultOptions.writeOptions(myProject.getComponent(MPSProject.class));
     return myState;
   }
-
   @Override
   public void loadState(Element state) {
     myState = (Element) state.clone();
@@ -61,7 +54,6 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
     }
     myDefaultOptions.readOptions(myState, myProject.getComponent(MPSProject.class));
   }
-
   @Override
   public void projectOpened() {
     StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
@@ -75,7 +67,6 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
       }
     });
   }
-
   @Override
   public void projectClosed() {
   }

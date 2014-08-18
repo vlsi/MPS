@@ -17,41 +17,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateReferenceOnClass_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateReferenceOnClass_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ThisExpression";
   }
-
   public String getPresentation() {
     return "CreateReferenceOnClass";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.CreateReferenceOnClass_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     while ((outerConcept != null)) {
@@ -63,30 +54,24 @@ public class CreateReferenceOnClass_Intention implements IntentionFactory {
     }
     return (outerConcept != null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1215507513710");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateReferenceOnClass_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create a Reference on Outer Class";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode outerConcept = SNodeOperations.getAncestor(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       while ((outerConcept != null)) {
@@ -98,7 +83,6 @@ public class CreateReferenceOnClass_Intention implements IntentionFactory {
       }
       SLinkOperations.setTarget(node, "classConcept", outerConcept, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateReferenceOnClass_Intention.this;
     }

@@ -20,35 +20,29 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
   private Deque<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>> monitorWorkStack = DequeSequence.fromDeque(new LinkedList<Tuples._2<ProgressMonitor, AbstractProgressStrategy.Work>>());
   private boolean isInitialized;
   private int done;
-
   public ProgressMonitorProgressStrategy() {
     super(TOTAL);
     reset(new EmptyProgressMonitor());
   }
-
   public void reset(ProgressMonitor monitor) {
     this.monitor = (monitor != null ? monitor : new EmptyProgressMonitor());
     DequeSequence.fromDeque(monitorWorkStack).clear();
     this.done = 0;
     this.isInitialized = false;
   }
-
   public void initializeIfNeeded() {
     if (!(isInitialized)) {
       monitor.start("", MAXWORK);
       isInitialized = true;
     }
   }
-
   public boolean isCanceled() {
     return monitor.isCanceled();
   }
-
   public ProgressMonitor getProgressMonitor() {
     initializeIfNeeded();
     return (DequeSequence.fromDeque(monitorWorkStack).isEmpty() ? monitor : DequeSequence.fromDeque(monitorWorkStack).peekElement()._0());
   }
-
   @Override
   protected void begunWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
@@ -61,7 +55,6 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
     submon.start(wrk.name(), wrk.workLeft());
     DequeSequence.fromDeque(monitorWorkStack).pushElement(MultiTuple.<ProgressMonitor,AbstractProgressStrategy.Work>from(submon, wrk));
   }
-
   @Override
   protected void advancedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
@@ -71,13 +64,11 @@ public class ProgressMonitorProgressStrategy extends AbstractProgressStrategy {
       mon.step(wrk.comment());
     }
   }
-
   @Override
   protected void finishedWork(AbstractProgressStrategy.Work wrk) {
     initializeIfNeeded();
     popMatchingMonitor(wrk).done();
   }
-
   private ProgressMonitor popMatchingMonitor(AbstractProgressStrategy.Work work) {
     while (DequeSequence.fromDeque(monitorWorkStack).isNotEmpty()) {
       if (DequeSequence.fromDeque(monitorWorkStack).peekElement()._1() == work) {

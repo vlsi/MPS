@@ -15,15 +15,12 @@ public class ThreadWatcher implements Output {
   private ThreadWatcher.ThreadState base;
   private String errors;
   private String desc = "threads difference";
-
   private static class ThreadState {
     private static Pattern IGNORED_THREAD = Pattern.compile("(AWT\\-.*)|(Image Fetch.*)|(Progress Cancel Checker)|(Flushing thread)|(Keep\\-Alive.*)|(Finalizer.*)|(MPS interrupting thread)|(caret blinker.*)|(ApplicationImpl.*)|(AnimatorThread)|(Executor)|(ChangesManager command queue)|(TimerQueue)|(Change List.*)|(Reference.*)|(Periodic task.*)|(Java2D.*)|(LowMemoryWatcher janitor)|(Timer\\-.*)|(FS Sync.*)|(timed reference disposer)|(Alarm pool\\(own\\))|(Alarm pool\\(shared\\))|(Poller SunPKCS11-Darwin)|(MPS interrupt.*)|(process reaper)|(RefCountingStorage.*)|(Encoding detection thread)");
     private TLongObjectHashMap<ThreadInfo> allThreads = new TLongObjectHashMap<ThreadInfo>();
     private TLongObjectHashMap<ThreadInfo> runningThreads = new TLongObjectHashMap<ThreadInfo>();
-
     private ThreadState() {
     }
-
     private void captureState() {
       allThreads.clear();
       runningThreads.clear();
@@ -38,7 +35,6 @@ public class ThreadWatcher implements Output {
         }
       }
     }
-
     public void dump(StringBuilder sb, String pref) {
       String sep = "";
       for (long id : runningThreads.keys()) {
@@ -52,7 +48,6 @@ public class ThreadWatcher implements Output {
         }
       }
     }
-
     public ThreadWatcher.ThreadState[] diff(ThreadWatcher.ThreadState baseLine) {
       ThreadWatcher.ThreadState newDiff = new ThreadWatcher.ThreadState();
       ThreadWatcher.ThreadState oldDiff = new ThreadWatcher.ThreadState();
@@ -87,29 +82,24 @@ public class ThreadWatcher implements Output {
       return new ThreadWatcher.ThreadState[]{newDiff, oldDiff};
     }
   }
-
   public ThreadWatcher(boolean capture) {
     if (capture) {
       this.base = new ThreadWatcher.ThreadState();
       base.captureState();
     }
   }
-
   @Override
   public boolean isNotEmpty() {
     return errors != null;
   }
-
   @Override
   public String getDescription() {
     return desc;
   }
-
   @Override
   public String getText() {
     return errors;
   }
-
   public boolean waitUntilSettled(long millis) {
     if (base == null) {
       return true;

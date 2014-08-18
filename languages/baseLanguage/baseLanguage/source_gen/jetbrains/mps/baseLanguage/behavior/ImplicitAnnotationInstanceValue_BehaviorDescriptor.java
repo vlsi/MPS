@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class ImplicitAnnotationInstanceValue_BehaviorDescriptor extends AnnotationInstanceValue_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ImplicitAnnotationInstanceValue_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue";

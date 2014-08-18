@@ -15,15 +15,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class RuleFieldReference extends DataFlowConstructor {
   public RuleFieldReference() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public void performActions(Program o, SNode node) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
       SNode field = SNodeOperations.cast(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");

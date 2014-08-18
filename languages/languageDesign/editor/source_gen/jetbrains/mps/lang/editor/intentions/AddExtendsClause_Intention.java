@@ -17,65 +17,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddExtendsClause_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddExtendsClause_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.StyleSheetClass";
   }
-
   public String getPresentation() {
     return "AddExtendsClause";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.AddExtendsClause_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1239735706419");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddExtendsClause_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Extends Clause";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setTarget(node, "extendedClass", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.StyleSheetClassReference", null), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddExtendsClause_Intention.this;
     }

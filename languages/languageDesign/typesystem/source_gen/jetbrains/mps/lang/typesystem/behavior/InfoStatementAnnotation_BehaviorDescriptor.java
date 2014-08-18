@@ -6,7 +6,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class InfoStatementAnnotation_BehaviorDescriptor extends MessageStatementAnnotation_BehaviorDescriptor {
   public InfoStatementAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.InfoStatementAnnotation";

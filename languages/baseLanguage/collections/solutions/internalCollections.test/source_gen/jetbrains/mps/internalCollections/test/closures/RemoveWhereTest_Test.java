@@ -22,7 +22,6 @@ public class RemoveWhereTest_Test extends Util_Test {
     Assert.assertEquals("a", ListSequence.fromList(l1).first());
     Assert.assertEquals("bb", ListSequence.fromList(l1).last());
   }
-
   public void test_queueRemoveWhere() throws Exception {
     Queue<String> pq = QueueSequence.fromQueueAndArray(new PriorityQueue<String>(), "a", "aa", "b", "bb");
     Queue<String> q = QueueSequence.fromQueue(pq).removeWhere(new IWhereFilter<String>() {
@@ -34,7 +33,6 @@ public class RemoveWhereTest_Test extends Util_Test {
     Assert.assertEquals("b", QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
-
   public RemoveWhereTest_Test() {
   }
 }

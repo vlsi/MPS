@@ -21,7 +21,6 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rv073a_a(editorContext, node);
   }
-
   private EditorCell createCollection_rv073a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rv073a_a");
@@ -35,14 +34,12 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rv073a_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rv073a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test child wrapper");
     editorCell.setCellId("Constant_rv073a_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_rv073a_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -60,7 +57,6 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_rv073a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_rv073a_c0");
@@ -72,14 +68,12 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_rv073a_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child to wrap");
     editorCell.setCellId("Constant_rv073a_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_rv073a_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_rv073a_e0");
@@ -89,7 +83,6 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_rv073a_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("childToWrap");
@@ -109,7 +102,6 @@ public class ActionTestChildWrapper_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_rv073a_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_rv073a_g0");

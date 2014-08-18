@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IStructureDeprecatable_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return (AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation")) != null);
   }
-
   public static String virtual_getMessage_1225207468592(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{}));

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class ConcatenateOperation_BehaviorDescriptor extends BinaryStringOperation_BehaviorDescriptor {
   public ConcatenateOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.ConcatenateOperation";

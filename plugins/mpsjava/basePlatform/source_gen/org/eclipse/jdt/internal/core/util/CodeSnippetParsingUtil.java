@@ -35,15 +35,12 @@ import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 public class CodeSnippetParsingUtil {
   public RecordedParsingInformation recordedParsingInformation;
   public boolean ignoreMethodBodies;
-
   public CodeSnippetParsingUtil(boolean ignoreMethodBodies) {
     this.ignoreMethodBodies = ignoreMethodBodies;
   }
-
   public CodeSnippetParsingUtil() {
     this(false);
   }
-
   private RecordedParsingInformation getRecordedParsingInformation(CompilationResult compilationResult, int[][] commentPositions) {
     int problemsCount = compilationResult.problemCount;
     CategorizedProblem[] problems = null;
@@ -57,11 +54,9 @@ public class CodeSnippetParsingUtil {
     }
     return new RecordedParsingInformation(problems, compilationResult.getLineSeparatorPositions(), commentPositions);
   }
-
   public ASTNode[] parseClassBodyDeclarations(char[] source, Map settings, boolean recordParsingInformation) {
     return parseClassBodyDeclarations(source, 0, source.length, settings, recordParsingInformation, false);
   }
-
   public ASTNode[] parseClassBodyDeclarations(char[] source, int offset, int length, Map settings, boolean recordParsingInformation, boolean enabledStatementRecovery) {
     if (source == null) {
       throw new IllegalArgumentException();
@@ -82,7 +77,6 @@ public class CodeSnippetParsingUtil {
     }
     return result;
   }
-
   public CompilationUnitDeclaration parseCompilationUnit(char[] source, Map settings, boolean recordParsingInformation) {
     if (source == null) {
       throw new IllegalArgumentException();
@@ -116,11 +110,9 @@ public class CodeSnippetParsingUtil {
     }
     return compilationUnitDeclaration;
   }
-
   public Expression parseExpression(char[] source, Map settings, boolean recordParsingInformation) {
     return parseExpression(source, 0, source.length, settings, recordParsingInformation);
   }
-
   public Expression parseExpression(char[] source, int offset, int length, Map settings, boolean recordParsingInformation) {
     if (source == null) {
       throw new IllegalArgumentException();
@@ -139,11 +131,9 @@ public class CodeSnippetParsingUtil {
     }
     return result;
   }
-
   public ConstructorDeclaration parseStatements(char[] source, Map settings, boolean recordParsingInformation, boolean enabledStatementRecovery) {
     return parseStatements(source, 0, source.length, settings, recordParsingInformation, enabledStatementRecovery);
   }
-
   public ConstructorDeclaration parseStatements(char[] source, int offset, int length, Map settings, boolean recordParsingInformation, boolean enabledStatementRecovery) {
     if (source == null) {
       throw new IllegalArgumentException();

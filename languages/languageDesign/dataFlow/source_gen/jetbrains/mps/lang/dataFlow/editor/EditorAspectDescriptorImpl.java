@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
@@ -51,11 +50,9 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
-
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};

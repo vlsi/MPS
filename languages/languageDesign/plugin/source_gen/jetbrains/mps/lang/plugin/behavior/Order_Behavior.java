@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class Order_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getGeneratedClassName_3038738109029038654(SNode thisNode) {
     String n;
     if (isEmptyString(SPropertyOperations.getString(thisNode, "name"))) {
@@ -23,7 +22,6 @@ public class Order_Behavior {
     }
     return NameUtil.toValidCamelIdentifier(n) + "_Order";
   }
-
   public static boolean virtual_presents_1499919975383879508(SNode thisNode, final SNode tab) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "tab", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -31,11 +29,9 @@ public class Order_Behavior {
       }
     }).isNotEmpty();
   }
-
   public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return thisNode;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

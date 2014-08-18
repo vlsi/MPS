@@ -25,10 +25,8 @@ import java.util.List;
 
 public class ResolveUnknownUtil {
   private static Logger LOG = LogManager.getLogger(ResolveUnknownUtil.class);
-
   public ResolveUnknownUtil() {
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveQualNameRef(SNode x) {
     final SNode result = ResolveUnknownUtil.resolveTokens(x);
 
@@ -56,7 +54,6 @@ public class ResolveUnknownUtil {
 
     return null;
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveConsCall(final SNode x) {
     SNode enclosingClass = SNodeOperations.getAncestor(x, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if ((enclosingClass == null)) {
@@ -77,7 +74,6 @@ public class ResolveUnknownUtil {
       }
     };
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveLocalCall(final SNode x) {
     final Wrappers._T<SNode> call = new Wrappers._T<SNode>(null);
 
@@ -116,7 +112,6 @@ public class ResolveUnknownUtil {
       }
     };
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveNew(final SNode x) {
     final SNode typ = findClass(x, SPropertyOperations.getString(x, "className"));
     if ((typ == null)) {
@@ -170,7 +165,6 @@ public class ResolveUnknownUtil {
       }
     };
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveDotCall(final SNode x) {
     final SNode operand = ResolveUnknownUtil.resolveTokens(x);
 
@@ -229,7 +223,6 @@ public class ResolveUnknownUtil {
     }
 
   }
-
   public static SNode resolveTokens(SNode x) {
     // returns either node<Expression> with a normal baseLanguage expression 
     // or node<Classifier> if all tokens form a name class 
@@ -308,7 +301,6 @@ public class ResolveUnknownUtil {
 
     return operand;
   }
-
   public static SNode makeFieldDotExpression(SNode holder, String fieldName) {
     SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
     SLinkOperations.setTarget(dotExpr, "operand", holder, true);
@@ -318,7 +310,6 @@ public class ResolveUnknownUtil {
     fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
   }
-
   public static SNode tryFirstTokenAsVarRef(SNode x) {
     Scope scope = Scope.getScope(SNodeOperations.getParent(x), x, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (scope == null) {
@@ -341,7 +332,6 @@ public class ResolveUnknownUtil {
       return null;
     }
   }
-
   public static Tuples._2<SNode, Integer> tryFindClass(SNode x) {
     StringBuilder sb = new StringBuilder();
     String[] tokens = SPropertyOperations.getString(x, "tokens").split("\\.");
@@ -373,7 +363,6 @@ public class ResolveUnknownUtil {
 
     return null;
   }
-
   public static SNode findClass(SNode from, String className) {
     SNode res = null;
 
@@ -390,7 +379,6 @@ public class ResolveUnknownUtil {
 
     return SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   public static SNode findConstructor(SNode claz, List<SNode> args) {
     SNode result;
     Iterable<SNode> conss = ClassConcept_Behavior.call_constructors_5292274854859503373(claz);
@@ -409,19 +397,16 @@ public class ResolveUnknownUtil {
     }
     return result;
   }
-
   public static void reattachMethodArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
   }
-
   public static void reattachTypeArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "typeArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(to, "typeArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
   }
-
 
   protected static Logger LOG_180675533 = LogManager.getLogger(ResolveUnknownUtil.class);
 }

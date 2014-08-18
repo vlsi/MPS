@@ -14,7 +14,6 @@ public class NamespaceActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceActions_ActionGroup";
   public static final String LABEL_ID_namespaceInternal = ID + "namespaceInternal";
   public static final String LABEL_ID_check = ID + "check";
-
   public NamespaceActions_ActionGroup() {
     super("NamespaceActions", ID);
     this.setIsInternal(false);

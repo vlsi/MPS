@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ChangeExpectedType_QuickFix extends QuickFix_Runtime {
   public ChangeExpectedType_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Change type of " + BehaviorReflection.invokeVirtual(String.class, ((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "virtual_getPresentation_1213877396640", new Object[]{}) + " to " + BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])), "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       SLinkOperations.setTarget(SNodeOperations.cast(((SNode) ChangeExpectedType_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", TypeChecker.getInstance().getTypeOf(((SNode) ChangeExpectedType_QuickFix.this.getField("desiredType")[0])), true);

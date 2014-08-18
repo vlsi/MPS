@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public abstract class SingleComplexExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public SingleComplexExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.SingleComplexExpression";

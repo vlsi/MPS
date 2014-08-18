@@ -34,18 +34,15 @@ import org.apache.log4j.LogManager;
 
 public class AddModelImportByRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AddModelImportByRoot_Action() {
     super("Add Model Import by Root", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -56,7 +53,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -87,7 +83,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
     MapSequence.fromMap(_params).put("editorContext", event.getData(MPSEditorDataKeys.EDITOR_CONTEXT));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> initialText = new Wrappers._T<String>("");
@@ -130,7 +125,6 @@ public class AddModelImportByRoot_Action extends BaseAction {
       }
     }
   }
-
   private EditorCell_Label getErrorCell(final Map<String, Object> _params) {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null) {
       return null;
@@ -144,9 +138,7 @@ public class AddModelImportByRoot_Action extends BaseAction {
     }
     return null;
   }
-
   protected static Logger LOG = LogManager.getLogger(AddModelImportByRoot_Action.class);
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

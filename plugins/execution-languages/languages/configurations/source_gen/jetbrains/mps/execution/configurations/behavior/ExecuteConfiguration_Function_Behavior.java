@@ -18,26 +18,21 @@ import jetbrains.mps.smodel.SReference;
 public class ExecuteConfiguration_Function_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "body", true), "virtual_getLocalVariableElements_1238805763253", new Object[]{});
   }
-
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor") && (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor"), "debuggerConfiguration", true) != null)) {
-      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"));
+      return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter"), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Executor_Parameter"));
     }
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.Project_Parameter"));
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_cw5ucd_a0a2();
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   private static SNode _quotation_createNode_cw5ucd_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

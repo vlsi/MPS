@@ -10,24 +10,19 @@ public class DResource extends MultiTuple._1<Iterable<IDelta>> implements IDelta
   public DResource() {
     super();
   }
-
   public DResource(Iterable<IDelta> delta) {
     super(delta);
   }
-
   public Iterable<IDelta> delta(Iterable<IDelta> value) {
     return super._0(value);
   }
-
   public Iterable<IDelta> delta() {
     return super._0();
   }
-
   @SuppressWarnings(value = "unchecked")
   public DResource assignFrom(Tuples._1<Iterable<IDelta>> from) {
     return (DResource) super.assign(from);
   }
-
   public String describe() {
     return null;
   }

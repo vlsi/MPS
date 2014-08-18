@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 /*package*/ class ExtractMethodWithOutputVariable extends ExtractMethodFromStatementsRefactoring {
   private SNode myOutputVariable;
   private SNode myDeclarationStatement = null;
-
   /*package*/ ExtractMethodWithOutputVariable(ExtractMethodRefactoringParameters parameters) {
     super(parameters);
     List<SNode> output = this.myAnalyzer.getOutputVariables();
@@ -33,19 +32,16 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       }
     }
   }
-
   @Override
   protected void modifyPartToExtract() {
     SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnStatement, "expression", this.createReference(this.myOutputVariable), true);
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
-
   @Override
   public SNode getMethodType() {
     return SNodeOperations.copyNode(SLinkOperations.getTarget(this.myOutputVariable, "type", true));
   }
-
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -67,7 +63,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
       }
     });
   }
-
   private static SNode _quotation_createNode_n3576q_a0b0a2a0a0a0f(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

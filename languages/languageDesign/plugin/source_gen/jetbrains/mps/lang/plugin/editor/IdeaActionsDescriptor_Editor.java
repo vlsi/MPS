@@ -24,7 +24,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rofybv_a(editorContext, node);
   }
-
   private EditorCell createCollection_rofybv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rofybv_a");
@@ -33,7 +32,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rofybv_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rofybv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "actions:");
     editorCell.setCellId("Constant_rofybv_a0");
@@ -43,7 +41,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_rofybv_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rofybv_b0");
@@ -58,7 +55,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_rofybv_e1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rofybv_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "groups:");
     editorCell.setCellId("Constant_rofybv_a1a");
@@ -68,7 +64,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_rofybv_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new IdeaActionsDescriptor_Editor.actionGroupsListHandler_rofybv_b1a(node, "actionGroups", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -81,30 +76,25 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class actionGroupsListHandler_rofybv_b1a extends RefNodeListHandler {
     public actionGroupsListHandler_rofybv_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -118,7 +108,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_rofybv_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_rofybv_c1a");
@@ -128,7 +117,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_rofybv_d1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "keymaps:");
     editorCell.setCellId("Constant_rofybv_d1a");
@@ -138,7 +126,6 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_rofybv_e1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new IdeaActionsDescriptor_Editor.keymapsRefListHandler_rofybv_e1a(node, "keymapsRef", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -151,30 +138,25 @@ public class IdeaActionsDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class keymapsRefListHandler_rofybv_e1a extends RefNodeListHandler {
     public keymapsRefListHandler_rofybv_e1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);

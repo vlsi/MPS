@@ -31,7 +31,6 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
   private ChangeGroupLayout myChangeGroupLayout;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
   private Map<ChangeGroup, String> myChangeGroupDescriptions;
-
   public DiffEditorSeparator(ChangeGroupLayout changeGroupLayout) {
     myChangeGroupLayout = changeGroupLayout;
     ChangeListener viewportListener = new ChangeListener() {
@@ -50,7 +49,6 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     });
     MPSToolTipManager.getInstance().registerComponent(this);
   }
-
   private void ensureBoundsCalculated() {
     if (myGroupsWithBounds != null) {
       return;
@@ -80,7 +78,6 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
       }
     });
   }
-
   @Override
   protected void paintComponent(Graphics g) {
     synchronized (this) {
@@ -100,7 +97,6 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
       }
     }
   }
-
   private void invalidateAndRepaint() {
     synchronized (this) {
       myGroupsWithBounds = null;
@@ -108,19 +104,15 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
     }
     repaint();
   }
-
   private JViewport getLeftViewport() {
     return myChangeGroupLayout.getLeftComponent().getViewport();
   }
-
   private JViewport getRightViewport() {
     return myChangeGroupLayout.getRightComponent().getViewport();
   }
-
   private int getOffset(JViewport viewport) {
     return -viewport.getViewPosition().y + myChangeGroupLayout.getEditorVerticalOffset();
   }
-
   @Override
   public String getMPSTooltipText(MouseEvent mouseEvent) {
     synchronized (this) {
@@ -142,11 +134,9 @@ public class DiffEditorSeparator extends JComponent implements TooltipComponent 
       }
     }
   }
-
   public void dispose() {
     MPSToolTipManager.getInstance().unregisterComponent(this);
   }
-
   private int vectorProduct(int left, int right, int x, int y) {
     int x1 = getWidth();
     int y1 = right - left;

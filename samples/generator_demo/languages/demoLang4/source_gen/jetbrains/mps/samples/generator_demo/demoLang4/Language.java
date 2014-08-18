@@ -10,25 +10,20 @@ import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "1409a436-ea24-4d03-a196-53795139ce8d(jetbrains.mps.samples.generator_demo.demoLang4)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.generator_demo.demoLang4";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.sampleXML", "jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "fba3f122-376d-47a5-9857-db3c00612598(jetbrains.mps.samples.generator_demo.demoLang4#1228678587345)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     return super.createAspectDescriptor(descriptorClass);

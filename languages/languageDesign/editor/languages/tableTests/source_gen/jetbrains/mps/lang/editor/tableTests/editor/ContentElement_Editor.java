@@ -15,7 +15,6 @@ public class ContentElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_tw0bxw_a(editorContext, node);
   }
-
   private EditorCell createProperty_tw0bxw_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

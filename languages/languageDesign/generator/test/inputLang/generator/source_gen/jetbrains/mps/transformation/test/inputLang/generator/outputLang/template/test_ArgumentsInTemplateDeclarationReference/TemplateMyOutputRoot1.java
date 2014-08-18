@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateMyOutputRoot1 implements TemplateDeclaration {
   public TemplateMyOutputRoot1() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_yzj738_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
@@ -44,7 +42,6 @@ public class TemplateMyOutputRoot1 implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_yzj738_a0a1 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599898724");
   private static SNodePointer copySrcListMacro_yzj738_b0a0a1a3a1a2 = new SNodePointer("r:b5afdf3a-04e4-43b0-b72c-a4e3b5141a37(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference@generator)", "7496726876599914776");
 }

@@ -6,20 +6,16 @@ import jetbrains.mps.smodel.structure.Extension;
 
 public class Extension_testExtensionPoint7036359038356253986_ extends Extension.Default<TestObject> {
   private TestObject myTestObject;
-
   public Extension_testExtensionPoint7036359038356253986_() {
     super("jetbrains.mps.lang.extension.tests.testExtensionPoint");
   }
-
   public TestObject get() {
     return myTestObject;
   }
-
   public void activate() {
     myTestObject = new TestObject();
     myTestObject.setValue("foobar");
   }
-
   public void deactivate() {
     myTestObject.setShutDown(true);
     myTestObject = null;

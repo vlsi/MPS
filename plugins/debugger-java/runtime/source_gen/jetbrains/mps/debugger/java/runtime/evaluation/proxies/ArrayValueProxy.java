@@ -26,24 +26,20 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
   public ArrayValueProxy(ArrayReference value) {
     super(value);
   }
-
   @NotNull
   private ArrayReference getArrayValue() {
     return (ArrayReference) myValue;
   }
-
   @Override
   public IValueProxy getFieldValue(String fieldName) {
     assert false : "Arrays can't have fields.";
     return null;
   }
-
   @NotNull
   @Override
   public IValueProxy getElementAt(int index) {
     return MirrorUtil.getInstance().getValueProxy(EvaluationUtils.getInstance().getArrayElementAt(getArrayValue(), index));
   }
-
   @Override
   public void setElement(Value element, int index) throws EvaluationException {
     try {
@@ -54,12 +50,10 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
       throw new EvaluationException("Error setting array element at " + index, e);
     }
   }
-
   @Override
   public int getLength() {
     return getArrayValue().length();
   }
-
   @Override
   public IValueProxy invokeMethod(String name, String jniSignature, final ThreadReference threadReference, Object... args) throws EvaluationException {
     // we can't use Evaluators similar method cause we find methods in Object, but invoke them for Array 
@@ -74,17 +68,14 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
       }
     });
   }
-
   @Override
   public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadRefence, Object... args) {
     throw new UnsupportedOperationException("Can't invoke super for an array");
   }
-
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
     return EvaluationUtils.getInstance().instanceOf(myValue.type(), typename, myValue.virtualMachine());
   }
-
   @Override
   public boolean javaEquals(IValueProxy proxy) {
     if (proxy == null || proxy instanceof INullValueProxy) {
@@ -92,7 +83,6 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.INullValueProxy;
     }
     return myValue.equals(proxy.getJDIValue());
   }
-
   public String getPresentation() {
     return (("{" + myValue.type().name() + "} ") + myValue.toString());
   }

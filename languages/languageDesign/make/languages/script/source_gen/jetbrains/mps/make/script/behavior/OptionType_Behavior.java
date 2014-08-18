@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class OptionType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "expectedOption", false), "virtual_classifierName_4609636120081351397", new Object[]{});
   }

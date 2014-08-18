@@ -15,23 +15,19 @@ public class ClassifiersScope extends FilteringScope {
   private boolean myInlcudeAncestors;
   private SNode myClassifier;
   private SModel myModel;
-
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName, boolean includeAncestors) {
     super(new ModelPlusImportedScope(model, false, conceptFqName));
     myModel = model;
     myInlcudeAncestors = includeAncestors;
     myClassifier = clas;
   }
-
   public ClassifiersScope(SModel model, SNode clas, String conceptFqName) {
     this(model, clas, conceptFqName, false);
   }
-
   @Override
   public boolean isExcluded(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass");
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     // hack for [model]node construction, remove it 
@@ -42,7 +38,6 @@ public class ClassifiersScope extends FilteringScope {
     // TODO Must be done through ScopeProvider 
     return ClassifierResolveUtils.resolveAndCache(refText, contextNode, (ModelPlusImportedScope) wrapped, myInlcudeAncestors);
   }
-
   @Override
   public boolean contains(SNode node) {
     if (super.contains(node)) {

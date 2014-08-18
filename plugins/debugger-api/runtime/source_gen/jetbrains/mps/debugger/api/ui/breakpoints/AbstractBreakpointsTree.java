@@ -47,7 +47,6 @@ import javax.swing.UIManager;
       update();
     }
   };
-
   public AbstractBreakpointsTree(BreakpointManagerComponent breakpointsManager, IOperationContext context) {
     super(breakpointsManager);
     myContext = context;
@@ -59,18 +58,14 @@ import javax.swing.UIManager;
         return new AbstractBreakpointsTree.BreakpointTreeNode(operationContext, data);
       }
 
-
-
       @Override
       protected GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, Object> createRootGroupKind() {
         return new AbstractBreakpointsTree.AllGroupKind();
       }
-
       @Override
       protected Collection<AbstractBreakpointsTree.BreakpointNodeData> getData() {
         return myData;
       }
-
       @Override
       protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
         return null;
@@ -85,20 +80,17 @@ import javax.swing.UIManager;
     myTree.setRootVisible(false);
     myTree.setShowsRootHandles(true);
   }
-
   @Override
   public void dispose() {
     myBreakpointsManager.removeChangeListener(myListener);
     super.dispose();
   }
-
   @Override
   @Nullable
   public IBreakpoint getSelectedBreakpoint() {
     TreePath path = myTree.getSelectionPath();
     return getSelectedBreakpoint(path);
   }
-
   @Nullable
   protected IBreakpoint getSelectedBreakpoint(@Nullable TreePath path) {
     if (path != null) {
@@ -109,7 +101,6 @@ import javax.swing.UIManager;
     }
     return null;
   }
-
   @Override
   public void selectBreakpoint(@Nullable final IBreakpoint breakpoint) {
     if (breakpoint != null) {
@@ -124,13 +115,11 @@ import javax.swing.UIManager;
       myTree.clearSelection();
     }
   }
-
   protected void updateView() {
     myModelKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModel());
     myModuleKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByModule());
     myRootKind.setVisible(BreakpointViewSettingsComponent.getInstance(myContext.getProject()).isGroupByRoot());
   }
-
   protected void updateBreakpointsData() {
     Collection<AbstractBreakpointsTree.BreakpointNodeData> data = new ArrayList<AbstractBreakpointsTree.BreakpointNodeData>();
     for (IBreakpoint bp : getBreakpointsList()) {
@@ -138,19 +127,16 @@ import javax.swing.UIManager;
     }
     myData = data;
   }
-
   @Override
   public JComponent getMainComponent() {
     return myTree;
   }
-
   @Override
   public void update() {
     updateBreakpoints();
     updateBreakpointsData();
     myTree.rebuildLater();
   }
-
   @Override
   public Object getData(@NonNls String dataId) {
     TreePath path = myTree.getSelectionPath();
@@ -167,26 +153,21 @@ import javax.swing.UIManager;
     }
     return null;
   }
-
   protected class AllGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, Object> {
     protected AllGroupKind() {
     }
-
     @Override
     public Object getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpoint) {
       return new Object();
     }
-
     @Override
     public GroupedTree.GroupKind getSubGroupKind() {
       return myModuleKind;
     }
   }
-
   private class ModuleGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SModule> {
     private ModuleGroupKind() {
     }
-
     @Override
     public SModule getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointData) {
       IBreakpoint breakpoint = breakpointData.getBreakpoint();
@@ -198,22 +179,18 @@ import javax.swing.UIManager;
       }
       return null;
     }
-
     @Override
     public GroupedTree.GroupKind getSubGroupKind() {
       return myModelKind;
     }
-
     @Override
     public Icon getIcon(SModule m) {
       return IconManager.getIconFor(m);
     }
   }
-
   private class ModelGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SModelReference> {
     private ModelGroupKind() {
     }
-
     @Override
     public SModelReference getGroup(AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
@@ -223,27 +200,22 @@ import javax.swing.UIManager;
         return null;
       }
     }
-
     @Override
     public GroupedTree.GroupKind getSubGroupKind() {
       return myRootKind;
     }
-
     @Override
     public String getText(@NotNull SModelReference group) {
       return SModelStereotype.withoutStereotype(group.getModelName());
     }
-
     @Override
     public Icon getIcon(SModelReference model) {
       return IconManager.getIconFor(SModelRepository.getInstance().getModelDescriptor(model));
     }
   }
-
   private class RootGroupKind extends GroupedTree.GroupKind<AbstractBreakpointsTree.BreakpointNodeData, SNodeReference> {
     private RootGroupKind() {
     }
-
     @Override
     public SNodeReference getGroup(@NotNull AbstractBreakpointsTree.BreakpointNodeData breakpointNodeData) {
       IBreakpoint breakpoint = breakpointNodeData.getBreakpoint();
@@ -255,51 +227,41 @@ import javax.swing.UIManager;
       }
       return null;
     }
-
     @Override
     public Icon getIcon(SNodeReference group) {
       return IconManager.getIconFor(((SNodePointer) group).resolve(MPSModuleRepository.getInstance()));
     }
   }
-
   protected class BreakpointNodeData implements CheckBoxNodeRenderer.NodeData {
     @NotNull
     private final IBreakpoint myBreakpoint;
-
     public BreakpointNodeData(@NotNull IBreakpoint breakpoint) {
       myBreakpoint = breakpoint;
     }
-
     @Override
     public Icon getIcon(boolean expanded) {
       return BreakpointIconRenderer.getIconFor(myBreakpoint);
     }
-
     @Override
     public Color getColor() {
       return UIManager.getColor("Tree.textForeground");
     }
-
     @Override
     public String getText() {
       return myBreakpoint.getPresentation();
     }
-
     @Override
     public boolean isSelected() {
       return myBreakpoint.isEnabled();
     }
-
     @Override
     public void setSelected(boolean selected) {
       myBreakpoint.setEnabled(selected);
     }
-
     @NotNull
     public IBreakpoint getBreakpoint() {
       return myBreakpoint;
     }
-
     @Override
     public boolean equals(Object o) {
       if (this == o) {
@@ -314,13 +276,11 @@ import javax.swing.UIManager;
       }
       return true;
     }
-
     @Override
     public int hashCode() {
       return myBreakpoint.hashCode();
     }
   }
-
   protected class BreakpointTreeNode extends MPSTreeNode {
     public BreakpointTreeNode(IOperationContext operationContext, AbstractBreakpointsTree.BreakpointNodeData breakpoint) {
       super(breakpoint, operationContext);
@@ -329,7 +289,6 @@ import javax.swing.UIManager;
       setIcon(bp.getIcon(true));
       setText(bp.getText());
     }
-
     @Override
     public boolean isLeaf() {
       return true;

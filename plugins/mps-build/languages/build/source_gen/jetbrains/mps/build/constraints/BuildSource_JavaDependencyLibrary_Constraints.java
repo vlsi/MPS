@@ -23,7 +23,6 @@ public class BuildSource_JavaDependencyLibrary_Constraints extends BaseConstrain
   public BuildSource_JavaDependencyLibrary_Constraints() {
     super("jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class BuildSource_JavaDependencyLibrary_Constraints extends BaseConstrain
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class BuildSource_JavaDependencyLibrary_Constraints extends BaseConstrain
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fyolh3_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class BuildSource_JavaDependencyLibrary_Constraints extends BaseConstrain
     });
     return references;
   }
-
   private static SNodePointer breakingNode_fyolh3_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1545517825663202142");
 }

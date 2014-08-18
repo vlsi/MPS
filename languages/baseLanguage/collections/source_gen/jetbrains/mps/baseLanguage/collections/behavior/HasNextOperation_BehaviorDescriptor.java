@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class HasNextOperation_BehaviorDescriptor extends AbstractIteratorOperation_BehaviorDescriptor {
   public HasNextOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HasNextOperation";

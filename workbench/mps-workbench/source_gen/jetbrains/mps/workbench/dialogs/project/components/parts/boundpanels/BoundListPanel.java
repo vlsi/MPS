@@ -18,11 +18,9 @@ import com.intellij.openapi.ui.Messages;
 
 public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
   private JList myUIList = new JBList();
-
   public BoundListPanel(IBindedDialog owner, String caption, List<T> ts) {
     super(owner, caption, ts);
   }
-
   @Override
   protected JComponent initUIComponentAndBinding() {
     if (myCellRenderer != null) {
@@ -31,34 +29,27 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
     myOwner.addBinding(SwingBindings.createJListBinding(AutoBinding.UpdateStrategy.READ_WRITE, myList, myUIList));
     return myUIList;
   }
-
   @Override
   protected BaseValidatedAction createAddAction(Computable<List<T>> chooser) {
     return new BoundListPanel.MyListAddAction(chooser);
   }
-
   @Override
   protected BaseValidatedAction createRemoveAction() {
     return new BoundListPanel.MyListRemoveAction();
   }
-
   @Override
   protected int[] getSelectedIndices() {
     return myUIList.getSelectedIndices();
   }
-
   public JList getList() {
     return myUIList;
   }
-
   private class MyListAddAction extends ListAddAction {
     private Computable<List<T>> myChooser;
-
     public MyListAddAction(Computable<List<T>> chooser) {
       super(myUIList);
       myChooser = chooser;
     }
-
     @Override
     protected int doAdd(AnActionEvent e) {
       List<T> chosen = myChooser.compute();
@@ -71,12 +62,10 @@ public class BoundListPanel<T> extends ValidateableBoundPanel<T> {
       return ((first == null) ? -1 : BoundListPanel.this.myList.indexOf(first));
     }
   }
-
   private class MyListRemoveAction extends ListRemoveAction {
     public MyListRemoveAction() {
       super(myUIList);
     }
-
     @Override
     protected void doRemove(AnActionEvent e) {
       String errorMessage = BoundListPanel.this.removeSelectedWithCheck();

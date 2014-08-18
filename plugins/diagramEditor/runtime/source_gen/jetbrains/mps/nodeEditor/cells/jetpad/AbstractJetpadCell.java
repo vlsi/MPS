@@ -37,16 +37,13 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
   private List<ReadableModelProperty> myModelProperties;
   protected Property<Boolean> myErrorItem = new ValueProperty<Boolean>(false);
   protected Property<Boolean> mySelectedItem = new ValueProperty<Boolean>(false);
-
   public AbstractJetpadCell(EditorContext editorContext, SNode node) {
     super(editorContext, node, new EmptyCellLayout(), null);
   }
-
   @Override
   public boolean isTransparentCollection() {
     return false;
   }
-
   protected DiagramCell getDiagramCell() {
     return (DiagramCell) CellFinderUtil.findParent(this, new Condition<jetbrains.mps.openapi.editor.cells.EditorCell_Collection>() {
       public boolean met(jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent) {
@@ -54,7 +51,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       }
     });
   }
-
   @Override
   public void paint(Graphics graphics, ParentSettings settings) {
     for (EditorCell child : Sequence.fromIterable(this)) {
@@ -71,25 +67,20 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
     myErrorItem.set(false);
   }
-
   protected void addModelProperty(ReadableModelProperty modelProperty) {
     if (myModelProperties == null) {
       myModelProperties = new LinkedList<ReadableModelProperty>();
     }
     myModelProperties.add(modelProperty);
   }
-
   @Override
   public int getAscent() {
     return getHeight();
   }
 
-
-
   public boolean canBeSynchronized() {
     return true;
   }
-
   @Override
   public void synchronizeViewWithModel() {
     if (myModelProperties != null) {
@@ -99,7 +90,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       requestRelayout();
     }
   }
-
   protected AbstractJetpadCell getDirectChildCell(SNode node) {
     // TODO: use more effitient way of getting port cell (by ID) 
     for (EditorCell nextCell : Sequence.fromIterable(getContentCells())) {
@@ -109,7 +99,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }
     return null;
   }
-
   protected void syncToNextNode(ListIterator<SNode> nodesIterator, Set<SNode> existingNodes, SNode node, EditorCell cell) {
     if (existingNodes.contains(node)) {
       while (nodesIterator.hasNext()) {
@@ -128,7 +117,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       existingNodes.add(node);
     }
   }
-
   protected void purgeTailNodes(ListIterator<SNode> listIterator) {
     while (listIterator.hasNext()) {
       SNode nextFromList = listIterator.next();
@@ -136,7 +124,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
       removeCell((getDirectChildCell(nextFromList)));
     }
   }
-
   protected void configureView(final View view, final _FunctionTypes._return_P0_E0<? extends Boolean> canDelete) {
     view.focusable().set(true);
     view.prop(RootTrait.DELETE_HANDLER).set(new DeleteHandler() {
@@ -144,7 +131,6 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
         // TODO: do we need it? it always return true.. 
         return canDelete.invoke();
       }
-
       public void delete() {
         getEditorComponent().getSelectionManager().getSelection().executeAction(CellActionType.DELETE);
       }
@@ -163,14 +149,11 @@ public abstract class AbstractJetpadCell extends EditorCell_Collection implement
     }).build());
   }
 
-
-
   @Override
   public void setSelected(boolean isSelected) {
     super.setSelected(isSelected);
     mySelectedItem.set(isSelected);
   }
-
   private static boolean eq_815jvj_a0a0a0c0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

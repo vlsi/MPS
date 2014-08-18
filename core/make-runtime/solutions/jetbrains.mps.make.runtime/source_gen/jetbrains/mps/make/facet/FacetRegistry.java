@@ -24,15 +24,12 @@ public class FacetRegistry {
   private static FacetRegistry INSTANCE = new FacetRegistry();
   private Map<IFacet.Name, IFacet> facetMap = MapSequence.fromMap(new HashMap<IFacet.Name, IFacet>());
   private Set<Tuples._2<String, IFacet>> facetsForLanguages = SetSequence.fromSet(new HashSet<Tuples._2<String, IFacet>>());
-
   private FacetRegistry() {
   }
-
   @Deprecated
   public void register(IFacet facet) {
     register(null, facet);
   }
-
   public void register(String languageNamespace, IFacet facet) {
     if (MapSequence.fromMap(facetMap).containsKey(facet.getName())) {
       throw new IllegalArgumentException("already registered");
@@ -40,7 +37,6 @@ public class FacetRegistry {
     MapSequence.fromMap(facetMap).put(facet.getName(), facet);
     SetSequence.fromSet(facetsForLanguages).addElement(MultiTuple.<String,IFacet>from(languageNamespace, facet));
   }
-
   public void unregister(final IFacet facet) {
     if (!(MapSequence.fromMap(facetMap).containsKey(facet.getName()))) {
       throw new IllegalArgumentException("not registered");
@@ -52,7 +48,6 @@ public class FacetRegistry {
       }
     }));
   }
-
   public IFacet lookup(IFacet.Name fn) {
     LanguageRegistry langReg = LanguageRegistry.getInstance();
     if (langReg != null) {
@@ -69,7 +64,6 @@ public class FacetRegistry {
     LOG.debug("facet not found, loading using deprecated mechanism " + fn);
     return MapSequence.fromMap(facetMap).get(fn);
   }
-
   public Iterable<IFacet> getFacetsForLanguage(final String languageNamespace) {
     return SetSequence.fromSet(facetsForLanguages).where(new IWhereFilter<Tuples._2<String, IFacet>>() {
       public boolean accept(Tuples._2<String, IFacet> it) {
@@ -81,11 +75,9 @@ public class FacetRegistry {
       }
     });
   }
-
   public Map<IFacet.Name, IFacet> allFacets() {
     return Collections.unmodifiableMap(facetMap);
   }
-
   public static FacetRegistry getInstance() {
     if (INSTANCE == null) {
       LOG.fatal("not initialized");

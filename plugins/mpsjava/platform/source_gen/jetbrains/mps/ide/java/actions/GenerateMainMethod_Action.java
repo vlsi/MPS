@@ -28,18 +28,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerateMainMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GenerateMainMethod_Action() {
     super("main(Strins[] args)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
     return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})).any(new IWhereFilter<SNode>() {
@@ -48,7 +45,6 @@ public class GenerateMainMethod_Action extends BaseAction {
       }
     })) && !(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -62,7 +58,6 @@ public class GenerateMainMethod_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -77,7 +72,6 @@ public class GenerateMainMethod_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
@@ -90,13 +84,10 @@ public class GenerateMainMethod_Action extends BaseAction {
       }
     }
   }
-
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateMainMethod_Action.class);
-
   private static SNode _quotation_createNode_fb0mnr_a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

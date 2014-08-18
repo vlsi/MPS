@@ -13,7 +13,6 @@ import jetbrains.mps.debug.api.BreakpointManagerComponent;
     myRootKind.setVisible(false);
     myTree.rebuildLater();
   }
-
   @Override
   public String getTitle() {
     return "Table View";

@@ -23,7 +23,6 @@ public class ChainedOperations_Test extends Util_Test {
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -56,7 +55,6 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList("12", "15"), test.toIterable());
   }
-
   public void test_chainedOperations() throws Exception {
     Iterable<String> test = Sequence.fromIterable(this.input5()).select(new ISelector<Integer, Integer>() {
       public Integer select(Integer it) {
@@ -68,7 +66,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {

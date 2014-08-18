@@ -6,7 +6,6 @@ package jetbrains.mps.build.plugin;
 /*package*/ class Utils {
   public Utils() {
   }
-
   /*package*/ static String getExtensionWithDot(String fileName) {
     int index = fileName.lastIndexOf('.');
     if (index >= 0) {
@@ -16,7 +15,6 @@ package jetbrains.mps.build.plugin;
     }
     return (index == -1 ? "" : fileName.substring(index));
   }
-
   /*package*/ static String withoutExtension(String fileName) {
     int index = fileName.lastIndexOf('.');
     if (index >= 0) {

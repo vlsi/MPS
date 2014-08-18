@@ -24,11 +24,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d13tpt_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d13tpt_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_d13tpt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_d13tpt_a");
@@ -43,7 +41,6 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_d13tpt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "0");
     editorCell.setCellId("Constant_d13tpt_a0");
@@ -53,7 +50,6 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_d13tpt_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rows");
@@ -76,7 +72,6 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d13tpt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_d13tpt_c0");
@@ -87,11 +82,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_d13tpt_a2a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "square"));
   }
-
   private EditorCell createRefNode_d13tpt_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("columns");
@@ -114,11 +107,9 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_d13tpt_a3a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "square"));
   }
-
   private EditorCell createCollection_d13tpt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d13tpt_a_0");
@@ -131,14 +122,12 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_d13tpt_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_d13tpt_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "square");
     editorCell.setCellId("Constant_d13tpt_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_d13tpt_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("square");
@@ -159,14 +148,12 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d13tpt_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rows");
     editorCell.setCellId("Constant_d13tpt_c0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_d13tpt_d0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rows");
@@ -189,14 +176,12 @@ public class MatrixZero_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d13tpt_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "columns");
     editorCell.setCellId("Constant_d13tpt_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_d13tpt_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("columns");

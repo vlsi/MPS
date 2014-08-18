@@ -16,7 +16,6 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_84i1v2_a(editorContext, node);
   }
-
   private EditorCell createCollection_84i1v2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_84i1v2_a");
@@ -25,7 +24,6 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_84i1v2_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_84i1v2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("amount");
@@ -43,7 +41,6 @@ public class MoneyLiteral_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_84i1v2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("currency");

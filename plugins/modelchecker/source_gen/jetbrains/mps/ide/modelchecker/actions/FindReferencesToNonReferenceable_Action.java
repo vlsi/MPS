@@ -40,23 +40,19 @@ import org.apache.log4j.LogManager;
 
 public class FindReferencesToNonReferenceable_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public FindReferencesToNonReferenceable_Action() {
     super("Find References to non-referenceable concepts", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     // todo: temporary disabled, see MPS-18470 
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -70,7 +66,6 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -85,7 +80,6 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final List<SModel> modelDescriptors = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).where(new IWhereFilter<SModel>() {
@@ -147,6 +141,5 @@ public class FindReferencesToNonReferenceable_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FindReferencesToNonReferenceable_Action.class);
 }

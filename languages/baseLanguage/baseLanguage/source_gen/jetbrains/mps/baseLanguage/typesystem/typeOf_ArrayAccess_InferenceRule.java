@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_ArrayAccess_InferenceRule() {
   }
-
   public void applyRule(final SNode arrayAccess, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode T_typevar_1175601836165 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -35,22 +34,18 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1175603547412", true), (SNode) _quotation_createNode_wq7qsi_a0d0b(), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_wq7qsi_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -62,7 +57,6 @@ public class typeOf_ArrayAccess_InferenceRule extends AbstractInferenceRule_Runt
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_wq7qsi_a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

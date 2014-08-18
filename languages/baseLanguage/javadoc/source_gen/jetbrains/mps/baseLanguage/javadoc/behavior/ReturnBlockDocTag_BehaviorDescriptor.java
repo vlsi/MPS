@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class ReturnBlockDocTag_BehaviorDescriptor extends BaseBlockDocTag_BehaviorDescriptor {
   public ReturnBlockDocTag_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag";

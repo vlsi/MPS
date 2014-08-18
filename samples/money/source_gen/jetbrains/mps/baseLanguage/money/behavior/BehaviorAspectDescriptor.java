@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 4:
@@ -28,6 +27,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.baseLanguage.money.structure.MoneyCreator", "jetbrains.mps.baseLanguage.money.structure.MoneyGetAmountMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", "jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", "jetbrains.mps.baseLanguage.money.structure.MoneyType"};
 }

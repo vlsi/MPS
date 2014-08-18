@@ -15,7 +15,6 @@ public class CommandProcessType_Constraints extends BaseConstraintsDescriptor {
   public CommandProcessType_Constraints() {
     super("jetbrains.mps.execution.commands.structure.CommandProcessType");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class CommandProcessType_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";

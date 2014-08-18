@@ -21,16 +21,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Slot_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.heating.tabular.editor.HeatingViews.tabular"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ggt0rc_a(editorContext, node);
   }
-
   private EditorCell createCollection_ggt0rc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ggt0rc_a");
@@ -42,7 +39,6 @@ public class Slot_tabular_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ggt0rc_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ggt0rc_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "customizing");
     editorCell.setCellId("Constant_ggt0rc_a0");
@@ -52,11 +48,9 @@ public class Slot_tabular_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ggt0rc_a0a(SNode node, EditorContext editorContext) {
     return Slot_Behavior.call_isCustomizing_935069066463662362(node);
   }
-
   private EditorCell createProperty_ggt0rc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("start");
@@ -74,7 +68,6 @@ public class Slot_tabular_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ggt0rc_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "o'clock");
     editorCell.setCellId("Constant_ggt0rc_c0");

@@ -14,13 +14,11 @@ import jetbrains.mps.refactoring.renameSolution.SolutionRenamer;
 
 public class RenameSolutionDialog extends RenameDialog {
   private Solution mySolution;
-
   public RenameSolutionDialog(Project project, Solution solution) throws HeadlessException {
     super(project, solution.getModuleName(), "solution");
     mySolution = solution;
     setTitle("Rename Solution");
   }
-
   @Override
   protected void doRefactoringAction() {
     boolean renamed = new ModelAccessHelper(ProjectHelper.getModelAccess(getProject())).executeCommand(new Computable<Boolean>() {

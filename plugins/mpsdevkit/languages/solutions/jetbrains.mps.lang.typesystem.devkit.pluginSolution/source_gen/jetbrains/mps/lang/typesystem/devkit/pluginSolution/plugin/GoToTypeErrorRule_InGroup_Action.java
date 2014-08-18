@@ -20,7 +20,6 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
   private static final Icon ICON = null;
   private Pair<String, String> errorId;
   private boolean immediate;
-
   public GoToTypeErrorRule_InGroup_Action(Pair<String, String> errorId_par, boolean immediate_par) {
     super("Go to Rule Which Caused Error", "", ICON);
     this.errorId = errorId_par;
@@ -28,12 +27,10 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +44,6 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +58,6 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToTypeErrorRuleUtil.goToRuleById(((MPSProject) MapSequence.fromMap(_params).get("project")), new Pair<String, String>(GoToTypeErrorRule_InGroup_Action.this.errorId.o1, GoToTypeErrorRule_InGroup_Action.this.errorId.o2));
@@ -72,7 +67,6 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -84,10 +78,8 @@ public class GoToTypeErrorRule_InGroup_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String errorId_State(Pair<String, String> object) {
     return object.o1 + "#" + object.o2;
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToTypeErrorRule_InGroup_Action.class);
 }

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class MoneyUtil {
   public MoneyUtil() {
   }
-
   public static boolean isMoneyOperation(SNode node) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "leftExpression", true)), HUtil.createMatchingPatternByConceptFQName("org.jetbrains.mps.samples.Money.structure.MoneyType"), true) != null && TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "rightExpression", true)), HUtil.createMatchingPatternByConceptFQName("org.jetbrains.mps.samples.Money.structure.MoneyType"), true) != null;
   }

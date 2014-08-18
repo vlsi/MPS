@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class MultiForEachPair_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public MultiForEachPair_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair";

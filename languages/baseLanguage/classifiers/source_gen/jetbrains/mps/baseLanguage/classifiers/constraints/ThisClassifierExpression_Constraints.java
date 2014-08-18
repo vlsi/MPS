@@ -23,12 +23,10 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
   public ThisClassifierExpression_Constraints() {
     super("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -39,7 +37,6 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -48,7 +45,6 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -57,7 +53,6 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(SNodeOperations.cast(_context.getReferenceNode(), "jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression"));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3;
@@ -67,11 +62,9 @@ public class ThisClassifierExpression_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1213107438050");
   private static SNodePointer breakingNode_9aiht3_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1218737393727");
 }

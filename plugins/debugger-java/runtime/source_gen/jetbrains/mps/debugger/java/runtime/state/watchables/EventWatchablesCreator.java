@@ -19,7 +19,6 @@ import com.sun.jdi.event.ModificationWatchpointEvent;
 public class EventWatchablesCreator {
   public EventWatchablesCreator() {
   }
-
   public void addWatchablesFromEvent(Event event, List<IWatchable> watchables, ThreadReference threadReference) {
     if (event instanceof ExceptionEvent) {
       ObjectReference exception = ((ExceptionEvent) event).exception();

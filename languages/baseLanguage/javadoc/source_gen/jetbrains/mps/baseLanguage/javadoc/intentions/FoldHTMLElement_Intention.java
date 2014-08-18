@@ -20,62 +20,48 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class FoldHTMLElement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public FoldHTMLElement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement";
   }
-
   public String getPresentation() {
     return "FoldHTMLElement";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions.FoldHTMLElement_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "6612597108004799966");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FoldHTMLElement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       String name = (isEmptyString(SPropertyOperations.getString(node, "name")) ? "..." : SPropertyOperations.getString(node, "name"));
       return (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty() ? String.format(Locale.getDefault(), "Convert to <%s></%s>", name, name) : String.format(Locale.getDefault(), "Convert to <%s />", name));
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
         SNodeFactoryOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
@@ -84,12 +70,10 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
         ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).clear();
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return FoldHTMLElement_Intention.this;
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

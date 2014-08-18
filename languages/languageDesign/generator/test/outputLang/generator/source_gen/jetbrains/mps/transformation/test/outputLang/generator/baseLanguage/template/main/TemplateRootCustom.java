@@ -23,11 +23,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateRootCustom implements TemplateDeclaration {
   public TemplateRootCustom() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_kyghau_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -265,7 +263,6 @@ public class TemplateRootCustom implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_kyghau_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992412775");
   private static SNodePointer varMacroRef_kyghau_b0a0a1a1a1a1a1a3a1a4a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5015072279636761108");
   private static SNodePointer propertyMacro_kyghau_c0a0c0b0b0d0e0b0b0b0b0d0b0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "2721957369897795323");

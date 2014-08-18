@@ -17,7 +17,6 @@ public class DependentProperty<ValueT> extends BaseReadableProperty<ValueT> {
   private Registration[] myRegistrations;
   private ValueT myOldValue;
 
-
   public DependentProperty(ReadableProperty<ValueT> mainProperty, ReadableProperty<?>... dependencies) {
     myMainProperty = mainProperty;
     myDependecies = new ReadableProperty<?>[dependencies.length + 1];
@@ -25,11 +24,9 @@ public class DependentProperty<ValueT> extends BaseReadableProperty<ValueT> {
     System.arraycopy(dependencies, 0, myDependecies, 1, dependencies.length);
 
   }
-
   public ValueT get() {
     return myMainProperty.get();
   }
-
   public Registration addHandler(EventHandler<? super PropertyChangeEvent<ValueT>> handler) {
     if (myHandlers == null) {
       myHandlers = new Listeners<EventHandler<? super PropertyChangeEvent<ValueT>>>();
@@ -47,7 +44,6 @@ public class DependentProperty<ValueT> extends BaseReadableProperty<ValueT> {
       }
     };
   }
-
   private void doAddListeners() {
     EventHandler<PropertyChangeEvent<?>> handler = new EventHandler<PropertyChangeEvent<?>>() {
       public void onEvent(PropertyChangeEvent<?> event) {
@@ -60,14 +56,12 @@ public class DependentProperty<ValueT> extends BaseReadableProperty<ValueT> {
       myRegistrations[i] = myDependecies[i].addHandler(handler);
     }
   }
-
   private void doRemoveListeners() {
     for (Registration reg : myRegistrations) {
       reg.remove();
     }
     myRegistrations = null;
   }
-
   private void somethingChange() {
     ValueT newValue = get();
     ValueT oldValue = myOldValue;

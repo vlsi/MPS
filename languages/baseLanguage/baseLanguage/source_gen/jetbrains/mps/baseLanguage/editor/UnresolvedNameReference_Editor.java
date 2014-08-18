@@ -20,7 +20,6 @@ public class UnresolvedNameReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_v1i4ji_a(editorContext, node);
   }
-
   private EditorCell createProperty_v1i4ji_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("resolveName");

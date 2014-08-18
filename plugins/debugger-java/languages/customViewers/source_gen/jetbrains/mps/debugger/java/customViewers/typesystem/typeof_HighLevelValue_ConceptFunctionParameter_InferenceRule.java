@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule() {
   }
-
   public void applyRule(final SNode highLevelValue_ConceptFunctionParameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = highLevelValue_ConceptFunctionParameter;
@@ -23,22 +22,18 @@ public class typeof_HighLevelValue_ConceptFunctionParameter_InferenceRule extend
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3883084c-f018-4330-aab0-6829350c4b17(jetbrains.mps.debugger.java.customViewers.typesystem)", "43370322128303942", true), (SNode) check_vmwfy8_a0a0b(SNodeOperations.getAncestor(highLevelValue_ConceptFunctionParameter, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer", false, false)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.debugger.java.customViewers.structure.HighLevelValue_ConceptFunctionParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode check_vmwfy8_a0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "valueType", true);

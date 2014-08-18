@@ -14,19 +14,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1228517679346(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
-
   public static boolean baseMappingRule_Condition_1228517679359(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
-
   public static SNode sourceNodeQuery_1228517514724(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1228518035217(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
   }

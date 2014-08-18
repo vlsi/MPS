@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class XmlPrologElement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isSingle_1262430001741497810(SAbstractConcept thisConcept) {
     return false;
   }
-
   public static boolean virtual_isFirst_1262430001741498376(SAbstractConcept thisConcept) {
     return false;
   }

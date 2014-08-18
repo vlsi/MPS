@@ -15,8 +15,9 @@
  */
 package jetbrains.mps.classloading;
 
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
@@ -27,7 +28,7 @@ import java.io.File;
 public class ClassesReloadTest extends WorkbenchMpsTest {
   //  @Test
   public static boolean testProjectReloadForLeaks(File projectFile) {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     return testProjectReloadForLeaks(projectFile, 1000);
   }
 
@@ -35,7 +36,7 @@ public class ClassesReloadTest extends WorkbenchMpsTest {
   public static boolean testProjectReloadForLeaks(final File projectFile, int leakThreshold) {
     return testActionForLeaks(new Runnable() {
       public void run() {
-        Project project = ActiveEnvironment.get().openProject(projectFile);
+        Project project = ActiveEnvironment.getInstance().openProject(projectFile);
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         project.dispose();
       }

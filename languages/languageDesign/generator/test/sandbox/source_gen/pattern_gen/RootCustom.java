@@ -5,7 +5,6 @@ package pattern_gen;
 
 public class RootCustom {
   private int q;
-
   public RootCustom() {
     int i = 42;
     q = i;
@@ -29,7 +28,6 @@ public class RootCustom {
     // in ctor 6010543442198725792 
     // in ctor 3571912445010045826 
   }
-
   public void main() {
     {
       int e2 = 5;
@@ -79,79 +77,60 @@ public class RootCustom {
       int ya2 = ya1 * 2;
     }
   }
-
   public static void statement2681305894288275125() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement4146564171992399882() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement4146564171992399888() {
     // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
   }
-
   public static void statement2681305894288275132() {
     // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
   }
-
   public static void statement2681305894288275179() {
     // jetbrains.mps.baseLanguage.structure.ExpressionStatement 
   }
-
   public static void statement2681305894288379455() {
     // jetbrains.mps.baseLanguage.structure.Statement 
   }
-
   public static void statement2681305894288379457() {
     // jetbrains.mps.baseLanguage.structure.IfStatement 
   }
-
   public static void statement3571912445010045823() {
     // jetbrains.mps.baseLanguage.structure.BlockStatement 
   }
-
   public static void statement6266395626233624824() {
     // jetbrains.mps.baseLanguage.structure.Statement 
   }
-
   public static void statement5857536350883158504() {
     // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
   }
-
   public static void statement6266395626233719470() {
     // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
   }
-
   public static void statement6509983489804965801() {
     // jetbrains.mps.transformation.test.outputLang.structure.CustomStatement 
   }
-
   public static void statement2163819695913718896() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement2163819695913721858() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement5857536350883158508() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement7870321878390043349() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement6509983489804965645() {
     // jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement 
   }
-
   public static void statement6010543442198725792() {
     // jetbrains.mps.transformation.test.outputLang.structure.TwoVarStatement 
   }
-
   public static void statement3571912445010045826() {
     // jetbrains.mps.baseLanguage.structure.SingleLineComment 
   }

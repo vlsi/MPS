@@ -34,7 +34,6 @@ public class Iterator_Test extends Util_Test {
       // expected exception 
     }
   }
-
   public void test_singleton() throws Exception {
     Iterable<Integer> test = Sequence.<Integer>singleton(42);
     Iterator<Integer> is = Sequence.fromIterable(test).iterator();
@@ -58,7 +57,6 @@ public class Iterator_Test extends Util_Test {
       // expected exception 
     }
   }
-
   public void test_iterating() throws Exception {
     Iterable<String> test = this.inputABC();
     String res = "";
@@ -73,7 +71,6 @@ public class Iterator_Test extends Util_Test {
     }
     Assert.assertEquals("AABBCC", res);
   }
-
   public void test_containerIterator() throws Exception {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
     for (Iterator<Integer> cit = ListSequence.fromList(list).iterator(); cit.hasNext();) {
@@ -88,7 +85,6 @@ public class Iterator_Test extends Util_Test {
     }
     Assert.assertTrue(SetSequence.fromSet(set).isEmpty());
   }
-
   public void test_multiIterator() throws Exception {
     Iterable<Integer> seq10 = input10();
     Iterable<Integer> seq01 = ListSequence.fromList(Sequence.fromIterable(seq10).toListSequence()).reversedList();
@@ -107,7 +103,6 @@ public class Iterator_Test extends Util_Test {
     }
     assertIterableEquals(expected, actual);
   }
-
   public void test_multiIterator2() throws Exception {
     Iterable<Integer> seq10 = input10();
     Iterable<Integer> seq5 = input5();
@@ -125,7 +120,6 @@ public class Iterator_Test extends Util_Test {
     }
     Assert.assertEquals(2 * (1 + 2 + 3 + 4 + 5), sum);
   }
-
   public Iterator_Test() {
   }
 }

@@ -14,34 +14,26 @@ public class VariableDeclaration_RemoveFinalOnDelete {
     editorCell.setAction(CellActionType.DELETE, new VariableDeclaration_RemoveFinalOnDelete.VariableDeclaration_RemoveFinalOnDelete_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new VariableDeclaration_RemoveFinalOnDelete.VariableDeclaration_RemoveFinalOnDelete_BACKSPACE(node));
   }
-
   public static class VariableDeclaration_RemoveFinalOnDelete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public VariableDeclaration_RemoveFinalOnDelete_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isFinal", "" + (false));
     }
   }
-
   public static class VariableDeclaration_RemoveFinalOnDelete_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public VariableDeclaration_RemoveFinalOnDelete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isFinal", "" + (false));
     }

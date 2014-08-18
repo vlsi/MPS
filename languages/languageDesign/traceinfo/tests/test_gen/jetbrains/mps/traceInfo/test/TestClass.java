@@ -7,7 +7,6 @@ import java.util.Collections;
 public class TestClass {
   public TestClass() {
   }
-
   public static void ifTest() {
     String nullString = null;
     if (!(nullString.equals("@"))) {
@@ -18,18 +17,15 @@ public class TestClass {
       Collections.EMPTY_SET.toString();
     }
   }
-
   public static void forTest() {
     int j = 0;
     for (int i = 0; i < 100; i += (Integer) null) {
       j++;
     }
   }
-
   public static void blockStatementTest() {
     throw new RuntimeException();
   }
-
   public static void foreachTest() {
     int sum = 0;
     int[] array = {1, 2, 3};
@@ -39,7 +35,6 @@ public class TestClass {
     }
     System.err.println("sum = " + sum);
   }
-
   public static void generatedForeachTest() {
     int sum = 0;
     int[] array = {1, 2, 3};
@@ -49,7 +44,6 @@ public class TestClass {
     }
     System.err.println("sum = " + sum);
   }
-
   public void internalClassTest() {
     new Thread(new Runnable() {
       public void run() {
@@ -57,7 +51,6 @@ public class TestClass {
       }
     });
   }
-
   public static void main(String[] args) {
   }
 }

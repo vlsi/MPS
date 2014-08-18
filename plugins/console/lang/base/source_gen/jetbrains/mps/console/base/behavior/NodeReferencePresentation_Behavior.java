@@ -12,11 +12,9 @@ public class NodeReferencePresentation_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "referencePresentation", BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "target", false), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_canExecute_3282455643657932881", new Object[]{});
   }
-
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.console.base.structure.INodeWithReference", "virtual_execute_8517397753922085153", new Object[]{project});
   }

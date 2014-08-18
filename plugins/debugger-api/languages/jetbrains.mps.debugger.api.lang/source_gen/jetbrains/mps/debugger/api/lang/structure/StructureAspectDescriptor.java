@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -46,6 +45,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.debugger.api.lang.structure.BreakpointCreator", "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem", "jetbrains.mps.debugger.api.lang.structure.ConceptDeclarationReference", "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Concept", "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_Debug_Project", "jetbrains.mps.debugger.api.lang.structure.ConceptFunctionParameter_DebuggableNode", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_CreateBreakpoint", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableToConcept", "jetbrains.mps.debugger.api.lang.structure.CreateBreakpointOperation", "jetbrains.mps.debugger.api.lang.structure.DebuggerConfiguration", "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", "jetbrains.mps.debugger.api.lang.structure.DebuggerType", "jetbrains.mps.debugger.api.lang.structure.GetDebuggerSettings_Function"};
 }

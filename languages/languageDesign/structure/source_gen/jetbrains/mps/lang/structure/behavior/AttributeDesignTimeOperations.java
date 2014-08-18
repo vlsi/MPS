@@ -49,11 +49,9 @@ public class AttributeDesignTimeOperations {
       }
     });
   }
-
   public static boolean isAttributeDeclaration(SNode conceptDeclaration) {
     return SetSequence.fromSet(getSuperConcepts(conceptDeclaration)).contains(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "5169995583184591161"));
   }
-
   public static boolean isMultipleAttribute(SNode attributeDeclaration) {
     if (!(isAttributeDeclaration(attributeDeclaration))) {
       return false;
@@ -64,7 +62,6 @@ public class AttributeDesignTimeOperations {
       }
     }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "multiple", true), "value");
   }
-
   @Nullable
   public static String getAttributeRole(SNode attributeDeclaration) {
     if (!(isAttributeDeclaration(attributeDeclaration))) {
@@ -76,7 +73,6 @@ public class AttributeDesignTimeOperations {
       }
     }), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")), "role");
   }
-
   public static Iterable<SNode> getApplicableConcepts(SNode attributeDeclaration) {
     if (!(isAttributeDeclaration(attributeDeclaration))) {
       return null;
@@ -100,8 +96,6 @@ public class AttributeDesignTimeOperations {
     });
   }
 
-
-
   private static Set<SNode> getSuperConcepts(SNode conceptDeclaration) {
     Set<SNode> concepts = SetSequence.fromSet(new LinkedHashSet<SNode>());
     while ((conceptDeclaration != null) && !(SetSequence.fromSet(concepts).contains(conceptDeclaration))) {
@@ -110,7 +104,6 @@ public class AttributeDesignTimeOperations {
     }
     return concepts;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

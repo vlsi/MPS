@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class WrongAspectDependenciesFinder extends ModelCheckerIssueFinder {
   public WrongAspectDependenciesFinder() {
   }
-
   @Override
   protected List<SpecificChecker> getSpecificCheckers() {
     return ListSequence.fromListAndArray(new ArrayList<SpecificChecker>(), new AspectDependenciesChecker());

@@ -18,23 +18,18 @@ public enum Values {
   POST_DATA("post_data");
 
   private String name;
-
   Values(String name) {
     this.name = PREFIX(name);
   }
-
   public void set(TemplateQueryContext genContext, SNode node, Object value) {
     genContext.putSessionObject(this.name + node.getNodeId().toString(), value);
   }
-
   public Object get(TemplateQueryContext genContext, SNode node) {
     return genContext.getSessionObject(this.name + node.getNodeId().toString());
   }
-
   public boolean isSet(TemplateQueryContext genContext, SNode node) {
     return genContext.getSessionObject(this.name + node.getNodeId().toString()) != null;
   }
-
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.closures.generator." + str;
   }

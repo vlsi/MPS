@@ -25,7 +25,6 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
   public ApplicableNodeReference_Constraints() {
     super("jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -77,7 +75,6 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_b5wqlc_a0a1a0a0a1a0b0a1a1;
@@ -87,6 +84,5 @@ public class ApplicableNodeReference_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   private static SNodePointer breakingNode_b5wqlc_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1213104858865");
 }

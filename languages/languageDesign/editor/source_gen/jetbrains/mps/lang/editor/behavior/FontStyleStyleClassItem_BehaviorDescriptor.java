@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class FontStyleStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public FontStyleStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem";

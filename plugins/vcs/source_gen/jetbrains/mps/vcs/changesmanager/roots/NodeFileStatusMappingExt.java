@@ -19,7 +19,6 @@ public class NodeFileStatusMappingExt extends NodeFileStatusMapping {
   public NodeFileStatusMappingExt(Project project, CurrentDifferenceRegistry registry) {
     super(project, registry);
   }
-
   @Override
   protected void statusChanged(FileStatusManager fsm, MPSNodesVirtualFileSystem nvfs, SNodeReference nodePointer) {
     super.statusChanged(fsm, nvfs, nodePointer);

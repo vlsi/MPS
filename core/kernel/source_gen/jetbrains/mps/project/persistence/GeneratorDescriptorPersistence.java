@@ -26,7 +26,6 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
   }
-
   public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, IFile file, final String contentRoot, final MacroHelper macroHelper) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {
@@ -95,7 +94,6 @@ public class GeneratorDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
-
   public static void saveGeneratorDescriptor(Element languageGeneratorsElement, GeneratorDescriptor descriptor, MacroHelper macroHelper) {
     Element generator = new Element("generator");
     if (descriptor.getNamespace() != null) {
@@ -156,7 +154,6 @@ public class GeneratorDescriptorPersistence {
 
     languageGeneratorsElement.addContent(generator);
   }
-
   private static void saveGeneratorMappingConfigRef(MappingConfig_AbstractRef mappingRef, Element parentElement) {
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
       parentElement.addContent(new Element("all-local-mappings"));
@@ -181,7 +178,6 @@ public class GeneratorDescriptorPersistence {
       parentElement.addContent(mappingSet);
     }
   }
-
   public static MappingConfig_AbstractRef loadGeneratorMappingConfigRef(final Element parentElement, final String genUID, boolean childOfGen) {
     // FIXME there seems to be little reason (if any) to change MCref structure during read. Consider removing childOfGen 
     // attribute altogether 

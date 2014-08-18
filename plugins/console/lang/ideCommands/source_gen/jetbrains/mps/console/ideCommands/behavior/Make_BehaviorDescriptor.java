@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class Make_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
   public Make_BehaviorDescriptor() {
   }
-
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return Make_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
-
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
     return Make_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.Make";

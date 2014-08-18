@@ -12,41 +12,34 @@ public class ParametersInformation<T> implements jetbrains.mps.editor.runtime.st
   public ParametersInformation() {
     // This class should be completely removed after MPS 3.0 
   }
-
   @Override
   public Iterable<T> getMethods(SNode node, EditorContext editorContext) {
     return getMethods(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext);
   }
-
   @Deprecated
   public Iterable<T> getMethods(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // Deprecated since MPS 3.0 should be removed 
     return null;
   }
-
   @Deprecated
   public String getMethodPresentation(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext, T method) {
     // Deprecated since MPS 3.0 should be removed 
     return null;
   }
-
   @Override
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, T method, StyledTextPrinter printer) {
     getStyledMethodPresentation(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, method, (jetbrains.mps.editor.runtime.StyledTextPrinter) printer);
   }
-
   @Deprecated
   public void getStyledMethodPresentation(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext, T method, jetbrains.mps.editor.runtime.StyledTextPrinter printer) {
     // Deprecated since MPS 3.0 should be removed 
     String text = this.getMethodPresentation(node, editorContext, method);
     printer.append(text);
   }
-
   @Override
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, T method) {
     return isMethodCurrent(node, (jetbrains.mps.nodeEditor.EditorContext) editorContext, method);
   }
-
   @Deprecated
   public boolean isMethodCurrent(SNode node, jetbrains.mps.nodeEditor.EditorContext editorContext, T method) {
     // Deprecated since MPS 3.0 should be removed 

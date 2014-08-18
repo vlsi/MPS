@@ -17,25 +17,20 @@ import jetbrains.mps.lang.generator.generationContext.typesystem.TypesystemDescr
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.lang.generator.generationContext";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "715b4f28-d9b2-45a3-a1a4-a7966d9df2d4(jetbrains.mps.lang.generator.generationContext#1216862161405)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {

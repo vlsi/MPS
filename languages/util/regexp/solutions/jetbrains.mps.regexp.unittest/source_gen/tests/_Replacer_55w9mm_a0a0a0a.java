@@ -9,10 +9,8 @@ public class _Replacer_55w9mm_a0a0a0a implements Replacer {
   public String replace(Matcher matcher) {
     return "<" + matcher.group(1) + ">";
   }
-
   /*package*/ Replace_Test _enclosingClass;
   /*package*/ Object _closureContext;
-
   public _Replacer_55w9mm_a0a0a0a(Replace_Test enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;

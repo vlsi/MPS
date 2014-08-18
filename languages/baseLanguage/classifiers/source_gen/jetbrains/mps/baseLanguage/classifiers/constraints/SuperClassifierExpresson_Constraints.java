@@ -19,12 +19,10 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
   public SuperClassifierExpresson_Constraints() {
     super("jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -35,7 +33,6 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     boolean inClassifier = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart"}, true, false) != null;
     if (!(inClassifier)) {
@@ -51,6 +48,5 @@ public class SuperClassifierExpresson_Constraints extends BaseConstraintsDescrip
     }
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)", "1217433547506");
 }

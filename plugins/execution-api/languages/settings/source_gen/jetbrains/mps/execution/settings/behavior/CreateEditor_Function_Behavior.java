@@ -11,23 +11,18 @@ import jetbrains.mps.smodel.SReference;
 public class CreateEditor_Function_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "createEditor");
   }
-
   public static SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "getComponent");
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_ajrw81_a0a3();
   }
-
   private static SNode _quotation_createNode_ajrw81_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

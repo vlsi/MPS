@@ -77,6 +77,5 @@ public class AnonymousClass_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AnonymousClass_TextGen.class);
 }

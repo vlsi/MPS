@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 5:
@@ -76,6 +75,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.structure.ActionGroup", "jetbrains.mps.lang.editor.diagram.structure.AttributedFigureReference", "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", "jetbrains.mps.lang.editor.diagram.structure.CellModel_Diagram", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramConnector", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode", "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramPort", "jetbrains.mps.lang.editor.diagram.structure.ConnectionEndBLQuery", "jetbrains.mps.lang.editor.diagram.structure.CreationActionReference", "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation", "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementBLQuery", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementCreationHandler", "jetbrains.mps.lang.editor.diagram.structure.DiagramElementsCreation", "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference", "jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping", "jetbrains.mps.lang.editor.diagram.structure.FromIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.FromNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.LinkArgument", "jetbrains.mps.lang.editor.diagram.structure.NodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.Palette", "jetbrains.mps.lang.editor.diagram.structure.PropertyArgument", "jetbrains.mps.lang.editor.diagram.structure.Separator", "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression", "jetbrains.mps.lang.editor.diagram.structure.ToIdFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.ToNodeFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.XFunctionParameter", "jetbrains.mps.lang.editor.diagram.structure.YFunctionParameter"};
 }

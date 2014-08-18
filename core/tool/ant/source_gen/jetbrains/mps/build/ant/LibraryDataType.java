@@ -9,38 +9,29 @@ public class LibraryDataType extends DataType {
   private String myName;
   private File myDir;
   private boolean myCompile = false;
-
   public LibraryDataType() {
   }
-
   public String getName() {
     return myName;
   }
-
   public void setName(String name) {
     myName = name;
   }
-
   public File getDir() {
     return myDir;
   }
-
   public void setDir(File dir) {
     myDir = dir;
   }
-
   public File getFile() {
     return myDir;
   }
-
   public void setFile(File dir) {
     myDir = dir;
   }
-
   public boolean getCompile() {
     return myCompile;
   }
-
   public void setCompile(boolean compile) {
     myCompile = compile;
   }

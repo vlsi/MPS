@@ -10,12 +10,10 @@ import java.util.Collections;
 public class BuildLayout_ToBinaryCopyProcessor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getTaskName_1330375798060763184(SNode thisNode) {
     // Note: task is declared in generator/weave_Tasks 
     return "copyModels";
   }
-
   public static Map<String, String> virtual_getTaskArguments_7918752904805535914(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "stripImplementation")) {
       return Collections.singletonMap("stripImplementation", "true");

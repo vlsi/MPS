@@ -17,11 +17,9 @@ import jetbrains.mps.smodel.SReference;
 public class IWillBeClassifier_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
     return SLinkOperations.getTarget(_quotation_createNode_937vih_a0a0b(), "classifier", false);
   }
-
   public static SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
     final String clsName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_classifierName_4609636120081351397", new Object[]{});
     return ListSequence.fromList(SModelOperations.getRoots(targetModel, "jetbrains.mps.baseLanguage.structure.Classifier")).findFirst(new IWhereFilter<SNode>() {
@@ -30,7 +28,6 @@ public class IWillBeClassifier_Behavior {
       }
     });
   }
-
   private static SNode _quotation_createNode_937vih_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -23,7 +23,6 @@ public class CellIdReferenceSelector_Constraints extends BaseConstraintsDescript
   public CellIdReferenceSelector_Constraints() {
     super("jetbrains.mps.lang.editor.structure.CellIdReferenceSelector");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class CellIdReferenceSelector_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class CellIdReferenceSelector_Constraints extends BaseConstraintsDescript
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_pz2436_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class CellIdReferenceSelector_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   private static SNodePointer breakingNode_pz2436_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "4323500428148835215");
 }

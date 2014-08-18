@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public abstract class BuildLayout_CopyFilter_BehaviorDescriptor extends BuildLayout_CopyHandler_BehaviorDescriptor {
   public BuildLayout_CopyFilter_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyFilter";

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_SimpleMathAssignment_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SimpleMathAssignment_InferenceRule() {
   }
-
   public void applyRule(final SNode assignment, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode T_typevar_930174696942622783 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -33,18 +32,15 @@ public class typeof_SimpleMathAssignment_InferenceRule extends AbstractInference
       typeCheckingContext.createGreaterThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:9e78ab00-457d-4aa2-aec8-f0f0bf086985(jetbrains.mps.samples.Expressions.typesystem)", "930174696942622544", true), (SNode) typeCheckingContext.getRepresentative(T_typevar_930174696942622783), false, true, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

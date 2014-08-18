@@ -8,12 +8,10 @@ import mf.Money;
 public class MoneyAddOperation implements Function<Money> {
   private Function<Money> myLeftOperand;
   private Function<Money> myRightOperand;
-
   public MoneyAddOperation(Function<Money> leftOperand, Function<Money> rightOperand) {
     myLeftOperand = leftOperand;
     myRightOperand = rightOperand;
   }
-
   @Override
   public Money compute(Object parm) {
     return myLeftOperand.compute(parm).add(myRightOperand.compute(parm));

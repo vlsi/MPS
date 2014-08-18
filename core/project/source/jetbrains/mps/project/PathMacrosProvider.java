@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import java.util.Set;
 
 /**
-* evgeny, 10/19/11
+* @author evgeny, 10/19/11
 */
 public interface PathMacrosProvider {
   Set<String> getNames();

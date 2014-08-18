@@ -172,7 +172,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
     }
 
     @Override
-    public void initTest(final TransformationTest btt, @NotNull String projectName, String model, boolean uiTest, boolean reOpenProject) throws Exception {
+    public void initTest(final TransformationTest btt, @NotNull String projectName, String model, boolean reOpenProject) throws Exception {
       // TODO use flags
       initTest(btt, projectName, model);
     }

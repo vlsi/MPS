@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public typeof_ClassConcept_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode cls, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(cls, "superclass", true) != null) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(cls, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
       {
@@ -60,18 +59,15 @@ public class typeof_ClassConcept_NonTypesystemRule extends AbstractNonTypesystem
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

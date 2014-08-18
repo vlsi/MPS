@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CreateRootRule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     sb.append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "templateNode", false), "name"));

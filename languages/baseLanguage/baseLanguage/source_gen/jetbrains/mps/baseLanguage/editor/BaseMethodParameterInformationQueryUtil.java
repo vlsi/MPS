@@ -17,7 +17,6 @@ import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 public class BaseMethodParameterInformationQueryUtil {
   public BaseMethodParameterInformationQueryUtil() {
   }
-
   public static List<SNode> getMethodsToShow(SNode methodCall) {
     SNode method = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
@@ -35,7 +34,6 @@ public class BaseMethodParameterInformationQueryUtil {
     }
     return methodsToShow;
   }
-
   public static void fillPresentation(SNode methodDeclaration, SNode selectedActualArgument, StyledTextPrinter styledText) {
     if (!(SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
       if (SLinkOperations.getTarget(methodDeclaration, "returnType", true) != null) {
@@ -84,7 +82,6 @@ public class BaseMethodParameterInformationQueryUtil {
     }
     styledText.append(")");
   }
-
   private static boolean eq_bha4h6_a0a0a5a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

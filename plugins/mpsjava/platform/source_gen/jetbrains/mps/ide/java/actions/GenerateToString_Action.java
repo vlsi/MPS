@@ -36,18 +36,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class GenerateToString_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GenerateToString_Action() {
     super("toString()", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
     return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).any(new IWhereFilter<SNode>() {
@@ -56,7 +53,6 @@ public class GenerateToString_Action extends BaseAction {
       }
     }));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -70,7 +66,6 @@ public class GenerateToString_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -85,7 +80,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SNode classConcept = GenerateToString_Action.this.getClassConcept(_params);
@@ -140,13 +134,10 @@ public class GenerateToString_Action extends BaseAction {
       }
     }
   }
-
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateToString_Action.class);
-
   private static SNode _quotation_createNode_satqj4_a0d0p0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -154,7 +145,6 @@ public class GenerateToString_Action extends BaseAction {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_satqj4_a0a0e0p0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -170,7 +160,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_satqj4_a0b0e0p0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -187,7 +176,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_satqj4_a0a0a4a51a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -204,7 +192,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_satqj4_a0b0a4a51a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -221,7 +208,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_satqj4_a0a0q0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -229,7 +215,6 @@ public class GenerateToString_Action extends BaseAction {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_satqj4_a0a0a61a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -245,7 +230,6 @@ public class GenerateToString_Action extends BaseAction {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_satqj4_a0a0r0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

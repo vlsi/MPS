@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class PropertyMacro_GetPropertyValue_BehaviorDescriptor extends TemplateQueryBase_BehaviorDescriptor {
   public PropertyMacro_GetPropertyValue_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return PropertyMacro_GetPropertyValue_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return PropertyMacro_GetPropertyValue_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return PropertyMacro_GetPropertyValue_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue";

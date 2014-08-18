@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QuickFixForDefaultClassCreator_QuickFix extends QuickFix_Runtime {
   public QuickFixForDefaultClassCreator_QuickFix() {
   }
-
   public void execute(SNode node) {
     SNode constructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -31,7 +30,6 @@ public class QuickFixForDefaultClassCreator_QuickFix extends QuickFix_Runtime {
       SNodeOperations.replaceWithAnother(node, newCreator);
     }
   }
-
   private static SNode _quotation_createNode_za6z2i_a0a0b0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

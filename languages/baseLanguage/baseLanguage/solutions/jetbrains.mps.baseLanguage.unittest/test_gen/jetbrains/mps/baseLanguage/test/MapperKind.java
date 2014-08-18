@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.test;
 
 public class MapperKind<T> {
   public static MapperKind<String> STRING = null;
-
   public MapperKind() {
   }
 }

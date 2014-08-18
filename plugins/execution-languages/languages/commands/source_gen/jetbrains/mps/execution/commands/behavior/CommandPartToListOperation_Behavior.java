@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class CommandPartToListOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return true;
   }

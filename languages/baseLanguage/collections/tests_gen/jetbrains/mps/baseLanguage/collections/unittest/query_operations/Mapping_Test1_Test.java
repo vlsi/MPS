@@ -23,7 +23,6 @@ public class Mapping_Test1_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -60,7 +59,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_num;
             };
           }
@@ -79,7 +77,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -159,7 +156,6 @@ __switch__:
     }
     Assert.assertEquals(5, count.value);
   }
-
   public void test__yieldNull() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> strings = ListSequence.fromListAndArray(new ArrayList<String>(), "a");
@@ -169,7 +165,6 @@ __switch__:
             public Iterator<String> iterator() {
               return new YieldingIterator<String>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -205,7 +200,6 @@ __switch__:
             public Iterator<String> iterator() {
               return new YieldingIterator<String>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -237,7 +231,6 @@ __switch__:
       Assert.assertNull(ListSequence.fromList(strings2).last());
     }
   }
-
   public void test__null() throws Exception {
     List<String> s1 = null;
     Iterable<String> s2 = ListSequence.fromList(s1).translate(new ITranslator2<String, String>() {
@@ -246,7 +239,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -275,7 +267,6 @@ __switch__:
     });
     Assert.assertEquals(0, Sequence.fromIterable(s2).count());
   }
-
   public Mapping_Test1_Test() {
   }
 }

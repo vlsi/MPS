@@ -14,11 +14,9 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.EndTryInstruction;
 public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
   private DataFlowManager myDataFlowManager;
   private boolean myMayBeUnreachable = false;
-
   public MPSProgramBuilder(DataFlowManager dataFlowManager) {
     this.myDataFlowManager = dataFlowManager;
   }
-
   @Override
   protected void doBuild(SNode node) {
     if (node == null) {
@@ -34,7 +32,6 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       }
     }
   }
-
   public void emitMayBeUnreachable(Runnable r) {
     boolean oldMayBeUnreachable = this.myMayBeUnreachable;
     this.myMayBeUnreachable = true;
@@ -44,7 +41,6 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
       this.myMayBeUnreachable = oldMayBeUnreachable;
     }
   }
-
   @Override
   protected void onInstructionEmitted(Instruction instruction) {
     super.onInstructionEmitted(instruction);

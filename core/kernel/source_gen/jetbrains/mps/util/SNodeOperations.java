@@ -37,7 +37,6 @@ import jetbrains.mps.extapi.model.GeneratableSModel;
 public class SNodeOperations {
   public SNodeOperations() {
   }
-
   /**
    * FIXME what on earth this method is supposed to tell?
    */
@@ -49,7 +48,6 @@ public class SNodeOperations {
     SModule sourceModule = node.getConcept().getLanguage().getSourceModule();
     return c == null || sourceModule == null;
   }
-
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {
       return true;
@@ -60,7 +58,6 @@ public class SNodeOperations {
     }
     return isAncestor(ancestor, parentOfChild);
   }
-
   public static List<SNode> getChildren(SNode node, boolean includeAttributes) {
     List<SNode> res = new ArrayList<SNode>();
     for (SNode child : node.getChildren()) {
@@ -70,13 +67,11 @@ public class SNodeOperations {
     }
     return res;
   }
-
   @Deprecated
   public static Iterable<SNode> getDescendants(SNode node, Condition<SNode> cond, boolean includeFirst) {
     // Deprecated: instead of this method, use openapi.model.SNodeUtil.getDescendants() directly 
     return SNodeUtil.getDescendants(node, cond, includeFirst);
   }
-
   public static SNode findParent(SNode node, Condition<SNode> condition) {
     SNode parent = ((SNode) node.getParent());
     while (parent != null) {
@@ -87,7 +82,6 @@ public class SNodeOperations {
     }
     return null;
   }
-
   public static Map<String, String> getProperties(SNode node) {
     Map<String, String> result = new LinkedHashMap<String, String>();
     for (String name : node.getPropertyNames()) {
@@ -95,20 +89,17 @@ public class SNodeOperations {
     }
     return result;
   }
-
   @Deprecated
   public static List<SNode> getDescendants(SNode node, Condition<SNode> condition) {
     // Deprecated: use openapi.model.SNodeUtil.getDescendants() instead 
     return IterableUtil.asList(SNodeUtil.getDescendants(node, condition, false));
   }
-
   /**
    * todo rewrite the code using this
    */
   public static SAbstractConcept getConcept(String name) {
     return SConceptRepository.getInstance().getInstanceConcept(name);
   }
-
   /**
    * todo rewrite the code using this
    */
@@ -119,7 +110,6 @@ public class SNodeOperations {
     }
     return res;
   }
-
   /**
    * todo rewrite the code using this
    */
@@ -130,7 +120,6 @@ public class SNodeOperations {
     }
     return res;
   }
-
   /**
    * todo rewrite the code using this
    */
@@ -141,7 +130,6 @@ public class SNodeOperations {
     }
     return res;
   }
-
   /**
    * todo rewrite the code using this
    */
@@ -152,14 +140,12 @@ public class SNodeOperations {
     }
     return res;
   }
-
   /**
    * todo rewrite the code using this
    */
   public static boolean isRoot(SNode n) {
     return n.getModel() != null && n.getParent() == null;
   }
-
   /**
    * todo rewrite the code via snode methods
    */
@@ -170,7 +156,6 @@ public class SNodeOperations {
       insertChild(parent, role, child, anchor);
     }
   }
-
   /**
    * todo rewrite the code via snode methods
    */
@@ -182,7 +167,6 @@ public class SNodeOperations {
     Iterator<? extends SNode> it = parent.getChildren().iterator();
     parent.insertChildBefore(role, child, (it.hasNext() ? it.next() : null));
   }
-
   /**
    * todo KILL IT! should not be used since nodes are not passed between read actions
    * todo after killing it, correct migration script to return false instead
@@ -191,14 +175,12 @@ public class SNodeOperations {
   public static boolean isDisposed(SNode node) {
     return !(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()));
   }
-
   /**
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
     return SNodeUtil.getDebugText(((SNode) node));
   }
-
   public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
     final Set<String> augend = new HashSet<String>();
     for (SNode child : n.getChildren()) {
@@ -208,7 +190,6 @@ public class SNodeOperations {
     }
     return augend;
   }
-
   public static SNode getChild(SNode node, String role) {
     Iterable<? extends SNode> children = node.getChildren(role);
     if (!(children.iterator().hasNext())) {
@@ -216,7 +197,6 @@ public class SNodeOperations {
     }
     return children.iterator().next();
   }
-
   /**
    * This will be replaced by getting resolve info from a reference in a context containing it
    */
@@ -227,13 +207,11 @@ public class SNodeOperations {
     }
     return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
   }
-
   public static void copyProperties(SNode from, final SNode to) {
     for (String name : from.getPropertyNames()) {
       to.setProperty(name, from.getProperty(name));
     }
   }
-
   public static Language getLanguage(SNode node) {
     final SLanguage language = node.getConcept().getLanguage();
     if (language == null) {
@@ -241,13 +219,11 @@ public class SNodeOperations {
     }
     return ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);
   }
-
   public static void copyUserObjects(SNode from, final SNode to) {
     for (Object key : from.getUserObjectKeys()) {
       to.putUserObject(key, from.getUserObject(key));
     }
   }
-
   public static SModel getModelFromNodeReference(SNodeReference ref) {
     SModelReference mr = ref.getModelReference();
     if (mr == null) {
@@ -255,7 +231,6 @@ public class SNodeOperations {
     }
     return SModelRepository.getInstance().getModelDescriptor(mr);
   }
-
   public static SNode getTargetNodeSilently(SReference ref) {
     try {
       jetbrains.mps.smodel.SReference.disableLogging();
@@ -264,32 +239,25 @@ public class SNodeOperations {
       jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
-
   public static String getModelStereotype(SModel model) {
     return SModelStereotype.getStereotype(model);
   }
-
   public static String getModelLongName(SModel model) {
     return NameUtil.getModelLongName(model);
   }
-
   public static List<SModuleReference> getUsedLanguages(SModel model) {
     Iterable<SModuleReference> languages = ((SModelInternal) model).importedLanguages();
     return Sequence.fromIterable(languages).toListSequence();
   }
-
   public static boolean isModelDisposed(SModel model) {
     return ((SModelInternal) model).getDisposedStacktrace() != null;
   }
-
   public static int nodesCount(SModel model) {
     return IterableUtil.asCollection(SNodeUtil.getDescendants(model)).size();
   }
-
   public static boolean isRegistered(SModel model) {
     return model.getRepository() != null;
   }
-
   public static boolean isGeneratable(SModel model) {
     // I wonder why this method doesn't reside in SModelOperations 
     return model instanceof GeneratableSModel && ((GeneratableSModel) model).isGeneratable();

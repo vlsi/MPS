@@ -15,42 +15,32 @@ public class ArrayType_Brackets_Actions {
     editorCell.setAction(CellActionType.DELETE, new ArrayType_Brackets_Actions.ArrayType_Brackets_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ArrayType_Brackets_Actions.ArrayType_Brackets_Actions_BACKSPACE(node));
   }
-
   public static class ArrayType_Brackets_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ArrayType_Brackets_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "replace array type with array's component type";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "componentType", true));
     }
   }
-
   public static class ArrayType_Brackets_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ArrayType_Brackets_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "replace array type with array's component type";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "componentType", true));
     }

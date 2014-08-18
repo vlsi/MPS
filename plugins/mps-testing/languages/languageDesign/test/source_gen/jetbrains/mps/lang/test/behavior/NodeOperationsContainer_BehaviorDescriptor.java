@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class NodeOperationsContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public NodeOperationsContainer_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeOperationsContainer";

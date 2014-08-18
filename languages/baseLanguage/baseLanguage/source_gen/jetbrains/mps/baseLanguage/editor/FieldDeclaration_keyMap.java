@@ -32,20 +32,16 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
     this.putAction("alt", "VK_INSERT", action);
     this.putAction("alt", "VK_HELP", action);
   }
-
   public static class FieldDeclaration_keyMap_Action0 extends KeyMapActionImpl {
     public FieldDeclaration_keyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "Generate getter";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -60,27 +56,22 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasGetter_1213877243808(node, classConcept));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
       g = _quotation_createNode_bsktda_a0b0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "member", true)).addElement(g);
     }
-
     public String getKeyStroke() {
       return "alt INSERT";
     }
-
     private static SNode _quotation_createNode_bsktda_a0b0a0(Object parameter_1, Object parameter_2, Object parameter_3) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_4 = null;
@@ -113,20 +104,16 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
       return quotedNode_4;
     }
   }
-
   public static class FieldDeclaration_keyMap_Action1 extends KeyMapActionImpl {
     public FieldDeclaration_keyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "Generate setter";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -141,27 +128,22 @@ public class FieldDeclaration_keyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasSetter_1213877243871(node, classConcept));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode s;
       s = _quotation_createNode_bsktda_a0b0a1(node, FieldDeclaration_Behavior.call_getSetterName_1213877243861(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), SPropertyOperations.getString(node, "name"));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "member", true)).addElement(s);
     }
-
     public String getKeyStroke() {
       return "alt INSERT";
     }
-
     private static SNode _quotation_createNode_bsktda_a0b0a1(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_5 = null;

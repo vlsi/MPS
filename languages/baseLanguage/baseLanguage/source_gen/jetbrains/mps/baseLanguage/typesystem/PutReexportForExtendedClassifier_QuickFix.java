@@ -13,11 +13,9 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 public class PutReexportForExtendedClassifier_QuickFix extends QuickFix_Runtime {
   public PutReexportForExtendedClassifier_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Put 'reexport' flag at " + ((SModule) PutReexportForExtendedClassifier_QuickFix.this.getField("moduleToImport")[0]) + " import";
   }
-
   public void execute(SNode node) {
     assert ((SModule) PutReexportForExtendedClassifier_QuickFix.this.getField("moduleToImport")[0]) != null;
     boolean reexport = true;

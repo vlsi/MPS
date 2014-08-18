@@ -20,7 +20,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xb66g7_a(editorContext, node);
   }
-
   private EditorCell createCollection_xb66g7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xb66g7_a");
@@ -31,7 +30,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     editorCell.addEditorCell(this.createConstant_xb66g7_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xb66g7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get original copied input for");
     editorCell.setCellId("Constant_xb66g7_a0");
@@ -41,7 +39,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_xb66g7_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xb66g7_b0");
@@ -51,7 +48,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xb66g7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("outputNode");
@@ -71,7 +67,6 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput_Editor extends D
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xb66g7_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xb66g7_d0");

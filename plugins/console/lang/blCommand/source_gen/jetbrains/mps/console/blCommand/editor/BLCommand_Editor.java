@@ -23,7 +23,6 @@ public class BLCommand_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_zc016d_a(editorContext, node);
   }
-
   private EditorCell createAlternation_zc016d_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = BLCommand_Editor.renderingCondition_zc016d_a0(node, editorContext);
@@ -39,11 +38,9 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_zc016d_a0(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.console.base.structure.History", false, false) == null;
   }
-
   private EditorCell createCollection_zc016d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zc016d_a0");
@@ -52,7 +49,6 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zc016d_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_zc016d_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_zc016d_a0a");
@@ -63,7 +59,6 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_zc016d_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -87,7 +82,6 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_zc016d_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_zc016d_c0a");
@@ -97,7 +91,6 @@ public class BLCommand_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_zc016d_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");

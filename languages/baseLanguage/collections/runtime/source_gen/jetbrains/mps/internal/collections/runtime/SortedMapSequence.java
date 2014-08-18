@@ -10,55 +10,44 @@ import jetbrains.mps.internal.collections.runtime.impl.NullSortedMapSequence;
 
 public class SortedMapSequence<U, V> extends AbstractMapSequence<U, V> implements ISortedMapSequence<U, V>, SortedMap<U, V>, Serializable {
   private static final long serialVersionUID = 4148607188257567855L;
-
   protected SortedMapSequence(SortedMap<U, V> map) {
     super(map);
   }
-
   @Override
   public Comparator<? super U> comparator() {
     return getMap().comparator();
   }
-
   @Override
   public U firstKey() {
     return getMap().firstKey();
   }
-
   @Override
   public ISortedMapSequence<U, V> headMap(U toKey) {
     return SortedMapSequence.fromMap(getMap().headMap(toKey));
   }
-
   @Override
   public U lastKey() {
     return getMap().lastKey();
   }
-
   @Override
   public ISortedMapSequence<U, V> subMap(U fromKey, U toKey) {
     return SortedMapSequence.fromMap(getMap().subMap(fromKey, toKey));
   }
-
   @Override
   public ISortedMapSequence<U, V> tailMap(U fromKey) {
     return SortedMapSequence.fromMap(getMap().tailMap(fromKey));
   }
-
   @Override
   protected SortedMap<U, V> getMap() {
     return (SortedMap<U, V>) super.getMap();
   }
-
   public static <P, Q> SortedMapSequence.SortedMapSequenceInitializer<P, Q> fromKeysArray(P... keys) {
     SortedMap<P, Q> map = new TreeMap<P, Q>();
     return new SortedMapSequence.SortedMapSequenceInitializer<P, Q>(new SortedMapSequence<P, Q>(map), keys);
   }
-
   public static <P, Q> SortedMapSequence.SortedMapSequenceInitializer<P, Q> fromMapAndKeysArray(SortedMap<P, Q> map, P... keys) {
     return new SortedMapSequence.SortedMapSequenceInitializer<P, Q>(new SortedMapSequence<P, Q>(map), keys);
   }
-
   public static <P, Q> ISortedMapSequence<P, Q> fromArray(IMapping<P, Q>... mappings) {
     SortedMap<P, Q> map = new TreeMap<P, Q>();
     for (IMapping<P, Q> mp : mappings) {
@@ -66,7 +55,6 @@ public class SortedMapSequence<U, V> extends AbstractMapSequence<U, V> implement
     }
     return new SortedMapSequence<P, Q>(map);
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <P, Q> ISortedMapSequence<P, Q> fromIterable(Iterable<IMapping<P, Q>> iterable) {
     if (iterable instanceof ISortedMapSequence) {
@@ -78,7 +66,6 @@ public class SortedMapSequence<U, V> extends AbstractMapSequence<U, V> implement
     }
     return new SortedMapSequence<P, Q>(map);
   }
-
   public static <P, Q> ISortedMapSequence<P, Q> fromMap(SortedMap<P, Q> map) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (map == null) {
@@ -90,12 +77,10 @@ public class SortedMapSequence<U, V> extends AbstractMapSequence<U, V> implement
     }
     return new SortedMapSequence<P, Q>(map);
   }
-
   public static class SortedMapSequenceInitializer<P, Q> extends MapSequence.MapSequenceInitializer<P, Q> {
     private SortedMapSequenceInitializer(ISortedMapSequence<P, Q> mapSeq, P... keys) {
       super(mapSeq, keys);
     }
-
     @Override
     public ISortedMapSequence<P, Q> withValues(Q... values) {
       return (ISortedMapSequence<P, Q>) super.withValues(values);

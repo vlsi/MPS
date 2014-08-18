@@ -10,7 +10,7 @@ import org.junit.runners.Parameterized;
 import java.util.List;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -23,7 +23,6 @@ public class BaseCheckModulesTest {
   private static CheckingTestStatistic ourStatistic;
   private static Project ourContextProject;
   protected final SModule myModule;
-
   public BaseCheckModulesTest(SModule module) {
     this.myModule = module;
   }
@@ -42,7 +41,7 @@ public class BaseCheckModulesTest {
     MpsTestsSupport.initEnv(withIdea);
 
     ourStatistic = new CheckingTestStatistic();
-    ourContextProject = ContextProjextSupport.getContextProject();
+    ourContextProject = ContextProjectSupport.loadContextProject();
   }
 
   public static List<Object[]> createTestParametersFromModules(Iterable<? extends SModule> modules) {

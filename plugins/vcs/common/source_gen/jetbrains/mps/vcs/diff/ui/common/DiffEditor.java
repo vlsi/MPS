@@ -38,7 +38,6 @@ public class DiffEditor implements EditorMessageOwner {
   private JPanel myTopComponent;
   private InspectorEditorComponent myInspector;
   private Map<ModelChange, List<ChangeEditorMessage>> myChangeToMessages = MapSequence.fromMap(new HashMap<ModelChange, List<ChangeEditorMessage>>());
-
   public DiffEditor(SRepository repository, SNode node, String contentTitle, boolean isLeftEditor) {
     myMainEditorComponent = new DiffEditor.MainEditorComponent(repository, isLeftEditor);
     myInspector = new InspectorEditorComponent(repository, isLeftEditor);
@@ -64,39 +63,31 @@ public class DiffEditor implements EditorMessageOwner {
     myTopComponent.add(myMainEditorComponent.getExternalComponent(), BorderLayout.CENTER);
     myTopComponent.setPreferredSize(new Dimension());
   }
-
   public SNode getEditedNode() {
     return getMainEditor().getEditedNode();
   }
-
   public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
     SNode root = (rootId == null ? null : model.getNode(rootId));
     if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root);
     }
   }
-
   public void inspect(SNode node) {
     myInspector.editNode(node);
     myInspector.getHighlightManager().repaintAndRebuildEditorMessages();
   }
-
   public JComponent getTopComponent() {
     return myTopComponent;
   }
-
   public DiffEditor.MainEditorComponent getMainEditor() {
     return myMainEditorComponent;
   }
-
   public InspectorEditorComponent getInspector() {
     return myInspector;
   }
-
   public EditorComponent getEditorComponent(boolean inspector) {
     return (inspector ? myInspector : myMainEditorComponent);
   }
-
   public void highlightChange(SModel model, ModelChange change, ChangeEditorMessage.ConflictChecker conflictChecker) {
     final List<ChangeEditorMessage> messages = ChangeEditorMessageFactory.createMessages(model, change, this, conflictChecker);
     if (ListSequence.fromList(messages).isEmpty()) {
@@ -113,7 +104,6 @@ public class DiffEditor implements EditorMessageOwner {
       }
     });
   }
-
   public void repaintAndRebuildEditorMessages() {
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
@@ -121,11 +111,9 @@ public class DiffEditor implements EditorMessageOwner {
       }
     });
   }
-
   public List<ChangeEditorMessage> getMessagesForChange(ModelChange change) {
     return MapSequence.fromMap(myChangeToMessages).get(change);
   }
-
   public void unhighlightAllChanges() {
     Sequence.fromIterable(getEditorComponents()).visitAll(new IVisitor<EditorComponent>() {
       public void visit(EditorComponent ec) {
@@ -134,26 +122,21 @@ public class DiffEditor implements EditorMessageOwner {
     });
     MapSequence.fromMap(myChangeToMessages).clear();
   }
-
   public void dispose() {
     myMainEditorComponent.dispose();
     myMainEditorComponent = null;
     myInspector.dispose();
     myInspector = null;
   }
-
   private Iterable<EditorComponent> getEditorComponents() {
     return Sequence.fromArray(new EditorComponent[]{myMainEditorComponent, myInspector});
   }
-
   public class MainEditorComponent extends EditorComponent {
     private DiffFileEditor myDiffFileEditor;
-
     public MainEditorComponent(SRepository repository, boolean rightToLeft) {
       super(repository, false, rightToLeft);
       myDiffFileEditor = new DiffFileEditor(this);
     }
-
     @Override
     public EditorCell createRootCell(List<SModelEvent> events) {
       if (getEditedNode() == null || getEditedNode().getModel() == null) {
@@ -167,7 +150,6 @@ public class DiffEditor implements EditorMessageOwner {
         popCellContext();
       }
     }
-
     @Override
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(PlatformDataKeys.FILE_EDITOR.getName())) {

@@ -30,12 +30,10 @@ import com.intellij.openapi.vcs.changes.CommitContext;
 public class ModelCheckerCheckinHandler extends CheckinHandler {
   private Project myProject;
   private CheckinProjectPanel myPanel;
-
   public ModelCheckerCheckinHandler(Project project, CheckinProjectPanel panel) {
     myProject = project;
     myPanel = panel;
   }
-
   @Nullable
   @Override
   public RefreshableOnComponent getBeforeCheckinConfigurationPanel() {
@@ -47,23 +45,19 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
         panel.add(checkModelCheckBox);
         return panel;
       }
-
       @Override
       public void restoreState() {
         checkModelCheckBox.setSelected(ModelCheckerSettings.getInstance().isCheckBeforeCommit());
       }
-
       @Override
       public void saveState() {
         ModelCheckerSettings.getInstance().setCheckBeforeCommit(checkModelCheckBox.isSelected());
       }
-
       @Override
       public void refresh() {
       }
     };
   }
-
   @Override
   public CheckinHandler.ReturnResult beforeCheckin() {
     if (!(ModelCheckerSettings.getInstance().isCheckBeforeCommit())) {
@@ -72,7 +66,6 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
 
     return ModelCheckerTool.getInstance(myProject).checkModelsBeforeCommit(new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), getModelsByFiles(myPanel.getFiles()));
   }
-
   private static List<SModel> getModelsByFiles(Iterable<File> files) {
     final SModelFileTracker ft = SModelFileTracker.getInstance();
     return ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(files).select(new ISelector<File, SModel>() {
@@ -85,11 +78,9 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       }
     }));
   }
-
   public static class ModelCheckerCheckinHandlerFactory extends CheckinHandlerFactory {
     public ModelCheckerCheckinHandlerFactory() {
     }
-
     @NotNull
     @Override
     public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext commitContext) {

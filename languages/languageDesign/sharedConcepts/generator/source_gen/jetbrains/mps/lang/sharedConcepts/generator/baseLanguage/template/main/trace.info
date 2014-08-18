@@ -3,13 +3,13 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="9,0,17,0" name="jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main.QueriesGenerated" />
+      <unit at="9,0,16,0" name="jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main@generator)/1161623876737">
     <file name="QueriesGenerated.java">
-      <node id="1199881507907" at="13,104,14,145" concept="0" />
-      <scope id="1199881492478" at="13,104,14,145" />
+      <node id="1199881507907" at="12,104,13,145" concept="0" />
+      <scope id="1199881492478" at="12,104,13,145" />
     </file>
   </root>
 </debug-info>

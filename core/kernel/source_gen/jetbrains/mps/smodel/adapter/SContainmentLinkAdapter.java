@@ -8,27 +8,20 @@ import jetbrains.mps.smodel.language.ConceptRegistry;
 
 public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SContainmentLink {
 
-
   public SContainmentLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
-
-
 
   @Override
   public boolean isReference() {
     return false;
   }
 
-
-
   @Override
   public boolean isMultiple() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
     return d.isMultipleChild(role);
   }
-
-
 
   public boolean isUnordered() {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);

@@ -8,7 +8,6 @@ import jetbrains.mps.console.tool.ConsoleContext;
 public class INodeSetReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return null;
   }

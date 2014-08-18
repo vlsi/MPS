@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class InternalStaticMethodCall_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public InternalStaticMethodCall_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return InternalStaticMethodCall_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall";

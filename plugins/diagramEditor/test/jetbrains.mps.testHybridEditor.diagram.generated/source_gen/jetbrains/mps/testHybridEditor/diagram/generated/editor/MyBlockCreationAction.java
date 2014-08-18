@@ -25,7 +25,6 @@ public class MyBlockCreationAction implements PaletteToggleAction {
   private SNode myMetaBlock;
   private String myText;
   private Icon myIcon;
-
   public MyBlockCreationAction(DiagramCell diagramCell, final SNode block) {
     myDiagramCell = diagramCell;
     myMetaBlock = block;
@@ -36,7 +35,6 @@ public class MyBlockCreationAction implements PaletteToggleAction {
       }
     });
   }
-
   protected ViewTrait getTrait() {
     if (myTrait == null) {
       myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
@@ -63,16 +61,12 @@ public class MyBlockCreationAction implements PaletteToggleAction {
     return myTrait;
   }
 
-
-
   public void onClick() {
     myDiagramCell.setExternalTrait(getTrait());
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getText() {
     return myText;
   }

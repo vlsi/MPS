@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ContextUtil {
   public ContextUtil() {
   }
-
   public static SNode getContextForConstant(TemplateQueryContext genContext, SNode node, boolean topmost) {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(node, "exprUsage");
     if ((usage != null)) {
@@ -35,7 +34,6 @@ public class ContextUtil {
     }
     return null;
   }
-
   public static SNode getContextForMethod(TemplateQueryContext genContext, SNode node, boolean topmost) {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "methUsageExpr");
     if ((usage != null)) {
@@ -56,7 +54,6 @@ public class ContextUtil {
     }
     return null;
   }
-
   public static SNode getContextForInnerClass(TemplateQueryContext genContext, SNode node, boolean topmost) {
     SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "classUsageExpr");
     if ((usage != null)) {

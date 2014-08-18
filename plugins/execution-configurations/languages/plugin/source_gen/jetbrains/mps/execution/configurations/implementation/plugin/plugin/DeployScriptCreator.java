@@ -52,11 +52,9 @@ public class DeployScriptCreator {
 
     return deployProject;
   }
-
   private static SNode createPathFromFullPath(File baseDir, String fullPath) {
     return createPath(makeRelative(baseDir.getAbsolutePath(), fullPath));
   }
-
   private static SNode createPath(String relativePath) {
     String[] parts = relativePath.split("/");
     SNode path = _quotation_createNode_ppcj9p_a0b0c();
@@ -70,7 +68,6 @@ public class DeployScriptCreator {
 
     return path;
   }
-
   private static String makeRelative(String basePath, String fullPath) {
     if ((fullPath == null || fullPath.length() == 0)) {
       return "";
@@ -79,7 +76,6 @@ public class DeployScriptCreator {
     String normalizedBase = FileUtil.getAbsolutePath(basePath).replace("\\", "/");
     return FileUtil.getRelativePath(normalizedFull, normalizedBase, "/");
   }
-
   private static SNode _quotation_createNode_ppcj9p_a0a0a11a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -87,7 +83,6 @@ public class DeployScriptCreator {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "script", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ppcj9p_a0a0a41a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -95,7 +90,6 @@ public class DeployScriptCreator {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "target", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ppcj9p_a0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

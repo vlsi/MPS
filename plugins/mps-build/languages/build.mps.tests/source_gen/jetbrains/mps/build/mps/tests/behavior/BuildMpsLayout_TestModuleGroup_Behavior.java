@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildMpsLayout_TestModuleGroup_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "group", false), "modules", true)).contains(module);
   }
-
   public static Iterable<SNode> virtual_getModules_4560297596904469651(SNode thisNode) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "group", false), "modules", true);
   }

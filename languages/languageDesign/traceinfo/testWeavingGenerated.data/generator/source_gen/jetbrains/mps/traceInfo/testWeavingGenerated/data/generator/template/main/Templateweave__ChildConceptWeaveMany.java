@@ -22,11 +22,9 @@ import java.util.Collection;
 public class Templateweave__ChildConceptWeaveMany implements TemplateDeclarationWeavingAware {
   public Templateweave__ChildConceptWeaveMany() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533395");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -174,7 +172,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode1;
   }
-
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode14 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -218,8 +215,8 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     final SNode tnode20 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
                     try {
                       environment.nodeCopied(context, tnode20, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533444");
-                      tnode20.setReference("classifier", SReference.create("classifier", tnode20, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System")));
-                      tnode20.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode20, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System.out")));
+                      tnode20.setReference("classifier", SReference.create("classifier", tnode20, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System")));
+                      tnode20.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode20, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System.out")));
                     } finally {
                     }
                     if (tnode20 != null) {
@@ -231,7 +228,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     final SNode tnode21 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.nodeCopied(context, tnode21, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533445");
-                      tnode21.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode21, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PrintStream.println(java.lang.String):void")));
+                      tnode21.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode21, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PrintStream.println(java.lang.String):void")));
                       {
                         final SNode tnode22 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                         try {
@@ -322,7 +319,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode14;
   }
-
   protected SNode applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode27 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
@@ -366,8 +362,8 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     final SNode tnode33 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
                     try {
                       environment.nodeCopied(context, tnode33, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533477");
-                      tnode33.setReference("classifier", SReference.create("classifier", tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System")));
-                      tnode33.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System.out")));
+                      tnode33.setReference("classifier", SReference.create("classifier", tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System")));
+                      tnode33.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode33, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), PersistenceFacade.getInstance().createNodeId("~System.out")));
                     } finally {
                     }
                     if (tnode33 != null) {
@@ -379,7 +375,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     final SNode tnode34 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.nodeCopied(context, tnode34, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533478");
-                      tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PrintStream.println(java.lang.String):void")));
+                      tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, PersistenceFacade.getInstance().createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), PersistenceFacade.getInstance().createNodeId("~PrintStream.println(java.lang.String):void")));
                       {
                         final SNode tnode35 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                         try {
@@ -470,11 +466,9 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     }
     return tnode27;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context), applyPart2(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_es4xty_a0b0g;
@@ -487,7 +481,6 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
     environment.weaveNode(outputContextNode, "member", tnodepart2, weaveTf2, context.getInput());
     return TemplateUtil.asList(tnodepart0, tnodepart1, tnodepart2);
   }
-
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533416");
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0c0b0b0b0c0b0c0b0b0b0b0b0e0b0c = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533407");
   private static SNodePointer propertyMacro_es4xty_c0a0c0b0b0d = new SNodePointer("r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)", "6186432342008533457");

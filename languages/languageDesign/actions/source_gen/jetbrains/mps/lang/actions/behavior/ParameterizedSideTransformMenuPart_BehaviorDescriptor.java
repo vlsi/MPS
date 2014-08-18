@@ -6,7 +6,6 @@ package jetbrains.mps.lang.actions.behavior;
 public class ParameterizedSideTransformMenuPart_BehaviorDescriptor extends SideTransformMenuPart_BehaviorDescriptor {
   public ParameterizedSideTransformMenuPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart";

@@ -21,7 +21,6 @@ public class DocMethodParameterReference_Constraints extends BaseConstraintsDesc
   public DocMethodParameterReference_Constraints() {
     super("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,7 +29,6 @@ public class DocMethodParameterReference_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,7 +37,6 @@ public class DocMethodParameterReference_Constraints extends BaseConstraintsDesc
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "parameter", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ne7gs9_a0a1a0a0a1a0b0a1a1;
@@ -49,6 +46,5 @@ public class DocMethodParameterReference_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   private static SNodePointer breakingNode_ne7gs9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "6832197706140571516");
 }

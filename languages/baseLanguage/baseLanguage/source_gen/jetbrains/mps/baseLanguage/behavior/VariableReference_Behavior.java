@@ -16,15 +16,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class VariableReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "virtual_getTypeAnnotation_1233920952262", new Object[]{});
   }
-
   public static SNode virtual_getVariable_1023687332192481693(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "variableDeclaration", false);
   }
-
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       // todo 
@@ -39,7 +36,6 @@ public class VariableReference_Behavior {
 
     return BehaviorReflection.invokeSuper(Object.class, thisNode, "jetbrains.mps.baseLanguage.structure.Expression", "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{module});
   }
-
   public static boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       // todo 
@@ -49,7 +45,6 @@ public class VariableReference_Behavior {
 
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Expression", "virtual_isCompileTimeConstant_1238860258777", new Object[]{});
   }
-
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       // todo 
@@ -73,7 +68,6 @@ public class VariableReference_Behavior {
 
     return BehaviorReflection.invokeSuper(Object.class, thisNode, "jetbrains.mps.baseLanguage.structure.Expression", "virtual_eval_1213877519769", new Object[]{module});
   }
-
   public static boolean call_isParameterOfThisMethod_1240394425603(SNode thisNode) {
     // todo: method from ParameterReference. Remove. 
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
@@ -86,7 +80,6 @@ public class VariableReference_Behavior {
     }
     return false;
   }
-
   public static boolean call_isVariableDefinedInThisMethod_1225456272518(SNode thisNode) {
     // todo: method from LocalVariableReference. Remove 
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
@@ -103,7 +96,6 @@ public class VariableReference_Behavior {
     }
     return false;
   }
-
   public static SNode virtual_getDeclaration_3262277503800831941(SNode thisNode) {
     // todo: method from LocalVariableReference. Remove 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
@@ -112,11 +104,9 @@ public class VariableReference_Behavior {
       return null;
     }
   }
-
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
-
   private static SModule check_gidzrl_a0e0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

@@ -8,18 +8,15 @@ import org.jetbrains.annotations.Nullable;
 
 public class VirtualPackageFeature extends Feature {
   private String myVirtualPackage;
-
   public VirtualPackageFeature(@NotNull SModelReference modelReference, @NotNull String virtualPackage) {
     super(modelReference);
     myVirtualPackage = virtualPackage;
   }
-
   @NotNull
   @Override
   public String toString() {
     return "Virtual Package {" + getModelReference().toString() + "|" + myVirtualPackage + "}";
   }
-
   @Nullable
   @Override
   public Feature getParent() {

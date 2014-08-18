@@ -13,22 +13,18 @@ public enum JavaBreakpointKind implements IBreakpointKind<JavaBreakpoint> {
 
   private static final String LANGUAGE_PREFIX = "JAVA_";
   private final String myPresentation;
-
   JavaBreakpointKind(String presentation) {
     myPresentation = presentation;
   }
-
   @Override
   public boolean supportsDisable() {
     return true;
   }
-
   @Override
   public String getName() {
     return LANGUAGE_PREFIX + toString();
     //  presentations should be unique 
   }
-
   @Override
   @NonNls
   public String getPresentation() {

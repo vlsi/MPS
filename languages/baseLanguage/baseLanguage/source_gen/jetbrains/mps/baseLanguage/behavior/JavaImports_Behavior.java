@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class JavaImports_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_staticOnDemand_5230012391903366883(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -19,7 +18,6 @@ public class JavaImports_Behavior {
       }
     });
   }
-
   public static Iterable<SNode> call_staticSingleName_5230012391903395274(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

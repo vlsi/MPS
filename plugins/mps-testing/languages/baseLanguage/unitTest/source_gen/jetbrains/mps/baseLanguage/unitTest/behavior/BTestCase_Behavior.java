@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BTestCase_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     SNode node = thisNode;
     List<SNode> methods = new ArrayList<SNode>();
@@ -34,11 +33,9 @@ public class BTestCase_Behavior {
     }));
     return methods;
   }
-
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     for (SNode annotationInstance : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "annotation", true))) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#920eaa0e-ecca-46bc-bee7-4e5c59213dd6#jetbrains.mps(Testbench/jetbrains.mps@java_stub)", "~MPSLaunch"))) {
@@ -54,7 +51,6 @@ public class BTestCase_Behavior {
     }
     return false;
   }
-
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     if (!(SPropertyOperations.getBoolean(thisNode, "abstractClass"))) {
@@ -65,13 +61,11 @@ public class BTestCase_Behavior {
     }
     return result;
   }
-
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
     return members;
   }
-
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
   }

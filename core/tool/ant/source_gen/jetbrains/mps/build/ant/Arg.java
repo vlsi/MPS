@@ -6,14 +6,11 @@ import org.apache.tools.ant.ProjectComponent;
 
 public class Arg extends ProjectComponent {
   private String myValue;
-
   public Arg() {
   }
-
   public String getValue() {
     return myValue;
   }
-
   public void setValue(String value) {
     myValue = value;
   }

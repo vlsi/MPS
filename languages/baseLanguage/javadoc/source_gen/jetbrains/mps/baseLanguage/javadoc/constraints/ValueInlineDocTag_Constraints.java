@@ -13,12 +13,10 @@ public class ValueInlineDocTag_Constraints extends BaseConstraintsDescriptor {
   public ValueInlineDocTag_Constraints() {
     super("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -29,11 +27,9 @@ public class ValueInlineDocTag_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     //  TODO check for constant 
     return true;
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "3941416111380671266");
 }

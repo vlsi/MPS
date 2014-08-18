@@ -16,7 +16,6 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Goto_ActionGroup";
   public static final String LABEL_ID_gotoVCS = ID + "gotoVCS";
   public static final String LABEL_ID_gotoConceptAspects = ID + "gotoConceptAspects";
-
   public Goto_ActionGroup() {
     super("Go To", ID);
     this.setIsInternal(false);

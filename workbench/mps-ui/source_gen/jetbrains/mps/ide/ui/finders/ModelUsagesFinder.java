@@ -25,7 +25,6 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 public class ModelUsagesFinder implements IFinder {
   public ModelUsagesFinder() {
   }
-
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
@@ -71,7 +70,6 @@ public class ModelUsagesFinder implements IFinder {
     }
     return searchResults;
   }
-
   private static <T> T as_s8v3jk_a0a0a0f0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -22,12 +22,10 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
   public ConceptTextGenDeclaration_Constraints() {
     super("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -38,7 +36,6 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -47,7 +44,6 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -56,10 +52,8 @@ public class ConceptTextGenDeclaration_Constraints extends BaseConstraintsDescri
     });
     return properties;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.TEXT_GEN.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1233758188295");
 }

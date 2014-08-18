@@ -2,13 +2,13 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,26,0" name="testMoveElements.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,24,0" name="testMoveElements.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ManyStatements_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
     </file>
     <file name="DummyBlock_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

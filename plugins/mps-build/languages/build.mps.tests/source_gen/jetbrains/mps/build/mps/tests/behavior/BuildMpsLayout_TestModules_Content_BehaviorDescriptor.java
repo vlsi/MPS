@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class BuildMpsLayout_TestModules_Content_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildMpsLayout_TestModules_Content_BehaviorDescriptor() {
   }
-
   public boolean virtual_contains_4560297596904469640(SNode thisNode, SNode module) {
     return BuildMpsLayout_TestModules_Content_Behavior.virtual_contains_4560297596904469640(thisNode, module);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules_Content";
   }
-
   public abstract Iterable<SNode> virtual_getModules_4560297596904469651(SNode thisNode);
 }

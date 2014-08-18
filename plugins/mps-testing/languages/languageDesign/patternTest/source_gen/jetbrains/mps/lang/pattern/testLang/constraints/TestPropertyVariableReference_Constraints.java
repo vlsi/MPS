@@ -20,7 +20,6 @@ public class TestPropertyVariableReference_Constraints extends BaseConstraintsDe
   public TestPropertyVariableReference_Constraints() {
     super("jetbrains.mps.lang.pattern.testLang.structure.TestPropertyVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -29,7 +28,6 @@ public class TestPropertyVariableReference_Constraints extends BaseConstraintsDe
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -38,7 +36,6 @@ public class TestPropertyVariableReference_Constraints extends BaseConstraintsDe
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SNodeOperations.getDescendants(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.testLang.structure.PatternTest", false, false), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", false, new String[]{});
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_c2snrj_a0a1a0a0a1a0b0a1a1;
@@ -48,6 +45,5 @@ public class TestPropertyVariableReference_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-
   private static SNodePointer breakingNode_c2snrj_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)", "1563914226484898757");
 }

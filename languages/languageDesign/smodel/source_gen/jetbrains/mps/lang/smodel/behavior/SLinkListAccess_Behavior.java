@@ -10,31 +10,24 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class SLinkListAccess_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "link", false), "role");
   }
-
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return SPropertyOperations.hasValue(SLinkOperations.getTarget(thisNode, "link", false), "metaClass", "aggregation", "reference");
   }
-
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
     return false;
   }
-
   public static SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "link", false), "target", false);
   }
-
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }

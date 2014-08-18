@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:8b9c3824-e139-4993-893a-476446730917(jetbrains.mps.ide.java.testMaterial.testModel3.sub)/8083368042256418379">
+    <nodeInfo nodeId="8083368042256418385" fileName="MyClass.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="i" />
+    <unitInfo nodeId="8083368042256418379" fileName="MyClass.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.ide.java.testMaterial.testModel3.sub.MyClass" />
+  </root>
+</debugInfo>
+

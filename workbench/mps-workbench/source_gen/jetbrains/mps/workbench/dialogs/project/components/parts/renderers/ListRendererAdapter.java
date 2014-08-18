@@ -10,11 +10,9 @@ import com.intellij.ui.components.JBList;
 
 public class ListRendererAdapter implements TableCellRenderer {
   private ListCellRenderer myCellRenderer;
-
   public ListRendererAdapter(ListCellRenderer cellRenderer) {
     myCellRenderer = cellRenderer;
   }
-
   @Override
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     return myCellRenderer.getListCellRendererComponent(new JBList(), value, row, isSelected, hasFocus);

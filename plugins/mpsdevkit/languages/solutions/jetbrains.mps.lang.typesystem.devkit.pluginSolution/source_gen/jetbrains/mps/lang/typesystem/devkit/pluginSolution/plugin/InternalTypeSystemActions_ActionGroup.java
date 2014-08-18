@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class InternalTypeSystemActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(InternalTypeSystemActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.InternalTypeSystemActions_ActionGroup";
-
   public InternalTypeSystemActions_ActionGroup() {
     super("InternalTypeSystemActions", ID);
     this.setIsInternal(false);

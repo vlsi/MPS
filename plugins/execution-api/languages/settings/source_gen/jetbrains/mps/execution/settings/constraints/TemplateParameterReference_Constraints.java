@@ -25,12 +25,10 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
   public TemplateParameterReference_Constraints() {
     super("jetbrains.mps.execution.settings.structure.TemplateParameterReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -41,7 +39,6 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -50,7 +47,6 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -63,7 +59,6 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
             }
             return SLinkOperations.getTargets(template, "templateParameter", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_hn11y1_a0a1a0a0a1a0b0a1a3;
@@ -73,11 +68,9 @@ public class TemplateParameterReference_Constraints extends BaseConstraintsDescr
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplate");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067068");
   private static SNodePointer breakingNode_hn11y1_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067045");
 }

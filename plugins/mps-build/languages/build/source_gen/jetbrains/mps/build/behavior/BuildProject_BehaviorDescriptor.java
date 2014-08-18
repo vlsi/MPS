@@ -12,19 +12,15 @@ import jetbrains.mps.scope.Scope;
 public class BuildProject_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public BuildProject_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, final SNode child) {
     return BuildProject_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return BuildProject_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildProject";

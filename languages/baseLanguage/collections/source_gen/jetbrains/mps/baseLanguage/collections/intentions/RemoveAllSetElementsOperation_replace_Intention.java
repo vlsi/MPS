@@ -20,70 +20,54 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class RemoveAllSetElementsOperation_replace_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public RemoveAllSetElementsOperation_replace_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation";
   }
-
   public String getPresentation() {
     return "RemoveAllSetElementsOperation_replace";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.RemoveAllSetElementsOperation_replace_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "4863683935051516296");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveAllSetElementsOperation_replace_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Deprecated Operation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_7558vk_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "argument", true))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return RemoveAllSetElementsOperation_replace_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_7558vk_a0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

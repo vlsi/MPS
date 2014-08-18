@@ -142,8 +142,7 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
 
   public static void assertLegalRead() {
     if (!instance().canRead()) {
-      LOG.error("You can read model only inside read actions", new IllegalModelAccessError("You can read model only inside read actions"));
-      // TODO throw
+      throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
 

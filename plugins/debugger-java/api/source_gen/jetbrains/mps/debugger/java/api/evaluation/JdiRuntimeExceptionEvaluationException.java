@@ -9,15 +9,12 @@ package jetbrains.mps.debugger.java.api.evaluation;
 public class JdiRuntimeExceptionEvaluationException extends EvaluationException {
   public JdiRuntimeExceptionEvaluationException() {
   }
-
   public JdiRuntimeExceptionEvaluationException(String message) {
     super(message);
   }
-
   public JdiRuntimeExceptionEvaluationException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public JdiRuntimeExceptionEvaluationException(Throwable cause) {
     super(cause);
   }

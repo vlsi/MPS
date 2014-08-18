@@ -30,11 +30,9 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_p6qpij_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_p6qpij_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_p6qpij_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p6qpij_a");
@@ -48,7 +46,6 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_p6qpij_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("declaration");
@@ -70,20 +67,16 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_p6qpij_a0a extends InlineCellProvider {
     public _Inline_p6qpij_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_p6qpij_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_p6qpij_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -103,7 +96,6 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_p6qpij_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p6qpij_b0");
@@ -114,27 +106,22 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_p6qpij_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_p6qpij_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "declaration", false) != null);
   }
-
   private EditorCell createConstant_p6qpij_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_p6qpij_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_p6qpij_b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SLinkOperations.getTarget(node, "declaration", false), "type", true), "virtual_getPresentation_1213877396640", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -144,7 +131,6 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_p6qpij_b1a");
     return editorCell;
   }
-
   private EditorCell createCollection_p6qpij_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_p6qpij_c0");
@@ -156,11 +142,9 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_p6qpij_c2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_p6qpij_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isOptional");
   }
-
   private EditorCell createConstant_p6qpij_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_p6qpij_a2a");
@@ -170,14 +154,12 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p6qpij_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional");
     editorCell.setCellId("Constant_p6qpij_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_p6qpij_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_p6qpij_c2a");
@@ -187,7 +169,6 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_p6qpij_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_p6qpij_a_0");
@@ -195,7 +176,6 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_p6qpij_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_p6qpij_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_p6qpij_a0");
@@ -206,14 +186,12 @@ public class GeneratorParameterReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_p6qpij_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_p6qpij_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "optional:");
     editorCell.setCellId("Constant_p6qpij_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_p6qpij_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isOptional");

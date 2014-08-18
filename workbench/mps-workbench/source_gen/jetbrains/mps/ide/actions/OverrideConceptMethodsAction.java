@@ -24,14 +24,12 @@ public class OverrideConceptMethodsAction {
   private SNode mySelectedNode;
   private EditorContext myEditorContext;
   private boolean myIsOverride;
-
   public OverrideConceptMethodsAction(Project project, SNode selectedNode, EditorContext editorContext, boolean isOverride) {
     myProject = project;
     mySelectedNode = selectedNode;
     myEditorContext = editorContext;
     myIsOverride = isOverride;
   }
-
   public void run() {
     final Wrappers._T<SNode> contextClass = new Wrappers._T<SNode>();
     final Wrappers._T<SNode> contextMethod = new Wrappers._T<SNode>();

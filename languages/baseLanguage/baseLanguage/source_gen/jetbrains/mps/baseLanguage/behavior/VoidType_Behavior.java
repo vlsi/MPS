@@ -10,15 +10,12 @@ import jetbrains.mps.smodel.SReference;
 public class VoidType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return _quotation_createNode_s71av5_a0a0();
   }
-
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return "V";
   }
-
   private static SNode _quotation_createNode_s71av5_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

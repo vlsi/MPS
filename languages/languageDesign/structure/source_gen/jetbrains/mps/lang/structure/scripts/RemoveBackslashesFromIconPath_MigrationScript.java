@@ -15,24 +15,19 @@ public class RemoveBackslashesFromIconPath_MigrationScript extends BaseMigration
       public String getName() {
         return "Remove backslashes from macros in iconPath";
       }
-
       public String getAdditionalInfo() {
         return "Remove backslashes from macros in iconPath";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         String iconPath = SPropertyOperations.getString(node, "iconPath");
         return iconPath != null && iconPath.startsWith("${") && iconPath.indexOf('\\') != -1;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SPropertyOperations.set(node, "iconPath", SPropertyOperations.getString(node, "iconPath").replace('\\', '/'));
       }
-
       public boolean isShowAsIntention() {
         return true;
       }

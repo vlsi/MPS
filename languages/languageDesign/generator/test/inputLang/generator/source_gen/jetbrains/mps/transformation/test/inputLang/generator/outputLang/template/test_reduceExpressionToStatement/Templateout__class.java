@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class Templateout__class implements TemplateDeclaration {
   public Templateout__class() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_lohefm_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -88,7 +86,6 @@ public class Templateout__class implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_lohefm_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150125542");
   private static SNodePointer copySrcMacro_lohefm_b0a0c0e0b0d0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f8(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceExpressionToStatement@generator)", "1209150187920");
 }

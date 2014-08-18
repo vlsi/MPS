@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class DummyBlock_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public DummyBlock_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testMoveElements.structure.DummyBlock";

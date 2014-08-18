@@ -21,19 +21,15 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public ObjectArraySupertypes_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode objectArrayType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // see JLS 3.0 
     return Arrays.asList(_quotation_createNode_gqfgxi_a0b0c(), _quotation_createNode_gqfgxi_b0b0c(), _quotation_createNode_gqfgxi_c0b0c());
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new ObjectArraySupertypes_SubtypingRule.Pattern_gqfgxi_a0a0a0a4();
@@ -42,15 +38,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public static class Pattern_gqfgxi_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_gqfgxi_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_mvbroc_a0a = nodeToMatch;
@@ -81,22 +74,17 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_gqfgxi_a0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -104,7 +92,6 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_gqfgxi_b0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -112,7 +99,6 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), facade.createNodeId("~Serializable")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_gqfgxi_c0b0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -120,6 +106,5 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Cloneable")));
     return quotedNode_1;
   }
-
   private static SNodePointer SNODE_POINTER_gqfgxi_a0a0a0a0b0b0b0b0b0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

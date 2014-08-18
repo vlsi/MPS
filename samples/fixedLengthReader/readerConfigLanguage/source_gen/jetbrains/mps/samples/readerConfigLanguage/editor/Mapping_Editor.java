@@ -31,7 +31,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mcrsin_a(editorContext, node);
   }
-
   private EditorCell createCollection_mcrsin_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_mcrsin_a");
@@ -40,7 +39,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_mcrsin_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_mcrsin_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mcrsin_a0");
@@ -52,14 +50,12 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_mcrsin_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_mcrsin_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping");
     editorCell.setCellId("Constant_mcrsin_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_mcrsin_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("code");
@@ -77,7 +73,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_mcrsin_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("targetClass");
@@ -95,7 +90,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_mcrsin_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mcrsin_b0");
@@ -106,7 +100,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_mcrsin_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_mcrsin_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_mcrsin_a1a");
@@ -116,7 +109,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_mcrsin_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new Mapping_Editor.fieldListHandler_mcrsin_b1a(node, "field", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -125,34 +117,28 @@ public class Mapping_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class fieldListHandler_mcrsin_b1a extends RefNodeListHandler {
     public fieldListHandler_mcrsin_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_mcrsin_a1b0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -165,7 +151,6 @@ public class Mapping_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_mcrsin_a1b0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "press <Ctrl>-<Enter> to add field");
       editorCell.setCellId("Constant_mcrsin_a1b0");

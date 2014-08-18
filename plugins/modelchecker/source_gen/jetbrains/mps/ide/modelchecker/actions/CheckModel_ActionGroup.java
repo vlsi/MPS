@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class CheckModel_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(CheckModel_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.modelchecker.actions.CheckModel_ActionGroup";
-
   public CheckModel_ActionGroup() {
     super("CheckModel", ID);
     this.setIsInternal(false);

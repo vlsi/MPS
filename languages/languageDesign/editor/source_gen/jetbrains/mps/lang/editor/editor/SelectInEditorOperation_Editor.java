@@ -22,7 +22,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gmlwwp_a(editorContext, node);
   }
-
   private EditorCell createCollection_gmlwwp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_a");
@@ -37,7 +36,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gmlwwp_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "select");
     editorCell.setCellId("Constant_gmlwwp_a0");
@@ -48,7 +46,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_gmlwwp_b0");
@@ -60,7 +57,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in:");
     editorCell.setCellId("Constant_gmlwwp_c0");
@@ -71,7 +67,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gmlwwp_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("editorContext");
@@ -95,7 +90,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gmlwwp_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_e0");
@@ -110,11 +104,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_gmlwwp_a4a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "cellSelector", true) != null);
   }
-
   private EditorCell createConstant_gmlwwp_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a4a");
@@ -127,7 +119,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell:");
     editorCell.setCellId("Constant_gmlwwp_b4a");
@@ -138,7 +129,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gmlwwp_c4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("cellSelector");
@@ -159,7 +149,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gmlwwp_d4a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_d4a");
@@ -174,11 +163,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_gmlwwp_a3e0(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "selectionStart", true) != null);
   }
-
   private EditorCell createConstant_gmlwwp_a3e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a3e0");
@@ -191,7 +178,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_b3e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selectionStart:");
     editorCell.setCellId("Constant_gmlwwp_b3e0");
@@ -202,7 +188,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gmlwwp_c3e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("selectionStart");
@@ -226,7 +211,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gmlwwp_d3e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gmlwwp_d3e0");
@@ -238,11 +222,9 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gmlwwp_c3d4a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_gmlwwp_a3d4a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "selectionEnd", true) != null;
   }
-
   private EditorCell createConstant_gmlwwp_a3d4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_gmlwwp_a3d4a");
@@ -255,7 +237,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_b3d4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selectionEnd:");
     editorCell.setCellId("Constant_gmlwwp_b3d4a");
@@ -266,7 +247,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gmlwwp_c3d4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("selectionEnd");
@@ -289,7 +269,6 @@ public class SelectInEditorOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gmlwwp_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("closingBracket");

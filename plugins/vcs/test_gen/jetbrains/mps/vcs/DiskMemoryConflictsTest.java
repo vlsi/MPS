@@ -56,10 +56,8 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private Solution myModule;
   private SNode myNodeBackup;
   private EditableSModel myModel;
-
   public DiskMemoryConflictsTest() {
   }
-
   @Test
   public void testDiskMemoryConflicts() {
     final DiskMemoryConflictsTest.Action[] startedAction = new DiskMemoryConflictsTest.Action[1];
@@ -103,7 +101,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       Assert.fail("Last started check action=" + startedAction[0] + ", disk modification=" + startedDiskModification[0] + ", version=" + startedVersion[0]);
     }
   }
-
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
@@ -128,15 +125,12 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     DiskMemoryConflictsTest.waitEDT();
     return result[0];
   }
-
   private void setFieldNameInModel(String value) {
     processFieldNameInModel(value);
   }
-
   private String getFieldNameFromModel() {
     return processFieldNameInModel(null);
   }
-
   private String processFieldNameInFile(final String nameToWrite) {
     //  File stuff 
     if (!(MODEL_FILE.exists())) {
@@ -183,19 +177,15 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     return null;
   }
-
   private String getFieldNameFromFile() {
     return processFieldNameInFile(null);
   }
-
   private void setFieldNameInFile(String name) {
     processFieldNameInFile(name);
   }
-
   private void checkInitialState() {
     checkSynchronizedState(FIELD_DEFAULT_NAME);
   }
-
   private void checkSynchronizedState(@Nullable String fieldName) {
     Assert.assertEquals(fieldName, getFieldNameFromModel());
     Assert.assertEquals(fieldName, getFieldNameFromFile());
@@ -205,7 +195,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       Assert.assertFalse(myModel.isChanged());
     }
   }
-
   private void provokeAndCheckConflict(DiskMemoryConflictsTest.Action action, final DiskMemoryConflictsTest.DiskModification diskModification, final DiskMemoryConflictsTest.VersionToChoose versionToChoose) {
     setFieldNameInModel(FIELD_NAME_IN_MODEL);
     if (DiskMemoryConflictsTest.DiskModification.MODIFY == diskModification) {
@@ -269,7 +258,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     checkSynchronizedState(expectedFieldName);
   }
-
   private void refreshVfs() {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE);
     if (vf == null || !(vf.exists())) {
@@ -280,7 +268,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     rs.addFile(vf);
     rs.launch();
   }
-
   private void restoreAndCheckOriginalState() {
     if (MODEL_FILE.exists()) {
       setFieldNameInFile(FIELD_DEFAULT_NAME);
@@ -305,7 +292,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     checkInitialState();
   }
-
   private static File getModelFile() {
     File modelFile = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
     try {
@@ -315,7 +301,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     return modelFile;
   }
-
   private static void setLastModified(long timeStamp) {
     //  this is a workaround of JRE bug #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
@@ -332,7 +317,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
-
   private static void delete() {
     //  this is a workaround of JRE bug similar to #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
@@ -349,7 +333,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
-
   private static void waitEDT() {
     ModelAccess.instance().flushEventQueue();
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
@@ -358,7 +341,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       }
     });
   }
-
   private static   enum Action {
     SAVE(),
     RELOAD();
@@ -366,7 +348,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     Action() {
     }
   }
-
   private static   enum VersionToChoose {
     MEMORY(),
     DISK();
@@ -374,7 +355,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     VersionToChoose() {
     }
   }
-
   private static   enum DiskModification {
     MODIFY(),
     DELETE();

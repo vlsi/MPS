@@ -9,27 +9,21 @@ import jetbrains.mps.build.util.UnpackHelper;
 public class BuildLayout_Folder_BehaviorDescriptor extends BuildLayout_NamedContainer_BehaviorDescriptor implements BuildLayout_PureNode_BehaviorDescriptor {
   public BuildLayout_Folder_BehaviorDescriptor() {
   }
-
   public boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     return BuildLayout_Folder_Behavior.virtual_exports_6547494638219603457(thisNode, object);
   }
-
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildLayout_Folder_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
-
   public boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return BuildLayout_Folder_Behavior.virtual_isFolder_1368030936106753980(thisNode);
   }
-
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return BuildLayout_Folder_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildLayout_Folder_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_Folder";

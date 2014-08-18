@@ -10,34 +10,26 @@ public class Person {
   private String name;
   private String lastName;
   private Address address;
-
   public Person() {
   }
-
   public String getName() {
     return this.name;
   }
-
   public void setName(String newName) {
     this.name = newName;
   }
-
   public String getLastName() {
     return this.lastName;
   }
-
   public void setLastName(String newLastName) {
     this.lastName = newLastName;
   }
-
   public Address getAddress() {
     return this.address;
   }
-
   public void setAddress(Address newAddress) {
     this.address = newAddress;
   }
-
   public Element toXml() {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {

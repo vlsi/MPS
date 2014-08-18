@@ -13,7 +13,6 @@ import javax.swing.JPopupMenu;
 
 public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHighlighterMessage {
   private Condition<EditorCell> myReturnTypeCellCondition;
-
   public AbstractOverrideEditorMessage(SNode node, EditorMessageOwner owner, String tooltip) {
     super(node, owner, tooltip);
     final SNode returnTypeNode = SLinkOperations.getTarget(node, "returnType", true);
@@ -24,13 +23,11 @@ public abstract class AbstractOverrideEditorMessage extends AbstractLeftEditorHi
       }
     };
   }
-
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     EditorCell returnTypeCell = CellFinderUtil.findChildByCondition(bigCell, myReturnTypeCellCondition, true);
     return (returnTypeCell != null ? returnTypeCell : bigCell);
   }
-
   @Override
   public JPopupMenu getPopupMenu() {
     return null;

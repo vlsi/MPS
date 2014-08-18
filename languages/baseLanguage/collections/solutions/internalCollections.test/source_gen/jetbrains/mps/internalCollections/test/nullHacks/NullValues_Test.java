@@ -31,7 +31,6 @@ public class NullValues_Test extends Util_Test {
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -77,7 +76,6 @@ __switch__:
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -116,7 +114,6 @@ __switch__:
       }));
     }
   }
-
   public void test_nullElements() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<Integer> list5 = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
@@ -152,7 +149,6 @@ __switch__:
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -189,7 +185,6 @@ __switch__:
       })).count());
     }
   }
-
   public void test_nullsViaBackdoor() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       List<String> listWithNulls = Arrays.asList("foo", null, "bar");
@@ -213,7 +208,6 @@ __switch__:
       this.assertIterableEquals(Arrays.asList("foo", null, "bar"), dlist);
     }
   }
-
   private void assertEmptyList(List<Integer> emptyList) {
     this.assertIterableEquals(this.expectEmpty(), emptyList);
     ListSequence.fromList(emptyList).removeElement(null);

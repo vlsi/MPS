@@ -8,39 +8,30 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SLinkAccess_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor implements ILinkAccess_BehaviorDescriptor {
   public SLinkAccess_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return SLinkAccess_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
   }
-
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return SLinkAccess_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
-
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return SLinkAccess_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }
-
   public SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return SLinkAccess_Behavior.virtual_getTargetConcept_4024382256428848859(thisNode);
   }
-
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SLinkAccess_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
   }
-
   public boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return SLinkAccess_Behavior.virtual_isAggregation_4024382256428848854(thisNode);
   }
-
   public boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
     return SLinkAccess_Behavior.virtual_isSingularCardinality_4024382256428848847(thisNode);
   }
-
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return SLinkAccess_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SLinkAccess";

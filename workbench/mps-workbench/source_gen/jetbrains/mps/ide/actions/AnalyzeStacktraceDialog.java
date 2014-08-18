@@ -22,7 +22,6 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
   private JComponent myComponent;
   private JTextArea myText;
   private Project myProject;
-
   public AnalyzeStacktraceDialog(Project project, final IOperationContext context) {
     super(project);
     setTitle("Analyze Stacktrace");
@@ -33,26 +32,22 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return AnalyzeStacktraceDialog.class.getCanonicalName();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myText;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return this.myComponent;
   }
-
   public JComponent createPanel() {
     JPanel panel = new JPanel(new BorderLayout());
 
@@ -72,7 +67,6 @@ public class AnalyzeStacktraceDialog extends DialogWrapper {
     panel.add(scrollPane, BorderLayout.CENTER);
     return panel;
   }
-
   @Override
   protected void doOKAction() {
     AnalyzeStacktraceUtil.addConsole(myProject, null, "<Stacktrace>", myText.getText());

@@ -8,7 +8,6 @@ public class DiagramDecoratorView extends GroupView {
   public final GroupView itemsDecotatorView = new GroupView();
   public final GroupView connectorsDecotatorView = new GroupView();
 
-
   public DiagramDecoratorView() {
     children().add(itemsDecotatorView);
     children().add(connectorsDecotatorView);

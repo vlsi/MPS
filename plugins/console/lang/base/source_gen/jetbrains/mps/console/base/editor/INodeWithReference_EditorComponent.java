@@ -30,11 +30,9 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_clzyhh_a(editorContext, node);
   }
-
   private EditorCell createAlternation_clzyhh_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = INodeWithReference_EditorComponent.renderingCondition_clzyhh_a0(node, editorContext);
@@ -46,11 +44,9 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_clzyhh_a0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canExecute_3282455643657932881", new Object[]{});
   }
-
   private EditorCell createRefCell_clzyhh_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("target");
@@ -72,20 +68,16 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     } else
     return editorCell;
   }
-
   public static class _Inline_clzyhh_a0a extends InlineCellProvider {
     public _Inline_clzyhh_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_clzyhh_a0a0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_clzyhh_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_clzyhh_a0a0");
@@ -98,16 +90,13 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
       return editorCell;
     }
   }
-
   private EditorCell createReadOnlyModelAccessor_clzyhh_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getTextWhenBroken_328850564593858078", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

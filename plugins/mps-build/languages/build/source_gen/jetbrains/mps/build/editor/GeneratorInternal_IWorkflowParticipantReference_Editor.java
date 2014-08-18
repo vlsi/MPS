@@ -21,7 +21,6 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n7w759_a(editorContext, node);
   }
-
   private EditorCell createCollection_n7w759_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n7w759_a");
@@ -29,7 +28,6 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
     editorCell.addEditorCell(this.createRefCell_n7w759_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_n7w759_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("participant");
@@ -51,20 +49,16 @@ public class GeneratorInternal_IWorkflowParticipantReference_Editor extends Defa
     } else
     return editorCell;
   }
-
   public static class _Inline_n7w759_a0a extends InlineCellProvider {
     public _Inline_n7w759_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_n7w759_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_n7w759_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("alias");

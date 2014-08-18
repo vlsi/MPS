@@ -12,8 +12,6 @@ public abstract class ConnectorCell extends AbstractJetpadCell {
   public ConnectorCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
-
   public abstract Mapper<SNode, PolyLineConnection> createMapper();
-
   public abstract Mapper<SNode, ConnectorDecoratorView> createDecorationMapper();
 }

@@ -8,40 +8,32 @@ import java.util.Comparator;
 
 public class NullSortedMapSequence<U, V> extends NullMapSequence<U, V> implements ISortedMapSequence<U, V>, SortedMap<U, V> {
   public static final NullSortedMapSequence<Object, Object> INSTANCE = new NullSortedMapSequence<Object, Object>();
-
   protected NullSortedMapSequence() {
   }
-
   @Override
   public Comparator<? super U> comparator() {
     return null;
   }
-
   @Override
   public U firstKey() {
     return null;
   }
-
   @Override
   public ISortedMapSequence<U, V> headMap(U toKey) {
     return this;
   }
-
   @Override
   public U lastKey() {
     return null;
   }
-
   @Override
   public ISortedMapSequence<U, V> subMap(U fromKey, U toKey) {
     return this;
   }
-
   @Override
   public ISortedMapSequence<U, V> tailMap(U fromKey) {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <P, Q> NullSortedMapSequence<P, Q> instance() {
     return (NullSortedMapSequence<P, Q>) INSTANCE;

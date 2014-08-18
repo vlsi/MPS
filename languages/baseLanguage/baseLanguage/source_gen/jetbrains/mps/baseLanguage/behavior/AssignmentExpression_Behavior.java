@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class AssignmentExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
@@ -29,15 +28,12 @@ public class AssignmentExpression_Behavior {
     }
     return type;
   }
-
   public static boolean virtual_isReadAsignment_1215696236033(SNode thisNode) {
     return false;
   }
-
   public static boolean call_canConvertToLocalVariableDeclaration_1221573334330(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
-
   public static SNode call_convertToLocalVariableDeclaration_1221573391693(SNode thisNode, String varName) {
     SNode exprStatement = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     SNode valueType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "rValue", true));
@@ -55,7 +51,6 @@ public class AssignmentExpression_Behavior {
     SNodeOperations.replaceWithAnother(exprStatement, varDeclStmnt);
     return varDeclStmnt;
   }
-
   private static SNode _quotation_createNode_4cbll2_a0a0c0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

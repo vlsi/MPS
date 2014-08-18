@@ -30,10 +30,8 @@ import com.intellij.execution.configurations.RunConfiguration;
 
 public class MPSDebugRunner extends GenericProgramRunner {
   private static final Logger LOG = LogManager.getLogger(MPSDebugRunner.class);
-
   public MPSDebugRunner() {
   }
-
   @Override
   public boolean canRun(@NotNull final String executorId, @NotNull final RunProfile profile) {
     try {
@@ -43,7 +41,6 @@ public class MPSDebugRunner extends GenericProgramRunner {
       return false;
     }
   }
-
   private boolean isOldRunConfiguration(RunProfile profile) {
     try {
       Method method = profile.getClass().getMethod("isDebuggable()");
@@ -58,23 +55,19 @@ public class MPSDebugRunner extends GenericProgramRunner {
     }
     return false;
   }
-
   private boolean isNewRunConfiguration(RunProfile profile) {
     return (profile instanceof BaseMpsRunConfiguration) && (((BaseMpsRunConfiguration) profile).canExecute(DefaultDebugExecutor.EXECUTOR_ID));
   }
-
   @NotNull
   @Override
   public String getRunnerId() {
     return "Default Debug Runner";
   }
-
   @Override
   protected RunContentDescriptor doExecute(final Project project, final RunProfileState state, final RunContentDescriptor contentToReuse, final ExecutionEnvironment env) throws ExecutionException {
     //  FileDocumentManager.getInstance().saveAllDocuments(); 
     return createContentDescriptor(project, env.getExecutor(), state, contentToReuse, env);
   }
-
   @Nullable
   protected RunContentDescriptor createContentDescriptor(Project project, Executor executor, RunProfileState state, RunContentDescriptor contentToReuse, ExecutionEnvironment env) throws ExecutionException {
     IDebugger debugger;
@@ -95,7 +88,6 @@ public class MPSDebugRunner extends GenericProgramRunner {
     DebuggerToolContentBuilder contentBuilder = new DebuggerToolContentBuilder(project, this, executor, executionResult, env);
     return contentBuilder.showRunContent(contentToReuse);
   }
-
   @Override
   public SettingsEditor getSettingsEditor(final Executor executor, RunConfiguration configuration) {
     return null;

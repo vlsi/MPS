@@ -23,7 +23,6 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nmsmyd_a(editorContext, node);
   }
-
   private EditorCell createCollection_nmsmyd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nmsmyd_a");
@@ -33,7 +32,6 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nmsmyd_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nmsmyd_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "horizontal-align");
     editorCell.setCellId("Constant_nmsmyd_a0");
@@ -44,23 +42,19 @@ public class HorizontalAlign_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HorizontalAlign_Editor.ReplaceWith_StyleClassItem_cellMenu_nmsmyd_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_nmsmyd_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_nmsmyd_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_nmsmyd_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nmsmyd_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_nmsmyd_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("align");

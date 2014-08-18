@@ -24,11 +24,9 @@ public class EditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8q27zs_a(editorContext, node);
   }
-
   private EditorCell createCollection_8q27zs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8q27zs_a");
@@ -39,12 +37,10 @@ public class EditorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_8q27zs_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_8q27zs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_8q27zs_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_8q27zs_b0");
@@ -55,7 +51,6 @@ public class EditorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_8q27zs_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_8q27zs_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editor:");
     editorCell.setCellId("Constant_8q27zs_a1a");
@@ -65,7 +60,6 @@ public class EditorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_8q27zs_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8q27zs_b1a");
@@ -76,12 +70,10 @@ public class EditorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createRefNode_8q27zs_b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_8q27zs_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_8q27zs_b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("editor");

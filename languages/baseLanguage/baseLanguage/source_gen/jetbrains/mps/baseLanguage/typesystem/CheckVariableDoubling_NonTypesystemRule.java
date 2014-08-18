@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckVariableDoubling_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode localVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Scope variablesScope = Scope.getScope(Scope.parent(localVariableDeclaration), localVariableDeclaration, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     Iterable<SNode> variablesInScope;
@@ -64,22 +63,18 @@ public class CheckVariableDoubling_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_6gv83m_a0a0a0a0a0a0a2a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

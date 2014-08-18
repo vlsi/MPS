@@ -22,7 +22,6 @@ public class StyleReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d8oyft_a(editorContext, node);
   }
-
   private EditorCell createCollection_d8oyft_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d8oyft_a");
@@ -30,7 +29,6 @@ public class StyleReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_d8oyft_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_d8oyft_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("style");
@@ -52,20 +50,16 @@ public class StyleReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_d8oyft_a0a extends InlineCellProvider {
     public _Inline_d8oyft_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_d8oyft_a0a0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_d8oyft_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "style");
       editorCell.setCellId("ReferencePresentation_d8oyft_a0a0");

@@ -36,16 +36,13 @@ public class Mockups {
     public boolean isSucessful() {
       return true;
     }
-
     @Override
     public Iterable<IResource> output() {
       return null;
     }
   };
-
   public Mockups() {
   }
-
   public static IFacet facet(Mockery context, final String name) {
     final IFacet fct = context.mock(IFacet.class, name);
     context.checking(new Expectations() {
@@ -56,7 +53,6 @@ public class Mockups {
     });
     return fct;
   }
-
   public static void allowing(Mockery context, final IFacet fct) {
     context.checking(new Expectations() {
       {
@@ -71,19 +67,15 @@ public class Mockups {
       }
     });
   }
-
   public static ITarget target(Mockery context, String name) {
     return target(context, name, new ITarget.Name(name), null);
   }
-
   public static ITarget target(Mockery context, String name, Class[] expIn) {
     return target(context, name, new ITarget.Name(name), expIn);
   }
-
   public static ITarget target(Mockery context, String name, ITarget.Name tname) {
     return target(context, name, tname, null);
   }
-
   public static ITarget target(Mockery context, String name, final ITarget.Name tname, final Class[] expIn) {
     final ITarget trg = context.mock(ITarget.class, name);
     context.checking(new Expectations() {
@@ -106,7 +98,6 @@ public class Mockups {
     }
     return trg;
   }
-
   public static void allowing(Mockery context, final ITarget trg) {
     context.checking(new Expectations() {
       {
@@ -133,12 +124,10 @@ public class Mockups {
       }
     });
   }
-
   public static IJob job(Mockery context, String name) {
     final IJob job = context.mock(IJob.class, name);
     return job;
   }
-
   public static IJob job(Mockery context, String name, final _FunctionTypes._return_P0_E0<? extends IResult> fun) {
     final IJob job = context.mock(IJob.class, name);
     context.checking(new Expectations() {
@@ -149,7 +138,6 @@ public class Mockups {
     });
     return job;
   }
-
   public static IResult result(Mockery context, String name, final boolean res) {
     final IResult result = context.mock(IResult.class, name);
     context.checking(new Expectations() {
@@ -160,7 +148,6 @@ public class Mockups {
     });
     return result;
   }
-
   public static void allowing(Mockery context, final IResult result) {
     context.checking(new Expectations() {
       {
@@ -169,11 +156,9 @@ public class Mockups {
       }
     });
   }
-
   public static IResource resource(Mockery context, String name) {
     return context.mock(IResource.class, name);
   }
-
   public static IJobMonitor monitor(Mockery context, String name) {
     final IJobMonitor monitor = context.mock(IJobMonitor.class, name);
     context.checking(new Expectations() {
@@ -184,17 +169,14 @@ public class Mockups {
     });
     return monitor;
   }
-
   public static IConfigMonitor cmonitor(Mockery context, String name) {
     final IConfigMonitor cmonitor = context.mock(IConfigMonitor.class, name);
     return cmonitor;
   }
-
   public static IScriptController monitors(Mockery context, String name) {
     final IScriptController mons = context.mock(IScriptController.class, name);
     return mons;
   }
-
   public static void allowing(Mockery context, final IScriptController mons) {
     context.checking(new Expectations() {
       {
@@ -203,7 +185,6 @@ public class Mockups {
       }
     });
   }
-
   public static void allowing(Mockery context, final IJobMonitor jmon) {
     context.checking(new Expectations() {
       {

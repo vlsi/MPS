@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public abstract class FloatStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public FloatStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.FloatStyleClassItem";

@@ -26,7 +26,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_VarRef_InferenceRule() {
   }
-
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
       final SNode fieldDecl = SNodeOperations.cast(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
@@ -89,22 +88,18 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_fse81k_a0k0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -112,7 +107,6 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_fse81k_a0a0a0c0b0e0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

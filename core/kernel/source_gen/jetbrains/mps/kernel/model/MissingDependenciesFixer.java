@@ -36,24 +36,17 @@ public class MissingDependenciesFixer {
 
   private SModel myModel;
 
-
   public MissingDependenciesFixer(SModel modelDescriptor) {
     myModel = modelDescriptor;
   }
-
-
 
   public void fixModuleDependencies() {
     fixDependencies(false);
   }
 
-
-
   public void fixAllDependencies() {
     fixDependencies(true);
   }
-
-
 
   private void fixDependencies(final boolean fixImplicit) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -75,19 +68,13 @@ public class MissingDependenciesFixer {
     });
   }
 
-
-
   private void loadModuleClassLoader(Set<SModule> modules) {
     ClassLoaderManager.getInstance().loadClasses(modules, new EmptyProgressMonitor());
   }
 
-
-
   private Set<SModule> unloadModuleClassLoader(@NotNull AbstractModule module) {
     return ClassLoaderManager.getInstance().unloadClasses(Collections.singleton(module), new EmptyProgressMonitor());
   }
-
-
 
   private void fixImports(@NotNull AbstractModule module, List<SModelReference> importsToAdd) {
     SRepository repository = module.getRepository();
@@ -111,8 +98,6 @@ public class MissingDependenciesFixer {
     }
   }
 
-
-
   private void fixLangs(@NotNull AbstractModule module) {
     SearchScope moduleScope = module.getScope();
     for (SModuleReference namespace : CollectionUtil.union(((SModelInternal) myModel).importedLanguages(), ((SModelInternal) myModel).engagedOnGenerationLanguages())) {
@@ -127,8 +112,6 @@ public class MissingDependenciesFixer {
       module.addUsedLanguage(ref);
     }
   }
-
-
 
   private void fixDevKits(@NotNull AbstractModule module) {
     SearchScope moduleScope = module.getScope();
@@ -145,8 +128,6 @@ public class MissingDependenciesFixer {
     }
   }
 
-
-
   private List<SModelReference> getExistingImports(boolean implicit) {
     List<SModelReference> models = ListSequence.fromList(new ArrayList<SModelReference>());
 
@@ -161,6 +142,5 @@ public class MissingDependenciesFixer {
     }
     return models;
   }
-
 
 }

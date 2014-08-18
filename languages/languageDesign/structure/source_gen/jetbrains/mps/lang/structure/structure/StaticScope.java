@@ -12,15 +12,12 @@ public enum StaticScope {
   none("none", "none");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<StaticScope> getConstants() {
     List<StaticScope> list = ListSequence.fromList(new LinkedList<StaticScope>());
     ListSequence.fromList(list).addElement(StaticScope.global);
@@ -28,11 +25,9 @@ public enum StaticScope {
     ListSequence.fromList(list).addElement(StaticScope.none);
     return list;
   }
-
   public static StaticScope getDefault() {
     return StaticScope.global;
   }
-
   public static StaticScope parseValue(String value) {
     if (value == null) {
       return StaticScope.getDefault();
@@ -48,14 +43,11 @@ public enum StaticScope {
     }
     return StaticScope.getDefault();
   }
-
   private String myValue;
-
   StaticScope(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

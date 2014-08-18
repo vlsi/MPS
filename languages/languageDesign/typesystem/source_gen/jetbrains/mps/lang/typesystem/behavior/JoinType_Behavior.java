@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class JoinType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("join(");
     List<SNode> nodes = SLinkOperations.getTargets(thisNode, "argument", true);
@@ -25,7 +24,6 @@ public class JoinType_Behavior {
     sb.append(")");
     return sb.toString();
   }
-
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     SNode copy = SNodeOperations.copyNode(thisNode);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(copy, "argument", true)).toListSequence()) {

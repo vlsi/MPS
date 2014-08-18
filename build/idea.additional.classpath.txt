@@ -17,6 +17,7 @@ core/kernel/jetbrains.mps.debug.api.info/classes
 core/kernel/dataFlowRuntime/classes
 core/mps-core/classes
 core/project/classes
+core/tool/builder/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes
 languages/baseLanguage/collections/runtime/classes

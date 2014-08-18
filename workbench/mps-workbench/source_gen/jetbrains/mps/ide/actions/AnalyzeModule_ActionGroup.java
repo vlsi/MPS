@@ -13,7 +13,6 @@ public class AnalyzeModule_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(AnalyzeModule_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AnalyzeModule_ActionGroup";
   public static final String LABEL_ID_analyze = ID + "analyze";
-
   public AnalyzeModule_ActionGroup() {
     super("Analyze", ID);
     this.setIsInternal(false);

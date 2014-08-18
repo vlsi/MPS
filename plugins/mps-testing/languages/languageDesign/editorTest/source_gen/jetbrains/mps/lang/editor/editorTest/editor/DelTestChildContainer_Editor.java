@@ -20,7 +20,6 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kin8gl_a(editorContext, node);
   }
-
   private EditorCell createCollection_kin8gl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kin8gl_a");
@@ -31,14 +30,12 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kin8gl_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kin8gl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "delete test container");
     editorCell.setCellId("Constant_kin8gl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kin8gl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_kin8gl_b0");
@@ -49,7 +46,6 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kin8gl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kin8gl_c0");
@@ -61,14 +57,12 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_kin8gl_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kin8gl_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "children");
     editorCell.setCellId("Constant_kin8gl_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kin8gl_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kin8gl_b2a");
@@ -79,7 +73,6 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kin8gl_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("child");
@@ -103,7 +96,6 @@ public class DelTestChildContainer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kin8gl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_kin8gl_d0");

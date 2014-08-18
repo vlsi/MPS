@@ -15,35 +15,27 @@ public class DeleteThrowsInMethods {
     editorCell.setAction(CellActionType.DELETE, new DeleteThrowsInMethods.DeleteThrowsInMethods_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteThrowsInMethods.DeleteThrowsInMethods_BACKSPACE(node));
   }
-
   public static class DeleteThrowsInMethods_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteThrowsInMethods_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).clear();
       editorContext.selectWRTFocusPolicy(node);
     }
   }
-
   public static class DeleteThrowsInMethods_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteThrowsInMethods_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).clear();
       editorContext.selectWRTFocusPolicy(node);

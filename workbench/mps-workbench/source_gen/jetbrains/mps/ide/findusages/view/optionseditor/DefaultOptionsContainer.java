@@ -25,23 +25,19 @@ public class DefaultOptionsContainer {
   private static Logger LOG = LogManager.getLogger(DefaultSearchOptionsComponent.class);
   private final HashMap<String, FindersOptions> myDefaultFinders = new HashMap<String, FindersOptions>();
   private FindUsagesOptions myDefaultOptions = createDefaultSearchOptions();
-
   public DefaultOptionsContainer() {
   }
-
   public FindUsagesOptions getDefaultSearchOptions(String concept) {
     FindUsagesOptions result = myDefaultOptions.clone();
     FindersOptions finders = myDefaultFinders.get(concept);
     result.setOption((finders != null ? finders : createDefaultFindersOption()));
     return result;
   }
-
   public void setDefaultSearchOptions(String concept, FindUsagesOptions defaultSearchOptions) {
     myDefaultOptions = defaultSearchOptions.clone();
     myDefaultOptions.removeOption(FindersOptions.class);
     myDefaultFinders.put(concept, defaultSearchOptions.getOption(FindersOptions.class));
   }
-
   private FindUsagesOptions createDefaultSearchOptions() {
     final FindUsagesOptions result = new FindUsagesOptions();
     ViewOptions viewOptions = new ViewOptions(true, false);
@@ -50,7 +46,6 @@ public class DefaultOptionsContainer {
     result.setOption(scopeOptions);
     return result;
   }
-
   public FindersOptions createDefaultFindersOption() {
     final Wrappers._T<FindersOptions> findersOptions = new Wrappers._T<FindersOptions>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -60,7 +55,6 @@ public class DefaultOptionsContainer {
     });
     return findersOptions.value;
   }
-
   public Element writeOptions(MPSProject project) {
     Element defaultFindOptionsXML = new Element(DEFAULT_SEARCH_OPTIONS);
     try {
@@ -78,7 +72,6 @@ public class DefaultOptionsContainer {
     }
     return defaultFindOptionsXML;
   }
-
   public void readOptions(Element state, MPSProject project) {
     myDefaultOptions = new FindUsagesOptions();
     myDefaultFinders.clear();

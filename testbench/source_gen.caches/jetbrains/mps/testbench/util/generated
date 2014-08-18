@@ -1,26 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8phznxnzgwa5lg3hwp8ta0i4i6mnakz">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="d2fl24l3oiffjkkonoxmewyguprxi93" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="5294483648489409095" name="ThreadWatcher" hash="-ai723ocuk88h1c5utews8ipot9gbmdl">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="ThreadWatcher.java" />
-  </source>
-  <source id="5294483648489409912" name="Output" hash="98irgk0kr8s4204t7zv9fh8u0jx5ala">
-    <file name="Output.java" />
-  </source>
-  <source id="5294483648489410428" name="CachingAppender" hash="-dyfbhbmrdm0rlbpastfczwjeky1q76y">
-    <file name="CachingAppender.java" />
-  </source>
-  <source id="5294483648489410732" name="CachingPrintStream" hash="-bcyqft27m3pirhycm9h42an2zboq8fi">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="CachingPrintStream.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="bzmweyd2uk0xeu76aikw4op6rgsrsas" />
 

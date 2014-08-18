@@ -58,44 +58,34 @@ import jetbrains.mps.make.delta.IDeltaVisitor;
 public class Generate_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.Generate");
-
   public Generate_Facet() {
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_checkParameters());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_configure());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_preloadModels());
     ListSequence.fromList(targets).addElement(new Generate_Facet.Target_generate());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new Generate_Facet.TargetProperties();
   }
-
   public static class Target_checkParameters implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
-
     public Target_checkParameters() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -122,56 +112,43 @@ public class Generate_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return null;
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return null;
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return false;
     }
-
     public boolean producesOutput() {
       return false;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -179,61 +156,47 @@ public class Generate_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 10;
     }
-
     public static Generate_Facet.Target_checkParameters.Variables vars(IPropertiesPool ppool) {
       return ppool.properties(name, Generate_Facet.Target_checkParameters.Variables.class);
     }
-
     public static class Variables extends MultiTuple._3<Project, IOperationContext, Boolean> {
       public Variables() {
         super();
       }
-
       public Variables(Project project, IOperationContext operationContext, Boolean cleanMake) {
         super(project, operationContext, cleanMake);
       }
-
       public Project project(Project value) {
         return super._0(value);
       }
-
       public IOperationContext operationContext(IOperationContext value) {
         return super._1(value);
       }
-
       public Boolean cleanMake(Boolean value) {
         return super._2(value);
       }
-
       public Project project() {
         return super._0();
       }
-
       public IOperationContext operationContext() {
         return super._1();
       }
-
       public Boolean cleanMake() {
         return super._2();
       }
-
       @SuppressWarnings(value = "unchecked")
       public Generate_Facet.Target_checkParameters.Variables assignFrom(Tuples._3<Project, IOperationContext, Boolean> from) {
         return (Generate_Facet.Target_checkParameters.Variables) super.assign(from);
       }
     }
   }
-
   public static class Target_configure implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.configure");
-
     public Target_configure() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -277,7 +240,6 @@ public class Generate_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return new IConfig.Stub() {
         @Override
@@ -292,52 +254,40 @@ public class Generate_Facet extends IFacet.Stub {
         }
       };
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return null;
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return false;
     }
-
     public boolean producesOutput() {
       return false;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Variables());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -345,69 +295,53 @@ public class Generate_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 10;
     }
-
     public static Generate_Facet.Target_configure.Variables vars(IPropertiesPool ppool) {
       return ppool.properties(name, Generate_Facet.Target_configure.Variables.class);
     }
-
     public static class Variables extends MultiTuple._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> {
       public Variables() {
         super();
       }
-
       public Variables(Boolean saveTransient, GenerationOptions.OptionsBuilder generationOptions, DefaultGenerationParametersProvider parametersProvider, TransientModelsProvider transientModelsProvider) {
         super(saveTransient, generationOptions, parametersProvider, transientModelsProvider);
       }
-
       public Boolean saveTransient(Boolean value) {
         return super._0(value);
       }
-
       public GenerationOptions.OptionsBuilder generationOptions(GenerationOptions.OptionsBuilder value) {
         return super._1(value);
       }
-
       public DefaultGenerationParametersProvider parametersProvider(DefaultGenerationParametersProvider value) {
         return super._2(value);
       }
-
       public TransientModelsProvider transientModelsProvider(TransientModelsProvider value) {
         return super._3(value);
       }
-
       public Boolean saveTransient() {
         return super._0();
       }
-
       public GenerationOptions.OptionsBuilder generationOptions() {
         return super._1();
       }
-
       public DefaultGenerationParametersProvider parametersProvider() {
         return super._2();
       }
-
       public TransientModelsProvider transientModelsProvider() {
         return super._3();
       }
-
       @SuppressWarnings(value = "unchecked")
       public Generate_Facet.Target_configure.Variables assignFrom(Tuples._4<Boolean, GenerationOptions.OptionsBuilder, DefaultGenerationParametersProvider, TransientModelsProvider> from) {
         return (Generate_Facet.Target_configure.Variables) super.assign(from);
       }
     }
   }
-
   public static class Target_preloadModels implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.preloadModels");
-
     public Target_preloadModels() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -443,73 +377,56 @@ public class Generate_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(MResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
     }
-
     public int workEstimate() {
       return 400;
     }
   }
-
   public static class Target_generate implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.generate");
-
     public Target_generate() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -539,7 +456,6 @@ public class Generate_Facet extends IFacet.Stub {
                 public void handle(IMessage msg) {
                   monitor.reportFeedback(new IFeedback.MESSAGE(msg));
                 }
-
                 @Override
                 public void clear() {
                 }
@@ -570,12 +486,10 @@ public class Generate_Facet extends IFacet.Stub {
                 public IDelta merge(IDelta toMerge) {
                   return this;
                 }
-
                 @Override
                 public boolean contains(IDelta other) {
                   return false;
                 }
-
                 @Override
                 public boolean reconcile() {
                   if (!(Generate_Facet.Target_configure.vars(pa.global()).saveTransient())) {
@@ -583,7 +497,6 @@ public class Generate_Facet extends IFacet.Stub {
                   }
                   return true;
                 }
-
                 @Override
                 public boolean acceptVisitor(IDeltaVisitor visitor) {
                   return true;
@@ -595,71 +508,55 @@ public class Generate_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.configure")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(MResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
     }
-
     public int workEstimate() {
       return 5000;
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters");
@@ -681,7 +578,6 @@ public class Generate_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {

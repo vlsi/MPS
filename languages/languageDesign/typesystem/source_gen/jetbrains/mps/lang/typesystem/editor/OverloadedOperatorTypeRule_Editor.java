@@ -32,7 +32,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xc5f9o_a(editorContext, node);
   }
-
   private EditorCell createCollection_xc5f9o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_a");
@@ -47,7 +46,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xc5f9o_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_xc5f9o_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_a0");
@@ -59,14 +57,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_xc5f9o_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation concepts:");
     editorCell.setCellId("Constant_xc5f9o_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_xc5f9o_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new OverloadedOperatorTypeRule_Editor.operationConceptListHandler_xc5f9o_b0a(node, "operationConcept", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -74,30 +70,25 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class operationConceptListHandler_xc5f9o_b0a extends RefNodeListHandler {
     public operationConceptListHandler_xc5f9o_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -111,7 +102,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), "|");
@@ -125,7 +115,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_xc5f9o_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_b0");
@@ -143,14 +132,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xc5f9o_f1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "left operand type:");
     editorCell.setCellId("Constant_xc5f9o_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xc5f9o_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperandType");
@@ -170,14 +157,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xc5f9o_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("leftIsExact");
@@ -195,7 +180,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_xc5f9o_e1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_e1a");
@@ -206,18 +190,15 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4b0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_xc5f9o_a4b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "leftIsExact"));
   }
-
   private EditorCell createConstant_xc5f9o_a4b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xc5f9o_b4b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("leftIsStrong");
@@ -235,7 +216,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_f1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "    ");
     editorCell.setCellId("Constant_xc5f9o_f1a");
@@ -245,7 +225,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_xc5f9o_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_c0");
@@ -262,14 +241,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "right operand type:");
     editorCell.setCellId("Constant_xc5f9o_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xc5f9o_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightOperandType");
@@ -289,14 +266,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is exact:");
     editorCell.setCellId("Constant_xc5f9o_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xc5f9o_d2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rightIsExact");
@@ -314,7 +289,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_xc5f9o_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xc5f9o_e2a");
@@ -325,18 +299,15 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_xc5f9o_b4c0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_xc5f9o_a4c0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "rightIsExact"));
   }
-
   private EditorCell createConstant_xc5f9o_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use strong subtyping");
     editorCell.setCellId("Constant_xc5f9o_a4c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_xc5f9o_b4c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rightIsStrong");
@@ -354,14 +325,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_xc5f9o_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xc5f9o_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("isApplicable");
@@ -381,14 +350,12 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "operation type:");
     editorCell.setCellId("Constant_xc5f9o_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xc5f9o_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("function");
@@ -408,7 +375,6 @@ public class OverloadedOperatorTypeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xc5f9o_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-----------------------------------------------");
     editorCell.setCellId("Constant_xc5f9o_h0");

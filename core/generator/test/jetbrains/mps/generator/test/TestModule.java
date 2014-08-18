@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.vfs.IFile;
@@ -46,6 +47,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
@@ -124,13 +126,13 @@ public class TestModule extends AbstractModule {
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     //todo make scope more precise. Was left untouched since Evgeny wrote this class
-    return (Iterable)MPSModuleRepository.getInstance().getAllModules();
+    return (Iterable)MPSModuleRepository.getInstance().getModules();
   }
 
   @Override
   public Set<SLanguage> getUsedLanguages() {
     //todo make scope more precise. Was left untouched since Evgeny wrote this class
-    return (Set)CollectionUtil.filter(Language.class, MPSModuleRepository.getInstance().getAllModules());
+    return (Set)CollectionUtil.filter(Language.class, IterableUtil.asSet(MPSModuleRepository.getInstance().getModules()));
   }
 
   class TestSModelDescriptor extends BaseSpecialModelDescriptor {

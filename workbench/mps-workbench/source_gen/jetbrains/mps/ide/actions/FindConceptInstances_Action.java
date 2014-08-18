@@ -29,23 +29,19 @@ import org.apache.log4j.LogManager;
 
 public class FindConceptInstances_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
-
   public FindConceptInstances_Action() {
     super("Find Concept Instances", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
     this.setMnemonic("I".charAt(0));
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false).isApplicable() && SNodeOperations.isInstanceOf(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -59,7 +55,6 @@ public class FindConceptInstances_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -92,7 +87,6 @@ public class FindConceptInstances_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new FindUsagesHelper(((Project) MapSequence.fromMap(_params).get("project")), false) {
@@ -117,6 +111,5 @@ public class FindConceptInstances_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FindConceptInstances_Action.class);
 }

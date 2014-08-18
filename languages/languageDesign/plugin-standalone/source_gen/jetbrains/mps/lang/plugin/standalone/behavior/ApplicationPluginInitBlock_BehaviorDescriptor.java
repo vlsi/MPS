@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ApplicationPluginInitBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ApplicationPluginInitBlock_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ApplicationPluginInitBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return ApplicationPluginInitBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock";

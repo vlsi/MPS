@@ -18,34 +18,26 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class UnmarkAsNonThreadSafe_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public UnmarkAsNonThreadSafe_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public String getPresentation() {
     return "UnmarkAsNonThreadSafe";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.ParallelFor.intentions.UnmarkAsNonThreadSafe_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.ParallelFor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
@@ -55,42 +47,33 @@ public class UnmarkAsNonThreadSafe_Intention implements IntentionFactory {
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass")) != null;
   }
-
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(childNode, "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "2975785153735235995");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UnmarkAsNonThreadSafe_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Unmark as Non Thread Safe";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.NonThreadSafeClass"), null);
     }
-
     public IntentionDescriptor getDescriptor() {
       return UnmarkAsNonThreadSafe_Intention.this;
     }

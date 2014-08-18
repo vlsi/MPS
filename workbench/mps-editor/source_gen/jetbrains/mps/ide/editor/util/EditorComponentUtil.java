@@ -21,7 +21,6 @@ import jetbrains.mps.nodeEditor.InspectorTool;
 public class EditorComponentUtil {
   public EditorComponentUtil() {
   }
-
   @Nullable
   public static EditorComponent scrollToNode(@NotNull SNode node, @Nullable EditorComponent component, FileEditorManager manager) {
     EditorComponent inspector = EditorComponentUtil.findInspector(manager);
@@ -57,7 +56,6 @@ public class EditorComponentUtil {
     component.scrollToNode(node);
     return component;
   }
-
   @NotNull
   public static List<EditorComponent> findComponentForNode(SNode node, FileEditorManager fileEditorManager) {
     ModelAccess.assertLegalRead();
@@ -75,7 +73,6 @@ public class EditorComponentUtil {
     }
     return result;
   }
-
   public static boolean isNodeShownInTheComponent(@NotNull EditorComponent component, @NotNull SNode node) {
     if (component instanceof InspectorEditorComponent) {
       SNode editedNode = component.getEditedNode();
@@ -84,7 +81,6 @@ public class EditorComponentUtil {
       return component.getEditedNode() == node.getContainingRoot();
     }
   }
-
   public static List<EditorComponent> getAllEditorComponents(FileEditorManager manager, boolean includeInspector) {
     if (manager.getProject().isDisposed()) {
       return Collections.emptyList();
@@ -105,7 +101,6 @@ public class EditorComponentUtil {
     }
     return result;
   }
-
   @Nullable
   public static EditorComponent findInspector(FileEditorManager manager) {
     if (manager.getProject().isDisposed()) {

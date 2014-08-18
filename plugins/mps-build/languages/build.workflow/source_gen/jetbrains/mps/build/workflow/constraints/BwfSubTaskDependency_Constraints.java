@@ -23,7 +23,6 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
   public BwfSubTaskDependency_Constraints() {
     super("jetbrains.mps.build.workflow.structure.BwfSubTaskDependency");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_45r57v_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class BwfSubTaskDependency_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_45r57v_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "2769948622284605893");
 }

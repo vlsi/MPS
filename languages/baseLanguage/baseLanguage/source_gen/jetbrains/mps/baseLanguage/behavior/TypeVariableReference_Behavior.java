@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SReference;
 public class TypeVariableReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode decl = SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false);
     if (ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(decl)) {
@@ -35,14 +34,12 @@ public class TypeVariableReference_Behavior {
     }
     return "?typevar_ref?";
   }
-
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true), "virtual_getErasure_702942408396803226", new Object[]{});
     }
     return _quotation_createNode_6i211a_a1a1();
   }
-
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypeVariableReferences) {
     SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true);
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
@@ -56,7 +53,6 @@ public class TypeVariableReference_Behavior {
     }
 
   }
-
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
       return;
@@ -67,7 +63,6 @@ public class TypeVariableReference_Behavior {
       BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
   }
-
   public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
       if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
@@ -86,7 +81,6 @@ public class TypeVariableReference_Behavior {
     }
     return thisNode;
   }
-
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     SNode myResolvedType = thisNode;
     SNode resolvedT = t;
@@ -115,7 +109,6 @@ public class TypeVariableReference_Behavior {
     }
 
   }
-
   private static SNode _quotation_createNode_6i211a_a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

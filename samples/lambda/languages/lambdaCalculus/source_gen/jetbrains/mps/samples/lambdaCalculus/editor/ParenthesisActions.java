@@ -15,35 +15,27 @@ public class ParenthesisActions {
     editorCell.setAction(CellActionType.DELETE, new ParenthesisActions.ParenthesisActions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ParenthesisActions.ParenthesisActions_BACKSPACE(node));
   }
-
   public static class ParenthesisActions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ParenthesisActions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expr = SLinkOperations.getTarget(node, "expression", true);
       SNodeOperations.replaceWithAnother(node, expr);
     }
   }
-
   public static class ParenthesisActions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ParenthesisActions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expr = SLinkOperations.getTarget(node, "expression", true);
       SNodeOperations.replaceWithAnother(node, expr);

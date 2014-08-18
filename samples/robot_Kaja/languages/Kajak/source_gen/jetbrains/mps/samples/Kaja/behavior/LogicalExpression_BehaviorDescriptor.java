@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class LogicalExpression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public LogicalExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.LogicalExpression";

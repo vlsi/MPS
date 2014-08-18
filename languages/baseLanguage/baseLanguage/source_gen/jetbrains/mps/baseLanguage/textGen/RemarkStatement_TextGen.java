@@ -39,6 +39,5 @@ public class RemarkStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RemarkStatement_TextGen.class);
 }

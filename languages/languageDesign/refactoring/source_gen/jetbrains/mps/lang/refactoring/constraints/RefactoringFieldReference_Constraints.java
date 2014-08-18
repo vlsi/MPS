@@ -21,7 +21,6 @@ public class RefactoringFieldReference_Constraints extends BaseConstraintsDescri
   public RefactoringFieldReference_Constraints() {
     super("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,7 +29,6 @@ public class RefactoringFieldReference_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,7 +37,6 @@ public class RefactoringFieldReference_Constraints extends BaseConstraintsDescri
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false), "field", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9vozis_a0a1a0a0a1a0b0a1a1;
@@ -49,6 +46,5 @@ public class RefactoringFieldReference_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   private static SNodePointer breakingNode_9vozis_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "5497648299878491779");
 }

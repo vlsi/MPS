@@ -7,10 +7,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class ThisProvider {
   private int bar = 10;
-
   public ThisProvider() {
   }
-
   public void testThisExpression() {
     Assert.assertEquals(10, this.bar);
     new _FunctionTypes._return_P0_E0<Integer>() {

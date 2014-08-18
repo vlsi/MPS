@@ -7,10 +7,8 @@ import org.jetbrains.annotations.NotNull;
 @SuppressWarnings(value = {"NonPrivateFieldAccessedInSynchronizedContext"})
 public abstract class TimedComputable<T> extends Timed<T> {
   private int myAcquireCount = 0;
-
   public TimedComputable() {
   }
-
   public T acquire() {
     myAccessCount++;
     myAcquireCount++;
@@ -20,27 +18,22 @@ public abstract class TimedComputable<T> extends Timed<T> {
     poll();
     return myT;
   }
-
   protected T getIfCached() {
     return myT;
   }
-
   public void release() {
     myAcquireCount--;
     assert myAcquireCount >= 0;
   }
-
   @Override
   public void dispose() {
     assert myAcquireCount == 0;
     super.dispose();
   }
-
   @Override
   protected boolean isLocked() {
     return myAcquireCount != 0;
   }
-
   @NotNull
   protected abstract T calc();
 }

@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class EditWatchAction_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public EditWatchAction_Action() {
     super("Edit Watch", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null && EvaluationUi.DEBUG_SESSION.getData(event.getDataContext()) != null);
@@ -39,7 +36,6 @@ public class EditWatchAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationContainer container = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
@@ -54,6 +50,5 @@ public class EditWatchAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(EditWatchAction_Action.class);
 }

@@ -11,49 +11,49 @@
     <file name="UpdateSwitchMacro_MigrationScript.java">
       <node id="982871510076818109" at="14,80,15,56" concept="6" />
       <node id="982871510076825112" at="17,31,18,62" concept="5" />
-      <node id="982871510076825112" at="21,41,22,62" concept="5" />
-      <node id="982871510076825112" at="25,59,26,68" concept="5" />
-      <node id="982871510076825112" at="29,59,30,20" concept="5" />
-      <node id="982871510076879349" at="33,52,34,122" concept="4" />
-      <node id="982871510076930574" at="34,122,35,114" concept="2" />
-      <node id="982871510076982429" at="35,114,36,94" concept="2" />
-      <node id="982871510077010307" at="36,94,37,120" concept="2" />
-      <node id="982871510077038385" at="37,120,38,116" concept="2" />
-      <node id="982871510076825112" at="41,42,42,21" concept="5" />
+      <node id="982871510076825112" at="20,41,21,62" concept="5" />
+      <node id="982871510076825112" at="23,59,24,68" concept="5" />
+      <node id="982871510076825112" at="26,59,27,20" concept="5" />
+      <node id="982871510076879349" at="29,52,30,122" concept="4" />
+      <node id="982871510076930574" at="30,122,31,114" concept="2" />
+      <node id="982871510076982429" at="31,114,32,94" concept="2" />
+      <node id="982871510077010307" at="32,94,33,120" concept="2" />
+      <node id="982871510077038385" at="33,120,34,116" concept="2" />
+      <node id="982871510076825112" at="36,42,37,21" concept="5" />
       <node id="982871510076825112" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="982871510076825112" at="21,0,24,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="982871510076825112" at="25,0,28,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-      <node id="982871510076825112" at="29,0,32,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="982871510076825112" at="41,0,44,0" concept="3" trace="isShowAsIntention#()Z" />
-      <node id="982871510076825112" at="33,0,40,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="982871510076818109" at="15,56,44,7" concept="0" />
-      <node id="982871510076825112" at="15,56,44,7" concept="2" />
-      <node id="982871510076818109" at="14,0,46,0" concept="1" trace="UpdateSwitchMacro_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="982871510076825112" at="20,0,23,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="23,0,26,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="26,0,29,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="982871510076825112" at="36,0,39,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="982871510076825112" at="29,0,36,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="982871510076818109" at="15,56,39,7" concept="0" />
+      <node id="982871510076825112" at="15,56,39,7" concept="2" />
+      <node id="982871510076818109" at="14,0,41,0" concept="1" trace="UpdateSwitchMacro_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
       <scope id="982871510076825112" at="17,31,18,62" />
-      <scope id="982871510076825112" at="21,41,22,62" />
-      <scope id="982871510076825112" at="25,59,26,68" />
-      <scope id="982871510076825112" at="29,59,30,20" />
-      <scope id="982871510076825112" at="41,42,42,21" />
+      <scope id="982871510076825112" at="20,41,21,62" />
+      <scope id="982871510076825112" at="23,59,24,68" />
+      <scope id="982871510076825112" at="26,59,27,20" />
+      <scope id="982871510076825112" at="36,42,37,21" />
       <scope id="982871510076825112" at="17,0,20,0" />
-      <scope id="982871510076825112" at="21,0,24,0" />
-      <scope id="982871510076825112" at="25,0,28,0" />
-      <scope id="982871510076825112" at="29,0,32,0">
+      <scope id="982871510076825112" at="20,0,23,0" />
+      <scope id="982871510076825112" at="23,0,26,0" />
+      <scope id="982871510076825112" at="26,0,29,0">
         <var name="node" id="982871510076825112" />
       </scope>
-      <scope id="982871510076825112" at="41,0,44,0" />
-      <scope id="982871510076825114" at="33,52,38,116">
+      <scope id="982871510076825112" at="36,0,39,0" />
+      <scope id="982871510076825114" at="29,52,34,116">
         <var name="n" id="982871510076879352" />
       </scope>
-      <scope id="982871510076825112" at="33,0,40,0">
+      <scope id="982871510076825112" at="29,0,36,0">
         <var name="node" id="982871510076825112" />
       </scope>
-      <scope id="982871510076825112" at="15,56,44,7" />
-      <scope id="982871510076818109" at="14,80,44,7" />
-      <scope id="982871510076818109" at="14,0,46,0">
+      <scope id="982871510076825112" at="15,56,39,7" />
+      <scope id="982871510076818109" at="14,80,39,7" />
+      <scope id="982871510076818109" at="14,0,41,0">
         <var name="operationContext" id="982871510076818109" />
       </scope>
-      <unit id="982871510076825112" at="16,28,44,5" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
-      <unit id="982871510076818109" at="13,0,47,0" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
+      <unit id="982871510076825112" at="16,28,39,5" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
+      <unit id="982871510076818109" at="13,0,42,0" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
     </file>
   </root>
 </debug-info>

@@ -20,7 +20,6 @@ public class BuildMps_ModuleTestSource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8lyoff_a(editorContext, node);
   }
-
   private EditorCell createCollection_8lyoff_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8lyoff_a");
@@ -29,7 +28,6 @@ public class BuildMps_ModuleTestSource_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_8lyoff_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_8lyoff_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "tests");
     editorCell.setCellId("Constant_8lyoff_a0");
@@ -39,7 +37,6 @@ public class BuildMps_ModuleTestSource_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8lyoff_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("folder");

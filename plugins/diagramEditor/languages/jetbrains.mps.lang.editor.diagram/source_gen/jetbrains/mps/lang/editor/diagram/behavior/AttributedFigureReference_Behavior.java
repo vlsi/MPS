@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class AttributedFigureReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
     return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
@@ -24,7 +23,6 @@ public class AttributedFigureReference_Behavior {
       }
     }).toListSequence();
   }
-
   public static SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, final String name) {
     return Sequence.fromIterable(FigureAttribute_Behavior.call_getPrameterAttributes_5422656561931892777(SLinkOperations.getTarget(thisNode, "figureAttribute", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -32,7 +30,6 @@ public class AttributedFigureReference_Behavior {
       }
     });
   }
-
   private static boolean eq_godh5_a0a0a0a0a0a0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

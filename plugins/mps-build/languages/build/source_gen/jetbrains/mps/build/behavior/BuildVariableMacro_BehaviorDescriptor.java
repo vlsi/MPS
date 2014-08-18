@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildVariableMacro_BehaviorDescriptor extends BuildMacro_BehaviorDescriptor {
   public BuildVariableMacro_BehaviorDescriptor() {
   }
-
   public boolean virtual_isPublic_6547494638219688113(SNode thisNode) {
     return BuildVariableMacro_Behavior.virtual_isPublic_6547494638219688113(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildVariableMacro";

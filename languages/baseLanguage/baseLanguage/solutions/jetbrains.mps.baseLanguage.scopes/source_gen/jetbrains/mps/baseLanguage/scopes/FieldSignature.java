@@ -6,7 +6,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class FieldSignature implements Signature {
   private final String singature;
-
   public FieldSignature(@NotNull String signature) {
     if (signature == null) {
       // todo: ? 
@@ -14,12 +13,10 @@ public class FieldSignature implements Signature {
     }
     this.singature = signature;
   }
-
   @Override
   public int hashCode() {
     return FieldSignature.class.hashCode() ^ singature.hashCode();
   }
-
   @Override
   public boolean equals(Object object) {
     if (!(object instanceof FieldSignature)) {
@@ -28,7 +25,6 @@ public class FieldSignature implements Signature {
     FieldSignature arg = (FieldSignature) object;
     return eq_kjk96n_a0c0d(this.singature, arg.singature);
   }
-
   private static boolean eq_kjk96n_a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

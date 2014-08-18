@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_all_ports_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_all_ports_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode block, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     boolean result = true;
     for (SNode port : ListSequence.fromList(SLinkOperations.getTargets(block, "inputPorts", true))) {
@@ -42,26 +41,21 @@ public class check_all_ports_NonTypesystemRule extends AbstractNonTypesystemRule
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.testHybridEditor.structure.Block";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_p42nu0_a0a0a0b0b0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_p42nu0_a0a0a0b0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

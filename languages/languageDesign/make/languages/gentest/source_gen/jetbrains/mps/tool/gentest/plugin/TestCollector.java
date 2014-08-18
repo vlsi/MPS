@@ -35,11 +35,9 @@ public class TestCollector {
   private static final String IGNORE_ANN = "IGNORE_ANN";
   private Iterable<SModel> models;
   private Map<Tuples._2<String, String>, SNode> nodeCache = MapSequence.fromMap(new HashMap<Tuples._2<String, String>, SNode>());
-
   public TestCollector(Iterable<SModel> models) {
     this.models = models;
   }
-
   public Iterable<String> collectTests() {
     return Sequence.fromIterable(models).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel model) {
@@ -55,13 +53,11 @@ public class TestCollector {
       }
     });
   }
-
   private boolean isJunit38Test(SNode maybetest) {
     boolean isdesc = BehaviorReflection.invokeVirtual(Boolean.TYPE, maybetest, "virtual_isDescendant_7165541881557222913", new Object[]{getTestCaseClass(SNodeOperations.getModel(maybetest))});
     boolean hasann = hasAnnotation(maybetest, getIgnoreAnnotation(SNodeOperations.getModel(maybetest)), getMPSLaunchAnnotation(SNodeOperations.getModel(maybetest)));
     return isdesc && !(hasann) && hasJUnit38TestMethods(maybetest);
   }
-
   private boolean hasJUnit38TestMethods(final SNode maybetest) {
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
@@ -73,11 +69,9 @@ public class TestCollector {
       }
     });
   }
-
   private boolean isJUnit4Test(SNode maybetest) {
     return !(hasAnnotation(getIgnoreAnnotation(SNodeOperations.getModel(maybetest)), getMPSLaunchAnnotation(SNodeOperations.getModel(maybetest)))) && hasJUnit4TestMethods(maybetest);
   }
-
   private boolean hasJUnit4TestMethods(final SNode maybetest) {
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(maybetest)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode meth) {
@@ -89,7 +83,6 @@ public class TestCollector {
       }
     });
   }
-
   private boolean hasAnnotation(final SNode hasann, SNode... annotation) {
     return Sequence.fromIterable(Sequence.fromArray(annotation)).any(new IWhereFilter<SNode>() {
       public boolean accept(final SNode ann) {
@@ -101,7 +94,6 @@ public class TestCollector {
       }
     });
   }
-
   private SNode getTestCaseClass(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_CASE, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -114,7 +106,6 @@ public class TestCollector {
       }
     }), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   private SNode getTestAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, TEST_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -127,7 +118,6 @@ public class TestCollector {
       }
     }), "jetbrains.mps.baseLanguage.structure.Annotation");
   }
-
   private SNode getIgnoreAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, IGNORE_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -140,7 +130,6 @@ public class TestCollector {
       }
     }), "jetbrains.mps.baseLanguage.structure.Annotation");
   }
-
   private SNode getMPSLaunchAnnotation(final SModel context) {
     return SNodeOperations.cast(getNode(context, MPS_LAUNCH_ANN, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -153,7 +142,6 @@ public class TestCollector {
       }
     }), "jetbrains.mps.baseLanguage.structure.Annotation");
   }
-
   private SNode getNode(SModel context, String kind, _FunctionTypes._return_P0_E0<? extends SNode> getter) {
     SNode node = MapSequence.fromMap(nodeCache).get(MultiTuple.<String,String>from(context.getReference().getModelName(), kind));
     if (node == null) {
@@ -162,15 +150,12 @@ public class TestCollector {
     }
     return node;
   }
-
   protected List<SNode> allClassifiers(SModel context) {
     return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.CLASS).getClassifiers();
   }
-
   protected List<SNode> allAnnotations(SModel context) {
     return (List<SNode>) new ReachableClassifiersScope(context, IClassifiersSearchScope.ANNOTATION).getClassifiers();
   }
-
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -178,7 +163,6 @@ public class TestCollector {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a41() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -186,7 +170,6 @@ public class TestCollector {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a51() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -194,7 +177,6 @@ public class TestCollector {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rpw6il_a0a0a0c0a0a61() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

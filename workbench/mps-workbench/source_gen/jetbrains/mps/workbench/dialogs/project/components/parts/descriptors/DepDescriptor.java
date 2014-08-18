@@ -10,12 +10,10 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.ListRe
 
 public class DepDescriptor extends VoidColumnDescriptor {
   private final IBindedDialog myOwner;
-
   public DepDescriptor(IBindedDialog owner, String name, String header, int width) {
     super(name, header, width);
     myOwner = owner;
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     ModuleRenderer renderer = new ModuleRenderer(myOwner.getModule(), myOwner.getProject());

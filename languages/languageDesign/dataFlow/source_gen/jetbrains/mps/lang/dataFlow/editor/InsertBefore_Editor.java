@@ -19,7 +19,6 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_l4xam2_a(editorContext, node);
   }
-
   private EditorCell createCollection_l4xam2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l4xam2_a");
@@ -28,7 +27,6 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_l4xam2_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_l4xam2_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -37,7 +35,6 @@ public class InsertBefore_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_l4xam2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instruction");

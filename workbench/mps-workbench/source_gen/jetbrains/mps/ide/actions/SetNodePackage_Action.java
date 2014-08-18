@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class SetNodePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SetNodePackage_Action() {
     super("Set Virtual Package...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode n) {
@@ -52,7 +49,6 @@ public class SetNodePackage_Action extends BaseAction {
       }
     });
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -66,7 +62,6 @@ public class SetNodePackage_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -97,7 +92,6 @@ public class SetNodePackage_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<String>> packages = new Wrappers._T<List<String>>();
@@ -133,7 +127,6 @@ public class SetNodePackage_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ List<String> fetchExistingPackages(List<SNode> nlist, final Map<String, Object> _params) {
     Set<SModel> models = SetSequence.fromSetWithValues(new HashSet<SModel>(), ListSequence.fromList(nlist).select(new ISelector<SNode, SModel>() {
       public SModel select(SNode n) {
@@ -157,6 +150,5 @@ public class SetNodePackage_Action extends BaseAction {
     Collections.sort(result);
     return result;
   }
-
   protected static Logger LOG = LogManager.getLogger(SetNodePackage_Action.class);
 }

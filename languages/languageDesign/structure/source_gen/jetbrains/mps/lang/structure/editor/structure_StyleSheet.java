@@ -18,7 +18,6 @@ public class structure_StyleSheet {
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_Keyword(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -27,6 +26,5 @@ public class structure_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
 
 }

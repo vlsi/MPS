@@ -39,20 +39,16 @@ public class InTextPositionComponent implements ProjectComponent {
   private volatile RangeHighlighter myHighlighter;
   private final FileEditorManager myEditorManager;
   private MessageBusConnection myConnection;
-
   public InTextPositionComponent(Project project, FileEditorManager fileEditorManager) {
     myProject = project;
     myEditorManager = fileEditorManager;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
@@ -63,36 +59,30 @@ public class InTextPositionComponent implements ProjectComponent {
       public void fileOpened(FileEditorManager manager, VirtualFile file) {
         reAttachPainter(getCurrentSession(), false);
       }
-
       @Override
       public void fileClosed(FileEditorManager manager, VirtualFile file) {
         reAttachPainter(getCurrentSession(), false);
       }
     });
   }
-
   @Override
   public void disposeComponent() {
     myConnection.disconnect();
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myCurrentDebugSessionListener);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Text Position Component";
   }
-
   protected AbstractDebugSession getCurrentSession() {
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
   }
-
   public void currentSessionChanged(AbstractDebugSession session) {
     reAttachPainter(session);
   }
-
   public void reAttachPainter(AbstractDebugSession session) {
     final _FunctionTypes._void_P0_E0 detach = detachPainterRunnable();
     final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session);
@@ -107,7 +97,6 @@ public class InTextPositionComponent implements ProjectComponent {
 
     }
   }
-
   public void reAttachPainter(AbstractDebugSession session, boolean open) {
     final _FunctionTypes._void_P0_E0 detach = detachPainterRunnable();
     final _FunctionTypes._void_P0_E0 attach = attachPainterRunnable(session, open);
@@ -122,7 +111,6 @@ public class InTextPositionComponent implements ProjectComponent {
 
     }
   }
-
   private _FunctionTypes._void_P0_E0 attachPainterRunnable(AbstractDebugSession session, final boolean open) {
     if (session == null) {
       return null;
@@ -142,12 +130,10 @@ public class InTextPositionComponent implements ProjectComponent {
       }
     };
   }
-
   private _FunctionTypes._void_P0_E0 attachPainterRunnable(AbstractDebugSession session) {
     AbstractDebugSession currentSession = getCurrentSession();
     return attachPainterRunnable(session, currentSession != null && session == currentSession);
   }
-
   public void detachPainter() {
     final _FunctionTypes._void_P0_E0 runnable = detachPainterRunnable();
     if (runnable == null) {
@@ -160,7 +146,6 @@ public class InTextPositionComponent implements ProjectComponent {
       }
     });
   }
-
   public _FunctionTypes._void_P0_E0 detachPainterRunnable() {
     if (myHighlighter != null) {
       return new _FunctionTypes._void_P0_E0() {
@@ -176,7 +161,6 @@ public class InTextPositionComponent implements ProjectComponent {
     }
     return null;
   }
-
   @Nullable
   public TextSourcePosition getLocation(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
@@ -188,7 +172,6 @@ public class InTextPositionComponent implements ProjectComponent {
     }
     return null;
   }
-
   @Nullable
   public RangeHighlighter createHighlighter(TextSourcePosition location) {
     Document document = FileDocumentManager.getInstance().getDocument(location.getFile());
@@ -209,69 +192,57 @@ public class InTextPositionComponent implements ProjectComponent {
     }
     return highlighter;
   }
-
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {
     private MyCurrentDebugSessionListener() {
     }
-
     @Override
     public void registered(AbstractDebugSession session) {
       session.addChangeListener(myChangeListener);
     }
-
     @Override
     public void currentSessionChanged(AbstractDebugSession session) {
       InTextPositionComponent.this.currentSessionChanged(session);
     }
-
     @Override
     public void detached(AbstractDebugSession session) {
       detachPainter();
       session.removeChangeListener(myChangeListener);
     }
   }
-
   private class MySessionChangeListener extends SessionChangeAdapter {
     private MySessionChangeListener() {
     }
-
     @Override
     public void stateChanged(AbstractDebugSession session) {
       reAttachPainter(session);
     }
-
     @Override
     public void paused(AbstractDebugSession session) {
       reAttachPainter(session);
     }
-
     @Override
     public void resumed(AbstractDebugSession session) {
       detachPainter();
     }
   }
-
   private static void check_uzwzqp_a0a0a0a0a0a2a41(_FunctionTypes._void_P0_E0 checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invoke();
     }
 
   }
-
   private static void check_uzwzqp_a1a0a0a0a0a2a41(_FunctionTypes._void_P0_E0 checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invoke();
     }
 
   }
-
   private static void check_uzwzqp_a0a0a0a0a0a2a51(_FunctionTypes._void_P0_E0 checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invoke();
     }
 
   }
-
   private static void check_uzwzqp_a1a0a0a0a0a2a51(_FunctionTypes._void_P0_E0 checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.invoke();

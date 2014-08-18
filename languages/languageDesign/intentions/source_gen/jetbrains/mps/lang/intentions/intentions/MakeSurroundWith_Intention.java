@@ -19,64 +19,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeSurroundWith_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeSurroundWith_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration";
   }
-
   public String getPresentation() {
     return "MakeSurroundWith";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.intentions";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)", "4203998840477564642");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeSurroundWith_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) {
         return "Make Plain Intention";
@@ -84,7 +70,6 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
         return "Make a Surround with Intention";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode sd;
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration")) {
@@ -106,7 +91,6 @@ public class MakeSurroundWith_Intention implements IntentionFactory {
 
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeSurroundWith_Intention.this;
     }

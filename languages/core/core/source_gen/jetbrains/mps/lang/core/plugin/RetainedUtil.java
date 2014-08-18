@@ -28,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class RetainedUtil {
   public RetainedUtil() {
   }
-
   public static Map<SModule, Iterable<SModel>> collectModelsToRetain(Iterable<? extends IResource> input) {
     final Map<SModule, Iterable<SModel>> retainedModels = MapSequence.fromMap(new HashMap<SModule, Iterable<SModel>>());
     Iterable<SModel> empty = ListSequence.fromList(new ArrayList<SModel>());
@@ -92,21 +91,17 @@ public class RetainedUtil {
     }
     return retainedModels;
   }
-
   public static Iterable<IDelta> retainedDeltas(Iterable<SModel> smd, _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
     // FIXME odd to have two classes just to collect two locations per model (output and caches dirs) 
     // rather shall spit out strings for these locations, and make shall translate them to IFile and IDelta itself. 
     return Sequence.fromIterable(new RetainedUtil.RetainedFilesDelta(getFile).deltas(smd)).concat(Sequence.fromIterable(new RetainedUtil.RetainedCachesDelta(getFile).deltas(smd)));
   }
-
   /*package*/ static class RetainedFilesDelta {
     protected Map<String, FilesDelta> dir2delta = MapSequence.fromMap(new HashMap<String, FilesDelta>());
     protected _FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile;
-
     public RetainedFilesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
       this.getFile = getFile;
     }
-
     public Iterable<IDelta> deltas(Iterable<SModel> smds) {
       for (SModel smd : smds) {
         String output = SModuleOperations.getOutputPathFor(smd);
@@ -116,11 +111,9 @@ public class RetainedUtil {
       }
       return this.collectedDeltas();
     }
-
     protected IFile getRootOutputDir(String output) {
       return getFile.invoke(output);
     }
-
     private Iterable<IDelta> collectedDeltas() {
       return Sequence.fromIterable(MapSequence.fromMap(dir2delta).values()).select(new ISelector<FilesDelta, IDelta>() {
         public IDelta select(FilesDelta it) {
@@ -128,7 +121,6 @@ public class RetainedUtil {
         }
       });
     }
-
     protected FilesDelta deltaForDir(String dir) {
       if (!(MapSequence.fromMap(dir2delta).containsKey(dir))) {
         MapSequence.fromMap(dir2delta).put(dir, new FilesDelta(this.getRootOutputDir(dir)));
@@ -136,12 +128,10 @@ public class RetainedUtil {
       return MapSequence.fromMap(dir2delta).get(dir);
     }
   }
-
   /*package*/ static class RetainedCachesDelta extends RetainedUtil.RetainedFilesDelta {
     public RetainedCachesDelta(_FunctionTypes._return_P1_E0<? extends IFile, ? super String> getFile) {
       super(getFile);
     }
-
     @Override
     protected IFile getRootOutputDir(String output) {
       return getFile.invoke(FileGenerationUtil.getCachesPath(output));

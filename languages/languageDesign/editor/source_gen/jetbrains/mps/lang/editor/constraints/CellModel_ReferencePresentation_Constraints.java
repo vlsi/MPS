@@ -14,12 +14,10 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
   public CellModel_ReferencePresentation_Constraints() {
     super("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,7 +28,6 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode ancestorRef = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_RefCell", true, false);
     SNode ancestorList = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole", true, false);
@@ -42,6 +39,5 @@ public class CellModel_ReferencePresentation_Constraints extends BaseConstraints
     }
     return jetbrains.mps.util.SNodeOperations.isAncestor(ancestorList, ancestorRef);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "625126330682991630");
 }

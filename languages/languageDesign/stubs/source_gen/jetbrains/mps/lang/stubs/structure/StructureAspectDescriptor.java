@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -42,6 +41,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.stubs.structure.CanCreateFunction", "jetbrains.mps.lang.stubs.structure.CreateBlock", "jetbrains.mps.lang.stubs.structure.CreateFunction", "jetbrains.mps.lang.stubs.structure.DescriptorsFunction", "jetbrains.mps.lang.stubs.structure.IModule_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.LanguageRef", "jetbrains.mps.lang.stubs.structure.ModelCreationSettings", "jetbrains.mps.lang.stubs.structure.ModelManagerDeclaration", "jetbrains.mps.lang.stubs.structure.ModelRoot_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.Model_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelFqName_ConceptFunctionParameter", "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter"};
 }

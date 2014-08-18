@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class matrix_element_must_be_number_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public matrix_element_must_be_number_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode mT, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(mT, "elementType", true), SNodeOperations.copyNode(MathTypeUtil.qBigComplex)))) {
       {
@@ -27,18 +26,15 @@ public class matrix_element_must_be_number_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

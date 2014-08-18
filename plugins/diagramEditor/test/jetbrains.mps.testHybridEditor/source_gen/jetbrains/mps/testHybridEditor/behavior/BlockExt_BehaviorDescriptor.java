@@ -6,7 +6,6 @@ package jetbrains.mps.testHybridEditor.behavior;
 public class BlockExt_BehaviorDescriptor extends Block_BehaviorDescriptor {
   public BlockExt_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.testHybridEditor.structure.BlockExt";

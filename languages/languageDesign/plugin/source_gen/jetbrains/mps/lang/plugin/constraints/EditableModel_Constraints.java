@@ -18,12 +18,10 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
   public EditableModel_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.EditableModel");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -34,11 +32,9 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", true, false)), _quotation_createNode_z543ji_b0a0a0());
   }
-
   private static SNode _quotation_createNode_z543ji_b0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -46,6 +42,5 @@ public class EditableModel_Constraints extends BaseConstraintsDescriptor {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), facade.createNodeId("~SModel")));
     return quotedNode_1;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8713489730824201066");
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ITestCase_And_TestInfo_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ITestCase_And_TestInfo_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode iTestCase, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, iTestCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{}) && ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(iTestCase), "jetbrains.mps.lang.test.structure.TestInfo")).isEmpty()) {
       {
@@ -28,18 +27,15 @@ public class check_ITestCase_And_TestInfo_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

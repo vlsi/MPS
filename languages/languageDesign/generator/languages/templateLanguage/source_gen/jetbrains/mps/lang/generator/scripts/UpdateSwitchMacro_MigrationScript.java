@@ -17,19 +17,15 @@ public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Replace SwitchMacro with TemplateSwitchMacro";
       }
-
       public String getAdditionalInfo() {
         return "Replace SwitchMacro with TemplateSwitchMacro";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.generator.structure.SwitchMacro";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode n = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.lang.generator.structure.TemplateSwitchMacro");
         SLinkOperations.setTarget(n, "template", SLinkOperations.getTarget(node, "templateSwitch", false), false);
@@ -37,7 +33,6 @@ public class UpdateSwitchMacro_MigrationScript extends BaseMigrationScript {
         SLinkOperations.setTarget(n, "sourceNodeQuery", SLinkOperations.getTarget(node, "sourceNodeQuery", true), true);
         SLinkOperations.setTarget(n, "mappingLabel", SLinkOperations.getTarget(node, "mappingLabel", false), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

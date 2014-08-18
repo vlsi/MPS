@@ -17,17 +17,14 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
   }
-
   public static void apply_greaterThen(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "type.brace");
   }
-
   public static void apply_operation(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
   }
-
   public static void apply_leftOperationBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -39,7 +36,6 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
   }
-
   public static void apply_rightOperationBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -50,7 +46,6 @@ public class RunConfigurations_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.MATCHING_LABEL, 0, "operation.brace");
   }
-
   public static void apply_constructorParameter(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -60,11 +55,9 @@ public class RunConfigurations_StyleSheet {
     }
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
-
   public static void apply_conceptFunctionHeader(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
   }
-
 
 }

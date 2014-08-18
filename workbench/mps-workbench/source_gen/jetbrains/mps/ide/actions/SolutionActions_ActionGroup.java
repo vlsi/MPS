@@ -15,7 +15,6 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
   public static final String LABEL_ID_contents = ID + "contents";
   public static final String LABEL_ID_commonModule = ID + "commonModule";
-
   public SolutionActions_ActionGroup() {
     super("SolutionActions", ID);
     this.setIsInternal(false);

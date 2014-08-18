@@ -16,25 +16,20 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class DerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder");
-
   public DerivedClasses_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Derived Classes";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -57,7 +52,6 @@ public class DerivedClasses_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Derived Classes";

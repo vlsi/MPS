@@ -80,10 +80,8 @@ public class EnumClass_TextGen extends SNodeTextGen {
       }
     }
   }
-
   public String getExtension(SNode node) {
     return "java";
   }
-
   protected static Logger LOG = LogManager.getLogger(EnumClass_TextGen.class);
 }

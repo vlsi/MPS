@@ -10,22 +10,18 @@ import org.jetbrains.annotations.NotNull;
 
 public class EditorResolverComponent implements ApplicationComponent {
   private EditorResolver myResolver;
-
   public EditorResolverComponent(MPSCoreComponents coreComponents) {
   }
-
   @Override
   public void initComponent() {
     myResolver = new EditorResolver();
     ResolverComponent.getInstance().addResolver(myResolver);
   }
-
   @Override
   public void disposeComponent() {
     ResolverComponent.getInstance().removeResolver(myResolver);
     myResolver = null;
   }
-
   @NonNls
   @NotNull
   @Override

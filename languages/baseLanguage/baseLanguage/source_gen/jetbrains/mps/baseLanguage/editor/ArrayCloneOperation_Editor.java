@@ -17,7 +17,6 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_l0mk2c_a(editorContext, node);
   }
-
   private EditorCell createCollection_l0mk2c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_l0mk2c_a");
@@ -28,7 +27,6 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_l0mk2c_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_l0mk2c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "clone");
     editorCell.setCellId("Constant_l0mk2c_a0");
@@ -40,7 +38,6 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_l0mk2c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_l0mk2c_b0");
@@ -50,7 +47,6 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_l0mk2c_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_l0mk2c_c0");
@@ -61,7 +57,6 @@ public class ArrayCloneOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_l0mk2c_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_l0mk2c_d0");

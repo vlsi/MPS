@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.choose.modules.BaseModuleModel;
 import com.intellij.openapi.project.Project;
@@ -39,22 +39,18 @@ import org.apache.log4j.LogManager;
 
 public class NewRuntimeModule_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public NewRuntimeModule_Action() {
     super("New Runtime Module", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModule) MapSequence.fromMap(_params).get("contextModule")) instanceof Language;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -68,7 +64,6 @@ public class NewRuntimeModule_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -95,7 +90,6 @@ public class NewRuntimeModule_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
@@ -103,7 +97,7 @@ public class NewRuntimeModule_Action extends BaseAction {
 
       modelAccess.runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(modules).addSequence(SetSequence.fromSet(MPSModuleRepository.getInstance().getAllModules()));
+          ListSequence.fromList(modules).addSequence(Sequence.fromIterable(MPSModuleRepository.getInstance().getModules()));
         }
       });
 
@@ -116,7 +110,6 @@ public class NewRuntimeModule_Action extends BaseAction {
             }
           }).toGenericArray(SModuleReference.class);
         }
-
         @Override
         public NavigationItem doGetNavigationItem(final SModuleReference module) {
           return new BaseModuleItem(module) {
@@ -151,6 +144,5 @@ public class NewRuntimeModule_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewRuntimeModule_Action.class);
 }

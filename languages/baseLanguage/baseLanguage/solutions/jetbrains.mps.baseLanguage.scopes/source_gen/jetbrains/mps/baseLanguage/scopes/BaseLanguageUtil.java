@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BaseLanguageUtil {
   public BaseLanguageUtil() {
   }
-
   public static boolean isAssignable(SNode fromClassifier, SNode toClassifier) {
     if (fromClassifier == null) {
       return false;
@@ -24,11 +23,9 @@ public class BaseLanguageUtil {
     }
     return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(fromClassifier)).contains(toClassifier);
   }
-
   public static SNode getSuperclass(SNode subClass) {
     return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, "superclass", true)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   private static SNode check_b9g70l_a0a0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);

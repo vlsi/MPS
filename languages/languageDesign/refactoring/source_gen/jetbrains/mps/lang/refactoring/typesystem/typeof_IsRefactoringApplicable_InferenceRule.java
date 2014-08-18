@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_IsRefactoringApplicable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IsRefactoringApplicable_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "refactoring", false), "target", true);
     if (SPropertyOperations.getBoolean(target, "allowMultiple") == false) {
@@ -39,22 +38,18 @@ public class typeof_IsRefactoringApplicable_InferenceRule extends AbstractInfere
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "6598645150040036552", true), (SNode) _quotation_createNode_f3lmj2_a0c0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.refactoring.structure.IsRefactoringApplicable";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_f3lmj2_a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -66,7 +61,6 @@ public class typeof_IsRefactoringApplicable_InferenceRule extends AbstractInfere
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_f3lmj2_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -9,20 +9,16 @@ import jetbrains.mps.project.Project;
 public class ProjectLevelRenderer extends DefaultListCellRenderer {
   private SModule myModule;
   private Project myProject;
-
   public ProjectLevelRenderer(SModule module, Project project) {
     myModule = module;
     myProject = project;
   }
-
   public String getItemLabel(Object value) {
     return value.toString();
   }
-
   public SModule getModule() {
     return myModule;
   }
-
   public Project getProject() {
     return myProject;
   }

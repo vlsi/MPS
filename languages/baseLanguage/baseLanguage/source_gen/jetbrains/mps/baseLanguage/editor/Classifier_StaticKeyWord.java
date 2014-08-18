@@ -16,18 +16,14 @@ public class Classifier_StaticKeyWord {
     editorCell.setAction(CellActionType.DELETE, new Classifier_StaticKeyWord.Classifier_StaticKeyWord_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new Classifier_StaticKeyWord.Classifier_StaticKeyWord_BACKSPACE(node));
   }
-
   public static class Classifier_StaticKeyWord_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Classifier_StaticKeyWord_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "nonStatic", "" + (true));
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -44,18 +40,14 @@ public class Classifier_StaticKeyWord {
       }
     }
   }
-
   public static class Classifier_StaticKeyWord_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Classifier_StaticKeyWord_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "nonStatic", "" + (true));
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {

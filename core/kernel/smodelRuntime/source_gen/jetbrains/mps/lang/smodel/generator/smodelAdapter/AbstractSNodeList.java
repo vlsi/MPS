@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 /*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
   protected final String myRole;
-
   private AbstractSNodeList(SNode referenceContainer, String role, int initialSize) {
     super(initialSize);
     assert referenceContainer != null;
@@ -22,42 +21,33 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     assert role != null;
     myRole = role;
   }
-
   protected AbstractSNodeList(SNode referenceContainer, String role, List<? extends SNode> referents) {
     this(referenceContainer, role, referents.size());
     super.addAll(referents);
   }
-
   protected AbstractSNodeList(SNode referenceContainer, String role, SNode referent) {
     this(referenceContainer, role, 1);
     super.add(referent);
   }
-
   protected void removeReference(SNode node) {
     if (node != null) {
       doRemoveReference(node);
     }
   }
-
   protected void addReference(SNode node) {
     if (node != null) {
       doAddReference(node);
     }
   }
-
   private void addReference(int index, SNode node) {
     if (node != null) {
       SNode anchorNode = (index > 0 ? get(index - 1) : null);
       insertAfter(node, anchorNode);
     }
   }
-
   protected abstract void doRemoveReference(SNode node);
-
   protected abstract void doAddReference(SNode node);
-
   protected abstract void insertAfter(SNode node, SNode anchorNode);
-
   @Override
   protected void removeRange(int fromIndex, int toIndex) {
     List<SNode> sublist = subList(fromIndex, toIndex);
@@ -67,7 +57,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       removeReference(nextNode);
     }
   }
-
   @Override
   public boolean addAll(Collection<? extends SNode> c) {
     for (SNode nextNode : c) {
@@ -75,7 +64,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     return super.addAll(c);
   }
-
   @Override
   public boolean addAll(int index, Collection<? extends SNode> c) {
     SNode anchorNode = (index > 0 ? get(index - 1) : null);
@@ -88,7 +76,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     return super.addAll(index, c);
   }
-
   @Override
   public void clear() {
     for (SNode nextNode : this) {
@@ -96,7 +83,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     super.clear();
   }
-
   @Override
   public boolean remove(Object o) {
     if (o instanceof SNode) {
@@ -104,14 +90,12 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     return super.remove(o);
   }
-
   @Override
   public SNode remove(int index) {
     SNode result = super.remove(index);
     removeReference(result);
     return result;
   }
-
   @Override
   public boolean removeAll(Collection<?> collection) {
     // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
@@ -125,7 +109,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     return modified;
   }
-
   @Override
   public boolean retainAll(Collection<?> collection) {
     // we have to keep this methods to make sure that our remove method is used which actually modifies the node 
@@ -139,19 +122,16 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     }
     return modified;
   }
-
   @Override
   public void add(int index, SNode element) {
     super.add(index, element);
     addReference(index, element);
   }
-
   @Override
   public boolean add(SNode sNode) {
     addReference(sNode);
     return super.add(sNode);
   }
-
   @Override
   public SNode set(int index, SNode element) {
     SNode result = super.set(index, element);
@@ -159,17 +139,14 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
     addReference(index, element);
     return result;
   }
-
   public static class AggregatedSNodesList extends AbstractSNodeList {
     public AggregatedSNodesList(SNode parent, String role) {
       super(parent, role, IterableUtil.asList(parent.getChildren(role)));
     }
-
     @Override
     protected void doRemoveReference(SNode node) {
       myReferenceContainer.removeChild(node);
     }
-
     @Override
     protected void doAddReference(SNode node) {
       if (node.getParent() != null) {
@@ -177,7 +154,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       }
       myReferenceContainer.addChild(myRole, node);
     }
-
     @Override
     protected void insertAfter(SNode node, SNode anchorNode) {
       if (node.getParent() != null) {
@@ -186,22 +162,18 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       SNodeOperations.insertChild(myReferenceContainer, myRole, node, anchorNode);
     }
   }
-
   public static class LinkedSNodesList extends AbstractSNodeList {
     public LinkedSNodesList(SNode referenceContainer, String role) {
       super(referenceContainer, role, referenceContainer.getReferenceTarget(role));
     }
-
     @Override
     protected void doRemoveReference(SNode node) {
       SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, null);
     }
-
     @Override
     protected void doAddReference(SNode node) {
       SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, node);
     }
-
     @Override
     protected void insertAfter(SNode node, SNode anchorNode) {
       doAddReference(node);

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class TextCommentPartUtil {
   public TextCommentPartUtil() {
   }
-
   public static void processCellText(EditorContext editorContext, final SNode node, final String newText) {
     final Wrappers._int index = new Wrappers._int(newText.indexOf("{@"));
     if (index.value != -1) {
@@ -49,7 +48,6 @@ public class TextCommentPartUtil {
       return;
     }
   }
-
   public static void divideLineBetweenCaret(SNode node, int index1, int index2, String text) {
     String leftPart = text.substring(0, index1);
     String rightPart = text.substring(index2);
@@ -60,7 +58,6 @@ public class TextCommentPartUtil {
     SPropertyOperations.set(newTextPart, "text", rightPart);
     SNodeOperations.insertNextSiblingChild(node, newTextPart);
   }
-
   public static SNode divideLineBetweenCaretAndInsertNewLine(SNode node, int index1, int index2, String text) {
     String leftPart = text.substring(0, index1);
     String rightPart = text.substring(index2);

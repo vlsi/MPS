@@ -28,13 +28,11 @@ public class TemplateModelScanner {
   private final SNode concept_rc_InlineTemplateWithContext = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence");
   private final SNode concept_rc_InlineTemplate = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence");
   private final SNode concept_rule_PatternReduction = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PatternReduction_MappingRule");
-
   public TemplateModelScanner(SModel model) {
     myTargetLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
     myQueryLanguages = SetSequence.fromSet(new LinkedHashSet<String>());
     myTemplateModel = model;
   }
-
   public void scan() {
     for (SNode root : myTemplateModel.getRootNodes()) {
       if (safeIsInstanceOf(root, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration"))) {
@@ -59,7 +57,6 @@ public class TemplateModelScanner {
       SetSequence.fromSet(myQueryLanguages).addElement("jetbrains.mps.lang.generator");
     }
   }
-
   protected void scanTemplateNode(SNode node) {
     if ((node == null)) {
       return;
@@ -78,7 +75,6 @@ public class TemplateModelScanner {
       }
     }
   }
-
   private void scanTemplateContextNode(SNode node) {
     if ((node == null)) {
       return;
@@ -91,7 +87,6 @@ public class TemplateModelScanner {
       scanTemplateContextNode(n);
     }
   }
-
   private void scanControlNode(SNode node) {
     if (safeIsInstanceOf(node, concept_rc_InlineTemplateWithContext)) {
       scanTemplateContextNode(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"), "contentNode", true));
@@ -112,7 +107,6 @@ public class TemplateModelScanner {
       }
     }
   }
-
   private void scanQueryNode(SNode node) {
     if ((node == null)) {
       return;
@@ -121,15 +115,12 @@ public class TemplateModelScanner {
       SetSequence.fromSet(myQueryLanguages).addElement(n.getConcept().getLanguage().getQualifiedName());
     }
   }
-
   public Set<String> getTargetLanguages() {
     return myTargetLanguages;
   }
-
   public Set<String> getQueryLanguages() {
     return myQueryLanguages;
   }
-
   private boolean safeIsInstanceOf(SNode node, SNode concept) {
     // as this class executed before ALL generation process we cannot use isInstanceOf operation here 
     // so isInstanceOf limited only to generator language concepts 
@@ -140,7 +131,6 @@ public class TemplateModelScanner {
       return false;
     }
   }
-
   private SNode safeNodeAttribute(SNode node, final SNode attribute) {
     // todo: basically for this we need everything castable to BaseConcept 
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.BaseConcept"), "smodelAttribute", true)).findFirst(new IWhereFilter<SNode>() {
@@ -149,7 +139,6 @@ public class TemplateModelScanner {
       }
     });
   }
-
   private static boolean eq_8grp5z_a0a3a02(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

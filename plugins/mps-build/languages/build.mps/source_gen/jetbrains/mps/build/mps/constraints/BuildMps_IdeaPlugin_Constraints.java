@@ -14,7 +14,6 @@ public class BuildMps_IdeaPlugin_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_IdeaPlugin_Constraints() {
     super("jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class BuildMps_IdeaPlugin_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

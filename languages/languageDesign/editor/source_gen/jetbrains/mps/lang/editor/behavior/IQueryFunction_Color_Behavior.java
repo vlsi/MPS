@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IQueryFunction_Color_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isFunction_1225463329531(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return null;
   }

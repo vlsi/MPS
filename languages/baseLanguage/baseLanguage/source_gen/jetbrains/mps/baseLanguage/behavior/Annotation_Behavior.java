@@ -12,7 +12,6 @@ public class Annotation_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
-
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.Interface", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));

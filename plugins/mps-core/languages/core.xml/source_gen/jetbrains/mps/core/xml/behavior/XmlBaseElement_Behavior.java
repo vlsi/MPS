@@ -8,23 +8,18 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class XmlBaseElement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return false;
   }

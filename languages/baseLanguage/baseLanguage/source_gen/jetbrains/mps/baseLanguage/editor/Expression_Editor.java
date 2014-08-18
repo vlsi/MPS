@@ -19,7 +19,6 @@ public class Expression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_1ltshm_a(editorContext, node);
   }
-
   private EditorCell createAlternation_1ltshm_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Expression_Editor.renderingCondition_1ltshm_a0(node, editorContext);
@@ -35,11 +34,9 @@ public class Expression_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_1ltshm_a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") == null;
   }
-
   private EditorCell createCustom_1ltshm_a0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
@@ -58,7 +55,6 @@ public class Expression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Custom_1ltshm_a0");
     return editorCell;
   }
-
   private EditorCell createComponent_1ltshm_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;

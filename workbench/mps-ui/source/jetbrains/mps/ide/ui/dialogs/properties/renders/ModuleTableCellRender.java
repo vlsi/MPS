@@ -17,6 +17,8 @@ package jetbrains.mps.ide.ui.dialogs.properties.renders;
 
 import com.intellij.ui.ColoredTableCellRenderer;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -33,12 +35,15 @@ public class ModuleTableCellRender extends ColoredTableCellRenderer {
     setFocusBorderAroundIcon(true);
     setBorder(BorderFactory.createEmptyBorder(1, 1, 1, 1));
     if (value != null) {
-      SModuleReference moduleReference = (SModuleReference) value;
-      setIcon(
-        IconManager.getIconFor(
-          MPSModuleRepository.getInstance().getModuleById(moduleReference.getModuleId())
-        )
-      );
+      final SModuleReference moduleReference = (SModuleReference) value;
+      final SModule[] module = {null};
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          module[0] = MPSModuleRepository.getInstance().getModule(moduleReference.getModuleId());
+        }
+      });
+      setIcon(IconManager.getIconFor(module[0]));
 
       append(moduleReference.getModuleName(), getDependencyCellState(moduleReference).getTextAttributes());
     }

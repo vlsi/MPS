@@ -23,41 +23,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ExpandBoolean_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ExpandBoolean_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public String getPresentation() {
     return "ExpandBoolean";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ExpandBoolean_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType"))) {
       return false;
@@ -67,30 +58,24 @@ public class ExpandBoolean_Intention implements IntentionFactory {
     }
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199627245932");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ExpandBoolean_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Expand Boolean";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode statementNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
       // 
@@ -130,7 +115,6 @@ public class ExpandBoolean_Intention implements IntentionFactory {
       // 
       SNodeOperations.deleteNode(statementNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ExpandBoolean_Intention.this;
     }

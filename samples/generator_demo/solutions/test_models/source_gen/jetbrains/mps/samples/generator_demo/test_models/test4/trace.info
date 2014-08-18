@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="DemoApp.java">
-      <unit at="14,0,72,0" name="jetbrains.mps.samples.generator_demo.test_models.test4.DemoApp" />
+      <unit at="14,0,65,0" name="jetbrains.mps.samples.generator_demo.test_models.test4.DemoApp" />
     </file>
   </root>
 </debug-info>

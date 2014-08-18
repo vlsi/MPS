@@ -15,42 +15,32 @@ public class CheckedDot_Actions_DeleteOperation {
     editorCell.setAction(CellActionType.DELETE, new CheckedDot_Actions_DeleteOperation.CheckedDot_Actions_DeleteOperation_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new CheckedDot_Actions_DeleteOperation.CheckedDot_Actions_DeleteOperation_BACKSPACE(node));
   }
-
   public static class CheckedDot_Actions_DeleteOperation_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CheckedDot_Actions_DeleteOperation_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete operation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
     }
   }
-
   public static class CheckedDot_Actions_DeleteOperation_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CheckedDot_Actions_DeleteOperation_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete operation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
     }

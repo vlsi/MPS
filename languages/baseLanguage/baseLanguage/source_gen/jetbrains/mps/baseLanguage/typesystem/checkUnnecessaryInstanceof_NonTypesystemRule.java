@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkUnnecessaryInstanceof_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkUnnecessaryInstanceof_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instanceOfExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifierType = SLinkOperations.getTarget(instanceOfExpression, "classType", true);
     SNode expressionType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true));
@@ -28,18 +27,15 @@ public class checkUnnecessaryInstanceof_NonTypesystemRule extends AbstractNonTyp
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

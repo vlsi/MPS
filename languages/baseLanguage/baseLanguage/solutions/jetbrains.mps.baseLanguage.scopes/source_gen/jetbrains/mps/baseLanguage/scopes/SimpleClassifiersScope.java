@@ -18,23 +18,19 @@ public class SimpleClassifiersScope extends Scope {
   private SNode myClassifier;
   private boolean myGoUpHieracrhy;
 
-
   public SimpleClassifiersScope(SNode classifier, boolean goUpInHierarchy) {
     myClassifier = classifier;
     myGoUpHieracrhy = goUpInHierarchy;
   }
-
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     // FIXME 
     return ListSequence.fromList(new ArrayList<SNode>());
   }
-
   @Nullable
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     // FIXME 
     return "";
   }
-
   @Nullable
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");

@@ -9,7 +9,6 @@ import java.nio.CharBuffer;
 public class InternalAnonymousClassUsage {
   public InternalAnonymousClassUsage() {
   }
-
   public void safeRun(Runnable task) {
     try {
       task.run();
@@ -22,7 +21,6 @@ public class InternalAnonymousClassUsage {
       }
     };
   }
-
   public void check1() {
     // default anonymous class 
     safeRun(new Runnable() {
@@ -31,7 +29,6 @@ public class InternalAnonymousClassUsage {
       }
     });
   }
-
   public void check2() {
     safeRun(new Runnable() {
       public void run() {
@@ -39,7 +36,6 @@ public class InternalAnonymousClassUsage {
       }
     });
   }
-
   public void check3() throws IOException {
     (new Readable() {
       public int read(CharBuffer cb) throws IOException {
@@ -50,30 +46,25 @@ public class InternalAnonymousClassUsage {
       }
     }).read(CharBuffer.wrap("aa"));
   }
-
   public void check4() {
     new Runnable() {
       public void run() {
       }
     }.run();
   }
-
   public void check5() {
     new ReadableImpl("wow, my title") {
       {
         System.out.println("initializer");
       }
-
       public int read(CharBuffer buffer) {
         return 6;
       }
     };
   }
-
   public class ReadableImpl implements Readable {
     public ReadableImpl(String title) {
     }
-
     @Override
     public int read(CharBuffer buffer) throws IOException {
       return 5;

@@ -25,15 +25,12 @@ public class OverrideImplementMethodInEnumConstantAction {
   private EditorContext myEditorContext;
   private boolean myIsOverride;
 
-
   public OverrideImplementMethodInEnumConstantAction(Project project, SNode selectedNode, EditorContext editorContext, boolean isOverride) {
     myProject = project;
     mySelectedNode = selectedNode;
     myEditorContext = editorContext;
     this.myIsOverride = isOverride;
   }
-
-
 
   public void run() {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
@@ -96,6 +93,5 @@ public class OverrideImplementMethodInEnumConstantAction {
       });
     }
   }
-
 
 }

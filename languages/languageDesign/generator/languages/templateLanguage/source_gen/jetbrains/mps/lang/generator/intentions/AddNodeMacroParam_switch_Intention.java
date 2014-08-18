@@ -25,53 +25,42 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
   public AddNodeMacroParam_switch_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddNodeMacroParam_switch";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_switch_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     return EditingUtil.isNodeMacroApplicable(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "3644457381597319727");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
@@ -82,22 +71,17 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
     }
     return list;
   }
-
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     return SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
-
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Invoke " + MacroIntentionsUtil.getPresentaion(myParameter) + " SWITCH macro";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
       SNode switchMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateSwitchMacro", null);
@@ -106,7 +90,6 @@ public class AddNodeMacroParam_switch_Intention implements IntentionFactory {
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, switchMacro, SelectionManager.FIRST_CELL, 1);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddNodeMacroParam_switch_Intention.this;
     }

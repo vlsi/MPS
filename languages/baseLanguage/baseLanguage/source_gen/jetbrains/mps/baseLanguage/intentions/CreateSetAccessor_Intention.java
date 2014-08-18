@@ -18,72 +18,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateSetAccessor_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateSetAccessor_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.GetAccessor";
   }
-
   public String getPresentation() {
     return "CreateSetAccessor";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.CreateSetAccessor_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", false, false), "setAccessor", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1202861044458");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateSetAccessor_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Set Accessor";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.setNewChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation", false, false), "setAccessor", "jetbrains.mps.baseLanguage.structure.SetAccessor");
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateSetAccessor_Intention.this;
     }

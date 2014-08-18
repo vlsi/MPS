@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
-
   public ShowDiffFromChanges_Action() {
     super("Show Difference", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -48,7 +45,6 @@ public class ShowDiffFromChanges_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Bounds bounds = ChangesStripActionsHelper.getCurrentChangeGroupPositionAndHidePopup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
@@ -84,6 +79,5 @@ public class ShowDiffFromChanges_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowDiffFromChanges_Action.class);
 }

@@ -9,21 +9,17 @@ import org.jetbrains.annotations.Nullable;
 public class StringUtil {
   public StringUtil() {
   }
-
   public static boolean endsWithIgnoreCase(@NonNls @NotNull String str, @NonNls @NotNull String suffix) {
     final int stringLength = str.length();
     final int suffixLength = suffix.length();
     return stringLength >= suffixLength && str.regionMatches(true, stringLength - suffixLength, suffix, 0, suffixLength);
   }
-
   public static boolean startsWithChar(@Nullable CharSequence s, char prefix) {
-    return s != null && s.length() != 0 && s.charAt(0) == prefix;
+    return jetbrains.mps.util.StringUtil.startsWithChar(s, prefix);
   }
-
   public static boolean endsWithChar(@Nullable CharSequence s, char suffix) {
-    return s != null && s.length() != 0 && s.charAt(s.length() - 1) == suffix;
+    return jetbrains.mps.util.StringUtil.endsWithChar(s, suffix);
   }
-
   public static boolean startsWithConcatenationOf(String testee, String firstPrefix, String secondPrefix) {
     int l1 = firstPrefix.length();
     int l2 = secondPrefix.length();
@@ -32,7 +28,6 @@ public class StringUtil {
     }
     return testee.startsWith(firstPrefix) && testee.regionMatches(l1, secondPrefix, 0, l2);
   }
-
   @NotNull
   public static String trimEnd(@NotNull String s, @NonNls @NotNull String suffix) {
     if (s.endsWith(suffix)) {
@@ -40,11 +35,9 @@ public class StringUtil {
     }
     return s;
   }
-
   public static boolean isEmptyOrSpaces(@Nullable final String s) {
     return s == null || s.trim().length() == 0;
   }
-
   public static String replace(@NotNull final String text, @NotNull final String oldS, @Nullable final String newS, boolean ignoreCase) {
     if (text.length() < oldS.length()) {
       return text;
@@ -72,11 +65,9 @@ public class StringUtil {
     }
     return newText.toString();
   }
-
   public static String replace(@NonNls @NotNull String text, @NonNls @NotNull String oldS, @NonNls @Nullable String newS) {
     return StringUtil.replace(text, oldS, newS, false);
   }
-
   public static int compareVersionNumbers(String v1, String v2) {
     if (v1 == null && v2 == null) {
       return 0;

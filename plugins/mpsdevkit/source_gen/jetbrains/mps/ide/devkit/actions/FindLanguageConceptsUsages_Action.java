@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Find;
-
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return false;
@@ -55,7 +52,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -69,7 +65,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -84,7 +79,6 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SearchQuery[] query = new SearchQuery[1];
@@ -104,6 +98,5 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FindLanguageConceptsUsages_Action.class);
 }

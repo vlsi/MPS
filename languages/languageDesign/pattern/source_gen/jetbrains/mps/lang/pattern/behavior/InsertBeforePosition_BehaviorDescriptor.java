@@ -6,7 +6,6 @@ package jetbrains.mps.lang.pattern.behavior;
 public class InsertBeforePosition_BehaviorDescriptor extends InsertPosition_BehaviorDescriptor {
   public InsertBeforePosition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.InsertBeforePosition";

@@ -8,27 +8,22 @@ import java.util.ListIterator;
 
 public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, Serializable {
   private static final long serialVersionUID = -7296400805973169021L;
-
   public LinkedList() {
   }
-
   @Override
   public Iterator<T> descendingIterator() {
     return new LinkedList.DescendingIterator<T>(listIterator(size()));
   }
-
   @Override
   public boolean offerFirst(T t) {
     addFirst(t);
     return true;
   }
-
   @Override
   public boolean offerLast(T t) {
     addLast(t);
     return true;
   }
-
   @Override
   public T peekFirst() {
     if (isEmpty()) {
@@ -36,7 +31,6 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     }
     return getFirst();
   }
-
   @Override
   public T peekLast() {
     if (isEmpty()) {
@@ -44,32 +38,26 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     }
     return getLast();
   }
-
   @Override
   public T pollFirst() {
     return getFirst();
   }
-
   @Override
   public T pollLast() {
     return getLast();
   }
-
   @Override
   public T pop() {
     return removeFirst();
   }
-
   @Override
   public void push(T t) {
     addFirst(t);
   }
-
   @Override
   public boolean removeFirstOccurrence(Object o) {
     return remove(o);
   }
-
   @Override
   public boolean removeLastOccurrence(Object o) {
     for (ListIterator li = listIterator(size()); li.hasPrevious();) {
@@ -80,28 +68,22 @@ public class LinkedList<T> extends java.util.LinkedList<T> implements Deque<T>, 
     }
     return false;
   }
-
   private static boolean eq(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static class DescendingIterator<U> implements Iterator<U> {
     private ListIterator<U> listIterator;
-
     public DescendingIterator(ListIterator<U> listIterator) {
       this.listIterator = listIterator;
     }
-
     @Override
     public boolean hasNext() {
       return listIterator.hasPrevious();
     }
-
     @Override
     public U next() {
       return listIterator.previous();
     }
-
     @Override
     public void remove() {
       listIterator.remove();

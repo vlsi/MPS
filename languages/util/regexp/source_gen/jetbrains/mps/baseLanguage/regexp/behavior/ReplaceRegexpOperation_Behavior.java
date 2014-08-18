@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ReplaceRegexpOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getReplacementString_3796137614137207007(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     for (SNode rep : SLinkOperations.getTargets(thisNode, "replacement", true)) {

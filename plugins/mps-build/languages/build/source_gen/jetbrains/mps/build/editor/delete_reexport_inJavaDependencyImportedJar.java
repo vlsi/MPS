@@ -14,34 +14,26 @@ public class delete_reexport_inJavaDependencyImportedJar {
     editorCell.setAction(CellActionType.DELETE, new delete_reexport_inJavaDependencyImportedJar.delete_reexport_inJavaDependencyImportedJar_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delete_reexport_inJavaDependencyImportedJar.delete_reexport_inJavaDependencyImportedJar_BACKSPACE(node));
   }
-
   public static class delete_reexport_inJavaDependencyImportedJar_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_reexport_inJavaDependencyImportedJar_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "reexport", "" + (false));
     }
   }
-
   public static class delete_reexport_inJavaDependencyImportedJar_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_reexport_inJavaDependencyImportedJar_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "reexport", "" + (false));
     }

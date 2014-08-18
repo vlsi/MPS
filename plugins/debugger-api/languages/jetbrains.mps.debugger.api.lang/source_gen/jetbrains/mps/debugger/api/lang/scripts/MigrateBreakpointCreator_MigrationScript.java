@@ -16,25 +16,20 @@ public class MigrateBreakpointCreator_MigrationScript extends BaseMigrationScrip
       public String getName() {
         return "Migrates breakpoint creators";
       }
-
       public String getAdditionalInfo() {
         return "Migrates breakpoint creators";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return SPropertyOperations.getBoolean(node, "isComplex") && (SLinkOperations.getTarget(node, "isApplicable", true) != null);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setNewChild(node, "isApplicableBreakpoint", "jetbrains.mps.debugger.api.lang.structure.ConceptFunction_IsApplicableBreakpoint");
         SLinkOperations.setTarget(SLinkOperations.getTarget(node, "isApplicableBreakpoint", true), "body", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "isApplicable", true), "body", true), true);
         SLinkOperations.setTarget(node, "isApplicable", null, true);
       }
-
       public boolean isShowAsIntention() {
         return true;
       }

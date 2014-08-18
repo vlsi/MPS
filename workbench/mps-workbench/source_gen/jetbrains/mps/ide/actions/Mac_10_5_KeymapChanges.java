@@ -23,19 +23,15 @@ public class Mac_10_5_KeymapChanges extends BaseKeymapChanges {
     // complex 
     addComplexShortcut("jetbrains.mps.ide.actions.GoToBookmark_Action", new Mac_10_5_KeymapChanges.GoToBookmark_ShortcutChange_yfpb4i_g());
   }
-
   public String getScheme() {
     return "Mac OS X 10.5+";
   }
-
   public static Shortcut getShortcut(String stroke) {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }
-
   public class GoToBookmark_ShortcutChange_yfpb4i_g extends BaseKeymapChanges.ComplexShortcut {
     public GoToBookmark_ShortcutChange_yfpb4i_g() {
     }
-
     public List<Shortcut> getShortcutsFor(Object... objects) {
       List<Shortcut> _result = new ArrayList<Shortcut>();
       _result.add(new KeyboardShortcut(KeyStroke.getKeyStroke("ctrl " + ((Integer) objects[0])), null));

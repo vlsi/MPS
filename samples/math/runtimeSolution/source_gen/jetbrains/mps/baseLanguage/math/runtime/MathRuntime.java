@@ -9,7 +9,6 @@ import java.math.BigInteger;
 public class MathRuntime {
   public MathRuntime() {
   }
-
   /*package*/ static BigDecimal sqrt(BigDecimal bd, MathContext context) {
     if (bd.scale() % 2 != 0) {
       bd = bd.setScale(bd.scale() + 1);

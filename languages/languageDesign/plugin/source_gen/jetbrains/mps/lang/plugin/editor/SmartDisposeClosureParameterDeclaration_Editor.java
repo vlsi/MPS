@@ -21,7 +21,6 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_oe6cnf_a(editorContext, node);
   }
-
   private EditorCell createCollection_oe6cnf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oe6cnf_a");
@@ -30,7 +29,6 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
     editorCell.addEditorCell(this.createProperty_oe6cnf_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_oe6cnf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
     editorCell.setCellId("Constant_oe6cnf_a0");
@@ -42,7 +40,6 @@ public class SmartDisposeClosureParameterDeclaration_Editor extends DefaultNodeE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_oe6cnf_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

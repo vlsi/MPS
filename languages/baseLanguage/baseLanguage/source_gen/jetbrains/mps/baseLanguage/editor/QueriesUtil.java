@@ -19,12 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class QueriesUtil {
   public QueriesUtil() {
   }
-
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
     ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(classifier, contextNode, IClassifiersSearchScope.STATIC_MEMBER);
     return QueriesUtil.replaceNodeMenu_parameterObjects(searchScope, classifier);
   }
-
   public static List<SNode> replaceNodeMenu_parameterObjects(ISearchScope searchScope, SNode classifier) {
     List<SNode> members = (List<SNode>) searchScope.getNodes();
     List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
@@ -38,7 +36,6 @@ public class QueriesUtil {
     }
     return result;
   }
-
   public static SNode replaceNodeMenu_createNewNode(SNode classifier, SNode parameterObject, SNode oldNode) {
     SModel model = SNodeOperations.getModel(classifier);
     if (SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
@@ -69,7 +66,6 @@ public class QueriesUtil {
     }
     throw new RuntimeException("Bad parameter object " + parameterObject);
   }
-
   public static SNode fillStaticMethodCall(SNode newNode, SNode parameterObject, SNode classifier, SNode oldNode) {
     SLinkOperations.setTarget(newNode, "baseMethodDeclaration", SNodeOperations.cast(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
     SLinkOperations.setTarget(newNode, "classConcept", SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);

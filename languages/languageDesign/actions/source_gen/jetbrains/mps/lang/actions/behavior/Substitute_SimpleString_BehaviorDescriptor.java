@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class Substitute_SimpleString_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ISubstitute_String_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public Substitute_SimpleString_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.Substitute_SimpleString";

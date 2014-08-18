@@ -52,13 +52,11 @@ public class ClassifierUpdater {
   private final boolean mySkipPrivate;
   private final SReferenceHandler myHandler;
   private final ASMClass myParsedClass;
-
   public ClassifierUpdater(ASMClass asmClass, boolean skipPrivate, SReferenceHandler handler) {
     mySkipPrivate = skipPrivate;
     myHandler = handler;
     myParsedClass = asmClass;
   }
-
   public SNode create(String fqName) {
     ClassifierKind kind = myParsedClass.getClassifierKind();
     if (kind == null) {
@@ -92,18 +90,15 @@ public class ClassifierUpdater {
         return null;
     }
   }
-
   private void prepare(SNode clsfr, String name) {
     SPropertyOperations.set(clsfr, "name", name);
     myClassifier = clsfr;
   }
-
   private void initAnnotation(SNode annotation) {
     updateAnnotationMethods(annotation);
     updateAnnotations(annotation);
     updateVisibility();
   }
-
   private void initClass(SNode cls) {
     SPropertyOperations.set(cls, "abstractClass", "" + (myParsedClass.isAbstract()));
     SPropertyOperations.set(cls, "isDeprecated", "" + (myParsedClass.isDeprecated()));
@@ -119,7 +114,6 @@ public class ClassifierUpdater {
     updateStaticMethods(cls);
     updateVisibility();
   }
-
   private void initInterface(SNode intfc) {
     SPropertyOperations.set(intfc, "isDeprecated", "" + (myParsedClass.isDeprecated()));
     updateAnnotations(intfc);
@@ -129,12 +123,9 @@ public class ClassifierUpdater {
     updateInstanceMethods(intfc);
     updateVisibility();
   }
-
   private void updateVisibility() {
     SLinkOperations.setTarget(myClassifier, "visibility", (myParsedClass.isPublic() ? _quotation_createNode_ol94f8_a0a0a01() : null), true);
   }
-
-
 
   private void updateTypeVariables(SNode result) {
     for (ASMTypeVariable tv : myParsedClass.getTypeParameters()) {
@@ -151,7 +142,6 @@ public class ClassifierUpdater {
       }
     }
   }
-
   private void updateTypeVariables(ASMMethod method, SNode result, SNode cls) {
     Map<ASMTypeVariable, SNode> typeVars = MapSequence.fromMap(new HashMap<ASMTypeVariable, SNode>());
     for (ASMTypeVariable tv : method.getTypeParameters()) {
@@ -172,7 +162,6 @@ public class ClassifierUpdater {
       }
     }
   }
-
   private SNode findTypeVariableDeclaration(SNode genDecl, final String name) {
     return ListSequence.fromList(SLinkOperations.getTargets(genDecl, "typeVariableDeclaration", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -180,23 +169,19 @@ public class ClassifierUpdater {
       }
     }).first();
   }
-
   private SNode createTypeVariableReference(SNode genDecl, String name) {
     return _quotation_createNode_ol94f8_a0a51(findTypeVariableDeclaration(genDecl, name));
   }
-
   private void updateAnnotations(SNode cls) {
     for (ASMAnnotation annotation : myParsedClass.getAnnotations()) {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "annotation", true)).addElement(createAnnotation(annotation));
     }
   }
-
   private void updateExtendsForInterface(SNode intfc) {
     for (ASMType type : myParsedClass.getGenericInterfaces()) {
       ListSequence.fromList(SLinkOperations.getTargets(intfc, "extendedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, intfc), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
   }
-
   private void updateExtendsAndImplements(SNode cls) {
     ASMType refSuperclass = myParsedClass.getGenericSuperclass();
     if (refSuperclass != null) {
@@ -206,7 +191,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "implementedInterface", true)).addElement(SNodeOperations.cast(getTypeByASMType(type, null, cls), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
     }
   }
-
   private void updateInstanceFields(SNode cls) {
     for (ASMField field : myParsedClass.getDeclaredFields()) {
       if (field.isPrivate() && mySkipPrivate) {
@@ -227,7 +211,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(decl);
     }
   }
-
   private void updateStaticFields(SNode cls) {
     for (ASMField field : myParsedClass.getDeclaredFields()) {
       if (field.isPrivate() && mySkipPrivate) {
@@ -266,7 +249,6 @@ public class ClassifierUpdater {
       }
     }
   }
-
   private void updateAnnotationMethods(final SNode annotation) {
     for (ASMMethod m : myParsedClass.getDeclaredMethods()) {
       SNode md = _quotation_createNode_ol94f8_a0a0a0v(null, ASMNodeId.createAnnotationMethodId(myParsedClass.getFqName(), m.getName()), getTypeByASMType(m.getGenericReturnType(), null, annotation), m.getName());
@@ -278,7 +260,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(annotation, "method", true)).addElement(md);
     }
   }
-
   private void updateConstructors(final SNode cls) {
     for (ASMMethod c : myParsedClass.getDeclaredConstructors()) {
       if (c.isSynthetic()) {
@@ -334,7 +315,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(constructor);
     }
   }
-
   private void updateInstanceMethods(SNode cls) {
     for (ASMMethod m : myParsedClass.getDeclaredMethods()) {
       if (m.isPrivate() && mySkipPrivate) {
@@ -359,7 +339,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(md);
     }
   }
-
   private void updateStaticMethods(SNode cls) {
     for (ASMMethod m : myParsedClass.getDeclaredMethods()) {
       if (m.isPrivate() && mySkipPrivate) {
@@ -383,7 +362,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(md);
     }
   }
-
   private void updateBaseMethod(ASMMethod m, SNode md, SNode cls) {
     SPropertyOperations.set(md, "name", m.getName());
     SLinkOperations.setTarget(md, "body", _quotation_createNode_ol94f8_a0b0z(), true);
@@ -425,7 +403,6 @@ public class ClassifierUpdater {
       ListSequence.fromList(SLinkOperations.getTargets(md, "annotation", true)).addElement(createAnnotation(annotation));
     }
   }
-
   private boolean isGeneratedEnumMethod(ASMMethod m) {
     if (m.getName().equals("values") && m.getParameterTypes().isEmpty()) {
       return true;
@@ -436,7 +413,6 @@ public class ClassifierUpdater {
     }
     return false;
   }
-
   protected SNode createVisibility(ASMMethod m) {
     if (m.isPublic()) {
       return _quotation_createNode_ol94f8_a0a0a72();
@@ -449,7 +425,6 @@ public class ClassifierUpdater {
     }
     return null;
   }
-
   protected SNode createVisibility(ASMField f) {
     if (f.isPublic()) {
       return _quotation_createNode_ol94f8_a0a0a82();
@@ -462,7 +437,6 @@ public class ClassifierUpdater {
     }
     return null;
   }
-
   private void addAnnotationsToParameter(SNode pd, List<ASMAnnotation> anns) {
     ListSequence.fromList(SLinkOperations.getTargets(pd, "annotation", true)).addSequence(ListSequence.fromList(anns).select(new ISelector<ASMAnnotation, SNode>() {
       public SNode select(ASMAnnotation it) {
@@ -470,7 +444,6 @@ public class ClassifierUpdater {
       }
     }));
   }
-
   private SNode createAnnotation(ASMAnnotation annotation) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
     ASMClassType c = (ASMClassType) annotation.getType();
@@ -483,7 +456,6 @@ public class ClassifierUpdater {
     }
     return result;
   }
-
   private SNode getAnnotationValue(Object value) {
     if (value instanceof Integer) {
       return _quotation_createNode_ol94f8_a0a0a13(value.toString());
@@ -548,7 +520,6 @@ public class ClassifierUpdater {
     }
     return null;
   }
-
   private SNode getTypeByASMType(ASMType type, SNode method, SNode classifier) {
     if (type == ASMPrimitiveType.BOOLEAN) {
       return _quotation_createNode_ol94f8_a0a0a23();
@@ -628,7 +599,6 @@ public class ClassifierUpdater {
     }
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
   }
-
   private void addTypeParameters(List<? extends ASMType> typeParameters, SNode method, SNode classifier, SNode result) {
     List<SNode> toAdd = new ArrayList<SNode>();
     for (ASMType tv : typeParameters) {
@@ -641,7 +611,6 @@ public class ClassifierUpdater {
     }
     ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addSequence(ListSequence.fromList(toAdd));
   }
-
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
     if (sourceNode.getReferenceTarget(role) != null) {
       return;
@@ -654,7 +623,6 @@ public class ClassifierUpdater {
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
     sourceNode.setReference(ref.getRole(), ref);
   }
-
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
     if (sourceNode.getReferenceTarget(role) != null) {
       return;
@@ -666,7 +634,6 @@ public class ClassifierUpdater {
     SReference ref = myHandler.createSReference(sourceNode, pack, nodeId, role, resolve, SNodeOperations.getContainingRoot(myClassifier).getPresentation());
     sourceNode.setReference(ref.getRole(), ref);
   }
-
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
     if (sourceNode.getReferenceTarget(role) != null) {
       return;
@@ -681,20 +648,16 @@ public class ClassifierUpdater {
 
     sourceNode.setReference(ref.getRole(), ref);
   }
-
   public boolean isSkipPrivate() {
     return mySkipPrivate;
   }
-
   protected static Logger LOG = LogManager.getLogger(ClassifierUpdater.class);
-
   private static SNode _quotation_createNode_ol94f8_a0a0a01() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a0m(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -702,7 +665,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0b0n(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -710,7 +672,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a51(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -718,7 +679,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0d0a0t(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_6 = null;
@@ -736,7 +696,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_6;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a3a0a02(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_6 = null;
@@ -754,7 +713,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_6;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0b0b0d0a3a0a02(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -762,7 +720,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a1a1a3a0d0a0u(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -770,7 +727,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0b0d0a0u(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -778,7 +734,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a0v(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -797,14 +752,12 @@ public class ClassifierUpdater {
     quotedNode_5.addChild("body", quotedNode_8);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0b0a0v() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0d0a0w(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4, Object parameter_5) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_6 = null;
@@ -825,7 +778,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_6;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a5a0a22(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -833,7 +785,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0c0g0g0g0a0w(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -846,14 +797,12 @@ public class ClassifierUpdater {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0b0z() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0g0g0g0z(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -866,49 +815,42 @@ public class ClassifierUpdater {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a72() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a1a72() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a2a72() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a1a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a2a82() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0e0eb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -920,7 +862,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -928,7 +869,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a1a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -936,7 +876,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a2a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -944,7 +883,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a3a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -952,7 +890,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a4a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -960,7 +897,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "charConstant", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a5a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -968,7 +904,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a6a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -976,7 +911,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a7a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -984,7 +918,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a8a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -992,7 +925,6 @@ public class ClassifierUpdater {
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a9a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1001,7 +933,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a01a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1013,7 +944,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a1a11a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1027,7 +957,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0n0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1035,70 +964,60 @@ public class ClassifierUpdater {
     quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, facade.createModelReference("r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)"), facade.createNodeId("7241381882860002170")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a0a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a1a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a2a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a3a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a4a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a5a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a6a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a7a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a8a23() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a9a23(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1110,7 +1029,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a0a01a23(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1122,7 +1040,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a2a41a23(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1134,7 +1051,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ol94f8_a1a51a23(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1146,7 +1062,6 @@ public class ClassifierUpdater {
     }
     return quotedNode_2;
   }
-
   private static boolean eq_ol94f8_a0a0a0a0a0a0a41(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

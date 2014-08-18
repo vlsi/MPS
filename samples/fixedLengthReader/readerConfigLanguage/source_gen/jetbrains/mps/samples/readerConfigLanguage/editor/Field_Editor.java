@@ -20,7 +20,6 @@ public class Field_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_s65pvt_a(editorContext, node);
   }
-
   private EditorCell createCollection_s65pvt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_s65pvt_a");
@@ -32,7 +31,6 @@ public class Field_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_s65pvt_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_s65pvt_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("start");
@@ -50,7 +48,6 @@ public class Field_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s65pvt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-");
     editorCell.setCellId("Constant_s65pvt_b0");
@@ -60,7 +57,6 @@ public class Field_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_s65pvt_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("end");
@@ -78,7 +74,6 @@ public class Field_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s65pvt_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_s65pvt_d0");
@@ -88,7 +83,6 @@ public class Field_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_s65pvt_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

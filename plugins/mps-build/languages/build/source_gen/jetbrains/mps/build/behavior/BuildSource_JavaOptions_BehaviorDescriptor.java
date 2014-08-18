@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildSource_JavaOptions_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor {
   public BuildSource_JavaOptions_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaOptions";

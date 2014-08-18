@@ -12,26 +12,19 @@ import org.jetbrains.annotations.NotNull;
 
 public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SReferenceLink {
 
-
   public SReferenceLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
-
-
 
   @Override
   public boolean isReference() {
     return true;
   }
 
-
-
   @Override
   public boolean isMultiple() {
     return false;
   }
-
-
 
   public SScope getScope(SNode referenceNode) {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role).getScope() 
@@ -41,7 +34,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     }
     return null;
   }
-
   public SScope getScope(SNode contextNode, @Nullable SContainmentLink link, int index) {
     // TODO scope = ModelConstraints.getReferenceDescriptor(conceptName, role, contextNode, link.role(), index).getScope() 
     Scope scope = null;
@@ -51,33 +43,25 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     return null;
   }
 
-
-
   private static class SScopeAdapter implements SScope {
     private final SNode myContextNode;
     private final Scope myScope;
-
 
     private SScopeAdapter(@NotNull Scope scope, @NotNull SNode contextNode) {
       myScope = scope;
       myContextNode = contextNode;
     }
 
-
-
     public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
       return myScope.getAvailableElements(prefix);
     }
-
     public boolean contains(SNode node) {
       return myScope.contains(node);
     }
-
     @Nullable
     public SNode resolve(@NotNull String string) {
       return myScope.resolve(myContextNode, string);
     }
-
     @Nullable
     public String getReferenceText(@NotNull SNode node) {
       return myScope.getReferenceText(myContextNode, node);

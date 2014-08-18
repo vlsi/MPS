@@ -20,16 +20,13 @@ public class ConceptEditorContextHints_hintKeymap extends KeyMapImpl {
     action = new ConceptEditorContextHints_hintKeymap.ConceptEditorContextHints_hintKeymap_Action0();
     this.putAction("any", "letter or digit", action);
   }
-
   public static class ConceptEditorContextHints_hintKeymap_Action0 extends KeyMapActionImpl {
     public ConceptEditorContextHints_hintKeymap_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -44,16 +41,13 @@ public class ConceptEditorContextHints_hintKeymap extends KeyMapImpl {
       }
       return true;
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.addNewChild(node, "hints", "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration");
     }
-
     public String getKeyStroke() {
       return " letter or digit";
     }

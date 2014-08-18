@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public abstract class MathPrimitiveType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public MathPrimitiveType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType";

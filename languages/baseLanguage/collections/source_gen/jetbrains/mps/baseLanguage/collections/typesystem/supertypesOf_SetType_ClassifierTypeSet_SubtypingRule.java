@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class supertypesOf_SetType_ClassifierTypeSet_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SetType_ClassifierTypeSet_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode setType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode et = SLinkOperations.getTarget(setType, "elementType", true);
     if (SNodeOperations.isInstanceOf(et, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
@@ -26,22 +25,18 @@ public class supertypesOf_SetType_ClassifierTypeSet_SubtypingRule extends Subtyp
     }
     return _quotation_createNode_m5bzh3_a2a1(et);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_m5bzh3_a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

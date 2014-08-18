@@ -34,11 +34,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lnae77_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lnae77_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_lnae77_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a");
@@ -51,7 +49,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createTransactionalProperty_lnae77_a0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -61,7 +58,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
         public void doCommit(final String oldValue, final String newValue) {
           this.doCommitImpl(oldValue, newValue);
         }
-
         public void doCommitImpl(final String oldValue, final String newValue) {
           if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
             public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
@@ -96,7 +92,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_lnae77_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_lnae77_b0");
@@ -106,7 +101,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_lnae77_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("dataType");
@@ -128,20 +122,16 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_lnae77_a2a extends InlineCellProvider {
     public _Inline_lnae77_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_lnae77_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_lnae77_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -161,7 +151,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_lnae77_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
     editorCell.setCellId("Constant_lnae77_d0");
@@ -171,11 +160,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
-
   private EditorCell createCollection_lnae77_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a_0");
@@ -184,7 +171,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_lnae77_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_lnae77_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_lnae77_a0");
@@ -194,7 +180,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_lnae77_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("doNotGenerate");

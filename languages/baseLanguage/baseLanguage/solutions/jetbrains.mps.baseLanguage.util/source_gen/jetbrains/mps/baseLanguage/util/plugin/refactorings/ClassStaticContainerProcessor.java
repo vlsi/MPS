@@ -13,12 +13,10 @@ public class ClassStaticContainerProcessor extends AbstractStaticContainerProces
   public ClassStaticContainerProcessor(SNode node) {
     super(node);
   }
-
   @Override
   public SNode createNewMethod() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
   }
-
   @Override
   public SNode createMethodCall(SNode method, List<SNode> arguments) {
     SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class BuildMps_ModuleTestSource_BehaviorDescriptor extends BuildMps_ModuleSource_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public BuildMps_ModuleTestSource_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource";

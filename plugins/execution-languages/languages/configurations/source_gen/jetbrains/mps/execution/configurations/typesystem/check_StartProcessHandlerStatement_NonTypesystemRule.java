@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StartProcessHandlerStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StartProcessHandlerStatement_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode startProcessHandler, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(startProcessHandler, "expression", true) == null)) {
       {
@@ -25,18 +24,15 @@ public class check_StartProcessHandlerStatement_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.configurations.structure.StartProcessHandlerStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

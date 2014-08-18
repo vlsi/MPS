@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class XmlWhitespace_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlPrologElement")) {
@@ -19,7 +18,6 @@ public class XmlWhitespace_Behavior {
     }
     return false;
   }
-
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.core.xml.structure.XmlPrologElement", "virtual_onNewLine_2133624044437631588", new Object[]{});
     if (isEmptyString(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) != null)) {
@@ -27,23 +25,18 @@ public class XmlWhitespace_Behavior {
     }
     return false;
   }
-
   public static boolean virtual_isOneLineBlock_2133624044437631438(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     return true;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

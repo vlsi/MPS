@@ -33,19 +33,15 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
   private Locator myLocator;
   private StructureModificationLog myResult;
   private ReadHelper fieldhelper;
-
   public HistoryReaderHandler() {
   }
-
   public StructureModificationLog getResult() {
     return myResult;
   }
-
   @Override
   public void setDocumentLocator(Locator locator) {
     myLocator = locator;
   }
-
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     HistoryReaderHandler.ElementHandler current = (myHandlersStack.empty() ? (HistoryReaderHandler.ElementHandler) null : myHandlersStack.peek());
@@ -53,7 +49,6 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
-
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
     HistoryReaderHandler.ElementHandler current = myHandlersStack.pop();
@@ -68,7 +63,6 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
     }
   }
-
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     HistoryReaderHandler.ElementHandler current = (myHandlersStack.empty() ? (HistoryReaderHandler.ElementHandler) null : myHandlersStack.peek());
@@ -100,52 +94,40 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
     myHandlersStack.push(current);
     myValues.push(result);
   }
-
   private static interface ChildHandler {
     public void apply(Object resultObject, Object value) throws SAXException;
   }
-
   private class ElementHandler {
     private ElementHandler() {
     }
-
     protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
-
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
-
     protected HistoryReaderHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
-
     protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
-
     protected String[] requiredAttributes() {
       return HistoryReaderHandler.EMPTY_ARRAY;
     }
-
     protected void validate(Object resultObject) throws SAXException {
     }
   }
-
   public class HistoryElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public HistoryElementHandler() {
     }
-
     @Override
     protected StructureModificationLog createObject(Attributes attrs) throws SAXException {
       return new StructureModificationLog();
     }
-
     @Override
     protected HistoryReaderHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("StructureModification".equals(tagName)) {
@@ -159,26 +141,21 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_4224832660979881723(Object resultObject, Object value) throws SAXException {
       StructureModificationLog result = (StructureModificationLog) resultObject;
       StructureModification child = (StructureModification) value;
       ListSequence.fromList(result.getHistory()).addElement(child);
     }
   }
-
   public class ElementElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public ElementElementHandler() {
     }
-
     @Override
     protected StructureModification createObject(Attributes attrs) throws SAXException {
       fieldhelper = new ReadHelper(null);
       return new StructureModification();
     }
-
     @Override
     protected HistoryReaderHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("dependencies".equals(tagName)) {
@@ -219,43 +196,35 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_4224832660979881734(Object resultObject, Object value) throws SAXException {
       StructureModification result = (StructureModification) resultObject;
       Map<SModelReference, Integer> child = (Map<SModelReference, Integer>) value;
       result.setDependencies(child);
     }
-
     private void handleChild_4224832660979881742(Object resultObject, Object value) throws SAXException {
       StructureModification result = (StructureModification) resultObject;
       StructureModification.MoveNode child = (StructureModification.MoveNode) value;
       ListSequence.fromList(result.getData()).addElement(child);
     }
-
     private void handleChild_4224832660979881752(Object resultObject, Object value) throws SAXException {
       StructureModification result = (StructureModification) resultObject;
       StructureModification.RenameNode child = (StructureModification.RenameNode) value;
       ListSequence.fromList(result.getData()).addElement(child);
     }
-
     private void handleChild_4224832660979881762(Object resultObject, Object value) throws SAXException {
       StructureModification result = (StructureModification) resultObject;
       StructureModification.RenameModel child = (StructureModification.RenameModel) value;
       ListSequence.fromList(result.getData()).addElement(child);
     }
   }
-
   public class DependenciesElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public DependenciesElementHandler() {
     }
-
     @Override
     protected Map<SModelReference, Integer> createObject(Attributes attrs) throws SAXException {
       return MapSequence.fromMap(new HashMap<SModelReference, Integer>());
     }
-
     @Override
     protected HistoryReaderHandler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("model".equals(tagName)) {
@@ -269,7 +238,6 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_4224832660979881785(Object resultObject, Object value) throws SAXException {
       Map<SModelReference, Integer> result = (Map<SModelReference, Integer>) resultObject;
       String[] child = (String[]) value;
@@ -278,23 +246,18 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       fieldhelper.addModelRef(child[0], modelRef);
     }
   }
-
   public class ModelElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"index", "modelUID", "version"};
-
     public ModelElementHandler() {
     }
-
     @Override
     protected String[] createObject(Attributes attrs) throws SAXException {
       return new String[]{attrs.getValue("index"), attrs.getValue("modelUID"), attrs.getValue("version")};
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String[] result = (String[]) resultObject;
@@ -310,23 +273,18 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class MoveNodeElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id", "to"};
-
     public MoveNodeElementHandler() {
     }
-
     @Override
     protected StructureModification.MoveNode createObject(Attributes attrs) throws SAXException {
       return new StructureModification.MoveNode(fieldhelper.readLinkId(attrs.getValue("id")), fieldhelper.readLinkId(attrs.getValue("to")));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       StructureModification.MoveNode result = (StructureModification.MoveNode) resultObject;
@@ -339,23 +297,18 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class RenameNodeElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"id", "type", "to"};
-
     public RenameNodeElementHandler() {
     }
-
     @Override
     protected StructureModification.RenameNode createObject(Attributes attrs) throws SAXException {
       return new StructureModification.RenameNode(fieldhelper.readLinkId(attrs.getValue("id")), StructureModification.RenameNode.RenameType.valueOf(attrs.getValue("type")), attrs.getValue("to"), null);
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       StructureModification.RenameNode result = (StructureModification.RenameNode) resultObject;
@@ -375,23 +328,18 @@ public class HistoryReaderHandler extends XMLSAXHandler<StructureModificationLog
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class RenameModelElementHandler extends HistoryReaderHandler.ElementHandler {
     private String[] requiredAttributes = new String[]{"oldModel", "newModel"};
-
     public RenameModelElementHandler() {
     }
-
     @Override
     protected StructureModification.RenameModel createObject(Attributes attrs) throws SAXException {
       return new StructureModification.RenameModel(PersistenceFacade.getInstance().createModelReference(attrs.getValue("oldModel")), PersistenceFacade.getInstance().createModelReference(attrs.getValue("newModel")));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       StructureModification.RenameModel result = (StructureModification.RenameModel) resultObject;

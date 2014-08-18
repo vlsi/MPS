@@ -153,6 +153,7 @@
         <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tool.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java-common.jar" />
         <fileset file="${artifacts.mpsPlugin}/mps-java/lib/mps-java.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-testing/lib/mps-testing.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />

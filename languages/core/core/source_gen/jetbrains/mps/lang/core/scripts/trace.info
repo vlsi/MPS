@@ -10,43 +10,43 @@
     <file name="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java">
       <node id="5989998095154029688" at="13,101,14,99" concept="5" />
       <node id="5989998095154034138" at="16,31,17,63" concept="4" />
-      <node id="5989998095154034138" at="20,41,21,63" concept="4" />
-      <node id="5989998095154034138" at="24,59,25,69" concept="4" />
-      <node id="2931648071864920980" at="28,59,29,21" concept="4" />
-      <node id="5989998095154069689" at="32,52,33,339" concept="2" />
-      <node id="5989998095154034138" at="36,42,37,21" concept="4" />
+      <node id="5989998095154034138" at="19,41,20,63" concept="4" />
+      <node id="5989998095154034138" at="22,59,23,69" concept="4" />
+      <node id="2931648071864920980" at="25,59,26,21" concept="4" />
+      <node id="5989998095154069689" at="28,52,29,339" concept="2" />
+      <node id="5989998095154034138" at="31,42,32,21" concept="4" />
       <node id="5989998095154034138" at="16,0,19,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="5989998095154034138" at="20,0,23,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
-      <node id="5989998095154034138" at="24,0,27,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-      <node id="5989998095154034138" at="28,0,31,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5989998095154034138" at="32,0,35,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5989998095154034138" at="36,0,39,0" concept="3" trace="isShowAsIntention#()Z" />
-      <node id="5989998095154029688" at="14,99,39,7" concept="0" />
-      <node id="5989998095154034138" at="14,99,39,7" concept="2" />
-      <node id="5989998095154029688" at="13,0,41,0" concept="1" trace="MigrateIModuleCastToAbstractModuleCast_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="5989998095154034138" at="19,0,22,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="5989998095154034138" at="22,0,25,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="5989998095154034138" at="25,0,28,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5989998095154034138" at="28,0,31,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5989998095154034138" at="31,0,34,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="5989998095154029688" at="14,99,34,7" concept="0" />
+      <node id="5989998095154034138" at="14,99,34,7" concept="2" />
+      <node id="5989998095154029688" at="13,0,36,0" concept="1" trace="MigrateIModuleCastToAbstractModuleCast_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
       <scope id="5989998095154034138" at="16,31,17,63" />
-      <scope id="5989998095154034138" at="20,41,21,63" />
-      <scope id="5989998095154034138" at="24,59,25,69" />
-      <scope id="5989998095154034406" at="28,59,29,21" />
-      <scope id="5989998095154034142" at="32,52,33,339" />
-      <scope id="5989998095154034138" at="36,42,37,21" />
+      <scope id="5989998095154034138" at="19,41,20,63" />
+      <scope id="5989998095154034138" at="22,59,23,69" />
+      <scope id="5989998095154034406" at="25,59,26,21" />
+      <scope id="5989998095154034142" at="28,52,29,339" />
+      <scope id="5989998095154034138" at="31,42,32,21" />
       <scope id="5989998095154034138" at="16,0,19,0" />
-      <scope id="5989998095154034138" at="20,0,23,0" />
-      <scope id="5989998095154034138" at="24,0,27,0" />
+      <scope id="5989998095154034138" at="19,0,22,0" />
+      <scope id="5989998095154034138" at="22,0,25,0" />
+      <scope id="5989998095154034138" at="25,0,28,0">
+        <var name="node" id="5989998095154034138" />
+      </scope>
       <scope id="5989998095154034138" at="28,0,31,0">
         <var name="node" id="5989998095154034138" />
       </scope>
-      <scope id="5989998095154034138" at="32,0,35,0">
-        <var name="node" id="5989998095154034138" />
-      </scope>
-      <scope id="5989998095154034138" at="36,0,39,0" />
-      <scope id="5989998095154034138" at="14,99,39,7" />
-      <scope id="5989998095154029688" at="13,101,39,7" />
-      <scope id="5989998095154029688" at="13,0,41,0">
+      <scope id="5989998095154034138" at="31,0,34,0" />
+      <scope id="5989998095154034138" at="14,99,34,7" />
+      <scope id="5989998095154029688" at="13,101,34,7" />
+      <scope id="5989998095154029688" at="13,0,36,0">
         <var name="operationContext" id="5989998095154029688" />
       </scope>
-      <unit id="5989998095154034138" at="15,28,39,5" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript$1" />
-      <unit id="5989998095154029688" at="12,0,42,0" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript" />
+      <unit id="5989998095154034138" at="15,28,34,5" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript$1" />
+      <unit id="5989998095154029688" at="12,0,37,0" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript" />
     </file>
   </root>
 </debug-info>

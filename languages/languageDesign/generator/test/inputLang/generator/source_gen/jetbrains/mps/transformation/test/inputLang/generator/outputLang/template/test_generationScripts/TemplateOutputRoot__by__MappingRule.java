@@ -21,11 +21,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration {
   public TemplateOutputRoot__by__MappingRule() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_d5hm2j_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
@@ -45,7 +43,6 @@ public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration 
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_d5hm2j_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195168984336");
   private static SNodePointer propertyMacro_d5hm2j_c0a0c0c0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195598330257");
   private static SNodePointer copySrcListMacro_d5hm2j_b0a0a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195170582046");

@@ -21,41 +21,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class UnwrapTryCatch_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public UnwrapTryCatch_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ITryCatchStatement";
   }
-
   public String getPresentation() {
     return "UnwrapTryCatch";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.UnwrapTryCatch_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     for (SNode ancestor : ListSequence.fromList(SNodeOperations.getAncestors(selectedNode, null, true))) {
@@ -65,30 +56,24 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "7093209195843978568");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UnwrapTryCatch_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Unwrap Try-Catch Block";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode body = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TryStatement") ? SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryStatement"), "body", true) : SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement"), "body", true));
 
@@ -107,12 +92,10 @@ public class UnwrapTryCatch_Intention implements IntentionFactory {
         SLinkOperations.setTarget(statement, "statements", body, true);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return UnwrapTryCatch_Intention.this;
     }
   }
-
   private static boolean eq_cj56ns_a0a0a0b0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

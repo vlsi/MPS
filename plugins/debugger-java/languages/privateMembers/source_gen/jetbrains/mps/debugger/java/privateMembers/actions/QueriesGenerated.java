@@ -47,15 +47,12 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, "classifier", (item), false);
                 return result;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name") + ".";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return "static access ^" + NodePresentationUtil.descriptionText((item));
               }

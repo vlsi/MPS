@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NodesTestCase_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getTestSet_1216130724401(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "testMethods", true))) {
@@ -24,21 +24,20 @@ public class NodesTestCase_Behavior {
     }
     return result;
   }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;
   }
-
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(thisNode, "testMethods", true))).union(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.test.structure.NodeCheckOperation", false, new String[]{}))).toListSequence();
   }
-
   public static boolean call_isIntentionApplicable_1217250498008(SAbstractConcept thisConcept, SNode node) {
     SNode test = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.test.structure.TestNode", "jetbrains.mps.lang.test.structure.EditorTestCase"}, true, false);
     return test != null;
   }
-
   public static String call_getTestBodyName_1224602741295(SAbstractConcept thisConcept) {
     return "TestBody";
+  }
+  public static boolean call_needsWriteAction_6339244025081193722(SNode thisNode) {
+    return !(SPropertyOperations.getBoolean(thisNode, "needsNoWriteAction"));
   }
 }

@@ -28,7 +28,6 @@ import java.awt.event.FocusEvent;
   private EditorComponent myEditor;
   private BaseVersionEditorComponent myBaseEditor;
   private ActionToolbar myToolbar;
-
   public PopupPanel(ChangeStripsPainter painter, ChangeGroup group) {
     myChangeGroup = group;
     myPainter = painter;
@@ -49,11 +48,9 @@ import java.awt.event.FocusEvent;
       add(myBaseEditor.getScrollPane(), BorderLayout.CENTER);
     }
   }
-
   /*package*/ ChangeGroup getChangeGroup() {
     return myChangeGroup;
   }
-
   public void show(int x, int y) {
     JLayeredPane layeredPane = myEditor.getRootPane().getLayeredPane();
     setLocation(SwingUtilities.convertPoint(myEditor, x, y, layeredPane));
@@ -73,17 +70,14 @@ import java.awt.event.FocusEvent;
 
     addListeners();
   }
-
   private void addListeners() {
     myEditor.addMouseListener(myMouseListener);
     myEditor.addFocusListener(myFocusListener);
   }
-
   private void removeListeners() {
     myEditor.removeFocusListener(myFocusListener);
     myEditor.removeMouseListener(myMouseListener);
   }
-
   /*package*/ void dispose() {
     removeListeners();
     JLayeredPane layeredPane = myEditor.getRootPane().getLayeredPane();
@@ -99,21 +93,17 @@ import java.awt.event.FocusEvent;
       myBaseEditor = null;
     }
   }
-
   private class MyMouseListener extends MouseAdapter {
     public MyMouseListener() {
     }
-
     @Override
     public void mousePressed(MouseEvent event) {
       dispose();
     }
   }
-
   private class MyFocusListener extends FocusAdapter {
     public MyFocusListener() {
     }
-
     @Override
     public void focusLost(FocusEvent event) {
       dispose();

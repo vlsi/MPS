@@ -10,14 +10,12 @@ public class OutputPathRedirects implements IRedirects {
   private String cachesOutputRoot;
   private boolean useTransientOutput;
   private ModuleOutputPaths moduleOutputPaths;
-
   public OutputPathRedirects(ModuleOutputPaths outputPaths, String outputRoot, String cachesOutputRoot, boolean useTransientOutput) {
     this.outputRoot = outputRoot;
     this.cachesOutputRoot = cachesOutputRoot;
     this.useTransientOutput = useTransientOutput;
     this.moduleOutputPaths = outputPaths;
   }
-
   @Override
   public IFile getRedirect(String path) {
     if (useTransientOutput) {
@@ -35,7 +33,6 @@ public class OutputPathRedirects implements IRedirects {
     // can't convert, return the literal path 
     return FileSystem.getInstance().getFileByPath(path);
   }
-
   public IFile getOutputRedirect(String path) {
     if (outputRoot != null) {
       String localOutPath = moduleOutputPaths.toLocalPath(path);
@@ -45,7 +42,6 @@ public class OutputPathRedirects implements IRedirects {
     }
     return null;
   }
-
   public IFile getCachesOutputRedirect(String path) {
     if (cachesOutputRoot != null) {
       String localOutCachePath = moduleOutputPaths.toLocalCachePath(path);
@@ -55,7 +51,6 @@ public class OutputPathRedirects implements IRedirects {
     }
     return null;
   }
-
   public boolean isInCacheOutput(String fullPath) {
     if (cachesOutputRoot != null && fullPath != null) {
       return fullPath.startsWith(cachesOutputRoot);

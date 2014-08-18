@@ -28,11 +28,9 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarationWeavingAware {
   public TemplateQuotation__to__staticMethodCall() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396628814");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression");
     try {
@@ -294,11 +292,9 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                               public Object resolve(SNode outputNode, TemplateContext context) {
                                 return QueriesGenerated.referenceMacro_GetReferent_6497389703574369414(new ReferenceMacroContext(context, tnode32, referenceMacro_3njegt_c0a0a0a0a0a0b0b0d0b0b0d0c0e0b0f0b0c0b0c, "variableDeclaration"));
                               }
-
                               public String getDefaultResolveInfo() {
                                 return "_node_";
                               }
-
                               public SNodeReference getTemplateNode() {
                                 return referenceMacro_3njegt_c0a0a0a0a0a0b0b0d0b0b0d0c0e0b0f0b0c0b0c;
                               }
@@ -330,11 +326,9 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                               public Object resolve(SNode outputNode, TemplateContext context) {
                                 return QueriesGenerated.referenceMacro_GetReferent_6497389703574369437(new ReferenceMacroContext(context, tnode34, referenceMacro_3njegt_c0a0a0a0a0a0b0b0f0b0b0d0c0e0b0f0b0c0b0c, "variableDeclaration"));
                               }
-
                               public String getDefaultResolveInfo() {
                                 return "_node_";
                               }
-
                               public SNodeReference getTemplateNode() {
                                 return referenceMacro_3njegt_c0a0a0a0a0a0b0b0f0b0b0d0c0e0b0f0b0c0b0c;
                               }
@@ -376,11 +370,9 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                         public Object resolve(SNode outputNode, TemplateContext context) {
                           return QueriesGenerated.referenceMacro_GetReferent_767161977427984193(new ReferenceMacroContext(context, tnode37, referenceMacro_3njegt_c0a0a0a0a0a0b0b0b0b0f0b0f0b0c0b0c, "variableDeclaration"));
                         }
-
                         public String getDefaultResolveInfo() {
                           return "_node_";
                         }
-
                         public SNodeReference getTemplateNode() {
                           return referenceMacro_3njegt_c0a0a0a0a0a0b0b0b0b0f0b0f0b0c0b0c;
                         }
@@ -417,18 +409,15 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.singletonList(applyPart0(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_3njegt_a0b0e;
     environment.weaveNode(outputContextNode, "contentNode", tnodepart0, weaveTf0, context.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer templateNode_3njegt_c0a1a1a1a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396668027");
   private static SNodePointer loopMacroRef_3njegt_b0a0a1a2a1a1a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396691723");
   private static SNodePointer copySrcMacro_3njegt_b0a0e0c0c0b0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1025590056396691787");

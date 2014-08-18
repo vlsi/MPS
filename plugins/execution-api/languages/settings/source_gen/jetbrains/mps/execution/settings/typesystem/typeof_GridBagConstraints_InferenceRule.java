@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_GridBagConstraints_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_GridBagConstraints_InferenceRule() {
   }
-
   public void applyRule(final SNode gridBagConstraints, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = gridBagConstraints;
@@ -29,22 +28,18 @@ public class typeof_GridBagConstraints_InferenceRule extends AbstractInferenceRu
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e115237b-80f4-4ca3-87d6-2ac891492994(jetbrains.mps.execution.settings.typesystem)", "2158326176673575458", true), (SNode) _quotation_createNode_b7f1sc_a0b0b(), false, false, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.settings.structure.GridBagConstraints";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_b7f1sc_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -52,7 +47,6 @@ public class typeof_GridBagConstraints_InferenceRule extends AbstractInferenceRu
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), facade.createNodeId("~GridBagConstraints")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_b7f1sc_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

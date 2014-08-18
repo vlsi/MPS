@@ -20,7 +20,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class SpecialMigrations {
   private SpecialMigrations() {
   }
-
   public static List<AbstractMigrationRefactoring> migrateSpecializedLinkAccess(final MigrationConfig config, final SNode linkTargetConcept) {
     // migrate all specialized link accesses to "base" link access 
     final SNode sourceLinkDeclaration = ListSequence.fromList(SLinkOperations.getTargets(config.sourceConcept, "linkDeclaration", true)).findFirst(new IWhereFilter<SNode>() {
@@ -40,12 +39,10 @@ public class SpecialMigrations {
       public String getName() {
         return "Migrate specialized link reference access for " + SPropertyOperations.getString(config.sourceConcept, "name");
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "link", false) == sourceLinkDeclaration;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", targetLinkDeclaration, false);
@@ -58,7 +55,6 @@ public class SpecialMigrations {
         SNode qualifier = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true);
         return SNodeOperations.isInstanceOf(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier") && SLinkOperations.getTarget(SNodeOperations.cast(qualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", false) == sourceLinkDeclaration;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "linkQualifier", true), "linkQualifier", true), "jetbrains.mps.lang.smodel.structure.LinkRefQualifier"), "link", targetLinkDeclaration, false);
@@ -67,7 +63,6 @@ public class SpecialMigrations {
 
     return migrations;
   }
-
   private static SNode _quotation_createNode_i1zgmn_a0c0a0b0c0a0a0h0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

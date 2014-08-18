@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class SimpleMathExpression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public SimpleMathExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathExpression";

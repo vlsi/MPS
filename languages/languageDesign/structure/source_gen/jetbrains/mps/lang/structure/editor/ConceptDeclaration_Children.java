@@ -23,18 +23,14 @@ public class ConceptDeclaration_Children {
     editorCell.setAction(CellActionType.DELETE, new ConceptDeclaration_Children.ConceptDeclaration_Children_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ConceptDeclaration_Children.ConceptDeclaration_Children_BACKSPACE(node));
   }
-
   public static class ConceptDeclaration_Children_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ConceptDeclaration_Children_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
       if (nodeCell == null || ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(editorContext.getEditorComponent(), nodeCell)) {
@@ -73,18 +69,14 @@ public class ConceptDeclaration_Children {
       }
     }
   }
-
   public static class ConceptDeclaration_Children_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ConceptDeclaration_Children_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       EditorCell nodeCell = editorContext.getEditorComponent().findNodeCell(node);
       if (nodeCell == null || ReadOnlyUtil.isCellOrSelectionReadOnlyInEditor(editorContext.getEditorComponent(), nodeCell)) {

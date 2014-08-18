@@ -19,14 +19,11 @@ import java.util.HashMap;
 
 public class TypeMatcher {
   private Map<SNode, SNode> typeMap;
-
   public TypeMatcher() {
   }
-
   public Map<SNode, SNode> getMap() {
     return typeMap;
   }
-
   public void matchType(SNode absType, SNode realType) {
     SNode matched = null;
     if (SNodeOperations.isInstanceOf(realType, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
@@ -47,7 +44,6 @@ public class TypeMatcher {
       }
     }
   }
-
   public void matchReturnType(SNode absType, SNode realType) {
     Set<String> visited = SetSequence.fromSet(new HashSet<String>());
     List<SNode> queue = new ArrayList<SNode>();
@@ -72,18 +68,15 @@ public class TypeMatcher {
       }
     }
   }
-
   private void mapTypeVar(SNode typeVar, SNode tvr) {
     MapSequence.fromMap(getOrCreateMap()).put(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false), FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(SNodeOperations.copyNode(tvr))));
   }
-
   private Map<SNode, SNode> getOrCreateMap() {
     if (typeMap == null) {
       typeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     }
     return typeMap;
   }
-
   private SNode whichTypeMatching(List<SNode> leftList, SNode right) {
     for (SNode left : leftList) {
       if (isTypeMatching(left, right)) {
@@ -92,7 +85,6 @@ public class TypeMatcher {
     }
     return null;
   }
-
   private boolean isTypeMatching(SNode left, SNode right) {
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.VoidType") || SNodeOperations.isInstanceOf(right, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;

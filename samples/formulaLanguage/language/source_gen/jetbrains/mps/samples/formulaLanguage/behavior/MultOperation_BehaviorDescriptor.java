@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class MultOperation_BehaviorDescriptor extends Operation_BehaviorDescriptor {
   public MultOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.MultOperation";

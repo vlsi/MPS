@@ -43,8 +43,6 @@ public class TypeVariableMatchUtil {
     }
   }
 
-
-
   @InferenceMethod
   public static void calculateTypesForStaticMethod(final TypeCheckingContext typeCheckingContext, final SNode staticMethodCall) {
     final SNode mdecl = SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false);
@@ -172,7 +170,6 @@ public class TypeVariableMatchUtil {
 
     TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, staticMethodCall, subs);
   }
-
   private static SNode _quotation_createNode_hh0s94_a0a1a0a9a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

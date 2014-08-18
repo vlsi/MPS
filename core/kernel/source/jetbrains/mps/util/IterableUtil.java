@@ -22,8 +22,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 public class IterableUtil {
 
@@ -33,11 +35,19 @@ public class IterableUtil {
 
   public static <T> Iterable<T> merge(@NotNull Iterable<T>... its) {
     if (its.length == 1) {
-      return its[1];
+      return its[0];
     } else if (its.length == 2) {
       return new MergeIterator<T>(its[0], its[1]);
     }
     return new FlattenIterable<T>(Arrays.asList(its));
+  }
+
+  public static <T> Set<T> asSet(Iterable<? extends T> iter) {
+    if (iter instanceof Set) return (Set<T>) iter;
+    Set<T> result = new HashSet<T>();
+    for (T o : iter)
+      result.add(o);
+    return result;
   }
 
   public static <T> Collection<T> asCollection(Iterable<? extends T> iter) {

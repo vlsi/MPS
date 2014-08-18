@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class addLinkValue_QuickFix extends QuickFix_Runtime {
   public addLinkValue_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Initialize `" + SPropertyOperations.getString(((SNode) addLinkValue_QuickFix.this.getField("link")[0]), "role") + "'";
   }
-
   public void execute(SNode node) {
     SNode val = SConceptOperations.createNewNode("jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", null);
     SLinkOperations.setTarget(val, "link", ((SNode) addLinkValue_QuickFix.this.getField("link")[0]), false);

@@ -29,8 +29,6 @@ public class DeleteIfUtil {
     SNodeOperations.deleteNode(ifStatement);
   }
 
-
-
   public static void unwrapElse(SNode ifStatement) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(ifStatement), "jetbrains.mps.baseLanguage.structure.StatementList"))) {
       SNodeOperations.detachNode(SLinkOperations.getTarget(ifStatement, "ifFalseStatement", true));

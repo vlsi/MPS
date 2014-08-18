@@ -18,69 +18,54 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ElsifTransform_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ElsifTransform_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public String getPresentation() {
     return "ElsifTransform";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ElsifTransform_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     return (ifFalseStatement != null) && SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1206065955177");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ElsifTransform_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Elsif Transform";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
       while (true) {
@@ -98,7 +83,6 @@ public class ElsifTransform_Intention implements IntentionFactory {
         }
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ElsifTransform_Intention.this;
     }

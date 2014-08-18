@@ -15,7 +15,6 @@ public class Advanced_Test extends Util_Test {
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -31,7 +30,6 @@ __switch__:
                             public Iterator<String> iterator() {
                               return new YieldingIterator<String>() {
                                 private int __CP__ = 0;
-
                                 protected boolean moveToNext() {
 __loop__:
                                   do {
@@ -64,7 +62,6 @@ __switch__:
                                   } while (true);
                                   return false;
                                 }
-
                                 private int _3_len;
                               };
                             }
@@ -96,7 +93,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private String[] _3_array;
               private String _4_s;
               private Iterator<String> _4_s_it;
@@ -107,7 +103,6 @@ __switch__:
     });
     this.assertIterableEquals(Sequence.fromArray(new String[]{"C", "B", "A"}), test);
   }
-
   public Advanced_Test() {
   }
 }

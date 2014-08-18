@@ -10,21 +10,17 @@ import jetbrains.mps.ide.actions.Tools_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.script.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     // groups 
     addGroup(new ScriptsForSelection_ActionGroup());
     addGroup(new ScriptsGlobally_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(ScriptsForSelection_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_scripts);
     insertGroupIntoAnother(ScriptsForSelection_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_scripts);

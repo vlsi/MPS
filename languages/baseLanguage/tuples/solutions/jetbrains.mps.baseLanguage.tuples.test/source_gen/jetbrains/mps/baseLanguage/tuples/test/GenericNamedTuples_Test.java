@@ -15,7 +15,6 @@ public class GenericNamedTuples_Test extends TestCase {
     Assert.assertEquals("dbca", pair.first());
     Assert.assertSame(2, pair.second());
   }
-
   public void test_pairToIndexedTuple() throws Exception {
     Pair<Integer, String> pair = new Pair<Integer, String>(1, "abc");
     int x;
@@ -28,10 +27,8 @@ public class GenericNamedTuples_Test extends TestCase {
     Assert.assertSame(1, x);
     Assert.assertEquals("abc", y);
   }
-
   public GenericNamedTuples_Test() {
   }
-
   public Pair<String, String> pairOfStrings() {
     return new Pair<String, String>("X", "Y");
   }

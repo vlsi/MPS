@@ -20,7 +20,6 @@ public class ScriptType_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class ScriptType_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     ScriptType constant = ScriptType.parseValue(value);
     if (constant != null) {

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BaseLineCell_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public BaseLineCell_BehaviorDescriptor() {
   }
-
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return BaseLineCell_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.BaseLineCell";

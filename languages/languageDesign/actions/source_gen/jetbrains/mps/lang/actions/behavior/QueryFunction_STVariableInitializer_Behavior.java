@@ -16,18 +16,15 @@ import jetbrains.mps.smodel.SReference;
 public class QueryFunction_STVariableInitializer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration")) {
       return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration"), "type", true));
     }
     return _quotation_createNode_f9d5ph_a1a0();
   }
-
   public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "1177497140107"));
@@ -35,7 +32,6 @@ public class QueryFunction_STVariableInitializer_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622665029"));
     return result;
   }
-
   private static SNode _quotation_createNode_f9d5ph_a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -48,10 +48,8 @@ import java.io.OutputStreamWriter;
 public class XmlModelPersistence implements ModelFactory, SModelPersistence {
   private static final String XML_EXTENSION = "xml";
   private static final Logger LOG = LogManager.getLogger(XmlModelPersistence.class);
-
   public XmlModelPersistence() {
   }
-
   @NotNull
   @Override
   public SModel load(@NotNull DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
@@ -82,7 +80,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
-
   @NotNull
   @Override
   public SModel create(DataSource dataSource, @NotNull Map<String, String> options) throws IOException {
@@ -103,7 +100,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(mref, id, modelName);
     return new CustomPersistenceSModel(ref, (StreamDataSource) dataSource, this);
   }
-
   @Override
   public boolean canCreate(DataSource dataSource, @NotNull Map<String, String> options) {
     if (!((dataSource instanceof StreamDataSource))) {
@@ -116,7 +112,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     return true;
   }
-
   @Override
   public void save(SModel model, DataSource dataSource) throws ModelSaveException, IOException {
     if (!((dataSource instanceof StreamDataSource))) {
@@ -124,31 +119,25 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     }
     writeModel(((SModelBase) model).getSModelInternal(), (StreamDataSource) dataSource);
   }
-
   @Override
   public boolean needsUpgrade(DataSource dataSource) throws IOException {
     return false;
   }
-
   @Override
   public void upgrade(DataSource dataSource) throws IOException {
   }
-
   @Override
   public boolean isBinary() {
     return false;
   }
-
   @Override
   public String getFileExtension() {
     return XML_EXTENSION;
   }
-
   @Override
   public String getFormatTitle() {
     return "XML file";
   }
-
   @Override
   public SModelData createEmpty(SModelReference reference, StreamDataSource source) {
     jetbrains.mps.smodel.SModel sModel = new jetbrains.mps.smodel.SModel(reference);
@@ -161,7 +150,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
     sModel.addRootNode(xmlFile);
     return sModel;
   }
-
   @Override
   public SModelData readModel(SModelReference reference, StreamDataSource source) throws IOException {
     InputStream in = null;
@@ -184,7 +172,6 @@ public class XmlModelPersistence implements ModelFactory, SModelPersistence {
       FileUtil.closeFileSafe(in);
     }
   }
-
   @Override
   public void writeModel(SModelData model, StreamDataSource source) throws IOException, ModelSaveException {
     Iterator<SNode> iterator = model.getRootNodes().iterator();

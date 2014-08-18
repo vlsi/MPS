@@ -7,13 +7,11 @@ public class IfFunction<T> implements Function<T> {
   private Function<Boolean> myLogicalTest;
   private Function<T> myValueIfTrue;
   private Function<T> myValueIfFalse;
-
   public IfFunction(Function<Boolean> logicalTest, Function<T> valueIfTrue, Function<T> valueIfFalse) {
     myLogicalTest = logicalTest;
     myValueIfTrue = valueIfTrue;
     myValueIfFalse = valueIfFalse;
   }
-
   @Override
   public T compute(Object parm) {
     if (myLogicalTest.compute(parm)) {

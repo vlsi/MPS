@@ -7,7 +7,6 @@ import testRefactoringTargetLang.behavior.AnsotherGoodConcept_BehaviorDescriptor
 public class YetAnotherGoodConcept_BehaviorDescriptor extends AnsotherGoodConcept_BehaviorDescriptor {
   public YetAnotherGoodConcept_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testRefactoring.structure.YetAnotherGoodConcept";

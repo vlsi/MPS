@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RelayQueryExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public RelayQueryExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return RelayQueryExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.RelayQueryExpression";

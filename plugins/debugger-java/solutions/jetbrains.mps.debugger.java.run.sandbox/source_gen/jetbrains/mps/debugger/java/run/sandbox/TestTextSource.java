@@ -7,7 +7,6 @@ import jetbrains.mps.util.EqualUtil;
 public class TestTextSource {
   public TestTextSource() {
   }
-
   public static void main(String[] args) {
     System.out.println(EqualUtil.equals("1", "2"));
   }

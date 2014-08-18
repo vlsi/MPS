@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodesOperation_BehaviorDescriptor extends ContextMemberOperation_BehaviorDescriptor {
   public NodesOperation_BehaviorDescriptor() {
   }
-
   public SNode virtual_createType_7012097027058652452(SNode thisNode) {
     return NodesOperation_Behavior.virtual_createType_7012097027058652452(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.NodesOperation";

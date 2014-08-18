@@ -12,16 +12,13 @@ public abstract class BaseMpsRunConfiguration extends RunConfigurationBase imple
   public BaseMpsRunConfiguration(Project project, ConfigurationFactory factory, String name) {
     super(project, factory, name);
   }
-
   public boolean canExecute(String executorId) {
     return DefaultRunExecutor.EXECUTOR_ID.equals(executorId);
   }
-
   @Override
   public boolean isGeneratedName() {
     return true;
   }
-
   @Override
   public String suggestedName() {
     String name = getName();

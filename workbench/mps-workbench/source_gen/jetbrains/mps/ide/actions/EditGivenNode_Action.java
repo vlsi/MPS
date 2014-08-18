@@ -22,7 +22,6 @@ public class EditGivenNode_Action extends BaseAction {
   private static final Icon ICON = null;
   private SNodeReference targetNode;
   private String text;
-
   public EditGivenNode_Action(SNodeReference targetNode_par, String text_par) {
     super("<no caption>", "", ICON);
     this.targetNode = targetNode_par;
@@ -30,12 +29,10 @@ public class EditGivenNode_Action extends BaseAction {
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setText(EditGivenNode_Action.this.text);
@@ -46,7 +43,6 @@ public class EditGivenNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,7 +57,6 @@ public class EditGivenNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNodePointer) EditGivenNode_Action.this.targetNode).resolve(MPSModuleRepository.getInstance()), true, true);
@@ -71,7 +66,6 @@ public class EditGivenNode_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -83,14 +77,11 @@ public class EditGivenNode_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String targetNode_State(SNodeReference object) {
     return ((SNodePointer) object).toString();
   }
-
   public static String text_State(String object) {
     return "";
   }
-
   protected static Logger LOG = LogManager.getLogger(EditGivenNode_Action.class);
 }

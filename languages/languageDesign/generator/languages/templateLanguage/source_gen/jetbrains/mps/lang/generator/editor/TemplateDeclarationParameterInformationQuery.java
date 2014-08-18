@@ -17,19 +17,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class TemplateDeclarationParameterInformationQuery implements ParametersInformation<SNode> {
   public TemplateDeclarationParameterInformationQuery() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, "template", false));
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     this.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext, node), styledText);
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;
   }
-
   private SNode getSelectedActualArgument(EditorContext editorContext, final SNode templateCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {
@@ -41,7 +37,6 @@ public class TemplateDeclarationParameterInformationQuery implements ParametersI
       }
     });
   }
-
   /*package*/ void fillPresentation(SNode templateDeclaration, SNode selectedActualArgument, StyledTextPrinter styledText) {
     if (SPropertyOperations.getString(templateDeclaration, "name") != null) {
       styledText.append(SPropertyOperations.getString(templateDeclaration, "name"));

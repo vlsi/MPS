@@ -10,7 +10,6 @@ import com.intellij.openapi.extensions.PluginId;
 public class Bookmarks_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Bookmarks_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Bookmarks_ActionGroup";
-
   public Bookmarks_ActionGroup() {
     super("Bookmarks", ID);
     this.setIsInternal(false);

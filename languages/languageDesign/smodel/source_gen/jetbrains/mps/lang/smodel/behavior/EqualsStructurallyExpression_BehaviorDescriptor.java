@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class EqualsStructurallyExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public EqualsStructurallyExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return EqualsStructurallyExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression";

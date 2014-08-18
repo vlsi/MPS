@@ -101,7 +101,7 @@ public class BehaviorReflection {
 
 
   public static <T> T invokeNonVirtualStatic(Class<T> returnType, SAbstractConcept concept, String methodName, Object[] parameters) {
-    return (T) invokeNonVirtualStatic(concept, methodName, parameters);
+    return concept == null ? defaultValue(returnType) : (T) invokeNonVirtualStatic(concept, methodName, parameters);
   }
 
   public static <T> T invokeSuper(Class<T> returnType, SNode node, String targetSuperFqName, String methodName, Object[] parameters) {

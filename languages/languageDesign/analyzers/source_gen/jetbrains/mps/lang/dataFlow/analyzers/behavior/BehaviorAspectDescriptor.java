@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
@@ -70,6 +69,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunctionResultType", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerInitialFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeFunction", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerParameterProgram", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerAnalyzeOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerCreator", "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType", "jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.BackwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.ForwardDirection", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertAfterPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Instruction", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionParameter", "jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference", "jetbrains.mps.lang.dataFlow.analyzers.structure.IsOperation", "jetbrains.mps.lang.dataFlow.analyzers.structure.PatternCondition", "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", "jetbrains.mps.lang.dataFlow.analyzers.structure.RuleReference"};
 }

@@ -18,11 +18,9 @@ import jetbrains.mps.smodel.SReference;
 public class SequenceType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return "sequence<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "seq");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "elementType", true), "jetbrains.mps.baseLanguage.structure.Type")) {
@@ -40,11 +38,9 @@ public class SequenceType_Behavior {
     }
     return variableSuffixes;
   }
-
   public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return true;
   }
-
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode seqCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", null);
@@ -55,11 +51,9 @@ public class SequenceType_Behavior {
     ListSequence.fromList(result).addElement(singCreator);
     return result;
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_hzlnln_a0a4();
   }
-
   private static SNode _quotation_createNode_hzlnln_a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

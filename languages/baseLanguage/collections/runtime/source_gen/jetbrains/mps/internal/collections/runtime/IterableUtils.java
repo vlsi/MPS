@@ -10,7 +10,6 @@ import java.util.NoSuchElementException;
 public class IterableUtils {
   public IterableUtils() {
   }
-
   public static <E> void visitAll(Iterable<E> seq, @AdapterClass(value = "IVisitor") _FunctionTypes._void_P1_E0<? super E> visitor) {
     for (Iterator<E> it = seq.iterator(); it.hasNext();) {
       try {
@@ -20,11 +19,9 @@ public class IterableUtils {
       }
     }
   }
-
   public static <E> boolean contains(Iterable<E> seq, E e) {
     return IterableUtils.indexOf(seq, e) >= 0;
   }
-
   public static <E> int indexOf(Iterable<E> seq, E e) {
     int index = 0;
     for (Iterator<E> it = seq.iterator(); it.hasNext(); index++) {
@@ -34,7 +31,6 @@ public class IterableUtils {
     }
     return -1;
   }
-
   public static <E> int lastIndexOf(Iterable<E> seq, E e) {
     int lastIndex = -1;
     int index = 0;
@@ -45,7 +41,6 @@ public class IterableUtils {
     }
     return lastIndex;
   }
-
   public static <E> int count(Iterable<E> seq) {
     int count = 0;
     for (Iterator<E> it = seq.iterator(); it.hasNext(); it.next()) {
@@ -53,15 +48,12 @@ public class IterableUtils {
     }
     return count;
   }
-
   public static <E> boolean isEmpty(Iterable<E> seq) {
     return !((seq.iterator().hasNext()));
   }
-
   public static <E> boolean isNotEmpty(Iterable<E> seq) {
     return seq.iterator().hasNext();
   }
-
   public static <E> E first(Iterable<E> seq) {
     Iterator<E> it = seq.iterator();
     if (it.hasNext()) {
@@ -72,7 +64,6 @@ public class IterableUtils {
     }
     throw new NoSuchElementException("Empty iterator");
   }
-
   public static <E> E last(Iterable<E> seq) {
     E last = null;
     boolean hasLast = false;
@@ -91,7 +82,6 @@ public class IterableUtils {
     }
     throw new NoSuchElementException("Empty iterator");
   }
-
   public static String join(Iterable<? extends String> seq, String delimiter) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -101,7 +91,6 @@ public class IterableUtils {
     }
     return sb.toString();
   }
-
   public static <T> T reduceLeft(Iterable<T> seq, _FunctionTypes._return_P2_E0<? extends T, ? super T, ? super T> combinator) {
     Iterator<T> it = seq.iterator();
     if (!(it.hasNext())) {
@@ -116,7 +105,6 @@ public class IterableUtils {
     }
     return left;
   }
-
   public static <T> T reduceRight(Iterable<T> revSeq, _FunctionTypes._return_P2_E0<? extends T, ? super T, ? super T> combinator) {
     Iterator<T> it = revSeq.iterator();
     if (!(it.hasNext())) {
@@ -131,7 +119,6 @@ public class IterableUtils {
     }
     return right;
   }
-
   public static <T, S> S foldLeft(Iterable<T> seq, S seed, _FunctionTypes._return_P2_E0<? extends S, ? super S, ? super T> combinator) {
     S s = seed;
     for (Iterator<T> it = seq.iterator(); it.hasNext();) {
@@ -139,7 +126,6 @@ public class IterableUtils {
     }
     return s;
   }
-
   public static <T, S> S foldRight(Iterable<T> revSeq, S seed, _FunctionTypes._return_P2_E0<? extends S, ? super T, ? super S> combinator) {
     S s = seed;
     for (Iterator<T> it = revSeq.iterator(); it.hasNext();) {
@@ -147,7 +133,6 @@ public class IterableUtils {
     }
     return s;
   }
-
   private static boolean eq(Object a, Object b) {
     return (a == b) || (((a != null) ? a.equals(b) : false));
   }

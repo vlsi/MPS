@@ -6,7 +6,6 @@ package jetbrains.mps.analyzers.sandbox.test;
 public class Ff {
   public Ff() {
   }
-
   public void f() {
     String s = "";
     if (s != null) {

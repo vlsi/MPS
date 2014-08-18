@@ -16,68 +16,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveSeparator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRemoveSeparator_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.textGen.structure.CollectionAppendPart";
   }
-
   public String getPresentation() {
     return "AddRemoveSeparator";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.textGen.intentions.AddRemoveSeparator_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.textGen";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)", "1237984182824");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveSeparator_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "withSeparator") ? "Remove Separator" : "Add Separator");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "withSeparator")) {
         SPropertyOperations.set(node, "separator", "");
       }
       SPropertyOperations.set(node, "withSeparator", "" + (!(SPropertyOperations.getBoolean(node, "withSeparator"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRemoveSeparator_Intention.this;
     }

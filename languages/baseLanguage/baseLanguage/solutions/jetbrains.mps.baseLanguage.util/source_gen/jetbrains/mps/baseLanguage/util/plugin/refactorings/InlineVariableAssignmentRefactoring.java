@@ -23,7 +23,6 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
   private Program myProgram;
   private Set<ReadInstruction> myReadInstructions;
   private SNode myVariable;
-
   public InlineVariableAssignmentRefactoring(SNode node) {
     this.myVariable = node;
     SNode body = findStatementList(node);
@@ -40,7 +39,6 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
       }
     }
   }
-
   @Override
   public SNode doRefactoring() {
     SNode newSelection = null;
@@ -55,7 +53,6 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     this.optimizeDeclaration(this.myVariable);
     return newSelection;
   }
-
   public List<SNode> getNodesToRefactor() {
     List<SNode> result = new ArrayList<SNode>();
     for (ReadInstruction read : SetSequence.fromSet(this.myReadInstructions)) {
@@ -66,7 +63,6 @@ public class InlineVariableAssignmentRefactoring extends InlineVariableRefactori
     }
     return result;
   }
-
   public static SNode findStatementList(SNode node) {
     SNode body = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     if (SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) == null) {

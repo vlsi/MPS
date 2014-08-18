@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class AgreementDeclarations_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AgreementDeclarations_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations";

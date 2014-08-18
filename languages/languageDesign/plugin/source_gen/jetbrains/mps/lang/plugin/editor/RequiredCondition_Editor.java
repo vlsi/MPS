@@ -15,7 +15,6 @@ public class RequiredCondition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_ud5w94_a(editorContext, node);
   }
-
   private EditorCell createConstant_ud5w94_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required");
     editorCell.setCellId("Constant_ud5w94_a");

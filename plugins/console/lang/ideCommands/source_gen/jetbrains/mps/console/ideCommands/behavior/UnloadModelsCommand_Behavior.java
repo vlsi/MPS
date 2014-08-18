@@ -9,7 +9,6 @@ import jetbrains.mps.console.tool.ConsoleStream;
 public class UnloadModelsCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
   }
 }

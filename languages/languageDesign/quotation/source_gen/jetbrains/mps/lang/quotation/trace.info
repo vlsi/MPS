@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="Generator.java">
-      <unit at="17,0,80,0" name="jetbrains.mps.lang.quotation.Generator" />
+      <unit at="17,0,71,0" name="jetbrains.mps.lang.quotation.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="18,0,59,0" name="jetbrains.mps.lang.quotation.Language" />
+      <unit at="18,0,54,0" name="jetbrains.mps.lang.quotation.Language" />
     </file>
   </root>
 </debug-info>

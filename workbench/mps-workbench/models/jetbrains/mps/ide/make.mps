@@ -4140,7 +4140,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="173672751428924238" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b2mh.~DumbService%dshowDumbModeNotification(java%dlang%dString)%cvoid" resolveInfo="showDumbModeNotification" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="173672751428924239" nodeInfo="nn">
-                    <property name="value" nameId="tpee.1070475926801" value="Generation is not available until indices are built." />
+                    <property name="value" nameId="tpee.1070475926801" value="Generation is not available until indices are built" />
                   </node>
                 </node>
               </node>
@@ -5041,7 +5041,7 @@
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="173672751428924721" nodeInfo="nn">
                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="173672751428924784" resolveInfo="displayInfo" />
                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="173672751428924722" nodeInfo="nn">
-                          <property name="value" nameId="tpee.1070475926801" value="Everything up to date" />
+                          <property name="value" nameId="tpee.1070475926801" value="Everything is up to date" />
                         </node>
                       </node>
                     </node>
@@ -5365,7 +5365,7 @@
                                         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4634869729622984743" nodeInfo="nn">
                                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~IllegalStateException%d&lt;init&gt;(java%dlang%dString)" resolveInfo="IllegalStateException" />
                                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4634869729622984744" nodeInfo="nn">
-                                            <property name="value" nameId="tpee.1070475926801" value="unexpected: make process already running" />
+                                            <property name="value" nameId="tpee.1070475926801" value="unexpected: make process is already running" />
                                           </node>
                                         </node>
                                       </node>

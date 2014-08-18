@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PastedNodeReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "target", false);
   }
-
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     int id = SLinkOperations.getTarget(thisNode, "target", false).getNodeId().hashCode();
     return "nodeRef@" + ((id >>> 16) + (id << 16 >>> 16));

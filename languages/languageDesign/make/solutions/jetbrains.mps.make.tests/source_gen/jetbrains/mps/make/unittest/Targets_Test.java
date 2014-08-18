@@ -45,7 +45,6 @@ public class Targets_Test extends MockTestCase {
     tr.sortedTargets();
     Assert.assertSame(trg, Sequence.fromIterable(tr.sortedTargets()).first());
   }
-
   @Test
   public void test_available() throws Exception {
     TargetRange tr = new TargetRange();
@@ -73,7 +72,6 @@ public class Targets_Test extends MockTestCase {
     Assert.assertTrue(tr.hasTarget(new ITarget.Name("text")));
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, make), tr.sortedTargets());
   }
-
   @Test
   public void test_availablePrecursors() throws Exception {
     TargetRange tr = new TargetRange();
@@ -109,7 +107,6 @@ public class Targets_Test extends MockTestCase {
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.sortedTargets());
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text, compile), tr.targetAndSortedPrecursors(compile.getName()));
   }
-
   @Test
   public void test_cycles() throws Exception {
     TargetRange tr = new TargetRange();
@@ -126,7 +123,6 @@ public class Targets_Test extends MockTestCase {
     Assert.assertTrue(tr.hasCycles());
     Assert.assertSame(make.getName(), ListSequence.fromList(ListSequence.fromList(tr.cycles()).first()).first());
   }
-
   @Test
   public void test_config() throws Exception {
     TargetRange tr = new TargetRange();
@@ -149,7 +145,6 @@ public class Targets_Test extends MockTestCase {
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg, gen), tr.targetAndSortedPrecursors(new ITarget.Name("gen")));
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), cfg), tr.immediatePrecursors(new ITarget.Name("gen")));
   }
-
   @Test
   public void test_precursors() throws Exception {
     TargetRange tr = new TargetRange();
@@ -184,7 +179,6 @@ public class Targets_Test extends MockTestCase {
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), res, gen, text), tr.targetAndSortedPrecursors(new ITarget.Name("text")));
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<ITarget>(), gen, text), tr.immediatePrecursors(new ITarget.Name("make")));
   }
-
   public Targets_Test() {
   }
 }

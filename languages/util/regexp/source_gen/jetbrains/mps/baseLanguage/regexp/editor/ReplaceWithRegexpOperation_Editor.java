@@ -22,7 +22,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q2clzo_a(editorContext, node);
   }
-
   private EditorCell createCollection_q2clzo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q2clzo_a");
@@ -34,7 +33,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_q2clzo_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_q2clzo_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replaceAll");
     editorCell.setCellId("Constant_q2clzo_a0");
@@ -44,7 +42,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q2clzo_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
@@ -67,7 +64,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q2clzo_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_q2clzo_c0");
@@ -77,7 +73,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q2clzo_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_q2clzo_d0");
@@ -87,7 +82,6 @@ public class ReplaceWithRegexpOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q2clzo_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("replaceBlock");

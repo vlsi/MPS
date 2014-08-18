@@ -11,26 +11,21 @@ public enum StyleAttributeKind {
   simple("simple", false);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<StyleAttributeKind> getConstants() {
     List<StyleAttributeKind> list = ListSequence.fromList(new LinkedList<StyleAttributeKind>());
     ListSequence.fromList(list).addElement(StyleAttributeKind.inherited);
     ListSequence.fromList(list).addElement(StyleAttributeKind.simple);
     return list;
   }
-
   public static StyleAttributeKind getDefault() {
     return StyleAttributeKind.inherited;
   }
-
   public static StyleAttributeKind parseValue(String value) {
     if (value == null) {
       return StyleAttributeKind.getDefault();
@@ -43,14 +38,11 @@ public enum StyleAttributeKind {
     }
     return StyleAttributeKind.getDefault();
   }
-
   private boolean myValue;
-
   StyleAttributeKind(String name, boolean value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public boolean getValue() {
     return this.myValue;
   }

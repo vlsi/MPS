@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import jetbrains.mps.testbench.junit.suites.AuditConstraints;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.AfterClass;
@@ -52,7 +52,7 @@ public class MpsAuditConstraints extends AuditConstraints {
 
   @Parameters
   public static List<Object[]> testParameters() throws InvocationTargetException, InterruptedException {
-    ourPreviousProjectPath = ContextProjextSupport.setContextProjectPath(new File("."));
+    ourPreviousProjectPath = ContextProjectSupport.setContextProjectPath(new File("."));
     initTestEnvironment(false);
 
     return createTestParametersFromModules(excludeModules(getContextProject().getModules(), DISABLED_MODULES));
@@ -60,7 +60,7 @@ public class MpsAuditConstraints extends AuditConstraints {
 
   @AfterClass
   public static void cleanUp() {
-    ContextProjextSupport.setContextProjectPath(ourPreviousProjectPath);
+    ContextProjectSupport.setContextProjectPath(ourPreviousProjectPath);
   }
 
   public MpsAuditConstraints(SModule module) {

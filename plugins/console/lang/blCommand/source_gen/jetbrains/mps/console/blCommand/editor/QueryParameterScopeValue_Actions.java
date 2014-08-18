@@ -16,18 +16,14 @@ public class QueryParameterScopeValue_Actions {
     editorCell.setAction(CellActionType.DELETE, new QueryParameterScopeValue_Actions.QueryParameterScopeValue_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new QueryParameterScopeValue_Actions.QueryParameterScopeValue_Actions_BACKSPACE(node));
   }
-
   public static class QueryParameterScopeValue_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryParameterScopeValue_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "value", true) != null) {
         SLinkOperations.setTarget(node, "value", null, true);
@@ -41,18 +37,14 @@ public class QueryParameterScopeValue_Actions {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class QueryParameterScopeValue_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryParameterScopeValue_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "value", true) != null) {
         SLinkOperations.setTarget(node, "value", null, true);

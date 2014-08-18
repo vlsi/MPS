@@ -26,11 +26,9 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myRemoveAttributes;
   private JCheckBox myAddReturn;
   private BehaviorDialogsPersistentOptions_PreferencesComponent myOptions;
-
   public OverrideConceptMethodsDialog(SNodeReference[] methods, Project project) {
     super(methods, false, true, project);
   }
-
   @Override
   protected void initOptions() {
     try {
@@ -45,11 +43,9 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     myRemoveAttributes.setMnemonic('t');
     myOptionControls = new JCheckBox[]{myAddReturn, myRemoveAttributes};
   }
-
   protected boolean showInsertOverride() {
     return true;
   }
-
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
@@ -60,21 +56,17 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     }
     return super.getText(node);
   }
-
   @Override
   protected void customizeOptionsPanel() {
     myAddReturn.setSelected((myOptions != null ? myOptions.getStateObject().addReturnsOnImplement : false));
     myRemoveAttributes.setSelected((myOptions != null ? myOptions.getStateObject().removeAttributes : true));
   }
-
   public boolean isAddReturn() {
     return myAddReturn.isSelected();
   }
-
   public boolean isRemoveAttributes() {
     return myRemoveAttributes.isSelected();
   }
-
   @Override
   public void dispose() {
     if (myOptions != null) {
@@ -83,7 +75,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     }
     super.dispose();
   }
-
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
@@ -110,7 +101,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
       }
     }, true);
   }
-
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
     return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
       public SNodePointer select(SNode it) {
@@ -118,7 +108,6 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
       }
     }).toGenericArray(SNodePointer.class);
   }
-
   private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

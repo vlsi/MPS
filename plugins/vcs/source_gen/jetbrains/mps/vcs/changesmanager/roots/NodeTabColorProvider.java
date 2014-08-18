@@ -18,11 +18,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class NodeTabColorProvider implements TabColorProvider {
   private NodeFileStatusMapping myFileStatusMapping;
-
   public NodeTabColorProvider(@NotNull NodeFileStatusMapping mapping) {
     myFileStatusMapping = mapping;
   }
-
   @Nullable
   @Override
   public Color getAspectColor(Iterable<SNodeReference> nodePointers) {
@@ -42,20 +40,17 @@ public class NodeTabColorProvider implements TabColorProvider {
       return FileStatus.MODIFIED.getColor();
     }
   }
-
   @Nullable
   @Override
   public Color getNodeColor(@NotNull SNode node) {
     return check_6tqz68_a0a3(myFileStatusMapping.getStatus(node));
   }
-
   private static Color check_6tqz68_a0a1a2(FileStatus checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getColor();
     }
     return null;
   }
-
   private static Color check_6tqz68_a0a3(FileStatus checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getColor();

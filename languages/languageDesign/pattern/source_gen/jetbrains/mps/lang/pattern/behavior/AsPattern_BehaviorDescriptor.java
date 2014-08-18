@@ -6,7 +6,6 @@ package jetbrains.mps.lang.pattern.behavior;
 public class AsPattern_BehaviorDescriptor extends PatternVariableDeclaration_BehaviorDescriptor {
   public AsPattern_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.AsPattern";

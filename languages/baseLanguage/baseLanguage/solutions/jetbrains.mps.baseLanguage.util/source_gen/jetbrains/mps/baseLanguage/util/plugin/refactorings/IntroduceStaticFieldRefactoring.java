@@ -68,14 +68,10 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     return newDeclaration;
   }
 
-
-
   @Override
   public void replaceNode(SNode node, SNode declaration) {
     SNodeOperations.replaceWithAnother(node, _quotation_createNode_282g55_a0a0a2(declaration));
   }
-
-
 
   private static SNode _quotation_createNode_282g55_a0a0g0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -99,7 +95,6 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_282g55_a0a0a6a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -117,7 +112,6 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     }
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_282g55_a0k0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -133,7 +127,6 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     quotedNode_3.addChild("lValue", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_282g55_a0l0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -145,7 +138,6 @@ public class IntroduceStaticFieldRefactoring extends AbstractIntroduceFieldRefac
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_282g55_a0a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

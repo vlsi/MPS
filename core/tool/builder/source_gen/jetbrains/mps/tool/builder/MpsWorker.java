@@ -61,22 +61,18 @@ public abstract class MpsWorker {
   protected final Script myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
   protected Environment myEnvironment;
-
   public MpsWorker(Script whatToDo) {
     this(whatToDo, new MpsWorker.LogLogger());
   }
-
   public MpsWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     myWhatToDo = whatToDo;
     myLogger = logger;
   }
-
   private Environment createDefaultEnvironment() {
     Environment env = new MpsEnvironment(createEnvConfig(myWhatToDo));
     Logger.getRootLogger().setLevel(myWhatToDo.getLogLevel());
     return env;
   }
-
   public static EnvironmentConfig createEnvConfig(Script whatToDo) {
     EnvironmentConfig config = EnvironmentConfig.emptyEnvironment();
     for (IMapping<String, String> macro : MapSequence.fromMap(whatToDo.getMacro())) {
@@ -90,7 +86,6 @@ public abstract class MpsWorker {
     }
     return config;
   }
-
   public void workFromMain() {
     try {
       work();
@@ -100,26 +95,21 @@ public abstract class MpsWorker {
       System.exit(1);
     }
   }
-
   public abstract void work();
-
   protected Project createDummyProject() {
-    return ActiveEnvironment.get().createDummyProject();
+    return ActiveEnvironment.getInstance().createDummyProject();
   }
-
   protected void dispose() {
     if (myEnvironment != null) {
-      myEnvironment.disposeEnvironment();
+      myEnvironment.dispose();
     }
   }
-
   protected void setupEnvironment() {
-    if (ActiveEnvironment.get() == null) {
+    if (ActiveEnvironment.getInstance() == null) {
       myEnvironment = createDefaultEnvironment();
     }
     make();
   }
-
   protected void make() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
@@ -130,7 +120,6 @@ public abstract class MpsWorker {
     });
     reload();
   }
-
   protected void reload() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
@@ -139,11 +128,8 @@ public abstract class MpsWorker {
       }
     });
   }
-
   protected abstract void executeTask(Project project, MpsWorker.ObjectsToProcess go);
-
   protected abstract void showStatistic();
-
   protected StringBuffer formatErrorsReport(String taskName) {
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < 100; i++) {
@@ -161,19 +147,16 @@ public abstract class MpsWorker {
     }
     return sb;
   }
-
   protected void failBuild(String name) {
     if (!(myErrors.isEmpty()) && myWhatToDo.getFailOnError()) {
       throw new RuntimeException(this.formatErrorsReport(name).toString());
     }
   }
-
   public void collectModelsToGenerate(MpsWorker.ObjectsToProcess go) {
     collectFromProjects(go.getProjects());
     collectFromModuleFiles(go.getModules());
     collectFromModelFiles(go.getModels());
   }
-
   private void collectFromProjects(Set<Project> projects) {
     for (File projectFile : myWhatToDo.getMPSProjectFiles().keySet()) {
       if (projectFile.getAbsolutePath().endsWith(MPSExtentions.DOT_MPS_PROJECT)) {
@@ -183,7 +166,6 @@ public abstract class MpsWorker {
       }
     }
   }
-
   protected void extractModels(Set<SModel> result, Project project) {
     for (SModule module : project.getModulesWithGenerators()) {
       for (SModel model : module.getModels()) {
@@ -193,11 +175,9 @@ public abstract class MpsWorker {
       }
     }
   }
-
   private boolean includeModel(SModel model) {
     return SModelStereotype.isUserModel(model) && GenerationFacade.canGenerate(model);
   }
-
   protected void extractModels(Collection<SModel> modelsList, SModule m) {
     for (SModel d : m.getModels()) {
       if (includeModel(d)) {
@@ -205,13 +185,11 @@ public abstract class MpsWorker {
       }
     }
   }
-
   protected void collectFromModuleFiles(Set<SModule> modules) {
     for (File moduleFile : myWhatToDo.getModules()) {
       processModuleFile(moduleFile, modules);
     }
   }
-
   protected void processModuleFile(final File moduleFile, final Set<SModule> modules) {
     if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
       return;
@@ -257,7 +235,6 @@ public abstract class MpsWorker {
       }
     }
   }
-
   protected void collectFromModelFiles(Set<SModel> model) {
     for (File f : myWhatToDo.getModels()) {
       if (f.getPath().endsWith(MPSExtentions.DOT_MODEL)) {
@@ -265,7 +242,6 @@ public abstract class MpsWorker {
       }
     }
   }
-
   private void processModelFile(Set<SModel> models, File f) {
     final IFile ifile = FileSystem.getInstance().getFileByPath(f.getAbsolutePath());
     //  try to find if model is loaded 
@@ -297,7 +273,6 @@ public abstract class MpsWorker {
       log(e);
     }
   }
-
   private void log(String text, Level level) {
     if (!(level.isGreaterOrEqual(myWhatToDo.getLogLevel()))) {
       return;
@@ -305,49 +280,39 @@ public abstract class MpsWorker {
 
     myLogger.log(text, level);
   }
-
   public void info(String text) {
     log(text, Level.INFO);
   }
-
   public void warning(String text) {
     log(text, Level.WARN);
     myWarnings.add(text);
   }
-
   public void debug(String text) {
     log(text, Level.DEBUG);
   }
-
   public void error(String text) {
     log(text, Level.ERROR);
     myErrors.add(text);
   }
-
   public void log(Throwable e) {
     StringBuffer sb = MpsWorker.extractStackTrace(e);
     error(sb.toString());
   }
-
   public void log(String text, Throwable e) {
     StringBuffer sb = MpsWorker.extractStackTrace(e);
     error(text + "\n" + sb.toString());
   }
-
   public static StringBuffer extractStackTrace(Throwable e) {
     StringWriter writer = new StringWriter();
     e.printStackTrace(new PrintWriter(writer));
     return writer.getBuffer();
   }
-
   protected static interface AntLogger {
     public void log(String text, Level level);
   }
-
   public static class SystemOutLogger implements MpsWorker.AntLogger {
     public SystemOutLogger() {
     }
-
     @Override
     public void log(String text, Level level) {
       if (level == Level.ERROR) {
@@ -357,11 +322,9 @@ public abstract class MpsWorker {
       }
     }
   }
-
   public static class LogLogger implements MpsWorker.AntLogger {
     public LogLogger() {
     }
-
     @Override
     public void log(String text, Level level) {
       switch (level.toInt()) {
@@ -383,33 +346,26 @@ public abstract class MpsWorker {
       }
     }
   }
-
   protected class ObjectsToProcess {
     private final Set<Project> myProjects = new LinkedHashSet<Project>();
     private final Set<SModule> myModules = new LinkedHashSet<SModule>();
     private final Set<SModel> myModels = new LinkedHashSet<SModel>();
-
     public ObjectsToProcess() {
     }
-
     public ObjectsToProcess(Set<? extends Project> mpsProjects, Set<SModule> modules, Set<SModel> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);
     }
-
     public Set<Project> getProjects() {
       return myProjects;
     }
-
     public Set<SModule> getModules() {
       return myModules;
     }
-
     public Set<SModel> getModels() {
       return myModels;
     }
-
     public boolean hasAnythingToGenerate() {
       return !(myModels.isEmpty()) || !(myProjects.isEmpty()) || !(myModules.isEmpty());
     }

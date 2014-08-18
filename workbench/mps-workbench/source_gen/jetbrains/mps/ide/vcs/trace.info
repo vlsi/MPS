@@ -15,70 +15,70 @@
   <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718077769">
     <file name="SourceRevision.java">
       <node id="5015601397718077942" at="16,25,17,18" concept="7" />
-      <node id="5015601397718077923" at="27,59,28,27" concept="1" />
-      <node id="5015601397718077931" at="32,44,33,29" concept="7" />
-      <node id="5015601397718077908" at="21,0,23,0" concept="0" trace="SourceRevision#()V" />
-      <node id="5015601397718077912" at="24,0,26,0" concept="5" trace="get#()Ljava/lang/String;" />
-      <node id="5015601397718077917" at="27,0,30,0" concept="10" trace="setProvider#(Ljetbrains/mps/ide/vcs/SourceRevision;)V" />
+      <node id="5015601397718077923" at="24,59,25,27" concept="1" />
+      <node id="5015601397718077931" at="28,44,29,29" concept="7" />
+      <node id="5015601397718077908" at="20,0,22,0" concept="0" trace="SourceRevision#()V" />
+      <node id="5015601397718077912" at="22,0,24,0" concept="5" trace="get#()Ljava/lang/String;" />
+      <node id="5015601397718077917" at="24,0,27,0" concept="10" trace="setProvider#(Ljetbrains/mps/ide/vcs/SourceRevision;)V" />
       <node id="5015601397718077905" at="15,0,19,0" concept="5" trace="get#()Ljava/lang/String;" />
-      <node id="5015601397718077927" at="31,0,35,0" concept="10" trace="getSourceRevision#()Ljava/lang/String;" />
+      <node id="5015601397718077927" at="27,0,31,0" concept="10" trace="getSourceRevision#()Ljava/lang/String;" />
       <node id="5015601397718077899" at="14,0,20,0" concept="9" trace="ourProvider" />
-      <scope id="5015601397718077911" at="21,27,21,27" />
+      <scope id="5015601397718077911" at="20,27,20,27" />
       <scope id="5015601397718077941" at="16,25,17,18" />
-      <scope id="5015601397718077922" at="27,59,28,27" />
-      <scope id="5015601397718077930" at="32,44,33,29" />
-      <scope id="5015601397718077908" at="21,0,23,0" />
-      <scope id="5015601397718077912" at="24,0,26,0" />
-      <scope id="5015601397718077917" at="27,0,30,0">
+      <scope id="5015601397718077922" at="24,59,25,27" />
+      <scope id="5015601397718077930" at="28,44,29,29" />
+      <scope id="5015601397718077908" at="20,0,22,0" />
+      <scope id="5015601397718077912" at="22,0,24,0" />
+      <scope id="5015601397718077917" at="24,0,27,0">
         <var name="provider" id="5015601397718077920" />
       </scope>
       <scope id="5015601397718077905" at="15,0,19,0" />
-      <scope id="5015601397718077927" at="31,0,35,0" />
+      <scope id="5015601397718077927" at="27,0,31,0" />
       <unit id="5015601397718077904" at="14,50,19,3" name="jetbrains.mps.ide.vcs.SourceRevision$1" />
-      <unit id="5015601397718077769" at="7,0,36,0" name="jetbrains.mps.ide.vcs.SourceRevision" />
+      <unit id="5015601397718077769" at="7,0,32,0" name="jetbrains.mps.ide.vcs.SourceRevision" />
     </file>
   </root>
   <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718560603">
     <file name="ExtendedDefaultVcsRootPolicy.java">
       <node id="5015601397718560606" at="15,0,16,0" concept="2" trace="myProject" />
-      <node id="5015601397718560615" at="17,56,18,19" concept="11" />
-      <node id="5015601397718560617" at="18,19,19,24" concept="1" />
-      <node id="5015601397718560629" at="23,83,24,51" concept="1" />
-      <node id="7184641355071739581" at="24,51,25,26" concept="8" />
-      <node id="5015601397718560633" at="25,26,26,83" concept="6" />
-      <node id="5015601397718560638" at="26,83,27,47" concept="6" />
-      <node id="5015601397718560650" at="28,32,29,43" concept="1" />
-      <node id="7184641355071698783" at="35,75,36,28" concept="8" />
-      <node id="5015601397718560672" at="36,28,37,19" concept="7" />
-      <node id="5015601397718560674" at="38,5,39,59" concept="7" />
-      <node id="5015601397718560645" at="27,47,30,5" concept="3" />
-      <node id="5015601397718560609" at="17,0,21,0" concept="0" trace="ExtendedDefaultVcsRootPolicy#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="5015601397718560664" at="34,79,38,5" concept="4" />
-      <node id="5015601397718560656" at="33,0,41,0" concept="5" trace="matchesDefaultMapping#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;)Z" />
-      <node id="5015601397718560621" at="22,0,32,0" concept="5" trace="markDefaultRootsDirty#(Lcom/intellij/openapi/vcs/changes/DirtBuilder;Lcom/intellij/openapi/vcs/changes/VcsGuess;)V" />
-      <scope id="5015601397718560649" at="28,32,29,43" />
-      <scope id="5015601397718560614" at="17,56,19,24" />
-      <scope id="5015601397718560671" at="35,75,37,19" />
-      <scope id="5015601397718560645" at="27,47,30,5">
+      <node id="5015601397718560615" at="16,56,17,19" concept="11" />
+      <node id="5015601397718560617" at="17,19,18,24" concept="1" />
+      <node id="5015601397718560629" at="21,83,22,51" concept="1" />
+      <node id="7184641355071739581" at="22,51,23,26" concept="8" />
+      <node id="5015601397718560633" at="23,26,24,83" concept="6" />
+      <node id="5015601397718560638" at="24,83,25,47" concept="6" />
+      <node id="5015601397718560650" at="26,32,27,43" concept="1" />
+      <node id="7184641355071698783" at="32,75,33,28" concept="8" />
+      <node id="5015601397718560672" at="33,28,34,19" concept="7" />
+      <node id="5015601397718560674" at="35,5,36,59" concept="7" />
+      <node id="5015601397718560645" at="25,47,28,5" concept="3" />
+      <node id="5015601397718560609" at="16,0,20,0" concept="0" trace="ExtendedDefaultVcsRootPolicy#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="5015601397718560664" at="31,79,35,5" concept="4" />
+      <node id="5015601397718560656" at="30,0,38,0" concept="5" trace="matchesDefaultMapping#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;)Z" />
+      <node id="5015601397718560621" at="20,0,30,0" concept="5" trace="markDefaultRootsDirty#(Lcom/intellij/openapi/vcs/changes/DirtBuilder;Lcom/intellij/openapi/vcs/changes/VcsGuess;)V" />
+      <scope id="5015601397718560649" at="26,32,27,43" />
+      <scope id="5015601397718560614" at="16,56,18,24" />
+      <scope id="5015601397718560671" at="32,75,34,19" />
+      <scope id="5015601397718560645" at="25,47,28,5">
         <var name="root" id="5015601397718560647" />
       </scope>
-      <scope id="5015601397718560609" at="17,0,21,0">
+      <scope id="5015601397718560609" at="16,0,20,0">
         <var name="project" id="5015601397718560612" />
       </scope>
-      <scope id="5015601397718560663" at="34,79,39,59" />
-      <scope id="5015601397718560628" at="23,83,30,5">
+      <scope id="5015601397718560663" at="31,79,36,59" />
+      <scope id="5015601397718560628" at="21,83,28,5">
         <var name="manager" id="5015601397718560634" />
         <var name="roots" id="5015601397718560639" />
       </scope>
-      <scope id="5015601397718560656" at="33,0,41,0">
+      <scope id="5015601397718560656" at="30,0,38,0">
         <var name="file" id="5015601397718560659" />
         <var name="matchContext" id="5015601397718560661" />
       </scope>
-      <scope id="5015601397718560621" at="22,0,32,0">
+      <scope id="5015601397718560621" at="20,0,30,0">
         <var name="builder" id="5015601397718560624" />
         <var name="vcsGuess" id="5015601397718560626" />
       </scope>
-      <unit id="5015601397718560603" at="14,0,42,0" name="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy" />
+      <unit id="5015601397718560603" at="14,0,39,0" name="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy" />
     </file>
   </root>
 </debug-info>

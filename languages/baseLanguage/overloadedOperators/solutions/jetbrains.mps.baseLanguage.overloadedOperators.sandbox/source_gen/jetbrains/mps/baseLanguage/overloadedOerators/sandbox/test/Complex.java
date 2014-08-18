@@ -6,23 +6,18 @@ package jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test;
 public class Complex {
   private double re = 0;
   private double im = 0;
-
   public Complex() {
   }
-
   public void set(double r, double i) {
     this.re = r;
     this.im = i;
   }
-
   public double getIm() {
     return this.im;
   }
-
   public double getRe() {
     return this.re;
   }
-
   public void print() {
     System.out.println(this.re + "+" + this.im + "i");
   }

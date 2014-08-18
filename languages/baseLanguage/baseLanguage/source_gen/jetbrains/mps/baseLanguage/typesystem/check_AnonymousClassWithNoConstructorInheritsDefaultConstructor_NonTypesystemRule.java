@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (neq_1xjb9m_a0a0a1(SNodeOperations.getParent(SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false)), SLinkOperations.getTarget(anonymousClass, "classifier", false)) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       if (Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isNotEmpty()) {
@@ -35,22 +34,18 @@ public class check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_Non
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean neq_1xjb9m_a0a0a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

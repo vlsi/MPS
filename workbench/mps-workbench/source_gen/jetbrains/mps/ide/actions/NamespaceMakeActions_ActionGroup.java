@@ -13,7 +13,6 @@ public class NamespaceMakeActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(NamespaceMakeActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.NamespaceMakeActions_ActionGroup";
   public static final String LABEL_ID_make = ID + "make";
-
   public NamespaceMakeActions_ActionGroup() {
     super("NamespaceMakeActions", ID);
     this.setIsInternal(false);

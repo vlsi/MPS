@@ -12,8 +12,6 @@ public abstract class PortCell extends AbstractJetpadCell {
   public PortCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
-
   public abstract Mapper<SNode, RectView> createMapper();
-
   public abstract Mapper<SNode, PortDecoratorView> createDecorationMapper();
 }

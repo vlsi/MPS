@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="11,0,84,0" name="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
+      <unit at="11,0,82,0" name="jetbrains.mps.execution.settings.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)/2722628536111969417">

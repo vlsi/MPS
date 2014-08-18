@@ -31,7 +31,6 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
   public CustomContainerCreator_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -40,7 +39,6 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
@@ -49,7 +47,6 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -58,7 +55,6 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -72,7 +68,6 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
               }
             }) : Sequence.fromIterable(Collections.<SNode>emptyList()));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2;
@@ -82,6 +77,5 @@ public class CustomContainerCreator_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   private static SNodePointer breakingNode_tzy4hl_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628295001");
 }

@@ -10,16 +10,13 @@ import org.jetbrains.annotations.NonNls;
 public class BuildLayout_EchoProperties_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildStringContainer_BehaviorDescriptor {
   public BuildLayout_EchoProperties_BehaviorDescriptor() {
   }
-
   @Nullable
   public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
   }
-
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return BuildLayout_EchoProperties_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_EchoProperties";

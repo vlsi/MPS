@@ -26,7 +26,6 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
   public PrivateFieldReferenceOperation_Constraints() {
     super("jetbrains.mps.debugger.java.privateMembers.structure.PrivateFieldReferenceOperation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -52,7 +50,6 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
               }
             };
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cgwyr9_a0a1a0a0a1a0b0a1a1;
@@ -62,6 +59,5 @@ public class PrivateFieldReferenceOperation_Constraints extends BaseConstraintsD
     });
     return references;
   }
-
   private static SNodePointer breakingNode_cgwyr9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:c8ec5cc5-f63f-40c3-ab3e-3fbb9a638ceb(jetbrains.mps.debugger.java.privateMembers.constraints)", "6825241477451043708");
 }

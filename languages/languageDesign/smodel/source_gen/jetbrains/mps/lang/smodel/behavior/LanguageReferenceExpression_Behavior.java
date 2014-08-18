@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.Language;
 public class LanguageReferenceExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @NotNull
   public static List<SModule> virtual_getVisibleModules_4040588429969394404(SNode thisNode) {
     List<SModule> result = ListSequence.fromList(new ArrayList<SModule>());

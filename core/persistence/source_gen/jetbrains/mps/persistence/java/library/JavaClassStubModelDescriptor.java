@@ -29,23 +29,19 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
 
   private SModel myModel;
   private ModelRoot myModelRoot;
-
   public JavaClassStubModelDescriptor(SModelReference modelReference, FolderSetDataSource source, ModelRoot root) {
     super(modelReference, source);
     myModelRoot = root;
   }
-
   @Override
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
-
   @NotNull
   @Override
   public FolderSetDataSource getSource() {
     return (FolderSetDataSource) super.getSource();
   }
-
   @Override
   public SModel getSModelInternal() {
     if (myModel == null) {
@@ -60,12 +56,10 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     }
     return myModel;
   }
-
   @Override
   public boolean isLoaded() {
     return myModel != null;
   }
-
   @Override
   public void unload() {
     ModelAccess.assertLegalWrite();
@@ -77,7 +71,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
       fireModelStateChanged(ModelLoadingState.NOT_LOADED);
     }
   }
-
   private SModel createModel() {
     SModel model = new SModel(getReference(), new ForeignNodeIdMap());
     for (Language l : getLanguagesToImport()) {
@@ -86,7 +79,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     new ASMModelLoader(myModelRoot.getModule(), getSource().getPaths(), model, false).updateModel();
     return model;
   }
-
   protected Set<Language> getLanguagesToImport() {
     Set<String> moduleIds = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(moduleIds).addElement(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)").getModuleId().toString());
@@ -97,7 +89,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     });
     return SetSequence.fromSetWithValues(new HashSet<Language>(), languages);
   }
-
   @Override
   public void reloadFromDiskSafe() {
     ModelAccess.assertLegalWrite();
@@ -109,7 +100,6 @@ public class JavaClassStubModelDescriptor extends ReloadableSModelBase {
     updateTimestamp();
     LOG.assertLog(!(needsReloading()), "Assertion failed.");
   }
-
   private void reload() {
     if (myModel == null) {
       return;

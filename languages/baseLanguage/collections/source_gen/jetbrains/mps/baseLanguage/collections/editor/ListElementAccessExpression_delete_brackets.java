@@ -15,42 +15,32 @@ public class ListElementAccessExpression_delete_brackets {
     editorCell.setAction(CellActionType.DELETE, new ListElementAccessExpression_delete_brackets.ListElementAccessExpression_delete_brackets_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ListElementAccessExpression_delete_brackets.ListElementAccessExpression_delete_brackets_BACKSPACE(node));
   }
-
   public static class ListElementAccessExpression_delete_brackets_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ListElementAccessExpression_delete_brackets_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete the brackets";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "list", true));
     }
   }
-
   public static class ListElementAccessExpression_delete_brackets_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ListElementAccessExpression_delete_brackets_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete the brackets";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "list", true));
     }

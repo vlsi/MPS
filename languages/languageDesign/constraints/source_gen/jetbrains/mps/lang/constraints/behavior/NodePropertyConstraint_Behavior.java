@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class NodePropertyConstraint_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getApplicableConcept_1213877292345(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false);

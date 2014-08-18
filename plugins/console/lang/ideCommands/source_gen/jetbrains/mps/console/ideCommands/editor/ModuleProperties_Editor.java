@@ -20,7 +20,6 @@ public class ModuleProperties_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mvaoom_a(editorContext, node);
   }
-
   private EditorCell createCollection_mvaoom_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mvaoom_a");
@@ -31,12 +30,10 @@ public class ModuleProperties_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mvaoom_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_mvaoom_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;
   }
-
   private EditorCell createConstant_mvaoom_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_mvaoom_b0");
@@ -46,7 +43,6 @@ public class ModuleProperties_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_mvaoom_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("targetModule");
@@ -66,7 +62,6 @@ public class ModuleProperties_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_mvaoom_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_mvaoom_d0");

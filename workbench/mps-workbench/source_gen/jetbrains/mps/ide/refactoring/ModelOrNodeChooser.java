@@ -23,7 +23,6 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
       return ModelOrNodeChooser.this.myTree;
     }
   };
-
   /*package*/ ModelOrNodeChooser(Project project, final Object initialValue) {
     super();
     myTree = new ProjectTree(project);
@@ -48,7 +47,6 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
       }
     });
   }
-
   @Override
   public Object getSelectedObject() {
     Object selection = myTree.getSelectionPath().getLastPathComponent();
@@ -60,7 +58,6 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     }
     return result;
   }
-
   @Override
   public JComponent getComponent() {
     return this;

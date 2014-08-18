@@ -8,10 +8,8 @@ import jetbrains.mps.make.script.IFeedback;
 
 public class LoggingFeedbackStrategy {
   private static Logger LOG = LogManager.getLogger(LoggingProgressStrategy.class.getPackage().getName());
-
   public LoggingFeedbackStrategy() {
   }
-
   public void reportFeedback(IFeedback fdk) {
     switch (fdk.getSeverity()) {
       case ERROR:

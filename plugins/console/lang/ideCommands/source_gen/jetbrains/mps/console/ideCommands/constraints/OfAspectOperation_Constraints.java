@@ -22,7 +22,6 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
   public OfAspectOperation_Constraints() {
     super("jetbrains.mps.console.ideCommands.structure.OfAspectOperation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,7 +38,6 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_srl38n_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new NamedElementsScope(SNodeOperations.ofConcept(SNodeOperations.getChildren(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~LanguageAspect")), "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"));
@@ -50,6 +47,5 @@ public class OfAspectOperation_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_srl38n_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:64807243-49b2-422a-a08f-a5df76bf508d(jetbrains.mps.console.ideCommands.constraints)", "5932042262275698794");
 }

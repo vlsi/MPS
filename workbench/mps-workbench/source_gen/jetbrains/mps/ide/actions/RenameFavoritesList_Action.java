@@ -22,22 +22,18 @@ import org.apache.log4j.LogManager;
 
 public class RenameFavoritesList_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_replace;
-
   public RenameFavoritesList_Action() {
     super("Rename Favorites List", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -51,7 +47,6 @@ public class RenameFavoritesList_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +57,6 @@ public class RenameFavoritesList_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(((Project) MapSequence.fromMap(_params).get("project")));
@@ -85,6 +79,5 @@ public class RenameFavoritesList_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RenameFavoritesList_Action.class);
 }

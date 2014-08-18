@@ -15,12 +15,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 /*package*/ class ExtractMethodFromExpressionRefactoring extends ExtractMethodRefactoring {
   @NotNull
   private SNode myExpression;
-
   /*package*/ ExtractMethodFromExpressionRefactoring(ExtractMethodRefactoringParameters params) {
     super(params);
     this.myExpression = SNodeOperations.cast(ListSequence.fromList(params.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
-
   @Override
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
@@ -35,7 +33,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     }
     return body;
   }
-
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -44,7 +41,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
       }
     });
   }
-
   @Override
   public SNode getMethodType() {
     SNode typeOf = TypeChecker.getInstance().getTypeOf(this.myExpression);

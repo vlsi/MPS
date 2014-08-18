@@ -16,13 +16,11 @@ public class ModelsExtractor {
   private Set<SModel> models = new HashSet<SModel>();
   private final SModule module;
   private final boolean myIncludeDoNotGenerate;
-
   public ModelsExtractor(SModule module, boolean includeDoNotGenerate) {
     this.module = module;
     this.myIncludeDoNotGenerate = includeDoNotGenerate;
     extractModels(module);
   }
-
   public ModelsExtractor includingGenerators() {
     if (module instanceof Language) {
       for (Generator gen : ((Language) module).getGenerators()) {
@@ -31,11 +29,9 @@ public class ModelsExtractor {
     }
     return this;
   }
-
   public Collection<SModel> getModels() {
     return models;
   }
-
   private void extractModels(SModule m) {
     for (SModel d : m.getModels()) {
       if (includeModel(d)) {
@@ -43,7 +39,6 @@ public class ModelsExtractor {
       }
     }
   }
-
   private boolean includeModel(SModel model) {
     return SModelStereotype.isUserModel(model) && (myIncludeDoNotGenerate || (SNodeOperations.isGeneratable(model) && !(model.isReadOnly())));
   }

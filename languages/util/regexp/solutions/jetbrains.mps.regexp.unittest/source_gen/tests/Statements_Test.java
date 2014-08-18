@@ -20,7 +20,6 @@ public class Statements_Test extends TestCase {
     }
     Assert.assertTrue(matches);
   }
-
   public void test_iftilde() throws Exception {
     boolean result = false;
     {
@@ -32,7 +31,6 @@ public class Statements_Test extends TestCase {
     }
     Assert.assertTrue(result);
   }
-
   public void test_findall() throws Exception {
     int i = 0;
     {
@@ -45,10 +43,8 @@ public class Statements_Test extends TestCase {
     }
     Assert.assertEquals(4, i);
   }
-
   public Statements_Test() {
   }
-
   private static Pattern REGEXP_yyh11i_a0a0c0a = Pattern.compile("(?:\\w+@\\w(?:.\\w+)*)", 0);
   private static Pattern REGEXP_yyh11i_a0a0b0b = Pattern.compile("ab", 0);
   private static Pattern REGEXP_yyh11i_a0a0b0c = Pattern.compile("(\\w\\w)", 0);

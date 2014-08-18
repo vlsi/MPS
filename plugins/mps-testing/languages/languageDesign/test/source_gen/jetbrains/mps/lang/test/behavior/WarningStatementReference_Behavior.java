@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class WarningStatementReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getName_7691029917083872184(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "declaration", false), "virtual_getName_1597542831856389237", new Object[]{});
   }

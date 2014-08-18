@@ -12,15 +12,12 @@ public class NodesTestMethod_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "returnType", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null), true);
   }
-
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.NodesTestCase", false, false);
   }
-
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     return "test_" + SPropertyOperations.getString(thisNode, "name");
   }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;
   }

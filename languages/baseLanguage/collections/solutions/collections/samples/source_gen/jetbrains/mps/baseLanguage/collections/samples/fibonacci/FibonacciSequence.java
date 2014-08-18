@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 public class FibonacciSequence {
   public FibonacciSequence() {
   }
-
   public Iterable<Integer> numbers(final int max) {
     return Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -18,7 +17,6 @@ public class FibonacciSequence {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -85,7 +83,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _6_n_;
               private int _7_n__;
               private int _11_n;

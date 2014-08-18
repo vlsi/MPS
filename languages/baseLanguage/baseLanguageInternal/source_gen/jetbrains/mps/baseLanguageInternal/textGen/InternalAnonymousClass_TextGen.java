@@ -64,6 +64,5 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(InternalAnonymousClass_TextGen.class);
 }

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IClassifiersSearchScopeAdapter {
   public IClassifiersSearchScopeAdapter() {
   }
-
   public static Iterable<SNode> filterMembers(Iterable<SNode> members, final int constraint) {
     return Sequence.fromIterable(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

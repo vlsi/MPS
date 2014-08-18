@@ -6,7 +6,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Generator;
 import java.awt.Component;
 import javax.swing.JList;
@@ -16,11 +16,10 @@ public class ModuleRenderer extends ProjectLevelRenderer {
   public ModuleRenderer(SModule moduleScope, Project projectScope) {
     super(moduleScope, projectScope);
   }
-
   @Override
   public String getItemLabel(Object value) {
     SModuleReference moduleReference = (ModuleReference) value;
-    final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
     if (module == null) {
       String moduleName = moduleReference.getModuleName();
       return (moduleName.equals("") ? "<no name>" : moduleName);
@@ -31,7 +30,6 @@ public class ModuleRenderer extends ProjectLevelRenderer {
       return moduleReference.getModuleName();
     }
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
@@ -40,7 +38,7 @@ public class ModuleRenderer extends ProjectLevelRenderer {
       return result;
     }
     setText(getItemLabel(value));
-    final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+    final SModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
     if (module == null && !(isSelected)) {
       setForeground(Color.RED);
     }

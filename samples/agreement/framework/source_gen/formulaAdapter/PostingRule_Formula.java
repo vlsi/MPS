@@ -10,12 +10,10 @@ import postingrules.AccountingEvent;
 
 public class PostingRule_Formula extends PostingRule {
   private Function<Money> myFunction;
-
   public PostingRule_Formula(AccountType accountType, boolean isTaxable, Function<Money> function) {
     super(accountType, isTaxable);
     myFunction = function;
   }
-
   @Override
   protected Money calculateAmount(AccountingEvent evt) {
     return myFunction.compute(evt);

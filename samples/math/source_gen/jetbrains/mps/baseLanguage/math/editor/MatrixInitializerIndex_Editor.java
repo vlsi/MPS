@@ -15,7 +15,6 @@ public class MatrixInitializerIndex_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_bnuud9_a(editorContext, node);
   }
-
   private EditorCell createProperty_bnuud9_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

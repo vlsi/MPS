@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellIdReferenceSelector_BehaviorDescriptor extends AbstractCellSelector_BehaviorDescriptor {
   public CellIdReferenceSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellIdReferenceSelector";

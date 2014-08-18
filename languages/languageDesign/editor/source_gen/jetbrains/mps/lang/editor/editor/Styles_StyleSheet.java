@@ -21,54 +21,44 @@ public class Styles_StyleSheet {
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a2a((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
-
   public static void apply_style(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_reference(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
   }
-
   public static void apply_item(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.ITALIC);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_header(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.UNDERLINED, 0, true);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_property(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.SELECTABLE, 0, false);
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
   }
-
   public static void apply_bordered(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
-
   public static void apply_borderedCollection(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
   }
-
   public static void apply_tag(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "tag");
   }
-
   public static void apply_attributedCellLabel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.DRAW_BORDER, 0, true);
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.UNDERLINED, 0, Styles_StyleSheet._StyleParameter_QueryFunction_kkd5s1_a3j((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
   }
-
   public static void apply_string(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -76,12 +66,10 @@ public class Styles_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
-
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -96,7 +84,6 @@ public class Styles_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
-
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -106,7 +93,6 @@ public class Styles_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -116,7 +102,6 @@ public class Styles_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -126,7 +111,6 @@ public class Styles_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_KeyWord(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -135,15 +119,12 @@ public class Styles_StyleSheet {
     }
   }
 
-
-
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a0a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isIndented_1237383418148(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
-
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a1a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
@@ -159,14 +140,12 @@ public class Styles_StyleSheet {
     }
     return false;
   }
-
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a2a(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"))) {
       return false;
     }
     return EditorCellModel_Behavior.call_isOnNewLine_1237385424172(SNodeOperations.cast(node, "jetbrains.mps.lang.editor.structure.EditorCellModel"));
   }
-
   private static boolean _StyleParameter_QueryFunction_kkd5s1_a3j(EditorContext editorContext, SNode node) {
     return true;
   }

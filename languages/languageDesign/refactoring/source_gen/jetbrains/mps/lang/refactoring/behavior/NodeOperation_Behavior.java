@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class NodeOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_7012097027058652452(SNode thisNode) {
     SNode refactoringNode = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(refactoringNode, "target", true), "jetbrains.mps.lang.refactoring.structure.NodeTarget")) {
@@ -20,7 +19,6 @@ public class NodeOperation_Behavior {
     }
     return _quotation_createNode_qyvi86_a2a0();
   }
-
   private static SNode _quotation_createNode_qyvi86_a0a1a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -28,7 +26,6 @@ public class NodeOperation_Behavior {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_qyvi86_a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

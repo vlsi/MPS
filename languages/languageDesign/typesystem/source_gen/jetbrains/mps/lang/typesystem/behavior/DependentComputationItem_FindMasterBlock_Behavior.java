@@ -16,17 +16,14 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class DependentComputationItem_FindMasterBlock_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_fiyp4x_a0a0(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem"), "blockingNodeConcept", false));
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "8058965347377019245"));
     return result;
   }
-
   private static SNode _quotation_createNode_fiyp4x_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

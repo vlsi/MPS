@@ -22,7 +22,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class IApplicableToNothing_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Set<SNode> call_getAllApplicableTypes_5994574781955687463(final SAbstractConcept thisConcept) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Iterable<SNode> implementList;
@@ -53,11 +52,9 @@ public class IApplicableToNothing_Behavior {
     }
     return result;
   }
-
   public static boolean call_hasApplicableTypes_2142237368811537351(SAbstractConcept thisConcept, SNode concept) {
     return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing") && !(SConceptOperations.isExactly(concept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"));
   }
-
   public static SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
     SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     for (SNode et : IApplicableToNothing_Behavior.call_getAllApplicableTypes_5994574781955687463(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))))) {

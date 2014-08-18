@@ -28,8 +28,6 @@ public class ModuleLoaderUtils {
     return (originalModule != null ? originalModule : module);
   }
 
-
-
   public static ModuleDescriptor loadModuleDescriptor(IFile moduleDescriptorFile, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
     MacroHelper helper = new ModuleLoaderUtils.ModuleMacroHelper(moduleDescriptorFile.getParent(), genContext, originalModule, reporter);
     String path = moduleDescriptorFile.getPath();
@@ -43,21 +41,17 @@ public class ModuleLoaderUtils {
     throw new RuntimeException("unknown file type: " + moduleDescriptorFile.getName());
   }
 
-
-
   private static class ModuleMacroHelper implements MacroHelper {
     private final IFile moduleSourceDir;
     private final TemplateQueryContext genContext;
     private final SNode originalModule;
     private final ModuleChecker.Reporter reporter;
-
     public ModuleMacroHelper(IFile moduleSourceDir, TemplateQueryContext genContext, SNode originalModule, ModuleChecker.Reporter reporter) {
       this.moduleSourceDir = moduleSourceDir;
       this.genContext = genContext;
       this.originalModule = originalModule;
       this.reporter = reporter;
     }
-
     @Override
     public String expandPath(@Nullable String path) {
       if (path == null) {
@@ -109,12 +103,10 @@ public class ModuleLoaderUtils {
       }
       return path;
     }
-
     @Override
     public String shrinkPath(@Nullable String string) {
       throw new UnsupportedOperationException("cannot shrink");
     }
-
     private static boolean eq_krgnbt_a0c0f0d0f4(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }

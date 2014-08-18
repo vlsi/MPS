@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CellModel_RefNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public check_CellModel_RefNode_InferenceRule() {
   }
-
   public void applyRule(final SNode refNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode lnk = SLinkOperations.getTarget(refNode, "relationDeclaration", false);
     if (!(SPropertyOperations.hasValue(lnk, "metaClass", "aggregation", "reference"))) {
@@ -30,18 +29,15 @@ public class check_CellModel_RefNode_InferenceRule extends AbstractInferenceRule
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(refNode, "single cardinality expected", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "1180280735244", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_RefNode";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

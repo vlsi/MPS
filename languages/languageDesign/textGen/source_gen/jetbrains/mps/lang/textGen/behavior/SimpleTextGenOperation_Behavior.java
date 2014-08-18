@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SimpleTextGenOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getMethodName_1234789420862(SNode thisNode) {
     String name = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
     if (name == null || name.length() <= 1) {
@@ -27,7 +26,6 @@ public class SimpleTextGenOperation_Behavior {
     }
     return result.toString();
   }
-
   public static boolean call_inLangConcept_1236168713983(SNode thisNode) {
     return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
   }

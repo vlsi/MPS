@@ -17,18 +17,14 @@ public class InlineTagCommentLinePart_Actions {
     editorCell.setAction(CellActionType.DELETE, new InlineTagCommentLinePart_Actions.InlineTagCommentLinePart_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new InlineTagCommentLinePart_Actions.InlineTagCommentLinePart_Actions_BACKSPACE(node));
   }
-
   public static class InlineTagCommentLinePart_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public InlineTagCommentLinePart_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);
@@ -44,18 +40,14 @@ public class InlineTagCommentLinePart_Actions {
       editorContext.flushEvents();
     }
   }
-
   public static class InlineTagCommentLinePart_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public InlineTagCommentLinePart_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode commentLine = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
       SNodeOperations.deleteNode(node);

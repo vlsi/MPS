@@ -25,14 +25,12 @@ public class RenameModelDialog extends RenameDialog {
   private JCheckBox myUpdateAllReferences;
   private Project myProject;
   private EditableSModel myModelDescriptor;
-
   public RenameModelDialog(Project project, EditableSModel sm) throws HeadlessException {
     super(project, sm.getModelName(), "model");
     myProject = project;
     myModelDescriptor = sm;
     setTitle("Rename Model");
   }
-
   @Override
   protected JComponent createNorthPanel() {
     super.createNorthPanel();
@@ -46,7 +44,6 @@ public class RenameModelDialog extends RenameDialog {
     myPanel.add(myUpdateAllReferences, c);
     return myPanel;
   }
-
   @Override
   protected void doRefactoringAction() {
     final String newModelName = getCurrentValue();

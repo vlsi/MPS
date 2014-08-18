@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ResolvedUnknownNode_QuickFix extends QuickFix_Runtime {
   public ResolvedUnknownNode_QuickFix() {
   }
-
   public void execute(SNode node) {
     _FunctionTypes._return_P0_E0<? extends SNode> nodeBuilder = BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), ((SNode) ResolvedUnknownNode_QuickFix.this.getField("unknownNode")[0]), "virtual_evaluateSubst_8136348407761606764", new Object[]{});
     if (nodeBuilder != null) {

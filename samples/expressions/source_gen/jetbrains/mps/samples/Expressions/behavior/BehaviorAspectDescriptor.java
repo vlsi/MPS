@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 2:
@@ -54,6 +53,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper"};
 }

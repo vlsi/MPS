@@ -19,32 +19,25 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_400642802550422214(final PropertyMacroContext _context) {
     Map<String, Integer> m = SwitchGenUtil.getMap(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement"), _context);
     return MapSequence.fromMap(m).get(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value"));
   }
-
   public static SNode sourceNodeQuery_400642802550422232(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
-
   public static SNode sourceNodeQuery_8297320321098371693(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true);
   }
-
   public static SNode sourceNodeQuery_3708576844065051190(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_400642802550422240(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "case", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_3708576844065083881(final SourceSubstituteMacroNodesContext _context) {
     return SwitchGenUtil.getNodes(_context.getNode());
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

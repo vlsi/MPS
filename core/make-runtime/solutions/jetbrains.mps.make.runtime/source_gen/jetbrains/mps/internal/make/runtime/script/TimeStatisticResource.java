@@ -8,16 +8,13 @@ import jetbrains.mps.make.facet.ITarget;
 
 public class TimeStatisticResource implements IResource {
   private Map<ITarget.Name, Long> statistic;
-
   public TimeStatisticResource(Map<ITarget.Name, Long> statistic) {
     this.statistic = statistic;
   }
-
   @Override
   public String describe() {
     return "Statistic of targets execution time (for internal use only)";
   }
-
   public Map<ITarget.Name, Long> getStatistic() {
     return statistic;
   }

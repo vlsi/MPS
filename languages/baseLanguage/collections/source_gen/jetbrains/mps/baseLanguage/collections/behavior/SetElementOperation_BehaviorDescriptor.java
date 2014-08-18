@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class SetElementOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements IListOperation_BehaviorDescriptor, IApplicableToList_BehaviorDescriptor {
   public SetElementOperation_BehaviorDescriptor() {
   }
-
   public SNode virtual_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
     return IApplicableToNothing_Behavior.virtual_expectedOperandType_6368025520509018230(thisNode, elementType);
   }
-
   public List<SNode> virtual_getApplicableTypes_5994574781955586127(SConcept thisConcept) {
     return IApplicableToList_Behavior.virtual_getApplicableTypes_5994574781955586127(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetElementOperation";

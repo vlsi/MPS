@@ -17,30 +17,24 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class ClassUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassUsages_Finder");
-
   public ClassUsages_Finder() {
   }
-
   @Override
   public boolean isUsedByDefault(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   @Override
   public String getDescription() {
     return "Class Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -57,7 +51,6 @@ public class ClassUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
@@ -65,7 +58,6 @@ public class ClassUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(constructor);
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Class Usages";

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class MinusOperation_BehaviorDescriptor extends Operation_BehaviorDescriptor {
   public MinusOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.MinusOperation";

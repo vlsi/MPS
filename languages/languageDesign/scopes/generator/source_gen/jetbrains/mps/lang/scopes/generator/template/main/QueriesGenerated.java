@@ -17,53 +17,44 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_742556521877854360(final PropertyMacroContext _context) {
     return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
-
   public static Object propertyMacro_GetPropertyValue_742556521877854443(final PropertyMacroContext _context) {
     return SModelUtil.getGenuineLinkRole(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
-
   public static boolean ifMacro_Condition_8077936094962965078(final IfMacroContext _context) {
     List<SNode> parameters = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true);
     // kind & child 
     return ListSequence.fromList(parameters).count() == 2;
   }
-
   public static SNode sourceNodeQuery_4819084825497330060(final SourceSubstituteMacroNodeContext _context) {
     SNode kindParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).first();
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", kindParameter, false);
     return ref;
   }
-
   public static SNode sourceNodeQuery_8077936094962965283(final SourceSubstituteMacroNodeContext _context) {
     SNode childParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).getElement(1);
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", childParameter, false);
     return ref;
   }
-
   public static SNode sourceNodeQuery_8077936094962965402(final SourceSubstituteMacroNodeContext _context) {
     SNode childParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).getElement(1);
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", childParameter, false);
     return ref;
   }
-
   public static SNode sourceNodeQuery_8077936094962965371(final SourceSubstituteMacroNodeContext _context) {
     SNode childParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).getElement(2);
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", childParameter, false);
     return ref;
   }
-
   public static SNode sourceNodeQuery_8077936094962972245(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expr", true);
   }
-
   public static SNode sourceNodeQuery_8077936094962972271(final SourceSubstituteMacroNodeContext _context) {
     SNode kindParameter = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "parameter", true)).first();
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);

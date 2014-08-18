@@ -26,15 +26,12 @@ public enum CastTargetDescriptor {
   _____matrix_bigcomplex_("...->matrix<bigcomplex>", 16);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<CastTargetDescriptor> getConstants() {
     List<CastTargetDescriptor> list = ListSequence.fromList(new LinkedList<CastTargetDescriptor>());
     ListSequence.fromList(list).addElement(CastTargetDescriptor.unknown);
@@ -56,11 +53,9 @@ public enum CastTargetDescriptor {
     ListSequence.fromList(list).addElement(CastTargetDescriptor._____matrix_bigcomplex_);
     return list;
   }
-
   public static CastTargetDescriptor getDefault() {
     return CastTargetDescriptor.primitive__biginteger;
   }
-
   public static CastTargetDescriptor parseValue(String value) {
     if (value == null) {
       return CastTargetDescriptor.getDefault();
@@ -118,14 +113,11 @@ public enum CastTargetDescriptor {
     }
     return CastTargetDescriptor.getDefault();
   }
-
   private int myValue;
-
   CastTargetDescriptor(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

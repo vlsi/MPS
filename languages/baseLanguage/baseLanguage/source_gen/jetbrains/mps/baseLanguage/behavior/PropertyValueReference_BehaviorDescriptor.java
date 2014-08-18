@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PropertyValueReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public PropertyValueReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return PropertyValueReference_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PropertyValueReference";

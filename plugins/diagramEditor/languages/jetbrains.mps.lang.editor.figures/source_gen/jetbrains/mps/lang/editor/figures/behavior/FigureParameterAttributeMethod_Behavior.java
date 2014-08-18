@@ -9,15 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class FigureParameterAttributeMethod_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getParameterMember_5422656561931910498(SNode thisNode) {
     return FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode);
   }
-
   public static SNode call_getMethodDeclaration_7911346875269168300(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
   }
-
   public static SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
     return SNodeOperations.as(SLinkOperations.getTarget(FigureParameterAttributeMethod_Behavior.call_getMethodDeclaration_7911346875269168300(thisNode), "returnType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
   }

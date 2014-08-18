@@ -14,12 +14,10 @@ public class SubstituteMenuPart_Constraints extends BaseConstraintsDescriptor {
   public SubstituteMenuPart_Constraints() {
     super("jetbrains.mps.lang.actions.structure.SubstituteMenuPart");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class SubstituteMenuPart_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1371735981988685427");
 }

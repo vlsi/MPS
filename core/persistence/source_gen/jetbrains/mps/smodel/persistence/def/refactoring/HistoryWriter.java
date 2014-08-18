@@ -31,10 +31,8 @@ public class HistoryWriter {
   public static final String OLD_VALUE = "from";
   public static final String NEW_VALUE = "to";
   private WriteHelper myHelper;
-
   public HistoryWriter() {
   }
-
   public Document saveHistory(StructureModificationLog history) {
     final Element root = new Element(MODIFICATION_HISTORY);
     ListSequence.fromList(history.getHistory()).visitAll(new IVisitor<StructureModification>() {
@@ -44,7 +42,6 @@ public class HistoryWriter {
     });
     return new Document(root);
   }
-
   public Element saveModification(StructureModification modification) {
     myHelper = new WriteHelper(null);
 
@@ -69,11 +66,9 @@ public class HistoryWriter {
 
     return elem;
   }
-
   private String genId(SNodeReference ptr) {
     return myHelper.genReferenceId(ptr);
   }
-
   public Element saveData(StructureModification.Entry data) {
     if (data instanceof StructureModification.MoveNode) {
       return saveMoveNode((StructureModification.MoveNode) data);
@@ -84,7 +79,6 @@ public class HistoryWriter {
     }
     return null;
   }
-
   public Element saveMoveNode(StructureModification.MoveNode data) {
     Element elem = new Element(MOVE_NODE);
     elem.setAttribute(NODE_ID, genId(data.oldID));
@@ -94,7 +88,6 @@ public class HistoryWriter {
     }
     return elem;
   }
-
   public Element saveRenameNode(StructureModification.RenameNode data) {
     Element elem = new Element(RENAME_NODE);
     elem.setAttribute(NODE_ID, genId(data.oldID));
@@ -105,7 +98,6 @@ public class HistoryWriter {
     elem.setAttribute(NEW_VALUE, data.newValue);
     return elem;
   }
-
   public Element saveRenameModel(StructureModification.RenameModel data) {
     Element elem = new Element("RenameModel");
     elem.setAttribute("oldModel", data.oldModel.toString());

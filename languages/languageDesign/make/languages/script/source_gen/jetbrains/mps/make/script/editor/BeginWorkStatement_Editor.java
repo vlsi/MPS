@@ -21,7 +21,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_al4u6z_a(editorContext, node);
   }
-
   private EditorCell createCollection_al4u6z_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_al4u6z_a");
@@ -37,7 +36,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_al4u6z_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_al4u6z_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -45,7 +43,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_al4u6z_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("workName");
@@ -66,7 +63,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_al4u6z_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "covering");
     editorCell.setCellId("Constant_al4u6z_c0");
@@ -76,7 +72,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_al4u6z_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ofTotal");
@@ -96,7 +91,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_al4u6z_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units of total work left,");
     editorCell.setCellId("Constant_al4u6z_e0");
@@ -106,7 +100,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_al4u6z_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expecting");
     editorCell.setCellId("Constant_al4u6z_f0");
@@ -116,7 +109,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_al4u6z_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expected");
@@ -136,7 +128,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_al4u6z_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units");
     editorCell.setCellId("Constant_al4u6z_h0");
@@ -146,7 +137,6 @@ public class BeginWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_al4u6z_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_al4u6z_i0");

@@ -54,7 +54,6 @@ import org.apache.log4j.LogManager;
 public class VcsActionsUtil {
   private VcsActionsUtil() {
   }
-
   public static void showRootDifference(SModel model, final SNode node, Project project, @Nullable Bounds bounds) {
     try {
       DataSource source = model.getSource();
@@ -92,7 +91,6 @@ public class VcsActionsUtil {
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
     }
   }
-
   private static Iterable<VirtualFile> collectUnversionedFiles(final VcsFileStatusProvider fileStatusProvider, final VirtualFile dir) {
     return new _FunctionTypes._return_P0_E0<Iterable<VirtualFile>>() {
       public Iterable<VirtualFile> invoke() {
@@ -100,7 +98,6 @@ public class VcsActionsUtil {
           public Iterator<VirtualFile> iterator() {
             return new YieldingIterator<VirtualFile>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -162,7 +159,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private VirtualFile _5_child;
               private Iterator<VirtualFile> _5_child_it;
               private VirtualFile _8__yield_brpb5o_a0b0a0a0c;
@@ -173,7 +169,6 @@ __switch__:
       }
     }.invoke();
   }
-
   public static Iterable<VirtualFile> getUnversionedFilesForModule(@NotNull Project project, @NotNull SModule module) {
     IFile descriptorFile = ((AbstractModule) module).getDescriptorFile();
     if (descriptorFile == null) {
@@ -183,7 +178,6 @@ __switch__:
     VcsFileStatusProvider statusProvider = project.getComponent(VcsFileStatusProvider.class);
     return collectUnversionedFiles(statusProvider, VirtualFileUtils.getVirtualFile(moduleDir));
   }
-
   public static List<VirtualFile> getUnversionedFilesForModules(@NotNull final Project project, List<SModule> module) {
     return ListSequence.fromList(module).translate(new ITranslator2<SModule, VirtualFile>() {
       public Iterable<VirtualFile> translate(SModule m) {
@@ -191,7 +185,6 @@ __switch__:
       }
     }).toListSequence();
   }
-
   public static List<SModel> getModels(@Nullable VirtualFile[] virtualFiles) {
     if (virtualFiles != null) {
       return Sequence.fromIterable(Sequence.fromArray(virtualFiles)).where(new IWhereFilter<VirtualFile>() {
@@ -211,11 +204,9 @@ __switch__:
       return ListSequence.fromList(new ArrayList<SModel>());
     }
   }
-
   public static boolean isMakePluginInstalled() {
     IdeaPluginDescriptor p = PluginManager.getPlugin(PluginId.getId("jetbrains.mps.ide.make"));
     return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
-
   protected static Logger LOG = LogManager.getLogger(VcsActionsUtil.class);
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BaseEditorComponent_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.lang.structure.structure.PropertyDeclaration")) {
       return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SLinkOperations.getTarget(thisNode, "conceptDeclaration", false))) {

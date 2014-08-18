@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NewExecuteFinderExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode executeFinderExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -46,42 +45,35 @@ public class typeof_NewExecuteFinderExpression_InferenceRule extends AbstractInf
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode createSNodeType_4xpah7_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, false);
     return n1;
   }
-
   private static SNode createClassifierType_4xpah7_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
     n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SearchScope")));
     return n1;
   }
-
   private static SNode createClassifierType_4xpah7_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, false);
     n1.setReference("classifier", SReference.create("classifier", n1, facade.createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.util(MPS.OpenAPI/org.jetbrains.mps.openapi.util@java_stub)"), facade.createNodeId("~ProgressMonitor")));
     return n1;
   }
-
   private static SNode createSNodeListType_4xpah7_a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, false);

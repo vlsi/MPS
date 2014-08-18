@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class LanguageTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getParameters_1234799367488(SNode thisNode) {
     if (thisNode == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
@@ -26,7 +25,6 @@ public class LanguageTextGenDeclaration_Behavior {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableHiddenParameter_3044950653914717099", new Object[]{})));
     return (List<SNode>) result;
   }
-
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, new ArrayList<SNode>(), thisNode);
@@ -40,7 +38,6 @@ public class LanguageTextGenDeclaration_Behavior {
     }
     return result;
   }
-
   public static List<SNode> call_getAvailableFunctions_1234781318196(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> list = LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "baseTextGen", false));
@@ -53,7 +50,6 @@ public class LanguageTextGenDeclaration_Behavior {
     }
     return result;
   }
-
   public static List<SNode> call_getBaseTextGenComponents_1234781318244(SNode thisNode, List<SNode> list, SNode node) {
     ListSequence.fromList(list).addElement(node);
     if ((SLinkOperations.getTarget(node, "baseTextGen", false) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseTextGen", false), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"))) {
@@ -62,11 +58,9 @@ public class LanguageTextGenDeclaration_Behavior {
       return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode) SLinkOperations.getTarget(node, "baseTextGen", false));
     }
   }
-
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return "textGen";
   }
-
   public static List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SAbstractConcept thisConcept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));

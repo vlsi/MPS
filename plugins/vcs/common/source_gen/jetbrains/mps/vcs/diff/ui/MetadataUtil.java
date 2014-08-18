@@ -33,7 +33,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class MetadataUtil {
   public MetadataUtil() {
   }
-
   public static SModel createMetadataModel(SModel model, String version, boolean editable) {
     EditableSModelBase metadataModel = new MergeTemporaryModel(model.getReference(), !(editable));
     metadataModel.addLanguage(PersistenceFacade.getInstance().createModuleReference("6df0089f-3288-4998-9d57-e698e7c8e145(jetbrains.mps.ide.vcs.modelmetadata)"));
@@ -43,11 +42,9 @@ public class MetadataUtil {
     metadataModel.setChanged(false);
     return metadataModel;
   }
-
   public static void dispose(SModel model) {
     DiffModelUtil.unregisterModel(model);
   }
-
   private static SNode createModelRoot(SModel model) {
     SModelBase modelBase = (SModelBase) model;
     SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
@@ -74,7 +71,6 @@ public class MetadataUtil {
     ((jetbrains.mps.smodel.SNode) root).setId(SNodeId.fromString("~root"));
     return root;
   }
-
   private static SNode createModuleRefNode(SModuleReference module) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
     SPropertyOperations.set(node, "qualifiedName", module.getModuleName());
@@ -82,11 +78,9 @@ public class MetadataUtil {
     ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
-
   private static SModuleReference getModuleReference(SNode node) {
     return new ModuleReference(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "uuid"));
   }
-
   private static SNode createModelRefNode(jetbrains.mps.smodel.SModel.ImportElement impModel) {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
     SPropertyOperations.set(node, "qualifiedName", SModelStereotype.withoutStereotype(impModel.getModelReference().getModelName()));
@@ -95,11 +89,9 @@ public class MetadataUtil {
     ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
-
   private static SModelReference getModelReference(SNode node) {
     return new jetbrains.mps.smodel.SModelReference(new SModelFqName(SPropertyOperations.getString(node, "qualifiedName"), SPropertyOperations.getString(node, "stereotype")), SModelId.fromString(SPropertyOperations.getString(node, "uuid")));
   }
-
   public static void applyMetadataChanges(SModel model, SModel metadataModel) {
     if (!(((EditableSModel) metadataModel).isChanged())) {
       return;
@@ -186,14 +178,12 @@ public class MetadataUtil {
 
     ((EditableSModel) metadataModel).setChanged(false);
   }
-
   private static boolean check_ca1g54_a0a0f0d(GeneratableSModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isDoNotGenerate();
     }
     return false;
   }
-
   private static void check_ca1g54_a0a5a8(GeneratableSModel checkedDotOperand, SNode root) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setDoNotGenerate(SPropertyOperations.getBoolean(root, "donotgenerate"));

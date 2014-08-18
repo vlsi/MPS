@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.unitTest.sandbox;
 public class TestMain {
   public TestMain() {
   }
-
   public static void main(String[] args) {
     System.err.println("Hello, Universe!");
   }

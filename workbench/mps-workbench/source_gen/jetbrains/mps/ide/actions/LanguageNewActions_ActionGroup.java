@@ -15,7 +15,6 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newSubModule = ID + "newSubModule";
   public static final String LABEL_ID_newAspect = ID + "newAspect";
   public static final String LABEL_ID_newModel = ID + "newModel";
-
   public LanguageNewActions_ActionGroup() {
     super("New", ID);
     this.setIsInternal(false);

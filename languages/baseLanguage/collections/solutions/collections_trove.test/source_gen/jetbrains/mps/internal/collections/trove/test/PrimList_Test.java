@@ -37,7 +37,6 @@ public class PrimList_Test extends TestCase {
     Assert.assertNotNull(ll);
     Assert.assertNotNull(ls);
   }
-
   public void test_byteList() throws Exception {
     List<Byte> lb = ListSequence.fromList(new TByteArrayListDecorator(new TByteArrayList()));
     ListSequence.fromList(lb).addElement((byte) 0);
@@ -46,7 +45,6 @@ public class PrimList_Test extends TestCase {
     Assert.assertSame(3, ListSequence.fromList(lb).count());
     Assert.assertSame(ListSequence.fromList(lb).getElement(0), ListSequence.fromList(lb).getElement(2));
   }
-
   public void test_intList() throws Exception {
     List<Integer> liPrim = ListSequence.fromList(new TIntArrayListDecorator(new TIntArrayList()));
     List<Integer> liBox = ListSequence.fromList(new ArrayList<Integer>());
@@ -65,10 +63,8 @@ public class PrimList_Test extends TestCase {
     Assert.assertTrue(2.5 * (mem2 - mem1) < (mem4 - mem3));
     Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liBox).count());
   }
-
   public PrimList_Test() {
   }
-
   private long getUsedMem() {
     System.gc();
     System.gc();

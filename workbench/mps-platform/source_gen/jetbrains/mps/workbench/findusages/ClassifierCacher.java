@@ -33,29 +33,23 @@ import jetbrains.mps.util.NameUtil;
 
 public class ClassifierCacher {
   private Map<IdIndexEntry, Integer> myResult = new THashMap<IdIndexEntry, Integer>();
-
   public ClassifierCacher() {
   }
-
   public Map<IdIndexEntry, Integer> getResult() {
     return myResult;
   }
-
   private void instance(String concept) {
     myResult.put(new IdIndexEntry(concept, true), 0);
   }
-
   private void ref(SNodeId id) {
     if (!(id instanceof jetbrains.mps.smodel.SNodeId.Foreign)) {
       return;
     }
     myResult.put(new IdIndexEntry(((jetbrains.mps.smodel.SNodeId.Foreign) id).getId(), true), 0);
   }
-
   private void modelRef(String packageName) {
     myResult.put(new IdIndexEntry(packageName + "@java_stub", true), 0);
   }
-
   public void updateClassifier(ClassifierKind kind, ASMClass ac) {
     if (kind == ClassifierKind.CLASS) {
       instance("jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -95,7 +89,6 @@ public class ClassifierCacher {
       instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
     }
   }
-
   private void updateTypeVariables(ASMClass cls) {
     for (ASMTypeVariable tv : cls.getTypeParameters()) {
       instance("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
@@ -111,7 +104,6 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateTypeVariables(ASMMethod method) {
     for (ASMTypeVariable tv : method.getTypeParameters()) {
       instance("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration");
@@ -129,19 +121,16 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateAnnotations(ASMClass ac) {
     for (ASMAnnotation annotation : ac.getAnnotations()) {
       createAnnotation(annotation);
     }
   }
-
   private void updateExtendsForInterface(ASMClass ac) {
     for (ASMType type : ac.getGenericInterfaces()) {
       getTypeByASMType(type);
     }
   }
-
   private void updateExtendsAndImplements(ASMClass ac) {
     ASMType refSuperclass = ac.getGenericSuperclass();
     if (refSuperclass != null) {
@@ -151,7 +140,6 @@ public class ClassifierCacher {
       getTypeByASMType(type);
     }
   }
-
   private void updateInstanceFields(ASMClass refCls) {
     for (ASMField field : refCls.getDeclaredFields()) {
       if (field.isStatic()) {
@@ -168,7 +156,6 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateStaticFields(ASMClass ac) {
     for (ASMField field : ac.getDeclaredFields()) {
       if (!(field.isStatic())) {
@@ -199,7 +186,6 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateAnnotationMethods(ASMClass refCls) {
     for (ASMMethod m : refCls.getDeclaredMethods()) {
       instance("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration");
@@ -210,7 +196,6 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateConstructors(ASMClass ac) {
     for (ASMMethod c : ac.getDeclaredConstructors()) {
       if (c.isSynthetic()) {
@@ -262,7 +247,6 @@ public class ClassifierCacher {
       }
     }
   }
-
   private void updateInstanceMethods(ASMClass ac) {
     for (ASMMethod m : ac.getDeclaredMethods()) {
       if (m.isStatic()) {
@@ -280,7 +264,6 @@ public class ClassifierCacher {
       updateBaseMethod(m);
     }
   }
-
   private void updateStaticMethods(ASMClass ac, ClassifierKind kind) {
     for (ASMMethod m : ac.getDeclaredMethods()) {
       if (!(m.isStatic())) {
@@ -298,7 +281,6 @@ public class ClassifierCacher {
       updateBaseMethod(m);
     }
   }
-
   private void updateBaseMethod(ASMMethod m) {
     instance("jetbrains.mps.baseLanguage.structure.StubStatementList");
     updateTypeVariables(m);
@@ -335,7 +317,6 @@ public class ClassifierCacher {
       createAnnotation(annotation);
     }
   }
-
   private boolean isGeneratedEnumMethod(ASMMethod m) {
     if (m.getName().equals("values") && m.getParameterTypes().isEmpty()) {
       return true;
@@ -346,7 +327,6 @@ public class ClassifierCacher {
     }
     return false;
   }
-
   protected void createVisibility(ASMMethod m) {
     if (m.isPublic()) {
       instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -356,7 +336,6 @@ public class ClassifierCacher {
       instance("jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
     }
   }
-
   protected void createVisibility(ASMField f) {
     if (f.isPublic()) {
       instance("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -366,7 +345,6 @@ public class ClassifierCacher {
       instance("jetbrains.mps.baseLanguage.structure.ProtectedVisibility");
     }
   }
-
   private void addAnnotationsToParameter(List<ASMAnnotation> anns) {
     ListSequence.fromList(anns).visitAll(new IVisitor<ASMAnnotation>() {
       public void visit(ASMAnnotation it) {
@@ -374,7 +352,6 @@ public class ClassifierCacher {
       }
     });
   }
-
   private void createAnnotation(ASMAnnotation annotation) {
     instance("jetbrains.mps.baseLanguage.structure.AnnotationInstance");
     ASMClassType c = (ASMClassType) annotation.getType();
@@ -386,7 +363,6 @@ public class ClassifierCacher {
       addAnnotationMethodReference(c, key);
     }
   }
-
   private void getAnnotationValue(Object value) {
     if (value instanceof Integer) {
       instance("jetbrains.mps.baseLanguage.structure.IntegerConstant");
@@ -431,7 +407,6 @@ public class ClassifierCacher {
       addClassifierReference((ASMClassType) value);
     }
   }
-
   private void getTypeByASMType(ASMType type) {
     if (type == ASMPrimitiveType.BOOLEAN) {
       instance("jetbrains.mps.baseLanguage.structure.BooleanType");
@@ -490,24 +465,20 @@ public class ClassifierCacher {
       instance("jetbrains.mps.baseLanguage.structure.Type");
     }
   }
-
   private void addTypeParameters(List<? extends ASMType> typeParameters) {
     for (ASMType tv : typeParameters) {
       getTypeByASMType(tv);
     }
   }
-
   private void addClassifierReference(ASMClassType clsType) {
     SNodeId nodeId = ASMNodeId.createId(clsType.getName());
     ref(nodeId);
     modelRef(NameUtil.namespaceFromLongName(clsType.getName()));
   }
-
   private void addAnnotationMethodReference(ASMClassType annotationType, String method) {
     SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
     ref(nodeId);
   }
-
   private void addEnumConstReference(ASMEnumValue enumValue) {
     ASMClassType classType = (ASMClassType) enumValue.getType();
     SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());

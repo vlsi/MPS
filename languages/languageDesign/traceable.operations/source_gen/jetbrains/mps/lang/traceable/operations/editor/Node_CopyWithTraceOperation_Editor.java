@@ -18,7 +18,6 @@ public class Node_CopyWithTraceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_ivgi6x_a(editorContext, node);
   }
-
   private EditorCell createConstant_ivgi6x_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy with trace");
     editorCell.setCellId("Constant_ivgi6x_a");

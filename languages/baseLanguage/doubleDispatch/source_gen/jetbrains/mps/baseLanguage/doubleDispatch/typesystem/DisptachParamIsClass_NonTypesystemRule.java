@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class DisptachParamIsClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public DisptachParamIsClass_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(method, "modifiers", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -53,18 +52,15 @@ public class DisptachParamIsClass_NonTypesystemRule extends AbstractNonTypesyste
       return;
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.MethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -35,11 +35,9 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
   @NotNull
   private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargetConcepts = ListSequence.fromList(new ArrayList<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>());
   private final ModulesWithLanguagesScope myScope;
-
   public NodeBySeveralConceptChooser(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>... targets) {
     this(Sequence.fromIterable(Sequence.fromArray(targets)).toListSequence());
   }
-
   public NodeBySeveralConceptChooser(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     ListSequence.fromList(myTargetConcepts).addSequence(ListSequence.fromList(targets).select(new ISelector<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> select(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
@@ -59,7 +57,6 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
 
     myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), languages);
   }
-
   @Override
   protected List<SNode> findToChooseFromOnInit(final FindUsagesFacade manager, final ProgressMonitor monitor) {
     return (List<SNode>) (ListSequence.fromList(myTargetConcepts).translate(new ITranslator2<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>, SNode>() {
@@ -80,12 +77,10 @@ public class NodeBySeveralConceptChooser extends NodeChooser {
       }
     }).toListSequence());
   }
-
   @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
-
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {

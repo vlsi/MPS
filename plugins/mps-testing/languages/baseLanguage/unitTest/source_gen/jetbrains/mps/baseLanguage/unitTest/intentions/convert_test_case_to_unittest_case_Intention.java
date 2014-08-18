@@ -29,68 +29,53 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class convert_test_case_to_unittest_case_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public convert_test_case_to_unittest_case_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public String getPresentation() {
     return "convert_test_case_to_unittest_case";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.unitTest";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "superclass", true), _quotation_createNode_g240td_b0a0a0a());
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "2230548360390192818");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convert_test_case_to_unittest_case_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to UnitTest Case";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode testCase = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
       SPropertyOperations.set(testCase, "name", SPropertyOperations.getString(node, "name"));
@@ -109,12 +94,10 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
         ListSequence.fromList(SLinkOperations.getTargets(testCase, "member", true)).addElement(SNodeOperations.detachNode(f));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return convert_test_case_to_unittest_case_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_g240td_b0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -122,7 +105,6 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_g240td_a0a0d0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -130,7 +112,6 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), facade.createNodeId("~TestCase")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_g240td_a0a0a0a4a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

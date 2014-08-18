@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class VCSModelActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(VCSModelActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.vcs.plugin.VCSModelActions_ActionGroup";
-
   public VCSModelActions_ActionGroup() {
     super("VCSModelActions", ID);
     this.setIsInternal(false);

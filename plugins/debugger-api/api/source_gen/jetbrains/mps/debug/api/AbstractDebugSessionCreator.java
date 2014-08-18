@@ -13,17 +13,13 @@ import com.intellij.execution.ExecutionException;
 
 public abstract class AbstractDebugSessionCreator {
   private static Logger LOG = LogManager.getLogger(AbstractDebugSessionCreator.class);
-
   public AbstractDebugSessionCreator() {
   }
-
   public ExecutionResult startSession(Executor executor, ProgramRunner runner, RunProfileState state, Project project) throws ExecutionException {
     return execute(executor, runner, state);
   }
-
   protected ExecutionResult execute(Executor executor, ProgramRunner runner, RunProfileState state) throws ExecutionException {
     return state.execute(executor, runner);
   }
-
   public abstract AbstractDebugSession getDebugSession();
 }

@@ -12,7 +12,6 @@ import java.util.List;
 public class ASMAnnotation {
   private ASMType myType;
   private Map<String, Object> myValues;
-
   public ASMAnnotation(AnnotationNode node) {
     myType = TypeUtil.fromDescriptor(node.desc);
     if (node.values != null) {
@@ -24,15 +23,12 @@ public class ASMAnnotation {
       }
     }
   }
-
   public Map<String, Object> getValues() {
     return (myValues == null ? Collections.<String,Object>emptyMap() : Collections.unmodifiableMap(myValues));
   }
-
   public ASMType getType() {
     return myType;
   }
-
   public static Object processValue(Object value) {
     if (value instanceof AnnotationNode) {
       return new ASMAnnotation((AnnotationNode) value);

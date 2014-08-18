@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IdeaPluginDependency_BehaviorDescriptor extends PluginDependency_BehaviorDescriptor {
   public IdeaPluginDependency_BehaviorDescriptor() {
   }
-
   public String virtual_getPluginId_5864553086652219131(SNode thisNode) {
     return IdeaPluginDependency_Behavior.virtual_getPluginId_5864553086652219131(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IdeaPluginDependency";

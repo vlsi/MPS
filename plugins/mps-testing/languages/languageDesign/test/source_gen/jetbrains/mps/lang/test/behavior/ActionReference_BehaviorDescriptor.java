@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class ActionReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ActionReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.ActionReference";
   }
-
   public abstract String virtual_getActionId_1101347953350122762(SNode thisNode);
 }

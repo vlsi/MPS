@@ -6,12 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ModuleLoaderException extends RuntimeException {
   private SNode node;
-
   public ModuleLoaderException(String message, SNode node, Throwable cause) {
     super(message, cause);
     this.node = node;
   }
-
   public SNode getNode() {
     return node;
   }

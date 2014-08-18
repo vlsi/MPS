@@ -26,68 +26,53 @@ import jetbrains.mps.util.IterableUtil;
 
 public class IterateOverIterable_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public IterateOverIterable_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
   }
-
   public String getPresentation() {
     return "IterateOverIterable";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.IterateOverIterable_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new IterateOverIterable_Intention.Pattern_w1n2qe_a1a0a0a0j(), true) != null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1238764345596");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new IterateOverIterable_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Iterate over Iterable";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       {
         GeneratedMatchingPattern pattern_6isygg_a0a = new IterateOverIterable_Intention.Pattern_w1n2qe_a0a0a0a2n();
@@ -104,18 +89,14 @@ public class IterateOverIterable_Intention implements IntentionFactory {
         }
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return IterateOverIterable_Intention.this;
     }
   }
-
   public static class Pattern_w1n2qe_a1a0a0a0j extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_elem;
-
     public Pattern_w1n2qe_a1a0a0a0j() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6isygg_a0a0a0a0 = nodeToMatch;
@@ -141,34 +122,27 @@ public class IterateOverIterable_Intention implements IntentionFactory {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_elem".equals(fieldName)) {
         return patternVar_elem;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_w1n2qe_a0a0a0a2n extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_elem;
-
     public Pattern_w1n2qe_a0a0a0a2n() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_6isygg_a0a0a0 = nodeToMatch;
@@ -194,28 +168,23 @@ public class IterateOverIterable_Intention implements IntentionFactory {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_elem = (SNode) pattern.getFieldValue("patternVar_elem");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_elem".equals(fieldName)) {
         return patternVar_elem;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0b0a0a0a9 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
   private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0b0a0a0a0a0a0c31 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

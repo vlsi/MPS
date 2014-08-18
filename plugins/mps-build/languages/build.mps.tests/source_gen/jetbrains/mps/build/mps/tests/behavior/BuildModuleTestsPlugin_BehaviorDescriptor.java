@@ -11,15 +11,12 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 public class BuildModuleTestsPlugin_BehaviorDescriptor extends BuildPlugin_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
   public BuildModuleTestsPlugin_BehaviorDescriptor() {
   }
-
   public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BuildModuleTestsPlugin_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
-
   public Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return BuildModuleTestsPlugin_Behavior.virtual_getImportedLibraries_4101476690142937969(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildModuleTestsPlugin";

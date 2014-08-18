@@ -26,7 +26,6 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
   public EnumMemberValueRefExpression_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.EnumMemberValueRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,7 +42,6 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ju2p9y_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -63,6 +60,5 @@ public class EnumMemberValueRefExpression_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_ju2p9y_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "6973815483245773404");
 }

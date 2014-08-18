@@ -23,7 +23,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cqolwn_a(editorContext, node);
   }
-
   private EditorCell createCollection_cqolwn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_a");
@@ -33,7 +32,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cqolwn_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cqolwn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_a0");
@@ -45,14 +43,12 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cqolwn_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cqolwn_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_cqolwn_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cqolwn_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_b0a");
@@ -65,7 +61,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cqolwn_c1a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cqolwn_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a1a0");
@@ -75,7 +70,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_cqolwn_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("headerRowLinkDeclaration");
@@ -97,20 +91,16 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_cqolwn_a1b0a extends InlineCellProvider {
     public _Inline_cqolwn_a1b0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_cqolwn_a0b1a0(editorContext, node);
     }
-
     private EditorCell createProperty_cqolwn_a0b1a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -130,7 +120,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_cqolwn_c1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c1a0");
@@ -140,7 +129,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cqolwn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_b0");
@@ -152,7 +140,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cqolwn_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cqolwn_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_a1a");
@@ -165,7 +152,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cqolwn_c0b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cqolwn_a0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a0b0");
@@ -175,7 +161,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_cqolwn_b0b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("rowsLinkDeclaration");
@@ -197,20 +182,16 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_cqolwn_a1a1a extends InlineCellProvider {
     public _Inline_cqolwn_a1a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_cqolwn_a0b0b0(editorContext, node);
     }
-
     private EditorCell createProperty_cqolwn_a0b0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -230,7 +211,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_cqolwn_c0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c0b0");
@@ -240,7 +220,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cqolwn_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cqolwn_b1a");
@@ -253,7 +232,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cqolwn_c1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cqolwn_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_a1b0");
@@ -263,7 +241,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_cqolwn_b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("cellsInRowLinkDeclaration");
@@ -285,20 +262,16 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_cqolwn_a1b1a extends InlineCellProvider {
     public _Inline_cqolwn_a1b1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_cqolwn_a0b1b0(editorContext, node);
     }
-
     private EditorCell createProperty_cqolwn_a0b1b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("role");
@@ -318,7 +291,6 @@ public class CellModel_HierarchycalTable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_cqolwn_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "%");
     editorCell.setCellId("Constant_cqolwn_c1b0");

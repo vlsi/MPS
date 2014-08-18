@@ -18,7 +18,6 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_find_javastub_usages = ID + "find_javastub_usages";
   public static final String LABEL_ID_ex = ID + "ex";
-
   public LanguageActions_ActionGroup() {
     super("LanguageActions", ID);
     this.setIsInternal(false);

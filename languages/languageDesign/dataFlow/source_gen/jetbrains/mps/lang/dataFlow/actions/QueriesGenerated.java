@@ -25,15 +25,12 @@ public class QueriesGenerated {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         return SLinkOperations.setTarget(_context.getSourceNode(), "position", SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.InsertPosition", null), true);
       }
-
       public String getMatchingText(String pattern) {
         return "insert";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

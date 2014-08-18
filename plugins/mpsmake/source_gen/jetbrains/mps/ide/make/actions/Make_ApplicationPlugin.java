@@ -18,14 +18,11 @@ import java.util.ArrayList;
 
 public class Make_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide.make");
-
   public Make_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new BuildAllActions_Action());
@@ -67,7 +64,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new TextPreviewGroup_ActionGroup());
     addGroup(new ToolbarMake_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MakeAddition_ActionGroup.ID, ToolsInternal_ActionGroup.ID, null);
     insertGroupIntoAnother(ProjectCompileActions_ActionGroup.ID, ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_compileJava);
@@ -84,7 +80,6 @@ public class Make_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(NamespaceMake_ActionGroup.ID, NamespaceMakeActions_ActionGroup.ID, NamespaceMakeActions_ActionGroup.LABEL_ID_make);
     insertGroupIntoAnother(ToolbarMake_ActionGroup.ID, "MPSToolbarRunGroup", null);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());

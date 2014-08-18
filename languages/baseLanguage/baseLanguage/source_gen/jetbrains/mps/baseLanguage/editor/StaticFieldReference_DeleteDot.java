@@ -18,22 +18,17 @@ public class StaticFieldReference_DeleteDot {
     editorCell.setAction(CellActionType.DELETE, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_BACKSPACE(node));
   }
-
   public static class StaticFieldReference_DeleteDot_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public StaticFieldReference_DeleteDot_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_65e73j_a0a0a0a(SLinkOperations.getTarget(node, "classifier", false)));
     }
-
     private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;
@@ -42,22 +37,17 @@ public class StaticFieldReference_DeleteDot {
       return quotedNode_2;
     }
   }
-
   public static class StaticFieldReference_DeleteDot_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public StaticFieldReference_DeleteDot_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_65e73j_a0a0a0a(SLinkOperations.getTarget(node, "classifier", false)));
     }
-
     private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_2 = null;

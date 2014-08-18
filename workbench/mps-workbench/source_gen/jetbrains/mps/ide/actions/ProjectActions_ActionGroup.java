@@ -17,7 +17,6 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
-
   public ProjectActions_ActionGroup() {
     super("ProjectActions", ID);
     this.setIsInternal(false);

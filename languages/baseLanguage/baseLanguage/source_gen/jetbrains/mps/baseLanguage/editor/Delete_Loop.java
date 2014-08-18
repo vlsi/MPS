@@ -19,18 +19,14 @@ public class Delete_Loop {
     editorCell.setAction(CellActionType.DELETE, new Delete_Loop.Delete_Loop_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new Delete_Loop.Delete_Loop_BACKSPACE(node));
   }
-
   public static class Delete_Loop_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_Loop_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
         final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -49,18 +45,14 @@ public class Delete_Loop {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class Delete_Loop_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_Loop_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
         final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");

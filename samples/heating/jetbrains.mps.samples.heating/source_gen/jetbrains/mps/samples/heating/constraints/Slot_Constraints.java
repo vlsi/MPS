@@ -18,7 +18,6 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
   public Slot_Constraints() {
     super("jetbrains.mps.samples.heating.structure.Slot");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -27,7 +26,6 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(final SNode node, final String propertyValue) {
         String propertyName = "start";
@@ -40,7 +38,6 @@ public class Slot_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static boolean eq_wqhmm2_a0a0a0a0a0a0a0b0b0a1a0b0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

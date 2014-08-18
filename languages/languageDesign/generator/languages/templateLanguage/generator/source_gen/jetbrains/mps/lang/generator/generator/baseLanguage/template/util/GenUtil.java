@@ -15,10 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenUtil {
   private static final String KEY = "VarName";
-
   public GenUtil() {
   }
-
   public static String getVar(TemplateQueryContext context, SNode node, int skipMacro) {
     List<SNode> macros = ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -28,7 +26,6 @@ public class GenUtil {
     SNode real = (ListSequence.fromList(macros).count() <= skipMacro ? node : ListSequence.fromList(macros).getElement(skipMacro));
     return (String) context.getTransientObject(MultiTuple.<String,SNode>from(KEY, real));
   }
-
   public static String saveVar(TemplateQueryContext context, SNode node, String var) {
     SNode original = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") ? SNodeOperations.getParent(node) : node);
     if (context.getTransientObject(original) == null) {
@@ -37,7 +34,6 @@ public class GenUtil {
     context.putTransientObject(MultiTuple.<String,SNode>from(KEY, node), var);
     return var;
   }
-
   public static boolean isGeneratable(SModel model) {
     SNode node = SModelOperations.getModuleStub(model);
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.project.structure.Generator")) {
@@ -45,7 +41,6 @@ public class GenUtil {
     }
     return false;
   }
-
   public static String asIdentifier(String s) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {

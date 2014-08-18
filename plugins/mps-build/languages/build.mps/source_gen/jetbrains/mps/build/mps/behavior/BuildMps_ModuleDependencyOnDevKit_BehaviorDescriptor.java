@@ -6,7 +6,6 @@ package jetbrains.mps.build.mps.behavior;
 public class BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor extends BuildMps_ModuleDependency_BehaviorDescriptor {
   public BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit";

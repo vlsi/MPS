@@ -14,15 +14,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class RuleAfterDotExpression extends DataFlowConstructor {
   public RuleAfterDotExpression() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DotExpression";
   }
-
   public void performActions(Program o, SNode node) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "operation", true), "virtual_operandCanBeNull_323410281720656291", new Object[]{})) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_allowsNullOperand_4585239809762176541", new Object[]{}))) {
       {

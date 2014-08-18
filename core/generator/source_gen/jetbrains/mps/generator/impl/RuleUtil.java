@@ -103,7 +103,6 @@ public final class RuleUtil {
    * Set of operations that might alter model (insertion of new nodes, replacement)
    */
   private static final Set<String> ModelChangeOperations = SetSequence.fromSet(new HashSet<String>());
-
   {
     ModelChangeOperations.add(concept_AbstractConceptDeclaration);
     ModelChangeOperations.add(concept_ModelNewRootOp);
@@ -114,15 +113,12 @@ public final class RuleUtil {
     ModelChangeOperations.add(concept_ReplaceNewOp);
     ModelChangeOperations.add(concept_ReplaceOp);
   }
-
   public static boolean isNodeMacro(SNode n) {
     return isNodeMacro(n.getConcept().getQualifiedName());
   }
-
   public static boolean isNodeMacro(String conceptQualifiedName) {
     return NodeMacroConcepts.contains(conceptQualifiedName);
   }
-
   private static String getMappingLabelName(SNode mappingLabelDeclaration) {
     if (mappingLabelDeclaration == null) {
       return null;
@@ -130,83 +126,63 @@ public final class RuleUtil {
     String result = SPropertyOperations.getString(mappingLabelDeclaration, "name");
     return (result.length() == 0 ? null : result);
   }
-
   public static String getCreateRootRuleLabel(SNode rule) {
     return getMappingLabelName(SLinkOperations.getTarget(rule, "label", false));
   }
-
   public static String getTemplateFragmentLabel(SNode templateFragment) {
     return getMappingLabelName(SLinkOperations.getTarget(templateFragment, "labelDeclaration", false));
   }
-
   public static String getNodeMacroLabel(SNode nodeMacro) {
     return getMappingLabelName(SLinkOperations.getTarget(nodeMacro, "mappingLabel", false));
   }
-
   public static String getPatternReductionRuleLabel(SNode patternRule) {
     return getMappingLabelName(SLinkOperations.getTarget(patternRule, "labelDeclaration", false));
   }
-
   public static String getBaseRuleLabel(SNode rule) {
     return getMappingLabelName(SLinkOperations.getTarget(rule, "labelDeclaration", false));
   }
-
   public static SNode getBaseRuleApplicableConcept(SNode rule) {
     return SLinkOperations.getTarget(rule, "applicableConcept", false);
   }
-
   public static boolean getBaseRuleApplyToConceptInheritors(SNode rule) {
     return SPropertyOperations.getBoolean(rule, "applyToConceptInheritors");
   }
-
   public static SNode getBaseRuleCondition(SNode rule) {
     return SLinkOperations.getTarget(rule, "conditionFunction", true);
   }
-
   public static SNode getCreateRootRuleCondition(SNode rule) {
     return SLinkOperations.getTarget(rule, "conditionFunction", true);
   }
-
   public static SNode getCreateRootRuleTemplateNode(SNode rule) {
     return SLinkOperations.getTarget(rule, "templateNode", false);
   }
-
   public static SNode getReductionRuleConsequence(SNode reductionRule) {
     return SLinkOperations.getTarget(reductionRule, "ruleConsequence", true);
   }
-
   public static SNode getDropRuleCondition(SNode rule) {
     return SLinkOperations.getTarget(rule, "conditionFunction", true);
   }
-
   public static SNode getDropRuleApplicableConcept(SNode rule) {
     return SLinkOperations.getTarget(rule, "applicableConcept", false);
   }
-
   public static SNode getRootRuleTemplateNode(SNode rule) {
     return SLinkOperations.getTarget(rule, "template", false);
   }
-
   public static boolean getRootRuleKeepSourceRoot(SNode rule) {
     return SPropertyOperations.hasValue(rule, "keepSourceRoot", "true", null);
   }
-
   public static SNode getSwitchModifiedSwitch(SNode switchNode) {
     return SLinkOperations.getTarget(switchNode, "modifiedSwitch", false);
   }
-
   public static SNode getSwitchDefaultConsequence(SNode switchNode) {
     return SLinkOperations.getTarget(switchNode, "defaultConsequence", true);
   }
-
   public static SNode getSwitch_NullInputMessage(SNode switch_) {
     return SLinkOperations.getTarget(switch_, "nullInputMessage", true);
   }
-
   public static SNode getPatternReductionRuleConsequence(SNode reductionRule) {
     return SLinkOperations.getTarget(reductionRule, "ruleConsequence", true);
   }
-
   public static SNode getMapSrc_PostMapperFunction(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "postMapperFunction", true);
@@ -215,7 +191,6 @@ public final class RuleUtil {
     }
     return null;
   }
-
   public static SNode getMapSrc_MapperFunction(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro"), "mapperFunction", true);
@@ -224,11 +199,9 @@ public final class RuleUtil {
     }
     return null;
   }
-
   public static SNode getPatternReductionRulePatternNode(SNode reductionRule) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(reductionRule, "pattern", true), "patternNode", true);
   }
-
   public static String[] getTemplateDeclarationParameterNames(SNode template) {
     List<SNode> params = SLinkOperations.getTargets(template, "parameter", true);
     String[] result = new String[ListSequence.fromList(params).count()];
@@ -244,103 +217,78 @@ public final class RuleUtil {
     }
     return result;
   }
-
   public static SNode getIfMacro_ConditionFunction(SNode macro) {
     return SLinkOperations.getTarget(macro, "conditionFunction", true);
   }
-
   public static SNode getIfMacro_AlternativeConsequence(SNode macro) {
     return SLinkOperations.getTarget(macro, "alternativeConsequence", true);
   }
-
   public static SNode getReferenceMacro_GetReferent(SNode macro) {
     return SLinkOperations.getTarget(macro, "referentFunction", true);
   }
-
   public static SNode getPropertyMacro_ValueFunction(SNode macro) {
     return SLinkOperations.getTarget(macro, "propertyValueFunction", true);
   }
-
   public static SNode getTemplateFragment_ContextNodeQuery(SNode tf) {
     return SLinkOperations.getTarget(tf, "contextNodeQuery", true);
   }
-
   public static SNode getMappingScriptReference_Script(SNode ref) {
     return SLinkOperations.getTarget(ref, "mappingScript", false);
   }
-
   public static SNode getSwitchMacro_TemplateSwitch(SNode macro) {
     return SLinkOperations.getTarget(macro, "templateSwitch", false);
   }
-
   public static SNode getTemplateSwitchMacro_TemplateSwitch(SNode macro) {
     return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateSwitch");
   }
-
   public static SNode getIncludeMacro_Template(SNode macro) {
     return SLinkOperations.getTarget(macro, "includeTemplate", false);
   }
-
   public static SNode getCallMacro_Template(SNode macro) {
     return SNodeOperations.cast(SLinkOperations.getTarget(macro, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
-
   public static SNode getWeaving_ContextNodeQuery(SNode rule) {
     return SLinkOperations.getTarget(rule, "contextNodeQuery", true);
   }
-
   public static SNode getWeaving_Consequence(SNode rule) {
     return SLinkOperations.getTarget(rule, "ruleConsequence", true);
   }
-
   public static SNode getTemplateFragmentByAnnotatedNode(SNode node) {
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"));
   }
-
   public static SNode getTemplateDeclarationReference_Template(SNode ref) {
     return SNodeOperations.cast(SLinkOperations.getTarget(ref, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
-
   public static SNode getInlineTemplate_templateNode(SNode ruleConsequence) {
     return SLinkOperations.getTarget(ruleConsequence, "templateNode", true);
   }
-
   public static SNode getInlineTemplateWithContext_contentNode(SNode ruleConsequence) {
     return SLinkOperations.getTarget(ruleConsequence, "contentNode", true);
   }
-
   public static List<SNode> getInlineSwitch_case(SNode ruleConsequence) {
     return SLinkOperations.getTargets(ruleConsequence, "case", true);
   }
-
   public static SNode getInlineSwitch_caseCondition(SNode inlineSwitchCase) {
     return SLinkOperations.getTarget(inlineSwitchCase, "conditionFunction", true);
   }
-
   public static SNode getInlineSwitch_caseConsequence(SNode inlineSwitchCase) {
     return SLinkOperations.getTarget(inlineSwitchCase, "caseConsequence", true);
   }
-
   public static SNode getInlineSwitch_defaultConsequence(SNode ruleConsequence) {
     return SLinkOperations.getTarget(ruleConsequence, "defaultConsequence", true);
   }
-
   public static SNode getWeaveEach_Template(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, "template", false);
   }
-
   public static SNode getWeaveEach_SourceNodesQuery(SNode weaveEach) {
     return SLinkOperations.getTarget(weaveEach, "sourceNodesQuery", true);
   }
-
   public static boolean getMappingConfiguration_TopPrio(SNode mapping) {
     return SPropertyOperations.getBoolean(mapping, "topPriorityGroup");
   }
-
   public static SNode getTemplateDeclaration_ContentNode(SNode decl) {
     return SLinkOperations.getTarget(decl, "contentNode", true);
   }
-
   public static SNode getSourceNodesQuery(SNode node) {
     if (node == null) {
       return null;
@@ -357,11 +305,9 @@ public final class RuleUtil {
     }
     return null;
   }
-
   public static SNode getWeaveMacro_Consequence(SNode weaveMacro) {
     return SLinkOperations.getTarget(weaveMacro, "ruleConsequence", true);
   }
-
   public static SNode getSourceNodeQuery(SNode node) {
     if (node == null) {
       return null;
@@ -384,16 +330,13 @@ public final class RuleUtil {
     }
     return null;
   }
-
   public static List<SNode> getTemplateCall_Arguments(SNode macro) {
     return SLinkOperations.getTargets(macro, "actualArgument", true);
 
   }
-
   public static SNode getTemplateCall_Template(SNode macro) {
     return SLinkOperations.getTarget(macro, "template", false);
   }
-
   public static Object evaluateBaseLanguageExpression(SNode expr) {
     if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
       return SPropertyOperations.getBoolean(SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.BooleanConstant"), "value");
@@ -406,51 +349,39 @@ public final class RuleUtil {
     }
     throw new IllegalArgumentException();
   }
-
   public static SNode getTemplateArgumentQueryExpression_Query(SNode expr) {
     return SLinkOperations.getTarget(expr, "query", true);
   }
-
   public static SNode getTemplateArgumentParameterExpression_Parameter(SNode expr) {
     return SLinkOperations.getTarget(expr, "parameter", false);
   }
-
   public static SNode getTemplateArgumentVarRef_VarMacro(SNode expr) {
     return SLinkOperations.getTarget(expr, "varmacro", false);
   }
-
   public static boolean getMappingScript_IsPreProcess(SNode script) {
     return SPropertyOperations.hasValue(script, "scriptKind", "pre_processing", "post_processing");
   }
-
   public static boolean getMappingScript_ModifiesModel(SNode script) {
     return SPropertyOperations.getBoolean(script, "modifiesModel");
   }
-
   public static SNode getMappingScript_CodeBlock(SNode script) {
     return SLinkOperations.getTarget(script, "codeBlock", true);
   }
-
   public static SNode getInsertMacro_Query(SNode macro) {
     return SLinkOperations.getTarget(macro, "createNodeQuery", true);
   }
-
   public static SNode getMappingConfiguration_IsApplicable(SNode mapping) {
     return SLinkOperations.getTarget(mapping, "condition", true);
   }
-
   public static String getVarMacro_Name(SNode macro) {
     return BehaviorReflection.invokeNonVirtual(String.class, macro, "jetbrains.mps.lang.generator.structure.VarMacro", "call_getName_2721957369897649366", new Object[]{});
   }
-
   public static SNode getVarMacro_Query(SNode macro) {
     return SLinkOperations.getTarget(macro, "value", true);
   }
-
   public static SNode getDismissTopRule_message(SNode dismissTopRuleConsequence) {
     return SLinkOperations.getTarget(dismissTopRuleConsequence, "generatorMessage", true);
   }
-
   public static Iterable<String> getModelChangeOperations() {
     return ModelChangeOperations;
   }

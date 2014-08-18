@@ -329,5 +329,10 @@ public class ModulesMiner {
     public ModuleDescriptor getDescriptor() {
       return descriptor;
     }
+
+    @Override
+    public String toString() {
+      return descriptor.getNamespace();
+    }
   }
 }

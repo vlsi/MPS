@@ -16,11 +16,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class supertypesOfLowerBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public supertypesOfLowerBoundType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return false;
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (false && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
       {
@@ -38,7 +36,6 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (false && SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
@@ -48,29 +45,24 @@ public class supertypesOfLowerBoundType_InequationReplacementRule extends Abstra
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LowerBoundType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }

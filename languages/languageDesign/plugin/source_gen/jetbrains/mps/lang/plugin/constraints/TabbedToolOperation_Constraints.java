@@ -16,12 +16,10 @@ public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
   public TabbedToolOperation_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.TabbedToolOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -32,11 +30,9 @@ public class TabbedToolOperation_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode dotExpression = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression", true, false);
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(dotExpression, "operand", true)), "jetbrains.mps.lang.plugin.structure.ToolType"), "tool", false), "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "8096638938275444163");
 }

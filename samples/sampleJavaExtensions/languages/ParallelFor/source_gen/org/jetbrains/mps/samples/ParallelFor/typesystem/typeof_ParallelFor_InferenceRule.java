@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ParallelFor_InferenceRule() {
   }
-
   public void applyRule(final SNode parallelFor, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(parallelFor, "threadPool", true);
@@ -40,22 +39,18 @@ public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runt
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_68f1fp_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -63,7 +58,6 @@ public class typeof_ParallelFor_InferenceRule extends AbstractInferenceRule_Runt
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), facade.createNodeId("~ExecutorService")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_68f1fp_a0b0d0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

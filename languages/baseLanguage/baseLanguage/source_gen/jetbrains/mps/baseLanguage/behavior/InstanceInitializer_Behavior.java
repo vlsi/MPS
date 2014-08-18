@@ -8,16 +8,7 @@ import javax.swing.Icon;
 public class InstanceInitializer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  }
-
-  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return true;
   }
 }

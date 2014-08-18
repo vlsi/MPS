@@ -18,7 +18,6 @@ public class NaiveSetOperations_Test extends TestCase {
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -71,7 +70,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -120,7 +118,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -189,7 +186,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -250,7 +246,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -291,7 +286,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -344,7 +338,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -393,7 +386,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -438,7 +430,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -471,7 +462,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -508,7 +498,6 @@ __switch__:
         public Iterator<String> iterator() {
           return new YieldingIterator<String>() {
             private int __CP__ = 0;
-
             protected boolean moveToNext() {
 __loop__:
               do {
@@ -543,19 +532,16 @@ __switch__:
       };
     }
   });
-
   public void test_union() throws Exception {
     this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(aabbcc).union(Sequence.fromIterable(cccdde)));
     this.assertIterableEqualsIgnoreOrder(aabbcccdde, Sequence.fromIterable(cccdde).union(Sequence.fromIterable(aabbcc)));
   }
-
   public void test_exclude() throws Exception {
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(aabb)));
     this.assertIterableEqualsIgnoreOrder(aabb, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(ccc)));
     this.assertIterableEqualsIgnoreOrder(aabbc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(c)));
     this.assertIterableEqualsIgnoreOrder(abc, Sequence.fromIterable(aabbcc).subtract(Sequence.fromIterable(abc)));
   }
-
   public void test_intersect() throws Exception {
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(aabbcc).intersect(Sequence.fromIterable(cccdde)));
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cccdde).intersect(Sequence.fromIterable(aabbcc)));
@@ -563,10 +549,8 @@ __switch__:
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccc)));
     this.assertIterableEqualsIgnoreOrder(cc, Sequence.fromIterable(cc).intersect(Sequence.fromIterable(ccaabbcc)));
   }
-
   public NaiveSetOperations_Test() {
   }
-
   public void assertSameContents(Iterable<String> seq1, Iterable<String> seq2) {
     Assert.assertSame(Sequence.fromIterable(seq1).count(), Sequence.fromIterable(seq2).count());
     for (String x : seq1) {
@@ -576,7 +560,6 @@ __switch__:
       Assert.assertTrue(Sequence.fromIterable(seq1).contains(y));
     }
   }
-
   public <T> void assertIterableEquals(Iterable<T> exp, Iterable<T> test) {
     Iterator<T> expIt = exp.iterator();
     Iterator<T> testIt = test.iterator();
@@ -586,7 +569,6 @@ __switch__:
     Assert.assertFalse(expIt.hasNext());
     Assert.assertFalse(testIt.hasNext());
   }
-
   public <T> void assertIterableEqualsAsSet(Iterable<T> exp, Iterable<T> test) {
     HashSet<T> expSet = new HashSet<T>();
     for (T e : exp) {
@@ -599,7 +581,6 @@ __switch__:
     Assert.assertTrue(expSet.isEmpty());
     Assert.assertFalse(testIt.hasNext());
   }
-
   public <T> void assertIterableEqualsIgnoreOrder(Iterable<T> exp, Iterable<T> test) {
     HashMap<T, Integer> cardMap = new HashMap<T, Integer>();
     for (T e : exp) {

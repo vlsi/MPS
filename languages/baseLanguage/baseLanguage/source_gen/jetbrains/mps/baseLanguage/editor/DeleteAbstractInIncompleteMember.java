@@ -14,34 +14,26 @@ public class DeleteAbstractInIncompleteMember {
     editorCell.setAction(CellActionType.DELETE, new DeleteAbstractInIncompleteMember.DeleteAbstractInIncompleteMember_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteAbstractInIncompleteMember.DeleteAbstractInIncompleteMember_BACKSPACE(node));
   }
-
   public static class DeleteAbstractInIncompleteMember_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteAbstractInIncompleteMember_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "abstract", "" + (false));
     }
   }
-
   public static class DeleteAbstractInIncompleteMember_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteAbstractInIncompleteMember_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "abstract", "" + (false));
     }

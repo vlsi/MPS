@@ -962,6 +962,8 @@ public class SModel implements SModelData {
   public boolean updateModuleReferences() {
     assertLegalChange();
 
+
+
     boolean changed = false;
 
     if (updateRefs(myDevKits)) {

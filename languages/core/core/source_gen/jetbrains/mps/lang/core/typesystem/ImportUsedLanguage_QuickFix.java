@@ -19,11 +19,9 @@ import jetbrains.mps.project.AbstractModule;
 public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
   public ImportUsedLanguage_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Import " + node.getConcept().getLanguage().getQualifiedName() + " language";
   }
-
   public void execute(SNode node) {
     SLanguage language = node.getConcept().getLanguage();
     Language languageModule = ModuleRepositoryFacade.getInstance().getModule(language.getQualifiedName(), Language.class);

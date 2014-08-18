@@ -28,7 +28,6 @@ public class VisibleArtifacts {
   private final List<SNode> visibleArtifacts = new ArrayList<SNode>();
   private final List<SNode> visibleLayouts = new ArrayList<SNode>();
   protected DependenciesHelper dependenciesHelper;
-
   public VisibleArtifacts(SNode project, @Nullable TemplateQueryContext genContext) {
     this.project = project;
     this.genContext = genContext;
@@ -37,7 +36,6 @@ public class VisibleArtifacts {
       throw new IllegalArgumentException("cannot instantiate VisibleArtifacts for transient model without generation context");
     }
   }
-
   public void collect() {
     for (SNode dep : SLinkOperations.getTargets(project, "dependencies", true)) {
       SNode layoutDependency = SNodeOperations.as(dep, "jetbrains.mps.build.structure.BuildExternalLayoutDependency");
@@ -63,12 +61,10 @@ public class VisibleArtifacts {
     }
     collectProjectArtifacts();
   }
-
   private void collectProjectArtifacts() {
     SNode originalProject = SNodeOperations.cast(DependenciesHelper.getOriginalNode(project, genContext), "jetbrains.mps.build.structure.BuildProject");
     collectInProject(SLinkOperations.getTarget(originalProject, "layout", true), originalProject);
   }
-
   protected void collectInProject(SNode parent, SNode target) {
     target = (target != project ? SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildProject") : project);
     if (target == null) {
@@ -84,7 +80,6 @@ public class VisibleArtifacts {
       collectInLayout(parent, node);
     }
   }
-
   private void collectInExternalLayout(SNode parent, SNode target) {
     target = SNodeOperations.as(toOriginalNode(target), "jetbrains.mps.build.structure.BuildExternalLayout");
     if (target == null) {
@@ -98,7 +93,6 @@ public class VisibleArtifacts {
       collectInLayout(parent, node);
     }
   }
-
   protected void collectInLayout(SNode parent, SNode node) {
     if (parentMap.containsKey(node)) {
       return;
@@ -125,30 +119,24 @@ public class VisibleArtifacts {
       }
     }
   }
-
   public SNode toOriginalNode(SNode node) {
     if (node == null) {
       return null;
     }
     return DependenciesHelper.getOriginalNode(node, genContext);
   }
-
   public SNode getProject() {
     return project;
   }
-
   public Iterable<SNode> getArtifacts() {
     return ListSequence.fromList(visibleArtifacts).asUnmodifiable();
   }
-
   public Iterable<SNode> getLayouts() {
     return ListSequence.fromList(visibleLayouts).asUnmodifiable();
   }
-
   public boolean contains(SNode node) {
     return parentMap.containsKey(node);
   }
-
   public SNode parent(SNode node) {
     SNode result = parentMap.get(node);
     if (result == node) {
@@ -156,7 +144,6 @@ public class VisibleArtifacts {
     }
     return result;
   }
-
   public void needsFetch(SNode node) {
     if ((node == null)) {
       return;
@@ -170,7 +157,6 @@ public class VisibleArtifacts {
     }
     dependenciesHelper.requiresFetch().put(node, "");
   }
-
   public SNode findArtifact(Object id) {
     if (id == null) {
       return null;
@@ -202,7 +188,6 @@ public class VisibleArtifacts {
     }
     return null;
   }
-
   @NotNull
   public Tuples._2<SNode, String> getResource(SNode path) {
     SNode result = findArtifact(path);
@@ -229,11 +214,9 @@ public class VisibleArtifacts {
 
     return MultiTuple.<SNode,String>from((SNode) null, (String) null);
   }
-
   public TemplateQueryContext getGenContext() {
     return genContext;
   }
-
   public static VisibleArtifacts createFor(final SNode project) {
     assert !(SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule);
     return getFromCache(VisibleArtifacts.class, project, new _FunctionTypes._return_P0_E0<VisibleArtifacts>() {
@@ -244,7 +227,6 @@ public class VisibleArtifacts {
       }
     });
   }
-
   public static <K, V> V getFromCache(Class clazz, K key, _FunctionTypes._return_P0_E0<? extends V> creator) {
     ConcurrentMap<K, V> cache = ModelAccess.instance().getRepositoryStateCache(clazz.getName());
     if (cache == null) {

@@ -9,19 +9,15 @@ public class Bool extends MultiTuple._1<Boolean> {
   public Bool() {
     super();
   }
-
   public Bool(Boolean isTrue) {
     super(isTrue);
   }
-
   public Boolean isTrue(Boolean value) {
     return super._0(value);
   }
-
   public Boolean isTrue() {
     return super._0();
   }
-
   @SuppressWarnings(value = "unchecked")
   public Bool assignFrom(Tuples._1<Boolean> from) {
     return (Bool) super.assign(from);

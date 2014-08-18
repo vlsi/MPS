@@ -28,18 +28,15 @@ import org.apache.log4j.LogManager;
 
 public class DeleteModules_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteModules_Action() {
     super("Delete Module...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((Integer) MapSequence.fromMap(_params).get("selSize")) == 0) {
       return false;
@@ -54,7 +51,6 @@ public class DeleteModules_Action extends BaseAction {
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -68,7 +64,6 @@ public class DeleteModules_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -91,7 +86,6 @@ public class DeleteModules_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       String message = "Are you sure you want to delete selected modules? This operation is not undoable.";
@@ -125,6 +119,5 @@ public class DeleteModules_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteModules_Action.class);
 }

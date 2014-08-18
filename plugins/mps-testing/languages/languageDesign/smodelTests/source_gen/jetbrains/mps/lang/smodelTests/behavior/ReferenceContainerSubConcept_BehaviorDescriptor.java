@@ -6,7 +6,6 @@ package jetbrains.mps.lang.smodelTests.behavior;
 public class ReferenceContainerSubConcept_BehaviorDescriptor extends ReferenceContainer_BehaviorDescriptor {
   public ReferenceContainerSubConcept_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept";

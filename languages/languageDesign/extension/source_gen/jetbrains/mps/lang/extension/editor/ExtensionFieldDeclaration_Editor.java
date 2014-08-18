@@ -20,7 +20,6 @@ public class ExtensionFieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rgn2ra_a(editorContext, node);
   }
-
   private EditorCell createCollection_rgn2ra_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rgn2ra_a");
@@ -29,7 +28,6 @@ public class ExtensionFieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_rgn2ra_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_rgn2ra_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fieldType");
@@ -49,7 +47,6 @@ public class ExtensionFieldDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_rgn2ra_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

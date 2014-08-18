@@ -26,7 +26,6 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tqq191_a(editorContext, node);
   }
-
   private EditorCell createCollection_tqq191_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tqq191_a");
@@ -37,7 +36,6 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_tqq191_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_tqq191_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -47,16 +45,13 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SingleArgumentSequenceOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_tqq191_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SequenceOperation_cellMenu_tqq191_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SequenceOperation_cellMenu_tqq191_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
   }
-
   private EditorCell createConstant_tqq191_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_tqq191_b0");
@@ -66,7 +61,6 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tqq191_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("argument");
@@ -89,7 +83,6 @@ public class SingleArgumentSequenceOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tqq191_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_tqq191_d0");

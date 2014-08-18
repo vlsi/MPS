@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveImplicitConstructorFromAnonymousClass_QuickFix extends QuickFix_Runtime {
   public RemoveImplicitConstructorFromAnonymousClass_QuickFix() {
   }
-
   public void execute(SNode node) {
     SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "baseMethodDeclaration", null, false);
   }

@@ -29,19 +29,15 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
   public MovePropertyUp() {
     this.addTransientParameter("targetConcept");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MovePropertyUp_Target();
   }
-
   public String getUserFriendlyName() {
     return "Move Property Up";
   }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     /*
@@ -55,7 +51,6 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
     refactoringContext.moveNodeToNode(node, node.getRoleInParent(), ((SNode) refactoringContext.getParameter("targetConcept")));
     refactoringContext.changeFeatureName(node, SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getReference().getModelName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(node, "name"));
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
@@ -77,11 +72,9 @@ public class MovePropertyUp extends BaseLoggableRefactoring {
 
     return result;
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class GetCodeForExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public GetCodeForExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression";

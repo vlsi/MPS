@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class ConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extends", false));
@@ -27,7 +26,6 @@ public class ConceptDeclaration_Behavior {
     }
     return result;
   }
-
   public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386338(SNode thisNode) {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
 

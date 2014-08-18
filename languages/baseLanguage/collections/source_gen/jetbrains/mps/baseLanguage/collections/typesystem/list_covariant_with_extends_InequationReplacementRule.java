@@ -19,10 +19,8 @@ import jetbrains.mps.util.IterableUtil;
 public class list_covariant_with_extends_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public list_covariant_with_extends_InequationReplacementRule() {
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -31,17 +29,14 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
       typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(supertype, "elementType", true), "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), false, true, _info_12389875345);
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(supertype, "elementType", true), "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), true);
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a6();
@@ -50,7 +45,6 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a7();
@@ -59,21 +53,16 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
-
   public static class Pattern_2juelu_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_sub;
-
     public Pattern_2juelu_a0a0a0a6() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_l7cfoj_a0a = nodeToMatch;
@@ -93,34 +82,27 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_sub = (SNode) pattern.getFieldValue("patternVar_sub");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_sub".equals(fieldName)) {
         return patternVar_sub;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_2juelu_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_super;
-
     public Pattern_2juelu_a0a0a0a7() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_l7cfoj_a0a_0 = nodeToMatch;
@@ -155,24 +137,20 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_super = (SNode) pattern.getFieldValue("patternVar_super");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_super".equals(fieldName)) {
         return patternVar_super;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

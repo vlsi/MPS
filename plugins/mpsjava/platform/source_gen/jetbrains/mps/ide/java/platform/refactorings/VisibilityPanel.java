@@ -22,7 +22,6 @@ import java.awt.event.ActionEvent;
 public class VisibilityPanel extends JPanel {
   private VisibilityLevel myResult = VisibilityLevel.PRIVATE;
   private List<ChangeListener> myChangeListeners = ListSequence.fromList(new ArrayList<ChangeListener>());
-
   public VisibilityPanel() {
     this.setLayout(new GridBagLayout());
     this.setBorder(new CompoundBorder(new TitledBorder("Visibility"), new EmptyBorder(5, 5, 5, 5)));
@@ -39,26 +38,21 @@ public class VisibilityPanel extends JPanel {
     this.add(new JPanel(), c);
     button.setSelected(true);
   }
-
   public VisibilityLevel getResult() {
     return this.myResult;
   }
-
   private void fireUpdate() {
     for (ChangeListener listener : ListSequence.fromList(this.myChangeListeners)) {
       listener.stateChanged(new ChangeEvent(this));
     }
   }
-
   public void setResult(VisibilityLevel levelToSet) {
     this.myResult = levelToSet;
     fireUpdate();
   }
-
   public void addChangeListener(ChangeListener changeListener) {
     ListSequence.fromList(this.myChangeListeners).addElement(changeListener);
   }
-
   private JRadioButton createVisibilityButton(int y, final VisibilityLevel levelToSet, ButtonGroup group, JPanel visbilityPanel) {
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.NONE;

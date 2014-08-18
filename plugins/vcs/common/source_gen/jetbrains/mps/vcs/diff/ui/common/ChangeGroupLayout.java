@@ -29,26 +29,19 @@ public abstract class ChangeGroupLayout {
   private boolean myMergeAdjacent;
   private List<ChangeGroup> myChangeGroups = null;
   private List<ChangeGroupInvalidateListener> myInvalidateListeners = ListSequence.fromList(new ArrayList<ChangeGroupInvalidateListener>());
-
   protected ChangeGroupLayout(@Nullable ChangeEditorMessage.ConflictChecker conflictChecker, boolean inspector, boolean mergeAdjacent) {
     myConflictChecker = conflictChecker;
     myInspector = inspector;
     myMergeAdjacent = mergeAdjacent;
   }
-
   @NotNull
   public abstract EditorComponent getLeftComponent();
-
   @NotNull
   public abstract EditorComponent getRightComponent();
-
   protected abstract List<ChangeEditorMessage> getLeftMessages(ModelChange change);
-
   protected abstract List<ChangeEditorMessage> getRightMessages(ModelChange change);
-
   @Nullable
   protected abstract ChangeSet getChangeSet();
-
   private void calculateChangeGroups() {
     final Map<ModelChange, Bounds> left = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
     final Map<ModelChange, Bounds> right = MapSequence.fromMap(new HashMap<ModelChange, Bounds>());
@@ -109,15 +102,12 @@ public abstract class ChangeGroupLayout {
       }
     }, true).toListSequence();
   }
-
   public void addInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
     ListSequence.fromList(myInvalidateListeners).addElement(listener);
   }
-
   public void removeInvalidateListener(@NotNull ChangeGroupInvalidateListener listener) {
     ListSequence.fromList(myInvalidateListeners).removeElement(listener);
   }
-
   @NotNull
   public List<ChangeGroup> getChangeGroups() {
     if (myChangeGroups == null) {
@@ -126,7 +116,6 @@ public abstract class ChangeGroupLayout {
     assert myChangeGroups != null;
     return myChangeGroups;
   }
-
   public void invalidate() {
     myChangeGroups = null;
     ListSequence.fromList(myInvalidateListeners).visitAll(new IVisitor<ChangeGroupInvalidateListener>() {
@@ -135,7 +124,6 @@ public abstract class ChangeGroupLayout {
       }
     });
   }
-
   public int getEditorVerticalOffset() {
     if (myInspector) {
       return 0;
@@ -144,7 +132,6 @@ public abstract class ChangeGroupLayout {
       return getLeftComponent().getExternalComponent().getY();
     }
   }
-
   private static Bounds findBounds(Iterable<ChangeEditorMessage> messages, final EditorComponent editorComponent) {
     Bounds bounds = null;
     if (Sequence.fromIterable(messages).isNotEmpty()) {
@@ -169,26 +156,22 @@ public abstract class ChangeGroupLayout {
       return bounds;
     }
   }
-
   private static boolean areBoundsSeparate(Bounds a, Bounds b, boolean canBeAdjacent) {
     int tolerance = (canBeAdjacent ? 0 : 1);
     return (int) a.end() - tolerance < (int) b.start() || (int) b.end() - tolerance < (int) a.start();
   }
-
   private static List<ModelChange> check_cuq72k_a2a11(ChangeSet checkedDotOperand, ChangeGroupLayout checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static int check_cuq72k_a0a0c0r(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getY();
     }
     return 0;
   }
-
   private static EditorCell check_cuq72k_a0a0a2a71(EditorComponent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRootCell();

@@ -11,7 +11,6 @@ import java.util.ArrayList;
 public class ExtractMethodFactory {
   public ExtractMethodFactory() {
   }
-
   public static ExtractMethodRefactoringParameters createParameters(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
     if (SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(first), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
@@ -21,7 +20,6 @@ public class ExtractMethodFactory {
     }
     return new ExtractMethodRefactoringParameters(nodes);
   }
-
   public static ExtractMethodRefactoring createRefactoring(ExtractMethodRefactoringParameters parameteres) {
     if (SNodeOperations.isInstanceOf(ListSequence.fromList(parameteres.getNodesToRefactor()).first(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       return new ExtractMethodFromExpressionRefactoring(parameteres);
@@ -38,13 +36,11 @@ public class ExtractMethodFactory {
     }
     return new ExtractMethodFromStatementsRefactoring(parameteres);
   }
-
   public static boolean isRefactoringAvailable(List<SNode> nodes) {
     SNode first = ListSequence.fromList(nodes).first();
     boolean hasProperContainer = (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) != null) || (SNodeOperations.getAncestor(first, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false) != null);
     return ((ListSequence.fromList(nodes).count() == 1 && SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Expression")) || SNodeOperations.isInstanceOf(first, "jetbrains.mps.baseLanguage.structure.Statement")) && hasProperContainer;
   }
-
   public static String getErrors(List<SNode> nodes) {
     ExtractMethodRefactoringAnalyzer analyzer = new ExtractMethodRefactoringAnalyzer(nodes);
     if (analyzer.isExitPointsDifferent() && !(analyzer.isAlwaysReturns())) {

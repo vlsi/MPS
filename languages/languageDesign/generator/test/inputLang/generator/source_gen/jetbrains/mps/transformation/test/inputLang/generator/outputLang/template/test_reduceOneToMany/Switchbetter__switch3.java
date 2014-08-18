@@ -19,23 +19,18 @@ import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 public class Switchbetter__switch3 implements TemplateSwitchMapping {
   public Switchbetter__switch3() {
   }
-
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075904");
   }
-
   public SNodeReference getModifiesSwitch() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809066874");
   }
-
   public Iterable<TemplateReductionRule> getReductionRules() {
     return Collections.emptySet();
   }
-
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
     throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info);
   }
-
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
 }

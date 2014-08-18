@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InvokeFunctionExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final List<SNode> ptypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode p : SLinkOperations.getTargets(invoke, "parameter", true)) {
@@ -81,18 +80,15 @@ public class typeof_InvokeFunctionExpression_InferenceRule extends AbstractInfer
       }, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "642108346586029351", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -9,19 +9,15 @@ import com.intellij.icons.AllIcons;
 
 public class DiagramTraitButton implements PaletteSimpleAction {
   private DiagramCell myDiagramCell;
-
   public DiagramTraitButton(DiagramCell cell) {
     myDiagramCell = cell;
   }
-
   public void onClick() {
     myDiagramCell.setExternalTrait(null);
   }
-
   public Icon getIcon() {
     return AllIcons.Actions.Close;
   }
-
   public String getText() {
     return "Set diagram initial trait";
   }

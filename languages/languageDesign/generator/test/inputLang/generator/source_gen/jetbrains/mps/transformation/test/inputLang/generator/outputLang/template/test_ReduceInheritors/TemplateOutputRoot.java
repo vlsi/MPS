@@ -23,11 +23,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_q702qm_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
@@ -88,7 +86,6 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_q702qm_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "1206460153890");
   private static SNodePointer insertMacro_q702qm_b0a0a1a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "7612440128092282149");
   private static SNodePointer weaveMacroRef_q702qm_b0a0a1a5a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878722923");

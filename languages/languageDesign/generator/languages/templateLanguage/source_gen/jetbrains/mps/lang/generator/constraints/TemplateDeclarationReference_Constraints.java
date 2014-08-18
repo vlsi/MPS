@@ -21,7 +21,6 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
   public TemplateDeclarationReference_Constraints() {
     super("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,7 +29,6 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,7 +37,6 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ModelPlusImportedScope(_context.getModel(), true, "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
@@ -49,6 +46,5 @@ public class TemplateDeclarationReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_ujnbk1_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "982871510077720755");
 }

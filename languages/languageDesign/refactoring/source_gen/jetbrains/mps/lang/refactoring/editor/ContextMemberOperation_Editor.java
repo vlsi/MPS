@@ -15,7 +15,6 @@ public class ContextMemberOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_pf5wzr_a(editorContext, node);
   }
-
   private EditorCell createComponent_pf5wzr_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

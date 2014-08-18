@@ -12,15 +12,12 @@ public enum _YesNoDefault_Enum {
   none("none", null);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<_YesNoDefault_Enum> getConstants() {
     List<_YesNoDefault_Enum> list = ListSequence.fromList(new LinkedList<_YesNoDefault_Enum>());
     ListSequence.fromList(list).addElement(_YesNoDefault_Enum.yes);
@@ -28,11 +25,9 @@ public enum _YesNoDefault_Enum {
     ListSequence.fromList(list).addElement(_YesNoDefault_Enum.none);
     return list;
   }
-
   public static _YesNoDefault_Enum getDefault() {
     return _YesNoDefault_Enum.none;
   }
-
   public static _YesNoDefault_Enum parseValue(String value) {
     if (value == null) {
       return _YesNoDefault_Enum.getDefault();
@@ -48,14 +43,11 @@ public enum _YesNoDefault_Enum {
     }
     return _YesNoDefault_Enum.getDefault();
   }
-
   private String myValue;
-
   _YesNoDefault_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

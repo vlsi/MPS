@@ -12,43 +12,33 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1200430777976(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_1200430828672(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "value") + ".0";
   }
-
   public static SNode sourceNodeQuery_1200430494834(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftOperand", true);
   }
-
   public static SNode sourceNodeQuery_1200430529811(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightOperand", true);
   }
-
   public static SNode sourceNodeQuery_1200430591959(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "logicalTest", true);
   }
-
   public static SNode sourceNodeQuery_1200430618421(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "valueIfTrue", true);
   }
-
   public static SNode sourceNodeQuery_1200430632007(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "valueIfFalse", true);
   }
-
   public static SNode sourceNodeQuery_1200430664124(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "logicalTest", true);
   }
-
   public static SNode sourceNodeQuery_1200430674101(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "valueIfTrue", true);
   }
-
   public static SNode sourceNodeQuery_1200430685109(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "valueIfFalse", true);
   }

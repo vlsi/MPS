@@ -43,7 +43,6 @@ public class YieldClosures_Test extends ClosuresBase_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -124,7 +123,6 @@ __switch__:
       }
     });
   }
-
   public void test_whileStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -149,7 +147,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -221,7 +218,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_i;
               private int _9_j;
             };
@@ -230,7 +226,6 @@ __switch__:
       }
     });
   }
-
   public void test_doWhileStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -257,7 +252,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -340,7 +334,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _4_i;
               private int _10_j;
             };
@@ -349,7 +342,6 @@ __switch__:
       }
     });
   }
-
   public void test_forStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -366,7 +358,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -424,7 +415,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
               private int _6_j;
             };
@@ -433,7 +423,6 @@ __switch__:
       }
     });
   }
-
   public void test_foreachStatement() throws Exception {
     final List<Integer> data1 = (List<Integer>) Arrays.asList(1, 2, 3, 4, 5);
     final List<Integer> data2 = (List<Integer>) Arrays.asList(1, 2, 3, 4, 5);
@@ -454,7 +443,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -514,7 +502,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
               private Iterator<Integer> _2_i_it;
               private int _6_j;
@@ -525,7 +512,6 @@ __switch__:
       }
     });
   }
-
   public void test_dmitriev() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -548,7 +534,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -624,7 +609,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_a;
               private int _8_j;
               private int _4_i;
@@ -634,7 +618,6 @@ __switch__:
       }
     });
   }
-
   public void test_switchStatement() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -659,7 +642,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -737,7 +719,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Fruits _2_fr;
               private Iterator<Fruits> _2_fr_it;
             };
@@ -746,7 +727,6 @@ __switch__:
       }
     });
   }
-
   public void test_elseIfClauses() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -771,7 +751,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -863,7 +842,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -871,7 +849,6 @@ __switch__:
       }
     });
   }
-
   public void test_mps7920() throws Exception {
     final boolean cond1 = false;
     final boolean cond2 = false;
@@ -897,7 +874,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -978,7 +954,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private List<Integer> _7_ll;
               private Integer _16__yield_75e5vq_a0c0a0a1a0c0i0;
               private Iterator<Integer> _16__yield_75e5vq_a0c0a0a1a0c0i0_it;
@@ -990,7 +965,6 @@ __switch__:
       }
     });
   }
-
   public void test_mps_1503() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -1012,7 +986,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1068,7 +1041,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_val;
               private int _11_foo;
             };
@@ -1077,7 +1049,6 @@ __switch__:
       }
     });
   }
-
   public void test_allKindsOfLoopLabels() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._void_P1_E0<List<Integer>>() {
       public void invoke(List<Integer> exp) {
@@ -1116,7 +1087,6 @@ label3:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1228,7 +1198,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_i;
               private int _6_j;
             };
@@ -1237,7 +1206,6 @@ __switch__:
       }
     });
   }
-
   public void test_yieldAllLast() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
@@ -1250,7 +1218,6 @@ __switch__:
       }
     });
   }
-
   public void test_yieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
@@ -1262,7 +1229,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1301,7 +1267,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Integer _2__yield_75e5vq_a0b0a0a21a;
               private Iterator<Integer> _2__yield_75e5vq_a0b0a0a21a_it;
             };
@@ -1310,7 +1275,6 @@ __switch__:
       }
     });
   }
-
   public void test_yieldYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
@@ -1322,7 +1286,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1361,7 +1324,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Integer _3__yield_75e5vq_b0b0a0a31a;
               private Iterator<Integer> _3__yield_75e5vq_b0b0a0a31a_it;
             };
@@ -1370,7 +1332,6 @@ __switch__:
       }
     });
   }
-
   public void test_yieldAllYieldAll() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
@@ -1382,7 +1343,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1434,7 +1394,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Integer _2__yield_75e5vq_a0b0a0a41a;
               private Iterator<Integer> _2__yield_75e5vq_a0b0a0a41a_it;
               private Integer _6__yield_75e5vq_b0b0a0a41a;
@@ -1445,7 +1404,6 @@ __switch__:
       }
     });
   }
-
   public void test_yieldAllInCycle() throws Exception {
     this.assertResultsEqual(new _FunctionTypes._return_P0_E0<IListSequence<Integer>>() {
       public IListSequence<Integer> invoke() {
@@ -1457,7 +1415,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1508,7 +1465,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Integer _6__yield_75e5vq_a0a0b0a0a51a;
               private Iterator<Integer> _6__yield_75e5vq_a0a0b0a0a51a_it;
               private int _2_i;
@@ -1518,7 +1474,6 @@ __switch__:
       }
     });
   }
-
   public void test_timur1() throws Exception {
     //  {1, 2, 3}.select{ it => yield 4; yield 5; } 
     final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -1532,7 +1487,6 @@ __switch__:
               public Iterator<Integer> iterator() {
                 return new YieldingIterator<Integer>() {
                   private int __CP__ = 0;
-
                   protected boolean moveToNext() {
 __loop__:
                     do {
@@ -1567,7 +1521,6 @@ __switch__:
     }.invoke()));
     this.assertEquals(exp, res);
   }
-
   public void test_timur2() throws Exception {
     //  {1, 2, 3}.select{ it => if (it == 2) {yield 4;}; } 
     final List<Integer> input = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3);
@@ -1581,7 +1534,6 @@ __switch__:
               public Iterator<Integer> iterator() {
                 return new YieldingIterator<Integer>() {
                   private int __CP__ = 0;
-
                   protected boolean moveToNext() {
 __loop__:
                     do {
@@ -1622,7 +1574,6 @@ __switch__:
     }.invoke()));
     this.assertEquals(exp, res);
   }
-
   public void test_mps3477() throws Exception {
     List<Integer> exp = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 0, 20, 11, 1, 21, 12, 2, 22, 13, 3, 23, 14, 4, 24, 15, 5, 25, 16, 6, 26, 17, 7, 27, 18, 8, 28, 19, 9, 29);
     final List<Integer> res = ListSequence.fromList(new ArrayList<Integer>());
@@ -1632,7 +1583,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1675,7 +1625,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -1688,7 +1637,6 @@ __switch__:
     }
     Assert.assertEquals(exp, res);
   }
-
   public void test_mps10427() throws Exception {
     final Iterable<String> s1 = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
@@ -1696,7 +1644,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1731,7 +1678,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1800,7 +1746,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private String _2__yield_75e5vq_a0a0a0a3a91a;
               private Iterator<String> _2__yield_75e5vq_a0a0a0a3a91a_it;
               private String _6__yield_75e5vq_b0a0a0a3a91a;
@@ -1814,7 +1759,6 @@ __switch__:
     })), ", ");
     Assert.assertEquals("foo, bar", s);
   }
-
   public void test_yieldNext() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -1822,7 +1766,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1866,7 +1809,6 @@ __switch__:
     }
     Assert.assertFalse(it.hasNext());
   }
-
   public void test_delayedException() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -1874,7 +1816,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -1944,7 +1885,6 @@ __switch__:
     }
 
   }
-
   public void test_mps10640() throws Exception {
     Object input = new Object[]{"a", "b", new Object[]{"c", "d"}};
     Iterable<Object> output = new _FunctionTypes._return_P1_E0<Iterable<Object>, Object>() {
@@ -1953,7 +1893,6 @@ __switch__:
           public Iterator<Object> iterator() {
             return new YieldingIterator<Object>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -2015,7 +1954,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Object _5_os;
               private int _5_os_idx;
               private Object _8__yield_75e5vq_a0a0b0a0a1a22a;
@@ -2027,7 +1965,6 @@ __switch__:
     }.invoke(input);
     Sequence.fromIterable(output).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), "a", "b", "c", "d"))).isEmpty();
   }
-
   public void test_mps15041() throws Exception {
     Iterable<? extends Number> seq = new _FunctionTypes._return_P0_E0<Iterable<? extends Number>>() {
       public Iterable<Number> invoke() {
@@ -2035,7 +1972,6 @@ __switch__:
           public Iterator<Number> iterator() {
             return new YieldingIterator<Number>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -2082,7 +2018,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Number _5__yield_75e5vq_d0a0a0a32a;
               private Iterator<? extends Number> _5__yield_75e5vq_d0a0a0a32a_it;
             };
@@ -2105,14 +2040,11 @@ __switch__:
     Assert.assertEquals(Long.valueOf(100500L), Sequence.fromIterable(seq).skip(1).first());
     Assert.assertEquals(Double.valueOf(2.718281828), Sequence.fromIterable(seq).skip(2).first());
   }
-
   public YieldClosures_Test() {
   }
-
   private List<? extends Number> numberSubtypes() {
     return Sequence.fromIterable(Sequence.fromArray(new Number[]{Integer.valueOf(42), Long.valueOf(100500L), Double.valueOf(2.718281828)})).toListSequence();
   }
-
   private void assertEquals(List<Iterable<Integer>> exp, List<Iterable<Integer>> res) {
     Assert.assertSame(ListSequence.fromList(exp).count(), ListSequence.fromList(res).count());
     {

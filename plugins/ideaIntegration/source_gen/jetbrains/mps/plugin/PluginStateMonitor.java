@@ -15,26 +15,21 @@ public class PluginStateMonitor implements ProjectComponent {
   private final Project myProject;
   private StatusBar myStatusBar;
   private PluginStateWidget myWidget;
-
   public PluginStateMonitor(Project project) {
     myProject = project;
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return PluginStateMonitor.class.getSimpleName();
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @Override
   public void projectOpened() {
     myStatusBar = getStatusBar();
@@ -45,7 +40,6 @@ public class PluginStateMonitor implements ProjectComponent {
     this.myWidget = new PluginStateWidget(myProject);
     myStatusBar.addWidget(this.myWidget);
   }
-
   @Override
   public void projectClosed() {
     if (myStatusBar == null) {
@@ -53,7 +47,6 @@ public class PluginStateMonitor implements ProjectComponent {
     }
     myStatusBar.removeWidget(myWidget.ID());
   }
-
   @Nullable
   private StatusBar getStatusBar() {
     IdeFrame ideFrame = WindowManager.getInstance().getIdeFrame(myProject);

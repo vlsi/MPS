@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class ExecuteSmartActionFunction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell"));
@@ -21,11 +20,9 @@ public class ExecuteSmartActionFunction_Behavior {
     return result;
 
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_jkiduv_a0a1();
   }
-
   private static SNode _quotation_createNode_jkiduv_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

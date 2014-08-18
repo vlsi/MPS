@@ -24,12 +24,10 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
   public CommandParameterAssignment_Constraints() {
     super("jetbrains.mps.execution.commands.structure.CommandParameterAssignment");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -40,7 +38,6 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -49,7 +46,6 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -58,7 +54,6 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.execution.commands.structure.CommandBuilderExpression"), "commandPart", false));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3py8zl_a0a1a0a0a1a0b0a1a3;
@@ -68,11 +63,9 @@ public class CommandParameterAssignment_Constraints extends BaseConstraintsDescr
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.execution.commands.structure.CommandBuilderExpression");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282450");
   private static SNodePointer breakingNode_3py8zl_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282441");
 }

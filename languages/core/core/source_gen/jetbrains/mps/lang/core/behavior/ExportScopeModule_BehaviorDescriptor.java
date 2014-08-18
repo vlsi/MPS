@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExportScopeModule_BehaviorDescriptor extends ExportScope_BehaviorDescriptor {
   public ExportScopeModule_BehaviorDescriptor() {
   }
-
   public boolean virtual_checkExport_2565736246230026584(SNode thisNode, String sourceNamespace, SNode targetNode) {
     return ExportScopeModule_Behavior.virtual_checkExport_2565736246230026584(thisNode, sourceNamespace, targetNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.core.structure.ExportScopeModule";

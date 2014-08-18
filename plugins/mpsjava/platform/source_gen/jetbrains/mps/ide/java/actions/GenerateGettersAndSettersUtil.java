@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class GenerateGettersAndSettersUtil {
   public GenerateGettersAndSettersUtil() {
   }
-
   private static String getPreparedName(String fullName, String prefix, String suffix) {
     if (prefix == null) {
       prefix = "";
@@ -29,7 +28,6 @@ public class GenerateGettersAndSettersUtil {
     }
     return fullName.substring(preparedNameStart, preparedNameEnd);
   }
-
   public static String getFieldGetterName(SNode fieldDeclaration, Project project) {
     String get = "get";
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fieldDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.BooleanType")) {
@@ -37,11 +35,9 @@ public class GenerateGettersAndSettersUtil {
     }
     return get + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
   }
-
   public static String getFieldSetterName(SNode fieldDeclaration, Project project) {
     return "set" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
   }
-
   public static String getParameterNameForField(SNode field, Project project) {
     String preparedFieldName = getPreparedFieldName(field, project);
     CodeStyleSettings codeStyleSettings = CodeStyleSettingsRegistry.getSettings(project);
@@ -61,7 +57,6 @@ public class GenerateGettersAndSettersUtil {
     }
     return paramName;
   }
-
   public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {
     String rawName = SPropertyOperations.getString(fieldDeclaration, "name");
     if (rawName == null || rawName.length() == 0) {

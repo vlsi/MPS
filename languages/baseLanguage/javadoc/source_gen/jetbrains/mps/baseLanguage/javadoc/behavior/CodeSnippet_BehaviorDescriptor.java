@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class CodeSnippet_BehaviorDescriptor extends CommentLine_BehaviorDescriptor {
   public CodeSnippet_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet";

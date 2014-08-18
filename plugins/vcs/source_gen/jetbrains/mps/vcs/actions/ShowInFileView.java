@@ -13,12 +13,10 @@ import java.util.Collections;
 public class ShowInFileView extends AbstractShowInFileView {
   public ShowInFileView() {
   }
-
   @Override
   protected FileViewProjectPane getView(Project project) {
     return (FileViewProjectPane) ProjectView.getInstance(project).getProjectViewPaneById(FileViewProjectPane.ID);
   }
-
   @Override
   protected List<VirtualFile> getRoots(VcsContext vcsContext) {
     return Collections.singletonList(vcsContext.getProject().getBaseDir());

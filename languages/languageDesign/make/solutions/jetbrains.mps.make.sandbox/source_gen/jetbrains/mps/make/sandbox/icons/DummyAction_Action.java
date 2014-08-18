@@ -14,18 +14,15 @@ import org.apache.log4j.LogManager;
 
 public class DummyAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("mpsHome.png");
-
   public DummyAction_Action() {
     super("Dummy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -36,7 +33,6 @@ public class DummyAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
@@ -45,6 +41,5 @@ public class DummyAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DummyAction_Action.class);
 }

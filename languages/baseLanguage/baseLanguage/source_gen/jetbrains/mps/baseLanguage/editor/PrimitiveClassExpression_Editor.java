@@ -24,7 +24,6 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bw5rf5_a(editorContext, node);
   }
-
   private EditorCell createCollection_bw5rf5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bw5rf5_a");
@@ -34,7 +33,6 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bw5rf5_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_bw5rf5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("primitiveType");
@@ -54,16 +52,13 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractClassifierReference_cellMenu_bw5rf5_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference";
     }
   }
-
   private EditorCell createConstant_bw5rf5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_bw5rf5_b0");
@@ -73,7 +68,6 @@ public class PrimitiveClassExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bw5rf5_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_bw5rf5_c0");

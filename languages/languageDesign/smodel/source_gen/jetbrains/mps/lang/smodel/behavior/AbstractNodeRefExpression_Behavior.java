@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class AbstractNodeRefExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode thisNode) {
     List<SNode> thisList = new ArrayList<SNode>();
     ListSequence.fromList(thisList).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{}));

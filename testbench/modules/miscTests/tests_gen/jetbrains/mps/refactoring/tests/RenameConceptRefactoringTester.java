@@ -19,10 +19,8 @@ import jetbrains.mps.ide.ThreadUtils;
 
 public class RenameConceptRefactoringTester implements IRefactoringTester {
   private static final String STRMD = "strmd";
-
   public RenameConceptRefactoringTester() {
   }
-
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String newConceptName = "MyVeryGoodConcept2";

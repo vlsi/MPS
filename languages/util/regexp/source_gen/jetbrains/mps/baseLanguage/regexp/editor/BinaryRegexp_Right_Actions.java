@@ -15,34 +15,26 @@ public class BinaryRegexp_Right_Actions {
     editorCell.setAction(CellActionType.DELETE, new BinaryRegexp_Right_Actions.BinaryRegexp_Right_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new BinaryRegexp_Right_Actions.BinaryRegexp_Right_Actions_BACKSPACE(node));
   }
-
   public static class BinaryRegexp_Right_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryRegexp_Right_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "left", true));
     }
   }
-
   public static class BinaryRegexp_Right_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryRegexp_Right_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "left", true));
     }

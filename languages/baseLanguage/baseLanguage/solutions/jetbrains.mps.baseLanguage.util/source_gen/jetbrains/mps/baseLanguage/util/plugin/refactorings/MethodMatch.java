@@ -25,51 +25,41 @@ public class MethodMatch {
   private Map<SNode, List<SNode>> myParamsToNodes;
   private ExtractMethodRefactoring myRefactoring = null;
   private Set<SNode> myOutputRefs;
-
   public MethodMatch(List<SNode> parametersOrder) {
     this.myParamsToNodes = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
     this.myNodes = new ArrayList<SNode>();
     myOutputRefs = SetSequence.fromSet(new HashSet<SNode>());
     this.myParametersOrder = parametersOrder;
   }
-
   public void putMapping(SNode node, SNode parameter) {
     if (!(MapSequence.fromMap(this.myParamsToNodes).containsKey(parameter))) {
       MapSequence.fromMap(this.myParamsToNodes).put(parameter, new ArrayList<SNode>());
     }
     ListSequence.fromList(MapSequence.fromMap(this.myParamsToNodes).get(parameter)).addElement(node);
   }
-
   public void putNode(SNode node) {
     ListSequence.fromList(this.myNodes).addElement(node);
   }
-
   public void putOutputReference(SNode node) {
     SetSequence.fromSet(myOutputRefs).addElement(node);
   }
-
   public List<SNode> getNodes() {
     return this.myNodes;
   }
-
   public Map<SNode, List<SNode>> getParamsMapping() {
     return this.myParamsToNodes;
   }
-
   public ExtractMethodRefactoring getRefactoring() {
     return this.myRefactoring;
   }
-
   public void createRefactoring() {
     this.myRefactoring = ExtractMethodFactory.createRefactoring(ExtractMethodFactory.createParameters(this.myNodes));
   }
-
   public boolean checkMatch() {
     boolean good = checkMapping();
     good &= checkOutputReferencies();
     return good;
   }
-
   private boolean checkMapping() {
     for (SNode parameter : SetSequence.fromSet(MapSequence.fromMap(this.myParamsToNodes).keySet())) {
       if (!(this.checkParameter(parameter))) {
@@ -78,7 +68,6 @@ public class MethodMatch {
     }
     return true;
   }
-
   private boolean checkParameter(SNode parameter) {
     List<SNode> nodes = MapSequence.fromMap(this.myParamsToNodes).get(parameter);
     if (ListSequence.fromList(nodes).isEmpty()) {
@@ -94,7 +83,6 @@ public class MethodMatch {
     }
     return true;
   }
-
   private boolean checkOutputReferencies() {
     Set<SNode> computedOutputRefs = myRefactoring.getOutputReferences();
     for (SNode computedRef : SetSequence.fromSet(computedOutputRefs)) {
@@ -104,7 +92,6 @@ public class MethodMatch {
     }
     return true;
   }
-
   public List<SNode> getCallParameters() {
     List<SNode> callActualParams = new ArrayList<SNode>();
     for (SNode parameter : ListSequence.fromList(this.myParametersOrder)) {
@@ -116,7 +103,6 @@ public class MethodMatch {
     }
     return callActualParams;
   }
-
   private static SNode _quotation_createNode_5zfyci_a0a0a0a1a71() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

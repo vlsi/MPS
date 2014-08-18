@@ -34,21 +34,17 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
   protected JCheckBox myIsFinal = null;
   protected VisibilityPanel myVisibilityPanel = null;
   private JComboBox myName;
-
   public IntroduceVariableDialog(Project project, String name, EditorContext editorContext) {
     super(project, true);
     setTitle(name);
     myEditorContext = editorContext;
   }
 
-
-
   @Nullable
   @Override
   protected String getHelpId() {
     return "refactoring.introduceVariable1";
   }
-
   private JPanel createNamePanel() {
     JPanel result = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -82,7 +78,6 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     });
     return result;
   }
-
   public void addReplacingAll(int gridy) {
     GridBagConstraints c = new GridBagConstraints();
     c.fill = GridBagConstraints.HORIZONTAL;
@@ -91,12 +86,10 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     this.myReplaceAll = new JCheckBox("replace duplicates (" + ListSequence.fromList(getRefactoring().getDuplicates()).count() + " found)");
     this.myPanel.add(this.myReplaceAll, c);
   }
-
   public void addIsFinal(GridBagConstraints c) {
     myIsFinal = new JCheckBox("declare final");
     myPanel.add(myIsFinal, c);
   }
-
   public void addVisibilityPanel(final GridBagConstraints c) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -105,9 +98,7 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
       }
     });
   }
-
   public abstract IntroduceVariableRefactoring getRefactoring();
-
   protected void doRefactoring() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -117,11 +108,9 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     });
     this.myEditorContext.select(this.myResult);
   }
-
   public SNode getResult() {
     return this.myResult;
   }
-
   protected void initPanel() {
     this.myPanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -133,7 +122,6 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     c.weighty = 0;
     this.myPanel.add(this.createNamePanel(), c);
   }
-
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
@@ -154,7 +142,6 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     super.doRefactoringAction();
     this.doRefactoring();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {

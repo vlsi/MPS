@@ -16,7 +16,6 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
   private ProjectManager myManager;
   private VirtualFileManager myVirtualFileManager;
   private ReloadManagerComponent myReloadManager;
-
   public TaskQueue(ProjectManager manager, VirtualFileManager virtualFileManager, ReloadManagerComponent reloadManager) {
     super();
     myManager = manager;
@@ -25,12 +24,10 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     myReloadManager.addReloadListener(myReloadListener);
     myVirtualFileManager.addVirtualFileManagerListener(myVirtualFileManagerListener);
   }
-
   public void dispose() {
     myReloadManager.removeReloadListener(myReloadListener);
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
   }
-
   @Override
   protected boolean isProcessingAllowed() {
     for (Project p : myManager.getOpenProjects()) {
@@ -47,13 +44,10 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     }
     return true;
   }
-
   private class BanVFMListener implements VirtualFileManagerListener {
     private int myVFMBan = 0;
-
     private BanVFMListener() {
     }
-
     @Override
     public void beforeRefreshStart(boolean async) {
       if (async) {
@@ -61,7 +55,6 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
       }
       myVFMBan++;
     }
-
     @Override
     public void afterRefreshFinish(boolean async) {
       if (async) {
@@ -69,28 +62,22 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
       }
       myVFMBan--;
     }
-
     public boolean isBanned() {
       return myVFMBan != 0;
     }
   }
-
   private class BanReloadListener implements ReloadListener {
     private int myReloadBan = 0;
-
     private BanReloadListener() {
     }
-
     @Override
     public void reloadStarted() {
       myReloadBan++;
     }
-
     @Override
     public void reloadFinished() {
       myReloadBan--;
     }
-
     public boolean isBanned() {
       return myReloadBan != 0;
     }

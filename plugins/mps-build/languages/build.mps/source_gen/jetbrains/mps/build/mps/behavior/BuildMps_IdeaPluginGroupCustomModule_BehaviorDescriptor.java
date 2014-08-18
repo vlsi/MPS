@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule";

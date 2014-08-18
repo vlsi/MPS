@@ -22,18 +22,15 @@ import org.apache.log4j.LogManager;
 
 public class FixModuleImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public FixModuleImportsInProject_Action() {
     super("Fix Module Imports", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -44,7 +41,6 @@ public class FixModuleImportsInProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -55,7 +51,6 @@ public class FixModuleImportsInProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModule module : ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getModulesWithGenerators())) {
@@ -79,6 +74,5 @@ public class FixModuleImportsInProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FixModuleImportsInProject_Action.class);
 }

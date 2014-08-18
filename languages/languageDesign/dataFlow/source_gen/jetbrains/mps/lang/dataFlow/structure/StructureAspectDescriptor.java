@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -82,6 +81,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.dataFlow.structure.AfterPosition", "jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.BaseEmitVariableStatement", "jetbrains.mps.lang.dataFlow.structure.BaseInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BeforePosition", "jetbrains.mps.lang.dataFlow.structure.BooleanInstructionOperation", "jetbrains.mps.lang.dataFlow.structure.BuilderBlock", "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", "jetbrains.mps.lang.dataFlow.structure.EmitIfJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", "jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement", "jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", "jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", "jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", "jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", "jetbrains.mps.lang.dataFlow.structure.EmitStatement", "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement", "jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", "jetbrains.mps.lang.dataFlow.structure.GetCodeForExpression", "jetbrains.mps.lang.dataFlow.structure.InsertAfter", "jetbrains.mps.lang.dataFlow.structure.InsertBefore", "jetbrains.mps.lang.dataFlow.structure.InsertPosition", "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation", "jetbrains.mps.lang.dataFlow.structure.InstructionIsJump", "jetbrains.mps.lang.dataFlow.structure.InstructionIsNop", "jetbrains.mps.lang.dataFlow.structure.InstructionIsRet", "jetbrains.mps.lang.dataFlow.structure.InstructionType", "jetbrains.mps.lang.dataFlow.structure.LabelPosition", "jetbrains.mps.lang.dataFlow.structure.NodeParameter", "jetbrains.mps.lang.dataFlow.structure.Position", "jetbrains.mps.lang.dataFlow.structure.RelativePosition"};
 }

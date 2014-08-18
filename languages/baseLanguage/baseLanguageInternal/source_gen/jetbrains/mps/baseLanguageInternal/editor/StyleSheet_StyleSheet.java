@@ -16,11 +16,9 @@ public class StyleSheet_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
   }
-
   public static void apply_InternalName(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_SquareBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -31,6 +29,5 @@ public class StyleSheet_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
     style.set(StyleAttributes.SELECTABLE, 0, false);
   }
-
 
 }

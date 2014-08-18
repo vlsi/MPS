@@ -46,6 +46,5 @@ public class SuperConstructorInvocation_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SuperConstructorInvocation_TextGen.class);
 }

@@ -21,7 +21,6 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lnoz1c_a(editorContext, node);
   }
-
   private EditorCell createCollection_lnoz1c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_lnoz1c_a");
@@ -30,14 +29,12 @@ public class IncompleteRightParen_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_lnoz1c_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_lnoz1c_a0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_lnoz1c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_lnoz1c_b0");

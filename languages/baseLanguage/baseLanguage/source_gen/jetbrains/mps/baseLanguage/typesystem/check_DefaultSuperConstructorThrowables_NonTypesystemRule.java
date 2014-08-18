@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DefaultSuperConstructorThrowables_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ConstructorDeclaration_Behavior.call_containsImplicitSuperConstructorCall_7152041109751551503(constructorDeclaration)) {
       SNode superConstructor = ConstructorDeclaration_Behavior.call_getSuperDefaultConstructor_7152041109751601013(constructorDeclaration);
@@ -40,18 +39,15 @@ public class check_DefaultSuperConstructorThrowables_NonTypesystemRule extends A
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

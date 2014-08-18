@@ -17,7 +17,6 @@ public class IdeaPluginDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cvrsr_a(editorContext, node);
   }
-
   private EditorCell createCollection_cvrsr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cvrsr_a");
@@ -26,14 +25,12 @@ public class IdeaPluginDependency_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cvrsr_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cvrsr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "idea plugin");
     editorCell.setCellId("Constant_cvrsr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cvrsr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("pluginId");

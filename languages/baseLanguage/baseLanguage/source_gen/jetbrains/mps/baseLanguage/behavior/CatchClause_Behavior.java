@@ -15,11 +15,9 @@ import jetbrains.mps.baseLanguage.scopes.Scopes;
 public class CatchClause_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "throwable", true));
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("catchBody", thisNode, child)) {

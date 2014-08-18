@@ -12,15 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ApplicationPluginDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getGeneratedName_481983775135179014(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_CustomApplicationPlugin";
   }
-
   public static String call_getGeneratedClassFQName_481983775135179025(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ApplicationPluginDeclaration_Behavior.call_getGeneratedName_481983775135179014(thisNode);
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", null);
     SLinkOperations.setTarget(type, "plugin", thisNode, false);

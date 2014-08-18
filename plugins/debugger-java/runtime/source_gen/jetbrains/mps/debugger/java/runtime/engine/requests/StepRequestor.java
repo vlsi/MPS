@@ -23,7 +23,6 @@ public class StepRequestor implements Requestor {
   private int myFrameCount;
   private String mySourceName;
   private final IDebuggableFramesSelector myFramesSelector;
-
   public StepRequestor(ThreadReference thread, int stepType, IDebuggableFramesSelector framesSelector) {
     myStepType = stepType;
     myFramesSelector = framesSelector;
@@ -43,7 +42,6 @@ public class StepRequestor implements Requestor {
       LOG.error(null, e);
     }
   }
-
   public int nextStep(StepEvent event) {
     ThreadReference thread = event.thread();
     if (thread == null) {
@@ -59,14 +57,12 @@ public class StepRequestor implements Requestor {
       return defaultStepType();
     }
   }
-
   private int defaultStepType() {
     if (myStepType == StepRequest.STEP_OVER || myStepType == StepRequest.STEP_INTO) {
       return myStepType;
     }
     return STOP;
   }
-
   private int nextStep(@NotNull ThreadReference thread, @NotNull StackFrame frame) {
     // decides whether we need to step again; depends on whether our current line in generated java class has been changed. 
     if (myStepType == StepRequest.STEP_OVER || myStepType == StepRequest.STEP_INTO) {

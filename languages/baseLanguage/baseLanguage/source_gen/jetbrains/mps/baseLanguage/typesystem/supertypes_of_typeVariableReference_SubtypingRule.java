@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypes_of_typeVariableReference_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypes_of_typeVariableReference_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode typeVariableReference, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode typeVariableDeclaration = SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false);
     List<SNode> supertypes = new ArrayList<SNode>();
@@ -33,22 +32,18 @@ public class supertypes_of_typeVariableReference_SubtypingRule extends Subtyping
     }
     return supertypes;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.TypeVariableReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_bsqhn5_a0a0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -33,12 +33,10 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
   public ResourceClassifierType_Constraints() {
     super("jetbrains.mps.make.facet.structure.ResourceClassifierType");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -49,7 +47,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -58,7 +55,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -67,12 +63,10 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return String.valueOf(_context.getParameterNode());
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return Sequence.fromIterable(SNodeOperations.ofConcept(ClassifierScopes.getVisibleClassifiersScope(_context.getEnclosingNode(), false).getAvailableElements(null), "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
@@ -93,7 +87,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_ymgo28_a0a3a0a0a1a0b0a1a3;
@@ -103,11 +96,9 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration");
   }
-
   private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -115,7 +106,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ymgo28_a0a0a0a0a0a0a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -123,7 +113,6 @@ public class ResourceClassifierType_Constraints extends BaseConstraintsDescripto
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "4902420589279531869");
   private static SNodePointer breakingNode_ymgo28_a0a3a0a0a1a0b0a1a3 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "119022571402207416");
 }

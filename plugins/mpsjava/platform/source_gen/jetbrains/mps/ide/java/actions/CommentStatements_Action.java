@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class CommentStatements_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CommentStatements_Action() {
     super("Comment Statements", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).select(new ISelector<SNode, EditorCell>() {
       public EditorCell select(SNode it) {
@@ -45,7 +42,6 @@ public class CommentStatements_Action extends BaseAction {
       }
     }))) && (SNodeOperations.getAncestor(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", false, false) == null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -59,7 +55,6 @@ public class CommentStatements_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -96,7 +91,6 @@ public class CommentStatements_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
@@ -107,6 +101,5 @@ public class CommentStatements_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CommentStatements_Action.class);
 }

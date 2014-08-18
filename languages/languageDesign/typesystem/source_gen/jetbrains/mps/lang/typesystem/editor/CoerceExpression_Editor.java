@@ -27,11 +27,9 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_zfkwl8_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_zfkwl8_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_zfkwl8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zfkwl8_a");
@@ -44,7 +42,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zfkwl8_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_zfkwl8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "coerce");
     editorCell.setCellId("Constant_zfkwl8_a0");
@@ -52,16 +49,13 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CoerceExpression_Editor.ReplaceWith_CoerceExpression_cellMenu_zfkwl8_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_CoerceExpression_cellMenu_zfkwl8_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_CoerceExpression_cellMenu_zfkwl8_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.CoerceExpression";
     }
   }
-
   private EditorCell createConstant_zfkwl8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_zfkwl8_b0");
@@ -71,7 +65,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_zfkwl8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCoerce");
@@ -91,14 +84,12 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_zfkwl8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":<");
     editorCell.setCellId("Constant_zfkwl8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_zfkwl8_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("pattern");
@@ -118,7 +109,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_zfkwl8_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_zfkwl8_f0");
@@ -128,7 +118,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_zfkwl8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_zfkwl8_a_0");
@@ -141,7 +130,6 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_zfkwl8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zfkwl8_a0");
@@ -149,18 +137,15 @@ public class CoerceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_zfkwl8_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_zfkwl8_a0a(SNode node, EditorContext editorContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", false, false) != null;
   }
-
   private EditorCell createConstant_zfkwl8_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strong:");
     editorCell.setCellId("Constant_zfkwl8_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_zfkwl8_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("strong");

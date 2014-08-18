@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class ToolbarMake_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ToolbarMake_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.ToolbarMake_ActionGroup";
-
   public ToolbarMake_ActionGroup() {
     super("ToolbarMake", ID);
     this.setIsInternal(false);

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class Concept_NewInstance_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
   }

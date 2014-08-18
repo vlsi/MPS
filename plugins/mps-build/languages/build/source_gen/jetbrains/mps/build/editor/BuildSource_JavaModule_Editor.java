@@ -39,7 +39,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kr3er8_a(editorContext, node);
   }
-
   private EditorCell createCollection_kr3er8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kr3er8_a");
@@ -50,7 +49,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kr3er8_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kr3er8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "java module");
     editorCell.setCellId("Constant_kr3er8_a0");
@@ -62,16 +60,13 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSource_JavaModule_Editor.ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildProjectPart_cellMenu_kr3er8_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildProjectPart";
     }
   }
-
   private EditorCell createProperty_kr3er8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -92,7 +87,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_kr3er8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kr3er8_c0");
@@ -110,7 +104,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_kr3er8_e2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kr3er8_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content:");
     editorCell.setCellId("Constant_kr3er8_a2a");
@@ -121,7 +114,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kr3er8_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("options");
@@ -144,7 +136,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_kr3er8_a1c0(SNode node, EditorContext editorContext) {
     if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule || (SLinkOperations.getTarget(node, "options", true) != null)) {
       return true;
@@ -156,7 +147,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
       }
     });
   }
-
   private EditorCell createRefNodeList_kr3er8_c2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildSource_JavaModule_Editor.sourcesListHandler_kr3er8_c2a(node, "sources", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -170,34 +160,28 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class sourcesListHandler_kr3er8_c2a extends RefNodeListHandler {
     public sourcesListHandler_kr3er8_c2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_kr3er8_a2c0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -210,7 +194,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_kr3er8_a2c0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_kr3er8_a2c0");
@@ -221,7 +204,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_kr3er8_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dependencies:");
     editorCell.setCellId("Constant_kr3er8_d2a");
@@ -232,7 +214,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_kr3er8_e2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new BuildSource_JavaModule_Editor.dependenciesListHandler_kr3er8_e2a(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -244,34 +225,28 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class dependenciesListHandler_kr3er8_e2a extends RefNodeListHandler {
     public dependenciesListHandler_kr3er8_e2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_kr3er8_a4c0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -284,7 +259,6 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     private EditorCell createConstant_kr3er8_a4c0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_kr3er8_a4c0");
@@ -295,14 +269,12 @@ public class BuildSource_JavaModule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_kr3er8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kr3er8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

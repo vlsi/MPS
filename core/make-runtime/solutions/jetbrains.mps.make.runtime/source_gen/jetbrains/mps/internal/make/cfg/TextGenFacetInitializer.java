@@ -9,20 +9,16 @@ import jetbrains.mps.make.facet.ITarget;
 public final class TextGenFacetInitializer {
   private Boolean myFailNoTextGen;
   private Boolean myDebugInfo;
-
   public TextGenFacetInitializer() {
   }
-
   public TextGenFacetInitializer failNoTextGen(Boolean fail) {
     myFailNoTextGen = fail;
     return this;
   }
-
   public TextGenFacetInitializer generateDebugInfo(Boolean needDebug) {
     myDebugInfo = needDebug;
     return this;
   }
-
   public void populate(IPropertiesPool ppool) {
     Tuples._2<Boolean, Boolean> tparams = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen"), Object.class);
     if (tparams != null) {

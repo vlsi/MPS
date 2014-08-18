@@ -10,15 +10,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class StyleClass_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStyleSheetMember_BehaviorDescriptor, IStyle_BehaviorDescriptor, IStyleContainer_BehaviorDescriptor, IValidIdentifier_BehaviorDescriptor {
   public StyleClass_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public SNode virtual_getParent_1219419981626(SNode thisNode) {
     return IStyleContainer_Behavior.virtual_getParent_1219419981626(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleClass";

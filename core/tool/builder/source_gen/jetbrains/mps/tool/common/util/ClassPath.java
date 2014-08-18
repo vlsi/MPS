@@ -30,24 +30,20 @@ public class ClassPath {
   private final boolean myCanLockJars;
   private final boolean myCanUseCache;
   private final boolean myAcceptUnescapedUrls;
-
   public ClassPath(URL[] urls, boolean canLockJars, boolean canUseCache) {
     this(urls, canLockJars, canUseCache, false);
   }
-
   public ClassPath(URL[] urls, boolean canLockJars, boolean canUseCache, boolean acceptUnescapedUrls) {
     this.myCanLockJars = canLockJars;
     this.myCanUseCache = canUseCache;
     this.myAcceptUnescapedUrls = acceptUnescapedUrls;
     push(urls);
   }
-
   public void addURL(URL url) {
     synchronized (myUrls) {
       myUrls.push(url);
     }
   }
-
   private void push(URL[] urls) {
     synchronized (myUrls) {
       for (int i = urls.length - 1; i >= 0; i--) {
@@ -55,7 +51,6 @@ public class ClassPath {
       }
     }
   }
-
   @Nullable
   public Resource getResource(String s, boolean flag) {
     final long started = (myDebugTime ? System.nanoTime() : 0);
@@ -93,7 +88,6 @@ public class ClassPath {
       }
     }
   }
-
   @Nullable
   private Loader getLoader(int i) {
     while (myLoaders.size() < i + 1) {
@@ -121,11 +115,9 @@ public class ClassPath {
     }
     return myLoaders.get(i);
   }
-
   public Enumeration<URL> getResources(final String name, final boolean check) {
     return new ClassPath.MyEnumeration(name, check);
   }
-
   @Nullable
   private Loader getLoader(final URL url) throws IOException {
     String s;
@@ -156,18 +148,15 @@ public class ClassPath {
     }
     return loader;
   }
-
   private class MyEnumeration implements Enumeration<URL> {
     private int myIndex = 0;
     private Resource myRes = null;
     private final String myName;
     private final boolean myCheck;
-
     public MyEnumeration(String name, boolean check) {
       myName = name;
       myCheck = check;
     }
-
     private boolean next() {
       if (myRes != null) {
         return true;
@@ -181,12 +170,10 @@ public class ClassPath {
       }
       return false;
     }
-
     @Override
     public boolean hasMoreElements() {
       return next();
     }
-
     @Override
     public URL nextElement() {
       if (!(next())) {

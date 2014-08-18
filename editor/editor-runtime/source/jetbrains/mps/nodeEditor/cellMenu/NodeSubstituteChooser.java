@@ -171,28 +171,25 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myMenuEmpty;
   }
 
-  public void setVisible(boolean b) {
-    if (myChooserActivated != b) {
-      if (b) {
+  public void setVisible(boolean visible) {
+    if (myChooserActivated != visible) {
+      boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
+      if (visible) {
+        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
-        if (!RuntimeFlags.isTestMode()) {
-          getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
-          myNodeSubstituteInfo.invalidateActions();
-          rebuildMenuEntries();
+        myNodeSubstituteInfo.invalidateActions();
+        rebuildMenuEntries();
+        if (canShowPopup) {
           getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
-          getPopupWindow().setSelectionIndex(0);
-          getPopupWindow().scrollToSelection();
         } else {
-          getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
-          myNodeSubstituteInfo.invalidateActions();
-          rebuildMenuEntries();
           getPopupWindow().initListModel();
-          getPopupWindow().setSelectionIndex(0);
         }
+        getPopupWindow().setSelectionIndex(0);
+        getPopupWindow().scrollToSelection();
         myPopupActivated = true;
       } else {
-        if (!RuntimeFlags.isTestMode()) {
+        if (canShowPopup) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
           getPopupWindow().setRelativeCell(null);
@@ -203,7 +200,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myContextCell = null;
       }
     }
-    myChooserActivated = b;
+    myChooserActivated = visible;
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
@@ -352,7 +349,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (!RuntimeFlags.isTestMode()) {
+        if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();
@@ -457,7 +454,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void relayoutPopupMenu() {
-    if (myPopupActivated) {
+   if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }

@@ -28,14 +28,12 @@ public class ImportModuleHelper {
   private ModuleDescriptor moduleDescriptor;
   private PathConverter converter;
   private SNode created;
-
   public ImportModuleHelper(SNode project, PathConverter converter, IFile moduleFile, ModuleDescriptor moduleDescriptor) {
     this.project = project;
     this.moduleFile = moduleFile;
     this.moduleDescriptor = moduleDescriptor;
     this.converter = converter;
   }
-
   public void create() {
     try {
       if (moduleDescriptor instanceof LanguageDescriptor) {
@@ -59,14 +57,12 @@ public class ImportModuleHelper {
       }
     }
   }
-
   private void initModule(SNode module) throws PathConverter.PathConvertException {
     SPropertyOperations.set(module, "compact", "" + (true));
     SPropertyOperations.set(module, "name", moduleDescriptor.getModuleReference().getModuleName());
     SPropertyOperations.set(module, "uuid", moduleDescriptor.getModuleReference().getModuleId().toString());
     SLinkOperations.setTarget(module, "path", ListSequence.fromList(converter.convertPath(moduleFile.getPath(), SNodeOperations.getModel(project))).first(), true);
   }
-
   public void update(VisibleModules visible) {
     if ((created == null)) {
       return;
@@ -80,6 +76,5 @@ public class ImportModuleHelper {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ImportModuleHelper.class);
 }

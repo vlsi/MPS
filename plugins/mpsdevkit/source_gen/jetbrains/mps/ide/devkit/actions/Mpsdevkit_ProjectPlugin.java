@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class Mpsdevkit_ProjectPlugin extends BaseProjectPlugin {
   public Mpsdevkit_ProjectPlugin() {
   }
-
   public List<RelationDescriptor> initTabbedEditors(Project project) {
     List<RelationDescriptor> result = new ArrayList();
     result.add(new Actions_TabDescriptor());
@@ -30,7 +29,6 @@ public class Mpsdevkit_ProjectPlugin extends BaseProjectPlugin {
     result.add(new Typesystem_TabDescriptor());
     return result;
   }
-
   public List<BaseGeneratedTool> initAllTools(Project project) {
     List<BaseGeneratedTool> tools = ListSequence.fromList(new ArrayList<BaseGeneratedTool>());
     ListSequence.fromList(tools).addElement(new NodeExplorer_Tool(project));

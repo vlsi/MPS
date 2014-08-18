@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -40,6 +39,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginDisposeBlock", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginInitBlock", "jetbrains.mps.lang.plugin.standalone.structure.ApplicationPluginType", "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDeclaration", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginDisposeBlock", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginInitBlock", "jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", "jetbrains.mps.lang.plugin.standalone.structure.StandalonePluginDescriptor"};
 }

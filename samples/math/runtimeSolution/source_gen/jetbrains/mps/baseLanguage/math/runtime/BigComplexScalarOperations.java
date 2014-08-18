@@ -8,14 +8,11 @@ import java.math.BigDecimal;
 
 public class BigComplexScalarOperations implements MatrixScalarOperations {
   /*package*/ MathContext myContext = null;
-
   public BigComplexScalarOperations() {
   }
-
   public BigComplexScalarOperations(MathContext context) {
     myContext = context;
   }
-
   @Override
   public BigComplex cast(Object o) {
     if (o instanceof BigComplex) {
@@ -35,7 +32,6 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     }
     throw new ClassCastException();
   }
-
   @Override
   public BigComplex add(Object o1, Object o2) {
     if (myContext == null) {
@@ -43,7 +39,6 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     } else
     return cast(o1).add(cast(o2), myContext);
   }
-
   @Override
   public BigComplex mul(Object i1, Object o2) {
     if (myContext == null) {
@@ -51,13 +46,11 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     } else
     return cast(i1).mul(cast(o2), myContext);
   }
-
   @Override
   public BigComplex neg(Object i) {
     BigComplex c = cast(i);
     return new BigComplex(c.re().negate(), c.im().negate());
   }
-
   @Override
   public BigComplex inv(Object d) {
     if (myContext == null) {
@@ -65,12 +58,10 @@ public class BigComplexScalarOperations implements MatrixScalarOperations {
     } else
     return cast(d).inv(myContext);
   }
-
   @Override
   public BigComplex conj(Object o) {
     return cast(o).conj();
   }
-
   @Override
   public Object abs(Object o) {
     return cast(o).abs(myContext);

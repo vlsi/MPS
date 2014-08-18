@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_CommandParameterAssignment_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CommandParameterAssignment_InferenceRule() {
   }
-
   public void applyRule(final SNode commandParameterAssignment, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(commandParameterAssignment, "value", true);
@@ -22,18 +21,15 @@ public class typeof_CommandParameterAssignment_InferenceRule extends AbstractInf
       typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3eecec87-82a4-4ea1-952b-7d3a8d81c769(jetbrains.mps.execution.commands.typesystem)", "946964771156863721", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(commandParameterAssignment, "parameterDeclaration", false), "type", true), false, false, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.commands.structure.CommandParameterAssignment";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

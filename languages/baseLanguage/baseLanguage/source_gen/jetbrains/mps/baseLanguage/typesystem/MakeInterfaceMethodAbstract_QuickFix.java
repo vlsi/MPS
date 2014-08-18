@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MakeInterfaceMethodAbstract_QuickFix extends QuickFix_Runtime {
   public MakeInterfaceMethodAbstract_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make Interface Method Abstract";
   }
-
   public void execute(SNode node) {
     SPropertyOperations.set(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "isAbstract", "" + (true));
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeInterfaceMethodAbstract_QuickFix.this.getField("method")[0]), "body", true), "statement", true)).clear();

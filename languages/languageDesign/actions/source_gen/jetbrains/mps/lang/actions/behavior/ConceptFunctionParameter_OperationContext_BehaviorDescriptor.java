@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptFunctionParameter_OperationContext_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConceptFunctionParameter_OperationContext_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_OperationContext_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_OperationContext";

@@ -8,21 +8,17 @@ import jetbrains.mps.ide.actions.ModelActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.testbench.suite.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new CollectTests_Action());
     // groups 
     addGroup(new CollectTestsGroup_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(CollectTestsGroup_ActionGroup.ID, ModelActions_ActionGroup.ID, ModelActions_ActionGroup.LABEL_ID_scripts);
   }

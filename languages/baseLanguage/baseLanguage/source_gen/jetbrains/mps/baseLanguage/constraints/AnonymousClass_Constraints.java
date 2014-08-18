@@ -26,7 +26,6 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
   public AnonymousClass_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.AnonymousClass");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -35,18 +34,15 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name") + "$anonymous";
       }
-
       @Override
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
@@ -55,7 +51,6 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -64,7 +59,6 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -73,7 +67,6 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_vrtrpd_a0a0a0a0a1a0b0a1a2;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             // false is essential here: not include parent hierarchy into the scope (will lead to infinite rescursion) 
@@ -84,6 +77,5 @@ public class AnonymousClass_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_vrtrpd_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4477882950024298123");
 }

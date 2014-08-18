@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class ConceptFunctionParameter_node_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false) != null)) {
       SNode editorTab = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.EditorTab", false, false);
@@ -22,7 +21,6 @@ public class ConceptFunctionParameter_node_Behavior {
       return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", "virtual_getType_2443692612523876968", new Object[]{});
     }
   }
-
   private static SNode _quotation_createNode_luv170_a1a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ClosureLiteral_DataFlow extends DataFlowBuilder {
   public ClosureLiteral_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode var : StatementList_Behavior.call_getExternalVariablesDeclarations_1214501165480(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
       _context.getBuilder().emitRead(var, "r:00000000-0000-4000-0000-011c89590335(jetbrains.mps.baseLanguage.closures.dataFlow)/1216727098945");

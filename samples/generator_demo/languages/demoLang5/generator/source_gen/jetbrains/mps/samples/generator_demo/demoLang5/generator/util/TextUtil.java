@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class TextUtil {
   public TextUtil() {
   }
-
   public static void fixText(SModel model) {
     // get all strings from the model 
     List<SNode> strings = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.StringLiteral");

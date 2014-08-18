@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildSourceMacroRelativePath_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     return BuildFolderMacro_Behavior.call_evaluate_4959435991187146982(SLinkOperations.getTarget(thisNode, "macro", false), context);
   }
-
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     String tail = BuildRelativePath_Behavior.call_getPathTail_1258644073389171001(thisNode);
     return ((tail == null || tail.length() == 0) ? "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}" : "${" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name") + "}/" + tail);

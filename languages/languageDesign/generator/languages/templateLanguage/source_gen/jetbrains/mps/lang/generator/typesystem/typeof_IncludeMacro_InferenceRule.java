@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IncludeMacro_InferenceRule() {
   }
-
   public void applyRule(final SNode macro, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode containingTemplate = SNodeOperations.getAncestor(macro, "jetbrains.mps.lang.generator.structure.TemplateDeclaration", false, false);
     SNode includedTemplate = SLinkOperations.getTarget(macro, "includeTemplate", false);
@@ -60,18 +59,15 @@ public class typeof_IncludeMacro_InferenceRule extends AbstractInferenceRule_Run
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.IncludeMacro";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

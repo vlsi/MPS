@@ -8,15 +8,12 @@ import mf.Unit;
 
 public class QuantityConstant implements Function<Quantity> {
   private Quantity myQuantity;
-
   public QuantityConstant(double amount, Unit unit) {
     myQuantity = new Quantity(amount, unit);
   }
-
   public QuantityConstant(Quantity quantity) {
     myQuantity = quantity;
   }
-
   @Override
   public Quantity compute(Object parm) {
     return myQuantity;

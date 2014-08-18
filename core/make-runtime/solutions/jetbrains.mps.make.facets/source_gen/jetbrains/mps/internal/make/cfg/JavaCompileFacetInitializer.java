@@ -9,15 +9,12 @@ import jetbrains.mps.make.facet.ITarget;
 public final class JavaCompileFacetInitializer {
   private Boolean mySkipCompilation;
 
-
   public JavaCompileFacetInitializer() {
   }
-
   public JavaCompileFacetInitializer skipCompilation(Boolean skip) {
     mySkipCompilation = skip;
     return this;
   }
-
   public void populate(IPropertiesPool ppool) {
     Tuples._2<Boolean, Boolean> compileProps = (Tuples._2<Boolean, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.make.facets.JavaCompile.compile"), Object.class);
     if (compileProps != null) {

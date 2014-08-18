@@ -45,7 +45,6 @@ public class DependenciesPanel extends JPanel {
   private BaseTool myTool;
   private ReferencesFinder myReferencesFinder = null;
   private boolean myIsMeta;
-
   public DependenciesPanel(BaseTool tool, Project project) {
     super(new BorderLayout());
     myTool = tool;
@@ -67,7 +66,6 @@ public class DependenciesPanel extends JPanel {
     add(splitter, BorderLayout.CENTER);
     add(createToolbar(), BorderLayout.NORTH);
   }
-
   public void resetContent(DependencyViewerScope scope, jetbrains.mps.project.Project project, boolean isMeta) {
     myIsMeta = isMeta;
     myReferencesFinder = new ReferencesFinder();
@@ -78,15 +76,12 @@ public class DependenciesPanel extends JPanel {
     myMPSProject = project;
     repaint();
   }
-
   public UsagesView getReferencesViewComponent() {
     return myReferencesView;
   }
-
   public DependencyViewerScope getCurrentScope() {
     return myScope;
   }
-
   public void updateTargetsView(final DependencyViewerScope sourceScope) {
     myScope = sourceScope;
     final Wrappers._T<SearchResults<SNode>> results = new Wrappers._T<SearchResults<SNode>>(new SearchResults<SNode>());
@@ -111,11 +106,9 @@ public class DependenciesPanel extends JPanel {
     myTargetsView.setContents(results.value);
     updateReferencesView(null);
   }
-
   public void selectInTargetsView(SModule module) {
     myTargetsView.selectModule(module);
   }
-
   public SearchResults updateReferencesView(final DependencyViewerScope targetScope) {
     final SearchResults[] results = new SearchResults[1];
     if (targetScope == null) {
@@ -134,11 +127,9 @@ public class DependenciesPanel extends JPanel {
     });
     return results[0];
   }
-
   public void close() {
     myTool.close();
   }
-
   private JComponent createToolbar() {
     DefaultActionGroup group = new DefaultActionGroup();
     group.add(new DependenciesPanel.CloseAction());
@@ -146,43 +137,35 @@ public class DependenciesPanel extends JPanel {
     group.add(new DependenciesPanel.ToggleUsedLanguages());
     return ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, true).getComponent();
   }
-
   public boolean isMeta() {
     return myIsMeta;
   }
-
   private class CloseAction extends AnAction {
     public CloseAction() {
       super("Close", "Close dependencies viewer", AllIcons.Actions.Cancel);
     }
-
     @Override
     public void actionPerformed(AnActionEvent event) {
       myTool.setAvailable(false);
     }
   }
-
   private class RerunAction extends AnAction {
     public RerunAction() {
       super("Rerun", "Rerun dependencies viewer", AllIcons.Actions.Refresh);
     }
-
     @Override
     public void actionPerformed(AnActionEvent event) {
       resetContent(myInitialScope, myMPSProject, myIsMeta);
     }
   }
-
   public class ToggleUsedLanguages extends ToggleAction {
     public ToggleUsedLanguages() {
       super("Show used languages", "Show used languages", MPSIcons.Nodes.Language);
     }
-
     @Override
     public boolean isSelected(AnActionEvent event) {
       return myIsMeta;
     }
-
     @Override
     public void setSelected(AnActionEvent event, boolean b) {
       resetContent(myInitialScope, myMPSProject, b);

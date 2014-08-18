@@ -62,7 +62,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 //
 // Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
 // to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
-// todo: move to workbench
+// TODO: move to workbench
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
@@ -77,7 +77,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 
   // this field for checking classes loading (double load from different modules)
-  // todo: move to a new class or remove at all
+  // TODO: move to a new class or remove at all
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
   private final SRepository myRepository;
@@ -187,13 +187,13 @@ public class ClassLoaderManager implements CoreComponent {
   // main internal method. use getClass instead
   // TODO must declare checked exceptions instead of silently throwing IAE
   @Nullable
-  public synchronized ClassLoader getClassLoader(SModule module) {
+  public synchronized ClassLoader getClassLoader(@NotNull SModule module) {
     CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
     if (customClassLoadingFacet != null) {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-        // todo!
+        LOG.warning("Facet " + module.getModuleName() + " is not valid");
         return null;
       }
     }
@@ -458,6 +458,7 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
+    LOG.info("Reloading all modules");
     reloadClasses(myRepository.getModules(), monitor);
   }
 

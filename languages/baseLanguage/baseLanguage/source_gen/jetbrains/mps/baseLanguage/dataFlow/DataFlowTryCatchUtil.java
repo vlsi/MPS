@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class DataFlowTryCatchUtil {
   public DataFlowTryCatchUtil() {
   }
-
   public static List<SNode> getPossibleCatches(SNode source, List<SNode> catchClauses) {
     List<SNode> result = new ArrayList<SNode>();
     SNode statement = SNodeOperations.getAncestor(source, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -38,7 +37,6 @@ public class DataFlowTryCatchUtil {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_l1x7gt_b0a0a1a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -46,7 +44,6 @@ public class DataFlowTryCatchUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Error")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_l1x7gt_b0a0a1a3a1_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -54,7 +51,6 @@ public class DataFlowTryCatchUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_l1x7gt_a0a0b0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -62,7 +58,6 @@ public class DataFlowTryCatchUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Exception")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_l1x7gt_a0a0a0a0b0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

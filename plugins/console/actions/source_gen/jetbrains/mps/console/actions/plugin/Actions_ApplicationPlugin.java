@@ -10,14 +10,11 @@ import jetbrains.mps.ide.make.actions.TextPreviewGroup_ActionGroup;
 
 public class Actions_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.console.actions");
-
   public Actions_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new FindInstancesByCondition_Action());
@@ -27,7 +24,6 @@ public class Actions_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new FindByConditionGroup_ActionGroup());
     addGroup(new TextPreviewGroup_Console_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FindByConditionGroup_ActionGroup.ID, FindUsages_ActionGroup.ID, FindUsages_ActionGroup.LABEL_ID_find_instances);
     insertGroupIntoAnother(FindByConditionGroup_ActionGroup.ID, Search_ActionGroup.ID, null);

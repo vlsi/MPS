@@ -22,7 +22,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c2v57n_a(editorContext, node);
   }
-
   private EditorCell createCollection_c2v57n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_a");
@@ -37,7 +36,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_c2v57n_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_a0");
@@ -45,7 +43,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_c2v57n_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comparison rule ");
     editorCell.setCellId("Constant_c2v57n_a0a");
@@ -55,7 +52,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c2v57n_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -73,7 +69,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_b0");
@@ -83,7 +78,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_c0");
@@ -93,7 +87,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_c2v57n_d2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable for ");
     editorCell.setCellId("Constant_c2v57n_a2a");
@@ -103,7 +96,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_c2v57n_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableNode");
@@ -123,14 +115,12 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_c2v57n_c2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_c2v57n_d2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("anotherNode");
@@ -150,7 +140,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
     editorCell.setCellId("Constant_c2v57n_d0");
@@ -160,7 +149,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_e0");
@@ -168,7 +156,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c2v57n_b4a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
     editorCell.setCellId("Constant_c2v57n_a4a");
@@ -179,7 +166,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_b4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_c2v57n_b4a");
@@ -190,7 +176,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_f0");
@@ -198,7 +183,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_c2v57n_b5a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_c2v57n_a5a");
@@ -208,7 +192,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_c2v57n_b5a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -228,7 +211,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_c2v57n_g0");
@@ -239,7 +221,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_h0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_h0");
@@ -250,7 +231,6 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_c2v57n_b7a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_c2v57n_a7a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createFlow(editorContext, node);
     editorCell.setCellId("Collection_c2v57n_a7a");
@@ -258,21 +238,18 @@ public class ComparisonRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c2v57n_b0h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_a0h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weak");
     editorCell.setCellId("Constant_c2v57n_a0h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_c2v57n_b0h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_c2v57n_b0h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c2v57n_b7a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isWeak");

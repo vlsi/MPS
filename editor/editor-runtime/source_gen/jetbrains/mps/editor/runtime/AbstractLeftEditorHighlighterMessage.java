@@ -14,21 +14,17 @@ import java.awt.Cursor;
 
 public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditorMessage implements EditorMessageIconRenderer {
   private String myTooltip;
-
   public AbstractLeftEditorHighlighterMessage(SNode node, EditorMessageOwner owner, String tooltip) {
     super(node, null, "", owner);
     myTooltip = tooltip;
   }
-
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
   }
-
   @Override
   public boolean isValid(EditorComponent component) {
     return true;
   }
-
   @Override
   public boolean sameAs(SimpleEditorMessage message) {
     if (message instanceof AbstractLeftEditorHighlighterMessage) {
@@ -37,17 +33,14 @@ public abstract class AbstractLeftEditorHighlighterMessage extends DefaultEditor
     }
     return false;
   }
-
   @Override
   public String getTooltipText() {
     return myTooltip;
   }
-
   @Override
   public Cursor getMouseOverCursor() {
     return Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
   }
-
   @Override
   public boolean showInGutter() {
     return false;

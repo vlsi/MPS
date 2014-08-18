@@ -40,7 +40,6 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertEquals("a1a1a1b2a1c3b2a1b2b2b2c3c3a1c3b2c3c3", IterableUtils.join(ListSequence.fromList(res), ""));
   }
-
   public void test_repeated() throws Exception {
     Iterable<Integer> sint = ArrayUtils.fromIntegerArray(new int[]{1, 2, 3});
     Iterable<String> sstr = Sequence.fromArray(new String[]{"a", "b", "c"});
@@ -69,7 +68,6 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertEquals("a1b2c3a1b2c3", IterableUtils.join(ListSequence.fromList(res), ""));
   }
-
   public void test_secondShort() throws Exception {
     Iterable<Integer> sint = ArrayUtils.fromIntegerArray(new int[]{1, 2, 3});
     Iterable<String> sstr = Sequence.fromArray(new String[]{"a", "b"});
@@ -87,7 +85,6 @@ public class MultiForeachTest_Test extends TestCase {
     }
     Assert.assertEquals("a1b2", IterableUtils.join(ListSequence.fromList(res), ""));
   }
-
   public MultiForeachTest_Test() {
   }
 }

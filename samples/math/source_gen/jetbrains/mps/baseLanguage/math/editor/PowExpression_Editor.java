@@ -23,7 +23,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ysso2m_a(editorContext, node);
   }
-
   private EditorCell createCollection_ysso2m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ysso2m_a");
@@ -32,7 +31,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createEmpty_ysso2m_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ysso2m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_ysso2m_a0");
@@ -43,7 +41,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ysso2m_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ysso2m_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("base");
@@ -63,7 +60,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_ysso2m_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("exponent");
@@ -87,7 +83,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createEmpty_ysso2m_b0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));

@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ContainerIteratorType_BehaviorDescriptor extends IteratorType_BehaviorDescriptor {
   public ContainerIteratorType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType";

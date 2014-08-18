@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StringSwitchCase_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StringSwitchCase_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // checking case elements 
     Set<String> caseElements = SetSequence.fromSet(new HashSet<String>());
@@ -43,18 +42,15 @@ public class check_StringSwitchCase_NonTypesystemRule extends AbstractNonTypesys
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -20,7 +20,6 @@ import java.util.Arrays;
 public class SwitchStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "expression", true));
@@ -32,7 +31,6 @@ public class SwitchStatement_Behavior {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "defaultBlock", true), throwables, ignoreMayBeThrowables);
     }
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     SNode childStatement = child;
     while ((childStatement != null) && SNodeOperations.getParent(childStatement) != thisNode) {

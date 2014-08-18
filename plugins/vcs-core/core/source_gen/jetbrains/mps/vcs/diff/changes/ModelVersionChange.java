@@ -11,29 +11,24 @@ public class ModelVersionChange extends MetadataChange {
   public ModelVersionChange(@NotNull ChangeSet changeSet) {
     super(changeSet);
   }
-
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     ((SModelBase) model).setVersion((as_7exgcv_a0a0a0a0b(getChangeSet().getNewModel(), SModelBase.class)).getVersion());
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
     return new ModelVersionChange(getChangeSet().getOppositeChangeSet());
   }
-
   @NotNull
   @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }
-
   @Override
   public String toString() {
     return "Change Model Version";
   }
-
   private static <T> T as_7exgcv_a0a0a0a0b(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

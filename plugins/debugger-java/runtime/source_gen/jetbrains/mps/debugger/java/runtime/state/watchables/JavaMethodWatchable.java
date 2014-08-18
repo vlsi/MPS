@@ -19,66 +19,53 @@ import java.util.Collections;
   private final Method myMethod;
   private final boolean myIsEnter;
   private final JavaMethodWatchable.JavaMethodValue myValue;
-
   public JavaMethodWatchable(Method method, boolean enter, ThreadReference threadReference) {
     super(threadReference);
     myMethod = method;
     myIsEnter = enter;
     myValue = new JavaMethodWatchable.JavaMethodValue();
   }
-
   @Override
   public String getName() {
     return ((myIsEnter ? "entered method" : "exited method"));
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.METHOD;
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return Icons.METHOD_BREAKPOINT;
   }
-
   @Override
   public SNode getNode() {
     //  todo from location??? 
     return null;
   }
-
   private class JavaMethodValue implements IValue {
     private final String myPresentation;
-
     private JavaMethodValue() {
       myPresentation = myMethod.declaringType().name() + "." + myMethod.name();
     }
-
     @Override
     public String getValuePresentation() {
       return myPresentation;
     }
-
     @Override
     public Icon getPresentationIcon() {
       return Icons.METHOD_BREAKPOINT;
     }
-
     @Override
     public boolean isStructure() {
       return false;
     }
-
     @Override
     public void initSubvalues() {
     }
-
     @Override
     public List<IWatchable> getSubvalues() {
       return Collections.emptyList();

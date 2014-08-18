@@ -27,15 +27,12 @@ public class MakeFieldStatic extends BaseRefactoring {
     this.addTransientParameter("hasExternalUsages");
     this.addTransientParameter("usages");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldStatic_Target();
   }
-
   public String getUserFriendlyName() {
     return "Make field static";
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     final SNode node = refactoringContext.getSelectedNode();
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -56,7 +53,6 @@ public class MakeFieldStatic extends BaseRefactoring {
     });
     return true;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode newDeclaration = _quotation_createNode_so6etp_a0a0a(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
     SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -79,14 +75,12 @@ public class MakeFieldStatic extends BaseRefactoring {
     }
     SNodeOperations.deleteNode(((SNode) refactoringContext.getParameter("declaration")));
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     if (!(((Boolean) refactoringContext.getParameter("hasExternalUsages")))) {
       return null;
     }
     return ((SearchResults<SNode>) refactoringContext.getParameter("usages"));
   }
-
   private static SNode _quotation_createNode_so6etp_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -104,7 +98,6 @@ public class MakeFieldStatic extends BaseRefactoring {
     }
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_so6etp_a0a0e0d0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -113,7 +106,6 @@ public class MakeFieldStatic extends BaseRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_so6etp_a0a0a4a3a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

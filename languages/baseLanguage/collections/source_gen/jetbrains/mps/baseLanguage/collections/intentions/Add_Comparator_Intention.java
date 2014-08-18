@@ -21,77 +21,60 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Add_Comparator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public Add_Comparator_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator";
   }
-
   public String getPresentation() {
     return "Add_Comparator";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.Add_Comparator_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "copyFrom", true) == null) && (SLinkOperations.getTarget(node, "initSize", true) == null) && (SLinkOperations.getTarget(node, "comparator", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2261417478149151571");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new Add_Comparator_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Specify Comparator";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setTarget(node, "comparator", _quotation_createNode_1k32yi_a0a0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "elementType", true))), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return Add_Comparator_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_1k32yi_a0a0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 public class ComponentSet_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_retrieveDependencies_9095678365528900313(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {

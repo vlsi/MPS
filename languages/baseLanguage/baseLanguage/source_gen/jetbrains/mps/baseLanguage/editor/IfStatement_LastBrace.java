@@ -16,18 +16,14 @@ public class IfStatement_LastBrace {
     editorCell.setAction(CellActionType.DELETE, new IfStatement_LastBrace.IfStatement_LastBrace_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new IfStatement_LastBrace.IfStatement_LastBrace_BACKSPACE(node));
   }
-
   public static class IfStatement_LastBrace_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IfStatement_LastBrace_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
         SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());
@@ -40,18 +36,14 @@ public class IfStatement_LastBrace {
       }
     }
   }
-
   public static class IfStatement_LastBrace_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IfStatement_LastBrace_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
         SNodeOperations.deleteNode(ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).first());

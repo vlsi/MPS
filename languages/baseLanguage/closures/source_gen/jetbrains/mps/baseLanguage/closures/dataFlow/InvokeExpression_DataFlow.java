@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class InvokeExpression_DataFlow extends DataFlowBuilder {
   public InvokeExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode p : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "parameter", true))) {
       _context.getBuilder().build((SNode) p);

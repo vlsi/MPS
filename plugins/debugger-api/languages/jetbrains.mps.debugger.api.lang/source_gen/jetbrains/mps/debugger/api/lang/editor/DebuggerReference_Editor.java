@@ -21,7 +21,6 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8xigmp_a(editorContext, node);
   }
-
   private EditorCell createCollection_8xigmp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8xigmp_a");
@@ -32,7 +31,6 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_8xigmp_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_8xigmp_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -40,7 +38,6 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_8xigmp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_8xigmp_b0");
@@ -52,7 +49,6 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_8xigmp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("debuggerName");
@@ -73,7 +69,6 @@ public class DebuggerReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8xigmp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_8xigmp_d0");

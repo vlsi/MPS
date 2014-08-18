@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class Looking_BehaviorDescriptor extends LogicalExpression_BehaviorDescriptor {
   public Looking_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.Looking";

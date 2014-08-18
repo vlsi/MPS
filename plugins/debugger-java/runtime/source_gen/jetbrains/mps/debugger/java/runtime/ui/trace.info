@@ -19,10 +19,10 @@
       <node id="3187167456722827932" at="15,0,16,0" concept="1" trace="DISABLED_FIELD_BREAKPOINT" />
       <node id="8949162067054041107" at="16,0,17,0" concept="1" trace="INVALID_FIELD_BREAKPOINT" />
       <node id="8949162067054041112" at="17,0,18,0" concept="1" trace="MUTED_FIELD_BREAKPOINT" />
-      <node id="3187167456722827938" at="19,0,21,0" concept="0" trace="Icons#()V" />
-      <scope id="3187167456722827941" at="19,18,19,18" />
-      <scope id="3187167456722827938" at="19,0,21,0" />
-      <unit id="3187167456722827906" at="7,0,22,0" name="jetbrains.mps.debugger.java.runtime.ui.Icons" />
+      <node id="3187167456722827938" at="18,0,20,0" concept="0" trace="Icons#()V" />
+      <scope id="3187167456722827941" at="18,18,18,18" />
+      <scope id="3187167456722827938" at="18,0,20,0" />
+      <unit id="3187167456722827906" at="7,0,21,0" name="jetbrains.mps.debugger.java.runtime.ui.Icons" />
     </file>
   </root>
 </debug-info>

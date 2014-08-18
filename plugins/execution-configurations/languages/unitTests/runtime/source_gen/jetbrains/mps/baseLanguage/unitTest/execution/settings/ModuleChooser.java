@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModuleChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final List<SModuleReference> myCheckedModules = ListSequence.fromList(new ArrayList<SModuleReference>());
-
   public ModuleChooser() {
     addActionListener(new ActionListener() {
       @Override
@@ -39,7 +38,6 @@ public class ModuleChooser extends TextFieldWithBrowseButton.NoPathCompletion {
       }
     });
   }
-
   private void collectModules() {
     ListSequence.fromList(this.myCheckedModules).clear();
     ModelAccess.instance().runReadAction(new Runnable() {

@@ -47,6 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -66,49 +67,51 @@ import static jetbrains.mps.project.SModuleOperations.getJavaFacet;
 public class ModuleMaker {
 
   private final static int MAX_ERRORS = 100;
+  private static final org.apache.log4j.Logger LOG = LogManager.getLogger(ModuleMaker.class);
 
   private Map<String, SModule> myContainingModules = new HashMap<String, SModule>();
   private Map<SModule, ModuleSources> myModuleSources = new HashMap<SModule, ModuleSources>();
   private Dependencies myDependencies;
-  private final IPerformanceTracer ttrace;
-  private final IMessageHandler handler;
+  private final IPerformanceTracer myTracer;
+  @NotNull
+  private final IMessageHandler myHandler;
   private final MessageKind myLevel;
 
   public ModuleMaker() {
     this(null, MessageKind.ERROR);
   }
 
-  /**
-   * @deprecated Use {@link #ModuleMaker(jetbrains.mps.messages.IMessageHandler, jetbrains.mps.messages.MessageKind)} instead
-   */
-  @Deprecated
-  public ModuleMaker(@Nullable IMessageHandler handler) {
-    this(handler, MessageKind.ERROR);
-  }
-
   public ModuleMaker(@Nullable IMessageHandler handler, MessageKind level) {
-    this(handler == null ? new LogHandler(Logger.wrap(LogManager.getLogger(ModuleMaker.class))) : handler, level,
-        handler != null ? new PerformanceTracer("module maker") : new NullPerformanceTracer());
+    if (handler != null) {
+      myHandler = handler;
+      myTracer = new PerformanceTracer("module maker");
+    } else {
+      myHandler = new LogHandler(Logger.wrap(LogManager.getLogger(ModuleMaker.class)));
+      myTracer = new NullPerformanceTracer();
+    }
+    myLevel = level;
   }
 
   public ModuleMaker(@NotNull IMessageHandler handler, MessageKind level, @NotNull IPerformanceTracer trace) {
-    this.handler = handler;
+    myHandler = handler;
     myLevel = level;
-    ttrace = trace;
+    myTracer = trace;
   }
 
   public void clean(final Set<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Cleaning...", modules.size());
     try {
-      for (SModule m : modules) {
-        if (isExcluded(m)) {
+      for (SModule module : modules) {
+        if (isExcluded(module)) {
           monitor.advance(1);
           continue;
         }
         if (monitor.isCanceled()) break;
 
-        monitor.step(m.getModuleName());
-        String path = m.getFacet(JavaModuleFacet.class).getClassesGen().getPath();
+        monitor.step(module.getModuleName());
+        JavaModuleFacet facet = module.getFacet(JavaModuleFacet.class);
+        assert facet != null && facet.getClassesGen() != null;
+        String path = facet.getClassesGen().getPath();
         FileUtil.delete(new File(path));
         ClassPathFactory.getInstance().invalidate(Collections.singleton(path));
         monitor.advance(1);
@@ -118,26 +121,27 @@ public class ModuleMaker {
     }
   }
 
-  public MPSCompilationResult make(Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
+  // TODO: get rid of push and pop tracer calls -- they need only for performance checks
+  public MPSCompilationResult make(final Collection<? extends SModule> modules, @NotNull final ProgressMonitor monitor) {
     monitor.start("Compiling", 12);
-    ttrace.push("making " + modules.size() + " modules", false);
+    myTracer.push("making " + modules.size() + " modules", false);
     try {
       monitor.step("Collecting candidates");
-      ttrace.push("collecting candidates", false);
+      myTracer.push("collecting candidates", false);
       Collection<SModule> candidates = new GlobalModuleDependenciesManager(modules).getModules(Deptype.COMPILE);
-      ttrace.pop();
+      myTracer.pop();
       monitor.advance(1);
 
-      ttrace.push("loading deps", false);
+      myTracer.push("loading deps", false);
       monitor.step("Loading dependencies");
       myDependencies = new Dependencies(candidates);
-      ttrace.pop();
+      myTracer.pop();
       monitor.advance(1);
 
-      ttrace.push("modules to compile", false);
+      myTracer.push("modules to compile", false);
       monitor.step("Calculating modules to compile");
       Set<SModule> toCompile = getModulesToCompile(candidates);
-      ttrace.pop();
+      myTracer.pop();
       monitor.advance(1);
 
       int errorCount = 0;
@@ -147,9 +151,9 @@ public class ModuleMaker {
       Set<SModule> changedModules = new HashSet<SModule>();
 
       monitor.step("Building module cycles");
-      ttrace.push("building cycles", false);
+      myTracer.push("building cycles", false);
       List<Set<SModule>> schedule = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(toCompile);
-      ttrace.pop();
+      myTracer.pop();
       monitor.advance(1);
 
       ProgressMonitor inner = monitor.subTask(8);
@@ -159,10 +163,10 @@ public class ModuleMaker {
           if (monitor.isCanceled()) break;
 
           inner.step("compiling " + cycle);
-          ttrace.push("processing cycle", false);
+          myTracer.push("processing cycle", false);
           MPSCompilationResult result = compile(cycle);
           inner.advance(cycle.size());
-          ttrace.pop();
+          myTracer.pop();
           errorCount += result.getErrors();
           warnCount += result.getWarnings();
           compiled = compiled || result.isCompiledAnything();
@@ -180,8 +184,8 @@ public class ModuleMaker {
 
       return new MPSCompilationResult(errorCount, warnCount, false, changedModules, messages);
     } finally {
-      ttrace.pop();
-      final String report = ttrace.report();
+      myTracer.pop();
+      final String report = myTracer.report();
       if (report != null) {
         handle(new Message(MessageKind.INFORMATION, report));
       }
@@ -192,7 +196,7 @@ public class ModuleMaker {
   // private methods, all modules here is SModule with JavaModuleFacet
   private void handle(IMessage msg) {
     if (msg.getKind().ordinal() >= myLevel.ordinal()) {
-      handler.handle(msg);
+      myHandler.handle(msg);
     }
   }
 
@@ -214,15 +218,15 @@ public class ModuleMaker {
     boolean hasJavaToCompile = false;
     boolean hasFilesToCopyOrDelete = false;
 
-    ttrace.push("preparing to compile", false);
+    myTracer.push("preparing to compile", false);
     Set<SModule> modulesWithRemovals = new HashSet<SModule>();
     for (SModule m : modules) {
       if (areClassesUpToDate(m)) continue;
 
       if (!getJavaFacet(m).isCompileInMps()) {
-        String text = "Module which compiled in IDEA depend on module which has to be compiled in MPS:" + m.getModuleName();
+        String text = "Module which compiled in IDEA depends on module which has to be compiled in MPS:" + m.getModuleName();
         messages.add(createMessage(MessageKind.WARNING, text, m));
-        handler.handle(createMessage(MessageKind.INFORMATION, text, m));
+        myHandler.handle(createMessage(MessageKind.INFORMATION, text, m));
         continue;
       }
 
@@ -231,6 +235,7 @@ public class ModuleMaker {
       hasJavaToCompile |= !sources.isJavaUpToDate();
 
       for (File f : sources.getFilesToDelete()) {
+        //noinspection ResultOfMethodCallIgnored
         f.delete();
         modulesWithRemovals.add(m);
       }
@@ -240,34 +245,34 @@ public class ModuleMaker {
         myContainingModules.put(f.getClassName(), m);
       }
     }
-    ttrace.pop();
+    myTracer.pop();
 
     if (!hasJavaToCompile && !hasFilesToCopyOrDelete) {
       return new MPSCompilationResult(0, 0, false, Collections.<SModule>emptySet(), messages);
     }
 
-    ttrace.push("invalidating classpath", false);
+    myTracer.push("invalidating classpath", false);
     for (SModule module : modulesWithRemovals) {
       invalidateCompiledClasses(module);
     }
-    ttrace.pop();
+    myTracer.pop();
 
     Set<SModule> changedModules = new HashSet<SModule>();
     MyCompilationResultAdapter listener = null;
     if (hasJavaToCompile) {
-      ttrace.push("compiling java", false);
+      myTracer.push("compiling java", false);
       IClassPathItem classPathItems = computeDependenciesClassPath(modules);
       listener = new MyCompilationResultAdapter(modules, classPathItems, messages);
       compiler.addCompilationResultListener(listener);
-      ttrace.push("eclipse compiler", true);
+      myTracer.push("eclipse compiler", true);
       compiler.compile(classPathItems);
-      ttrace.pop();
+      myTracer.pop();
       changedModules.addAll(listener.myChangedModules);
       compiler.removeCompilationResultListener(listener);
-      ttrace.pop();
+      myTracer.pop();
     }
 
-    ttrace.push("copying resources", false);
+    myTracer.push("copying resources", false);
     for (SModule module : modules) {
       ModuleSources sources = getModuleSources(module);
       for (ResourceFile toCopy : sources.getResourcesToCopy()) {
@@ -289,26 +294,26 @@ public class ModuleMaker {
         }
       }
     }
-    ttrace.pop();
+    myTracer.pop();
 
-    ttrace.push("updating classpath", false);
+    myTracer.push("updating classpath", false);
     for (SModule module : changedModules) {
       invalidateCompiledClasses(module);
     }
-    ttrace.pop();
+    myTracer.pop();
 
     for (SModule module : modulesWithRemovals) {
       if (!changedModules.contains(module)) {
-        handler.handle(createMessage(MessageKind.WARNING, "Module with removals not in changed modules: " + module, module));
+        myHandler.handle(createMessage(MessageKind.WARNING, "Module with removals not in changed modules: " + module, module));
       }
     }
 
     // todo: check possibility of this statements
     if (hasJavaToCompile && changedModules.isEmpty()) {
-      handler.handle(createMessage(MessageKind.ERROR, "has java to compile but changed modules is empty", null));
+      myHandler.handle(createMessage(MessageKind.ERROR, "has java to compile but changed modules is empty", null));
     }
     if (!hasJavaToCompile && !changedModules.isEmpty()) {
-      handler.handle(createMessage(MessageKind.ERROR, "has not java to compile but changed modules is not empty", null));
+      myHandler.handle(createMessage(MessageKind.ERROR, "has not java to compile but changed modules is not empty", null));
     }
 
     return new MPSCompilationResult(listener == null ? 0 : listener.getErrorCount(), 0, false, changedModules, messages);
@@ -335,17 +340,17 @@ public class ModuleMaker {
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<SModule> modules) {
-    ttrace.push("dependencies classpath", false);
+    myTracer.push("dependencies classpath", false);
     try {
       Set<String> classpath = JavaModuleOperations.collectCompileClasspath(modules, true);
       return JavaModuleOperations.createClassPathItem(classpath, ModuleMaker.class.getName());
     } finally {
-      ttrace.pop();
+      myTracer.pop();
     }
   }
 
   private Set<SModule> getModulesToCompile(Collection<SModule> candidates) {
-    ttrace.push("checking if " + candidates.size() + " modules are dirty", false);
+    myTracer.push("checking if " + candidates.size() + " modules are dirty", false);
     Set<SModule> allModules = candidates instanceof Set ? (Set<SModule>) candidates : new HashSet<SModule>(candidates);
     List<SModule> dirtyModules = new ArrayList<SModule>(candidates.size());
     for (SModule m : candidates) {
@@ -353,7 +358,7 @@ public class ModuleMaker {
         dirtyModules.add(m);
       }
     }
-    ttrace.pop();
+    myTracer.pop();
 
     // select from modules those that are affected by the "dirty" modules
     // M={m}, D={m*}, D<=M, R:M->2^M (required), R* transitive closure of R
@@ -362,7 +367,7 @@ public class ModuleMaker {
 
     Map<SModule, Set<SModule>> backDependencies = new HashMap<SModule, Set<SModule>>();
 
-    ttrace.push("building back deps", false);
+    myTracer.push("building back deps", false);
 
     for (SModule m : candidates) {
       for (SModule dep : new GlobalModuleDependenciesManager(m).getModules(Deptype.COMPILE)) {
@@ -374,9 +379,9 @@ public class ModuleMaker {
         incoming.add(m);
       }
     }
-    ttrace.pop();
+    myTracer.pop();
 
-    ttrace.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
+    myTracer.push("adding modules dependent on dirty ones - " + dirtyModules.size(), false);
     Set<SModule> toCompile = new LinkedHashSet<SModule>();
     // BFS from dirtyModules along backDependencies
     LinkedList<SModule> queue = new LinkedList<SModule>(dirtyModules);
@@ -390,7 +395,7 @@ public class ModuleMaker {
         queue.addAll(backDeps);
       }
     }
-    ttrace.pop();
+    myTracer.pop();
 
     return toCompile;
   }
@@ -408,11 +413,11 @@ public class ModuleMaker {
     return getModuleSources(m).isUpToDate();
   }
 
-  private ModuleSources getModuleSources(SModule module) {
-    ModuleSources moduleSources = myModuleSources.get(module);
+  private ModuleSources getModuleSources(SModule m) {
+    ModuleSources moduleSources = myModuleSources.get(m);
     if (moduleSources == null) {
-      moduleSources = new ModuleSources(module, myModuleSources, myDependencies, ttrace);
-      myModuleSources.put(module, moduleSources);
+      moduleSources = new ModuleSources(m, myModuleSources, myDependencies, myTracer);
+      myModuleSources.put(m, moduleSources);
     }
     return moduleSources;
   }
@@ -446,7 +451,7 @@ public class ModuleMaker {
     public void onCompilationResult(CompilationResult cr) {
       Set<String> classesWithErrors = new HashSet<String>();
       if (cr.getErrors() != null) {
-        ttrace.push("handling errors", false);
+        myTracer.push("handling errors", false);
         for (final CategorizedProblem cp : cr.getErrors()) {
           String fileName = new String(cp.getOriginatingFileName());
           final String fqName = NameUtil.namespaceFromPath(fileName.substring(0, fileName.length() - MPSExtentions.DOT_JAVAFILE.length()));
@@ -476,12 +481,12 @@ public class ModuleMaker {
             }
           }
         }
-        ttrace.pop();
+        myTracer.pop();
 
         myErrorCount += cr.getErrors().length;
       }
 
-      ttrace.push("storing files", false);
+      myTracer.push("storing files", false);
       for (ClassFile cf : cr.getClassFiles()) {
         String fqName = getName(cf.getCompoundName());
         String containerClassName = fqName;
@@ -515,7 +520,7 @@ public class ModuleMaker {
                 try {
                   os.close();
                 } catch (IOException e) {
-                  handler.handle(createMessage(MessageKind.ERROR, e.toString(), e));
+                  myHandler.handle(createMessage(MessageKind.ERROR, e.toString(), e));
                 }
               }
             }
@@ -530,7 +535,7 @@ public class ModuleMaker {
           myMessages.add(createMessage(MessageKind.ERROR, errMsg, null));
         }
       }
-      ttrace.pop();
+      myTracer.pop();
     }
 
     public int getErrorCount() {

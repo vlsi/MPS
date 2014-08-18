@@ -30,7 +30,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
   public ConstantValue_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ConstantValue");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -39,7 +38,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "className";
@@ -48,7 +46,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -57,7 +54,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -70,7 +66,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
               }
             });
           }
-
           @Override
           public ISearchScope createSearchScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
@@ -79,7 +74,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
               }
             };
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2;
@@ -89,6 +83,5 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
 }

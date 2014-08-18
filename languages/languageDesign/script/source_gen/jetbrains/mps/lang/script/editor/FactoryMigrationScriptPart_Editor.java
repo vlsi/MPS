@@ -17,7 +17,6 @@ public class FactoryMigrationScriptPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_chq41h_a(editorContext, node);
   }
-
   private EditorCell createCollection_chq41h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_chq41h_a");
@@ -26,14 +25,12 @@ public class FactoryMigrationScriptPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_chq41h_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_chq41h_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Factory static method: ");
     editorCell.setCellId("Constant_chq41h_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_chq41h_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("factoryMethod");

@@ -35,12 +35,15 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.util.Collections;
 import java.util.Set;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
+  private static final Logger LOG = LogManager.getLogger(MPSFileBasedIndexProjectHandler.class);
   private ProjectRootManagerEx myRootManager;
   private ProjectManager myProjectManager;
   private final FileBasedIndexImpl myIndex;
@@ -64,7 +67,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
     myProjectManager = projectManager;
     myIndex = index;
 
-    final MPSUnindexedFilesUpdater updater = new MPSUnindexedFilesUpdater(myIndex, myRootManager, project);
+    final MPSUnIndexedFilesUpdater updater = new MPSUnIndexedFilesUpdater(myIndex, myRootManager, project);
 
     final StartupManagerEx startupManager = (StartupManagerEx) StartupManager.getInstance(myProject);
     if (startupManager == null) return;
@@ -74,6 +77,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       public void run() {
         startupManager.registerCacheUpdater(updater);
         myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this, myProject);
+        LOG.debug("Queueing cache update");
         DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(updater));
       }
     });

@@ -11,7 +11,6 @@ public class RenameMethodDialog extends RenameDialog {
   public RenameMethodDialog(Project project, String oldName) {
     super(project, oldName, "method");
   }
-
   @Override
   protected JComponent createNorthPanel() {
     super.createNorthPanel();
@@ -22,7 +21,6 @@ public class RenameMethodDialog extends RenameDialog {
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     return myPanel;
   }
-
   @Override
   protected void doRefactoringAction() {
     super.doRefactoringAction();

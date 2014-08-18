@@ -9,7 +9,6 @@ import jetbrains.mps.util.SNodeOperations;
 public class TupleDeclarationUtil {
   public TupleDeclarationUtil() {
   }
-
   public static String getResolveInfo(SNode tupleDeclaration) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, tupleDeclaration, "virtual_getFqName_1213877404258", new Object[]{});
     String packageName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(tupleDeclaration));

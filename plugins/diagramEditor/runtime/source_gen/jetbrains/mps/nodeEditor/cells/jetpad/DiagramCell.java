@@ -86,12 +86,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   protected Registration myRegistration;
   protected Property<ViewTrait> myTraitProperty = new ValueProperty<ViewTrait>(null);
 
-
   public DiagramCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
     myTraitProperty.set(getEventHandlingTrait());
   }
-
   public JComponent getComponent() {
     if (myPanel == null) {
       int columnCount = (myPalettePanel == null ? 1 : 2);
@@ -112,7 +110,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     return myPanel;
   }
-
   private ViewContainerComponent getContainerComponent() {
     if (myComponent == null) {
       myComponent = new ViewContainerComponent();
@@ -121,10 +118,8 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       getDecorationRootMapper().attachRoot();
       myComponent.addFocusListener(new FocusListener() {
 
-
         public void focusGained(FocusEvent event) {
         }
-
         public void focusLost(FocusEvent focusEvent) {
           hidePatternEditor();
         }
@@ -133,52 +128,43 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return myComponent;
 
   }
-
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
     setWidth(getComponent().getWidth() + myGapLeft + myGapRight);
     setHeight(getComponent().getHeight());
   }
-
   @Override
   public void onAdd() {
     super.onAdd();
     getEditor().getCellTracker().addComponentCell(this);
   }
-
   @Override
   public void onRemove() {
     getEditor().getCellTracker().removeComponentCell(this);
     super.onRemove();
   }
-
   @Override
   public void setX(int x) {
     getComponent().setLocation(x, getComponent().getY());
     super.setX(x);
   }
-
   @Override
   public void setY(int y) {
     getComponent().setLocation(getComponent().getX(), y);
     super.setY(y);
   }
-
   @Override
   public void moveTo(int x, int y) {
     super.moveTo(x, y);
     getComponent().setLocation(myX, myY);
   }
-
   /*package*/ void setPatternEditorX(int x) {
     myPatternEditorX = x;
   }
-
   /*package*/ void setPatternEditorY(int y) {
     myPatternEditorY = y;
   }
-
   public void setExternalTrait(ViewTrait trait) {
     check_xnhqai_a0a72(myRegistration);
     if (trait == null) {
@@ -187,20 +173,15 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       myTraitProperty.set(trait);
     }
   }
-
   @Override
   public boolean isDrawBorder() {
     return false;
   }
-
   public void setPalette(DiagramPalette palette) {
     myPalettePanel = palette;
   }
-
   protected abstract SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts();
-
   protected abstract SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts();
-
   private ViewTrait getEventHandlingTrait() {
     if (myHandlingTrait == null) {
       this.myHandlingTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
@@ -263,7 +244,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     return this.myHandlingTrait;
   }
-
   public void createNewDiagramElement(int x, int y) {
     myPatternEditorX = x;
     myPatternEditorY = y;
@@ -272,7 +252,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     getEditor().activateNodeSubstituteChooser(this, false);
   }
-
   private boolean trySubstituteImmediately() {
     List<SubstituteAction> matchingActions = getSubstituteInfo().getMatchingActions("", false);
     if (matchingActions.size() == 0) {
@@ -300,11 +279,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     hideConnectionDragFeedback();
     return true;
   }
-
   private void hidePatternEditor() {
     getEditor().getNodeSubstituteChooser().setVisible(false);
   }
-
   public SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -315,7 +292,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             public boolean canSubstitute(String string) {
               return !(hasConnectionDragFeedback()) && super.canSubstitute(string);
             }
-
             @Override
             public SNode substitute(@Nullable EditorContext context, String string) {
               SNode result = super.substitute(context, string);
@@ -328,7 +304,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     };
   }
-
   public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
     // TMP solution: manually creating instance of connection instead of using 
     // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
@@ -345,7 +320,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
             DiagramCell.ConnectionInfo connectionInfo = getConnectionInfo();
             return connectionInfo.isValid() && canCreateConnector.invoke(connectionInfo.getFromNode(), connectionInfo.getFromId(), connectionInfo.getToNode(), connectionInfo.getToId());
           }
-
           @Override
           protected SNode doSubstitute(@Nullable EditorContext context, String string) {
             SNode result = NodeFactoryManager.createNode(childNodeConcept, null, container, SNodeOperations.getModel(container));
@@ -360,25 +334,20 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     };
   }
 
-
-
   public DiagramCell.ConnectionInfo getConnectionInfo() {
     return new DiagramCell.ConnectionInfo();
   }
-
-
 
   @Override
   public NodeSubstitutePatternEditor createSubstitutePatternEditor() {
     return new NodeSubstitutePatternEditor() {
       @Override
-      public void activate(Window window, Point point, Dimension dimension) {
+      public void activate(Window window, Point point, Dimension dimension, boolean show) {
         Dimension actualDimension = new Dimension(100, 0);
         point.translate(myPatternEditorX + getContainerComponent().getX(), myPatternEditorY + getContainerComponent().getY());
-        super.activate(window, point, actualDimension);
+        super.activate(window, point, actualDimension, show);
         mySubstituteEditorVisible = true;
       }
-
       @Override
       public void done() {
         super.done();
@@ -387,7 +356,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       }
     };
   }
-
   private java.awt.event.KeyEvent getAWTKeyEvent(KeyEvent jetPadKeyEvent, boolean isTyped) {
     // TODO: better integration with MPS substitute editor is required here 
     int id = (isTyped ? java.awt.event.KeyEvent.KEY_TYPED : java.awt.event.KeyEvent.KEY_PRESSED);
@@ -439,7 +407,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     return new java.awt.event.KeyEvent(getComponent(), id, when, modifiers, keyCode, jetPadKeyEvent.keyChar());
   }
-
   public Mapper<SNode, ViewContainer> getRootMapper() {
     if (myRootMapper == null) {
       myRootMapper = new Mapper<SNode, ViewContainer>(getSNode(), createViewContainer()) {
@@ -460,8 +427,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return myRootMapper;
   }
 
-
-
   public Mapper<SNode, ViewContainer> getDecorationRootMapper() {
     if (myDecorationRootMapper == null) {
       myDecorationRootMapper = new Mapper<SNode, ViewContainer>(getSNode(), getRootMapper().getTarget()) {
@@ -479,11 +444,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return myDecorationRootMapper;
   }
 
-
-
   public abstract Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node);
-
-
 
   private ViewContainer createViewContainer() {
     ViewContainer result = new ViewContainer();
@@ -500,11 +461,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     result.root().addTrait(RootTrait.ROOT_TRAIT);
     return result;
   }
-
   public boolean hasConnectionDragFeedback() {
     return myIsShowingDragFeedBack.get();
   }
-
   public PolyLineConnection showConnectionDragFeedback(View fromView) {
     assert !(myIsShowingDragFeedBack.get());
     PolyLineConnection connection = new PolyLineConnection();
@@ -513,7 +472,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     myIsShowingDragFeedBack.set(true);
     return connection;
   }
-
   public void updateConnectionDragFeedback(Vector toLocation) {
     View targetView = getRootMapper().getTarget().contentRoot().viewAt(toLocation);
     while (targetView != null && targetView.prop(JetpadUtils.CONNECTABLE).get() == null) {
@@ -526,11 +484,9 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
     myDragConnection.toLocation().set(toLocation);
   }
-
   public void hideConnectionDragFeedback() {
     myIsShowingDragFeedBack.set(false);
   }
-
   protected void syncDiagramElements(Iterable<SNode> elements, ListIterator<SNode> blocksIterator, Set<SNode> existingBlocks, ListIterator<SNode> connectorsIterator, Set<SNode> existingConnectors) {
     for (SNode nextElement : Sequence.fromIterable(elements)) {
       EditorCell cell = getContext().createNodeCell(nextElement);
@@ -540,12 +496,10 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       syncToNextNode((cell instanceof BlockCell ? blocksIterator : connectorsIterator), (cell instanceof BlockCell ? existingBlocks : existingConnectors), nextElement, cell);
     }
   }
-
   /*package*/ static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
     private DiagramSubstituteActionWraper(SubstituteAction action) {
       super(action);
     }
-
     @Override
     public Icon getIconFor(String string) {
       Icon icon;
@@ -559,10 +513,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
   }
 
-
-
   public class ConnectionInfo {
-
 
     public ConnectionInfo() {
       if (myDragConnection == null) {
@@ -580,53 +531,38 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
       setToNode(toView.prop(JetpadUtils.SOURCE).get());
       setToId(toView.prop(JetpadUtils.ID).get());
     }
-
     public boolean isValid() {
-      return myFromNode != null && myToNode != null;
+      return getFromNode() != null && getToNode() != null;
     }
-
     private SNode myFromNode;
-
     public SNode getFromNode() {
       return this.myFromNode;
     }
-
     private void setFromNode(SNode value) {
       this.myFromNode = value;
     }
-
     private Object myFromId;
-
     public Object getFromId() {
       return this.myFromId;
     }
-
     private void setFromId(Object value) {
       this.myFromId = value;
     }
-
     private SNode myToNode;
-
     public SNode getToNode() {
       return this.myToNode;
     }
-
     private void setToNode(SNode value) {
       this.myToNode = value;
     }
-
     private Object myToId;
-
     public Object getToId() {
       return this.myToId;
     }
-
     private void setToId(Object value) {
       this.myToId = value;
     }
   }
-
-
 
 
   private static void check_xnhqai_a0a72(Registration checkedDotOperand) {
@@ -635,7 +571,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     }
 
   }
-
   private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();

@@ -12,7 +12,6 @@ public class NodeBuilderInitPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_58elew_a(editorContext, node);
   }
-
   private EditorCell createError_58elew_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "no argument");
     editorCell.setCellId("Error_58elew_a");

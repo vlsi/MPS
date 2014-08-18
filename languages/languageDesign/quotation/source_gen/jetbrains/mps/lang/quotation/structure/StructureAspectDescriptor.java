@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -46,6 +45,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
 }

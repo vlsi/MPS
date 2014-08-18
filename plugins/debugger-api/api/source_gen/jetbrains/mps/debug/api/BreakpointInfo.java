@@ -11,33 +11,26 @@ public class BreakpointInfo {
   public long myCreationTime = -1;
   public boolean myIsEnabled;
   private SNodeReference myLocation;
-
   public BreakpointInfo(IBreakpoint breakpoint, BreakpointLocation location) {
     myCreationTime = breakpoint.getCreationTime();
     myIsEnabled = breakpoint.isEnabled();
     myLocation = location.getNodePointer();
   }
-
   public BreakpointInfo() {
   }
-
   public void initBreakpoint(IBreakpoint breakpoint) {
     breakpoint.setCreationTime(myCreationTime);
     breakpoint.setEnabled(myIsEnabled);
   }
-
   public boolean isInitialized() {
     return myLocation != null;
   }
-
   public SNodeReference location() {
     return myLocation;
   }
-
   public String getLocation() {
     return SNodePointer.serialize(myLocation);
   }
-
   public void setLocation(String location) {
     myLocation = SNodePointer.deserialize(location);
   }

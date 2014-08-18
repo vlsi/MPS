@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="XMLDocument_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.generator_demo.demoLang7.behavior.XMLDocument_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.generator_demo.demoLang7.behavior.XMLDocument_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.samples.generator_demo.demoLang7.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,22,0" name="jetbrains.mps.samples.generator_demo.demoLang7.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

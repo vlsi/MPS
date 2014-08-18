@@ -14,12 +14,10 @@ public class RelayQueryExpression_Constraints extends BaseConstraintsDescriptor 
   public RelayQueryExpression_Constraints() {
     super("jetbrains.mps.make.script.structure.RelayQueryExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class RelayQueryExpression_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.make.script.structure.ConfigDefinition"}, false, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:56325792-0540-48ec-8d52-897a8821cc64(jetbrains.mps.make.script.constraints)", "1977954644795375517");
 }

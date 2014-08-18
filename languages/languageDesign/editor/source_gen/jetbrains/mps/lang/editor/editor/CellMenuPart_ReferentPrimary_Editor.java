@@ -19,7 +19,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rsvjao_a(editorContext, node);
   }
-
   private EditorCell createCollection_rsvjao_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rsvjao_a");
@@ -28,7 +27,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rsvjao_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_rsvjao_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rsvjao_a0");
@@ -38,7 +36,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rsvjao_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rsvjao_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "primary choose referent menu");
     editorCell.setCellId("Constant_rsvjao_a0a");
@@ -49,7 +46,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_rsvjao_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rsvjao_b0");
@@ -60,7 +56,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_rsvjao_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rsvjao_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_rsvjao_a1a");
@@ -70,7 +65,6 @@ public class CellMenuPart_ReferentPrimary_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_rsvjao_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "no customization needed");
     editorCell.setCellId("Constant_rsvjao_b1a");

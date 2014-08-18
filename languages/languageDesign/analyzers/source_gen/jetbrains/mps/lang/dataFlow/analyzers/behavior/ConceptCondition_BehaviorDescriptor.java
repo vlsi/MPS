@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptCondition_BehaviorDescriptor extends ApplicableCondition_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public ConceptCondition_BehaviorDescriptor() {
   }
-
   public SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return ConceptCondition_Behavior.virtual_getApplicableConcept_4413230749907681652(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition";

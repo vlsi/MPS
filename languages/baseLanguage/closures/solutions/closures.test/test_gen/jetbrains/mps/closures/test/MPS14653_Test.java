@@ -16,7 +16,6 @@ public class MPS14653_Test extends TestCase {
       // expected exception 
     }
   }
-
   public void test_acceptFunction() throws Exception {
     _FunctionTypes._void_P0_E1<? extends Exception> fun = new _FunctionTypes._void_P0_E1<Exception>() {
       public void invoke() throws Exception {
@@ -30,7 +29,6 @@ public class MPS14653_Test extends TestCase {
       // expected exception 
     }
   }
-
   public MPS14653_Test() {
   }
 }

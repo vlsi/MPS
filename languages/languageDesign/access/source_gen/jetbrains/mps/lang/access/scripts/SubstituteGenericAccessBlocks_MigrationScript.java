@@ -20,23 +20,18 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
       public String getName() {
         return "read action { }";
       }
-
       public String getAdditionalInfo() {
         return "read action { }";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, _quotation_createNode_7jihir_a0a0a0a(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commandClosureLiteral", true), "body", true)));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -45,23 +40,18 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
       public String getName() {
         return "write action { }";
       }
-
       public String getAdditionalInfo() {
         return "write action { }";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, _quotation_createNode_7jihir_a0a0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commandClosureLiteral", true), "body", true)));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -70,23 +60,18 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
       public String getName() {
         return "command action { }";
       }
-
       public String getAdditionalInfo() {
         return "command action { }";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.access.structure.ExecuteCommandStatement";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, _quotation_createNode_7jihir_a0a0a0c(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commandClosureLiteral", true), "body", true)));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -95,29 +80,23 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
       public String getName() {
         return "undo-transparent command action { }";
       }
-
       public String getAdditionalInfo() {
         return "undo-transparent command action { }";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.access.structure.ExecuteTransparentCommandStatement";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithAnother(node, _quotation_createNode_7jihir_a0a0a0d(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commandClosureLiteral", true), "body", true)));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static SNode _quotation_createNode_7jihir_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -144,7 +123,6 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
     quotedNode_2.addChild("expression", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7jihir_a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -171,7 +149,6 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
     quotedNode_2.addChild("expression", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7jihir_a0a0a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -198,7 +175,6 @@ public class SubstituteGenericAccessBlocks_MigrationScript extends BaseMigration
     quotedNode_2.addChild("expression", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_7jihir_a0a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

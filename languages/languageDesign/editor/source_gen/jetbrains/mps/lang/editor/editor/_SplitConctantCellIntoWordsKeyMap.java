@@ -24,20 +24,16 @@ public class _SplitConctantCellIntoWordsKeyMap extends KeyMapImpl {
     action = new _SplitConctantCellIntoWordsKeyMap._SplitConctantCellIntoWordsKeyMap_Action0();
     this.putAction("ctrl+alt+shift", "VK_W", action);
   }
-
   public static class _SplitConctantCellIntoWordsKeyMap_Action0 extends KeyMapActionImpl {
     public _SplitConctantCellIntoWordsKeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "split constant cell into words";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -52,16 +48,13 @@ public class _SplitConctantCellIntoWordsKeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SNodeOperations.getParent(node) != null);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode collection = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
       SNodeFactoryOperations.setNewChild(collection, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Flow");
@@ -74,7 +67,6 @@ public class _SplitConctantCellIntoWordsKeyMap extends KeyMapImpl {
         ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
       }
     }
-
     public String getKeyStroke() {
       return "ctrl alt shift W";
     }

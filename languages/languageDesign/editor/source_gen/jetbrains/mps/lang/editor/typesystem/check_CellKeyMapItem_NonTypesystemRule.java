@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CellKeyMapItem_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CellKeyMapItem_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode cellKeyMapKeystroke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getString(cellKeyMapKeystroke, "keycode") != null && SPropertyOperations.getString(cellKeyMapKeystroke, "keycode").length() > 1 && !(AWTKeymapHandler.getValidKeyCodes().contains(SPropertyOperations.getString(cellKeyMapKeystroke, "keycode")))) {
       {
@@ -36,18 +35,15 @@ public class check_CellKeyMapItem_NonTypesystemRule extends AbstractNonTypesyste
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

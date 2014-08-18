@@ -14,28 +14,23 @@ import jetbrains.mps.util.Computable;
 public class ConflictableModuleAdapter extends Conflictable {
   private final AbstractModule myModule;
   private final boolean myIsConflictDetected;
-
   public ConflictableModuleAdapter(SModule module, boolean isConflictDetected) {
     myModule = (AbstractModule) module;
     myIsConflictDetected = isConflictDetected;
   }
-
   @Override
   public boolean isConflictDetected() {
     return myIsConflictDetected;
   }
-
   @Override
   public IFile getFile() {
     return myModule.getDescriptorFile();
   }
-
   @Override
   public void reloadFromDisk() {
     SModuleOperations.reloadFromDisk(myModule);
     ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
-
   @Override
   public boolean needReloading() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {

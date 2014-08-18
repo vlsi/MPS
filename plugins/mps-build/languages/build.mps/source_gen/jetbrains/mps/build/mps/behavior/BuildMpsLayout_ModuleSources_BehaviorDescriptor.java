@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildMpsLayout_ModuleSources_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_InJarNode_BehaviorDescriptor {
   public BuildMpsLayout_ModuleSources_BehaviorDescriptor() {
   }
-
   public boolean virtual_reexportsFromJar_5970181360961342219(SNode thisNode, Object o) {
     return BuildMpsLayout_ModuleSources_Behavior.virtual_reexportsFromJar_5970181360961342219(thisNode, o);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources";

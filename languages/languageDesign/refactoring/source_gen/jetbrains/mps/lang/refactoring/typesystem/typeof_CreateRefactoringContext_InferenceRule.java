@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CreateRefactoringContext_InferenceRule() {
   }
-
   public void applyRule(final SNode createContextNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(createContextNode, "refactoring", false), "target", true);
     if (SPropertyOperations.getBoolean(target, "allowMultiple") == false) {
@@ -71,22 +70,18 @@ public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "1817812116819936885", true), (SNode) _quotation_createNode_q0qn4n_a0f0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.refactoring.structure.CreateRefactoringContext";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_q0qn4n_a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -98,7 +93,6 @@ public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInfer
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_q0qn4n_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -106,7 +100,6 @@ public class typeof_CreateRefactoringContext_InferenceRule extends AbstractInfer
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)"), facade.createNodeId("~Project")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_q0qn4n_a0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

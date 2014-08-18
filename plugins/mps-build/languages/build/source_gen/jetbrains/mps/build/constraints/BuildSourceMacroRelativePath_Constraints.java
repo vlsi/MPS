@@ -25,7 +25,6 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
   public BuildSourceMacroRelativePath_Constraints() {
     super("jetbrains.mps.build.structure.BuildSourceMacroRelativePath");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,17 +41,14 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return (!(_context.getSmartReference()) ? SPropertyOperations.getString(_context.getParameterNode(), "name") : "$" + SPropertyOperations.getString(_context.getParameterNode(), "name"));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6szw9x_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -66,6 +61,5 @@ public class BuildSourceMacroRelativePath_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_6szw9x_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7389400916848182175");
 }

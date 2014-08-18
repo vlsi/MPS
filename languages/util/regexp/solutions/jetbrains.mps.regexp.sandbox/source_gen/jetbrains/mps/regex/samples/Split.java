@@ -8,20 +8,17 @@ import java.util.regex.Pattern;
 /*package*/ class Split {
   public Split() {
   }
-
   /*package*/ void splitTest() {
     String s = "ab23cd23ef";
     for (String st : RegexpOperations.split(s, REGEXP_nud8d_b0b0b)) {
       System.out.println("s = " + st);
     }
   }
-
   /*package*/ void abc(String s) {
     for (String st : RegexpOperations.split(s, REGEXP_nud8d_b0a0c)) {
       System.out.println("s = " + st);
     }
   }
-
   private static Pattern REGEXP_nud8d_b0b0b = Pattern.compile("\\d+", 0);
   private static Pattern REGEXP_nud8d_b0a0c = Pattern.compile("\\s+", 0);
 }

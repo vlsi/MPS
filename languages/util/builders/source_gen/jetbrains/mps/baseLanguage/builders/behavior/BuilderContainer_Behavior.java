@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuilderContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLeaf_932644095877881871(SNode thisNode) {
     return false;
   }

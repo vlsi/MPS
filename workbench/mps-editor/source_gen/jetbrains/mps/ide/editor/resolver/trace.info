@@ -12,76 +12,76 @@
   <root nodeRef="r:e83eb82a-b3b8-4003-84af-b40cb742ea94(jetbrains.mps.ide.editor.resolver)/1802459475176570754">
     <file name="EditorResolverComponent.java">
       <node id="1802459475176571506" at="12,0,13,0" concept="2" trace="myResolver" />
-      <node id="1802459475176571511" at="18,31,19,38" concept="1" />
-      <node id="1802459475176570783" at="19,38,20,60" concept="1" />
-      <node id="1802459475176570801" at="24,34,25,63" concept="1" />
-      <node id="1802459475176571528" at="25,63,26,22" concept="1" />
-      <node id="1802459475176570779" at="32,36,33,49" concept="6" />
-      <node id="1802459475176570756" at="14,0,16,0" concept="0" trace="EditorResolverComponent#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-      <node id="1802459475176570765" at="17,0,22,0" concept="4" trace="initComponent#()V" />
-      <node id="1802459475176570769" at="23,0,28,0" concept="4" trace="disposeComponent#()V" />
-      <node id="1802459475176570773" at="29,0,35,0" concept="4" trace="getComponentName#()Ljava/lang/String;" />
-      <scope id="1802459475176570759" at="14,68,14,68" />
-      <scope id="1802459475176570778" at="32,36,33,49" />
-      <scope id="1802459475176570756" at="14,0,16,0">
+      <node id="1802459475176571511" at="16,31,17,38" concept="1" />
+      <node id="1802459475176570783" at="17,38,18,60" concept="1" />
+      <node id="1802459475176570801" at="21,34,22,63" concept="1" />
+      <node id="1802459475176571528" at="22,63,23,22" concept="1" />
+      <node id="1802459475176570779" at="28,36,29,49" concept="6" />
+      <node id="1802459475176570756" at="13,0,15,0" concept="0" trace="EditorResolverComponent#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="1802459475176570765" at="15,0,20,0" concept="4" trace="initComponent#()V" />
+      <node id="1802459475176570769" at="20,0,25,0" concept="4" trace="disposeComponent#()V" />
+      <node id="1802459475176570773" at="25,0,31,0" concept="4" trace="getComponentName#()Ljava/lang/String;" />
+      <scope id="1802459475176570759" at="13,68,13,68" />
+      <scope id="1802459475176570778" at="28,36,29,49" />
+      <scope id="1802459475176570756" at="13,0,15,0">
         <var name="coreComponents" id="4365681323802964092" />
       </scope>
-      <scope id="1802459475176570768" at="18,31,20,60" />
-      <scope id="1802459475176570772" at="24,34,26,22" />
-      <scope id="1802459475176570765" at="17,0,22,0" />
-      <scope id="1802459475176570769" at="23,0,28,0" />
-      <scope id="1802459475176570773" at="29,0,35,0" />
-      <unit id="1802459475176570754" at="11,0,36,0" name="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" />
+      <scope id="1802459475176570768" at="16,31,18,60" />
+      <scope id="1802459475176570772" at="21,34,23,22" />
+      <scope id="1802459475176570765" at="15,0,20,0" />
+      <scope id="1802459475176570769" at="20,0,25,0" />
+      <scope id="1802459475176570773" at="25,0,31,0" />
+      <unit id="1802459475176570754" at="11,0,32,0" name="jetbrains.mps.ide.editor.resolver.EditorResolverComponent" />
     </file>
   </root>
   <root nodeRef="r:e83eb82a-b3b8-4003-84af-b40cb742ea94(jetbrains.mps.ide.editor.resolver)/1802459475176571473">
     <file name="EditorResolver.java">
-      <node id="1802459475176585196" at="25,117,26,92" concept="5" />
-      <node id="4953860923773790232" at="27,30,28,19" concept="6" />
-      <node id="1802459475176582994" at="29,5,30,156" concept="5" />
-      <node id="5447047924422203920" at="31,9,32,121" concept="6" />
-      <node id="216787248379473153" at="33,15,34,27" concept="1" />
-      <node id="1802459475176582256" at="39,68,40,24" concept="7" />
-      <node id="8120663389537738165" at="40,24,41,67" concept="1" />
-      <node id="1802459475176582292" at="41,67,42,21" concept="1" />
-      <node id="1802459475176582296" at="48,67,49,72" concept="6" />
+      <node id="1802459475176585196" at="24,117,25,92" concept="5" />
+      <node id="4953860923773790232" at="26,30,27,19" concept="6" />
+      <node id="1802459475176582994" at="28,5,29,156" concept="5" />
+      <node id="5447047924422203920" at="30,9,31,121" concept="6" />
+      <node id="216787248379473153" at="32,15,33,27" concept="1" />
+      <node id="1802459475176582256" at="37,68,38,24" concept="7" />
+      <node id="8120663389537738165" at="38,24,39,67" concept="1" />
+      <node id="1802459475176582292" at="39,67,40,21" concept="1" />
+      <node id="1802459475176582296" at="44,67,45,72" concept="6" />
       <node id="1802459475176571475" at="20,0,22,0" concept="0" trace="EditorResolver#()V" />
-      <node id="4953860923773790207" at="26,92,29,5" concept="3" />
-      <node id="1806760877632907064" at="54,0,57,0" concept="4" trace="attachListeners#()V" />
-      <node id="1806760877632926682" at="60,0,63,0" concept="4" trace="detachListeners#()V" />
-      <node id="1802459475176573218" at="47,0,51,0" concept="4" trace="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-      <node id="3391050862413798839" at="30,156,35,5" concept="8" />
-      <node id="1802459475176572298" at="39,0,44,0" concept="0" trace="FakeEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <node id="1802459475176571480" at="23,0,37,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
+      <node id="4953860923773790207" at="25,92,28,5" concept="3" />
+      <node id="1806760877632907064" at="48,0,51,0" concept="4" trace="attachListeners#()V" />
+      <node id="1806760877632926682" at="52,0,55,0" concept="4" trace="detachListeners#()V" />
+      <node id="1802459475176573218" at="43,0,47,0" concept="4" trace="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+      <node id="3391050862413798839" at="29,156,34,5" concept="8" />
+      <node id="1802459475176572298" at="37,0,42,0" concept="0" trace="FakeEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <node id="1802459475176571480" at="22,0,36,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
       <scope id="1802459475176571478" at="20,27,20,27" />
-      <scope id="1806760877632907068" at="55,38,55,38" />
-      <scope id="1806760877632926686" at="61,38,61,38" />
-      <scope id="4953860923773790208" at="27,30,28,19" />
-      <scope id="3391050862413798840" at="31,9,32,121" />
-      <scope id="3391050862413798842" at="33,15,34,27" />
-      <scope id="1802459475176573224" at="48,67,49,72" />
+      <scope id="1806760877632907068" at="49,38,49,38" />
+      <scope id="1806760877632926686" at="53,38,53,38" />
+      <scope id="4953860923773790208" at="26,30,27,19" />
+      <scope id="3391050862413798840" at="30,9,31,121" />
+      <scope id="3391050862413798842" at="32,15,33,27" />
+      <scope id="1802459475176573224" at="44,67,45,72" />
       <scope id="1802459475176571475" at="20,0,22,0" />
-      <scope id="1802459475176572301" at="39,68,42,21" />
-      <scope id="1806760877632907064" at="54,0,57,0" />
-      <scope id="1806760877632926682" at="60,0,63,0" />
-      <scope id="1802459475176573218" at="47,0,51,0">
+      <scope id="1802459475176572301" at="37,68,40,21" />
+      <scope id="1806760877632907064" at="48,0,51,0" />
+      <scope id="1806760877632926682" at="52,0,55,0" />
+      <scope id="1802459475176573218" at="43,0,47,0">
         <var name="events" id="1802459475176573221" />
       </scope>
-      <scope id="1802459475176572298" at="39,0,44,0">
+      <scope id="1802459475176572298" at="37,0,42,0">
         <var name="node" id="1802459475176582257" />
         <var name="repository" id="817507406026968566" />
       </scope>
-      <scope id="1802459475176571503" at="25,117,35,5">
+      <scope id="1802459475176571503" at="24,117,34,5">
         <var name="fakeEditor" id="1802459475176582995" />
         <var name="resolveInfo" id="1802459475176585197" />
       </scope>
-      <scope id="1802459475176571480" at="23,0,37,0">
+      <scope id="1802459475176571480" at="22,0,36,0">
         <var name="reference" id="1802459475176571481" />
         <var name="repository" id="1802459475176571487" />
         <var name="sourceNode" id="1802459475176571484" />
       </scope>
-      <unit id="1802459475176572296" at="38,0,64,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
-      <unit id="1802459475176571473" at="19,0,65,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
+      <unit id="1802459475176572296" at="36,0,56,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
+      <unit id="1802459475176571473" at="19,0,57,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
     </file>
   </root>
 </debug-info>

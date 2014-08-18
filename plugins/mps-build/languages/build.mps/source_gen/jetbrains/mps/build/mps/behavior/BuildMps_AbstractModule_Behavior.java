@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildMps_AbstractModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isCompact_8369506495128693730(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "compact");
   }
-
   public static String call_getModuleReference_4643216374596368935(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "uuid") + "(" + SPropertyOperations.getString(thisNode, "name") + ")";
   }

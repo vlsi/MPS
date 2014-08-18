@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class DebugStepsMenu_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DebugStepsMenu_ActionGroup.class);
   public static final String ID = "jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup";
-
   public DebugStepsMenu_ActionGroup() {
     super("DebugStepsMenu", ID);
     this.setIsInternal(false);

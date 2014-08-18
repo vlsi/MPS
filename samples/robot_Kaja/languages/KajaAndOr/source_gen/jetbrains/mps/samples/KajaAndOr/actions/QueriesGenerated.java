@@ -34,7 +34,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "right", SLinkOperations.getTarget(oldNode, "right", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LogicalOperator_1904811872814312765(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -59,15 +58,12 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(newInitializedInstance, "right", SLinkOperations.getTarget(_context.getCurrentTargetNode(), "right", true), true);
                 return newInitializedInstance;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "conceptAlias");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return SPropertyOperations.getString((item), "name");
               }
@@ -78,7 +74,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814253599(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -102,15 +97,12 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(conjuction, "right", _context.getSourceNode(), true);
               return SLinkOperations.getTarget(conjuction, "left", true);
             }
-
             public String getMatchingText(String pattern) {
               return (item);
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -124,7 +116,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_1904811872814296399(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -150,15 +141,12 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(conjuction, "left", _context.getSourceNode(), true);
               return SLinkOperations.getTarget(conjuction, "right", true);
             }
-
             public String getMatchingText(String pattern) {
               return (item);
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -172,7 +160,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Heading_642541832611943584(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -194,19 +181,15 @@ public class QueriesGenerated {
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
               return SLinkOperations.getTarget(newInitializedInstance, "right", true);
             }
-
             public String getMatchingText(String pattern) {
               return SPropertyOperations.getString((item), "conceptAlias");
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             public String getDescriptionText(String pattern) {
               return SPropertyOperations.getString((item), "name");
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -220,7 +203,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Looking_7060824959894576633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -242,19 +224,15 @@ public class QueriesGenerated {
               SNodeOperations.replaceWithAnother(_context.getSourceNode(), newInitializedInstance);
               return SLinkOperations.getTarget(newInitializedInstance, "right", true);
             }
-
             public String getMatchingText(String pattern) {
               return SPropertyOperations.getString((item), "conceptAlias");
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             public String getDescriptionText(String pattern) {
               return SPropertyOperations.getString((item), "name");
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();

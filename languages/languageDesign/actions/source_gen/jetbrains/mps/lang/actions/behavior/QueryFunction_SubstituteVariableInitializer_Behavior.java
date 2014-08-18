@@ -13,16 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class QueryFunction_SubstituteVariableInitializer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return true;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode varDecl = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
     return SLinkOperations.getTarget(varDecl, "type", true);
   }
-
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parentNode"));

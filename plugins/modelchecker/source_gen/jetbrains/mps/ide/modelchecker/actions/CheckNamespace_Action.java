@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class CheckNamespace_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
-
   public CheckNamespace_Action() {
     super("Check Selected Modules", "Check modules for errors", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
     for (TreeNode node : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")))) {
@@ -48,7 +45,6 @@ public class CheckNamespace_Action extends BaseAction {
     }
     return ListSequence.fromList(modules).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -62,7 +58,6 @@ public class CheckNamespace_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -81,7 +76,6 @@ public class CheckNamespace_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModule> modules = ListSequence.fromList(new ArrayList<SModule>());
@@ -95,6 +89,5 @@ public class CheckNamespace_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CheckNamespace_Action.class);
 }

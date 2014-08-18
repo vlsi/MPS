@@ -23,16 +23,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5wuhzs_a(editorContext, node);
   }
-
   private EditorCell createCollection_5wuhzs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5wuhzs_a");
@@ -40,7 +37,6 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     editorCell.addEditorCell(this.createCollection_5wuhzs_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_5wuhzs_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5wuhzs_a0");
@@ -54,7 +50,6 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     editorCell.addEditorCell(this.createCollection_5wuhzs_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_5wuhzs_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5wuhzs_a0a");
@@ -65,7 +60,6 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     editorCell.addEditorCell(this.createProperty_5wuhzs_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5wuhzs_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
     editorCell.setCellId("Constant_5wuhzs_a0a0");
@@ -77,7 +71,6 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_5wuhzs_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -99,7 +92,6 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_5wuhzs_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5wuhzs_b0a");
@@ -110,14 +102,12 @@ public class MultipleEditorsTestMostSpecificChild_rich_Editor extends DefaultNod
     editorCell.addEditorCell(this.createProperty_5wuhzs_b1a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5wuhzs_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5wuhzs_a1a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_5wuhzs_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("richProperty");

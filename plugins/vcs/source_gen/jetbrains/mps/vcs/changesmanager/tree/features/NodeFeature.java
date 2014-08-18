@@ -15,7 +15,6 @@ public class NodeFeature extends AbstractNodeFeature {
   public NodeFeature(SNodeReference nodePointer) {
     super(nodePointer);
   }
-
   @Nullable
   @Override
   public Feature getParent() {
@@ -31,7 +30,6 @@ public class NodeFeature extends AbstractNodeFeature {
     }
     return new NodeFeature(new SNodePointer(parentNode));
   }
-
   @Override
   @NotNull
   public String toString() {

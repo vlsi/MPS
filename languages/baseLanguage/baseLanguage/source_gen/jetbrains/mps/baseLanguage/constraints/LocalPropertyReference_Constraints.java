@@ -26,12 +26,10 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
   public LocalPropertyReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalPropertyReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -42,7 +40,6 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -51,7 +48,6 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -60,7 +56,6 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_pyukpt_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -73,7 +68,6 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode ancestor = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false);
     if (ancestor != null) {
@@ -83,10 +77,8 @@ public class LocalPropertyReference_Constraints extends BaseConstraintsDescripto
     }
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "766946382474481600");
   private static SNodePointer breakingNode_pyukpt_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137259");
-
   private static boolean eq_pyukpt_a0a0a1a4(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

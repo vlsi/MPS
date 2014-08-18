@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class DeprecatedAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public DeprecatedAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.DeprecatedAnnotation";

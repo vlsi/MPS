@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class VectorType_BehaviorDescriptor extends MathPrimitiveType_BehaviorDescriptor implements MatrixOrVectorType_BehaviorDescriptor {
   public VectorType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.VectorType";

@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SReference;
 public class ExecuteCommandPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getParameters_6129022259108621180(SNode thisNode) {
     if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(thisNode))) {
       return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterDeclaration", true)).select(new ISelector<SNode, SNode>() {
@@ -33,7 +32,6 @@ public class ExecuteCommandPart_Behavior {
     }
     return SLinkOperations.getTargets(thisNode, "parameterDeclaration", true);
   }
-
   public static List<SNode> call_getRequiredParameters_6129022259108621289(SNode thisNode) {
     return ListSequence.fromList(ExecuteCommandPart_Behavior.call_getParameters_6129022259108621180(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -41,27 +39,21 @@ public class ExecuteCommandPart_Behavior {
       }
     }).toListSequence();
   }
-
   public static SNode call_getCommandDeclaration_6129022259108621200(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.execution.commands.structure.CommandDeclaration", false, false);
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qal9w4_a0a0a3());
   }
-
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "execute", true), "statements", true);
   }
-
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return _quotation_createNode_qal9w4_a0a5();
   }
-
   public static String call_getSuffix_3754131050835940463(SNode thisNode) {
     return "_" + IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), thisNode.getNodeId().toString());
   }
-
   private static SNode _quotation_createNode_qal9w4_a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -69,7 +61,6 @@ public class ExecuteCommandPart_Behavior {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.execution(MPS.IDEA/com.intellij.execution@java_stub)"), facade.createNodeId("~ExecutionException")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_qal9w4_a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

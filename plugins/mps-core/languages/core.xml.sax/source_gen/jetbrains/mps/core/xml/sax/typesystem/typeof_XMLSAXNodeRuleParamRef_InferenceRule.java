@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_XMLSAXNodeRuleParamRef_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_XMLSAXNodeRuleParamRef_InferenceRule() {
   }
-
   public void applyRule(final SNode paramRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = paramRef;
@@ -23,18 +22,15 @@ public class typeof_XMLSAXNodeRuleParamRef_InferenceRule extends AbstractInferen
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "4720003541456865939", true), (SNode) SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(paramRef, "param", false), "type", true)), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

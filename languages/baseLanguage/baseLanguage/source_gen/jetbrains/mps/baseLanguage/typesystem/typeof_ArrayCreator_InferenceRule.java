@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ArrayCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode type = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(arrayCreator, "dimensionExpression", true)).count(); i++) {
@@ -29,22 +28,18 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1209402739197", true), (SNode) type, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_vouny3_a0a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -21,61 +21,47 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AddContext_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddContext_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
   }
-
   public String getPresentation() {
     return "AddContext";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.AddContext_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "3462145372628250475");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddContext_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Inline Template with Context";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode tNode = SLinkOperations.getTarget(node, "templateNode", true);
       SLinkOperations.setTarget(node, "templateNode", null, true);
@@ -87,12 +73,10 @@ public class AddContext_Intention implements IntentionFactory {
       }
       EditingUtil.createTemplateFragment(tNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddContext_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_4m6r5j_a0a0d0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

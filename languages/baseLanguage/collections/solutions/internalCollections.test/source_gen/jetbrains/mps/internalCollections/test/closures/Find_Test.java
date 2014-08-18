@@ -19,7 +19,6 @@ public class Find_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -57,7 +56,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -87,7 +85,6 @@ __switch__:
     };
     Assert.assertSame(2, Sequence.fromIterable(test).findFirst(cl2));
   }
-
   public void test_mps10458() throws Exception {
     Assert.assertNull(Sequence.fromIterable(this.interfaces()).findFirst(new IWhereFilter<IInterface>() {
       public boolean accept(IInterface it) {
@@ -95,7 +92,6 @@ __switch__:
       }
     }));
   }
-
   public void test_anyAll() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -103,7 +99,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -141,7 +136,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -181,7 +175,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -235,10 +228,8 @@ __switch__:
       }
     }));
   }
-
   public Find_Test() {
   }
-
   public Iterable<IInterface> interfaces() {
     return null;
   }

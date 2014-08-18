@@ -32,71 +32,55 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateRootMappingRule> rootRules;
   private final TemplateModel myModel;
-
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0());
     rootRules = TemplateUtil.<TemplateRootMappingRule>asCollection(new Mappingmain.RootMappingRule0());
   }
-
   public String getName() {
     return "main";
   }
-
   public TemplateModel getModel() {
     return this.myModel;
   }
-
   public SNodeReference getMappingNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414084744");
   }
-
   public boolean isApplicable(ITemplateGenerator generator) {
     return true;
   }
-
   public Collection<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateRootMappingRule> getRootRules() {
     return rootRules;
   }
-
   public Collection<TemplateWeavingRule> getWeavingRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPostScripts() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPreScripts() {
     return Collections.emptySet();
   }
-
   public boolean isTopPriority() {
     return false;
   }
-
   public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
       super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086883"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
-
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_3893401255414132234(new ReductionRuleQueryContext(context, getRuleNode()));
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -104,39 +88,31 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return tlist1;
     }
   }
-
   public class RootMappingRule0 implements TemplateRootMappingRule {
     public RootMappingRule0() {
     }
-
     public SNodeReference getRuleNode() {
       return rootMappingRule_417xrn_a0a1r;
     }
-
     public boolean applyToInheritors() {
       return false;
     }
-
     public String getApplicableConcept() {
       return "jetbrains.mps.transformation.test.inputLang.structure.InputRoot";
     }
-
     public boolean keepSourceRoot() {
       return false;
     }
-
     public boolean isApplicable(TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
       if (!(QueriesGenerated.baseMappingRule_Condition_3893401255414129777(new MapRootRuleContext(context, getRuleNode())))) {
         return false;
       }
       return true;
     }
-
     public Collection<SNode> apply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
       Collection<SNode> result = new TemplateOutputRoot().apply(environment, context);
       return result;
     }
   }
-
   private static SNodePointer rootMappingRule_417xrn_a0a1r = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086885");
 }

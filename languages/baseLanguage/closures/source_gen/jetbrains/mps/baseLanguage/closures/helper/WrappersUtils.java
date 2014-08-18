@@ -43,7 +43,6 @@ public class WrappersUtils {
     }
     return resVdecls;
   }
-
   public static Map<SNode, Integer> collectVariableUsages(SNode start) {
     Map<SNode, Integer> resMap = MapSequence.fromMap(new HashMap<SNode, Integer>());
     Program prg = DataFlowManager.getInstance().buildProgramFor(start);
@@ -64,7 +63,6 @@ public class WrappersUtils {
     }
     return resMap;
   }
-
   public static List<SNode> collectVariableDeclarationsToWrap(SNode closure) {
     List<SNode> vdecls = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode desc : SNodeOperations.getDescendants(closure, null, false, new String[]{})) {

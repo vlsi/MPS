@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class XmlCommentLine_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public XmlCommentLine_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlCommentLine";

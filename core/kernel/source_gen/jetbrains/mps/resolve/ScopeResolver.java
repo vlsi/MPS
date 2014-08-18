@@ -21,10 +21,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ScopeResolver implements IResolver {
   private static final Logger LOG = LogManager.getLogger(ScopeResolver.class);
-
   public ScopeResolver() {
   }
-
   @Override
   public boolean resolve(@NotNull final SReference reference, @NotNull final SNode sourceNode, @NotNull final SRepository repository) {
     SNode linkDeclaration = BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(sourceNode), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{reference.getRole()});

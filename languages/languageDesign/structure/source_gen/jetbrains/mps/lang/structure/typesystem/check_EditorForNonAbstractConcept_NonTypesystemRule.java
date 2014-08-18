@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_EditorForNonAbstractConcept_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_EditorForNonAbstractConcept_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode conceptDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getBoolean(conceptDeclaration, "abstract")) {
       return;
@@ -53,18 +52,15 @@ public class check_EditorForNonAbstractConcept_NonTypesystemRule extends Abstrac
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportInfo(conceptDeclaration, "Editor for concept " + SPropertyOperations.getString(conceptDeclaration, "name") + " is not defined. Default editor will be used.", "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "2823239769520680200", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

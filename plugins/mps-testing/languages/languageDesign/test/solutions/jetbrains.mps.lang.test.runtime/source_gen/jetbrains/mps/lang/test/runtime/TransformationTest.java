@@ -7,11 +7,12 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public interface TransformationTest {
   public void setProject(Project project);
+  public void setTestRunner(TestRunner runner);
+  public TestRunner getTestRunner();
   public Project getProject();
   public void setModelDescriptor(SModel descriptor);
+  public void setTransientModelDescriptor(SModel descriptor);
   public SModel getModelDescriptor();
-  public void setTestRunner(TransformationTestRunner runner);
-  public TransformationTestRunner getTestRunner();
   public SModel getTransientModelDescriptor();
   public void init();
   public void dispose();

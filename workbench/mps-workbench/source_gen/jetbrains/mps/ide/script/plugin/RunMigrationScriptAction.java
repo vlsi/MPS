@@ -24,13 +24,11 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
   private List<SModel> myModels;
   private List<SModule> myModules;
   private Project myProject;
-
   public RunMigrationScriptAction(SNode script, String name, boolean applyToSelection) {
     super(name);
     myScript = script;
     myApplyToSelection = applyToSelection;
   }
-
   @Override
   protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
     SearchScope scope;
@@ -46,7 +44,6 @@ public class RunMigrationScriptAction extends BaseAction implements DumbAware {
     scripts.add(myScript);
     AbstractMigrationScriptHelper.doRunScripts(scripts, scope, myContext);
   }
-
   @Override
   protected boolean collectActionData(AnActionEvent e, Map<String, Object> _params) {
     if (!(super.collectActionData(e, _params))) {

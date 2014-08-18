@@ -6,7 +6,6 @@ package Samples;
 public class SidewaysIfSample {
   public SidewaysIfSample() {
   }
-
   public static void main(String[] args) {
     // This is a good old "if", just displayed differently on the screen 
     if (args.length > 1) {

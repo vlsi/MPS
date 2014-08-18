@@ -16,19 +16,16 @@ public class Model {
   public void model_long_name(SModel model) {
     String name = SModelOperations.getModelName(model);
   }
-
   public void new_node_1(SModel model) {
     SNode new_stmt = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNode new_class = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     SModelOperations.addRootNode(model, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null));
     SModelOperations.addRootNode(model, SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement")), null));
   }
-
   public void new_node_2(SModel model) {
     SNode named = SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SPropertyOperations.set(named, "name", "a");
   }
-
   public void roots_access_1(SModel model) {
     List<SNode> roots1 = SModelOperations.getRoots(model, null);
     SModelOperations.getRootsIncludingImported(model, null);
@@ -39,11 +36,9 @@ public class Model {
       }
     });
   }
-
   public void roots_access_2(SModel model) {
     SModelOperations.getRootsIncludingImported(model, "jetbrains.mps.baseLanguage.structure.IfStatement");
   }
-
   public void nodes_access_1(SModel model) {
     List<SNode> nodes1 = SModelOperations.getNodes(model, null);
     List<SNode> nodes2 = SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassConcept");

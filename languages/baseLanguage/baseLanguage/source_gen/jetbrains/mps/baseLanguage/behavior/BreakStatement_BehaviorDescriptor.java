@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BreakStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public BreakStatement_BehaviorDescriptor() {
   }
-
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return BreakStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BreakStatement";

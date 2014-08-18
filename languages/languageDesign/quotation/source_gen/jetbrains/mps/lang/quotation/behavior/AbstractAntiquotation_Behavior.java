@@ -11,19 +11,15 @@ import jetbrains.mps.scope.EmptyScope;
 public class AbstractAntiquotation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return 1;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return AbstractAntiquotation_Behavior.call_getScope_7939206742749757475(thisNode, kind);
   }
-
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return AbstractAntiquotation_Behavior.call_getScope_7939206742749757475(thisNode, kind);
   }
-
   public static Scope call_getScope_7939206742749757475(SNode thisNode, SNode kind) {
     SNode node = thisNode;
     int metaLevelChange = 0;

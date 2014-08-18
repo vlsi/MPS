@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BaseMappingRule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     sb.append(" ").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name"));
@@ -20,11 +19,9 @@ public class BaseMappingRule_Behavior {
     }
     return sb.toString();
   }
-
   public static SNode virtual_getTemplateType_1213877498511(SNode thisNode) {
     return null;
   }
-
   public static String call_getMappingLabelText_1213877498516(SNode thisNode) {
     String mappingLabel = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "labelDeclaration", false), "name");
     if (mappingLabel != null) {

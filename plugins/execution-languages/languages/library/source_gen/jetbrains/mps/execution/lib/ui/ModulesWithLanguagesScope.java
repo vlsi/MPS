@@ -17,12 +17,10 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 
 public class ModulesWithLanguagesScope extends FilteredScope {
   private Set<Language> requiredLanguages;
-
   public ModulesWithLanguagesScope(SearchScope innerScope, Iterable<Language> requiredLanguages) {
     super(innerScope);
     this.requiredLanguages = SetSequence.fromSetWithValues(new HashSet<Language>(), requiredLanguages);
   }
-
   @Override
   protected boolean acceptModel(SModel model) {
     if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(model))) {
@@ -30,7 +28,6 @@ public class ModulesWithLanguagesScope extends FilteredScope {
     }
     return acceptModule(model.getModule());
   }
-
   @Override
   protected boolean acceptModule(SModule module) {
     if (module instanceof TransientModelsModule || module instanceof Generator) {

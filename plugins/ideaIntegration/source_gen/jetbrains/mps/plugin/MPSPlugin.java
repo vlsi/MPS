@@ -19,10 +19,8 @@ public class MPSPlugin {
   private static MPSPlugin ourInstance;
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
-
   private MPSPlugin() {
   }
-
   @Deprecated
   public IProjectHandler getProjectHandler(Project project) {
     MPSPlugin.assertNotInEDT();
@@ -32,7 +30,6 @@ public class MPSPlugin {
     String projectPath = projectFile.getAbsolutePath();
     return getProjectHandler(projectPath);
   }
-
   public IProjectHandler getProjectHandler(String projectPath) {
     try {
       IMPSPlugin plugin = getPlugin();
@@ -44,7 +41,6 @@ public class MPSPlugin {
       return null;
     }
   }
-
   public boolean isIDEAPresent() {
     MPSPlugin.assertNotInEDT();
     try {
@@ -62,7 +58,6 @@ public class MPSPlugin {
       return false;
     }
   }
-
   public boolean openConnectionPresent() {
     MPSPlugin.assertNotInEDT();
     if (myPlugin == null) {
@@ -78,7 +73,6 @@ public class MPSPlugin {
     }
     return myPlugin != null;
   }
-
   private IMPSPlugin getPlugin() {
     try {
       myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
@@ -90,14 +84,12 @@ public class MPSPlugin {
     }
     return myPlugin;
   }
-
   public static MPSPlugin getInstance() {
     if (ourInstance == null) {
       ourInstance = new MPSPlugin();
     }
     return ourInstance;
   }
-
   private static void assertNotInEDT() {
     LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
   }

@@ -9,15 +9,12 @@ import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;
 
 public abstract class CustomAnalyzerRunner<E> extends AnalyzerRunner<E> {
   protected SNode myNode;
-
   public CustomAnalyzerRunner(Program program, DataFlowAnalyzer<E> analyzer) {
     super(program, analyzer);
   }
-
   public CustomAnalyzerRunner() {
     super(null, null);
   }
-
   public Program getProgram() {
     return myProgram;
   }

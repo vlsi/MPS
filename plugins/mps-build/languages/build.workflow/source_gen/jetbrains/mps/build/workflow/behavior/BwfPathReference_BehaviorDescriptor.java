@@ -7,7 +7,6 @@ import jetbrains.mps.core.xml.behavior.XmlBaseElement_BehaviorDescriptor;
 public class BwfPathReference_BehaviorDescriptor extends XmlBaseElement_BehaviorDescriptor {
   public BwfPathReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfPathReference";

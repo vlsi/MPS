@@ -7,7 +7,6 @@ public class BitemporalCollectionSuperclassTester extends TemporalCollectionTest
   public BitemporalCollectionSuperclassTester(String name) {
     super(name);
   }
-
   @Override
   protected void createSubject() {
     mySubject = new BitemporalCollection();

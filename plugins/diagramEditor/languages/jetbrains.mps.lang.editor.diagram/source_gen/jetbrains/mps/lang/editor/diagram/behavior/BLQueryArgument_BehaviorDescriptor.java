@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 public class BLQueryArgument_BehaviorDescriptor extends AbstractArgument_BehaviorDescriptor {
   public BLQueryArgument_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument";

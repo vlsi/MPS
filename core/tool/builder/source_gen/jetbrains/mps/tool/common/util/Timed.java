@@ -20,32 +20,26 @@ import java.util.concurrent.TimeUnit;
   /*package*/ int myAccessCount;
   protected T myT;
   /*package*/ boolean myPolled;
-
   public Timed() {
   }
-
   public void dispose() {
     final Object t = myT;
     myT = null;
     remove();
   }
-
   protected final void poll() {
     if (!(myPolled)) {
       ourReferences.put(this, Boolean.TRUE);
       myPolled = true;
     }
   }
-
   protected final void remove() {
     ourReferences.remove(this);
     myPolled = false;
   }
-
   protected boolean isLocked() {
     return false;
   }
-
   /*package*/ static void disposeTimed() {
     final Timed[] references = ourReferences.keySet().toArray(new Timed[ourReferences.size()]);
     for (Timed timed : references) {
@@ -61,7 +55,6 @@ import java.util.concurrent.TimeUnit;
       }
     }
   }
-
   static {
     ScheduledExecutorService service = ConcurrencyUtil.newSingleScheduledThreadExecutor("timed reference disposer", Thread.MIN_PRIORITY + 1);
     service.scheduleWithFixedDelay(new Runnable() {

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildFileExcludeSelector_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildFileExcludeSelector_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode ex, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (isNotEmptyString(SPropertyOperations.getString(ex, "pattern")) && (SPropertyOperations.getString(ex, "pattern").contains(" ") || SPropertyOperations.getString(ex, "pattern").contains("\t") || SPropertyOperations.getString(ex, "pattern").contains(","))) {
       {
@@ -27,22 +26,18 @@ public class check_BuildFileExcludeSelector_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildFileExcludeSelector";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

@@ -29,11 +29,9 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_o92gz8_a(editorContext, node);
   }
-
   private EditorCell createCollection_o92gz8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o92gz8_a");
@@ -43,7 +41,6 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_o92gz8_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_o92gz8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can:");
     editorCell.setCellId("Constant_o92gz8_a0");
@@ -53,7 +50,6 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_o92gz8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o92gz8_b0");
@@ -69,12 +65,10 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createIndentCell_o92gz8_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createConstant_o92gz8_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "run");
     editorCell.setCellId("Constant_o92gz8_b1a");
@@ -85,24 +79,19 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_o92gz8_a1b0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "canRun");
   }
-
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b1a() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (false));
     }
-
     public String getMatchingText() {
       return "can't run";
     }
   }
-
   private EditorCell createConstant_o92gz8_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't run");
     editorCell.setCellId("Constant_o92gz8_c1a");
@@ -113,31 +102,25 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_o92gz8_a2b0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "canRun"));
   }
-
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0c1a() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canRun", "" + (true));
     }
-
     public String getMatchingText() {
       return "run";
     }
   }
-
   private EditorCell createConstant_o92gz8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_o92gz8_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_o92gz8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_o92gz8_d0");
@@ -152,7 +135,6 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_o92gz8_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debug");
     editorCell.setCellId("Constant_o92gz8_a3a");
@@ -163,24 +145,19 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_o92gz8_a0d0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "canDebug");
   }
-
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0a3a() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canDebug", "" + (false));
     }
-
     public String getMatchingText() {
       return "can't debug";
     }
   }
-
   private EditorCell createConstant_o92gz8_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can't debug");
     editorCell.setCellId("Constant_o92gz8_b3a");
@@ -191,19 +168,15 @@ public class SimpleCanRunAndDebug implements ConceptEditorComponent {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SimpleCanRunAndDebug.RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "canDebug"));
   }
-
   public static class RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a extends AbstractCellMenuPart_Generic_Item {
     public RunConfigurationExecutor_generic_cellMenu_o92gz8_a0b3a() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "canDebug", "" + (true));
     }
-
     public String getMatchingText() {
       return "debug";
     }

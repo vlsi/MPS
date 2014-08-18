@@ -11,20 +11,16 @@ public class SmartWrapper<T> {
   private static Map<String, String> WRAPPERS_CACHE = MapSequence.fromMap(new HashMap<String, String>());
   private static Pattern PATTERN = Pattern.compile(".+\\.(.+)$");
   private final T towrap;
-
   public SmartWrapper(T towrap) {
     this.towrap = towrap;
   }
-
   public T unwrap() {
     return towrap;
   }
-
   @Override
   public String toString() {
     return this.getWrapperName() + "[" + towrap + "]";
   }
-
   private String getWrapperName() {
     String name = getClass().getName();
     if (MapSequence.fromMap(WRAPPERS_CACHE).containsKey(name)) {
@@ -35,7 +31,6 @@ public class SmartWrapper<T> {
     MapSequence.fromMap(WRAPPERS_CACHE).put(name, toCache);
     return toCache;
   }
-
   @Override
   @SuppressWarnings(value = {"unchecked"})
   public boolean equals(Object that) {
@@ -47,14 +42,12 @@ public class SmartWrapper<T> {
     }
     return eq_awov2t_a0c0h(this.towrap, ((SmartWrapper) that).towrap);
   }
-
   @Override
   public int hashCode() {
     int h = 17;
     h *= (towrap != null ? towrap.hashCode() : 31);
     return h;
   }
-
   private static boolean eq_awov2t_a0c0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -23,11 +23,9 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_yczb8_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yczb8_a(editorContext, node);
   }
-
   private EditorCell createConstant_yczb8_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$image$");
     editorCell.setCellId("Constant_yczb8_a");
@@ -38,7 +36,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_yczb8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yczb8_a");
@@ -53,12 +50,10 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_yczb8_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_yczb8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;
   }
-
   private EditorCell createConstant_yczb8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_yczb8_b0");
@@ -68,7 +63,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_yczb8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Image cell:");
     editorCell.setCellId("Constant_yczb8_c0");
@@ -78,7 +72,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_yczb8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_yczb8_d0");
@@ -90,7 +83,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_yczb8_c3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_yczb8_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_a3a");
@@ -102,7 +94,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_yczb8_b0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_yczb8_a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "image provider : ");
     editorCell.setCellId("Constant_yczb8_a0d0");
@@ -112,7 +103,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_yczb8_b0d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("imagePathProvider");
@@ -132,7 +122,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_yczb8_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_b3a");
@@ -144,7 +133,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_yczb8_b1d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_yczb8_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "image file : ");
     editorCell.setCellId("Constant_yczb8_a1d0");
@@ -154,7 +142,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_yczb8_b1d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_b1d0");
@@ -166,7 +153,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createJComponent_yczb8_b1b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_yczb8_a1b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("imageFile");
@@ -188,7 +174,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createJComponent_yczb8_b1b3a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CellModel_Image_Editor._QueryFunction_JComponent_yczb8_a1b1d0(node, editorContext), "_yczb8_b1b3a");
     editorCell.setCellId("JComponent_yczb8_b1b3a");
@@ -197,11 +182,9 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_yczb8_a1b1d0(final SNode node, final EditorContext editorContext) {
     return new SelectImageFileButton(node);
   }
-
   private EditorCell createCollection_yczb8_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_yczb8_c3a");
@@ -213,7 +196,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_yczb8_b2d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_yczb8_a2d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "descent :");
     editorCell.setCellId("Constant_yczb8_a2d0");
@@ -223,7 +205,6 @@ public class CellModel_Image_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_yczb8_b2d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("descent");

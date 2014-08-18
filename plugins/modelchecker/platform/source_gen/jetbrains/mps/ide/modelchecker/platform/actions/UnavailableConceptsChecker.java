@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, SRepository repository) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());

@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class AppendTextOperation_BehaviorDescriptor extends AbstractStyledTextOperation_BehaviorDescriptor {
   public AppendTextOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
     return AppendTextOperation_Behavior.virtual_getMethodToGenerate_1262430001741492328(thisConcept);
   }
-
   public List<SNode> virtual_getOperationArgumentType_6575219246652510406(SConcept thisConcept) {
     return AppendTextOperation_Behavior.virtual_getOperationArgumentType_6575219246652510406(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AppendTextOperation";

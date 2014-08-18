@@ -18,7 +18,6 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 public class InternalAnonymousClassCreator_DataFlow extends DataFlowBuilder {
   public InternalAnonymousClassCreator_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     List<SNode> methods = SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, new String[]{});
     Set<SNode> vars = SetSequence.fromSet(new HashSet<SNode>());

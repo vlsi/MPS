@@ -11,10 +11,8 @@ import java.util.Collections;
 public class SingleTemporalCollection implements TemporalCollection {
   private Map myContents = new HashMap();
   private List myMilestoneCache;
-
   public SingleTemporalCollection() {
   }
-
   @Override
   public Object get(MfDate when) {
     for (Object o : milestones()) {
@@ -25,45 +23,37 @@ public class SingleTemporalCollection implements TemporalCollection {
     }
     throw new IllegalArgumentException("no records that early");
   }
-
   @Override
   public void put(MfDate at, Object item) {
     myContents.put(at, item);
     clearMilestoneCache();
   }
-
   private List milestones() {
     if (myMilestoneCache == null) {
       calculateMilestones();
     }
     return myMilestoneCache;
   }
-
   private void calculateMilestones() {
     myMilestoneCache = new ArrayList(myContents.size());
     myMilestoneCache.addAll(myContents.keySet());
     Collections.sort(myMilestoneCache, Collections.reverseOrder());
   }
-
   private void clearMilestoneCache() {
     myMilestoneCache = null;
   }
-
   @Override
   public Object get(int year, int month, int date) {
     return get(new MfDate(year, month, date));
   }
-
   @Override
   public Object get() {
     return get(MfDate.today());
   }
-
   @Override
   public void put(Object item) {
     put(MfDate.today(), item);
   }
-
   public TemporalCollection copy() {
     SingleTemporalCollection result = new SingleTemporalCollection();
     result.myContents.putAll(this.myContents);

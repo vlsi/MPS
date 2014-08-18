@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class ClassRefactoringUtils {
   public ClassRefactoringUtils() {
   }
-
   public static Set<SNode> getClassMemberRefernce(SNode body) {
     Set<SNode> nodesToCheck = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode call : ListSequence.fromList(SNodeOperations.getDescendants(body, null, false, new String[]{}))) {

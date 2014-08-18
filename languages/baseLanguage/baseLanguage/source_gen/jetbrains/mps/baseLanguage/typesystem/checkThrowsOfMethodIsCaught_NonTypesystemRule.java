@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkThrowsOfMethodIsCaught_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SNodeOperations.getAncestor(methodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false) == null)) {
       return;
@@ -29,18 +28,15 @@ public class checkThrowsOfMethodIsCaught_NonTypesystemRule extends AbstractNonTy
     Set<SNode> throwables = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "throwsItem", true));
     RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, methodCall);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

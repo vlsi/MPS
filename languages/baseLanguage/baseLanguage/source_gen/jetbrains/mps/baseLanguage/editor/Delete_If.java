@@ -13,34 +13,26 @@ public class Delete_If {
     editorCell.setAction(CellActionType.DELETE, new Delete_If.Delete_If_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new Delete_If.Delete_If_BACKSPACE(node));
   }
-
   public static class Delete_If_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_If_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       DeleteIfUtil.unwrapIf(node);
     }
   }
-
   public static class Delete_If_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_If_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       DeleteIfUtil.unwrapIf(node);
     }

@@ -16,7 +16,6 @@ public class TemplateArgumentQueryExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ckxqdd_a(editorContext, node);
   }
-
   private EditorCell createCollection_ckxqdd_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ckxqdd_a");
@@ -25,7 +24,6 @@ public class TemplateArgumentQueryExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ckxqdd_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ckxqdd_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");

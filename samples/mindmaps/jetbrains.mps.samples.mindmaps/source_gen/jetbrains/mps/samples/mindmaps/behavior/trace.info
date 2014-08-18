@@ -2,25 +2,25 @@
 <debug-info>
   <root>
     <file name="Thought_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.samples.mindmaps.behavior.Thought_BehaviorDescriptor" />
     </file>
     <file name="MindMap_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.mindmaps.behavior.MindMap_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.mindmaps.behavior.MindMap_BehaviorDescriptor" />
     </file>
     <file name="Specializes_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.mindmaps.behavior.Specializes_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.mindmaps.behavior.Specializes_BehaviorDescriptor" />
     </file>
     <file name="VisualBox_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.mindmaps.behavior.VisualBox_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.mindmaps.behavior.VisualBox_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.samples.mindmaps.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,30,0" name="jetbrains.mps.samples.mindmaps.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Relationship_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.samples.mindmaps.behavior.Relationship_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.samples.mindmaps.behavior.Relationship_BehaviorDescriptor" />
     </file>
     <file name="CoreThrought_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.samples.mindmaps.behavior.CoreThrought_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.samples.mindmaps.behavior.CoreThrought_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

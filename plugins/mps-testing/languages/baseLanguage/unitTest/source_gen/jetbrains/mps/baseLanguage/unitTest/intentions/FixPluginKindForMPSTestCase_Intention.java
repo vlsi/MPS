@@ -16,74 +16,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class FixPluginKindForMPSTestCase_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public FixPluginKindForMPSTestCase_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase";
   }
-
   public String getPresentation() {
     return "FixPluginKindForMPSTestCase";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions.FixPluginKindForMPSTestCase_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.unitTest";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(CheckUtils.checkPluginKindForMPSTestCase(node));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "8797237962361678880");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FixPluginKindForMPSTestCase_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Fix plugin kind for module (mps testcases should be in plugin solutions)";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (!(CheckUtils.fixPluginKindForMPSTestCase(node))) {
         // todo: ? 
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return FixPluginKindForMPSTestCase_Intention.this;
     }

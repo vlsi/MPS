@@ -17,72 +17,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class addHandler_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public addHandler_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule";
   }
-
   public String getPresentation() {
     return "addHandler";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.core.xml.sax.intentions.addHandler_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.core.xml.sax";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "handler", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)", "2264311582634140824");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new addHandler_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add handler";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.setTarget(node, "handler", SNodeFactoryOperations.createNewNode("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler", null), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return addHandler_Intention.this;
     }

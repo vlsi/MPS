@@ -32,18 +32,15 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   public JavaClassStubsModelRoot() {
     super();
   }
-
   @Override
   public String getType() {
     return JavaClassStubConstants.STUB_TYPE;
   }
-
   @Override
   public SModel getModel(SModelId id) {
     // todo implement 
     return null;
   }
-
   @Override
   public void load(Memento memento) {
     super.load(memento);
@@ -59,7 +56,6 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
     List<String> files = filesForKind.get(SOURCE_ROOTS);
     files.add(memento.get("path"));
   }
-
   @Override
   public Iterable<SModel> loadModels() {
     final List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
@@ -102,7 +98,6 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
 
     return result;
   }
-
   private void collectJarFiles(final IFile file, Collection<String> excluded, Set<IFile> files) {
     if (CollectionSequence.fromCollection(excluded).contains(file.getPath())) {
       return;
@@ -118,22 +113,18 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       collectJarFiles(child, excluded, files);
     }
   }
-
   @Override
   public boolean canCreateModels() {
     return false;
   }
-
   @Override
   public boolean canCreateModel(String string) {
     return false;
   }
-
   @Override
   public SModel createModel(String string) {
     return null;
   }
-
   public void getModelDescriptors(final List<SModel> result, IFile file, String prefix, String languageId, SModule module) {
     List<IFile> children = file.getChildren();
     for (IFile subdir : ListSequence.fromList(children).where(new IWhereFilter<IFile>() {
@@ -180,11 +171,9 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       getModelDescriptors(result, subdir, pack, languageId, module);
     }
   }
-
   private static boolean eq_jzcn2m_a0a0a0a3a1a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_jzcn2m_a0a5a1a9(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

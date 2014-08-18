@@ -13,18 +13,15 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class StringLiteralRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text"));
   }
-
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
     if (isEmptyString(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return StringLiteralRegexp_Behavior.call_toRegexp_8330008649152995372(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
   }
-
   public static String call_toRegexp_8330008649152995372(SNode thisNode, String s) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
@@ -79,11 +76,9 @@ public class StringLiteralRegexp_Behavior {
     }
     return sb.toString();
   }
-
   public static boolean call_isHexChar_8949395081772969908(SAbstractConcept thisConcept, char c) {
     return Character.isDigit(c) || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

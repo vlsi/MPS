@@ -32,12 +32,10 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
   public EditorExpression_Constraints() {
     super("jetbrains.mps.execution.settings.structure.EditorExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -48,7 +46,6 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -57,7 +54,6 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -70,7 +66,6 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_lq9qwe_a0a1a0a0a1a0b0a1a3;
@@ -80,18 +75,15 @@ public class EditorExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", true, false) != null);
   }
-
   private static SNode _quotation_createNode_lq9qwe_b0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "5365453833390602832");
   private static SNodePointer breakingNode_lq9qwe_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067130");
 }

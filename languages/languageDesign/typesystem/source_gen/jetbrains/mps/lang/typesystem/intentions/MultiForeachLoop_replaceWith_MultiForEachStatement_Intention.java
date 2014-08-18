@@ -27,61 +27,47 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MultiForeachLoop_replaceWith_MultiForEachStatement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.MultipleForeachLoop";
   }
-
   public String getPresentation() {
     return "MultiForeachLoop_replaceWith_MultiForEachStatement";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.typesystem.intentions.MultiForeachLoop_replaceWith_MultiForEachStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.typesystem";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "8293956702610699517");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace with foreach from collections language";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       final List<SNode> mfps = ListSequence.fromList(SLinkOperations.getTargets(node, "loopVariable", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode lv) {
@@ -108,12 +94,10 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
         }
       });
     }
-
     public IntentionDescriptor getDescriptor() {
       return MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_kx76k7_a0a0a0a0a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -129,7 +113,6 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_kx76k7_a0a0b0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -150,7 +133,6 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_kx76k7_a0a0a0a0d0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

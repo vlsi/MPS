@@ -24,19 +24,16 @@ import org.apache.log4j.LogManager;
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
   private String savedText;
-
   public GoToRootNode_Action(String savedText_par) {
     super("Go to Root Node", "", ICON);
     this.savedText = savedText_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class GoToRootNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
@@ -63,7 +59,6 @@ public class GoToRootNode_Action extends BaseAction {
         public void onClose() {
           GoToRootNode_Action.this.savedText = popup.getEnteredText();
         }
-
         @Override
         public void elementChosen(Object element) {
           ((NavigationItem) element).navigate(true);
@@ -75,7 +70,6 @@ public class GoToRootNode_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -85,10 +79,8 @@ public class GoToRootNode_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String savedText_State(String object) {
     return "";
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToRootNode_Action.class);
 }

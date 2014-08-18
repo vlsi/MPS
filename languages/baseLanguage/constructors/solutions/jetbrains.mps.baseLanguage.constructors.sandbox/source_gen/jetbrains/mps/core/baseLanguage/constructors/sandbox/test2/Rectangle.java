@@ -8,11 +8,9 @@ import java.awt.geom.Rectangle2D;
 public class Rectangle {
   public Rectangle() {
   }
-
   public static Point2D Point(double x, double y) {
     return new Point2D.Double(x, y);
   }
-
   public static Rectangle2D Rectangle(Point2D topleft, Point2D bottomright) {
     double x = topleft.getX();
     double y = topleft.getY();

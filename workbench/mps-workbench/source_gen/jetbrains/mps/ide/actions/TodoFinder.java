@@ -19,7 +19,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 public class TodoFinder implements IFinder {
   public TodoFinder() {
   }
-
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     Set<SNode> nodes = (Set<SNode>) FindUsagesFacade.getInstance().findInstances(query.getScope(), Collections.singleton(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.TextCommentPart")), false, new EmptyProgressMonitor());

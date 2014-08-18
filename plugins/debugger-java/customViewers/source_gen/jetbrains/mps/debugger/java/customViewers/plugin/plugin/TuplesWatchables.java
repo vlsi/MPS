@@ -9,14 +9,11 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 public class TuplesWatchables {
   public TuplesWatchables() {
   }
-
   public static class MyWatchable_element extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("element");
-
     public MyWatchable_element(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }

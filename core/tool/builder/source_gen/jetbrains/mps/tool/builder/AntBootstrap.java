@@ -15,10 +15,8 @@ public class AntBootstrap {
     // This is a temporary workaround for classloading loop problem 
     LogManager.exists("testLog");
   }
-
   public AntBootstrap() {
   }
-
   public static void main(String[] args) {
     //     System.setProperty(ClassloaderUtil.PROPERTY_IGNORE_CLASSPATH, ".*trove4j.*trove4j.*\\.jar"); 
     RuntimeFlags.setUseIOFile(true);

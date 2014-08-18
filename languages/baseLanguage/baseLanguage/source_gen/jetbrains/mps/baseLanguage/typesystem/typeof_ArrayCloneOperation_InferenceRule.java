@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ArrayCloneOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ArrayCloneOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode arrayCloneOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = arrayCloneOperation;
@@ -23,18 +22,15 @@ public class typeof_ArrayCloneOperation_InferenceRule extends AbstractInferenceR
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950462112", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(arrayCloneOperation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5205855332950472833", true), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCloneOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

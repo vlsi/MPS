@@ -14,7 +14,6 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
   public RegexpDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
@@ -32,7 +30,6 @@ public class RegexpDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

@@ -7,12 +7,9 @@ import java.util.HashMap;
 
 public abstract class SimpleCache<K, V> {
   private Map<K, V> cache = new HashMap<K, V>();
-
   public SimpleCache() {
   }
-
   protected abstract V innerGet(K key);
-
   public final V get(K key) {
     if (cache.containsKey(key)) {
       return cache.get(key);

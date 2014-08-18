@@ -28,8 +28,6 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
   public JavaStubNavigationContributor() {
   }
 
-
-
   @Override
   public void findTargets(NavigationParticipant.TargetKind kind, Collection<SModel> scope, Consumer<NavigationParticipant.NavigationTarget> consumer, Consumer<SModel> processedConsumer) {
     for (SModel model : scope) {
@@ -65,8 +63,6 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
     }
   }
 
-
-
   public static void iterateClassPath(final SModuleReference module, final IClassPathItem item, Consumer<NavigationParticipant.NavigationTarget> consumer, final String pName) {
     final org.jetbrains.mps.openapi.model.SModelReference model = StubHelper.uidForPackageInStubs(pName, LanguageID.JAVA, module, false);
     for (final String cls : item.getRootClasses(pName)) {
@@ -76,17 +72,14 @@ public class JavaStubNavigationContributor implements NavigationParticipant, App
       iterateClassPath(module, item, consumer, subpack);
     }
   }
-
   @Override
   public void initComponent() {
     PersistenceFacade.getInstance().addNavigationParticipant(this);
   }
-
   @Override
   public void disposeComponent() {
     PersistenceFacade.getInstance().removeNavigationParticipant(this);
   }
-
   @NonNls
   @NotNull
   @Override

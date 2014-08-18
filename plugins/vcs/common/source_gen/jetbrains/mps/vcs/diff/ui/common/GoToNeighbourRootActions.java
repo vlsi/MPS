@@ -20,65 +20,49 @@ public abstract class GoToNeighbourRootActions {
   public static final ShortcutSet PREV_ROOT_SHORTCUT = CustomShortcutSet.fromString("control LEFT");
   public static final ShortcutSet NEXT_ROOT_SHORTCUT = CustomShortcutSet.fromString("control RIGHT");
   private BaseAction[] myActions;
-
   public GoToNeighbourRootActions() {
     myActions = new BaseAction[]{new GoToNeighbourRootActions.TheAction(false), new GoToNeighbourRootActions.TheAction(true)};
   }
-
   protected abstract boolean hasNeighbour(boolean next);
-
   protected abstract void goToNeighbour(boolean next);
-
   public final BaseAction previous() {
     return myActions[0];
   }
-
   public final BaseAction next() {
     return myActions[1];
   }
-
   public BaseAction[] getActions() {
     return myActions;
   }
-
   private class TheAction extends BaseAction implements DumbAware {
     private boolean myNext;
-
     public TheAction(boolean next) {
       super("Go to " + ((next ? "Next" : "Previous")) + " Root", null, (next ? GoToNeighbourRootActions.NEXT_ROOT_ICON : GoToNeighbourRootActions.PREVIOUS_ROOT_ICON));
       setDisableOnNoProject(false);
       setExecuteOutsideCommand(true);
       myNext = next;
     }
-
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       goToNeighbour(myNext);
     }
-
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       setEnabledState(event.getPresentation(), hasNeighbour(myNext));
     }
   }
-
   public static abstract class GoToByTree extends GoToNeighbourRootActions {
     private DiffModelTree myTree;
-
     public GoToByTree(@NotNull DiffModelTree tree) {
       myTree = tree;
     }
-
     @Nullable
     protected abstract SNodeId getCurrentNodeId();
-
     public abstract void setCurrentNodeId(@Nullable SNodeId nodeId);
-
     @Override
     protected boolean hasNeighbour(boolean next) {
       return myTree.hasNeighbour(getCurrentNodeId(), next);
     }
-
     @Override
     protected void goToNeighbour(boolean next) {
       SNodeId nodeId = myTree.getNeighbourRoot(getCurrentNodeId(), next);

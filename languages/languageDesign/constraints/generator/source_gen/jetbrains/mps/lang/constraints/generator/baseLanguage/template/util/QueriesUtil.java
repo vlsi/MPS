@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class QueriesUtil {
   public QueriesUtil() {
   }
-
   public static SNode get_registerSelf_body(SNode clazz) {
     SNode regiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -21,7 +20,6 @@ public class QueriesUtil {
     }).first();
     return SLinkOperations.getTarget(regiserSelfMethod, "body", true);
   }
-
   public static SNode get_unRegisterSelf_body(SNode clazz) {
     SNode unRegiserSelfMethod = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(clazz)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

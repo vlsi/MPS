@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowBookmarks_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowBookmarks_Action() {
     super("Bookmarks...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -39,7 +36,6 @@ public class ShowBookmarks_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -50,7 +46,6 @@ public class ShowBookmarks_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(BookmarksTool.class).openTool(true);
@@ -60,6 +55,5 @@ public class ShowBookmarks_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowBookmarks_Action.class);
 }

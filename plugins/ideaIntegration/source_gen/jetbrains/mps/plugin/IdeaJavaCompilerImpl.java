@@ -22,11 +22,9 @@ import java.rmi.RemoteException;
 public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler {
   private final Project myProject;
   private IProjectHandler myIdeaProjectHandler;
-
   public IdeaJavaCompilerImpl(Project project) {
     myProject = project;
   }
-
   @Override
   public void projectOpened() {
     new Thread(new Runnable() {
@@ -36,31 +34,25 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
       }
     }).start();
   }
-
   @Override
   public void projectClosed() {
     myIdeaProjectHandler = null;
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "IDEA Java Compiler";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @Override
   public boolean isValid() {
     return !(RuntimeFlags.isTestMode()) && myIdeaProjectHandler != null;
   }
-
   @Override
   public MPSCompilationResult compileModules(SModule[] modules) {
     if (!(isValid())) {
@@ -82,7 +74,6 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
     }
     return null;
   }
-
   private IProjectHandler getIdeaProjectHandler() {
     if (RuntimeFlags.isTestMode()) {
       return null;

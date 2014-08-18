@@ -15,12 +15,10 @@ public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor 
   public IntentionDeclaration_Constraints() {
     super("jetbrains.mps.lang.intentions.structure.IntentionDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -31,10 +29,8 @@ public class IntentionDeclaration_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.INTENTIONS.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)", "1227089959348");
 }

@@ -15,25 +15,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AbstractEquation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AbstractEquation_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode abstractEquationStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(RulesUtil.withinInferenceItem(abstractEquationStatement))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(abstractEquationStatement, "type equations should be used only within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1195217401619", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

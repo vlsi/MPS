@@ -23,7 +23,6 @@ public class TemplateParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pth000_a(editorContext, node);
   }
-
   private EditorCell createCollection_pth000_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pth000_a");
@@ -33,7 +32,6 @@ public class TemplateParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_pth000_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_pth000_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -54,14 +52,12 @@ public class TemplateParameterDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pth000_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_pth000_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pth000_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");

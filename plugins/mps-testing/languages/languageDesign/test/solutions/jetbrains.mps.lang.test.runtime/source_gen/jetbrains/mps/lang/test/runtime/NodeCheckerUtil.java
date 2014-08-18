@@ -11,31 +11,23 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class NodeCheckerUtil {
 
-
   public static String nodeWithIdToString(final SNode node) {
     return node + " [" + node.getNodeId() + "]";
   }
-
-
 
   public static void assertTypesAreTheSame(SNode node, final SNode type1, final SNode type2) {
     String errorString = "node '" + nodeWithIdToString(node) + "' does not have type '" + nodeWithIdToString(type2) + "'!";
     Assert.assertNull(errorString, NodesMatcher.matchNodes(type1, type2));
   }
 
-
-
   public static SNode getRuleNodeFromReporter(IErrorReporter reporter) {
     SNodePointer ref = new SNodePointer(reporter.getRuleModel(), reporter.getRuleId());
     return ref.resolve(MPSModuleRepository.getInstance());
   }
 
-
-
   public static void checkNodeForErrorMessages(final SNode node, final boolean allowErrors, final boolean allowWarnings) {
     Runnable checkErrorsAction = new CheckErrorMessagesAction(node, allowWarnings, allowErrors);
     checkErrorsAction.run();
   }
-
 
 }

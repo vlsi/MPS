@@ -25,7 +25,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bblft7_a(editorContext, node);
   }
-
   private EditorCell createCollection_bblft7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bblft7_a");
@@ -43,7 +42,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bblft7_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_bblft7_a0");
@@ -53,7 +51,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bblft7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fieldType");
@@ -73,7 +70,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_bblft7_c0");
@@ -83,7 +79,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bblft7_d0");
@@ -93,7 +88,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_bblft7_e0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bblft7_e0");
@@ -105,11 +99,9 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bblft7_c4a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_bblft7_a4a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "instance", true) != null;
   }
-
   private EditorCell createConstant_bblft7_a4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_bblft7_a4a");
@@ -119,7 +111,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bblft7_b4a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instanceType");
@@ -139,7 +130,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_c4a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_bblft7_c4a");
@@ -150,7 +140,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bblft7_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("instance");
@@ -173,7 +162,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_bblft7_g0");
@@ -183,7 +171,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_bblft7_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fieldName");
@@ -204,7 +191,6 @@ public class InternalPartialFieldReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bblft7_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bblft7_i0");

@@ -20,7 +20,6 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
   public TestCaseRef_Constraints() {
     super("jetbrains.mps.testbench.suite.structure.TestCaseRef");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -29,7 +28,6 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -38,7 +36,6 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ModelAndImportedModelsScope(_context.getModel(), true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_d3a0zo_a0a1a0a0a1a0b0a1a1;
@@ -48,6 +45,5 @@ public class TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_d3a0zo_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199519459");
 }

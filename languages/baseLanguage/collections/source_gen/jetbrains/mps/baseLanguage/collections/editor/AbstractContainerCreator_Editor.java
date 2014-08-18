@@ -12,7 +12,6 @@ public class AbstractContainerCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_8tcnfj_a(editorContext, node);
   }
-
   private EditorCell createComponent_8tcnfj_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.collections.editor.AbstractContainerCreator_Component");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

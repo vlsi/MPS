@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public anonymousClassExtendsItsClassifier_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     {
@@ -39,22 +38,18 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_r0kks7_a0a0a0a2a1a1a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

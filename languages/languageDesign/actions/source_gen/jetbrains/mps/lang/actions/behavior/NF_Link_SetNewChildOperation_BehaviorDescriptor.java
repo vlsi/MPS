@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NF_Link_SetNewChildOperation_BehaviorDescriptor extends Link_SetNewChildOperation_BehaviorDescriptor {
   public NF_Link_SetNewChildOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return NF_Link_SetNewChildOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Link_SetNewChildOperation";

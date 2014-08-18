@@ -18,13 +18,11 @@ public class Concat_Test extends Util_Test {
     ISequence<Integer> test = input.concat(Sequence.fromArray(4, 5, 6));
     this.assertIterableEquals(Arrays.asList(1, 2, 3, 4, 5, 6), test);
   }
-
   public void test_concatOperation() throws Exception {
     Iterable<Integer> input = this.input5();
     Iterable<Integer> test = Sequence.fromIterable(input).concat(ListSequence.fromList(Arrays.asList(6, 7, 8, 9, 10)));
     this.assertIterableEquals(this.expect10(), test);
   }
-
   public void test_concatOpCovariant() throws Exception {
     Foo foo1 = new Foo();
     Foo foo2 = new Foo();
@@ -34,7 +32,6 @@ public class Concat_Test extends Util_Test {
     Iterable<Foo> res = Sequence.fromIterable(head).concat(Sequence.fromIterable(tail));
     assertIterableEquals(Sequence.fromArray(new Foo[]{foo1, foo2, bar1}), res);
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3)).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 4, 5))).iterator();
     Assert.assertSame(1, it.next());

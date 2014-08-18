@@ -28,13 +28,11 @@ public class LocalVariableIntroducer {
   private IntroduceLocalVariableRefactoring myRefactoring;
   private EditorComponent myEditorComponent;
   private EditorContext myEditorContext;
-
   public LocalVariableIntroducer(Frame frame, IntroduceLocalVariableRefactoring refactoring, EditorComponent editorComponent, EditorContext editorContext) {
     myRefactoring = refactoring;
     myEditorComponent = editorComponent;
     myEditorContext = editorContext;
   }
-
   public void invoke(DataContext dataContext) {
     if (myRefactoring.hasDuplicates()) {
       AnAction thisOnly = new AnAction("Replace this occurence only") {
@@ -57,7 +55,6 @@ public class LocalVariableIntroducer {
       execute();
     }
   }
-
   private void execute() {
     myRefactoring.setIsFinal(false);
     myRefactoring.setName(ListSequence.fromList(myRefactoring.getExpectedNames()).first());
@@ -80,7 +77,6 @@ public class LocalVariableIntroducer {
       }
     }
   }
-
   private RelativePoint getRelativePoint() {
     EditorCell cell = myEditorContext.getContextCell();
     return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getY()));

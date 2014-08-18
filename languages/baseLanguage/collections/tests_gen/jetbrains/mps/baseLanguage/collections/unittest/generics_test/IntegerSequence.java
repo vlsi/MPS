@@ -5,10 +5,8 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
 
 /*package*/ class IntegerSequence extends MySequence<Integer> {
   /*package*/ int myCount = -1;
-
   /*package*/ IntegerSequence() {
   }
-
   @Override
   /*package*/ Integer getNext() {
     if (this.myCount < 5) {

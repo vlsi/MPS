@@ -12,23 +12,18 @@ import java.util.List;
 public abstract class AbstractConceptDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
   public AbstractConceptDeclaration_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
-
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
-
   public abstract List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode);
 }

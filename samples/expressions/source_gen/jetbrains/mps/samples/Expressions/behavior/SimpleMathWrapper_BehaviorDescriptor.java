@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class SimpleMathWrapper_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public SimpleMathWrapper_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper";

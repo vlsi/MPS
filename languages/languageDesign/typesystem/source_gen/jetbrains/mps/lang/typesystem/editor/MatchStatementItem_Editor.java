@@ -22,7 +22,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nahhdz_a(editorContext, node);
   }
-
   private EditorCell createCollection_nahhdz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nahhdz_a");
@@ -32,7 +31,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nahhdz_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_nahhdz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nahhdz_a0");
@@ -44,7 +42,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nahhdz_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_nahhdz_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -64,14 +61,12 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nahhdz_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_nahhdz_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nahhdz_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_nahhdz_c0a");
@@ -81,7 +76,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_nahhdz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nahhdz_b0");
@@ -92,12 +86,10 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_nahhdz_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_nahhdz_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_nahhdz_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ifTrue");
@@ -117,7 +109,6 @@ public class MatchStatementItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nahhdz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_nahhdz_c0");

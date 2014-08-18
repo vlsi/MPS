@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 public class SModelDataFlavor extends DataFlavor {
   public static DataFlavor sNode = new DataFlavor(SNodeTransferable.class, "SNode");
   public static DataFlavor sNodeReference = new DataFlavor(SNodeReference.class, "SNodeReference");
-
   public SModelDataFlavor() {
   }
 }

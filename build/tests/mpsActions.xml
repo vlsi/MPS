@@ -155,6 +155,7 @@
       <library file="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <library file="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <library file="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
       <chunk>
         <module file="${basedir}/testbench/modules/testActions/jetbrains.mps.testActions.msd" />
       </chunk>
@@ -280,6 +281,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/lib/mps-testing.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">
@@ -312,7 +314,7 @@
       <sysproperty key="mps.libraries" value="${mps.libraries.path.string}" />
       <sysproperty key="mps.test.modules" value="${mps.tests.path.string}" />
       
-      <test name="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.ModuleTestSuite-actions" />
+      <test name="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" outfile="TEST-jetbrains.mps.testbench.junit.suites.AntModuleTestSuite-actions" />
       <formatter type="xml" />
     </junit>
   </target>

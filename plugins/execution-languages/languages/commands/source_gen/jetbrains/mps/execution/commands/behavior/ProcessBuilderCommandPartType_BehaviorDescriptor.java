@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class ProcessBuilderCommandPartType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public ProcessBuilderCommandPartType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ProcessBuilderCommandPartType";

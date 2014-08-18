@@ -25,7 +25,6 @@ public final class QueriesUtil {
     SNode rootAnnotation = AttributeOperations.getAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
     return SLinkOperations.getTarget(SNodeOperations.cast(rootAnnotation, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false);
   }
-
   public static SNode getQueryFunction_fromSourceSubstituteMacro(SNode macro) {
     if (macro == null) {
       return null;
@@ -60,6 +59,5 @@ public final class QueriesUtil {
 
     return null;
   }
-
 
 }

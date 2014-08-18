@@ -11,26 +11,21 @@ public enum TableComponentEnum {
   vertical_collection("vertical collection", "VERTICAL_COLLECTION");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<TableComponentEnum> getConstants() {
     List<TableComponentEnum> list = ListSequence.fromList(new LinkedList<TableComponentEnum>());
     ListSequence.fromList(list).addElement(TableComponentEnum.horizontal_collection);
     ListSequence.fromList(list).addElement(TableComponentEnum.vertical_collection);
     return list;
   }
-
   public static TableComponentEnum getDefault() {
     return TableComponentEnum.horizontal_collection;
   }
-
   public static TableComponentEnum parseValue(String value) {
     if (value == null) {
       return TableComponentEnum.getDefault();
@@ -43,14 +38,11 @@ public enum TableComponentEnum {
     }
     return TableComponentEnum.getDefault();
   }
-
   private String myValue;
-
   TableComponentEnum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

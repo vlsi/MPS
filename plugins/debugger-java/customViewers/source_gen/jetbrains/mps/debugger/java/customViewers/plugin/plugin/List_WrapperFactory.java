@@ -21,11 +21,9 @@ import jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager;
 public class List_WrapperFactory extends ValueWrapperFactory {
   public List_WrapperFactory() {
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new List_WrapperFactory.ListWrapper(value, threadReference);
   }
-
   @Override
   public boolean canWrapValue(@NotNull final IValueProxy proxy) {
     return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<Boolean>() {
@@ -41,17 +39,14 @@ public class List_WrapperFactory extends ValueWrapperFactory {
       }
     }, false);
   }
-
   @Override
   public String getWrappedType() {
     return "Ljava/util/List;";
   }
-
   public static class ListWrapper extends ValueWrapper {
     public ListWrapper(IValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
     }
-
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<List<CustomJavaWatchable>>() {
         public List<CustomJavaWatchable> invoke() throws EvaluationException {
@@ -59,7 +54,6 @@ public class List_WrapperFactory extends ValueWrapperFactory {
         }
       }, Collections.<CustomJavaWatchable>emptyList());
     }
-
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> watchables = new ArrayList<CustomJavaWatchable>();
 
@@ -73,8 +67,6 @@ public class List_WrapperFactory extends ValueWrapperFactory {
       return watchables;
     }
   }
-
-
 
   @Override
   public String getName() {

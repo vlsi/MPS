@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ChangeEvent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ChangeEvent_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.heating.structure.ChangeEvent";

@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ComplexLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode literal, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode tR_typevar_1238420360404 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode tI_typevar_1238420378223 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -87,18 +86,15 @@ public class typeof_ComplexLiteral_InferenceRule extends AbstractInferenceRule_R
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1238420360413", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.ComplexLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

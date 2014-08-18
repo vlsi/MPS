@@ -14,7 +14,6 @@ public class ListOfNodes {
   public void newList(SNode e1, SNode e2) {
     List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), e1, e2);
   }
-
   public void first(SNode sl) {
     ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).first();
     Iterable<SNode> nodes = ListSequence.fromList(SLinkOperations.getTargets(sl, "statement", true)).where(new IWhereFilter<SNode>() {

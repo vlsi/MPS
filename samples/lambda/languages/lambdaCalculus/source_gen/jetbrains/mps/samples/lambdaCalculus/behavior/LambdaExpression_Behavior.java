@@ -13,7 +13,6 @@ import java.util.ArrayList;
 public class LambdaExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getOuterApplication_1308935328408190993(SNode thisNode) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication"), "function", true) == thisNode) && SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication")) {
       return SNodeOperations.cast(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaApplication");
@@ -23,7 +22,6 @@ public class LambdaExpression_Behavior {
     }
     return null;
   }
-
   public static boolean call_hasParameterRefs_7397484091645986293(SNode thisNode) {
     SNode node = thisNode;
     node = SNodeOperations.getParent(node);
@@ -38,7 +36,6 @@ public class LambdaExpression_Behavior {
     }
     return LambdaExpression_Behavior.call_isInFull_7347119454575591465(SNodeOperations.cast(node, "jetbrains.mps.samples.lambdaCalculus.structure.LambdaExpression"));
   }
-
   public static boolean call_isInFull_7347119454575591465(SNode thisNode) {
     SNode appl = LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode);
     if (null == appl) {
@@ -46,7 +43,6 @@ public class LambdaExpression_Behavior {
     }
     return LambdaApplication_Behavior.call_isFullApplication_1308935328408190838(LambdaExpression_Behavior.call_getOuterApplication_1308935328408190993(thisNode));
   }
-
   public static List<SNode> call_getOuterVariables_5249919352014727828(SNode thisNode) {
     List<SNode> allVar = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.Variable", false, new String[]{});
     List<SNode> allRef = SNodeOperations.getDescendants(thisNode, "jetbrains.mps.samples.lambdaCalculus.structure.VariableReference", false, new String[]{});

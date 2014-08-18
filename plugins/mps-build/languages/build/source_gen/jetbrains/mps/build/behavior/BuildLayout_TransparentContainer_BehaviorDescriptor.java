@@ -9,15 +9,12 @@ import jetbrains.mps.build.util.UnpackHelper;
 public abstract class BuildLayout_TransparentContainer_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor {
   public BuildLayout_TransparentContainer_BehaviorDescriptor() {
   }
-
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildLayout_TransparentContainer_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildLayout_TransparentContainer_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_TransparentContainer";

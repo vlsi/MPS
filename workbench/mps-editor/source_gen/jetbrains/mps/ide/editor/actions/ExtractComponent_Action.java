@@ -23,22 +23,18 @@ import org.apache.log4j.LogManager;
 
 public class ExtractComponent_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ExtractComponent_Action() {
     super("Extract Component", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class ExtractComponent_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -85,7 +80,6 @@ public class ExtractComponent_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ExtractComponentUtil.extractComponent(((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
@@ -95,6 +89,5 @@ public class ExtractComponent_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ExtractComponent_Action.class);
 }

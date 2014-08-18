@@ -18,7 +18,6 @@ import java.io.PrintWriter;
 public class StringsIO {
   private StringsIO() {
   }
-
   public static List<String> readLines(File file) {
     if (!(file.exists())) {
       return null;
@@ -31,7 +30,6 @@ public class StringsIO {
       return null;
     }
   }
-
   public static List<String> readLines(InputStream input) {
     List<String> lines = ListSequence.fromList(new ArrayList<String>());
     Scanner sc = new Scanner(input);
@@ -42,11 +40,9 @@ public class StringsIO {
     sc.close();
     return lines;
   }
-
   public static void writeLines(File file, Iterable<String> lines) throws IOException {
     writeLines(new FileOutputStream(file), lines);
   }
-
   public static void writeLines(OutputStream output, Iterable<String> lines) {
     PrintWriter out = new PrintWriter(output);
     for (String line : lines) {

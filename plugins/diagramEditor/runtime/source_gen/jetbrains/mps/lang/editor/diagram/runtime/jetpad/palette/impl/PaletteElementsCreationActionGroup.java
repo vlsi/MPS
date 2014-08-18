@@ -30,7 +30,6 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
   private DiagramCell myDiagramCell;
   private Icon myIcon;
-
   public PaletteElementsCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback) {
     myDiagramCell = diagramCell;
     myEditorContext = diagramCell.getContext();
@@ -39,7 +38,6 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramNodeActions(container, childNodeConcept, containingLink)});
     myIcon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(childNodeConcept));
   }
-
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();
     return ListSequence.fromList(((List<SubstituteAction>) mySubstituteInfo.getMatchingActions("", false))).select(new ISelector<SubstituteAction, PaletteElementsCreationAction>() {
@@ -48,19 +46,15 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
       }
     }).toGenericArray(PaletteElementsCreationAction.class);
   }
-
   public boolean isPopup() {
     return true;
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getText() {
     return null;
   }
-
   private SubstituteInfoPartExt createNewDiagramNodeActions(final SNode container, final SNode childNodeConcept, final SNode containingLink) {
     return new SubstituteInfoPartExt() {
       public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
@@ -72,6 +66,5 @@ public class PaletteElementsCreationActionGroup implements PaletteActionGroup {
       }
     };
   }
-
 
 }

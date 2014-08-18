@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.behavior.VariableReference_Behavior;
 public class AssignmentExpression_DataFlow extends DataFlowBuilder {
   public AssignmentExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
     SNode variable = SLinkOperations.getTarget(_context.getNode(), "lValue", true);

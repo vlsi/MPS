@@ -10,15 +10,12 @@ import com.intellij.openapi.project.Project;
 public class ExceptionHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IClickable_BehaviorDescriptor {
   public ExceptionHolder_BehaviorDescriptor() {
   }
-
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return ExceptionHolder_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
-
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     ExceptionHolder_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.ExceptionHolder";

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CommandClosureLiteral_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CommandClosureLiteral_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode commandClosureLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode rs : SNodeOperations.getDescendants(commandClosureLiteral, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{"jetbrains.mps.baseLanguage.structure.IMethodLike"})) {
       if ((SLinkOperations.getTarget(rs, "expression", true) != null)) {
@@ -28,18 +27,15 @@ public class check_CommandClosureLiteral_NonTypesystemRule extends AbstractNonTy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.access.structure.CommandClosureLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

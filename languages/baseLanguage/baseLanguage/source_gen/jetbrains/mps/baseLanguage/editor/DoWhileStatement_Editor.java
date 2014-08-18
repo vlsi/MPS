@@ -29,11 +29,9 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q3zjs1_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q3zjs1_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_q3zjs1_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a");
@@ -55,7 +53,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_q3zjs1_k0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_q3zjs1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a0");
@@ -66,11 +63,9 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_q3zjs1_b0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_q3zjs1_a0a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
   private EditorCell createProperty_q3zjs1_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
@@ -92,7 +87,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_q3zjs1_b0a");
@@ -103,7 +97,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_q3zjs1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_b0");
@@ -114,11 +107,9 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_q3zjs1_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_q3zjs1_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
   }
-
   private EditorCell createRefNode_q3zjs1_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");
@@ -138,7 +129,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_q3zjs1_b1a");
@@ -149,7 +139,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_q3zjs1_c0");
@@ -164,43 +153,34 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DoWhileStatement_Editor.ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0(), new DoWhileStatement_Editor.ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0(), new DoWhileStatement_Editor.ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0(), new DoWhileStatement_Editor.ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_IfStatement_cellMenu_q3zjs1_a0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.IfStatement";
     }
   }
-
   public static class ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_WhileStatement_cellMenu_q3zjs1_b0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.WhileStatement";
     }
   }
-
   public static class ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ForStatement_cellMenu_q3zjs1_c0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ForStatement";
     }
   }
-
   public static class ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ForeachStatement_cellMenu_q3zjs1_d0c0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
     }
   }
-
   private EditorCell createConstant_q3zjs1_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_q3zjs1_d0");
@@ -211,7 +191,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q3zjs1_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -235,7 +214,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_q3zjs1_f0");
@@ -245,7 +223,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "while");
     editorCell.setCellId("Constant_q3zjs1_g0");
@@ -257,7 +234,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_q3zjs1_h0");
@@ -267,7 +243,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q3zjs1_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -287,7 +262,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_q3zjs1_j0");
@@ -297,7 +271,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_q3zjs1_k0");
@@ -307,7 +280,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_q3zjs1_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q3zjs1_a_0");
@@ -317,7 +289,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_q3zjs1_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "label");
     editorCell.setCellId("Constant_q3zjs1_a0");
@@ -327,7 +298,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q3zjs1_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_q3zjs1_b0");
@@ -338,7 +308,6 @@ public class DoWhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q3zjs1_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabel");

@@ -26,39 +26,31 @@ public class MembersPopulatingContext {
   private final Set<Signature> hidedSignatures = new HashSet<Signature>();
   private Map<SNode, SNode> typeByTypeVariable = new HashMap<SNode, SNode>();
   private Map<Object, Object> userObjects = new HashMap<Object, Object>();
-
   public MembersPopulatingContext() {
     // java collections for speed 
   }
-
   public void hideMembers(Signature signature) {
     hidedSignatures.add(signature);
   }
-
   public void addMember(SNode member, Signature signature) {
     if (!(hidedSignatures.contains(signature))) {
       members.add(member);
     }
   }
-
   public Iterable<SNode> getMembers() {
     List<SNode> members = new ArrayList<SNode>();
     members.addAll(this.members);
     return members;
   }
-
   public void putUserObject(Object key, Object value) {
     userObjects.put(key, value);
   }
-
   public Object getUserObject(Object key) {
     return userObjects.get(key);
   }
-
   public boolean containsUserObject(Object key) {
     return userObjects.containsKey(key);
   }
-
   public boolean enterClassifierInternal(SNode classifierType) {
     SNode classifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{});
 
@@ -93,19 +85,15 @@ public class MembersPopulatingContext {
 
     return true;
   }
-
   public void exitClassifierInternal(SNode classifier) {
     assert classifiers.pop() == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getClassifier_7405920559687237513", new Object[]{});
   }
-
   public boolean isPackageProtectedVisible() {
     return isPackageProtectedAvailable;
   }
-
   public boolean isPrivateVisible() {
     return classifiers.size() == 1;
   }
-
   public boolean isElementVisible(SNode element) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(element, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       return isPrivateVisible();
@@ -115,7 +103,6 @@ public class MembersPopulatingContext {
     }
     return true;
   }
-
   public Map<SNode, SNode> getTypeByTypeVariableMapping() {
     return Collections.unmodifiableMap(typeByTypeVariable);
   }

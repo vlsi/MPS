@@ -19,25 +19,20 @@ import java.util.Collections;
 
 public class ConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-
   public ConceptInstances_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Concept Instances";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -50,7 +45,6 @@ public class ConceptInstances_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";

@@ -11,11 +11,9 @@ public class LocalArtifacts extends VisibleArtifacts {
   public LocalArtifacts(SNode project, TemplateQueryContext genContext) {
     super(project, genContext);
   }
-
   public void collectOutputArtifacts() {
     collectInProject(SLinkOperations.getTarget(project, "layout", true), project);
   }
-
   @Override
   public SNode findArtifact(Object id) {
     for (SNode artifact : this.getArtifacts()) {

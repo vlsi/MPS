@@ -18,18 +18,14 @@ import jetbrains.mps.ide.project.ProjectHelper;
 public class MPSStackTraceFilter implements Filter {
   private static String STRING_START = "at ";
   private final Project myProject;
-
   public MPSStackTraceFilter(Project project) {
     myProject = project;
   }
-
   @Nullable
   @Override
   public Filter.Result applyFilter(String line, int length) {
     return tryToParseLine(line, length - line.length(), myProject);
   }
-
-
 
   private Filter.Result tryToParseLine(String line, int offset, Project project) {
     if (((line == null ? null : line.trim())).indexOf(STRING_START) < 0) {
@@ -71,8 +67,6 @@ public class MPSStackTraceFilter implements Filter {
 
     return detectTarget(hlStart, hlEnd, unitName, fileName, lineNumber, project);
   }
-
-
 
   protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber, Project project) {
     final SNodeReference nodeToShow = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ContainsAllOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ContainsAllOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode op, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode ELEMENT_TYPE_typevar_6126991172893688513 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode ARG_ELEMENT_TYPE_typevar_6126991172893688543 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -44,22 +43,18 @@ public class typeof_ContainsAllOperation_InferenceRule extends AbstractInference
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "6126991172893688536", true), (SNode) _quotation_createNode_e50h9w_a0f0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ContainsAllOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_e50h9w_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -71,7 +66,6 @@ public class typeof_ContainsAllOperation_InferenceRule extends AbstractInference
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_e50h9w_a0d0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -83,7 +77,6 @@ public class typeof_ContainsAllOperation_InferenceRule extends AbstractInference
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_e50h9w_a0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

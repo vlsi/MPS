@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode binaryOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.AndExpression")) && !(SNodeOperations.isInstanceOf(binaryOperation, "jetbrains.mps.baseLanguage.structure.OrExpression"))) {
       return;
@@ -49,18 +48,15 @@ public class check_BinaryLogicalOperationCanBeSimplified_NonTypesystemRule exten
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

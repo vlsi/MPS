@@ -41,7 +41,6 @@ public class TestRelativePathHelper_Test extends TestCase {
     Assert.assertEquals(oneUp.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute(".."));
     Assert.assertEquals(oneUp.replace("\\", "/"), new RelativePathHelper(scriptsFolder).makeAbsolute("../"));
   }
-
   public TestRelativePathHelper_Test() {
   }
 }

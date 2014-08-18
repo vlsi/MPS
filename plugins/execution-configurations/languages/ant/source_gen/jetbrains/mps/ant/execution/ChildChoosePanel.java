@@ -28,7 +28,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
   @Nullable
   private C myChild;
   private final ChildChoosePanel.MyComboBoxModel myComboBoxModel = new ChildChoosePanel.MyComboBoxModel();
-
   public ChildChoosePanel(String title) {
     super(new GridBagLayout());
 
@@ -38,9 +37,7 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     comboBox.setEditor(new ReadComboBoxEditor());
     this.add(comboBox, LayoutUtil.createFieldConstraints(1));
   }
-
   public abstract List<C> getChildrenNodes(N node);
-
   public void nodeChanged(@Nullable N node) {
     if (node == null) {
       this.reset(null, null);
@@ -48,7 +45,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
       this.reset(node, this.selectFromChangedNode(node));
     }
   }
-
   protected String selectFromChangedNode(final N node) {
     final Wrappers._T<String> child = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -61,7 +57,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     });
     return child.value;
   }
-
   public void reset(@Nullable N node, @Nullable final String childId) {
     this.myNode = node;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -71,7 +66,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     });
     this.myComboBoxModel.nodeChanged();
   }
-
   private void selectChild(@Nullable String childId) {
     if ((childId == null || childId.length() == 0) || (this.myNode == null)) {
       this.myChild = null;
@@ -79,7 +73,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     }
     this.myChild = (C) (SNodeOperations.getModel(myNode).getNode(SNodeId.fromString(childId)));
   }
-
   @Nullable
   public String getChildId() {
     if ((this.myChild == null)) {
@@ -93,31 +86,25 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
     });
     return id.value;
   }
-
   public class MyComboBoxModel extends AbstractListModel implements ComboBoxModel {
     public MyComboBoxModel() {
     }
-
     @Override
     public void setSelectedItem(Object object) {
       ChildChoosePanel.this.myChild = (C) object;
     }
-
     @Override
     public int getSize() {
       return ListSequence.fromList(this.getConfigurations()).count();
     }
-
     @Override
     public Object getSelectedItem() {
       return ChildChoosePanel.this.myChild;
     }
-
     @Override
     public Object getElementAt(int i) {
       return ListSequence.fromList(this.getConfigurations()).getElement(i);
     }
-
     @NotNull
     public List<Object> getConfigurations() {
       final Wrappers._T<List<Object>> children = new Wrappers._T<List<Object>>();
@@ -132,7 +119,6 @@ public abstract class ChildChoosePanel<N extends SNode, C extends SNode> extends
       });
       return children.value;
     }
-
     public void nodeChanged() {
       this.fireContentsChanged(this, -1, this.getSize());
     }

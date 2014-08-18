@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class PersistentConfigurationTemplateInitializer_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public PersistentConfigurationTemplateInitializer_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer";

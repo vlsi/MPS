@@ -14,7 +14,6 @@ public class XmlText_Constraints extends BaseConstraintsDescriptor {
   public XmlText_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlText");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class XmlText_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "value";

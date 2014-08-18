@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnknownNew_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnknownNew_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode unkNew, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (BehaviorReflection.invokeVirtual((Class<_FunctionTypes._return_P0_E0<? extends SNode>>) ((Class) Object.class), unkNew, "virtual_evaluateSubst_8136348407761606764", new Object[]{}) != null) {
       {
@@ -38,18 +37,15 @@ public class check_UnknownNew_NonTypesystemRule extends AbstractNonTypesystemRul
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkNew, "Unresolved class name or constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936528633", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UnknownNew";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

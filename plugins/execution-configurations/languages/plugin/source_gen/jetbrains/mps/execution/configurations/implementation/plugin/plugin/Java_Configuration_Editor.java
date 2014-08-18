@@ -11,20 +11,18 @@ import org.jetbrains.annotations.NotNull;
 import javax.swing.JPanel;
 import jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser;
 import java.awt.BorderLayout;
-import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions;
+import jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent;
 import com.intellij.openapi.options.ConfigurationException;
 
 public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configuration> {
   private JLabel myLabel;
   private NodeBySeveralConcepts_Configuration_Editor myNode;
   private JavaRunParameters_Configuration_Editor myRunParameters;
-
   public void disposeEditor() {
     myRunParameters.dispose();
     Disposer.dispose(myNode);
     Disposer.dispose(myRunParameters);
   }
-
   @NotNull
   public JPanel createEditor() {
     myLabel = new JLabel("Select class:");
@@ -33,24 +31,21 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
     panel.add(myLabel, BorderLayout.NORTH);
     panel.add(nodeChooser, BorderLayout.CENTER);
 
-    JavaConfigurationOptions javaRunParametersEditor = myRunParameters.createEditor();
+    JavaConfigurationEditorComponent javaRunParametersEditor = myRunParameters.createEditor();
 
     JPanel mainPanel = new JPanel(new BorderLayout());
     mainPanel.add(panel, BorderLayout.NORTH);
     mainPanel.add(javaRunParametersEditor, BorderLayout.CENTER);
     return mainPanel;
   }
-
   public void applyEditorTo(final Java_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     myRunParameters.applyEditorTo(configuration.getRunParameters());
   }
-
   public void resetEditorFrom(final Java_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     myRunParameters.resetEditorFrom(configuration.getRunParameters());
   }
-
   public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters_Configuration_Editor runParameters) {
     myNode = node;
     myRunParameters = runParameters;

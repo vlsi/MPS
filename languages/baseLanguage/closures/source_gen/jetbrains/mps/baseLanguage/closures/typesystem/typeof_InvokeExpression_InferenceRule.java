@@ -23,7 +23,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InvokeExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode invoke, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode cl = SNodeOperations.getAncestor(invoke, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", false, false);
     if (!((cl != null))) {
@@ -54,22 +53,18 @@ public class typeof_InvokeExpression_InferenceRule extends AbstractInferenceRule
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)", "1225469808572", true), (SNode) typeCheckingContext.getRepresentative(ret_typevar_1225469708846), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_9tk0iy_a0f0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.ui.Modifiable;
 import jetbrains.mps.project.DevKit;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -85,21 +86,29 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   }
 
   public List<SModuleReference> getUsedLanguages() {
-    List<SModuleReference> list = new ArrayList<SModuleReference>();
-    MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(SModuleReference tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof Language)
-        list.add(tableItem);
+    final List<SModuleReference> list = new ArrayList<SModuleReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for(SModuleReference tableItem : myTableItems)
+          if(MPSModuleRepository.getInstance().getModule(tableItem.getModuleId()) instanceof Language)
+            list.add(tableItem);
+      }
+    });
 
     return list;
   }
 
   public List<SModuleReference> getUsedDevkits() {
-    List<SModuleReference> list = new ArrayList<SModuleReference>();
-    MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(SModuleReference tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof DevKit)
-        list.add(tableItem);
+    final List<SModuleReference> list = new ArrayList<SModuleReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for(SModuleReference tableItem : myTableItems)
+          if(MPSModuleRepository.getInstance().getModule(tableItem.getModuleId()) instanceof DevKit)
+            list.add(tableItem);
+      }
+    });
 
     return list;
   }

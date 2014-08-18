@@ -35,7 +35,6 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
   private SNode node;
   private MPSFileNodeEditor nodeEditor;
 
-
   public EmbeddableEditor(Project project, boolean editable) {
     // todo: merge with UIEditorComponent ? 
     super(new BorderLayout());
@@ -44,8 +43,6 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     this.editable = editable;
     this.temporaryModel = TemporaryModels.getInstance().create(true, TempModuleOptions.forDefaultModule());
   }
-
-
 
   public void editNode(@NotNull final SNode node) {
     MPSFileNodeEditor oldEditor = nodeEditor;
@@ -59,19 +56,13 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     }
   }
 
-
-
   public void selectNode(SNode node) {
     nodeEditor.getNodeEditor().showNode(node, true);
   }
 
-
-
   public SNode getNode() {
     return node;
   }
-
-
 
   public void setBackground(Color color) {
     if (nodeEditor != null && nodeEditor.getNodeEditor() instanceof NodeEditor) {
@@ -79,13 +70,9 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     }
   }
 
-
-
   public Editor getEditor() {
     return nodeEditor.getNodeEditor();
   }
-
-
 
   @Nullable
   @Override
@@ -95,8 +82,6 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     }
     return null;
   }
-
-
 
   private MPSFileNodeEditor createEditorForNode(SNode node) {
     SModel nodeModel;
@@ -116,8 +101,6 @@ public class EmbeddableEditor extends JPanel implements DataProvider {
     IOperationContext context = new ModuleContext(nodeModel.getModule(), project);
     return new MPSFileNodeEditor(context, MPSNodesVirtualFileSystem.getInstance().getFileFor(node));
   }
-
-
 
   public void disposeEditor() {
     repository.getModelAccess().runWriteAction(new Runnable() {

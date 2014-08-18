@@ -15,34 +15,26 @@ public class TernaryOperator_Delete {
     editorCell.setAction(CellActionType.DELETE, new TernaryOperator_Delete.TernaryOperator_Delete_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new TernaryOperator_Delete.TernaryOperator_Delete_BACKSPACE(node));
   }
-
   public static class TernaryOperator_Delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TernaryOperator_Delete_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "condition", true));
     }
   }
-
   public static class TernaryOperator_Delete_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TernaryOperator_Delete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "condition", true));
     }

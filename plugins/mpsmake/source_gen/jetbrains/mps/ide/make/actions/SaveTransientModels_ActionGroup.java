@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class SaveTransientModels_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(SaveTransientModels_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.SaveTransientModels_ActionGroup";
-
   public SaveTransientModels_ActionGroup() {
     super("SaveTransientModels", ID);
     this.setIsInternal(false);

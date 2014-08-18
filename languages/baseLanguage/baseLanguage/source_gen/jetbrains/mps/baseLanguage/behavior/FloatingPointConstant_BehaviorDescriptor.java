@@ -10,15 +10,12 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class FloatingPointConstant_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public FloatingPointConstant_BehaviorDescriptor() {
   }
-
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return FloatingPointConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
   }
-
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return FloatingPointConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";

@@ -13,7 +13,6 @@ import jetbrains.mps.util.IterableUtil;
 public class MapSrcListMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_wn5chh_a0a = new MapSrcListMacro_Behavior.Pattern_wn5chh_a0a0a0a1();
@@ -25,13 +24,10 @@ public class MapSrcListMacro_Behavior {
     }
     return null;
   }
-
   public static class Pattern_wn5chh_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_wn5chh_a0a0a0a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_wn5chh_a0a0a0 = nodeToMatch;
@@ -57,24 +53,20 @@ public class MapSrcListMacro_Behavior {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

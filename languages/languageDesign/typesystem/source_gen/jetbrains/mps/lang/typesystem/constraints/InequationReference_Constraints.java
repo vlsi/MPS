@@ -19,7 +19,6 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
   public InequationReference_Constraints() {
     super("jetbrains.mps.lang.typesystem.structure.InequationReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (isNotEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "label"))) {
@@ -46,7 +44,6 @@ public class InequationReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

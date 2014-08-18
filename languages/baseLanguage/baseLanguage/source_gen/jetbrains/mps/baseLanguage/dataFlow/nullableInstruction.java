@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class nullableInstruction extends GeneratedInstruction {
   private SNode myexpression;
   private String myPresentation;
-
   public nullableInstruction(SNode expression) {
     StringBuilder sb = new StringBuilder();
     sb.append("nullable");
@@ -18,12 +17,10 @@ public class nullableInstruction extends GeneratedInstruction {
     sb.append(" " + expression);
     myPresentation = sb.toString();
   }
-
   @Override
   public String commandPresentation() {
     return myPresentation;
   }
-
   public SNode getexpression() {
     return myexpression;
   }

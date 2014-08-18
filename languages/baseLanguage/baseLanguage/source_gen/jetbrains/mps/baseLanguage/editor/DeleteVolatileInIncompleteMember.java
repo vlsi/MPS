@@ -14,34 +14,26 @@ public class DeleteVolatileInIncompleteMember {
     editorCell.setAction(CellActionType.DELETE, new DeleteVolatileInIncompleteMember.DeleteVolatileInIncompleteMember_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteVolatileInIncompleteMember.DeleteVolatileInIncompleteMember_BACKSPACE(node));
   }
-
   public static class DeleteVolatileInIncompleteMember_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteVolatileInIncompleteMember_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "volatile", "" + (false));
     }
   }
-
   public static class DeleteVolatileInIncompleteMember_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteVolatileInIncompleteMember_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "volatile", "" + (false));
     }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class InsertBeforePosition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public InsertBeforePosition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.InsertBeforePosition";

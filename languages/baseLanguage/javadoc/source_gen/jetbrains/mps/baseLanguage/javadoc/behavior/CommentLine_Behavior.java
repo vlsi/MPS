@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class CommentLine_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static NodeCaretPair call_tryMergeToRight_439148907936414403(SNode thisNode, int index) {
     if (index >= 0 && index + 1 < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
       SNode leftPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
@@ -26,7 +25,6 @@ public class CommentLine_Behavior {
     }
     return null;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

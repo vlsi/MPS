@@ -11,26 +11,21 @@ public enum ScriptType {
   migration("migration", "migration");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<ScriptType> getConstants() {
     List<ScriptType> list = ListSequence.fromList(new LinkedList<ScriptType>());
     ListSequence.fromList(list).addElement(ScriptType.enhancement);
     ListSequence.fromList(list).addElement(ScriptType.migration);
     return list;
   }
-
   public static ScriptType getDefault() {
     return ScriptType.enhancement;
   }
-
   public static ScriptType parseValue(String value) {
     if (value == null) {
       return ScriptType.getDefault();
@@ -43,14 +38,11 @@ public enum ScriptType {
     }
     return ScriptType.getDefault();
   }
-
   private String myValue;
-
   ScriptType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -6,12 +6,10 @@ package jetbrains.mps.lang.test.matcher;
 public class ReferenceDifferense extends DifferanceItem {
   private String myRole;
   private boolean myInternal;
-
   public ReferenceDifferense(String role, boolean internal) {
     myRole = role;
     myInternal = internal;
   }
-
   @Override
   public String toString() {
     if (myInternal) {
@@ -19,7 +17,6 @@ public class ReferenceDifferense extends DifferanceItem {
     }
     return "Different external reference of role: " + myRole;
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

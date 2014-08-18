@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class EnumerationMemberDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor {
   public EnumerationMemberDeclaration_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return EnumerationMemberDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration";

@@ -16,23 +16,18 @@ import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 public class BuildMpsLayout_TestModules_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor, INamedConcept_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public BuildMpsLayout_TestModules_BehaviorDescriptor() {
   }
-
   public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BuildMpsLayout_TestModules_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return BuildMpsLayout_TestModules_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules";

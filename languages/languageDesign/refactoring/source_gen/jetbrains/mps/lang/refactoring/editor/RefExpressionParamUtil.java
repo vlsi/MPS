@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class RefExpressionParamUtil {
   public RefExpressionParamUtil() {
   }
-
   public static void xxx(SNode node, SNode ref, StyledTextPrinter styledText, boolean showParameters) {
     styledText.append(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias")).append("<").append(SPropertyOperations.getString(ref, "name")).append(">(");
     String target = "no_target";

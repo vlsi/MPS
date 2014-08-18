@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 21:
@@ -62,6 +61,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.make.script.structure.AdvanceWorkStatement", "jetbrains.mps.make.script.structure.AllWorkLeftExpression", "jetbrains.mps.make.script.structure.BeginWorkStatement", "jetbrains.mps.make.script.structure.ConceptFunctionParameter_progressMonitor", "jetbrains.mps.make.script.structure.ConfigDefinition", "jetbrains.mps.make.script.structure.ExpectedInput", "jetbrains.mps.make.script.structure.ExpectedOption", "jetbrains.mps.make.script.structure.FinishWorkStatement", "jetbrains.mps.make.script.structure.InputResourcesParameter", "jetbrains.mps.make.script.structure.JobDeclaration", "jetbrains.mps.make.script.structure.JobDefinition", "jetbrains.mps.make.script.structure.Option", "jetbrains.mps.make.script.structure.OptionExpression", "jetbrains.mps.make.script.structure.OptionType", "jetbrains.mps.make.script.structure.OutputResources", "jetbrains.mps.make.script.structure.PropertiesAccessorParameter", "jetbrains.mps.make.script.structure.QueryDefinition", "jetbrains.mps.make.script.structure.QueryParameterDeclaration", "jetbrains.mps.make.script.structure.RelayQueryExpression", "jetbrains.mps.make.script.structure.ReportFeedbackStatement", "jetbrains.mps.make.script.structure.ResourceType", "jetbrains.mps.make.script.structure.ResultStatement", "jetbrains.mps.make.script.structure.Text"};
 }

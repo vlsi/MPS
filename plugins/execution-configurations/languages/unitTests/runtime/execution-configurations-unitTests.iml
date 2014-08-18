@@ -7,6 +7,9 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
+    <content url="file://$MODULE_DIR$/../startup">
+      <sourceFolder url="file://$MODULE_DIR$/../startup/source_gen" isTestSource="false" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="kernel" />
@@ -30,6 +33,10 @@
     <orderEntry type="module" module-name="execution-api" />
     <orderEntry type="module" module-name="mps-ui" />
     <orderEntry type="library" name="Log4j" level="project" />
+    <orderEntry type="library" name="PicoContainer" level="project" />
+    <orderEntry type="module" module-name="execution-configurations-plugin" />
+    <orderEntry type="module" module-name="mps-testing" />
+    <orderEntry type="library" name="JMock" level="project" />
   </component>
 </module>
 

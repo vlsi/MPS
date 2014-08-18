@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveNodesExecute {
 
-
   public static void execute(MPSProject project, final List<SNode> target, final MoveNodesExecute.ExecuteRefactoring executeRefactoring) {
     final Wrappers._T<SModel> targetModelDescriptor = new Wrappers._T<SModel>();
     ModelAccess modelAccess = project.getRepository().getModelAccess();
@@ -58,11 +57,8 @@ public class MoveNodesExecute {
     });
   }
 
-
-
   public static interface ExecuteRefactoring {
     public void run(Object newLocation);
   }
-
 
 }

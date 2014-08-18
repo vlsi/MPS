@@ -19,7 +19,6 @@ public class HierarchycalTableModel extends AbstractTableModel {
   private SNode myColumnsLinkDeclaration;
   private int myColumnCount;
   private int myRowCount;
-
   public HierarchycalTableModel(@NotNull SNode tableNode, @NotNull SNode rowsLinkDeclaration, @NotNull SNode cellsLinkDeclaration) {
     myTableNode = tableNode;
     myRowsLinkDeclaration = rowsLinkDeclaration;
@@ -32,29 +31,24 @@ public class HierarchycalTableModel extends AbstractTableModel {
       assert myColumnCount == ListSequence.fromList(getColumns(row)).count();
     }
   }
-
   @Override
   public SNode getValueAt(int row, int column) {
     assert row >= 0;
     assert column >= 0;
     return ListSequence.fromList(getColumns(ListSequence.fromList(getRows()).getElement(row))).getElement(column);
   }
-
   @Override
   public int getRowCount() {
     return myRowCount;
   }
-
   @Override
   public int getColumnCount() {
     return myColumnCount;
   }
-
   @Override
   public void deleteRow(int rowNumber) {
     deleteElementAt(getRows(), rowNumber);
   }
-
   @Override
   public void insertRow(int rowNumber) {
     SNode newRow = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myRowsLinkDeclaration, "target", false)), null);
@@ -63,14 +57,12 @@ public class HierarchycalTableModel extends AbstractTableModel {
     }
     Utils.insertElementAt(getRows(), newRow, rowNumber);
   }
-
   @Override
   public void deleteColumn(int columnNumber) {
     for (SNode row : ListSequence.fromList(getRows())) {
       deleteElementAt(getColumns(row), columnNumber);
     }
   }
-
   @Override
   public void insertColumn(int columnNumber) {
     for (SNode row : ListSequence.fromList(getRows())) {
@@ -78,20 +70,16 @@ public class HierarchycalTableModel extends AbstractTableModel {
       Utils.insertElementAt(getColumns(row), newColumn, columnNumber);
     }
   }
-
   protected SNode getTableNode() {
     return myTableNode;
   }
-
   protected void deleteElementAt(List<SNode> list, int index) {
     assert index >= 0 && index < ListSequence.fromList(list).count();
     ListSequence.fromList(list).removeElementAt(index);
   }
-
   private List<SNode> getRows() {
     return SNodeOperations.getChildren(myTableNode, myRowsLinkDeclaration);
   }
-
   private List<SNode> getColumns(SNode row) {
     return SNodeOperations.getChildren(row, myColumnsLinkDeclaration);
   }

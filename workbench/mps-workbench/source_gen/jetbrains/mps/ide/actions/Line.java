@@ -11,7 +11,6 @@ public class Line extends JComponent {
   public Line() {
     this.setPreferredSize(new Dimension(1, 1));
   }
-
   @Override
   protected void paintComponent(Graphics g) {
     g.setColor(Color.LIGHT_GRAY);

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class GenericFTAcceptor<ZZZ extends _FunctionTypes._return_P1_E0<? extends String, ? super Integer>> {
   public GenericFTAcceptor() {
   }
-
   public void accept(ZZZ fun) {
     fun.invoke(1);
     fun.invoke(1);

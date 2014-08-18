@@ -15,7 +15,6 @@ public class XElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_3818ic_a(editorContext, node);
   }
-
   private EditorCell createProperty_3818ic_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -13,12 +13,10 @@ public class Siblings {
     SNode next3 = SNodeOperations.insertNewNextSiblingChild(statement, "jetbrains.mps.baseLanguage.structure.IfStatement");
     SNodeOperations.insertNextSiblingChild(statement, SNodeOperations.copyNode(next3));
   }
-
   public void nextSiblings(SNode statement) {
     List<SNode> nextSiblings_exclusive = SNodeOperations.getNextSiblings(statement, false);
     List<SNode> nextSiblings_inclusive = SNodeOperations.getNextSiblings(statement, true);
   }
-
   public void allSiblings(SNode statement) {
     List<SNode> siblings_inclusive = SNodeOperations.getAllSiblings(statement, true);
   }

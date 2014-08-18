@@ -27,7 +27,6 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
   public TestVariableReference_Constraints() {
     super("jetbrains.mps.lang.pattern.testLang.structure.TestVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -54,7 +52,6 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_t68zsq_a0a1a0a0a1a0b0a1a1;
@@ -64,6 +61,5 @@ public class TestVariableReference_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_t68zsq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:02c98d9f-8736-40ad-9bbb-eeffd3fee9b8(jetbrains.mps.lang.pattern.testLang.constraints)", "8707387027762047796");
 }

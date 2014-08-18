@@ -29,27 +29,22 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
   public BreakpointIconRenderer(ILocationBreakpoint breakpoint, Component component) {
     super(breakpoint, component);
   }
-
   @Override
   public Icon getIcon() {
     return BreakpointIconRenderer.getIconFor(myBreakpoint, DebugActionsUtil.getDebugSession(DataManager.getInstance().getDataContext(myComponent)));
   }
-
   @Override
   public String getTooltipText() {
     return "<html><body>" + StringUtil.escapeXml(myBreakpoint.getKind().getPresentation()) + "<br>" + StringUtil.escapeXml(myBreakpoint.getPresentation()) + ((myBreakpoint.isValid() ? "" : "<br><font color='red'>Invalid</br>")) + "</html></body>";
   }
-
   @Override
   public SNode getNode() {
     return myBreakpoint.getLocation().getSNode();
   }
-
   @Override
   public EditorCell getAnchorCell(EditorCell bigCell) {
     return BreakpointIconRenderer.getBreakpointIconAnchorCell(bigCell);
   }
-
   @Override
   public JPopupMenu getPopupMenu() {
     if (!(myBreakpoint.isValid())) {
@@ -80,11 +75,9 @@ import jetbrains.mps.debug.api.breakpoints.BreakpointProvidersManager;
     });
     return menu;
   }
-
   public static Icon getIconFor(@NotNull IBreakpoint breakpoint) {
     return BreakpointIconRenderer.getIconFor(breakpoint, null);
   }
-
   private static Icon getIconFor(@NotNull IBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     if (session != null && session.isMute()) {
       return Icons.MUTED_BREAKPOINT;

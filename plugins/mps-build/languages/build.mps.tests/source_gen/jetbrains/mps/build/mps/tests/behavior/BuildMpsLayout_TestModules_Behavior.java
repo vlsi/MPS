@@ -22,7 +22,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class BuildMpsLayout_TestModules_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_hasModule_4560297596904469365(SNode thisNode, final SNode module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "modules", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -30,7 +29,6 @@ public class BuildMpsLayout_TestModules_Behavior {
       }
     }) != null;
   }
-
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     SNode project = artifacts.getProject();
     TemplateQueryContext genContext = artifacts.getGenContext();
@@ -78,7 +76,6 @@ public class BuildMpsLayout_TestModules_Behavior {
       }
     }
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.build.mps.structure.BuildMps_Group")) {
       SNode project = SNodeOperations.cast(SNodeOperations.getContainingRoot(thisNode), "jetbrains.mps.build.structure.BuildProject");

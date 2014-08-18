@@ -12,23 +12,18 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_138767106958845441(final PropertyMacroContext _context) {
     return ("EvaluatorInstance");
   }
-
   public static Object propertyMacro_GetPropertyValue_138767106958624542(final PropertyMacroContext _context) {
     return ("EvaluatorInstance");
   }
-
   public static SNode sourceNodeQuery_6293005617706016074(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "evaluatedStatements", true);
   }
-
   public static SNode sourceNodeQuery_3409752288362167508(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "code", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1496492112286760828(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "variables", true);
   }

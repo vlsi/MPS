@@ -13,11 +13,9 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_63pn5a_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_63pn5a_a(editorContext, node);
   }
-
   private EditorCell createConstant_63pn5a_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "type");
     editorCell.setCellId("Constant_63pn5a_a");
@@ -25,7 +23,6 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_63pn5a_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor._NotInRules_Component");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

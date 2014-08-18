@@ -21,17 +21,14 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class IClassifier_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", null);
     SLinkOperations.setTarget(result, "classifier", thisNode, false);
     return result;
   }
-
   public static SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
@@ -41,7 +38,6 @@ public class IClassifier_Behavior {
     }
     return result;
   }
-
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528124", new Object[]{})) {
@@ -63,7 +59,6 @@ public class IClassifier_Behavior {
     }
     return result;
   }
-
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(thisNode)) {
@@ -76,14 +71,12 @@ public class IClassifier_Behavior {
     }
     return result;
   }
-
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
       @Override
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
       }
-
       @Override
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
         SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
@@ -96,7 +89,6 @@ public class IClassifier_Behavior {
       }
     };
   }
-
   public static SNode call_getContextClassifier_1213877527940(SAbstractConcept thisConcept, SNode contextNode) {
     SNode classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", true, false);
     if (classifier != null) {

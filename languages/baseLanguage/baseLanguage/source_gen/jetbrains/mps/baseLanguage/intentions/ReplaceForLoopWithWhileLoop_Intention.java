@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceForLoopWithWhileLoop_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceForLoopWithWhileLoop_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ForStatement";
   }
-
   public String getPresentation() {
     return "ReplaceForLoopWithWhileLoop";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ReplaceForLoopWithWhileLoop_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199623693658");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceForLoopWithWhileLoop_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace For with While";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       // replace for loop with while 
       SNode whileStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
@@ -101,7 +86,6 @@ public class ReplaceForLoopWithWhileLoop_Intention implements IntentionFactory {
       // adjust exit condition 
       SLinkOperations.setTarget(whileStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceForLoopWithWhileLoop_Intention.this;
     }

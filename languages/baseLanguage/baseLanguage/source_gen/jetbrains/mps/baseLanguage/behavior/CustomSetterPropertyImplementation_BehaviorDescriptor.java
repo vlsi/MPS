@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CustomSetterPropertyImplementation_BehaviorDescriptor extends PropertyImplementation_BehaviorDescriptor {
   public CustomSetterPropertyImplementation_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasSetter_1213877430658(SNode thisNode) {
     return CustomSetterPropertyImplementation_Behavior.virtual_hasSetter_1213877430658(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation";

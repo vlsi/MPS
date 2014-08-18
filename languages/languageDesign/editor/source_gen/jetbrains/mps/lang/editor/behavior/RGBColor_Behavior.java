@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class RGBColor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isFunction_1225463329531(SNode thisNode) {
     return false;
   }
-
   public static String virtual_getRGBValue_1225468086082(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "value");
   }

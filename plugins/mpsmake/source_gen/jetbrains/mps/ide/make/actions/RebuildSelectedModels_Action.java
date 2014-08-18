@@ -21,18 +21,15 @@ import org.apache.log4j.LogManager;
 
 public class RebuildSelectedModels_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RebuildSelectedModels_Action() {
     super("Rebuild Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
@@ -45,7 +42,6 @@ public class RebuildSelectedModels_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -59,7 +55,6 @@ public class RebuildSelectedModels_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -72,7 +67,6 @@ public class RebuildSelectedModels_Action extends BaseAction {
     MapSequence.fromMap(_params).put("cmodel", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) ((List<SModel>) MapSequence.fromMap(_params).get("models")));
@@ -83,6 +77,5 @@ public class RebuildSelectedModels_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RebuildSelectedModels_Action.class);
 }

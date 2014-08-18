@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class NamedTupleLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRightBracket_1262430001741498139(SAbstractConcept thisConcept) {
     return ")";
   }
-
   public static String virtual_getLeftBracket_1262430001741498346(SAbstractConcept thisConcept) {
     return "(";
   }

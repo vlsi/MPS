@@ -12,7 +12,6 @@ public enum NullableState {
 
   NullableState() {
   }
-
   public NullableState merge(NullableState state) {
     if (this.equals(state)) {
       return this;
@@ -31,7 +30,6 @@ public enum NullableState {
     }
     return NullableState.NULLABLE;
   }
-
   public static boolean canBeNull(NullableState state) {
     if (state == null) {
       return false;

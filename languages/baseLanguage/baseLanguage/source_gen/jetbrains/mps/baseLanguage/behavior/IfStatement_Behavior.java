@@ -16,7 +16,6 @@ import jetbrains.mps.util.NameUtil;
 public class IfStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void call_convertElseToElseIf_1217845914183(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
     SNode ifFalseStatement = SLinkOperations.getTarget(thisNode, "ifFalseStatement", true);
@@ -28,7 +27,6 @@ public class IfStatement_Behavior {
     SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).addElement(result);
   }
-
   public static boolean call_isGuardIf_1237547453258(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null) || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).isNotEmpty()) {
       return false;
@@ -47,11 +45,9 @@ public class IfStatement_Behavior {
     SNode onlyStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "ifTrue", true), "statement", true)).first();
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, onlyStatement, "virtual_isGuardClauseStatement_1237547327995", new Object[]{});
   }
-
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return IfStatement_Behavior.call_isGuardIf_1237547453258(thisNode);
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if ((SLinkOperations.getTarget(thisNode, "ifTrue", true) != null)) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "ifTrue", true), throwables, ignoreMayBeThrowables);

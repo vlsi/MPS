@@ -30,39 +30,30 @@ public class DependencyTree extends MPSTree implements DataProvider {
   private SModule myModule;
   private boolean myShowRuntime;
   private boolean myShowUsedLanguage = true;
-
   public DependencyTree(Project project) {
     myProject = project;
   }
-
   /*package*/ Project getProject() {
     return myProject;
   }
-
   public void setModules(SModule module) {
     myModule = module;
   }
-
   public SModule getModule() {
     return myModule;
   }
-
   public boolean isShowRuntime() {
     return myShowRuntime;
   }
-
   public void setShowRuntime(boolean showRuntime) {
     myShowRuntime = showRuntime;
   }
-
   public boolean isShowUsedLanguage() {
     return myShowUsedLanguage;
   }
-
   public void setShowUsedLanguage(boolean showUsedLanguage) {
     myShowUsedLanguage = showUsedLanguage;
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     if (myModule == null) {
@@ -75,7 +66,6 @@ public class DependencyTree extends MPSTree implements DataProvider {
     return root;
 
   }
-
   private void populate(MPSTreeNode root, Iterable<DepLink> allDependencies) {
     final TreeMessage HAS_CYCLE = new TreeMessage(Color.RED, "module with dependency cycle", null);
     final TreeMessage BOOTSTRAP_DEPENDENCY = new TreeMessage(Color.RED, "language with bootstrap dependency", null);
@@ -155,12 +145,10 @@ public class DependencyTree extends MPSTree implements DataProvider {
       }
     }
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode treeNode) {
     return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowDependenciesInViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.AnalyzeModuleDependencies_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
@@ -176,21 +164,18 @@ public class DependencyTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   private static IOperationContext check_he3vmc_a0a2a51(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
-
   private static SModule check_he3vmc_a0a3a51(ModuleDependencyNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static <T> T as_he3vmc_a0a0a51(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ExpectedType_FactoryUtil {
   public ExpectedType_FactoryUtil() {
   }
-
   public static boolean canComputeCastType(SNode castExpression) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(castExpression), "jetbrains.mps.baseLanguage.structure.TypeDerivable");
   }
-
   public static SNode createExpectedType(SNode contextNode) {
     SNode castType = null;
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.TypeDerivable")) {
@@ -24,7 +22,6 @@ public class ExpectedType_FactoryUtil {
     }
     return castType;
   }
-
   public static SNode getOriginalExpression(SNode enclosingNode, SNode copiedExpression) {
     SNode originalExpression = null;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(enclosingNode))) {
@@ -34,7 +31,6 @@ public class ExpectedType_FactoryUtil {
     }
     return originalExpression;
   }
-
   public static SNode getCorrespondingInstanceOf(SNode expressionOrItsParent) {
     SNode outer = expressionOrItsParent;
     while (SNodeOperations.isInstanceOf(outer, "jetbrains.mps.baseLanguage.structure.Expression")) {

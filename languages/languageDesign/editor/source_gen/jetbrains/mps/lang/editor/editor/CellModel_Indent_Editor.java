@@ -17,7 +17,6 @@ public class CellModel_Indent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_l8ulis_a(editorContext, node);
   }
-
   private EditorCell createConstant_l8ulis_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "--->");
     editorCell.setCellId("Constant_l8ulis_a");

@@ -25,18 +25,15 @@ public class JavaModulesClosure {
   private Set<Tuples._2<SNode, String>> externalJarsInFolder = new LinkedHashSet<Tuples._2<SNode, String>>();
   private TemplateQueryContext genContext;
   private SNode initial;
-
   public JavaModulesClosure(TemplateQueryContext genContext, SNode initial) {
     this.genContext = genContext;
     this.initial = initial;
   }
-
   public JavaModulesClosure closure(boolean reexportOnly) {
     moduleClosure(initial, reexportOnly);
     modules.remove(initial);
     return this;
   }
-
   private void moduleClosure(SNode module, boolean reexportOnly) {
     for (SNode dep : SLinkOperations.getTargets(module, "dependencies", true)) {
       if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.structure.BuildSource_JavaDependencyModule")) {
@@ -90,7 +87,6 @@ public class JavaModulesClosure {
       }
     }
   }
-
   private SNode toOriginalNode(SNode node) {
     if (node == null) {
       return null;
@@ -100,15 +96,12 @@ public class JavaModulesClosure {
     }
     return DependenciesHelper.getOriginalNode(node, genContext);
   }
-
   public Collection<SNode> getModules() {
     return modules;
   }
-
   public Collection<SNode> getLibraries() {
     return libraries;
   }
-
   public Collection<SNode> getJars() {
     return Sequence.fromIterable(((Iterable<SNode>) jars)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -116,7 +109,6 @@ public class JavaModulesClosure {
       }
     }).toListSequence();
   }
-
   public Collection<SNode> getExternalJars() {
     return Sequence.fromIterable(((Iterable<SNode>) jars)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -128,11 +120,9 @@ public class JavaModulesClosure {
       }
     }).concat(SetSequence.fromSet(externalJars)).toListSequence();
   }
-
   public Collection<Tuples._2<SNode, String>> getExternalJarsInFolder() {
     return externalJarsInFolder;
   }
-
   public SNode getInitial() {
     return initial;
   }

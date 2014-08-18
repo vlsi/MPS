@@ -41,7 +41,6 @@
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
     <orderEntry type="module" module-name="persistence" scope="TEST" />
-    <orderEntry type="module" module-name="mpsjava" scope="RUNTIME" />
     <orderEntry type="module" module-name="mps-ant" exported="" />
     <orderEntry type="module" module-name="ant-mps" />
     <orderEntry type="module" module-name="make-facets" />

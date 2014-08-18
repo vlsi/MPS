@@ -27,7 +27,6 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wv5dgr_a(editorContext, node);
   }
-
   private EditorCell createCollection_wv5dgr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wv5dgr_a");
@@ -36,7 +35,6 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_wv5dgr_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_wv5dgr_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -44,7 +42,6 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_wv5dgr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("relativeTo");
@@ -64,28 +61,22 @@ public class RelativePosition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0 extends PrimaryReplaceChildMenuCellMenuPart {
     public RelativePosition_relativeTo_cellMenu_wv5dgr_a0b0() {
     }
   }
-
   public static class RelativePosition_customReplace_cellMenu_wv5dgr_b0b0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public RelativePosition_customReplace_cellMenu_wv5dgr_b0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "label");
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.structure.LabelPosition", null);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

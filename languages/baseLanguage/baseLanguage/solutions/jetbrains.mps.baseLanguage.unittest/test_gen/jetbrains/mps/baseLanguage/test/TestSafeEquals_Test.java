@@ -13,7 +13,6 @@ public class TestSafeEquals_Test extends TestCase {
     Assert.assertFalse(eq_g71ru1_a0a3a0(null, o));
     Assert.assertTrue(eq_g71ru1_a0a4a0(null, null));
   }
-
   public void test_test_ne() throws Exception {
     Object o = new Object();
     Assert.assertFalse(neq_g71ru1_a0a1a1(o, o));
@@ -21,38 +20,29 @@ public class TestSafeEquals_Test extends TestCase {
     Assert.assertTrue(neq_g71ru1_a0a3a1(null, o));
     Assert.assertFalse(neq_g71ru1_a0a4a1(null, null));
   }
-
   public TestSafeEquals_Test() {
   }
-
   private static boolean eq_g71ru1_a0a1a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_g71ru1_a0a2a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_g71ru1_a0a3a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_g71ru1_a0a4a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_g71ru1_a0a1a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_g71ru1_a0a2a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_g71ru1_a0a3a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_g71ru1_a0a4a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

@@ -30,11 +30,8 @@ public abstract class BlockCell extends AbstractJetpadCell {
   public BlockCell(EditorContext editorContext, SNode node) {
     super(editorContext, node);
   }
-
   public abstract Mapper<SNode, DiagramNodeView> createMapper();
-
   public abstract Mapper<SNode, NodeDecoratorView> createDecorationMapper();
-
   private void moveView(ReadableModelProperty<Integer> xProperty, ReadableModelProperty<Integer> yProperty) {
     // TODO: not used? remove?  
     DiagramCell cell = getDiagramCell();
@@ -48,15 +45,12 @@ public abstract class BlockCell extends AbstractJetpadCell {
       requestRelayout();
     }
   }
-
   protected String getContentViewMapperSource() {
     return getSNode().getNodeId().toString();
   }
-
   protected Mapper<SNode, DiagramNodeView> getBlockMapper() {
     return (Mapper<SNode, DiagramNodeView>) getDiagramCell().getRootMapper().getDescendantMapper(getSNode());
   }
-
   protected View getContentView() {
     Mapper<SNode, DiagramNodeView> blockMapper = getBlockMapper();
     if (blockMapper == null || blockMapper.getTarget() == null || blockMapper.getTarget().contentView.children().size() == 0) {
@@ -64,7 +58,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
     return blockMapper.getTarget().contentView.children().get(0);
   }
-
   protected void syncPortNodes(Iterable<? extends SNode> ports, ListIterator<SNode> portsIterator, Set<SNode> existingPorts) {
     for (SNode nextPort : Sequence.fromIterable(ports)) {
       EditorCell portCell = getContext().createNodeCell(nextPort);
@@ -75,7 +68,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
     purgeTailNodes(portsIterator);
   }
-
   protected void syncPortObjects(Iterable<?> ports, ListIterator portsIterator, Set existingPorts) {
     for (Object port : Sequence.fromIterable(ports)) {
       if (existingPorts.contains(port)) {
@@ -90,7 +82,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
       portsIterator.remove();
     }
   }
-
   private void syncToNextObject(ListIterator listIterator, Set elementsSet, Object next) {
     while (listIterator.hasNext()) {
       Object nextFromList = listIterator.next();
@@ -102,7 +93,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }
     assert false : "Next element was not found in passed listIterator";
   }
-
   protected DiagramNodeView createDiagramNodeView() {
     final BlockView blockView = new BlockView();
     blockView.minimalSize().set(new Vector(10, 10));
@@ -139,7 +129,6 @@ public abstract class BlockCell extends AbstractJetpadCell {
     }).build());
     return blockView;
   }
-
   protected void updatePositionsFromModel(View contentView, DiagramNodeView nodeView) {
     Integer xPosition = contentView.prop(MovableContentView.POSITION_X).get();
     Integer yPosition = contentView.prop(MovableContentView.POSITION_Y).get();

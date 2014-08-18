@@ -21,7 +21,6 @@ import org.apache.log4j.LogManager;
 public class _QueriesUtil {
   public _QueriesUtil() {
   }
-
   public static SNode find_EnclosingContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(inputNode);
     if (contextOwner != null) {
@@ -32,11 +31,9 @@ public class _QueriesUtil {
     }
     return SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
   }
-
   public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(inputNode, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS);
   }
-
   public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
     SNode generatedClass = (SNode) find_ContextOwner_ClosureContext_generatedClass(inputNode, generator);
     if (generatedClass != null) {
@@ -44,12 +41,10 @@ public class _QueriesUtil {
     }
     return null;
   }
-
   public static SNode find_Closure_generatedClosureAdapter_constructor(SNode closure, ITemplateGenerator generator) {
     SNode closureAdapterClass = (SNode) generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(closureAdapterClass)).first();
   }
-
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
     SNode var = SLinkOperations.getTarget(localVarDeclStmt, "localVariableDeclaration", true);
     if ((var != null)) {
@@ -57,7 +52,6 @@ public class _QueriesUtil {
     }
     return null;
   }
-
   public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode varRef, ITemplateGenerator generator) {
     SNode variableAdapter = SLinkOperations.getTarget(varRef, "variableDeclaration", false);
     if ((variableAdapter != null)) {
@@ -65,7 +59,6 @@ public class _QueriesUtil {
     }
     return null;
   }
-
   public static List<SNode> getList_ContextOwner_ifMethod_ParmsUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
     if (!((SNodeOperations.isInstanceOf(inputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")))) {
       return Collections.emptyList();
@@ -79,16 +72,13 @@ public class _QueriesUtil {
     }
     return parms;
   }
-
   public static List<SNode> getList_ContextOwner_VariablesUsedInClosure(SNode inputNode, ITemplateGenerator generator) {
     return ClosuresUtil.getVariablesUsedInClosure(inputNode, generator);
   }
-
   public static String getString_VariableDeclaration_nameInClosureContext(SNode varDecl, ITemplateGenerator generator) {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(varDecl);
     return ClosuresUtil.getVariableNameInClosureContext(contextOwner, varDecl, generator);
   }
-
   /**
    * method should be invoked in $MAP-SRC$ because it relay weaved members (MAP-SRC is processed after all other mappings)
    */
@@ -121,6 +111,5 @@ public class _QueriesUtil {
     // no variable found - return 'null' 
     return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.NullLiteral");
   }
-
   protected static Logger LOG = LogManager.getLogger(_QueriesUtil.class);
 }

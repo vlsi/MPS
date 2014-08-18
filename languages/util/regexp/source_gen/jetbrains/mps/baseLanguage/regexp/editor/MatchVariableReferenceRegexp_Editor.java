@@ -25,7 +25,6 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7j6yq4_a(editorContext, node);
   }
-
   private EditorCell createCollection_7j6yq4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7j6yq4_a");
@@ -35,7 +34,6 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_7j6yq4_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_7j6yq4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\\");
     editorCell.setCellId("Constant_7j6yq4_a0");
@@ -46,7 +44,6 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_7j6yq4_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("match");
@@ -68,20 +65,16 @@ public class MatchVariableReferenceRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_7j6yq4_a1a extends InlineCellProvider {
     public _Inline_7j6yq4_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_7j6yq4_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_7j6yq4_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

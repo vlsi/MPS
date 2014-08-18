@@ -13,12 +13,10 @@ import java.util.List;
 public class TryStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     TryCatchStatement_Behavior.call_collectUncatchedThrowables_4313092516462065508(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement"))), throwables, SLinkOperations.getTarget(thisNode, "body", true), SLinkOperations.getTargets(thisNode, "catchClause", true), ignoreMayBeThrowables);
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "finallyBody", true), throwables, ignoreMayBeThrowables);
   }
-
   public static List<SNode> virtual_getCatchClauses_3718132079121388582(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "catchClause", true);
   }

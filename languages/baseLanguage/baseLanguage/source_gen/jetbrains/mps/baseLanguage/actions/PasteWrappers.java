@@ -22,11 +22,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
@@ -37,11 +35,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         return SLinkOperations.getTarget(_context.getSourceNode(), "expression", true);
       }
@@ -50,11 +46,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         return SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true);
       }
@@ -63,11 +57,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SLinkOperations.setTarget(statement, "localVariableDeclaration", _context.getSourceNode(), true);
@@ -78,11 +70,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
         SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -96,11 +86,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
         SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "name"));
@@ -114,11 +102,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         SPropertyOperations.set(variable, "name", SPropertyOperations.getString(SLinkOperations.getTarget(_context.getSourceNode(), "localVariableDeclaration", true), "name"));
@@ -132,11 +118,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -150,11 +134,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
@@ -170,11 +152,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
         SPropertyOperations.set(variable, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -188,11 +168,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
@@ -208,11 +186,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode statement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
         SNode variable = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
@@ -228,11 +204,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode method = (SPropertyOperations.getBoolean(_context.getSourceNode(), "isStatic") ? SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null) : SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null));
         SPropertyOperations.set(method, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -260,11 +234,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
         SPropertyOperations.set(method, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -289,11 +261,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null);
         SPropertyOperations.set(method, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -323,11 +293,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
         SPropertyOperations.set(method, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));
@@ -357,11 +325,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Expression";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
         SLinkOperations.setTarget(result, "creator", _context.getSourceNode(), true);
@@ -372,11 +338,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.AbstractCreator";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.Statement";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SNode newExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);

@@ -22,80 +22,61 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean createRootRule_Condition_6759767305208033198(final CreateRootRuleContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.resources.structure.IconResourceExpression")).isNotEmpty();
   }
-
   public static Object propertyMacro_GetPropertyValue_2990235398087431176(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "declaration", false), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_2990235398087273707(final PropertyMacroContext _context) {
     SNode irb = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "declaration", false), "jetbrains.mps.lang.resources.structure.IconResourceBundle", false, false);
     return JavaNameUtil.packageName(SNodeOperations.getModel(irb)) + "." + IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(irb);
   }
-
   public static Object propertyMacro_GetPropertyValue_7038317550322744907(final PropertyMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
-
   public static Object propertyMacro_GetPropertyValue_2990235398086399637(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_2990235398086953162(final PropertyMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
-
   public static Object propertyMacro_GetPropertyValue_1474977673367987868(final PropertyMacroContext _context) {
     return IconResource_Behavior.call_getFilename_8974276187400030131(SLinkOperations.getTarget(_context.getNode(), "icon", true));
   }
-
   public static Object propertyMacro_GetPropertyValue_6759767305208041200(final PropertyMacroContext _context) {
     return _context.createUniqueName("ICON", null);
   }
-
   public static Object referenceMacro_GetReferent_6759767305208080925(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("map_IconContainer");
   }
-
   public static Object referenceMacro_GetReferent_6759767305208080928(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "map_IconContainerItem");
   }
-
   public static Object referenceMacro_GetReferent_2990235398086953122(final ReferenceMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
-
   public static Object referenceMacro_GetReferent_2990235398086953146(final ReferenceMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
-
   public static Object referenceMacro_GetReferent_2990235398086953187(final ReferenceMacroContext _context) {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
-
   public static boolean ifMacro_Condition_4965310991037828399(final IfMacroContext _context) {
     return isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
   }
-
   public static SNode sourceNodeQuery_8814893218132245226(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconExpression", true);
   }
-
   public static SNode sourceNodeQuery_4965310991037946893(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "iconExpression", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2990235398086399665(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "icons", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_6759767305208041204(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.resources.structure.IconResourceExpression");
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

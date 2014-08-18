@@ -38,7 +38,6 @@ import java.util.ArrayList;
 public class TraceInfoUtil {
   public TraceInfoUtil() {
   }
-
   @Nullable
   public static String getUnitName(final String file, final int position, SModel descriptor) {
     DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
@@ -48,7 +47,6 @@ public class TraceInfoUtil {
     UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position, file);
     return check_4iwlxm_a3a1(unitInfoForPosition);
   }
-
   @Nullable
   public static String getUnitName(TraceablePositionInfo position, SModel descriptor) {
     DebugInfo info = TraceInfoCache.getInstance().get(descriptor);
@@ -58,7 +56,6 @@ public class TraceInfoUtil {
     UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position);
     return check_4iwlxm_a3a2(unitInfoForPosition);
   }
-
   @Nullable
   public static SNode getUnitNode(@NonNls String className, final String file, final int position) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModel>() {
@@ -72,7 +69,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   private static UnitPositionInfo getUnitInfoForPosition(DebugInfo info, final int position, final String file) {
     List<UnitPositionInfo> resultList = info.getUnitInfoForPosition(file, position);
     if (ListSequence.fromList(resultList).isEmpty()) {
@@ -84,7 +80,6 @@ public class TraceInfoUtil {
       }
     }, false).first();
   }
-
   private static UnitPositionInfo getUnitInfoForPosition(DebugInfo info, @NotNull final TraceablePositionInfo position) {
     List<UnitPositionInfo> resultList = info.getUnitInfoForPosition(position.getFileName(), position.getStartLine());
     if (ListSequence.fromList(resultList).isEmpty()) {
@@ -100,7 +95,6 @@ public class TraceInfoUtil {
       }
     }, false).first();
   }
-
   private static Tuples._2<UnitPositionInfo, DebugInfoRoot> getRootInfoAndUnitInfoForPosition(DebugInfo info, final int position, final String file) {
     Map<DebugInfoRoot, List<UnitPositionInfo>> resultList = info.getRootToInfoForPosition(file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
       public Set<UnitPositionInfo> invoke(DebugInfoRoot root) {
@@ -116,12 +110,10 @@ public class TraceInfoUtil {
     }
     return null;
   }
-
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
     return check_4iwlxm_a0a7(getAllTraceableNodes(className, file, position));
   }
-
   /**
    * Java-specific method for finding the most suitable node from position in java code.
    * 
@@ -203,7 +195,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   @Nullable
   public static SNode getVar(@NonNls String className, final String file, final int position, @NonNls final String varName) {
     return findInTraceInfo(className, new _FunctionTypes._return_P2_E0<SNode, DebugInfo, SModel>() {
@@ -234,7 +225,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   @Nullable
   public static List<SNode> getAllTraceableNodes(@NotNull String className, final String file, final int position) {
     return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<TraceablePositionInfo>, DebugInfoRoot>() {
@@ -243,7 +233,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   @Nullable
   public static List<SNode> getAllScopeNodes(@NotNull String className, final String file, final int position) {
     return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<ScopePositionInfo>, DebugInfoRoot>() {
@@ -252,7 +241,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   @Nullable
   public static List<SNode> getAllUnitNodes(@NotNull String className, final String file, final int position) {
     return TraceInfoUtil.getAllNodes(className, file, position, new _FunctionTypes._return_P1_E0<Set<UnitPositionInfo>, DebugInfoRoot>() {
@@ -261,12 +249,10 @@ public class TraceInfoUtil {
       }
     });
   }
-
   public static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
-
   @Nullable
   public static <T> T findInTraceInfo(@NonNls String unitName, _FunctionTypes._return_P2_E0<? extends T, ? super DebugInfo, ? super SModel> getter) {
     for (SModel descriptor : Sequence.fromIterable(getCandidateModels(unitName))) {
@@ -281,7 +267,6 @@ public class TraceInfoUtil {
     }
     return null;
   }
-
   public static Iterable<SModel> getCandidateModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).where(new IWhereFilter<String>() {
@@ -298,7 +283,6 @@ public class TraceInfoUtil {
       }
     });
   }
-
   public static <T extends PositionInfo> List<SNode> getAllNodes(@NonNls String unitName, final String file, final int lineNumber, final _FunctionTypes._return_P1_E0<? extends Set<T>, ? super DebugInfoRoot> positionsGetter) {
     return findInTraceInfo(unitName, new _FunctionTypes._return_P2_E0<List<SNode>, DebugInfo, SModel>() {
       public List<SNode> invoke(DebugInfo debugInfo, SModel descriptor) {
@@ -327,21 +311,18 @@ public class TraceInfoUtil {
       }
     });
   }
-
   private static String check_4iwlxm_a3a1(UnitPositionInfo checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUnitName();
     }
     return null;
   }
-
   private static String check_4iwlxm_a3a2(UnitPositionInfo checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUnitName();
     }
     return null;
   }
-
   private static SNode check_4iwlxm_a0a7(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();

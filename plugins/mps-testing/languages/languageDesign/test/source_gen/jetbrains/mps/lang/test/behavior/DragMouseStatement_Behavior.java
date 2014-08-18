@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DragMouseStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getPressMouseStatement_4196004291146433125(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.PressMouseStatement", false, false);
   }

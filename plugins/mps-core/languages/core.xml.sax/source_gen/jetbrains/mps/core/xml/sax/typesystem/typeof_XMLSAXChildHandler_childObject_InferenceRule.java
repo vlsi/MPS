@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_XMLSAXChildHandler_childObject_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule", false, false);
     {
@@ -26,22 +25,18 @@ public class typeof_XMLSAXChildHandler_childObject_InferenceRule extends Abstrac
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:553bcb75-a1cc-4005-9641-b5a2524d9f6a(jetbrains.mps.core.xml.sax.typesystem)", "2264311582634140525", true), (SNode) (((rule != null) && (SLinkOperations.getTarget(rule, "rule", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "rule", false), "type", true) : _quotation_createNode_4xzpao_a0a1a1())), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXChildHandler_childObject";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_4xzpao_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

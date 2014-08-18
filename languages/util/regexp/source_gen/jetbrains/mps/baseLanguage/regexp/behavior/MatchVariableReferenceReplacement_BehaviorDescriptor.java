@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MatchVariableReferenceReplacement_BehaviorDescriptor extends Replacement_BehaviorDescriptor {
   public MatchVariableReferenceReplacement_BehaviorDescriptor() {
   }
-
   public String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     return MatchVariableReferenceReplacement_Behavior.virtual_toString_3796137614137538905(thisNode, search);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement";

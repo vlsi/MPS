@@ -13,7 +13,6 @@ public class MessageStatementUtil {
 
   private static final int MAX_LENGTH = 20;
 
-
   public static String generateNameFromExpression(SNode expr) {
     List<SNode> descendants = SNodeOperations.getDescendants(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral", true, new String[]{});
     if (ListSequence.fromList(descendants).isEmpty()) {
@@ -21,8 +20,6 @@ public class MessageStatementUtil {
     }
     return convertToCamelCaseNameString(SPropertyOperations.getString(ListSequence.fromList(descendants).last(), "value"));
   }
-
-
 
   private static String convertToCamelCaseNameString(String nameString) {
     String[] tokens = nameString.split(" ");
@@ -36,8 +33,6 @@ public class MessageStatementUtil {
     return result;
   }
 
-
-
   private static String convertTokenToCamelCase(String token) {
     token = clearNameFromNonJavaSymbols(token);
     if (token.length() <= 1) {
@@ -45,8 +40,6 @@ public class MessageStatementUtil {
     }
     return token.substring(0, 1).toUpperCase() + token.substring(1).toLowerCase();
   }
-
-
 
   private static String clearNameFromNonJavaSymbols(String name) {
     name = name.toLowerCase();
@@ -58,6 +51,5 @@ public class MessageStatementUtil {
     }
     return res;
   }
-
 
 }

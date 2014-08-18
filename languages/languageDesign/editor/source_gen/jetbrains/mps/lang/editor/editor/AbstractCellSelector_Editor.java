@@ -12,7 +12,6 @@ public class AbstractCellSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_2thjk4_a(editorContext, node);
   }
-
   private EditorCell createError_2thjk4_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no cell selector>");
     editorCell.setCellId("Error_2thjk4_a");

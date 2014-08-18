@@ -38,38 +38,30 @@ public class ReducedMakeFacetConfiguration {
   private List<String> deletedFiles = ListSequence.fromList(new ArrayList<String>());
   private List<String> keptFiles = ListSequence.fromList(new ArrayList<String>());
   private Map<String, SModel> sources = MapSequence.fromMap(new HashMap<String, SModel>());
-
   public ReducedMakeFacetConfiguration(IRedirects pathRedirects) {
     this.outputPathRedirects = pathRedirects;
   }
-
   public ReducedMakeFacetConfiguration(IRedirects pathRedirects, boolean rebuild, IConfigMonitor cmon, IJobMonitor jmon) {
     this.outputPathRedirects = pathRedirects;
     this.cmon = cmon;
     this.jmon = jmon;
     this.rebuild = rebuild;
   }
-
   public Map<String, String> getFileHashes() {
     return Collections.unmodifiableMap(fileHashes);
   }
-
   public List<String> getWrittenFiles() {
     return ListSequence.fromList(writtenFiles).asUnmodifiable();
   }
-
   public List<String> getKeptFiles() {
     return ListSequence.fromList(keptFiles).asUnmodifiable();
   }
-
   public List<String> getDeletedFiles() {
     return ListSequence.fromList(deletedFiles).asUnmodifiable();
   }
-
   public SModel getSource(String filePath) {
     return MapSequence.fromMap(sources).get(filePath);
   }
-
   public IScriptController configureFacets(final MakeSession makeSession) {
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
     settings.setIncremental(true);
@@ -112,6 +104,5 @@ public class ReducedMakeFacetConfiguration {
       }
     };
   }
-
 
 }

@@ -13,37 +13,30 @@ public class Account {
   private List<Entry> myEntries = new ArrayList<Entry>();
   private Currency myCurrency;
   private AccountType myType;
-
   public Account(Currency currency) {
     this(currency, null);
   }
-
   public Account(Currency currency, AccountType type) {
     this.myCurrency = currency;
     this.myType = type;
   }
-
   public void addEntry(Entry arg) {
     ensureSameCurrency(arg.getAmount());
     myEntries.add(arg);
     arg.setAccount(this);
   }
-
   /*package*/ void addEntry(Money amount, MfDate date) {
     final Entry e = new Entry(amount, date);
     addEntry(e);
   }
-
   private void ensureSameCurrency(Money arg) {
     if (!(arg.currency().equals(myCurrency))) {
       throw new IllegalArgumentException("New item has incompatable currency");
     }
   }
-
   public Money balance() {
     return balance(MfDate.today());
   }
-
   /*package*/ Money balance(DateRange period) {
     Money result = new Money(0, myCurrency);
     for (Entry e : myEntries) {
@@ -53,11 +46,9 @@ public class Account {
     }
     return result;
   }
-
   /*package*/ Money balance(MfDate date) {
     return balance(DateRange.upTo(date));
   }
-
   public Account copy() {
     Account result = new Account(myCurrency, myType);
     for (Entry e : myEntries) {
@@ -65,7 +56,6 @@ public class Account {
     }
     return result;
   }
-
   /*package*/ Money deposits(DateRange period) {
     Money result = new Money(0, myCurrency);
     for (Entry each : myEntries) {
@@ -75,15 +65,12 @@ public class Account {
     }
     return result;
   }
-
   public Entry[] entries() {
     return myEntries.toArray(new Entry[0]);
   }
-
   /*package*/ boolean isValid() {
     return allMyEntriesReferToMe();
   }
-
   /*package*/ boolean allMyEntriesReferToMe() {
     for (Entry e : myEntries) {
       if (e.getAccount() != this) {
@@ -92,20 +79,16 @@ public class Account {
     }
     return true;
   }
-
   @Override
   public String toString() {
     return "Acc: " + myType;
   }
-
   /*package*/ AccountType type() {
     return myType;
   }
-
   /*package*/ void withdraw(Money amount, Account target, MfDate date) {
     new AccountingTransaction(amount, this, target, date);
   }
-
   /*package*/ Money withdrawels(DateRange period) {
     Money result = new Money(0, myCurrency);
     for (Entry each : myEntries) {

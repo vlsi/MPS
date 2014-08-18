@@ -21,7 +21,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fxg4hy_a(editorContext, node);
   }
-
   private EditorCell createCollection_fxg4hy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fxg4hy_a");
@@ -34,7 +33,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_fxg4hy_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fxg4hy_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant taskdef");
     editorCell.setCellId("Constant_fxg4hy_a0");
@@ -44,7 +42,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_fxg4hy_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -62,7 +59,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxg4hy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_fxg4hy_c0");
@@ -72,7 +68,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_fxg4hy_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("classname");
@@ -90,7 +85,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fxg4hy_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_fxg4hy_e0");
@@ -100,7 +94,6 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_fxg4hy_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classpath");
@@ -122,20 +115,16 @@ public class BwfAntTaskDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_fxg4hy_a5a extends InlineCellProvider {
     public _Inline_fxg4hy_a5a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_fxg4hy_a0f0(editorContext, node);
     }
-
     private EditorCell createProperty_fxg4hy_a0f0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

@@ -12,42 +12,34 @@ public interface IFacet {
   public Iterable<IFacet.Name> optional();
   public Iterable<ITarget> targets();
   public IPropertiesPersistence propertiesPersistence();
-
   public static class Name extends FqName {
     public Name(String fqn) {
       super(fqn);
     }
   }
-
   public static class Stub implements IFacet {
     public Stub() {
     }
-
     @Override
     public Iterable<ITarget> targets() {
       return null;
     }
-
     @Override
     public Iterable<IFacet.Name> optional() {
       return null;
     }
-
     @Override
     public Iterable<IFacet.Name> required() {
       return null;
     }
-
     @Override
     public Iterable<IFacet.Name> extended() {
       return null;
     }
-
     @Override
     public IFacet.Name getName() {
       return null;
     }
-
     @Override
     public IPropertiesPersistence propertiesPersistence() {
       return null;

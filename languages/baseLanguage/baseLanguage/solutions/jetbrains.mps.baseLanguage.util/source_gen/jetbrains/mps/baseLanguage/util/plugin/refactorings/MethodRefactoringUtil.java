@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MethodRefactoringUtil {
   public MethodRefactoringUtil() {
   }
-
   public static SNode getMethodDeclaration(SNode methodOrMethodCall) {
     if (SNodeOperations.isInstanceOf(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return SNodeOperations.cast(methodOrMethodCall, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");

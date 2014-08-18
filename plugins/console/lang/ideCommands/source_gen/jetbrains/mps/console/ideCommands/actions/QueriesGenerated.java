@@ -26,18 +26,15 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_SubtreeStatisticsTarget_2087237500476328252(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "target", "jetbrains.mps.console.ideCommands.structure.NodeReference");
   }
-
   public static void nodeFactory_NodeSetup_AbsractMake_5308946314782063425(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.console.ideCommands.structure.AbsractMake")) {
       SLinkOperations.setTarget(_context.getNewNode(), "argument", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.console.ideCommands.structure.AbsractMake"), "argument", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_OfAspectOperation_5932042262275855253(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     return result;
   }
-
   public static void removeActionsByCondition_5932042262275855360(final IOperationContext operationContext, final RemoveSubstituteActionByConditionContext _context) {
     Iterator<SubstituteAction> actions = _context.getSubstituteActions();
     while (actions.hasNext()) {
@@ -60,7 +57,6 @@ public class QueriesGenerated {
       }
     }
   }
-
   private static SNode _quotation_createNode_b0a1a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

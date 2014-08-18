@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class InlineFieldReferenceRefactoring extends InlineFieldRefactoring {
   private SNode myReference;
 
-
   public InlineFieldReferenceRefactoring(SNode node) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"))) {
       throw new IllegalArgumentException();
@@ -17,8 +16,6 @@ public class InlineFieldReferenceRefactoring extends InlineFieldRefactoring {
 
     this.myReference = node;
   }
-
-
 
   @Override
   public SNode doRefactoring() {

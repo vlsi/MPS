@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class SymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_validateChar_8173814113624732613(SNode thisNode, String s) {
     StringBuilder sb = new StringBuilder();
     int i = 0;
@@ -68,7 +67,6 @@ public class SymbolClassPart_Behavior {
     }
     return sb.toString();
   }
-
   public static String call_escapeChar_8173814113624637238(SNode thisNode, String s) {
     String res = SymbolClassPart_Behavior.call_validateChar_8173814113624732613(thisNode, s);
     if (res == null) {

@@ -13,15 +13,12 @@ public enum FocusPolicy {
   attractsRecursively("attractsRecursively", 3);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<FocusPolicy> getConstants() {
     List<FocusPolicy> list = ListSequence.fromList(new LinkedList<FocusPolicy>());
     ListSequence.fromList(list).addElement(FocusPolicy.noAttraction);
@@ -30,11 +27,9 @@ public enum FocusPolicy {
     ListSequence.fromList(list).addElement(FocusPolicy.attractsRecursively);
     return list;
   }
-
   public static FocusPolicy getDefault() {
     return FocusPolicy.noAttraction;
   }
-
   public static FocusPolicy parseValue(String value) {
     if (value == null) {
       return FocusPolicy.getDefault();
@@ -53,14 +48,11 @@ public enum FocusPolicy {
     }
     return FocusPolicy.getDefault();
   }
-
   private int myValue;
-
   FocusPolicy(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

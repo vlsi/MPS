@@ -22,7 +22,6 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FavoritesPopupWrapper_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-
   public FavoritesPopupWrapper_ActionGroup() {
     super("FavoritesPopupWrapper", ID);
     this.setIsInternal(false);
@@ -32,7 +31,6 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
   public void doUpdate(AnActionEvent event) {
     try {
       Project project = event.getData(MPSDataKeys.PROJECT);
@@ -45,11 +43,9 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
       this.addPlace(p.first, p.second);
     }
   }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
-
   public boolean isStrict() {
     return false;
   }

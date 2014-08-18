@@ -20,7 +20,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xnhqer_a(editorContext, node);
   }
-
   private EditorCell createCollection_xnhqer_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xnhqer_a");
@@ -32,7 +31,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xnhqer_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xnhqer_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_xnhqer_a0");
@@ -46,7 +44,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_xnhqer_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_xnhqer_b0");
@@ -60,7 +57,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xnhqer_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tag");
@@ -80,7 +76,6 @@ public class InlineTagCommentLinePart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xnhqer_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_xnhqer_d0");

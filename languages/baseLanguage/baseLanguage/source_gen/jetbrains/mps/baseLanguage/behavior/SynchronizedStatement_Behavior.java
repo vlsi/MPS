@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class SynchronizedStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "block", true), throwables, ignoreMayBeThrowables);
     if (!(ignoreMayBeThrowables)) {

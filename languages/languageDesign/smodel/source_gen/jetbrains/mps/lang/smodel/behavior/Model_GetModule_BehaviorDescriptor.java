@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Model_GetModule_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Model_GetModule_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return Model_GetModule_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Model_GetModule";

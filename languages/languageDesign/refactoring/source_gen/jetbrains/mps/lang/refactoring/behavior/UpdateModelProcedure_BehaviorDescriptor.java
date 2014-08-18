@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class UpdateModelProcedure_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public UpdateModelProcedure_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure";

@@ -19,7 +19,6 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hrb2do_a(editorContext, node);
   }
-
   private EditorCell createCollection_hrb2do_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hrb2do_a");
@@ -28,14 +27,12 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_hrb2do_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hrb2do_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept=");
     editorCell.setCellId("Constant_hrb2do_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_hrb2do_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -57,20 +54,16 @@ public class ConceptCondition_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_hrb2do_a1a extends InlineCellProvider {
     public _Inline_hrb2do_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_hrb2do_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_hrb2do_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

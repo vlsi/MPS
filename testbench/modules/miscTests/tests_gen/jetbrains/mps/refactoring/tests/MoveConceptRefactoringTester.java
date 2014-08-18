@@ -22,7 +22,6 @@ import jetbrains.mps.ide.ThreadUtils;
 public class MoveConceptRefactoringTester implements IRefactoringTester {
   public MoveConceptRefactoringTester() {
   }
-
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final String conceptName = "MyVeryGoodConcept1";

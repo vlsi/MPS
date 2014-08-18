@@ -27,18 +27,15 @@ import org.apache.log4j.LogManager;
 
 public class CopyThisDown_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     Iterable<EditorCell> seq;
     return ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).isNotEmpty() && EditorActionUtils.isWriteActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).select(new ISelector<SNode, EditorCell>() {
@@ -47,7 +44,6 @@ public class CopyThisDown_Action extends BaseAction {
       }
     }));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -61,7 +57,6 @@ public class CopyThisDown_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -92,7 +87,6 @@ public class CopyThisDown_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("editing.duplicateLine");
@@ -136,6 +130,5 @@ public class CopyThisDown_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CopyThisDown_Action.class);
 }

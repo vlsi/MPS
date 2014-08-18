@@ -46,7 +46,6 @@ public class DeployScript {
   private final String myDeployScriptPath;
   private final String myArtifactsPath;
 
-
   public DeployScript(Project project, List<SNodeReference> plugins) {
     myProject = project;
     myModule = new DeployScript.TemporalModuleWithDescriptorFile();
@@ -64,8 +63,6 @@ public class DeployScript {
 
     SModelOperations.validateLanguagesAndImports(model, true, true);
   }
-
-
 
   @Nullable
   public String make() {
@@ -90,17 +87,12 @@ public class DeployScript {
     return null;
   }
 
-
-
   public String getArtifactsPath() {
     return myArtifactsPath;
   }
-
   public String getDeployScriptLocation() {
     return myDeployScriptPath;
   }
-
-
 
   public void dispose() {
     FileUtil.delete(myModule.getBaseDirectory());
@@ -114,33 +106,26 @@ public class DeployScript {
     });
   }
 
-
-
   private static class TemporalModuleWithDescriptorFile extends TempModule {
     private final File myDescriptorFile;
     private final File myBaseDir;
-
     private TemporalModuleWithDescriptorFile() {
       super(Collections.<ModelRootDescriptor>emptySet(), true, false);
       myBaseDir = FileUtil.createTmpDir();
       // just anything 
       myDescriptorFile = new File(myBaseDir, "module.msd");
     }
-
     @Override
     public IFile getDescriptorFile() {
       return FileSystem.getInstance().getFileByPath(myDescriptorFile.getAbsolutePath().replace("\\", "/"));
     }
-
     public File getBaseDirectory() {
       return myBaseDir;
     }
-
     public boolean isPackaged() {
       // don't ask 
       return false;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeployScript.class);
 }

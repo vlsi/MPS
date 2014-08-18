@@ -12,16 +12,13 @@ public class DeployPlugins_Configuration_Factory extends ConfigurationFactory {
   public DeployPlugins_Configuration_Factory(MPS_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new DeployPlugins_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "Deploy Plugins";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

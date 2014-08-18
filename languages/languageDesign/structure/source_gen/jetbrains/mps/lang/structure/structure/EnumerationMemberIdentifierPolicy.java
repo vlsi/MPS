@@ -12,15 +12,12 @@ public enum EnumerationMemberIdentifierPolicy {
   custom("custom", "custom");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<EnumerationMemberIdentifierPolicy> getConstants() {
     List<EnumerationMemberIdentifierPolicy> list = ListSequence.fromList(new LinkedList<EnumerationMemberIdentifierPolicy>());
     ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.derive_from_presentation);
@@ -28,11 +25,9 @@ public enum EnumerationMemberIdentifierPolicy {
     ListSequence.fromList(list).addElement(EnumerationMemberIdentifierPolicy.custom);
     return list;
   }
-
   public static EnumerationMemberIdentifierPolicy getDefault() {
     return EnumerationMemberIdentifierPolicy.derive_from_presentation;
   }
-
   public static EnumerationMemberIdentifierPolicy parseValue(String value) {
     if (value == null) {
       return EnumerationMemberIdentifierPolicy.getDefault();
@@ -48,14 +43,11 @@ public enum EnumerationMemberIdentifierPolicy {
     }
     return EnumerationMemberIdentifierPolicy.getDefault();
   }
-
   private String myValue;
-
   EnumerationMemberIdentifierPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

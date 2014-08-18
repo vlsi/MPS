@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.project.facets;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.extapi.module.ModuleFacetBase;
@@ -75,6 +76,8 @@ public class IdeaPluginModuleFacetImpl extends ModuleFacetBase implements IdeaPl
 
   @Override
   public ClassLoader getClassLoader() {
-    return PluginManager.getPlugin(PluginId.getId(getPluginId())).getPluginClassLoader();
+    IdeaPluginDescriptor plugin = PluginManager.getPlugin(PluginId.getId(getPluginId()));
+    assert plugin != null;
+    return plugin.getPluginClassLoader();
   }
 }

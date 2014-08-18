@@ -67,6 +67,5 @@ public class ForeachStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ForeachStatement_TextGen.class);
 }

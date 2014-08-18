@@ -18,11 +18,9 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.IArrayValueProxy;
  */
 public class TargetVMEvaluationException extends EvaluationException {
   private static final Logger LOG = LogManager.getLogger(TargetVMEvaluationException.class);
-
   public TargetVMEvaluationException(@NotNull InvocationException e) {
     this(e, null);
   }
-
   public TargetVMEvaluationException(@NotNull InvocationException e, @Nullable ThreadReference threadReference) {
     super(e.exception().referenceType().name());
     if (threadReference == null) {

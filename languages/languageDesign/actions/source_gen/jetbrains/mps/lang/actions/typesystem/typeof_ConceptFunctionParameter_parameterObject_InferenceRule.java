@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConceptFunctionParameter_parameterObject_InferenceRule() {
   }
-
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", false, false), "type", true) != null) {
       {
@@ -34,18 +33,15 @@ public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule exten
       return;
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_parameterObject";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

@@ -20,7 +20,6 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_r9gaet_a(editorContext, node);
   }
-
   private EditorCell createCollection_r9gaet_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r9gaet_a");
@@ -31,7 +30,6 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_r9gaet_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_r9gaet_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "check");
     editorCell.setCellId("Constant_r9gaet_a0");
@@ -41,7 +39,6 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_r9gaet_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCheck");
@@ -61,7 +58,6 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_r9gaet_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "dataflow");
     editorCell.setCellId("Constant_r9gaet_c0");
@@ -71,7 +67,6 @@ public class CheckNodeDataflow_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_r9gaet_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_r9gaet_d0");

@@ -14,7 +14,6 @@ public class XmlProcessingInstruction_Constraints extends BaseConstraintsDescrip
   public XmlProcessingInstruction_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlProcessingInstruction");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class XmlProcessingInstruction_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "target";

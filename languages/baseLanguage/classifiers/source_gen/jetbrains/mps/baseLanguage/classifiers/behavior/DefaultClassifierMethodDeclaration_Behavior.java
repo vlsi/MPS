@@ -15,19 +15,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DefaultClassifierMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getVisiblity_1213877352965(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "visibility", true);
   }
-
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "virtual_getOperationConcept_3044950653914717125", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)", "1205769149993"));

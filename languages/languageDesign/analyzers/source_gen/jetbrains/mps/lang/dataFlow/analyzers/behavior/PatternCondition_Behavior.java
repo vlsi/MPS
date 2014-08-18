@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PatternCondition_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "pattern", true), "patternNode", true));
   }

@@ -37,19 +37,16 @@ public class ModelCheckerExecutor {
   private Project project;
   private IOperationContext context;
   private List<SModule> modules;
-
   public ModelCheckerExecutor(List<SModule> modules, IOperationContext context, Project project) {
     this.project = project;
     this.context = context;
     this.modules = modules;
   }
-
   public void execImmediately(ProgressMonitor promon) {
     ThreadUtils.assertEDT();
     Runnable process = createProcess(false, promon);
     process.run();
   }
-
   public void execAsCommand(Frame frame) {
     ThreadUtils.assertEDT();
     TaskInfo task = createTaskInfo();
@@ -68,7 +65,6 @@ public class ModelCheckerExecutor {
     };
     primExec(task, process, afterFinish, frame);
   }
-
   private Runnable createProcess(final boolean spawnCommands, final ProgressMonitor monitor) {
     return new Runnable() {
       @Override
@@ -113,7 +109,6 @@ public class ModelCheckerExecutor {
       }
     };
   }
-
   protected List<SpecificChecker> getMySpecificCheckers() {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
     ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
@@ -121,7 +116,6 @@ public class ModelCheckerExecutor {
     ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     return specificCheckers;
   }
-
   private TaskInfo createTaskInfo() {
     return new TaskInfo() {
       @NotNull
@@ -129,22 +123,18 @@ public class ModelCheckerExecutor {
       public String getTitle() {
         return "Checking models";
       }
-
       @Override
       public String getCancelText() {
         return null;
       }
-
       @Override
       public String getCancelTooltipText() {
         return null;
       }
-
       @Override
       public boolean isCancellable() {
         return false;
       }
-
       @NonNls
       @Override
       public String getProcessId() {
@@ -152,7 +142,6 @@ public class ModelCheckerExecutor {
       }
     };
   }
-
   private ProgressMonitor getOrCreateProgressMonitor(ProgressMonitor promon) {
     if (promon != null) {
       return promon;
@@ -161,7 +150,6 @@ public class ModelCheckerExecutor {
     prind = (prind != null ? prind : new EmptyProgressIndicator());
     return new ProgressMonitorAdapter(prind);
   }
-
   private void primExec(TaskInfo task, final Runnable proc, final Runnable afterFinish, Frame frame) {
     Runnable process = new Runnable() {
       @Override
@@ -174,19 +162,15 @@ public class ModelCheckerExecutor {
     };
     execAsync(process, task, frame);
   }
-
   private Object startCommand(TaskInfo task) {
     return ((CommandProcessorEx) CommandProcessor.getInstance()).startCommand(project, task.getTitle(), null, UndoConfirmationPolicy.REQUEST_CONFIRMATION);
   }
-
   private void finishCommand(Object cmd) {
     ((CommandProcessorEx) CommandProcessor.getInstance()).finishCommand(project, cmd, null);
   }
-
   private void execAsync(Runnable process, TaskInfo task, Frame frame) {
     ApplicationManagerEx.getApplicationEx().runProcessWithProgressSynchronously(process, task.getTitle(), task.isCancellable(), project, SwingUtilities.getRootPane(frame));
   }
-
   private MPSProject getMPSProject() {
     return project.getComponent(MPSProject.class);
   }

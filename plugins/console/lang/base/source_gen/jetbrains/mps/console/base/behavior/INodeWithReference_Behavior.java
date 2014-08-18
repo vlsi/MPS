@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class INodeWithReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     SNode targetNode = SLinkOperations.getTarget(thisNode, "target", false);
     jetbrains.mps.project.Project mpsProject = ProjectHelper.toMPSProject(project);
@@ -25,11 +24,9 @@ public class INodeWithReference_Behavior {
     IOperationContext context = new ProjectOperationContext(mpsProject);
     NavigationSupport.getInstance().openNode(context, targetNode, true, !(SNodeOperations.isRoot(targetNode)));
   }
-
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "target", false) != null;
   }
-
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "referencePresentation") + " (deleted node)";
   }

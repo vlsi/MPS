@@ -14,15 +14,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class RuleTernaryOperation extends DataFlowConstructor {
   public RuleTernaryOperation() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
-
   public void performActions(Program o, SNode node) {
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
     if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.EqualsExpression") || SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {

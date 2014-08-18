@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RedirectOutputExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public RedirectOutputExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return RedirectOutputExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.RedirectOutputExpression";

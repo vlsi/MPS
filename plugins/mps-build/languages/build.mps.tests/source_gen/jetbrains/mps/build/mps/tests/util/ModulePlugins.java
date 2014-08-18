@@ -22,13 +22,11 @@ public class ModulePlugins {
   private final TemplateQueryContext myContext;
   private final SNode myInitialProject;
   private final ConcurrentHashSet<SNode> myDependency;
-
   public ModulePlugins(SNode initialProject, TemplateQueryContext context) {
     myContext = context;
     myInitialProject = initialProject;
     myDependency = GenerationUtil.<SNode>getSessionSet(initialProject, context, ModulePlugins.KEY);
   }
-
   public void collect(MPSModulesClosure closure) {
     List<SNode> initialPlugins = ListSequence.fromList(new ArrayList<SNode>());
     for (final SNode module : Sequence.fromIterable(closure.getAllModules())) {
@@ -52,7 +50,6 @@ public class ModulePlugins {
       myDependency.add(plugin);
     }
   }
-
   public Iterable<SNode> getDependency() {
     return myDependency;
   }

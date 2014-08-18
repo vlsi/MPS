@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix extends QuickFix_Runtime {
   public SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Simplify Logical Expression";
   }
-
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("operation")[0]), "jetbrains.mps.baseLanguage.structure.AndExpression")) {
       if (SPropertyOperations.getBoolean(((SNode) SimplifyBinaryLogicalExpressionWithBooleanConstant_QuickFix.this.getField("eliminatedNode")[0]), "value") == true) {

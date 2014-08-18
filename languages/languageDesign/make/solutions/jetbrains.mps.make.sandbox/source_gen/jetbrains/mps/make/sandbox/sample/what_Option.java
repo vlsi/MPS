@@ -11,11 +11,9 @@ public enum what_Option implements IOption {
   __VOID__("__VOID__");
 
   private String text;
-
   what_Option(String text) {
     this.text = text;
   }
-
   public String getText() {
     return text;
   }

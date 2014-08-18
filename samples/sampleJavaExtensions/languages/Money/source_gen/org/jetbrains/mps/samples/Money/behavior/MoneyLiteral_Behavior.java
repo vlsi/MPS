@@ -13,13 +13,11 @@ import java.util.HashMap;
 public class MoneyLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     String text = MoneyLiteral_Behavior.call_convertAmountAdvanced_595452003767176013(thisNode, SPropertyOperations.getInteger(thisNode, "amount"));
     text += NameUtil.pluralize(NameUtil.capitalize(NameUtil.decapitalize(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "unit", false), "name"))));
     return text;
   }
-
   public static String call_convertAmountAdvanced_595452003767176013(SNode thisNode, final int amount) {
     Map<Integer, String> smallConversion = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10).withValues("one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten");
     Map<Integer, String> mediumConversion = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 11, 12, 13, 14, 15, 16, 17, 18, 19).withValues("eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen");

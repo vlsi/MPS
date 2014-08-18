@@ -29,7 +29,6 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ydtnyj_a(editorContext, node);
   }
-
   private EditorCell createCollection_ydtnyj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ydtnyj_a");
@@ -40,16 +39,13 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ydtnyj_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_ydtnyj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return ConceptFunction_Behavior.call_getHeader_2866018809101862250(node);
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -64,7 +60,6 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_ydtnyj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ydtnyj_b0");
@@ -75,7 +70,6 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ydtnyj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -99,7 +93,6 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ydtnyj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ydtnyj_d0");

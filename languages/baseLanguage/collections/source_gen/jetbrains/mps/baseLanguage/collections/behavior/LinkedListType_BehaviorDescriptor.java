@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class LinkedListType_BehaviorDescriptor extends ListType_BehaviorDescriptor {
   public LinkedListType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.LinkedListType";

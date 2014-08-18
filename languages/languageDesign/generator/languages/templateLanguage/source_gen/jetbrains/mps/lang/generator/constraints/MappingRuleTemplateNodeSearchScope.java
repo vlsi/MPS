@@ -18,11 +18,9 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
   private SModel myModel;
   private List<SNode> myOwnNodes;
-
   public MappingRuleTemplateNodeSearchScope(SModel model) {
     myModel = model;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
@@ -41,7 +39,6 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
     }
     return resut;
   }
-
   private void ensureInitialized() {
     if (myOwnNodes == null) {
       ISearchScope searchScope = SModelSearchUtil.createModelAndImportedModelsScope(myModel, true);

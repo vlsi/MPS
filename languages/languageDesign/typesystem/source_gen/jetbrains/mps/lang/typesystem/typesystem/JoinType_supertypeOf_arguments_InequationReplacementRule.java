@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class JoinType_supertypeOf_arguments_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public JoinType_supertypeOf_arguments_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
       if (MatchingUtil.matchNodes(arg, subtype)) {
@@ -42,7 +41,6 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
     }
     return false;
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
       if (MatchingUtil.matchNodes(arg, subtype)) {
@@ -89,7 +87,6 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     for (SNode arg : SLinkOperations.getTargets(supertype, "argument", true)) {
@@ -118,29 +115,24 @@ public class JoinType_supertypeOf_arguments_InequationReplacementRule extends Ab
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.JoinType";
   }

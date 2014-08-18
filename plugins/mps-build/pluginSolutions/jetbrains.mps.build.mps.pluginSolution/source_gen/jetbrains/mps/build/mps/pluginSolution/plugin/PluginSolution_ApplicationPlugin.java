@@ -8,14 +8,11 @@ import jetbrains.mps.ide.actions.ProjectNewActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.build.mps.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new GenerateBuildForProjectAction_Action());
@@ -24,7 +21,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new IntentionsEx_ActionGroup());
     addGroup(new ProjectPaneProjectAddition_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(IntentionsEx_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup", null);
     insertGroupIntoAnother(ProjectPaneProjectAddition_ActionGroup.ID, ProjectNewActions_ActionGroup.ID, null);

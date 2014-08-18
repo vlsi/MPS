@@ -9,15 +9,12 @@ import java.util.List;
 public class DiagramConnectorCanCreateHandler_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public DiagramConnectorCanCreateHandler_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return DiagramConnectorCanCreateHandler_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return DiagramConnectorCanCreateHandler_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCanCreateHandler";

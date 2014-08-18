@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ComeFromExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ComeFromExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.scopes.structure.ComeFromExpression";

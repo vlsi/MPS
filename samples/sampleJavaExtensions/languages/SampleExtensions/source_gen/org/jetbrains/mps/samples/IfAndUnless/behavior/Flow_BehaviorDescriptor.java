@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class Flow_BehaviorDescriptor extends StatementList_BehaviorDescriptor {
   public Flow_BehaviorDescriptor() {
   }
-
   public String virtual_getTitle_1262430001741498056(SConcept thisConcept) {
     return Flow_Behavior.virtual_getTitle_1262430001741498056(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.Flow";

@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PropertyReference_InferenceRule() {
   }
-
   public void applyRule(final SNode propertyReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode property = SLinkOperations.getTarget(propertyReference, "property", false);
     if ((property != null)) {
@@ -36,22 +35,18 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.PropertyReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_jcpbj3_a0b0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

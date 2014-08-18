@@ -17,7 +17,6 @@ public class Node_GetNextSiblingOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_c93a65_a(editorContext, node);
   }
-
   private EditorCell createConstant_c93a65_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "next-sibling");
     editorCell.setCellId("Constant_c93a65_a");

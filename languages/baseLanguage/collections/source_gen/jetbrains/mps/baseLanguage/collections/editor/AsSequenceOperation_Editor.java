@@ -14,7 +14,6 @@ public class AsSequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_f2fc9o_a(editorContext, node);
   }
-
   private EditorCell createComponent_f2fc9o_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

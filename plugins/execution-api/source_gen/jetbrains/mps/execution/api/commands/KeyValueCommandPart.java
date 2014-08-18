@@ -14,13 +14,11 @@ public class KeyValueCommandPart extends AbstractCommandPart implements CommandP
       addCommands(ProcessHandlerBuilder.splitCommandInParts(value));
     }
   }
-
   public KeyValueCommandPart(@Nullable String key, @Nullable File value) {
     if ((key != null && key.length() > 0) && (value != null) && (isNotEmptyString(value.getAbsolutePath()))) {
       addCommands(key, value.getAbsolutePath());
     }
   }
-
   public KeyValueCommandPart(@Nullable String key, @Nullable CommandPart value) {
     if ((key != null && key.length() > 0) && (value != null)) {
       List<String> commandList = value.getCommandList();
@@ -30,7 +28,6 @@ public class KeyValueCommandPart extends AbstractCommandPart implements CommandP
       }
     }
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

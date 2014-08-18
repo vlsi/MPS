@@ -16,25 +16,20 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public map_type_comparableWith_Map_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       GeneratedMatchingPattern pattern = new map_type_comparableWith_Map_ComparisonRule.Pattern_yoc8ci_a0a0a0a5();
@@ -43,22 +38,17 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public static class Pattern_yoc8ci_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_KEY;
     /*package*/ SNode patternVar_VALUE;
-
     public Pattern_yoc8ci_a0a0a0a5() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_a1tqv3_a0a = nodeToMatch;
@@ -88,18 +78,15 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_KEY = (SNode) pattern.getFieldValue("patternVar_KEY");
         patternVar_VALUE = (SNode) pattern.getFieldValue("patternVar_VALUE");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_KEY".equals(fieldName)) {
         return patternVar_KEY;
@@ -109,10 +96,8 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer SNODE_POINTER_yoc8ci_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map");
 }

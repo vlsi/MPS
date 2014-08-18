@@ -13,99 +13,99 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515128">
     <file name="RuleOperandRenderer.java">
-      <node id="3995997045458515129" at="36,0,37,0" concept="3" trace="myRenderersCache" />
-      <node id="7093733149214777667" at="43,24,44,33" concept="8" />
-      <node id="6466271953722286428" at="46,53,47,29" concept="8" />
-      <node id="6466271953722322961" at="49,54,50,31" concept="8" />
-      <node id="7093733149214777801" at="52,51,53,69" concept="7" />
-      <node id="7093733149214777807" at="53,69,54,106" concept="7" />
-      <node id="7093733149214777814" at="54,106,55,22" concept="7" />
-      <node id="7093733149214777925" at="56,41,57,118" concept="2" />
-      <node id="7093733149214777826" at="58,14,59,88" concept="7" />
-      <node id="7093733149214777851" at="62,35,63,87" concept="7" />
-      <node id="7093733149214777857" at="63,87,64,70" concept="7" />
-      <node id="7093733149214777872" at="65,48,66,26" concept="8" />
-      <node id="7093733149214777874" at="67,13,68,103" concept="7" />
-      <node id="7093733149214777881" at="68,103,69,52" concept="8" />
-      <node id="7093733149214777894" at="72,31,73,60" concept="7" />
-      <node id="6466271953722344543" at="73,60,74,56" concept="8" />
-      <node id="6466271953722368019" at="76,7,77,34" concept="8" />
-      <node id="7093733149214777717" at="79,53,80,73" concept="7" />
-      <node id="7093733149214777723" at="80,73,81,64" concept="7" />
-      <node id="6466271953722407391" at="82,39,83,66" concept="8" />
-      <node id="7093733149214777744" at="84,7,85,54" concept="7" />
-      <node id="7093733149214777748" at="85,54,86,95" concept="7" />
-      <node id="7093733149214777762" at="87,30,88,62" concept="7" />
-      <node id="6466271953722444248" at="88,62,89,53" concept="8" />
-      <node id="6466271953722540178" at="90,7,91,54" concept="7" />
-      <node id="6466271953722557122" at="91,54,92,98" concept="2" />
-      <node id="6466271953722458776" at="92,98,93,19" concept="8" />
-      <node id="6466271953722454877" at="93,19,94,0" concept="9" />
-      <node id="6466271953722713094" at="96,48,97,53" concept="7" />
-      <node id="6466271953722748137" at="98,103,99,87" concept="2" />
-      <node id="7093733149214777714" at="100,7,101,19" concept="8" />
-      <node id="7093733149214777966" at="102,5,103,26" concept="8" />
+      <node id="3995997045458515129" at="37,0,38,0" concept="3" trace="myRenderersCache" />
+      <node id="7093733149214777667" at="42,24,43,33" concept="8" />
+      <node id="6466271953722286428" at="45,53,46,29" concept="8" />
+      <node id="6466271953722322961" at="48,54,49,31" concept="8" />
+      <node id="7093733149214777801" at="51,51,52,69" concept="7" />
+      <node id="7093733149214777807" at="52,69,53,106" concept="7" />
+      <node id="7093733149214777814" at="53,106,54,22" concept="7" />
+      <node id="7093733149214777925" at="55,41,56,118" concept="2" />
+      <node id="7093733149214777826" at="57,14,58,88" concept="7" />
+      <node id="7093733149214777851" at="61,35,62,87" concept="7" />
+      <node id="7093733149214777857" at="62,87,63,70" concept="7" />
+      <node id="7093733149214777872" at="64,48,65,26" concept="8" />
+      <node id="7093733149214777874" at="66,13,67,103" concept="7" />
+      <node id="7093733149214777881" at="67,103,68,52" concept="8" />
+      <node id="7093733149214777894" at="71,31,72,60" concept="7" />
+      <node id="6466271953722344543" at="72,60,73,56" concept="8" />
+      <node id="6466271953722368019" at="75,7,76,34" concept="8" />
+      <node id="7093733149214777717" at="78,53,79,73" concept="7" />
+      <node id="7093733149214777723" at="79,73,80,64" concept="7" />
+      <node id="6466271953722407391" at="81,39,82,66" concept="8" />
+      <node id="7093733149214777744" at="83,7,84,54" concept="7" />
+      <node id="7093733149214777748" at="84,54,85,98" concept="7" />
+      <node id="7093733149214777762" at="86,30,87,62" concept="7" />
+      <node id="6466271953722444248" at="87,62,88,53" concept="8" />
+      <node id="6466271953722540178" at="89,7,90,54" concept="7" />
+      <node id="6466271953722557122" at="90,54,91,98" concept="2" />
+      <node id="6466271953722458776" at="91,98,92,19" concept="8" />
+      <node id="6466271953722454877" at="92,19,93,0" concept="9" />
+      <node id="6466271953722713094" at="95,48,96,53" concept="7" />
+      <node id="6466271953722748137" at="97,103,98,87" concept="2" />
+      <node id="7093733149214777714" at="99,7,100,19" concept="8" />
+      <node id="7093733149214777966" at="101,5,102,26" concept="8" />
       <node id="3995997045458515140" at="38,0,40,0" concept="1" trace="RuleOperandRenderer#()V" />
-      <node id="7093733149214777662" at="42,143,45,5" concept="5" />
-      <node id="7093733149214777863" at="64,70,67,13" concept="5" />
-      <node id="7093733149214777729" at="81,64,84,7" concept="5" />
-      <node id="7093733149214777694" at="97,53,100,7" concept="4" />
-      <node id="7093733149214777889" at="71,11,75,9" concept="5" />
-      <node id="7093733149214777757" at="86,95,90,7" concept="5" />
-      <node id="7093733149214777685" at="95,10,102,5" concept="5" />
-      <node id="7093733149214777847" at="61,0,71,0" concept="6" trace="compute#()Ljava/lang/String;" />
-      <node id="7093733149214777837" at="59,88,71,11" concept="2" />
-      <node id="7093733149214777824" at="58,12,76,7" concept="0" />
-      <node id="7093733149214777817" at="55,22,76,7" concept="5" />
-      <node id="7093733149214777681" at="78,10,102,5" concept="5" />
-      <node id="7093733149214777677" at="51,10,102,5" concept="5" />
-      <node id="7093733149214777673" at="48,10,102,5" concept="5" />
-      <node id="7093733149214777669" at="45,5,102,5" concept="5" />
-      <node id="3995997045458515143" at="41,0,105,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <node id="7093733149214777662" at="41,143,44,5" concept="5" />
+      <node id="7093733149214777863" at="63,70,66,13" concept="5" />
+      <node id="7093733149214777729" at="80,64,83,7" concept="5" />
+      <node id="7093733149214777694" at="96,53,99,7" concept="4" />
+      <node id="7093733149214777889" at="70,11,74,9" concept="5" />
+      <node id="7093733149214777757" at="85,98,89,7" concept="5" />
+      <node id="7093733149214777685" at="94,10,101,5" concept="5" />
+      <node id="7093733149214777847" at="60,0,70,0" concept="6" trace="compute#()Ljava/lang/String;" />
+      <node id="7093733149214777837" at="58,88,70,11" concept="2" />
+      <node id="7093733149214777824" at="57,12,75,7" concept="0" />
+      <node id="7093733149214777817" at="54,22,75,7" concept="5" />
+      <node id="7093733149214777681" at="77,10,101,5" concept="5" />
+      <node id="7093733149214777677" at="50,10,101,5" concept="5" />
+      <node id="7093733149214777673" at="47,10,101,5" concept="5" />
+      <node id="7093733149214777669" at="44,5,101,5" concept="5" />
+      <node id="3995997045458515143" at="40,0,104,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
       <scope id="3995997045458515142" at="38,32,38,32" />
-      <scope id="7093733149214777666" at="43,24,44,33" />
-      <scope id="7093733149214777955" at="46,53,47,29" />
-      <scope id="7093733149214777944" at="49,54,50,31" />
-      <scope id="7093733149214777924" at="56,41,57,118" />
-      <scope id="7093733149214777871" at="65,48,66,26" />
-      <scope id="7093733149214777733" at="82,39,83,66" />
-      <scope id="7093733149214777703" at="98,103,99,87" />
+      <scope id="7093733149214777666" at="42,24,43,33" />
+      <scope id="7093733149214777955" at="45,53,46,29" />
+      <scope id="7093733149214777944" at="48,54,49,31" />
+      <scope id="7093733149214777924" at="55,41,56,118" />
+      <scope id="7093733149214777871" at="64,48,65,26" />
+      <scope id="7093733149214777733" at="81,39,82,66" />
+      <scope id="7093733149214777703" at="97,103,98,87" />
       <scope id="3995997045458515140" at="38,0,40,0" />
-      <scope id="7093733149214777893" at="72,31,74,56">
+      <scope id="7093733149214777893" at="71,31,73,56">
         <var name="nodeString" id="7093733149214777895" />
       </scope>
-      <scope id="7093733149214777761" at="87,30,89,53">
+      <scope id="7093733149214777761" at="86,30,88,53">
         <var name="genString" id="7093733149214777763" />
       </scope>
-      <scope id="7093733149214777694" at="97,53,100,7">
+      <scope id="7093733149214777694" at="96,53,99,7">
         <var name="mappingRef" id="7093733149214777701" />
       </scope>
-      <scope id="7093733149214777689" at="96,48,101,19">
+      <scope id="7093733149214777689" at="95,48,100,19">
         <var name="panel" id="6466271953722713095" />
       </scope>
-      <scope id="7093733149214777850" at="62,35,69,52">
+      <scope id="7093733149214777850" at="61,35,68,52">
         <var name="model" id="7093733149214777852" />
         <var name="modelName" id="7093733149214777875" />
         <var name="node" id="7093733149214777858" />
       </scope>
-      <scope id="7093733149214777847" at="61,0,71,0" />
-      <scope id="7093733149214777716" at="79,53,94,0">
+      <scope id="7093733149214777847" at="60,0,70,0" />
+      <scope id="7093733149214777716" at="78,53,93,0">
         <var name="generator" id="7093733149214777749" />
         <var name="generatorReference" id="7093733149214777724" />
         <var name="label" id="6466271953722540179" />
         <var name="moduleRef" id="7093733149214777745" />
         <var name="refC" id="7093733149214777718" />
       </scope>
-      <scope id="7093733149214777825" at="58,14,75,9">
+      <scope id="7093733149214777825" at="57,14,74,9">
         <var name="p" id="7093733149214777827" />
       </scope>
-      <scope id="7093733149214777800" at="52,51,77,34">
+      <scope id="7093733149214777800" at="51,51,76,34">
         <var name="modelRef" id="7093733149214777808" />
         <var name="nodeName" id="7093733149214777815" />
         <var name="refC" id="7093733149214777802" />
       </scope>
-      <scope id="3995997045458515158" at="42,143,103,26" />
-      <scope id="3995997045458515143" at="41,0,105,0">
+      <scope id="3995997045458515158" at="41,143,102,26" />
+      <scope id="3995997045458515143" at="40,0,104,0">
         <var name="column" id="3995997045458515156" />
         <var name="hasFocus" id="3995997045458515152" />
         <var name="isSelected" id="3995997045458515150" />
@@ -113,45 +113,45 @@
         <var name="table" id="3995997045458515146" />
         <var name="value" id="3995997045458515148" />
       </scope>
-      <unit id="7093733149214777845" at="60,60,71,9" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer$1" />
-      <unit id="3995997045458515128" at="35,0,106,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
+      <unit id="7093733149214777845" at="59,60,70,9" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer$1" />
+      <unit id="3995997045458515128" at="36,0,105,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
     </file>
   </root>
   <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515690">
     <file name="RuleTypeRenderer.java">
-      <node id="3995997045458515712" at="22,155,23,97" concept="7" />
-      <node id="3995997045458515726" at="23,97,24,122" concept="7" />
-      <node id="6464687090063707171" at="28,27,29,40" concept="2" />
-      <node id="3995997045458515738" at="32,5,33,62" concept="8" />
-      <node id="3995997045458515748" at="36,73,37,55" concept="7" />
-      <node id="3995997045458515755" at="37,55,38,160" concept="7" />
-      <node id="3995997045458515776" at="38,160,39,37" concept="2" />
-      <node id="3995997045458515782" at="39,37,40,50" concept="2" />
-      <node id="3995997045458515789" at="40,50,41,53" concept="2" />
-      <node id="3995997045458515799" at="41,53,42,21" concept="8" />
+      <node id="3995997045458515712" at="21,155,22,97" concept="7" />
+      <node id="3995997045458515726" at="22,97,23,122" concept="7" />
+      <node id="6464687090063707171" at="27,27,28,40" concept="2" />
+      <node id="3995997045458515738" at="31,5,32,62" concept="8" />
+      <node id="3995997045458515748" at="34,73,35,55" concept="7" />
+      <node id="3995997045458515755" at="35,55,36,160" concept="7" />
+      <node id="3995997045458515776" at="36,160,37,37" concept="2" />
+      <node id="3995997045458515782" at="37,37,38,50" concept="2" />
+      <node id="3995997045458515789" at="38,50,39,53" concept="2" />
+      <node id="3995997045458515799" at="39,53,40,21" concept="8" />
       <node id="3995997045458515693" at="18,0,20,0" concept="1" trace="RuleTypeRenderer#()V" />
-      <node id="6464687090063239371" at="27,0,31,0" concept="6" trace="run#()V" />
-      <node id="6464687090063120754" at="25,47,31,9" concept="2" />
-      <node id="6464687090063239734" at="24,122,32,5" concept="5" />
-      <node id="3995997045458515742" at="36,0,44,0" concept="10" trace="createCenterAlignmentInCell#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
-      <node id="3995997045458515696" at="21,0,35,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <node id="6464687090063239371" at="26,0,30,0" concept="6" trace="run#()V" />
+      <node id="6464687090063120754" at="24,47,30,9" concept="2" />
+      <node id="6464687090063239734" at="23,122,31,5" concept="5" />
+      <node id="3995997045458515742" at="34,0,42,0" concept="10" trace="createCenterAlignmentInCell#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
+      <node id="3995997045458515696" at="20,0,34,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
       <scope id="3995997045458515695" at="18,29,18,29" />
-      <scope id="6464687090063239375" at="28,27,29,40" />
+      <scope id="6464687090063239375" at="27,27,28,40" />
       <scope id="3995997045458515693" at="18,0,20,0" />
-      <scope id="6464687090063239371" at="27,0,31,0" />
-      <scope id="6464687090063239737" at="25,47,31,9" />
-      <scope id="3995997045458515747" at="36,73,42,21">
+      <scope id="6464687090063239371" at="26,0,30,0" />
+      <scope id="6464687090063239737" at="24,47,30,9" />
+      <scope id="3995997045458515747" at="34,73,40,21">
         <var name="compPanel" id="3995997045458515749" />
         <var name="constraints" id="3995997045458515756" />
       </scope>
-      <scope id="3995997045458515742" at="36,0,44,0">
+      <scope id="3995997045458515742" at="34,0,42,0">
         <var name="comp" id="3995997045458515745" />
       </scope>
-      <scope id="3995997045458515711" at="22,155,33,62">
+      <scope id="3995997045458515711" at="21,155,32,62">
         <var name="caption" id="3995997045458515713" />
         <var name="comp" id="3995997045458515727" />
       </scope>
-      <scope id="3995997045458515696" at="21,0,35,0">
+      <scope id="3995997045458515696" at="20,0,34,0">
         <var name="column" id="3995997045458515709" />
         <var name="hasFocus" id="3995997045458515705" />
         <var name="isSelected" id="3995997045458515703" />
@@ -159,8 +159,8 @@
         <var name="table" id="3995997045458515699" />
         <var name="value" id="3995997045458515701" />
       </scope>
-      <unit id="6464687090063239369" at="26,37,31,7" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
-      <unit id="3995997045458515690" at="17,0,45,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" />
+      <unit id="6464687090063239369" at="25,37,30,7" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
+      <unit id="3995997045458515690" at="17,0,43,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" />
     </file>
   </root>
 </debug-info>

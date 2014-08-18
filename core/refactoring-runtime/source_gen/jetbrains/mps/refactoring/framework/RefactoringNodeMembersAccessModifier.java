@@ -34,35 +34,29 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
   private Set<String> myOldNames = SetSequence.fromSet(new HashSet<String>());
   private Project myProject;
 
-
   public RefactoringNodeMembersAccessModifier(Project project) {
     this.myProject = project;
   }
-
   @Override
   public void addModelsToModify(Collection<SModel> models) {
     LOG.assertLog(myProject.getModelAccess().canRead());
     myModifiableModels.addAll(models);
   }
-
   public void addChildRoleChange(String conceptFQName, String oldRole, String newRole) {
     LOG.assertLog(myProject.getModelAccess().canWrite());
     myChildrenRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
     SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
-
   public void addReferentRoleChange(String conceptFQName, String oldRole, String newRole) {
     LOG.assertLog(myProject.getModelAccess().canWrite());
     myReferencesRolesMap.put(new Pair<String, String>(conceptFQName, oldRole), newRole);
     SetSequence.fromSet(myOldNames).addElement(oldRole);
   }
-
   public void addPropertyNameChange(String conceptFQName, String oldName, String newName) {
     LOG.assertLog(myProject.getModelAccess().canWrite());
     myPropertiesNamesMap.put(new Pair<String, String>(conceptFQName, oldName), newName);
     SetSequence.fromSet(myOldNames).addElement(oldName);
   }
-
   private String getNewFeatureRole_internal(@NotNull String conceptFQName, @NotNull String oldRole, StructureModificationData.ConceptFeatureKind conceptFeatureKind) {
     Map<Pair<String, String>, String> featuresMap;
     Set<Pair<String, String>> absentFeatureSet;
@@ -107,11 +101,9 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     absentFeatureSet.add(stringPair);
     return null;
   }
-
   private boolean isModificationMode(SModel model, String oldName) {
     return myModifiableModels.contains(model) && SetSequence.fromSet(myOldNames).contains(oldName);
   }
-
   @Override
   public String getNewChildRole(SModel model, String conceptFQName, String role) {
     if (isModificationMode(model, role)) {
@@ -122,7 +114,6 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     }
     return role;
   }
-
   @Override
   public String getNewReferentRole(SModel model, String conceptFQName, String role) {
     if (isModificationMode(model, role)) {
@@ -133,7 +124,6 @@ public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessMod
     }
     return role;
   }
-
   @Override
   public String getNewPropertyName(SModel model, String conceptFQName, String propertyName) {
     if (isModificationMode(model, propertyName)) {

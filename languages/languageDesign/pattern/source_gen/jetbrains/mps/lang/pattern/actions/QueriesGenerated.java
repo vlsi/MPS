@@ -28,15 +28,12 @@ public class QueriesGenerated {
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), orPattern);
         return SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", _context.getSourceNode(), true);
       }
-
       public String getMatchingText(String pattern) {
         return "|";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -47,7 +44,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2879868312063095317(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false) != null;
   }

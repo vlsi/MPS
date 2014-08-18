@@ -22,11 +22,9 @@ import com.intellij.openapi.vcs.AbstractVcs;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
-
   public GitRepositoriesInstaller(Project project) {
     super(project);
   }
-
   @NotNull
   @Override
   protected AbstractInstaller.State install(final boolean dryRun) {
@@ -64,7 +62,6 @@ import com.intellij.openapi.vcs.AbstractVcs;
       return installForRoots(gitRoots);
     }
   }
-
   private int getRootsToInstall() {
     return Sequence.fromIterable(getGitRoots()).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
@@ -76,7 +73,6 @@ import com.intellij.openapi.vcs.AbstractVcs;
       }
     }).count();
   }
-
   private Iterable<VcsRoot> getGitRoots() {
     VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
     return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
@@ -85,7 +81,6 @@ import com.intellij.openapi.vcs.AbstractVcs;
       }
     });
   }
-
   private AbstractInstaller.State installForRoots(Iterable<VcsRoot> roots) {
     int updated = 0;
     int failed = 0;
@@ -105,17 +100,14 @@ import com.intellij.openapi.vcs.AbstractVcs;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   @Override
   public String getActionTitle() {
     return "Git file attributes for " + NameUtil.formatNumericalString(getRootsToInstall(), "repository") + "  (.gitattributes)";
   }
-
   @Override
   public String getAffectedVcsName() {
     return "Git";
   }
-
   @NotNull
   private static AbstractInstaller.State installForRoot(VirtualFile vcsRootPath, boolean dryRun) {
     VirtualFile attributesFile = vcsRootPath.findChild(ATTRIBUTES_FILE);
@@ -198,7 +190,6 @@ import com.intellij.openapi.vcs.AbstractVcs;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   private static String check_mnsjzr_a0a0a0a0b0e(AbstractVcs checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getName();

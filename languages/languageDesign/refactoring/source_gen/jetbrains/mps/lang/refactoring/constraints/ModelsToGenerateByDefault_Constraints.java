@@ -14,12 +14,10 @@ public class ModelsToGenerateByDefault_Constraints extends BaseConstraintsDescri
   public ModelsToGenerateByDefault_Constraints() {
     super("jetbrains.mps.lang.refactoring.structure.ModelsToGenerateByDefault");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class ModelsToGenerateByDefault_Constraints extends BaseConstraintsDescri
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.refactoring.structure.ModelsToGenerateClause", true, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590313(jetbrains.mps.lang.refactoring.constraints)", "4347648036456711205");
 }

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildMps_ModuleDependencyJar_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildMps_ModuleDependencyJar_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode jarEntry, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String relativePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(jarEntry, "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
     if (!(relativePath.endsWith("}")) && !(relativePath.endsWith(".jar"))) {
@@ -27,18 +26,15 @@ public class check_BuildMps_ModuleDependencyJar_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

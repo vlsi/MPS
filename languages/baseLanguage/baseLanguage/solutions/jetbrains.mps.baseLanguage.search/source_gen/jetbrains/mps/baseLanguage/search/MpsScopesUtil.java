@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class MpsScopesUtil {
   public MpsScopesUtil() {
   }
-
   public static String getSignature(SNode classifierMember, SNode classifier) {
     String classifierPrefix = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(classifierMember), "jetbrains.mps.baseLanguage.structure.Classifier"), "virtual_getFqName_1213877404258", new Object[]{}) + ":";
     if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
@@ -30,7 +29,6 @@ public class MpsScopesUtil {
     }
     return "No signature for " + classifierMember;
   }
-
   public static List<String> getMembersSignatures(SNode classifier) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (SNode member : BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), "jetbrains.mps.baseLanguage.structure.IClassifierType", "call_getMembers_7405920559687277275", new Object[]{})) {

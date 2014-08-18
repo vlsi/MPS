@@ -11,11 +11,9 @@ public class FooCheckedDots<T extends Enum> {
   private boolean myBoolean;
   private int myInt;
   private T element;
-
   public FooCheckedDots(T element) {
     this.element = element;
   }
-
   public void bar(String s, Object t, FooCheckedDots foo2) {
     check_7013wl_a0a5(s);
     if (check_7013wl_a1a5(t, s)) {
@@ -24,7 +22,6 @@ public class FooCheckedDots<T extends Enum> {
 
     }
   }
-
   public void foo(String s) {
     check_7013wl_a0a6(s, this);
     check_7013wl_a1a6(s, this);
@@ -33,11 +30,9 @@ public class FooCheckedDots<T extends Enum> {
     // http://youtrack.jetbrains.com/issue/MPS-14355 
     check_7013wl_a5a6(s, this);
   }
-
   public int intFunc() {
     return 2;
   }
-
   public void MPS14570() {
     List<String> sList = ListSequence.fromList(new ArrayList<String>());
     String s2 = "";
@@ -45,92 +40,78 @@ public class FooCheckedDots<T extends Enum> {
       check_7013wl_a0a2a8(s2, s);
     }
   }
-
   public void checkThisBeforCheckedDot() {
     // http://youtrack.jetbrains.net/issue/MPS-13818 
     check_7013wl_a1a9(getInstance(this.myInt, this.myBoolean), this);
   }
-
   private String getString(int i, boolean b) {
     System.out.println(i + "" + b);
     return myString;
   }
-
   private FooCheckedDots getInstance(int i, boolean b) {
     System.out.println(i + "" + b);
     return null;
   }
-
   private static char check_7013wl_a0a5(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.charAt(2);
     }
     return 0;
   }
-
   private static void check_7013wl_a0a1a5(FooCheckedDots checkedDotOperand, String s, Object t, FooCheckedDots foo2) {
     if (null != checkedDotOperand) {
       checkedDotOperand.bar(s, t, foo2);
     }
 
   }
-
   private static String check_7013wl_a1a1a5(String checkedDotOperand, String s) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.concat(s);
     }
     return null;
   }
-
   private static boolean check_7013wl_a1a5(Object checkedDotOperand, String s) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(s);
     }
     return false;
   }
-
   private static <T extends Enum> char check_7013wl_a0a6(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
     }
     return 0;
   }
-
   private static <T extends Enum> char check_7013wl_a1a6(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.charAt(checkedDotThisExpression.intFunc());
     }
     return 0;
   }
-
   private static boolean check_7013wl_a2a6(String checkedDotOperand, String myString) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(myString);
     }
     return false;
   }
-
   private static <T extends Enum> boolean check_7013wl_a3a6(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(checkedDotThisExpression.myString);
     }
     return false;
   }
-
   private static <T extends Enum> boolean check_7013wl_a5a6(String checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals(checkedDotThisExpression.element.name());
     }
     return false;
   }
-
   private static int check_7013wl_a0a2a8(String checkedDotOperand, String s) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.compareTo(s);
     }
     return 0;
   }
-
   private static <T extends Enum> void check_7013wl_a1a9(FooCheckedDots checkedDotOperand, FooCheckedDots<T> checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.foo(checkedDotThisExpression.getString(checkedDotThisExpression.myInt, checkedDotThisExpression.myBoolean));

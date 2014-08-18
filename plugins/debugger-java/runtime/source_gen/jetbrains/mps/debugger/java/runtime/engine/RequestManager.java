@@ -55,22 +55,18 @@ public class RequestManager implements IRequestManager {
   private final RequestManager.MyDebugProcessListener myDebugProcessListener = new RequestManager.MyDebugProcessListener();
   private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
   private final List<_FunctionTypes._void_P0_E0> myWarningsListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-
   public RequestManager(EventsProcessor processor) {
     myDebugEventsProcessor = processor;
     myDebugEventsProcessor.addDebugProcessListener(myDebugProcessListener);
   }
-
   public EventRequestManager getVMRequestManager() {
     return myEventRequestManager;
   }
-
   @Nullable
   public Requestor findRequestor(EventRequest request) {
     ManagerThread.assertIsMangerThread();
     return (request != null ? (Requestor) request.getProperty(REQUESTOR) : null);
   }
-
   @NotNull
   public Set<EventRequest> findRequests(Requestor requestor) {
     ManagerThread.assertIsMangerThread();
@@ -79,12 +75,10 @@ public class RequestManager implements IRequestManager {
     }
     return new HashSet<EventRequest>(myRequestorToBelongedRequests.get(requestor));
   }
-
   private void registerRequestInternal(final Requestor requestor, final EventRequest request) {
     registerRequest(requestor, request);
     request.putProperty(REQUESTOR, requestor);
   }
-
   private void registerRequest(Requestor requestor, EventRequest request) {
     Set<EventRequest> reqSet = myRequestorToBelongedRequests.get(requestor);
     if (reqSet == null) {
@@ -93,7 +87,6 @@ public class RequestManager implements IRequestManager {
     }
     reqSet.add(request);
   }
-
   public void deleteRequests(Requestor requestor) {
     ManagerThread.assertIsMangerThread();
     if (!(myDebugEventsProcessor.isAttached())) {
@@ -126,7 +119,6 @@ public class RequestManager implements IRequestManager {
       }
     }
   }
-
   public BreakpointRequest createBreakpointRequest(JavaBreakpoint requestor, Location location) {
     // ------------------- requests creation 
     ManagerThread.assertIsMangerThread();
@@ -134,7 +126,6 @@ public class RequestManager implements IRequestManager {
     initRequest(requestor, request);
     return request;
   }
-
   public MethodEntryRequest createMethodEntryRequest(JavaBreakpoint requestor, ReferenceType type) {
     ManagerThread.assertIsMangerThread();
     MethodEntryRequest request = myEventRequestManager.createMethodEntryRequest();
@@ -142,7 +133,6 @@ public class RequestManager implements IRequestManager {
     initRequest(requestor, request);
     return request;
   }
-
   public MethodExitRequest createMethodExitRequest(JavaBreakpoint requestor, ReferenceType type) {
     ManagerThread.assertIsMangerThread();
     MethodExitRequest request = myEventRequestManager.createMethodExitRequest();
@@ -150,28 +140,24 @@ public class RequestManager implements IRequestManager {
     initRequest(requestor, request);
     return request;
   }
-
   public AccessWatchpointRequest createFieldAccessRequest(JavaBreakpoint requestor, Field field) {
     ManagerThread.assertIsMangerThread();
     AccessWatchpointRequest request = myEventRequestManager.createAccessWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
-
   public ModificationWatchpointRequest createFieldModificationRequest(JavaBreakpoint requestor, Field field) {
     ManagerThread.assertIsMangerThread();
     ModificationWatchpointRequest request = myEventRequestManager.createModificationWatchpointRequest(field);
     initRequest(requestor, request);
     return request;
   }
-
   public ExceptionRequest createExceptionRequest(JavaBreakpoint requestor, ReferenceType reference) {
     ManagerThread.assertIsMangerThread();
     ExceptionRequest request = myEventRequestManager.createExceptionRequest(reference, true, true);
     initRequest(requestor, request);
     return request;
   }
-
   private void initRequest(JavaBreakpoint requestor, EventRequest req) {
     int suspendPolicy = requestor.getSuspendPolicy();
     if (suspendPolicy == EventRequest.SUSPEND_NONE) {
@@ -181,7 +167,6 @@ public class RequestManager implements IRequestManager {
     req.setSuspendPolicy(suspendPolicy);
     registerRequestInternal(requestor, req);
   }
-
   public void deleteStepRequests() {
     ManagerThread.assertIsMangerThread();
     // todo what are these step requests to delete? 
@@ -209,7 +194,6 @@ public class RequestManager implements IRequestManager {
       myEventRequestManager.deleteEventRequests(toDelete);
     }
   }
-
   public StepRequest createStepRequest(StepRequestor requestor, int stepType, ThreadReference stepThread, int suspendPolicy) {
     deleteStepRequests();
     StepRequest stepRequest = myEventRequestManager.createStepRequest(stepThread, StepRequest.STEP_LINE, stepType);
@@ -217,7 +201,6 @@ public class RequestManager implements IRequestManager {
     registerRequestInternal(requestor, stepRequest);
     return stepRequest;
   }
-
   public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
     // todo: some other types of requests; later 
     // ------------------- ~requests creation 
@@ -226,7 +209,6 @@ public class RequestManager implements IRequestManager {
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
     classPrepareRequest.enable();
   }
-
   private ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String className) {
     ClassPrepareRequest classPrepareRequest = myEventRequestManager.createClassPrepareRequest();
     classPrepareRequest.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
@@ -235,14 +217,12 @@ public class RequestManager implements IRequestManager {
     registerRequestInternal(requestor, classPrepareRequest);
     return classPrepareRequest;
   }
-
   public void enableRequest(EventRequest request) {
     // currently does no much more than request.enable() 
     ManagerThread.assertIsMangerThread();
     LOG.assertLog(findRequestor(request) != null, "Assertion failed.");
     request.enable();
   }
-
   public void setInvalid(Requestor requestor, String message) {
     ManagerThread.assertIsMangerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
@@ -252,21 +232,17 @@ public class RequestManager implements IRequestManager {
       }
     });
   }
-
   @Nullable
   public String getWarning(Requestor requestor) {
     ManagerThread.assertIsMangerThread();
     return myInvalidRequestsAndWarnings.get(requestor);
   }
-
   public void addWarningsListener(_FunctionTypes._void_P0_E0 listener) {
     ListSequence.fromList(myWarningsListeners).addElement(listener);
   }
-
   public void removeWarningsListener(_FunctionTypes._void_P0_E0 listener) {
     ListSequence.fromList(myWarningsListeners).removeElement(listener);
   }
-
   public void processClassPrepared(final ClassPrepareEvent event) {
     if (!(myDebugEventsProcessor.isAttached())) {
       return;
@@ -279,7 +255,6 @@ public class RequestManager implements IRequestManager {
       }
     }
   }
-
   public static void createClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new _FunctionTypes._void_P1_E0<EventsProcessor>() {
       public void invoke(EventsProcessor processor) {
@@ -289,7 +264,6 @@ public class RequestManager implements IRequestManager {
       }
     });
   }
-
   public static void removeClassPrepareRequests(final JavaBreakpoint breakpoint) {
     VMEventsProcessorManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new _FunctionTypes._void_P1_E0<EventsProcessor>() {
       public void invoke(EventsProcessor processor) {
@@ -299,17 +273,14 @@ public class RequestManager implements IRequestManager {
       }
     });
   }
-
   public class MyDebugProcessListener extends DebugProcessAdapter {
     public MyDebugProcessListener() {
     }
-
     @Override
     public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       myEventRequestManager = null;
       myRequestorToBelongedRequests.clear();
     }
-
     @Override
     public void processAttached(@NotNull EventsProcessor process) {
       myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();

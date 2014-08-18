@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class RectangleNode_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public RectangleNode_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode";

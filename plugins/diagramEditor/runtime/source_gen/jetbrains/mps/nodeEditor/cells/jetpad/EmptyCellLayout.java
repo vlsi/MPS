@@ -9,10 +9,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 
 public class EmptyCellLayout extends AbstractCellLayout {
 
-
   public void doLayout(EditorCell_Collection collection) {
   }
-
   public TextBuilder doLayoutText(Iterable<EditorCell> iterable) {
     return jetbrains.mps.nodeEditor.text.TextBuilder.getEmptyTextBuilder();
   }

@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildLayout_CopyRegexMapper_BehaviorDescriptor extends BuildLayout_CopyMapper_BehaviorDescriptor {
   public BuildLayout_CopyRegexMapper_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyRegexMapper";

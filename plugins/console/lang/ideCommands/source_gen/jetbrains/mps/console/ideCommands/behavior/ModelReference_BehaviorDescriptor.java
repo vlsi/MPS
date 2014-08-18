@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.behavior.ModelReferenceExpression_BehaviorDescr
 public class ModelReference_BehaviorDescriptor extends ModelReferenceExpression_BehaviorDescriptor {
   public ModelReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ModelReference";

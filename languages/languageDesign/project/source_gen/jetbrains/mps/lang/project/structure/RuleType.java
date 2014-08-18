@@ -14,15 +14,12 @@ public enum RuleType {
   strictly_after("after (>)", "strictly_after");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<RuleType> getConstants() {
     List<RuleType> list = ListSequence.fromList(new LinkedList<RuleType>());
     ListSequence.fromList(list).addElement(RuleType.strictly_before);
@@ -32,11 +29,9 @@ public enum RuleType {
     ListSequence.fromList(list).addElement(RuleType.strictly_after);
     return list;
   }
-
   public static RuleType getDefault() {
     return RuleType.strictly_before;
   }
-
   public static RuleType parseValue(String value) {
     if (value == null) {
       return RuleType.getDefault();
@@ -58,14 +53,11 @@ public enum RuleType {
     }
     return RuleType.getDefault();
   }
-
   private String myValue;
-
   RuleType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

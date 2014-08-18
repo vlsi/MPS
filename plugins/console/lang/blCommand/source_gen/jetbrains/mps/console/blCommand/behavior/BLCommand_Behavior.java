@@ -15,36 +15,29 @@ import jetbrains.mps.smodel.SReference;
 public class BLCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return _quotation_createNode_1tnz54_a0a0();
   }
-
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "body", true);
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_1tnz54_a0a1a2());
     return result;
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "execute statement list";
+    return "execute a statement list";
   }
-
   public static String virtual_getDisplayString_7006261637493126103(SAbstractConcept thisConcept) {
     return "{ <statements> }";
   }
-
   private static SNode _quotation_createNode_1tnz54_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_1tnz54_a0a1a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

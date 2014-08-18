@@ -19,7 +19,6 @@ public final class DepLink {
   private final List<DepLink> myReferences;
   private DepLink myReusedDepLink;
   /*package*/ DepLink myParent;
-
   public DepLink(SModule module, DependencyUtil.Role role, DependencyUtil.LinkType linktype) {
     this.module = module;
     this.role = role;
@@ -27,28 +26,22 @@ public final class DepLink {
     myChildren = ListSequence.fromList(new ArrayList<DepLink>());
     myReferences = ListSequence.fromList(new ArrayList<DepLink>());
   }
-
   public List<DepLink> children() {
     return myChildren;
   }
-
   public DepLink parent() {
     return myParent;
   }
-
   public void setReused(DepLink reusedDepLink) {
     myReusedDepLink = reusedDepLink;
     ListSequence.fromList(reusedDepLink.myReferences).addElement(this);
   }
-
   public DepLink getReused() {
     return myReusedDepLink;
   }
-
   public List<DepLink> reusedFrom() {
     return myReferences;
   }
-
   @Override
   public boolean equals(Object object) {
     if (object instanceof DepLink) {
@@ -57,21 +50,17 @@ public final class DepLink {
     }
     return false;
   }
-
   public Dependency getRoleModuleKey() {
     return new Dependency(this.module, this.role);
   }
-
   @Override
   public int hashCode() {
     return module.hashCode() + linktype.hashCode();
   }
-
   @Override
   public String toString() {
     return String.format("[%s %s %s]", role, module.getModuleName(), linktype);
   }
-
   /**
    * Flatten list of all children, recursively
    */

@@ -9,32 +9,25 @@ public class Questionnable extends MultiTuple._2<String, Integer> implements Run
   public Questionnable() {
     super();
   }
-
   public Questionnable(String question, Integer answer) {
     super(question, answer);
   }
-
   public String question(String value) {
     return super._0(value);
   }
-
   public Integer answer(Integer value) {
     return super._1(value);
   }
-
   public String question() {
     return super._0();
   }
-
   public Integer answer() {
     return super._1();
   }
-
   @SuppressWarnings(value = "unchecked")
   public Questionnable assignFrom(Tuples._2<String, Integer> from) {
     return (Questionnable) super.assign(from);
   }
-
   public void run() {
     throw new RuntimeException();
   }

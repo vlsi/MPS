@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class AbstractComponent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AbstractComponent_BehaviorDescriptor() {
   }
-
   public SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
     return AbstractComponent_Behavior.virtual_getConceptDeclaration_7055725856388417603(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractComponent";

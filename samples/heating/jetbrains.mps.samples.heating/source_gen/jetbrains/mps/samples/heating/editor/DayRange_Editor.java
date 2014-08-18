@@ -24,7 +24,6 @@ public class DayRange_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rtxy5x_a(editorContext, node);
   }
-
   private EditorCell createCollection_rtxy5x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_rtxy5x_a");
@@ -35,7 +34,6 @@ public class DayRange_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_rtxy5x_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rtxy5x_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from");
     editorCell.setCellId("Constant_rtxy5x_a0");
@@ -43,16 +41,13 @@ public class DayRange_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new DayRange_Editor.ReplaceWith_Applicability_cellMenu_rtxy5x_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_Applicability_cellMenu_rtxy5x_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Applicability_cellMenu_rtxy5x_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.heating.structure.Applicability";
     }
   }
-
   private EditorCell createProperty_rtxy5x_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("start");
@@ -73,14 +68,12 @@ public class DayRange_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_rtxy5x_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to");
     editorCell.setCellId("Constant_rtxy5x_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_rtxy5x_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("end");

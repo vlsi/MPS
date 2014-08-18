@@ -10,29 +10,29 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:5d73334e-5a3b-4ea5-bf0c-57e352c702de(jetbrains.mps.analyzers.sandbox.test)/7985661997283617007">
     <file name="Ff.java">
-      <node id="7985661997283619979" at="10,19,11,18" concept="6" />
-      <node id="7985661997283672858" at="12,20,13,26" concept="2" />
-      <node id="7985661997283672867" at="16,22,17,15" concept="7" />
+      <node id="7985661997283619979" at="9,19,10,18" concept="6" />
+      <node id="7985661997283672858" at="11,20,12,26" concept="2" />
+      <node id="7985661997283672867" at="15,22,16,15" concept="7" />
       <node id="7985661997283617009" at="7,0,9,0" concept="1" trace="Ff#()V" />
-      <node id="7985661997283672853" at="11,18,14,5" concept="4" />
-      <node id="7985661997283672865" at="15,33,18,7" concept="4" />
-      <node id="7985661997283672863" at="14,5,19,5" concept="3" />
-      <node id="7985661997283672849" at="11,18,19,5" concept="0" />
-      <node id="7985661997283617013" at="10,0,21,0" concept="5" trace="f#()V" />
+      <node id="7985661997283672853" at="10,18,13,5" concept="4" />
+      <node id="7985661997283672865" at="14,33,17,7" concept="4" />
+      <node id="7985661997283672863" at="13,5,18,5" concept="3" />
+      <node id="7985661997283672849" at="10,18,18,5" concept="0" />
+      <node id="7985661997283617013" at="9,0,20,0" concept="5" trace="f#()V" />
       <scope id="7985661997283617012" at="7,15,7,15" />
-      <scope id="7985661997283672857" at="12,20,13,26" />
-      <scope id="7985661997283672866" at="16,22,17,15" />
+      <scope id="7985661997283672857" at="11,20,12,26" />
+      <scope id="7985661997283672866" at="15,22,16,15" />
       <scope id="7985661997283617009" at="7,0,9,0" />
-      <scope id="7985661997283672864" at="15,33,18,7" />
-      <scope id="7985661997283672863" at="14,5,19,5">
+      <scope id="7985661997283672864" at="14,33,17,7" />
+      <scope id="7985661997283672863" at="13,5,18,5">
         <var name="i" id="7985661997283672871" />
       </scope>
-      <scope id="7985661997283672850" at="11,18,19,5" />
-      <scope id="7985661997283617016" at="10,19,19,5">
+      <scope id="7985661997283672850" at="10,18,18,5" />
+      <scope id="7985661997283617016" at="9,19,18,5">
         <var name="s" id="7985661997283619980" />
       </scope>
-      <scope id="7985661997283617013" at="10,0,21,0" />
-      <unit id="7985661997283617007" at="6,0,22,0" name="jetbrains.mps.analyzers.sandbox.test.Ff" />
+      <scope id="7985661997283617013" at="9,0,20,0" />
+      <unit id="7985661997283617007" at="6,0,21,0" name="jetbrains.mps.analyzers.sandbox.test.Ff" />
     </file>
   </root>
 </debug-info>

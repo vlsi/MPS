@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeRef="r:ebf0924b-b6b1-4927-b5b5-45c50b516a21(jetbrains.mps.ide.java.testMaterial.testModel2.sub)/8083368042256417929">
+    <nodeInfo nodeId="8083368042256417930" fileName="Integer.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="i" />
+    <nodeInfo nodeId="8083368042256417940" fileName="Integer.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Integer#(I)V" />
+    <nodeInfo nodeId="8083368042256417933" fileName="Integer.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
+    <scopeInfo nodeId="2790039039257308389" fileName="Integer.java" startLine="9" startPosition="25" endLine="9" endPosition="25" />
+    <scopeInfo nodeId="2790039039257308390" fileName="Integer.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
+    <scopeInfo nodeId="8083368042256417940" fileName="Integer.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+      <varInfo nodeId="8083368042256417944" varName="x" />
+    </scopeInfo>
+    <scopeInfo nodeId="8083368042256417933" fileName="Integer.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
+    <unitInfo nodeId="8083368042256417929" fileName="Integer.java" startLine="6" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.ide.java.testMaterial.testModel2.sub.Integer" />
+  </root>
+</debugInfo>
+

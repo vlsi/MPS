@@ -17,7 +17,6 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_olleho_a(editorContext, node);
   }
-
   private EditorCell createCollection_olleho_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_olleho_a");
@@ -27,21 +26,18 @@ public class CustomRoot_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_olleho_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_olleho_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "My custom root");
     editorCell.setCellId("Constant_olleho_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_olleho_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_olleho_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_olleho_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statement");

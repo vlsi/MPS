@@ -6,15 +6,12 @@ package jetbrains.mps.ide.java.newparser;
 public class JavaParseException extends Exception {
   public JavaParseException() {
   }
-
   public JavaParseException(String msg) {
     super(msg);
   }
-
   public JavaParseException(Throwable e) {
     super(e);
   }
-
   public JavaParseException(String msg, Throwable e) {
   }
 }

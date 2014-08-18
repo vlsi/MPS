@@ -14,17 +14,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class GetHighLevelWatchablesBlock_ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:c8cdf89f-8d25-442c-ae58-6e44844b68d7(jetbrains.mps.debugger.java.customViewers.structure)", "43370322128272301"));
     return result;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return createWatchableListType_jjngr0_a0a1();
   }
-
   private static SNode createWatchableListType_jjngr0_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.debugger.java.customViewers.structure.WatchableListType", null, false);

@@ -30,7 +30,6 @@ public class DecoratorTestRunner {
     }
     return getMapper(node, editorComponent);
   }
-
   public static Mapper getMapper(final SNode node, EditorComponent editorComponent) {
     final Wrappers._T<Mapper<? super SNode, ?>> descendantMapper = new Wrappers._T<Mapper<? super SNode, ?>>();
 

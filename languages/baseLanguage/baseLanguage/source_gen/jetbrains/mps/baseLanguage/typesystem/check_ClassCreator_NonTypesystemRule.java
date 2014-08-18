@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassCreator_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(classCreator, "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(classCreator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
@@ -43,29 +42,24 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SModule check_gfouwf_a0b0a0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModel check_gfouwf_a0a1a0a1(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();

@@ -7,52 +7,52 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:3d2b27a7-4374-41aa-af31-19e1e430d9f5(jetbrains.mps.lang.test.generator.baseLanguage.template.util)/882854394069504727">
     <file name="TestsUtil.java">
-      <node id="882854394069504745" at="22,89,23,245" concept="2" />
-      <node id="882854394069504754" at="24,30,25,25" concept="3" />
-      <node id="882854394069504765" at="26,5,27,88" concept="2" />
-      <node id="882854394069504775" at="28,22,29,55" concept="3" />
-      <node id="882854394069504786" at="30,5,31,14" concept="3" />
-      <node id="882854394069695316" at="34,61,35,348" concept="3" />
-      <node id="1979862460101669798" at="39,36,40,49" concept="3" />
-      <node id="1979862460101669798" at="41,5,42,16" concept="3" />
-      <node id="1979862460101669790" at="46,36,47,48" concept="3" />
-      <node id="1979862460101669790" at="48,5,49,16" concept="3" />
+      <node id="882854394069504745" at="21,89,22,245" concept="2" />
+      <node id="882854394069504754" at="23,30,24,25" concept="3" />
+      <node id="882854394069504765" at="25,5,26,88" concept="2" />
+      <node id="882854394069504775" at="27,22,28,55" concept="3" />
+      <node id="882854394069504786" at="29,5,30,14" concept="3" />
+      <node id="882854394069695316" at="32,61,33,348" concept="3" />
+      <node id="1979862460101669798" at="36,36,37,49" concept="3" />
+      <node id="1979862460101669798" at="38,5,39,16" concept="3" />
+      <node id="1979862460101669790" at="42,36,43,48" concept="3" />
+      <node id="1979862460101669790" at="44,5,45,16" concept="3" />
       <node id="882854394069504729" at="19,0,21,0" concept="0" trace="TestsUtil#()V" />
-      <node id="882854394069504752" at="23,245,26,5" concept="1" />
-      <node id="882854394069504773" at="27,88,30,5" concept="1" />
-      <node id="882854394069695309" at="34,0,37,0" concept="4" trace="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="1979862460101669798" at="38,68,41,5" concept="1" />
-      <node id="1979862460101669790" at="45,70,48,5" concept="1" />
-      <node id="1979862460101669798" at="38,0,44,0" concept="4" trace="check_6yh4up_a0c0b#(Ljava/io/File;)Ljava/lang/String;" />
-      <node id="1979862460101669790" at="45,0,51,0" concept="4" trace="check_6yh4up_a0a2a1#(Ljetbrains/mps/project/Project;)Ljava/io/File;" />
-      <node id="882854394069504737" at="22,0,33,0" concept="4" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
+      <node id="882854394069504752" at="22,245,25,5" concept="1" />
+      <node id="882854394069504773" at="26,88,29,5" concept="1" />
+      <node id="882854394069695309" at="32,0,35,0" concept="4" trace="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1979862460101669798" at="35,68,38,5" concept="1" />
+      <node id="1979862460101669790" at="41,70,44,5" concept="1" />
+      <node id="1979862460101669798" at="35,0,41,0" concept="4" trace="check_6yh4up_a0c0b#(Ljava/io/File;)Ljava/lang/String;" />
+      <node id="1979862460101669790" at="41,0,47,0" concept="4" trace="check_6yh4up_a0a2a1#(Ljetbrains/mps/project/Project;)Ljava/io/File;" />
+      <node id="882854394069504737" at="21,0,32,0" concept="4" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
       <scope id="882854394069504732" at="19,22,19,22" />
-      <scope id="882854394069504753" at="24,30,25,25" />
-      <scope id="882854394069504774" at="28,22,29,55" />
-      <scope id="882854394069695312" at="34,61,35,348" />
-      <scope id="1979862460101669798" at="39,36,40,49" />
-      <scope id="1979862460101669790" at="46,36,47,48" />
+      <scope id="882854394069504753" at="23,30,24,25" />
+      <scope id="882854394069504774" at="27,22,28,55" />
+      <scope id="882854394069695312" at="32,61,33,348" />
+      <scope id="1979862460101669798" at="36,36,37,49" />
+      <scope id="1979862460101669790" at="42,36,43,48" />
       <scope id="882854394069504729" at="19,0,21,0" />
-      <scope id="882854394069695309" at="34,0,37,0">
+      <scope id="882854394069695309" at="32,0,35,0">
         <var name="testCase" id="882854394069695314" />
       </scope>
-      <scope id="1979862460101669798" at="38,68,42,16" />
-      <scope id="1979862460101669790" at="45,70,49,16" />
-      <scope id="1979862460101669798" at="38,0,44,0">
+      <scope id="1979862460101669798" at="35,68,39,16" />
+      <scope id="1979862460101669790" at="41,70,45,16" />
+      <scope id="1979862460101669798" at="35,0,41,0">
         <var name="checkedDotOperand" id="1979862460101669798" />
       </scope>
-      <scope id="1979862460101669790" at="45,0,51,0">
+      <scope id="1979862460101669790" at="41,0,47,0">
         <var name="checkedDotOperand" id="1979862460101669790" />
       </scope>
-      <scope id="882854394069504740" at="22,89,31,14">
+      <scope id="882854394069504740" at="21,89,30,14">
         <var name="projectPath" id="882854394069504746" />
         <var name="url" id="882854394069504766" />
       </scope>
-      <scope id="882854394069504737" at="22,0,33,0">
+      <scope id="882854394069504737" at="21,0,32,0">
         <var name="model" id="882854394069504788" />
         <var name="operationContext" id="882854394069504790" />
       </scope>
-      <unit id="882854394069504727" at="18,0,52,0" name="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
+      <unit id="882854394069504727" at="18,0,48,0" name="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
     </file>
   </root>
 </debug-info>

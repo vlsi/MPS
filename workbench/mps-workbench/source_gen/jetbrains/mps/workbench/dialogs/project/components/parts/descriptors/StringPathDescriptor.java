@@ -11,7 +11,6 @@ public class StringPathDescriptor extends VoidColumnDescriptor {
   public StringPathDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new StringPathRenderer());

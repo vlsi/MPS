@@ -34,7 +34,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "rightOperand", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.samples.formulaLanguage.structure.Operation"), "rightOperand", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1113331454611(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -47,11 +46,9 @@ public class QueriesGenerated {
             SPropertyOperations.set(res, "value", "" + (Integer.parseInt(pattern)));
             return res;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             {
               Pattern _pattern_0 = REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b;
@@ -62,7 +59,6 @@ public class QueriesGenerated {
             }
             return false;
           }
-
           public String getDescriptionText(String pattern) {
             return "integer constant (formula language)";
           }
@@ -83,11 +79,9 @@ public class QueriesGenerated {
             }
             return res;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             {
               Pattern _pattern_0 = REGEXP_x583g4_a0a0a0c0a0a0a0c0a0c0b;
@@ -103,7 +97,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1140215644909(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -112,7 +105,6 @@ public class QueriesGenerated {
         public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
           return substitute(newChild, lastPattern[0], editorContext);
         }
-
         private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
           SLinkOperations.setTarget(result, "leftOperand", _context.getSourceNode(), true);
@@ -131,7 +123,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0b0b = Pattern.compile("(?:-?)\\d+", 0);
   private static Pattern REGEXP_x583g4_a0a0a0c0a0a0a0c0a0c0b = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
 }

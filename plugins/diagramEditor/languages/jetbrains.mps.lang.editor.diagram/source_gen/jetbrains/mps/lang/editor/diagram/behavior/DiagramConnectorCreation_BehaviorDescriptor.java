@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 public class DiagramConnectorCreation_BehaviorDescriptor extends AbstractDiagramCreation_BehaviorDescriptor {
   public DiagramConnectorCreation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.DiagramConnectorCreation";

@@ -28,7 +28,6 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ScriptsForSelection_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.script.pluginSolution.plugin.ScriptsForSelection_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-
   public ScriptsForSelection_ActionGroup() {
     super("Scripts", ID);
     this.setIsInternal(false);
@@ -38,7 +37,6 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
   public void doUpdate(AnActionEvent event) {
     try {
       ScriptsForSelection_ActionGroup.this.removeAll();
@@ -68,11 +66,9 @@ public class ScriptsForSelection_ActionGroup extends GeneratedActionGroup {
       this.addPlace(p.first, p.second);
     }
   }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
-
   public boolean isStrict() {
     return false;
   }

@@ -29,11 +29,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class ConflictsUtil {
   public ConflictsUtil() {
   }
-
   public static boolean isModelOrModuleConflicting(EditableSModel emd, Project project) {
     return ListSequence.fromList(getConflictingModelFiles(emd, project)).isNotEmpty() || ListSequence.fromList(getConflictingModuleFiles((emd != null ? emd.getModule() : null), project)).isNotEmpty();
   }
-
   @NotNull
   public static List<VirtualFile> getConflictingModelFiles(@Nullable SModel model, @NotNull Project project) {
     if (!(model instanceof EditableSModel)) {
@@ -53,7 +51,6 @@ public class ConflictsUtil {
     }
     return getConflictingFiles(filesToCheck, project);
   }
-
   @NotNull
   public static List<VirtualFile> getConflictingModuleFiles(@Nullable SModule module, @NotNull Project project) {
     Iterable<IFile> filesToCheck = Sequence.fromIterable(Collections.<IFile>emptyList());
@@ -65,7 +62,6 @@ public class ConflictsUtil {
     }
     return getConflictingFiles(filesToCheck, project);
   }
-
   private static boolean isConflictedFile(IFile file, @NotNull Project project) {
     VirtualFile vf = VirtualFileUtils.getVirtualFile(file);
     if (vf == null) {
@@ -74,7 +70,6 @@ public class ConflictsUtil {
     FileStatus status = FileStatusManager.getInstance(project).getStatus(vf);
     return FileStatus.MERGED_WITH_CONFLICTS == status || FileStatus.MERGED_WITH_BOTH_CONFLICTS == status;
   }
-
   private static List<VirtualFile> getConflictingFiles(Iterable<IFile> files, final Project project) {
     return Sequence.fromIterable(files).where(new IWhereFilter<IFile>() {
       public boolean accept(IFile f) {

@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring {
   public void run() {
   }
-
   @Override
   public SNode doRefactoring() {
     this.findDuplicates();
@@ -56,12 +55,10 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     }
     return newDeclaration;
   }
-
   @Override
   public void replaceNode(SNode node, SNode declaration) {
     SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a2(declaration));
   }
-
   private static SNode _quotation_createNode_baxqxe_a0a0c0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -84,7 +81,6 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_baxqxe_a0a0a2a1(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -102,7 +98,6 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     }
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_baxqxe_a0g0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -127,7 +122,6 @@ public class IntroduceFieldRefactoring extends AbstractIntroduceFieldRefactoring
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_baxqxe_a0a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

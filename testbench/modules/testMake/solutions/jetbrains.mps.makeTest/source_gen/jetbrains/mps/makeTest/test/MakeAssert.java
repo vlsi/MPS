@@ -20,17 +20,12 @@ import jetbrains.mps.tool.environment.ActiveEnvironment;
 import java.io.File;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 
-/**
- * todo: this class doesn't executed anymore, check test and add to some test suite
- */
 public class MakeAssert extends WorkbenchMpsTest {
   private static final String MESSAGE_COMPILATION_FAILED = "Compilation failed";
   private static final String MESSAGE_DEPENDENCY_NOT_CHECKED = "Compilation finished with Unchecked Dependencies";
   private static final String PROJECT_FILE = "core/tests/testMake/testMake";
-
   private MakeAssert() {
   }
-
   public static void assertNotMake(final String modelName, final ChangeModel changer) {
     Project project = launchProject();
     Assert.assertNotNull("project is not loaded", project);
@@ -39,11 +34,10 @@ public class MakeAssert extends WorkbenchMpsTest {
     boolean baseIsOk = changeModelProcessor.changeStep(genType);
     boolean newIsOk = changeModelProcessor.revertStep(genType);
     changeModelProcessor.generateModelToChange(genType);
-    disposeProject(project.getComponent(MPSProject.class));
+    WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
     assertNoProblems(baseIsOk);
     assertDependenciesChecked(newIsOk);
   }
-
   public static void assertDependenciesChecked(final String modelName, final ChangeModel changer) {
     final Project project = launchProject();
     Assert.assertNotNull("project is not loaded", project);
@@ -69,29 +63,25 @@ public class MakeAssert extends WorkbenchMpsTest {
           changeModelProcessor.revertStep(filesGenHandler);
           changeModelProcessor.generateModelToChange(filesGenHandler);
         } catch (Throwable t) {
-          disposeProject(project.getComponent(MPSProject.class));
+          WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
           t.printStackTrace();
           Assert.fail("Exception: " + t);
         }
       }
     });
-    disposeProject(project.getComponent(MPSProject.class));
+    WorkbenchMpsTest.disposeProject(project.getComponent(MPSProject.class));
     Assert.assertFalse(MESSAGE_DEPENDENCY_NOT_CHECKED, returnValue[0]);
   }
-
   public static void assertDependenciesChecked(boolean isOk) {
     Assert.assertFalse(MESSAGE_DEPENDENCY_NOT_CHECKED, isOk);
   }
-
   public static void assertNoProblems(boolean isOk) {
     Assert.assertTrue(MESSAGE_COMPILATION_FAILED, isOk);
   }
-
   private static Project launchProject() {
-    jetbrains.mps.project.Project mpsProject = ActiveEnvironment.get().openProject(new File(PROJECT_FILE));
+    jetbrains.mps.project.Project mpsProject = ActiveEnvironment.getInstance().openProject(new File(PROJECT_FILE));
     return ((MPSProject) mpsProject).getProject();
   }
-
   private static IGenerationHandler getFilesGenHandler() {
     return new JavaGenerationHandler();
   }

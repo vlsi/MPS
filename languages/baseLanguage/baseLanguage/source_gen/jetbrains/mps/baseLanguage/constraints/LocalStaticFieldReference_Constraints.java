@@ -22,7 +22,6 @@ public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescri
   public LocalStaticFieldReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,7 +38,6 @@ public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescri
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_jxwoyo_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return MigrationScopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
@@ -50,6 +47,5 @@ public class LocalStaticFieldReference_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   private static SNodePointer breakingNode_jxwoyo_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "304895491241626247");
 }

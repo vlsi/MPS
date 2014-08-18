@@ -12,7 +12,6 @@ public class BuildLayout_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_5wtg0a_a(editorContext, node);
   }
-
   private EditorCell createComponent_5wtg0a_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

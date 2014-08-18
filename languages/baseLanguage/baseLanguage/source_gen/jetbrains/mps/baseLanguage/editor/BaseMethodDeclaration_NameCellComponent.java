@@ -30,11 +30,9 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8989zw_a(editorContext, node);
   }
-
   private EditorCell createCollection_8989zw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8989zw_a");
@@ -44,7 +42,6 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     editorCell.addEditorCell(this.createProperty_8989zw_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_8989zw_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -66,15 +63,12 @@ public class BaseMethodDeclaration_NameCellComponent implements ConceptEditorCom
     } else
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_8989zw_a0a0(EditorContext editorContext, SNode node) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept")) && BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{});
   }
-
   public static class BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public BaseMethodDeclaration_name_postfixCellMenu_8989zw_a0a0() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);

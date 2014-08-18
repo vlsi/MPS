@@ -14,12 +14,10 @@ import jetbrains.mps.debug.api.source.SourcePosition;
 public class DebuggableFramesSelector implements IDebuggableFramesSelector {
   private final Project myProject;
   private AbstractDebugSession mySession;
-
   public DebuggableFramesSelector(Project project, AbstractDebugSession session) {
     myProject = project;
     mySession = session;
   }
-
   @Override
   public IStackFrame findDeepestDebuggableFrame(List<IStackFrame> frames) {
     for (IStackFrame frame : frames) {
@@ -32,7 +30,6 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     }
     return frames.get(0);
   }
-
   @Override
   public int findDeepestDebuggableFrameIndex(List<IStackFrame> frames) {
     int index = 0;
@@ -47,17 +44,14 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     }
     return 0;
   }
-
   @Override
   public boolean isDebuggableFrame(@NotNull IStackFrame frame) {
     return PositionProvider.getInstance(myProject).getPosition(frame.getLocation(), mySession) != null;
   }
-
   @Override
   public boolean isDebuggablePosition(@NonNls String unitName, @NonNls String fileName, int position) {
     return PositionProvider.getInstance(myProject).getPosition(unitName, fileName, position, mySession) != null;
   }
-
   @Override
   public boolean isSamePosition(String lastUnitName, String lastFileName, int lastLineNumber, int lastFrameCount, String nextUnitName, String nextFileName, int nextLineNumber, int nextFrameCount) {
     if (EqualUtil.equals(lastUnitName, nextUnitName) && lastLineNumber == nextLineNumber && lastFrameCount == nextFrameCount) {
@@ -67,7 +61,6 @@ public class DebuggableFramesSelector implements IDebuggableFramesSelector {
     SourcePosition nextPointer = PositionProvider.getInstance(myProject).getPosition(nextUnitName, nextFileName, nextLineNumber, mySession);
     return eq_xhry8p_a0d0h(lastPointer, nextPointer);
   }
-
   private static boolean eq_xhry8p_a0d0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

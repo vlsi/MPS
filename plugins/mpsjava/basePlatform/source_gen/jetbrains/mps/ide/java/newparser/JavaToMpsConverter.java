@@ -91,12 +91,9 @@ public class JavaToMpsConverter {
   private boolean wasDefaultPkg = false;
   private int myRootCount = 0;
 
-
   public JavaToMpsConverter(SModule module, SRepository repository) {
     this(module, repository, false, false);
   }
-
-
 
   public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace) {
     // currently perRoot==false and inPlace==true doesn't make it in-place 
@@ -108,15 +105,11 @@ public class JavaToMpsConverter {
     myModelAccess = repository.getModelAccess();
   }
 
-
-
   public JavaToMpsConverter(SModel model, SRepository repository) {
     myModel = model;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
-
-
 
   public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
 
@@ -206,8 +199,6 @@ public class JavaToMpsConverter {
     tryResolveRefs(myAttachedRoots, FeatureKind.CLASS, resolveProgress);
     progress.done();
   }
-
-
 
   public void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor progress) {
     progress.start("Resolving...", 10);
@@ -325,19 +316,13 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
-
-
   public List<IFile> getSuccessfulFiles() {
     return mySuccessfulFiles;
   }
 
-
-
   public List<SModel> getModels() {
     return myModels;
   }
-
-
 
   private void parseFile(IFile file) throws JavaParseException, IOException {
     String contents = IFileUtils.getTextContents(file);
@@ -388,8 +373,6 @@ public class JavaToMpsConverter {
 
   }
 
-
-
   private void runCommand(String name, final Runnable runnable) {
     if (SwingUtilities.isEventDispatchThread()) {
       myModelAccess.executeCommand(runnable);
@@ -410,9 +393,7 @@ public class JavaToMpsConverter {
     }
   }
 
-
   private Set<SReference> myVisitedRefs = SetSequence.fromSet(new HashSet<SReference>());
-
 
   private void resolveUpdatePass(String name, final Iterable<SNode> nodes, final _FunctionTypes._return_P1_E0<? extends Iterable<SReference>, ? super SNode> extractor, final ProgressMonitor progress) {
     final Map<SNodeReference, List<SReference>> resolveMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
@@ -448,8 +429,6 @@ public class JavaToMpsConverter {
     progress.advance(1);
     progress.done();
   }
-
-
 
   private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
     progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 5 + 1);
@@ -588,8 +567,6 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
-
-
   private void removeJavaImportsPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
     progress.start("Removing java imports", Sequence.fromIterable(nodes).count() + 1);
     final Map<SNode, Iterable<SNode>> toRemove = MapSequence.fromMap(new HashMap<SNode, Iterable<SNode>>());
@@ -634,8 +611,6 @@ public class JavaToMpsConverter {
     progress.done();
 
   }
-
-
 
   private SNode transformUnqualifedEnum(SNode varRef) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
@@ -729,8 +704,6 @@ public class JavaToMpsConverter {
     return null;
   }
 
-
-
   private SNode transformUnqualifedEnumUnderSwitch(SNode switchCase, TypeChecker typeChecker) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
@@ -773,8 +746,6 @@ public class JavaToMpsConverter {
   }
 
 
-
-
   private SNode transformLocalCall(SNode localCall) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
@@ -806,8 +777,6 @@ public class JavaToMpsConverter {
     return smc;
   }
 
-
-
   private SNode transformLocalNameRef(SNode varRef) {
     // it's either EnumConstReference or StaticFieldReference 
 
@@ -838,8 +807,6 @@ public class JavaToMpsConverter {
 
     return sfr;
   }
-
-
 
 
   private Iterable<SNode> getImportsToRemove(SNode root) {
@@ -901,8 +868,6 @@ public class JavaToMpsConverter {
     return unneeded;
   }
 
-
-
   private Iterable<SReference> getTopLevelRefs(SNode node) {
     final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
@@ -932,8 +897,6 @@ public class JavaToMpsConverter {
     return refs;
   }
 
-
-
   private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
     Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ? SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) : Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
@@ -959,8 +922,6 @@ public class JavaToMpsConverter {
     return refs;
   }
 
-
-
   private Iterable<SReference> getVarTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
@@ -974,8 +935,6 @@ public class JavaToMpsConverter {
     return refs;
   }
 
-
-
   private Iterable<SReference> getVariableRefs(SNode node) {
     return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -988,8 +947,6 @@ public class JavaToMpsConverter {
     });
   }
 
-
-
   private Iterable<SReference> getDotExpLeftParts(SNode node) {
     return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
@@ -997,8 +954,6 @@ public class JavaToMpsConverter {
       }
     });
   }
-
-
 
   private void resolveRefs(Iterable<SReference> refs, Map<SNodeReference, List<SReference>> result) {
     for (SReference ref : refs) {
@@ -1028,8 +983,6 @@ public class JavaToMpsConverter {
     }
   }
 
-
-
   private void updateReference(Map<SNodeReference, List<SReference>> refMap) {
     for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(refMap).keySet())) {
       final SNode node = nodeRef.resolve(myRepository);
@@ -1048,8 +1001,6 @@ public class JavaToMpsConverter {
     }
   }
 
-
-
   public static Iterable<SReference> deepReferences(SNode node) {
 
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
@@ -1063,8 +1014,6 @@ public class JavaToMpsConverter {
     // generator for yield broken? 
   }
 
-
-
   private SModel getModel(String pkgFqName, IFile pkgDir) {
     for (SModel model : Sequence.fromIterable(myModule.getModels())) {
       // not handling stereotype on purpose: if there's my.pkg@java_stub, it shouldn't prevent us 
@@ -1075,7 +1024,6 @@ public class JavaToMpsConverter {
     }
     return createModel(pkgFqName, pkgDir);
   }
-
   private SModel createModel(String pkgFqName, IFile pkgDir) {
     SModel modelDescr;
     try {
@@ -1119,7 +1067,6 @@ public class JavaToMpsConverter {
 
     return modelDescr;
   }
-
   @Nullable
   private ModelRoot getFirstRootToCreateModel(String packageName) {
     for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
@@ -1132,7 +1079,6 @@ public class JavaToMpsConverter {
     }
     return null;
   }
-
   private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
     // returns modelRoot and sourceRoot within 
     for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
@@ -1148,6 +1094,5 @@ public class JavaToMpsConverter {
     }
     return null;
   }
-
 
 }

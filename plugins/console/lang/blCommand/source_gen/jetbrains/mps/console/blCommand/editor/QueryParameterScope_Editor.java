@@ -21,7 +21,6 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5iann0_a(editorContext, node);
   }
-
   private EditorCell createCollection_5iann0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5iann0_a");
@@ -34,13 +33,11 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_5iann0_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_5iann0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     QueryParameter_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private EditorCell createConstant_5iann0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("EQ");
@@ -50,7 +47,6 @@ public class QueryParameterScope_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5iann0_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");

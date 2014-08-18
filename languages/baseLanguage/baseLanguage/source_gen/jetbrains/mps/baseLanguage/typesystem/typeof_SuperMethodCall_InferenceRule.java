@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SuperMethodCall_InferenceRule() {
   }
-
   public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode mdecl = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     if (mdecl == null) {
@@ -148,22 +147,18 @@ public class typeof_SuperMethodCall_InferenceRule extends AbstractInferenceRule_
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.SuperMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_okooqp_a0b0c0k0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

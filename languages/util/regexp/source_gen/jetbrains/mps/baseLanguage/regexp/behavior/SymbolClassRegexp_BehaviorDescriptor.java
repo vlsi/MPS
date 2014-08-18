@@ -8,15 +8,12 @@ import java.util.List;
 public abstract class SymbolClassRegexp_BehaviorDescriptor extends Regexp_BehaviorDescriptor implements SymbolClassRegexpAndPart_BehaviorDescriptor {
   public SymbolClassRegexp_BehaviorDescriptor() {
   }
-
   public String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SymbolClassRegexp_Behavior.virtual_getRepresentation_8173814113624650482(thisNode);
   }
-
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SymbolClassRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp";

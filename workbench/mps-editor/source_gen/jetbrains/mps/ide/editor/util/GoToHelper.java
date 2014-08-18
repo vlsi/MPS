@@ -47,32 +47,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class GoToHelper {
   public GoToHelper() {
   }
-
   public static RelativePoint getRelativePoint(EditorCell selectedCell, InputEvent inputEvent) {
     if (inputEvent instanceof MouseEvent) {
       return new RelativePoint(((MouseEvent) inputEvent));
     }
     return new RelativePoint((EditorComponent) selectedCell.getEditorComponent(), new Point(selectedCell.getX(), selectedCell.getY()));
   }
-
   public static void showOverridingMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose overriding method of " + methodName + "() to navigate to";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
-
   public static void showOverridenMethodsMenu(List<SNodeReference> nodes, RelativePoint point, Project project, String methodName) {
     String title = "Choose super method of" + methodName + "()";
     GoToHelper.MethodCellRenderer renderer = new GoToHelper.MethodCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
-
   public static void showInheritedClassesMenu(List<SNodeReference> nodes, RelativePoint point, Project project) {
     String title = "Choose inherited class to navigate to";
     GoToHelper.DefaultNodeNavigationItemCellRenderer renderer = new GoToHelper.DefaultNodeNavigationItemCellRenderer();
     GoToHelper.showMenu(point, project, title, nodes, renderer);
   }
-
   private static void showMenu(RelativePoint point, Project project, String title, List<SNodeReference> nodes, NodeListCellRenderer renderer) {
     if (ListSequence.fromList(nodes).isEmpty()) {
       return;
@@ -84,7 +79,6 @@ public class GoToHelper {
     Collections.sort(navigatables, renderer.getComparator());
     GoToHelper.openTargets(point, navigatables, title, renderer);
   }
-
   private static void openTargets(RelativePoint p, List<NodeNavigatable> targets, String title, ListCellRenderer listRenderer) {
     assert !(GoToHelper.class.getClassLoader() instanceof ModuleClassLoader) : "if this class is loaded by a reloadable classloader, this will cause memleaks. See MPS-13481";
     if (targets.isEmpty()) {
@@ -111,11 +105,9 @@ public class GoToHelper {
       }).createPopup().show(p);
     }
   }
-
   public static boolean hasApplicableFinder(SNode node, String finderClassName) {
     return FindUtils.getFinderByClassName(finderClassName).isApplicable(node);
   }
-
   public static void executeFinders(final SNode method, com.intellij.openapi.project.Project project, final String finderClassName, RelativePoint relativePoint) {
     final String[] methodName = new String[1];
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -144,11 +136,9 @@ public class GoToHelper {
 
     GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relativePoint, ProjectHelper.toMPSProject(project), methodName[0]);
   }
-
   public static class DefaultNodeNavigationItemCellRenderer extends NodeListCellRenderer<NodeNavigatable> {
     public DefaultNodeNavigationItemCellRenderer() {
     }
-
     @Override
     public String getElementText(final NodeNavigatable element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -158,7 +148,6 @@ public class GoToHelper {
         }
       });
     }
-
     @Override
     protected String getContainerText(final NodeNavigatable element, String name) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -168,7 +157,6 @@ public class GoToHelper {
         }
       });
     }
-
     @Override
     protected Icon getIcon(final NodeNavigatable element) {
       final Wrappers._T<Icon> res = new Wrappers._T<Icon>();
@@ -179,20 +167,16 @@ public class GoToHelper {
       });
       return res.value;
     }
-
     protected SNode getLabelNode(NodeNavigatable element) {
       return ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());
     }
-
     protected SNode getContainerNode(NodeNavigatable element) {
       return getLabelNode(element).getContainingRoot();
     }
   }
-
   public static class MethodCellRenderer extends GoToHelper.DefaultNodeNavigationItemCellRenderer {
     public MethodCellRenderer() {
     }
-
     @Override
     public String getElementText(final NodeNavigatable element) {
       return ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -208,7 +192,6 @@ public class GoToHelper {
         }
       });
     }
-
     @Override
     protected SNode getLabelNode(NodeNavigatable element) {
       SNode node = ((SNodePointer) element.getNodePointer()).resolve(MPSModuleRepository.getInstance());

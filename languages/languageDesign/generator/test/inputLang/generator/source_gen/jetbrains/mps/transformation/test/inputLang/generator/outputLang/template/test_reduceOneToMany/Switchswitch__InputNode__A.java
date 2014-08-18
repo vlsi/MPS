@@ -19,35 +19,27 @@ import jetbrains.mps.generator.runtime.GenerationException;
 @Generated
 public class Switchswitch__InputNode__A implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
-
   public Switchswitch__InputNode__A() {
     rules = TemplateUtil.<TemplateReductionRule>asIterable(new Switchswitch__InputNode__A.ReductionRule0());
   }
-
   public SNodeReference getSwitchNode() {
     return new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310366");
   }
-
   public SNodeReference getModifiesSwitch() {
     return null;
   }
-
   public Iterable<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodeReference templateSwitch, String mappingLabel, final TemplateContext context) {
     return null;
   }
-
   public void processNull(TemplateExecutionEnvironment environment, SNodeReference templateSwitch, TemplateContext context) {
   }
-
   public final class ReductionRule0 extends ReductionRuleBase {
     public ReductionRule0() {
       super(new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "1892993302480310367"), "jetbrains.mps.transformation.test.inputLang.structure.InputNode_A", false);
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();

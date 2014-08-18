@@ -30,11 +30,9 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xqbs61_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xqbs61_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_xqbs61_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xqbs61_a");
@@ -42,7 +40,6 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_xqbs61_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_xqbs61_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("target");
@@ -64,20 +61,16 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_xqbs61_a0a extends InlineCellProvider {
     public _Inline_xqbs61_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_xqbs61_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_xqbs61_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -100,7 +93,6 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_xqbs61_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xqbs61_a_0");
@@ -111,7 +103,6 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_xqbs61_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xqbs61_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "qualified name:");
     editorCell.setCellId("Constant_xqbs61_a0");
@@ -121,16 +112,13 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_xqbs61_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "target", false), "virtual_getFqName_1213877404258", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -143,7 +131,6 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_xqbs61_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
     editorCell.setCellId("Constant_xqbs61_c0");
@@ -153,16 +140,13 @@ public class NodeBuilderRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_xqbs61_d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SLinkOperations.getTarget(node, "target", false).getConcept().getQualifiedName();
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

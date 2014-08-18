@@ -20,7 +20,6 @@ public class InstanceIncomingReferencesPolicy_PropertySupport extends PropertySu
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class InstanceIncomingReferencesPolicy_PropertySupport extends PropertySu
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     InstanceIncomingReferencesPolicy constant = InstanceIncomingReferencesPolicy.parseValue(value);
     if (constant != null) {

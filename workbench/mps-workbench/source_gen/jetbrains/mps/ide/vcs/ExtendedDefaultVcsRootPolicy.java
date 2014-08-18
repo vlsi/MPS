@@ -13,12 +13,10 @@ import com.intellij.platform.ProjectBaseDirectory;
 
 public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
   private Project myProject;
-
   public ExtendedDefaultVcsRootPolicy(Project project) {
     super(project);
     myProject = project;
   }
-
   @Override
   public void markDefaultRootsDirty(DirtBuilder builder, final VcsGuess vcsGuess) {
     super.markDefaultRootsDirty(builder, vcsGuess);
@@ -29,7 +27,6 @@ public class ExtendedDefaultVcsRootPolicy extends BasicDefaultVcsRootPolicy {
       builder.addDirtyDirRecursively(root);
     }
   }
-
   @Override
   public boolean matchesDefaultMapping(VirtualFile file, Object matchContext) {
     if (ProjectBaseDirectory.getInstance(myProject).getBaseDir() == null) {

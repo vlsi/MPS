@@ -21,7 +21,6 @@ public class Operation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ujw05e_a(editorContext, node);
   }
-
   private EditorCell createCollection_ujw05e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ujw05e_a");
@@ -30,7 +29,6 @@ public class Operation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createError_ujw05e_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ujw05e_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
@@ -51,7 +49,6 @@ public class Operation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createError_ujw05e_b0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, " ");
     editorCell.setCellId("Error_ujw05e_b0");
@@ -59,11 +56,9 @@ public class Operation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Operation_Editor.ReplaceWith_Operation_cellMenu_ujw05e_a0b0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_Operation_cellMenu_ujw05e_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Operation_cellMenu_ujw05e_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.formulaLanguage.structure.Operation";
     }

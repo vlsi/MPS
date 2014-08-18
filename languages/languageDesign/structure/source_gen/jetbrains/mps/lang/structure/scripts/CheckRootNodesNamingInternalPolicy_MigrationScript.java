@@ -16,15 +16,12 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
       public String getName() {
         return "Fix Root Concepts' Aliases";
       }
-
       public String getAdditionalInfo() {
         return "Fix Root Concepts' Aliases";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (SPropertyOperations.getBoolean(node, "abstract")) {
           return false;
@@ -37,11 +34,9 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         }
         return !(SPropertyOperations.getString(node, "conceptAlias").equals(NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias"))));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SPropertyOperations.set(node, "conceptAlias", NameUtil.multiWordDecapitalize(SPropertyOperations.getString(node, "conceptAlias")));
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -50,15 +45,12 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
       public String getName() {
         return "Add Alias to Root Concepts";
       }
-
       public String getAdditionalInfo() {
         return "Add Alias to Root Concepts";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (SPropertyOperations.getBoolean(node, "abstract")) {
           return false;
@@ -68,7 +60,6 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         }
         return isEmptyString(SPropertyOperations.getString(node, "conceptAlias"));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         StringBuilder sb = new StringBuilder();
         for (String word : NameUtil.splitByCamels(SPropertyOperations.getString(node, "name"))) {
@@ -76,13 +67,11 @@ public class CheckRootNodesNamingInternalPolicy_MigrationScript extends BaseMigr
         }
         SPropertyOperations.set(node, "conceptAlias", sb.toString().trim());
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

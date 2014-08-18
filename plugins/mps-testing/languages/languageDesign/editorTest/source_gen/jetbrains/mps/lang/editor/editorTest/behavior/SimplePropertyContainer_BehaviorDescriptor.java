@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class SimplePropertyContainer_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public SimplePropertyContainer_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer";

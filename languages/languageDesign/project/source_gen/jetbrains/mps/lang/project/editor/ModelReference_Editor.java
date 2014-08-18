@@ -21,11 +21,9 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_i85no5_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_i85no5_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_i85no5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a");
@@ -36,7 +34,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_i85no5_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("qualifiedName");
@@ -54,7 +51,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_i85no5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_b0");
@@ -65,11 +61,9 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_i85no5_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_i85no5_a1a(SNode node, EditorContext editorContext) {
     return isNotEmptyString(SPropertyOperations.getString(node, "stereotype"));
   }
-
   private EditorCell createConstant_i85no5_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_i85no5_a1a");
@@ -80,7 +74,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_i85no5_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stereotype");
@@ -98,7 +91,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_i85no5_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a_0");
@@ -108,14 +100,12 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_i85no5_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Model reference:");
     editorCell.setCellId("Constant_i85no5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_i85no5_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_b0_0");
@@ -127,7 +117,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_i85no5_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_a1a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_i85no5_a1a_0");
@@ -137,7 +126,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_i85no5_b1a");
@@ -147,7 +135,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_i85no5_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uuid");
@@ -165,7 +152,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_i85no5_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_i85no5_c0");
@@ -177,7 +163,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_i85no5_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stereotype");
     editorCell.setCellId("Constant_i85no5_a2a");
@@ -187,14 +172,12 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_i85no5_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_i85no5_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stereotype");
@@ -213,7 +196,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ModuleScopeLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ModuleScopeLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode moduleScopeLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode elem : ListSequence.fromList(SLinkOperations.getTargets(moduleScopeLiteral, "module", true))) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -29,22 +28,18 @@ public class typeof_ModuleScopeLiteral_InferenceRule extends AbstractInferenceRu
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.blCommand.structure.ModulesScope";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_51ub11_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

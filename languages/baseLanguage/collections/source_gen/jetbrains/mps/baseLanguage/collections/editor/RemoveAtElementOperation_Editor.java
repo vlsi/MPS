@@ -25,7 +25,6 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_89g4zp_a(editorContext, node);
   }
-
   private EditorCell createCollection_89g4zp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_89g4zp_a");
@@ -36,7 +35,6 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_89g4zp_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_89g4zp_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -46,16 +44,13 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new RemoveAtElementOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SequenceOperation_cellMenu_89g4zp_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
   }
-
   private EditorCell createConstant_89g4zp_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_89g4zp_b0");
@@ -65,7 +60,6 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_89g4zp_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("index");
@@ -85,7 +79,6 @@ public class RemoveAtElementOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_89g4zp_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_89g4zp_d0");

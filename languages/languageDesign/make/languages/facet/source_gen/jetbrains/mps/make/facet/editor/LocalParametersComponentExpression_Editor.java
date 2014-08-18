@@ -22,7 +22,6 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_m2es92_a(editorContext, node);
   }
-
   private EditorCell createCollection_m2es92_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_m2es92_a");
@@ -33,7 +32,6 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_m2es92_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operation");
@@ -53,7 +51,6 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_m2es92_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_m2es92_b0");
@@ -64,11 +61,9 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createRefNode_m2es92_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_m2es92_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "resource", true) != null);
   }
-
   private EditorCell createConstant_m2es92_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_m2es92_a1a");
@@ -80,7 +75,6 @@ public class LocalParametersComponentExpression_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_m2es92_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("resource");

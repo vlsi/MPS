@@ -21,16 +21,13 @@ import jetbrains.mps.smodel.SReference;
 public class XMLSAXNodeCreator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode rule = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", false, false);
     return XMLSAXNodeRule_Behavior.call_getType_2264311582634140653(rule);
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeRule")) {
       SNode node = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule");
@@ -41,13 +38,11 @@ public class XMLSAXNodeCreator_Behavior {
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getThrowableTypes_6204026822016975623", new Object[]{});
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_uorgh9_a0a0a1a3())));
     return result;
   }
-
   private static SNode _quotation_createNode_uorgh9_a0a0a1a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

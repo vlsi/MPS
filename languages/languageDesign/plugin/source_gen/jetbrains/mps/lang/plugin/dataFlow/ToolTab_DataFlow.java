@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ToolTab_DataFlow extends DataFlowBuilder {
   public ToolTab_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "componentExpression", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "titleExpression", true));

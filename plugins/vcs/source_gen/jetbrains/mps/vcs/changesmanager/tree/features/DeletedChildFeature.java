@@ -9,19 +9,16 @@ import org.jetbrains.annotations.Nullable;
 public class DeletedChildFeature extends AbstractNodeFeature {
   private String myRole;
   private int myIndex;
-
   public DeletedChildFeature(@NotNull SNodeReference nodePointer, String role, int index) {
     super(nodePointer);
     myRole = role;
     myIndex = index;
   }
-
   @NotNull
   @Override
   public String toString() {
     return "Node reference {" + getNodePointerString() + "|" + myRole + "|" + myIndex + "}";
   }
-
   @Nullable
   @Override
   public Feature getParent() {

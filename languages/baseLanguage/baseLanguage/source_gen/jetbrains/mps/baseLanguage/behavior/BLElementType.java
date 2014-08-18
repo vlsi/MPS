@@ -57,6 +57,5 @@ public enum BLElementType {
 
   BLElementType() {
   }
-
   public abstract boolean accept(SNode target);
 }

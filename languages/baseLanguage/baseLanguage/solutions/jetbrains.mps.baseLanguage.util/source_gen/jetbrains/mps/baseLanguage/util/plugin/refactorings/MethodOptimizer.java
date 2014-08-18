@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class MethodOptimizer {
   public MethodOptimizer() {
   }
-
   public static void optimize(SNode body) {
     SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) {
@@ -26,7 +25,6 @@ public class MethodOptimizer {
     }
     // <node> 
   }
-
   public static void removeUnusedDeclarations(SNode body) {
     List<SNode> references = ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -37,7 +35,6 @@ public class MethodOptimizer {
       removeUnusedDeclaration(references, declaration);
     }
   }
-
   public static void removeUnusedDeclaration(List<SNode> references, final SNode declaration) {
     if (ListSequence.fromList(references).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -47,7 +44,6 @@ public class MethodOptimizer {
       SNodeOperations.deleteNode(SNodeOperations.getParent(declaration));
     }
   }
-
   public static void optimizeAssignmentFollowedByReturn(SNode body, SNode lastReturn, SNode variableReference) {
     List<SNode> statements = SLinkOperations.getTargets(body, "statement", true);
     int size = ListSequence.fromList(statements).count();
@@ -80,7 +76,6 @@ public class MethodOptimizer {
       }
     }
   }
-
   public static void optimizeVariableFollowedByReturn(SNode body, SNode lastReturn, SNode variableReference) {
     List<SNode> statements = SLinkOperations.getTargets(body, "statement", true);
     int size = ListSequence.fromList(statements).count();

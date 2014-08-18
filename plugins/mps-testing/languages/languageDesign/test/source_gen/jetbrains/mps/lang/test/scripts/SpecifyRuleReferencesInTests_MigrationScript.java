@@ -14,23 +14,18 @@ public class SpecifyRuleReferencesInTests_MigrationScript extends BaseMigrationS
       public String getName() {
         return "Specify Rule References";
       }
-
       public String getAdditionalInfo() {
         return "Specify Rule References";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return (SpecifyUtil.getOperationsContainer(node) != null);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SpecifyUtil.fillContainerWithRuleMessages(node);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

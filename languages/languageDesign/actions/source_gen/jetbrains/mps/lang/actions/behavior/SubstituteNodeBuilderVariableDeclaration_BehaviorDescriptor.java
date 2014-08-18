@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public SubstituteNodeBuilderVariableDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration";

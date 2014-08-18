@@ -16,66 +16,51 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class editoMute_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public editoMute_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.testbench.suite.structure.ITestRef";
   }
-
   public String getPresentation() {
     return "editoMute";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.testbench.suite.intentions.editoMute_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.testbench.suite";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7344827c-92d1-4046-9d4e-c93304e0d649(jetbrains.mps.testbench.suite.intentions)", "8605005254686393770");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new editoMute_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "muted") ? "Unmute TestCase" : "Mute TestCase");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "muted", "" + (!(SPropertyOperations.getBoolean(node, "muted"))));
       editorContext.getEditorComponent().rebuildEditorContent();
     }
-
     public IntentionDescriptor getDescriptor() {
       return editoMute_Intention.this;
     }

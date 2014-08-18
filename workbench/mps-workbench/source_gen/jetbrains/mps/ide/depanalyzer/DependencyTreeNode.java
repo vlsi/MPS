@@ -11,7 +11,6 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 public class DependencyTreeNode extends MPSTreeNode {
   private DepLink myLink;
   private Project myProject;
-
   public DependencyTreeNode(Project project, DepLink link) {
     super(link, null);
     myLink = link;
@@ -21,25 +20,20 @@ public class DependencyTreeNode extends MPSTreeNode {
     setNodeIdentifier(link.linktype + link.module.getModuleName());
     setText("<html>" + linktype + link.module.getModuleName() + "</html>");
   }
-
   public DepLink getLink() {
     return myLink;
   }
-
   public SModule getModule() {
     return check_akkfj9_a0a4(myLink);
   }
-
   public void setDepLeaf() {
     String linktype = (myLink.linktype == null ? "" : "<i>" + myLink.linktype.toString() + "</i> ");
     setText("<html>" + linktype + "<b>" + myLink.module.getModuleName() + "</b></html>");
   }
-
   @Override
   public void doubleClick() {
     ProjectPane.getInstance(myProject).selectModule(getModule(), false);
   }
-
   private static SModule check_akkfj9_a0a4(DepLink checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.module;

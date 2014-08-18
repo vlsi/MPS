@@ -29,15 +29,13 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -126,7 +124,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
     @Override
     public void eventsHappenedInCommand(List<SModelEvent> events) {
-      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
+      if (RuntimeFlags.isTestMode()) return;
       synchronized (EVENTS_LOCK) {
         myLastEvents.addAll(events);
       }
@@ -718,7 +716,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
     @Override
     public void run() {
-      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
+      if (RuntimeFlags.isTestMode()) return;
       DumbService dumbService = DumbService.getInstance(myProject);
       while (true) {
         try {

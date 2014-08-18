@@ -39,7 +39,7 @@ import org.junit.runners.Suite;
     jetbrains.mps.packaged.PackagedLanguageTest.class,
     jetbrains.mps.refactoring.RefactoringTest.class,
     jetbrains.mps.vcs.DiskMemoryConflictsTest.class,
-//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled]
+//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
     jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
@@ -49,5 +49,5 @@ import org.junit.runners.Suite;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class
 })
-public class GlobalTestSuite extends TestSuite {
+public class GlobalTestSuite {
 }

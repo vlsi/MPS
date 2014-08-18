@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.testbench.junit.suites.AntModuleTestSuite" file="AntModuleTestSuite.java">
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSuite" />
+    <classNode dependClassName="org.junit.runner.RunWith" />
+  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.AuditConstraints" file="AuditConstraints.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -40,7 +44,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ContextProjextSupport" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ContextProjectSupport" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.TeamCityParameterized" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.suites.CheckingTestStatistic" />
@@ -123,11 +127,11 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="jetbrains.mps.TestMain" />
+    <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
+    <classNode dependClassName="jetbrains.mps.TestMode" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
-    <classNode dependClassName="jetbrains.mps.ide.IdeMain" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -155,10 +159,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
   </dependency>
-  <dependency className="jetbrains.mps.testbench.junit.suites.ModuleTestSuite" file="ModuleTestSuite.java">
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSuite" />
-    <classNode dependClassName="org.junit.runner.RunWith" />
-  </dependency>
   <dependency className="jetbrains.mps.testbench.junit.suites.ScopesTest" file="ScopesTest.java">
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
@@ -177,7 +177,7 @@
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.constraints.ModelConstraints" />
-    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ContextProjextSupport" />
+    <classNode dependClassName="jetbrains.mps.testbench.junit.runners.ContextProjectSupport" />
     <classNode dependClassName="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />

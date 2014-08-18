@@ -18,7 +18,6 @@ public class CurrentDifference {
   private ChangeSetImpl myChangeSet;
   private final CurrentDifferenceBroadcaster myBroadcaster;
   private boolean myEnabled = false;
-
   public CurrentDifference(@NotNull CurrentDifferenceRegistry registry, @NotNull EditableSModel modelDescriptor) {
     myCommandQueue = registry.getCommandQueue();
     myModelDescriptor = modelDescriptor;
@@ -26,19 +25,15 @@ public class CurrentDifference {
     myBroadcaster = new CurrentDifferenceBroadcaster(myCommandQueue);
     myBroadcaster.addDifferenceListener(registry.getGlobalBroadcaster());
   }
-
   public void dispose() {
     myTracking.dispose();
   }
-
   public void addDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     myBroadcaster.addDifferenceListener(listener);
   }
-
   public void removeDifferenceListener(@NotNull CurrentDifferenceListener listener) {
     myBroadcaster.removeDifferenceListener(listener);
   }
-
   /*package*/ void removeChangeSet() {
     myCommandQueue.assertSoftlyIsCommandThread();
     if (myChangeSet != null) {
@@ -52,7 +47,6 @@ public class CurrentDifference {
       myBroadcaster.changeUpdateFinished();
     }
   }
-
   /*package*/ void setChangeSet(@NotNull ChangeSetImpl changeSetImpl) {
     myCommandQueue.assertSoftlyIsCommandThread();
     removeChangeSet();
@@ -65,37 +59,30 @@ public class CurrentDifference {
     });
     myBroadcaster.changeUpdateFinished();
   }
-
   /*package*/ CurrentDifferenceBroadcaster getBroadcaster() {
     return myBroadcaster;
   }
-
   /*package*/ void addChange(@NotNull ModelChange change) {
     if (myChangeSet != null) {
       myChangeSet.add(change);
       myBroadcaster.changeAdded(change);
     }
   }
-
   /*package*/ void removeChange(@NotNull ModelChange change) {
     if (myChangeSet != null) {
       myChangeSet.remove(change);
       myBroadcaster.changeRemoved(change);
     }
   }
-
   /*package*/ EditableSModel getModelDescriptor() {
     return myModelDescriptor;
   }
-
   /*package*/ ChangesTracking getChangesTracker() {
     return myTracking;
   }
-
   /*package*/ boolean isEnabled() {
     return myEnabled;
   }
-
   public void setEnabled(boolean enabled) {
     if (myEnabled != enabled) {
       myEnabled = enabled;
@@ -110,7 +97,6 @@ public class CurrentDifference {
       }
     }
   }
-
   @Nullable
   public ChangeSet getChangeSet() {
     return myChangeSet;

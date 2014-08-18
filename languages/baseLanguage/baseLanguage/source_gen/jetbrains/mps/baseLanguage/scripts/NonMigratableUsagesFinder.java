@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class NonMigratableUsagesFinder {
   public NonMigratableUsagesFinder() {
   }
-
   public static Iterable<SNode> findNonMigratableUsages(SNode linkDeclaration) {
     Iterable<SNode> linkUsages = FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder", linkDeclaration, GlobalScope.getInstance(), new EmptyProgressMonitor());
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
@@ -45,7 +44,6 @@ public class NonMigratableUsagesFinder {
     }
     return result;
   }
-
   public static boolean isExcluded(SNode nodeUsage) {
     SNode root = SNodeOperations.getContainingRoot(nodeUsage);
 
@@ -64,7 +62,6 @@ public class NonMigratableUsagesFinder {
     }
     return false;
   }
-
   public static boolean isSequenceNeeded(SNode nodeUsage) {
     SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
 
@@ -122,7 +119,6 @@ public class NonMigratableUsagesFinder {
 
     return false;
   }
-
   public static boolean isThisForSimpleAddOperation(SNode nodeUsage) {
     SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(dotExpression), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -149,7 +145,6 @@ public class NonMigratableUsagesFinder {
 
     return false;
   }
-
   public static boolean isListNeeded(SNode nodeUsage) {
     if (isThisForSimpleAddOperation(nodeUsage)) {
       return true;
@@ -166,7 +161,6 @@ public class NonMigratableUsagesFinder {
 
     return false;
   }
-
   public static SNode calcExpectedType(SNode nodeUsage) {
     SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(nodeUsage), "jetbrains.mps.baseLanguage.structure.DotExpression");
 

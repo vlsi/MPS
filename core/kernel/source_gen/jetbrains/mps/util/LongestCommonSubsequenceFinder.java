@@ -21,12 +21,10 @@ public class LongestCommonSubsequenceFinder<E> {
   private List<Tuples._2<Integer, Integer>> myCommonIndices;
   private List<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>> myDifferentIndices;
   private List<Tuples._2<Iterable<E>, Iterable<E>>> myDifferentSubsequences;
-
   public LongestCommonSubsequenceFinder(@NotNull List<E> a, @NotNull List<E> b) {
     myA = a;
     myB = b;
   }
-
   @NotNull
   public int[][] getCommonLengths() {
     // This method finds lengths of longest common subsequence for each 
@@ -47,7 +45,6 @@ public class LongestCommonSubsequenceFinder<E> {
     }
     return myCommonLengths;
   }
-
   @NotNull
   public List<Tuples._2<Integer, Integer>> getCommonIndices() {
     // This method finds pairs of indices in a and b lists which are 
@@ -75,7 +72,6 @@ public class LongestCommonSubsequenceFinder<E> {
     }
     return myCommonIndices;
   }
-
   @NotNull
   public List<Tuples._2<Tuples._2<Integer, Integer>, Tuples._2<Integer, Integer>>> getDifferentIndices() {
     // This methods finds pairs of begin-end pairs of original lists a and b 
@@ -90,7 +86,6 @@ public class LongestCommonSubsequenceFinder<E> {
             public Iterator<Tuples._2<Integer, Integer>> iterator() {
               return new YieldingIterator<Tuples._2<Integer, Integer>>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -126,7 +121,6 @@ __switch__:
     }
     return myDifferentIndices;
   }
-
   @NotNull
   public List<Tuples._2<Iterable<E>, Iterable<E>>> getDifferentSubsequences() {
     // This methods finds pairs of subsequences of original lists a and b 

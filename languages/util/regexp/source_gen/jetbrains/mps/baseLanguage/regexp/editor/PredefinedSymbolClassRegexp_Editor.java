@@ -25,11 +25,9 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5lunhw_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5lunhw_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_5lunhw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5lunhw_a");
@@ -37,7 +35,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_5lunhw_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_5lunhw_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("symbolClass");
@@ -60,20 +57,16 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_5lunhw_a0a extends InlineCellProvider {
     public _Inline_5lunhw_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_5lunhw_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_5lunhw_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -98,7 +91,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_5lunhw_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5lunhw_a_0");
@@ -106,7 +98,6 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_5lunhw_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_5lunhw_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5lunhw_a0");
@@ -117,14 +108,12 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_5lunhw_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5lunhw_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Description:");
     editorCell.setCellId("Constant_5lunhw_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_5lunhw_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("symbolClass");
@@ -146,20 +135,16 @@ public class PredefinedSymbolClassRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_5lunhw_a1a0 extends InlineCellProvider {
     public _Inline_5lunhw_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_5lunhw_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_5lunhw_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("description");

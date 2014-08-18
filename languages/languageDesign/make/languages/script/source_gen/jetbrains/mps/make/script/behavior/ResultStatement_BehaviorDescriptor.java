@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ResultStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ResultStatement_BehaviorDescriptor() {
   }
-
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return ResultStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.ResultStatement";

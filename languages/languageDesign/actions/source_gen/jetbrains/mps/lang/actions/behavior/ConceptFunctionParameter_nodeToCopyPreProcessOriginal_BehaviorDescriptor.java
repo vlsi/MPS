@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConceptFunctionParameter_nodeToCopyPreProcessOriginal_BehaviorDescriptor() {
   }
-
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcessOriginal";

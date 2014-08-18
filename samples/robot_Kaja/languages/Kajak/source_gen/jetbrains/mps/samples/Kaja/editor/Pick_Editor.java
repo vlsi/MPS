@@ -14,7 +14,6 @@ public class Pick_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_l3e9b9_a(editorContext, node);
   }
-
   private EditorCell createComponent_l3e9b9_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

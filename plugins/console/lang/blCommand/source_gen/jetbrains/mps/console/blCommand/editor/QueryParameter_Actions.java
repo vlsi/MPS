@@ -18,18 +18,14 @@ public class QueryParameter_Actions {
     editorCell.setAction(CellActionType.DELETE, new QueryParameter_Actions.QueryParameter_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new QueryParameter_Actions.QueryParameter_Actions_BACKSPACE(node));
   }
-
   public static class QueryParameter_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryParameter_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.console.blCommand.structure.QueryParameterList");
       if (parameterList != null && ListSequence.fromList(SLinkOperations.getTargets(parameterList, "parameter", true)).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {
@@ -46,18 +42,14 @@ public class QueryParameter_Actions {
       }
     }
   }
-
   public static class QueryParameter_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public QueryParameter_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parameterList = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.console.blCommand.structure.QueryParameterList");
       if (parameterList != null && ListSequence.fromList(SLinkOperations.getTargets(parameterList, "parameter", true)).count() == 1 && SNodeOperations.getConceptDeclaration(node) != SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameter")) {

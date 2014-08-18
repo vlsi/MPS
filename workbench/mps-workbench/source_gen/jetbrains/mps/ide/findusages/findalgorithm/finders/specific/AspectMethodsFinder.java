@@ -26,7 +26,6 @@ import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 public class AspectMethodsFinder implements IFinder {
   public AspectMethodsFinder() {
   }
-
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     final AspectMethodsFinder.AspectMethodQueryData data = (AspectMethodsFinder.AspectMethodQueryData) query.getObjectHolder().getObject();
@@ -54,52 +53,42 @@ public class AspectMethodsFinder implements IFinder {
     }
     return res;
   }
-
   public String getDescription() {
     return "aspect methods";
   }
-
   public static class AspectMethodsHolder implements IHolder<AspectMethodsFinder.AspectMethodQueryData> {
     private static final String METHOD_NAME = "method_name";
     private static final String MODEL_NAME = "model_name";
     private AspectMethodsFinder.AspectMethodQueryData myData = new AspectMethodsFinder.AspectMethodQueryData();
-
     public AspectMethodsHolder() {
     }
-
     public AspectMethodsHolder(String modelName, String methodName) {
       myData.myModelName = modelName;
       myData.myMethodName = methodName;
     }
-
     @Override
     public AspectMethodsFinder.AspectMethodQueryData getObject() {
       return myData;
     }
-
     @NotNull
     @Override
     public String getCaption() {
       return myData.myMethodName + " in " + myData.myModelName;
     }
-
     @Override
     public void read(Element element, Project project) throws CantLoadSomethingException {
       myData.myModelName = element.getAttributeValue(MODEL_NAME);
       myData.myMethodName = element.getAttributeValue(METHOD_NAME);
     }
-
     @Override
     public void write(Element element, Project project) throws CantSaveSomethingException {
       element.setAttribute(MODEL_NAME, myData.myModelName);
       element.setAttribute(METHOD_NAME, myData.myMethodName);
     }
   }
-
   public static class AspectMethodQueryData {
     public String myModelName = "";
     public String myMethodName = "";
-
     public AspectMethodQueryData() {
     }
   }

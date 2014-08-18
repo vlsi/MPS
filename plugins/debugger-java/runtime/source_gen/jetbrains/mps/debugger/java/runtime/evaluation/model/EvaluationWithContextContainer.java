@@ -67,14 +67,11 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
   private final boolean myIsInWatch;
   private boolean myVariablesInitialized = false;
   protected final EvaluationContext myEvaluationContext;
-
   public EvaluationWithContextContainer(Project project, DebugSession session, @NotNull SModuleReference containerModule, List<SNodeReference> nodesToImport, boolean isInWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     super(project, session, containerModule, nodesToImport, onNodeSetUp);
     myIsInWatch = isInWatch;
     myEvaluationContext = new StackFrameContext(session.getUiState());
   }
-
-
 
   @Override
   protected void setUpNode(List<SNodeReference> nodesToImport) {
@@ -94,7 +91,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
 
     SModelOperations.validateLanguagesAndImports(containerModel, true, true);
   }
-
   private void setUpDependencies(final EvaluationModule containerModule, SModel containerModel) {
     ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
       public void visit(String it) {
@@ -109,12 +105,10 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     containerModule.addUsedLanguage(PersistenceFacade.getInstance().createModuleReference("80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)"));
     containerModule.addDependency(PersistenceFacade.getInstance().createModuleReference("6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)"), false);
   }
-
   private void tryToImport(final SNode evaluatorNode, List<SNodeReference> nodesToImport) {
     BaseLanguagesImportHelper helper = new EvaluationWithContextContainer.MyBaseLanguagesImportHelper(evaluatorNode);
     helper.tryToImport(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), evaluatorNode, "virtual_getCode_317191294093624551", new Object[]{}), nodesToImport);
   }
-
   @Override
   protected SNode createEvaluatorNode() {
     SNode evaluatorConcept = SNodeFactoryOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", null);
@@ -122,7 +116,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     AttributeOperations.createAndSetAttrbiute(SLinkOperations.getTarget(evaluatorConcept, "evaluatedStatements", true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.ToEvaluateAnnotation");
     return evaluatorConcept;
   }
-
   private void createVars() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -130,7 +123,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     });
   }
-
   private void fillVariables(SNode evaluatorConcept) {
     try {
       _FunctionTypes._return_P1_E0<? extends SNode, ? super String> createClassifierType = new _FunctionTypes._return_P1_E0<SNode, String>() {
@@ -186,8 +178,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     myVariablesInitialized = true;
   }
 
-
-
   @Override
   public void updateState() {
     super.updateState();
@@ -199,7 +189,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       });
     }
   }
-
   @Nullable
   private SNode createClassifierType(final String unitFqName) {
     SNode unit = findUnit(unitFqName);
@@ -210,7 +199,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
     SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(unit, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
     return classifierType;
   }
-
   public SNode findUnit(final String unitName) {
     // I hate the next piece of code 
     // (and this class in general, since it inherited a lot of the ugly stuff from the old evaluation code) 
@@ -237,16 +225,13 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     }), "jetbrains.mps.lang.traceable.structure.UnitConcept");
   }
-
   @Nullable
   private SModel findStubForFqName(String fqName) {
     return SModelRepository.getInstance().getModelDescriptor(new SModelFqName(fqName, "java_stub").toString());
   }
-
   private boolean needUpdateVariables() {
     return !(myVariablesInitialized) || !(myIsInWatch);
   }
-
   @Override
   public EvaluationWithContextContainer copy(final boolean isInWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     final SNodeReference reference = myNode;
@@ -259,7 +244,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     };
   }
-
   public static List<String> getDebuggerStubPath() {
     PluginId apiPlugin = PluginManager.getPluginByClassName(Debuggers.class.getName());
     PluginId javaPlugin = PluginManager.getPluginByClassName(JavaDebugger.class.getName());
@@ -274,7 +258,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     }).toListSequence();
   }
-
   public static Iterable<SModel> getCandidateNonStubModels(String unitName) {
     final String modelFqName = modelFqNameFromUnitName(unitName);
     return Sequence.fromIterable(Sequence.fromArray(SModelStereotype.values)).select(new ISelector<String, SModel>() {
@@ -287,19 +270,15 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
     });
   }
-
   public static String modelFqNameFromUnitName(String unitName) {
     int lastDot = unitName.lastIndexOf(".");
     return ((lastDot == -1 ? "" : unitName.substring(0, lastDot)));
   }
-
   private class MyBaseLanguagesImportHelper extends BaseLanguagesImportHelper {
     private final SNode myEvaluatorNode;
-
     public MyBaseLanguagesImportHelper(SNode evaluatorNode) {
       myEvaluatorNode = evaluatorNode;
     }
-
     @Override
     public SNode findVariable(final SReference variableReference) {
       SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(myEvaluatorNode, "variables", true)).findFirst(new IWhereFilter<SNode>() {
@@ -316,7 +295,6 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       }
       return matchingVar;
     }
-
     @Override
     public SNode createVariableReference(SNode variable) {
       SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
@@ -324,17 +302,13 @@ public class EvaluationWithContextContainer extends EvaluationContainer {
       return newVariableReference;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(EvaluationWithContextContainer.class);
-
   private static boolean eq_v5yv3u_a0a0a0a0a0a0b0d0o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_v5yv3u_a0a0a0a0a0a0a2v(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_v5yv3u_a0a0a0a0a0a0a1a2v(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

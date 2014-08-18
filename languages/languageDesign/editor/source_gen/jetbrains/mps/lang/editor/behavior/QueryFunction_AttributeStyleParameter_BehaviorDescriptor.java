@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class QueryFunction_AttributeStyleParameter_BehaviorDescriptor extends QueryFunction_StyleParameter_BehaviorDescriptor {
   public QueryFunction_AttributeStyleParameter_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_AttributeStyleParameter_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_AttributeStyleParameter";

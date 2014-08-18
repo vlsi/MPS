@@ -13,7 +13,6 @@ public class Edit_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Edit_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Edit_ActionGroup";
   public static final String LABEL_ID_custom = ID + "custom";
-
   public Edit_ActionGroup() {
     super("Edit", ID);
     this.setIsInternal(false);

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class BaseSimpleBuilderDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BaseSimpleBuilderDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration";
   }
-
   public abstract SNode virtual_getContextDeclaration_6254726786820551255(SNode thisNode);
 }

@@ -13,11 +13,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class MoveItemToTheRightPositionWithinDailyPlan_QuickFix extends QuickFix_Runtime {
   public MoveItemToTheRightPositionWithinDailyPlan_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Move the item to the correct position within the daily plan";
   }
-
   public void execute(SNode node) {
     final SNode item = SNodeOperations.cast(node, "jetbrains.mps.samples.heating.structure.Slot");
     if (SPropertyOperations.getInteger(item, "start") < 0) {

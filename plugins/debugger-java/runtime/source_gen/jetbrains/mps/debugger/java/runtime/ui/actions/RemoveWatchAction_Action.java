@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class RemoveWatchAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Remove;
-
   public RemoveWatchAction_Action() {
     super("Remove Watch", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setEnabled(EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext()) != null);
@@ -41,7 +38,6 @@ public class RemoveWatchAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationContainer model = EvaluationUi.EVALUATION_CONTAINER.getData(event.getDataContext());
@@ -55,6 +51,5 @@ public class RemoveWatchAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RemoveWatchAction_Action.class);
 }

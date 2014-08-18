@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MapElement_InferenceRule() {
   }
-
   public void applyRule(final SNode mapElement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode keyType_typevar_1198083488673 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode valueType_typevar_1198083495346 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -38,22 +37,18 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapElement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_y91lxu_a0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

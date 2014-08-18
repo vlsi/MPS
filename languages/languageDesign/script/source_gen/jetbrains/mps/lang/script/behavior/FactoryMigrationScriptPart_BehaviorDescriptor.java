@@ -6,7 +6,6 @@ package jetbrains.mps.lang.script.behavior;
 public class FactoryMigrationScriptPart_BehaviorDescriptor extends MigrationScriptPart_BehaviorDescriptor {
   public FactoryMigrationScriptPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart";

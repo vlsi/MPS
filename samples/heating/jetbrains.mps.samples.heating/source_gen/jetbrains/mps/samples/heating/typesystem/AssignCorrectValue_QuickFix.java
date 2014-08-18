@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class AssignCorrectValue_QuickFix extends QuickFix_Runtime {
   public AssignCorrectValue_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Assign correct value";
   }
-
   public void execute(SNode node) {
     SNode prev = SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.samples.heating.structure.Slot");
     if ((prev != null)) {

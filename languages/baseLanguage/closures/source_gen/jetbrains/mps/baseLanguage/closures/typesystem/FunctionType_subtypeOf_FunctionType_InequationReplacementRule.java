@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.SReference;
 public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public FunctionType_subtypeOf_FunctionType_InequationReplacementRule() {
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (SNodeOperations.getConceptDeclaration(subtype) != SNodeOperations.getConceptDeclaration(supertype)) {
       {
@@ -96,7 +95,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
@@ -139,33 +137,27 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
   private static SNode _quotation_createNode_8k7qpx_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -180,7 +172,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_8k7qpx_a0a6a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -188,7 +179,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_8k7qpx_a0c0b0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -203,7 +193,6 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
     quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_8k7qpx_a0a6a1a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

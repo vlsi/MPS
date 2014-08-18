@@ -20,11 +20,9 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_qilpva_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCustom_qilpva_a(editorContext, node);
   }
-
   private EditorCell createComponent_qilpva_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ConceptFunction_Component");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +31,6 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCustom_qilpva_a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {

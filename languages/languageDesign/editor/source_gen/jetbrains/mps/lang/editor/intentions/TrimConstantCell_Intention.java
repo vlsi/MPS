@@ -16,41 +16,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TrimConstantCell_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TrimConstantCell_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Constant";
   }
-
   public String getPresentation() {
     return "TrimConstantCell";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.TrimConstantCell_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     String text = SPropertyOperations.getString(node, "text");
     if (text == null || text.length() == 0) {
@@ -61,34 +52,27 @@ public class TrimConstantCell_Intention implements IntentionFactory {
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1224530037892");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TrimConstantCell_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Trim Constant Cell";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "text", SPropertyOperations.getString(node, "text").trim());
     }
-
     public IntentionDescriptor getDescriptor() {
       return TrimConstantCell_Intention.this;
     }

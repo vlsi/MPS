@@ -16,7 +16,6 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_58m68g_a(editorContext, node);
   }
-
   private EditorCell createCollection_58m68g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58m68g_a");
@@ -28,18 +27,15 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_58m68g_b0(editorContext, node));
     return editorCell;
   }
-
   private static String _StyleParameter_QueryFunction_58m68g_a0a(EditorContext editorContext, SNode node) {
     return "Hey!";
   }
-
   private EditorCell createConstant_58m68g_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_58m68g_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_58m68g_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58m68g_b0");
@@ -53,15 +49,12 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_58m68g_c1a(editorContext, node));
     return editorCell;
   }
-
   private static String _StyleParameter_QueryFunction_58m68g_a1b0(EditorContext editorContext, SNode node) {
     return "Bye!";
   }
-
   private static boolean _StyleParameter_QueryFunction_58m68g_a2b0(EditorContext editorContext, SNode node) {
     return true;
   }
-
   private EditorCell createConstant_58m68g_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "re");
     editorCell.setCellId("Constant_58m68g_a1a");
@@ -72,22 +65,18 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static String _StyleParameter_QueryFunction_58m68g_a0a1a(EditorContext editorContext, SNode node) {
     return "Yeah!";
   }
-
   private static boolean _StyleParameter_QueryFunction_58m68g_a1a1a(EditorContext editorContext, SNode node) {
     return false;
   }
-
   private EditorCell createConstant_58m68g_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mi");
     editorCell.setCellId("Constant_58m68g_b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_58m68g_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58m68g_c1a");
@@ -100,14 +89,12 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_58m68g_c2b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_58m68g_a2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "fa");
     editorCell.setCellId("Constant_58m68g_a2b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_58m68g_b2b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sol");
     editorCell.setCellId("Constant_58m68g_b2b0");
@@ -117,7 +104,6 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_58m68g_c2b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_58m68g_c2b0");
@@ -129,14 +115,12 @@ public class TestConceptWithStyleAttributes_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_58m68g_b2c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_58m68g_a2c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "la");
     editorCell.setCellId("Constant_58m68g_a2c1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_58m68g_b2c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ti");
     editorCell.setCellId("Constant_58m68g_b2c1a");

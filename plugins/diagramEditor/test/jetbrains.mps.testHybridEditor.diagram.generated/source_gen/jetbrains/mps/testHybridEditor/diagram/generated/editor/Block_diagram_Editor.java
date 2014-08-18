@@ -37,16 +37,13 @@ import jetbrains.mps.lang.editor.diagram.runtime.jetpad.views.PortDecoratorView;
 
 public class Block_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_pj4dhh_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_pj4dhh_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new Block_diagram_Editor.BlockCellImpl_pj4dhh_a(editorContext, node);
     editorCell.setCellId("DiagramNode_pj4dhh_a");
@@ -54,7 +51,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_pj4dhh_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_pj4dhh_a0a;
     private final PropertyMapperCell<Boolean> myPropertyCell_pj4dhh_a1a;
@@ -62,14 +58,12 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
     private final PropertyMapperCell<Integer> myPropertyCell_pj4dhh_a3a;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
     private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
-
     private BlockCellImpl_pj4dhh_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_pj4dhh_a0a = new PropertyMapperCell<String>(editorContext, node) {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
         }
-
         protected void setModelPropertyValueImpl(String value) {
           SPropertyOperations.set(node, "name", value);
         }
@@ -80,7 +74,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         protected Boolean getModelPropertyValueImpl() {
           return SPropertyOperations.getBoolean(node, "myBooleanProperty");
         }
-
         protected void setModelPropertyValueImpl(Boolean value) {
           SPropertyOperations.set(node, "myBooleanProperty", "" + (value));
         }
@@ -91,7 +84,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -102,7 +94,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -111,7 +102,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
       myPropertyCell_pj4dhh_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pj4dhh_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_pj4dhh_a0a.synchronize();
@@ -121,7 +111,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
       syncPortNodes(SLinkOperations.getTargets(getSNode(), "inputPorts", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
       syncPortNodes(SLinkOperations.getTargets(getSNode(), "outputPorts", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -205,7 +194,6 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

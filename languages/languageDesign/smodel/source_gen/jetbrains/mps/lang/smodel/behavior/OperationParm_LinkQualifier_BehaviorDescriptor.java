@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class OperationParm_LinkQualifier_BehaviorDescriptor extends AbstractOperationParameter_BehaviorDescriptor implements ILinkAccessQualifierContainer_BehaviorDescriptor {
   public OperationParm_LinkQualifier_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getLinkAccessScope_2906110183022538642(SNode thisNode) {
     return OperationParm_LinkQualifier_Behavior.virtual_getLinkAccessScope_2906110183022538642(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier";

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class EditorPropertyDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor {
   public EditorPropertyDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return EditorPropertyDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.EditorPropertyDeclaration";

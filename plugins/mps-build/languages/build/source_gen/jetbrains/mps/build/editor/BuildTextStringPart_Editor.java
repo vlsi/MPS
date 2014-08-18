@@ -24,7 +24,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_zen9g6_a(editorContext, node);
   }
-
   private EditorCell createAlternation_zen9g6_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0(node, editorContext);
@@ -40,11 +39,9 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_zen9g6_a0(SNode node, EditorContext editorContext) {
     return (BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node) != null) && BehaviorReflection.invokeVirtual(Color.class, BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node), "virtual_getColorForTextPart_6083230236994422116", new Object[]{SNodeOperations.getParent(node).getRoleInParent()}) != null;
   }
-
   private EditorCell createAlternation_zen9g6_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0a(node, editorContext);
@@ -56,11 +53,9 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_zen9g6_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_punctuationLeft_5096397858823356723", new Object[]{});
   }
-
   private EditorCell createProperty_zen9g6_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -84,7 +79,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_zen9g6_a1a0a(EditorContext editorContext, SNode node) {
     SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
     if ((container != null)) {
@@ -95,7 +89,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     }
     return null;
   }
-
   private EditorCell createProperty_zen9g6_a0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -118,7 +111,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_zen9g6_a0a0a(EditorContext editorContext, SNode node) {
     SNode container = BuildTextStringPart_Behavior.call_getContainer_6083230236994622122(node);
     if ((container != null)) {
@@ -129,7 +121,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     }
     return null;
   }
-
   private EditorCell createAlternation_zen9g6_a0_0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = BuildTextStringPart_Editor.renderingCondition_zen9g6_a0a_0(node, editorContext);
@@ -141,11 +132,9 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_zen9g6_a0a_0(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_punctuationLeft_5096397858823356723", new Object[]{});
   }
-
   private EditorCell createProperty_zen9g6_a0a_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -168,7 +157,6 @@ public class BuildTextStringPart_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_zen9g6_a0a_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");

@@ -25,11 +25,9 @@ public class replace_node_macro extends AbstractCellMenuComponent {
   public replace_node_macro() {
     super(new SubstituteInfoPartExt[]{new replace_node_macro.NodeMacro_generic_cellMenu_f12orh_a0()});
   }
-
   public static class NodeMacro_generic_cellMenu_f12orh_a0 extends AbstractCellMenuPart_Generic_Group {
     public NodeMacro_generic_cellMenu_f12orh_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro"), SNodeOperations.getModel(node))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -37,34 +35,27 @@ public class replace_node_macro extends AbstractCellMenuComponent {
         }
       }).subtract(Sequence.fromIterable(Sequence.<SNode>singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro")))).toListSequence();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode macro = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
       SNodeOperations.replaceWithAnother(node, macro);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, macro, SelectionManager.FIRST_CELL, 1);
       editorContext.openInspector();
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
-
     public String getMatchingText_internal(SNode parameterObject) {
       return SPropertyOperations.getString(parameterObject, "conceptAlias");
     }
-
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SNode) parameterObject);
     }
-
     public String getDescriptionText_internal(SNode parameterObject) {
       if (isNotEmptyString(SPropertyOperations.getString(parameterObject, "conceptShortDescription"))) {
         return SPropertyOperations.getString(parameterObject, "conceptShortDescription");
@@ -72,7 +63,6 @@ public class replace_node_macro extends AbstractCellMenuComponent {
         return SPropertyOperations.getString(parameterObject, "conceptAlias");
       }
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }

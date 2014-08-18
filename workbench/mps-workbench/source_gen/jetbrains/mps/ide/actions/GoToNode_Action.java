@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class GoToNode_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Node;
-
   public GoToNode_Action() {
     super("Go to Source Node", "go to source node", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -41,7 +38,6 @@ public class GoToNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class GoToNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((SNode) MapSequence.fromMap(_params).get("source")), false, true);
@@ -66,6 +61,5 @@ public class GoToNode_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToNode_Action.class);
 }

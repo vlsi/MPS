@@ -40,8 +40,6 @@ public class MethodResolveUtil {
   public MethodResolveUtil() {
   }
 
-
-
   public static Tuples._2<SNode, Boolean> resolveMethod(SNode methodCall, String name) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, methodCall, "virtual_useScopesForMethodDeclarationFixer_66132694723287898", new Object[]{})) {
       return resolveMethodUsingScopes(methodCall, name);
@@ -55,7 +53,6 @@ public class MethodResolveUtil {
 
     return resolveMethodByCandidatesAndTypes(methodCall, candidates, typeByTypeVar);
   }
-
   private static Tuples._2<SNode, Boolean> resolveMethodUsingScopes(SNode methodCall, final String name) {
     if (SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration")) == null) {
       return MultiTuple.<SNode,Boolean>from((SNode) null, false);
@@ -73,7 +70,6 @@ public class MethodResolveUtil {
       }), null);
     }
   }
-
   private static Tuples._2<SNode, Boolean> resolveMethodByCandidatesAndTypes(SNode methodCall, Iterable<SNode> candidates, @Nullable Map<SNode, SNode> typeByTypeVar) {
     List<SNode> actualArgs = SLinkOperations.getTargets(methodCall, "actualArgument", true);
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
@@ -98,11 +94,9 @@ public class MethodResolveUtil {
       }
     }
   }
-
   private static Map<SNode, SNode> getTypeByTypeVar(SNode methodCall) {
     return BehaviorReflection.invokeVirtual((Class<Map<SNode, SNode>>) ((Class) Object.class), methodCall, "virtual_getTypesByTypeVars_851115533308208851", new Object[]{});
   }
-
   public static Iterable<SNode> getCandidates(@NotNull SNode methodCall, String methodName) {
     Iterable<SNode> availableMethodDeclarations = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), methodCall, "virtual_getAvailableMethodDeclarations_5776618742611315379", new Object[]{methodName});
     assert availableMethodDeclarations != null : "getAvailableMethodDeclarations() return null for concept: " + BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(methodCall), "virtual_getFqName_1213877404258", new Object[]{});
@@ -110,12 +104,9 @@ public class MethodResolveUtil {
   }
 
 
-
-
   public static List<SNode> selectByParmCount(List<SNode> methods, List<SNode> actualArgs) {
     return selectByParmCountReportNoGoodMethodNode(methods, actualArgs).o1;
   }
-
   public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
@@ -154,7 +145,6 @@ public class MethodResolveUtil {
     }
     return new Pair<List<SNode>, Boolean>(result, good);
   }
-
   public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
     List<SNode> goodMethods = new ArrayList<SNode>();
     List<SNode> badMethods = new ArrayList<SNode>();
@@ -198,15 +188,12 @@ public class MethodResolveUtil {
       return new Pair<List<SNode>, Boolean>(goodMethods, true);
     }
   }
-
   private static boolean hasEqualsFQName(SModel model1, SModel model2) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(model1).equals(jetbrains.mps.util.SNodeOperations.getModelLongName(model2));
   }
-
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     return MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, candidates, actualArgs, typeByTypeVar).o1;
   }
-
   public static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     Map<SNode, SNode> nodesAndTypes = new HashMap<SNode, SNode>();
     int i = 1;
@@ -247,7 +234,6 @@ public class MethodResolveUtil {
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
-
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
@@ -301,7 +287,6 @@ public class MethodResolveUtil {
     }
     return result;
   }
-
   /**
    * Use this method in baseLanguage.scopes module
    */
@@ -324,7 +309,6 @@ public class MethodResolveUtil {
     }
     return typeByTypeVar;
   }
-
   private static boolean eq_zegw12_a0a0a0a0a1a0a0e0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

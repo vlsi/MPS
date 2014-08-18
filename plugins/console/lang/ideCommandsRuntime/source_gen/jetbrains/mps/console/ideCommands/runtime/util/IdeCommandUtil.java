@@ -99,8 +99,6 @@ public class IdeCommandUtil {
     new MakeActionImpl(context, new MakeActionParameters(context, modelsToGenerate.value, null, null, null), false).executeAction();
   }
 
-
-
   public static void cleanCaches(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<List<SModel>> modelsToClean = new Wrappers._T<List<SModel>>();
     if (Sequence.fromIterable(models).isEmpty() && Sequence.fromIterable(modules).isEmpty()) {
@@ -126,8 +124,6 @@ public class IdeCommandUtil {
       }
     });
   }
-
-
 
   public static void removeGenSources(final Project project, Iterable<? extends SModel> models, Iterable<? extends SModule> modules) {
     final Wrappers._T<Iterable<? extends SModule>> _modules = new Wrappers._T<Iterable<? extends SModule>>(modules);
@@ -190,8 +186,6 @@ public class IdeCommandUtil {
     });
   }
 
-
-
   public static Map<String, Object> prepareParameters(Iterable<Tuples._2<String, Object>> parameters) {
     Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
     for (Tuples._2<String, Object> parameter : Sequence.fromIterable(parameters)) {
@@ -199,8 +193,6 @@ public class IdeCommandUtil {
     }
     return result;
   }
-
-
 
   public static void callAction(final SNode actionDeclaration, final Map<String, Object> parameters) {
     AnAction action = ActionManager.getInstance().getAction(ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(actionDeclaration));
@@ -212,15 +204,12 @@ public class IdeCommandUtil {
     }));
   }
 
-
-
   private static IFile check_nf7729_a0b0a0a2a4(TestsFacet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTestsOutputPath();
     }
     return null;
   }
-
   private static <T> T as_nf7729_a0a0a0a0a0a0a0a0a0a0a0a2a1a0a0a0a3a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

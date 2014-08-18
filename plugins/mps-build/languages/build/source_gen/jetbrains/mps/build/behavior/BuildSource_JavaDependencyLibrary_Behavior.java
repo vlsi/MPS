@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildSource_JavaDependencyLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     JavaExportUtil.requireLibrary(artifacts, SLinkOperations.getTarget(thisNode, "library", false), SNodeOperations.getParent(thisNode), builder);
   }

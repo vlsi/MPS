@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildFileSelector_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements BuildLayout_CopyParameter_BehaviorDescriptor {
   public BuildFileSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildFileSelector";

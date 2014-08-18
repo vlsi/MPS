@@ -19,76 +19,60 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateOrPattern_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateOrPattern_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
-
   public String getPresentation() {
     return "CreateOrPattern";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.pattern.intentions.CreateOrPattern_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.pattern";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode currentNode = editorContext.getSelectedNode();
     return SNodeOperations.getAncestor(currentNode, "jetbrains.mps.lang.pattern.structure.PatternExpression", false, false) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "8263735385373627208");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateOrPattern_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create OrPattern";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
       SNode orPattern = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.pattern.structure.OrPattern", null);
       SNodeOperations.replaceWithAnother(currentNode, orPattern);
       SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(orPattern, "clause", true)).first(), "patternNode", currentNode, true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateOrPattern_Intention.this;
     }

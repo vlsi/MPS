@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class EvaluatorsSuperMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorDescriptor {
   public EvaluatorsSuperMethodCall_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return EvaluatorsSuperMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall";

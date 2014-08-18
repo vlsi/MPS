@@ -12,18 +12,15 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public abstract class RevertRootsAction extends BaseAction implements DumbAware {
   private String myRevertTitle;
-
   public RevertRootsAction(String revertTitle) {
     super("Revert " + revertTitle, null, IconLoader.getIcon("/actions/rollback.png"));
     myRevertTitle = revertTitle;
   }
-
   @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
     ModelChange.rollbackChanges(getChanges());
     after();
   }
-
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
     super.doUpdate(event, map);
@@ -32,11 +29,8 @@ public abstract class RevertRootsAction extends BaseAction implements DumbAware 
     event.getPresentation().setVisible(enabled);
     event.getPresentation().setText("Revert " + getRevertTitle());
   }
-
   protected abstract void after();
-
   protected abstract Iterable<ModelChange> getChanges();
-
   protected String getRevertTitle() {
     return myRevertTitle;
   }

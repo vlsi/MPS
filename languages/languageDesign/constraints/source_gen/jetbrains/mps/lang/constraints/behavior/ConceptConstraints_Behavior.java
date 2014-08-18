@@ -16,15 +16,12 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class ConceptConstraints_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
   }
-
   public static SNode call_getConstraintFunctionBodyUsingInheritance_4960272075650318140(SAbstractConcept thisConcept, SNode concept, final _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> constraintFunctionSpecifier) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> computePredicate = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode concept) {
@@ -38,7 +35,6 @@ public class ConceptConstraints_Behavior {
       return SLinkOperations.getTarget(method, "body", true);
     }
   }
-
   private static SNode _quotation_createNode_wrxfmp_a0a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

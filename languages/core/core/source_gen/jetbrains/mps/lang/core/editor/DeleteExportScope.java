@@ -14,42 +14,32 @@ public class DeleteExportScope {
     editorCell.setAction(CellActionType.DELETE, new DeleteExportScope.DeleteExportScope_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteExportScope.DeleteExportScope_BACKSPACE(node));
   }
-
   public static class DeleteExportScope_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteExportScope_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete export";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class DeleteExportScope_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteExportScope_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete export";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }

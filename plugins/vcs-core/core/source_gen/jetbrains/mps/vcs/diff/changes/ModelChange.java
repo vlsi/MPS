@@ -14,23 +14,18 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public abstract class ModelChange {
   private ChangeSet myChangeSet;
   private ModelChange myOpposite = null;
-
   protected ModelChange(@NotNull ChangeSet changeSet) {
     myChangeSet = changeSet;
   }
-
   @NotNull
   public final ChangeSet getChangeSet() {
     return myChangeSet;
   }
-
   @Nullable
   public SNodeId getRootId() {
     return null;
   }
-
   public abstract void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier);
-
   public ModelChange getOppositeChange() {
     if (myOpposite == null) {
       myOpposite = createOppositeChange();
@@ -38,23 +33,17 @@ public abstract class ModelChange {
     }
     return myOpposite;
   }
-
   @NotNull
   protected abstract ModelChange createOppositeChange();
-
   @NotNull
   public abstract ChangeType getType();
-
   public boolean isNonConflicting() {
     // true - change can never conflict with other change and should be ignored if connected change exists (e.g. resolveInfo change) 
     return false;
   }
-
   @Override
   public abstract String toString();
-
   public abstract String getDescription();
-
   public static void rollbackChanges(Iterable<ModelChange> changes) {
     assert Sequence.fromIterable(changes).isNotEmpty();
     final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();

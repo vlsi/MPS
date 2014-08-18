@@ -9,21 +9,17 @@ public class CategoryKind {
   private String myName;
   private Icon myIcon;
   private String myTooltip;
-
   public CategoryKind(String name, Icon icon, String tooltip) {
     myName = name;
     myIcon = icon;
     myTooltip = tooltip;
   }
-
   public String getName() {
     return myName;
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getTooltip() {
     return myTooltip;
   }

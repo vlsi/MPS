@@ -8,7 +8,6 @@ import com.intellij.execution.process.ProcessListener;
 public class OutputRedirector {
   public OutputRedirector() {
   }
-
   public static ProcessHandler redirect(ProcessHandler handler, ProcessListener listener) {
     handler.addProcessListener(listener);
     return handler;

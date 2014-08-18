@@ -19,6 +19,10 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 import jetbrains.mps.baseLanguage.scopes.FieldSignature;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,7 +30,6 @@ public class FieldDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
   }
-
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), _quotation_createNode_dh5t54_b0a1a0())) {
@@ -34,17 +37,14 @@ public class FieldDeclaration_Behavior {
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
-
   public static boolean call_hasGetter_1213877243808(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(classConcept)).where(new IWhereFilter<SNode>() {
@@ -53,15 +53,12 @@ public class FieldDeclaration_Behavior {
       }
     }).isNotEmpty();
   }
-
   public static boolean call_isGetter_1213877243833(SNode thisNode, SNode method) {
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && FieldDeclaration_Behavior.call_getGetterName_1213877243782(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), SLinkOperations.getTarget(method, "returnType", true));
   }
-
   public static String call_getSetterName_1213877243861(SNode thisNode) {
     return "set" + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static boolean call_hasSetter_1213877243871(SNode thisNode, SNode classConcept) {
     final SNode fieldDeclaration = thisNode;
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(classConcept)).where(new IWhereFilter<SNode>() {
@@ -70,15 +67,12 @@ public class FieldDeclaration_Behavior {
       }
     }).isNotEmpty();
   }
-
   public static boolean call_isSetter_1213877243896(SNode thisNode, SNode method) {
     return ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1 && FieldDeclaration_Behavior.call_getSetterName_1213877243861(thisNode).equals(SPropertyOperations.getString(method, "name")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).first(), "type", true), SLinkOperations.getTarget(thisNode, "type", true));
   }
-
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
@@ -86,7 +80,6 @@ public class FieldDeclaration_Behavior {
     }
     return (settings.getFieldSuffix() == null ? "" : settings.getFieldSuffix());
   }
-
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
@@ -94,12 +87,10 @@ public class FieldDeclaration_Behavior {
     }
     return (settings.getFieldPrefix() == null ? "" : settings.getFieldPrefix());
   }
-
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
   }
-
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
       return;
@@ -107,7 +98,19 @@ public class FieldDeclaration_Behavior {
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
-
+  public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
+    if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null)) {
+      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment");
+    }
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "deprecated", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
+  }
+  public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+    AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), null);
+    AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
+  }
   private static SNode _quotation_createNode_dh5t54_b0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

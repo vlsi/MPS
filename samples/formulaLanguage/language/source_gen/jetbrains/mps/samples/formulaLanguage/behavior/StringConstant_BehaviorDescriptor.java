@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class StringConstant_BehaviorDescriptor extends Constant_BehaviorDescriptor {
   public StringConstant_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.StringConstant";

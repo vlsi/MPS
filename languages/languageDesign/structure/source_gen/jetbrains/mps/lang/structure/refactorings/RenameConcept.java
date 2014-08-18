@@ -25,24 +25,19 @@ public class RenameConcept extends BaseLoggableRefactoring {
   public RenameConcept() {
     this.addTransientParameter("newName");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new RenameConcept_Target();
   }
-
   public String getUserFriendlyName() {
     return "Rename Concept";
   }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     String newConceptName = SNodeOperations.getModel(refactoringContext.getSelectedNode()).getReference().getModelName() + "." + ((String) refactoringContext.getParameter("newName"));
     refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newConceptName, ((String) refactoringContext.getParameter("newName")));
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     Set<SModel> result = SetSequence.fromSetWithValues(new HashSet<SModel>(), (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel()));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()));
@@ -53,11 +48,9 @@ public class RenameConcept extends BaseLoggableRefactoring {
     }
     return SetSequence.fromSet(result).toListSequence();
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder");
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }

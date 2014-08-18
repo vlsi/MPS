@@ -14,34 +14,26 @@ public class UpperBoundToWildcard {
     editorCell.setAction(CellActionType.DELETE, new UpperBoundToWildcard.UpperBoundToWildcard_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new UpperBoundToWildcard.UpperBoundToWildcard_BACKSPACE(node));
   }
-
   public static class UpperBoundToWildcard_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UpperBoundToWildcard_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.WildCardType");
     }
   }
-
   public static class UpperBoundToWildcard_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UpperBoundToWildcard_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.WildCardType");
     }

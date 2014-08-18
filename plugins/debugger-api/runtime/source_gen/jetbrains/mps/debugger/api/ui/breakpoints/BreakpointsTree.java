@@ -15,7 +15,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
     loadState();
     myTree.rebuildLater();
   }
-
   private void loadState() {
     MPSTree.TreeState treeState = BreakpointViewSettingsComponent.getInstance(myContext.getProject()).getTreeState();
     if (treeState != null) {
@@ -24,46 +23,37 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
       expandAll();
     }
   }
-
   @Override
   public void saveState() {
     super.saveState();
     BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setTreeState(myTree.saveState());
   }
-
   @Override
   public String getTitle() {
     return "Tree View";
   }
-
   public void toggleModuleGroup(boolean value) {
     //  todo: refactor 
     myModuleKind.setVisible(value);
     BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModule(value);
   }
-
   public void toggleRootGroup(boolean value) {
     myRootKind.setVisible(value);
     BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByRoot(value);
   }
-
   public void toggleModelGroup(boolean value) {
     myModelKind.setVisible(value);
     BreakpointViewSettingsComponent.getInstance(myContext.getProject()).setGroupByModel(value);
   }
-
   public boolean isModuleGroupVisible() {
     return myModuleKind.isVisible();
   }
-
   public boolean isRootGroupVisible() {
     return myRootKind.isVisible();
   }
-
   public boolean isModelGroupVisible() {
     return myModelKind.isVisible();
   }
-
   public void expandAll() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override
@@ -72,7 +62,6 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNode;
       }
     });
   }
-
   public void collapseAll() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       @Override

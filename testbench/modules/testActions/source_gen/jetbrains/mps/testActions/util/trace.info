@@ -14,17 +14,18 @@
     <file name="FlyingActionsFinder.java">
       <node id="1575175756409680356" at="17,0,18,0" concept="2" trace="myActionManager" />
       <node id="4484885613884975931" at="18,0,19,0" concept="2" trace="myFlyingActions" />
-      <node id="1575175756409685624" at="20,33,21,24" concept="1" />
-      <node id="4484885613884918107" at="30,44,31,69" concept="6" />
-      <node id="2283592493588086022" at="31,69,32,72" concept="6" />
-      <node id="4484885613884975995" at="32,72,33,56" concept="6" />
-      <node id="4484885613884975980" at="33,56,34,0" concept="8" />
-      <node id="2283592493588087265" at="35,72,36,59" concept="1" />
-      <node id="4484885613884975976" at="37,5,38,27" concept="7" />
+      <node id="1575175756409685624" at="19,33,20,24" concept="1" />
+      <node id="4484885613884918107" at="28,44,29,69" concept="6" />
+      <node id="2283592493588086022" at="29,69,30,72" concept="6" />
+      <node id="4484885613884975995" at="30,72,31,56" concept="6" />
+      <node id="6926353569064051618" at="31,56,32,0" concept="8" />
+      <node id="6926353569064041871" at="33,29,34,29" concept="7" />
+      <node id="2283592493588087265" at="36,72,37,59" concept="1" />
+      <node id="4484885613884975976" at="38,5,39,27" concept="7" />
       <node id="4484885613884975946" at="41,36,42,91" concept="1" />
       <node id="4484885613884963028" at="42,91,43,68" concept="6" />
       <node id="4484885613884963041" at="43,68,44,0" concept="8" />
-      <node id="4484885613884963082" at="44,0,45,29" concept="6" />
+      <node id="4484885613884963082" at="44,0,45,22" concept="6" />
       <node id="4484885613884963089" at="46,39,47,47" concept="1" />
       <node id="4484885613885012476" at="48,64,49,44" concept="1" />
       <node id="4484885613884972089" at="52,75,53,72" concept="1" />
@@ -32,66 +33,68 @@
       <node id="4484885613884972397" at="57,0,58,59" concept="1" />
       <node id="4484885613884975914" at="58,59,59,52" concept="1" />
       <node id="1031873601093433334" at="59,52,60,53" concept="1" />
-      <node id="2283592493588027456" at="68,42,69,27" concept="7" />
-      <node id="2283592493588119307" at="78,51,79,44" concept="6" />
-      <node id="2283592493588119336" at="79,44,80,0" concept="8" />
-      <node id="3197704031717961705" at="80,0,81,67" concept="1" />
-      <node id="5152061616759057317" at="81,67,82,75" concept="1" />
-      <node id="5152061616759219523" at="82,75,83,63" concept="1" />
-      <node id="5152061616759418621" at="83,63,84,94" concept="1" />
-      <node id="2283592493588119337" at="84,94,85,0" concept="8" />
-      <node id="2283592493588119333" at="85,0,86,15" concept="7" />
-      <node id="1031873601093433364" at="89,51,90,59" concept="6" />
-      <node id="1031873601093444831" at="90,59,91,37" concept="7" />
-      <node id="1575175756409680352" at="20,0,23,0" concept="0" trace="FlyingActionsFinder#()V" />
-      <node id="2283592493588086040" at="34,0,37,5" concept="3" />
+      <node id="2283592493588027456" at="67,42,68,27" concept="7" />
+      <node id="2283592493588119307" at="76,51,77,44" concept="6" />
+      <node id="2283592493588119336" at="77,44,78,0" concept="8" />
+      <node id="3197704031717961705" at="78,0,79,67" concept="1" />
+      <node id="5152061616759057317" at="79,67,80,75" concept="1" />
+      <node id="5152061616759219523" at="80,75,81,63" concept="1" />
+      <node id="5152061616759418621" at="81,63,82,94" concept="1" />
+      <node id="2283592493588119337" at="82,94,83,0" concept="8" />
+      <node id="2283592493588119333" at="83,0,84,15" concept="7" />
+      <node id="1031873601093433364" at="86,51,87,59" concept="6" />
+      <node id="1031873601093444831" at="87,59,88,37" concept="7" />
+      <node id="1575175756409680352" at="19,0,22,0" concept="0" trace="FlyingActionsFinder#()V" />
+      <node id="6926353569064033858" at="32,0,35,5" concept="4" />
+      <node id="2283592493588086040" at="35,5,38,5" concept="3" />
       <node id="4484885613885012418" at="47,47,50,7" concept="4" />
       <node id="4484885613884972083" at="51,51,54,9" concept="3" />
-      <node id="1031873601093433351" at="89,0,93,0" concept="9" trace="getAllFlyingActions#()Ljava/util/Set;" />
+      <node id="1031873601093433351" at="86,0,90,0" concept="9" trace="getAllFlyingActions#()Ljava/util/Set;" />
       <node id="4484885613884963101" at="50,7,55,7" concept="4" />
-      <node id="2283592493587977671" at="63,0,71,0" concept="5" trace="getFlyingActions#()Ljava/util/Set;" />
-      <node id="4484885613884963047" at="45,29,56,5" concept="3" />
-      <node id="2283592493588086014" at="24,0,40,0" concept="5" trace="getIdeaCoreActions#()Ljava/util/Set;" />
-      <node id="2283592493588134041" at="72,0,88,0" concept="9" trace="getMPSRootActionIds#()Ljava/util/Set;" />
+      <node id="2283592493587977671" at="62,0,70,0" concept="5" trace="getFlyingActions#()Ljava/util/Set;" />
+      <node id="4484885613884963047" at="45,22,56,5" concept="3" />
+      <node id="2283592493588134041" at="70,0,86,0" concept="9" trace="getMPSRootActionIds#()Ljava/util/Set;" />
+      <node id="2283592493588086014" at="22,0,41,0" concept="5" trace="getIdeaCoreActions#()Ljava/util/Set;" />
       <node id="1575175756409680469" at="41,0,62,0" concept="5" trace="findFlyingActions#()V" />
-      <scope id="1575175756409680355" at="20,33,21,24" />
-      <scope id="2283592493588086041" at="35,72,36,59" />
+      <scope id="1575175756409680355" at="19,33,20,24" />
+      <scope id="6926353569064033861" at="33,29,34,29" />
+      <scope id="2283592493588086041" at="36,72,37,59" />
       <scope id="4484885613885012419" at="48,64,49,44" />
       <scope id="4484885613884972084" at="52,75,53,72" />
-      <scope id="2283592493587977674" at="68,42,69,27" />
-      <scope id="1031873601093433354" at="89,51,91,37">
+      <scope id="2283592493587977674" at="67,42,68,27" />
+      <scope id="1031873601093433354" at="86,51,88,37">
         <var name="finder" id="1031873601093433365" />
       </scope>
-      <scope id="1575175756409680352" at="20,0,23,0" />
-      <scope id="2283592493588086040" at="34,0,37,5">
+      <scope id="1575175756409680352" at="19,0,22,0" />
+      <scope id="2283592493588086040" at="35,5,38,5">
         <var name="element" id="2283592493588086043" />
       </scope>
       <scope id="4484885613884963102" at="51,51,54,9" />
       <scope id="4484885613884972083" at="51,51,54,9">
         <var name="child" id="4484885613884972086" />
       </scope>
-      <scope id="1031873601093433351" at="89,0,93,0" />
-      <scope id="2283592493588086017" at="30,44,38,27">
+      <scope id="1031873601093433351" at="86,0,90,0" />
+      <scope id="2283592493587977671" at="62,0,70,0" />
+      <scope id="2283592493588134044" at="76,51,84,15">
+        <var name="set" id="2283592493588119308" />
+      </scope>
+      <scope id="4484885613884963048" at="46,39,55,7" />
+      <scope id="2283592493588086017" at="28,44,39,27">
         <var name="descriptor" id="2283592493588086023" />
         <var name="ideaCoreActions" id="4484885613884975996" />
         <var name="pluginId" id="4484885613884918108" />
       </scope>
-      <scope id="2283592493587977671" at="63,0,71,0" />
-      <scope id="2283592493588134044" at="78,51,86,15">
-        <var name="set" id="2283592493588119308" />
-      </scope>
-      <scope id="4484885613884963048" at="46,39,55,7" />
-      <scope id="4484885613884963047" at="45,29,56,5">
+      <scope id="4484885613884963047" at="45,22,56,5">
         <var name="id" id="4484885613884963050" />
       </scope>
-      <scope id="2283592493588086014" at="24,0,40,0" />
-      <scope id="2283592493588134041" at="72,0,88,0" />
+      <scope id="2283592493588134041" at="70,0,86,0" />
+      <scope id="2283592493588086014" at="22,0,41,0" />
       <scope id="1575175756409680472" at="41,36,60,53">
         <var name="anAction" id="4484885613884963083" />
         <var name="childrenOrSortCutActionsSet" id="4484885613884963029" />
       </scope>
       <scope id="1575175756409680469" at="41,0,62,0" />
-      <unit id="1575175756409680350" at="16,0,94,0" name="jetbrains.mps.testActions.util.FlyingActionsFinder" />
+      <unit id="1575175756409680350" at="16,0,91,0" name="jetbrains.mps.testActions.util.FlyingActionsFinder" />
     </file>
   </root>
 </debug-info>

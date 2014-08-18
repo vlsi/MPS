@@ -8,7 +8,6 @@ import java.math.BigDecimal;
 public class MovingAverage_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<BigDecimal> call_calculate_4001135958235925008(SNode thisNode) {
     return null;
   }

@@ -30,7 +30,6 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
   private MergeDriverOptionsDialog.InstallerCheckBox<GitRepositoriesInstaller> myGitRepos;
   private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myCommonSvn;
   private MergeDriverOptionsDialog.InstallerCheckBox<SvnInstaller> myIdeSvn;
-
   public MergeDriverOptionsDialog(Project project) {
     super(project);
     setTitle("MPS VCS Add-ons");
@@ -65,18 +64,15 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }
-
   @Override
   public String getDimensionServiceKey() {
     return "#jetbrains.mps.vcs.mergedriver.MergeDriverOptionDialog";
   }
-
   @Override
   protected void doOKAction() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
@@ -94,7 +90,6 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
       }
     });
   }
-
   @NotNull
   @Override
   protected Action[] createActions() {
@@ -103,15 +98,12 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
     ListSequence.fromList(actions).addElement(getCancelAction());
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
-
   private class InstallerCheckBox<I extends AbstractInstaller> extends JCheckBox {
     private I myInstaller;
-
     public InstallerCheckBox(I installer) {
       super(installer.getActionTitle() + ((installer.getCurrentState() == AbstractInstaller.State.OUTDATED ? " (update)" : "")));
       myInstaller = installer;
     }
-
     private void addIfNeeded() {
       AbstractInstaller.State currentState = myInstaller.getCurrentState();
       if (currentState != AbstractInstaller.State.NOT_ENABLED) {
@@ -121,7 +113,6 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
         setSelected(currentState != AbstractInstaller.State.INSTALLED);
       }
     }
-
     private void installIfNeeded() {
       if (isSelected() && isEnabled()) {
         myInstaller.install();

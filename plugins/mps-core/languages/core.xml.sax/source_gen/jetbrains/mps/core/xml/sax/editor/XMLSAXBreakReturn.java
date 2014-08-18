@@ -21,16 +21,13 @@ public class XMLSAXBreakReturn extends KeyMapImpl {
     action = new XMLSAXBreakReturn.XMLSAXBreakReturn_Action0();
     this.putAction("any", "VK_SPACE", action);
   }
-
   public static class XMLSAXBreakReturn_Action0 extends KeyMapActionImpl {
     public XMLSAXBreakReturn_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -45,22 +42,18 @@ public class XMLSAXBreakReturn extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SLinkOperations.getTarget(node, "result", true) == null);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if ((SLinkOperations.getTarget(node, "result", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "result", "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
-
     public String getKeyStroke() {
       return " SPACE";
     }

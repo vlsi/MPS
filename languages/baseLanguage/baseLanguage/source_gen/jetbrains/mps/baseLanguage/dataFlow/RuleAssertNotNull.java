@@ -13,26 +13,20 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 
 public class RuleAssertNotNull extends DataFlowConstructor {
   private GeneratedMatchingPattern myPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a();
-
   public RuleAssertNotNull() {
   }
-
   public boolean isApplicable(SNode node) {
     return myPattern.match(node);
   }
-
   public void performActions(Program program, SNode node) {
     myPattern.performActions(program);
   }
-
   public static class Pattern_7fbm30_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_p;
     /*package*/ SNode patternVar_action_var_5730083271929373007;
     private GeneratedMatchingPattern myOrPattern_7fbm30_a0a0;
-
     public Pattern_7fbm30_a0a() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_7fbm30_a0a = nodeToMatch;
@@ -72,18 +66,15 @@ public class RuleAssertNotNull extends DataFlowConstructor {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
         patternVar_action_var_5730083271929373007 = (SNode) pattern.getFieldValue("patternVar_action_var_5730083271929373007");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_p".equals(fieldName)) {
         return patternVar_p;
@@ -93,7 +84,6 @@ public class RuleAssertNotNull extends DataFlowConstructor {
       }
       return null;
     }
-
     public void performActions(Object o) {
       {
         Object object = getFieldValue("patternVar_action_var_5730083271929373007");
@@ -112,11 +102,9 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         }
       }
     }
-
     public class Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_7fbm30_a0a0a2a1a1a1a1a0a1a1a0a0a0a() {
       }
-
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_7fbm30_a0a0a0 = nodeToMatch;
@@ -154,26 +142,20 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         }
         return true;
       }
-
       public boolean hasAntiquotations() {
         return false;
       }
-
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       }
-
       public Object getFieldValue(String fieldName) {
         return null;
       }
-
       public void performActions(Object o) {
       }
     }
-
     public class Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_7fbm30_a0a0a3a1a1a1a1a0a1a1a0a0a0a() {
       }
-
       public boolean match(SNode nodeToMatch) {
         {
           SNode nodeToMatch_7fbm30_a1a0a0 = nodeToMatch;
@@ -211,18 +193,14 @@ public class RuleAssertNotNull extends DataFlowConstructor {
         }
         return true;
       }
-
       public boolean hasAntiquotations() {
         return false;
       }
-
       public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       }
-
       public Object getFieldValue(String fieldName) {
         return null;
       }
-
       public void performActions(Object o) {
       }
     }

@@ -26,11 +26,9 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class ClosureLiteralTarget {
   private TemplateQueryContext genContext;
-
   public ClosureLiteralTarget(TemplateQueryContext genContext) {
     this.genContext = genContext;
   }
-
   public void setTarget(SNode literal, SNode targetIface) {
     SNode targetIfaceErase = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(targetIface)), null);
     SLinkOperations.setTarget(targetIfaceErase, "classifier", SLinkOperations.getTarget(targetIface, "classifier", false), false);
@@ -38,7 +36,6 @@ public class ClosureLiteralTarget {
     Values.LITERAL.set(genContext, targetIfaceErase, literal);
     Values.LITERAL_TARGET.set(genContext, literal, targetIfaceErase);
   }
-
   private void matchTypeParameters(SNode literal, SNode targetIfaceErase, List<SNode> reifiedTargetIfaceTypeParams) {
     SNode meth = getFunctionMethod(literal, targetIfaceErase);
     SNode funType = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(literal), "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
@@ -117,11 +114,9 @@ public class ClosureLiteralTarget {
       }
     }
   }
-
   private boolean hasTypeVariable(SNode type) {
     return ListSequence.fromList(SNodeOperations.getDescendants(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})).isNotEmpty();
   }
-
   private SNode getFunctionMethod(SNode literal, SNode targetIface) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode mth : Classifier_Behavior.call_methods_5292274854859311639(SLinkOperations.getTarget(targetIface, "classifier", false))) {

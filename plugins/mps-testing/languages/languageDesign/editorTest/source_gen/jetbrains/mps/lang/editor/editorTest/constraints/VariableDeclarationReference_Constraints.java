@@ -24,7 +24,6 @@ public class VariableDeclarationReference_Constraints extends BaseConstraintsDes
   public VariableDeclarationReference_Constraints() {
     super("jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class VariableDeclarationReference_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -50,7 +48,6 @@ public class VariableDeclarationReference_Constraints extends BaseConstraintsDes
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_98f22q_a0a1a0a0a1a0b0a1a1;
@@ -60,6 +57,5 @@ public class VariableDeclarationReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   private static SNodePointer breakingNode_98f22q_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "2340678293597344726");
 }

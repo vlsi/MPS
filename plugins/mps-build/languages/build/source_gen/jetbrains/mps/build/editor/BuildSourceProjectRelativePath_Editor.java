@@ -32,11 +32,9 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_698n2d_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_698n2d_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_698n2d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_698n2d_a");
@@ -47,7 +45,6 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_698n2d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_698n2d_a0");
@@ -58,16 +55,13 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceProjectRelativePath_Editor.ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildSourceMacroRelativePath_cellMenu_698n2d_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildSourceMacroRelativePath";
     }
   }
-
   private EditorCell createCollection_698n2d_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_698n2d_b0");
@@ -79,11 +73,9 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_698n2d_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_698n2d_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "compositePart", true) != null);
   }
-
   private EditorCell createConstant_698n2d_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_698n2d_a1a");
@@ -95,7 +87,6 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_698n2d_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("compositePart");
@@ -121,7 +112,6 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_698n2d_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_698n2d_a_0");
@@ -130,7 +120,6 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_698n2d_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_698n2d_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parent:");
     editorCell.setCellId("Constant_698n2d_a0_0");
@@ -140,17 +129,14 @@ public class BuildSourceProjectRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_698n2d_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         SNode parent = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getParent_8654221991637145399", new Object[]{});
         return (parent == null ? "no parent" : BehaviorReflection.invokeVirtual(String.class, parent, "virtual_getRelativePath_5481553824944787371", new Object[]{}));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

@@ -16,7 +16,6 @@ public class ImplicitAnnotationInstanceValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_oshw76_a(editorContext, node);
   }
-
   private EditorCell createCollection_oshw76_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oshw76_a");
@@ -24,7 +23,6 @@ public class ImplicitAnnotationInstanceValue_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_oshw76_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_oshw76_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");

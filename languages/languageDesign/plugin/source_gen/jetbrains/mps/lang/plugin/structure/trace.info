@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="11,0,256,0" name="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
+      <unit at="11,0,254,0" name="jetbrains.mps.lang.plugin.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1205676676847">
@@ -58,72 +58,72 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/1562714432501166200">
     <file name="Keymap.java">
       <node id="1562714432501166200" at="17,0,18,0" concept="3" trace="myName" />
-      <node id="1562714432501166200" at="19,27,20,23" concept="7" />
-      <node id="1562714432501166200" at="23,36,24,24" concept="7" />
-      <node id="1562714432501166200" at="27,45,28,72" concept="6" />
-      <node id="1562714432501166200" at="28,72,29,60" concept="2" />
-      <node id="1562714432501166200" at="29,60,30,66" concept="2" />
-      <node id="1562714432501166200" at="30,66,31,56" concept="2" />
-      <node id="1562714432501166200" at="31,56,32,57" concept="2" />
-      <node id="1562714432501166200" at="32,57,33,55" concept="2" />
-      <node id="1562714432501166200" at="33,55,34,59" concept="2" />
-      <node id="1562714432501166200" at="34,59,35,16" concept="7" />
-      <node id="1562714432501166200" at="38,37,39,26" concept="7" />
-      <node id="1562714432501166200" at="43,24,44,33" concept="7" />
-      <node id="1562714432501166200" at="46,59,47,29" concept="7" />
-      <node id="1562714432501166200" at="49,65,50,35" concept="7" />
-      <node id="1562714432501166200" at="52,55,53,25" concept="7" />
-      <node id="1562714432501166200" at="55,56,56,26" concept="7" />
-      <node id="1562714432501166200" at="58,54,59,24" concept="7" />
-      <node id="1562714432501166200" at="61,58,62,28" concept="7" />
-      <node id="1562714432501166200" at="63,5,64,31" concept="7" />
-      <node id="1562714432501166200" at="67,0,68,0" concept="3" trace="myValue" />
-      <node id="1562714432501166200" at="69,37,70,23" concept="2" />
-      <node id="1562714432501166200" at="70,23,71,25" concept="2" />
-      <node id="1562714432501166200" at="74,28,75,24" concept="7" />
-      <node id="1562714432501166200" at="19,0,22,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="1562714432501166200" at="23,0,26,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1562714432501166200" at="38,0,41,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/plugin/structure/Keymap;" />
-      <node id="1562714432501166200" at="42,49,45,5" concept="4" />
-      <node id="1562714432501166200" at="45,5,48,5" concept="4" />
-      <node id="1562714432501166200" at="48,5,51,5" concept="4" />
-      <node id="1562714432501166200" at="51,5,54,5" concept="4" />
-      <node id="1562714432501166200" at="54,5,57,5" concept="4" />
-      <node id="1562714432501166200" at="57,5,60,5" concept="4" />
-      <node id="1562714432501166200" at="60,5,63,5" concept="4" />
-      <node id="1562714432501166200" at="74,0,77,0" concept="5" trace="getValue#()Ljava/lang/String;" />
-      <node id="1562714432501166200" at="69,0,73,0" concept="1" trace="Keymap#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1562714432501166200" at="27,0,37,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1562714432501166200" at="42,0,66,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/plugin/structure/Keymap;" />
-      <scope id="1562714432501166200" at="19,27,20,23" />
-      <scope id="1562714432501166200" at="23,36,24,24" />
-      <scope id="1562714432501166200" at="38,37,39,26" />
-      <scope id="1562714432501166200" at="43,24,44,33" />
-      <scope id="1562714432501166200" at="46,59,47,29" />
-      <scope id="1562714432501166200" at="49,65,50,35" />
-      <scope id="1562714432501166200" at="52,55,53,25" />
-      <scope id="1562714432501166200" at="55,56,56,26" />
-      <scope id="1562714432501166200" at="58,54,59,24" />
-      <scope id="1562714432501166200" at="61,58,62,28" />
-      <scope id="1562714432501166200" at="74,28,75,24" />
-      <scope id="1562714432501166200" at="69,37,71,25" />
-      <scope id="1562714432501166200" at="19,0,22,0" />
-      <scope id="1562714432501166200" at="23,0,26,0" />
-      <scope id="1562714432501166200" at="38,0,41,0" />
-      <scope id="1562714432501166200" at="74,0,77,0" />
-      <scope id="1562714432501166200" at="69,0,73,0">
+      <node id="1562714432501166200" at="18,27,19,23" concept="7" />
+      <node id="1562714432501166200" at="21,36,22,24" concept="7" />
+      <node id="1562714432501166200" at="24,45,25,72" concept="6" />
+      <node id="1562714432501166200" at="25,72,26,60" concept="2" />
+      <node id="1562714432501166200" at="26,60,27,66" concept="2" />
+      <node id="1562714432501166200" at="27,66,28,56" concept="2" />
+      <node id="1562714432501166200" at="28,56,29,57" concept="2" />
+      <node id="1562714432501166200" at="29,57,30,55" concept="2" />
+      <node id="1562714432501166200" at="30,55,31,59" concept="2" />
+      <node id="1562714432501166200" at="31,59,32,16" concept="7" />
+      <node id="1562714432501166200" at="34,37,35,26" concept="7" />
+      <node id="1562714432501166200" at="38,24,39,33" concept="7" />
+      <node id="1562714432501166200" at="41,59,42,29" concept="7" />
+      <node id="1562714432501166200" at="44,65,45,35" concept="7" />
+      <node id="1562714432501166200" at="47,55,48,25" concept="7" />
+      <node id="1562714432501166200" at="50,56,51,26" concept="7" />
+      <node id="1562714432501166200" at="53,54,54,24" concept="7" />
+      <node id="1562714432501166200" at="56,58,57,28" concept="7" />
+      <node id="1562714432501166200" at="58,5,59,31" concept="7" />
+      <node id="1562714432501166200" at="61,0,62,0" concept="3" trace="myValue" />
+      <node id="1562714432501166200" at="62,37,63,23" concept="2" />
+      <node id="1562714432501166200" at="63,23,64,25" concept="2" />
+      <node id="1562714432501166200" at="66,28,67,24" concept="7" />
+      <node id="1562714432501166200" at="18,0,21,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1562714432501166200" at="21,0,24,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1562714432501166200" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/plugin/structure/Keymap;" />
+      <node id="1562714432501166200" at="37,49,40,5" concept="4" />
+      <node id="1562714432501166200" at="40,5,43,5" concept="4" />
+      <node id="1562714432501166200" at="43,5,46,5" concept="4" />
+      <node id="1562714432501166200" at="46,5,49,5" concept="4" />
+      <node id="1562714432501166200" at="49,5,52,5" concept="4" />
+      <node id="1562714432501166200" at="52,5,55,5" concept="4" />
+      <node id="1562714432501166200" at="55,5,58,5" concept="4" />
+      <node id="1562714432501166200" at="66,0,69,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1562714432501166200" at="62,0,66,0" concept="1" trace="Keymap#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1562714432501166200" at="24,0,34,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1562714432501166200" at="37,0,61,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/plugin/structure/Keymap;" />
+      <scope id="1562714432501166200" at="18,27,19,23" />
+      <scope id="1562714432501166200" at="21,36,22,24" />
+      <scope id="1562714432501166200" at="34,37,35,26" />
+      <scope id="1562714432501166200" at="38,24,39,33" />
+      <scope id="1562714432501166200" at="41,59,42,29" />
+      <scope id="1562714432501166200" at="44,65,45,35" />
+      <scope id="1562714432501166200" at="47,55,48,25" />
+      <scope id="1562714432501166200" at="50,56,51,26" />
+      <scope id="1562714432501166200" at="53,54,54,24" />
+      <scope id="1562714432501166200" at="56,58,57,28" />
+      <scope id="1562714432501166200" at="66,28,67,24" />
+      <scope id="1562714432501166200" at="62,37,64,25" />
+      <scope id="1562714432501166200" at="18,0,21,0" />
+      <scope id="1562714432501166200" at="21,0,24,0" />
+      <scope id="1562714432501166200" at="34,0,37,0" />
+      <scope id="1562714432501166200" at="66,0,69,0" />
+      <scope id="1562714432501166200" at="62,0,66,0">
         <var name="name" id="1562714432501166200" />
         <var name="value" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="27,45,35,16">
+      <scope id="1562714432501166200" at="24,45,32,16">
         <var name="list" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="27,0,37,0" />
-      <scope id="1562714432501166200" at="42,49,64,31" />
-      <scope id="1562714432501166200" at="42,0,66,0">
+      <scope id="1562714432501166200" at="24,0,34,0" />
+      <scope id="1562714432501166200" at="37,49,59,31" />
+      <scope id="1562714432501166200" at="37,0,61,0">
         <var name="value" id="1562714432501166200" />
       </scope>
-      <unit id="1562714432501166200" at="9,0,78,0" name="jetbrains.mps.lang.plugin.structure.Keymap" />
+      <unit id="1562714432501166200" at="9,0,70,0" name="jetbrains.mps.lang.plugin.structure.Keymap" />
     </file>
     <file name="Keymap_PropertySupport.java">
       <node id="1562714432501166200" at="11,24,12,18" concept="7" />
@@ -131,117 +131,117 @@
       <node id="1562714432501166200" at="15,33,16,41" concept="6" />
       <node id="1562714432501166200" at="17,45,18,20" concept="7" />
       <node id="1562714432501166200" at="20,5,21,17" concept="7" />
-      <node id="1562714432501166200" at="25,24,26,18" concept="7" />
-      <node id="1562714432501166200" at="27,5,28,89" concept="6" />
-      <node id="1562714432501166200" at="29,33,30,41" concept="6" />
-      <node id="1562714432501166200" at="31,45,32,43" concept="7" />
-      <node id="1562714432501166200" at="34,5,35,16" concept="7" />
-      <node id="1562714432501166200" at="38,49,39,47" concept="6" />
-      <node id="1562714432501166200" at="40,27,41,32" concept="7" />
-      <node id="1562714432501166200" at="42,5,43,14" concept="7" />
+      <node id="1562714432501166200" at="24,24,25,18" concept="7" />
+      <node id="1562714432501166200" at="26,5,27,89" concept="6" />
+      <node id="1562714432501166200" at="28,33,29,41" concept="6" />
+      <node id="1562714432501166200" at="30,45,31,43" concept="7" />
+      <node id="1562714432501166200" at="33,5,34,16" concept="7" />
+      <node id="1562714432501166200" at="36,49,37,47" concept="6" />
+      <node id="1562714432501166200" at="38,27,39,32" concept="7" />
+      <node id="1562714432501166200" at="40,5,41,14" concept="7" />
       <node id="1562714432501166200" at="10,44,13,5" concept="4" />
       <node id="1562714432501166200" at="16,41,19,7" concept="4" />
-      <node id="1562714432501166200" at="24,47,27,5" concept="4" />
-      <node id="1562714432501166200" at="30,41,33,7" concept="4" />
-      <node id="1562714432501166200" at="39,47,42,5" concept="4" />
+      <node id="1562714432501166200" at="23,47,26,5" concept="4" />
+      <node id="1562714432501166200" at="29,41,32,7" concept="4" />
+      <node id="1562714432501166200" at="37,47,40,5" concept="4" />
       <node id="1562714432501166200" at="14,89,20,5" concept="9" />
-      <node id="1562714432501166200" at="28,89,34,5" concept="9" />
-      <node id="1562714432501166200" at="38,0,45,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1562714432501166200" at="27,89,33,5" concept="9" />
+      <node id="1562714432501166200" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1562714432501166200" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1562714432501166200" at="24,0,37,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1562714432501166200" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1562714432501166200" at="11,24,12,18" />
       <scope id="1562714432501166200" at="17,45,18,20" />
-      <scope id="1562714432501166200" at="25,24,26,18" />
-      <scope id="1562714432501166200" at="31,45,32,43" />
-      <scope id="1562714432501166200" at="40,27,41,32" />
+      <scope id="1562714432501166200" at="24,24,25,18" />
+      <scope id="1562714432501166200" at="30,45,31,43" />
+      <scope id="1562714432501166200" at="38,27,39,32" />
       <scope id="1562714432501166200" at="15,33,19,7">
         <var name="constant" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="29,33,33,7">
+      <scope id="1562714432501166200" at="28,33,32,7">
         <var name="constant" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="38,49,43,14">
+      <scope id="1562714432501166200" at="36,49,41,14">
         <var name="constant" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="38,0,45,0">
+      <scope id="1562714432501166200" at="36,0,43,0">
         <var name="value" id="1562714432501166200" />
       </scope>
       <scope id="1562714432501166200" at="10,44,21,17">
         <var name="constants" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="24,47,35,16">
+      <scope id="1562714432501166200" at="23,47,34,16">
         <var name="constants" id="1562714432501166200" />
       </scope>
       <scope id="1562714432501166200" at="10,0,23,0">
         <var name="value" id="1562714432501166200" />
       </scope>
-      <scope id="1562714432501166200" at="24,0,37,0">
+      <scope id="1562714432501166200" at="23,0,36,0">
         <var name="value" id="1562714432501166200" />
       </scope>
-      <unit id="1562714432501166200" at="9,0,46,0" name="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
+      <unit id="1562714432501166200" at="9,0,44,0" name="jetbrains.mps.lang.plugin.structure.Keymap_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)/2498620720770664567">
     <file name="ToolPosition.java">
       <node id="2498620720770664567" at="15,0,16,0" concept="3" trace="myName" />
-      <node id="2498620720770664567" at="17,27,18,23" concept="7" />
-      <node id="2498620720770664567" at="21,36,22,24" concept="7" />
-      <node id="2498620720770664567" at="25,51,26,84" concept="6" />
-      <node id="2498620720770664567" at="26,84,27,64" concept="2" />
-      <node id="2498620720770664567" at="27,64,28,61" concept="2" />
-      <node id="2498620720770664567" at="28,61,29,62" concept="2" />
-      <node id="2498620720770664567" at="29,62,30,63" concept="2" />
-      <node id="2498620720770664567" at="30,63,31,16" concept="7" />
-      <node id="2498620720770664567" at="34,43,35,31" concept="7" />
-      <node id="2498620720770664567" at="39,24,40,39" concept="7" />
-      <node id="2498620720770664567" at="42,63,43,33" concept="7" />
-      <node id="2498620720770664567" at="45,60,46,30" concept="7" />
-      <node id="2498620720770664567" at="48,61,49,31" concept="7" />
-      <node id="2498620720770664567" at="51,62,52,32" concept="7" />
-      <node id="2498620720770664567" at="53,5,54,37" concept="7" />
-      <node id="2498620720770664567" at="57,0,58,0" concept="3" trace="myValue" />
-      <node id="2498620720770664567" at="59,43,60,23" concept="2" />
-      <node id="2498620720770664567" at="60,23,61,25" concept="2" />
-      <node id="2498620720770664567" at="64,28,65,24" concept="7" />
-      <node id="2498620720770664567" at="17,0,20,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="2498620720770664567" at="21,0,24,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="2498620720770664567" at="34,0,37,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/plugin/structure/ToolPosition;" />
-      <node id="2498620720770664567" at="38,55,41,5" concept="4" />
-      <node id="2498620720770664567" at="41,5,44,5" concept="4" />
-      <node id="2498620720770664567" at="44,5,47,5" concept="4" />
-      <node id="2498620720770664567" at="47,5,50,5" concept="4" />
-      <node id="2498620720770664567" at="50,5,53,5" concept="4" />
-      <node id="2498620720770664567" at="64,0,67,0" concept="5" trace="getValue#()Ljava/lang/String;" />
-      <node id="2498620720770664567" at="59,0,63,0" concept="1" trace="ToolPosition#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="2498620720770664567" at="25,0,33,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="2498620720770664567" at="38,0,56,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/plugin/structure/ToolPosition;" />
-      <scope id="2498620720770664567" at="17,27,18,23" />
-      <scope id="2498620720770664567" at="21,36,22,24" />
-      <scope id="2498620720770664567" at="34,43,35,31" />
-      <scope id="2498620720770664567" at="39,24,40,39" />
-      <scope id="2498620720770664567" at="42,63,43,33" />
-      <scope id="2498620720770664567" at="45,60,46,30" />
-      <scope id="2498620720770664567" at="48,61,49,31" />
-      <scope id="2498620720770664567" at="51,62,52,32" />
-      <scope id="2498620720770664567" at="64,28,65,24" />
-      <scope id="2498620720770664567" at="59,43,61,25" />
-      <scope id="2498620720770664567" at="17,0,20,0" />
-      <scope id="2498620720770664567" at="21,0,24,0" />
-      <scope id="2498620720770664567" at="34,0,37,0" />
-      <scope id="2498620720770664567" at="64,0,67,0" />
-      <scope id="2498620720770664567" at="59,0,63,0">
+      <node id="2498620720770664567" at="16,27,17,23" concept="7" />
+      <node id="2498620720770664567" at="19,36,20,24" concept="7" />
+      <node id="2498620720770664567" at="22,51,23,84" concept="6" />
+      <node id="2498620720770664567" at="23,84,24,64" concept="2" />
+      <node id="2498620720770664567" at="24,64,25,61" concept="2" />
+      <node id="2498620720770664567" at="25,61,26,62" concept="2" />
+      <node id="2498620720770664567" at="26,62,27,63" concept="2" />
+      <node id="2498620720770664567" at="27,63,28,16" concept="7" />
+      <node id="2498620720770664567" at="30,43,31,31" concept="7" />
+      <node id="2498620720770664567" at="34,24,35,39" concept="7" />
+      <node id="2498620720770664567" at="37,63,38,33" concept="7" />
+      <node id="2498620720770664567" at="40,60,41,30" concept="7" />
+      <node id="2498620720770664567" at="43,61,44,31" concept="7" />
+      <node id="2498620720770664567" at="46,62,47,32" concept="7" />
+      <node id="2498620720770664567" at="48,5,49,37" concept="7" />
+      <node id="2498620720770664567" at="51,0,52,0" concept="3" trace="myValue" />
+      <node id="2498620720770664567" at="52,43,53,23" concept="2" />
+      <node id="2498620720770664567" at="53,23,54,25" concept="2" />
+      <node id="2498620720770664567" at="56,28,57,24" concept="7" />
+      <node id="2498620720770664567" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="2498620720770664567" at="19,0,22,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="2498620720770664567" at="30,0,33,0" concept="8" trace="getDefault#()Ljetbrains/mps/lang/plugin/structure/ToolPosition;" />
+      <node id="2498620720770664567" at="33,55,36,5" concept="4" />
+      <node id="2498620720770664567" at="36,5,39,5" concept="4" />
+      <node id="2498620720770664567" at="39,5,42,5" concept="4" />
+      <node id="2498620720770664567" at="42,5,45,5" concept="4" />
+      <node id="2498620720770664567" at="45,5,48,5" concept="4" />
+      <node id="2498620720770664567" at="56,0,59,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="2498620720770664567" at="52,0,56,0" concept="1" trace="ToolPosition#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="2498620720770664567" at="22,0,30,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="2498620720770664567" at="33,0,51,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/plugin/structure/ToolPosition;" />
+      <scope id="2498620720770664567" at="16,27,17,23" />
+      <scope id="2498620720770664567" at="19,36,20,24" />
+      <scope id="2498620720770664567" at="30,43,31,31" />
+      <scope id="2498620720770664567" at="34,24,35,39" />
+      <scope id="2498620720770664567" at="37,63,38,33" />
+      <scope id="2498620720770664567" at="40,60,41,30" />
+      <scope id="2498620720770664567" at="43,61,44,31" />
+      <scope id="2498620720770664567" at="46,62,47,32" />
+      <scope id="2498620720770664567" at="56,28,57,24" />
+      <scope id="2498620720770664567" at="52,43,54,25" />
+      <scope id="2498620720770664567" at="16,0,19,0" />
+      <scope id="2498620720770664567" at="19,0,22,0" />
+      <scope id="2498620720770664567" at="30,0,33,0" />
+      <scope id="2498620720770664567" at="56,0,59,0" />
+      <scope id="2498620720770664567" at="52,0,56,0">
         <var name="name" id="2498620720770664567" />
         <var name="value" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="25,51,31,16">
+      <scope id="2498620720770664567" at="22,51,28,16">
         <var name="list" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="25,0,33,0" />
-      <scope id="2498620720770664567" at="38,55,54,37" />
-      <scope id="2498620720770664567" at="38,0,56,0">
+      <scope id="2498620720770664567" at="22,0,30,0" />
+      <scope id="2498620720770664567" at="33,55,49,37" />
+      <scope id="2498620720770664567" at="33,0,51,0">
         <var name="value" id="2498620720770664567" />
       </scope>
-      <unit id="2498620720770664567" at="9,0,68,0" name="jetbrains.mps.lang.plugin.structure.ToolPosition" />
+      <unit id="2498620720770664567" at="9,0,60,0" name="jetbrains.mps.lang.plugin.structure.ToolPosition" />
     </file>
     <file name="ToolPosition_PropertySupport.java">
       <node id="2498620720770664567" at="11,24,12,18" concept="7" />
@@ -249,54 +249,54 @@
       <node id="2498620720770664567" at="15,33,16,47" concept="6" />
       <node id="2498620720770664567" at="17,45,18,20" concept="7" />
       <node id="2498620720770664567" at="20,5,21,17" concept="7" />
-      <node id="2498620720770664567" at="25,24,26,18" concept="7" />
-      <node id="2498620720770664567" at="27,5,28,101" concept="6" />
-      <node id="2498620720770664567" at="29,33,30,47" concept="6" />
-      <node id="2498620720770664567" at="31,45,32,43" concept="7" />
-      <node id="2498620720770664567" at="34,5,35,16" concept="7" />
-      <node id="2498620720770664567" at="38,49,39,59" concept="6" />
-      <node id="2498620720770664567" at="40,27,41,32" concept="7" />
-      <node id="2498620720770664567" at="42,5,43,14" concept="7" />
+      <node id="2498620720770664567" at="24,24,25,18" concept="7" />
+      <node id="2498620720770664567" at="26,5,27,101" concept="6" />
+      <node id="2498620720770664567" at="28,33,29,47" concept="6" />
+      <node id="2498620720770664567" at="30,45,31,43" concept="7" />
+      <node id="2498620720770664567" at="33,5,34,16" concept="7" />
+      <node id="2498620720770664567" at="36,49,37,59" concept="6" />
+      <node id="2498620720770664567" at="38,27,39,32" concept="7" />
+      <node id="2498620720770664567" at="40,5,41,14" concept="7" />
       <node id="2498620720770664567" at="10,44,13,5" concept="4" />
       <node id="2498620720770664567" at="16,47,19,7" concept="4" />
-      <node id="2498620720770664567" at="24,47,27,5" concept="4" />
-      <node id="2498620720770664567" at="30,47,33,7" concept="4" />
-      <node id="2498620720770664567" at="39,59,42,5" concept="4" />
+      <node id="2498620720770664567" at="23,47,26,5" concept="4" />
+      <node id="2498620720770664567" at="29,47,32,7" concept="4" />
+      <node id="2498620720770664567" at="37,59,40,5" concept="4" />
       <node id="2498620720770664567" at="14,101,20,5" concept="9" />
-      <node id="2498620720770664567" at="28,101,34,5" concept="9" />
-      <node id="2498620720770664567" at="38,0,45,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2498620720770664567" at="27,101,33,5" concept="9" />
+      <node id="2498620720770664567" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="2498620720770664567" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="2498620720770664567" at="24,0,37,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2498620720770664567" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="2498620720770664567" at="11,24,12,18" />
       <scope id="2498620720770664567" at="17,45,18,20" />
-      <scope id="2498620720770664567" at="25,24,26,18" />
-      <scope id="2498620720770664567" at="31,45,32,43" />
-      <scope id="2498620720770664567" at="40,27,41,32" />
+      <scope id="2498620720770664567" at="24,24,25,18" />
+      <scope id="2498620720770664567" at="30,45,31,43" />
+      <scope id="2498620720770664567" at="38,27,39,32" />
       <scope id="2498620720770664567" at="15,33,19,7">
         <var name="constant" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="29,33,33,7">
+      <scope id="2498620720770664567" at="28,33,32,7">
         <var name="constant" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="38,49,43,14">
+      <scope id="2498620720770664567" at="36,49,41,14">
         <var name="constant" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="38,0,45,0">
+      <scope id="2498620720770664567" at="36,0,43,0">
         <var name="value" id="2498620720770664567" />
       </scope>
       <scope id="2498620720770664567" at="10,44,21,17">
         <var name="constants" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="24,47,35,16">
+      <scope id="2498620720770664567" at="23,47,34,16">
         <var name="constants" id="2498620720770664567" />
       </scope>
       <scope id="2498620720770664567" at="10,0,23,0">
         <var name="value" id="2498620720770664567" />
       </scope>
-      <scope id="2498620720770664567" at="24,0,37,0">
+      <scope id="2498620720770664567" at="23,0,36,0">
         <var name="value" id="2498620720770664567" />
       </scope>
-      <unit id="2498620720770664567" at="9,0,46,0" name="jetbrains.mps.lang.plugin.structure.ToolPosition_PropertySupport" />
+      <unit id="2498620720770664567" at="9,0,44,0" name="jetbrains.mps.lang.plugin.structure.ToolPosition_PropertySupport" />
     </file>
   </root>
 </debug-info>

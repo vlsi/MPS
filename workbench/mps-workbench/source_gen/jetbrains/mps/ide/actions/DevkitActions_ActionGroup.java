@@ -14,7 +14,6 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions_ActionGroup";
   public static final String LABEL_ID_analyze = ID + "analyze";
   public static final String LABEL_ID_favorites = ID + "favorites";
-
   public DevkitActions_ActionGroup() {
     super("DevkitActions", ID);
     this.setIsInternal(false);

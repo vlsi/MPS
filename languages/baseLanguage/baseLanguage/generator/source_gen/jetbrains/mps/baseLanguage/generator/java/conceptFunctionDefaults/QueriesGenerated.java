@@ -14,19 +14,15 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1199879576743(final PropertyMacroContext _context) {
     return NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias"));
   }
-
   public static Object referenceMacro_GetReferent_1170351924342(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(_context.getNode()), "conceptAlias");
   }
-
   public static Object referenceMacro_GetReferent_1199971770629(final ReferenceMacroContext _context) {
     return "_context";
   }
-
   public static boolean ifMacro_Condition_1199879109301(final IfMacroContext _context) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_getFromParameterObject_1213877522908", new Object[]{}));
   }

@@ -23,5 +23,4 @@ public class KajakStyles_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD_ITALIC);
   }
 
-
 }

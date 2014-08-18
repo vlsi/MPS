@@ -14,11 +14,9 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 
 public class TextPositionProvider implements IPositionProvider<TextSourcePosition> {
   private Project myProject;
-
   public TextPositionProvider(Project project) {
     myProject = project;
   }
-
   @Nullable
   @Override
   public TextSourcePosition getPosition(@Nullable ILocation location) {
@@ -31,7 +29,6 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     }
     return null;
   }
-
   @Nullable
   @Override
   public TextSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
@@ -41,7 +38,6 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     }
     return null;
   }
-
   @Nullable
   public VirtualFile getFile(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
@@ -49,12 +45,10 @@ public class TextPositionProvider implements IPositionProvider<TextSourcePositio
     }
     return FileOpenUtil.findFile(myProject, location.getUnitName(), location.getFileName());
   }
-
   @Nullable
   public VirtualFile getFile(@NonNls String unitName, @NonNls String fileName) {
     return FileOpenUtil.findFile(myProject, unitName, fileName);
   }
-
   @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;

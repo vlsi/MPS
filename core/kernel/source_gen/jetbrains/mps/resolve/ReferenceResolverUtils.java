@@ -26,7 +26,6 @@ public class ReferenceResolverUtils {
     }
     return true;
   }
-
   public static String getResolveInfo(SReference reference, SNode sourceNode) {
     String result = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
     if (result != null) {
@@ -40,7 +39,6 @@ public class ReferenceResolverUtils {
     }
     return result;
   }
-
   private static SModule check_y1vr00_a0c0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

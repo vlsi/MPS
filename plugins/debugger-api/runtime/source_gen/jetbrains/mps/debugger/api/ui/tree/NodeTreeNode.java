@@ -11,7 +11,6 @@ public class NodeTreeNode extends AbstractWatchableNode {
   public NodeTreeNode(@NotNull SNode node) {
     this(null, node);
   }
-
   public NodeTreeNode(IOperationContext context, @NotNull SNode node) {
     super(context, node);
     setNodeIdentifier(myNode.getPresentation());

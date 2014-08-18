@@ -16,12 +16,10 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
   public TypeExtension_Constraints() {
     super("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -32,12 +30,10 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -48,18 +44,15 @@ public class TypeExtension_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Expression");
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (!(SConceptOperations.isExactly(childConcept, "jetbrains.mps.baseLanguage.structure.PublicVisibility")) && link == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", "visibility")) {
       return false;
     }
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "1550313277220707355");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "5617464356391443670");
 }

@@ -37,24 +37,20 @@ import org.apache.log4j.LogManager;
 
 public class PasteNode_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Menu_paste;
-
   public PasteNode_Action() {
     super("Paste", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     boolean searchPanelInactive = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")) == null || !(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible());
     ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
     return searchPanelInactive && ((SModel) MapSequence.fromMap(_params).get("contextModel")) instanceof EditableSModel && PasteNode_Action.this.canPasteNodes(modelAccess, _params);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -68,7 +64,6 @@ public class PasteNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -102,7 +97,6 @@ public class PasteNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess modelAccess = ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess();
@@ -155,7 +149,6 @@ public class PasteNode_Action extends BaseAction {
       }
     }
   }
-
   private PasteNodeData getPasteData(ModelAccess modelAccess, final Map<String, Object> _params) {
     final Wrappers._T<PasteNodeData> result = new Wrappers._T<PasteNodeData>();
     modelAccess.runReadAction(new Runnable() {
@@ -165,11 +158,9 @@ public class PasteNode_Action extends BaseAction {
     });
     return result.value;
   }
-
   private boolean canPasteNodes(ModelAccess modelAccess, final Map<String, Object> _params) {
     return PasteNode_Action.this.getPasteData(modelAccess, _params) != null;
   }
-
   private String getContextPackage(final Map<String, Object> _params) {
     if (((SNode) MapSequence.fromMap(_params).get("node")) != null) {
       return SPropertyOperations.getString(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "virtualPackage");
@@ -179,6 +170,5 @@ public class PasteNode_Action extends BaseAction {
     }
     return null;
   }
-
   protected static Logger LOG = LogManager.getLogger(PasteNode_Action.class);
 }

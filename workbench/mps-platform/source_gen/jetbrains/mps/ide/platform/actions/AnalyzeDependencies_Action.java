@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class AnalyzeDependencies_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowInspection;
-
   public AnalyzeDependencies_Action() {
     super("Analyze Model Dependencies", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(AnalyzeDependencies_Action.this.computeScope(_params).isEmpty());
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +66,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DependencyViewerScope scope = AnalyzeDependencies_Action.this.computeScope(_params);
@@ -85,7 +79,6 @@ public class AnalyzeDependencies_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ DependencyViewerScope computeScope(final Map<String, Object> _params) {
     final DependencyViewerScope scope = new DependencyViewerScope();
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -110,9 +103,7 @@ public class AnalyzeDependencies_Action extends BaseAction {
     });
     return scope;
   }
-
   protected static Logger LOG = LogManager.getLogger(AnalyzeDependencies_Action.class);
-
   private static SNode check_rkpdtm_a0a0c0a0a1a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getContainingRoot();

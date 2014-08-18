@@ -22,41 +22,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public NewTemplateInSwitchCase_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.Reduction_MappingRule";
   }
-
   public String getPresentation() {
     return "NewTemplateInSwitchCase";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.NewTemplateInSwitchCase_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     final EditorCell editorCell = editorContext.getSelectedCell();
     if (editorCell == null) {
@@ -67,30 +58,24 @@ public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
     }
     return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "8004199436029426156");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewTemplateInSwitchCase_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "New Template";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode applicableConcept = SLinkOperations.getTarget(node, "applicableConcept", false);
       String name = CreateFromUsageUtil.getText(editorContext);
@@ -108,7 +93,6 @@ public class NewTemplateInSwitchCase_Intention implements IntentionFactory {
       SNode tr = SNodeFactoryOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(tr, "template", t, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInSwitchCase_Intention.this;
     }

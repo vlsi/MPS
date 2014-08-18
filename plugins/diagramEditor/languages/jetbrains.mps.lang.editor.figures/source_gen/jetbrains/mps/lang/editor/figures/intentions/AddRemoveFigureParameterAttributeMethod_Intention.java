@@ -23,41 +23,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveFigureParameterAttributeMethod_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRemoveFigureParameterAttributeMethod_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   public String getPresentation() {
     return "AddRemoveFigureParameterAttributeMethod";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor.figures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return false;
@@ -73,30 +64,24 @@ public class AddRemoveFigureParameterAttributeMethod_Intention implements Intent
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)", "2084788800270642821");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureParameterAttributeMethod_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod")) == null ? "Add figure parameter attribute" : "Remove figure parameter attribute");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod")) != null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod"), null);
@@ -104,7 +89,6 @@ public class AddRemoveFigureParameterAttributeMethod_Intention implements Intent
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeMethod", null));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRemoveFigureParameterAttributeMethod_Intention.this;
     }

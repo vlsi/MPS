@@ -14,21 +14,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class PreferencesComponentDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getClassName_1213877322095(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "_PreferencesComponent";
   }
-
   public static String call_getGeneratedClassFQName_4911466715314111449(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(thisNode);
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", null);
     SLinkOperations.setTarget(type, "componentDeclaration", thisNode, false);
     return type;
   }
-
   public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistenPropertyDeclaration", true)));

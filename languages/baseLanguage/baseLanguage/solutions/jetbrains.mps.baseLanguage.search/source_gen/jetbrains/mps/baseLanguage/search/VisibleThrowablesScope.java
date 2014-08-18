@@ -13,13 +13,11 @@ import jetbrains.mps.util.NameUtil;
 @Deprecated
 public class VisibleThrowablesScope extends VisibleClassifiersScope {
   private static String THROWABLE_FQ_NAME = "java.lang.Throwable";
-
   @Deprecated
   public VisibleThrowablesScope(@NotNull SNode contextNode, int constraint) {
     // use ClassifierScopes.getThrowablesScope instead 
     super(contextNode, constraint);
   }
-
   @NotNull
   @Override
   public List<SNode> getClassifiers() {

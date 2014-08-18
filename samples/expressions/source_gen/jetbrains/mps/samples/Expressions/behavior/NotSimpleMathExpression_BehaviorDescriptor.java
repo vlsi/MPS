@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class NotSimpleMathExpression_BehaviorDescriptor extends UnarySimpleMathExpression_BehaviorDescriptor {
   public NotSimpleMathExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression";

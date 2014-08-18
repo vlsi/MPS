@@ -18,7 +18,6 @@ public class EditorBasedReferenceResolverUtils {
     }
     return substituteCell(cellWithRole, resolveInfo, editorComponent.getEditorContext());
   }
-
   public static boolean substituteCell(EditorCell editorCell, String pattern, EditorContext editorContext) {
     SubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -31,8 +30,6 @@ public class EditorBasedReferenceResolverUtils {
     applicableSubstituteAction.substitute(editorContext, pattern);
     return true;
   }
-
-
 
   private static SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
     SubstituteAction result = null;

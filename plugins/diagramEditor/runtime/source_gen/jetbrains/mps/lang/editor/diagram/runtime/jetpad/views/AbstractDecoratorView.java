@@ -20,7 +20,6 @@ public abstract class AbstractDecoratorView extends GroupView {
   protected ObservableSingleItemList<Boolean> errorDecorator = new ObservableSingleItemList<Boolean>();
   protected ObservableSingleItemList<Boolean> selectionDecorator = new ObservableSingleItemList<Boolean>();
   private GroupView myDecoratorsContainer = new GroupView();
-
   public AbstractDecoratorView() {
     children().add(myDecoratorsContainer);
     new Mapper<AbstractDecoratorView, AbstractDecoratorView>(this, this) {
@@ -48,7 +47,6 @@ public abstract class AbstractDecoratorView extends GroupView {
       }
     }.attachRoot();
   }
-
   protected ObservableList<View> childSubList() {
     return new SubList<View>() {
       protected ObservableList<View> getBaseList() {

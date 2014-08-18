@@ -28,18 +28,15 @@ import org.apache.log4j.LogManager;
 
 public class MigrateOldIScopeInConstraints_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MigrateOldIScopeInConstraints_Action() {
     super("Migrate Simple IScope Usages in Constraints", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -50,7 +47,6 @@ public class MigrateOldIScopeInConstraints_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,7 +57,6 @@ public class MigrateOldIScopeInConstraints_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SAbstractConcept concept1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_scope");
@@ -85,6 +80,5 @@ public class MigrateOldIScopeInConstraints_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrateOldIScopeInConstraints_Action.class);
 }

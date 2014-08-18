@@ -14,20 +14,16 @@ public class BasicMoveRefactoring {
   protected SNode myReplacing = null;
   protected SearchResults<SNode> myUsages = new SearchResults<SNode>();
   private boolean myIsChangingModel = false;
-
   public BasicMoveRefactoring(SNode moving, SNode destination) {
     this.myMoving = moving;
     this.myDestination = destination;
   }
-
   public void setUssages(SearchResults<SNode> usages) {
     this.myUsages = usages;
   }
-
   public SearchResults<SNode> getUsages() {
     return this.myUsages;
   }
-
   public void doRefactoring() {
     this.setIsChangingModel();
     this.correctMoving();
@@ -43,25 +39,20 @@ public class BasicMoveRefactoring {
     }
     this.deleteOld();
   }
-
   public void replaceSingleUsage(SNode usage) {
     if (this.myIsChangingModel) {
       MoveRefactoringUtils.addNodeModelImportIfNeed(usage, this.myDestination);
     }
   }
-
   protected void createCopy() {
     this.myReplacing = SNodeOperations.copyNode(this.myMoving);
     MoveRefactoringUtils.addNodeAtLink(this.myDestination, this.myReplacing);
   }
-
   protected void deleteOld() {
     SNodeOperations.detachNode(this.myMoving);
   }
-
   protected void correctMoving() {
   }
-
   private void setIsChangingModel() {
     this.myIsChangingModel = (SNodeOperations.getModel(this.myDestination) != SNodeOperations.getModel(this.myMoving));
   }

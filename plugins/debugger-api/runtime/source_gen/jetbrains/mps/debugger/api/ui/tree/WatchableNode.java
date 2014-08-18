@@ -26,11 +26,9 @@ public class WatchableNode extends AbstractWatchableNode {
   private final AbstractUiState myState;
   private final AtomicBoolean myInitializationInProgress = new AtomicBoolean(false);
   private final List<_FunctionTypes._void_P0_E0> myCallbacks = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-
   public WatchableNode(@NotNull IWatchable watchable, AbstractUiState state) {
     this(null, watchable, state);
   }
-
   public WatchableNode(IOperationContext context, @NotNull IWatchable watchable, AbstractUiState state) {
     super(context, watchable.getNode());
     myWatchable = watchable;
@@ -38,22 +36,18 @@ public class WatchableNode extends AbstractWatchableNode {
     setNodeIdentifier(calculateNodeId());
     setIcon(getNodeIcon());
   }
-
   @Override
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
-
   @Override
   public boolean isInitialized() {
     return myInitialized;
   }
-
   protected Icon getNodeIcon() {
     return myWatchable.getPresentationIcon();
   }
-
   protected String calculateNodeId() {
     IValue value = myWatchable.getValue();
     if (value == null) {
@@ -61,21 +55,17 @@ public class WatchableNode extends AbstractWatchableNode {
     }
     return myWatchable.getName() + " = " + value.getValuePresentation();
   }
-
   @Override
   public boolean isLeaf() {
     IValue value = getValue();
     return value == null || !(value.isStructure());
   }
-
   public IValue getValue() {
     return myWatchable.getValue();
   }
-
   /*package*/ void nodeChanged() {
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
   }
-
   @Override
   protected void doInit() {
     init(new _FunctionTypes._void_P0_E0() {
@@ -83,7 +73,6 @@ public class WatchableNode extends AbstractWatchableNode {
       }
     });
   }
-
   public void init(final _FunctionTypes._void_P0_E0 callback) {
     if (myInitialized) {
       callback.invoke();
@@ -133,6 +122,5 @@ public class WatchableNode extends AbstractWatchableNode {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(WatchableNode.class);
 }

@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildFileIncludesSelector_BehaviorDescriptor extends BuildFileSelector_BehaviorDescriptor implements BuildFileSelectorInAttribute_BehaviorDescriptor {
   public BuildFileIncludesSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildFileIncludesSelector";

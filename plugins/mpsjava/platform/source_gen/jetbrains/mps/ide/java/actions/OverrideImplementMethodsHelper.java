@@ -33,7 +33,6 @@ public class OverrideImplementMethodsHelper {
   private boolean myRemoveAttributes;
   private boolean myInsertOverride;
   private boolean myNeedReturnKW;
-
   public OverrideImplementMethodsHelper(Project project, SNode target, SNode contextMember, boolean removeAttributes, boolean insertOverride, boolean needReturnKW) {
     this.myProject = project;
     this.myClassConcept = target;
@@ -42,7 +41,6 @@ public class OverrideImplementMethodsHelper {
     this.myInsertOverride = insertOverride;
     this.myNeedReturnKW = needReturnKW;
   }
-
   public List<SNode> insertMethods(List<SNode> baseMethods) {
     int index = (myContextMember != null && SNodeOperations.getParent(myContextMember) == myClassConcept ? ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "member", true)).indexOf(myContextMember) + 1 : -1);
     List<SNode> result = new ArrayList<SNode>();
@@ -61,7 +59,6 @@ public class OverrideImplementMethodsHelper {
     }
     return result;
   }
-
   /*package*/ void update(SNode method, SNode baseMethod) {
     if (SModelStereotype.isStubModelStereotype(jetbrains.mps.util.SNodeOperations.getModelStereotype(SNodeOperations.getModel(baseMethod)))) {
       setVariableNames(method, MapSequence.fromMap(new HashMap<String, Integer>()));
@@ -105,7 +102,6 @@ public class OverrideImplementMethodsHelper {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultExpr));
     }
   }
-
   private SNode getReturnStatement(SNode returnExpr) {
     if ((returnExpr == null)) {
       return null;
@@ -117,7 +113,6 @@ public class OverrideImplementMethodsHelper {
       return _quotation_createNode_tfz3o4_a0a0c0j(returnExpr);
     }
   }
-
   private void removeAttributes(SNode node) {
     if (SNodeOperations.isAttribute(node)) {
       SNodeOperations.deleteNode(node);
@@ -127,7 +122,6 @@ public class OverrideImplementMethodsHelper {
       }
     }
   }
-
   private void setVariableNames(SNode node, Map<String, Integer> usedNames) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       SNode variable = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
@@ -155,7 +149,6 @@ public class OverrideImplementMethodsHelper {
       setVariableNames(child, usedNames);
     }
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a0a2a3a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -163,7 +156,6 @@ public class OverrideImplementMethodsHelper {
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Override")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a8(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -171,7 +163,6 @@ public class OverrideImplementMethodsHelper {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a0a7a8(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -186,7 +177,6 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a0a0a9a8(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -198,7 +188,6 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a2a9(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -210,7 +199,6 @@ public class OverrideImplementMethodsHelper {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_tfz3o4_a0a0c0j(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

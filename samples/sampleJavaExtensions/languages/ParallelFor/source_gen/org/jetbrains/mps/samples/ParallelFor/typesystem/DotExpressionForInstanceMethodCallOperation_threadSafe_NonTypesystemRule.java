@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode dotExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode directAncestor = SNodeOperations.getAncestor(dotExpression, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
 
@@ -96,22 +95,18 @@ public class DotExpressionForInstanceMethodCallOperation_threadSafe_NonTypesyste
 
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DotExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode check_ttr84v_a0c0c0c0c0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);

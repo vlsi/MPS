@@ -30,13 +30,11 @@ public class PartitioningHelper {
   private final SModel inputModel;
   private final MessagesViewTool messagesView;
   private final ConsoleStream console;
-
   private PartitioningHelper(SModel inputModel, MessagesViewTool viewTool, ConsoleStream console) {
     this.inputModel = inputModel;
     this.messagesView = viewTool;
     this.console = console;
   }
-
   private void show() {
     GenerationPlan plan = new GenerationPlan(inputModel);
 
@@ -88,7 +86,6 @@ public class PartitioningHelper {
     }
     console.addText("---------------------------------------------------------------------------------\n");
   }
-
   public static void showMappingPartitioning(Project project, List<SModel> models, ConsoleStream console) {
     // no multiple input models 
     SModel inputModel = models.get(0);
@@ -132,7 +129,6 @@ public class PartitioningHelper {
     //  } 
     // } 
   }
-
   private void printPlanConflicts(List<Conflict> conflicts, String header) {
     messagesView.add(new Message(MessageKind.ERROR, PartitioningHelper.class, header));
     console.addText(header);

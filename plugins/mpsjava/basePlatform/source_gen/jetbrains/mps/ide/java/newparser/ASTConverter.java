@@ -80,17 +80,14 @@ public class ASTConverter {
   private static final Logger LOG = LogManager.getLogger(ASTConverter.class);
   private boolean myOnlyStubs = false;
   private Map<Integer, SNode> myJavadocs = MapSequence.fromMap(new HashMap<Integer, SNode>());
-
   public ASTConverter(boolean onlyStubs) {
     myOnlyStubs = onlyStubs;
   }
-
   protected ASTConverter(ASTConverter base) {
     myOnlyStubs = base.myOnlyStubs;
     // FIXME do it more carefully (State?) 
     myJavadocs = base.myJavadocs;
   }
-
   public SNode convertRoot(ASTNode node) throws JavaParseException {
 
     if (node instanceof TypeDeclaration) {
@@ -105,7 +102,6 @@ public class ASTConverter {
       throw new JavaParseException("Root is not type decl");
     }
   }
-
   public SNode convertTypeDecl(TypeDeclaration x) throws JavaParseException {
 
     SNode cls;
@@ -284,11 +280,9 @@ public class ASTConverter {
 
     return cls;
   }
-
   public SNode convertField(FieldDeclaration x, SNode context) throws JavaParseException {
     return convertField(context, x, false);
   }
-
   private SNode convertField(SNode cls, FieldDeclaration f, boolean attach) throws JavaParseException {
 
     if (f instanceof Initializer) {
@@ -358,18 +352,15 @@ public class ASTConverter {
 
     return SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
   }
-
   public SNode convertInitializer(Initializer x) throws JavaParseException {
     // don't need it in stubs 
     return null;
   }
-
   public SNode convertMethod(AbstractMethodDeclaration x, SNode container) throws JavaParseException {
     // false = we don't attach the method to the container for external clients 
     // they'll do it themselves 
     return convertMethod(container, x, false);
   }
-
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException {
     SNode result = null;
 
@@ -419,7 +410,6 @@ public class ASTConverter {
 
     return result;
   }
-
   public List<SNode> convertClassContents(ASTNode[] astNodes, SNode container) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
     SNode node;
@@ -444,7 +434,6 @@ public class ASTConverter {
     }
     return result;
   }
-
   /**
    * Returns new ASTConverter, with the state that knows about these type variables
    */
@@ -470,7 +459,6 @@ public class ASTConverter {
     // return ASTConverter equipped with typevar declarations 
     return this.withTypeVarDecls(SLinkOperations.getTargets(result, "typeVariableDeclaration", true));
   }
-
   public SNode convertTypeVar(TypeParameter par) throws JavaParseException {
     SNode tvar = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
     SPropertyOperations.set(tvar, "name", new String(par.name));
@@ -492,7 +480,6 @@ public class ASTConverter {
     }
     return tvar;
   }
-
   public void convertAnnotations(Annotation[] annos, SNode result) throws JavaParseException {
     if (annos != null) {
       for (Annotation anno : annos) {
@@ -500,7 +487,6 @@ public class ASTConverter {
       }
     }
   }
-
   public SNode convertAnnotation(Annotation anno) throws JavaParseException {
     TypeReference typRef = anno.type;
     if (typRef == null) {
@@ -528,7 +514,6 @@ public class ASTConverter {
     }
     return node;
   }
-
   private SNode convertMethodGuts(@NotNull AbstractMethodDeclaration x, @Nullable String idPrefix, @NotNull SNode result) throws JavaParseException {
 
     StringBuilder idBuilder = (idPrefix == null ? null : new StringBuilder(idPrefix));
@@ -615,8 +600,6 @@ public class ASTConverter {
   }
 
 
-
-
   protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
     SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
     SPropertyOperations.set(enm, "name", enumConstantName(x));
@@ -631,11 +614,9 @@ public class ASTConverter {
 
     return enm;
   }
-
   protected boolean isEnumConstant(FieldDeclaration x) {
     return x.initialization != null && x.initialization instanceof AllocationExpression && ((AllocationExpression) x.initialization).enumConstant != null;
   }
-
   protected String enumConstantName(FieldDeclaration x) {
     // Unsafe. supposed to be used after isEnumConstant 
     return new String(((AllocationExpression) x.initialization).enumConstant.name);
@@ -643,17 +624,13 @@ public class ASTConverter {
 
 
 
-
-
   public SNode convertVisibility(int astModifiers) {
     return (flagSet(astModifiers, ClassFileConstants.AccPublic) ? _quotation_createNode_rbndtb_a0a0ab() : (flagSet(astModifiers, ClassFileConstants.AccProtected) ? _quotation_createNode_rbndtb_a0a0a62() : (flagSet(astModifiers, ClassFileConstants.AccPrivate) ? _quotation_createNode_rbndtb_a0a0a0ab() : null)));
   }
-
   public SNode convertTypeReference(TypeReference typRef) {
     SNode result = convertTypeRef(typRef);
     return result;
   }
-
   public SNode convertTypeRef(TypeReference typRef) {
     if (typRef instanceof QualifiedTypeReference) {
       return convertTypeRef((QualifiedTypeReference) typRef);
@@ -667,7 +644,6 @@ public class ASTConverter {
     }
 
   }
-
   public SNode convertTypeRef(SingleTypeReference typRef) {
     if (typRef instanceof Wildcard) {
       return convertTypeRef((Wildcard) typRef);
@@ -694,7 +670,6 @@ public class ASTConverter {
     }
 
   }
-
   public SNode convertUnqualifiedType(String typ, TypeReference typRef) {
     // first see if it's a primitive type 
     SNode primType = tryConvertPrimitiveType(typ);
@@ -712,7 +687,6 @@ public class ASTConverter {
     SNode base = buildClassifierType(typ, typRef);
     return base;
   }
-
   public SNode tryConvertPrimitiveType(String typ) {
     if ("void".equals(typ)) {
       return _quotation_createNode_rbndtb_a0a0a13();
@@ -735,7 +709,6 @@ public class ASTConverter {
     }
     return null;
   }
-
   public SNode convertTypeRef(Wildcard typRef) {
     // it's a wildcard type of the form ? or ? extends ... or ? super ... 
 
@@ -756,7 +729,6 @@ public class ASTConverter {
         return null;
     }
   }
-
   public SNode convertTypeRef(QualifiedTypeReference typRef) {
 
     StringBuilder sb = new StringBuilder();
@@ -781,7 +753,6 @@ public class ASTConverter {
       return base;
     }
   }
-
   protected SNode buildArrayType(SNode base, int dimensions, boolean vararg) {
     SNode arrType = base;
 
@@ -799,7 +770,6 @@ public class ASTConverter {
 
     return arrType;
   }
-
   public SNode buildClassifierType(String typ, TypeReference typRef) {
     SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SReference ref = new DynamicReference("classifier", cls, null, typ);
@@ -828,14 +798,12 @@ public class ASTConverter {
 
     return cls;
   }
-
   public SNode buildAnnotationInstance(String name) {
     SNode anno = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
     SReference ref = new DynamicReference("annotation", anno, null, name);
     anno.setReference("annotation", ref);
     return anno;
   }
-
   public String typeReferenceId(TypeReference typ) {
     if (typ == null) {
       return null;
@@ -856,7 +824,6 @@ public class ASTConverter {
 
     return sb.toString();
   }
-
   public void addTypeArgs(TypeReference[] from, List<SNode> into) throws JavaParseException {
     if (from == null || from.length == 0) {
       return;
@@ -865,11 +832,9 @@ public class ASTConverter {
       ListSequence.fromList(into).addElement(convertTypeReference(typeRef));
     }
   }
-
   protected boolean flagSet(int bitmap, int flag) {
     return (bitmap & flag) != 0;
   }
-
   public String getTypeName(SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")), "conceptAlias");
@@ -889,16 +854,13 @@ public class ASTConverter {
       return "unk";
     }
   }
-
   public Map<Integer, SNode> getJavadocs() {
     return myJavadocs;
   }
-
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration method) throws JavaParseException {
     // ignore by default: only stub structure 
     SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
   }
-
   public SNode convertExpression(Expression x) throws JavaParseException {
     if (x instanceof Literal) {
       return convertExpression((Literal) x);
@@ -939,8 +901,6 @@ public class ASTConverter {
 
   }
 
-
-
   /*package*/ SNode convertExpression(Literal x) {
     x.computeConstant();
     if (x.constant == null) {
@@ -955,8 +915,6 @@ public class ASTConverter {
       return _quotation_createNode_rbndtb_a1a0c0tb(NameUtil.escapeString(new String(((Literal) x).source())));
     }
   }
-
-
 
 
   /*package*/ SNode convertConstant(Constant x, String source) {
@@ -987,38 +945,32 @@ public class ASTConverter {
     }
 
   }
-
   /*package*/ SNode convertConstant(BooleanConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.booleanValue()));
     return result;
   }
-
   /*package*/ SNode convertConstant(ByteConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.byteValue()));
     return result;
   }
-
   /*package*/ SNode convertConstant(CharConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CharConstant", null);
     String value = NameUtil.escapeChar(x.charValue());
     SPropertyOperations.set(result, "charConstant", value);
     return result;
   }
-
   /*package*/ SNode convertConstant(DoubleConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
     SPropertyOperations.set(result, "value", x.doubleValue() + "");
     return result;
   }
-
   /*package*/ SNode convertConstant(FloatConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
     SPropertyOperations.set(result, "value", x.floatValue() + "f");
     return result;
   }
-
   /*package*/ SNode convertConstant(IntConstant x, String source) {
     boolean hex = source.length() >= 2;
     if (hex) {
@@ -1035,19 +987,16 @@ public class ASTConverter {
       return cnst;
     }
   }
-
   /*package*/ SNode convertConstant(LongConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
     SPropertyOperations.set(result, "value", x.longValue() + "L");
     return result;
   }
-
   /*package*/ SNode convertConstant(ShortConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
     SPropertyOperations.set(result, "value", "" + (x.shortValue()));
     return result;
   }
-
   /*package*/ SNode convertConstant(StringConstant x, String source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(result, "value", NameUtil.escapeString(x.stringValue()));
@@ -1055,29 +1004,22 @@ public class ASTConverter {
   }
 
 
-
-
   protected ASTConverter withNewState(ASTConverter.State state) {
     return new ASTConverter.ASTConverterWithState(this, state);
   }
-
   protected ASTConverter withIdPrefix(String prefix) {
     return withNewState(new ASTConverter.State(this.getState(), prefix));
   }
-
   protected ASTConverter withTypeVarNames(Set<String> typeaVarNames) {
     return withNewState(new ASTConverter.State(this.getState(), typeaVarNames));
   }
-
   protected ASTConverter withTypeVarDecls(Iterable<SNode> typeVars) {
     return withNewState(new ASTConverter.State(this.getState(), typeVars));
   }
-
   protected ASTConverter.State getState() {
     // default state 
     return new ASTConverter.State(null, SNodeId.Foreign.ID_PREFIX);
   }
-
   /**
    * Immutable (will have to add annotation for that)
    */
@@ -1085,12 +1027,10 @@ public class ASTConverter {
     private ASTConverter.State parentState;
     private String myIdPrefix;
     private Map<String, SNode> myTypeVars;
-
     public State(ASTConverter.State base, String idPrefix) {
       parentState = base;
       myIdPrefix = idPrefix;
     }
-
     /**
      * State when we already know the names of type vars, but haven't yet parsed them.
      * Type vars of a declaration can reference each other (incl. backwards)
@@ -1104,7 +1044,6 @@ public class ASTConverter {
         }
       });
     }
-
     public State(ASTConverter.State base, Iterable<SNode> typeVars) {
       parentState = base;
       myTypeVars = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -1112,7 +1051,6 @@ public class ASTConverter {
         MapSequence.fromMap(myTypeVars).put(SPropertyOperations.getString(tv, "name"), tv);
       }
     }
-
     public String getIdPrefix() {
       // going up by parent states, and concatenating all id preifixes to build one final id prefix 
       // FIXME move it to constructor (since everything is immutable) 
@@ -1127,7 +1065,6 @@ public class ASTConverter {
 
       return sb.toString();
     }
-
     protected SNode resolveTypeVar(String name) {
       if (myTypeVars == null) {
         return (parentState == null ? null : parentState.resolveTypeVar(name));
@@ -1157,189 +1094,161 @@ public class ASTConverter {
       }
     }
   }
-
   private class ASTConverterWithState extends ASTConverter {
     private final ASTConverter.State myState;
-
     private ASTConverterWithState(ASTConverter base, ASTConverter.State state) {
       super(base);
       myState = state;
     }
-
     @Override
     public ASTConverter.State getState() {
       return myState;
     }
   }
-
   private static SNode _quotation_createNode_rbndtb_a0b0c0g0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0c0a6a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static StringBuilder check_rbndtb_a1a5a71(StringBuilder checkedDotOperand, SNode result) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append("." + new String(SPropertyOperations.getString(result, "name")));
     }
     return null;
   }
-
   private static StringBuilder check_rbndtb_a6a71(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append("(");
     }
     return null;
   }
-
   private static StringBuilder check_rbndtb_a0a7a0a21a71(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.getTypeName(SLinkOperations.getTarget(par, "type", true)));
     }
     return null;
   }
-
   private static StringBuilder check_rbndtb_a8a0a21a71(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.typeReferenceId(arg.type));
     }
     return null;
   }
-
   private static StringBuilder check_rbndtb_a9a0a21a71(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(",");
     }
     return null;
   }
-
   private static StringBuilder check_rbndtb_a0a2a21a71(StringBuilder checkedDotOperand, StringBuilder idBuilder) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.deleteCharAt(check_rbndtb_a0a0a0c0m0r(idBuilder) - 1);
     }
     return null;
   }
-
   private static int check_rbndtb_a0a0a0c0m0r(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
   }
-
   private static StringBuilder check_rbndtb_a31a71(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(")");
     }
     return null;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0b0r0r() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StubStatementList", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0ab() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0a62() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0a0ab() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0a13() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a1a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a2a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a3a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a4a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a5a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a6a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a7a0fb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0c0gb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a1a1c0gb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1351,7 +1260,6 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_rbndtb_a1a2c0gb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1363,7 +1271,6 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a0e0ib(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1375,7 +1282,6 @@ public class ASTConverter {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_rbndtb_a0a2a34() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1383,7 +1289,6 @@ public class ASTConverter {
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a1a1c0rb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1391,7 +1296,6 @@ public class ASTConverter {
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_rbndtb_a1a0c0tb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

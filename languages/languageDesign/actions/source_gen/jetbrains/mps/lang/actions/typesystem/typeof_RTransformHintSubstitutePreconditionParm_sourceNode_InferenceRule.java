@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode hostBuilder = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", false, false);
     SNode applicableConcept = SLinkOperations.getTarget(hostBuilder, "applicableConcept", false);
@@ -27,22 +26,18 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503175", true), (SNode) _quotation_createNode_c12rs2_a0c0b(applicableConcept), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_c12rs2_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

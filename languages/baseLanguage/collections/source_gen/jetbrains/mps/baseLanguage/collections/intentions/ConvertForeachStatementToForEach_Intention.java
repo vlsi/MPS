@@ -21,61 +21,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertForeachStatementToForEach_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertForeachStatementToForEach_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
   }
-
   public String getPresentation() {
     return "ConvertForeachStatementToForEach";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.ConvertForeachStatementToForEach_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "2442451895696290638");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertForeachStatementToForEach_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to 'for (var in iterable)'";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       final SNode oldVariable = SLinkOperations.getTarget(node, "variable", true);
       SNode forEachStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement");
@@ -93,7 +79,6 @@ public class ConvertForeachStatementToForEach_Intention implements IntentionFact
         SLinkOperations.setTarget(SNodeFactoryOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference"), "variable", newVariable, false);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertForeachStatementToForEach_Intention.this;
     }

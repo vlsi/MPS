@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ExpressionStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_canServeAsReturn_1239355137616(SNode thisNode) {
     SNode methodLike = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     if (SNodeOperations.isInstanceOf(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {

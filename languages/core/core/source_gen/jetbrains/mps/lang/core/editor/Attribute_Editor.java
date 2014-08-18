@@ -27,7 +27,6 @@ public class Attribute_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mc4j88_a(editorContext, node);
   }
-
   private EditorCell createCollection_mc4j88_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mc4j88_a");
@@ -38,16 +37,13 @@ public class Attribute_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_mc4j88_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_mc4j88_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -57,7 +53,6 @@ public class Attribute_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_mc4j88_a0");
     return editorCell;
   }
-
   private EditorCell createConstant_mc4j88_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_mc4j88_b0");
@@ -69,14 +64,12 @@ public class Attribute_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_mc4j88_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_mc4j88_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_mc4j88_d0");

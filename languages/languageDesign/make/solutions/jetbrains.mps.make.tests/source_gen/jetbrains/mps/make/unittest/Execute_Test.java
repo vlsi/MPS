@@ -49,7 +49,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertNotNull(res.output());
     Assert.assertTrue(Sequence.fromIterable(res.output()).isEmpty());
   }
-
   @Test
   public void test_resources() throws Exception {
     final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
@@ -99,7 +98,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
   }
-
   @Test
   public void test_inputResources() throws Exception {
     final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
@@ -133,7 +131,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
   }
-
   @Test
   public void test_transpResources() throws Exception {
     final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
@@ -191,7 +188,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
   }
-
   @Test
   public void test_noDuplicateResources() throws Exception {
     final ITarget make = Mockups.target(context, "make", new Class[]{IResource.class});
@@ -270,7 +266,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
   }
-
   @Test
   public void test_resultResources() throws Exception {
     final ITarget nop = Mockups.target(context, "nop");
@@ -313,7 +308,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(r.isSucessful());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<IResource>(), resA, resB)).disjunction(Sequence.fromIterable(r.output())).isEmpty());
   }
-
   @Test
   public void test_fail() throws Exception {
     final ITarget make = Mockups.target(context, "make");
@@ -335,7 +329,6 @@ public class Execute_Test extends MockTestCase {
             job[0] = o;
             return true;
           }
-
           @Override
           public void describeTo(Description p0) {
           }
@@ -346,7 +339,6 @@ public class Execute_Test extends MockTestCase {
             ((_FunctionTypes._void_P1_E0<? super IJobMonitor>) job[0]).invoke(jmon);
             return null;
           }
-
           @Override
           public void describeTo(Description description) {
           }
@@ -362,7 +354,6 @@ public class Execute_Test extends MockTestCase {
             }
             return false;
           }
-
           @Override
           public void describeTo(Description p0) {
           }
@@ -421,7 +412,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertTrue(Sequence.fromIterable(r.output()).isEmpty());
     Assert.assertTrue(fbk[0] instanceof IFeedback.ERROR);
   }
-
   @Test
   public void test_variables() throws Exception {
     final ITarget make = Mockups.target(context, "make");
@@ -474,7 +464,6 @@ public class Execute_Test extends MockTestCase {
     Assert.assertNotNull(res.output());
     Assert.assertEquals("FUBAR", vars[0]);
   }
-
   public Execute_Test() {
   }
 }

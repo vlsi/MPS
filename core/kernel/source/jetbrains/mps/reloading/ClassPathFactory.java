@@ -50,7 +50,7 @@ public class ClassPathFactory {
       if (!exists) {
         String moduleString = requestor == null ? "" : (" in " + requestor.toString());
         String message = "Can't load class path item " + path + moduleString + "." + (new File(path).isDirectory() ? " Execute make in IDEA." : "");
-        LOG.debug(message, new Throwable());
+        LOG.warn(message);
         NonExistingClassPathItem item = new NonExistingClassPathItem(path);
         myCache.put(path, item);
         return item;

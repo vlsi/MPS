@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class LocalStaticFieldReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public LocalStaticFieldReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return LocalStaticFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference";

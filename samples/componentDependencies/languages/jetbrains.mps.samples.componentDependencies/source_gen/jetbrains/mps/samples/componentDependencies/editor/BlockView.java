@@ -15,7 +15,6 @@ import jetbrains.jetpad.model.property.Property;
 
 public class BlockView extends CenterVerticalLayoutView implements MovableContentView {
   private TextCell myCell = new TextCell();
-
   public BlockView() {
     super(false);
     background().set(Color.BLUE);
@@ -30,7 +29,6 @@ public class BlockView extends CenterVerticalLayoutView implements MovableConten
     children().add(bottomRect);
     initSynchronizers();
   }
-
   private void initSynchronizers() {
     new Mapper<BlockView, BlockView>(this, this) {
       @Override
@@ -39,7 +37,6 @@ public class BlockView extends CenterVerticalLayoutView implements MovableConten
       }
     }.attachRoot();
   }
-
   public Property<String> text() {
     return myCell.text();
   }

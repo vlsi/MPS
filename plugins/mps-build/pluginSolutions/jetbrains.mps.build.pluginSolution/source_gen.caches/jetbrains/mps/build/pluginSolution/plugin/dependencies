@@ -6,6 +6,7 @@
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationInfoProvider" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationPerRunnerSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.RunProfileState" />
+    <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationError" />
     <classNode dependClassName="com.intellij.execution.configurations.RuntimeConfigurationException" />
     <classNode dependClassName="com.intellij.execution.runners.ExecutionEnvironment" />
     <classNode dependClassName="com.intellij.execution.runners.ProgramRunner" />

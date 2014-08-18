@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class IndexedTupleLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     for (SNode mexp : SLinkOperations.getTargets(thisNode, "component", true)) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mexp, "virtual_isLValue_1213877519786", new Object[]{}))) {
@@ -19,11 +18,9 @@ public class IndexedTupleLiteral_Behavior {
     }
     return true;
   }
-
   public static String virtual_getLeftBracket_1262430001741497798(SAbstractConcept thisConcept) {
     return "[";
   }
-
   public static String virtual_getRightBracket_1262430001741498223(SAbstractConcept thisConcept) {
     return "]";
   }

@@ -18,18 +18,14 @@ public class Delete_BlockStatement {
     editorCell.setAction(CellActionType.DELETE, new Delete_BlockStatement.Delete_BlockStatement_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new Delete_BlockStatement.Delete_BlockStatement_BACKSPACE(node));
   }
-
   public static class Delete_BlockStatement_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_BlockStatement_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
         final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");
@@ -55,18 +51,14 @@ public class Delete_BlockStatement {
       }
     }
   }
-
   public static class Delete_BlockStatement_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Delete_BlockStatement_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList")) {
         final SNode statementList = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.StatementList");

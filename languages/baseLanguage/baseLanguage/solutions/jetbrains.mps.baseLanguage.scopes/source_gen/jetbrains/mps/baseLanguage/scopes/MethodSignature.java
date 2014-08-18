@@ -13,20 +13,16 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class MethodSignature implements Signature {
   private final String singature;
-
   public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, MembersPopulatingContext context) {
     this.singature = getStringSignature(method, typeByTypeVariable, context);
   }
-
   public MethodSignature(SNode method, Map<SNode, SNode> typeByTypeVariable) {
     this.singature = getStringSignature(method, typeByTypeVariable, null);
   }
-
   @Override
   public int hashCode() {
     return MethodSignature.class.hashCode() ^ singature.hashCode();
   }
-
   @Override
   public boolean equals(Object object) {
     if (!(object instanceof MethodSignature)) {
@@ -35,7 +31,6 @@ public class MethodSignature implements Signature {
     MethodSignature arg = (MethodSignature) object;
     return eq_1fkaqj_a0c0e(this.singature, arg.singature);
   }
-
   public static String getStringSignature(SNode method, Map<SNode, SNode> typeByTypeVariable, @Nullable MembersPopulatingContext context) {
     StringBuilder result = new StringBuilder();
     result.append(SPropertyOperations.getString(method, "name"));
@@ -66,7 +61,6 @@ public class MethodSignature implements Signature {
     result.append(')');
     return result.toString();
   }
-
   private static boolean eq_1fkaqj_a0c0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -11,11 +11,9 @@ import jetbrains.mps.extapi.model.SModelBase;
 public class makeReferenceStatic_QuickFix extends QuickFix_Runtime {
   public makeReferenceStatic_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make reference static";
   }
-
   public void execute(SNode node) {
     SReference ref = node.getReference(((String) makeReferenceStatic_QuickFix.this.getField("role")[0]));
     SNode target = ref.getTargetNode();

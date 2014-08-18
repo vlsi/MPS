@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 public class ForEach_Test1 extends TestCase {
   public ForEach_Test1() {
   }
-
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     final Wrappers._int sum = new Wrappers._int(0);
@@ -28,7 +27,6 @@ public class ForEach_Test1 extends TestCase {
     });
     Assert.assertEquals(15, sum.value);
   }
-
   public void test_2() {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -36,7 +34,6 @@ public class ForEach_Test1 extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -74,7 +71,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -89,7 +85,6 @@ __switch__:
     });
     Assert.assertEquals(15, sum.value);
   }
-
   public void test_null() {
     Iterable<String> zseq = null;
     final Wrappers._int sum = new Wrappers._int(0);

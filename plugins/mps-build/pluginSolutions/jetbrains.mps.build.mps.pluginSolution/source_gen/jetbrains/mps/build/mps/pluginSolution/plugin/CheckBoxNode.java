@@ -8,7 +8,6 @@ import javax.swing.Icon;
 public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
   protected final N myData;
   private boolean myIsChecked = false;
-
   public CheckBoxNode(N rootNode, boolean createChildren) {
     super(null);
     this.setUserObject(rootNode);
@@ -18,33 +17,26 @@ public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
     }
     setText(getNodeText());
   }
-
   public String getNodeText() {
     return this.myData.getText();
   }
-
   public Icon getIconNonFinal(boolean expanded) {
     return this.myData.getIcon(expanded);
   }
-
   public N getData() {
     return this.myData;
   }
-
   public boolean isChecked() {
     return this.myIsChecked;
   }
-
   public void setChecked(boolean checked) {
     this.myIsChecked = checked;
   }
-
   private void createChildren() {
     for (NodeData childNode : this.myData.getChildren()) {
       this.add(new CheckBoxNode<N>((N) childNode, true));
     }
   }
-
   @Override
   public boolean isLeaf() {
     return !(this.myData.canHaveChildren());

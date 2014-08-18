@@ -21,20 +21,16 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class DispatchGroup {
   private DispatchGroupDescriptor myDescriptor;
   private List<DispatchGroup.ClassMethodGroup> myGroupsByClass = ListSequence.fromList(new ArrayList<DispatchGroup.ClassMethodGroup>());
-
   public DispatchGroup(DispatchGroupDescriptor descriptor, SNode cls) {
     myDescriptor = descriptor;
     startNewClass(cls);
   }
-
   public void startNewClass(SNode cls) {
     ListSequence.fromList(myGroupsByClass).addElement(new DispatchGroup.ClassMethodGroup(cls));
   }
-
   public void addMethod(SNode method) {
     ListSequence.fromList(myGroupsByClass).last().addMethod(method);
   }
-
   @Override
   public void finalize() {
     List<DispatchGroup.ClassMethodGroup> filtered = ListSequence.fromList(myGroupsByClass).where(new IWhereFilter<DispatchGroup.ClassMethodGroup>() {
@@ -44,7 +40,6 @@ public class DispatchGroup {
     }).toListSequence();
     myGroupsByClass = filtered;
   }
-
   public DispatchGroup.Error check() {
 
     DispatchGroup.ClassMethodGroup thisClassGroup = ListSequence.fromList(myGroupsByClass).first();
@@ -109,21 +104,17 @@ public class DispatchGroup {
     // no errors 
     return null;
   }
-
   public class ClassMethodGroup {
     private SNode classifier;
     private Map<SNode, SNode> methods;
-
     public ClassMethodGroup(SNode cls) {
       classifier = cls;
       methods = MapSequence.fromMap(new HashMap<SNode, SNode>());
     }
-
     public void addMethod(SNode method) {
       SNode paramClass = DispatchUtil.getParamClass(method);
       MapSequence.fromMap(methods).put(paramClass, method);
     }
-
     public Set<SNode> getRoots() {
       Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
 
@@ -149,7 +140,6 @@ public class DispatchGroup {
 
       return roots;
     }
-
     public Iterable<SNode> methodsByDispatchTypes(final Set<SNode> classes) {
       return MapSequence.fromMap(methods).where(new IWhereFilter<IMapping<SNode, SNode>>() {
         public boolean accept(IMapping<SNode, SNode> it) {
@@ -162,20 +152,16 @@ public class DispatchGroup {
       });
     }
   }
-
   public class Error {
     private String msg;
     private Iterable<SNode> errMethods;
-
     public Error(String msg, Iterable<SNode> ms) {
       this.msg = msg;
       errMethods = ms;
     }
-
     public String getMessage() {
       return msg;
     }
-
     public Iterable<SNode> getMethods() {
       return errMethods;
     }

@@ -10,7 +10,6 @@ import java.util.Iterator;
 public class PatternUtil {
   public PatternUtil() {
   }
-
   public static boolean matchReferentWithNode(SNodeReference pointer, SNode node) {
     if (pointer == null || node == null || node.getModel() == null) {
       return false;
@@ -20,7 +19,6 @@ public class PatternUtil {
     }
     return true;
   }
-
   public static boolean hasNChildren(SNode parent, String role, int num) {
     Iterator<? extends SNode> it = parent.getChildren(role).iterator();
     for (int i = 0; i < num; i++) {

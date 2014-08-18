@@ -6,24 +6,19 @@ package jetbrains.mps.debugger.java.run.sandbox;
 public class DerivedClass extends BaseClass {
   private static Integer myStaticField = 239;
   private Integer myNonStaticField = 239;
-
   public DerivedClass() {
   }
-
   @Override
   public int getZero(int arg) {
     return 0;
   }
-
   private Object getObject() {
     return null;
   }
-
   public static void main(String[] args) {
     DerivedClass derivedClass = new DerivedClass();
     System.out.println(derivedClass.getZero(1));
   }
-
   private static int getOne() {
     return 1;
   }

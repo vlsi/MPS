@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class LanguageTextGenDeclaration_BehaviorDescriptor extends AbstractTextGenDeclaration_BehaviorDescriptor {
   public LanguageTextGenDeclaration_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SConcept thisConcept) {
     return LanguageTextGenDeclaration_Behavior.virtual_getApplicableHiddenParameter_3044950653914717099(thisConcept);
   }
-
   public List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     return LanguageTextGenDeclaration_Behavior.virtual_getAvailableOperations_1234781444746(thisNode);
   }
-
   public String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return LanguageTextGenDeclaration_Behavior.virtual_getTextGenNode_1234784577703(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration";

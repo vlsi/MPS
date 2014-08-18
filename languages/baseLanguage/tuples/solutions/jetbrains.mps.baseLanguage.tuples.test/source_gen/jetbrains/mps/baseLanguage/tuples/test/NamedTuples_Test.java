@@ -47,13 +47,11 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("abc", tpl2.foo());
     Assert.assertEquals("xyz", tpl2.bar());
   }
-
   public void test_returnValue() throws Exception {
     Data data = this.getData();
     Assert.assertEquals("ABC", data.foo());
     Assert.assertEquals("XYZ", data.bar());
   }
-
   public void test_sequenceOfTuples() throws Exception {
     Iterable<Data> seq = this.getSequence();
     for (Data tpl : Sequence.fromIterable(seq)) {
@@ -61,13 +59,11 @@ public class NamedTuples_Test extends TestCase {
       Assert.assertTrue("xyz".equalsIgnoreCase(tpl.bar()));
     }
   }
-
   public void test_assignToIndexedTupleType() throws Exception {
     Tuples._2<String, String> itpl = this.getData();
     Assert.assertEquals("ABC", itpl._0());
     Assert.assertEquals("XYZ", itpl._1());
   }
-
   public void test_patternMatching() throws Exception {
     String foo;
     String bar;
@@ -79,7 +75,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("ABC", foo);
     Assert.assertEquals("XYZ", bar);
   }
-
   public void test_equalsOperator() throws Exception {
     Data tpl1 = this.getData();
     Data tpl2 = this.getData();
@@ -90,12 +85,10 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
     Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
   }
-
   public void test_boolean() throws Exception {
     Bool truth = new Bool(true);
     Assert.assertTrue((boolean) truth.isTrue());
   }
-
   public void test_filter() throws Exception {
     Iterable<Data> seq = this.getSequence();
     Sequence.fromIterable(seq).any(new IWhereFilter<Data>() {
@@ -104,7 +97,6 @@ public class NamedTuples_Test extends TestCase {
       }
     });
   }
-
   public void test_pair() throws Exception {
     Pair<Integer, String> p = new Pair<Integer, String>(1, "a");
     Assert.assertSame(1, p.first());
@@ -114,7 +106,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }
-
   public void test_valueOfAssignment() throws Exception {
     Pair<String, Integer> pair = new Pair<String, Integer>("foo", 13);
     String res = pair.first("bar");
@@ -122,17 +113,14 @@ public class NamedTuples_Test extends TestCase {
     int i = pair.second(99);
     Assert.assertSame(99, i);
   }
-
   public void test_vararg1() throws Exception {
     String string = this.getString(new Pair<String, String>("a", "A"), new Pair<String, String>("b", "B"), new Pair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
-
   public void test_vararg3() throws Exception {
     String string = this.getString(new GlobalSharedPair<String, String>("a", "A"), new GlobalSharedPair<String, String>("b", "B"), new GlobalSharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
   }
-
   public void test_listOfTuples() throws Exception {
     List<Pair<String, Long>> lot = ListSequence.fromList(new ArrayList<Pair<String, Long>>());
     ListSequence.fromList(lot).addElement(new Pair<String, Long>("A", 1L));
@@ -140,7 +128,6 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(2, ListSequence.fromList(lot).count());
     Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1).first());
   }
-
   public void test_arrayOfTuples() throws Exception {
     Pair<String, Long>[] arr1 = ArrayUtils.asArray(new Pair<String, Long>("A", 1L), new Pair<String, Long>("B", 2L));
     Pair<String, Long>[] arr2 = (Pair<String, Long>[]) ArrayUtils.newArrayInstance(Pair.class, 2);
@@ -151,33 +138,28 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1L, arr2[0].second());
     Assert.assertEquals("B", arr2[1].first());
   }
-
   public void test_tupleDecl() throws Exception {
     Pair<Integer, String> pair;
     pair = new Pair<Integer, String>(-1, "Z");
     Assert.assertNotNull(pair);
     Assert.assertEquals("Z", pair.second());
   }
-
   public void test_record() throws Exception {
     Record r = new Record("Foo", 567, 0.5f);
     Assert.assertEquals("Foo:567:0.5", r.toString());
   }
-
   public void test_mps11134() throws Exception {
     IntPair ip = new IntPair(7, 7);
     Assert.assertTrue((int) ip.a() == (int) ip.b());
     IntPair ip2 = new IntPair(9999 + 1, 10001 - 1);
     Assert.assertTrue((int) ip2.a() == (int) ip2.b());
   }
-
   public void test_nulls() throws Exception {
     IntPair pair = null;
     Assert.assertNull(pair);
     pair = new IntPair(1, 2);
     Assert.assertNotNull(pair);
   }
-
   public void test_implementsInterface() throws Exception {
     Sample sample = new Sample(42);
     Assert.assertSame(42, sample.get());
@@ -185,10 +167,8 @@ public class NamedTuples_Test extends TestCase {
     ISample s = sample;
     Assert.assertEquals("<42>", s.getSample());
   }
-
   public NamedTuples_Test() {
   }
-
   public String getString(Pair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<Pair<String, String>, String>() {
       public String select(Pair<String, String> t) {
@@ -196,7 +176,6 @@ public class NamedTuples_Test extends TestCase {
       }
     }), ", ");
   }
-
   public String getString(GlobalSharedPair<String, String>... tuples) {
     return IterableUtils.join(Sequence.fromIterable(Sequence.fromArray(tuples)).select(new ISelector<GlobalSharedPair<String, String>, String>() {
       public String select(GlobalSharedPair<String, String> t) {
@@ -204,11 +183,9 @@ public class NamedTuples_Test extends TestCase {
       }
     }), ", ");
   }
-
   public Data getData() {
     return new Data("ABC", "XYZ");
   }
-
   public Iterable<Data> getSequence() {
     return Sequence.fromClosure(new ISequenceClosure<Data>() {
       public Iterable<Data> iterable() {
@@ -216,7 +193,6 @@ public class NamedTuples_Test extends TestCase {
           public Iterator<Data> iterator() {
             return new YieldingIterator<Data>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {

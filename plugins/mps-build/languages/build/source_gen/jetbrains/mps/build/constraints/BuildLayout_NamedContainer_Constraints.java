@@ -15,7 +15,6 @@ public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescr
   public BuildLayout_NamedContainer_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_NamedContainer");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class BuildLayout_NamedContainer_Constraints extends BaseConstraintsDescr
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

@@ -9,27 +9,22 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 public class ConflictableModelAdapter extends Conflictable {
   private final EditableSModel myModel;
   private final boolean myIsConflictDetected;
-
   public ConflictableModelAdapter(EditableSModel model, boolean isConflictDetected) {
     myModel = model;
     myIsConflictDetected = isConflictDetected;
   }
-
   @Override
   public boolean isConflictDetected() {
     return myIsConflictDetected;
   }
-
   @Override
   public IFile getFile() {
     return ((FileDataSource) myModel.getSource()).getFile();
   }
-
   @Override
   public void reloadFromDisk() {
     myModel.reloadFromSource();
   }
-
   @Override
   public boolean needReloading() {
     return myModel.needsReloading();

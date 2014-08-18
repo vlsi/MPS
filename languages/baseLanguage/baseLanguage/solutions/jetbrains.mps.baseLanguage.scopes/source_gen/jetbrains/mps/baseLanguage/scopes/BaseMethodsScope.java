@@ -32,7 +32,6 @@ public abstract class BaseMethodsScope extends Scope {
   protected final SNode classifier;
   protected final Iterable<SNode> extendedClassifiers;
   private SNode[] allMethods;
-
   @Deprecated
   public BaseMethodsScope(final SNode kind, SNode classifier, Iterable<SNode> extendedClassifiers) {
     // all extendedClassifiers should be not null 
@@ -69,9 +68,7 @@ public abstract class BaseMethodsScope extends Scope {
       }
     }
   }
-
   public abstract String getSignatureForOverriding(SNode method, SNode contextClassifier);
-
   public Iterable<SNode> getMethodsFromGroup(Iterable<SNode> groupWithEqualSignature) {
     if (Sequence.fromIterable(groupWithEqualSignature).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -83,7 +80,6 @@ public abstract class BaseMethodsScope extends Scope {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     if (allMethods != null) {
@@ -146,7 +142,6 @@ public abstract class BaseMethodsScope extends Scope {
 
     return result;
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull final String refText) {
@@ -177,19 +172,16 @@ public abstract class BaseMethodsScope extends Scope {
 
     return resolveMethod(contextNode, refText, actualArguments, methods);
   }
-
   @Nullable
   public SNode resolveMethod(SNode contextNode, @NotNull String refText, List<SNode> actualArguments, List<SNode> methods) {
     // all methods have exactly actualArguments.size arguments and name of all methods is refText 
     throw new UnsupportedOperationException();
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name");
   }
-
   @Override
   public boolean contains(SNode node) {
     return SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(kind)) && Sequence.fromIterable(getAvailableElements(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"))).contains(node);

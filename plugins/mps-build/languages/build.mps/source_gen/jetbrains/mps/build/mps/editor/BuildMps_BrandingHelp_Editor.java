@@ -21,7 +21,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_r7vwah_a(editorContext, node);
   }
-
   private EditorCell createCollection_r7vwah_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r7vwah_a");
@@ -30,7 +29,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_r7vwah_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_r7vwah_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "help");
     editorCell.setCellId("Constant_r7vwah_a0");
@@ -41,7 +39,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_r7vwah_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r7vwah_b0");
@@ -57,7 +54,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_r7vwah_f1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_r7vwah_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "file");
     editorCell.setCellId("Constant_r7vwah_a1a");
@@ -67,7 +63,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_r7vwah_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("file");
@@ -90,7 +85,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_r7vwah_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_r7vwah_c1a");
@@ -100,7 +94,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_r7vwah_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("root");
@@ -123,7 +116,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_r7vwah_e1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "url");
     editorCell.setCellId("Constant_r7vwah_e1a");
@@ -133,7 +125,6 @@ public class BuildMps_BrandingHelp_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_r7vwah_f1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("url");

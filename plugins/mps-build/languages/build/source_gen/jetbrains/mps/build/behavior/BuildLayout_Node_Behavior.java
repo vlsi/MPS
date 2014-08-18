@@ -16,40 +16,32 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BuildLayout_Node_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     // nop 
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     return false;
   }
-
   public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     return helper.locations().get(thisNode);
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Node")) {
       sb.append("/");
     }
     sb.append((SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name")));
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     BuildLayout_Node_Behavior.call_appendName_internal_1368030936106708110(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Node"))), thisNode, sb);
     return sb.toString();
   }
-
   public static boolean virtual_isFolder_1368030936106753980(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return false;
   }
-
   public static void call_appendName_internal_1368030936106708110(SAbstractConcept thisConcept, SNode node, StringBuilder sb) {
     SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.build.structure.BuildLayout_PathElement");
     if (parent != null) {

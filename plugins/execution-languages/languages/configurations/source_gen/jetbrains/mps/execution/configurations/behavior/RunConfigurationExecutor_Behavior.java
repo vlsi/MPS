@@ -15,19 +15,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class RunConfigurationExecutor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isDebuggable_442015021861764808(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "debuggerConfiguration", true) != null) || (RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(thisNode) && SPropertyOperations.getBoolean(thisNode, "canDebug"));
   }
-
   public static boolean call_canBeSimple_6226796386650277682(SNode thisNode) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "execute", true)), _quotation_createNode_wnz9gp_b0a0a1());
   }
-
   public static boolean call_isSimple_6226796386650421097(SNode thisNode) {
     return RunConfigurationExecutor_Behavior.call_canBeSimple_6226796386650277682(thisNode) && (SLinkOperations.getTarget(thisNode, "debuggerConfiguration", true) == null);
   }
-
   @Nullable
   public static SNode call_getCommand_6226796386650434672(SNode thisNode) {
     {
@@ -42,7 +38,6 @@ public class RunConfigurationExecutor_Behavior {
     }
     return null;
   }
-
   private static SNode _quotation_createNode_wnz9gp_b0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

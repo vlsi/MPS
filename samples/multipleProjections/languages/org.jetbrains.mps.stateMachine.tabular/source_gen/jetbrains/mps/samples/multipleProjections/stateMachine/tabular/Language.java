@@ -12,25 +12,20 @@ import jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.Edi
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "9357c0ba-2430-4f01-b20a-cc8947960ac3(jetbrains.mps.samples.multipleProjections.stateMachine.tabular)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.samples.multipleProjections.stateMachine.tabular";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "a8a18a0f-5ff4-4a26-8c9a-bcfc48fe6a5b(jetbrains.mps.samples.multipleProjections.stateMachine.tabular#3675491646420732262)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {

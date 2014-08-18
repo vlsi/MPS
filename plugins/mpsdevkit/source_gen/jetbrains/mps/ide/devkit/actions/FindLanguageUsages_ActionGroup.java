@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class FindLanguageUsages_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FindLanguageUsages_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.FindLanguageUsages_ActionGroup";
-
   public FindLanguageUsages_ActionGroup() {
     super("FindLanguageUsages", ID);
     this.setIsInternal(false);

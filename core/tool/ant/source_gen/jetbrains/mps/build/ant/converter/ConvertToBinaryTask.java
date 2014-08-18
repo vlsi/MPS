@@ -30,7 +30,6 @@ public class ConvertToBinaryTask extends Copy {
   private boolean myStripImplementation = false;
   private File mpsHome;
 
-
   public ConvertToBinaryTask() {
     FirstMatchMapper mapper = new FirstMatchMapper();
     GlobPatternMapper first = new GlobPatternMapper();
@@ -41,31 +40,24 @@ public class ConvertToBinaryTask extends Copy {
     add(mapper);
     fileUtils = new ConvertToBinaryTask.FileUtilsEx(fileUtils);
   }
-
   public void setMpsHome(File mpsHome) {
     this.mpsHome = mpsHome;
   }
-
   public File getMpsHome() {
     return mpsHome;
   }
-
   public void setStripImplementation(boolean value) {
     this.myStripImplementation = value;
   }
-
   public boolean getStripImplementation() {
     return myStripImplementation;
   }
-
-
 
   @Override
   public void addFileset(FileSet set) {
     set.setErrorOnMissingDir(false);
     super.addFileset(set);
   }
-
   @Override
   public void execute() throws BuildException {
     super.execute();
@@ -103,19 +95,15 @@ public class ConvertToBinaryTask extends Copy {
       }
     }
   }
-
   public class FileUtilsEx extends FileUtils {
     private final FileUtils delegate;
-
     public FileUtilsEx(FileUtils delegate) {
       this.delegate = delegate;
     }
-
     @Override
     public String getDefaultEncoding() {
       return delegate.getDefaultEncoding();
     }
-
     @Override
     public void copyFile(File sourceFile, File destFile, FilterSetCollection filters, Vector filterChains, boolean overwrite, boolean preserveLastModified, boolean append, String inputEncoding, String outputEncoding, Project project, boolean force) throws IOException {
       if (sourceFile.getPath().endsWith(".mps")) {

@@ -9,23 +9,18 @@ import java.util.List;
 public abstract class Regexp_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Regexp_BehaviorDescriptor() {
   }
-
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return Regexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
-
   public boolean virtual_isValid_4759120547781297301(SNode thisNode) {
     return Regexp_Behavior.virtual_isValid_4759120547781297301(thisNode);
   }
-
   public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return Regexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
   }
-
   public String virtual_toString_1213877429451(SNode thisNode) {
     return Regexp_Behavior.virtual_toString_1213877429451(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.Regexp";

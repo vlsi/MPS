@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class MoneyType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", null);
     return creator;

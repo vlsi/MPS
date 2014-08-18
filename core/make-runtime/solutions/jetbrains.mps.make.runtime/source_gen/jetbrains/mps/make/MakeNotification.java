@@ -6,21 +6,17 @@ import java.util.EventObject;
 
 public class MakeNotification extends EventObject {
   private MakeNotification.Kind kind;
-
   public MakeNotification(IMakeService source, MakeNotification.Kind kind) {
     super(source);
     this.kind = kind;
   }
-
   @Override
   public IMakeService getSource() {
     return (IMakeService) super.getSource();
   }
-
   public MakeNotification.Kind getKind() {
     return kind;
   }
-
   public static   enum Kind {
     SCRIPT_ABOUT_TO_START(),
     SCRIPT_FINISHED(),

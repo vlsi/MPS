@@ -27,11 +27,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateOutputRoot__2 implements TemplateDeclaration {
   public TemplateOutputRoot__2() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_ewlaka_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
@@ -70,11 +68,9 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                     public SNode map(SNode outputNode, TemplateContext mapContext) {
                       return QueriesGenerated.mapSrcMacro_mapper_1202338546473(new MapSrcMacroContext(mapContext, outputNode.getParent(), mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0c0d0e0e0c0d0b0c));
                     }
-
                     public String getConceptFqName() {
                       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
                     }
-
                     public SNodeReference getTemplateNode() {
                       return mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0c0d0e0e0c0d0b0c;
                     }
@@ -94,11 +90,9 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                     public SNode map(SNode outputNode, TemplateContext mapContext) {
                       return QueriesGenerated.mapSrcMacro_mapper_1202338683284(new MapSrcMacroContext(mapContext, outputNode.getParent(), mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0d0d0e0e0c0d0b0c));
                     }
-
                     public String getConceptFqName() {
                       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
                     }
-
                     public SNodeReference getTemplateNode() {
                       return mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0d0d0e0e0c0d0b0c;
                     }
@@ -114,11 +108,9 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                     public SNode map(SNode outputNode, TemplateContext mapContext) {
                       return QueriesGenerated.mapSrcMacro_mapper_1202338740199(new MapSrcMacroContext(mapContext, outputNode.getParent(), mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0e0d0e0e0c0d0b0c));
                     }
-
                     public String getConceptFqName() {
                       return "jetbrains.mps.transformation.test.outputLang.structure.OutputNode";
                     }
-
                     public SNodeReference getTemplateNode() {
                       return mapsrcMacroRef_ewlaka_c0a0a0a0a0a0a0b0e0d0e0e0c0d0b0c;
                     }
@@ -157,7 +149,6 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_ewlaka_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338159177");
   private static SNodePointer loopMacroRef_ewlaka_b0a0a1a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467104");
   private static SNodePointer loopMacroRef_ewlaka_b0a0a3a2a3a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f7(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_getPrevInput@generator)", "1202338467111");

@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ProjectExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return null;
   }

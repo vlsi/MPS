@@ -20,28 +20,22 @@ public interface IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor);
   public void addListener(IMakeNotificationListener listener);
   public void removeListener(IMakeNotificationListener listener);
-
   public static class INSTANCE {
     private static IMakeService Component;
-
     private INSTANCE() {
     }
-
     public static IMakeService get() {
       if (Component == null) {
         throw new IllegalStateException("no make service component");
       }
       return Component;
     }
-
     public static void set(IMakeService service) {
       Component = service;
     }
-
     public static boolean isSessionActive() {
       return IMakeService.INSTANCE.hasMakeService() && Component.isSessionActive();
     }
-
     public static boolean hasMakeService() {
       return Component != null;
     }

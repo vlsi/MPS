@@ -21,7 +21,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9277sk_a(editorContext, node);
   }
-
   private EditorCell createCollection_9277sk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9277sk_a");
@@ -32,7 +31,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_9277sk_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_9277sk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<?");
     editorCell.setCellId("Constant_9277sk_a0");
@@ -44,11 +42,9 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_9277sk_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
-
   private EditorCell createProperty_9277sk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("target");
@@ -69,7 +65,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_9277sk_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("rawData");
@@ -90,7 +85,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_9277sk_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?>");
     editorCell.setCellId("Constant_9277sk_d0");
@@ -102,7 +96,6 @@ public class XmlProcessingInstruction_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_9277sk_a1d0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }

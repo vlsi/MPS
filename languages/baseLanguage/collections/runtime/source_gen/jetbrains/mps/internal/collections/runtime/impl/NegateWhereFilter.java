@@ -7,11 +7,9 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class NegateWhereFilter<T> extends IWhereFilter<T> {
   private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter;
-
   public NegateWhereFilter(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     this.filter = filter;
   }
-
   @Override
   public boolean accept(T t) {
     return !((filter.invoke(t)));

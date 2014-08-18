@@ -22,7 +22,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConjugateOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       final SNode t = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "expr", true), "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229357", true);
@@ -62,22 +61,18 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229275", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.ConjugateOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_2f5qmh_a0a0a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -89,7 +84,6 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_2f5qmh_a0a0a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

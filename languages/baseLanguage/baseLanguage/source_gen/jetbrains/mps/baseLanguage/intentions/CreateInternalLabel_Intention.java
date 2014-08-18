@@ -17,68 +17,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateInternalLabel_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateInternalLabel_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Statement";
   }
-
   public String getPresentation() {
     return "CreateInternalLabel";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.CreateInternalLabel_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && isEmptyString(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "9163255059340117948");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateInternalLabel_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Internal Label";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       String value = "label";
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement")) {
@@ -91,12 +76,10 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
         SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label", value);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateInternalLabel_Intention.this;
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

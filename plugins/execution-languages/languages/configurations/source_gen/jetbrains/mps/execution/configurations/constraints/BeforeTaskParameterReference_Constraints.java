@@ -24,12 +24,10 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
   public BeforeTaskParameterReference_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -40,7 +38,6 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -49,7 +46,6 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -58,7 +54,6 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_xor3la_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ModelPlusImportedScope(_context.getModel(), false, "jetbrains.mps.execution.configurations.structure.BeforeTaskParameter");
@@ -69,11 +64,9 @@ public class BeforeTaskParameterReference_Constraints extends BaseConstraintsDes
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), "jetbrains.mps.execution.configurations.structure.BeforeTask");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "8852113381329465495");
   private static SNodePointer breakingNode_xor3la_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "2598676492883034140");
 }

@@ -30,7 +30,6 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7qsf43_a(editorContext, node);
   }
-
   private EditorCell createCollection_7qsf43_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7qsf43_a");
@@ -41,7 +40,6 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_7qsf43_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_7qsf43_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -62,11 +60,9 @@ public class IfInstanceOfVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public IfInstanceOfVariable_name_postfixCellMenu_7qsf43_a0a0() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SNode nodeConcept = SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement"), "nodeConcept", false);
       List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "node");

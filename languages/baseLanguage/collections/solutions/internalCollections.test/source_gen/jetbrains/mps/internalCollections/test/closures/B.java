@@ -9,7 +9,6 @@ public class B {
   public List<A> listofa;
   public Iterable<A> seqofa;
   public Iterable<A> iterableofa;
-
   public B() {
   }
 }

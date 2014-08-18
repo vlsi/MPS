@@ -38,7 +38,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_dbn5di_a(editorContext, node);
   }
-
   private EditorCell createCollection_dbn5di_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCanBeSynchronized(true);
@@ -48,13 +47,11 @@ public class Diagram2_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_dbn5di_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createDiagram_dbn5di_a0(EditorContext editorContext, SNode node) {
     DiagramCell editorCell = new Diagram2_Editor.DiagramCellImpl_dbn5di_a0(editorContext, node);
     editorCell.setCellId("Diagram_dbn5di_a0");
     return editorCell;
   }
-
   private class DiagramCellImpl_dbn5di_a0 extends DiagramCell {
     private DiagramCellImpl_dbn5di_a0(EditorContext editorContext, SNode node) {
       super(editorContext, node);
@@ -76,8 +73,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
       synchronize();
     }
 
-
-
     protected SubstituteInfoPartExt[] createPaletteBlockSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramNodeActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "mainNodes"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
         public void invoke(SNode node, Integer x, Integer y) {
@@ -86,7 +81,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
         }
       })};
     }
-
     protected SubstituteInfoPartExt[] createPaletteConnectorSubstituteInfoPartExts() {
       return new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector"), SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "nodeConnectors"), new _FunctionTypes._return_P4_E0<Boolean, SNode, Object, SNode, Object>() {
         public Boolean invoke(SNode from, Object fromId, SNode to, Object toId) {
@@ -99,7 +93,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
         }
       })};
     }
-
     public Mapper<SNode, DiagramView> createMapper(SNode node) {
       return new Mapper<SNode, DiagramView>(node, createDiagramView()) {
         @Override
@@ -140,7 +133,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, DiagramDecoratorView> createDecorationMapper(SNode node) {
       return new Mapper<SNode, DiagramDecoratorView>(getSNode(), new DiagramDecoratorView()) {
         @Override
@@ -159,7 +151,6 @@ public class Diagram2_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public void synchronize() {
       Set<SNode> existingBlocks = new HashSet<SNode>(myBlocks);
       ListIterator<SNode> blocksIterator = myBlocks.listIterator();
@@ -170,13 +161,11 @@ public class Diagram2_Editor extends DefaultNodeEditor {
       purgeTailNodes(blocksIterator);
       purgeTailNodes(connectorsIterator);
     }
-
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
     }
   }
-
   private EditorCell createConstant_dbn5di_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text");
     editorCell.setCellId("Constant_dbn5di_b0");

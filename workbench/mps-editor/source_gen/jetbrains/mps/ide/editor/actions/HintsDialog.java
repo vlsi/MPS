@@ -38,7 +38,6 @@ public class HintsDialog extends DialogWrapper {
   private ConceptEditorHintSettings mySettings;
 
 
-
   public HintsDialog(Project project, @NotNull ConceptEditorHintPreferencesPage page, ConceptEditorHintSettings settings, EditorComponent component) {
     super(project, true);
     myPage = page;
@@ -47,13 +46,10 @@ public class HintsDialog extends DialogWrapper {
     setTitle("Push Editor Hints");
     init();
   }
-
   @Nullable
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }
-
-
 
   @Override
   @NotNull
@@ -63,8 +59,6 @@ public class HintsDialog extends DialogWrapper {
     ListSequence.fromList(actions).addElement(getCancelAction());
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
-
-
 
 
 
@@ -86,8 +80,6 @@ public class HintsDialog extends DialogWrapper {
 
     super.doOKAction();
   }
-
-
 
 
 
@@ -128,7 +120,6 @@ public class HintsDialog extends DialogWrapper {
     myMainPanel.add(scrollPane, BorderLayout.CENTER);
     super.init();
   }
-
   private void setPanelEnabled(JComponent panel, boolean enabled) {
     for (Component component : panel.getComponents()) {
       component.setEnabled(enabled);
@@ -138,15 +129,12 @@ public class HintsDialog extends DialogWrapper {
     }
   }
 
-
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
 
 
 }

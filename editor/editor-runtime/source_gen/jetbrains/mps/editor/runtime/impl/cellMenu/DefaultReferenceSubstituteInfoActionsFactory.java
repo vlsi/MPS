@@ -30,7 +30,6 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
   private SNode myLinkDeclaration;
   private SNode myCurrentReferent;
   private DefaultReferenceSubstituteInfo mySubstituteInfo;
-
   public DefaultReferenceSubstituteInfoActionsFactory(SNode sourceNode, SNode linkDeclaration, DefaultReferenceSubstituteInfo substituteInfo) {
     mySourceNode = sourceNode;
     myLinkDeclaration = linkDeclaration;
@@ -47,7 +46,6 @@ public class DefaultReferenceSubstituteInfoActionsFactory {
     myCurrentReferent = SLinkOperations.getTargetNode(SNodeOperations.getReference(sourceNode, myLinkDeclaration));
     mySubstituteInfo = substituteInfo;
   }
-
   public List<SubstituteAction> createActions() {
     if (myLinkDeclaration == null) {
       return Collections.emptyList();

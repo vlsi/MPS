@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class TypeAnnotable_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return null;
   }

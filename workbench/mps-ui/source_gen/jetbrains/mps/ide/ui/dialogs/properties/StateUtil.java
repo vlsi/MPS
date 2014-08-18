@@ -5,24 +5,20 @@ package jetbrains.mps.ide.ui.dialogs.properties;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 
 public class StateUtil {
   public static final int normal = 0;
-
   public StateUtil() {
   }
-
   public static boolean isAvailable(final SModelReference modelReference) {
     return SModelRepository.getInstance().getModelDescriptor(modelReference) != null;
   }
-
   public static boolean isAvailable(SModuleReference moduleReference) {
-    return MPSModuleRepository.getInstance().getModule(moduleReference) != null;
+    return ModuleRepositoryFacade.getInstance().getModule(moduleReference) != null;
   }
-
   public static boolean isAvailable(String path) {
     VirtualFile file = VirtualFileUtils.getVirtualFile(path);
     if (file == null || !(file.exists())) {
@@ -30,7 +26,6 @@ public class StateUtil {
     }
     return true;
   }
-
   public static int compare(boolean isOk1, boolean isOk2) {
     if (isOk1 && !(isOk2)) {
       return 1;
@@ -40,11 +35,9 @@ public class StateUtil {
     }
     return 0;
   }
-
   public static int compare(SModuleReference moduleRef1, SModuleReference moduleRef2) {
     return compare(isAvailable(moduleRef1), isAvailable(moduleRef2));
   }
-
   public static int compare(String path1, String path2) {
     return compare(isAvailable(path1), isAvailable(path2));
   }

@@ -24,14 +24,11 @@ public class PaletteElementsCreationAction extends AbstractPaletteCreationAction
   private _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> myCallback;
 
 
-
   public PaletteElementsCreationAction(DiagramCell diagramCell, SubstituteAction action, final _FunctionTypes._void_P3_E0<? super SNode, ? super Integer, ? super Integer> setNodePositionCallback, EditorContext editorContext) {
     super(diagramCell, action);
     myEditorContext = editorContext;
     myCallback = setNodePositionCallback;
   }
-
-
 
   protected SubstituteAction createSubstituteAction(SubstituteAction action) {
     return new NodeSubstituteActionWrapper(action) {
@@ -43,7 +40,6 @@ public class PaletteElementsCreationAction extends AbstractPaletteCreationAction
       }
     };
   }
-
   protected ViewTrait getTrait() {
     if (myTrait == null) {
       myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_PRESSED, new ViewEventHandler<MouseEvent>() {
@@ -77,6 +73,5 @@ public class PaletteElementsCreationAction extends AbstractPaletteCreationAction
     }
     return myTrait;
   }
-
 
 }

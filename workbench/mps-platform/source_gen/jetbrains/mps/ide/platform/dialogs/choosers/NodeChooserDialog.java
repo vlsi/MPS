@@ -26,7 +26,6 @@ import java.awt.Dimension;
 
 public class NodeChooserDialog extends DialogWrapper {
   private ChooseByNamePanel myChooser;
-
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes, ChooseByNameModel chooseByNameModel) {
     super(project, true);
     setTitle("Choose Node");
@@ -41,7 +40,6 @@ public class NodeChooserDialog extends DialogWrapper {
 
     init();
   }
-
   public NodeChooserDialog(Project project, final Iterable<SNodeReference> nodes) {
     this(project, nodes, new BaseNodePointerModel(project) {
       @Override
@@ -52,29 +50,24 @@ public class NodeChooserDialog extends DialogWrapper {
           }
         };
       }
-
       @Override
       public SNodeReference[] find(boolean checkboxState) {
         return Sequence.fromIterable(nodes).toGenericArray(SNodeReference.class);
       }
-
       @Override
       public SNodeReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
-
       @Override
       public boolean loadInitialCheckBoxState() {
         return false;
       }
-
       @Override
       public boolean willOpenEditor() {
         return false;
       }
     });
   }
-
   public NodeChooserDialog(Project project, final List<SNode> nodes) {
     this(project, ListSequence.fromList(nodes).select(new ISelector<SNode, SNodeReference>() {
       public SNodeReference select(SNode it) {
@@ -82,14 +75,12 @@ public class NodeChooserDialog extends DialogWrapper {
       }
     }));
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     myChooser.getPanel().setPreferredSize(new Dimension(400, 500));
     return myChooser.getPanel();
   }
-
   @Nullable
   public SNode getResultNode() {
     if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
@@ -98,7 +89,6 @@ public class NodeChooserDialog extends DialogWrapper {
     BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
     return (nodeItem != null ? nodeItem.getNode() : null);
   }
-
   @Nullable
   public SNodeReference getResult() {
     if (getExitCode() != DialogWrapper.OK_EXIT_CODE) {
@@ -107,7 +97,6 @@ public class NodeChooserDialog extends DialogWrapper {
     BaseNodePointerItem nodeItem = (BaseNodePointerItem) myChooser.getChosenElement();
     return (nodeItem != null ? nodeItem.getNodePointer() : null);
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {

@@ -22,11 +22,9 @@ import jetbrains.mps.smodel.SReference;
 public class TypeVariableDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getConcreteUpperBound_4346214032091509920(SNode thisNode) {
     return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
   }
-
   public static SNode call_getConcreteUpperBound_4346214032091504647(SNode thisNode, Set<SNode> visitedVars) {
     if (SetSequence.fromSet(visitedVars).contains(thisNode)) {
       return _quotation_createNode_ct7zh2_a0a0a1();
@@ -38,7 +36,6 @@ public class TypeVariableDeclaration_Behavior {
       return _quotation_createNode_ct7zh2_a0a0c0b();
     }
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer buff = new StringBuffer();
     buff.append(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
@@ -52,7 +49,6 @@ public class TypeVariableDeclaration_Behavior {
     }
     return buff.toString();
   }
-
   public static SNode call_getTypeWithConcreteUpperBounds_4346214032091504651(SAbstractConcept thisConcept, SNode inputType, Set<SNode> visitedVars) {
     if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
@@ -66,7 +62,6 @@ public class TypeVariableDeclaration_Behavior {
       return SNodeOperations.copyNode(javaType);
     }
   }
-
   private static SNode _quotation_createNode_ct7zh2_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -74,7 +69,6 @@ public class TypeVariableDeclaration_Behavior {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ct7zh2_a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

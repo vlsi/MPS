@@ -20,7 +20,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q7sw6e_a(editorContext, node);
   }
-
   private EditorCell createCollection_q7sw6e_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_q7sw6e_a");
@@ -35,7 +34,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createConstant_q7sw6e_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unique name from");
     editorCell.setCellId("Constant_q7sw6e_a0");
@@ -45,7 +43,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_q7sw6e_b0");
@@ -55,7 +52,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q7sw6e_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("baseName");
@@ -75,7 +71,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_q7sw6e_d0");
@@ -85,7 +80,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in context");
     editorCell.setCellId("Constant_q7sw6e_e0");
@@ -95,7 +89,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_q7sw6e_f0");
@@ -105,7 +98,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_q7sw6e_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contextNode");
@@ -125,7 +117,6 @@ public class GenerationContextOp_CreateUniqueName_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_q7sw6e_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_q7sw6e_h0");

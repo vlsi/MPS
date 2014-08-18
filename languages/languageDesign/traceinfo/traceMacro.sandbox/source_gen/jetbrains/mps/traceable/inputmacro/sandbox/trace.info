@@ -7,30 +7,30 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:6a753c4c-c72d-48f6-96df-dfb0fd647f0e(jetbrains.mps.traceable.inputmacro.sandbox)/1187962225387703184">
     <file name="Main.java">
-      <node id="1187962225387703197" at="10,42,11,28" concept="3" />
-      <node id="1187962225387708167" at="12,26,13,29" concept="1" />
-      <node id="7980748436587796570" at="15,31,16,34" concept="1" />
+      <node id="1187962225387703197" at="9,42,10,28" concept="3" />
+      <node id="1187962225387708167" at="11,26,12,29" concept="1" />
+      <node id="7980748436587796570" at="14,31,15,34" concept="1" />
       <node id="1187962225387703186" at="7,0,9,0" concept="0" trace="Main#()V" />
-      <node id="1187962225387708162" at="11,28,14,5" concept="2" />
-      <node id="7980748436587796565" at="14,5,17,5" concept="2" />
-      <node id="1187962225387703190" at="10,0,19,0" concept="4" trace="main#([Ljava/lang/String;)V" />
+      <node id="1187962225387708162" at="10,28,13,5" concept="2" />
+      <node id="7980748436587796565" at="13,5,16,5" concept="2" />
+      <node id="1187962225387703190" at="9,0,18,0" concept="4" trace="main#([Ljava/lang/String;)V" />
       <scope id="1187962225387703189" at="7,17,7,17" />
-      <scope id="1187962225387708165" at="12,26,13,29" />
-      <scope id="7980748436587796568" at="15,31,16,34" />
+      <scope id="1187962225387708165" at="11,26,12,29" />
+      <scope id="7980748436587796568" at="14,31,15,34" />
       <scope id="1187962225387703186" at="7,0,9,0" />
-      <scope id="1187962225387708162" at="11,28,14,5">
+      <scope id="1187962225387708162" at="10,28,13,5">
         <var name="it" id="1187962225387708163" />
       </scope>
-      <scope id="7980748436587796565" at="14,5,17,5">
+      <scope id="7980748436587796565" at="13,5,16,5">
         <var name="var_gen" id="7980748436587796566" />
       </scope>
-      <scope id="1187962225387703196" at="10,42,17,5">
+      <scope id="1187962225387703196" at="9,42,16,5">
         <var name="array" id="1187962225387703198" />
       </scope>
-      <scope id="1187962225387703190" at="10,0,19,0">
+      <scope id="1187962225387703190" at="9,0,18,0">
         <var name="args" id="1187962225387703191" />
       </scope>
-      <unit id="1187962225387703184" at="6,0,20,0" name="jetbrains.mps.traceable.inputmacro.sandbox.Main" />
+      <unit id="1187962225387703184" at="6,0,19,0" name="jetbrains.mps.traceable.inputmacro.sandbox.Main" />
     </file>
   </root>
 </debug-info>

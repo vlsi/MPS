@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public ActionParameterTypeIsNotClassifier_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parameter, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       {
@@ -26,18 +25,15 @@ public class ActionParameterTypeIsNotClassifier_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

@@ -49,15 +49,12 @@ public class QueriesGenerated {
                 SPropertyOperations.set(debuggerReference, "debuggerName", (item));
                 return debuggerReference;
               }
-
               public String getMatchingText(String pattern) {
                 return "debugger<" + (item) + ">";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return (item) + " Debugger";
               }
@@ -68,7 +65,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_2569394751387978976(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -96,15 +92,12 @@ public class QueriesGenerated {
                 SPropertyOperations.set(createBreakpointOperation, "kindPresentation", (item).getPresentation());
                 return createBreakpointOperation;
               }
-
               public String getMatchingText(String pattern) {
                 return (item).getPresentation();
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return "create " + (item).getPresentation();
               }
@@ -115,7 +108,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

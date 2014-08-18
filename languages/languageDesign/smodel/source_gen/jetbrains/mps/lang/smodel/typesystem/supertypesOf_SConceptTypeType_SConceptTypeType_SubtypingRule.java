@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
@@ -33,22 +32,18 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     }
     return list;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SConceptType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_keb29w_a0a0a1a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -56,7 +51,6 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaraton", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_keb29w_a0a2a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

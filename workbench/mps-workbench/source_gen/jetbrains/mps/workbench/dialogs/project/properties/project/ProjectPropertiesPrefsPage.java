@@ -16,79 +16,63 @@ import org.jetbrains.annotations.NotNull;
 public final class ProjectPropertiesPrefsPage implements SearchableConfigurable, NonDefaultProjectConfigurable, ProjectComponent {
   private Project myProject;
   private ProjectPropertiesComponent myComponent;
-
   public ProjectPropertiesPrefsPage(Project project) {
     myProject = project;
   }
-
   @Nls
   @Override
   public String getDisplayName() {
     return getComponentName();
   }
-
   public Icon getIcon() {
     return IdeIcons.PROJECT_ICON;
   }
-
   @Override
   public String getHelpTopic() {
     return "Project_Structure";
   }
-
   @Override
   public JComponent createComponent() {
     myComponent = new ProjectPropertiesComponent(myProject);
     return myComponent;
   }
-
   @Override
   public boolean isModified() {
     return myComponent.isModified();
   }
-
   @Override
   public void apply() throws ConfigurationException {
     myComponent.apply();
   }
-
   @Override
   public void reset() {
     myComponent.reset();
   }
-
   @Override
   public void disposeUIResources() {
     myComponent = null;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Project Structure";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   @Override
   public String getId() {
     return "project.options.prefs.page";
   }
-
   @Override
   public Runnable enableSearch(String option) {
     return null;

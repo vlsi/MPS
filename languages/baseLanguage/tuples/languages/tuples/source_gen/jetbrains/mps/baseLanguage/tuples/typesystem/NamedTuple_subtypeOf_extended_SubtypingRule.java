@@ -18,29 +18,24 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class NamedTuple_subtypeOf_extended_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public NamedTuple_subtypeOf_extended_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false) != null)) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_xrnhlx_a0a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(ntt, "classifier", false), "extended", true), "classifier", false)));
     }
     return null;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_xrnhlx_a0a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

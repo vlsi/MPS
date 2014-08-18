@@ -17,15 +17,12 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "find java util refrences";
       }
-
       public String getAdditionalInfo() {
         return "find java util refrences";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
           String targetModelFQName = ref.getTargetSModelReference().getModelName();
@@ -35,10 +32,8 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -47,15 +42,12 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "find adapter class usages";
       }
-
       public String getAdditionalInfo() {
         return "find adapter class usages";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
           return false;
@@ -64,10 +56,8 @@ public class ShowAdapterUsages_MigrationScript extends BaseMigrationScript {
         String namespace = NameUtil.namespaceFromLongName(className);
         return namespace.endsWith(".structure");
       }
-
       public void doUpdateInstanceNode(SNode node) {
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

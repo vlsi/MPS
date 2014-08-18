@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class AbstractSetOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public AbstractSetOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation";

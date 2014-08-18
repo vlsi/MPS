@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddAnnotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddCastStatement_Intention());
@@ -39,7 +38,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new CreateMethodDeclaration_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateReferenceOnClass_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateSetAccessor_Intention());
-    IntentionsManager.getInstance().registerIntentionFactory(new DeprecatedJavaDoc_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ElsifSwapWithMain_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ElsifTransform_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new ExpandBoolean_Intention());
@@ -51,6 +49,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassAbstract_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassAbstractFromMethod_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeClassFinal_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new MakeDeprecated_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldTransient_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeFieldVolatile_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new MakeGeneric_Intention());

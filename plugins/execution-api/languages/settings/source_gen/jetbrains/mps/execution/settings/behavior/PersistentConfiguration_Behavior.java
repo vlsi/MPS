@@ -22,24 +22,19 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class PersistentConfiguration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return "Configuration";
   }
-
   public static String call_getGeneratedEditorName_946964771156066479(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{}) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
   }
-
   public static String call_getFullEditorName_946964771156066491(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFullName_946964771156905503", new Object[]{}) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_4ves9l_a0a3(thisNode);
   }
-
   public static List<SNode> call_getTemplateProperties_946964771156066510(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -47,7 +42,6 @@ public class PersistentConfiguration_Behavior {
       }
     }).toListSequence();
   }
-
   public static List<SNode> call_getNonTemplateProperties_946964771156066530(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "persistentProperty", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -55,11 +49,9 @@ public class PersistentConfiguration_Behavior {
       }
     }).toListSequence();
   }
-
   public static String call_getEditorSuffix_946964771156066551(SNode thisNode) {
     return "Editor";
   }
-
   public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> allMemebers = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", "virtual_getMembers_1213877528020", new Object[]{contextNode});
     if ((SNodeOperations.getAncestor(contextNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null)) {
@@ -71,7 +63,6 @@ public class PersistentConfiguration_Behavior {
     }
     return allMemebers;
   }
-
   public static SNode call_getContextPersistentConfigurationType_946964771156066389(SAbstractConcept thisConcept, SNode node) {
     SNode configuration = SNodeOperations.getAncestor(node, "jetbrains.mps.execution.settings.structure.PersistentConfiguration", false, false);
     if (configuration == null) {
@@ -82,7 +73,6 @@ public class PersistentConfiguration_Behavior {
     }
     return _quotation_createNode_4ves9l_a2a8(configuration);
   }
-
   public static List<SNode> call_getContextPersistentProperties_946964771156066434(SAbstractConcept thisConcept, SNode node) {
     SNode configurationType = PersistentConfiguration_Behavior.call_getContextPersistentConfigurationType_946964771156066389(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfiguration"))), node);
     if ((configurationType == null) || (SLinkOperations.getTarget(configurationType, "persistentConfiguration", false) == null)) {
@@ -90,11 +80,9 @@ public class PersistentConfiguration_Behavior {
     }
     return SLinkOperations.getTargets(SLinkOperations.getTarget(configurationType, "persistentConfiguration", false), "persistentProperty", true);
   }
-
   public static String call_getCheckMethodName_946964771156066466(SAbstractConcept thisConcept) {
     return "checkConfiguration";
   }
-
   private static SNode _quotation_createNode_4ves9l_a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -102,7 +90,6 @@ public class PersistentConfiguration_Behavior {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "persistentConfiguration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_4ves9l_a2a8(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

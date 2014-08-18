@@ -15,17 +15,15 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.editor.colors.EditorColorsManager;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
+import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.ide.util.ColorAndGraphicsUtil;
-import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.nodeEditor.messageTargets.EditorMessageWithTarget;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -60,16 +58,12 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
   @Override
   public boolean isBackground() {
-    return isWarning();
+    return false;
   }
 
   @Override
   public boolean showInGutter() {
     return getStatus() != MessageStatus.OK;
-  }
-
-  private boolean isWarning() {
-    return getStatus() == MessageStatus.WARNING;
   }
 
   @Override
@@ -79,13 +73,7 @@ public class HighlighterMessage extends EditorMessageWithTarget {
 
   private void paintDecorations(Graphics g, EditorCell cell) {
     if (cell == null) return;
-    if (isWarning()) {
-      cell.paintSelection(g,
-        EditorColorsManager.getInstance().getGlobalScheme().getAttributes(TextAttributesKey.createTextAttributesKey("WARNING_ATTRIBUTES")).getBackgroundColor(),
-        false);
-    } else {
-      drawWaveUnderCell(g, getColor(), cell);
-    }
+    drawWaveUnderCell(g, getColor(), cell);
   }
 
   public static void drawWaveUnderCell(Graphics g, Color c, EditorCell cell) {

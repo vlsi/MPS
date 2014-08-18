@@ -12,16 +12,13 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
   protected byte[] myConflictStart;
   protected byte[] myConflictEnd;
   protected byte[] mySeparator;
-
   /*package*/ AbstractContentMerger() {
   }
-
   public void setConflictMarks(byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
     myConflictStart = conflictStart;
     myConflictEnd = conflictEnd;
     mySeparator = separator;
   }
-
   @Nullable
   public abstract Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent);
 }

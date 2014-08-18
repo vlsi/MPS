@@ -5,35 +5,35 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="DefaultGenerationParameterId_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGenerationParameterId_BehaviorDescriptor" />
     </file>
     <file name="DefaultGeneratorParameterContainer_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameterContainer_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DefaultGeneratorParameter_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
+      <unit at="11,0,25,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:fd22fe79-96d7-4028-99df-53ccd194ec8d(jetbrains.mps.lang.generator.generationParameters.behavior)/8484425748929510084">
     <file name="DefaultGeneratorParameter_Behavior.java">
-      <node id="8484425748929510090" at="13,79,14,357" concept="0" />
-      <node id="8484425748929510113" at="14,357,15,137" concept="1" />
+      <node id="8484425748929510090" at="12,79,13,357" concept="0" />
+      <node id="8484425748929510113" at="13,357,14,137" concept="1" />
       <node id="8484425748929510084" at="10,0,12,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8484425748929510084" at="13,0,17,0" concept="2" trace="virtual_getUniqueId_650531548511609559#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8484425748929510084" at="12,0,16,0" concept="2" trace="virtual_getUniqueId_650531548511609559#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="8484425748929510086" at="10,43,10,43" />
       <scope id="8484425748929510084" at="10,0,12,0">
         <var name="thisNode" id="8484425748929510084" />
       </scope>
-      <scope id="8484425748929510089" at="13,79,15,137">
+      <scope id="8484425748929510089" at="12,79,14,137">
         <var name="containerName" id="8484425748929510091" />
       </scope>
-      <scope id="8484425748929510084" at="13,0,17,0">
+      <scope id="8484425748929510084" at="12,0,16,0">
         <var name="thisNode" id="8484425748929510084" />
       </scope>
-      <unit id="8484425748929510084" at="9,0,18,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_Behavior" />
+      <unit id="8484425748929510084" at="9,0,17,0" name="jetbrains.mps.lang.generator.generationParameters.behavior.DefaultGeneratorParameter_Behavior" />
     </file>
   </root>
 </debug-info>

@@ -7,7 +7,6 @@ import jetbrains.mps.core.xml.behavior.XmlText_BehaviorDescriptor;
 public class TextMacro_BehaviorDescriptor extends XmlText_BehaviorDescriptor {
   public TextMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.xmlLiterals.structure.TextMacro";

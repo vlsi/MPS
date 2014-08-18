@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ExtensionMethodCall_InferenceRule() {
   }
-
   public void applyRule(final SNode emcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode emdecl = SLinkOperations.getTarget(emcall, "baseMethodDeclaration", false);
     if (emdecl == null) {
@@ -139,18 +138,15 @@ public class typeof_ExtensionMethodCall_InferenceRule extends AbstractInferenceR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

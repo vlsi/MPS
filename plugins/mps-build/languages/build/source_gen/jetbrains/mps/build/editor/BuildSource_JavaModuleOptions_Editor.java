@@ -22,7 +22,6 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bvukwp_a(editorContext, node);
   }
-
   private EditorCell createCollection_bvukwp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bvukwp_a");
@@ -31,7 +30,6 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_bvukwp_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_bvukwp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply compiler options");
     editorCell.setCellId("Constant_bvukwp_a0");
@@ -41,7 +39,6 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_bvukwp_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("compileOptions");
@@ -63,20 +60,16 @@ public class BuildSource_JavaModuleOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_bvukwp_a1a extends InlineCellProvider {
     public _Inline_bvukwp_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_bvukwp_a0b0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_bvukwp_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "compileOptions");
       editorCell.setCellId("ReferencePresentation_bvukwp_a0b0");

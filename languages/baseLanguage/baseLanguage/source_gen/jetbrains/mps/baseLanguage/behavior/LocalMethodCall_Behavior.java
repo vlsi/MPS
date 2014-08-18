@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class LocalMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return true;
   }

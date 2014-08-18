@@ -12,7 +12,6 @@ import com.intellij.ui.InsertPathAction;
 
 public class RawLineEditorComponent extends TextFieldWithBrowseButton {
   private String myDialogCaption;
-
   public RawLineEditorComponent() {
     addActionListener(new ActionListener() {
       @Override
@@ -23,19 +22,15 @@ public class RawLineEditorComponent extends TextFieldWithBrowseButton {
     setButtonIcon(AllIcons.Actions.ShowViewer);
     this.setDescriptor(null);
   }
-
   public void setDialogCaption(String value) {
     this.myDialogCaption = value;
   }
-
   public String getDialodCaption() {
     return this.myDialogCaption;
   }
-
   public void setDescriptor(FileChooserDescriptor descriptor) {
     InsertPathAction.addTo(getTextField(), descriptor);
   }
-
   public void setEditable(boolean editable) {
     super.setEditable(editable);
     getButton().setEnabled(editable);

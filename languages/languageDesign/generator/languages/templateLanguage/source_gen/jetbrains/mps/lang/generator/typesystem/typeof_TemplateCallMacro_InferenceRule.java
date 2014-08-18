@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_TemplateCallMacro_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_TemplateCallMacro_InferenceRule() {
   }
-
   public void applyRule(final SNode macro, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode template = TemplateCallMacro_Behavior.call_getTemplate_982871510068205176(macro);
 
@@ -27,18 +26,15 @@ public class typeof_TemplateCallMacro_InferenceRule extends AbstractInferenceRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.TemplateCallMacro";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

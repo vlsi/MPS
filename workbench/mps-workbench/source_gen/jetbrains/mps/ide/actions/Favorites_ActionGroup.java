@@ -14,7 +14,6 @@ public class Favorites_ActionGroup extends GeneratedActionGroup {
   public static final String ID = "jetbrains.mps.ide.actions.Favorites_ActionGroup";
   public static final String LABEL_ID_generate = ID + "generate";
   public static final String LABEL_ID_popup = ID + "popup";
-
   public Favorites_ActionGroup() {
     super("Favorites", ID);
     this.setIsInternal(false);

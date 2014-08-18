@@ -16,7 +16,6 @@ import jetbrains.mps.errors.IErrorReporter;
 public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_VariableArityType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode matchedNode_x4f43m_a0 = SNodeOperations.getParent(variableArityType);
@@ -42,18 +41,15 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.VariableArityType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

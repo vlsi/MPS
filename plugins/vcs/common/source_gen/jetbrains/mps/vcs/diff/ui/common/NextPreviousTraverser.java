@@ -47,7 +47,6 @@ public class NextPreviousTraverser {
   private NextPreviousTraverser.TheAction myPreviousAction = new NextPreviousTraverser.TheAction(true);
   private NextPreviousTraverser.TheAction myNextAction = new NextPreviousTraverser.TheAction(false);
   private ActionToolbar myActionToolbar = null;
-
   public NextPreviousTraverser(@NotNull List<ChangeGroupLayout> changeGroupLayouts, @NotNull EditorComponent firstEditor) {
     myChangeGroupLayouts = changeGroupLayouts;
     myLastEditor = firstEditor;
@@ -80,11 +79,9 @@ public class NextPreviousTraverser {
       }
     });
   }
-
   public void setActionToolbar(ActionToolbar actionToolbar) {
     myActionToolbar = actionToolbar;
   }
-
   private void updateToolbar() {
     if (myActionToolbar != null) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
@@ -94,7 +91,6 @@ public class NextPreviousTraverser {
       });
     }
   }
-
   @Nullable
   private ChangeGroupLayout getLayoutAsLeft() {
     return ListSequence.fromList(myChangeGroupLayouts).findFirst(new IWhereFilter<ChangeGroupLayout>() {
@@ -103,7 +99,6 @@ public class NextPreviousTraverser {
       }
     });
   }
-
   @Nullable
   private ChangeGroupLayout getLayoutAsRight() {
     return ListSequence.fromList(myChangeGroupLayouts).findFirst(new IWhereFilter<ChangeGroupLayout>() {
@@ -112,7 +107,6 @@ public class NextPreviousTraverser {
       }
     });
   }
-
   private synchronized void setLastEditor(EditorComponent editor) {
     myLastEditor = editor;
     if (!(ListSequence.fromList(myChangeGroupLayouts).any(new IWhereFilter<ChangeGroupLayout>() {
@@ -125,7 +119,6 @@ public class NextPreviousTraverser {
       }
     }
   }
-
   private Bounds findNeighbourGroupAsLeftOrRight(final int currentY, boolean previous, final boolean left) {
     ChangeGroupLayout layout = (left ? getLayoutAsLeft() : getLayoutAsRight());
     if (layout == null) {
@@ -148,7 +141,6 @@ public class NextPreviousTraverser {
     }
     return check_mf966z_a5a51(changeGroup, left);
   }
-
   private synchronized Bounds getNeighbourGroupBounds(boolean previous) {
     // -1 means that group is not available 
 
@@ -194,15 +186,12 @@ public class NextPreviousTraverser {
       return max;
     }
   }
-
   public BaseAction previousAction() {
     return myPreviousAction;
   }
-
   public BaseAction nextAction() {
     return myNextAction;
   }
-
   public void goToFirstChangeLater() {
     Bounds firstGroup = getNeighbourGroupBounds(false);
     EditorCell rc = myLastEditor.getRootCell();
@@ -214,14 +203,12 @@ public class NextPreviousTraverser {
       }
     });
   }
-
   public void goToBounds(Bounds bounds) {
     if (!(myLastEditor.isDisposed())) {
       goToY((int) bounds.end());
       goToY((int) bounds.start());
     }
   }
-
   private synchronized void goToY(int y) {
     EditorCell editorCell = ((jetbrains.mps.nodeEditor.EditorComponent) myLastEditor).findCellWeak(1, y + 1);
     if (editorCell != null) {
@@ -236,45 +223,37 @@ public class NextPreviousTraverser {
       }
     }
   }
-
   private class TheAction extends BaseAction implements DumbAware {
     private boolean myPrevious;
-
     private TheAction(boolean previous) {
       super("Go to " + ((previous ? "Previous" : "Next")) + " Change", null, (previous ? NextPreviousTraverser.PREVIOUS_ICON : NextPreviousTraverser.NEXT_ICON));
       setDisableOnNoProject(false);
       setExecuteOutsideCommand(true);
       myPrevious = previous;
     }
-
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
       assert getNeighbourGroupBounds(myPrevious) != null;
       goToBounds(getNeighbourGroupBounds(myPrevious));
     }
-
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       event.getPresentation().setEnabled(getNeighbourGroupBounds(myPrevious) != null);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NextPreviousTraverser.class);
-
   private static Bounds check_mf966z_a5a51(ChangeGroup checkedDotOperand, boolean left) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getBounds(left);
     }
     return null;
   }
-
   private static String check_mf966z_a0a0a2a0a0b0v(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQualifiedName();
     }
     return null;
   }
-
   private static SConcept check_mf966z_a0a0a0c0a0a1a12(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getConcept();

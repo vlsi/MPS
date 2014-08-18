@@ -15,25 +15,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class StraightDerivedClasses_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.StraightDerivedClasses_Finder");
-
   public StraightDerivedClasses_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Straight Derivatives";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -49,7 +44,6 @@ public class StraightDerivedClasses_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Straight Derivatives";

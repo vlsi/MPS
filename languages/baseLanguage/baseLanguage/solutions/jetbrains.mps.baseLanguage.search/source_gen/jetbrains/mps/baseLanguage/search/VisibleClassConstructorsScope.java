@@ -28,13 +28,11 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
   public VisibleClassConstructorsScope(SModel model) {
     super(model, IClassifiersSearchScope.CONSTRUCTOR);
   }
-
   @Deprecated
   public VisibleClassConstructorsScope(@NotNull SNode contextNode) {
     // use VisibleClassConstructorsScope in j.m.baseLanguage.scopes instead 
     super(contextNode, IClassifiersSearchScope.CONSTRUCTOR);
   }
-
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
@@ -51,7 +49,6 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     }
     return result;
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(NameUtil.nodeFQName(targetConcept), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
@@ -62,17 +59,14 @@ public class VisibleClassConstructorsScope extends VisibleClassifiersScope {
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
-
   private static class ConstructorDeclarationReferenceInfoResolver extends ReachableClassifiersScope.ClassifierReferenceInfoResolver {
     private List<SNode> myActualArgs;
     private List<SNode> myTypeParms;
-
     /*package*/ ConstructorDeclarationReferenceInfoResolver(List<SNode> actualArgs, List<SNode> typeParms, SModel model) {
       super(model);
       myActualArgs = actualArgs;
       myTypeParms = typeParms;
     }
-
     @Override
     public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       SNode classifier_ = super.resolve(referenceInfo, targetModelReference);

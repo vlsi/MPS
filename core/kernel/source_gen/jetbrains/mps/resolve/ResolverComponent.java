@@ -31,12 +31,10 @@ public class ResolverComponent implements CoreComponent {
   };
   private List<IResolver> myResolvers;
   private ScopeResolver myScopeResolver;
-
   public ResolverComponent() {
     myResolvers = ListSequence.fromList(new LinkedList<IResolver>());
     myScopeResolver = new ScopeResolver();
   }
-
   @Override
   public void init() {
     if (INSTANCE != null) {
@@ -46,21 +44,17 @@ public class ResolverComponent implements CoreComponent {
     INSTANCE = this;
     INSTANCE.addResolver(myScopeResolver);
   }
-
   @Override
   public void dispose() {
     INSTANCE.removeResolver(myScopeResolver);
     INSTANCE = null;
   }
-
   public void addResolver(IResolver resolver) {
     ListSequence.fromList(myResolvers).addElement(resolver);
   }
-
   public void removeResolver(IResolver resolver) {
     ListSequence.fromList(myResolvers).removeElement(resolver);
   }
-
   public boolean resolve(SReference reference, SRepository repository) {
     SNode sourceNode = reference.getSourceNode();
     if (sourceNode == null) {
@@ -73,7 +67,6 @@ public class ResolverComponent implements CoreComponent {
     }
     return false;
   }
-
   public void resolveScopesOnly(Iterable<SReference> references, SRepository repository) {
     List<SReference> unresolvedReferences = Sequence.fromIterable(references).sort(REFERENCE_COMPARATOR, true).toListSequence();
     boolean performResolve = true;
@@ -87,7 +80,6 @@ public class ResolverComponent implements CoreComponent {
       }
     }
   }
-
   public boolean resolveScopesOnly(SReference reference, SRepository repository) {
     SNode sourceNode = reference.getSourceNode();
     if (sourceNode == null) {
@@ -95,7 +87,6 @@ public class ResolverComponent implements CoreComponent {
     }
     return myScopeResolver.resolve(reference, sourceNode, repository);
   }
-
   public static ResolverComponent getInstance() {
     return INSTANCE;
   }

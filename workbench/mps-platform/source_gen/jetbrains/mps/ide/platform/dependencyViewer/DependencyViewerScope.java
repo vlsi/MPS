@@ -15,17 +15,14 @@ public class DependencyViewerScope {
   private Collection<SModule> myModules;
   private Collection<SModel> myModels;
   private Collection<SNode> myRoots;
-
   public DependencyViewerScope() {
     myModules = CollectionSequence.fromCollection(new LinkedHashSet<SModule>());
     myModels = CollectionSequence.fromCollection(new LinkedHashSet<SModel>());
     myRoots = CollectionSequence.fromCollection(new LinkedHashSet<SNode>());
   }
-
   private int getNumRoots(SModel model) {
     return Sequence.fromIterable(((Iterable<SNode>) model.getRootNodes())).count();
   }
-
   public boolean contains(SNode node) {
     if (node == null) {
       return false;
@@ -43,7 +40,6 @@ public class DependencyViewerScope {
     }
     return false;
   }
-
   public boolean contains(SModel model) {
     if (model == null) {
       return false;
@@ -53,14 +49,12 @@ public class DependencyViewerScope {
     }
     return CollectionSequence.fromCollection(myModules).contains(model.getModule());
   }
-
   public void add(@Nullable SModule module) {
     if (module == null) {
       return;
     }
     CollectionSequence.fromCollection(myModules).addElement(module);
   }
-
   public void add(@Nullable SModel model) {
     if (model == null) {
       return;
@@ -69,7 +63,6 @@ public class DependencyViewerScope {
       CollectionSequence.fromCollection(myModels).addElement(model);
     }
   }
-
   public void add(@Nullable SNode root) {
     if (root == null) {
       return;
@@ -78,19 +71,15 @@ public class DependencyViewerScope {
       CollectionSequence.fromCollection(myRoots).addElement(root);
     }
   }
-
   public Collection<SModel> getModels() {
     return myModels;
   }
-
   public Collection<SModule> getModules() {
     return myModules;
   }
-
   public Collection<SNode> getRoots() {
     return myRoots;
   }
-
   public int getNumRoots() {
     int result = 0;
     for (SModule module : myModules) {
@@ -102,11 +91,9 @@ public class DependencyViewerScope {
     result += CollectionSequence.fromCollection(myRoots).count();
     return result;
   }
-
   public boolean isEmpty() {
     return CollectionSequence.fromCollection(myModels).isEmpty() && CollectionSequence.fromCollection(myModules).isEmpty() && CollectionSequence.fromCollection(myRoots).isEmpty();
   }
-
   private int getNumRoots(SModule module) {
     int result = 0;
     for (SModel model : module.getModels()) {
@@ -114,7 +101,6 @@ public class DependencyViewerScope {
     }
     return result;
   }
-
   public String getPresentation() {
     StringBuilder sb = new StringBuilder();
     if (CollectionSequence.fromCollection(myModules).isNotEmpty()) {
@@ -138,7 +124,6 @@ public class DependencyViewerScope {
     }
     return sb.toString();
   }
-
   private <T> String getPresentation(Collection<T> list, String elementType) {
     if (CollectionSequence.fromCollection(list).isEmpty()) {
       return "";

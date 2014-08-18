@@ -20,22 +20,17 @@ public class BinaryOperation_RightArgument_Actions {
     editorCell.setAction(CellActionType.DELETE, new BinaryOperation_RightArgument_Actions.BinaryOperation_RightArgument_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new BinaryOperation_RightArgument_Actions.BinaryOperation_RightArgument_Actions_BACKSPACE(node));
   }
-
   public static class BinaryOperation_RightArgument_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryOperation_RightArgument_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "replace binary operation with left operand";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "rightExpression", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"))))) {
         SLinkOperations.setTarget(node, "rightExpression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
@@ -55,22 +50,17 @@ public class BinaryOperation_RightArgument_Actions {
       }
     }
   }
-
   public static class BinaryOperation_RightArgument_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryOperation_RightArgument_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "replace binary operation with left operand";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "rightExpression", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"))))) {
         SLinkOperations.setTarget(node, "rightExpression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);

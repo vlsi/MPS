@@ -34,11 +34,9 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6g738i_a(editorContext, node);
   }
-
   private EditorCell createCollection_6g738i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6g738i_a");
@@ -46,7 +44,6 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_6g738i_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_6g738i_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = IconSelectorComponent.renderingCondition_6g738i_a0a(node, editorContext);
@@ -58,7 +55,6 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_6g738i_a0a(SNode node, EditorContext editorContext) {
     SModule module = SNodeOperations.getModel(node).getModule();
     if (!(module instanceof AbstractModule)) {
@@ -70,7 +66,6 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     }
     return FileSystem.getInstance().getFileByPath(s).exists();
   }
-
   private EditorCell createImage_6g738i_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
@@ -82,14 +77,12 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     editorCell.setDescent(0);
     return editorCell;
   }
-
   private EditorCell createConstant_6g738i_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_6g738i_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_6g738i_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6g738i_b0");
@@ -101,14 +94,12 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createJComponent_6g738i_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6g738i_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_6g738i_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6g738i_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("iconPath");
@@ -130,13 +121,11 @@ public class IconSelectorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createJComponent_6g738i_c1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, IconSelectorComponent._QueryFunction_JComponent_6g738i_a2b0(node, editorContext), "_6g738i_c1a");
     editorCell.setCellId("JComponent_6g738i_c1a");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_6g738i_a2b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }

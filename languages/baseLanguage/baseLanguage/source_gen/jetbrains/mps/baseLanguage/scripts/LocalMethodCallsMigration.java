@@ -20,7 +20,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class LocalMethodCallsMigration {
   private LocalMethodCallsMigration() {
   }
-
   public static List<AbstractMigrationRefactoring> forConcept(SNode callConcept, final SNode declarationConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
@@ -30,7 +29,6 @@ public class LocalMethodCallsMigration {
 
     return refactorings;
   }
-
   public static MigrationConfig getMigrationConfig(SNode callConcept, final SNode declarationConcept) {
     return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall")) {
       @Override
@@ -38,12 +36,10 @@ public class LocalMethodCallsMigration {
         // <node> 
         return _quotation_createNode_lds4sy_a1a0a0a0a2(declarationConcept, arg);
       }
-
       @Override
       public boolean isConditionNonTrivial() {
         return true;
       }
-
       @Override
       public SNode migrateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
@@ -69,14 +65,12 @@ public class LocalMethodCallsMigration {
         // copy 
         return result;
       }
-
       @Override
       public boolean isInstanceNodeMigrationNonTrivial() {
         return true;
       }
     };
   }
-
   private static SNode _quotation_createNode_lds4sy_a1a0a0a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

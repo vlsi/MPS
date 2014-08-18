@@ -23,68 +23,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInCreateRootRule_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public NewTemplateInCreateRootRule_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.CreateRootRule";
   }
-
   public String getPresentation() {
     return "NewTemplateInCreateRootRule";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.NewTemplateInCreateRootRule_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "templateNode", false) == null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216337594117");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewTemplateInCreateRootRule_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "New Root Template";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       final Wrappers._T<String> name = new Wrappers._T<String>(CreateFromUsageUtil.getText(editorContext));
       if (name.value == null || name.value.length() == 0) {
@@ -119,7 +104,6 @@ public class NewTemplateInCreateRootRule_Intention implements IntentionFactory {
         }
       });
     }
-
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInCreateRootRule_Intention.this;
     }

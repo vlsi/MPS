@@ -38,10 +38,8 @@ import com.intellij.openapi.progress.ProgressManager;
 
 public class AnnotationHelper {
   private static Set<EditorComponent> ourProgress = SetSequence.fromSet(new HashSet<EditorComponent>());
-
   private AnnotationHelper() {
   }
-
   @Nullable
   private static AnnotationColumn findAnnotationColumn(@NotNull EditorComponent editorComponent) {
     for (AbstractLeftColumn column : ListSequence.fromList(editorComponent.getLeftEditorHighlighter().getLeftColumns())) {
@@ -51,7 +49,6 @@ public class AnnotationHelper {
     }
     return null;
   }
-
   private static boolean annotate(@NotNull final EditorComponent editorComponent, boolean dryRun) {
     // check if annotation is in progress (always called from ui thread) 
     if (SetSequence.fromSet(ourProgress).contains(editorComponent)) {
@@ -107,7 +104,6 @@ public class AnnotationHelper {
     Task.Backgroundable annotateTask = new Task.Backgroundable(ideaProject, "Retrieving annotations", true, BackgroundFromStartOption.getInstance()) {
       private FileAnnotation myFileAnnotation;
       private VcsException myException;
-
       @Override
       public void run(@NotNull ProgressIndicator indicator) {
         try {
@@ -116,12 +112,10 @@ public class AnnotationHelper {
           myException = e;
         }
       }
-
       @Override
       public void onCancel() {
         onSuccess();
       }
-
       @Override
       public void onSuccess() {
         // (in UI thread) 
@@ -149,15 +143,12 @@ public class AnnotationHelper {
     }
     return true;
   }
-
   public static void annotate(EditorComponent editorComponent) {
     annotate(editorComponent, false);
   }
-
   public static boolean isAnnotateable(EditorComponent editorComponent) {
     return annotate(editorComponent, true);
   }
-
   private static SModel check_19hp0u_a0h0d(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();

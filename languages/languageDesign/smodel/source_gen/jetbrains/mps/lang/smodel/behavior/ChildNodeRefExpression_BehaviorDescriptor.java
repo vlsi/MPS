@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ChildNodeRefExpression_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ChildNodeRefExpression_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return ChildNodeRefExpression_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ChildNodeRefExpression";

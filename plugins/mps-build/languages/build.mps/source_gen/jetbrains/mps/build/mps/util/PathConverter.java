@@ -27,7 +27,6 @@ public class PathConverter {
   private String workingDirectory;
   private final Iterable<Tuples._2<String, SNode>> macros;
   private final Iterable<SNode> macrosWithoutPath;
-
   public PathConverter(SNode project) {
     String workingDir = BuildProject_Behavior.call_getBasePath_4959435991187146924(project, Context.defaultContext());
     this.workingDirectory = normalizePath(workingDir, true);
@@ -56,7 +55,6 @@ public class PathConverter {
     }, false);
     macrosWithoutPath = withoutPath;
   }
-
   private SNode buildRelative(String currPath, SNode macro, SModel model) {
     SNode relPath;
     if (macro == null) {
@@ -68,7 +66,6 @@ public class PathConverter {
     buildCompositePath(relPath, currPath, model);
     return relPath;
   }
-
   public List<SNode> convertPath(String path, SModel model) throws PathConverter.PathConvertException {
     path = normalizePath(path, false);
     String withSlash = normalizePath(path, true);
@@ -100,7 +97,6 @@ public class PathConverter {
     }
     return result;
   }
-
   private void buildCompositePath(SNode result, String path, SModel model) {
     SNode last = null;
     for (String fname : path.split("/")) {
@@ -116,7 +112,6 @@ public class PathConverter {
       }
     }
   }
-
   private static String normalizePath(String path, boolean addSlash) {
     if (path == null || (path == null || path.length() == 0)) {
       return null;
@@ -132,7 +127,6 @@ public class PathConverter {
     }
     return path;
   }
-
   public class PathConvertException extends Exception {
     public PathConvertException(String message) {
       super(message);

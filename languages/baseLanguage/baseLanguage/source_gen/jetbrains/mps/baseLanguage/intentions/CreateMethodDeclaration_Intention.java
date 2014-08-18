@@ -26,68 +26,53 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class CreateMethodDeclaration_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateMethodDeclaration_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IOperation";
   }
-
   public String getPresentation() {
     return "CreateMethodDeclaration";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.CreateMethodDeclaration_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return CreateMethodDeclarationUtil.isApplicable(editorContext, node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "5742179528877834612");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateMethodDeclaration_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Method Declaration";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
       boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
@@ -113,19 +98,16 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
         editor.getEditorContext().selectWRTFocusPolicy(method);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateMethodDeclaration_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_v1wtfy_a0a0a5a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_v1wtfy_a0g0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -144,14 +126,12 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     quotedNode_3.addChild("body", quotedNode_6);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_v1wtfy_a0a0h0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_v1wtfy_a0a9a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

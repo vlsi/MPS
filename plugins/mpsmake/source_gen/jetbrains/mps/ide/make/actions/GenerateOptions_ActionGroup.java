@@ -13,7 +13,6 @@ public class GenerateOptions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(GenerateOptions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.GenerateOptions_ActionGroup";
   public static final String LABEL_ID_saveTransientModels = ID + "saveTransientModels";
-
   public GenerateOptions_ActionGroup() {
     super("GenerateOptions", ID);
     this.setIsInternal(false);

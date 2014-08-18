@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CallActionDuplicatedParameters_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CallActionDuplicatedParameters_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode callAction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final Iterable<SNode> parameters = SLinkOperations.getTargets(callAction, "parameter", true);
     Iterable<SNode> parameterFields = Sequence.fromIterable(parameters).select(new ISelector<SNode, SNode>() {
@@ -50,22 +49,18 @@ public class check_CallActionDuplicatedParameters_NonTypesystemRule extends Abst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.ideCommands.structure.CallActionExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_7ie7o0_a0a0a0a0a0a0a0a0a0a2a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

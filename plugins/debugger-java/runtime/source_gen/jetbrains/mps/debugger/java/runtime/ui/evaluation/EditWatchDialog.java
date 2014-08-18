@@ -14,16 +14,13 @@ import org.jetbrains.annotations.NonNls;
 public class EditWatchDialog extends AbstractEvaluationDialog {
   @Nullable
   private final _FunctionTypes._void_P0_E0 myOkAction;
-
   public EditWatchDialog(@NotNull IOperationContext context, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model) {
     this(context, provider, model, null);
   }
-
   public EditWatchDialog(@NotNull IOperationContext context, @NotNull EvaluationProvider provider, @NotNull IEvaluationContainer model, _FunctionTypes._void_P0_E0 okAction) {
     super(context, provider, model, "Edit Watch");
     myOkAction = okAction;
   }
-
   @Override
   protected void doOKAction() {
     if (myOkAction != null) {
@@ -31,13 +28,11 @@ public class EditWatchDialog extends AbstractEvaluationDialog {
     }
     super.doOKAction();
   }
-
   @Override
   @NotNull
   protected Action[] createActions() {
     return new Action[]{getOKAction()};
   }
-
   @Nullable
   @NonNls
   @Override

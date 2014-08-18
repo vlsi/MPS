@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class BwfProjectPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BwfProjectPart_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return BwfProjectPart_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfProjectPart";

@@ -22,30 +22,24 @@ public class TemplateModelImpl implements TemplateModel {
   private final Collection<TemplateSwitchMapping> switches;
   private final TemplateModule templateModule;
   private final SModelReference model;
-
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     templateModule = module;
     model = PersistenceFacade.getInstance().createModelReference("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)");
   }
-
   public String getLongName() {
     return "jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main";
   }
-
   public SModelReference getSModelReference() {
     return model;
   }
-
   public Collection<TemplateMappingConfiguration> getConfigurations() {
     return mappings;
   }
-
   public Collection<TemplateSwitchMapping> getSwitches() {
     return switches;
   }
-
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     if (!(model.equals(template.getModelReference()))) {
       return null;
@@ -53,7 +47,6 @@ public class TemplateModelImpl implements TemplateModel {
     SNodeId id = ((SNodePointer) template).getNodeId();
     return null;
   }
-
   public TemplateModule getModule() {
     return templateModule;
   }

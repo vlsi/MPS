@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class StyleClassItem_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return true;
   }
-
   public static SNode call_getStyleContainer_7991857262599637608(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.IStyleContainer");
   }

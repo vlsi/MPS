@@ -14,7 +14,6 @@ public class RegexpStylesheet_StyleSheet {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_MAGENTA));
     style.set(StyleAttributes.MATCHING_LABEL, 0, "regexpBrace");
   }
-
   public static void apply_LeftRegexpBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -24,7 +23,6 @@ public class RegexpStylesheet_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightRegexpBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -34,6 +32,5 @@ public class RegexpStylesheet_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
 
 }

@@ -31,7 +31,6 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ConceptDeclaration_1163111194509(final IOperationContext operationContext, final NodeSetupContext _context) {
     SLinkOperations.setTarget(_context.getNewNode(), "extends", SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), false);
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AttributeInfo_IsMultiple_1262857012844556609(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -51,11 +50,9 @@ public class QueriesGenerated {
                 SPropertyOperations.set(result, "value", "" + ((item).booleanValue()));
                 return result;
               }
-
               public String getMatchingText(String pattern) {
                 return (item).toString();
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -66,7 +63,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_100768563187670098(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
@@ -74,15 +70,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract", "" + (true));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "abstract";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -93,11 +86,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ConceptDeclaration_4672725010143173249(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "final"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ConceptDeclaration_6375966607167092186(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration"), _context.getSourceNode()) {
@@ -105,15 +96,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "final", "" + (true));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "final";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -124,11 +112,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ConceptDeclaration_6375966607167242574(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LinkDeclaration_2395585628934067633(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -159,15 +145,12 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(_context.getSourceNode(), "specializedLink", (item), false);
               return _context.getSourceNode();
             }
-
             public String getMatchingText(String pattern) {
               return "specializes " + SPropertyOperations.getString((item), "role");
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -181,11 +164,9 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LinkDeclaration_2395585628934067726(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "specializedLink", false) == null);
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LinkDeclaration_2395585628936685793(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration"), _context.getSourceNode()) {
@@ -193,15 +174,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(_context.getSourceNode(), "unordered", "" + (true));
         return _context.getSourceNode();
       }
-
       public String getMatchingText(String pattern) {
         return "unordered";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -212,7 +190,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LinkDeclaration_2395585628936781430(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "unordered"));
   }

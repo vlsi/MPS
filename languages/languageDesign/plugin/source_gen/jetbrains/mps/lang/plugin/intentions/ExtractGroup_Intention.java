@@ -19,75 +19,59 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ExtractGroup_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ExtractGroup_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration";
   }
-
   public String getPresentation() {
     return "ExtractGroup";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.plugin.intentions.ExtractGroup_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.plugin";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getParent(node) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)", "1204990433124");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ExtractGroup_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Extract Group";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode rootGroup = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", null);
       SPropertyOperations.set(rootGroup, "name", SPropertyOperations.getString(node, "name"));
       SLinkOperations.setTarget(rootGroup, "contents", SLinkOperations.getTarget(node, "contents", true), true);
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ExtractGroup_Intention.this;
     }

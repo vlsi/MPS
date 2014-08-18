@@ -23,7 +23,6 @@ public class ModuleOutputPaths {
   private String[] sortedOutCacheDirs;
   private String[] sortedTestOutCacheDirs;
   private String[] sortedModelDirs;
-
   public ModuleOutputPaths(Iterable<SModule> _modules) {
     Iterable<AbstractModule> modules = Sequence.fromIterable(_modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -104,7 +103,6 @@ public class ModuleOutputPaths {
       }
     }));
   }
-
   public String toLocalPath(String path) {
     String localOut = toLocal(path, sortedOutDirs);
     if (localOut != null) {
@@ -112,7 +110,6 @@ public class ModuleOutputPaths {
     }
     return toLocal(path, sortedTestOutDirs);
   }
-
   public String toLocalCachePath(String path) {
     String localCacheOut = toLocal(path, sortedOutCacheDirs);
     if (localCacheOut != null) {
@@ -120,7 +117,6 @@ public class ModuleOutputPaths {
     }
     return toLocal(path, sortedTestOutCacheDirs);
   }
-
   private String toLocal(String path, String[] sortedDirs) {
     String normPath = DirUtil.normalizeAsDir(path);
     int idx = DirUtil.findPrefixAsDir(normPath, sortedDirs);
@@ -130,7 +126,6 @@ public class ModuleOutputPaths {
     // not found 
     return null;
   }
-
   public Iterable<String> getOutputPaths() {
     return Sequence.fromIterable(Sequence.fromArray(sortedOutDirs)).concat(Sequence.fromIterable(Sequence.fromArray(sortedTestOutDirs))).concat(Sequence.fromIterable(Sequence.fromArray(sortedModelDirs)));
   }

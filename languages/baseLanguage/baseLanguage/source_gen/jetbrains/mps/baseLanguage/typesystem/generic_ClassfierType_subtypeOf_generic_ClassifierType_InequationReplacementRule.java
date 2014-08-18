@@ -29,7 +29,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     {
       GeneratedMatchingPattern pattern_e5spwb_a0a = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a1(SLinkOperations.getTarget(supertype, "classifier", false));
@@ -41,7 +40,6 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     }
     return false;
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       GeneratedMatchingPattern pattern_e5spwb_a0 = new generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationReplacementRule.Pattern_nn7be_a0a0a0a2(SLinkOperations.getTarget(supertype, "classifier", false));
@@ -143,7 +141,6 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     {
@@ -198,40 +195,32 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public static class Pattern_nn7be_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a0;
-
     public Pattern_nn7be_a0a0a0a1(Object parameter_e5spwb_a0a0a0a0) {
       this.AntiquotationField_e5spwb_a0a0a0a0 = parameter_e5spwb_a0a0a0a0;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a0a0 = nodeToMatch;
@@ -248,29 +237,22 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return true;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_nn7be_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
-
     public Pattern_nn7be_a0a0a0a2(Object parameter_e5spwb_a0a0a0a) {
       this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
@@ -287,29 +269,22 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return true;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_nn7be_a0a0a0a1a3 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_e5spwb_a0a0a0a;
-
     public Pattern_nn7be_a0a0a0a1a3(Object parameter_e5spwb_a0a0a0a) {
       this.AntiquotationField_e5spwb_a0a0a0a = parameter_e5spwb_a0a0a0a;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_e5spwb_a0a0a = nodeToMatch;
@@ -326,18 +301,14 @@ public class generic_ClassfierType_subtypeOf_generic_ClassifierType_InequationRe
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return true;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

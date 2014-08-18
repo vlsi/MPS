@@ -18,7 +18,6 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
   public ListCommandPart(List<? extends Object> list) {
     this(list, null);
   }
-
   public ListCommandPart(List<? extends Object> list, @Nullable String separator) {
     if ((separator == null || separator.length() == 0)) {
       addCommands(getCommands(list));
@@ -26,7 +25,6 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       addCommands(IterableUtils.join(Sequence.fromIterable(getCommands(list)), separator));
     }
   }
-
   private Iterable<String> getCommands(List<? extends Object> list) {
     return ListSequence.fromList(list).translate(new ITranslator2<Object, String>() {
       public Iterable<String> translate(Object it) {
@@ -34,7 +32,6 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
       }
     });
   }
-
   private Iterable<String> getCommandsFromItem(Object item) {
     if (item == null) {
       return ListSequence.fromList(new ArrayList<String>());
@@ -63,9 +60,7 @@ public class ListCommandPart extends AbstractCommandPart implements CommandPart 
     }
     return ListSequence.fromList(new ArrayList<String>());
   }
-
   protected static Logger LOG = LogManager.getLogger(ListCommandPart.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

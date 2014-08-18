@@ -11,11 +11,9 @@ public class OperationDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "returnType", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null), true);
   }
-
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "operationName");
   }

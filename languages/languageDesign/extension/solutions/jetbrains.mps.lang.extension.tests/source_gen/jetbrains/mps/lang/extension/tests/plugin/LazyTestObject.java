@@ -5,7 +5,6 @@ package jetbrains.mps.lang.extension.tests.plugin;
 
 public class LazyTestObject {
   public static LazyTestObject INSTANCE;
-
   public LazyTestObject() {
     INSTANCE = this;
   }

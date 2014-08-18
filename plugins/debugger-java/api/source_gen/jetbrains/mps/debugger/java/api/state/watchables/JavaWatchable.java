@@ -7,7 +7,6 @@ import com.sun.jdi.ThreadReference;
 
 public abstract class JavaWatchable implements IWatchable {
   protected ThreadReference myThreadReference;
-
   public JavaWatchable(ThreadReference threadReference) {
     myThreadReference = threadReference;
   }

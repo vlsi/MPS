@@ -12,25 +12,20 @@ import jetbrains.mps.testHybridEditor.diagram.generated.editor.EditorAspectDescr
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "dabb32d7-ce29-4e63-bdf4-c024c25acf62(jetbrains.mps.testHybridEditor.diagram.generated)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.testHybridEditor.diagram.generated";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.testHybridEditor"};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "bf480cea-3c04-47d8-a487-7e95106715b9(jetbrains.mps.testHybridEditor.diagram.generated#1793245865110341950)"));
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == EditorAspectDescriptor.class) {

@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return SLinkOperations.getTarget(subtype, "classifier", false) == SLinkOperations.getTarget(supertype, "classifier", false) && ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).isNotEmpty();
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // normally this is an unchecked cast warning 
     // TODO look for Suppress("unchecked") annotation 
@@ -37,7 +35,6 @@ public class raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationRepla
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     // normally this is an unchecked cast warning 
@@ -48,29 +45,24 @@ public class raw_ClassifierType_subtypeOf_generic_ClassifierType_InequationRepla
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }

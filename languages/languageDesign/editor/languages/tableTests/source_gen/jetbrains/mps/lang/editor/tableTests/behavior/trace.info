@@ -8,58 +8,58 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="AbstractStateMachineElement_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
     </file>
     <file name="StateMachine_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateMachine_BehaviorDescriptor" />
     </file>
     <file name="HierarchycalTable_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_BehaviorDescriptor" />
     </file>
     <file name="State_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.tableTests.behavior.State_BehaviorDescriptor" />
     </file>
     <file name="XElement_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.XElement_BehaviorDescriptor" />
     </file>
     <file name="DataCell_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.DataCell_BehaviorDescriptor" />
     </file>
     <file name="YElement_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.YElement_BehaviorDescriptor" />
     </file>
     <file name="UltimateContainer_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.UltimateContainer_BehaviorDescriptor" />
     </file>
     <file name="EventReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.EventReference_BehaviorDescriptor" />
     </file>
     <file name="ContentElement_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.ContentElement_BehaviorDescriptor" />
     </file>
     <file name="Event_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Event_BehaviorDescriptor" />
     </file>
     <file name="StateReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.StateReference_BehaviorDescriptor" />
     </file>
     <file name="LightWeightDecisionTable_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.LightWeightDecisionTable_BehaviorDescriptor" />
     </file>
     <file name="Matrix_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Matrix_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,54,0" name="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,52,0" name="jetbrains.mps.lang.editor.tableTests.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="Row_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Row_BehaviorDescriptor" />
     </file>
     <file name="Transition_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Transition_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Transition_BehaviorDescriptor" />
     </file>
     <file name="Table_BehaviorDescriptor.java">
-      <unit at="11,0,32,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
+      <unit at="11,0,28,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/2882388703616228638">
@@ -69,22 +69,22 @@
       <node id="2882388703616228663" at="21,123,22,76" concept="0" />
       <node id="2882388703616228673" at="22,76,23,99" concept="0" />
       <node id="2882388703616228688" at="24,7,25,96" concept="0" />
-      <node id="1262430001741498025" at="29,101,30,13" concept="3" />
-      <node id="1262430001741498093" at="33,98,34,13" concept="3" />
-      <node id="2882388703616228638" at="29,0,32,0" concept="5" trace="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
-      <node id="2882388703616228638" at="33,0,36,0" concept="5" trace="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
+      <node id="1262430001741498025" at="28,101,29,13" concept="3" />
+      <node id="1262430001741498093" at="31,98,32,13" concept="3" />
+      <node id="2882388703616228638" at="28,0,31,0" concept="5" trace="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
+      <node id="2882388703616228638" at="31,0,34,0" concept="5" trace="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
       <node id="2882388703616228655" at="19,111,24,7" concept="1" />
       <node id="2882388703616228647" at="17,43,26,5" concept="1" />
       <node id="2882388703616228638" at="17,0,28,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1262430001741498028" at="29,101,30,13" />
-      <scope id="1262430001741498096" at="33,98,34,13" />
+      <scope id="1262430001741498028" at="28,101,29,13" />
+      <scope id="1262430001741498096" at="31,98,32,13" />
       <scope id="2882388703616228656" at="20,270,23,99">
         <var name="dataCell" id="2882388703616228658" />
       </scope>
-      <scope id="2882388703616228638" at="29,0,32,0">
+      <scope id="2882388703616228638" at="28,0,31,0">
         <var name="thisConcept" id="2882388703616228638" />
       </scope>
-      <scope id="2882388703616228638" at="33,0,36,0">
+      <scope id="2882388703616228638" at="31,0,34,0">
         <var name="thisConcept" id="2882388703616228638" />
       </scope>
       <scope id="2882388703616228655" at="19,111,24,7">
@@ -100,7 +100,7 @@
       <scope id="2882388703616228638" at="17,0,28,0">
         <var name="thisNode" id="2882388703616228638" />
       </scope>
-      <unit id="2882388703616228638" at="16,0,37,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_Behavior" />
+      <unit id="2882388703616228638" at="16,0,35,0" name="jetbrains.mps.lang.editor.tableTests.behavior.Table_Behavior" />
     </file>
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7483705179651302808">
@@ -179,18 +179,18 @@
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/7943979732673457913">
     <file name="AbstractStateMachineElement_Behavior.java">
-      <node id="7943979732673457921" at="12,80,13,132" concept="3" />
+      <node id="7943979732673457921" at="11,80,12,132" concept="3" />
       <node id="7943979732673457913" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="7943979732673457913" at="12,0,15,0" concept="5" trace="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7943979732673457913" at="11,0,14,0" concept="5" trace="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="7943979732673457915" at="9,43,9,43" />
-      <scope id="7943979732673457919" at="12,80,13,132" />
+      <scope id="7943979732673457919" at="11,80,12,132" />
       <scope id="7943979732673457913" at="9,0,11,0">
         <var name="thisNode" id="7943979732673457913" />
       </scope>
-      <scope id="7943979732673457913" at="12,0,15,0">
+      <scope id="7943979732673457913" at="11,0,14,0">
         <var name="thisNode" id="7943979732673457913" />
       </scope>
-      <unit id="7943979732673457913" at="8,0,16,0" name="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
+      <unit id="7943979732673457913" at="8,0,15,0" name="jetbrains.mps.lang.editor.tableTests.behavior.AbstractStateMachineElement_Behavior" />
     </file>
   </root>
   <root nodeRef="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)/8506335436194799574">
@@ -198,21 +198,21 @@
       <node id="2422839104779457221" at="18,268,19,121" concept="2" />
       <node id="2422839104779457227" at="19,121,20,59" concept="0" />
       <node id="2422839104779457235" at="20,59,21,104" concept="0" />
-      <node id="1262430001741646993" at="25,101,26,13" concept="3" />
-      <node id="1262430001741720097" at="29,98,30,13" concept="3" />
-      <node id="8506335436194799574" at="25,0,28,0" concept="5" trace="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
-      <node id="8506335436194799574" at="29,0,32,0" concept="5" trace="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
+      <node id="1262430001741646993" at="24,101,25,13" concept="3" />
+      <node id="1262430001741720097" at="27,98,28,13" concept="3" />
+      <node id="8506335436194799574" at="24,0,27,0" concept="5" trace="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
+      <node id="8506335436194799574" at="27,0,30,0" concept="5" trace="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)I" />
       <node id="2422839104779457219" at="17,43,22,5" concept="1" />
       <node id="8506335436194799574" at="17,0,24,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="1262430001741646991" at="25,101,26,13" />
-      <scope id="1262430001741720095" at="29,98,30,13" />
+      <scope id="1262430001741646991" at="24,101,25,13" />
+      <scope id="1262430001741720095" at="27,98,28,13" />
       <scope id="2422839104779457220" at="18,268,21,104">
         <var name="dataCell" id="2422839104779457222" />
       </scope>
-      <scope id="8506335436194799574" at="25,0,28,0">
+      <scope id="8506335436194799574" at="24,0,27,0">
         <var name="thisConcept" id="8506335436194799574" />
       </scope>
-      <scope id="8506335436194799574" at="29,0,32,0">
+      <scope id="8506335436194799574" at="27,0,30,0">
         <var name="thisConcept" id="8506335436194799574" />
       </scope>
       <scope id="2422839104779457219" at="17,43,22,5">
@@ -222,7 +222,7 @@
       <scope id="8506335436194799574" at="17,0,24,0">
         <var name="thisNode" id="8506335436194799574" />
       </scope>
-      <unit id="8506335436194799574" at="16,0,33,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_Behavior" />
+      <unit id="8506335436194799574" at="16,0,31,0" name="jetbrains.mps.lang.editor.tableTests.behavior.HierarchycalTable_Behavior" />
     </file>
   </root>
 </debug-info>

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class ConceptFunctionParameter_progressMonitor_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_progressMonitor_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_progressMonitor";

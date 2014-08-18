@@ -30,7 +30,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ttjdsx_a(editorContext, node);
   }
-
   private EditorCell createCollection_ttjdsx_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttjdsx_a");
@@ -39,7 +38,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ttjdsx_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ttjdsx_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ttjdsx_a0");
@@ -50,14 +48,12 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ttjdsx_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ttjdsx_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "test");
     editorCell.setCellId("Constant_ttjdsx_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ttjdsx_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("methodName");
@@ -75,7 +71,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_ttjdsx_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ttjdsx_b0");
@@ -86,7 +81,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ttjdsx_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ttjdsx_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_ttjdsx_a1a");
@@ -96,7 +90,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ttjdsx_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttjdsx_b1a");
@@ -107,7 +100,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ttjdsx_b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNodeList_ttjdsx_a1b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new StateMachineTestMethod_Editor.handleEventListHandler_ttjdsx_a1b0(node, "handleEvent", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -115,30 +107,25 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class handleEventListHandler_ttjdsx_a1b0 extends RefNodeListHandler {
     public handleEventListHandler_ttjdsx_a1b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -152,7 +139,6 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createCollection_ttjdsx_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ttjdsx_b1b0");
@@ -163,14 +149,12 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_ttjdsx_b1b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ttjdsx_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final state:");
     editorCell.setCellId("Constant_ttjdsx_a1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_ttjdsx_b1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("finalState");
@@ -192,20 +176,16 @@ public class StateMachineTestMethod_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ttjdsx_a1b1b0 extends InlineCellProvider {
     public _Inline_ttjdsx_a1b1b0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_ttjdsx_a0b1b1a(editorContext, node);
     }
-
     private EditorCell createProperty_ttjdsx_a0b1b1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("stateName");

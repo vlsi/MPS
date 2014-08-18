@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BuildLayout_EchoPropertyEntry_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildLayout_EchoPropertyEntry_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_EchoPropertyEntry";

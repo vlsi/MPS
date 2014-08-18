@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExplicitCommandParameterDeclaration_BehaviorDescriptor extends CommandParameterDeclaration_BehaviorDescriptor {
   public ExplicitCommandParameterDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return ExplicitCommandParameterDeclaration_Behavior.virtual_generateField_8478830098674441876(thisNode);
   }
-
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return ExplicitCommandParameterDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ExplicitCommandParameterDeclaration";

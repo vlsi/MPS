@@ -15,20 +15,16 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class BuildMps_IdeaPlugin_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, BuildStringContainer_BehaviorDescriptor {
   public BuildMps_IdeaPlugin_BehaviorDescriptor() {
   }
-
   @Nullable
   public Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     return BuildStringContainer_Behavior.virtual_getColorForTextPart_6083230236994422116(thisNode, role);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return BuildMps_IdeaPlugin_Behavior.virtual_isValidPart_9184644532456897464(thisNode, propertyValue, role);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin";

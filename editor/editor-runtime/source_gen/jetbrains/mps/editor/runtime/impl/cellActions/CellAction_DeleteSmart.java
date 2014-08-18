@@ -18,7 +18,6 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
   private boolean myCanBeNull = true;
   private boolean myEnabled = true;
   private String myRole;
-
   public CellAction_DeleteSmart(SNode source, SNode link, SNode target) {
     mySource = source;
     myLink = link;
@@ -32,12 +31,10 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
       myEnabled = myEnabled && SNodeOperations.getConceptDeclaration(myTarget) != SLinkOperations.getTarget(myLink, "target", false);
     }
   }
-
   @Override
   public boolean canExecute(EditorContext context) {
     return myEnabled;
   }
-
   @Override
   public void execute(EditorContext context) {
     SNodeOperations.deleteNode(myTarget);

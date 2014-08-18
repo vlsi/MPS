@@ -23,7 +23,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wnrqtk_a(editorContext, node);
   }
-
   private EditorCell createCollection_wnrqtk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wnrqtk_a");
@@ -37,7 +36,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_wnrqtk_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_wnrqtk_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -45,7 +43,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_wnrqtk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("amount");
@@ -65,7 +62,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_wnrqtk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "units of");
     editorCell.setCellId("Constant_wnrqtk_c0");
@@ -75,7 +71,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_wnrqtk_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("workStatement");
@@ -97,20 +92,16 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_wnrqtk_a3a extends InlineCellProvider {
     public _Inline_wnrqtk_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_wnrqtk_a0d0(editorContext, node);
     }
-
     private EditorCell createProperty_wnrqtk_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("workName");
@@ -133,7 +124,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_wnrqtk_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with comment");
     editorCell.setCellId("Constant_wnrqtk_e0");
@@ -143,7 +133,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_wnrqtk_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -163,7 +152,6 @@ public class AdvanceWorkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_wnrqtk_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_wnrqtk_g0");

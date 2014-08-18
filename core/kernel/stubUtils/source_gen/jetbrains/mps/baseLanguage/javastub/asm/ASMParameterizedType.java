@@ -10,28 +10,22 @@ import java.util.Collections;
 public class ASMParameterizedType extends ASMType {
   private ASMType myRawType;
   private List<ASMType> myTypeArguments;
-
   public ASMParameterizedType(ASMType rawType, List<? extends ASMType> typeArguments) {
     myRawType = rawType;
     myTypeArguments = new ArrayList<ASMType>(((Collection<? extends ASMType>) ((typeArguments == null ? Collections.emptyList() : typeArguments))));
   }
-
   public ASMType getRawType() {
     return myRawType;
   }
-
   /*package*/ void addArgument(ASMType t) {
     myTypeArguments.add(t);
   }
-
   /*package*/ void removeArgument(ASMType t) {
     myTypeArguments.remove(t);
   }
-
   public List<ASMType> getActualTypeArguments() {
     return Collections.unmodifiableList(myTypeArguments);
   }
-
   @Override
   public String toString() {
     return "" + myRawType + getActualTypeArguments();

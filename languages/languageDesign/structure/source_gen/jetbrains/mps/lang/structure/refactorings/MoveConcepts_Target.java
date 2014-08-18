@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MoveConcepts_Target implements IRefactoringTarget {
   public MoveConcepts_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return true;
   }
-
   public boolean isApplicableToEntityType(final Object entity) {
     return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

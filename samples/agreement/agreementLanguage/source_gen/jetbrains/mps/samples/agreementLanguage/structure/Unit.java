@@ -12,15 +12,12 @@ public enum Unit {
   KWH("KWH", "KWH");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Unit> getConstants() {
     List<Unit> list = ListSequence.fromList(new LinkedList<Unit>());
     ListSequence.fromList(list).addElement(Unit.USD_KWH);
@@ -28,11 +25,9 @@ public enum Unit {
     ListSequence.fromList(list).addElement(Unit.KWH);
     return list;
   }
-
   public static Unit getDefault() {
     return Unit.USD_KWH;
   }
-
   public static Unit parseValue(String value) {
     if (value == null) {
       return Unit.getDefault();
@@ -48,14 +43,11 @@ public enum Unit {
     }
     return Unit.getDefault();
   }
-
   private String myValue;
-
   Unit(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

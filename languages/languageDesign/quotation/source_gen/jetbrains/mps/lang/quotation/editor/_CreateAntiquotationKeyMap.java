@@ -32,20 +32,16 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
     action = new _CreateAntiquotationKeyMap._CreateAntiquotationKeyMap_Action3();
     this.putAction("any", "$", action);
   }
-
   public static class _CreateAntiquotationKeyMap_Action0 extends KeyMapActionImpl {
     public _CreateAntiquotationKeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -60,16 +56,13 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
@@ -84,25 +77,20 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       } else
       SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"), "jetbrains.mps.lang.quotation.structure.Antiquotation");
     }
-
     public String getKeyStroke() {
       return " %";
     }
   }
-
   public static class _CreateAntiquotationKeyMap_Action1 extends KeyMapActionImpl {
     public _CreateAntiquotationKeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "list antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -117,16 +105,13 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
@@ -143,25 +128,20 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       } else
       SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
     }
-
     public String getKeyStroke() {
       return " *";
     }
   }
-
   public static class _CreateAntiquotationKeyMap_Action2 extends KeyMapActionImpl {
     public _CreateAntiquotationKeyMap_Action2() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "reference antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -176,16 +156,13 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
@@ -211,25 +188,20 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
         }
       }
     }
-
     public String getKeyStroke() {
       return " ^";
     }
   }
-
   public static class _CreateAntiquotationKeyMap_Action3 extends KeyMapActionImpl {
     public _CreateAntiquotationKeyMap_Action3() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "property antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -244,16 +216,13 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = SNodeOperations.cast(selectedCell.getSNode(), "jetbrains.mps.lang.core.structure.BaseConcept");
@@ -280,7 +249,6 @@ public class _CreateAntiquotationKeyMap extends KeyMapImpl {
         }
       }
     }
-
     public String getKeyStroke() {
       return " $";
     }

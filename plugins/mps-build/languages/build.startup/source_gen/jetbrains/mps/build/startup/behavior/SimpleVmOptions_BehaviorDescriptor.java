@@ -6,7 +6,6 @@ package jetbrains.mps.build.startup.behavior;
 public class SimpleVmOptions_BehaviorDescriptor extends VmOptions_BehaviorDescriptor {
   public SimpleVmOptions_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.startup.structure.SimpleVmOptions";

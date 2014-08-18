@@ -13,22 +13,18 @@ public class DefaultExecutionResult implements ExecutionResult {
   private final ProcessHandler myProcessHandler;
   @NotNull
   private final ExecutionConsole myConsole;
-
   public DefaultExecutionResult(@NotNull ProcessHandler process, @NotNull ExecutionConsole console) {
     myProcessHandler = process;
     myConsole = console;
   }
-
   @Override
   public ProcessHandler getProcessHandler() {
     return myProcessHandler;
   }
-
   @Override
   public AnAction[] getActions() {
     return new AnAction[0];
   }
-
   @Override
   public ExecutionConsole getExecutionConsole() {
     return myConsole;

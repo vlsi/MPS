@@ -6,7 +6,6 @@ package jetbrains.mps.execution.configurations.behavior;
 public class NodeListSource_BehaviorDescriptor extends RunConfigurationSource_BehaviorDescriptor {
   public NodeListSource_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.NodeListSource";

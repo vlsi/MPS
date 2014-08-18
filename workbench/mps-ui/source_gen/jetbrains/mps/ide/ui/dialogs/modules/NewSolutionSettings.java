@@ -32,11 +32,9 @@ public class NewSolutionSettings extends JPanel {
 
   private NewSolutionSettings.SolutionSettingsChangedListener myListener;
 
-
   public NewSolutionSettings() {
     this(null);
   }
-
   public NewSolutionSettings(String projectPath) {
     super(new GridLayoutManager(3, 1, new Insets(0, 5, 5, 5), -1, -1));
     myProjectPath = projectPath;
@@ -83,27 +81,22 @@ public class NewSolutionSettings extends JPanel {
       setSolutionLocation(myProjectPath + File.separator + "solutions" + File.separator + getSolutionName());
     }
   }
-
   public String getSolutionName() {
     return mySolutionName.getText().trim();
   }
-
   public void setSolutionName(String solutionName) {
     mySolutionName.setText(solutionName);
     fireChaged();
   }
-
   public String getSolutionLocation() {
     return mySolutionLocation.getText().trim();
   }
-
   public void setSolutionLocation(String solutionLocation) {
     mySolutionLocationDocListenerEnabled = false;
     mySolutionLocation.setText(solutionLocation);
     mySolutionLocationDocListenerEnabled = true;
     fireChaged();
   }
-
   public void setProjectPath(String projectPath) {
     String oldProjectPath = myProjectPath;
     myProjectPath = projectPath;
@@ -115,12 +108,9 @@ public class NewSolutionSettings extends JPanel {
     fireChaged();
   }
 
-
-
   public void setListener(NewSolutionSettings.SolutionSettingsChangedListener listener) {
     myListener = listener;
   }
-
   private void fireChaged() {
     if (myListener != null) {
       myListener.changed();
@@ -128,13 +118,9 @@ public class NewSolutionSettings extends JPanel {
   }
 
 
-
-
   public JComponent getPreferredFocusedComponent() {
     return mySolutionName;
   }
-
-
 
   public static interface SolutionSettingsChangedListener {
     public void changed();

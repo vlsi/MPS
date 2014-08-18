@@ -8,21 +8,17 @@ import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.quotation.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new ShowMetaLevel_Action());
     // groups 
     addGroup(new MetaLevelActions_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(MetaLevelActions_ActionGroup.ID, DebugActions_ActionGroup.ID, null);
   }

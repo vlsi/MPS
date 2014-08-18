@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_CellMenuPart_ApplySideTransforms_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CellMenuPart_ApplySideTransforms_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode cellMenuPart_ApplySideTransforms, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.hasValue(cellMenuPart_ApplySideTransforms, "side", "both", null)) {
       {
@@ -25,18 +24,15 @@ public class check_CellMenuPart_ApplySideTransforms_NonTypesystemRule extends Ab
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_ApplySideTransforms";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

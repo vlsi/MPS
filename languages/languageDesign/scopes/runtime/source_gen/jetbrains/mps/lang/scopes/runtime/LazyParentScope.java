@@ -11,12 +11,10 @@ public class LazyParentScope extends DelegatingScope {
   private final SNode kind;
   private Scope scope;
   private boolean isCalculated = false;
-
   public LazyParentScope(SNode node, SNode kind) {
     this.node = node;
     this.kind = kind;
   }
-
   @Override
   protected Scope getScope() {
     if (!(isCalculated)) {

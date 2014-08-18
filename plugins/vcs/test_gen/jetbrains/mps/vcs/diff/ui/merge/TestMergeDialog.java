@@ -16,7 +16,8 @@ import java.io.IOException;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import java.util.Scanner;
 import jetbrains.mps.tool.environment.EnvironmentConfig;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
@@ -64,10 +65,8 @@ public class TestMergeDialog {
     }
   };
   private static MPSProject ourMPSProject = new MPSProject(ourProject);
-
   public TestMergeDialog() {
   }
-
   public static void main(String[] args) throws JDOMException, IOException, ModelReadException {
     if (args.length == 0) {
       System.out.print("Input path to model zip: ");
@@ -75,7 +74,7 @@ public class TestMergeDialog {
       args = new String[]{((line == null ? null : line.trim()))};
     }
     ENV = new IdeaEnvironment(EnvironmentConfig.defaultEnvironment());
-    IdeMain.setTestMode(IdeMain.TestMode.NO_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     IconLoader.activate();
     final SModel[] models = new SModel[3];
     String resultFile;
@@ -147,9 +146,7 @@ public class TestMergeDialog {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(TestMergeDialog.class);
-
   private static <T> T as_jrs6o7_a0a0a0c0a0a0a0f0a0a0a8a7(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

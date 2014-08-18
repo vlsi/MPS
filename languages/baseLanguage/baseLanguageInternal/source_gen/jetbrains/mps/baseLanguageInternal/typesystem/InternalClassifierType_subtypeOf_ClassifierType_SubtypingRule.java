@@ -15,26 +15,21 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class InternalClassifierType_subtypeOf_ClassifierType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public InternalClassifierType_subtypeOf_ClassifierType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode ict, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_za0vnm_a0a1(SLinkOperations.getTarget(ict, "classifier", false));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_za0vnm_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

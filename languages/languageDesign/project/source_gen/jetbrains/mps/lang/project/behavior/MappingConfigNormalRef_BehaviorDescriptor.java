@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MappingConfigNormalRef_BehaviorDescriptor extends MappingConfigRefBase_BehaviorDescriptor {
   public MappingConfigNormalRef_BehaviorDescriptor() {
   }
-
   public boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     return MappingConfigNormalRef_Behavior.virtual_isComplete_2721285250110257005(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.project.structure.MappingConfigNormalRef";

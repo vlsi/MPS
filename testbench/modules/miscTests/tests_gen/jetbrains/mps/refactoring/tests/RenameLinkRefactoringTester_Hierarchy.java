@@ -23,7 +23,6 @@ import jetbrains.mps.util.IterableUtil;
 public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester {
   public RenameLinkRefactoringTester_Hierarchy() {
   }
-
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final ModelAccess modelAccess = project.getRepository().getModelAccess();

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class ParenthisizedExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ParenthisizedExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression";

@@ -23,7 +23,6 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
   public AnnotationInstanceValue_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_orb3ki_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class AnnotationInstanceValue_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   private static SNodePointer breakingNode_orb3ki_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133115");
 }

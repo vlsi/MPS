@@ -8,15 +8,12 @@ import java.util.List;
 public class OrRegexp_BehaviorDescriptor extends BinaryRegexp_BehaviorDescriptor {
   public OrRegexp_BehaviorDescriptor() {
   }
-
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return OrRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
-
   public boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return OrRegexp_Behavior.virtual_needParentheses_1353467374623880338(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.OrRegexp";

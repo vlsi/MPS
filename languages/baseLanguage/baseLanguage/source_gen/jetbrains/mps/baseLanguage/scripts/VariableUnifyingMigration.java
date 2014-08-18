@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class VariableUnifyingMigration {
   private VariableUnifyingMigration() {
   }
-
   public static List<AbstractMigrationRefactoring> forConcept(SNode referenceConcept, SNode declarationConcept) {
     List<AbstractMigrationRefactoring> refactorings = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
@@ -30,7 +29,6 @@ public class VariableUnifyingMigration {
 
     return refactorings;
   }
-
   public static MigrationConfig getMigrationConfig(SNode referenceConcept, final SNode declarationConcept) {
     return new MigrationConfig(referenceConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference")) {
       @Override
@@ -38,12 +36,10 @@ public class VariableUnifyingMigration {
         // <node> 
         return _quotation_createNode_u7t7ux_a1a0a0a0a2(arg, declarationConcept);
       }
-
       @Override
       public boolean isConditionNonTrivial() {
         return true;
       }
-
       @Override
       public SNode migrateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
@@ -55,14 +51,12 @@ public class VariableUnifyingMigration {
         }
         return result;
       }
-
       @Override
       public boolean isInstanceNodeMigrationNonTrivial() {
         return true;
       }
     };
   }
-
   private static SNode _quotation_createNode_u7t7ux_a1a0a0a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

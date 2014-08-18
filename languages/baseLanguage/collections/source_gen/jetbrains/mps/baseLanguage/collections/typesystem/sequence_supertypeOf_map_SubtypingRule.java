@@ -15,27 +15,22 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public sequence_supertypeOf_map_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode mappingType = _quotation_createNode_cekk5b_a0a0b(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
     return _quotation_createNode_cekk5b_a1a1(mappingType);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_cekk5b_a0a0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -52,7 +47,6 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_cekk5b_a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

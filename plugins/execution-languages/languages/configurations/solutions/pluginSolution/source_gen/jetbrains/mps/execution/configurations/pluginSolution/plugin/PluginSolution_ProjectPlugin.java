@@ -14,7 +14,6 @@ import jetbrains.mps.project.MPSProject;
 public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
   public PluginSolution_ProjectPlugin() {
   }
-
   public List<RelationDescriptor> initTabbedEditors(Project project) {
     List<RelationDescriptor> result = new ArrayList();
     result.add(new Executor_TabDescriptor());
@@ -22,7 +21,6 @@ public class PluginSolution_ProjectPlugin extends BaseProjectPlugin {
     result.add(new Run_Configuration_TabDescriptor());
     return result;
   }
-
   public List<BaseCustomProjectPlugin> initCustomParts(Project project) {
     List<BaseCustomProjectPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomProjectPlugin>());
     MPSProject mpsProject = project.getComponent(MPSProject.class);

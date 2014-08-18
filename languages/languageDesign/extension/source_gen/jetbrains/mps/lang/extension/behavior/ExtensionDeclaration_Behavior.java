@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ExtensionDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getJavaName_5234729458457669523(SNode thisNode) {
     return "Extension_" + NameUtil.toValidIdentifier(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "extensionPoint", false), "extensionName"));
   }

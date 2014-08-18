@@ -12,19 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ApplyTo_Function_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "applyEditorTo");
   }
-
   public static SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return EditorOperationDeclaration_Behavior.call_getMethodbyName_946964771156066997(thisNode, "apply");
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.execution.settings.structure.EditorOperationDeclaration", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)", "946964771156067216"));

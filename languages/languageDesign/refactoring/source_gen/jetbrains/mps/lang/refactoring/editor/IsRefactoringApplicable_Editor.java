@@ -25,7 +25,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xt8j9n_a(editorContext, node);
   }
-
   private EditorCell createCollection_xt8j9n_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xt8j9n_a");
@@ -42,7 +41,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xt8j9n_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_xt8j9n_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -50,7 +48,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_xt8j9n_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_xt8j9n_b0");
@@ -60,7 +57,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_xt8j9n_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("refactoring");
@@ -82,20 +78,16 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_xt8j9n_a2a extends InlineCellProvider {
     public _Inline_xt8j9n_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_xt8j9n_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_xt8j9n_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -115,7 +107,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_xt8j9n_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_xt8j9n_d0");
@@ -125,7 +116,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_xt8j9n_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xt8j9n_e0");
@@ -135,7 +125,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xt8j9n_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("target");
@@ -155,7 +144,6 @@ public class IsRefactoringApplicable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xt8j9n_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xt8j9n_g0");

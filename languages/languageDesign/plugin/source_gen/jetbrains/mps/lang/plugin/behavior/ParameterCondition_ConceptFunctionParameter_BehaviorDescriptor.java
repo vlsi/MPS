@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ParameterCondition_ConceptFunctionParameter_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ParameterCondition_ConceptFunctionParameter";

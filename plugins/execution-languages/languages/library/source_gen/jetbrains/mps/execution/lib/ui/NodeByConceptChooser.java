@@ -35,11 +35,9 @@ public class NodeByConceptChooser extends NodeChooser {
   @Nullable
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myAcceptor;
   private final ModulesWithLanguagesScope myScope;
-
   public NodeByConceptChooser() {
     this("jetbrains.mps.lang.core.structure.BaseConcept", null);
   }
-
   public NodeByConceptChooser(@NonNls String conceptFqName, @Nullable _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     super();
 
@@ -54,31 +52,24 @@ public class NodeByConceptChooser extends NodeChooser {
 
     myScope = new ModulesWithLanguagesScope(GlobalScope.getInstance(), Sequence.<Language>singleton(language));
   }
-
   public String getTargetConcept() {
     return myTargetConcept;
   }
-
   public SNode getTargetConceptNode() {
     return (SNode) SModelUtil.findConceptDeclaration(myTargetConcept);
   }
-
   public void setTargetConcept(String targetConcept) {
     myTargetConcept = targetConcept;
   }
-
   public void setTargetConcept(SNode targetConcept) {
     myTargetConcept = BehaviorReflection.invokeVirtual(String.class, targetConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   public _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> getAcceptor() {
     return myAcceptor;
   }
-
   public void setAcceptor(_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> acceptor) {
     myAcceptor = acceptor;
   }
-
   @Override
   protected List<SNode> findToChooseFromOnInit(FindUsagesFacade manager, ProgressMonitor monitor) {
     SAbstractConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
@@ -93,12 +84,10 @@ public class NodeByConceptChooser extends NodeChooser {
       }).toListSequence();
     }
   }
-
   @Override
   protected Iterable<SModel> getModels(String model) {
     return ScopeOperations.getModelsByName(myScope, model);
   }
-
   @Override
   protected Iterable<SNode> findNodes(SModel model, final String fqName) {
     return ListSequence.fromList(SModelOperations.getNodes(((SModel) model), null)).where(new IWhereFilter<SNode>() {

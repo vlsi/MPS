@@ -14,12 +14,10 @@ public class ExecuteFinderExpression_Constraints extends BaseConstraintsDescript
   public ExecuteFinderExpression_Constraints() {
     super("jetbrains.mps.lang.findUsages.structure.ExecuteFinderExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class ExecuteFinderExpression_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.lang.findUsages.structure.FindBlock", "jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock"}, false, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590358(jetbrains.mps.lang.findUsages.constraints)", "1213107434956");
 }

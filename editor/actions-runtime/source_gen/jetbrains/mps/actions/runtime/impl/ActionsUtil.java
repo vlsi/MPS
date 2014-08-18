@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ActionsUtil {
   public ActionsUtil() {
   }
-
   public static boolean isInstanceOfIType(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.IType");
   }

@@ -18,7 +18,6 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_z1r74j_a(editorContext, node);
   }
-
   private EditorCell createCollection_z1r74j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_z1r74j_a");
@@ -26,7 +25,6 @@ public class TextCommentPart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_z1r74j_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_z1r74j_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");

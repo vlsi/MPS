@@ -16,25 +16,20 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public set_type_comparableWith_Set_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return true;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       GeneratedMatchingPattern pattern = new set_type_comparableWith_Set_ComparisonRule.Pattern_3k2v7g_a0a0a0a5();
@@ -43,21 +38,16 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.collections.structure.SetType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public static class Pattern_3k2v7g_a0a0a0a5 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT;
-
     public Pattern_3k2v7g_a0a0a0a5() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_plg4lh_a0a = nodeToMatch;
@@ -83,27 +73,22 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ELEMENT = (SNode) pattern.getFieldValue("patternVar_ELEMENT");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ELEMENT".equals(fieldName)) {
         return patternVar_ELEMENT;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer SNODE_POINTER_3k2v7g_a0a0a0a0b0b0a0a0a0a0a0f = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Set");
 }

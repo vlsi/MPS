@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public abstract class BinaryRegexp_BehaviorDescriptor extends Regexp_BehaviorDescriptor {
   public BinaryRegexp_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp";

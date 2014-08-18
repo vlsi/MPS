@@ -32,25 +32,21 @@ import org.apache.log4j.LogManager;
 
 public class IntroduceField_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public IntroduceField_Action() {
     super("Introduce Field...", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("component")), Sequence.<EditorCell>singleton(((EditorComponent) MapSequence.fromMap(_params).get("component")).findNodeCell(((SNode) MapSequence.fromMap(_params).get("node")))))) {
       return false;
     }
     return IntroduceFieldRefactoring.isApplicable(((SNode) MapSequence.fromMap(_params).get("node")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -64,7 +60,6 @@ public class IntroduceField_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -98,7 +93,6 @@ public class IntroduceField_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.introduceField");
@@ -128,6 +122,5 @@ public class IntroduceField_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(IntroduceField_Action.class);
 }

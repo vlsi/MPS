@@ -23,19 +23,15 @@ public class RenameMethod extends BaseRefactoring {
   public RenameMethod() {
     this.addTransientParameter("newName");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new RenameMethod_Target();
   }
-
   public String getUserFriendlyName() {
     return "Rename Method";
   }
-
   public Class getOverridenRefactoringClass() {
     return Rename.class;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
@@ -43,11 +39,9 @@ public class RenameMethod extends BaseRefactoring {
     }
     SPropertyOperations.set(method, "name", ((String) refactoringContext.getParameter("newName")));
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {

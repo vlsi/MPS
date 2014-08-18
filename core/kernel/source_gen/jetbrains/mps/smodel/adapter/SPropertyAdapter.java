@@ -16,17 +16,14 @@ public class SPropertyAdapter implements SProperty {
   private String conceptName;
   private String propertyName;
 
-
   public SPropertyAdapter(String conceptName, String name) {
     this.conceptName = conceptName;
     this.propertyName = name;
   }
-
   @Override
   public String getName() {
     return propertyName;
   }
-
   @Override
   public SDataType getType() {
     // TODO reimplement using ConceptDescriptor 
@@ -45,13 +42,11 @@ public class SPropertyAdapter implements SProperty {
     }
     return new SDataTypeAdapter();
   }
-
   @Override
   public boolean isValid(String string) {
     // TODO implement 
     return true;
   }
-
   protected final SNode getPropertyNode() {
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if ((concept == null)) {
@@ -59,6 +54,5 @@ public class SPropertyAdapter implements SProperty {
     }
     return (SNode) new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
-
 
 }

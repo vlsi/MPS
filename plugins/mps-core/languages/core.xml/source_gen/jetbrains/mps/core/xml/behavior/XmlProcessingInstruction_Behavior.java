@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class XmlProcessingInstruction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return false;
   }
-
   public static boolean virtual_oneLineBlock_1262430001741497816(SAbstractConcept thisConcept) {
     return true;
   }

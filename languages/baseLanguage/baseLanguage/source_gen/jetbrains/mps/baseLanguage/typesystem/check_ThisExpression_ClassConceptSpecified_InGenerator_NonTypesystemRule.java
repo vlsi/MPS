@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode expression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SModel model = SNodeOperations.getModel(expression);
     if (model == null) {
@@ -56,18 +55,15 @@ public class check_ThisExpression_ClassConceptSpecified_InGenerator_NonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ThisExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

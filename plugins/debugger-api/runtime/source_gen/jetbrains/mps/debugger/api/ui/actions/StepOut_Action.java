@@ -16,18 +16,15 @@ import org.apache.log4j.LogManager;
 
 public class StepOut_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.StepOut;
-
   public StepOut_Action() {
     super("Step Out", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -41,7 +38,6 @@ public class StepOut_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DebugActionsUtil.getDebugSession(event).stepOut();
@@ -51,6 +47,5 @@ public class StepOut_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(StepOut_Action.class);
 }

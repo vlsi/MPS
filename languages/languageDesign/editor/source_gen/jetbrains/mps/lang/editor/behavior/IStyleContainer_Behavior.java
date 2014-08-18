@@ -17,17 +17,14 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class IStyleContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getParent_1219419981626(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> call_getClassItems_1219419901278(SNode thisNode, SNode itemConcept) {
     List<SNode> result = new ArrayList<SNode>();
     IStyleContainer_Behavior.call_fillClassItems_2551781846503685010(thisNode, result, itemConcept, SetSequence.fromSet(new HashSet<SNode>()));
     return result;
   }
-
   public static void call_fillClassItems_2551781846503685010(SNode thisNode, List<SNode> classItems, SNode itemConcept, Set<SNode> visitedContainers) {
     for (SNode item : SLinkOperations.getTargets(thisNode, "styleItem", true)) {
       if (SNodeOperations.isInstanceOf(item, NameUtil.nodeFQName(itemConcept))) {

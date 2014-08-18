@@ -11,34 +11,25 @@ import java.util.ArrayList;
 public abstract class AbstractProgressStrategy {
   private AbstractProgressStrategy.Work last;
   private IProgress current;
-
   public AbstractProgressStrategy(String total) {
     this.last = new AbstractProgressStrategy.Work(null, total, 1000, 1000);
     this.current = new AbstractProgressStrategy.CurrentProgress();
   }
-
   protected AbstractProgressStrategy.Work pushProgress(String name, int estimate, int total) {
     return this.last = new AbstractProgressStrategy.Work(last, name, estimate, total);
   }
-
   protected AbstractProgressStrategy.Work popProgress(AbstractProgressStrategy.Work wrk) {
     return this.last = (wrk.prev != null ? wrk.prev : wrk);
   }
-
   protected AbstractProgressStrategy.Work lastProgress() {
     return last;
   }
-
   protected abstract void begunWork(AbstractProgressStrategy.Work wrk);
-
   protected abstract void advancedWork(AbstractProgressStrategy.Work wrk);
-
   protected abstract void finishedWork(AbstractProgressStrategy.Work wrk);
-
   public IProgress currentProgress() {
     return current;
   }
-
   public class Work implements IProgress {
     private AbstractProgressStrategy.Work prev;
     private String name;
@@ -46,14 +37,12 @@ public abstract class AbstractProgressStrategy {
     private int estimate;
     private int total;
     private int done = 0;
-
     public Work(AbstractProgressStrategy.Work prev, String name, int estimate, int ofTotal) {
       this.prev = prev;
       this.name = name;
       this.estimate = estimate;
       this.total = ofTotal;
     }
-
     @Override
     public void beginWork(String name, int estimate, int ofTotal) {
       if (estimate <= 0) {
@@ -64,12 +53,10 @@ public abstract class AbstractProgressStrategy {
       }
       begunWork(pushProgress(name, estimate, ofTotal));
     }
-
     @Override
     public void advanceWork(String name, int done) {
       advanceWork(name, done, null);
     }
-
     @Override
     public void advanceWork(String name, int done, String comment) {
       if (done < 0) {
@@ -77,7 +64,6 @@ public abstract class AbstractProgressStrategy {
       }
       matchingOrTotal(name).primDone(done, comment);
     }
-
     @Override
     public void finishWork(String name) {
       AbstractProgressStrategy.Work wrk = matchingOrTotal(name);
@@ -85,46 +71,36 @@ public abstract class AbstractProgressStrategy {
       finishedWork(wrk);
       popProgress(wrk);
     }
-
     @Override
     public int workLeft() {
       return Math.max(0, estimate - done);
     }
-
     public int workDone() {
       return Math.min(estimate, done);
     }
-
     public int prevWork() {
       return total;
     }
-
     public double prevWorkRatio() {
       return ((double) prev.estimate) / total;
     }
-
     public String name() {
       return name;
     }
-
     public String fullName() {
       List<String> names = this.namePath();
       return IterableUtils.join(ListSequence.fromList(names).reversedList(), "/");
     }
-
     public String namePrefix() {
       List<String> names = this.namePath();
       return IterableUtils.join(ListSequence.fromList(names).reversedList().cut(1), "/");
     }
-
     public double doneRatio() {
       return ((double) Math.min(this.estimate, this.done)) / this.estimate;
     }
-
     public String comment() {
       return comment;
     }
-
     public AbstractProgressStrategy.Work matchingOrTotal(String name) {
       AbstractProgressStrategy.Work wrk = this;
       while (wrk.prev != null) {
@@ -135,7 +111,6 @@ public abstract class AbstractProgressStrategy {
       }
       return wrk;
     }
-
     private List<String> namePath() {
       List<String> names = ListSequence.fromList(new ArrayList<String>());
       AbstractProgressStrategy.Work wrk = this;
@@ -145,7 +120,6 @@ public abstract class AbstractProgressStrategy {
       }
       return names;
     }
-
     private void primDone(int primDone, String comment) {
       this.comment = comment;
       if (primDone > 0) {
@@ -157,37 +131,30 @@ public abstract class AbstractProgressStrategy {
       advancedWork(this);
     }
   }
-
   public class CurrentProgress implements IProgress {
     public CurrentProgress() {
     }
-
     @Override
     public void beginWork(String name, int estimate, int ofTotal) {
       lastProgress().beginWork(name, estimate, ofTotal);
     }
-
     @Override
     public void finishWork(String name) {
       lastProgress().finishWork(name);
     }
-
     @Override
     public void advanceWork(String name, int done) {
       lastProgress().advanceWork(name, done);
     }
-
     @Override
     public void advanceWork(String name, int done, String comment) {
       lastProgress().advanceWork(name, done, comment);
     }
-
     @Override
     public int workLeft() {
       return lastProgress().workLeft();
     }
   }
-
   private static boolean eq_idfyc1_a0a0b0u01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

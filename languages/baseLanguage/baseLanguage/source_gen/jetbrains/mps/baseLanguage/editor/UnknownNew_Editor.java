@@ -35,7 +35,6 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lvgr57_a(editorContext, node);
   }
-
   private EditorCell createCollection_lvgr57_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lvgr57_a");
@@ -45,7 +44,6 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_lvgr57_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_lvgr57_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "new");
     editorCell.setCellId("Constant_lvgr57_a0");
@@ -55,7 +53,6 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_lvgr57_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("className");
@@ -77,11 +74,9 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class UnknownNew_generic_cellMenu_lvgr57_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public UnknownNew_generic_cellMenu_lvgr57_a0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
       return Sequence.fromIterable(moduleScope.getAvailableElements("")).select(new ISelector<SNode, SNode>() {
@@ -91,21 +86,17 @@ public class UnknownNew_Editor extends DefaultNodeEditor {
       }).toListSequence();
 
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode choosen = parameterObject;
       SPropertyOperations.set(node, "className", BehaviorReflection.invokeVirtual(String.class, choosen, "virtual_getNestedName_8540045600162184125", new Object[]{}));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createComponent_lvgr57_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;

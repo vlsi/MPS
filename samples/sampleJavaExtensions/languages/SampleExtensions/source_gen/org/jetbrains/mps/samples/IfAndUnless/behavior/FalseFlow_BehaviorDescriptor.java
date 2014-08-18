@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class FalseFlow_BehaviorDescriptor extends Flow_BehaviorDescriptor {
   public FalseFlow_BehaviorDescriptor() {
   }
-
   public String virtual_getTitle_1262430001741498056(SConcept thisConcept) {
     return FalseFlow_Behavior.virtual_getTitle_1262430001741498056(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.FalseFlow";

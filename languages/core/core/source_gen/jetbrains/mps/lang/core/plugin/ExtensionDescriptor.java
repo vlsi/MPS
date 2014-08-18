@@ -9,10 +9,8 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.core.GeneratorCache", GenerationCacheContainer.class)};
-
   public ExtensionDescriptor() {
   }
-
   @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
     return Arrays.asList(extensionPoints);

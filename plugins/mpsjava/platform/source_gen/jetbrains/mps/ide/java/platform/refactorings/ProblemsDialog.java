@@ -20,7 +20,6 @@ import java.awt.event.ActionEvent;
 public class ProblemsDialog extends DialogWrapper {
   private String myErrors;
   private DialogWrapper.DialogWrapperAction myIgnoreAction;
-
   public ProblemsDialog(Project project, String errors) {
     super(project, true);
     setTitle("Problems detected");
@@ -28,7 +27,6 @@ public class ProblemsDialog extends DialogWrapper {
     myErrors = errors;
     init();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -42,12 +40,10 @@ public class ProblemsDialog extends DialogWrapper {
     panel.setMinimumSize(new Dimension(400, 250));
     return panel;
   }
-
   @Override
   protected Action[] createActions() {
     return new Action[]{myIgnoreAction, getCancelAction()};
   }
-
   @Override
   protected void createDefaultActions() {
     super.createDefaultActions();

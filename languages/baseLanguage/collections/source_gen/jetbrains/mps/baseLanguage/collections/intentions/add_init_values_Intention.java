@@ -19,72 +19,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class add_init_values_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public add_init_values_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
-
   public String getPresentation() {
     return "add_init_values";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.collections.intentions.add_init_values_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.collections";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).isEmpty() && (SLinkOperations.getTarget(node, "copyFrom", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "1237739140549");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new add_init_values_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Init Values";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "initValue", "jetbrains.mps.baseLanguage.structure.Expression");
     }
-
     public IntentionDescriptor getDescriptor() {
       return add_init_values_Intention.this;
     }

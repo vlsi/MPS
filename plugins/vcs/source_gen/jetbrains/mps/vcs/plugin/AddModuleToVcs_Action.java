@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class AddModuleToVcs_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.AddToVCS;
-
   public AddModuleToVcs_Action() {
     super("Add Module to VCS", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +50,6 @@ public class AddModuleToVcs_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +64,6 @@ public class AddModuleToVcs_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<VirtualFile> unversionedFiles = VcsActionsUtil.getUnversionedFilesForModules(((Project) MapSequence.fromMap(_params).get("project")), ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
@@ -80,6 +75,5 @@ public class AddModuleToVcs_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AddModuleToVcs_Action.class);
 }

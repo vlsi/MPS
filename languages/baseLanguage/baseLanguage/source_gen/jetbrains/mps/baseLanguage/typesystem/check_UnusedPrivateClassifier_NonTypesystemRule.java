@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnusedPrivateClassifier_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifier, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       if (!(ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(classifier), "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -65,26 +64,21 @@ public class check_UnusedPrivateClassifier_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_kryfz9_a0a0a0a0a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_kryfz9_a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

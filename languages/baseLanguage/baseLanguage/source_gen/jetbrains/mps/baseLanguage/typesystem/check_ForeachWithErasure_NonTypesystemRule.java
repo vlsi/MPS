@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.SNodePointer;
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode foreachStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode iterableType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true));
     if (SNodeOperations.isInstanceOf(iterableType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
@@ -49,28 +48,22 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   public static class Pattern_aftnu9_a0a0a2a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_p;
-
     public Pattern_aftnu9_a0a0a2a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_gn1qzs_a0a2a = nodeToMatch;
@@ -96,28 +89,23 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_p".equals(fieldName)) {
         return patternVar_p;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_aftnu9_a0a2a0c0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -125,6 +113,5 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNodePointer SNODE_POINTER_aftnu9_a0a0a0a0b0b0a0a0a0a0c0b = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
 }

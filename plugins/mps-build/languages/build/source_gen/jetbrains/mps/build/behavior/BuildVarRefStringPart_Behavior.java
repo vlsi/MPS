@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildVarRefStringPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     String macroName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "macro", false), "name");
     if (helper != null) {
@@ -23,11 +22,9 @@ public class BuildVarRefStringPart_Behavior {
     }
     return "${" + macroName + "}";
   }
-
   public static boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
     return (SNodeOperations.getNextSibling(thisNode) == null);
   }
-
   public static boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.build.structure.BuildTextStringPart"));
   }

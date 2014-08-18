@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ModelsExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
   public ModelsExpression_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
     return ModelsExpression_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.ModelsExpression";

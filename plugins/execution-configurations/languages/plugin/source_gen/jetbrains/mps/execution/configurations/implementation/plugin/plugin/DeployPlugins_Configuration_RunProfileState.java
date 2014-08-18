@@ -40,20 +40,16 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
   private final DeployPlugins_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public DeployPlugins_Configuration_RunProfileState(@NotNull DeployPlugins_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
@@ -132,7 +128,6 @@ public class DeployPlugins_Configuration_RunProfileState implements RunProfileSt
       }));
     }
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultRunExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

@@ -20,12 +20,10 @@ import java.io.IOException;
 public class ClassifierLoader {
   private final SReferenceHandler myReferenceFactory;
   private final boolean mySkipPrivate;
-
   public ClassifierLoader(SReferenceHandler refFactory, boolean skipPrivate) {
     myReferenceFactory = refFactory;
     mySkipPrivate = skipPrivate;
   }
-
   public void getClassifier(IFile file, _FunctionTypes._void_P1_E0<? super SNode> adder) {
     byte[] code = readClass(file);
     if (code == null) {
@@ -38,7 +36,6 @@ public class ClassifierLoader {
       updateInnerClassifiers(file, ac, res);
     }
   }
-
   private void updateInnerClassifiers(IFile file, ASMClass ac, final SNode cls) {
     for (InnerClassNode cn : ac.getInnerClasses()) {
       if ((cn.access & Opcodes.ACC_SYNTHETIC) != 0) {
@@ -77,8 +74,6 @@ public class ClassifierLoader {
     }
   }
 
-
-
   public byte[] readClass(IFile file) {
     try {
       byte[] result = null;
@@ -96,8 +91,6 @@ public class ClassifierLoader {
       return null;
     }
   }
-
-
 
   public static String getClassName(IFile file) {
     String name = file.getName();

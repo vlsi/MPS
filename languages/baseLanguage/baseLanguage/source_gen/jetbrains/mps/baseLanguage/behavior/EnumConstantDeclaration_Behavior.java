@@ -24,40 +24,32 @@ import jetbrains.mps.scope.CompositeScope;
 public class EnumConstantDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode enumClass = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return ClassConcept_Behavior.call_constructors_5292274854859503373(enumClass);
   }
-
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.core.structure.BaseConcept", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     return markIcons;
   }
-
   public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return true;
   }
-
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingEnum = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{}));
   }
-
   public static String call_getEnumConstantDeclarationPresentation_8767021959483237039(SNode thisNode) {
     return "Enum constant '" + SPropertyOperations.getString(thisNode, "name") + "' in ";
   }
-
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (SPropertyOperations.getString(thisNode, "name") == null) {
       return;
@@ -65,11 +57,9 @@ public class EnumConstantDeclaration_Behavior {
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
   }
-
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "method", true);
   }
-
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
     if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
@@ -93,7 +83,6 @@ public class EnumConstantDeclaration_Behavior {
     }));
     return methods;
   }
-
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
     if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
@@ -117,7 +106,6 @@ public class EnumConstantDeclaration_Behavior {
     }));
     return methods;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
       Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});

@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class biginteger_extends_bigdecimal_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public biginteger_extends_bigdecimal_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode bigIntegerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SNodeOperations.copyNode(MathTypeUtil.qBigDecimal);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.BigIntegerType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

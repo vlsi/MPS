@@ -1,33 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="3ih4cws2cb7cnykdisiqcrk1ims4o60">
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-8n4jcrqs0dtzn3dx0zj7p8ivj2x0pyj" dependsOnNodes="true">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-  </common>
-  <source id="5294483648489411750" name="Order" hash="2ewbt9v4dr8xfvi7edqrasmh7y4cfuf">
-    <file name="Order.java" />
-  </source>
-  <source id="5294483648489411798" name="DelegatingRunNotifier" hash="-e921y2fj0xtzj66n0m67mhxel0jruqd">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="DelegatingRunNotifier.java" />
-  </source>
-  <source id="5294483648489411978" name="ExpectLogEvent" hash="-d80ibxdr60mp36y7zuf9rbcvitfujeq">
-    <file name="ExpectLogEvent.java" />
-  </source>
-  <source id="5294483648489412039" name="OrderComparator" hash="5mswvo1x2629llxl8doirl913hmhg3l">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <file name="OrderComparator.java" />
-  </source>
-  <source id="5294483648489412205" name="WatchingRunNotifier" hash="eg1tdky6skg5lijhrg4awttkzjkrwpn">
-    <file name="WatchingRunNotifier.java" />
-  </source>
-  <source id="5294483648489412683" name="UncleanTestExecutionException" hash="ehkgcm98aydd9bcycr3ne04mb0a20tf">
-    <file name="UncleanTestExecutionException.java" />
-  </source>
-</dependencies>
+<dependencies version="2" modelHash="-5mfvuk2odxmutojqpd2yjedi1yzja8f" />
 

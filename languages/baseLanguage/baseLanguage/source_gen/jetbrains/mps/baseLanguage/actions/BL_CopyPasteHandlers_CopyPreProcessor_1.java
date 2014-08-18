@@ -13,7 +13,6 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_1 implements CopyPreProcessor
   public SNode getApplicableConcept() {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
   }
-
   public void preProcesNode(SNode copy, SNode original) {
     // todo: remove after MPS 3.0 
     SNodeOperations.replaceWithAnother(copy, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, "variableDeclaration", false), "virtual_getQualifiedReference_4598334504606213641", new Object[]{}));

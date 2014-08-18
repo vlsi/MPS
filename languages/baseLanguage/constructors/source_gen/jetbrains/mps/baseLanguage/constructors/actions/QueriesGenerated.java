@@ -52,15 +52,12 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(usage, "customConstructor", (item), false);
                 return usage;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "leftParenthesis") + "..." + SPropertyOperations.getString((item), "rightParenthesis");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
-
               public String getDescriptionText(String pattern) {
                 return SPropertyOperations.getString((item), "shortDescription");
               }
@@ -71,7 +68,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ArgumentClause_994932413699396071(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -86,11 +82,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(parameter, "type", nodeToWrap, true);
             return result;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -103,14 +97,12 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ArgumentClause_994932413699396077(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor")) {
       return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"), "arguments", true), "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause"));
     }
     return false;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ArgumentClause_3391577739832644582(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -121,11 +113,9 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause", null);
           }
-
           public String getMatchingText(String pattern) {
             return "listof";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -134,7 +124,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_ArgumentClause_3391577739832644592(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor")) {
       return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor"), "arguments", true), "jetbrains.mps.baseLanguage.constructors.structure.ListArgumentsClause"));

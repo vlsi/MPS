@@ -20,7 +20,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_evgwyu_a(editorContext, node);
   }
-
   private EditorCell createCollection_evgwyu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_evgwyu_a");
@@ -32,7 +31,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_evgwyu_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_evgwyu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return");
     editorCell.setCellId("Constant_evgwyu_a0");
@@ -43,7 +41,6 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_evgwyu_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -64,11 +61,9 @@ public class ReturnStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_evgwyu_a1a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "expression", true) != null;
   }
-
   private EditorCell createConstant_evgwyu_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_evgwyu_c0");

@@ -22,7 +22,6 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
   private Iterable<Segment> mySegments;
   private Property<Boolean> myValid = new ConnectorDecoratorView.EventSourceProperty<Boolean>(Boolean.TRUE);
 
-
   public ConnectorDecoratorView() {
     new Mapper<ConnectorDecoratorView, ConnectorDecoratorView>(this, this) {
       @Override
@@ -34,7 +33,6 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       }
     }.attachRoot();
   }
-
   private MapperFactory<Boolean, GroupView> createSelectionDecoratorMapperFactory() {
     return new MapperFactory<Boolean, GroupView>() {
       public Mapper<? extends Boolean, ? extends GroupView> createMapper(Boolean selected) {
@@ -52,7 +50,6 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       }
     };
   }
-
   private MapperFactory<Boolean, CrossView> createErrorDecoratorMapperFactory() {
     return new MapperFactory<Boolean, CrossView>() {
       public Mapper<? extends Boolean, ? extends CrossView> createMapper(Boolean error) {
@@ -70,25 +67,20 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       }
     };
   }
-
   public void setSegments(Iterable<Segment> segments) {
     mySegments = segments;
   }
-
   public Property<Boolean> isValid() {
     return myValid;
   }
-
   private CrossView createErrorView() {
     CrossView errorView = new CrossView();
     errorView.color.set(Color.RED);
     return errorView;
   }
-
   protected GroupView createSelectionView() {
     return new GroupView();
   }
-
   private Vector getErrorPoint() {
     if (Sequence.fromIterable(mySegments).isEmpty()) {
       return null;
@@ -117,7 +109,6 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
     return null;
 
   }
-
   private void updateSelectionView(GroupView selectionView) {
     selectionView.children().clear();
     for (Segment segment : Sequence.fromIterable(mySegments)) {
@@ -135,27 +126,21 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
       }
     }
   }
-
   private class EventSourceProperty<T> extends SimpleEventSource<PropertyChangeEvent<T>> implements Property<T> {
     private T myDefautlValue;
-
     public EventSourceProperty(T defaultValue) {
       myDefautlValue = defaultValue;
     }
-
     public String getPropExpr() {
       return "eventSourceProperty()";
     }
-
     public T get() {
       return myDefautlValue;
     }
-
     public void set(T value) {
       fire(new PropertyChangeEvent(myDefautlValue, value));
     }
   }
-
   private static boolean neq_2z6621_a0a0b0o(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

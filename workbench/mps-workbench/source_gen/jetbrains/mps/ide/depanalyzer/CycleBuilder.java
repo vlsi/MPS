@@ -13,11 +13,9 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
   private DepLink myTarget;
   private List<DepPath> myCycles;
   private DepPath myCurrent;
-
   /*package*/ CycleBuilder(Condition<DepLink> elementMatch) {
     this.elementMatch = elementMatch;
   }
-
   /**
    * Each cycle found when traversing supplied depLink.
    * Cycle starts and ends at the same module with the same role, and these are of supplied depLink
@@ -32,7 +30,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
     nextPathLevel(depLink);
     return myCycles;
   }
-
   private void nextPathLevel(DepLink l) {
     if (ListSequence.fromList(l.children()).isEmpty() && l.getReused() != null) {
       // reused is identical to the referencing node, don't check key equality to avoid false cycles 
@@ -58,7 +55,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
       myCurrent.pop();
     }
   }
-
   private static boolean eq_tn82ka_a0a0a0b0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -34,23 +34,19 @@ public class EvaluationModule extends AbstractModule implements SModule {
   private final ModuleDescriptor myDescriptor;
   private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
   private static final Logger LOG = LogManager.getLogger(EvaluationModule.class);
-
   public EvaluationModule() {
     SModuleReference reference = new ModuleReference("Evaluation Container Module", ModuleId.regular());
     setModuleReference(reference);
     myDescriptor = new ModuleDescriptor();
   }
-
   @Override
   public String toString() {
     return "Evaluation Module";
   }
-
   @Override
   public ModuleDescriptor getModuleDescriptor() {
     return myDescriptor;
   }
-
   @Override
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
@@ -66,7 +62,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
     }
     return result;
   }
-
   public String addClassPathItem(String path) {
     if (SetSequence.fromSet(myClassPaths).contains(path)) {
       path = null;
@@ -78,8 +73,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
     return path;
   }
 
-
-
   @Override
   public Iterable<SDependency> getDeclaredDependencies() {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
@@ -89,7 +82,6 @@ public class EvaluationModule extends AbstractModule implements SModule {
       }
     });
   }
-
   @Override
   public Set<SLanguage> getUsedLanguages() {
     Collection<Language> languages = ModuleRepositoryFacade.getInstance().getAllModules(Language.class);

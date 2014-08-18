@@ -30,20 +30,16 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
     action = new MacrosSwitch_KeyMap.MacrosSwitch_KeyMap_Action3();
     this.putAction("ctrl+shift", "VK_M", action);
   }
-
   public static class MacrosSwitch_KeyMap_Action0 extends KeyMapActionImpl {
     public MacrosSwitch_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "create template fragmet";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -55,12 +51,10 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
@@ -80,7 +74,6 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       // do not hang <TF> on other attributes 
       SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
@@ -90,25 +83,20 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }).first();
       EditingUtil.createTemplateFragment(applyToNode);
     }
-
     public String getKeyStroke() {
       return "ctrl shift F";
     }
   }
-
   public static class MacrosSwitch_KeyMap_Action1 extends KeyMapActionImpl {
     public MacrosSwitch_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "add node macro";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -120,43 +108,35 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
       return EditingUtil.isNodeMacroApplicable(node);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, nodeMacro, SelectionManager.FIRST_CELL, 1);
     }
-
     public String getKeyStroke() {
       return "ctrl shift M";
     }
   }
-
   public static class MacrosSwitch_KeyMap_Action2 extends KeyMapActionImpl {
     public MacrosSwitch_KeyMap_Action2() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "add property macro";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -168,19 +148,16 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
       return EditingUtil.isPropertyMacroApplicable(node, editorContext.getSelectedCell());
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode propertyMacro = EditingUtil.addPropertyMacro(node, editorContext.getSelectedCell());
       // set caret 
@@ -189,25 +166,20 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       assert inspector != null;
       inspector.activate();
     }
-
     public String getKeyStroke() {
       return "ctrl shift M";
     }
   }
-
   public static class MacrosSwitch_KeyMap_Action3 extends KeyMapActionImpl {
     public MacrosSwitch_KeyMap_Action3() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "add reference macro";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -219,19 +191,16 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
       }
       return EditingUtil.isReferenceMacroApplicable(node, editorContext.getSelectedCell());
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode referenceMacro = EditingUtil.addReferenceMacro(node, editorContext.getSelectedCell());
       // set caret 
@@ -240,7 +209,6 @@ public class MacrosSwitch_KeyMap extends KeyMapImpl {
       assert inspector != null;
       inspector.activate();
     }
-
     public String getKeyStroke() {
       return "ctrl shift M";
     }

@@ -25,19 +25,16 @@ import org.apache.log4j.LogManager;
 public class MakeNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
   private boolean cleanMake;
-
   public MakeNamespace_Action(boolean cleanMake_par) {
     super("Make", "", ICON);
     this.cleanMake = cleanMake_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
@@ -54,7 +51,6 @@ public class MakeNamespace_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -68,7 +64,6 @@ public class MakeNamespace_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -87,7 +82,6 @@ public class MakeNamespace_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, MakeNamespace_Action.this.selectedModules(_params), null), MakeNamespace_Action.this.cleanMake).executeAction();
@@ -98,7 +92,6 @@ public class MakeNamespace_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -108,7 +101,6 @@ public class MakeNamespace_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   private List<SModule> selectedModules(final Map<String, Object> _params) {
     List<SModule> modules = new ArrayList<SModule>();
     for (TreeNode ppNode : ListSequence.fromList(((List<TreeNode>) MapSequence.fromMap(_params).get("ppNodes")))) {
@@ -118,6 +110,5 @@ public class MakeNamespace_Action extends BaseAction {
     }
     return modules;
   }
-
   protected static Logger LOG = LogManager.getLogger(MakeNamespace_Action.class);
 }

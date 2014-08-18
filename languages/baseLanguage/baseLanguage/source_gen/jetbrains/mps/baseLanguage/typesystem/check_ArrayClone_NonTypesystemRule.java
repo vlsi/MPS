@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ArrayClone_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ArrayClone_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instanceMethodCallOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // FIXME: almost duplicate code with JavaToMpsConverter 
     SReference methodRef = SNodeOperations.getReference(instanceMethodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration"));
@@ -56,18 +55,15 @@ public class check_ArrayClone_NonTypesystemRule extends AbstractNonTypesystemRul
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

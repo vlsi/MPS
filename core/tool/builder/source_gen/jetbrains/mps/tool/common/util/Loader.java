@@ -9,19 +9,14 @@ import java.io.IOException;
 
 /*package*/ abstract class Loader {
   private final URL myURL;
-
   protected Loader(URL url) {
     myURL = url;
   }
-
   protected URL getBaseURL() {
     return myURL;
   }
-
   @Nullable
   /*package*/ abstract Resource getResource(final String name, boolean flag);
-
   /*package*/ abstract void buildCache(ClasspathCache cache) throws IOException;
-
   /*package*/ abstract void dispose();
 }

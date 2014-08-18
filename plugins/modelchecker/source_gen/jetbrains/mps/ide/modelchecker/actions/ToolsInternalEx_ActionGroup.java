@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class ToolsInternalEx_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(ToolsInternalEx_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.modelchecker.actions.ToolsInternalEx_ActionGroup";
-
   public ToolsInternalEx_ActionGroup() {
     super("ToolsInternalEx", ID);
     this.setIsInternal(true);

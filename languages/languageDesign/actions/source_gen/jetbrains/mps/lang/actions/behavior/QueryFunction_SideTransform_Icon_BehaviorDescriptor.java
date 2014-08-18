@@ -9,15 +9,12 @@ import java.util.List;
 public class QueryFunction_SideTransform_Icon_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_SideTransform_Icon_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_SideTransform_Icon_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return QueryFunction_SideTransform_Icon_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Icon";

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class InlineSwitch_Case_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public InlineSwitch_Case_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.InlineSwitch_Case";

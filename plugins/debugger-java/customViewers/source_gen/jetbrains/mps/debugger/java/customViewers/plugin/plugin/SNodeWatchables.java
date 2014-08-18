@@ -9,98 +9,74 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 public class SNodeWatchables {
   public SNodeWatchables() {
   }
-
   public static class MyWatchable_child extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("child");
-
     public MyWatchable_child(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_reference extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("reference");
-
     public MyWatchable_reference(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_property extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("property");
-
     public MyWatchable_property(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_concept extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("concept");
-
     public MyWatchable_concept(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_id extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("id");
-
     public MyWatchable_id(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_model extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("model");
-
     public MyWatchable_model(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_text extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("text");
-
     public MyWatchable_text(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }
   }
-
   public static class MyWatchable_parent extends CustomJavaWatchable {
     private static WatchablesCategory ourCategory = new WatchablesCategory("parent");
-
     public MyWatchable_parent(JavaValue value, String name) {
       super(value, name);
     }
-
     public WatchablesCategory getCategory() {
       return ourCategory;
     }

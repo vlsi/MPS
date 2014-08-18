@@ -62,6 +62,5 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AnnotationMethodDeclaration_TextGen.class);
 }

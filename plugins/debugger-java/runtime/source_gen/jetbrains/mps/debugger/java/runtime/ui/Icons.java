@@ -15,7 +15,6 @@ public class Icons {
   public static final Icon DISABLED_FIELD_BREAKPOINT = IconContainer.ICON_a7;
   public static final Icon INVALID_FIELD_BREAKPOINT = IconContainer.ICON_a8;
   public static final Icon MUTED_FIELD_BREAKPOINT = IconContainer.ICON_a9;
-
   public Icons() {
   }
 }

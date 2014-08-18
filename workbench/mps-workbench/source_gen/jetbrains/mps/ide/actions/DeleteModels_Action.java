@@ -23,18 +23,15 @@ import org.apache.log4j.LogManager;
 
 public class DeleteModels_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteModels_Action() {
     super("Delete Models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -45,7 +42,6 @@ public class DeleteModels_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,7 +60,6 @@ public class DeleteModels_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final DeleteDialog.DeleteOption safeOption = new DeleteDialog.DeleteOption("Safe Delete", false, true);
@@ -92,6 +87,5 @@ public class DeleteModels_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteModels_Action.class);
 }

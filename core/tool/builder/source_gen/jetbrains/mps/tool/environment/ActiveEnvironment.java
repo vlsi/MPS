@@ -20,7 +20,7 @@ public class ActiveEnvironment {
     ActiveEnvironment.INSTANCE = null;
   }
 
-  public static Environment get() {
+  public static Environment getInstance() {
     return ActiveEnvironment.INSTANCE;
   }
 }

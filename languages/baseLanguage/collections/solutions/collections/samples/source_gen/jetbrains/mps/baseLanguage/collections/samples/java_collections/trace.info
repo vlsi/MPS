@@ -81,78 +81,78 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903b6(jetbrains.mps.baseLanguage.collections.samples.java_collections)/1153939305375">
     <file name="Main_sequence_as_javaList.java">
-      <node id="1224754223402" at="45,27,45,27" concept="1" />
-      <node id="1224754223404" at="48,27,48,27" concept="1" />
+      <node id="1224754223402" at="44,27,44,27" concept="1" />
+      <node id="1224754223404" at="47,27,47,27" concept="1" />
       <node id="1224754223401" at="18,0,19,0" concept="5" trace="__CP__" />
-      <node id="1224754223401" at="25,28,26,54" concept="0" />
-      <node id="1224754223401" at="26,54,27,35" concept="11" />
-      <node id="1224754223403" at="28,27,29,36" concept="4" />
-      <node id="1224754223403" at="31,40,32,40" concept="4" />
-      <node id="1224754223403" at="32,40,33,30" concept="2" />
-      <node id="1224754223403" at="34,23,35,38" concept="4" />
-      <node id="1224754223403" at="35,38,36,28" concept="2" />
-      <node id="1224754223403" at="37,27,38,29" concept="4" />
-      <node id="1224754223403" at="38,29,39,38" concept="4" />
-      <node id="1224754223403" at="39,38,40,28" concept="2" />
-      <node id="1224754226474" at="41,27,42,38" concept="4" />
-      <node id="1224754226474" at="42,38,43,39" concept="4" />
-      <node id="1224754226474" at="43,39,44,34" concept="11" />
-      <node id="1224754223402" at="45,27,46,38" concept="4" />
-      <node id="1224754223402" at="46,38,47,28" concept="2" />
-      <node id="1224754223404" at="48,27,49,38" concept="4" />
-      <node id="1224754223404" at="49,38,50,28" concept="2" />
-      <node id="1224754223401" at="51,28,52,37" concept="2" />
-      <node id="1224754223401" at="54,31,55,29" concept="11" />
-      <node id="1224754223407" at="58,0,59,0" concept="5" trace="_2_i" />
-      <node id="1153940280462" at="63,7,64,74" concept="10" />
-      <node id="1153939878810" at="64,74,65,55" concept="4" />
-      <node id="1153939850176" at="65,55,66,34" concept="10" />
-      <node id="1153940004523" at="67,32,68,28" concept="4" />
-      <node id="1153939985391" at="66,34,69,5" concept="7" />
-      <node id="1224754223403" at="30,27,34,23" concept="8" />
-      <node id="1224754223401" at="22,20,53,19" concept="13" />
-      <node id="1224754223401" at="20,46,54,31" concept="3" />
-      <node id="1224754223401" at="20,0,57,0" concept="9" trace="moveToNext#()Z" />
-      <node id="1224754223401" at="16,47,59,14" concept="11" />
-      <node id="1224754223401" at="16,0,61,0" concept="9" trace="iterator#()Ljava/util/Iterator;" />
-      <node id="1224754223401" at="14,43,61,10" concept="11" />
-      <node id="1224754223401" at="14,0,63,0" concept="9" trace="iterable#()Ljava/lang/Iterable;" />
-      <node id="1153939438520" at="12,47,63,7" concept="10" />
-      <node id="1153939332251" at="12,0,71,0" concept="12" trace="main#([Ljava/lang/String;)V" />
-      <scope id="1224754223402" at="45,27,45,27" />
-      <scope id="1224754223404" at="48,27,48,27" />
-      <scope id="1224754223403" at="28,27,29,36" />
-      <scope id="1224754223401" at="51,28,52,37" />
-      <scope id="1153939985395" at="67,32,68,28" />
-      <scope id="1224754223401" at="25,28,27,35" />
-      <scope id="1224754223403" at="31,40,33,30" />
-      <scope id="1224754223402" at="45,27,47,28" />
-      <scope id="1224754223404" at="48,27,50,28" />
-      <scope id="1224754223403" at="37,27,40,28" />
-      <scope id="1224754226474" at="41,27,44,34" />
-      <scope id="1153939985391" at="66,34,69,5">
+      <node id="1224754223401" at="24,28,25,54" concept="0" />
+      <node id="1224754223401" at="25,54,26,35" concept="11" />
+      <node id="1224754223403" at="27,27,28,36" concept="4" />
+      <node id="1224754223403" at="30,40,31,40" concept="4" />
+      <node id="1224754223403" at="31,40,32,30" concept="2" />
+      <node id="1224754223403" at="33,23,34,38" concept="4" />
+      <node id="1224754223403" at="34,38,35,28" concept="2" />
+      <node id="1224754223403" at="36,27,37,29" concept="4" />
+      <node id="1224754223403" at="37,29,38,38" concept="4" />
+      <node id="1224754223403" at="38,38,39,28" concept="2" />
+      <node id="1224754226474" at="40,27,41,38" concept="4" />
+      <node id="1224754226474" at="41,38,42,39" concept="4" />
+      <node id="1224754226474" at="42,39,43,34" concept="11" />
+      <node id="1224754223402" at="44,27,45,38" concept="4" />
+      <node id="1224754223402" at="45,38,46,28" concept="2" />
+      <node id="1224754223404" at="47,27,48,38" concept="4" />
+      <node id="1224754223404" at="48,38,49,28" concept="2" />
+      <node id="1224754223401" at="50,28,51,37" concept="2" />
+      <node id="1224754223401" at="53,31,54,29" concept="11" />
+      <node id="1224754223407" at="56,0,57,0" concept="5" trace="_2_i" />
+      <node id="1153940280462" at="61,7,62,74" concept="10" />
+      <node id="1153939878810" at="62,74,63,55" concept="4" />
+      <node id="1153939850176" at="63,55,64,34" concept="10" />
+      <node id="1153940004523" at="65,32,66,28" concept="4" />
+      <node id="1153939985391" at="64,34,67,5" concept="7" />
+      <node id="1224754223403" at="29,27,33,23" concept="8" />
+      <node id="1224754223401" at="21,20,52,19" concept="13" />
+      <node id="1224754223401" at="19,46,53,31" concept="3" />
+      <node id="1224754223401" at="19,0,56,0" concept="9" trace="moveToNext#()Z" />
+      <node id="1224754223401" at="16,47,57,14" concept="11" />
+      <node id="1224754223401" at="16,0,59,0" concept="9" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="1224754223401" at="14,43,59,10" concept="11" />
+      <node id="1224754223401" at="14,0,61,0" concept="9" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="1153939438520" at="12,47,61,7" concept="10" />
+      <node id="1153939332251" at="12,0,69,0" concept="12" trace="main#([Ljava/lang/String;)V" />
+      <scope id="1224754223402" at="44,27,44,27" />
+      <scope id="1224754223404" at="47,27,47,27" />
+      <scope id="1224754223403" at="27,27,28,36" />
+      <scope id="1224754223401" at="50,28,51,37" />
+      <scope id="1153939985395" at="65,32,66,28" />
+      <scope id="1224754223401" at="24,28,26,35" />
+      <scope id="1224754223403" at="30,40,32,30" />
+      <scope id="1224754223402" at="44,27,46,28" />
+      <scope id="1224754223404" at="47,27,49,28" />
+      <scope id="1224754223403" at="36,27,39,28" />
+      <scope id="1224754226474" at="40,27,43,34" />
+      <scope id="1153939985391" at="64,34,67,5">
         <var name="n" id="1153939985393" />
       </scope>
-      <scope id="1224754223403" at="30,27,36,28" />
-      <scope id="1224754223401" at="22,20,53,19" />
-      <scope id="1224754223401" at="20,46,55,29" />
-      <scope id="1224754223401" at="20,0,57,0" />
-      <scope id="1224754223401" at="16,47,59,14" />
-      <scope id="1224754223401" at="16,0,61,0" />
-      <scope id="1224754223401" at="14,43,61,10" />
-      <scope id="1224754223401" at="14,0,63,0" />
-      <scope id="1153939332253" at="12,47,69,5">
+      <scope id="1224754223403" at="29,27,35,28" />
+      <scope id="1224754223401" at="21,20,52,19" />
+      <scope id="1224754223401" at="19,46,54,29" />
+      <scope id="1224754223401" at="19,0,56,0" />
+      <scope id="1224754223401" at="16,47,57,14" />
+      <scope id="1224754223401" at="16,0,59,0" />
+      <scope id="1224754223401" at="14,43,59,10" />
+      <scope id="1224754223401" at="14,0,61,0" />
+      <scope id="1153939332253" at="12,47,67,5">
         <var name="javaList" id="1153939850177" />
         <var name="list" id="1153940280463" />
         <var name="sequence" id="1153939438521" />
       </scope>
-      <scope id="1153939332251" at="12,0,71,0">
+      <scope id="1153939332251" at="12,0,69,0">
         <var name="args" id="1153939342427" />
       </scope>
-      <unit id="1224754223401" at="17,23,59,13" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$3" />
-      <unit id="1224754223401" at="15,19,61,9" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$2" />
-      <unit id="1224754223401" at="13,58,63,5" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$1" />
-      <unit id="1153939305375" at="11,0,72,0" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList" />
+      <unit id="1224754223401" at="17,23,57,13" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$3" />
+      <unit id="1224754223401" at="15,19,59,9" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$2" />
+      <unit id="1224754223401" at="13,58,61,5" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList$1" />
+      <unit id="1153939305375" at="11,0,70,0" name="jetbrains.mps.baseLanguage.collections.samples.java_collections.Main_sequence_as_javaList" />
     </file>
   </root>
 </debug-info>

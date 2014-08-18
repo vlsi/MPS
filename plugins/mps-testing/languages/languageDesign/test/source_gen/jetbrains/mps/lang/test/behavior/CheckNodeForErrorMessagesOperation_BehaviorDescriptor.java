@@ -7,19 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CheckNodeForErrorMessagesOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
   public CheckNodeForErrorMessagesOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return CheckNodeForErrorMessagesOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CheckNodeForErrorMessagesOperation_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     CheckNodeForErrorMessagesOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.CheckNodeForErrorMessagesOperation";

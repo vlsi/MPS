@@ -28,12 +28,10 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
   public Classifier_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -41,24 +39,20 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       public boolean hasPresentation() {
         return true;
       }
-
       @Override
       public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
         return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(_context.getParameterNode(), _context.getEnclosingNode());
       }
-
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_z47b7w_a0a2a0a0a2;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getVisibleClassifiersScope(_context.getContextNode(), true);
       }
     };
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -67,7 +61,6 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "nestedName";
@@ -79,7 +72,6 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "resolveInfo";
@@ -91,7 +83,6 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
@@ -100,6 +91,5 @@ public class Classifier_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static SNodePointer breakingNode_z47b7w_a0a2a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136860");
 }

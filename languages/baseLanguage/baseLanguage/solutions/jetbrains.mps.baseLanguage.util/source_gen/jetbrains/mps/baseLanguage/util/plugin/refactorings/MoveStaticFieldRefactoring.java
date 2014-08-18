@@ -12,7 +12,6 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
   public MoveStaticFieldRefactoring(SNode moving, SNode destination) {
     super(moving, destination);
   }
-
   @Override
   public void replaceSingleUsage(SNode usage) {
     super.replaceSingleUsage(usage);
@@ -22,11 +21,9 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
       SNodeOperations.replaceWithAnother(usage, _quotation_createNode_fls06q_a0a0a0b0b(this.myDestination, this.myReplacing));
     }
   }
-
   protected boolean goodDestination() {
     return SNodeOperations.isInstanceOf(this.myDestination, "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   private static SNode _quotation_createNode_fls06q_a0a0a0b0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -35,7 +32,6 @@ public class MoveStaticFieldRefactoring extends BasicMoveRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_fls06q_a0a0a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

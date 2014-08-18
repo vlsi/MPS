@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnnotationTarget_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode annotationDeclaration = SLinkOperations.getTarget(annotationInstance, "annotation", false);
     SNode targetAi = null;
@@ -38,18 +37,15 @@ public class check_AnnotationTarget_NonTypesystemRule extends AbstractNonTypesys
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "wrong target of annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8695552310380242272", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -13,22 +13,18 @@ import org.apache.log4j.LogManager;
 
 public class Options_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public Options_Action() {
     super("Options", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -42,7 +38,6 @@ public class Options_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
@@ -51,6 +46,5 @@ public class Options_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(Options_Action.class);
 }

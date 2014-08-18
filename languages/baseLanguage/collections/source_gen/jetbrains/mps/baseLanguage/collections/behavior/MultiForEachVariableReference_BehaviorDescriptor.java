@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MultiForEachVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MultiForEachVariableReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference";

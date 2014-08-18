@@ -26,7 +26,6 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
   private DiagramCell myDiagramCell;
   private String myText;
   private Icon myIcon;
-
   public MyConnectorCreationAction(DiagramCell diagramCell) {
     myDiagramCell = diagramCell;
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -36,7 +35,6 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
       }
     });
   }
-
   protected ViewTrait getTrait() {
     if (myTrait == null) {
       myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
@@ -91,27 +89,21 @@ public class MyConnectorCreationAction implements PaletteToggleAction {
   }
 
 
-
-
   public void onClick() {
     myDiagramCell.setExternalTrait(getTrait());
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getText() {
     return myText;
   }
-
   private static boolean check_lbjacb_a0a1a0a0a0b0a0a0a0a0f(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }
     return false;
   }
-
   private static boolean eq_lbjacb_a0a0a0a0a0a4a0a0b0a0a0a0a5(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

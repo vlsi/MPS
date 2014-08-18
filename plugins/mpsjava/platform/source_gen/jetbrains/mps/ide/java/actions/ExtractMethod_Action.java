@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class ExtractMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ExtractMethod_Action() {
     super("Extract Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(ReadOnlyUtil.isCellsReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes"))).select(new ISelector<SNode, EditorCell>() {
       public EditorCell select(SNode it) {
@@ -52,7 +49,6 @@ public class ExtractMethod_Action extends BaseAction {
       }
     }))) && ExtractMethodFactory.isRefactoringAvailable(((List<SNode>) MapSequence.fromMap(_params).get("nodes")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -66,7 +62,6 @@ public class ExtractMethod_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -105,7 +100,6 @@ public class ExtractMethod_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("refactoring.extractMethod");
@@ -126,6 +120,5 @@ public class ExtractMethod_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ExtractMethod_Action.class);
 }

@@ -24,12 +24,10 @@ public class ProjectDependency {
   private final TemplateQueryContext myGenContext;
   private final SNode myProject;
   private final List<Tuples._2<SNode, String>> myDependency = ListSequence.fromList(new ArrayList<Tuples._2<SNode, String>>());
-
   public ProjectDependency(TemplateQueryContext genContext, SNode project) {
     myGenContext = genContext;
     myProject = project;
   }
-
   public ProjectDependency collectDependencies() {
     List<SNode> dependencies = ListSequence.fromList(new ArrayList<SNode>());
     dfs(myProject, dependencies, SetSequence.fromSet(new HashSet<SNode>()));
@@ -48,11 +46,9 @@ public class ProjectDependency {
 
     return this;
   }
-
   public List<Tuples._2<SNode, String>> getDependencies() {
     return myDependency;
   }
-
   private String calculatePath(SNode node, RelativePathHelper helper) {
     SNode script = SLinkOperations.getTarget(node, "script", false);
     String filePath = BuildProject_Behavior.call_getScriptsPath_4796668409958419284(script, Context.defaultContext(myGenContext));
@@ -74,7 +70,6 @@ public class ProjectDependency {
       return "????";
     }
   }
-
   private void dfs(SNode project, List<SNode> result, Set<SNode> visited) {
     SetSequence.fromSet(visited).addElement(project);
     for (SNode dependency : Sequence.fromIterable(getImmediateDependencies(project))) {
@@ -85,7 +80,6 @@ public class ProjectDependency {
       ListSequence.fromList(result).addElement(dependency);
     }
   }
-
   private Iterable<SNode> getImmediateDependencies(SNode project) {
     return ListSequence.fromList(SLinkOperations.getTargets(project, "dependencies", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

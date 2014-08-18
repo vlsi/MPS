@@ -7,7 +7,6 @@ import jetbrains.mps.console.blCommand.behavior.QueryParameter_BehaviorDescripto
 public class WithDependencies_BehaviorDescriptor extends QueryParameter_BehaviorDescriptor {
   public WithDependencies_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.WithDependencies";

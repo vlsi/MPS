@@ -11,7 +11,6 @@ import jetbrains.mps.build.util.JavaExportUtil;
 public class BuildSource_JavaExternalJarFolderRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getDependencyTarget_5610619299014531753(SNode thisNode, VisibleArtifacts artifacts) {
     if (SNodeOperations.getContainingRoot(thisNode) == SNodeOperations.getContainingRoot(SLinkOperations.getTarget(thisNode, "folder", false))) {
       return null;

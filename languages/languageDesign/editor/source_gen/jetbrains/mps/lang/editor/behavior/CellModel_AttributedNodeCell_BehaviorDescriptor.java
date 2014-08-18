@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CellModel_AttributedNodeCell_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_AttributedNodeCell_BehaviorDescriptor() {
   }
-
   public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return CellModel_AttributedNodeCell_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell";

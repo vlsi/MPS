@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class check_FactoryMigrationScriptPath_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_FactoryMigrationScriptPath_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode part, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode returnType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(part, "factoryMethod", true));
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, _quotation_createNode_5hdosv_b0a0b0b()))) {
@@ -30,22 +29,18 @@ public class check_FactoryMigrationScriptPath_NonTypesystemRule extends Abstract
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.script.structure.FactoryMigrationScriptPart";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_5hdosv_b0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -18,29 +18,23 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
   private static final StandardDescriptorIOProvider.SolutionDescriptorIO SOLUTION = new StandardDescriptorIOProvider.SolutionDescriptorIO();
   private static final StandardDescriptorIOProvider.LanguageDescriptorIO LANGUAGE = new StandardDescriptorIOProvider.LanguageDescriptorIO();
   private static final StandardDescriptorIOProvider.DevkitDescriptorIO DEVKIT = new StandardDescriptorIOProvider.DevkitDescriptorIO();
-
   /*package*/ StandardDescriptorIOProvider() {
   }
-
   @Override
   public DescriptorIO<SolutionDescriptor> solutionDescriptorIO() {
     return SOLUTION;
   }
-
   @Override
   public DescriptorIO<LanguageDescriptor> languageDescriptorIO() {
     return LANGUAGE;
   }
-
   @Override
   public DescriptorIO<DevkitDescriptor> devkitDescriptorIO() {
     return DEVKIT;
   }
-
   public static class SolutionDescriptorIO implements DescriptorIO<SolutionDescriptor> {
     public SolutionDescriptorIO() {
     }
-
     @Override
     public SolutionDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
@@ -51,27 +45,22 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
         return sd;
       }
     }
-
     @Override
     public void writeToFile(SolutionDescriptor sd, IFile file) {
       SolutionDescriptorPersistence.saveSolutionDescriptor(file, sd, MacrosFactory.forModuleFile(file));
     }
-
     @Override
     public void writeToXml(SolutionDescriptor sd, Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public SolutionDescriptor readFromXml(Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
     }
   }
-
   public static class LanguageDescriptorIO implements DescriptorIO<LanguageDescriptor> {
     public LanguageDescriptorIO() {
     }
-
     @Override
     public LanguageDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
@@ -82,27 +71,22 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
         return ld;
       }
     }
-
     @Override
     public void writeToFile(LanguageDescriptor ld, IFile file) {
       LanguageDescriptorPersistence.saveLanguageDescriptor(file, ld, MacrosFactory.forModuleFile(file));
     }
-
     @Override
     public void writeToXml(LanguageDescriptor ld, Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public LanguageDescriptor readFromXml(Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
     }
   }
-
   public static class DevkitDescriptorIO implements DescriptorIO<DevkitDescriptor> {
     public DevkitDescriptorIO() {
     }
-
     @Override
     public DevkitDescriptor readFromFile(IFile file) throws DescriptorIOException {
       try {
@@ -113,17 +97,14 @@ public class StandardDescriptorIOProvider implements DescriptorIOProvider {
         return dd;
       }
     }
-
     @Override
     public void writeToFile(DevkitDescriptor dd, IFile file) {
       DevkitDescriptorPersistence.saveDevKitDescriptor(file, dd);
     }
-
     @Override
     public DevkitDescriptor readFromXml(Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public void writeToXml(DevkitDescriptor t, Element element, IFile anchorFile) {
       throw new UnsupportedOperationException();

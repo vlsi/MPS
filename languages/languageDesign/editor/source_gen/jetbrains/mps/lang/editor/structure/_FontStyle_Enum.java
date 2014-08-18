@@ -14,15 +14,12 @@ public enum _FontStyle_Enum {
   query("query", "QUERY");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<_FontStyle_Enum> getConstants() {
     List<_FontStyle_Enum> list = ListSequence.fromList(new LinkedList<_FontStyle_Enum>());
     ListSequence.fromList(list).addElement(_FontStyle_Enum.bold);
@@ -32,11 +29,9 @@ public enum _FontStyle_Enum {
     ListSequence.fromList(list).addElement(_FontStyle_Enum.query);
     return list;
   }
-
   public static _FontStyle_Enum getDefault() {
     return _FontStyle_Enum.plain;
   }
-
   public static _FontStyle_Enum parseValue(String value) {
     if (value == null) {
       return _FontStyle_Enum.getDefault();
@@ -58,14 +53,11 @@ public enum _FontStyle_Enum {
     }
     return _FontStyle_Enum.getDefault();
   }
-
   private String myValue;
-
   _FontStyle_Enum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

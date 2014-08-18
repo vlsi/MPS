@@ -26,33 +26,26 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
   private final DebugProcessListener myListener = new VMEventsProcessorManagerComponent.MyDebugProcessesMulticaster();
   private final List<DebugProcessListener> myAllProcessListeners = new ArrayList<DebugProcessListener>();
   private final DebugSessionManagerComponent myDebugManager;
-
   public VMEventsProcessorManagerComponent(DebugSessionManagerComponent component) {
     myDebugManager = component;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "MPS Debug VM Events Processors Manager";
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   public EventsProcessor getEventsProcessor(final DebugSession session) {
     synchronized (myEventProcessorToSessionMap) {
       EventsProcessor processor = check_4p75cp_a0a0a0k(MapSequence.fromMap(myEventProcessorToSessionMap).findFirst(new IWhereFilter<IMapping<EventsProcessor, DebugSession>>() {
@@ -63,13 +56,11 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       return processor;
     }
   }
-
   private Set<EventsProcessor> getDebugProcesses() {
     synchronized (myEventProcessorToSessionMap) {
       return SetSequence.fromSetWithValues(new HashSet<EventsProcessor>(), MapSequence.fromMap(myEventProcessorToSessionMap).keySet());
     }
   }
-
   private void removeDebugProcess(EventsProcessor process) {
     synchronized (myEventProcessorToSessionMap) {
       DebugSession debugSession = MapSequence.fromMap(myEventProcessorToSessionMap).removeKey(process);
@@ -77,7 +68,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
     }
     process.removeDebugProcessListener(myListener);
   }
-
   public void performAllDebugProcessesAction(final _FunctionTypes._void_P1_E0<? super EventsProcessor> action) {
     for (final EventsProcessor processor : getDebugProcesses()) {
       processor.invoke(new _FunctionTypes._void_P0_E0() {
@@ -87,7 +77,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       });
     }
   }
-
   public void addDebugSession(DebugSession debugSession) {
     EventsProcessor process = debugSession.getEventsProcessor();
     synchronized (myEventProcessorToSessionMap) {
@@ -95,47 +84,39 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
     }
     process.addDebugProcessListener(myListener);
   }
-
   public void addAllProcessListener(DebugProcessListener listener) {
     synchronized (myAllProcessListeners) {
       myAllProcessListeners.add(listener);
     }
   }
-
   public void removeAllProcessListener(DebugProcessListener listener) {
     synchronized (myAllProcessListeners) {
       myAllProcessListeners.remove(listener);
     }
   }
-
   public List<DebugProcessListener> getAllProcessListeners() {
     synchronized (myAllProcessListeners) {
       return new ArrayList<DebugProcessListener>(myAllProcessListeners);
     }
   }
-
   public static VMEventsProcessorManagerComponent getInstance(Project project) {
     return project.getComponent(VMEventsProcessorManagerComponent.class);
   }
-
   private class MyDebugProcessesMulticaster implements DebugProcessListener {
     private MyDebugProcessesMulticaster() {
     }
-
     @Override
     public void connectorIsReady() {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.connectorIsReady();
       }
     }
-
     @Override
     public void processAttached(@NotNull EventsProcessor process) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.processAttached(process);
       }
     }
-
     @Override
     public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
@@ -143,14 +124,12 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       }
       removeDebugProcess(process);
     }
-
     @Override
     public void resumed(@NotNull Context suspendContext) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
         listener.resumed(suspendContext);
       }
     }
-
     @Override
     public void paused(@NotNull Context suspendContext) {
       for (DebugProcessListener listener : getAllProcessListeners()) {
@@ -158,7 +137,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
       }
     }
   }
-
   private static EventsProcessor check_4p75cp_a0a0a0k(IMapping<EventsProcessor, DebugSession> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.key();

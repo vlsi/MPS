@@ -26,7 +26,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class DispatchGenUtil {
   public DispatchGenUtil() {
   }
-
   public static Iterable<SNode> getMatchingMethods(SNode dispatchMethod) {
 
     int paramIndex = 0;

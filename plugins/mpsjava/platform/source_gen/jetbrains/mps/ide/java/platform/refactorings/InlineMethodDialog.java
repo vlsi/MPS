@@ -45,7 +45,6 @@ public class InlineMethodDialog extends RefactoringDialog {
   private InlineMethodDialog.PreviewAction myPreviewAction;
   private boolean myForAll;
   private IOperationContext myOperationContext;
-
   public InlineMethodDialog(SNode node, Project project, IOperationContext operationContext) {
     super(project, true);
     setTitle("Inline Method");
@@ -55,13 +54,11 @@ public class InlineMethodDialog extends RefactoringDialog {
     myOperationContext = operationContext;
     init();
   }
-
   @Nullable
   @Override
   protected String getHelpId() {
     return "refactoring.inlineMethod";
   }
-
   private JPanel createCheckBoxes() {
     JPanel checkboxesPanel = new JPanel();
     checkboxesPanel.setLayout(new BoxLayout(checkboxesPanel, BoxLayout.Y_AXIS));
@@ -85,7 +82,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     myPreviewAction.setEnabled(myForAll);
     return checkboxesPanel;
   }
-
   public void tryToShow(Component parentComponent) {
     final Wrappers._T<String> errors = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -99,7 +95,6 @@ public class InlineMethodDialog extends RefactoringDialog {
       JOptionPane.showMessageDialog(parentComponent, errors.value, "Can't perform refactoring", JOptionPane.ERROR_MESSAGE);
     }
   }
-
   private JRadioButton createButton(ButtonGroup group, JPanel checkboxesPanel, final boolean forAll, String text) {
     JRadioButton button1 = new JRadioButton(new AbstractAction(text) {
       @Override
@@ -112,7 +107,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     checkboxesPanel.add(button1);
     return button1;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -120,18 +114,15 @@ public class InlineMethodDialog extends RefactoringDialog {
     panel.add(createCheckBoxes(), BorderLayout.CENTER);
     return panel;
   }
-
   @Override
   protected void createDefaultActions() {
     super.createDefaultActions();
     myPreviewAction = new InlineMethodDialog.PreviewAction();
   }
-
   @Override
   protected Action[] createActions() {
     return new Action[]{getRefactorAction(), myPreviewAction, getCancelAction()};
   }
-
   /**
    * This method will be called on pressing "Refactor" button in dialog.
    * 
@@ -144,7 +135,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     }
     super.doRefactoringAction();
   }
-
   private boolean canExecuteRefactoring(SearchResults<SNode> usages) {
     String problems = getProblems(usages);
     if (problems.length() == 0) {
@@ -154,7 +144,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     dialog.show();
     return dialog.getExitCode() == DialogWrapper.NEXT_USER_EXIT_CODE;
   }
-
   private SearchResults<SNode> findUssages() {
     if (!(myForAll)) {
       return null;
@@ -172,7 +161,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     });
     return usages.value;
   }
-
   private String getProblems(SearchResults<SNode> usages) {
     InlineMethodRefactoringAnalyzer analyzer;
     if (myModel.getMethodCall() == null) {
@@ -182,7 +170,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     }
     return analyzer.findProblems(usages);
   }
-
   @Nullable
   @Override
   protected JComponent createNorthPanel() {
@@ -190,7 +177,6 @@ public class InlineMethodDialog extends RefactoringDialog {
     label.setText(myModel.getMethodPresentation());
     return label;
   }
-
   private void performRefactoring(final SearchResults<SNode> usages) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -207,12 +193,10 @@ public class InlineMethodDialog extends RefactoringDialog {
       }
     });
   }
-
   public class PreviewAction extends DialogWrapper.DialogWrapperAction {
     public PreviewAction() {
       super("Preview");
     }
-
     @Override
     protected void doAction(ActionEvent event) {
       final SearchResults<SNode> usages = findUssages();

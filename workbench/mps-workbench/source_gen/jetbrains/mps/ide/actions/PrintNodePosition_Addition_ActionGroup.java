@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class PrintNodePosition_Addition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(PrintNodePosition_Addition_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.PrintNodePosition_Addition_ActionGroup";
-
   public PrintNodePosition_Addition_ActionGroup() {
     super("PrintNodePosition_Addition", ID);
     this.setIsInternal(false);

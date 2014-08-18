@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class DeleteReferenceAction_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteReferenceAction_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof ReferenceTreeNode)) {
       return false;
@@ -36,7 +33,6 @@ public class DeleteReferenceAction_Action extends BaseAction {
     TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
     return parent instanceof ReferencesTreeNode;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -50,7 +46,6 @@ public class DeleteReferenceAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,7 +56,6 @@ public class DeleteReferenceAction_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
@@ -74,6 +68,5 @@ public class DeleteReferenceAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteReferenceAction_Action.class);
 }

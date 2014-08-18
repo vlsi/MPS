@@ -25,13 +25,11 @@ public class SReferenceCreator implements SReferenceHandler {
   private final SModule module;
   private final SModel model;
   private final String modelLongName;
-
   public SReferenceCreator(SModule module, SModel model) {
     this.module = module;
     this.model = model;
     modelLongName = NameUtil.getModelLongName(model.getReference().getModelName());
   }
-
   @Override
   public SReference createSReference(SNode source, String pack, SNodeId targetNodeId, String role, String resolveInfo, String rootPresentation) {
     if (pack.equals(modelLongName)) {

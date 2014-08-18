@@ -23,12 +23,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class BaseLanguagesImportHelper {
   public abstract SNode findVariable(SReference variableReference);
-
   public abstract SNode createVariableReference(SNode variable);
-
   public BaseLanguagesImportHelper() {
   }
-
   public void tryToImport(SNode container, List<SNodeReference> nodesToImport) {
     List<SNode> nodes = CopyUtil.copy(ListSequence.fromList(nodesToImport).select(new ISelector<SNodeReference, SNode>() {
       public SNode select(SNodeReference it) {
@@ -53,7 +50,6 @@ public abstract class BaseLanguagesImportHelper {
       }
     }
   }
-
   private void replaceStubReferences(SNode node, SModel containerModel) {
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
       SModel targetModel = SNodeOperations.getModel(SLinkOperations.getTargetNode(reference));
@@ -69,7 +65,6 @@ public abstract class BaseLanguagesImportHelper {
       }
     }
   }
-
   private void transformNodeToProperVariableReference(SNode node, SModel containerModel) {
     if (ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1) {
       SReference reference = ListSequence.fromList(SNodeOperations.getReferences(node)).first();
@@ -81,7 +76,6 @@ public abstract class BaseLanguagesImportHelper {
       }
     }
   }
-
   private void transformNode(SNode node, final SModel containerModel) {
     // try to resolve variables 
     ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -98,7 +92,6 @@ public abstract class BaseLanguagesImportHelper {
       replaceStubReferences(d, containerModel);
     }
   }
-
   private static SNode _quotation_createNode_5vd2f2_a0a0b0b0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -110,15 +103,12 @@ public abstract class BaseLanguagesImportHelper {
     }
     return quotedNode_2;
   }
-
   private static boolean neq_5vd2f2_a0b0a0e(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_5vd2f2_a0a1a1a0a4(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_5vd2f2_a0a1a0a5(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

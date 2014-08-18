@@ -9,27 +9,21 @@ public class GlobalSharedPair<A, B> extends MultiTuple._2<A, B> {
   public GlobalSharedPair() {
     super();
   }
-
   public GlobalSharedPair(A first, B second) {
     super(first, second);
   }
-
   public A first(A value) {
     return super._0(value);
   }
-
   public B second(B value) {
     return super._1(value);
   }
-
   public A first() {
     return super._0();
   }
-
   public B second() {
     return super._1();
   }
-
   @SuppressWarnings(value = "unchecked")
   public GlobalSharedPair assignFrom(Tuples._2<A, B> from) {
     return (GlobalSharedPair) super.assign(from);

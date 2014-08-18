@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class CleanProject_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CleanProject_Action() {
     super("Clean Compiled Java Files", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -51,7 +48,6 @@ public class CleanProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -70,7 +66,6 @@ public class CleanProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Set<SModule> modulesToBuild = SetSequence.fromSet(new LinkedHashSet<SModule>());
@@ -92,6 +87,5 @@ public class CleanProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CleanProject_Action.class);
 }

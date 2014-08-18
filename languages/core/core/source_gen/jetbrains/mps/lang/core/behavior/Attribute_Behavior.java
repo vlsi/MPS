@@ -12,19 +12,16 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class Attribute_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @Deprecated
   public static String virtual_getRole_1262430001741497900(SAbstractConcept thisConcept) {
     // use this method 
     return AttributeDesignTimeOperations.getAttributeRole(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()));
   }
-
   @Deprecated
   public static boolean virtual_multiple_1262430001741497972(SAbstractConcept thisConcept) {
     // use this method 
     return AttributeDesignTimeOperations.isMultipleAttribute(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()));
   }
-
   @Deprecated
   public static List<SNode> virtual_getAttributed_3044950653914717013(SAbstractConcept thisConcept) {
     // use this method 

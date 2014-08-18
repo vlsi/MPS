@@ -17,25 +17,20 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class FieldUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
-
   public FieldUsages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Field Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
@@ -46,7 +41,6 @@ public class FieldUsages_Finder extends GeneratedFinder {
     }
     return true;
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -66,7 +60,6 @@ public class FieldUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
@@ -76,7 +69,6 @@ public class FieldUsages_Finder extends GeneratedFinder {
       }
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Field Usages";

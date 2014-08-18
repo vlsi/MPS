@@ -11,7 +11,6 @@ public class SimpleRunner extends BlockJUnit4ClassRunner {
   public SimpleRunner(Class clazz) throws InitializationError {
     super(clazz);
   }
-
   @Override
   protected void runChild(FrameworkMethod method, RunNotifier notifier) {
     System.out.println("Running " + method);

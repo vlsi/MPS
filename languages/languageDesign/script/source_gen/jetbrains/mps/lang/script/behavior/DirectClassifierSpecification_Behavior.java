@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DirectClassifierSpecification_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getClassifierFqName_5434557751112930827(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   public static String virtual_getSModelReference_5434557751113441014(SNode thisNode) {
     return SNodeOperations.getModel(SLinkOperations.getTarget(thisNode, "classifier", false)).getReference().toString();
   }

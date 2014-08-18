@@ -16,15 +16,14 @@
   <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpeh" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" version="-1" />
   <import index="tpel" modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
-  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
-  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="dbrf" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="1t7x" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" version="-1" />
   <import index="xmjj" modelUID="f:java_stub#f3061a53-9226-4cc5-a443-f952ceaf5816#jetbrains.mps.baseLanguage.typesystem(jetbrains.mps.baseLanguage/jetbrains.mps.baseLanguage.typesystem@java_stub)" version="-1" />
   <import index="53gy" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)" version="-1" />
+  <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" version="-1" />
+  <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
@@ -32,6 +31,7 @@
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tpe3" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
+  <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="1217271585456" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="OnlyStatementsCanUnreachable" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow.unreachable" />
@@ -2876,7 +2876,7 @@
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="6011730950863071639" nodeInfo="nn">
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="6011730950863071640" nodeInfo="nn">
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6011730950863071641" nodeInfo="nn">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905150325957" nodeInfo="nn">
+                      <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3321636530264586259" nodeInfo="nn">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6011730950863071662" resolveInfo="s2" />
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6011730950863071643" nodeInfo="nn">
@@ -6540,6 +6540,7 @@
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="4395293866213195826" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="TestExpectedType" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
+    <property name="canNotRunInProcess" nameId="tpe3.6427619394892729757" value="false" />
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="4395293866213195827" nodeInfo="ng">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="4395293866213195828" nodeInfo="ig">
         <property name="name" nameId="tpck.1169194664001" value="ExpectedTest" />
@@ -6583,7 +6584,7 @@
               <node role="expression" roleId="tpee.1068581517676" type="tpee.Expression" typeId="tpee.1068431790191" id="8625360827012434491" nodeInfo="nn">
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="8625360827012434495" nodeInfo="ng">
                   <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeExpectedTypeCheckOperation" typeId="tp5g.4395293866213195846" id="4395293866213259305" nodeInfo="ng">
-                    <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="4395293866213259307" nodeInfo="in" />
+                    <node role="type" roleId="tp5g.1215526393912" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5477904468777633931" nodeInfo="in" />
                   </node>
                 </node>
               </node>
@@ -6680,6 +6681,7 @@
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpck.SuppressErrorsAnnotation" typeId="tpck.4222318806802425298" id="5719057349399106402" nodeInfo="ng" />
             </node>
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2034684073131264358" nodeInfo="nn" />
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7924017315521966089" nodeInfo="nn">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7924017315521967049" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7924017315521966090" nodeInfo="nn">
@@ -18382,6 +18384,131 @@
         </node>
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="595838485955140575" nodeInfo="ng">
           <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.CheckNodeForErrorMessagesOperation" typeId="tp5g.1215607067978" id="595838485955141760" nodeInfo="ng" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="5772383102104979493" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="dataFlow" />
+    <property name="name" nameId="tpck.1169194664001" value="PropertySetterReturn" />
+    <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="5772383102104987800" nodeInfo="ng">
+      <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5772383102104987802" nodeInfo="ig">
+        <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="PropSetterTest" />
+        <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="5772383102105099383" nodeInfo="igu">
+          <property name="propertyName" nameId="tpee.1201371481316" value="prop1" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5772383102105099384" nodeInfo="nn" />
+          <node role="propertyImplementation" roleId="tpee.1201372378714" type="tpee.CustomSetterPropertyImplementation" typeId="tpee.4285773203949551198" id="5772383102105100683" nodeInfo="ng">
+            <node role="getAccessor" roleId="tpee.4285773203949552004" type="tpee.DefaultGetAccessor" typeId="tpee.1202065242027" id="5772383102105100688" nodeInfo="ng" />
+            <node role="setAccessor" roleId="tpee.4285773203949552005" type="tpee.SetAccessor" typeId="tpee.1201476912089" id="5772383102105100693" nodeInfo="ng">
+              <node role="statementList" roleId="tpee.1202593336291" type="tpee.StatementList" typeId="tpee.1068580123136" id="5772383102105100694" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5772383102105100769" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5772383102105100765" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5772383102105100766" nodeInfo="nn">
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5772383102105100767" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5772383102105100768" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1070475926801" value="Foo" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpee.1201371521209" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5772383102105100680" nodeInfo="in" />
+        </node>
+        <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="5772383102105100904" nodeInfo="igu">
+          <property name="propertyName" nameId="tpee.1201371481316" value="prop2" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5772383102105100905" nodeInfo="nn" />
+          <node role="propertyImplementation" roleId="tpee.1201372378714" type="tpee.CustomSetterPropertyImplementation" typeId="tpee.4285773203949551198" id="5772383102105101049" nodeInfo="ng">
+            <node role="getAccessor" roleId="tpee.4285773203949552004" type="tpee.DefaultGetAccessor" typeId="tpee.1202065242027" id="5772383102105101054" nodeInfo="ng" />
+            <node role="setAccessor" roleId="tpee.4285773203949552005" type="tpee.SetAccessor" typeId="tpee.1201476912089" id="5772383102105101059" nodeInfo="ng">
+              <node role="statementList" roleId="tpee.1202593336291" type="tpee.StatementList" typeId="tpee.1068580123136" id="5772383102105101060" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5772383102105101132" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5772383102105101131" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="10" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpee.1201371521209" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5772383102105101046" nodeInfo="in" />
+        </node>
+        <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="5772383102105101273" nodeInfo="igu">
+          <property name="propertyName" nameId="tpee.1201371481316" value="prop3" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5772383102105101274" nodeInfo="nn" />
+          <node role="propertyImplementation" roleId="tpee.1201372378714" type="tpee.CustomSetterPropertyImplementation" typeId="tpee.4285773203949551198" id="5772383102105101370" nodeInfo="ng">
+            <node role="getAccessor" roleId="tpee.4285773203949552004" type="tpee.DefaultGetAccessor" typeId="tpee.1202065242027" id="5772383102105101375" nodeInfo="ng" />
+            <node role="setAccessor" roleId="tpee.4285773203949552005" type="tpee.SetAccessor" typeId="tpee.1201476912089" id="5772383102105101380" nodeInfo="ng">
+              <node role="statementList" roleId="tpee.1202593336291" type="tpee.StatementList" typeId="tpee.1068580123136" id="5772383102105101381" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5772383102105101452" nodeInfo="nn">
+                  <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5772383102105101453" nodeInfo="sn">
+                    <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5772383102105103529" nodeInfo="nn" />
+                  </node>
+                  <node role="condition" roleId="tpee.1068580123160" type="tpee.LessThanExpression" typeId="tpee.1081506773034" id="5772383102105103385" nodeInfo="nn">
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5772383102105103395" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="5" />
+                    </node>
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5772383102105101465" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="1" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5772383102105103751" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="5772383102105105298" nodeInfo="nn">
+                    <node role="rValue" roleId="tpee.1068498886297" type="tpee.ValueParameter" typeId="tpee.1202003934320" id="5772383102105105450" nodeInfo="nn" />
+                    <node role="lValue" roleId="tpee.1068498886295" type="tpee.PropertyValueReference" typeId="tpee.2622108313324567541" id="5772383102105103749" nodeInfo="ng">
+                      <link role="owningProperty" roleId="tpee.2622108313342889969" targetNodeId="5772383102105101273" resolveInfo="prop3" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5772383102105103667" nodeInfo="nn" />
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpee.1201371521209" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5772383102105101367" nodeInfo="in" />
+        </node>
+        <node role="member" roleId="tpee.5375687026011219971" type="tpee.Property" typeId="tpee.1201370618622" id="5772383102105105608" nodeInfo="igu">
+          <property name="propertyName" nameId="tpee.1201371481316" value="prop4" />
+          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5772383102105105609" nodeInfo="nn" />
+          <node role="propertyImplementation" roleId="tpee.1201372378714" type="tpee.CustomSetterPropertyImplementation" typeId="tpee.4285773203949551198" id="5772383102105105817" nodeInfo="ng">
+            <node role="getAccessor" roleId="tpee.4285773203949552004" type="tpee.DefaultGetAccessor" typeId="tpee.1202065242027" id="5772383102105105822" nodeInfo="ng" />
+            <node role="setAccessor" roleId="tpee.4285773203949552005" type="tpee.SetAccessor" typeId="tpee.1201476912089" id="5772383102105105827" nodeInfo="ng">
+              <node role="statementList" roleId="tpee.1202593336291" type="tpee.StatementList" typeId="tpee.1068580123136" id="5772383102105105828" nodeInfo="sn">
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5772383102105105903" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5772383102105105899" nodeInfo="nn">
+                    <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5772383102105105900" nodeInfo="nn">
+                      <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lb.~System" resolveInfo="System" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lb.~System%dout" resolveInfo="out" />
+                    </node>
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5772383102105105901" nodeInfo="nn">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg7.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="5772383102105105902" nodeInfo="nn">
+                        <property name="value" nameId="tpee.1070475926801" value="" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="5772383102105106045" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1068581517676" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="5772383102105106062" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="10" />
+                  </node>
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="5772383102105107063" nodeInfo="ng">
+                    <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="5772383102105107064" nodeInfo="ng" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="type" roleId="tpee.1201371521209" type="tpee.IntegerType" typeId="tpee.1070534370425" id="5772383102105105720" nodeInfo="in" />
+        </node>
+        <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5772383102104987803" nodeInfo="nn" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="5772383102105107059" nodeInfo="ng">
+          <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.CheckNodeForErrorMessagesOperation" typeId="tp5g.1215607067978" id="5772383102105107061" nodeInfo="ng" />
         </node>
       </node>
     </node>

@@ -23,12 +23,10 @@ public class EditorPropertyReference_Constraints extends BaseConstraintsDescript
   public EditorPropertyReference_Constraints() {
     super("jetbrains.mps.execution.settings.structure.EditorPropertyReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -39,7 +37,6 @@ public class EditorPropertyReference_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -48,7 +45,6 @@ public class EditorPropertyReference_Constraints extends BaseConstraintsDescript
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -57,7 +53,6 @@ public class EditorPropertyReference_Constraints extends BaseConstraintsDescript
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false), "propertyDeclaration", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fgw7og_a0a1a0a0a1a0b0a1a3;
@@ -67,11 +62,9 @@ public class EditorPropertyReference_Constraints extends BaseConstraintsDescript
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.SettingsEditor", false, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067191");
   private static SNodePointer breakingNode_fgw7og_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "2228878981387169228");
 }

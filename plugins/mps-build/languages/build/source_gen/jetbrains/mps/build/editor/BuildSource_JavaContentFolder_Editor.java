@@ -18,7 +18,6 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mj8zou_a(editorContext, node);
   }
-
   private EditorCell createCollection_mj8zou_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_mj8zou_a");
@@ -27,7 +26,6 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_mj8zou_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_mj8zou_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("kind");
@@ -48,7 +46,6 @@ public class BuildSource_JavaContentFolder_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_mj8zou_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("relativePath");

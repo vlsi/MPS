@@ -20,11 +20,9 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_525l3g_a(editorContext, node);
   }
-
   private EditorCell createCollection_525l3g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_525l3g_a");
@@ -34,7 +32,6 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     }
     return editorCell;
   }
-
   private EditorCell createConstant_525l3g_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("TYPE_VARIABLES_ANCHOR");
@@ -47,16 +44,13 @@ public class _GenericDeclaration_TypeVariables_WithAnchor_Component implements C
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_525l3g_a1a0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
-
   private EditorCell createComponent_525l3g_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
     return editorCell;
   }
-
   private static boolean renderingCondition_525l3g_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }

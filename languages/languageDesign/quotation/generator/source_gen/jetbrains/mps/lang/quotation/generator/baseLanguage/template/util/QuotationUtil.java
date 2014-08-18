@@ -11,7 +11,6 @@ import java.util.concurrent.ConcurrentHashMap;
 public class QuotationUtil {
   public QuotationUtil() {
   }
-
   public static String genQuotationNodeId(TemplateQueryContext genContext, SNode node) {
     SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     Integer id = (Integer) genContext.getTransientObject(quotation);
@@ -23,7 +22,6 @@ public class QuotationUtil {
     genContext.putTransientObject(quotation, id);
     return id.toString();
   }
-
   public static <K, V> ConcurrentMap<K, V> getBuilderMap(TemplateQueryContext genContext, SNode builder, String prefix) {
     String key = "QUtil/" + prefix + "/" + builder.getNodeId();
     ConcurrentMap<K, V> map = (ConcurrentMap<K, V>) genContext.getTransientObject(key);

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class RightOperand_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public RightOperand_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand";

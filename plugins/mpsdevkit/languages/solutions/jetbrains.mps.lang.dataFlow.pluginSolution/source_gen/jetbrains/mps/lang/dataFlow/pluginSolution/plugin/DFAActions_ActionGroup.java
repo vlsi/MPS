@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class DFAActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DFAActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DFAActions_ActionGroup";
-
   public DFAActions_ActionGroup() {
     super("DFAActions", ID);
     this.setIsInternal(false);

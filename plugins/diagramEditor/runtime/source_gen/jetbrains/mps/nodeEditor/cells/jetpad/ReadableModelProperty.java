@@ -12,7 +12,6 @@ public abstract class ReadableModelProperty<T> extends ValueProperty<T> {
     super();
     set(safeGetModelPropertyValue());
   }
-
   private T safeGetModelPropertyValue() {
     return ModelAccess.instance().runReadAction(new Computable<T>() {
       public T compute() {
@@ -24,9 +23,7 @@ public abstract class ReadableModelProperty<T> extends ValueProperty<T> {
       }
     });
   }
-
   protected abstract T getModelPropertyValue();
-
   public void synchronizeViewWithModel() {
     set(safeGetModelPropertyValue());
   }

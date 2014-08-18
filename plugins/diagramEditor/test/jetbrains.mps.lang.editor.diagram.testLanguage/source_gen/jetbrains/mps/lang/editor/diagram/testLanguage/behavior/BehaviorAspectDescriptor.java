@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
   public BehaviorAspectDescriptor() {
   }
-
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
@@ -38,6 +37,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram1", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Diagram2", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.InputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.Node", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithName", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPortQueries", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithSize", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputPort", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.OutputToInputPortConnector", "jetbrains.mps.lang.editor.diagram.testLanguage.structure.RectangleNode"};
 }

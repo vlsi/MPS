@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class BinaryOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public BinaryOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.BinaryOperation";

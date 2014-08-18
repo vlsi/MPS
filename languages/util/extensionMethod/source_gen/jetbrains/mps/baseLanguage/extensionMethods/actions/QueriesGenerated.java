@@ -29,7 +29,6 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ExtensionMethodDeclaration_720975379598240373(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_5246850046234986610(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -57,14 +56,12 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_5246850046234986611(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if ((SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"}, true, false) != null)) {
       return true;
     }
     return false;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_8455935734540360533(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -95,7 +92,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_8455935734540360534(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if ((SNodeOperations.getAncestorWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer"}, true, false) != null)) {
       return false;

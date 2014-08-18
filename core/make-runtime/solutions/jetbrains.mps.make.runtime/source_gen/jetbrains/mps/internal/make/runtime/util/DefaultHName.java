@@ -10,12 +10,10 @@ public abstract class DefaultHName<T> implements IHName<T> {
   private static Pattern FQNAME = Pattern.compile("(.+)\\.([^\\.]+)");
   private T parentName;
   private String name;
-
   protected DefaultHName(T parentName, String name) {
     this.parentName = parentName;
     this.name = name;
   }
-
   protected DefaultHName(String fqName) {
     Matcher m = FQNAME.matcher(fqName);
     if (m.matches()) {
@@ -25,22 +23,18 @@ public abstract class DefaultHName<T> implements IHName<T> {
       this.name = fqName;
     }
   }
-
   @Override
   public final T parentName() {
     return parentName;
   }
-
   @Override
   public final String fqName() {
     return prefix() + name;
   }
-
   @Override
   public String name() {
     return name;
   }
-
   @Override
   public boolean equals(Object that) {
     if (this == that) {
@@ -51,17 +45,14 @@ public abstract class DefaultHName<T> implements IHName<T> {
     }
     return fqName().equals(((IHName) that).fqName());
   }
-
   @Override
   public int hashCode() {
     return fqName().hashCode() * 43;
   }
-
   @Override
   public String toString() {
     return fqName();
   }
-
   /**
    * Override and make final. Called from the constructor when object is not fully constructed.
    * 
@@ -69,7 +60,6 @@ public abstract class DefaultHName<T> implements IHName<T> {
    * @return  
    */
   protected abstract T createParentName(String parentFqName);
-
   private String prefix() {
     if (parentName == null) {
       return "";

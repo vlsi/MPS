@@ -14,12 +14,10 @@ public class XMLSAXLocatorExpression_Constraints extends BaseConstraintsDescript
   public XMLSAXLocatorExpression_Constraints() {
     super("jetbrains.mps.core.xml.sax.structure.XMLSAXLocatorExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class XMLSAXLocatorExpression_Constraints extends BaseConstraintsDescript
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", false, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "2264311582634140769");
 }

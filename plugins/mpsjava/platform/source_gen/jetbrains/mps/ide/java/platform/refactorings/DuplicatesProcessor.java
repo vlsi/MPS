@@ -12,11 +12,9 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 public abstract class DuplicatesProcessor<T> {
   protected EditorContext myEditorContext;
-
   public DuplicatesProcessor(EditorContext context) {
     this.myEditorContext = context;
   }
-
   public void process(List<T> duplicates, Project project) {
     boolean replaceAll = false;
     for (T duplicate : ListSequence.fromList(duplicates)) {
@@ -44,8 +42,6 @@ public abstract class DuplicatesProcessor<T> {
       }
     }
   }
-
   protected abstract List<EditorMessage> createEditorMessages(T duplicate);
-
   public abstract void substitute(T duplicate);
 }

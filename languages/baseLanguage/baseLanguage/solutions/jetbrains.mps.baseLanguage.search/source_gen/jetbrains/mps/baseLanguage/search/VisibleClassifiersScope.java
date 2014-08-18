@@ -16,19 +16,16 @@ import org.apache.log4j.LogManager;
 @Deprecated
 public class VisibleClassifiersScope extends ReachableClassifiersScope {
   private SNode myContextNode = null;
-
   @Deprecated
   public VisibleClassifiersScope(SModel model, int constraint) {
     // use ClassifierScopes.getVisibleClassifiersScope instead 
     super(model, constraint);
   }
-
   @Deprecated
   public VisibleClassifiersScope(@NotNull SNode contextNode, int constraint) {
     super(SNodeOperations.getModel(contextNode), constraint);
     myContextNode = contextNode;
   }
-
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
@@ -40,7 +37,6 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     }
     return result;
   }
-
   @Override
   public boolean isInScope(SNode node) {
     // speed up IVisible nodes with context 
@@ -56,6 +52,5 @@ public class VisibleClassifiersScope extends ReachableClassifiersScope {
     }
     return VisibilityUtil.isVisible(myContextNode, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IVisible"));
   }
-
   protected static Logger LOG = LogManager.getLogger(VisibleClassifiersScope.class);
 }

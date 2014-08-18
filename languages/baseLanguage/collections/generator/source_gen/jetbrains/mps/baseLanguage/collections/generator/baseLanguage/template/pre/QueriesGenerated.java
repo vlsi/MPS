@@ -28,51 +28,40 @@ import jetbrains.mps.generator.template.InlineSwitchCaseContext;
 @Generated
 public class QueriesGenerated extends QueryProviderBase {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_5233164016162060882(final BaseMappingRuleContext _context) {
     SNode lt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     SNode rt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
     return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType"));
   }
-
   public static boolean baseMappingRule_Condition_5233164016162060952(final BaseMappingRuleContext _context) {
     return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
   }
-
   public static boolean baseMappingRule_Condition_5233164016162061001(final BaseMappingRuleContext _context) {
     SNode lt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
     SNode rt = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
     return (SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.PrimitiveType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) && !(SNodeOperations.isInstanceOf(lt, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.NullType"));
   }
-
   public static boolean baseMappingRule_Condition_5233164016162061071(final BaseMappingRuleContext _context) {
     return Helper.isCollectionElementAccess(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
   }
-
   public static SNode sourceNodeQuery_5233164016162060926(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_5233164016162060935(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_5233164016162060943(final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
   }
-
   public static SNode sourceNodeQuery_5233164016162061046(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_5233164016162061054(final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
   }
-
   public static SNode sourceNodeQuery_5233164016162061064(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static boolean mappingConfiguration_Condition_6847351214607238415(final TemplateQueryContext _context) {
     for (SNode node : SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.EqualsExpression")) {
       SNode le = SLinkOperations.getTarget(node, "leftExpression", true);
@@ -83,15 +72,12 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return false;
   }
-
   private final Map<String, ReductionRuleCondition> rrcMethods = new HashMap<String, ReductionRuleCondition>();
-
   {
     int i = 0;
     rrcMethods.put("5233164016162060879", new QueriesGenerated.RRC(i++));
     rrcMethods.put("5233164016162060998", new QueriesGenerated.RRC(i++));
   }
-
   @Override
   @NotNull
   public ReductionRuleCondition getReductionRuleCondition(@NotNull SNode rule) {
@@ -101,14 +87,11 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return rrcMethods.get(id);
   }
-
   private static class RRC implements ReductionRuleCondition {
     private final int methodKey;
-
     public RRC(int methodKey) {
       this.methodKey = methodKey;
     }
-
     @Override
     public boolean check(ReductionRuleQueryContext ctx) throws GenerationFailureException {
       switch (methodKey) {
@@ -121,14 +104,11 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-
   private final Map<String, MapConfigurationCondition> mccMethods = new HashMap<String, MapConfigurationCondition>();
-
   {
     int i = 0;
     mccMethods.put("5233164016162060878", new QueriesGenerated.MCC(i++));
   }
-
   @Override
   @NotNull
   public MapConfigurationCondition getMapConfigurationCondition(@NotNull SNode mapCfg) {
@@ -138,14 +118,11 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return mccMethods.get(id);
   }
-
   private static class MCC implements MapConfigurationCondition {
     private final int methodKey;
-
     public MCC(int methodKey) {
       this.methodKey = methodKey;
     }
-
     @Override
     public boolean check(TemplateQueryContext ctx) throws GenerationFailureException {
       switch (methodKey) {
@@ -156,9 +133,7 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-
   private final Map<String, SourceNodeQuery> snqMethods = new HashMap<String, SourceNodeQuery>();
-
   {
     int i = 0;
     snqMethods.put("5233164016162060926", new QueriesGenerated.SNQ(i++));
@@ -168,7 +143,6 @@ public class QueriesGenerated extends QueryProviderBase {
     snqMethods.put("5233164016162061054", new QueriesGenerated.SNQ(i++));
     snqMethods.put("5233164016162061064", new QueriesGenerated.SNQ(i++));
   }
-
   @NotNull
   @Override
   public SourceNodeQuery getSourceNodeQuery(@NotNull SNode query) {
@@ -178,14 +152,11 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return snqMethods.get(id);
   }
-
   private static class SNQ implements SourceNodeQuery {
     private final int methodKey;
-
     public SNQ(int methodKey) {
       this.methodKey = methodKey;
     }
-
     @Nullable
     public SNode evaluate(@NotNull SourceSubstituteMacroNodeContext ctx) throws GenerationFailureException {
       switch (methodKey) {
@@ -206,15 +177,12 @@ public class QueriesGenerated extends QueryProviderBase {
       }
     }
   }
-
   private final Map<String, InlineSwitchCaseCondition> isccMethods = new HashMap<String, InlineSwitchCaseCondition>();
-
   {
     int i = 0;
     isccMethods.put("5233164016162060881", new QueriesGenerated.ISCC(i++));
     isccMethods.put("5233164016162061000", new QueriesGenerated.ISCC(i++));
   }
-
   @NotNull
   @Override
   public InlineSwitchCaseCondition getInlineSwitchCaseCondition(@NotNull SNode caseNode) {
@@ -224,14 +192,11 @@ public class QueriesGenerated extends QueryProviderBase {
     }
     return isccMethods.get(id);
   }
-
   private static class ISCC implements InlineSwitchCaseCondition {
     private final int methodKey;
-
     public ISCC(int methodKey) {
       this.methodKey = methodKey;
     }
-
     @Override
     public boolean check(@NotNull InlineSwitchCaseContext ctx) throws GenerationFailureException {
       switch (methodKey) {

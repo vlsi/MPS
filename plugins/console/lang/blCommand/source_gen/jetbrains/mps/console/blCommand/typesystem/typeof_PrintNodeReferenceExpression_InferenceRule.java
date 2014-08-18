@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_PrintNodeReferenceExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PrintNodeReferenceExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode printNodeReferenceExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -25,22 +24,18 @@ public class typeof_PrintNodeReferenceExpression_InferenceRule extends AbstractI
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.blCommand.structure.PrintNodeReferenceExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_t5gmh8_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

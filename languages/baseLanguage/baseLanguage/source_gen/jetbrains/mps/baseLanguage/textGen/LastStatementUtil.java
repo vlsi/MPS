@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public final class LastStatementUtil {
   private LastStatementUtil() {
   }
-
   public static boolean canMakeReturnStatement(SNode lastStatement) {
     if (!(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       return false;

@@ -8,11 +8,9 @@ import mf.Currency;
 
 public class MoneyConstant implements Function<Money> {
   private Money myMoney;
-
   public MoneyConstant(double amount, Currency currency) {
     myMoney = new Money(amount, currency);
   }
-
   @Override
   public Money compute(Object parm) {
     return myMoney;

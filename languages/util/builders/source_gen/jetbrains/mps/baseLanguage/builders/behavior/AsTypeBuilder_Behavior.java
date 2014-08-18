@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AsTypeBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     throw new UnsupportedOperationException();
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "type", true);
   }

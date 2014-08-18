@@ -18,7 +18,6 @@ public class InheritDocInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ru37wa_a(editorContext, node);
   }
-
   private EditorCell createComponent_ru37wa_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -31,11 +30,9 @@ public class InheritDocInlineDocTag_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InheritDocInlineDocTag_Editor.ReplaceWith_BaseInlineDocTag_cellMenu_ru37wa_a0a()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BaseInlineDocTag_cellMenu_ru37wa_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BaseInlineDocTag_cellMenu_ru37wa_a0a() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag";
     }

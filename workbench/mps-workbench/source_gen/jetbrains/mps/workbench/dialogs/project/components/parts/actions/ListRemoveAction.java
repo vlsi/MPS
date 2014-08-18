@@ -8,18 +8,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public abstract class ListRemoveAction extends BaseValidatedAction {
   private JList myList;
-
   public ListRemoveAction(JList list) {
     super("Remove", "Remove", AllIcons.General.Remove);
     myList = list;
   }
-
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setEnabled(myList.getSelectedIndices().length != 0);
   }
-
   @Override
   public final void doPerform(AnActionEvent e) {
     int index = myList.getSelectedIndex();
@@ -40,6 +37,5 @@ public abstract class ListRemoveAction extends BaseValidatedAction {
       myList.setSelectedIndex(index);
     }
   }
-
   protected abstract void doRemove(AnActionEvent e);
 }

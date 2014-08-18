@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action() {
     super("Replace PlaceholderMethodDeclaration with PlaceholderMember", "Find and replace empty lines in Interfaces represented by PlaceholderMethodDeclaration", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Acti
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Acti
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c8959032d(jetbrains.mps.baseLanguage.collections.scripts)", "3600688056589376389");
@@ -80,6 +75,5 @@ public class MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Acti
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToRemovePlaceholderMethodDeclarations_Action.class);
 }

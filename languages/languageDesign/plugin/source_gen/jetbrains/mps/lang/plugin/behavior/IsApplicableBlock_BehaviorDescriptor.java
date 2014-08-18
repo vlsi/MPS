@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class IsApplicableBlock_BehaviorDescriptor extends UpdateBlock_BehaviorDescriptor {
   public IsApplicableBlock_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return IsApplicableBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return IsApplicableBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";

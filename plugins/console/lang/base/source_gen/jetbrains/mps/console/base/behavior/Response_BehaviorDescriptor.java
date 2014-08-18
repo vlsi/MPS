@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class Response_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HistoryItem_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public Response_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.Response";

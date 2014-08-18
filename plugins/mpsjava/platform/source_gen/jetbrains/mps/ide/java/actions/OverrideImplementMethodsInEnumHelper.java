@@ -16,13 +16,10 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 public class OverrideImplementMethodsInEnumHelper extends OverrideImplementMethodsHelper {
   private SNode enumConstant;
 
-
   public OverrideImplementMethodsInEnumHelper(Project project, SNode target, SNode enumConstant, SNode contextMember, boolean removeAttributes, boolean insertOverride, boolean needReturnKW) {
     super(project, target, contextMember, removeAttributes, insertOverride, needReturnKW);
     this.enumConstant = enumConstant;
   }
-
-
 
   public List<SNode> insertMethods(List<SNode> baseMethods) {
     int index = (myContextMember != null && SNodeOperations.isInstanceOf(myContextMember, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SNodeOperations.getParent(myContextMember) == enumConstant ? ListSequence.fromList(SLinkOperations.getTargets(enumConstant, "method", true)).indexOf(SNodeOperations.cast(myContextMember, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) + 1 : -1);
@@ -42,6 +39,5 @@ public class OverrideImplementMethodsInEnumHelper extends OverrideImplementMetho
     }
     return result;
   }
-
 
 }

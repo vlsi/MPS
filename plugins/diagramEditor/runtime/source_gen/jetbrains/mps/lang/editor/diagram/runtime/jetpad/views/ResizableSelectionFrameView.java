@@ -26,7 +26,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
   private ObservableList<Vector> myCornerResizeHandlePositions = new ObservableArrayList<Vector>();
   private ObservableList<Vector> mySideResizeHandlePositions = new ObservableArrayList<Vector>();
 
-
   public ResizableSelectionFrameView() {
     new Mapper<ResizableSelectionFrameView, ResizableSelectionFrameView>(this, this) {
       @Override
@@ -116,7 +115,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       }
     }.attachRoot();
   }
-
   private void updateCornerResizeHandlePositions(boolean resizable, Rectangle rectangle) {
     if (!(resizable)) {
       myCornerResizeHandlePositions.clear();
@@ -134,7 +132,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       iterator.add(nextPoint);
     }
   }
-
   private void updateSideResizeHandlePositions(boolean resizable, boolean visible, Rectangle rectangle) {
     if (!(resizable) || !(visible)) {
       mySideResizeHandlePositions.clear();
@@ -160,15 +157,12 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       iterator.add(nextPoint);
     }
   }
-
   private class ResizeHandleMapper extends Mapper<Vector, ResizeHandleView> {
     private Property<DragHandler> myDragHandler = new ValueProperty<DragHandler>();
-
     private ResizeHandleMapper(Vector position, ResizableSelectionFrameView.RectangleUpdater... updater) {
       super(position, new ResizeHandleView(position));
       myDragHandler.set(new ResizableSelectionFrameView.ResizeHandleMapper.DragHandlerImpl(updater));
     }
-
     @Override
     protected void registerSynchronizers(Mapper.SynchronizersConfiguration configuration) {
       super.registerSynchronizers(configuration);
@@ -176,23 +170,19 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       configuration.add(Synchronizers.forProperty(backgroundColor, getTarget().backgroundColor));
       configuration.add(Synchronizers.forProperty(myDragHandler, getTarget().dragHandler));
     }
-
     private class DragHandlerImpl implements DragHandler {
       private Rectangle myOriginalBounds;
       private Vector myDragStartposition;
       private ResizableSelectionFrameView.RectangleUpdater[] myUpdaters;
 
-
       private DragHandlerImpl(ResizableSelectionFrameView.RectangleUpdater... updaters) {
         myUpdaters = updaters;
       }
-
       public void dragStarted(Vector position) {
         myOriginalBounds = internalsBounds.get();
         myDragStartposition = position;
         updatePosition(position);
       }
-
       public void updatePosition(Vector position) {
         Rectangle bounds = myOriginalBounds;
         Vector dragDelta = position.sub(myDragStartposition);
@@ -201,7 +191,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
         }
         internalsBounds.set(bounds);
       }
-
       public void dragStopped(Vector position) {
         Rectangle finalBounds = internalsBounds.get();
         Vector originDelta = finalBounds.origin.sub(myOriginalBounds.origin);
@@ -212,17 +201,14 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       }
     }
   }
-
   private class RectangleUpdater {
     private boolean myOrigin;
     private boolean myX;
-
 
     private RectangleUpdater(boolean origin, boolean x) {
       myOrigin = origin;
       myX = x;
     }
-
     public Rectangle updateRect(Rectangle rectangle, Vector moveDelta) {
       Vector origin = rectangle.origin;
       Vector dimension = rectangle.dimension;
@@ -235,7 +221,6 @@ public class ResizableSelectionFrameView extends AbstractExternalFrameView {
       }
       return new Rectangle(origin, dimension);
     }
-
     private Vector updateVector(Vector value, Vector newValue) {
       return (myX ? new Vector(newValue.x, value.y) : new Vector(value.x, newValue.y));
     }

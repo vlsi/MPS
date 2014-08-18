@@ -15,7 +15,6 @@ import com.intellij.openapi.util.Computable;
 
 /*package*/ class WidgetSettingsPanel extends JPanel {
   private final JCheckBox myShowPopupBox;
-
   public WidgetSettingsPanel() {
     super(new GridBagLayout());
     myShowPopupBox = new JCheckBox("Display balloon on generation", TransientModelBallonDisplayer.isPopupShown());
@@ -24,7 +23,6 @@ import com.intellij.openapi.util.Computable;
 
     add(myShowPopupBox, LayoutUtil.createFieldConstraints(1));
   }
-
   public void showComponent(RelativePoint point) {
     final JBPopup popup = JBPopupFactory.getInstance().createComponentPopupBuilder(this, this).setRequestFocus(true).setMovable(true).setCancelCallback(new Computable<Boolean>() {
       @Override
@@ -35,7 +33,6 @@ import com.intellij.openapi.util.Computable;
     }).createPopup();
     popup.show(point);
   }
-
   private void onClose() {
     TransientModelBallonDisplayer.setShowPopup(myShowPopupBox.isSelected());
     TransientModelsNotification.updateWidgets();

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ResourceSpecificPropertiesExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ResourceSpecificPropertiesExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.facet.structure.ResourceSpecificPropertiesExpression";

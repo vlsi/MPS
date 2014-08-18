@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class Property_RemoveOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_applicableToEnumProperty_1262430001741498259(SAbstractConcept thisConcept) {
     return true;
   }

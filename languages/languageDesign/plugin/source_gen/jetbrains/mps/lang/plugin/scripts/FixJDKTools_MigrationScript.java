@@ -18,15 +18,12 @@ public class FixJDKTools_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "fix JDK.Tools refs";
       }
-
       public String getAdditionalInfo() {
         return "fix JDK.Tools refs";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -35,11 +32,9 @@ public class FixJDKTools_MigrationScript extends BaseMigrationScript {
           }
         }).isNotEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         MpsClasspathRefUtil.updateReferencesToMpsClasspath(node);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

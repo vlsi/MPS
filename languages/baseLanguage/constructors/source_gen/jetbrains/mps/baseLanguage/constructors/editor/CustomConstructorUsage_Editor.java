@@ -32,7 +32,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pubti2_a(editorContext, node);
   }
-
   private EditorCell createCollection_pubti2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pubti2_a");
@@ -42,16 +41,13 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createModelAccess_pubti2_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createModelAccess_pubti2_a0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "leftParenthesis");
       }
-
       public void setText(String text) {
       }
-
       public boolean isValidText(String text) {
         return true;
       }
@@ -67,7 +63,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCustom_pubti2_b0(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
       public AbstractCellProvider invoke() {
@@ -79,21 +74,18 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
               public SNode createNodeToInsert(EditorContext p0) {
                 return SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
               }
-
               @Override
               public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
                 EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
                 this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
                 return elementCell;
               }
-
               @Override
               public EditorCell createEmptyCell(EditorContext editorContext) {
                 EditorCell emptyCell = super.createEmptyCell(editorContext);
                 this.installElementCellActions(this.getOwner(), null, emptyCell, editorContext);
                 return emptyCell;
               }
-
               public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
                 if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
                   elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -107,7 +99,6 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                   }
                 }
               }
-
               public EditorCell createSeparatorCell(EditorContext editorContext) {
                 EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "separator"));
                 editorCell.setSelectable(false);
@@ -126,16 +117,13 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Custom_pubti2_b0");
     return editorCell;
   }
-
   private EditorCell createModelAccess_pubti2_c0(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "rightParenthesis");
       }
-
       public void setText(String text) {
       }
-
       public boolean isValidText(String text) {
         return true;
       }

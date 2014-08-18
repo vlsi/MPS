@@ -5,15 +5,12 @@ package jetbrains.mps.baseLanguage.collections.plugin;
 
 public class CollectionsLanguage {
   private static CollectionsLanguage INSTANCE = new CollectionsLanguage();
-
   private CollectionsLanguage() {
     INSTANCE = this;
   }
-
   public CustomContainersRegistry getCustomContainersRegistry() {
     return CustomContainersRegistry.INSTANCE;
   }
-
   public static CollectionsLanguage getInstance() {
     return INSTANCE;
   }

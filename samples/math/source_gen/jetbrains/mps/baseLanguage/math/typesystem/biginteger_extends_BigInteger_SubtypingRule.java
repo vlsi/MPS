@@ -14,26 +14,21 @@ import jetbrains.mps.smodel.SReference;
 public class biginteger_extends_BigInteger_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public biginteger_extends_BigInteger_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode bigIntegerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_nvphb0_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.BigIntegerType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_nvphb0_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -17,7 +17,6 @@ import java.util.ListIterator;
 public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
   private final AbstractSequence<U> input;
   private final Comparator<? super U> comparator;
-
   public SortingSequence(AbstractSequence<U> input, Comparator<? super U> comparator, boolean ascending) {
     if (input == null || comparator == null) {
       throw new NullPointerException();
@@ -29,7 +28,6 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
       this.comparator = new SortingSequence.InversedComparator<U>(comparator);
     }
   }
-
   public SortingSequence(AbstractSequence<U> input, Comparator<U> comparator) {
     if (input == null || comparator == null) {
       throw new NullPointerException();
@@ -37,19 +35,16 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
     this.input = input;
     this.comparator = comparator;
   }
-
   @Override
   public Iterator<U> iterator() {
     List<U> sortedInput = inputSortedWithSelector();
     return new SortingSequence.UnmodifiableIterator<U>(sortedInput.listIterator());
   }
-
   @Override
   public ISequence<U> alsoSort(_FunctionTypes._return_P1_E0<? extends Comparable<?>, ? super U> selector, boolean ascending) {
     SelectComparator<U> selectComparator = new SelectComparator<U>(selector);
     return new SortingSequence<U>(input, new SortingSequence.CompoundComparator<U>(comparator, (ascending ? selectComparator : new SortingSequence.InversedComparator<U>(selectComparator))));
   }
-
   @SuppressWarnings(value = "unchecked")
   private List<U> inputSortedWithSelector() {
     ArrayList<U> cache = new ArrayList<U>();
@@ -60,52 +55,41 @@ public class SortingSequence<U> extends Sequence<U> implements Iterable<U> {
     Arrays.sort(array, comparator);
     return Arrays.asList(array);
   }
-
   private static class UnmodifiableIterator<U> implements Iterator<U> {
     private final ListIterator<U> source;
-
     public UnmodifiableIterator(ListIterator<U> source) {
       this.source = source;
     }
-
     @Override
     public boolean hasNext() {
       return source.hasNext();
     }
-
     @Override
     public U next() {
       return source.next();
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
   }
-
   private static class InversedComparator<T> implements Comparator<T> {
     private final Comparator<? super T> primary;
-
     public InversedComparator(Comparator<? super T> primary) {
       this.primary = primary;
     }
-
     @Override
     public int compare(T a, T b) {
       return -primary.compare(a, b);
     }
   }
-
   private static class CompoundComparator<T> implements Comparator<T> {
     private final Comparator<? super T> secondary;
     private final Comparator<? super T> primary;
-
     public CompoundComparator(Comparator<? super T> primary, Comparator<? super T> secondary) {
       this.primary = primary;
       this.secondary = secondary;
     }
-
     @Override
     public int compare(T a, T b) {
       int c = primary.compare(a, b);

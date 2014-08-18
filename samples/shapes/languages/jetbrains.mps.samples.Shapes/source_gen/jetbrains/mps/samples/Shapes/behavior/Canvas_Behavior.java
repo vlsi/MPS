@@ -10,7 +10,6 @@ import javax.swing.JPanel;
 public class Canvas_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void call_interpret_1082824515535528722(SNode thisNode) {
     JFrame frame = new JFrame("Preview: " + SPropertyOperations.getString(thisNode, "name"));
     final JPanel panel = PreviewFactory.createPanel(thisNode);

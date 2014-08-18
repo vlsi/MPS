@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class FigureParameterAttributeViewProperty_BehaviorDescriptor extends FigureParameterAttribute_BehaviorDescriptor {
   public FigureParameterAttributeViewProperty_BehaviorDescriptor() {
   }
-
   public SNode virtual_getParameterMember_5422656561931910498(SNode thisNode) {
     return FigureParameterAttributeViewProperty_Behavior.virtual_getParameterMember_5422656561931910498(thisNode);
   }
-
   public SNode virtual_getParameterType_342110547581236128(SNode thisNode) {
     return FigureParameterAttributeViewProperty_Behavior.virtual_getParameterType_342110547581236128(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty";

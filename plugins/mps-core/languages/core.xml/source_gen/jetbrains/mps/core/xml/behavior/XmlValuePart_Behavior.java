@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class XmlValuePart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isFirstPositionAllowed_3080189811177340436(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlValuePart")) {
       SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlValuePart");
@@ -20,7 +19,6 @@ public class XmlValuePart_Behavior {
     }
     return true;
   }
-
   public static boolean virtual_isLastPositionAllowed_3080189811177340441(SNode thisNode) {
     SNode right = SNodeOperations.getNextSibling(thisNode);
     if (SNodeOperations.isInstanceOf(right, "jetbrains.mps.core.xml.structure.XmlTextValue")) {
@@ -28,11 +26,9 @@ public class XmlValuePart_Behavior {
     }
     return true;
   }
-
   public static boolean virtual_onNewLine_3080189811177340422(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_hasNewLineAfter_3080189811177340429(SNode thisNode) {
     return false;
   }

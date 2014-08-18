@@ -16,18 +16,14 @@ public class StaticFieldReference_Actions {
     editorCell.setAction(CellActionType.DELETE, new StaticFieldReference_Actions.StaticFieldReference_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new StaticFieldReference_Actions.StaticFieldReference_Actions_BACKSPACE(node));
   }
-
   public static class StaticFieldReference_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public StaticFieldReference_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -37,18 +33,14 @@ public class StaticFieldReference_Actions {
       }
     }
   }
-
   public static class StaticFieldReference_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public StaticFieldReference_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);

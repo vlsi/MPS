@@ -13,15 +13,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class RuleNullLiteral extends DataFlowConstructor {
   public RuleNullLiteral() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NullLiteral";
   }
-
   public void performActions(Program o, SNode node) {
     {
       Object object = node;

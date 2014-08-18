@@ -6,11 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class AbstractStaticContainerProcessor implements IStaticContainerProcessor {
   protected SNode myStaticContainer;
-
   public AbstractStaticContainerProcessor(SNode staticContainer) {
     this.myStaticContainer = staticContainer;
   }
-
   @Override
   public void addMethod(SNode method) {
     AbstractExtractMethodRefactoringProcessor.universalAddMethod(this.myStaticContainer, method);

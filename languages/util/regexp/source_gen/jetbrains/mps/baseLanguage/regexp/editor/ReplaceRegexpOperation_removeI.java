@@ -16,18 +16,14 @@ public class ReplaceRegexpOperation_removeI {
     editorCell.setAction(CellActionType.DELETE, new ReplaceRegexpOperation_removeI.ReplaceRegexpOperation_removeI_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ReplaceRegexpOperation_removeI.ReplaceRegexpOperation_removeI_BACKSPACE(node));
   }
-
   public static class ReplaceRegexpOperation_removeI_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ReplaceRegexpOperation_removeI_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
@@ -35,18 +31,14 @@ public class ReplaceRegexpOperation_removeI {
       editorContext.getEditorComponent().changeSelection(toSelect);
     }
   }
-
   public static class ReplaceRegexpOperation_removeI_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ReplaceRegexpOperation_removeI_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);

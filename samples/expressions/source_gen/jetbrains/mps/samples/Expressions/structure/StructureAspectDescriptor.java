@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -66,6 +65,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.samples.Expressions.structure.AndSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.BinarySimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.LogicalSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.NotSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.OrSimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathBooleanType", "jetbrains.mps.samples.Expressions.structure.SimpleMathElementType", "jetbrains.mps.samples.Expressions.structure.SimpleMathExpression", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongConstant", "jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", "jetbrains.mps.samples.Expressions.structure.SimpleMathNumberType", "jetbrains.mps.samples.Expressions.structure.SimpleMathType", "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration", "jetbrains.mps.samples.Expressions.structure.SimpleMathVarReference", "jetbrains.mps.samples.Expressions.structure.SimpleMathWrapper", "jetbrains.mps.samples.Expressions.structure.UnarySimpleMathExpression"};
 }

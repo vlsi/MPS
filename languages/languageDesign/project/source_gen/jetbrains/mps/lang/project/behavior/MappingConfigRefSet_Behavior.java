@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class MappingConfigRefSet_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     for (SNode r : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "refs", true))) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, r, "virtual_isComplete_2721285250110257005", new Object[]{}))) {

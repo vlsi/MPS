@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class DataTransferUtil {
   public DataTransferUtil() {
   }
-
   public static boolean isAbstract(SNode conceptDeclaration) {
     return SPropertyOperations.getBoolean(conceptDeclaration, "abstract");
   }

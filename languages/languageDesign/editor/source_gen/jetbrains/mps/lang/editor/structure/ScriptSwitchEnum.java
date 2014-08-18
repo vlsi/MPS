@@ -12,15 +12,12 @@ public enum ScriptSwitchEnum {
   subscript("subscript", "SUBSCRIPT");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<ScriptSwitchEnum> getConstants() {
     List<ScriptSwitchEnum> list = ListSequence.fromList(new LinkedList<ScriptSwitchEnum>());
     ListSequence.fromList(list).addElement(ScriptSwitchEnum.plain_text);
@@ -28,11 +25,9 @@ public enum ScriptSwitchEnum {
     ListSequence.fromList(list).addElement(ScriptSwitchEnum.subscript);
     return list;
   }
-
   public static ScriptSwitchEnum getDefault() {
     return ScriptSwitchEnum.plain_text;
   }
-
   public static ScriptSwitchEnum parseValue(String value) {
     if (value == null) {
       return ScriptSwitchEnum.getDefault();
@@ -48,14 +43,11 @@ public enum ScriptSwitchEnum {
     }
     return ScriptSwitchEnum.getDefault();
   }
-
   private String myValue;
-
   ScriptSwitchEnum(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -41,39 +41,31 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private final List<Element> myUnreadBreakpoints = new ArrayList<Element>();
   private BreakpointManagerComponent.IBreakpointsIO myBreakpointsIO = DUMMY_IO;
   private final List<BreakpointManagerComponent.IBreakpointManagerListener> myListeners = new ArrayList<BreakpointManagerComponent.IBreakpointManagerListener>();
-
   public BreakpointManagerComponent() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Breakpoint Manager";
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
     myBreakpointsIO = null;
     //  dispose 
   }
-
   public void setBreakpointsIO(BreakpointManagerComponent.IBreakpointsIO io) {
     myBreakpointsIO = io;
     reReadState();
   }
-
   public void addBreakpoint(@NotNull final IBreakpoint breakpoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -90,7 +82,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     });
     fireBreakpointAdded(breakpoint);
   }
-
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
@@ -110,7 +101,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       breakpointsForRoot.add(breakpoint);
     }
   }
-
   public void removeBreakpoint(@NotNull final IBreakpoint breakpoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
@@ -126,7 +116,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     });
     fireBreakpointRemoved(breakpoint);
   }
-
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
@@ -138,7 +127,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
     }
   }
-
   private void clear() {
     synchronized (myBreakpoints) {
       myRootsToBreakpointsMap.clear();
@@ -147,7 +135,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       myBreakpointsForRootInitialized = false;
     }
   }
-
   @Override
   public void loadState(Element state) {
     Set<IBreakpoint> newBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
@@ -166,7 +153,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
     });
   }
-
   private void loadStateInternal(Element state, Set<IBreakpoint> oldBreakpoints, Set<IBreakpoint> newBreakpoints) {
     synchronized (myBreakpoints) {
       SetSequence.fromSet(oldBreakpoints).addSequence(SetSequence.fromSet(myBreakpoints));
@@ -188,7 +174,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       SetSequence.fromSet(newBreakpoints).addSequence(SetSequence.fromSet(myBreakpoints));
     }
   }
-
   @Override
   public Element getState() {
     Element rootElement = new Element(BREAKPOINTS_LIST_ELEMENT);
@@ -209,7 +194,6 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
     }
     return rootElement;
   }
-
   public void reReadState() {
     Set<IBreakpoint> newBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
     Set<IBreakpoint> oldBreakpoints = SetSequence.fromSet(new HashSet<IBreakpoint>());
@@ -229,45 +213,38 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
     });
   }
-
   public Set<IBreakpoint> getAllIBreakpoints() {
     synchronized (myBreakpoints) {
       return new HashSet<IBreakpoint>(myBreakpoints);
     }
   }
-
   public void addChangeListener(BreakpointManagerComponent.IBreakpointManagerListener listener) {
     synchronized (myListeners) {
       myListeners.add(listener);
     }
   }
-
   public void removeChangeListener(BreakpointManagerComponent.IBreakpointManagerListener listener) {
     synchronized (myListeners) {
       myListeners.remove(listener);
     }
   }
-
   private List<BreakpointManagerComponent.IBreakpointManagerListener> getListeners() {
     synchronized (myListeners) {
       return new ArrayList<BreakpointManagerComponent.IBreakpointManagerListener>(myListeners);
     }
   }
-
   private void fireBreakpointRemoved(IBreakpoint breakpoint) {
     List<BreakpointManagerComponent.IBreakpointManagerListener> listeners = getListeners();
     for (BreakpointManagerComponent.IBreakpointManagerListener listener : listeners) {
       listener.breakpointRemoved(breakpoint);
     }
   }
-
   private void fireBreakpointAdded(IBreakpoint breakpoint) {
     List<BreakpointManagerComponent.IBreakpointManagerListener> listeners = getListeners();
     for (BreakpointManagerComponent.IBreakpointManagerListener listener : listeners) {
       listener.breakpointAdded(breakpoint);
     }
   }
-
   public Set<ILocationBreakpoint> getBreakpoints(final SNodeReference rootPointer) {
     return ModelAccess.instance().runReadAction(new Computable<Set<ILocationBreakpoint>>() {
       @Override
@@ -286,49 +263,39 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
       }
     });
   }
-
   public static BreakpointManagerComponent getInstance(@NotNull Project project) {
     return project.getComponent(BreakpointManagerComponent.class);
   }
-
   public static interface IBreakpointManagerListener {
     public void breakpointAdded(@NotNull IBreakpoint breakpoint);
     public void breakpointRemoved(@NotNull IBreakpoint breakpoint);
   }
-
   public static abstract class BreakpointManagerListener implements BreakpointManagerComponent.IBreakpointManagerListener {
     public BreakpointManagerListener() {
     }
-
     @Override
     public void breakpointAdded(@NotNull IBreakpoint breakpoints) {
       breakpointsChanged();
     }
-
     @Override
     public void breakpointRemoved(@NotNull IBreakpoint breakpoint) {
       breakpointsChanged();
     }
-
     public abstract void breakpointsChanged();
   }
-
   public static interface IBreakpointsIO {
     @Nullable
     public IBreakpoint readBreakpoint(@NotNull Element element);
     @Nullable
     public Element writeBreakpoint(@NotNull IBreakpoint breakpoint);
   }
-
   public static class DummyIO implements BreakpointManagerComponent.IBreakpointsIO {
     public DummyIO() {
     }
-
     @Override
     public IBreakpoint readBreakpoint(@NotNull Element element) {
       return null;
     }
-
     @Override
     public Element writeBreakpoint(@NotNull IBreakpoint breakpoint) {
       return null;

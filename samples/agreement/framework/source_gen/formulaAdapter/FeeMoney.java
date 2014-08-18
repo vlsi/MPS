@@ -9,7 +9,6 @@ import postingrules.MonetaryEvent;
 public class FeeMoney implements Function<Money> {
   public FeeMoney() {
   }
-
   @Override
   public Money compute(Object parm) {
     MonetaryEvent monetaryEvent = (MonetaryEvent) parm;

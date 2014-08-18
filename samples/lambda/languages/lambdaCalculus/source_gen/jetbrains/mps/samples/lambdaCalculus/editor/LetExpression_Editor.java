@@ -17,7 +17,6 @@ public class LetExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tphyk_a(editorContext, node);
   }
-
   private EditorCell createCollection_tphyk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tphyk_a");
@@ -30,14 +29,12 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_tphyk_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_tphyk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "let");
     editorCell.setCellId("Constant_tphyk_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tphyk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variable");
@@ -57,14 +54,12 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tphyk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_tphyk_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tphyk_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
@@ -84,14 +79,12 @@ public class LetExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_tphyk_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in");
     editorCell.setCellId("Constant_tphyk_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_tphyk_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");

@@ -26,11 +26,9 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_y5igai_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_y5igai_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_y5igai_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_y5igai_a");
@@ -42,7 +40,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedPropertyCell_y5igai_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_y5igai_a0");
@@ -54,7 +51,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_y5igai_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -76,11 +72,9 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_y5igai_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
-
   private EditorCell createAttributedPropertyCell_y5igai_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
@@ -90,7 +84,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_y5igai_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_y5igai_a_0");
@@ -101,7 +94,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_y5igai_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "property macro");
     editorCell.setCellId("Constant_y5igai_a0_0");
@@ -113,7 +105,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_y5igai_b0");
@@ -123,7 +114,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_y5igai_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_y5igai_c0");
@@ -135,14 +125,12 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_y5igai_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_y5igai_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_y5igai_b2a");
@@ -152,7 +140,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_y5igai_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -171,7 +158,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_y5igai_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_y5igai_d0");
@@ -182,7 +168,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_y5igai_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y5igai_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "value :");
     editorCell.setCellId("Constant_y5igai_a3a");
@@ -192,7 +177,6 @@ public class PropertyMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_y5igai_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("propertyValueFunction");

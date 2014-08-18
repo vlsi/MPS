@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class UnknownRuleReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getName_7691029917083872184(SNode thisNode) {
     return "UnknownRule";
   }

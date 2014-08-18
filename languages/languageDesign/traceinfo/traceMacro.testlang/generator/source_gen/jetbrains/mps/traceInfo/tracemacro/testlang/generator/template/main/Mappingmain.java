@@ -37,65 +37,50 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
   private final TemplateModel myModel;
-
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1());
   }
-
   public String getName() {
     return "main";
   }
-
   public TemplateModel getModel() {
     return this.myModel;
   }
-
   public SNodeReference getMappingNode() {
     return new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587788164");
   }
-
   public boolean isApplicable(ITemplateGenerator generator) {
     return true;
   }
-
   public Collection<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateRootMappingRule> getRootRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateWeavingRule> getWeavingRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPostScripts() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPreScripts() {
     return Collections.emptySet();
   }
-
   public boolean isTopPriority() {
     return false;
   }
-
   public final class ReductionRule0 extends ReductionRuleBase {
     public ReductionRule0() {
       super(new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587788165"), "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach", false);
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -150,17 +135,14 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return TemplateUtil.singletonList(tnode1);
     }
   }
-
   public final class ReductionRule1 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule1() {
       super(new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587793686"), "jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", false);
     }
-
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_7980748436587793846(new ReductionRuleQueryContext(context, getRuleNode()));
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -171,11 +153,9 @@ public class Mappingmain implements TemplateMappingConfiguration {
           public Object resolve(SNode outputNode, TemplateContext context) {
             return QueriesGenerated.referenceMacro_GetReferent_7980748436587793726(new ReferenceMacroContext(context, tnode1, referenceMacro_417xrn_c0a0a0a0a0a0b0c0c61, "variable"));
           }
-
           public String getDefaultResolveInfo() {
             return "";
           }
-
           public SNodeReference getTemplateNode() {
             return referenceMacro_417xrn_c0a0a0a0a0a0b0c0c61;
           }
@@ -185,7 +165,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
       return TemplateUtil.singletonList(tnode1);
     }
   }
-
   private static SNodePointer copySrcMacro_417xrn_b0a0c0b0c0b51 = new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587788177");
   private static SNodePointer copySrcMacro_417xrn_b0a0c0c0c0b51 = new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587788198");
   private static SNodePointer traceMacro_417xrn_b0a0a1a1a3a2a1p = new SNodePointer("r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)", "7980748436587793692");

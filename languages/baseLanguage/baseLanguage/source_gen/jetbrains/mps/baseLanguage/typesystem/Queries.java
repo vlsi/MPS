@@ -20,11 +20,9 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 public class Queries {
   public Queries() {
   }
-
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
     return getBinaryOperationType(leftType, rightType, false);
   }
-
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType, boolean mayBeString) {
     List<SNode> leastCommonSupertypes = SubtypingUtil.leastCommonSuperTypes(Arrays.asList(leftType, rightType), null);
     if (mayBeString) {

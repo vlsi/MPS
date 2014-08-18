@@ -10,22 +10,17 @@ public class DescriptorIOFacade {
   private static DescriptorIOFacade INSTANCE = new DescriptorIOFacade();
   private static final StandardDescriptorIOProvider STANDARD_FACTORY = new StandardDescriptorIOProvider();
   private static final IdeaDescriptorIOProvider IDEA = new IdeaDescriptorIOProvider();
-
   private DescriptorIOFacade() {
   }
-
   public DescriptorIO<? extends ModuleDescriptor> fromFileType(IFile file) {
     return fromExtension(file.getPath());
   }
-
   public DescriptorIOProvider standardProvider() {
     return STANDARD_FACTORY;
   }
-
   public DescriptorIOProvider ideaProvider() {
     return IDEA;
   }
-
   private DescriptorIO<? extends ModuleDescriptor> fromExtension(String path) {
     if (path.endsWith(MPSExtentions.DOT_LANGUAGE)) {
       return standardProvider().languageDescriptorIO();
@@ -38,7 +33,6 @@ public class DescriptorIOFacade {
     }
     return null;
   }
-
   public static DescriptorIOFacade getInstance() {
     return INSTANCE;
   }

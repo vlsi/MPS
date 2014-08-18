@@ -13,38 +13,29 @@ public class HandleEnterInTheEnd_Actions {
     editorCell.setAction(CellActionType.INSERT, new HandleEnterInTheEnd_Actions.HandleEnterInTheEnd_Actions_INSERT(node));
     editorCell.setAction(CellActionType.INSERT_BEFORE, new HandleEnterInTheEnd_Actions.HandleEnterInTheEnd_Actions_INSERT_BEFORE(node));
   }
-
   public static class HandleEnterInTheEnd_Actions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public HandleEnterInTheEnd_Actions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "insertNewLine";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       CommentLineEditingUtil.insertLine(editorContext);
     }
   }
-
   public static class HandleEnterInTheEnd_Actions_INSERT_BEFORE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public HandleEnterInTheEnd_Actions_INSERT_BEFORE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       CommentLineEditingUtil.insertLine(editorContext);
     }

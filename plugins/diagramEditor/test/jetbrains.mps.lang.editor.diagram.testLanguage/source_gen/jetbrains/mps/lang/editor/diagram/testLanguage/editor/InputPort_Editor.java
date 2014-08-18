@@ -27,20 +27,17 @@ public class InputPort_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramPort_w1m4cg_a(editorContext, node);
   }
-
   private EditorCell createDiagramPort_w1m4cg_a(final EditorContext editorContext, final SNode node) {
     final EditorCell editorCell = new InputPort_Editor.PortCellImpl_w1m4cg_a(editorContext, node);
     editorCell.setCellId("DiagramPort_w1m4cg_a");
     editorCell.setBig(true);
     return editorCell;
   }
-
   private class PortCellImpl_w1m4cg_a extends PortCell {
     private PortCellImpl_w1m4cg_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public Mapper<SNode, RectView> createMapper() {
       return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
         @Override
@@ -87,10 +84,8 @@ public class InputPort_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public void synchronize() {
     }
-
     private RectView createPortView() {
       RectView portView = new RectView();
       configureView(portView, new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -102,8 +97,6 @@ public class InputPort_Editor extends DefaultNodeEditor {
       portView.focusable().set(true);
       return portView;
     }
-
-
 
     public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
@@ -129,7 +122,6 @@ public class InputPort_Editor extends DefaultNodeEditor {
         }
       };
     }
-
 
   }
 }

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SConceptType_SNodeType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode conceptType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if (concept != null) {
@@ -35,22 +34,18 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     }
     return _quotation_createNode_6unv0u_a2a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SConceptType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_6unv0u_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -58,7 +53,6 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1071489090640")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_6unv0u_a0a0f0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -66,7 +60,6 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1169125989551")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_6unv0u_a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

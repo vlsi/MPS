@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class AbsractMake_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
   public AbsractMake_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
     return AbsractMake_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SNode thisNode) {
     return AbsractMake_Behavior.virtual_legalAsStatement_1262430001741498032(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.AbsractMake";

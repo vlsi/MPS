@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class BuildVariableMacroInitWithString_BehaviorDescriptor extends BuildVariableMacroInitValue_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public BuildVariableMacroInitWithString_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildVariableMacroInitWithString";

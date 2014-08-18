@@ -10,12 +10,10 @@ import java.util.ArrayList;
 
 public abstract class BaseAddAction extends BaseValidatedAction {
   private ListSelectionModel mySelectionModel;
-
   protected BaseAddAction(ListSelectionModel model) {
     super("Add", "Add", AllIcons.General.Add);
     mySelectionModel = model;
   }
-
   @Override
   public final void doPerform(AnActionEvent e) {
     List<Integer> indices = doAddMul(e);
@@ -24,11 +22,9 @@ public abstract class BaseAddAction extends BaseValidatedAction {
       getSelectionModel().addSelectionInterval(index, index);
     }
   }
-
   protected ListSelectionModel getSelectionModel() {
     return mySelectionModel;
   }
-
   protected List<Integer> doAddMul(AnActionEvent e) {
     ArrayList<Integer> result = new ArrayList<Integer>();
     int addResult = doAdd(e);
@@ -37,7 +33,6 @@ public abstract class BaseAddAction extends BaseValidatedAction {
     }
     return result;
   }
-
   protected int doAdd(AnActionEvent e) {
     return -1;
   }

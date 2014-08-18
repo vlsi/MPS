@@ -25,7 +25,6 @@ public class HelpHelper {
     }
     return null;
   }
-
   public static void showHelpFor(SModule contextModule, SModel contextModel, SNode node) {
     HelpHelper.HelpType defaultHelp = getDefaultHelpFor(contextModule, contextModel, node);
     if (defaultHelp == HelpHelper.HelpType.NODE) {
@@ -36,21 +35,18 @@ public class HelpHelper {
       HelpHelper.showHelpForAspect(contextModule, contextModel);
     }
   }
-
   public static boolean helpForNodeIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
     return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
   }
-
   public static boolean helpForRootIsAvailable(SNode node) {
     if ((node == null)) {
       return false;
     }
     return isNotEmptyString(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
   }
-
   public static boolean helpForAspectIsAvailable(SModule module, SModel model) {
     if (model == null || module == null) {
       return false;
@@ -66,7 +62,6 @@ public class HelpHelper {
       return module instanceof Generator;
     }
   }
-
   public static void showHelpForAspect(SModule contextModule, SModel contextModel) {
     if (contextModule instanceof Language) {
       Language language = ((Language) contextModule);
@@ -76,31 +71,25 @@ public class HelpHelper {
       BrowserUtil.launchBrowser(LanguageAspect.CONFLUENCE_BASE + "Generator#Generator-aboutgenerator");
     }
   }
-
   public static void showHelpForRoot(SNode node) {
     BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SNodeOperations.getContainingRoot(node)), "helpURL"));
   }
-
   public static void showHelpForNode(SNode node) {
     BrowserUtil.launchBrowser(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "helpURL"));
   }
-
   public static   enum HelpType {
     NODE("node"),
     ROOT_NODE("root"),
     ASPECT("aspect");
 
     private String myName;
-
     HelpType(String name) {
       this.myName = name;
     }
-
     public String getName() {
       return this.myName;
     }
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

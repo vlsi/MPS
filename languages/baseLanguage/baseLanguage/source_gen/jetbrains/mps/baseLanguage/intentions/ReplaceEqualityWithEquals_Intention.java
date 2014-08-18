@@ -23,68 +23,53 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceEqualityWithEquals_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceEqualityWithEquals_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.EqualsExpression";
   }
-
   public String getPresentation() {
     return "ReplaceEqualityWithEquals";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ReplaceEqualityWithEquals_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199557092807");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceEqualityWithEquals_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Equality with equals()";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode leftExpr = SLinkOperations.getTarget(node, "leftExpression", true);
       SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
@@ -95,12 +80,10 @@ public class ReplaceEqualityWithEquals_Intention implements IntentionFactory {
       ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).insertElement(0, rightExpression);
       SNodeOperations.replaceWithAnother(node, equalsExpression);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceEqualityWithEquals_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_1rm795_a0a0a0f0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

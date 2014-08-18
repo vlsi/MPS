@@ -19,16 +19,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact", "jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.rich"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_crd8ui_a(editorContext, node);
   }
-
   private EditorCell createCollection_crd8ui_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_crd8ui_a");
@@ -40,7 +37,6 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     editorCell.addEditorCell(this.createProperty_crd8ui_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_crd8ui_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -61,7 +57,6 @@ public class MultipleEditorsTestMostSpecificChild_compact_rich_Editor extends De
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_crd8ui_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("richCompactProperty");

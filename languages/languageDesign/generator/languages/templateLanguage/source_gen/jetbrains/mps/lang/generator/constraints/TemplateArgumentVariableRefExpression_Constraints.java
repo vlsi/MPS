@@ -25,7 +25,6 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
   public TemplateArgumentVariableRefExpression_Constraints() {
     super("jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,17 +41,14 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_k799s7_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -66,6 +61,5 @@ public class TemplateArgumentVariableRefExpression_Constraints extends BaseConst
     });
     return references;
   }
-
   private static SNodePointer breakingNode_k799s7_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "8247364127001806534");
 }

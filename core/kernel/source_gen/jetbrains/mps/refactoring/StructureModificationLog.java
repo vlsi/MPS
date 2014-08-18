@@ -11,18 +11,14 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class StructureModificationLog {
   private List<StructureModification> myDataList = ListSequence.fromList(new ArrayList<StructureModification>());
-
   public StructureModificationLog() {
   }
-
   public List<StructureModification> getHistory() {
     return myDataList;
   }
-
   public void addStructureModification(StructureModification data) {
     ListSequence.fromList(myDataList).addElement(data);
   }
-
   public int getLatestVersion(SModelReference modelRef) {
     if (ListSequence.fromList(myDataList).isEmpty()) {
       return -1;

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class InheritedNodeScopeFactory_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements NodeScopeFactory_BehaviorDescriptor {
   public InheritedNodeScopeFactory_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.InheritedNodeScopeFactory";

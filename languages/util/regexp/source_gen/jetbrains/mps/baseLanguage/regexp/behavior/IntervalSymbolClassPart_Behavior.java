@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IntervalSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "start")) + "-" + SymbolClassPart_Behavior.call_escapeChar_8173814113624637238(thisNode, SPropertyOperations.getString(thisNode, "end"));
   }

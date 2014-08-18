@@ -20,7 +20,6 @@ public class RuleType_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class RuleType_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     RuleType constant = RuleType.parseValue(value);
     if (constant != null) {

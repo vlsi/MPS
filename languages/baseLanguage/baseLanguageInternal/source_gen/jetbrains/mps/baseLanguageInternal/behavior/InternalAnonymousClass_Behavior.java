@@ -16,11 +16,9 @@ public class InternalAnonymousClass_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
   }
-
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return InternalAnonymousClass_Behavior.call_getJavaName_3421461530438560397(thisNode);
   }
-
   public static String call_getJavaName_3421461530438560397(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
     if ((ancestor == null)) {
@@ -28,7 +26,6 @@ public class InternalAnonymousClass_Behavior {
     }
     return BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}) + "$" + InternalAnonymousClass_Behavior.call_getIndexInContainingClass_3421461530438560434(thisNode);
   }
-
   public static int call_getIndexInContainingClass_3421461530438560434(SNode thisNode) {
     final SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     int index = ListSequence.fromList(SNodeOperations.getDescendantsWhereConceptInList(ancestor, new String[]{"jetbrains.mps.baseLanguage.structure.AnonymousClass", "jetbrains.mps.baseLanguageInternal.structure.InternalAnonymousClass"}, false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -38,21 +35,17 @@ public class InternalAnonymousClass_Behavior {
     }).indexOf(thisNode) + 1;
     return index;
   }
-
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return _quotation_createNode_bwi1fo_a0a3();
   }
-
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ? InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getNestedName_8540045600162184125", new Object[]{}) : BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getNestedName_8540045600162184125", new Object[]{}));
   }
-
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ? InternalAnonymousClass_Behavior.call_getAnonymousClassPresentation_3421461530438560331(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getFqName_1213877404258", new Object[]{}));
   }
-
   public static String call_getAnonymousClassPresentation_3421461530438560331(SNode thisNode, SNode containingClassifier) {
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
@@ -61,7 +54,6 @@ public class InternalAnonymousClass_Behavior {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_bwi1fo_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

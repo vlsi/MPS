@@ -32,15 +32,12 @@ public class MoveNodes extends BaseLoggableRefactoring {
     this.addTransientParameter("role");
     this.addTransientParameter("nodeToOpen");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveNodes_Target();
   }
-
   public String getUserFriendlyName() {
     return "Move Nodes";
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     ((RefactoringContext) refactoringContext).setLocal(true);
 
@@ -87,7 +84,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
     });
     return result.value;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     List<SNode> nodes = refactoringContext.getSelectedNodes();
     SModel targetModel = null;
@@ -105,11 +101,9 @@ public class MoveNodes extends BaseLoggableRefactoring {
       refactoringContext.setParameter("nodeToOpen", ListSequence.fromList(movedNodes).first());
     }
   }
-
   public void doWhenDone(final RefactoringContext refactoringContext) {
     // todo: open target nodes 
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
     for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
@@ -117,7 +111,6 @@ public class MoveNodes extends BaseLoggableRefactoring {
     }
     return searchResults;
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }

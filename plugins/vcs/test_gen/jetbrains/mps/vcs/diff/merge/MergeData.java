@@ -45,7 +45,6 @@ public class MergeData {
   private final String myModelMpsMine;
   private final String myModelMpsRepository;
   private final String myModelMpsResult;
-
   public MergeData(File zipFile) throws IOException {
     myZipFileFile = zipFile;
     myZipFile = new ZipFile(myZipFileFile);
@@ -65,19 +64,16 @@ public class MergeData {
     myModelMpsMine = modelName + ".mps.mine";
     myModelMpsResult = modelName + ".mps.result";
   }
-
   private void loadCommonData() throws IOException {
     myBaseModelString = loadString(myModelMpsBase);
     myMineModelString = loadString(myModelMpsMine);
     myRepositoryModelString = loadString(myModelMpsRepository);
   }
-
   private void loadResultData() throws IOException {
     myResultModelString = loadString(myModelMpsResult);
     myChangesMineString = loadString(CHANGES_MINE_TXT);
     myChangesRepositoryString = loadString(CHANGES_REPOSITORY_TXT);
   }
-
   private boolean generateAndCheckResultData() throws ModelReadException {
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
 
@@ -111,7 +107,6 @@ public class MergeData {
       return false;
     }
   }
-
   private void saveAndClose() throws IOException {
     myZipFile.close();
     ZipOutputStream zos = new ZipOutputStream(new FileOutputStream(myZipFileFile));
@@ -125,7 +120,6 @@ public class MergeData {
     addFileToZos(zos, CHANGES_REPOSITORY_TXT, myChangesRepositoryString);
     zos.close();
   }
-
   @Nullable
   private String loadString(@NotNull String name) throws IOException {
     ZipEntry entry = myZipFile.getEntry(name);
@@ -137,7 +131,6 @@ public class MergeData {
     inputStream.close();
     return new String(bytes, FileUtil.DEFAULT_CHARSET);
   }
-
   public void generate() throws IOException, ModelReadException {
     loadCommonData();
     loadResultData();
@@ -145,7 +138,6 @@ public class MergeData {
       saveAndClose();
     }
   }
-
   public boolean check() throws IOException, ModelReadException {
     loadCommonData();
     loadResultData();
@@ -153,7 +145,6 @@ public class MergeData {
     myZipFile.close();
     return result;
   }
-
   private static String dumpChangeSet(ChangeSet changeSet, MergeSession session) {
     StringBuffer buf = new StringBuffer();
     for (ModelChange change : ListSequence.fromList(changeSet.getModelChanges()).sort(new ISelector<ModelChange, String>() {
@@ -172,13 +163,11 @@ public class MergeData {
     }
     return buf.toString();
   }
-
   private static void addFileToZos(ZipOutputStream zipOutputStream, String name, String content) throws IOException {
     zipOutputStream.putNextEntry(new ZipEntry(name));
     zipOutputStream.write(content.getBytes(FileUtil.DEFAULT_CHARSET));
     zipOutputStream.closeEntry();
   }
-
   private static boolean check(String what, String expected, String actual) {
     if (expected == null || actual == null) {
       if (expected != null || actual != null) {
@@ -201,7 +190,6 @@ public class MergeData {
       return false;
     }
   }
-
   private static <T> T as_u0rai9_a0a0a2a8a71(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

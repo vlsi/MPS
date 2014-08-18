@@ -97,7 +97,7 @@ public class ScopeEditor extends BaseEditor<ScopeOptions> {
     myButtonGroup.add(myModuleScopeButton);
     myButtonGroup.add(myModelScopeButton);
 
-    Set<SModule> moduleList = MPSModuleRepository.getInstance().getAllModules();
+    Iterable<SModule> moduleList = MPSModuleRepository.getInstance().getModules();
     List<String> moduleNameList = new ArrayList<String>();
 
     for (SModule iModule : moduleList) {

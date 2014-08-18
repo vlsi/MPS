@@ -21,8 +21,6 @@ import java.awt.event.MouseEvent;
     super(place, actionGroup, horizontal, dataManager, actionManager, keymapManager);
   }
 
-
-
   @Override
   public ActionButton createToolbarButton(AnAction action, ActionButtonLook look, String place, Presentation presentation, Dimension minimumSize) {
     if (action.displayTextInToolbar()) {
@@ -33,8 +31,6 @@ import java.awt.event.MouseEvent;
       protected DataContext getDataContext() {
         return getToolbarDataContext();
       }
-
-
 
       @Override
       protected void processMouseEvent(MouseEvent event) {
@@ -47,21 +43,17 @@ import java.awt.event.MouseEvent;
         }
       }
 
-
-
       @Override
       public void click() {
         updateChildren();
         super.click();
         removeChildren();
       }
-
       private void updateChildren() {
         if (myAction instanceof PopupPaletteActionGroupAdapter) {
           ((PopupPaletteActionGroupAdapter) myAction).updateChildren();
         }
       }
-
       private void removeChildren() {
         if (myAction instanceof PopupPaletteActionGroupAdapter) {
           ((PopupPaletteActionGroupAdapter) myAction).removeChildren();
@@ -71,6 +63,5 @@ import java.awt.event.MouseEvent;
     button.setLook(look);
     return button;
   }
-
 
 }

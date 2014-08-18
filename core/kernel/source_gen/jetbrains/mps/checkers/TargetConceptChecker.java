@@ -18,7 +18,6 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 public class TargetConceptChecker extends AbstractConstraintsChecker {
   public TargetConceptChecker() {
   }
-
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {

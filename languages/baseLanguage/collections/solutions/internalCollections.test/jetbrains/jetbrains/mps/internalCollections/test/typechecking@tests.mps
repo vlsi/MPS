@@ -528,7 +528,7 @@
     </node>
   </root>
   <root type="tp5g.TestInfo" typeId="tp5g.5097124989038916362" id="2169032458071665236" nodeInfo="ng">
-    <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test" />
+    <property name="projectPath" nameId="tp5g.5097124989038916363" value="${mps_home}" />
   </root>
 </model>
 

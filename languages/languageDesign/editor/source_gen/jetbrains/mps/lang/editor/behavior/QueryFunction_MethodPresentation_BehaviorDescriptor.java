@@ -10,15 +10,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class QueryFunction_MethodPresentation_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public QueryFunction_MethodPresentation_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return QueryFunction_MethodPresentation_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_MethodPresentation_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation";

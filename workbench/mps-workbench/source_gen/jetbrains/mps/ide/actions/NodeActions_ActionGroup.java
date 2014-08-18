@@ -21,7 +21,6 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_structure = ID + "structure";
   public static final String LABEL_ID_diff = ID + "diff";
   public static final String LABEL_ID_favorites = ID + "favorites";
-
   public NodeActions_ActionGroup() {
     super("NodeActions", ID);
     this.setIsInternal(false);

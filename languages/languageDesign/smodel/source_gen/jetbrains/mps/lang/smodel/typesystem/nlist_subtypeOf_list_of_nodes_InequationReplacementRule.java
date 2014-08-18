@@ -20,10 +20,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public nlist_subtypeOf_list_of_nodes_InequationReplacementRule() {
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     {
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
@@ -32,17 +30,14 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_9szvhv_a0a0d(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), false, true, _info_12389875345);
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_9szvhv_a0a0b0e(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), true);
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a6();
@@ -51,7 +46,6 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a7();
@@ -60,21 +54,16 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeListType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
-
   public static class Pattern_9szvhv_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_CONCEPT;
-
     public Pattern_9szvhv_a0a0a0a6() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_3tjcdg_a0a = nodeToMatch;
@@ -85,34 +74,27 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_CONCEPT = (SNode) pattern.getFieldValue("patternVar_CONCEPT");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_CONCEPT".equals(fieldName)) {
         return patternVar_CONCEPT;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_9szvhv_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT;
-
     public Pattern_9szvhv_a0a0a0a7() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_3tjcdg_a0a_0 = nodeToMatch;
@@ -132,28 +114,23 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ELEMENT = (SNode) pattern.getFieldValue("patternVar_ELEMENT");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ELEMENT".equals(fieldName)) {
         return patternVar_ELEMENT;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_9szvhv_a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -161,7 +138,6 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_9szvhv_a0a0b0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

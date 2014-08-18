@@ -11,25 +11,20 @@ import jetbrains.mps.make.reduced.plugin.FacetAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "b608bb31-cbf1-4d56-a8e8-8fa2f751be68(jetbrains.mps.make.reduced)";
-
   public Language() {
   }
-
   @Override
   public String getNamespace() {
     return "jetbrains.mps.make.reduced";
   }
-
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{};
   }
-
   @Override
   public Collection<TemplateModule> getGenerators() {
     return null;
   }
-
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == MakeAspectDescriptor.class) {

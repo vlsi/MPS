@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationAdapter;
 
 public class Extension_Test extends TestCase {
   private static TestObject TEST_OBJECT;
-
   @MPSLaunch
   public void test_testObject() throws Exception {
     Iterable<Extension<TestObject>> extensions = ((ExtensionPoint<TestObject>) ExtensionPoint.<TestObject>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.testExtensionPoint", TestObject.class))).getExtensions();
@@ -38,7 +37,6 @@ public class Extension_Test extends TestCase {
     Assert.assertEquals("foobar", to.getValue());
     Assert.assertFalse(to.isShutDown());
   }
-
   @MPSLaunch
   public void test_testLazyObject() throws Exception {
     Assert.assertNull(LazyTestObject.INSTANCE);
@@ -47,7 +45,6 @@ public class Extension_Test extends TestCase {
     Assert.assertNotNull(lzo);
     Assert.assertSame(LazyTestObject.INSTANCE, lzo);
   }
-
   @MPSLaunch
   public void test_extensionPointExpression() throws Exception {
     String string = IterableUtils.join(Sequence.fromIterable(ExtensionPoint.<String>generify(new ExtensionPoint("jetbrains.mps.lang.extension.tests.multiExtensionPoint", String.class)).getObjects()).sort(new ISelector<String, String>() {
@@ -57,7 +54,6 @@ public class Extension_Test extends TestCase {
     }, false), ", ");
     Assert.assertEquals("salam, dunya", string);
   }
-
   public void tearDown() {
     if (TEST_OBJECT != null) {
       Assert.assertFalse(TEST_OBJECT.isShutDown());
@@ -71,7 +67,6 @@ public class Extension_Test extends TestCase {
       });
     }
   }
-
   public Extension_Test() {
   }
 }

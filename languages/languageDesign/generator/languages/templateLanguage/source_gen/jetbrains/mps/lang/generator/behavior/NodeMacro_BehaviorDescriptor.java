@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class NodeMacro_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor {
   public NodeMacro_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return NodeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NodeMacro_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.NodeMacro";

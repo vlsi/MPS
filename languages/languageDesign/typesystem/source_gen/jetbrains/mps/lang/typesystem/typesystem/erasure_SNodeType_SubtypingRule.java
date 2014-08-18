@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public erasure_SNodeType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_ak4xkm_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode _quotation_createNode_ak4xkm_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

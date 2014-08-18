@@ -14,12 +14,10 @@ public class ReportConfigurationErrorStatement_Constraints extends BaseConstrain
   public ReportConfigurationErrorStatement_Constraints() {
     super("jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class ReportConfigurationErrorStatement_Constraints extends BaseConstrain
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.execution.settings.structure.CheckProperties_Function", false, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067078");
 }

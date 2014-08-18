@@ -93,7 +93,6 @@ public class MergeModelsDialog extends DialogWrapper {
   private boolean myApplyChanges = false;
   private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
 
-
   public MergeModelsDialog(final SModel baseModel, final SModel mineModel, final SModel repoModel, DiffRequest request) {
     super(request.getProject(), true);
     setTitle("Merging " + SModelOperations.getModelName(baseModel));
@@ -134,8 +133,6 @@ public class MergeModelsDialog extends DialogWrapper {
     init();
   }
 
-
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -162,18 +159,15 @@ public class MergeModelsDialog extends DialogWrapper {
 
     return myComponent;
   }
-
   @Override
   public String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myMergeTree;
   }
-
   @Override
   protected void doOKAction() {
     applyMetadataChanges();
@@ -193,7 +187,6 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   @Override
   @NotNull
   protected Action[] createActions() {
@@ -202,7 +195,6 @@ public class MergeModelsDialog extends DialogWrapper {
     ListSequence.fromList(actions).addElement(getCancelAction());
     return ListSequence.fromList(actions).toGenericArray(Action.class);
   }
-
   @Override
   protected void dispose() {
     if (myMergeRootsPane != null) {
@@ -211,12 +203,9 @@ public class MergeModelsDialog extends DialogWrapper {
     super.dispose();
   }
 
-
-
   public SModel getResultModel() {
     return (myApplyChanges ? myMergeSession.getResultModel() : null);
   }
-
   public SModel getResultModelWithFixedId() {
     if (!(myApplyChanges)) {
       return null;
@@ -235,7 +224,6 @@ public class MergeModelsDialog extends DialogWrapper {
     }
     return resultModel;
   }
-
   public void unregisterModels() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -252,22 +240,17 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   /*package*/ void rebuildLater() {
     myToolbar.updateActionsImmediately();
     myMergeTree.rebuildLater();
   }
-
   /*package*/ Project getProject() {
     return myProject;
   }
-
   @Nullable
   public SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
     return myMergeTree.getNeighbourRoot(rootId, next);
   }
-
-
 
   public void resetCurrentRoot() {
     if (myMergeRootsPane == null) {
@@ -282,7 +265,6 @@ public class MergeModelsDialog extends DialogWrapper {
     myStatusBar.setText("");
     applyMetadataChanges();
   }
-
   private void changeCurrentRoot(@Nullable final SNodeId rootId) {
     if (myMergeRootsPane != null && myRootId == rootId) {
       return;
@@ -310,18 +292,14 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   public void setCurrentRoot(@Nullable SNodeId rootId) {
     myMergeTree.setSelected(rootId);
     changeCurrentRoot(rootId);
   }
-
   @Nullable
   public SNodeId getCurrentRoot() {
     return myRootId;
   }
-
-
 
   public Iterable<ModelChange> getApplicableChangesInNonConflictingRoots() {
     return Sequence.fromIterable(myMergeSession.getApplicableChangesInNonConflictingRoots()).where(new IWhereFilter<ModelChange>() {
@@ -330,12 +308,9 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   public Iterable<ModelChange> getApplicableChangesInMetadata() {
     return myMetadataMergeSession.getApplicableChangesInNonConflictingRoots();
   }
-
-
 
   public void mergeNonConflictingRoots() {
     myMergeSession.applyChanges(getApplicableChangesInNonConflictingRoots());
@@ -344,11 +319,9 @@ public class MergeModelsDialog extends DialogWrapper {
       applyMetadataChanges();
     }
   }
-
   public boolean hasNonConflictingRoots() {
     return Sequence.fromIterable(getApplicableChangesInNonConflictingRoots()).isNotEmpty() || myMetadataMergeSession != null && Sequence.fromIterable(getApplicableChangesInMetadata()).isNotEmpty();
   }
-
   public boolean isAcceptYoursTheirsEnabled() {
     return Sequence.fromIterable(getModelChangesForSelection()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
@@ -360,7 +333,6 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     }).isNotEmpty();
   }
-
   public void acceptVersionForSelectedRoots(boolean mine) {
     applyUnresolvedChanges(myMergeSession, getModelChangesForSelection(), mine);
     if (myMetadataMergeSession != null && isMetadataSelected()) {
@@ -373,7 +345,6 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   private void applyMetadataChanges() {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -383,11 +354,9 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   private boolean isMetadataSelected() {
     return myMergeTree.getSelectedNodes(DiffModelTree.MetadataTreeNode.class, null).length == 1 || myMergeTree.getSelectedNodes(DiffModelTree.ModelTreeNode.class, null).length == 1;
   }
-
   private Iterable<ModelChange> getModelChangesForSelection() {
     if (myMergeTree.getSelectedNodes(DiffModelTree.ModelTreeNode.class, null).length == 1) {
       return Sequence.fromIterable(myMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
@@ -411,7 +380,6 @@ public class MergeModelsDialog extends DialogWrapper {
       });
     }
   }
-
   private void applyUnresolvedChanges(final MergeSession session, Iterable<ModelChange> changes, boolean mine) {
     final List<ModelChange> changesToApply = ListSequence.fromList(new ArrayList<ModelChange>());
     final List<ModelChange> changesToExclude = ListSequence.fromList(new ArrayList<ModelChange>());
@@ -433,21 +401,16 @@ public class MergeModelsDialog extends DialogWrapper {
       }
     });
   }
-
   /*package*/ void markMetadataChangesAsApplied(Iterable<ModelChange> changes) {
     SetSequence.fromSet(myAppliedMetadataChanges).addSequence(Sequence.fromIterable(changes));
   }
 
-
-
   /*package*/ String[] getContentTitles() {
     return myContentTitles;
   }
-
   /*package*/ MergeSession getMergeSession() {
     return myMergeSession;
   }
-
   public void resetState() {
     myMergeSession.restoreState(myInitialState);
     if (myMetadataMergeSession != null) {
@@ -455,8 +418,6 @@ public class MergeModelsDialog extends DialogWrapper {
     }
     rebuildLater();
   }
-
-
 
   /*package*/ static String generateUnresolvedChangesText(int totalChanges, int conflictingChanges) {
     if (conflictingChanges != 0) {
@@ -475,26 +436,20 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-
-
   private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
     public MyGoToNeighbourRootActions() {
       super(myMergeTree);
     }
-
     @Nullable
     @Override
     protected SNodeId getCurrentNodeId() {
       return getCurrentRoot();
     }
-
     @Override
     public void setCurrentNodeId(@Nullable SNodeId nodeId) {
       setCurrentRoot(nodeId);
     }
   }
-
-
 
   private class MergeModelsTree extends DiffModelTree {
     private MergeModelsTree() {
@@ -505,13 +460,11 @@ public class MergeModelsDialog extends DialogWrapper {
         }
       });
     }
-
     @Override
     protected Iterable<BaseAction> getRootActions() {
       MergeModelsDialog md = MergeModelsDialog.this;
       return Arrays.<BaseAction>asList(AcceptYoursTheirs.yoursInstance(md), AcceptYoursTheirs.theirsInstance(md));
     }
-
     @Override
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       final MergeSession session = (rootTreeNode.getRootId() == null ? myMetadataMergeSession : myMergeSession);
@@ -566,35 +519,28 @@ public class MergeModelsDialog extends DialogWrapper {
 
       rootTreeNode.setColor((compositeChangeType == null ? null : ChangeColors.getForTree(compositeChangeType)));
     }
-
     @Override
     protected Iterable<SModel> getModels() {
       return Arrays.asList(myMergeSession.getBaseModel(), myMergeSession.getMyModel(), myMergeSession.getRepositoryModel());
     }
-
     @Override
     protected Iterable<SNodeId> getAffectedRoots() {
       return myMergeSession.getAffectedRoots();
     }
-
     @Override
     protected boolean isMultipleRootNames() {
       return true;
     }
 
-
-
     @Override
     protected void onUnselect() {
       resetCurrentRoot();
     }
-
     @Override
     protected void onSelectRoot(@Nullable SNodeId rootId) {
       changeCurrentRoot(rootId);
     }
   }
-
   private static <T> T as_3qqb0l_a0a0a1a0a0a0a0b0jb(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -14,18 +14,14 @@ public class SelectInEditorOperation_editorContextActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new SelectInEditorOperation_editorContextActions.SelectInEditorOperation_editorContextActions_INSERT(node));
   }
-
   public static class SelectInEditorOperation_editorContextActions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public SelectInEditorOperation_editorContextActions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "cellSelector", true) == null) {
         SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);

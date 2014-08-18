@@ -18,12 +18,10 @@ public class NodeBuilderList_Constraints extends BaseConstraintsDescriptor {
   public NodeBuilderList_Constraints() {
     super("jetbrains.mps.lang.quotation.structure.NodeBuilderList");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -34,12 +32,10 @@ public class NodeBuilderList_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -50,15 +46,12 @@ public class NodeBuilderList_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink") && SPropertyOperations.hasValue(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false), "metaClass", "aggregation", "reference") && !(LinkDeclaration_Behavior.call_isSingular_1213877254557(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink"), "link", false)));
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderNode") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709738821");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:abd7937b-2ad1-4cfc-8256-a7fa45a55f0f(jetbrains.mps.lang.quotation.constraints)", "8182547171709914677");
 }

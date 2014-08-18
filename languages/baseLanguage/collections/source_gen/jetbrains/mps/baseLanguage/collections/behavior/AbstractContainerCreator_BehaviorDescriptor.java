@@ -10,23 +10,18 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class AbstractContainerCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public AbstractContainerCreator_BehaviorDescriptor() {
   }
-
   public boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
     return AbstractContainerCreator_Behavior.virtual_canHaveParameter_2261417478150191157(thisNode);
   }
-
   public List<SNode> virtual_getAvailableFor_3044950653914717035(SConcept thisConcept) {
     return AbstractContainerCreator_Behavior.virtual_getAvailableFor_3044950653914717035(thisConcept);
   }
-
   public boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
     return AbstractContainerCreator_Behavior.virtual_hasInitSize_1262430001741498238(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
-
   public abstract SNode virtual_createType_1237722437229(SNode thisNode);
 }

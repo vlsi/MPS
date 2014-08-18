@@ -16,19 +16,16 @@ import org.apache.log4j.LogManager;
 public class GoToFile_Action extends BaseAction {
   private static final Icon ICON = null;
   private AnAction action;
-
   public GoToFile_Action(AnAction action_par) {
     super("Go to File", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToFile_Action.this.action.update(event);
@@ -39,7 +36,6 @@ public class GoToFile_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.file");
@@ -50,7 +46,6 @@ public class GoToFile_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -60,10 +55,8 @@ public class GoToFile_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String action_State(AnAction object) {
     return "";
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToFile_Action.class);
 }

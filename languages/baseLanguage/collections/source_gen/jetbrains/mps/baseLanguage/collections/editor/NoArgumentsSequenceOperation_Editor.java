@@ -19,7 +19,6 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_6d3m25_a(editorContext, node);
   }
-
   private EditorCell createComponent_6d3m25_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,11 +32,9 @@ public class NoArgumentsSequenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NoArgumentsSequenceOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_6d3m25_a0a()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SequenceOperation_cellMenu_6d3m25_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SequenceOperation_cellMenu_6d3m25_a0a() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }

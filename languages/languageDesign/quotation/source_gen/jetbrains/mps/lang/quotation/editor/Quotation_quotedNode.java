@@ -22,11 +22,9 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
   public Quotation_quotedNode() {
     super(new SubstituteInfoPartExt[]{new Quotation_quotedNode.Quotation_generic_cellMenu_61vnku_a0()});
   }
-
   public static class Quotation_generic_cellMenu_61vnku_a0 extends AbstractCellMenuPart_Generic_Group {
     public Quotation_generic_cellMenu_61vnku_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode nextConcept : ListSequence.fromList(SModelSearchUtil.createConceptsFromModelLanguagesScope(SNodeOperations.getModel(node), true).getNodes())) {
@@ -34,11 +32,9 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
       }
       return result;
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode oldInstance = SLinkOperations.getTarget(node, "quotedNode", true);
       SLinkOperations.setTarget(node, "quotedNode", SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), null), true);
@@ -46,7 +42,6 @@ public class Quotation_quotedNode extends AbstractCellMenuComponent {
         SNodeOperations.deleteNode(oldInstance);
       }
     }
-
     public boolean isReferentPresentation() {
       return true;
     }

@@ -8,11 +8,9 @@ import java.util.List;
 public class AbstractTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     return null;
   }

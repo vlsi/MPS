@@ -29,7 +29,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a4wjjz_a(editorContext, node);
   }
-
   private EditorCell createCollection_a4wjjz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a4wjjz_a");
@@ -43,7 +42,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_a4wjjz_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_a4wjjz_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classConcept");
@@ -66,20 +64,16 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_a4wjjz_a0a extends InlineCellProvider {
     public _Inline_a4wjjz_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_a4wjjz_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_a4wjjz_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -99,7 +93,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_a4wjjz_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_a4wjjz_b0");
@@ -110,7 +103,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_a4wjjz_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_typeArguments");
     Style style = new StyleImpl();
@@ -118,7 +110,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_a4wjjz_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a4wjjz_d0");
@@ -130,7 +121,6 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_a4wjjz_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_a4wjjz_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("staticMethodDeclaration");
@@ -155,20 +145,16 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_a4wjjz_a0d0 extends InlineCellProvider {
     public _Inline_a4wjjz_a0d0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_a4wjjz_a0a3a(editorContext, node);
     }
-
     private EditorCell createProperty_a4wjjz_a0a3a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -192,28 +178,22 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   public static class StaticMethodCall_customReplace_cellMenu_a4wjjz_a0a3a extends AbstractCellMenuPart_ReplaceNode_Group {
     public StaticMethodCall_customReplace_cellMenu_a4wjjz_a0a3a() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "classConcept", false), node);
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "classConcept", false), parameterObject, node);
     }
-
     public boolean isReferentPresentation() {
       return true;
     }
   }
-
   private EditorCell createComponent_a4wjjz_b3a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     Style style = new StyleImpl();

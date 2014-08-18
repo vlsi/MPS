@@ -17,12 +17,10 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4MethodWrapper(SNode method) {
     super(method);
   }
-
   @Override
   public boolean isTestCase() {
     return false;
   }
-
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
@@ -32,7 +30,6 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     }
     return null;
   }
-
   public static boolean isJUnit4TestMethod(SNode method) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
       boolean hasTestAnnotation = false;
@@ -48,21 +45,18 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-
   private static SNode check_lclll2_a0a0c(SNode checkedDotOperand, JUnit4MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.getAncestor(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     }
     return null;
   }
-
   private static SNode check_lclll2_a0a0b0a0d(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
     }
     return null;
   }
-
   private static SNode _quotation_createNode_lclll2_a0a0a1a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -70,14 +64,12 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
     return quotedNode_1;
   }
-
   private static SNode check_lclll2_a0a1a1a0a3(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
     }
     return null;
   }
-
   private static SNode _quotation_createNode_lclll2_a0a0b0b0a0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -85,11 +77,9 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
     return quotedNode_1;
   }
-
   private static boolean eq_lclll2_a0a0b0a0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_lclll2_a0a1a1a0a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

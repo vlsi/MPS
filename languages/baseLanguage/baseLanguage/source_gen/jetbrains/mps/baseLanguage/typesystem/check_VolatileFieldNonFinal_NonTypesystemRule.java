@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_VolatileFieldNonFinal_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_VolatileFieldNonFinal_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode fieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getBoolean(fieldDeclaration, "isVolatile") && SPropertyOperations.getBoolean(fieldDeclaration, "isFinal")) {
       {
@@ -25,18 +24,15 @@ public class check_VolatileFieldNonFinal_NonTypesystemRule extends AbstractNonTy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

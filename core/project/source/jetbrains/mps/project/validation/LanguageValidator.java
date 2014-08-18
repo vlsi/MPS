@@ -85,13 +85,13 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (SModuleReference lang : myModule.getExtendedLanguageRefs()) {
-      if (MPSModuleRepository.getInstance().getModule(lang) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language: " + lang.getModuleName());
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
     for (SModuleReference mr : myModule.getRuntimeModulesReferences()) {
-      SModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
+      SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (runtimeModule == null) continue;
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module " + runtimeModule + " is not a solution");
@@ -108,7 +108,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     for (SModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(ref) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(ref) == null) {
         errors.add("Can't find runtime module: " + ref.getModuleName());
       }
     }

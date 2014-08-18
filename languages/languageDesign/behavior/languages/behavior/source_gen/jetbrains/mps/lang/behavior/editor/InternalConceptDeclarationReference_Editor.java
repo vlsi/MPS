@@ -19,7 +19,6 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wcbhig_a(editorContext, node);
   }
-
   private EditorCell createCollection_wcbhig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wcbhig_a");
@@ -28,14 +27,12 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
     editorCell.addEditorCell(this.createRefCell_wcbhig_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_wcbhig_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Concept");
     editorCell.setCellId("Constant_wcbhig_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_wcbhig_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -57,20 +54,16 @@ public class InternalConceptDeclarationReference_Editor extends DefaultNodeEdito
     } else
     return editorCell;
   }
-
   public static class _Inline_wcbhig_a1a extends InlineCellProvider {
     public _Inline_wcbhig_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_wcbhig_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_wcbhig_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

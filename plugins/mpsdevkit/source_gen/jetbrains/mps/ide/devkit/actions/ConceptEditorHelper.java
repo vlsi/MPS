@@ -37,7 +37,6 @@ public class ConceptEditorHelper {
     }
     return result;
   }
-
   public static List<SNode> getAvailableConceptAspects(LanguageAspect aspect, SNode node) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     Language language = ((Language) aspect.getMainLanguage().resolve(MPSModuleRepository.getInstance()));
@@ -45,7 +44,6 @@ public class ConceptEditorHelper {
     ListSequence.fromList(result).addSequence(ListSequence.fromList(getAvailableConceptAspects(structureModel, node)));
     return result;
   }
-
   public static SNode createNewConceptAspectInstance(SNode applicableNode, SNode concept, SModel model) {
     SNode conceptAspect = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     BehaviorReflection.invokeVirtual(Void.class, conceptAspect, "virtual_setBaseConcept_6261424444345963020", new Object[]{applicableNode});
@@ -53,7 +51,6 @@ public class ConceptEditorHelper {
 
     return conceptAspect;
   }
-
   public static SNode createNewConceptAspectInstance(LanguageAspect aspect, SNode applicableNode, SNode concept) {
     Language language = SModelUtil.getDeclaringLanguage(applicableNode);
     assert language != null : "Language shouldn't be null for " + applicableNode;
@@ -64,7 +61,6 @@ public class ConceptEditorHelper {
     }
     return createNewConceptAspectInstance(applicableNode, concept, md);
   }
-
   public static List<SNode> sortRootsByConcept(List<SNode> roots, final SNode[] conceptOrder) {
     return ListSequence.fromList(roots).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode root) {
@@ -73,29 +69,23 @@ public class ConceptEditorHelper {
       }
     }, true).toListSequence();
   }
-
   public static class ModelCondition implements Condition<SModel> {
     private Language myLanguage;
     private LanguageAspect myAspect;
-
     public ModelCondition(Language language, LanguageAspect aspect) {
       this.myLanguage = language;
       this.myAspect = aspect;
     }
-
     @Override
     public boolean met(SModel modelDescriptor) {
       return Language.getLanguageFor(modelDescriptor) == this.myLanguage && Language.getModelAspect(modelDescriptor) == this.myAspect;
     }
   }
-
   public static class GeneratorCondition implements Condition<SModel> {
     private Language myLanguage;
-
     public GeneratorCondition(Language language) {
       this.myLanguage = language;
     }
-
     @Override
     public boolean met(SModel modelDescriptor) {
       for (Generator generator : CollectionSequence.fromCollection(this.myLanguage.getGenerators())) {

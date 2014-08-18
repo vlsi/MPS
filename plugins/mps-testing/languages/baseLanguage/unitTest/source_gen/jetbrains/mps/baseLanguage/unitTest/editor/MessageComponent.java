@@ -22,11 +22,9 @@ public class MessageComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8rtror_a(editorContext, node);
   }
-
   private EditorCell createCollection_8rtror_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_8rtror_a");
@@ -38,18 +36,15 @@ public class MessageComponent implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_8rtror_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8rtror_a0");
     editorCell.addEditorCell(this.createRefNode_8rtror_a0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_8rtror_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "message", true) != null);
   }
-
   private EditorCell createRefNode_8rtror_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");

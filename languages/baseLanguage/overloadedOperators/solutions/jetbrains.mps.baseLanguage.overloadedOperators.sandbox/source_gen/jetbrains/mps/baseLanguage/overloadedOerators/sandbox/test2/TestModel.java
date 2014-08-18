@@ -9,13 +9,11 @@ import jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test.Complex;
 public class TestModel {
   public TestModel() {
   }
-
   public void test() {
     String str = "";
     check_6o96ff_a1a1(str);
     str.concat("b");
   }
-
   public static void main(String[] args) {
     Complex2 a = new Complex2();
     Complex2 b = new Complex2();
@@ -28,7 +26,6 @@ public class TestModel {
     c.print();
     d.print();
   }
-
   private static String check_6o96ff_a1a1(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.concat("a");

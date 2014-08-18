@@ -14,204 +14,204 @@
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4263887295358464059">
     <file name="GenerateTask.java">
       <node id="3415722583341679792" at="17,0,18,0" concept="3" trace="myGenProps" />
-      <node id="3415722583341687853" at="19,25,20,53" concept="2" />
-      <node id="3415722583341695911" at="20,53,21,108" concept="2" />
-      <node id="6255157494753346969" at="25,37,26,61" concept="8" />
-      <node id="5682549678865142841" at="29,47,30,66" concept="2" />
-      <node id="5682549678865142881" at="33,57,34,30" concept="7" />
-      <node id="5682549678865142889" at="35,23,36,55" concept="2" />
-      <node id="3415722583341736987" at="40,49,41,41" concept="2" />
-      <node id="5682549678865142964" at="44,53,45,45" concept="2" />
-      <node id="3415722583341291341" at="48,62,49,51" concept="2" />
-      <node id="4297162197630004175" at="52,51,53,47" concept="2" />
-      <node id="3938719774425091778" at="56,53,57,45" concept="2" />
-      <node id="978600701690013397" at="60,50,61,76" concept="7" />
-      <node id="978600701690014122" at="62,55,63,52" concept="2" />
-      <node id="978600701690014168" at="64,12,65,74" concept="2" />
-      <node id="978600701689998724" at="66,5,67,68" concept="2" />
-      <node id="569227341171792501" at="73,56,74,97" concept="7" />
-      <node id="5682549678865143225" at="75,35,76,103" concept="10" />
-      <node id="569227341171837042" at="76,103,77,0" concept="9" />
-      <node id="5682549678865143123" at="78,5,79,52" concept="7" />
-      <node id="569227341172141731" at="80,38,81,69" concept="2" />
-      <node id="5682549678865143229" at="82,5,83,0" concept="9" />
-      <node id="5682549678865143230" at="83,0,84,21" concept="8" />
-      <node id="978600701690014166" at="64,10,66,5" concept="0" />
-      <node id="5682549678865142837" at="29,0,32,0" concept="6" trace="addConfiguredChunk#(Ljetbrains/mps/build/ant/generation/Chunk;)V" />
-      <node id="5682549678865142887" at="34,30,37,5" concept="5" />
-      <node id="5682549678865142914" at="40,0,43,0" concept="6" trace="setStrictMode#(Z)V" />
-      <node id="5682549678865142958" at="44,0,47,0" concept="6" trace="setParallelMode#(Z)V" />
-      <node id="3415722583341225070" at="48,0,51,0" concept="6" trace="setUseInplaceTransform#(Z)V" />
-      <node id="4297162197629971036" at="52,0,55,0" concept="6" trace="setParallelThreads#(I)V" />
-      <node id="3938719774425091774" at="56,0,59,0" concept="6" trace="setHideWarnings#(Z)V" />
-      <node id="569227341172071558" at="79,52,82,5" concept="4" />
-      <node id="5682549678867577946" at="19,0,23,0" concept="1" trace="GenerateTask#()V" />
-      <node id="5682549678865142818" at="24,0,28,0" concept="6" trace="getWorkerClass#()Ljava/lang/String;" />
-      <node id="569227341171837041" at="74,97,78,5" concept="5" />
-      <node id="978600701690013423" at="61,76,66,5" concept="5" />
-      <node id="5682549678865142877" at="33,0,39,0" concept="6" trace="addConfiguredLibrary#(Ljetbrains/mps/build/ant/LibraryDataType;)V" />
-      <node id="978600701689998693" at="60,0,69,0" concept="6" trace="addConfiguredPlugin#(Ljetbrains/mps/build/ant/generation/Plugin;)V" />
-      <node id="5682549678865143118" at="72,0,86,0" concept="6" trace="calculateClassPath#(Z)Ljava/util/Set;" />
-      <scope id="5682549678865142820" at="25,37,26,61" />
-      <scope id="5682549678865142840" at="29,47,30,66" />
-      <scope id="5682549678865142888" at="35,23,36,55" />
-      <scope id="5682549678865142919" at="40,49,41,41" />
-      <scope id="5682549678865142963" at="44,53,45,45" />
-      <scope id="3415722583341225074" at="48,62,49,51" />
-      <scope id="4297162197629971039" at="52,51,53,47" />
-      <scope id="3938719774425091777" at="56,53,57,45" />
-      <scope id="978600701690013424" at="62,55,63,52" />
-      <scope id="978600701690014167" at="64,12,65,74" />
-      <scope id="569227341172071560" at="80,38,81,69" />
-      <scope id="5682549678867577948" at="19,25,21,108" />
-      <scope id="569227341171837043" at="75,35,77,0" />
-      <scope id="5682549678865142837" at="29,0,32,0">
+      <node id="3415722583341687853" at="18,25,19,53" concept="2" />
+      <node id="3415722583341695911" at="19,53,20,108" concept="2" />
+      <node id="6255157494753346969" at="23,37,24,61" concept="8" />
+      <node id="5682549678865142841" at="26,47,27,66" concept="2" />
+      <node id="5682549678865142881" at="29,57,30,30" concept="7" />
+      <node id="5682549678865142889" at="31,23,32,55" concept="2" />
+      <node id="3415722583341736987" at="35,49,36,41" concept="2" />
+      <node id="5682549678865142964" at="38,53,39,45" concept="2" />
+      <node id="3415722583341291341" at="41,62,42,51" concept="2" />
+      <node id="4297162197630004175" at="44,51,45,47" concept="2" />
+      <node id="3938719774425091778" at="47,53,48,45" concept="2" />
+      <node id="978600701690013397" at="50,50,51,76" concept="7" />
+      <node id="978600701690014122" at="52,55,53,52" concept="2" />
+      <node id="978600701690014168" at="54,12,55,74" concept="2" />
+      <node id="978600701689998724" at="56,5,57,68" concept="2" />
+      <node id="569227341171792501" at="61,56,62,97" concept="7" />
+      <node id="5682549678865143225" at="63,35,64,103" concept="10" />
+      <node id="569227341171837042" at="64,103,65,0" concept="9" />
+      <node id="5682549678865143123" at="66,5,67,52" concept="7" />
+      <node id="569227341172141731" at="68,38,69,69" concept="2" />
+      <node id="5682549678865143229" at="70,5,71,0" concept="9" />
+      <node id="5682549678865143230" at="71,0,72,21" concept="8" />
+      <node id="978600701690014166" at="54,10,56,5" concept="0" />
+      <node id="5682549678865142837" at="26,0,29,0" concept="6" trace="addConfiguredChunk#(Ljetbrains/mps/build/ant/generation/Chunk;)V" />
+      <node id="5682549678865142887" at="30,30,33,5" concept="5" />
+      <node id="5682549678865142914" at="35,0,38,0" concept="6" trace="setStrictMode#(Z)V" />
+      <node id="5682549678865142958" at="38,0,41,0" concept="6" trace="setParallelMode#(Z)V" />
+      <node id="3415722583341225070" at="41,0,44,0" concept="6" trace="setUseInplaceTransform#(Z)V" />
+      <node id="4297162197629971036" at="44,0,47,0" concept="6" trace="setParallelThreads#(I)V" />
+      <node id="3938719774425091774" at="47,0,50,0" concept="6" trace="setHideWarnings#(Z)V" />
+      <node id="569227341172071558" at="67,52,70,5" concept="4" />
+      <node id="5682549678867577946" at="18,0,22,0" concept="1" trace="GenerateTask#()V" />
+      <node id="5682549678865142818" at="22,0,26,0" concept="6" trace="getWorkerClass#()Ljava/lang/String;" />
+      <node id="569227341171837041" at="62,97,66,5" concept="5" />
+      <node id="978600701690013423" at="51,76,56,5" concept="5" />
+      <node id="5682549678865142877" at="29,0,35,0" concept="6" trace="addConfiguredLibrary#(Ljetbrains/mps/build/ant/LibraryDataType;)V" />
+      <node id="978600701689998693" at="50,0,59,0" concept="6" trace="addConfiguredPlugin#(Ljetbrains/mps/build/ant/generation/Plugin;)V" />
+      <node id="5682549678865143118" at="60,0,74,0" concept="6" trace="calculateClassPath#(Z)Ljava/util/Set;" />
+      <scope id="5682549678865142820" at="23,37,24,61" />
+      <scope id="5682549678865142840" at="26,47,27,66" />
+      <scope id="5682549678865142888" at="31,23,32,55" />
+      <scope id="5682549678865142919" at="35,49,36,41" />
+      <scope id="5682549678865142963" at="38,53,39,45" />
+      <scope id="3415722583341225074" at="41,62,42,51" />
+      <scope id="4297162197629971039" at="44,51,45,47" />
+      <scope id="3938719774425091777" at="47,53,48,45" />
+      <scope id="978600701690013424" at="52,55,53,52" />
+      <scope id="978600701690014167" at="54,12,55,74" />
+      <scope id="569227341172071560" at="68,38,69,69" />
+      <scope id="5682549678867577948" at="18,25,20,108" />
+      <scope id="569227341171837043" at="63,35,65,0" />
+      <scope id="5682549678865142837" at="26,0,29,0">
         <var name="chunk" id="5682549678865142851" />
       </scope>
-      <scope id="5682549678865142914" at="40,0,43,0">
+      <scope id="5682549678865142914" at="35,0,38,0">
         <var name="strictMode" id="5682549678865142917" />
       </scope>
-      <scope id="5682549678865142958" at="44,0,47,0">
+      <scope id="5682549678865142958" at="38,0,41,0">
         <var name="parallelMode" id="5682549678865142959" />
       </scope>
-      <scope id="3415722583341225070" at="48,0,51,0">
+      <scope id="3415722583341225070" at="41,0,44,0">
         <var name="inplaceEnabled" id="3415722583341288139" />
       </scope>
-      <scope id="4297162197629971036" at="52,0,55,0">
+      <scope id="4297162197629971036" at="44,0,47,0">
         <var name="threadCount" id="4297162197630001311" />
       </scope>
-      <scope id="3938719774425091774" at="56,0,59,0">
+      <scope id="3938719774425091774" at="47,0,50,0">
         <var name="hideWarnings" id="3938719774425091783" />
       </scope>
-      <scope id="569227341172071558" at="79,52,82,5">
+      <scope id="569227341172071558" at="67,52,70,5">
         <var name="file" id="569227341172071561" />
       </scope>
-      <scope id="5682549678867577946" at="19,0,23,0" />
-      <scope id="5682549678865142818" at="24,0,28,0" />
-      <scope id="5682549678865142880" at="33,57,37,5">
+      <scope id="5682549678867577946" at="18,0,22,0" />
+      <scope id="5682549678865142818" at="22,0,26,0" />
+      <scope id="5682549678865142880" at="29,57,33,5">
         <var name="file" id="5682549678865142882" />
       </scope>
-      <scope id="5682549678865142877" at="33,0,39,0">
+      <scope id="5682549678865142877" at="29,0,35,0">
         <var name="jar" id="5682549678865142899" />
       </scope>
-      <scope id="978600701689998696" at="60,50,67,68">
+      <scope id="978600701689998696" at="50,50,57,68">
         <var name="property" id="978600701690013398" />
       </scope>
-      <scope id="978600701689998693" at="60,0,69,0">
+      <scope id="978600701689998693" at="50,0,59,0">
         <var name="plugin" id="978600701689998709" />
       </scope>
-      <scope id="5682549678865143122" at="73,56,84,21">
+      <scope id="5682549678865143122" at="61,56,72,21">
         <var name="classPath" id="5682549678865143124" />
         <var name="classPathRoots" id="569227341171792502" />
       </scope>
-      <scope id="5682549678865143118" at="72,0,86,0">
+      <scope id="5682549678865143118" at="60,0,74,0">
         <var name="fork" id="7757477914029821215" />
       </scope>
-      <unit id="4263887295358464059" at="16,0,89,0" name="jetbrains.mps.build.ant.generation.GenerateTask" />
+      <unit id="4263887295358464059" at="16,0,76,0" name="jetbrains.mps.build.ant.generation.GenerateTask" />
     </file>
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/861826518923203126">
     <file name="GenTestTask.java">
       <node id="861826518923203153" at="9,37,10,59" concept="8" />
-      <node id="4003657351907891939" at="13,32,14,84" concept="8" />
-      <node id="4003657351907891951" at="17,59,18,97" concept="2" />
-      <node id="1374711517442257732" at="21,59,22,47" concept="2" />
-      <node id="4003657351907891935" at="13,0,16,0" concept="6" trace="getShowDiff#()Z" />
-      <node id="4003657351907891945" at="17,0,20,0" concept="6" trace="setShowDiff#(Z)V" />
-      <node id="1374711517442257727" at="21,0,24,0" concept="6" trace="addConfiguredModule#(Ljetbrains/mps/build/ant/generation/ModuleChunkPart;)V" />
+      <node id="4003657351907891939" at="12,32,13,84" concept="8" />
+      <node id="4003657351907891951" at="15,59,16,97" concept="2" />
+      <node id="1374711517442257732" at="18,59,19,47" concept="2" />
+      <node id="4003657351907891935" at="12,0,15,0" concept="6" trace="getShowDiff#()Z" />
+      <node id="4003657351907891945" at="15,0,18,0" concept="6" trace="setShowDiff#(Z)V" />
+      <node id="1374711517442257727" at="18,0,21,0" concept="6" trace="addConfiguredModule#(Ljetbrains/mps/build/ant/generation/ModuleChunkPart;)V" />
       <node id="861826518923203150" at="8,0,12,0" concept="6" trace="getWorkerClass#()Ljava/lang/String;" />
       <scope id="861826518923203152" at="9,37,10,59" />
-      <scope id="4003657351907891938" at="13,32,14,84" />
-      <scope id="4003657351907891950" at="17,59,18,97" />
-      <scope id="1374711517442257731" at="21,59,22,47" />
-      <scope id="4003657351907891935" at="13,0,16,0" />
-      <scope id="4003657351907891945" at="17,0,20,0">
+      <scope id="4003657351907891938" at="12,32,13,84" />
+      <scope id="4003657351907891950" at="15,59,16,97" />
+      <scope id="1374711517442257731" at="18,59,19,47" />
+      <scope id="4003657351907891935" at="12,0,15,0" />
+      <scope id="4003657351907891945" at="15,0,18,0">
         <var name="isDifferenceCalculated" id="4003657351907891948" />
       </scope>
-      <scope id="1374711517442257727" at="21,0,24,0">
+      <scope id="1374711517442257727" at="18,0,21,0">
         <var name="module" id="1374711517442257728" />
       </scope>
       <scope id="861826518923203150" at="8,0,12,0" />
-      <unit id="861826518923203126" at="7,0,25,0" name="jetbrains.mps.build.ant.generation.GenTestTask" />
+      <unit id="861826518923203126" at="7,0,22,0" name="jetbrains.mps.build.ant.generation.GenTestTask" />
     </file>
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151691260">
     <file name="Chunk.java">
       <node id="5922356631317911885" at="10,0,11,0" concept="3" trace="myBootstrap" />
       <node id="5922356631317911816" at="11,0,12,0" concept="3" trace="myModules" />
-      <node id="5922356631317911825" at="16,58,17,45" concept="2" />
-      <node id="4263887295358372890" at="20,36,21,21" concept="8" />
-      <node id="9096318311151865526" at="24,33,25,23" concept="8" />
-      <node id="9096318311151865535" at="28,49,29,30" concept="2" />
-      <node id="9096318311151691262" at="13,0,15,0" concept="1" trace="Chunk#()V" />
-      <node id="9096318311151865495" at="16,0,19,0" concept="6" trace="addConfiguredModule#(Ljetbrains/mps/build/ant/generation/ModuleChunkPart;)V" />
-      <node id="4263887295358372879" at="20,0,23,0" concept="6" trace="getModules#()Ljava/util/List;" />
-      <node id="9096318311151865509" at="24,0,27,0" concept="6" trace="getBootstrap#()Z" />
-      <node id="9096318311151865528" at="28,0,31,0" concept="6" trace="setBootstrap#(Z)V" />
-      <scope id="9096318311151691265" at="13,18,13,18" />
-      <scope id="9096318311151865497" at="16,58,17,45" />
-      <scope id="4263887295358372882" at="20,36,21,21" />
-      <scope id="9096318311151865512" at="24,33,25,23" />
-      <scope id="9096318311151865531" at="28,49,29,30" />
-      <scope id="9096318311151691262" at="13,0,15,0" />
-      <scope id="9096318311151865495" at="16,0,19,0">
+      <node id="5922356631317911825" at="14,58,15,45" concept="2" />
+      <node id="4263887295358372890" at="17,36,18,21" concept="8" />
+      <node id="9096318311151865526" at="20,33,21,23" concept="8" />
+      <node id="9096318311151865535" at="23,49,24,30" concept="2" />
+      <node id="9096318311151691262" at="12,0,14,0" concept="1" trace="Chunk#()V" />
+      <node id="9096318311151865495" at="14,0,17,0" concept="6" trace="addConfiguredModule#(Ljetbrains/mps/build/ant/generation/ModuleChunkPart;)V" />
+      <node id="4263887295358372879" at="17,0,20,0" concept="6" trace="getModules#()Ljava/util/List;" />
+      <node id="9096318311151865509" at="20,0,23,0" concept="6" trace="getBootstrap#()Z" />
+      <node id="9096318311151865528" at="23,0,26,0" concept="6" trace="setBootstrap#(Z)V" />
+      <scope id="9096318311151691265" at="12,18,12,18" />
+      <scope id="9096318311151865497" at="14,58,15,45" />
+      <scope id="4263887295358372882" at="17,36,18,21" />
+      <scope id="9096318311151865512" at="20,33,21,23" />
+      <scope id="9096318311151865531" at="23,49,24,30" />
+      <scope id="9096318311151691262" at="12,0,14,0" />
+      <scope id="9096318311151865495" at="14,0,17,0">
         <var name="chunk" id="9096318311151865499" />
       </scope>
-      <scope id="4263887295358372879" at="20,0,23,0" />
-      <scope id="9096318311151865509" at="24,0,27,0" />
-      <scope id="9096318311151865528" at="28,0,31,0">
+      <scope id="4263887295358372879" at="17,0,20,0" />
+      <scope id="9096318311151865509" at="20,0,23,0" />
+      <scope id="9096318311151865528" at="23,0,26,0">
         <var name="bootrastrap" id="9096318311151865532" />
       </scope>
-      <unit id="9096318311151691260" at="9,0,32,0" name="jetbrains.mps.build.ant.generation.Chunk" />
+      <unit id="9096318311151691260" at="9,0,27,0" name="jetbrains.mps.build.ant.generation.Chunk" />
     </file>
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151864960">
     <file name="ModuleChunkPart.java">
       <node id="9096318311151865642" at="9,0,10,0" concept="3" trace="myModuleFile" />
       <node id="9096318311151865672" at="10,0,11,0" concept="3" trace="myBootstrap" />
-      <node id="9096318311151865653" at="15,34,16,24" concept="2" />
-      <node id="9096318311151865670" at="19,25,20,24" concept="8" />
-      <node id="9096318311151865712" at="23,47,24,28" concept="2" />
-      <node id="9096318311151865729" at="27,33,28,23" concept="8" />
-      <node id="9096318311151864962" at="12,0,14,0" concept="1" trace="ModuleChunkPart#()V" />
-      <node id="9096318311151865647" at="15,0,18,0" concept="6" trace="setFile#(Ljava/io/File;)V" />
-      <node id="9096318311151865665" at="19,0,22,0" concept="6" trace="getFile#()Ljava/io/File;" />
-      <node id="9096318311151865706" at="23,0,26,0" concept="6" trace="setBootstrap#(Z)V" />
-      <node id="9096318311151865724" at="27,0,30,0" concept="6" trace="getBootstrap#()Z" />
-      <scope id="9096318311151864965" at="12,28,12,28" />
-      <scope id="9096318311151865649" at="15,34,16,24" />
-      <scope id="9096318311151865668" at="19,25,20,24" />
-      <scope id="9096318311151865709" at="23,47,24,28" />
-      <scope id="9096318311151865727" at="27,33,28,23" />
-      <scope id="9096318311151864962" at="12,0,14,0" />
-      <scope id="9096318311151865647" at="15,0,18,0">
+      <node id="9096318311151865653" at="13,34,14,24" concept="2" />
+      <node id="9096318311151865670" at="16,25,17,24" concept="8" />
+      <node id="9096318311151865712" at="19,47,20,28" concept="2" />
+      <node id="9096318311151865729" at="22,33,23,23" concept="8" />
+      <node id="9096318311151864962" at="11,0,13,0" concept="1" trace="ModuleChunkPart#()V" />
+      <node id="9096318311151865647" at="13,0,16,0" concept="6" trace="setFile#(Ljava/io/File;)V" />
+      <node id="9096318311151865665" at="16,0,19,0" concept="6" trace="getFile#()Ljava/io/File;" />
+      <node id="9096318311151865706" at="19,0,22,0" concept="6" trace="setBootstrap#(Z)V" />
+      <node id="9096318311151865724" at="22,0,25,0" concept="6" trace="getBootstrap#()Z" />
+      <scope id="9096318311151864965" at="11,28,11,28" />
+      <scope id="9096318311151865649" at="13,34,14,24" />
+      <scope id="9096318311151865668" at="16,25,17,24" />
+      <scope id="9096318311151865709" at="19,47,20,28" />
+      <scope id="9096318311151865727" at="22,33,23,23" />
+      <scope id="9096318311151864962" at="11,0,13,0" />
+      <scope id="9096318311151865647" at="13,0,16,0">
         <var name="file" id="9096318311151865651" />
       </scope>
-      <scope id="9096318311151865665" at="19,0,22,0" />
-      <scope id="9096318311151865706" at="23,0,26,0">
+      <scope id="9096318311151865665" at="16,0,19,0" />
+      <scope id="9096318311151865706" at="19,0,22,0">
         <var name="bootstrap" id="9096318311151865710" />
       </scope>
-      <scope id="9096318311151865724" at="27,0,30,0" />
-      <unit id="9096318311151864960" at="8,0,33,0" name="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
+      <scope id="9096318311151865724" at="22,0,25,0" />
+      <unit id="9096318311151864960" at="8,0,27,0" name="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
     </file>
   </root>
   <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/978600701689990961">
     <file name="Plugin.java">
       <node id="978600701689991886" at="9,0,10,0" concept="3" trace="myDir" />
-      <node id="978600701689998663" at="14,33,15,16" concept="2" />
-      <node id="978600701689998680" at="18,25,19,17" concept="8" />
-      <node id="978600701689991878" at="11,0,13,0" concept="1" trace="Plugin#()V" />
-      <node id="978600701689991882" at="14,0,17,0" concept="6" trace="setPath#(Ljava/io/File;)V" />
-      <node id="978600701689998675" at="18,0,21,0" concept="6" trace="getPath#()Ljava/io/File;" />
-      <scope id="978600701689991881" at="11,19,11,19" />
-      <scope id="978600701689991885" at="14,33,15,16" />
-      <scope id="978600701689998678" at="18,25,19,17" />
-      <scope id="978600701689991878" at="11,0,13,0" />
-      <scope id="978600701689991882" at="14,0,17,0">
+      <node id="978600701689998663" at="12,33,13,16" concept="2" />
+      <node id="978600701689998680" at="15,25,16,17" concept="8" />
+      <node id="978600701689991878" at="10,0,12,0" concept="1" trace="Plugin#()V" />
+      <node id="978600701689991882" at="12,0,15,0" concept="6" trace="setPath#(Ljava/io/File;)V" />
+      <node id="978600701689998675" at="15,0,18,0" concept="6" trace="getPath#()Ljava/io/File;" />
+      <scope id="978600701689991881" at="10,19,10,19" />
+      <scope id="978600701689991885" at="12,33,13,16" />
+      <scope id="978600701689998678" at="15,25,16,17" />
+      <scope id="978600701689991878" at="10,0,12,0" />
+      <scope id="978600701689991882" at="12,0,15,0">
         <var name="dir" id="978600701689998661" />
       </scope>
-      <scope id="978600701689998675" at="18,0,21,0" />
-      <unit id="978600701689990961" at="8,0,22,0" name="jetbrains.mps.build.ant.generation.Plugin" />
+      <scope id="978600701689998675" at="15,0,18,0" />
+      <unit id="978600701689990961" at="8,0,19,0" name="jetbrains.mps.build.ant.generation.Plugin" />
     </file>
   </root>
 </debug-info>

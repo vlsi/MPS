@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownReference_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Reference in undeclared role \"" + ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]) + "\"";
   }
-
   public void execute(SNode node) {
     SNodeAccessUtil.setReferenceTarget(node, ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);
   }

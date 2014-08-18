@@ -15,11 +15,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class OverloadedBinaryOperator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "returnType", true);
   }
-
   public static String call_getFunctionName_6677452554240637506(SNode thisNode) {
     String operatorName;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {
@@ -29,7 +27,6 @@ public class OverloadedBinaryOperator_Behavior {
     }
     return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "leftType", true), "virtual_getPresentation_1213877396640", new Object[]{})) + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "rightType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)", "483844232470668960"));

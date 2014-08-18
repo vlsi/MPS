@@ -17,15 +17,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SortKeymapMembers extends BaseRefactoring {
   public SortKeymapMembers() {
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new SortKeymapMembers_Target();
   }
-
   public String getUserFriendlyName() {
     return "Sort Members";
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode node = refactoringContext.getSelectedNode();
     List<SNode> copy = ListSequence.fromListWithValues(new ArrayList<SNode>(), SLinkOperations.getTargets(node, "shortcutChange", true));

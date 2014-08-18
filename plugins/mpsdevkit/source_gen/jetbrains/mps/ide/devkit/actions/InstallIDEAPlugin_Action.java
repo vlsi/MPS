@@ -32,18 +32,15 @@ import org.apache.log4j.LogManager;
 
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public InstallIDEAPlugin_Action() {
     super("Install IntelliJ IDEA Plugin", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -54,7 +51,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -65,7 +61,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
@@ -88,7 +83,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
       }
     }
   }
-
   private File getTargetDir(final Map<String, Object> _params) {
     File targetIdeaInstallDir = InstallIDEAPlugin_Action.this.getTargetIdeaInstallDir(_params);
     if (targetIdeaInstallDir == null) {
@@ -99,7 +93,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     }
     return new File(targetIdeaInstallDir, "config" + File.separator + "plugins");
   }
-
   private File getTargetIdeaInstallDir(final Map<String, Object> _params) {
     boolean isMac = SystemInfo.isMac;
     String userHome = System.getProperty("user.home");
@@ -141,7 +134,6 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     assert files.length <= 1;
     return (files.length == 0 ? null : VirtualFileUtils.toFile(files[0]));
   }
-
   protected static Logger LOG = LogManager.getLogger(InstallIDEAPlugin_Action.class);
   private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
   private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);

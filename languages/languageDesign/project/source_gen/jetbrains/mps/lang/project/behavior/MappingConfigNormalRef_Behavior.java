@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class MappingConfigNormalRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isComplete_2721285250110257005(SNode thisNode) {
     if (isEmptyString(SPropertyOperations.getString(thisNode, "modelUID"))) {
       return false;
@@ -21,7 +20,6 @@ public class MappingConfigNormalRef_Behavior {
     }
     return true;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

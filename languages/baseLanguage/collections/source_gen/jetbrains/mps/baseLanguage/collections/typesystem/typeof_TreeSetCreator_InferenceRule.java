@@ -16,7 +16,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_TreeSetCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode treeSetCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(treeSetCreator, "comparator", true) != null)) {
       final SNode ELEMENT_typevar_2261417478149018313 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -34,22 +33,18 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_3g5uu_a0b0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -61,7 +56,6 @@ public class typeof_TreeSetCreator_InferenceRule extends AbstractInferenceRule_R
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_3g5uu_a0c0a0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

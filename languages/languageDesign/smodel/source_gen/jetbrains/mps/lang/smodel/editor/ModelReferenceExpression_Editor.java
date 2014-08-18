@@ -32,11 +32,9 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uy53zt_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uy53zt_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_uy53zt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_a");
@@ -47,7 +45,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_uy53zt_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_uy53zt_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -56,7 +53,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_uy53zt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_uy53zt_b0");
@@ -66,7 +62,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_uy53zt_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fqName");
@@ -84,37 +79,29 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public ModelReferenceExpression_generic_cellMenu_uy53zt_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SModelRepository.getInstance().getModelDescriptors();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModel) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SModel parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "name", SNodeOperations.getModelLongName(parameterObject));
       SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(parameterObject));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SModel) parameterObject);
     }
-
     public String getMatchingText_internal(SModel parameterObject) {
       return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
     }
   }
-
   private EditorCell createConstant_uy53zt_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_uy53zt_d0");
@@ -124,7 +111,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_uy53zt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_a_0");
@@ -133,7 +119,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_uy53zt_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_uy53zt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_a0");
@@ -144,7 +129,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_uy53zt_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_uy53zt_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "long name");
     editorCell.setCellId("Constant_uy53zt_a0a");
@@ -154,7 +138,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_uy53zt_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -172,7 +155,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_uy53zt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uy53zt_b0");
@@ -183,7 +165,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_uy53zt_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_uy53zt_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stereotype");
     editorCell.setCellId("Constant_uy53zt_a1a");
@@ -193,7 +174,6 @@ public class ModelReferenceExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_uy53zt_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stereotype");

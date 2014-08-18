@@ -13,30 +13,24 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class SimpleMathIntegerType_subtypeOf_Long_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public SimpleMathIntegerType_subtypeOf_Long_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode integerType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return createSimpleMathLongType_alq2vz_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathIntegerType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   public boolean surelyKeepsConcept() {
     return true;
   }
-
   private static SNode createSimpleMathLongType_alq2vz_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.Expressions.structure.SimpleMathLongType", null, false);

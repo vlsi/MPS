@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class superTypesOfMeet_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public superTypesOfMeet_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode meet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(meet, "argument", true))) {
@@ -25,18 +24,15 @@ public class superTypesOfMeet_SubtypingRule extends SubtypingRule_Runtime implem
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.MeetType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

@@ -15,11 +15,9 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class ConvertFieldToLocalVariable_QuickFix extends QuickFix_Runtime {
   public ConvertFieldToLocalVariable_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Convert field to local variable";
   }
-
   public void execute(SNode node) {
     SNode variableDeclaration = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
     SNode varStmd = SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) ConvertFieldToLocalVariable_QuickFix.this.getField("method")[0]), "body", true), "statement", true)).first(), SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));

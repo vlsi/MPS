@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PredefinedSymbolClassSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "declaration", false), "name");
   }

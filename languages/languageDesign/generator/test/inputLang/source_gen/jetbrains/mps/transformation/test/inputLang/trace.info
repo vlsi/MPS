@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="Generator.java">
-      <unit at="17,0,78,0" name="jetbrains.mps.transformation.test.inputLang.Generator" />
+      <unit at="17,0,69,0" name="jetbrains.mps.transformation.test.inputLang.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="16,0,54,0" name="jetbrains.mps.transformation.test.inputLang.Language" />
+      <unit at="16,0,49,0" name="jetbrains.mps.transformation.test.inputLang.Language" />
     </file>
   </root>
 </debug-info>

@@ -14,12 +14,10 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
   public SettingsEditor_Constraints() {
     super("jetbrains.mps.execution.settings.structure.SettingsEditor");
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -30,10 +28,8 @@ public class SettingsEditor_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     return childConcept != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression");
   }
-
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067202");
 }

@@ -14,35 +14,27 @@ public class DeleteFinalInField {
     editorCell.setAction(CellActionType.DELETE, new DeleteFinalInField.DeleteFinalInField_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteFinalInField.DeleteFinalInField_BACKSPACE(node));
   }
-
   public static class DeleteFinalInField_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteFinalInField_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isFinal", "" + (false));
       editorContext.selectWRTFocusPolicy(node);
     }
   }
-
   public static class DeleteFinalInField_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteFinalInField_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isFinal", "" + (false));
       editorContext.selectWRTFocusPolicy(node);

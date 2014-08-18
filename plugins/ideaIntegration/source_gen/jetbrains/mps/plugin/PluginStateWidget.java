@@ -31,7 +31,6 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
   private AtomicReference<PluginStateWidget.State> myState = new AtomicReference<PluginStateWidget.State>(PluginStateWidget.State.TRYING_TO_CONNECT);
   private volatile boolean myConnecting = false;
   private StatusBar myStatusBar;
-
   public PluginStateWidget(Project project) {
     myProject = project;
     myTimer = new PluginStateWidget.MyTimer(new ActionListener() {
@@ -65,13 +64,11 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
       }
     });
   }
-
   @Override
   public void install(@NotNull StatusBar bar) {
     myStatusBar = bar;
     myTimer.start();
   }
-
   @Nullable
   @Override
   public Consumer<MouseEvent> getClickConsumer() {
@@ -86,43 +83,36 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
       }
     };
   }
-
   @Nullable
   @Override
   public StatusBarWidget.WidgetPresentation getPresentation(@NotNull StatusBarWidget.PlatformType type) {
     return this;
   }
-
   @Override
   public void dispose() {
     if (myTimer.isRunning()) {
       myTimer.stop();
     }
   }
-
   @Nullable
   @Override
   public String getTooltipText() {
     return myState.get().getHelpText();
   }
-
   @NotNull
   @Override
   public Icon getIcon() {
     return myState.get().getIcon();
   }
-
   @NotNull
   @Override
   public String ID() {
     return "MpsPluginStateMonitor";
   }
-
   private void tick() {
     LOG.assertLog(!(ThreadUtils.isEventDispatchThread()), "You should not do this in EDT");
     tickImpl();
   }
-
   private void tickImpl() {
     PluginStateWidget.State state = myState.get();
     if (state == PluginStateWidget.State.CONNECTED) {
@@ -174,7 +164,6 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
       }
     }
   }
-
   private boolean setNewState(PluginStateWidget.State oldState, PluginStateWidget.State newState) {
     if (myState.compareAndSet(oldState, newState)) {
       myTimer.setNewDelay(myState.get().getDefaultDelay());
@@ -188,15 +177,12 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     }
     return false;
   }
-
   private boolean isConnected() {
     return MPSPlugin.getInstance().isIDEAPresent();
   }
-
   private boolean canOperate() {
     return MPSPlugin.getInstance().getProjectHandler(myProject) != null;
   }
-
   private static   enum State {
     DISCONNECTED(MPSIcons.IdeaIntegration.Disconnected, "Not connected to IDEA. Click to reconnect.", PluginStateWidget.INITIAL_DELAY),
     TRYING_TO_CONNECT(MPSIcons.IdeaIntegration.TryingToConnect, "Connecting to IDEA...", PluginStateWidget.INITIAL_DELAY),
@@ -206,31 +192,25 @@ public class PluginStateWidget implements StatusBarWidget, StatusBarWidget.IconP
     private final Icon myIcon;
     private final String myHelpText;
     private final int myDefaultDelay;
-
     State(Icon icon, String helpText, int defaultDelay) {
       myIcon = icon;
       myHelpText = helpText;
       myDefaultDelay = defaultDelay;
     }
-
     public Icon getIcon() {
       return myIcon;
     }
-
     public String getHelpText() {
       return myHelpText;
     }
-
     public int getDefaultDelay() {
       return myDefaultDelay;
     }
   }
-
   private static class MyTimer extends Timer {
     public MyTimer(ActionListener listener) {
       super(PluginStateWidget.INITIAL_DELAY, listener);
     }
-
     public void setNewDelay(int delay) {
       setDelay(delay);
       setInitialDelay(delay);

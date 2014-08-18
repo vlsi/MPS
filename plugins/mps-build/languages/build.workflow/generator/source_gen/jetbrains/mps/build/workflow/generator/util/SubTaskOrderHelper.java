@@ -19,12 +19,10 @@ public class SubTaskOrderHelper {
   private final List<SNode> list;
   private final Map<SNode, SubTaskOrderHelper.SubTask> map = new HashMap<SNode, SubTaskOrderHelper.SubTask>();
   private final TemplateQueryContext genContext;
-
   public SubTaskOrderHelper(List<SNode> list, TemplateQueryContext genContext) {
     this.list = list;
     this.genContext = genContext;
   }
-
   public void sort() {
     int count = 0;
     SubTaskOrderHelper.SubTask[] subtasks = new SubTaskOrderHelper.SubTask[ListSequence.fromList(list).count()];
@@ -77,17 +75,14 @@ public class SubTaskOrderHelper {
       ListSequence.fromList(list).addElement(subtasks[cycle[0]].getTask());
     }
   }
-
   private class SubTask {
     private final int index;
     private final SNode task;
     public final Set<Integer> targets = new HashSet<Integer>();
-
     public SubTask(SNode task, int index) {
       this.task = task;
       this.index = index;
     }
-
     public int[] getTargets() {
       targets.remove(index);
       int[] arr = new int[targets.size()];
@@ -104,11 +99,9 @@ public class SubTaskOrderHelper {
       }
       return arr;
     }
-
     public SNode getTask() {
       return task;
     }
-
     public int getIndex() {
       return index;
     }

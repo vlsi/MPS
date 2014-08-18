@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildLayout_Comment_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public BuildLayout_Comment_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_Comment";

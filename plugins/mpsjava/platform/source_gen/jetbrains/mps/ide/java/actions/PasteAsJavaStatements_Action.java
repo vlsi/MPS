@@ -25,25 +25,21 @@ import org.apache.log4j.LogManager;
 
 public class PasteAsJavaStatements_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PasteAsJavaStatements_Action() {
     super("Paste as Java Statements", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ReadOnlyUtil.isSelectionReadOnlyInEditor(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")))) {
       return false;
     }
     return (SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("anchorNode"))), "jetbrains.mps.baseLanguage.structure.StatementList", true, false) != null) && JavaPaster.areDataAvailableInClipboard();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -57,7 +53,6 @@ public class PasteAsJavaStatements_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -93,7 +88,6 @@ public class PasteAsJavaStatements_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new JavaPaster().pasteJava(((SNode) MapSequence.fromMap(_params).get("anchorNode")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), FeatureKind.STATEMENTS, ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
@@ -103,6 +97,5 @@ public class PasteAsJavaStatements_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PasteAsJavaStatements_Action.class);
 }

@@ -8,21 +8,17 @@ import java.util.ArrayList;
 
 public class StateMachine {
   private State start;
-
   public StateMachine(State start) {
     this.start = start;
   }
-
   /*package*/ State getStart() {
     return start;
   }
-
   /*package*/ Collection<State> getStates() {
     List<State> result = new ArrayList<State>();
     gatherForwards(result, start);
     return result;
   }
-
   private void gatherForwards(Collection<State> result, State start) {
     if (result.contains(start)) {
       return;
@@ -34,13 +30,11 @@ public class StateMachine {
       return;
     }
   }
-
   public void addResetEvents(Event... events) {
     for (Event e : events) {
       addResetEvent(e);
     }
   }
-
   private void addResetEvent(Event e) {
     for (State s : getStates()) {
       if (!(s.hasTransition(e.getCode()))) {
@@ -48,7 +42,6 @@ public class StateMachine {
       }
     }
   }
-
   @Override
   public String toString() {
     if (null == start) {
@@ -60,7 +53,6 @@ public class StateMachine {
     }
     return result.toString();
   }
-
   /*package*/ State getState(String arg) {
     for (State s : getStates()) {
       if (arg.equals(s.getName())) {
@@ -69,13 +61,11 @@ public class StateMachine {
     }
     return null;
   }
-
   public Notification compare(StateMachine other) {
     Notification result = new Notification();
     compareNumberOfStates(other, result);
     return result;
   }
-
   private void compareNumberOfStates(StateMachine other, Notification note) {
     for (State s : getStates()) {
       compareState(s, other, note);
@@ -86,7 +76,6 @@ public class StateMachine {
       }
     }
   }
-
   private void compareState(State state, StateMachine otherMachine, Notification note) {
     State otherState = otherMachine.getState(state.getName());
     if (null == otherState) {
@@ -95,7 +84,6 @@ public class StateMachine {
       state.compare(otherState, note);
     }
   }
-
   public String toDot() {
     StringBuilder result = new StringBuilder();
     result.append("digraph state_machine {");

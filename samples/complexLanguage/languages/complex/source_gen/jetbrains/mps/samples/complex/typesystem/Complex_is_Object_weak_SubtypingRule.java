@@ -14,26 +14,21 @@ import jetbrains.mps.smodel.SReference;
 public class Complex_is_Object_weak_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Complex_is_Object_weak_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode complexType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_f46hoj_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.complex.structure.ComplexType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_f46hoj_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

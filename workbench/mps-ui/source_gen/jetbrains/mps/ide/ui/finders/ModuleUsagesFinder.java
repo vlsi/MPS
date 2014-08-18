@@ -35,10 +35,8 @@ public class ModuleUsagesFinder implements IFinder {
   private static final String MODELS_WRITTEN_IN_LANGUAGE = "models written in language";
   private static final String NODES_IN_LANGUAGE = "nodes written in language";
 
-
   public ModuleUsagesFinder() {
   }
-
   @Override
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SearchResults searchResults = new SearchResults();
@@ -68,7 +66,6 @@ public class ModuleUsagesFinder implements IFinder {
 
     return searchResults;
   }
-
   private void collectUsagesInSolution(SModule searchedModule, Solution solution, SearchResults searchResults) {
     if (getDeclaredDependenciesTargets(solution).contains(searchedModule)) {
       searchResults.getSearchResults().add(new SearchResult<Solution>(solution, ModuleUsagesFinder.DEPENDENT_MODULES));
@@ -78,7 +75,6 @@ public class ModuleUsagesFinder implements IFinder {
       collectUsagesInModels(searchedModule, solution, searchResults);
     }
   }
-
   private void collectUsagesInLanguage(SModule searchedModule, Language language, SearchResults searchResults) {
     if (language.getExtendedLanguageRefs().contains(searchedModule.getModuleReference())) {
       searchResults.getSearchResults().add(new SearchResult<Language>(language, ModuleUsagesFinder.EXTENDING_LANGUAGES));
@@ -95,7 +91,6 @@ public class ModuleUsagesFinder implements IFinder {
       collectUsagesInModels(searchedModule, language, searchResults);
     }
   }
-
   private void collectUsagesInDevKit(SModule searchedModule, DevKit devKit, SearchResults searchResults) {
     if (devKit.getExportedLanguages().contains(searchedModule)) {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, ModuleUsagesFinder.EXPORTED_BY));
@@ -104,7 +99,6 @@ public class ModuleUsagesFinder implements IFinder {
       searchResults.getSearchResults().add(new SearchResult<DevKit>(devKit, ModuleUsagesFinder.DEPENDENT_MODULES));
     }
   }
-
   private void collectUsagesInGenerator(SModule searchedModule, Generator generator, SearchResults searchResults) {
     boolean depExtends = false;
     boolean depRuntime = false;
@@ -133,7 +127,6 @@ public class ModuleUsagesFinder implements IFinder {
     }
 
   }
-
   private void collectUsagesInModels(SModule searchedModule, SModule owner, SearchResults searchResults) {
     for (SModel modelDescriptor : owner.getModels()) {
       if (!(SModelStereotype.isUserModel(modelDescriptor))) {
@@ -145,7 +138,6 @@ public class ModuleUsagesFinder implements IFinder {
       }
     }
   }
-
   private static Set<SModule> getDeclaredDependenciesTargets(SModule module) {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dep : module.getDeclaredDependencies()) {
@@ -153,7 +145,6 @@ public class ModuleUsagesFinder implements IFinder {
     }
     return result;
   }
-
   private static Set<SDependency> findDependencies(SModule from, SModule to) {
     // FIXME nice candidate to move into SModule (along with findDependencies(SDependencyKind) 
     LinkedHashSet<SDependency> rv = new LinkedHashSet<SDependency>();

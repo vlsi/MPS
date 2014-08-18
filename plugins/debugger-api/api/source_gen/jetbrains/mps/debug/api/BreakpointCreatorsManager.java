@@ -36,16 +36,13 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
    * Map to keep binary compatibility inside 3.1.x, should be removed together with addBreakpointCreator()/removeBreakpointCreator()
    */
   private Map<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>, Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myOldToNewCreatorMap = MapSequence.fromMap(new HashMap<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>, Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
-
   public BreakpointCreatorsManager() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Debug Info Manager";
   }
-
   public void addConceptBreakpointCreator(final String baseConcept, final Mapper2<SNode, Project, ILocationBreakpoint> breakpointCreator) {
     Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> pair = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
       public Boolean invoke(SNode concept, SNode n) {
@@ -59,12 +56,10 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     MapSequence.fromMap(myAddedByConceptCreators).put(baseConcept, pair);
     SetSequence.fromSet(myCreators).addElement(pair);
   }
-
   public void removeConceptBreakpointCreator(String fqName) {
     SetSequence.fromSet(myCreators).removeElement(MapSequence.fromMap(myAddedByConceptCreators).get(fqName));
     MapSequence.fromMap(myAddedByConceptCreators).removeKey(fqName);
   }
-
   @Deprecated
   public void addBreakpointCreator(final Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> oldCreator) {
     Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator = MultiTuple.<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>,_FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>from(new _FunctionTypes._return_P2_E0<Boolean, SNode, SNode>() {
@@ -75,21 +70,17 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     SetSequence.fromSet(myCreators).addElement(creator);
     MapSequence.fromMap(myOldToNewCreatorMap).put(oldCreator, creator);
   }
-
   @Deprecated
   public void removeBreakpointCreator(Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> oldCreator) {
     SetSequence.fromSet(myCreators).removeElement(MapSequence.fromMap(myOldToNewCreatorMap).get(oldCreator));
     MapSequence.fromMap(myOldToNewCreatorMap).removeKey(oldCreator);
   }
-
   public void addCreator(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
     SetSequence.fromSet(myCreators).addElement(creator);
   }
-
   public void removeCreator(Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator) {
     SetSequence.fromSet(myCreators).removeElement(creator);
   }
-
   public boolean isDebuggableNode(@Nullable final SNode node) {
     if (node == null) {
       return false;
@@ -100,7 +91,6 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       }
     }) != null;
   }
-
   private ILocationBreakpoint createBreakpoint(SNode concept, SNode node, Project project) {
     for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(myCreators)) {
       if (creator._0().invoke(concept, node)) {
@@ -116,7 +106,6 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     }
     return null;
   }
-
   @Nullable
   public ILocationBreakpoint createBreakpoint(SNode node, Project project) {
     ILocationBreakpoint breakpoint = createBreakpoint(SNodeOperations.getConceptDeclaration(node), node, project);
@@ -135,18 +124,14 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
     }
     return null;
   }
-
   @Override
   public void initComponent() {
   }
-
   @Override
   public void disposeComponent() {
   }
-
   public static BreakpointCreatorsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(BreakpointCreatorsManager.class);
   }
-
   protected static Logger LOG = LogManager.getLogger(BreakpointCreatorsManager.class);
 }

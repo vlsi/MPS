@@ -32,11 +32,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class MethodResolveUtil {
   public MethodResolveUtil() {
   }
-
   public static List<SNode> selectByParmCount(List<SNode> methods, List<SNode> actualArgs) {
     return selectByParmCountReportNoGoodMethodNode(methods, actualArgs).o1;
   }
-
   public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
@@ -75,7 +73,6 @@ public class MethodResolveUtil {
     }
     return new Pair<List<SNode>, Boolean>(result, good);
   }
-
   public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
     List<SNode> goodMethods = new ArrayList<SNode>();
     List<SNode> badMethods = new ArrayList<SNode>();
@@ -119,11 +116,9 @@ public class MethodResolveUtil {
       return new Pair<List<SNode>, Boolean>(goodMethods, true);
     }
   }
-
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     return MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, candidates, actualArgs, typeByTypeVar).o1;
   }
-
   public static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     Map<SNode, SNode> nodesAndTypes = new HashMap<SNode, SNode>();
     int i = 1;
@@ -164,7 +159,6 @@ public class MethodResolveUtil {
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
-
   private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
@@ -218,7 +212,6 @@ public class MethodResolveUtil {
     }
     return result;
   }
-
   public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, Iterable<SNode> typeParameters) {
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierScopeUtils.resolveClassifierTypeVars(classifier))) {

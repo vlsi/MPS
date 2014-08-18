@@ -11,35 +11,27 @@ import jetbrains.mps.build.util.UnpackHelper;
 public class BuildExternalLayout_BehaviorDescriptor extends BuildLayout_AbstractContainer_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public BuildExternalLayout_BehaviorDescriptor() {
   }
-
   public void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     BuildExternalLayout_Behavior.virtual_appendName_1368030936106665465(thisNode, parent, sb);
   }
-
   public String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
     return BuildExternalLayout_Behavior.virtual_getAssembleSubTaskId_4701820937132344052(thisNode);
   }
-
   public String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     return BuildExternalLayout_Behavior.virtual_getChildrenOutputDir_WithMacro_4701820937132344011(thisNode, context);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
     return BuildExternalLayout_Behavior.virtual_getPrepareSubTaskId_4701820937132344041(thisNode);
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BuildExternalLayout_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   public void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     BuildExternalLayout_Behavior.virtual_unpack_7128123785277710736(thisNode, helper, artifacts);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildExternalLayout";

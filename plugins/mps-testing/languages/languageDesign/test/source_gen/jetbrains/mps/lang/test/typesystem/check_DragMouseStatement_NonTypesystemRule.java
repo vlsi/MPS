@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DragMouseStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DragMouseStatement_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode dragMouseStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (DragMouseStatement_Behavior.call_getPressMouseStatement_4196004291146433125(dragMouseStatement) == null) {
       {
@@ -25,18 +24,15 @@ public class check_DragMouseStatement_NonTypesystemRule extends AbstractNonTypes
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.test.structure.DragMouseStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

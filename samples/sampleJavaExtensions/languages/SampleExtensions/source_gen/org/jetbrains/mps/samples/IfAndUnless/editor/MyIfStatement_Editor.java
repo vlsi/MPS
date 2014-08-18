@@ -24,7 +24,6 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a1fgw3_a(editorContext, node);
   }
-
   private EditorCell createCollection_a1fgw3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a1fgw3_a");
@@ -40,7 +39,6 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_a1fgw3_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_a1fgw3_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on condition that");
     editorCell.setCellId("Constant_a1fgw3_a0");
@@ -50,7 +48,6 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_a1fgw3_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -73,7 +70,6 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_a1fgw3_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -97,34 +93,28 @@ public class MyIfStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createIndentCell_a1fgw3_d0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createIndentCell_a1fgw3_e0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createConstant_a1fgw3_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "|");
     editorCell.setCellId("Constant_a1fgw3_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createIndentCell_a1fgw3_g0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createIndentCell_a1fgw3_h0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_a1fgw3_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("alternative");

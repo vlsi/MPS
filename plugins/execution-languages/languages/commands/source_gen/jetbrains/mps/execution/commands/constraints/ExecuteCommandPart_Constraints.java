@@ -28,12 +28,10 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
   public ExecuteCommandPart_Constraints() {
     super("jetbrains.mps.execution.commands.structure.ExecuteCommandPart");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseReferenceScopeProvider() {
@@ -45,14 +43,12 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
           }
         });
       }
-
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_kwfdao_a0a1a0a0a2;
       }
     };
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -61,7 +57,6 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -73,7 +68,6 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
@@ -93,13 +87,11 @@ public class ExecuteCommandPart_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static String check_kwfdao_a0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SPropertyOperations.getString(checkedDotOperand, "name");
     }
     return null;
   }
-
   private static SNodePointer breakingNode_kwfdao_a0a1a0a0a2 = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "3445893456318180892");
 }

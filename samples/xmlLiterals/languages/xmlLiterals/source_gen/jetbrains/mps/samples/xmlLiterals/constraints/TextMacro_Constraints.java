@@ -14,12 +14,10 @@ public class TextMacro_Constraints extends BaseConstraintsDescriptor {
   public TextMacro_Constraints() {
     super("jetbrains.mps.samples.xmlLiterals.structure.TextMacro");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class TextMacro_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", true, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:522aace3-e88f-4df7-82be-4ab3d6ccd8bc(jetbrains.mps.samples.xmlLiterals.constraints)", "9152904044274469614");
 }

@@ -40,11 +40,9 @@ public class Quotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_29llnk_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_29llnk_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_29llnk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_29llnk_a");
@@ -58,7 +56,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_29llnk_a0");
@@ -72,7 +69,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_29llnk_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("quotedNode");
@@ -92,7 +88,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_29llnk_c0");
@@ -106,7 +101,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_29llnk_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_29llnk_d0");
@@ -121,18 +115,15 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_29llnk_f3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_29llnk_a3a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
   }
-
   private EditorCell createConstant_29llnk_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[model =");
     editorCell.setCellId("Constant_29llnk_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_29llnk_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("modelToCreate");
@@ -152,21 +143,18 @@ public class Quotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_29llnk_c3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_d3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id =");
     editorCell.setCellId("Constant_29llnk_d3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_29llnk_e3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeId");
@@ -186,14 +174,12 @@ public class Quotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_f3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_29llnk_f3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_29llnk_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_29llnk_a_0");
@@ -201,7 +187,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_29llnk_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_29llnk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_29llnk_a0");
@@ -217,7 +202,6 @@ public class Quotation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_29llnk_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept:");
     editorCell.setCellId("Constant_29llnk_a0a");
@@ -228,16 +212,13 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_29llnk_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (SLinkOperations.getTarget(node, "quotedNode", true) != null ? SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "quotedNode", true)), "name") : "<not specitied>");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -248,41 +229,32 @@ public class Quotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("ReadOnlyModelAccessor_29llnk_b0a");
     return editorCell;
   }
-
   private static boolean renderingCondition_29llnk_a1a0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "quotedNode", true) != null;
   }
-
   public static class Quotation_component_cellMenu_29llnk_a0b0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
-
     public Quotation_component_cellMenu_29llnk_a0b0a() {
       this.myComponent = new Quotation_quotedNode();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createError_29llnk_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<not specified>");
     editorCell.setCellId("Error_29llnk_c0a");
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Quotation_Editor.Quotation_component_cellMenu_29llnk_a0c0a()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_29llnk_a2a0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "quotedNode", true) == null;
   }
-
   public static class Quotation_component_cellMenu_29llnk_a0c0a implements SubstituteInfoPartExt {
     private Quotation_quotedNode myComponent;
-
     public Quotation_component_cellMenu_29llnk_a0c0a() {
       this.myComponent = new Quotation_quotedNode();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }

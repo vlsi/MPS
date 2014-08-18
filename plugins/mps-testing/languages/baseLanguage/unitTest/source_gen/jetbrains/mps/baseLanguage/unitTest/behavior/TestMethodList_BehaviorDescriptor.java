@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class TestMethodList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public TestMethodList_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList";

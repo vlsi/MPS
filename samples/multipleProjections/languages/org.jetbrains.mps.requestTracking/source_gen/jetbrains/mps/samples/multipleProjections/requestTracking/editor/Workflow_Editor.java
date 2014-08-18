@@ -26,7 +26,6 @@ public class Workflow_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yhw0dy_a(editorContext, node);
   }
-
   private EditorCell createCollection_yhw0dy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yhw0dy_a");
@@ -38,7 +37,6 @@ public class Workflow_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_yhw0dy_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_yhw0dy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("presentation");
@@ -56,14 +54,12 @@ public class Workflow_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yhw0dy_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "workflow");
     editorCell.setCellId("Constant_yhw0dy_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_yhw0dy_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -84,7 +80,6 @@ public class Workflow_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_yhw0dy_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yhw0dy_d0");
@@ -97,11 +92,9 @@ public class Workflow_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private Iterable<String> getEditorHints_yhw0dy_a3a(SNode node, EditorContext editorContext) {
     return (SPropertyOperations.hasValue(node, "presentation", "tabular", "structural") ? ListSequence.fromListAndArray(new ArrayList<String>(), "jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular") : Collections.<String>emptyList());
   }
-
   private EditorCell createRefNode_yhw0dy_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("stateMachine");
@@ -124,7 +117,6 @@ public class Workflow_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yhw0dy_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_yhw0dy_e0");

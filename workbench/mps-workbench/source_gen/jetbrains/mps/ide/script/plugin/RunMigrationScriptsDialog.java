@@ -54,7 +54,6 @@ public class RunMigrationScriptsDialog extends JDialog {
   private JButton myOpenSelectedButton;
   private boolean myRunChecked;
   private boolean myOpenSelected;
-
   public RunMigrationScriptsDialog(Frame owner, List<SNode> scripts, Set<String> selectedScriptIds) throws HeadlessException {
     super(owner, "Migration Scripts", true);
     myScripts = scripts;
@@ -63,7 +62,6 @@ public class RunMigrationScriptsDialog extends JDialog {
     setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     setSize(750, 600);
   }
-
   private void init() {
     JComponent contentPane = ((JComponent) getContentPane());
     contentPane.setLayout(new BorderLayout());
@@ -152,7 +150,6 @@ public class RunMigrationScriptsDialog extends JDialog {
     });
     updateButtons();
   }
-
   private void updateButtons() {
     int[] ints = myTable.getSelectedRows();
     boolean enableCheck = false;
@@ -169,7 +166,6 @@ public class RunMigrationScriptsDialog extends JDialog {
     myOpenSelectedButton.setEnabled(getSelectedScripts().size() == 1);
     myRunCheckedButton.setEnabled(getCheckedScripts().size() >= 1);
   }
-
   public List<SNode> getSelectedScripts() {
     List<SNode> list = new ArrayList<SNode>();
     int[] ints = myTable.getSelectedRows();
@@ -179,7 +175,6 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
     return list;
   }
-
   public List<SNode> getCheckedScripts() {
     List<SNode> list = new ArrayList<SNode>();
     int count = myTable.getModel().getRowCount();
@@ -190,25 +185,20 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
     return list;
   }
-
   public boolean isRunChecked() {
     return myRunChecked;
   }
-
   public boolean isOpenSelected() {
     return myOpenSelected;
   }
-
   private class MyTableModel extends DefaultTableModel {
     public MyTableModel() {
       super(new String[]{"", "script", "category", "language"}, ListSequence.fromList(myScripts).count());
     }
-
     @Override
     public boolean isCellEditable(int row, int column) {
       return column == 0;
     }
-
     @Override
     public Class<?> getColumnClass(int column) {
       if (column == 0) {
@@ -216,7 +206,6 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
       return super.getColumnClass(column);
     }
-
     @Override
     public Object getValueAt(int row, int column) {
       SNode sn = ListSequence.fromList(myScripts).getElement(row);
@@ -239,7 +228,6 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
       return null;
     }
-
     @Override
     public void setValueAt(Object aValue, int row, int column) {
       String id = ListSequence.fromList(myScripts).getElement(row).getNodeId().toString();
@@ -251,7 +239,6 @@ public class RunMigrationScriptsDialog extends JDialog {
       super.setValueAt(aValue, row, column);
     }
   }
-
   private class MySortingTableModel extends RunMigrationScriptsDialog.MyTableModel {
     private static final int NONE = 0;
     private static final int ASC = 1;
@@ -259,42 +246,34 @@ public class RunMigrationScriptsDialog extends JDialog {
     private int mySortedColumn = -1;
     private int mySortingOrder = NONE;
     private int[] myViewToModelMap;
-
     private MySortingTableModel() {
     }
-
     @Override
     public boolean isCellEditable(int row, int column) {
       return super.isCellEditable(convertRowIndexToModel(row), column);
     }
-
     @Override
     public Class<?> getColumnClass(int column) {
       return super.getColumnClass(column);
     }
-
     @Override
     public Object getValueAt(int row, int column) {
       return super.getValueAt(convertRowIndexToModel(row), column);
     }
-
     @Override
     public void setValueAt(Object aValue, int row, int column) {
       super.setValueAt(aValue, convertRowIndexToModel(row), column);
       fireTableCellUpdated(row, column);
     }
-
     public boolean isChecked(int row) {
       return (Boolean) super.getValueAt(row, 0);
     }
-
     public int convertRowIndexToModel(int viewIndex) {
       if (mySortingOrder == NONE) {
         return viewIndex;
       }
       return myViewToModelMap[viewIndex];
     }
-
     public int convertRowIndexToView(int modelIndex) {
       if (mySortingOrder == NONE) {
         return modelIndex;
@@ -306,7 +285,6 @@ public class RunMigrationScriptsDialog extends JDialog {
       }
       return -1;
     }
-
     public void install(final JTable table) {
       TableColumnModel columnModel = table.getColumnModel();
       for (int i = 0; i < columnModel.getColumnCount(); i++) {
@@ -368,7 +346,6 @@ public class RunMigrationScriptsDialog extends JDialog {
         }
       });
     }
-
     private void sort(final int column, int order) {
       mySortingOrder = order;
       mySortedColumn = column;
@@ -396,53 +373,43 @@ public class RunMigrationScriptsDialog extends JDialog {
       fireTableDataChanged();
     }
   }
-
   private class MyDownIcon implements Icon {
     private int mySize;
     private int myXoff = 4;
     private int myYoff = 4;
-
     private MyDownIcon(int size) {
       mySize = size;
     }
-
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
       g.setColor(UIManager.getColor("controlDkShadow"));
       g.fillPolygon(new int[]{myXoff + 0, myXoff + mySize, myXoff + mySize / 2}, new int[]{myYoff + 0, myYoff + 0, myYoff + (int) (mySize * 0.87)}, 3);
     }
-
     @Override
     public int getIconWidth() {
       return mySize + myXoff;
     }
-
     @Override
     public int getIconHeight() {
       return mySize + myYoff;
     }
   }
-
   private class MyUpIcon implements Icon {
     private int mySize;
     private int myXoff = 4;
     private int myYoff = 4;
-
     private MyUpIcon(int size) {
       mySize = size;
     }
-
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
       g.setColor(UIManager.getColor("controlDkShadow"));
       g.fillPolygon(new int[]{myXoff + 0, myXoff + mySize / 2, myXoff + mySize}, new int[]{myYoff + (int) (mySize * 0.87), myYoff + 0, myYoff + (int) (mySize * 0.87)}, 3);
     }
-
     @Override
     public int getIconWidth() {
       return mySize + myXoff;
     }
-
     @Override
     public int getIconHeight() {
       return mySize + myYoff;

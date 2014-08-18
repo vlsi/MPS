@@ -31,7 +31,6 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_imlbz9_a(editorContext, node);
   }
-
   private EditorCell createCollection_imlbz9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_imlbz9_a");
@@ -63,7 +62,6 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_imlbz9_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_imlbz9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("visibility");
@@ -83,11 +81,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a0a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "visibility", true) != null);
   }
-
   private EditorCell createConstant_imlbz9_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_imlbz9_b0");
@@ -98,11 +94,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "static");
   }
-
   private EditorCell createConstant_imlbz9_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_imlbz9_c0");
@@ -113,11 +107,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "final");
   }
-
   private EditorCell createConstant_imlbz9_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "abstract");
     editorCell.setCellId("Constant_imlbz9_d0");
@@ -128,11 +120,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "abstract");
   }
-
   private EditorCell createConstant_imlbz9_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "synchronized");
     editorCell.setCellId("Constant_imlbz9_e0");
@@ -143,11 +133,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "synchronized");
   }
-
   private EditorCell createConstant_imlbz9_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_imlbz9_f0");
@@ -155,11 +143,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "transient");
   }
-
   private EditorCell createConstant_imlbz9_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_imlbz9_g0");
@@ -170,11 +156,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "volatile");
   }
-
   private EditorCell createRefNode_imlbz9_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -194,11 +178,9 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_imlbz9_a7a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "type", true) != null);
   }
-
   private EditorCell createConstant_imlbz9_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_imlbz9_i0");
@@ -214,17 +196,14 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncompleteMemberDeclaration_Editor.ApplySideTransforms_null_cellMenu_imlbz9_a0i0(), new IncompleteMemberDeclaration_Editor.ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0()}));
     return editorCell;
   }
-
   public static class ApplySideTransforms_null_cellMenu_imlbz9_a0i0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_imlbz9_a0i0() {
       super(CellSide.RIGHT);
     }
   }
-
   public static class ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
     }

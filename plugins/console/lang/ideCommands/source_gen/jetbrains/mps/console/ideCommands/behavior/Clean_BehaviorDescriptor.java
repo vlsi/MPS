@@ -6,7 +6,6 @@ package jetbrains.mps.console.ideCommands.behavior;
 public class Clean_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
   public Clean_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.Clean";

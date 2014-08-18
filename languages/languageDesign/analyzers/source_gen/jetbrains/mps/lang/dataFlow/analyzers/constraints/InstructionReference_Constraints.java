@@ -25,7 +25,6 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
   public InstructionReference_Constraints() {
     super("jetbrains.mps.lang.dataFlow.analyzers.structure.InstructionReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -47,7 +45,6 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yymroq_a0a1a0a0a1a0b0a1a1;
@@ -57,6 +54,5 @@ public class InstructionReference_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_yymroq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:73c9a355-2bf0-4466-8a7d-8b8d8a945cd4(jetbrains.mps.lang.dataFlow.analyzers.constraints)", "7383406024685167123");
 }

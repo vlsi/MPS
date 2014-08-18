@@ -13,12 +13,10 @@ public class ThisNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public ThisNodeExpression_Constraints() {
     super("jetbrains.mps.lang.behavior.structure.ThisNodeExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -29,10 +27,8 @@ public class ThisNodeExpression_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ConstraintsUtil.isInsideOfNonStaticBehaviorContext(parentNode);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "2043122710974690751");
 }

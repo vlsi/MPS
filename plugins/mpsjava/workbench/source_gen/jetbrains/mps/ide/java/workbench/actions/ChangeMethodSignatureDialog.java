@@ -44,7 +44,6 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
   private Project myProject;
   private List<ChangeMethodSignatureRefactoring> myRefactorings = null;
 
-
   public ChangeMethodSignatureDialog(@NotNull com.intellij.openapi.project.Project project, SNode node, IOperationContext operationContext) {
     super(project, true);
     setTitle("Change Method Signature");
@@ -59,7 +58,6 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     });
     init();
   }
-
   private JComponent createSingnaturePanel() {
     JPanel panel = new JPanel(new BorderLayout());
     myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
@@ -79,11 +77,9 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     panel.add(this.myEditor);
     return panel;
   }
-
   public List<ChangeMethodSignatureRefactoring> getAllRefactorings() {
     return myRefactorings;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -98,7 +94,6 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     panel.add(this.createSingnaturePanel(), c);
     return panel;
   }
-
   @Override
   protected void doRefactoringAction() {
     final Wrappers._T<List<SNode>> methodsToRefactor = new Wrappers._T<List<SNode>>(new ArrayList<SNode>());
@@ -120,7 +115,6 @@ public class ChangeMethodSignatureDialog extends RefactoringDialog {
     }
     super.doRefactoringAction();
   }
-
   @Override
   protected void dispose() {
     if (myEditor != null) {

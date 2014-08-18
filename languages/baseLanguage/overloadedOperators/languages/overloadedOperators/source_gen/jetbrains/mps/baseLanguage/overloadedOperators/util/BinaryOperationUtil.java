@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 public class BinaryOperationUtil {
   public BinaryOperationUtil() {
   }
-
   public static boolean isOverloading(SNode node, SNode leftType, SNode rightType, SNode operator) {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, SLinkOperations.getTarget(operator, "leftType", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, SLinkOperations.getTarget(operator, "rightType", true)))) {
       return false;
@@ -33,7 +32,6 @@ public class BinaryOperationUtil {
     }
     return false;
   }
-
   public static Map<SNode, Boolean> getOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
     Map<SNode, Boolean> result = MapSequence.fromMap(new HashMap<SNode, Boolean>());
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
@@ -49,7 +47,6 @@ public class BinaryOperationUtil {
     }
     return result;
   }
-
   public static boolean hasOverloadedOperators(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
     for (SNode operator : operators) {
       if (isOverloading(node, leftType, rightType, operator)) {
@@ -61,7 +58,6 @@ public class BinaryOperationUtil {
     }
     return false;
   }
-
   public static boolean isSubTypeOperatorStraight(SNode subOperator, SNode superOperator) {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(superOperator, "leftType", true), SLinkOperations.getTarget(subOperator, "leftType", true), false)) {
       return false;
@@ -74,7 +70,6 @@ public class BinaryOperationUtil {
     }
     return true;
   }
-
   public static boolean isReversedSubTypeOperator(SNode subOperator, SNode superOperator) {
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(superOperator, "rightType", true), SLinkOperations.getTarget(subOperator, "leftType", true), false)) {
       return false;
@@ -87,14 +82,12 @@ public class BinaryOperationUtil {
     }
     return true;
   }
-
   public static boolean isSubTypeOperator(SNode subOperator, SNode superOperator, boolean reversed) {
     if (!(reversed)) {
       return isSubTypeOperatorStraight(subOperator, superOperator);
     }
     return isReversedSubTypeOperator(subOperator, superOperator);
   }
-
   public static SNode getNearestOverloaded(SNode node, SNode leftType, SNode rightType, List<SNode> operators) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
       return null;

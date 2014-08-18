@@ -11,7 +11,6 @@ public class StringAction extends BaseAction implements DumbAware {
   public StringAction(String caption) {
     super(caption);
   }
-
   @Override
   protected void doExecute(AnActionEvent event, Map<String, Object> _params) {
   }

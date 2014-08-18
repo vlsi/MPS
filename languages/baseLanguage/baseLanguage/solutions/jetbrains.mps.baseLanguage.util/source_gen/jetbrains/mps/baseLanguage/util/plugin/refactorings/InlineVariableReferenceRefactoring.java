@@ -19,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 public class InlineVariableReferenceRefactoring extends InlineVariableRefactoring {
   private SNode myReference;
   private SNode myAssignment;
-
   public InlineVariableReferenceRefactoring(SNode node) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       throw new IllegalArgumentException();
@@ -28,7 +27,6 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     this.myReference = node;
     this.findAssignment(node);
   }
-
   @Override
   public SNode doRefactoring() {
     final SNode variable = SLinkOperations.getTarget(this.myReference, "variableDeclaration", false);
@@ -59,7 +57,6 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     this.optimizeDeclaration(variable);
     return nodeToSelect;
   }
-
   private void findAssignment(SNode node) {
     SNode variable = SLinkOperations.getTarget(node, "variableDeclaration", false);
     myAssignment = null;
@@ -83,7 +80,6 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
       currentList = SNodeOperations.getAncestor(currentList, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     }
   }
-
   private SNode getParentStatement(SNode node, SNode list) {
     SNode curParent = node;
     while ((curParent != null) && SNodeOperations.getParent(curParent) != list) {
@@ -91,7 +87,6 @@ public class InlineVariableReferenceRefactoring extends InlineVariableRefactorin
     }
     return SNodeOperations.cast(curParent, "jetbrains.mps.baseLanguage.structure.Statement");
   }
-
   private static boolean eq_uj3i4l_a0a0a0a0a0a0a0a2a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

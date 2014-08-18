@@ -9,11 +9,9 @@ import jetbrains.mps.console.tool.ConsoleStream;
 public abstract class GeneratedCommand_BehaviorDescriptor extends Command_BehaviorDescriptor {
   public GeneratedCommand_BehaviorDescriptor() {
   }
-
   public void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     GeneratedCommand_Behavior.virtual_execute_6854397602732226506(thisNode, context, console, beforeCallback, afterCallback);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.GeneratedCommand";

@@ -13,10 +13,8 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 public class BreakpointsUtil {
   public static DataKey<IBreakpoint> MPS_BREAKPOINT = DataKey.create("MPS_Breakpoint");
   public static DataKey<BreakpointsBrowserDialog> MPS_BREAKPOINTS_BROWSER_DIALOG = DataKey.create("MPS_Breakpoints_Browser_Dialog");
-
   public BreakpointsUtil() {
   }
-
   public static void openNode(final IOperationContext context, final ILocationBreakpoint breakpoint, final boolean focus, final boolean select) {
     final Project project = context.getProject();
     project.getModelAccess().executeCommand(new Runnable() {

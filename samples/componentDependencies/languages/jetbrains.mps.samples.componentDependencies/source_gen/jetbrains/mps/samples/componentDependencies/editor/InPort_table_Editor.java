@@ -17,25 +17,20 @@ import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
 public class InPort_table_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.table"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createModelAccess_24bp2j_a(editorContext, node);
   }
-
   private EditorCell createModelAccess_24bp2j_a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.Component", false, false), "name");
       }
-
       public void setText(String text) {
       }
-
       public boolean isValidText(String text) {
         return true;
       }

@@ -23,16 +23,13 @@ import javax.swing.JComponent;
   private final Icon myIcon = IconContainer.ICON_a2;
   private final Icon myIconDisable = IconContainer.ICON_a3;
   private TransientModelsPanel myComponent;
-
   public TransientModelsWidget(StatusBar bar) {
     myStatusBar = bar;
     myComponent = new TransientModelsPanel(this);
   }
-
   @Override
   public void install(@NotNull StatusBar bar) {
   }
-
   @Nullable
   @Override
   public String getTooltipText() {
@@ -41,7 +38,6 @@ import javax.swing.JComponent;
     }
     return "Save transient models";
   }
-
   @Nullable
   @Override
   public Consumer<MouseEvent> getClickConsumer() {
@@ -62,22 +58,18 @@ import javax.swing.JComponent;
       }
     };
   }
-
   public void update() {
     myComponent.update();
     myStatusBar.updateWidget(ID());
   }
-
   @Nullable
   @Override
   public StatusBarWidget.WidgetPresentation getPresentation(@NotNull StatusBarWidget.PlatformType type) {
     return this;
   }
-
   @Override
   public void dispose() {
   }
-
   @NotNull
   /*package*/ Icon getIcon() {
     if (isSaveTransientModels()) {
@@ -87,22 +79,18 @@ import javax.swing.JComponent;
     // <node> 
     return myIconDisable;
   }
-
   @NotNull
   @Override
   public String ID() {
     return WIDGET_ID;
   }
-
   public boolean isSaveTransientModels() {
     return GenerationSettings.getInstance().isSaveTransientModels();
   }
-
   @Override
   public JComponent getComponent() {
     return this.myComponent;
   }
-
   @NotNull
   public String getText() {
     if (isSaveTransientModels()) {
@@ -110,12 +98,10 @@ import javax.swing.JComponent;
     }
     return ":OFF";
   }
-
   @NotNull
   public String getMaxPossibleText() {
     return ":OFF";
   }
-
   public float getAlignment() {
     return JComponent.RIGHT_ALIGNMENT;
   }

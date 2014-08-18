@@ -20,18 +20,14 @@ public class delComponent {
     editorCell.setAction(CellActionType.DELETE, new delComponent.delComponent_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new delComponent.delComponent_BACKSPACE(node));
   }
-
   public static class delComponent_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delComponent_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
@@ -50,18 +46,14 @@ public class delComponent {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class delComponent_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delComponent_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {

@@ -23,7 +23,6 @@ public class BuildProjectDependency_Constraints extends BaseConstraintsDescripto
   public BuildProjectDependency_Constraints() {
     super("jetbrains.mps.build.structure.BuildProjectDependency");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class BuildProjectDependency_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class BuildProjectDependency_Constraints extends BaseConstraintsDescripto
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_woke7q_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class BuildProjectDependency_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   private static SNodePointer breakingNode_woke7q_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "8258189873530172584");
 }

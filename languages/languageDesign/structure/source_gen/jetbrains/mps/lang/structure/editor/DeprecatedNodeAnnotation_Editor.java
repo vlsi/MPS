@@ -26,11 +26,9 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cv1jro_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cv1jro_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_cv1jro_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a");
@@ -39,7 +37,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_cv1jro_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a0");
@@ -55,7 +52,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_cv1jro_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@Deprecated");
     editorCell.setCellId("Constant_cv1jro_a0a");
@@ -67,7 +63,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_b0a");
@@ -80,11 +75,9 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_cv1jro_c1a0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_cv1jro_a1a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "comment") != null;
   }
-
   private EditorCell createConstant_cv1jro_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_cv1jro_a1a0");
@@ -96,7 +89,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cv1jro_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -120,7 +112,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_cv1jro_c1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_cv1jro_c1a0");
@@ -132,7 +123,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_c0a");
@@ -144,11 +134,9 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cv1jro_b2a0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_cv1jro_a2a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getString(node, "build") != null;
   }
-
   private EditorCell createConstant_cv1jro_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "since build");
     editorCell.setCellId("Constant_cv1jro_a2a0");
@@ -159,7 +147,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cv1jro_b2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("build");
@@ -181,14 +168,12 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_cv1jro_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a_0");
@@ -198,7 +183,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cv1jro_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_a0_0");
@@ -210,7 +194,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cv1jro_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cv1jro_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_cv1jro_a0a_0");
@@ -220,7 +203,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cv1jro_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -242,7 +224,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_cv1jro_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cv1jro_b0");
@@ -250,7 +231,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_cv1jro_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cv1jro_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deprecated since build");
     editorCell.setCellId("Constant_cv1jro_a1a");
@@ -260,7 +240,6 @@ public class DeprecatedNodeAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_cv1jro_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("build");

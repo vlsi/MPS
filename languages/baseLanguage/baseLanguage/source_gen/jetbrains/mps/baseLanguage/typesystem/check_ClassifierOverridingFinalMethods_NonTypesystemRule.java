@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ClassifierOverridingFinalMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassifierOverridingFinalMethods_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classifier);
     for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
@@ -48,18 +47,15 @@ public class check_ClassifierOverridingFinalMethods_NonTypesystemRule extends Ab
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

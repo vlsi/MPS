@@ -15,12 +15,10 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
   public EvaluatorsThisExpression_Constraints() {
     super("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsThisExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -31,10 +29,8 @@ public class EvaluatorsThisExpression_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", true, false), "thisNode", true) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966315980");
 }

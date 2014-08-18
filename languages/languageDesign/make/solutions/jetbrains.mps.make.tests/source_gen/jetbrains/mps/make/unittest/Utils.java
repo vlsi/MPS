@@ -9,7 +9,6 @@ import junit.framework.Assert;
 public class Utils {
   public Utils() {
   }
-
   public static <T> void assertSameSequence(Iterable<T> expexted, Iterable<T> actual) {
     Iterator<T> expIt = Sequence.fromIterable(expexted).iterator();
     Iterator<T> testIt = Sequence.fromIterable(actual).iterator();

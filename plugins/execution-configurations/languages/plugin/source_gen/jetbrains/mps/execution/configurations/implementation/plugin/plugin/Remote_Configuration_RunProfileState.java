@@ -34,20 +34,16 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
   private final Remote_Configuration myRunConfiguration;
   @NotNull
   private final ExecutionEnvironment myEnvironment;
-
   public Remote_Configuration_RunProfileState(@NotNull Remote_Configuration configuration, @NotNull Executor executor, @NotNull ExecutionEnvironment environment) {
     myRunConfiguration = configuration;
     myEnvironment = environment;
   }
-
   public ConfigurationPerRunnerSettings getConfigurationSettings() {
     return null;
   }
-
   public RunnerSettings getRunnerSettings() {
     return null;
   }
-
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
@@ -64,7 +60,6 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
       }));
     }
   }
-
   @NotNull
   public IDebuggerConfiguration getDebuggerConfiguration() {
     return new IDebuggerConfiguration() {
@@ -72,13 +67,11 @@ public class Remote_Configuration_RunProfileState extends DebuggerRunProfileStat
       public IDebuggerSettings createDebuggerSettings() {
         return myRunConfiguration.getSettings();
       }
-
       public IDebugger getDebugger() {
         return Debuggers.getInstance().getDebuggerByName("Java");
       }
     };
   }
-
   public static boolean canExecute(String executorId) {
     if (DefaultDebugExecutor.EXECUTOR_ID.equals(executorId)) {
       return true;

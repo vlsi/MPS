@@ -17,25 +17,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class BaseConcept_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isInTemplates_1213877396627(SNode thisNode) {
     return SModelStereotype.isGeneratorModel(SNodeOperations.getModel(thisNode));
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return null;
   }
-
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return new ArrayList<Icon>();
   }
-
   @Deprecated
   @ToRemove(version = 3.0)
   public static boolean virtual_isRunnable_7941158526576616752(SNode thisNode) {
     return false;
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       String name = SPropertyOperations.getString(SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
@@ -57,11 +52,9 @@ public class BaseConcept_Behavior {
     // -- 
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "name");
   }
-
   public static String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   public static int virtual_getMetaLevel_3981318653438234726(SNode thisNode) {
     if (jetbrains.mps.util.SNodeOperations.isRoot(thisNode)) {
       return 0;
@@ -72,7 +65,6 @@ public class BaseConcept_Behavior {
     }
     return metalevel;
   }
-
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return false;
   }

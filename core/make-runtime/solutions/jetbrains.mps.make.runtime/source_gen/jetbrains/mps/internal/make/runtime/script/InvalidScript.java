@@ -14,47 +14,37 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class InvalidScript implements IScript {
   private Iterable<ValidationError> errors;
-
   public InvalidScript(Iterable<ValidationError> errors) {
     this.errors = errors;
   }
-
   public void init(IPropertiesPool ppool) {
     throw new IllegalStateException("Invalid script");
   }
-
   public IScriptController monitors() {
     throw new IllegalStateException("Invalid script");
   }
-
   @Override
   public IResult execute(IScriptController controller, Iterable<? extends IResource> input, ProgressMonitor monitor) {
     throw new IllegalStateException("Invalid script");
   }
-
   @Override
   public ITarget startingTarget() {
     return null;
   }
-
   @Override
   public ITarget finalTarget() {
     return null;
   }
-
   @Override
   public Iterable<ITarget> allTargets() {
     return null;
   }
-
   public void validate() {
   }
-
   @Override
   public boolean isValid() {
     return false;
   }
-
   @Override
   public Iterable<IMessage> validationErrors() {
     return Sequence.fromIterable(errors).ofType(IMessage.class);

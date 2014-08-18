@@ -18,18 +18,14 @@ public class DeleteThought {
     editorCell.setAction(CellActionType.DELETE, new DeleteThought.DeleteThought_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteThought.DeleteThought_BACKSPACE(node));
   }
-
   public static class DeleteThought_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteThought_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       SNode mindMap = SNodeOperations.getAncestor(node, "jetbrains.mps.samples.mindmaps.structure.MindMap", false, false);
 
@@ -44,27 +40,21 @@ public class DeleteThought {
       });
       SNodeOperations.deleteNode(node);
     }
-
     private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d1(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-
     private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d1_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }
-
   public static class DeleteThought_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteThought_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       SNode mindMap = SNodeOperations.getAncestor(node, "jetbrains.mps.samples.mindmaps.structure.MindMap", false, false);
 
@@ -79,11 +69,9 @@ public class DeleteThought {
       });
       SNodeOperations.deleteNode(node);
     }
-
     private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
-
     private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }

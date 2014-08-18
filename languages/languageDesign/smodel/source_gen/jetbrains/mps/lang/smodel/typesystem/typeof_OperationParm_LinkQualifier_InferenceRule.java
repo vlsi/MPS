@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_OperationParm_LinkQualifier_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_OperationParm_LinkQualifier_InferenceRule() {
   }
-
   public void applyRule(final SNode operationParam, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode linkQualifier = SLinkOperations.getTarget(operationParam, "linkQualifier", true);
     if (SNodeOperations.isInstanceOf(linkQualifier, "jetbrains.mps.lang.smodel.structure.LinkRefQualifier")) {
@@ -34,22 +33,18 @@ public class typeof_OperationParm_LinkQualifier_InferenceRule extends AbstractIn
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_m2dx3q_a0a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -57,7 +52,6 @@ public class typeof_OperationParm_LinkQualifier_InferenceRule extends AbstractIn
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_m2dx3q_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -20,6 +20,7 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
@@ -120,7 +121,7 @@ public abstract class ChooserType<T> {
         @Override
         public SModuleReference[] find(boolean checkboxState) {
           List<SModuleReference> filteredModules = new ArrayList<SModuleReference>();
-          for (SModule module : filter(settings, MPSModuleRepository.getInstance().getAllModules())){
+          for (SModule module : filter(settings, IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()))) {
             filteredModules.add(module.getModuleReference());
           }
           return filteredModules.toArray(new SModuleReference[filteredModules.size()]);

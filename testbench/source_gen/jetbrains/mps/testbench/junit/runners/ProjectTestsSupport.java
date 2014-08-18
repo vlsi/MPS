@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class ProjectTestsSupport {
 
-
   /**
    * Note:
    * @param projectName -- can be null or empty in the case of new format (no .mpr file)
@@ -41,37 +40,25 @@ public class ProjectTestsSupport {
     }
   }
 
-
-
   private static <T extends SModule> T getModule(String moduleFqName, Class<T> cls) {
     return ModuleRepositoryFacade.getInstance().getModule(moduleFqName, cls);
   }
-
-
 
   public static Solution getSolution(String moduleFqName) {
     return getModule(moduleFqName, Solution.class);
   }
 
-
-
   public static Language getLanguage(String moduleFqName) {
     return getModule(moduleFqName, Language.class);
   }
-
-
 
   public static Generator getGenerator(String moduleFqName) {
     return getModule(moduleFqName, Generator.class);
   }
 
-
-
   public static SModel getModel(Project project, String modelName) {
     return project.getScope().resolve(PersistenceFacade.getInstance().createModelReference(modelName));
   }
-
-
 
   /**
    * todo: make this method private
@@ -92,21 +79,20 @@ public class ProjectTestsSupport {
         return null;
       }
     }
-    return ActiveEnvironment.get().openProject(((projectName != null && projectName.length() > 0) ? new File(destinationDir, projectName) : destinationDir));
+    File projectFile = ((projectName != null && projectName.length() > 0) ? new File(destinationDir, projectName) : destinationDir);
+    return ActiveEnvironment.getInstance().openProject(projectFile);
   }
-
   /**
    * todo: make this method private
    */
   public static void finishTestOnProjectCopy(final Project project, final File destinationDir) {
     waitUntilAllEventsFlushed();
-    ActiveEnvironment.get().disposeProject(project);
+    ActiveEnvironment.getInstance().disposeProject(project.getProjectFile());
     FileUtil.delete(destinationDir);
   }
-
   private static void waitUntilAllEventsFlushed() {
     // todo 
-    if (ActiveEnvironment.get().hasIdeaInstance()) {
+    if (ActiveEnvironment.getInstance().hasIdeaInstance()) {
       // Wait until last invokeLater() is executed 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
@@ -115,8 +101,6 @@ public class ProjectTestsSupport {
       ModelAccess.instance().flushEventQueue();
     }
   }
-
-
 
   public static interface ProjectRunnable {
     public boolean execute(Project project);

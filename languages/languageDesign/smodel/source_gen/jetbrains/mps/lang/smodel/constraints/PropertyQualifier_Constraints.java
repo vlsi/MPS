@@ -25,7 +25,6 @@ public class PropertyQualifier_Constraints extends BaseConstraintsDescriptor {
   public PropertyQualifier_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.PropertyQualifier");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class PropertyQualifier_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,7 +41,6 @@ public class PropertyQualifier_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(SNodeOperation_Behavior.call_getLeftNodeConcept_1213877508847(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation"))), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression", true, false)));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3ir79i_a0a1a0a0a1a0b0a1a1;
@@ -53,6 +50,5 @@ public class PropertyQualifier_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_3ir79i_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "2788452359612124354");
 }

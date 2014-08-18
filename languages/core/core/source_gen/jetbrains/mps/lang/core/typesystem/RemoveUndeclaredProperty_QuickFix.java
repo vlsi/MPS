@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RemoveUndeclaredProperty_QuickFix extends QuickFix_Runtime {
   public RemoveUndeclaredProperty_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove undeclared property \"" + ((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]) + "\"";
   }
-
   public void execute(SNode node) {
     node.setProperty(((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]), null);
   }

@@ -14,10 +14,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class AttributeUtil {
   public AttributeUtil() {
   }
-
   public static void setIndexSelection(EditorContext editorContext) {
   }
-
   public static void updateValue(SNode attr, EditorContext editorContext) {
     if (attr == null) {
       return;
@@ -43,7 +41,6 @@ public class AttributeUtil {
       SNodeOperations.deleteNode(d);
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

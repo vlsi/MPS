@@ -17,12 +17,10 @@ public class DependencyStep extends AbstractStep {
   private final AbstractBuildGenerator myGenerator;
   private final IErrorHandler myHandler;
   private int mySelectedIndex = DependencyStep.DependencyKind.DEFAULT;
-
   public DependencyStep(AbstractBuildGenerator buildGenerator, IErrorHandler handler) {
     myGenerator = buildGenerator;
     myHandler = handler;
   }
-
   @Override
   public JComponent createMainComponent() {
     JPanel panel = new JPanel(new GridBagLayout());
@@ -46,12 +44,10 @@ public class DependencyStep extends AbstractStep {
 
     return panel;
   }
-
   @Override
   public String getDescription() {
     return "Select distribution kind.";
   }
-
   @Override
   public void _init() {
     super._init();
@@ -61,19 +57,16 @@ public class DependencyStep extends AbstractStep {
     }
     myHandler.setErrorText(errorText);
   }
-
   @Override
   public void _commit(boolean finished) throws CommitStepException {
     super._commit(finished);
     myGenerator.setDependencyKind(DependencyStep.DependencyKind.values()[mySelectedIndex]);
   }
-
   @NotNull
   @Override
   public String getImageText() {
     return "Distribution Kind";
   }
-
   public static   enum DependencyKind {
     MPS("Plug-in for MPS"),
     IDEA("Plug-in for IntelliJ IDEA"),
@@ -81,11 +74,9 @@ public class DependencyStep extends AbstractStep {
 
     public static final int DEFAULT = 0;
     private final String myText;
-
     DependencyKind(String text) {
       myText = text;
     }
-
     public String getText() {
       return myText;
     }

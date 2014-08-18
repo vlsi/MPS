@@ -6,7 +6,6 @@ package jetbrains.mps.execution.configurations.behavior;
 public class SModuleSource_BehaviorDescriptor extends RunConfigurationSource_BehaviorDescriptor {
   public SModuleSource_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.SModuleSource";

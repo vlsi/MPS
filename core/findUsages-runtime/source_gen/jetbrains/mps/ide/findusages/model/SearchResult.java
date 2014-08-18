@@ -11,40 +11,31 @@ public class SearchResult<T> {
   protected T myObject;
   protected Object myPathObject;
   protected List<Pair<CategoryKind, String>> myCategories = new ArrayList<Pair<CategoryKind, String>>();
-
   public SearchResult() {
   }
-
   public SearchResult(SearchResult<T> src) {
     this(src.getObject(), src.getPathObject(), src.getCategories());
   }
-
   public SearchResult(T object, String category) {
     this(object, object, new Pair<CategoryKind, String>(CategoryKind.DEFAULT_CATEGORY_KIND, category));
   }
-
   public SearchResult(T object, Object pathObject, String category) {
     this(object, pathObject, new Pair<CategoryKind, String>(CategoryKind.DEFAULT_CATEGORY_KIND, category));
   }
-
   public SearchResult(T object, Object pathObject, List<Pair<CategoryKind, String>> categories) {
     myObject = object;
     myPathObject = pathObject;
     myCategories = categories;
   }
-
   public SearchResult(T object, Object pathObject, Pair<CategoryKind, String>... categories) {
     this(object, pathObject, Arrays.asList(categories));
   }
-
   public T getObject() {
     return myObject;
   }
-
   public Object getPathObject() {
     return myPathObject;
   }
-
   public String getCategory() {
     if (myCategories.size() == 0) {
       return null;
@@ -52,7 +43,6 @@ public class SearchResult<T> {
       return myCategories.get(0).o2;
     }
   }
-
   public String getCategoryForKind(CategoryKind categoryKind) {
     for (Pair<CategoryKind, String> kindNamePair : myCategories) {
       if (kindNamePair.o1.equals(categoryKind)) {
@@ -61,15 +51,12 @@ public class SearchResult<T> {
     }
     return null;
   }
-
   public List<Pair<CategoryKind, String>> getCategories() {
     return myCategories;
   }
-
   public int hashCode() {
     return myCategories.hashCode() * 37 + myObject.hashCode() * 17;
   }
-
   public boolean equals(Object o) {
     if (!((o instanceof SearchResult))) {
       return false;

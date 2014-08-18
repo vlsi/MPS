@@ -29,7 +29,6 @@ public class MakeActionParameters {
   private SModel cmodel;
   private List<SModule> modules;
   private SModule cmodule;
-
   public MakeActionParameters(IOperationContext context, Iterable<SModel> models, SModel cmodel, Iterable<SModule> modules, SModule cmodule) {
     this.context = context;
     this.models = (models != null ? ListSequence.fromListWithValues(new ArrayList<SModel>(), models) : null);
@@ -37,7 +36,6 @@ public class MakeActionParameters {
     this.modules = (modules != null ? ListSequence.fromListWithValues(new ArrayList<SModule>(), modules) : null);
     this.cmodule = cmodule;
   }
-
   public String actionText(boolean cleanMake) {
     StringBuilder sb = new StringBuilder();
     sb.append((cleanMake ? "Rebuild " : "Make "));
@@ -90,7 +88,6 @@ public class MakeActionParameters {
     }
     return sb.toString();
   }
-
   public Iterable<IResource> collectInput(boolean dirtyOnly) {
     final SModule module = this.moduleToMake();
     final SModel model = this.modelToMake();
@@ -100,7 +97,6 @@ public class MakeActionParameters {
           public Iterator<SModel> iterator() {
             return new YieldingIterator<SModel>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -219,7 +215,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private Iterable<SModel> _7_models;
               private SModel _8__yield_nk3wxj_b0a0a0a0a0c0h;
               private Iterator<SModel> _8__yield_nk3wxj_b0a0a0a0a0c0h_it;
@@ -240,7 +235,6 @@ __switch__:
     });
     return new ModelsToResources(context, Sequence.fromIterable(smds).toListSequence()).resources(dirtyOnly);
   }
-
   public Iterable<SModel> modelsToMake(SModule module) {
     Iterable<SModel> models = Sequence.fromIterable(((Iterable<SModel>) module.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -254,7 +248,6 @@ __switch__:
     }
     return models;
   }
-
   private SModule moduleToMake() {
     Iterable<SModule> modulesSeq = ((Iterable<SModule>) this.modules);
     if (Sequence.fromIterable(modulesSeq).count() == 1) {
@@ -264,7 +257,6 @@ __switch__:
     }
     return this.cmodule;
   }
-
   private SModel modelToMake() {
     Iterable<SModel> modelsSeq = ((Iterable<SModel>) this.models);
     if (Sequence.fromIterable(modelsSeq).count() == 1) {

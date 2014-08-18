@@ -6,7 +6,6 @@ package jetbrains.mps.debugger.java.run.sandbox;
 public class BaseClass {
   public BaseClass() {
   }
-
   public int getZero(int arg) {
     return arg;
   }

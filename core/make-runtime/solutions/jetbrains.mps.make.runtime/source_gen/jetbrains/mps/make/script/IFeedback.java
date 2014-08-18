@@ -9,51 +9,41 @@ public interface IFeedback {
   public String getMessage();
   public Object getSource();
   public Throwable getException();
-
   public static   enum Severity {
     ERROR("error"),
     WARNING("warning"),
     INFO("info");
 
     private String severity;
-
     Severity(String severity) {
       this.severity = severity;
     }
-
     @Override
     public String toString() {
       return severity.toUpperCase();
     }
   }
-
   public static abstract class Stub implements IFeedback {
     public Stub() {
     }
-
     @Override
     public Throwable getException() {
       return null;
     }
-
     @Override
     public Object getSource() {
       return null;
     }
   }
-
   public static class MESSAGE implements IFeedback {
     private IMessage msg;
-
     public MESSAGE(IMessage message) {
       this.msg = message;
     }
-
     @Override
     public String getMessage() {
       return msg.getText();
     }
-
     @Override
     public IFeedback.Severity getSeverity() {
       switch (msg.getKind()) {
@@ -67,84 +57,68 @@ public interface IFeedback {
           return null;
       }
     }
-
     @Override
     public Object getSource() {
       return msg.getHintObject();
     }
-
     @Override
     public Throwable getException() {
       return msg.getException();
     }
   }
-
   public static class Default extends IFeedback.Stub implements IFeedback {
     private final String message;
     private final Throwable throwable;
     private final IFeedback.Severity severity;
-
     public Default(String message) {
       this(message, null);
     }
-
     public Default(String message, Throwable throwable) {
       this(message, throwable, IFeedback.Severity.ERROR);
     }
-
     public Default(String message, Throwable throwable, IFeedback.Severity severity) {
       this.message = message;
       this.throwable = throwable;
       this.severity = severity;
     }
-
     @Override
     public IFeedback.Severity getSeverity() {
       return severity;
     }
-
     @Override
     public String getMessage() {
       return message;
     }
-
     @Override
     public String toString() {
       String msg = getSeverity().toString() + " - " + getMessage().toString();
       return (getException() != null ? msg + " (" + getException().toString() + ")" : msg);
     }
-
     @Override
     public Throwable getException() {
       return throwable;
     }
   }
-
   public static class ERROR extends IFeedback.Default implements IFeedback {
     public ERROR(String message) {
       super(message, null, IFeedback.Severity.ERROR);
     }
-
     public ERROR(String message, Throwable throwable) {
       super(message, throwable, IFeedback.Severity.ERROR);
     }
   }
-
   public static class WARNING extends IFeedback.Default implements IFeedback {
     public WARNING(String message) {
       super(message, null, IFeedback.Severity.WARNING);
     }
-
     public WARNING(String message, Throwable throwable) {
       super(message, throwable, IFeedback.Severity.WARNING);
     }
   }
-
   public static class INFORMATION extends IFeedback.Default implements IFeedback {
     public INFORMATION(String message) {
       super(message, null, IFeedback.Severity.INFO);
     }
-
     public INFORMATION(String message, Throwable throwable) {
       super(message, throwable, IFeedback.Severity.INFO);
     }

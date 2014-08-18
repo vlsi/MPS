@@ -15,7 +15,6 @@ import java.util.Iterator;
 public class ListMigrationUtil {
   public ListMigrationUtil() {
   }
-
   public static boolean isApplicableForLists(SNode node, String name, List<ParameterType> params) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
@@ -26,7 +25,6 @@ public class ListMigrationUtil {
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
-
   public static boolean isApplicableForSet(SNode node, String name, List<ParameterType> params) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
@@ -37,7 +35,6 @@ public class ListMigrationUtil {
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
-
   public static boolean isApplicableForIterator(SNode node, String name, List<ParameterType> params) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
@@ -48,7 +45,6 @@ public class ListMigrationUtil {
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
-
   public static boolean isApplicableForAll(SNode node, String name, List<ParameterType> params) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
@@ -59,7 +55,6 @@ public class ListMigrationUtil {
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
-
   public static boolean isApplicableForMap(SNode node, String name, List<ParameterType> params) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return false;
@@ -70,7 +65,6 @@ public class ListMigrationUtil {
     }
     return ListMigrationUtil.isApplicableMethod(node, name, params);
   }
-
   private static boolean isApplicableMethod(SNode node, String name, List<ParameterType> params) {
     SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
     if (neq_gtz9m1_a0b0g(SPropertyOperations.getString(declaration, "name"), name)) {
@@ -110,7 +104,6 @@ public class ListMigrationUtil {
     }
     return true;
   }
-
   public static boolean isApplicableForType(SNode node, int params, List<SNode> classifiers) {
     if (!(ListSequence.fromList(classifiers).contains(SLinkOperations.getTarget(node, "classifier", false)))) {
       return false;
@@ -132,11 +125,9 @@ public class ListMigrationUtil {
     }
     return false;
   }
-
   private static boolean neq_gtz9m1_a0b0g(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_gtz9m1_a0a2a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

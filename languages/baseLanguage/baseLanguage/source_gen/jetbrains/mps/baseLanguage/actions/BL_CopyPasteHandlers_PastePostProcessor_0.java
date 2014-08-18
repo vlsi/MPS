@@ -15,7 +15,6 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
   public SNode getApplicableConcept() {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
   }
-
   public void postProcesNode(SNode pastedNode) {
     // todo: not working for IVariableReference. Unify and fix it. 
     if (Scope.parent(pastedNode) != null) {

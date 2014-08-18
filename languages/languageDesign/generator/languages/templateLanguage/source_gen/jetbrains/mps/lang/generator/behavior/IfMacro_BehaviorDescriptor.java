@@ -6,7 +6,6 @@ package jetbrains.mps.lang.generator.behavior;
 public class IfMacro_BehaviorDescriptor extends NodeMacro_BehaviorDescriptor {
   public IfMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.IfMacro";

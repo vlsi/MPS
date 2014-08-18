@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SReference;
 public class NamedTupleType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497792", new Object[]{}));
     String sep = "";
@@ -46,7 +45,6 @@ public class NamedTupleType_Behavior {
     }
     return sb.append(suffix).toString();
   }
-
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       return thisNode;
@@ -56,7 +54,6 @@ public class NamedTupleType_Behavior {
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
   }
-
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -94,15 +91,12 @@ public class NamedTupleType_Behavior {
       BehaviorReflection.invokeVirtual(Void.class, ifc, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
   }
-
   public static String virtual_getLeftBracket_1262430001741497792(SAbstractConcept thisConcept) {
     return "(";
   }
-
   public static String virtual_getRightBracket_1262430001741497990(SAbstractConcept thisConcept) {
     return ")";
   }
-
   private static SNode _quotation_createNode_ja7850_a0a0a1a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

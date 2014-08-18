@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class BigSumExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getOpName_1262430001741497894(SAbstractConcept thisConcept) {
     return "\u2211";
   }

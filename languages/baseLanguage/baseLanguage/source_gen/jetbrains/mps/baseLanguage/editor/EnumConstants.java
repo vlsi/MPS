@@ -25,16 +25,13 @@ public class EnumConstants extends KeyMapImpl {
     action = new EnumConstants.EnumConstants_Action0();
     this.putAction("any", "non-space char", action);
   }
-
   public static class EnumConstants_Action0 extends KeyMapActionImpl {
     public EnumConstants_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -49,16 +46,13 @@ public class EnumConstants extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).isEmpty();
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode constant = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
       SNode constructor = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(node)).first();
@@ -68,7 +62,6 @@ public class EnumConstants extends KeyMapImpl {
       SLinkOperations.setTarget(constant, "baseMethodDeclaration", constructor, false);
       ListSequence.fromList(SLinkOperations.getTargets(node, "enumConstant", true)).addElement(constant);
     }
-
     public String getKeyStroke() {
       return "any non-space char";
     }

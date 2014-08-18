@@ -13,7 +13,6 @@ import org.jetbrains.annotations.NotNull;
 
 public abstract class SimpleScope extends Scope {
   private final List<SNode> nodes;
-
   public SimpleScope(Iterable<SNode> nodes) {
     // why i need hash set? 
     this.nodes = ListSequence.fromList(new ArrayList<SNode>());
@@ -23,7 +22,6 @@ public abstract class SimpleScope extends Scope {
       }
     }
   }
-
   public SimpleScope(SNode node) {
     if ((node != null)) {
       nodes = Collections.singletonList(node);
@@ -31,7 +29,6 @@ public abstract class SimpleScope extends Scope {
       nodes = Collections.emptyList();
     }
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     if (prefix == null) {
@@ -50,7 +47,6 @@ public abstract class SimpleScope extends Scope {
     }
     return result;
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
@@ -68,10 +64,8 @@ public abstract class SimpleScope extends Scope {
     }
     return result;
   }
-
   @Nullable
   public abstract String getReferenceText(@NotNull SNode target);
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode target) {

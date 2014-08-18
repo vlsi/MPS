@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptFunctionParameter_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode conceptFunction = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false, true);
     if (SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
@@ -46,18 +45,15 @@ public class check_ConceptFunctionParameter_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

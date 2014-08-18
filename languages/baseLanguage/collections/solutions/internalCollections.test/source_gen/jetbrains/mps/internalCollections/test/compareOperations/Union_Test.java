@@ -18,13 +18,11 @@ public class Union_Test extends Util_Test {
     ISequence<Integer> test = input.union(Sequence.fromArray(2, 2, 3, 4));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 2, 3, 3, 4), test);
   }
-
   public void test_unionOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 3);
     Iterable<Integer> test = Sequence.fromIterable(input).union(ListSequence.fromList(Arrays.asList(2, 2, 3, 4)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(1, 2, 2, 3, 3, 4), test);
   }
-
   public void test_unionOpCovariant() throws Exception {
     Foo foo1 = new Foo();
     Foo foo2 = new Foo();
@@ -36,7 +34,6 @@ public class Union_Test extends Util_Test {
     Iterable<Foo> res = Sequence.fromIterable(first).union(Sequence.fromIterable(second));
     assertIterableEquals(Sequence.fromArray(new Foo[]{foo1, foo3, foo2, bar2}), res);
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2)).union(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 3))).iterator();
     Assert.assertSame(1, it.next());

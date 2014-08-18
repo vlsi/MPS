@@ -14,87 +14,66 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1241363259554(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1241364001134(final PropertyMacroContext _context) {
     return _context.createUniqueName("inputField", null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1241364033300(final PropertyMacroContext _context) {
     return _context.createUniqueName("outputField", null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1241363912194(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1241364137614(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1241364403679(final PropertyMacroContext _context) {
     return _context.createUniqueName("i", null);
   }
-
   public static Object referenceMacro_GetReferent_313932908986203995(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "field", false), "LocalVar");
   }
-
   public static Object referenceMacro_GetReferent_7812194938265879183(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_7812194938265880288(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_1241364275728(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "OutputFieldDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_7812194938265880303(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InputFieldDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_1241364536782(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LocalVar");
   }
-
   public static Object referenceMacro_GetReferent_7812194938265880324(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "OutputFieldDeclaration");
   }
-
   public static SNode sourceNodeQuery_1241369673715(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241363965966(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364033293(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "outputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364118228(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364275738(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "outputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364372886(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364521505(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputField", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1241364634223(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "outputField", true);
   }

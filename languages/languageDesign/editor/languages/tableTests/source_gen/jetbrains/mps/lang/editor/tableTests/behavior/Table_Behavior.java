@@ -25,11 +25,9 @@ public class Table_Behavior {
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rows", true)).addElement(row);
     }
   }
-
   public static int virtual_getInitialColumnCount_1262430001741498026(SAbstractConcept thisConcept) {
     return 3;
   }
-
   public static int virtual_getInitialRowCount_1262430001741498094(SAbstractConcept thisConcept) {
     return 5;
   }

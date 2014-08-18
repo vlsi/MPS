@@ -30,20 +30,16 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class DependencyPathTree extends MPSTree implements DataProvider {
   private List<DepLink> myAllDependencies = ListSequence.fromList(new ArrayList<DepLink>());
   private final Project myProject;
-
   public DependencyPathTree(Project project) {
     myProject = project;
     getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
   }
-
   public void resetDependencies() {
     ListSequence.fromList(myAllDependencies).clear();
   }
-
   public void revealDependencies(Iterable<DepLink> node) {
     ListSequence.fromList(myAllDependencies).addSequence(Sequence.fromIterable(node));
   }
-
   private void buildTree(DepLink depNode, Map<Dependency, DependencyPathTree.LinkFrom> visited) {
     List<DepLink> dependencyPath = ListSequence.fromList(new LinkedList<DepLink>());
     // unwind up to source of depdendency path, effectively reversing it, top (source of dep) -> bottom (target of dep) 
@@ -71,7 +67,6 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       parent.node.setDepLeaf();
     }
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     MPSTreeNode result = new TextTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ? "No Dependencies Selected" : "Found Dependencies:"));
@@ -90,12 +85,10 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     setShowsRootHandles(result.getChildCount() != 0);
     return result;
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
@@ -111,12 +104,10 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   public static class LinkFrom {
     /*package*/ DepLink link;
     /*package*/ DependencyPathTree.LinkFrom parent;
     /*package*/ DependencyTreeNode node;
-
     public LinkFrom(DepLink link, DependencyPathTree.LinkFrom from, Project project) {
       this.link = link;
       this.parent = from;
@@ -126,21 +117,18 @@ public class DependencyPathTree extends MPSTree implements DataProvider {
       }
     }
   }
-
   private static IOperationContext check_9bg0dz_a0a2a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
-
   private static SModule check_9bg0dz_a0a3a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static <T> T as_9bg0dz_a0a0a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AbstractOperationArguments_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(operation))), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
     if (ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).count() != ListSequence.fromList(argumentTypes).count()) {
@@ -56,18 +55,15 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

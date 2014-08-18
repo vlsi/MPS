@@ -10,17 +10,14 @@ import java.util.regex.Matcher;
 public class ModuleMacroExpander implements MacroHelper {
   private ProjectMacroExpander myProjectMacroExpander;
   private IFile myModuleFile;
-
   public ModuleMacroExpander(ProjectMacroExpander pme, IFile moduleFile) {
     this.myProjectMacroExpander = pme;
     this.myModuleFile = moduleFile;
   }
-
   @Override
   public String shrinkPath(@Nullable String string) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public String expandPath(@Nullable String path) {
     if (path == null) {

@@ -18,18 +18,15 @@ import org.apache.log4j.LogManager;
 
 public class RemoveTransientModels_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RemoveTransientModels_Action() {
     super("Remove Transient Models", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -40,7 +37,6 @@ public class RemoveTransientModels_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -51,7 +47,6 @@ public class RemoveTransientModels_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MessagesViewTool.class).clear();
@@ -64,6 +59,5 @@ public class RemoveTransientModels_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RemoveTransientModels_Action.class);
 }

@@ -23,7 +23,6 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
   public SimpleBuilderParameterReference_Constraints() {
     super("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", true, false), "virtual_getContextDeclaration_6254726786820551255", new Object[]{}), "parameter", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_seakpt_a0a1a0a0a1a0b0a1a1;
@@ -51,6 +48,5 @@ public class SimpleBuilderParameterReference_Constraints extends BaseConstraints
     });
     return references;
   }
-
   private static SNodePointer breakingNode_seakpt_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:971d5c35-6139-4f76-9019-ac96d9713d41(jetbrains.mps.baseLanguage.builders.constraints)", "5425713840853785838");
 }

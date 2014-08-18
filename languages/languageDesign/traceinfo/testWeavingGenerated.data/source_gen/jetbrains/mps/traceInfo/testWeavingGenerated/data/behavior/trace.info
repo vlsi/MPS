@@ -2,22 +2,22 @@
 <debug-info>
   <root>
     <file name="ChildConceptWeaveMany_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveMany_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveMany_BehaviorDescriptor" />
     </file>
     <file name="ChildConceptWeaveEachMany_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEachMany_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEachMany_BehaviorDescriptor" />
     </file>
     <file name="ChildConceptWeave_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeave_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeave_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,32,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,30,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ChildConceptWeaveEach_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEach_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEach_BehaviorDescriptor" />
     </file>
     <file name="RootConcept_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.RootConcept_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.RootConcept_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

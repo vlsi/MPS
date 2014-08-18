@@ -15,15 +15,12 @@ public enum Keymap {
   Default("Default", "$default");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Keymap> getConstants() {
     List<Keymap> list = ListSequence.fromList(new LinkedList<Keymap>());
     ListSequence.fromList(list).addElement(Keymap.Mac_OS_X);
@@ -34,11 +31,9 @@ public enum Keymap {
     ListSequence.fromList(list).addElement(Keymap.Default);
     return list;
   }
-
   public static Keymap getDefault() {
     return Keymap.Default;
   }
-
   public static Keymap parseValue(String value) {
     if (value == null) {
       return Keymap.getDefault();
@@ -63,14 +58,11 @@ public enum Keymap {
     }
     return Keymap.getDefault();
   }
-
   private String myValue;
-
   Keymap(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

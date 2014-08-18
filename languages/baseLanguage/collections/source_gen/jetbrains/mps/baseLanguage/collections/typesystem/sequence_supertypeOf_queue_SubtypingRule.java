@@ -15,26 +15,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class sequence_supertypeOf_queue_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public sequence_supertypeOf_queue_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode queueType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_7whjtm_a0a1(SLinkOperations.getTarget(queueType, "elementType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.QueueType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_7whjtm_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

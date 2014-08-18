@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class NewSubModel_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Model;
-
   public NewSubModel_Action() {
     super("Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof AbstractModule)) {
       return false;
@@ -53,7 +50,6 @@ public class NewSubModel_Action extends BaseAction {
     }
     return correctStereotype;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -67,7 +63,6 @@ public class NewSubModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -90,7 +85,6 @@ public class NewSubModel_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
@@ -115,6 +109,5 @@ public class NewSubModel_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewSubModel_Action.class);
 }

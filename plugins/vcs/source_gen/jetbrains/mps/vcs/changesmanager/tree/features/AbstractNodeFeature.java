@@ -8,21 +8,17 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public abstract class AbstractNodeFeature extends Feature {
   private SNodeReference myNodeRef;
-
   protected AbstractNodeFeature(@NotNull SNodeReference nodePointer) {
     super(nodePointer.getModelReference());
     myNodeRef = nodePointer;
   }
-
   public SNodeReference getNodePointer() {
     return myNodeRef;
   }
-
   @Override
   public boolean equals(Object object) {
     return super.equals(object) && ((SNodePointer) myNodeRef).equals(((AbstractNodeFeature) object).myNodeRef);
   }
-
   protected final String getNodePointerString() {
     return SNodePointer.serialize(myNodeRef);
   }

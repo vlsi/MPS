@@ -29,11 +29,9 @@ public class VisibleModules {
   private Map<String, SNode> moduleByName = new HashMap<String, SNode>();
   private Map<String, SNode> moduleById = new HashMap<String, SNode>();
   private SNode project;
-
   public VisibleModules(SNode project) {
     this.project = project;
   }
-
   public void collect() {
     Queue<SNode> queue = QueueSequence.fromQueue(new LinkedList<SNode>());
     QueueSequence.fromQueue(queue).addLastElement(project);
@@ -73,19 +71,16 @@ public class VisibleModules {
       moduleByName.put(SPropertyOperations.getString(module, "name"), module);
     }
   }
-
   protected void report(String message, SNode anchor) {
     // FIXME use (share) reported interface from ModuleChecker to report directly to gencontext, if available 
     if (LOG.isEnabledFor(Level.ERROR)) {
       LOG.error(message);
     }
   }
-
   public SNode resolve(SModuleReference moduleRef) {
     String targetName = moduleRef.getModuleName();
     return this.resolve(targetName, moduleRef.getModuleId().toString());
   }
-
   public SNode resolve(String moduleName, String moduleId) {
     SNode result = null;
     if (moduleId != null) {
@@ -96,9 +91,7 @@ public class VisibleModules {
     }
     return result;
   }
-
   protected static Logger LOG = LogManager.getLogger(VisibleModules.class);
-
   private static String check_xuwpka_a0a1a4a1a3a5(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();

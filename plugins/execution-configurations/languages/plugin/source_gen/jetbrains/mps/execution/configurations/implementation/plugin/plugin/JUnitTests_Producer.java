@@ -10,11 +10,9 @@ import java.util.ArrayList;
 import jetbrains.mps.execution.api.configurations.BaseMpsProducer;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.plugins.runconfigs.MPSPsiElement;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.unitTest.execution.settings.TestUtils;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.execution.impl.RunManagerImpl;
-import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
+import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -22,15 +20,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.execution.lib.PointerUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class JUnitTests_Producer {
   private static String CONFIGURATION_FACTORY_CLASS_NAME = "jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration_Factory";
-
   public JUnitTests_Producer() {
   }
-
   public static List<RuntimeConfigurationProducer> getProducers(ConfigurationType configurationType) {
     List<RuntimeConfigurationProducer> creators = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
@@ -42,93 +39,74 @@ public class JUnitTests_Producer {
     ListSequence.fromList(creators).addElement(new JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g(configurationType, CONFIGURATION_FACTORY_CLASS_NAME));
     return creators;
   }
-
   public static class ProducerPart_SModel_f2w1m9_a extends BaseMpsProducer<SModel> {
     public ProducerPart_SModel_f2w1m9_a(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SModel;
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final SModel source) {
       setSourceElement(new MPSPsiElement(source));
-      if (Sequence.fromIterable(TestUtils.getModelTests(source)).isEmpty()) {
-        return null;
-      }
+      // <node> 
       String name = source.getModelName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODEL);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.MODEL);
       configuration.getJUnitSettings().setModel(source.getModelName());
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a clone() {
       return (JUnitTests_Producer.ProducerPart_SModel_f2w1m9_a) super.clone();
     }
   }
-
   public static class ProducerPart_SModule_f2w1m9_b extends BaseMpsProducer<SModule> {
     public ProducerPart_SModule_f2w1m9_b(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SModule;
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final SModule source) {
       setSourceElement(new MPSPsiElement(source));
-      // commented out due to perfomance problems 
-      // <node> 
+      // check for emptiness has been commented out due to perfomance problems 
       String name = source.getModuleName();
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "Tests in '" + NameUtil.shortNameFromLongName(name) + "'", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.MODULE);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.MODULE);
       configuration.getJUnitSettings().setModule(source.getModuleName());
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b clone() {
       return (JUnitTests_Producer.ProducerPart_SModule_f2w1m9_b) super.clone();
     }
   }
-
   public static class ProducerPart_MPSProject_f2w1m9_c extends BaseMpsProducer<MPSProject> {
     public ProducerPart_MPSProject_f2w1m9_c(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof MPSProject;
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final MPSProject source) {
       setSourceElement(new MPSPsiElement(source));
-      // commented out due to perfomance problems 
-      // <node> 
+      // check for emptiness has been commented out due to perfomance problems 
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + "All Tests in Project", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.PROJECT);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.PROJECT);
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c clone() {
       return (JUnitTests_Producer.ProducerPart_MPSProject_f2w1m9_c) super.clone();
     }
   }
-
   public static class ProducerPart_Node_f2w1m9_d extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_f2w1m9_d(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
@@ -141,26 +119,22 @@ public class JUnitTests_Producer {
       }
 
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + wrapper.getName(), (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.METHOD);
       configuration.getJUnitSettings().setTestMethods(PointerUtils.nodeToCloneableList(method));
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_Node_f2w1m9_d clone() {
       return (JUnitTests_Producer.ProducerPart_Node_f2w1m9_d) super.clone();
     }
   }
-
   public static class ProducerPart_Node_f2w1m9_e extends BaseMpsProducer<SNode> {
     public ProducerPart_Node_f2w1m9_e(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       return source instanceof SNode && SNodeOperations.isInstanceOf(((SNode) source), "jetbrains.mps.lang.core.structure.BaseConcept");
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final SNode source) {
       setSourceElement(new MPSPsiElement(source));
       SNode method = TestNodeWrapperFactory.findWrappableAncestor(source, false);
@@ -187,22 +161,19 @@ public class JUnitTests_Producer {
       }
 
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + name, (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.NODE);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.NODE);
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodeToCloneableList(testNode));
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_Node_f2w1m9_e clone() {
       return (JUnitTests_Producer.ProducerPart_Node_f2w1m9_e) super.clone();
     }
   }
-
   public static class ProducerPart_NlistITestCase_f2w1m9_f extends BaseMpsProducer<List<SNode>> {
     public ProducerPart_NlistITestCase_f2w1m9_f(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       if (!(source instanceof List)) {
         return false;
@@ -214,7 +185,6 @@ public class JUnitTests_Producer {
       }
       return true;
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
       boolean containsTest = false;
@@ -229,22 +199,19 @@ public class JUnitTests_Producer {
       }
 
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + SPropertyOperations.getString(SNodeOperations.cast(ListSequence.fromList(source).first(), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), "name") + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.NODE);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.NODE);
       configuration.getJUnitSettings().setTestCases(PointerUtils.nodesToCloneableList(source));
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_f clone() {
       return (JUnitTests_Producer.ProducerPart_NlistITestCase_f2w1m9_f) super.clone();
     }
   }
-
   public static class ProducerPart_NlistITestMethod_f2w1m9_g extends BaseMpsProducer<List<SNode>> {
     public ProducerPart_NlistITestMethod_f2w1m9_g(ConfigurationType configurationType, String factoryName) {
       super(configurationType, factoryName);
     }
-
     protected boolean isApplicable(Object source) {
       if (!(source instanceof List)) {
         return false;
@@ -256,15 +223,13 @@ public class JUnitTests_Producer {
       }
       return true;
     }
-
     protected JUnitTests_Configuration doCreateConfiguration(final List<SNode> source) {
       setSourceElement(new MPSPsiElement(source));
       JUnitTests_Configuration configuration = ((JUnitTests_Configuration) getConfigurationFactory().createConfiguration("" + BehaviorReflection.invokeVirtual(String.class, ListSequence.fromList(source).first(), "virtual_getTestName_1216136419751", new Object[]{}) + ",...", (JUnitTests_Configuration) RunManagerImpl.getInstanceImpl(getContext().getProject()).getConfigurationTemplate(getConfigurationFactory()).getConfiguration()));
-      configuration.getJUnitSettings().setRunType(JUnitRunTypes2.METHOD);
+      configuration.getJUnitSettings().setRunType(JUnitRunTypes.METHOD);
       configuration.getJUnitSettings().setTestMethods(PointerUtils.nodesToCloneableList(source));
       return configuration;
     }
-
     @Override
     public JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g clone() {
       return (JUnitTests_Producer.ProducerPart_NlistITestMethod_f2w1m9_g) super.clone();

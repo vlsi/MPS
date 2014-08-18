@@ -23,7 +23,6 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
   public NodeAttributeQualifier_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.NodeAttributeQualifier");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             try {
@@ -54,12 +51,10 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
             }
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return AttributeDesignTimeOperations.getApplicableAttributes(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.AttributeAccess"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "3364660638048049748"));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_40vqv7_a0a3a0a0a1a0b0a1a1;
@@ -69,6 +64,5 @@ public class NodeAttributeQualifier_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   private static SNodePointer breakingNode_40vqv7_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "6407023681583036866");
 }

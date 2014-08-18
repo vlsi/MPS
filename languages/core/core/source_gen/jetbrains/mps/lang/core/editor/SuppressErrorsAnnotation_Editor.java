@@ -14,7 +14,6 @@ public class SuppressErrorsAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAttributedNodeCell_tmyyum_a(editorContext, node);
   }
-
   private EditorCell createAttributedNodeCell_tmyyum_a(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

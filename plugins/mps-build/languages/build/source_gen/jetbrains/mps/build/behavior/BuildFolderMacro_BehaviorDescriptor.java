@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildFolderMacro_BehaviorDescriptor extends BuildMacro_BehaviorDescriptor {
   public BuildFolderMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildFolderMacro";

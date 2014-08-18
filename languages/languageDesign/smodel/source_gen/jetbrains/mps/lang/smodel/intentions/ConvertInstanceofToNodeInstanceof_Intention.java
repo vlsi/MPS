@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertInstanceofToNodeInstanceof_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertInstanceofToNodeInstanceof_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
   }
-
   public String getPresentation() {
     return "ConvertInstanceofToNodeInstanceof";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.smodel.intentions.ConvertInstanceofToNodeInstanceof_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.smodel";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classType", true), "jetbrains.mps.lang.smodel.structure.SNodeType") && (SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "classType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false) != null) && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "leftExpression", true)), "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "8288233991428710054");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInstanceofToNodeInstanceof_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Node InstanceOf";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode operation = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null);
@@ -91,7 +76,6 @@ public class ConvertInstanceofToNodeInstanceof_Intention implements IntentionFac
       SLinkOperations.setTarget(result, "operand", SLinkOperations.getTarget(node, "leftExpression", true), true);
       SNodeOperations.replaceWithAnother(node, result);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertInstanceofToNodeInstanceof_Intention.this;
     }

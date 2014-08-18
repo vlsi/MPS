@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_LightQuotationPropertyValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LightQuotationPropertyValue_InferenceRule() {
   }
-
   public void applyRule(final SNode val, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(val, "property", false), "dataType", false);
     if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -26,18 +25,15 @@ public class typeof_LightQuotationPropertyValue_InferenceRule extends AbstractIn
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -11,10 +11,10 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)"), PersistenceFacade.getInstance().createModelReference("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddAuthorBlockDocTag_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddClassifierDocComment_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new AddDeprecatedBlockDocTag_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddFieldDocComment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddMethodDocComment_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddParameterBlockDocTag_Intention());

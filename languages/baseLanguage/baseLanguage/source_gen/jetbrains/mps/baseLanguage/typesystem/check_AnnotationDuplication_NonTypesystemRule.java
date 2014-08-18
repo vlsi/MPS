@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnnotationDuplication_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.HasAnnotation"))) {
       return;
@@ -43,22 +42,18 @@ public class check_AnnotationDuplication_NonTypesystemRule extends AbstractNonTy
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_qq1g71_a0a0a0a0a0a2a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

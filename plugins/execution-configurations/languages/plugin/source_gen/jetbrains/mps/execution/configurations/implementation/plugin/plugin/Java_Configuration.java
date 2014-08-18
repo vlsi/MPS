@@ -18,6 +18,7 @@ import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -53,7 +54,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
   })))).toListSequence());
   private JavaRunParameters_Configuration myRunParameters = new JavaRunParameters_Configuration();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
       this.getNode().checkConfiguration();
@@ -68,11 +68,10 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       });
 
       if (hasMainMethod.value) {
-        throw new RuntimeConfigurationException("Selected class does not have main method.");
+        throw new RuntimeConfigurationError("Selected class does not have main method.");
       }
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
@@ -87,7 +86,6 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       element.addContent(fieldElement);
     }
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -115,15 +113,12 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       }
     }
   }
-
   public NodeBySeveralConcepts_Configuration getNode() {
     return myNode;
   }
-
   public JavaRunParameters_Configuration getRunParameters() {
     return myRunParameters;
   }
-
   @Override
   public Java_Configuration clone() {
     Java_Configuration clone = null;
@@ -140,56 +135,44 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     }
     return clone;
   }
-
   public class MyState {
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       Java_Configuration.MyState state = new Java_Configuration.MyState();
       return state;
     }
   }
-
   public Java_Configuration(Project project, Java_Configuration_Factory factory, String name) {
     super(project, factory, name);
   }
-
   @Nullable
   public RunProfileState getState(@NotNull Executor executor, @NotNull ExecutionEnvironment environment) throws ExecutionException {
     return new Java_Configuration_RunProfileState(this, executor, environment);
   }
-
   @Nullable
   public SettingsEditor<ConfigurationPerRunnerSettings> getRunnerSettingsEditor(ProgramRunner runner) {
     return null;
   }
-
   public ConfigurationPerRunnerSettings createRunnerSettings(ConfigurationInfoProvider provider) {
     return null;
   }
-
   public SettingsEditorEx<Java_Configuration> getConfigurationEditor() {
     return (SettingsEditorEx<Java_Configuration>) getEditor();
   }
-
   public Java_Configuration createCloneTemplate() {
     return (Java_Configuration) super.clone();
   }
-
   public SettingsEditorEx<? extends IPersistentConfiguration> getEditor() {
     return new Java_Configuration_Editor(myNode.getEditor(), myRunParameters.getEditor());
   }
-
   @Override
   public boolean canExecute(String executorId) {
     return Java_Configuration_RunProfileState.canExecute(executorId);
   }
-
   public Object[] createMakeNodePointersTask() {
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodeReference>(), this.getNode().getNodePointer())};
   }
-
   protected static Logger LOG = LogManager.getLogger(Java_Configuration.class);
 }

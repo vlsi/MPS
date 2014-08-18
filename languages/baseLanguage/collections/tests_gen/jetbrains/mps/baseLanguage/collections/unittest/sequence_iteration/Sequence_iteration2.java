@@ -12,7 +12,6 @@ import junit.framework.Assert;
 public class Sequence_iteration2 extends TestCase {
   public Sequence_iteration2() {
   }
-
   public void test_1() {
     // inner iteration 
     Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
@@ -21,7 +20,6 @@ public class Sequence_iteration2 extends TestCase {
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {

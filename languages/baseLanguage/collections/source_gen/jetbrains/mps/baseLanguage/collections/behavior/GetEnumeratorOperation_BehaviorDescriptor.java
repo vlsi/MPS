@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class GetEnumeratorOperation_BehaviorDescriptor extends NoArgumentsSequenceOperation_BehaviorDescriptor {
   public GetEnumeratorOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation";

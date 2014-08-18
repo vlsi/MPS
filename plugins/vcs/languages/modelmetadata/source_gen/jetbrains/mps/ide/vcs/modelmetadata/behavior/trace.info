@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="Model_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,22,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -10,7 +10,6 @@ public class ReturnBlock extends AbstractBlock {
   public ReturnBlock(int x, int y, int width, int height, SNodeReference source, String caption, String ruleNodeReference) {
     super(x, y, width, height, source, caption, ruleNodeReference);
   }
-
   @Override
   protected void paintBlock(Graphics g) {
     g.setColor(Color.MAGENTA);

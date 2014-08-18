@@ -8,7 +8,6 @@ public class UpdateBlock_Constraints extends BaseConstraintsDescriptor {
   public UpdateBlock_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.UpdateBlock");
   }
-
   public String getDefaultConcreteConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.IsApplicableBlock";
   }

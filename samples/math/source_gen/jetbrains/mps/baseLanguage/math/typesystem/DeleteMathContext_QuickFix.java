@@ -10,11 +10,9 @@ import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 public class DeleteMathContext_QuickFix extends QuickFix_Runtime {
   public DeleteMathContext_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Use default math context";
   }
-
   public void execute(SNode node) {
     SNodeOperations.replaceWithAnother(node, MathUtil.convert1(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation")));
   }

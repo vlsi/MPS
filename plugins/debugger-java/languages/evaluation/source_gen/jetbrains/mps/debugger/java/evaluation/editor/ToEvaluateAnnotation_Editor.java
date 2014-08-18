@@ -14,7 +14,6 @@ public class ToEvaluateAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAttributedNodeCell_62jluc_a(editorContext, node);
   }
-
   private EditorCell createAttributedNodeCell_62jluc_a(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

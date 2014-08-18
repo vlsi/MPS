@@ -39,18 +39,15 @@ import org.apache.log4j.LogManager;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ReRunMergeFromBackup_Action() {
     super("Rerun Merge from Backup", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource)) {
       return false;
@@ -65,7 +62,6 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
     return manager.getVcsFor(file) != null && Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params)).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -79,7 +75,6 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -97,7 +92,6 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (File backupFile : Sequence.fromIterable(ReRunMergeFromBackup_Action.this.getBackupFiles(_params))) {
@@ -135,15 +129,12 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       }
     }
   }
-
   private Iterable<File> getBackupFiles(final Map<String, Object> _params) {
     return MergeBackupUtil.findZipFilesForModelFile(ReRunMergeFromBackup_Action.this.getModelFile(_params).getName());
   }
-
   private IFile getModelFile(final Map<String, Object> _params) {
     return ((FileDataSource) ((SModel) MapSequence.fromMap(_params).get("model")).getSource()).getFile();
   }
-
   private String selectMineModel(String currentModel, String backUpModel, final Map<String, Object> _params) {
     if (ModelDigestUtil.hashText(currentModel).equals(ModelDigestUtil.hashText(backUpModel))) {
       return backUpModel;
@@ -161,6 +152,5 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReRunMergeFromBackup_Action.class);
 }

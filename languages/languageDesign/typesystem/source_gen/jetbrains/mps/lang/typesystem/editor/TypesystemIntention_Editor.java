@@ -32,7 +32,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_il97sk_a(editorContext, node);
   }
-
   private EditorCell createCollection_il97sk_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_il97sk_a");
@@ -42,7 +41,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_il97sk_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_il97sk_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_il97sk_a0");
@@ -56,7 +54,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_il97sk_d0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_il97sk_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("quickFix");
@@ -78,20 +75,16 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_il97sk_a0a0 extends InlineCellProvider {
     public _Inline_il97sk_a0a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_il97sk_a0a0a(editorContext, node);
     }
-
     private EditorCell createProperty_il97sk_a0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -111,7 +104,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_il97sk_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_il97sk_b0a");
@@ -121,7 +113,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_il97sk_c0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new TypesystemIntention_Editor.actualArgumentListHandler_il97sk_c0a(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
@@ -129,30 +120,25 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class actualArgumentListHandler_il97sk_c0a extends RefNodeListHandler {
     public actualArgumentListHandler_il97sk_c0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -166,7 +152,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -180,7 +165,6 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_il97sk_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_il97sk_d0a");
@@ -190,14 +174,12 @@ public class TypesystemIntention_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_il97sk_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply immediately:");
     editorCell.setCellId("Constant_il97sk_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_il97sk_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("applyImmediately");

@@ -21,22 +21,18 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   private SNode myChildLinkDeclaration;
   private List<TableRow> myTableRows;
   private Map<TableRow, SNode> myRowToNodeMap = MapSequence.fromMap(new HashMap<TableRow, SNode>());
-
   public ChildrenTableModel(@NotNull SNode parentNode, @NotNull SNode childLinkDeclaration, boolean keepSameSizeRows) {
     super(keepSameSizeRows);
     myParentNode = parentNode;
     myChildLinkDeclaration = childLinkDeclaration;
   }
-
   public abstract TableRow createTableRow(SNode childNode, int rowNumber);
-
   @Override
   public void removeRow(int index) {
     TableRow row = getRow(index);
     SNode rowNode = MapSequence.fromMap(myRowToNodeMap).get(row);
     SNodeOperations.deleteNode(rowNode);
   }
-
   @Override
   public List<TableRow> getRows() {
     if (myTableRows == null) {
@@ -50,7 +46,6 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
     }
     return myTableRows;
   }
-
   @Override
   public void createNewRow(int index) {
     int rowCount = getRowCount();

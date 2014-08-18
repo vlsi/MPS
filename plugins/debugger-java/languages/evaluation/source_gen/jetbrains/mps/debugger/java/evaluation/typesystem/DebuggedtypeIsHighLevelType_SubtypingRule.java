@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class DebuggedtypeIsHighLevelType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public DebuggedtypeIsHighLevelType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode debuggedType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(debuggedType, "highType", true);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

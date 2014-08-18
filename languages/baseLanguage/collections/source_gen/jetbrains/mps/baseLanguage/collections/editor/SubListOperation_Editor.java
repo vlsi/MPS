@@ -25,7 +25,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6usca9_a(editorContext, node);
   }
-
   private EditorCell createCollection_6usca9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6usca9_a");
@@ -38,7 +37,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6usca9_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_6usca9_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -47,16 +45,13 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SubListOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SequenceOperation_cellMenu_6usca9_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
   }
-
   private EditorCell createConstant_6usca9_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_6usca9_b0");
@@ -66,7 +61,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6usca9_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fromIndex");
@@ -86,7 +80,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6usca9_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_6usca9_d0");
@@ -97,7 +90,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6usca9_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("upToIndex");
@@ -117,7 +109,6 @@ public class SubListOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6usca9_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_6usca9_f0");

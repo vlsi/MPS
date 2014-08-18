@@ -9,41 +9,41 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,25,0" name="jetbrains.mps.samples.Expressions.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.samples.Expressions.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:c8883f02-cad6-4252-a4e6-ca01d435b80e(jetbrains.mps.samples.Expressions.constraints)/2073504467208672573">
     <file name="ArithmeticSimpleMathExpression_Constraints.java">
       <node id="2073504467208672573" at="16,55,17,88" concept="6" />
-      <node id="2073504467208672573" at="21,82,22,74" concept="4" />
-      <node id="2073504467208672573" at="25,40,26,20" concept="5" />
-      <node id="2073504467208672573" at="30,70,31,41" concept="4" />
-      <node id="2073504467208672573" at="31,41,32,234" concept="0" />
-      <node id="2073504467208880117" at="31,41,32,234" concept="5" />
-      <node id="2073504467208672573" at="34,7,35,22" concept="5" />
+      <node id="2073504467208672573" at="20,82,21,74" concept="4" />
+      <node id="2073504467208672573" at="24,40,25,20" concept="5" />
+      <node id="2073504467208672573" at="28,70,29,41" concept="4" />
+      <node id="2073504467208672573" at="29,41,30,234" concept="0" />
+      <node id="2073504467208880117" at="29,41,30,234" concept="5" />
+      <node id="2073504467208672573" at="32,7,33,22" concept="5" />
       <node id="2073504467208672573" at="16,0,19,0" concept="1" trace="ArithmeticSimpleMathExpression_Constraints#()V" />
-      <node id="2073504467208672573" at="24,0,28,0" concept="3" trace="hasOwnValidator#()Z" />
-      <node id="2073504467208672573" at="29,0,34,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-      <node id="2073504467208672573" at="22,74,34,7" concept="2" />
-      <node id="2073504467208672573" at="20,0,37,0" concept="3" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <node id="2073504467208672573" at="23,0,27,0" concept="3" trace="hasOwnValidator#()Z" />
+      <node id="2073504467208672573" at="27,0,32,0" concept="3" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2073504467208672573" at="21,74,32,7" concept="2" />
+      <node id="2073504467208672573" at="19,0,35,0" concept="3" trace="getNotDefaultProperties#()Ljava/util/Map;" />
       <scope id="2073504467208672573" at="16,55,17,88" />
-      <scope id="2073504467208672573" at="25,40,26,20" />
-      <scope id="2073504467208672628" at="31,41,32,234" />
-      <scope id="2073504467208672573" at="30,70,32,234">
+      <scope id="2073504467208672573" at="24,40,25,20" />
+      <scope id="2073504467208672628" at="29,41,30,234" />
+      <scope id="2073504467208672573" at="28,70,30,234">
         <var name="propertyName" id="2073504467208672573" />
       </scope>
       <scope id="2073504467208672573" at="16,0,19,0" />
-      <scope id="2073504467208672573" at="24,0,28,0" />
-      <scope id="2073504467208672573" at="29,0,34,0">
+      <scope id="2073504467208672573" at="23,0,27,0" />
+      <scope id="2073504467208672573" at="27,0,32,0">
         <var name="node" id="2073504467208672573" />
         <var name="propertyValue" id="2073504467208672573" />
       </scope>
-      <scope id="2073504467208672573" at="21,82,35,22">
+      <scope id="2073504467208672573" at="20,82,33,22">
         <var name="properties" id="2073504467208672573" />
       </scope>
-      <scope id="2073504467208672573" at="20,0,37,0" />
-      <unit id="2073504467208672573" at="23,35,34,5" name="jetbrains.mps.samples.Expressions.constraints.ArithmeticSimpleMathExpression_Constraints$1" />
-      <unit id="2073504467208672573" at="15,0,38,0" name="jetbrains.mps.samples.Expressions.constraints.ArithmeticSimpleMathExpression_Constraints" />
+      <scope id="2073504467208672573" at="19,0,35,0" />
+      <unit id="2073504467208672573" at="22,35,32,5" name="jetbrains.mps.samples.Expressions.constraints.ArithmeticSimpleMathExpression_Constraints$1" />
+      <unit id="2073504467208672573" at="15,0,36,0" name="jetbrains.mps.samples.Expressions.constraints.ArithmeticSimpleMathExpression_Constraints" />
     </file>
   </root>
 </debug-info>

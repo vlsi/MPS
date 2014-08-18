@@ -23,12 +23,10 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 public class ExportScope_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_checkExport_2565736246230031479(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
     SNode exp = ExportScope_Behavior.call_getExportScope_4075196924244445285(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node);
     return namespace == null || (((exp == null) ? ExportScope_Behavior.call_checkExportDefault_8259195909097980935(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), isConcept, node, namespace) : BehaviorReflection.invokeVirtual(Boolean.TYPE, exp, "virtual_checkExport_2565736246230026584", new Object[]{namespace, node})));
   }
-
   public static boolean call_checkExportDefault_8259195909097980935(SAbstractConcept thisConcept, boolean isConcept, SNode node, String namespace) {
     /*
       return (isConcept ? true : namespace.equals(ExportScope_Behavior.call_getNamespace_2565736246230026649(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.ExportScope"))), node)));
@@ -44,7 +42,6 @@ public class ExportScope_Behavior {
     // stubs are module by default, all other are public now 
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node))));
   }
-
   public static SNode call_getExportScope_4075196924244445285(SAbstractConcept thisConcept, SNode node) {
     // return effective ExportScope or null 
     /*
@@ -56,7 +53,6 @@ public class ExportScope_Behavior {
     */
     return AttributeOperations.getAttribute(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.ExportScope"));
   }
-
   public static String call_getNamespace_2565736246230026649(SAbstractConcept thisConcept, SNode node) {
     SModule module = check_ogf5a0_a0a0e(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node));
     if (module instanceof Generator) {
@@ -64,21 +60,18 @@ public class ExportScope_Behavior {
     }
     return check_ogf5a0_a2a4(check_ogf5a0_a0c0e(((AbstractModule) module)));
   }
-
   private static SModule check_ogf5a0_a0a0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static String check_ogf5a0_a2a4(ModuleDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNamespace();
     }
     return null;
   }
-
   private static ModuleDescriptor check_ogf5a0_a0c0e(AbstractModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleDescriptor();

@@ -15,35 +15,27 @@ public class SelectionStartSelectorLabel_Actions {
     editorCell.setAction(CellActionType.DELETE, new SelectionStartSelectorLabel_Actions.SelectionStartSelectorLabel_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new SelectionStartSelectorLabel_Actions.SelectionStartSelectorLabel_Actions_BACKSPACE(node));
   }
-
   public static class SelectionStartSelectorLabel_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public SelectionStartSelectorLabel_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "selectionStart", null, true);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
     }
   }
-
   public static class SelectionStartSelectorLabel_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public SelectionStartSelectorLabel_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "selectionStart", null, true);
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);

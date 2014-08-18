@@ -6,6 +6,5 @@ package jetbrains.mps.lang.dataFlow;
 public abstract class DataFlowBuilders {
   public DataFlowBuilders() {
   }
-
   public abstract void install(DataFlowManager manager);
 }

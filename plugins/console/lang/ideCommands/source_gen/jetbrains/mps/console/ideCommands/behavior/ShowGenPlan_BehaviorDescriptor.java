@@ -10,11 +10,9 @@ import jetbrains.mps.console.tool.ConsoleStream;
 public class ShowGenPlan_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
   public ShowGenPlan_BehaviorDescriptor() {
   }
-
   public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     ShowGenPlan_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ShowGenPlan";

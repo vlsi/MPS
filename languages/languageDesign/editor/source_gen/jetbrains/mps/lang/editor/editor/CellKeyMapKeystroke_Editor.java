@@ -29,7 +29,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_y8xyxm_a(editorContext, node);
   }
-
   private EditorCell createCollection_y8xyxm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_y8xyxm_a");
@@ -41,7 +40,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_y8xyxm_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_y8xyxm_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_y8xyxm_a0");
@@ -52,7 +50,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_y8xyxm_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modifiers");
@@ -75,18 +72,15 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0 extends AbstractCellMenuPart_PropertyValues {
     public CellKeyMapKeystroke_modifiers_cellMenu_y8xyxm_a0b0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidModifiers()));
       return result;
     }
   }
-
   private EditorCell createConstant_y8xyxm_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "> + <");
     editorCell.setCellId("Constant_y8xyxm_c0");
@@ -98,7 +92,6 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_y8xyxm_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("keycode");
@@ -120,18 +113,15 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0 extends AbstractCellMenuPart_PropertyValues {
     public CellKeyMapKeystroke_keycode_cellMenu_y8xyxm_a0d0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidKeyCodes()));
       return result;
     }
   }
-
   private EditorCell createConstant_y8xyxm_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_y8xyxm_e0");

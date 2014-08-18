@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class LocalParametersComponentExpression_BehaviorDescriptor extends DotExpression_BehaviorDescriptor implements IPropertyExpression_BehaviorDescriptor {
   public LocalParametersComponentExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return LocalParametersComponentExpression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.facet.structure.LocalParametersComponentExpression";

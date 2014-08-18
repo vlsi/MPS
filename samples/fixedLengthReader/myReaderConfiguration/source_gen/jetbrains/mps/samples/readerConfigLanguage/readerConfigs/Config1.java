@@ -10,12 +10,10 @@ import jetbrains.mps.samples.readerConfigLanguage.dsl.Usage;
 public class Config1 {
   public Config1() {
   }
-
   public void Configure(Reader target) {
     target.AddStrategy(this.ConfigureServiceCall());
     target.AddStrategy(this.ConfigureUsage());
   }
-
   public ReaderStrategy ConfigureServiceCall() {
     ReaderStrategy result = new ReaderStrategy("SVCL", ServiceCall.class);
     result.AddFieldExtractor(4, 18, "CustomerName");
@@ -24,7 +22,6 @@ public class Config1 {
     result.AddFieldExtractor(28, 35, "DateOfCallString");
     return result;
   }
-
   public ReaderStrategy ConfigureUsage() {
     ReaderStrategy result = new ReaderStrategy("USGE", Usage.class);
     result.AddFieldExtractor(4, 8, "CustomerID");

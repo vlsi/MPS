@@ -26,7 +26,6 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
   public GenerationContextOp_VarRef_Constraints() {
     super("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,12 +42,10 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode contextNode = (_context.getReferenceNode() == null ? _context.getEnclosingNode() : _context.getReferenceNode());
@@ -62,7 +58,6 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
             }
             return vars;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_m6rnzp_a0a3a0a0a1a0b0a1a1;
@@ -72,6 +67,5 @@ public class GenerationContextOp_VarRef_Constraints extends BaseConstraintsDescr
     });
     return references;
   }
-
   private static SNodePointer breakingNode_m6rnzp_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ee(jetbrains.mps.lang.generator.generationContext.constraints)", "2721957369897614821");
 }

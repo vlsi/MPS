@@ -7,17 +7,14 @@ import jetbrains.mps.smodel.SModelStereotype;
 
 public class TestCaseRow extends TestContainerRow {
   private final String myTestCaseName;
-
   public TestCaseRow(ITestNodeWrapper testCase) {
     super(testCase.getFqName(), SModelStereotype.withoutStereotype(testCase.getNodePointer().getModelReference().getModelName()));
     myTestCaseName = testCase.getFqName();
   }
-
   @Override
   public boolean matches(String testCase, String testMethod) {
     return testCase == null || eq_f4t6f0_a0a0a2(testCase, myTestCaseName);
   }
-
   private static boolean eq_f4t6f0_a0a0a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

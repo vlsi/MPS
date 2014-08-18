@@ -21,69 +21,54 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class convert_to_from_unrestricted_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public convert_to_from_unrestricted_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   }
-
   public String getPresentation() {
     return "convert_to_from_unrestricted";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.closures.intentions.convert_to_from_unrestricted_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.closures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1230480249136");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convert_to_from_unrestricted_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       String type = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? "Unrestricted" : "Restricted");
       return "Convert to " + type + " Closure Literal";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode cl = (SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") ? SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral", null) : SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null));
       SNodeOperations.replaceWithAnother(node, cl);
@@ -93,7 +78,6 @@ public class convert_to_from_unrestricted_Intention implements IntentionFactory 
       }
       SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "body", true)), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return convert_to_from_unrestricted_Intention.this;
     }

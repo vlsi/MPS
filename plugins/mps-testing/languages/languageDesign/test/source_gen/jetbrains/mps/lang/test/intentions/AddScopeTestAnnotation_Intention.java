@@ -26,69 +26,54 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddScopeTestAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddScopeTestAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddScopeTestAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.test";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     return ScopesTest_Behavior.call_isApplicable_5449224527592368025(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest"))), node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "3100207102208970627");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddScopeTestAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Scope Test Annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest"), newAnnotation);
@@ -106,7 +91,6 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
 
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddScopeTestAnnotation_Intention.this;
     }

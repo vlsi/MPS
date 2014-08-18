@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class GreaterThanOrEqualsExpression_BehaviorDescriptor extends BinaryCompareOperation_BehaviorDescriptor {
   public GreaterThanOrEqualsExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return GreaterThanOrEqualsExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression";

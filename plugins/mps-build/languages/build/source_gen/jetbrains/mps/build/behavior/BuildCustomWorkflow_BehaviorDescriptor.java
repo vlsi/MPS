@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildCustomWorkflow_BehaviorDescriptor extends BuildAspect_BehaviorDescriptor {
   public BuildCustomWorkflow_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildCustomWorkflow";

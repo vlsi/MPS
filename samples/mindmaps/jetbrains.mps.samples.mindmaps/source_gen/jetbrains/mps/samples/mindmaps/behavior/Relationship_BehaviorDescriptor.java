@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Relationship_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Relationship_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.mindmaps.structure.Relationship";
