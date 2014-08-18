@@ -1931,7 +1931,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         myConceptId = name2cid(myConceptFqName);
       }
       if (myRoleInParentId == null && myRoleInParent != null) {
-        setRoleInParentId(name2lid(getParent(), getRoleInParent_byName()));
+        setRoleInParent_byId(name2lid(getParent(), getRoleInParent_byName()));
       }
       for (String prop : getPropertyNames()) {
         setProperty_byId(name2pid(prop), getProperty_byName(prop));
@@ -1949,8 +1949,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
     if (mode == IdMigrationMode.ID) {
-      if (ref.getRoleId() == null) {
-        ref.setRoleId(name2rid(ref.getRole_byName()));
+      if (ref.getRoleId_byId() == null) {
+        ref.setRoleId_direct(name2rid(ref.getRole_byName()));
       }
     }
   }
