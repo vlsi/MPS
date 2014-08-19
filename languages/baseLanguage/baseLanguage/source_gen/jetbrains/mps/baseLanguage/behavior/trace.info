@@ -12464,123 +12464,127 @@
     <unitInfo nodeId="1457547649399766338" fileName="BaseStringOperation_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1742226163722653517">
-    <nodeInfo nodeId="4985347495069590319" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="130" endLine="17" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1063516660192754696" fileName="ISupportParentheses_Behavior.java" startLine="17" startPosition="38" endLine="18" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2572626204612741199" fileName="ISupportParentheses_Behavior.java" startLine="18" startPosition="75" endLine="19" endPosition="429" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653684" fileName="ISupportParentheses_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1742226163722653698" fileName="ISupportParentheses_Behavior.java" startLine="26" startPosition="114" endLine="27" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1742226163722653712" fileName="ISupportParentheses_Behavior.java" startLine="30" startPosition="102" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653718" fileName="ISupportParentheses_Behavior.java" startLine="34" startPosition="103" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="39" startPosition="127" endLine="40" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="44" startPosition="160" endLine="45" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="49" startPosition="110" endLine="50" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="54" startPosition="143" endLine="55" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="59" startPosition="111" endLine="60" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="64" startPosition="144" endLine="65" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="69" startPosition="99" endLine="70" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="74" startPosition="132" endLine="75" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="79" startPosition="100" endLine="80" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="84" startPosition="133" endLine="85" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1063516660192754696" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="130" endLine="17" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6653651625813730782" fileName="ISupportParentheses_Behavior.java" startLine="17" startPosition="75" endLine="18" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6653651625813729900" fileName="ISupportParentheses_Behavior.java" startLine="18" startPosition="181" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6653651625816725674" fileName="ISupportParentheses_Behavior.java" startLine="19" startPosition="183" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2572626204612741199" fileName="ISupportParentheses_Behavior.java" startLine="20" startPosition="0" endLine="21" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653684" fileName="ISupportParentheses_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1742226163722653698" fileName="ISupportParentheses_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="1742226163722653712" fileName="ISupportParentheses_Behavior.java" startLine="32" startPosition="102" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653718" fileName="ISupportParentheses_Behavior.java" startLine="36" startPosition="103" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="41" startPosition="127" endLine="42" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="46" startPosition="160" endLine="47" endPosition="325" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="51" startPosition="110" endLine="52" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="56" startPosition="143" endLine="57" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="61" startPosition="111" endLine="62" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="66" startPosition="144" endLine="67" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="71" startPosition="99" endLine="72" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="76" startPosition="132" endLine="77" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="81" startPosition="100" endLine="82" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="86" startPosition="133" endLine="87" endPosition="314" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setSyntacticallyLeftSideExpression_1742226163722653680#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
     <scopeInfo nodeId="1742226163722653519" fileName="ISupportParentheses_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1742226163722653683" fileName="ISupportParentheses_Behavior.java" startLine="22" startPosition="113" endLine="23" endPosition="146" />
-    <scopeInfo nodeId="1742226163722653697" fileName="ISupportParentheses_Behavior.java" startLine="26" startPosition="114" endLine="27" endPosition="147" />
-    <scopeInfo nodeId="1742226163722653711" fileName="ISupportParentheses_Behavior.java" startLine="30" startPosition="102" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="1742226163722653717" fileName="ISupportParentheses_Behavior.java" startLine="34" startPosition="103" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="39" startPosition="127" endLine="40" endPosition="160" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="44" startPosition="160" endLine="45" endPosition="325" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="49" startPosition="110" endLine="50" endPosition="145" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="54" startPosition="143" endLine="55" endPosition="296" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="59" startPosition="111" endLine="60" endPosition="146" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="64" startPosition="144" endLine="65" endPosition="297" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="69" startPosition="99" endLine="70" endPosition="175" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="74" startPosition="132" endLine="75" endPosition="313" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="79" startPosition="100" endLine="80" endPosition="176" />
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="84" startPosition="133" endLine="85" endPosition="314" />
+    <scopeInfo nodeId="1742226163722653683" fileName="ISupportParentheses_Behavior.java" startLine="24" startPosition="113" endLine="25" endPosition="146" />
+    <scopeInfo nodeId="1742226163722653697" fileName="ISupportParentheses_Behavior.java" startLine="28" startPosition="114" endLine="29" endPosition="147" />
+    <scopeInfo nodeId="1742226163722653711" fileName="ISupportParentheses_Behavior.java" startLine="32" startPosition="102" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="1742226163722653717" fileName="ISupportParentheses_Behavior.java" startLine="36" startPosition="103" endLine="37" endPosition="16" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="41" startPosition="127" endLine="42" endPosition="160" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="46" startPosition="160" endLine="47" endPosition="325" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="51" startPosition="110" endLine="52" endPosition="145" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="56" startPosition="143" endLine="57" endPosition="296" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="61" startPosition="111" endLine="62" endPosition="146" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="66" startPosition="144" endLine="67" endPosition="297" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="71" startPosition="99" endLine="72" endPosition="175" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="76" startPosition="132" endLine="77" endPosition="313" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="81" startPosition="100" endLine="82" endPosition="176" />
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="86" startPosition="133" endLine="87" endPosition="314" />
     <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1742226163722653517" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163722653673" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="130" endLine="19" endPosition="429">
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1742226163722653692" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1742226163722653706" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="40" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1742226163722653676" varName="leaf" />
+      <varInfo nodeId="1742226163722653678" varName="rightParen" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
+      <varInfo nodeId="1742226163722653676" varName="leaf" />
+      <varInfo nodeId="1742226163722653678" varName="rightParen" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="1742226163722653692" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
+      <varInfo nodeId="1742226163722653692" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="1742226163722653706" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
+      <varInfo nodeId="1742226163722653706" varName="expr" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="70" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="75" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
+      <varInfo nodeId="1742226163722653517" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1742226163722653673" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="130" endLine="21" endPosition="111">
       <varInfo nodeId="1063516660192754697" varName="ancestors" />
+      <varInfo nodeId="6653651625813730783" varName="left" />
+      <varInfo nodeId="6653651625813729901" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1742226163722653692" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1742226163722653706" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="38" startPosition="0" endLine="42" endPosition="0">
+    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1742226163722653676" varName="leaf" />
       <varInfo nodeId="1742226163722653678" varName="rightParen" />
       <varInfo nodeId="1742226163722653517" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
-      <varInfo nodeId="1742226163722653676" varName="leaf" />
-      <varInfo nodeId="1742226163722653678" varName="rightParen" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="1742226163722653692" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
-      <varInfo nodeId="1742226163722653692" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="1742226163722653706" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
-      <varInfo nodeId="1742226163722653706" varName="expr" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="73" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="1742226163722653517" varName="callerConceptFqName" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1742226163722653676" varName="leaf" />
-      <varInfo nodeId="1742226163722653678" varName="rightParen" />
-      <varInfo nodeId="1742226163722653517" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="12" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ISupportParentheses_Behavior" />
+    <unitInfo nodeId="1742226163722653517" fileName="ISupportParentheses_Behavior.java" startLine="12" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ISupportParentheses_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1955452033143960286">
     <nodeInfo nodeId="2832018561209142530" fileName="AbstractLoopStatement_Behavior.java" startLine="20" startPosition="57" endLine="21" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

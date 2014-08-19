@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ISupportParentheses_Behavior {
@@ -14,9 +14,11 @@ public class ISupportParentheses_Behavior {
   }
 
   public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    // true for condition and ifFalse 
     List<SNode> ancestors = SNodeOperations.getAncestors(leaf, null, true);
-    return ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{})) || ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
+    SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+    SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+
+    return ListSequence.fromList(ancestors).contains(left) || ListSequence.fromList(ancestors).contains(right);
   }
 
   public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
