@@ -68,15 +68,15 @@ public class DotExpression_Behavior {
     return true;
   }
 
-  public static void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "operand", expr, true);
   }
 
-  public static SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "operand", true);
   }
 
-  public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
     return null;
   }
 

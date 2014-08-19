@@ -22,16 +22,12 @@ public abstract class BinaryOperation_BehaviorDescriptor extends Expression_Beha
     return BinaryOperation_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
 
-  public void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    BinaryOperation_Behavior.virtual_rebalanceAfterParenthing_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+  public void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    BinaryOperation_Behavior.virtual_setSyntacticallyLeftSideExpression_7583777362102629706(thisNode, expr);
   }
 
-  public void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    BinaryOperation_Behavior.virtual_setLeftSideExpression_7583777362102629706(thisNode, expr);
-  }
-
-  public void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
-    BinaryOperation_Behavior.virtual_setRightSideExpression_7583777362102706555(thisNode, expr);
+  public void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+    BinaryOperation_Behavior.virtual_setSyntacticallyRightSideExpression_7583777362102706555(thisNode, expr);
   }
 
   @Override

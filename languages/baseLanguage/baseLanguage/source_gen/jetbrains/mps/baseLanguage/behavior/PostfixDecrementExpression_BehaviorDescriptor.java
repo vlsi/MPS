@@ -12,12 +12,12 @@ public class PostfixDecrementExpression_BehaviorDescriptor extends AbstractUnary
     return PostfixDecrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
   }
 
-  public SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return PostfixDecrementExpression_Behavior.virtual_getLeftSideExpression_7583777362095214544(thisNode);
+  public SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return PostfixDecrementExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_7583777362095214544(thisNode);
   }
 
-  public SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return PostfixDecrementExpression_Behavior.virtual_getRightSideExpression_7583777362095256690(thisNode);
+  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return PostfixDecrementExpression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
   }
 
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {

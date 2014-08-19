@@ -23,12 +23,12 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
     return DotExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
   }
 
-  public SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return DotExpression_Behavior.virtual_getLeftSideExpression_7583777362095214544(thisNode);
+  public SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return DotExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_7583777362095214544(thisNode);
   }
 
-  public SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return DotExpression_Behavior.virtual_getRightSideExpression_7583777362095256690(thisNode);
+  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return DotExpression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
   }
 
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
@@ -47,8 +47,8 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
     return DotExpression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
-  public void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    DotExpression_Behavior.virtual_setLeftSideExpression_7583777362102629706(thisNode, expr);
+  public void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    DotExpression_Behavior.virtual_setSyntacticallyLeftSideExpression_7583777362102629706(thisNode, expr);
   }
 
   @Override

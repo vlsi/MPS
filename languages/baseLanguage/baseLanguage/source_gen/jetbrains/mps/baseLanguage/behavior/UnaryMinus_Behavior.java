@@ -13,7 +13,7 @@ public class UnaryMinus_Behavior {
     return true;
   }
 
-  public static void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "expression", expr, true);
   }
 }

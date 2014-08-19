@@ -28,16 +28,16 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
     return Expression_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
 
-  public SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return Expression_Behavior.virtual_getLeftSideExpression_7583777362095214544(thisNode);
-  }
-
   public List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
     return Expression_Behavior.virtual_getOrderedChildExpressions_7583777362095257106(thisNode);
   }
 
-  public SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return Expression_Behavior.virtual_getRightSideExpression_7583777362095256690(thisNode);
+  public SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return Expression_Behavior.virtual_getSyntacticallyLeftSideExpression_7583777362095214544(thisNode);
+  }
+
+  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return Expression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
   }
 
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
@@ -64,16 +64,12 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
     return Expression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
 
-  public void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    Expression_Behavior.virtual_rebalanceAfterParenthing_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+  public void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    Expression_Behavior.virtual_setSyntacticallyLeftSideExpression_7583777362102629706(thisNode, expr);
   }
 
-  public void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    Expression_Behavior.virtual_setLeftSideExpression_7583777362102629706(thisNode, expr);
-  }
-
-  public void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
-    Expression_Behavior.virtual_setRightSideExpression_7583777362102706555(thisNode, expr);
+  public void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+    Expression_Behavior.virtual_setSyntacticallyRightSideExpression_7583777362102706555(thisNode, expr);
   }
 
   @Override

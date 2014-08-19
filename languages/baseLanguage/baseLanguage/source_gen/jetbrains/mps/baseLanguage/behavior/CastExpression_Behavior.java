@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CastExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -20,17 +19,6 @@ public class CastExpression_Behavior {
       return eq_fzg371_a0a0a0c(root, leaf);
     }
     return CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), leaf);
-  }
-
-  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    if (rightTurn != null) {
-      SNodeOperations.replaceWithAnother(thisNode, rightTurn);
-      BehaviorReflection.invokeVirtual(Void.class, rightTurn, "virtual_setLeftSideExpression_7583777362102629706", new Object[]{parens});
-    } else {
-      SNodeOperations.replaceWithAnother(thisNode, parens);
-    }
-    SLinkOperations.setTarget(parens, "expression", thisNode, true);
-    SLinkOperations.setTarget(thisNode, "expression", rightAccumulator, true);
   }
 
   private static boolean eq_fzg371_a0a0a0c(Object a, Object b) {

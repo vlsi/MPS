@@ -62,21 +62,21 @@ public class Expression_Behavior {
     return false;
   }
 
-  public static void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
     throw new UnsupportedOperationException("This expression cannot have its left child set: " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode));
   }
 
-  public static void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
     throw new UnsupportedOperationException("This expression cannot have its right child set: " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode));
   }
 
-  public static SNode virtual_getLeftSideExpression_7583777362095214544(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
     // In case of a single child, it is considerred to be the right child by default 
     List<SNode> orderedChidExpressions = Expression_Behavior.call_getOrderedChildExpressions_7583777362095257106(thisNode);
     return (ListSequence.fromList(orderedChidExpressions).count() > 1 ? ListSequence.fromList(orderedChidExpressions).first() : null);
   }
 
-  public static SNode virtual_getRightSideExpression_7583777362095256690(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
     // In case of a single child, it is considerred to be the right child by default 
     List<SNode> orderedChidExpressions = Expression_Behavior.call_getOrderedChildExpressions_7583777362095257106(thisNode);
     return (ListSequence.fromList(orderedChidExpressions).count() > 0 ? ListSequence.fromList(orderedChidExpressions).last() : null);
@@ -92,10 +92,6 @@ public class Expression_Behavior {
         return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }).toListSequence();
-  }
-
-  public static void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    throw new UnsupportedOperationException("This expression cannot be a root of tree rebalancing after setting parentheses: " + jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(thisNode));
   }
 
   @Deprecated
@@ -169,43 +165,43 @@ public class Expression_Behavior {
   }
 
   @Deprecated
-  public static void call_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setLeftSideExpression_7583777362102629706", new Object[]{expr});
+  public static void call_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setSyntacticallyLeftSideExpression_7583777362102629706", new Object[]{expr});
   }
 
   @Deprecated
-  public static void callSuper_setLeftSideExpression_7583777362102629706(SNode thisNode, String callerConceptFqName, SNode expr) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_setLeftSideExpression_7583777362102629706", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
+  public static void callSuper_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, String callerConceptFqName, SNode expr) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_setSyntacticallyLeftSideExpression_7583777362102629706", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
   }
 
   @Deprecated
-  public static void call_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setRightSideExpression_7583777362102706555", new Object[]{expr});
+  public static void call_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_setSyntacticallyRightSideExpression_7583777362102706555", new Object[]{expr});
   }
 
   @Deprecated
-  public static void callSuper_setRightSideExpression_7583777362102706555(SNode thisNode, String callerConceptFqName, SNode expr) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_setRightSideExpression_7583777362102706555", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
+  public static void callSuper_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, String callerConceptFqName, SNode expr) {
+    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_setSyntacticallyRightSideExpression_7583777362102706555", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
   }
 
   @Deprecated
-  public static SNode call_getLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{});
+  public static SNode call_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyLeftSideExpression_7583777362095214544", new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getLeftSideExpression_7583777362095214544(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getLeftSideExpression_7583777362095214544", new Class[]{SNode.class}, new Object[]{});
+  public static SNode callSuper_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getSyntacticallyLeftSideExpression_7583777362095214544", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
-  public static SNode call_getRightSideExpression_7583777362095256690(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getRightSideExpression_7583777362095256690", new Object[]{});
+  public static SNode call_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Object[]{});
   }
 
   @Deprecated
-  public static SNode callSuper_getRightSideExpression_7583777362095256690(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getRightSideExpression_7583777362095256690", new Class[]{SNode.class}, new Object[]{});
+  public static SNode callSuper_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode, String callerConceptFqName) {
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -216,15 +212,5 @@ public class Expression_Behavior {
   @Deprecated
   public static List<SNode> callSuper_getOrderedChildExpressions_7583777362095257106(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getOrderedChildExpressions_7583777362095257106", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static void call_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_rebalanceAfterParenthing_4985347495062678851", new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
-  }
-
-  @Deprecated
-  public static void callSuper_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, String callerConceptFqName, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_rebalanceAfterParenthing_4985347495062678851", new Class[]{SNode.class, SNode.class, SNode.class, SNode.class, SNode.class, SNode.class}, new Object[]{rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator});
   }
 }

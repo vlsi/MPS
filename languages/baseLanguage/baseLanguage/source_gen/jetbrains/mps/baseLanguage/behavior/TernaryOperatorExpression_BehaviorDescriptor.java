@@ -17,16 +17,12 @@ public class TernaryOperatorExpression_BehaviorDescriptor extends Expression_Beh
     return TernaryOperatorExpression_Behavior.virtual_getOrderedChildExpressions_7583777362095257106(thisNode);
   }
 
-  public void virtual_rebalanceAfterParenthing_4985347495062678851(SNode thisNode, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
-    TernaryOperatorExpression_Behavior.virtual_rebalanceAfterParenthing_4985347495062678851(thisNode, rightTurn, leftTurn, parens, rightAccumulator, leftAccumulator);
+  public void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+    TernaryOperatorExpression_Behavior.virtual_setSyntacticallyLeftSideExpression_7583777362102629706(thisNode, expr);
   }
 
-  public void virtual_setLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    TernaryOperatorExpression_Behavior.virtual_setLeftSideExpression_7583777362102629706(thisNode, expr);
-  }
-
-  public void virtual_setRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
-    TernaryOperatorExpression_Behavior.virtual_setRightSideExpression_7583777362102706555(thisNode, expr);
+  public void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+    TernaryOperatorExpression_Behavior.virtual_setSyntacticallyRightSideExpression_7583777362102706555(thisNode, expr);
   }
 
   @Override

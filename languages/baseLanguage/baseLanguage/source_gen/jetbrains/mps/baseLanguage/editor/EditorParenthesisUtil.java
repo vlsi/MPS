@@ -97,11 +97,11 @@ public class EditorParenthesisUtil {
       return root;
     }
 
-    if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}) != null) {
-      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getRightSideExpression_7583777362095256690", new Object[]{}), rightmost);
+    if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Object[]{}) != null) {
+      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Object[]{}), rightmost);
     }
-    if (!(rightmost) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}) != null) {
-      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getLeftSideExpression_7583777362095214544", new Object[]{}), rightmost);
+    if (!(rightmost) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getSyntacticallyLeftSideExpression_7583777362095214544", new Object[]{}) != null) {
+      return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), root, "virtual_getSyntacticallyLeftSideExpression_7583777362095214544", new Object[]{}), rightmost);
     }
     return root;
   }
