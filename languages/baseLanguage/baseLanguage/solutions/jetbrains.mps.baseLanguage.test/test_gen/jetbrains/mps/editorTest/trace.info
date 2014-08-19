@@ -4265,6 +4265,246 @@
     <unitInfo nodeId="6080342878134138487" fileName="EmptyEnumConstantCreationTest_Test.java" startLine="25" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test$TestBody" />
     <unitInfo nodeId="6080342878134138487" fileName="EmptyEnumConstantCreationTest_Test.java" startLine="14" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.editorTest.EmptyEnumConstantCreationTest_Test" />
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764075431047">
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764075431069" fileName="AddParensToArrayAccess1_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess1_Test#()V" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess1#()V" />
+    <nodeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764075431047" varName="editor" />
+      <varInfo nodeId="6141629764075431047" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess1_Test$TestBody" />
+    <unitInfo nodeId="6141629764075431047" fileName="AddParensToArrayAccess1_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess1_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077165660">
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077165689" fileName="AddParensToArrayAccess2_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess2_Test#()V" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess2#()V" />
+    <nodeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077165660" varName="editor" />
+      <varInfo nodeId="6141629764077165660" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess2_Test$TestBody" />
+    <unitInfo nodeId="6141629764077165660" fileName="AddParensToArrayAccess2_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess2_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077176494">
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077176523" fileName="AddParensToArrayAccess3_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess3_Test#()V" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess3#()V" />
+    <nodeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077176494" varName="editor" />
+      <varInfo nodeId="6141629764077176494" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess3_Test$TestBody" />
+    <unitInfo nodeId="6141629764077176494" fileName="AddParensToArrayAccess3_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess3_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077185755">
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077185784" fileName="AddParensToArrayAccess4_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess4_Test#()V" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess4#()V" />
+    <nodeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077185755" varName="editor" />
+      <varInfo nodeId="6141629764077185755" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess4_Test$TestBody" />
+    <unitInfo nodeId="6141629764077185755" fileName="AddParensToArrayAccess4_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess4_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077194675">
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077194704" fileName="AddParensToArrayAccess5_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess5_Test#()V" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess5#()V" />
+    <nodeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077194675" varName="editor" />
+      <varInfo nodeId="6141629764077194675" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess5_Test$TestBody" />
+    <unitInfo nodeId="6141629764077194675" fileName="AddParensToArrayAccess5_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess5_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077201382">
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077201411" fileName="AddParensToArrayAccess6_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess6_Test#()V" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess6#()V" />
+    <nodeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077201382" varName="editor" />
+      <varInfo nodeId="6141629764077201382" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess6_Test$TestBody" />
+    <unitInfo nodeId="6141629764077201382" fileName="AddParensToArrayAccess6_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess6_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077225957">
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077242941" fileName="AddParensToArrayAccess7_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess7_Test#()V" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess7#()V" />
+    <nodeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="108">
+      <varInfo nodeId="6141629764077225957" varName="editor" />
+      <varInfo nodeId="6141629764077225957" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess7_Test$TestBody" />
+    <unitInfo nodeId="6141629764077225957" fileName="AddParensToArrayAccess7_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess7_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077244380">
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077244410" fileName="AddParensToArrayAccess8_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess8_Test#()V" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess8#()V" />
+    <nodeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077244380" varName="editor" />
+      <varInfo nodeId="6141629764077244380" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess8_Test$TestBody" />
+    <unitInfo nodeId="6141629764077244380" fileName="AddParensToArrayAccess8_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess8_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077265187">
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077265216" fileName="AddParensToArrayAccess9_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess9_Test#()V" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess9#()V" />
+    <nodeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077265187" varName="editor" />
+      <varInfo nodeId="6141629764077265187" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess9_Test$TestBody" />
+    <unitInfo nodeId="6141629764077265187" fileName="AddParensToArrayAccess9_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess9_Test" />
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764077273251">
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6141629764077273280" fileName="AddParensToArrayAccess9_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddParensToArrayAccess9_Test#()V" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_AddParensToArrayAccess9#()V" />
+    <nodeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="104" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
+      <varInfo nodeId="6141629764077273251" varName="editor" />
+      <varInfo nodeId="6141629764077273251" varName="editorComponent" />
+    </scopeInfo>
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
+    <unitInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess9_Test$TestBody" />
+    <unitInfo nodeId="6141629764077273251" fileName="AddParensToArrayAccess9_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.editorTest.AddParensToArrayAccess9_Test" />
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6181413376134300552">
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="18" startPosition="61" endLine="19" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6181413376134300552" fileName="MethodAddGenericCaret_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

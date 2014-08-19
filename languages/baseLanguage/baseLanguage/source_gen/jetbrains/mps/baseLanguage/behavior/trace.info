@@ -12113,32 +12113,24 @@
     <unitInfo nodeId="1262430001741641630" fileName="NotEqualsExpression_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.NotEqualsExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741642258">
-    <nodeInfo nodeId="1262430001741642256" fileName="ArrayAccessExpression_Behavior.java" startLine="15" startPosition="90" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2163970720677422488" fileName="ArrayAccessExpression_Behavior.java" startLine="19" startPosition="130" endLine="20" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2163970720677422665" fileName="ArrayAccessExpression_Behavior.java" startLine="23" startPosition="102" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1262430001741642260" fileName="ArrayAccessExpression_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="1262430001741642255" fileName="ArrayAccessExpression_Behavior.java" startLine="15" startPosition="90" endLine="16" endPosition="16" />
-    <scopeInfo nodeId="2163970720677398664" fileName="ArrayAccessExpression_Behavior.java" startLine="19" startPosition="130" endLine="20" endPosition="159" />
-    <scopeInfo nodeId="2163970720677422547" fileName="ArrayAccessExpression_Behavior.java" startLine="23" startPosition="102" endLine="24" endPosition="62" />
-    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="1262430001741642256" fileName="ArrayAccessExpression_Behavior.java" startLine="13" startPosition="90" endLine="14" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2163970720677422665" fileName="ArrayAccessExpression_Behavior.java" startLine="17" startPosition="102" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_lvalue_1262430001741497939#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+    <nodeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="1262430001741642260" fileName="ArrayAccessExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
+    <scopeInfo nodeId="1262430001741642255" fileName="ArrayAccessExpression_Behavior.java" startLine="13" startPosition="90" endLine="14" endPosition="16" />
+    <scopeInfo nodeId="2163970720677422547" fileName="ArrayAccessExpression_Behavior.java" startLine="17" startPosition="102" endLine="18" endPosition="62" />
+    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="1262430001741642258" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1262430001741642258" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="2163970720677398665" varName="leaf" />
-      <varInfo nodeId="2163970720677398667" varName="rightParen" />
+    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1262430001741642258" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1262430001741642258" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="11" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayAccessExpression_Behavior" />
+    <unitInfo nodeId="1262430001741642258" fileName="ArrayAccessExpression_Behavior.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ArrayAccessExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1262430001741646919">
     <nodeInfo nodeId="1262430001741646918" fileName="RemExpression_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -13811,226 +13803,221 @@
     <nodeInfo nodeId="2329139813973092172" fileName="ParenthesisUtil.java" startLine="104" startPosition="37" endLine="105" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7583777362088042866" fileName="ParenthesisUtil.java" startLine="105" startPosition="92" endLine="106" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2329139813973092176" fileName="ParenthesisUtil.java" startLine="106" startPosition="39" endLine="107" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2163970720680759350" fileName="ParenthesisUtil.java" startLine="107" startPosition="37" endLine="108" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3313213291232127474" fileName="ParenthesisUtil.java" startLine="108" startPosition="81" endLine="109" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973092183" fileName="ParenthesisUtil.java" startLine="110" startPosition="24" endLine="111" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973092200" fileName="ParenthesisUtil.java" startLine="112" startPosition="65" endLine="113" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973166000" fileName="ParenthesisUtil.java" startLine="113" startPosition="39" endLine="114" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973092210" fileName="ParenthesisUtil.java" startLine="114" startPosition="91" endLine="115" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2329139813973092216" fileName="ParenthesisUtil.java" startLine="115" startPosition="151" endLine="116" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973092223" fileName="ParenthesisUtil.java" startLine="116" startPosition="83" endLine="117" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7583777362088012179" fileName="ParenthesisUtil.java" startLine="118" startPosition="7" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2441191009825748389" fileName="ParenthesisUtil.java" startLine="119" startPosition="0" endLine="120" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973092190" fileName="ParenthesisUtil.java" startLine="120" startPosition="46" endLine="121" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2163970720682265698" fileName="ParenthesisUtil.java" startLine="121" startPosition="93" endLine="122" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973092236" fileName="ParenthesisUtil.java" startLine="125" startPosition="43" endLine="126" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329139813973092244" fileName="ParenthesisUtil.java" startLine="128" startPosition="11" endLine="129" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="2163970720683774522" fileName="ParenthesisUtil.java" startLine="129" startPosition="43" endLine="130" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6653651625794691932" fileName="ParenthesisUtil.java" startLine="131" startPosition="119" endLine="132" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6653651625794692277" fileName="ParenthesisUtil.java" startLine="133" startPosition="9" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2441191009822211867" fileName="ParenthesisUtil.java" startLine="134" startPosition="0" endLine="135" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009822213549" fileName="ParenthesisUtil.java" startLine="135" startPosition="284" endLine="136" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009822216895" fileName="ParenthesisUtil.java" startLine="136" startPosition="286" endLine="137" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009822217979" fileName="ParenthesisUtil.java" startLine="137" startPosition="103" endLine="138" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009822335528" fileName="ParenthesisUtil.java" startLine="138" startPosition="89" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2441191009825857777" fileName="ParenthesisUtil.java" startLine="139" startPosition="0" endLine="140" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2441191009822259761" fileName="ParenthesisUtil.java" startLine="141" startPosition="244" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2441191009822259825" fileName="ParenthesisUtil.java" startLine="144" startPosition="247" endLine="145" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="2163970720685275024" fileName="ParenthesisUtil.java" startLine="146" startPosition="9" endLine="147" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2441191009825865933" fileName="ParenthesisUtil.java" startLine="147" startPosition="39" endLine="148" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2441191009825862129" fileName="ParenthesisUtil.java" startLine="149" startPosition="7" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973092330" fileName="ParenthesisUtil.java" startLine="150" startPosition="55" endLine="151" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973276325" fileName="ParenthesisUtil.java" startLine="153" startPosition="22" endLine="154" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973276327" fileName="ParenthesisUtil.java" startLine="155" startPosition="35" endLine="156" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973320148" fileName="ParenthesisUtil.java" startLine="157" startPosition="14" endLine="158" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973276337" fileName="ParenthesisUtil.java" startLine="159" startPosition="7" endLine="160" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329139813973276353" fileName="ParenthesisUtil.java" startLine="161" startPosition="5" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2329139813973330067" fileName="ParenthesisUtil.java" startLine="162" startPosition="0" endLine="163" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163724321528" fileName="ParenthesisUtil.java" startLine="163" startPosition="71" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2441191009825870606" fileName="ParenthesisUtil.java" startLine="164" startPosition="0" endLine="165" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2329139813973366409" fileName="ParenthesisUtil.java" startLine="165" startPosition="87" endLine="166" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2329139813973371995" fileName="ParenthesisUtil.java" startLine="166" startPosition="89" endLine="167" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495044841966" fileName="ParenthesisUtil.java" startLine="168" startPosition="9" endLine="169" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4985347495044725767" fileName="ParenthesisUtil.java" startLine="169" startPosition="74" endLine="170" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495044725773" fileName="ParenthesisUtil.java" startLine="170" startPosition="89" endLine="171" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495044774353" fileName="ParenthesisUtil.java" startLine="172" startPosition="50" endLine="173" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495044725795" fileName="ParenthesisUtil.java" startLine="174" startPosition="14" endLine="175" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495044725801" fileName="ParenthesisUtil.java" startLine="175" startPosition="151" endLine="176" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495044782341" fileName="ParenthesisUtil.java" startLine="176" startPosition="83" endLine="177" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7247988578522027327" fileName="ParenthesisUtil.java" startLine="179" startPosition="15" endLine="180" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3313213291232478798" fileName="ParenthesisUtil.java" startLine="193" startPosition="94" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3313213291232423366" fileName="ParenthesisUtil.java" startLine="194" startPosition="0" endLine="195" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3313213291232462367" fileName="ParenthesisUtil.java" startLine="195" startPosition="97" endLine="196" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="751045515425795831" fileName="ParenthesisUtil.java" startLine="196" startPosition="72" endLine="197" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3313213291232454874" fileName="ParenthesisUtil.java" startLine="197" startPosition="82" endLine="198" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3313213291232469865" fileName="ParenthesisUtil.java" startLine="198" startPosition="98" endLine="199" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="751045515425795834" fileName="ParenthesisUtil.java" startLine="199" startPosition="73" endLine="200" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7763247701662055463" fileName="ParenthesisUtil.java" startLine="200" startPosition="85" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7763247701662066788" fileName="ParenthesisUtil.java" startLine="201" startPosition="0" endLine="202" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7763247701662059574" fileName="ParenthesisUtil.java" startLine="202" startPosition="35" endLine="203" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4985347495059677184" fileName="ParenthesisUtil.java" startLine="203" startPosition="36" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="751045515425796013" fileName="ParenthesisUtil.java" startLine="204" startPosition="0" endLine="205" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1742226163692420786" fileName="ParenthesisUtil.java" startLine="206" startPosition="116" endLine="207" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692672227" fileName="ParenthesisUtil.java" startLine="208" startPosition="133" endLine="209" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692739170" fileName="ParenthesisUtil.java" startLine="210" startPosition="122" endLine="211" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692741170" fileName="ParenthesisUtil.java" startLine="212" startPosition="5" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="751045515425796103" fileName="ParenthesisUtil.java" startLine="213" startPosition="0" endLine="214" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="751045515425796110" fileName="ParenthesisUtil.java" startLine="214" startPosition="79" endLine="215" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163692305153" fileName="ParenthesisUtil.java" startLine="221" startPosition="32" endLine="222" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305157" fileName="ParenthesisUtil.java" startLine="222" startPosition="55" endLine="223" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305162" fileName="ParenthesisUtil.java" startLine="223" startPosition="79" endLine="224" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305167" fileName="ParenthesisUtil.java" startLine="224" startPosition="81" endLine="225" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305172" fileName="ParenthesisUtil.java" startLine="225" startPosition="66" endLine="226" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163692305176" fileName="ParenthesisUtil.java" startLine="227" startPosition="5" endLine="228" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1742226163692305181" fileName="ParenthesisUtil.java" startLine="228" startPosition="77" endLine="229" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1742226163692305186" fileName="ParenthesisUtil.java" startLine="229" startPosition="79" endLine="230" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1742226163692305194" fileName="ParenthesisUtil.java" startLine="230" startPosition="49" endLine="231" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1742226163692305203" fileName="ParenthesisUtil.java" startLine="231" startPosition="60" endLine="232" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305207" fileName="ParenthesisUtil.java" startLine="232" startPosition="51" endLine="233" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305213" fileName="ParenthesisUtil.java" startLine="233" startPosition="64" endLine="234" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305219" fileName="ParenthesisUtil.java" startLine="234" startPosition="77" endLine="235" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305225" fileName="ParenthesisUtil.java" startLine="235" startPosition="79" endLine="236" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1742226163692305230" fileName="ParenthesisUtil.java" startLine="237" startPosition="27" endLine="238" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305234" fileName="ParenthesisUtil.java" startLine="238" startPosition="25" endLine="239" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305244" fileName="ParenthesisUtil.java" startLine="240" startPosition="12" endLine="241" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1742226163692305250" fileName="ParenthesisUtil.java" startLine="243" startPosition="28" endLine="244" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974204" fileName="ParenthesisUtil.java" startLine="250" startPosition="162" endLine="251" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495062974212" fileName="ParenthesisUtil.java" startLine="252" startPosition="28" endLine="253" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974221" fileName="ParenthesisUtil.java" startLine="254" startPosition="29" endLine="255" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974228" fileName="ParenthesisUtil.java" startLine="255" startPosition="196" endLine="256" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974238" fileName="ParenthesisUtil.java" startLine="257" startPosition="14" endLine="258" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974250" fileName="ParenthesisUtil.java" startLine="261" startPosition="29" endLine="262" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974257" fileName="ParenthesisUtil.java" startLine="262" startPosition="101" endLine="263" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974267" fileName="ParenthesisUtil.java" startLine="264" startPosition="14" endLine="265" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974272" fileName="ParenthesisUtil.java" startLine="267" startPosition="5" endLine="268" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062974279" fileName="ParenthesisUtil.java" startLine="268" startPosition="84" endLine="269" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938750" fileName="ParenthesisUtil.java" startLine="281" startPosition="171" endLine="282" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062938763" fileName="ParenthesisUtil.java" startLine="283" startPosition="5" endLine="284" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495062920677" fileName="ParenthesisUtil.java" startLine="290" startPosition="28" endLine="291" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920682" fileName="ParenthesisUtil.java" startLine="291" startPosition="58" endLine="292" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920692" fileName="ParenthesisUtil.java" startLine="293" startPosition="12" endLine="294" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920697" fileName="ParenthesisUtil.java" startLine="295" startPosition="5" endLine="296" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495062920704" fileName="ParenthesisUtil.java" startLine="296" startPosition="64" endLine="297" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059585323" fileName="ParenthesisUtil.java" startLine="306" startPosition="94" endLine="307" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495059555933" fileName="ParenthesisUtil.java" startLine="308" startPosition="72" endLine="309" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4985347495059555935" fileName="ParenthesisUtil.java" startLine="309" startPosition="67" endLine="310" endPosition="352" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555941" fileName="ParenthesisUtil.java" startLine="310" startPosition="352" endLine="311" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555945" fileName="ParenthesisUtil.java" startLine="311" startPosition="46" endLine="312" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495059555952" fileName="ParenthesisUtil.java" startLine="312" startPosition="128" endLine="313" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495059555958" fileName="ParenthesisUtil.java" startLine="314" startPosition="64" endLine="315" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495059555966" fileName="ParenthesisUtil.java" startLine="316" startPosition="88" endLine="317" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555971" fileName="ParenthesisUtil.java" startLine="318" startPosition="21" endLine="319" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059622619" fileName="ParenthesisUtil.java" startLine="320" startPosition="18" endLine="321" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555976" fileName="ParenthesisUtil.java" startLine="322" startPosition="11" endLine="323" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555982" fileName="ParenthesisUtil.java" startLine="324" startPosition="16" endLine="325" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059555993" fileName="ParenthesisUtil.java" startLine="326" startPosition="9" endLine="327" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059556005" fileName="ParenthesisUtil.java" startLine="329" startPosition="12" endLine="330" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4985347495061166004" fileName="ParenthesisUtil.java" startLine="330" startPosition="31" endLine="331" endPosition="401" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4985347495059556015" fileName="ParenthesisUtil.java" startLine="332" startPosition="45" endLine="333" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059556019" fileName="ParenthesisUtil.java" startLine="333" startPosition="47" endLine="334" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059556028" fileName="ParenthesisUtil.java" startLine="335" startPosition="14" endLine="336" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4985347495059614974" fileName="ParenthesisUtil.java" startLine="338" startPosition="5" endLine="339" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329139813973165874" fileName="ParenthesisUtil.java" startLine="348" startPosition="33" endLine="349" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973173002" fileName="ParenthesisUtil.java" startLine="350" startPosition="12" endLine="351" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7251340091287918931" fileName="ParenthesisUtil.java" startLine="362" startPosition="65" endLine="363" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7251340091287923024" fileName="ParenthesisUtil.java" startLine="373" startPosition="66" endLine="374" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7251340091287912618" fileName="ParenthesisUtil.java" startLine="379" startPosition="79" endLine="380" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7251340091287912624" fileName="ParenthesisUtil.java" startLine="380" startPosition="56" endLine="381" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009808759403" fileName="ParenthesisUtil.java" startLine="382" startPosition="149" endLine="383" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009808760569" fileName="ParenthesisUtil.java" startLine="383" startPosition="274" endLine="384" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2441191009808819944" fileName="ParenthesisUtil.java" startLine="385" startPosition="75" endLine="386" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009808831146" fileName="ParenthesisUtil.java" startLine="388" startPosition="77" endLine="389" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009808836850" fileName="ParenthesisUtil.java" startLine="390" startPosition="7" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7251340091287912663" fileName="ParenthesisUtil.java" startLine="391" startPosition="0" endLine="392" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7251340091287912667" fileName="ParenthesisUtil.java" startLine="392" startPosition="29" endLine="393" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7251340091287912676" fileName="ParenthesisUtil.java" startLine="394" startPosition="5" endLine="395" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7251340091277418509" fileName="ParenthesisUtil.java" startLine="405" startPosition="73" endLine="406" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3313213291215942668" fileName="ParenthesisUtil.java" startLine="406" startPosition="46" endLine="407" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2163970720691423904" fileName="ParenthesisUtil.java" startLine="407" startPosition="49" endLine="408" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3313213291212468844" fileName="ParenthesisUtil.java" startLine="408" startPosition="79" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2163970720692945417" fileName="ParenthesisUtil.java" startLine="411" startPosition="106" endLine="412" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2163970720692970390" fileName="ParenthesisUtil.java" startLine="412" startPosition="107" endLine="413" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2163970720692971205" fileName="ParenthesisUtil.java" startLine="413" startPosition="0" endLine="414" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2163970720692995749" fileName="ParenthesisUtil.java" startLine="414" startPosition="96" endLine="415" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2163970720688353903" fileName="ParenthesisUtil.java" startLine="416" startPosition="432" endLine="417" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6653651625794659904" fileName="ParenthesisUtil.java" startLine="418" startPosition="161" endLine="419" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6653651625794659536" fileName="ParenthesisUtil.java" startLine="422" startPosition="7" endLine="423" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7251340091277460054" fileName="ParenthesisUtil.java" startLine="424" startPosition="5" endLine="425" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7247988578525650413" fileName="ParenthesisUtil.java" startLine="430" startPosition="60" endLine="431" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3706019411777599081" fileName="ParenthesisUtil.java" startLine="431" startPosition="25" endLine="432" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7247988578525658632" fileName="ParenthesisUtil.java" startLine="433" startPosition="129" endLine="434" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3706019411777598592" fileName="ParenthesisUtil.java" startLine="435" startPosition="5" endLine="436" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3706019411776080142" fileName="ParenthesisUtil.java" startLine="436" startPosition="0" endLine="437" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3706019411776085628" fileName="ParenthesisUtil.java" startLine="437" startPosition="148" endLine="438" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3706019411776114992" fileName="ParenthesisUtil.java" startLine="438" startPosition="43" endLine="439" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3706019411776094013" fileName="ParenthesisUtil.java" startLine="442" startPosition="37" endLine="443" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3706019411776107894" fileName="ParenthesisUtil.java" startLine="445" startPosition="9" endLine="446" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3706019411776094443" fileName="ParenthesisUtil.java" startLine="446" startPosition="40" endLine="447" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000185" fileName="ParenthesisUtil.java" startLine="453" startPosition="61" endLine="454" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000189" fileName="ParenthesisUtil.java" startLine="454" startPosition="49" endLine="455" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000193" fileName="ParenthesisUtil.java" startLine="455" startPosition="48" endLine="456" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000219" fileName="ParenthesisUtil.java" startLine="461" startPosition="83" endLine="462" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000236" fileName="ParenthesisUtil.java" startLine="463" startPosition="105" endLine="464" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000243" fileName="ParenthesisUtil.java" startLine="465" startPosition="52" endLine="466" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000248" fileName="ParenthesisUtil.java" startLine="466" startPosition="61" endLine="467" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522392247" fileName="ParenthesisUtil.java" startLine="470" startPosition="115" endLine="471" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522425104" fileName="ParenthesisUtil.java" startLine="472" startPosition="20" endLine="473" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522395089" fileName="ParenthesisUtil.java" startLine="473" startPosition="209" endLine="474" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522397563" fileName="ParenthesisUtil.java" startLine="475" startPosition="14" endLine="476" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522450635" fileName="ParenthesisUtil.java" startLine="476" startPosition="206" endLine="477" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7247988578522477453" fileName="ParenthesisUtil.java" startLine="478" startPosition="7" endLine="479" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000262" fileName="ParenthesisUtil.java" startLine="484" startPosition="50" endLine="485" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4830579082341000270" fileName="ParenthesisUtil.java" startLine="487" startPosition="128" endLine="488" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000277" fileName="ParenthesisUtil.java" startLine="488" startPosition="131" endLine="489" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000283" fileName="ParenthesisUtil.java" startLine="490" startPosition="79" endLine="491" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000294" fileName="ParenthesisUtil.java" startLine="492" startPosition="85" endLine="493" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000305" fileName="ParenthesisUtil.java" startLine="495" startPosition="65" endLine="496" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000310" fileName="ParenthesisUtil.java" startLine="496" startPosition="58" endLine="497" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000325" fileName="ParenthesisUtil.java" startLine="500" startPosition="141" endLine="501" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000332" fileName="ParenthesisUtil.java" startLine="501" startPosition="144" endLine="502" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000340" fileName="ParenthesisUtil.java" startLine="502" startPosition="117" endLine="503" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000345" fileName="ParenthesisUtil.java" startLine="503" startPosition="55" endLine="504" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095125007083" fileName="ParenthesisUtil.java" startLine="506" startPosition="127" endLine="507" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8152288095125031494" fileName="ParenthesisUtil.java" startLine="507" startPosition="132" endLine="508" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095125060504" fileName="ParenthesisUtil.java" startLine="508" startPosition="57" endLine="509" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095125065412" fileName="ParenthesisUtil.java" startLine="509" startPosition="119" endLine="510" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095126586412" fileName="ParenthesisUtil.java" startLine="512" startPosition="224" endLine="513" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8152288095126611189" fileName="ParenthesisUtil.java" startLine="513" startPosition="130" endLine="514" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095126618585" fileName="ParenthesisUtil.java" startLine="514" startPosition="56" endLine="515" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8152288095126628772" fileName="ParenthesisUtil.java" startLine="515" startPosition="116" endLine="516" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000396" fileName="ParenthesisUtil.java" startLine="520" startPosition="61" endLine="521" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000404" fileName="ParenthesisUtil.java" startLine="522" startPosition="106" endLine="523" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4830579082341000411" fileName="ParenthesisUtil.java" startLine="524" startPosition="5" endLine="525" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000416" fileName="ParenthesisUtil.java" startLine="525" startPosition="106" endLine="526" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000426" fileName="ParenthesisUtil.java" startLine="526" startPosition="99" endLine="527" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000439" fileName="ParenthesisUtil.java" startLine="528" startPosition="24" endLine="529" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4830579082341000444" fileName="ParenthesisUtil.java" startLine="530" startPosition="5" endLine="531" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4830579082341000510" fileName="ParenthesisUtil.java" startLine="534" startPosition="73" endLine="535" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4830579082341000521" fileName="ParenthesisUtil.java" startLine="535" startPosition="154" endLine="536" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000525" fileName="ParenthesisUtil.java" startLine="536" startPosition="38" endLine="537" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000530" fileName="ParenthesisUtil.java" startLine="537" startPosition="50" endLine="538" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000538" fileName="ParenthesisUtil.java" startLine="539" startPosition="18" endLine="540" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000547" fileName="ParenthesisUtil.java" startLine="541" startPosition="12" endLine="542" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000564" fileName="ParenthesisUtil.java" startLine="546" startPosition="83" endLine="547" endPosition="946" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="550" startPosition="64" endLine="551" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="554" startPosition="65" endLine="555" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="558" startPosition="68" endLine="559" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="562" startPosition="65" endLine="563" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="566" startPosition="66" endLine="567" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="570" startPosition="66" endLine="571" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="574" startPosition="65" endLine="575" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="578" startPosition="64" endLine="579" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3313213291232127474" fileName="ParenthesisUtil.java" startLine="107" startPosition="37" endLine="108" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973092183" fileName="ParenthesisUtil.java" startLine="109" startPosition="24" endLine="110" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973092200" fileName="ParenthesisUtil.java" startLine="111" startPosition="65" endLine="112" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973166000" fileName="ParenthesisUtil.java" startLine="112" startPosition="39" endLine="113" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973092210" fileName="ParenthesisUtil.java" startLine="113" startPosition="91" endLine="114" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2329139813973092216" fileName="ParenthesisUtil.java" startLine="114" startPosition="151" endLine="115" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973092223" fileName="ParenthesisUtil.java" startLine="115" startPosition="83" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7583777362088012179" fileName="ParenthesisUtil.java" startLine="117" startPosition="7" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2441191009825748389" fileName="ParenthesisUtil.java" startLine="118" startPosition="0" endLine="119" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973092190" fileName="ParenthesisUtil.java" startLine="119" startPosition="46" endLine="120" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973092236" fileName="ParenthesisUtil.java" startLine="123" startPosition="43" endLine="124" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329139813973092244" fileName="ParenthesisUtil.java" startLine="126" startPosition="11" endLine="127" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="6653651625794691932" fileName="ParenthesisUtil.java" startLine="128" startPosition="119" endLine="129" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6653651625794692277" fileName="ParenthesisUtil.java" startLine="130" startPosition="9" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2441191009822211867" fileName="ParenthesisUtil.java" startLine="131" startPosition="0" endLine="132" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009822213549" fileName="ParenthesisUtil.java" startLine="132" startPosition="284" endLine="133" endPosition="286" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009822216895" fileName="ParenthesisUtil.java" startLine="133" startPosition="286" endLine="134" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009822217979" fileName="ParenthesisUtil.java" startLine="134" startPosition="103" endLine="135" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009822335528" fileName="ParenthesisUtil.java" startLine="135" startPosition="89" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2441191009825857777" fileName="ParenthesisUtil.java" startLine="136" startPosition="0" endLine="137" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2441191009822259761" fileName="ParenthesisUtil.java" startLine="138" startPosition="244" endLine="139" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2441191009822259825" fileName="ParenthesisUtil.java" startLine="141" startPosition="247" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="2441191009825865933" fileName="ParenthesisUtil.java" startLine="143" startPosition="9" endLine="144" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2441191009825862129" fileName="ParenthesisUtil.java" startLine="145" startPosition="7" endLine="146" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973092330" fileName="ParenthesisUtil.java" startLine="146" startPosition="55" endLine="147" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973276325" fileName="ParenthesisUtil.java" startLine="149" startPosition="22" endLine="150" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973276327" fileName="ParenthesisUtil.java" startLine="151" startPosition="35" endLine="152" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973320148" fileName="ParenthesisUtil.java" startLine="153" startPosition="14" endLine="154" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973276337" fileName="ParenthesisUtil.java" startLine="155" startPosition="7" endLine="156" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329139813973276353" fileName="ParenthesisUtil.java" startLine="157" startPosition="5" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2329139813973330067" fileName="ParenthesisUtil.java" startLine="158" startPosition="0" endLine="159" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163724321528" fileName="ParenthesisUtil.java" startLine="159" startPosition="71" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2441191009825870606" fileName="ParenthesisUtil.java" startLine="160" startPosition="0" endLine="161" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2329139813973366409" fileName="ParenthesisUtil.java" startLine="161" startPosition="87" endLine="162" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2329139813973371995" fileName="ParenthesisUtil.java" startLine="162" startPosition="89" endLine="163" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495044841966" fileName="ParenthesisUtil.java" startLine="164" startPosition="9" endLine="165" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4985347495044725767" fileName="ParenthesisUtil.java" startLine="165" startPosition="74" endLine="166" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495044725773" fileName="ParenthesisUtil.java" startLine="166" startPosition="89" endLine="167" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495044774353" fileName="ParenthesisUtil.java" startLine="168" startPosition="50" endLine="169" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495044725795" fileName="ParenthesisUtil.java" startLine="170" startPosition="14" endLine="171" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495044725801" fileName="ParenthesisUtil.java" startLine="171" startPosition="151" endLine="172" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495044782341" fileName="ParenthesisUtil.java" startLine="172" startPosition="83" endLine="173" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7247988578522027327" fileName="ParenthesisUtil.java" startLine="175" startPosition="15" endLine="176" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3313213291232478798" fileName="ParenthesisUtil.java" startLine="189" startPosition="94" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3313213291232423366" fileName="ParenthesisUtil.java" startLine="190" startPosition="0" endLine="191" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3313213291232462367" fileName="ParenthesisUtil.java" startLine="191" startPosition="97" endLine="192" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="751045515425795831" fileName="ParenthesisUtil.java" startLine="192" startPosition="72" endLine="193" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3313213291232454874" fileName="ParenthesisUtil.java" startLine="193" startPosition="82" endLine="194" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3313213291232469865" fileName="ParenthesisUtil.java" startLine="194" startPosition="98" endLine="195" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="751045515425795834" fileName="ParenthesisUtil.java" startLine="195" startPosition="73" endLine="196" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7763247701662055463" fileName="ParenthesisUtil.java" startLine="196" startPosition="85" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7763247701662066788" fileName="ParenthesisUtil.java" startLine="197" startPosition="0" endLine="198" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7763247701662059574" fileName="ParenthesisUtil.java" startLine="198" startPosition="35" endLine="199" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="4985347495059677184" fileName="ParenthesisUtil.java" startLine="199" startPosition="36" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="751045515425796013" fileName="ParenthesisUtil.java" startLine="200" startPosition="0" endLine="201" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1742226163692420786" fileName="ParenthesisUtil.java" startLine="202" startPosition="116" endLine="203" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692672227" fileName="ParenthesisUtil.java" startLine="204" startPosition="133" endLine="205" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692739170" fileName="ParenthesisUtil.java" startLine="206" startPosition="122" endLine="207" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692741170" fileName="ParenthesisUtil.java" startLine="208" startPosition="5" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="751045515425796103" fileName="ParenthesisUtil.java" startLine="209" startPosition="0" endLine="210" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="751045515425796110" fileName="ParenthesisUtil.java" startLine="210" startPosition="79" endLine="211" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163692305153" fileName="ParenthesisUtil.java" startLine="217" startPosition="32" endLine="218" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305157" fileName="ParenthesisUtil.java" startLine="218" startPosition="55" endLine="219" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305162" fileName="ParenthesisUtil.java" startLine="219" startPosition="79" endLine="220" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305167" fileName="ParenthesisUtil.java" startLine="220" startPosition="81" endLine="221" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305172" fileName="ParenthesisUtil.java" startLine="221" startPosition="66" endLine="222" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1742226163692305176" fileName="ParenthesisUtil.java" startLine="223" startPosition="5" endLine="224" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1742226163692305181" fileName="ParenthesisUtil.java" startLine="224" startPosition="77" endLine="225" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1742226163692305186" fileName="ParenthesisUtil.java" startLine="225" startPosition="79" endLine="226" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1742226163692305194" fileName="ParenthesisUtil.java" startLine="226" startPosition="49" endLine="227" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1742226163692305203" fileName="ParenthesisUtil.java" startLine="227" startPosition="60" endLine="228" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305207" fileName="ParenthesisUtil.java" startLine="228" startPosition="51" endLine="229" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305213" fileName="ParenthesisUtil.java" startLine="229" startPosition="64" endLine="230" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305219" fileName="ParenthesisUtil.java" startLine="230" startPosition="77" endLine="231" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305225" fileName="ParenthesisUtil.java" startLine="231" startPosition="79" endLine="232" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1742226163692305230" fileName="ParenthesisUtil.java" startLine="233" startPosition="27" endLine="234" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305234" fileName="ParenthesisUtil.java" startLine="234" startPosition="25" endLine="235" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305244" fileName="ParenthesisUtil.java" startLine="236" startPosition="12" endLine="237" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1742226163692305250" fileName="ParenthesisUtil.java" startLine="239" startPosition="28" endLine="240" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974204" fileName="ParenthesisUtil.java" startLine="246" startPosition="162" endLine="247" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495062974212" fileName="ParenthesisUtil.java" startLine="248" startPosition="28" endLine="249" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974221" fileName="ParenthesisUtil.java" startLine="250" startPosition="29" endLine="251" endPosition="196" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974228" fileName="ParenthesisUtil.java" startLine="251" startPosition="196" endLine="252" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974238" fileName="ParenthesisUtil.java" startLine="253" startPosition="14" endLine="254" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974250" fileName="ParenthesisUtil.java" startLine="257" startPosition="29" endLine="258" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974257" fileName="ParenthesisUtil.java" startLine="258" startPosition="101" endLine="259" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974267" fileName="ParenthesisUtil.java" startLine="260" startPosition="14" endLine="261" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974272" fileName="ParenthesisUtil.java" startLine="263" startPosition="5" endLine="264" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062974279" fileName="ParenthesisUtil.java" startLine="264" startPosition="84" endLine="265" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938750" fileName="ParenthesisUtil.java" startLine="277" startPosition="171" endLine="278" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062938763" fileName="ParenthesisUtil.java" startLine="279" startPosition="5" endLine="280" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495062920677" fileName="ParenthesisUtil.java" startLine="286" startPosition="28" endLine="287" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920682" fileName="ParenthesisUtil.java" startLine="287" startPosition="58" endLine="288" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920692" fileName="ParenthesisUtil.java" startLine="289" startPosition="12" endLine="290" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920697" fileName="ParenthesisUtil.java" startLine="291" startPosition="5" endLine="292" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495062920704" fileName="ParenthesisUtil.java" startLine="292" startPosition="64" endLine="293" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059585323" fileName="ParenthesisUtil.java" startLine="302" startPosition="94" endLine="303" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495059555933" fileName="ParenthesisUtil.java" startLine="304" startPosition="72" endLine="305" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4985347495059555935" fileName="ParenthesisUtil.java" startLine="305" startPosition="67" endLine="306" endPosition="352" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555941" fileName="ParenthesisUtil.java" startLine="306" startPosition="352" endLine="307" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555945" fileName="ParenthesisUtil.java" startLine="307" startPosition="46" endLine="308" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495059555952" fileName="ParenthesisUtil.java" startLine="308" startPosition="128" endLine="309" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495059555958" fileName="ParenthesisUtil.java" startLine="310" startPosition="64" endLine="311" endPosition="369" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495059555966" fileName="ParenthesisUtil.java" startLine="312" startPosition="88" endLine="313" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555971" fileName="ParenthesisUtil.java" startLine="314" startPosition="21" endLine="315" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059622619" fileName="ParenthesisUtil.java" startLine="316" startPosition="18" endLine="317" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555976" fileName="ParenthesisUtil.java" startLine="318" startPosition="11" endLine="319" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555982" fileName="ParenthesisUtil.java" startLine="320" startPosition="16" endLine="321" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059555993" fileName="ParenthesisUtil.java" startLine="322" startPosition="9" endLine="323" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059556005" fileName="ParenthesisUtil.java" startLine="325" startPosition="12" endLine="326" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4985347495061166004" fileName="ParenthesisUtil.java" startLine="326" startPosition="31" endLine="327" endPosition="401" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4985347495059556015" fileName="ParenthesisUtil.java" startLine="328" startPosition="45" endLine="329" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059556019" fileName="ParenthesisUtil.java" startLine="329" startPosition="47" endLine="330" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059556028" fileName="ParenthesisUtil.java" startLine="331" startPosition="14" endLine="332" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4985347495059614974" fileName="ParenthesisUtil.java" startLine="334" startPosition="5" endLine="335" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329139813973165874" fileName="ParenthesisUtil.java" startLine="344" startPosition="33" endLine="345" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973173002" fileName="ParenthesisUtil.java" startLine="346" startPosition="12" endLine="347" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7251340091287918931" fileName="ParenthesisUtil.java" startLine="358" startPosition="65" endLine="359" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7251340091287923024" fileName="ParenthesisUtil.java" startLine="369" startPosition="66" endLine="370" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7251340091287912618" fileName="ParenthesisUtil.java" startLine="375" startPosition="79" endLine="376" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7251340091287912624" fileName="ParenthesisUtil.java" startLine="376" startPosition="56" endLine="377" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009808759403" fileName="ParenthesisUtil.java" startLine="378" startPosition="149" endLine="379" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009808760569" fileName="ParenthesisUtil.java" startLine="379" startPosition="274" endLine="380" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2441191009808819944" fileName="ParenthesisUtil.java" startLine="381" startPosition="75" endLine="382" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2441191009808831146" fileName="ParenthesisUtil.java" startLine="384" startPosition="77" endLine="385" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2441191009808836850" fileName="ParenthesisUtil.java" startLine="386" startPosition="7" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7251340091287912663" fileName="ParenthesisUtil.java" startLine="387" startPosition="0" endLine="388" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7251340091287912667" fileName="ParenthesisUtil.java" startLine="388" startPosition="29" endLine="389" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7251340091287912676" fileName="ParenthesisUtil.java" startLine="390" startPosition="5" endLine="391" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7251340091277418509" fileName="ParenthesisUtil.java" startLine="401" startPosition="73" endLine="402" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3313213291215942668" fileName="ParenthesisUtil.java" startLine="402" startPosition="46" endLine="403" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2163970720691423904" fileName="ParenthesisUtil.java" startLine="403" startPosition="49" endLine="404" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3313213291212468844" fileName="ParenthesisUtil.java" startLine="404" startPosition="79" endLine="405" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2163970720692945417" fileName="ParenthesisUtil.java" startLine="407" startPosition="106" endLine="408" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2163970720692971205" fileName="ParenthesisUtil.java" startLine="408" startPosition="107" endLine="409" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2163970720692995749" fileName="ParenthesisUtil.java" startLine="409" startPosition="96" endLine="410" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2163970720688353903" fileName="ParenthesisUtil.java" startLine="411" startPosition="432" endLine="412" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6653651625794659904" fileName="ParenthesisUtil.java" startLine="413" startPosition="161" endLine="414" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="6653651625794659536" fileName="ParenthesisUtil.java" startLine="417" startPosition="7" endLine="418" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7251340091277460054" fileName="ParenthesisUtil.java" startLine="419" startPosition="5" endLine="420" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7247988578525650413" fileName="ParenthesisUtil.java" startLine="425" startPosition="60" endLine="426" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3706019411777599081" fileName="ParenthesisUtil.java" startLine="426" startPosition="25" endLine="427" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7247988578525658632" fileName="ParenthesisUtil.java" startLine="428" startPosition="129" endLine="429" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3706019411777598592" fileName="ParenthesisUtil.java" startLine="430" startPosition="5" endLine="431" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3706019411776080142" fileName="ParenthesisUtil.java" startLine="431" startPosition="0" endLine="432" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3706019411776085628" fileName="ParenthesisUtil.java" startLine="432" startPosition="148" endLine="433" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3706019411776114992" fileName="ParenthesisUtil.java" startLine="433" startPosition="43" endLine="434" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3706019411776094013" fileName="ParenthesisUtil.java" startLine="437" startPosition="37" endLine="438" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3706019411776107894" fileName="ParenthesisUtil.java" startLine="440" startPosition="9" endLine="441" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3706019411776094443" fileName="ParenthesisUtil.java" startLine="441" startPosition="40" endLine="442" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000185" fileName="ParenthesisUtil.java" startLine="448" startPosition="61" endLine="449" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000189" fileName="ParenthesisUtil.java" startLine="449" startPosition="49" endLine="450" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000193" fileName="ParenthesisUtil.java" startLine="450" startPosition="48" endLine="451" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000219" fileName="ParenthesisUtil.java" startLine="456" startPosition="83" endLine="457" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000236" fileName="ParenthesisUtil.java" startLine="458" startPosition="105" endLine="459" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000243" fileName="ParenthesisUtil.java" startLine="460" startPosition="52" endLine="461" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000248" fileName="ParenthesisUtil.java" startLine="461" startPosition="61" endLine="462" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522392247" fileName="ParenthesisUtil.java" startLine="465" startPosition="115" endLine="466" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522425104" fileName="ParenthesisUtil.java" startLine="467" startPosition="20" endLine="468" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522395089" fileName="ParenthesisUtil.java" startLine="468" startPosition="209" endLine="469" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522397563" fileName="ParenthesisUtil.java" startLine="470" startPosition="14" endLine="471" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522450635" fileName="ParenthesisUtil.java" startLine="471" startPosition="206" endLine="472" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7247988578522477453" fileName="ParenthesisUtil.java" startLine="473" startPosition="7" endLine="474" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000262" fileName="ParenthesisUtil.java" startLine="479" startPosition="50" endLine="480" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4830579082341000270" fileName="ParenthesisUtil.java" startLine="482" startPosition="128" endLine="483" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000277" fileName="ParenthesisUtil.java" startLine="483" startPosition="131" endLine="484" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000283" fileName="ParenthesisUtil.java" startLine="485" startPosition="79" endLine="486" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000294" fileName="ParenthesisUtil.java" startLine="487" startPosition="85" endLine="488" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000305" fileName="ParenthesisUtil.java" startLine="490" startPosition="65" endLine="491" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000310" fileName="ParenthesisUtil.java" startLine="491" startPosition="58" endLine="492" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000325" fileName="ParenthesisUtil.java" startLine="495" startPosition="141" endLine="496" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000332" fileName="ParenthesisUtil.java" startLine="496" startPosition="144" endLine="497" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000340" fileName="ParenthesisUtil.java" startLine="497" startPosition="117" endLine="498" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000345" fileName="ParenthesisUtil.java" startLine="498" startPosition="55" endLine="499" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095125007083" fileName="ParenthesisUtil.java" startLine="501" startPosition="127" endLine="502" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095125031494" fileName="ParenthesisUtil.java" startLine="502" startPosition="132" endLine="503" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095125060504" fileName="ParenthesisUtil.java" startLine="503" startPosition="57" endLine="504" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095125065412" fileName="ParenthesisUtil.java" startLine="504" startPosition="119" endLine="505" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095126586412" fileName="ParenthesisUtil.java" startLine="507" startPosition="224" endLine="508" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8152288095126611189" fileName="ParenthesisUtil.java" startLine="508" startPosition="130" endLine="509" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095126618585" fileName="ParenthesisUtil.java" startLine="509" startPosition="56" endLine="510" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8152288095126628772" fileName="ParenthesisUtil.java" startLine="510" startPosition="116" endLine="511" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000396" fileName="ParenthesisUtil.java" startLine="515" startPosition="61" endLine="516" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000404" fileName="ParenthesisUtil.java" startLine="517" startPosition="106" endLine="518" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4830579082341000411" fileName="ParenthesisUtil.java" startLine="519" startPosition="5" endLine="520" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000416" fileName="ParenthesisUtil.java" startLine="520" startPosition="106" endLine="521" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000426" fileName="ParenthesisUtil.java" startLine="521" startPosition="99" endLine="522" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000439" fileName="ParenthesisUtil.java" startLine="523" startPosition="24" endLine="524" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4830579082341000444" fileName="ParenthesisUtil.java" startLine="525" startPosition="5" endLine="526" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4830579082341000510" fileName="ParenthesisUtil.java" startLine="529" startPosition="73" endLine="530" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4830579082341000521" fileName="ParenthesisUtil.java" startLine="530" startPosition="154" endLine="531" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000525" fileName="ParenthesisUtil.java" startLine="531" startPosition="38" endLine="532" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000530" fileName="ParenthesisUtil.java" startLine="532" startPosition="50" endLine="533" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000538" fileName="ParenthesisUtil.java" startLine="534" startPosition="18" endLine="535" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000547" fileName="ParenthesisUtil.java" startLine="536" startPosition="12" endLine="537" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000564" fileName="ParenthesisUtil.java" startLine="541" startPosition="83" endLine="542" endPosition="946" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="545" startPosition="64" endLine="546" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="549" startPosition="65" endLine="550" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="553" startPosition="68" endLine="554" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="557" startPosition="65" endLine="558" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="561" startPosition="66" endLine="562" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="565" startPosition="66" endLine="566" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="569" startPosition="65" endLine="570" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="573" startPosition="64" endLine="574" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4830579082341000583" fileName="ParenthesisUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParenthesisUtil#()V" />
-    <nodeInfo nodeId="2329139813973320080" fileName="ParenthesisUtil.java" startLine="157" startPosition="12" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1742226163692305242" fileName="ParenthesisUtil.java" startLine="240" startPosition="10" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974236" fileName="ParenthesisUtil.java" startLine="257" startPosition="12" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062974265" fileName="ParenthesisUtil.java" startLine="264" startPosition="12" endLine="266" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495062920690" fileName="ParenthesisUtil.java" startLine="293" startPosition="10" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495059622826" fileName="ParenthesisUtil.java" startLine="320" startPosition="16" endLine="322" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495059555980" fileName="ParenthesisUtil.java" startLine="324" startPosition="14" endLine="326" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4985347495059556026" fileName="ParenthesisUtil.java" startLine="335" startPosition="12" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2329139813973173452" fileName="ParenthesisUtil.java" startLine="350" startPosition="10" endLine="352" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4830579082341000545" fileName="ParenthesisUtil.java" startLine="541" startPosition="10" endLine="543" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2329139813973320080" fileName="ParenthesisUtil.java" startLine="153" startPosition="12" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1742226163692305242" fileName="ParenthesisUtil.java" startLine="236" startPosition="10" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974236" fileName="ParenthesisUtil.java" startLine="253" startPosition="12" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062974265" fileName="ParenthesisUtil.java" startLine="260" startPosition="12" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495062920690" fileName="ParenthesisUtil.java" startLine="289" startPosition="10" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495059622826" fileName="ParenthesisUtil.java" startLine="316" startPosition="16" endLine="318" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495059555980" fileName="ParenthesisUtil.java" startLine="320" startPosition="14" endLine="322" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4985347495059556026" fileName="ParenthesisUtil.java" startLine="331" startPosition="12" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2329139813973173452" fileName="ParenthesisUtil.java" startLine="346" startPosition="10" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4830579082341000545" fileName="ParenthesisUtil.java" startLine="536" startPosition="10" endLine="538" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7251340091273300245" fileName="ParenthesisUtil.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createUnmatchedLeftParenthesis#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7251340091277278261" fileName="ParenthesisUtil.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createUnmatchedRightParenthesis#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7247988578546708614" fileName="ParenthesisUtil.java" startLine="51" startPosition="29" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -14041,95 +14028,95 @@
     <nodeInfo nodeId="2163970720669249428" fileName="ParenthesisUtil.java" startLine="72" startPosition="11" endLine="75" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6653651625802609011" fileName="ParenthesisUtil.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="6653651625804155943" fileName="ParenthesisUtil.java" startLine="97" startPosition="7" endLine="100" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6653651625794688408" fileName="ParenthesisUtil.java" startLine="130" startPosition="62" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2441191009822214784" fileName="ParenthesisUtil.java" startLine="140" startPosition="96" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2441191009822259823" fileName="ParenthesisUtil.java" startLine="143" startPosition="9" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1742226163692305248" fileName="ParenthesisUtil.java" startLine="242" startPosition="5" endLine="245" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062938748" fileName="ParenthesisUtil.java" startLine="280" startPosition="71" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2441191009808791672" fileName="ParenthesisUtil.java" startLine="384" startPosition="276" endLine="387" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2441191009808831144" fileName="ParenthesisUtil.java" startLine="387" startPosition="7" endLine="390" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2163970720688351254" fileName="ParenthesisUtil.java" startLine="417" startPosition="135" endLine="420" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7247988578525651037" fileName="ParenthesisUtil.java" startLine="432" startPosition="36" endLine="435" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="442" startPosition="0" endLine="445" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7247988578522395008" fileName="ParenthesisUtil.java" startLine="475" startPosition="12" endLine="478" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4830579082341000260" fileName="ParenthesisUtil.java" startLine="483" startPosition="67" endLine="486" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000402" fileName="ParenthesisUtil.java" startLine="521" startPosition="51" endLine="524" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000437" fileName="ParenthesisUtil.java" startLine="527" startPosition="102" endLine="530" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000554" fileName="ParenthesisUtil.java" startLine="546" startPosition="0" endLine="549" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isBadPriority#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="550" startPosition="0" endLine="553" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0b0n0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="554" startPosition="0" endLine="557" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0a1a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="558" startPosition="0" endLine="561" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a1a5a1a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="562" startPosition="0" endLine="565" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0f0b0v#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="566" startPosition="0" endLine="569" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a2a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="570" startPosition="0" endLine="573" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a3a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="574" startPosition="0" endLine="577" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="578" startPosition="0" endLine="581" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0h0ib#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4985347495044725793" fileName="ParenthesisUtil.java" startLine="174" startPosition="12" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4830579082341000241" fileName="ParenthesisUtil.java" startLine="464" startPosition="111" endLine="468" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000303" fileName="ParenthesisUtil.java" startLine="494" startPosition="7" endLine="498" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="6653651625794688408" fileName="ParenthesisUtil.java" startLine="127" startPosition="43" endLine="130" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2441191009822214784" fileName="ParenthesisUtil.java" startLine="137" startPosition="96" endLine="140" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2441191009822259823" fileName="ParenthesisUtil.java" startLine="140" startPosition="9" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1742226163692305248" fileName="ParenthesisUtil.java" startLine="238" startPosition="5" endLine="241" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062938748" fileName="ParenthesisUtil.java" startLine="276" startPosition="71" endLine="279" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="2441191009808791672" fileName="ParenthesisUtil.java" startLine="380" startPosition="276" endLine="383" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2441191009808831144" fileName="ParenthesisUtil.java" startLine="383" startPosition="7" endLine="386" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2163970720688351254" fileName="ParenthesisUtil.java" startLine="412" startPosition="135" endLine="415" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7247988578525651037" fileName="ParenthesisUtil.java" startLine="427" startPosition="36" endLine="430" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="437" startPosition="0" endLine="440" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7247988578522395008" fileName="ParenthesisUtil.java" startLine="470" startPosition="12" endLine="473" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4830579082341000260" fileName="ParenthesisUtil.java" startLine="478" startPosition="67" endLine="481" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000402" fileName="ParenthesisUtil.java" startLine="516" startPosition="51" endLine="519" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000437" fileName="ParenthesisUtil.java" startLine="522" startPosition="102" endLine="525" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000554" fileName="ParenthesisUtil.java" startLine="541" startPosition="0" endLine="544" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isBadPriority#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="545" startPosition="0" endLine="548" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0b0m0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="549" startPosition="0" endLine="552" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0a1a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="553" startPosition="0" endLine="556" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a1a5a1a12#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="557" startPosition="0" endLine="560" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0f0b0v#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="561" startPosition="0" endLine="564" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a2a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="565" startPosition="0" endLine="568" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_a65dpo_a0a3a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="569" startPosition="0" endLine="572" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0a2a92#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="573" startPosition="0" endLine="576" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_a65dpo_a0h0ib#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="4985347495044725793" fileName="ParenthesisUtil.java" startLine="170" startPosition="12" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4830579082341000241" fileName="ParenthesisUtil.java" startLine="459" startPosition="111" endLine="463" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000303" fileName="ParenthesisUtil.java" startLine="489" startPosition="7" endLine="493" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2329139813972958298" fileName="ParenthesisUtil.java" startLine="92" startPosition="80" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2329139813973092229" fileName="ParenthesisUtil.java" startLine="123" startPosition="219" endLine="128" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329139813973311706" fileName="ParenthesisUtil.java" startLine="154" startPosition="105" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495059622208" fileName="ParenthesisUtil.java" startLine="317" startPosition="64" endLine="322" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2329139813973172935" fileName="ParenthesisUtil.java" startLine="347" startPosition="100" endLine="352" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3706019411776091195" fileName="ParenthesisUtil.java" startLine="440" startPosition="65" endLine="445" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4830579082341000181" fileName="ParenthesisUtil.java" startLine="453" startPosition="0" endLine="458" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4830579082341000281" fileName="ParenthesisUtil.java" startLine="489" startPosition="30" endLine="494" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000535" fileName="ParenthesisUtil.java" startLine="538" startPosition="57" endLine="543" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1742226163692305228" fileName="ParenthesisUtil.java" startLine="236" startPosition="18" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062974219" fileName="ParenthesisUtil.java" startLine="253" startPosition="110" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062974248" fileName="ParenthesisUtil.java" startLine="260" startPosition="12" endLine="266" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062920675" fileName="ParenthesisUtil.java" startLine="289" startPosition="160" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495059556013" fileName="ParenthesisUtil.java" startLine="331" startPosition="401" endLine="337" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2163970720689850291" fileName="ParenthesisUtil.java" startLine="415" startPosition="100" endLine="421" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000323" fileName="ParenthesisUtil.java" startLine="499" startPosition="5" endLine="505" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8152288095125000758" fileName="ParenthesisUtil.java" startLine="505" startPosition="5" endLine="511" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8152288095126552442" fileName="ParenthesisUtil.java" startLine="511" startPosition="5" endLine="517" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2329139813973092198" fileName="ParenthesisUtil.java" startLine="111" startPosition="93" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495044725779" fileName="ParenthesisUtil.java" startLine="171" startPosition="92" endLine="178" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1742226163692287358" fileName="ParenthesisUtil.java" startLine="205" startPosition="126" endLine="212" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1742226163692305151" fileName="ParenthesisUtil.java" startLine="220" startPosition="158" endLine="227" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495062974246" fileName="ParenthesisUtil.java" startLine="260" startPosition="10" endLine="267" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4830579082341000230" fileName="ParenthesisUtil.java" startLine="462" startPosition="148" endLine="469" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7247988578522394837" fileName="ParenthesisUtil.java" startLine="471" startPosition="57" endLine="478" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2329139813973092229" fileName="ParenthesisUtil.java" startLine="121" startPosition="219" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329139813973311706" fileName="ParenthesisUtil.java" startLine="150" startPosition="105" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495059622208" fileName="ParenthesisUtil.java" startLine="313" startPosition="64" endLine="318" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2329139813973172935" fileName="ParenthesisUtil.java" startLine="343" startPosition="100" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3706019411776091195" fileName="ParenthesisUtil.java" startLine="435" startPosition="65" endLine="440" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4830579082341000181" fileName="ParenthesisUtil.java" startLine="448" startPosition="0" endLine="453" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4830579082341000281" fileName="ParenthesisUtil.java" startLine="484" startPosition="30" endLine="489" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000535" fileName="ParenthesisUtil.java" startLine="533" startPosition="57" endLine="538" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1742226163692305228" fileName="ParenthesisUtil.java" startLine="232" startPosition="18" endLine="238" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062974219" fileName="ParenthesisUtil.java" startLine="249" startPosition="110" endLine="255" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062974248" fileName="ParenthesisUtil.java" startLine="256" startPosition="12" endLine="262" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062920675" fileName="ParenthesisUtil.java" startLine="285" startPosition="160" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495059556013" fileName="ParenthesisUtil.java" startLine="327" startPosition="401" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2163970720689850291" fileName="ParenthesisUtil.java" startLine="410" startPosition="100" endLine="416" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000323" fileName="ParenthesisUtil.java" startLine="494" startPosition="5" endLine="500" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8152288095125000758" fileName="ParenthesisUtil.java" startLine="500" startPosition="5" endLine="506" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8152288095126552442" fileName="ParenthesisUtil.java" startLine="506" startPosition="5" endLine="512" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2329139813973092198" fileName="ParenthesisUtil.java" startLine="110" startPosition="93" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495044725779" fileName="ParenthesisUtil.java" startLine="167" startPosition="92" endLine="174" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1742226163692287358" fileName="ParenthesisUtil.java" startLine="201" startPosition="126" endLine="208" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1742226163692305151" fileName="ParenthesisUtil.java" startLine="216" startPosition="158" endLine="223" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495062974246" fileName="ParenthesisUtil.java" startLine="256" startPosition="10" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4830579082341000230" fileName="ParenthesisUtil.java" startLine="457" startPosition="148" endLine="464" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7247988578522394837" fileName="ParenthesisUtil.java" startLine="466" startPosition="57" endLine="473" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2163970720669164385" fileName="ParenthesisUtil.java" startLine="60" startPosition="260" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2163970720669164411" fileName="ParenthesisUtil.java" startLine="68" startPosition="9" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7251340091284632621" fileName="ParenthesisUtil.java" startLine="357" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findLeftTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7251340091284761908" fileName="ParenthesisUtil.java" startLine="368" startPosition="0" endLine="376" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findRightTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2329139813973276323" fileName="ParenthesisUtil.java" startLine="152" startPosition="5" endLine="161" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4985347495059556003" fileName="ParenthesisUtil.java" startLine="329" startPosition="10" endLine="338" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3706019411776086811" fileName="ParenthesisUtil.java" startLine="439" startPosition="46" endLine="448" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1742226163692700111" fileName="ParenthesisUtil.java" startLine="289" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceCastExpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2329139813973165995" fileName="ParenthesisUtil.java" startLine="344" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="clearIncompleteParens#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
-    <nodeInfo nodeId="4985347495059555964" fileName="ParenthesisUtil.java" startLine="315" startPosition="369" endLine="326" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7247988578522361795" fileName="ParenthesisUtil.java" startLine="469" startPosition="5" endLine="480" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000500" fileName="ParenthesisUtil.java" startLine="534" startPosition="0" endLine="545" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rotateTree#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
-    <nodeInfo nodeId="1742226163692645038" fileName="ParenthesisUtil.java" startLine="274" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findBottomMostTernary#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7763247701645516198" fileName="ParenthesisUtil.java" startLine="410" startPosition="211" endLine="422" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7251340091287912628" fileName="ParenthesisUtil.java" startLine="381" startPosition="26" endLine="394" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4830579082341000268" fileName="ParenthesisUtil.java" startLine="486" startPosition="5" endLine="499" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000392" fileName="ParenthesisUtil.java" startLine="520" startPosition="0" endLine="533" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBinOp#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8152288095122224506" fileName="ParenthesisUtil.java" startLine="167" startPosition="90" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4985347495059555956" fileName="ParenthesisUtil.java" startLine="313" startPosition="28" endLine="328" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7763247701645427127" fileName="ParenthesisUtil.java" startLine="409" startPosition="0" endLine="424" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4985347495062974210" fileName="ParenthesisUtil.java" startLine="251" startPosition="58" endLine="267" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7251340091287912616" fileName="ParenthesisUtil.java" startLine="379" startPosition="0" endLine="397" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7251340091284632621" fileName="ParenthesisUtil.java" startLine="353" startPosition="0" endLine="361" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findLeftTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7251340091284761908" fileName="ParenthesisUtil.java" startLine="364" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findRightTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2329139813973276323" fileName="ParenthesisUtil.java" startLine="148" startPosition="5" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4985347495059556003" fileName="ParenthesisUtil.java" startLine="325" startPosition="10" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3706019411776086811" fileName="ParenthesisUtil.java" startLine="434" startPosition="46" endLine="443" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1742226163692700111" fileName="ParenthesisUtil.java" startLine="285" startPosition="0" endLine="295" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceCastExpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2329139813973165995" fileName="ParenthesisUtil.java" startLine="340" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="clearIncompleteParens#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="4985347495059555964" fileName="ParenthesisUtil.java" startLine="311" startPosition="369" endLine="322" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7763247701645516198" fileName="ParenthesisUtil.java" startLine="406" startPosition="211" endLine="417" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7247988578522361795" fileName="ParenthesisUtil.java" startLine="464" startPosition="5" endLine="475" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000500" fileName="ParenthesisUtil.java" startLine="529" startPosition="0" endLine="540" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rotateTree#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="1742226163692645038" fileName="ParenthesisUtil.java" startLine="270" startPosition="0" endLine="282" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findBottomMostTernary#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="7251340091287912628" fileName="ParenthesisUtil.java" startLine="377" startPosition="26" endLine="390" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4830579082341000268" fileName="ParenthesisUtil.java" startLine="481" startPosition="5" endLine="494" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000392" fileName="ParenthesisUtil.java" startLine="515" startPosition="0" endLine="528" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBinOp#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="8152288095122224506" fileName="ParenthesisUtil.java" startLine="163" startPosition="90" endLine="177" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="7763247701645427127" fileName="ParenthesisUtil.java" startLine="405" startPosition="0" endLine="419" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="4985347495059555956" fileName="ParenthesisUtil.java" startLine="309" startPosition="28" endLine="324" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4985347495062974210" fileName="ParenthesisUtil.java" startLine="247" startPosition="58" endLine="263" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7251340091287912616" fileName="ParenthesisUtil.java" startLine="375" startPosition="0" endLine="393" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findTurn#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="1742226163723251391" fileName="ParenthesisUtil.java" startLine="57" startPosition="7" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7247988578522008313" fileName="ParenthesisUtil.java" startLine="430" startPosition="0" endLine="450" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkExpressionPriorities#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1742226163692673096" fileName="ParenthesisUtil.java" startLine="250" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceTernaryOpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4830579082341000198" fileName="ParenthesisUtil.java" startLine="461" startPosition="0" endLine="482" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationChildWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
-    <nodeInfo nodeId="7251340091277411696" fileName="ParenthesisUtil.java" startLine="401" startPosition="0" endLine="427" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parentPath#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="2329139813973092196" fileName="ParenthesisUtil.java" startLine="122" startPosition="107" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1742226163692321950" fileName="ParenthesisUtil.java" startLine="220" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceBinOpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7247988578522008313" fileName="ParenthesisUtil.java" startLine="425" startPosition="0" endLine="445" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkExpressionPriorities#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1742226163692673096" fileName="ParenthesisUtil.java" startLine="246" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceTernaryOpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4830579082341000198" fileName="ParenthesisUtil.java" startLine="456" startPosition="0" endLine="477" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationChildWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;Z)V" />
+    <nodeInfo nodeId="2329139813973092196" fileName="ParenthesisUtil.java" startLine="120" startPosition="93" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7251340091277411696" fileName="ParenthesisUtil.java" startLine="397" startPosition="0" endLine="422" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parentPath#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
+    <nodeInfo nodeId="1742226163692321950" fileName="ParenthesisUtil.java" startLine="216" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalanceBinOpAfterParething#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="2163970720669091434" fileName="ParenthesisUtil.java" startLine="50" startPosition="0" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="751045515425796148" fileName="ParenthesisUtil.java" startLine="186" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4985347495059555924" fileName="ParenthesisUtil.java" startLine="307" startPosition="22" endLine="338" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4830579082341000256" fileName="ParenthesisUtil.java" startLine="483" startPosition="0" endLine="519" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationParentWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4985347495059529054" fileName="ParenthesisUtil.java" startLine="303" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildAccumulator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="751045515425796148" fileName="ParenthesisUtil.java" startLine="182" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="rebalance#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="4985347495059555924" fileName="ParenthesisUtil.java" startLine="303" startPosition="22" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4830579082341000256" fileName="ParenthesisUtil.java" startLine="478" startPosition="0" endLine="514" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkOperationParentWRTPriority#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4985347495059529054" fileName="ParenthesisUtil.java" startLine="299" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="buildAccumulator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2329139813973092181" fileName="ParenthesisUtil.java" startLine="108" startPosition="85" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="7247988578541910221" fileName="ParenthesisUtil.java" startLine="40" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="descendInto#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljava/util/List;" />
-    <nodeInfo nodeId="2329139813973092181" fileName="ParenthesisUtil.java" startLine="109" startPosition="85" endLine="152" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="2329139813972819155" fileName="ParenthesisUtil.java" startLine="86" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createUnmatchedParenthesis#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2329139813972819155" fileName="ParenthesisUtil.java" startLine="86" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createUnmatchedParenthesis#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="4830579082341000585" fileName="ParenthesisUtil.java" startLine="23" startPosition="28" endLine="23" endPosition="28" />
     <scopeInfo nodeId="7251340091273300247" fileName="ParenthesisUtil.java" startLine="28" startPosition="85" endLine="29" endPosition="61" />
     <scopeInfo nodeId="7251340091277278263" fileName="ParenthesisUtil.java" startLine="34" startPosition="87" endLine="35" endPosition="61" />
@@ -14141,62 +14128,62 @@
     <scopeInfo nodeId="2163970720669249429" fileName="ParenthesisUtil.java" startLine="73" startPosition="29" endLine="74" endPosition="63" />
     <scopeInfo nodeId="6653651625802609012" fileName="ParenthesisUtil.java" startLine="94" startPosition="39" endLine="95" endPosition="100" />
     <scopeInfo nodeId="6653651625804155946" fileName="ParenthesisUtil.java" startLine="98" startPosition="25" endLine="99" endPosition="58" />
-    <scopeInfo nodeId="2329139813973092235" fileName="ParenthesisUtil.java" startLine="125" startPosition="43" endLine="126" endPosition="81" />
-    <scopeInfo nodeId="6653651625794688411" fileName="ParenthesisUtil.java" startLine="131" startPosition="119" endLine="132" endPosition="19" />
-    <scopeInfo nodeId="2441191009822214787" fileName="ParenthesisUtil.java" startLine="141" startPosition="244" endLine="142" endPosition="16" />
-    <scopeInfo nodeId="2441191009822259824" fileName="ParenthesisUtil.java" startLine="144" startPosition="247" endLine="145" endPosition="16" />
-    <scopeInfo nodeId="2329139813973311709" fileName="ParenthesisUtil.java" startLine="155" startPosition="35" endLine="156" endPosition="261" />
-    <scopeInfo nodeId="2329139813973320081" fileName="ParenthesisUtil.java" startLine="157" startPosition="14" endLine="158" endPosition="259" />
-    <scopeInfo nodeId="4985347495044725780" fileName="ParenthesisUtil.java" startLine="172" startPosition="50" endLine="173" endPosition="157" />
-    <scopeInfo nodeId="8152288095122224508" fileName="ParenthesisUtil.java" startLine="179" startPosition="15" endLine="180" endPosition="40" />
-    <scopeInfo nodeId="1742226163692287361" fileName="ParenthesisUtil.java" startLine="206" startPosition="116" endLine="207" endPosition="198" />
-    <scopeInfo nodeId="1742226163692670323" fileName="ParenthesisUtil.java" startLine="208" startPosition="133" endLine="209" endPosition="212" />
-    <scopeInfo nodeId="1742226163692678599" fileName="ParenthesisUtil.java" startLine="210" startPosition="122" endLine="211" endPosition="199" />
-    <scopeInfo nodeId="1742226163692305243" fileName="ParenthesisUtil.java" startLine="240" startPosition="12" endLine="241" endPosition="23" />
-    <scopeInfo nodeId="1742226163692305249" fileName="ParenthesisUtil.java" startLine="243" startPosition="28" endLine="244" endPosition="151" />
-    <scopeInfo nodeId="4985347495062974237" fileName="ParenthesisUtil.java" startLine="257" startPosition="14" endLine="258" endPosition="152" />
-    <scopeInfo nodeId="4985347495062974266" fileName="ParenthesisUtil.java" startLine="264" startPosition="14" endLine="265" endPosition="57" />
-    <scopeInfo nodeId="4985347495062938749" fileName="ParenthesisUtil.java" startLine="281" startPosition="171" endLine="282" endPosition="176" />
-    <scopeInfo nodeId="4985347495062920691" fileName="ParenthesisUtil.java" startLine="293" startPosition="12" endLine="294" endPosition="55" />
-    <scopeInfo nodeId="4985347495059622211" fileName="ParenthesisUtil.java" startLine="318" startPosition="21" endLine="319" endPosition="159" />
-    <scopeInfo nodeId="4985347495059622827" fileName="ParenthesisUtil.java" startLine="320" startPosition="18" endLine="321" endPosition="160" />
-    <scopeInfo nodeId="4985347495059555981" fileName="ParenthesisUtil.java" startLine="324" startPosition="16" endLine="325" endPosition="29" />
-    <scopeInfo nodeId="4985347495059556027" fileName="ParenthesisUtil.java" startLine="335" startPosition="14" endLine="336" endPosition="115" />
-    <scopeInfo nodeId="2329139813973172938" fileName="ParenthesisUtil.java" startLine="348" startPosition="33" endLine="349" endPosition="162" />
-    <scopeInfo nodeId="2329139813973173453" fileName="ParenthesisUtil.java" startLine="350" startPosition="12" endLine="351" endPosition="163" />
-    <scopeInfo nodeId="7251340091284632624" fileName="ParenthesisUtil.java" startLine="362" startPosition="65" endLine="363" endPosition="42" />
-    <scopeInfo nodeId="7251340091284761909" fileName="ParenthesisUtil.java" startLine="373" startPosition="66" endLine="374" endPosition="43" />
-    <scopeInfo nodeId="2441191009808791675" fileName="ParenthesisUtil.java" startLine="385" startPosition="75" endLine="386" endPosition="101" />
-    <scopeInfo nodeId="2441191009808831145" fileName="ParenthesisUtil.java" startLine="388" startPosition="77" endLine="389" endPosition="101" />
-    <scopeInfo nodeId="2163970720688351255" fileName="ParenthesisUtil.java" startLine="418" startPosition="161" endLine="419" endPosition="21" />
-    <scopeInfo nodeId="7247988578525651039" fileName="ParenthesisUtil.java" startLine="433" startPosition="129" endLine="434" endPosition="124" />
-    <scopeInfo nodeId="3706019411776094012" fileName="ParenthesisUtil.java" startLine="442" startPosition="37" endLine="443" endPosition="40" />
-    <scopeInfo nodeId="4830579082341000261" fileName="ParenthesisUtil.java" startLine="484" startPosition="50" endLine="485" endPosition="13" />
-    <scopeInfo nodeId="4830579082341000282" fileName="ParenthesisUtil.java" startLine="490" startPosition="79" endLine="491" endPosition="23" />
-    <scopeInfo nodeId="4830579082341000293" fileName="ParenthesisUtil.java" startLine="492" startPosition="85" endLine="493" endPosition="24" />
-    <scopeInfo nodeId="4830579082341000403" fileName="ParenthesisUtil.java" startLine="522" startPosition="106" endLine="523" endPosition="18" />
-    <scopeInfo nodeId="4830579082341000438" fileName="ParenthesisUtil.java" startLine="528" startPosition="24" endLine="529" endPosition="22" />
-    <scopeInfo nodeId="4830579082341000537" fileName="ParenthesisUtil.java" startLine="539" startPosition="18" endLine="540" endPosition="75" />
-    <scopeInfo nodeId="4830579082341000546" fileName="ParenthesisUtil.java" startLine="541" startPosition="12" endLine="542" endPosition="74" />
-    <scopeInfo nodeId="4830579082341000563" fileName="ParenthesisUtil.java" startLine="546" startPosition="83" endLine="547" endPosition="946" />
-    <scopeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="550" startPosition="64" endLine="551" endPosition="46" />
-    <scopeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="554" startPosition="65" endLine="555" endPosition="49" />
-    <scopeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="558" startPosition="68" endLine="559" endPosition="46" />
-    <scopeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="562" startPosition="65" endLine="563" endPosition="49" />
-    <scopeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="566" startPosition="66" endLine="567" endPosition="46" />
-    <scopeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="570" startPosition="66" endLine="571" endPosition="46" />
-    <scopeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="574" startPosition="65" endLine="575" endPosition="49" />
-    <scopeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="578" startPosition="64" endLine="579" endPosition="49" />
+    <scopeInfo nodeId="2329139813973092235" fileName="ParenthesisUtil.java" startLine="123" startPosition="43" endLine="124" endPosition="81" />
+    <scopeInfo nodeId="6653651625794688411" fileName="ParenthesisUtil.java" startLine="128" startPosition="119" endLine="129" endPosition="19" />
+    <scopeInfo nodeId="2441191009822214787" fileName="ParenthesisUtil.java" startLine="138" startPosition="244" endLine="139" endPosition="16" />
+    <scopeInfo nodeId="2441191009822259824" fileName="ParenthesisUtil.java" startLine="141" startPosition="247" endLine="142" endPosition="16" />
+    <scopeInfo nodeId="2329139813973311709" fileName="ParenthesisUtil.java" startLine="151" startPosition="35" endLine="152" endPosition="261" />
+    <scopeInfo nodeId="2329139813973320081" fileName="ParenthesisUtil.java" startLine="153" startPosition="14" endLine="154" endPosition="259" />
+    <scopeInfo nodeId="4985347495044725780" fileName="ParenthesisUtil.java" startLine="168" startPosition="50" endLine="169" endPosition="157" />
+    <scopeInfo nodeId="8152288095122224508" fileName="ParenthesisUtil.java" startLine="175" startPosition="15" endLine="176" endPosition="40" />
+    <scopeInfo nodeId="1742226163692287361" fileName="ParenthesisUtil.java" startLine="202" startPosition="116" endLine="203" endPosition="198" />
+    <scopeInfo nodeId="1742226163692670323" fileName="ParenthesisUtil.java" startLine="204" startPosition="133" endLine="205" endPosition="212" />
+    <scopeInfo nodeId="1742226163692678599" fileName="ParenthesisUtil.java" startLine="206" startPosition="122" endLine="207" endPosition="199" />
+    <scopeInfo nodeId="1742226163692305243" fileName="ParenthesisUtil.java" startLine="236" startPosition="12" endLine="237" endPosition="23" />
+    <scopeInfo nodeId="1742226163692305249" fileName="ParenthesisUtil.java" startLine="239" startPosition="28" endLine="240" endPosition="151" />
+    <scopeInfo nodeId="4985347495062974237" fileName="ParenthesisUtil.java" startLine="253" startPosition="14" endLine="254" endPosition="152" />
+    <scopeInfo nodeId="4985347495062974266" fileName="ParenthesisUtil.java" startLine="260" startPosition="14" endLine="261" endPosition="57" />
+    <scopeInfo nodeId="4985347495062938749" fileName="ParenthesisUtil.java" startLine="277" startPosition="171" endLine="278" endPosition="176" />
+    <scopeInfo nodeId="4985347495062920691" fileName="ParenthesisUtil.java" startLine="289" startPosition="12" endLine="290" endPosition="55" />
+    <scopeInfo nodeId="4985347495059622211" fileName="ParenthesisUtil.java" startLine="314" startPosition="21" endLine="315" endPosition="159" />
+    <scopeInfo nodeId="4985347495059622827" fileName="ParenthesisUtil.java" startLine="316" startPosition="18" endLine="317" endPosition="160" />
+    <scopeInfo nodeId="4985347495059555981" fileName="ParenthesisUtil.java" startLine="320" startPosition="16" endLine="321" endPosition="29" />
+    <scopeInfo nodeId="4985347495059556027" fileName="ParenthesisUtil.java" startLine="331" startPosition="14" endLine="332" endPosition="115" />
+    <scopeInfo nodeId="2329139813973172938" fileName="ParenthesisUtil.java" startLine="344" startPosition="33" endLine="345" endPosition="162" />
+    <scopeInfo nodeId="2329139813973173453" fileName="ParenthesisUtil.java" startLine="346" startPosition="12" endLine="347" endPosition="163" />
+    <scopeInfo nodeId="7251340091284632624" fileName="ParenthesisUtil.java" startLine="358" startPosition="65" endLine="359" endPosition="42" />
+    <scopeInfo nodeId="7251340091284761909" fileName="ParenthesisUtil.java" startLine="369" startPosition="66" endLine="370" endPosition="43" />
+    <scopeInfo nodeId="2441191009808791675" fileName="ParenthesisUtil.java" startLine="381" startPosition="75" endLine="382" endPosition="101" />
+    <scopeInfo nodeId="2441191009808831145" fileName="ParenthesisUtil.java" startLine="384" startPosition="77" endLine="385" endPosition="101" />
+    <scopeInfo nodeId="2163970720688351255" fileName="ParenthesisUtil.java" startLine="413" startPosition="161" endLine="414" endPosition="21" />
+    <scopeInfo nodeId="7247988578525651039" fileName="ParenthesisUtil.java" startLine="428" startPosition="129" endLine="429" endPosition="124" />
+    <scopeInfo nodeId="3706019411776094012" fileName="ParenthesisUtil.java" startLine="437" startPosition="37" endLine="438" endPosition="40" />
+    <scopeInfo nodeId="4830579082341000261" fileName="ParenthesisUtil.java" startLine="479" startPosition="50" endLine="480" endPosition="13" />
+    <scopeInfo nodeId="4830579082341000282" fileName="ParenthesisUtil.java" startLine="485" startPosition="79" endLine="486" endPosition="23" />
+    <scopeInfo nodeId="4830579082341000293" fileName="ParenthesisUtil.java" startLine="487" startPosition="85" endLine="488" endPosition="24" />
+    <scopeInfo nodeId="4830579082341000403" fileName="ParenthesisUtil.java" startLine="517" startPosition="106" endLine="518" endPosition="18" />
+    <scopeInfo nodeId="4830579082341000438" fileName="ParenthesisUtil.java" startLine="523" startPosition="24" endLine="524" endPosition="22" />
+    <scopeInfo nodeId="4830579082341000537" fileName="ParenthesisUtil.java" startLine="534" startPosition="18" endLine="535" endPosition="75" />
+    <scopeInfo nodeId="4830579082341000546" fileName="ParenthesisUtil.java" startLine="536" startPosition="12" endLine="537" endPosition="74" />
+    <scopeInfo nodeId="4830579082341000563" fileName="ParenthesisUtil.java" startLine="541" startPosition="83" endLine="542" endPosition="946" />
+    <scopeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="545" startPosition="64" endLine="546" endPosition="46" />
+    <scopeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="549" startPosition="65" endLine="550" endPosition="49" />
+    <scopeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="553" startPosition="68" endLine="554" endPosition="46" />
+    <scopeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="557" startPosition="65" endLine="558" endPosition="49" />
+    <scopeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="561" startPosition="66" endLine="562" endPosition="46" />
+    <scopeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="565" startPosition="66" endLine="566" endPosition="46" />
+    <scopeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="569" startPosition="65" endLine="570" endPosition="49" />
+    <scopeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="573" startPosition="64" endLine="574" endPosition="49" />
     <scopeInfo nodeId="4830579082341000583" fileName="ParenthesisUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1742226163692305229" fileName="ParenthesisUtil.java" startLine="237" startPosition="27" endLine="239" endPosition="150" />
-    <scopeInfo nodeId="4985347495062974220" fileName="ParenthesisUtil.java" startLine="254" startPosition="29" endLine="256" endPosition="152" />
-    <scopeInfo nodeId="4985347495062974249" fileName="ParenthesisUtil.java" startLine="261" startPosition="29" endLine="263" endPosition="152" />
-    <scopeInfo nodeId="4985347495062920676" fileName="ParenthesisUtil.java" startLine="290" startPosition="28" endLine="292" endPosition="150" />
-    <scopeInfo nodeId="4985347495059556014" fileName="ParenthesisUtil.java" startLine="332" startPosition="45" endLine="334" endPosition="48" />
-    <scopeInfo nodeId="4830579082341000242" fileName="ParenthesisUtil.java" startLine="465" startPosition="52" endLine="467" endPosition="40" />
-    <scopeInfo nodeId="7247988578522394840" fileName="ParenthesisUtil.java" startLine="472" startPosition="20" endLine="474" endPosition="157" />
-    <scopeInfo nodeId="7247988578522395009" fileName="ParenthesisUtil.java" startLine="475" startPosition="14" endLine="477" endPosition="155" />
-    <scopeInfo nodeId="4830579082341000304" fileName="ParenthesisUtil.java" startLine="495" startPosition="65" endLine="497" endPosition="46" />
+    <scopeInfo nodeId="1742226163692305229" fileName="ParenthesisUtil.java" startLine="233" startPosition="27" endLine="235" endPosition="150" />
+    <scopeInfo nodeId="4985347495062974220" fileName="ParenthesisUtil.java" startLine="250" startPosition="29" endLine="252" endPosition="152" />
+    <scopeInfo nodeId="4985347495062974249" fileName="ParenthesisUtil.java" startLine="257" startPosition="29" endLine="259" endPosition="152" />
+    <scopeInfo nodeId="4985347495062920676" fileName="ParenthesisUtil.java" startLine="286" startPosition="28" endLine="288" endPosition="150" />
+    <scopeInfo nodeId="4985347495059556014" fileName="ParenthesisUtil.java" startLine="328" startPosition="45" endLine="330" endPosition="48" />
+    <scopeInfo nodeId="4830579082341000242" fileName="ParenthesisUtil.java" startLine="460" startPosition="52" endLine="462" endPosition="40" />
+    <scopeInfo nodeId="7247988578522394840" fileName="ParenthesisUtil.java" startLine="467" startPosition="20" endLine="469" endPosition="157" />
+    <scopeInfo nodeId="7247988578522395009" fileName="ParenthesisUtil.java" startLine="470" startPosition="14" endLine="472" endPosition="155" />
+    <scopeInfo nodeId="4830579082341000304" fileName="ParenthesisUtil.java" startLine="490" startPosition="65" endLine="492" endPosition="46" />
     <scopeInfo nodeId="7251340091273300245" fileName="ParenthesisUtil.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="7251340091273300438" varName="leftExpression" />
     </scopeInfo>
@@ -14206,103 +14193,106 @@
     <scopeInfo nodeId="6653651625802609011" fileName="ParenthesisUtil.java" startLine="94" startPosition="0" endLine="97" endPosition="0">
       <varInfo nodeId="6653651625802609011" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
+    <scopeInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="2329139813973092234" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495044725794" fileName="ParenthesisUtil.java" startLine="174" startPosition="14" endLine="177" endPosition="22">
+    <scopeInfo nodeId="4985347495044725794" fileName="ParenthesisUtil.java" startLine="170" startPosition="14" endLine="173" endPosition="22">
       <varInfo nodeId="4985347495044725796" varName="parens" />
     </scopeInfo>
-    <scopeInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="442" startPosition="0" endLine="445" endPosition="0">
+    <scopeInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="437" startPosition="0" endLine="440" endPosition="0">
       <varInfo nodeId="3706019411776094011" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000184" fileName="ParenthesisUtil.java" startLine="453" startPosition="61" endLine="456" endPosition="43" />
-    <scopeInfo nodeId="4830579082341000554" fileName="ParenthesisUtil.java" startLine="546" startPosition="0" endLine="549" endPosition="0">
+    <scopeInfo nodeId="4830579082341000184" fileName="ParenthesisUtil.java" startLine="448" startPosition="61" endLine="451" endPosition="43" />
+    <scopeInfo nodeId="4830579082341000554" fileName="ParenthesisUtil.java" startLine="541" startPosition="0" endLine="544" endPosition="0">
       <varInfo nodeId="4830579082341000557" varName="child" />
       <varInfo nodeId="4830579082341000561" varName="isRight" />
       <varInfo nodeId="4830579082341000559" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="550" startPosition="0" endLine="553" endPosition="0">
+    <scopeInfo nodeId="2329139813973092225" fileName="ParenthesisUtil.java" startLine="545" startPosition="0" endLine="548" endPosition="0">
       <varInfo nodeId="2329139813973092225" varName="a" />
       <varInfo nodeId="2329139813973092225" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="554" startPosition="0" endLine="557" endPosition="0">
+    <scopeInfo nodeId="4985347495059555929" fileName="ParenthesisUtil.java" startLine="549" startPosition="0" endLine="552" endPosition="0">
       <varInfo nodeId="4985347495059555929" varName="a" />
       <varInfo nodeId="4985347495059555929" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="558" startPosition="0" endLine="561" endPosition="0">
+    <scopeInfo nodeId="4985347495059555987" fileName="ParenthesisUtil.java" startLine="553" startPosition="0" endLine="556" endPosition="0">
       <varInfo nodeId="4985347495059555987" varName="a" />
       <varInfo nodeId="4985347495059555987" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="562" startPosition="0" endLine="565" endPosition="0">
+    <scopeInfo nodeId="4985347495059556000" fileName="ParenthesisUtil.java" startLine="557" startPosition="0" endLine="560" endPosition="0">
       <varInfo nodeId="4985347495059556000" varName="a" />
       <varInfo nodeId="4985347495059556000" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="566" startPosition="0" endLine="569" endPosition="0">
+    <scopeInfo nodeId="2441191009808819301" fileName="ParenthesisUtil.java" startLine="561" startPosition="0" endLine="564" endPosition="0">
       <varInfo nodeId="2441191009808819301" varName="a" />
       <varInfo nodeId="2441191009808819301" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="570" startPosition="0" endLine="573" endPosition="0">
+    <scopeInfo nodeId="2441191009808831150" fileName="ParenthesisUtil.java" startLine="565" startPosition="0" endLine="568" endPosition="0">
       <varInfo nodeId="2441191009808831150" varName="a" />
       <varInfo nodeId="2441191009808831150" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="574" startPosition="0" endLine="577" endPosition="0">
+    <scopeInfo nodeId="7251340091287912673" fileName="ParenthesisUtil.java" startLine="569" startPosition="0" endLine="572" endPosition="0">
       <varInfo nodeId="7251340091287912673" varName="a" />
       <varInfo nodeId="7251340091287912673" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="578" startPosition="0" endLine="581" endPosition="0">
+    <scopeInfo nodeId="3706019411776090731" fileName="ParenthesisUtil.java" startLine="573" startPosition="0" endLine="576" endPosition="0">
       <varInfo nodeId="3706019411776090731" varName="a" />
       <varInfo nodeId="3706019411776090731" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062938747" fileName="ParenthesisUtil.java" startLine="280" startPosition="71" endLine="284" endPosition="29" />
-    <scopeInfo nodeId="2163970720689850294" fileName="ParenthesisUtil.java" startLine="416" startPosition="432" endLine="420" endPosition="11" />
-    <scopeInfo nodeId="4830579082341000324" fileName="ParenthesisUtil.java" startLine="500" startPosition="141" endLine="504" endPosition="70">
+    <scopeInfo nodeId="4985347495062938747" fileName="ParenthesisUtil.java" startLine="276" startPosition="71" endLine="280" endPosition="29" />
+    <scopeInfo nodeId="2163970720689850294" fileName="ParenthesisUtil.java" startLine="411" startPosition="432" endLine="415" endPosition="11" />
+    <scopeInfo nodeId="4830579082341000324" fileName="ParenthesisUtil.java" startLine="495" startPosition="141" endLine="499" endPosition="70">
       <varInfo nodeId="4830579082341000326" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="8152288095125000761" fileName="ParenthesisUtil.java" startLine="506" startPosition="127" endLine="510" endPosition="72">
+    <scopeInfo nodeId="8152288095125000761" fileName="ParenthesisUtil.java" startLine="501" startPosition="127" endLine="505" endPosition="72">
       <varInfo nodeId="8152288095125007084" varName="castExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="8152288095126552445" fileName="ParenthesisUtil.java" startLine="512" startPosition="224" endLine="516" endPosition="72">
+    <scopeInfo nodeId="8152288095126552445" fileName="ParenthesisUtil.java" startLine="507" startPosition="224" endLine="511" endPosition="72">
       <varInfo nodeId="8152288095126586413" varName="dotExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973092199" fileName="ParenthesisUtil.java" startLine="112" startPosition="65" endLine="117" endPosition="22">
+    <scopeInfo nodeId="2329139813973092199" fileName="ParenthesisUtil.java" startLine="111" startPosition="65" endLine="116" endPosition="22">
       <varInfo nodeId="2329139813973092211" varName="parens" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163692305152" fileName="ParenthesisUtil.java" startLine="221" startPosition="32" endLine="226" endPosition="13" />
-    <scopeInfo nodeId="2329139813973165873" fileName="ParenthesisUtil.java" startLine="347" startPosition="100" endLine="352" endPosition="5" />
-    <scopeInfo nodeId="4830579082341000181" fileName="ParenthesisUtil.java" startLine="453" startPosition="0" endLine="458" endPosition="0">
+    <scopeInfo nodeId="1742226163692305152" fileName="ParenthesisUtil.java" startLine="217" startPosition="32" endLine="222" endPosition="13" />
+    <scopeInfo nodeId="2329139813973165873" fileName="ParenthesisUtil.java" startLine="343" startPosition="100" endLine="348" endPosition="5" />
+    <scopeInfo nodeId="4830579082341000181" fileName="ParenthesisUtil.java" startLine="448" startPosition="0" endLine="453" endPosition="0">
       <varInfo nodeId="4830579082341000196" varName="binOp" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000235" fileName="ParenthesisUtil.java" startLine="463" startPosition="105" endLine="468" endPosition="7">
+    <scopeInfo nodeId="4830579082341000235" fileName="ParenthesisUtil.java" startLine="458" startPosition="105" endLine="463" endPosition="7">
       <varInfo nodeId="4830579082341000237" varName="sideChild" />
     </scopeInfo>
     <scopeInfo nodeId="2163970720669164386" fileName="ParenthesisUtil.java" startLine="61" startPosition="37" endLine="67" endPosition="11" />
     <scopeInfo nodeId="2163970720669164412" fileName="ParenthesisUtil.java" startLine="69" startPosition="40" endLine="75" endPosition="11" />
-    <scopeInfo nodeId="4985347495062974247" fileName="ParenthesisUtil.java" startLine="260" startPosition="12" endLine="266" endPosition="7" />
-    <scopeInfo nodeId="2329139813973276324" fileName="ParenthesisUtil.java" startLine="153" startPosition="22" endLine="160" endPosition="26" />
-    <scopeInfo nodeId="4985347495062974211" fileName="ParenthesisUtil.java" startLine="252" startPosition="28" endLine="259" endPosition="7" />
-    <scopeInfo nodeId="4985347495059555965" fileName="ParenthesisUtil.java" startLine="316" startPosition="88" endLine="323" endPosition="105" />
-    <scopeInfo nodeId="3706019411776086813" fileName="ParenthesisUtil.java" startLine="440" startPosition="65" endLine="447" endPosition="138" />
-    <scopeInfo nodeId="4985347495062920255" fileName="ParenthesisUtil.java" startLine="289" startPosition="160" endLine="297" endPosition="74" />
-    <scopeInfo nodeId="4985347495059556004" fileName="ParenthesisUtil.java" startLine="329" startPosition="12" endLine="337" endPosition="7">
+    <scopeInfo nodeId="4985347495062974247" fileName="ParenthesisUtil.java" startLine="256" startPosition="12" endLine="262" endPosition="7" />
+    <scopeInfo nodeId="2329139813973276324" fileName="ParenthesisUtil.java" startLine="149" startPosition="22" endLine="156" endPosition="26" />
+    <scopeInfo nodeId="4985347495062974211" fileName="ParenthesisUtil.java" startLine="248" startPosition="28" endLine="255" endPosition="7" />
+    <scopeInfo nodeId="4985347495059555965" fileName="ParenthesisUtil.java" startLine="312" startPosition="88" endLine="319" endPosition="105" />
+    <scopeInfo nodeId="3706019411776086813" fileName="ParenthesisUtil.java" startLine="435" startPosition="65" endLine="442" endPosition="138" />
+    <scopeInfo nodeId="4985347495062920255" fileName="ParenthesisUtil.java" startLine="285" startPosition="160" endLine="293" endPosition="74" />
+    <scopeInfo nodeId="4985347495059556004" fileName="ParenthesisUtil.java" startLine="325" startPosition="12" endLine="333" endPosition="7">
       <varInfo nodeId="4985347495061166007" varName="firstCommonAncestorChild" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091284632621" fileName="ParenthesisUtil.java" startLine="357" startPosition="0" endLine="365" endPosition="0">
+    <scopeInfo nodeId="7251340091284632621" fileName="ParenthesisUtil.java" startLine="353" startPosition="0" endLine="361" endPosition="0">
       <varInfo nodeId="7251340091284633863" varName="leaf" />
       <varInfo nodeId="7251340091284694844" varName="stopNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091284761908" fileName="ParenthesisUtil.java" startLine="368" startPosition="0" endLine="376" endPosition="0">
+    <scopeInfo nodeId="7251340091284761908" fileName="ParenthesisUtil.java" startLine="364" startPosition="0" endLine="372" endPosition="0">
       <varInfo nodeId="7251340091284761956" varName="leaf" />
       <varInfo nodeId="7251340091284761958" varName="stopNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7247988578522361798" fileName="ParenthesisUtil.java" startLine="470" startPosition="115" endLine="479" endPosition="38" />
-    <scopeInfo nodeId="4830579082341000509" fileName="ParenthesisUtil.java" startLine="534" startPosition="73" endLine="543" endPosition="5">
+    <scopeInfo nodeId="7763247701645516201" fileName="ParenthesisUtil.java" startLine="407" startPosition="106" endLine="416" endPosition="9">
+      <varInfo nodeId="2163970720692945418" varName="curr" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522361798" fileName="ParenthesisUtil.java" startLine="465" startPosition="115" endLine="474" endPosition="38" />
+    <scopeInfo nodeId="4830579082341000509" fileName="ParenthesisUtil.java" startLine="529" startPosition="73" endLine="538" endPosition="5">
       <varInfo nodeId="4830579082341000511" varName="backsideExpr" />
     </scopeInfo>
-    <scopeInfo nodeId="8152288095122224507" fileName="ParenthesisUtil.java" startLine="168" startPosition="9" endLine="178" endPosition="7">
+    <scopeInfo nodeId="8152288095122224507" fileName="ParenthesisUtil.java" startLine="164" startPosition="9" endLine="174" endPosition="7">
       <varInfo nodeId="4985347495044725768" varName="leftTurn" />
       <varInfo nodeId="4985347495044725774" varName="rightTurn" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163692700111" fileName="ParenthesisUtil.java" startLine="289" startPosition="0" endLine="299" endPosition="0">
+    <scopeInfo nodeId="1742226163692700111" fileName="ParenthesisUtil.java" startLine="285" startPosition="0" endLine="295" endPosition="0">
       <varInfo nodeId="4985347495062920264" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062920258" varName="leftTurn" />
       <varInfo nodeId="1742226163692714131" varName="node" />
@@ -14310,47 +14300,44 @@
       <varInfo nodeId="4985347495062920262" varName="rightAccumulator" />
       <varInfo nodeId="4985347495062920256" varName="rightTurn" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973165995" fileName="ParenthesisUtil.java" startLine="344" startPosition="0" endLine="354" endPosition="0">
+    <scopeInfo nodeId="2329139813973165995" fileName="ParenthesisUtil.java" startLine="340" startPosition="0" endLine="350" endPosition="0">
       <varInfo nodeId="2329139813973171959" varName="completingByRightParen" />
       <varInfo nodeId="2329139813973165882" varName="otherExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="7763247701645516201" fileName="ParenthesisUtil.java" startLine="411" startPosition="106" endLine="421" endPosition="9">
-      <varInfo nodeId="2163970720692945418" varName="curr" />
-    </scopeInfo>
-    <scopeInfo nodeId="7251340091287912629" fileName="ParenthesisUtil.java" startLine="382" startPosition="149" endLine="393" endPosition="59">
+    <scopeInfo nodeId="7251340091287912629" fileName="ParenthesisUtil.java" startLine="378" startPosition="149" endLine="389" endPosition="59">
       <varInfo nodeId="2441191009808759404" varName="leftSideExpression" />
       <varInfo nodeId="2441191009808760570" varName="rightSideExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000269" fileName="ParenthesisUtil.java" startLine="487" startPosition="128" endLine="498" endPosition="7">
+    <scopeInfo nodeId="4830579082341000269" fileName="ParenthesisUtil.java" startLine="482" startPosition="128" endLine="493" endPosition="7">
       <varInfo nodeId="4830579082341000278" varName="isRight" />
       <varInfo nodeId="4830579082341000271" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000395" fileName="ParenthesisUtil.java" startLine="520" startPosition="61" endLine="531" endPosition="39">
+    <scopeInfo nodeId="4830579082341000395" fileName="ParenthesisUtil.java" startLine="515" startPosition="61" endLine="526" endPosition="39">
       <varInfo nodeId="4830579082341000427" varName="left" />
       <varInfo nodeId="4830579082341000397" varName="parent" />
       <varInfo nodeId="4830579082341000412" varName="parentOp" />
       <varInfo nodeId="4830579082341000417" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000500" fileName="ParenthesisUtil.java" startLine="534" startPosition="0" endLine="545" endPosition="0">
+    <scopeInfo nodeId="4830579082341000500" fileName="ParenthesisUtil.java" startLine="529" startPosition="0" endLine="540" endPosition="0">
       <varInfo nodeId="4830579082341000503" varName="child" />
       <varInfo nodeId="4830579082341000507" varName="isRight" />
       <varInfo nodeId="4830579082341000505" varName="op" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163692645038" fileName="ParenthesisUtil.java" startLine="274" startPosition="0" endLine="286" endPosition="0">
+    <scopeInfo nodeId="1742226163692645038" fileName="ParenthesisUtil.java" startLine="270" startPosition="0" endLine="282" endPosition="0">
       <varInfo nodeId="4985347495062938766" varName="bottomMostTernary" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059555957" fileName="ParenthesisUtil.java" startLine="314" startPosition="64" endLine="327" endPosition="128">
+    <scopeInfo nodeId="7763247701645427130" fileName="ParenthesisUtil.java" startLine="406" startPosition="211" endLine="418" endPosition="12" />
+    <scopeInfo nodeId="4985347495059555957" fileName="ParenthesisUtil.java" startLine="310" startPosition="64" endLine="323" endPosition="128">
       <varInfo nodeId="4985347495059555959" varName="sideExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="7763247701645427130" fileName="ParenthesisUtil.java" startLine="410" startPosition="211" endLine="423" endPosition="12" />
-    <scopeInfo nodeId="4830579082341000392" fileName="ParenthesisUtil.java" startLine="520" startPosition="0" endLine="533" endPosition="0">
+    <scopeInfo nodeId="4830579082341000392" fileName="ParenthesisUtil.java" startLine="515" startPosition="0" endLine="528" endPosition="0">
       <varInfo nodeId="4830579082341000448" varName="expr" />
       <varInfo nodeId="4830579082341000450" varName="toRight" />
     </scopeInfo>
-    <scopeInfo nodeId="7763247701645427127" fileName="ParenthesisUtil.java" startLine="409" startPosition="0" endLine="424" endPosition="5">
+    <scopeInfo nodeId="7763247701645427127" fileName="ParenthesisUtil.java" startLine="405" startPosition="0" endLine="419" endPosition="5">
       <varInfo nodeId="7763247701645427133" varName="currentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091287912617" fileName="ParenthesisUtil.java" startLine="379" startPosition="79" endLine="395" endPosition="16">
+    <scopeInfo nodeId="7251340091287912617" fileName="ParenthesisUtil.java" startLine="375" startPosition="79" endLine="391" endPosition="16">
       <varInfo nodeId="7251340091287912619" varName="currentNode" />
       <varInfo nodeId="7251340091287912625" varName="previous" />
     </scopeInfo>
@@ -14358,34 +14345,34 @@
       <varInfo nodeId="2163970720669228125" varName="left" />
       <varInfo nodeId="2163970720669230350" varName="right" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091287912616" fileName="ParenthesisUtil.java" startLine="379" startPosition="0" endLine="397" endPosition="0">
+    <scopeInfo nodeId="7251340091287912616" fileName="ParenthesisUtil.java" startLine="375" startPosition="0" endLine="393" endPosition="0">
       <varInfo nodeId="7251340091287912680" varName="leaf" />
       <varInfo nodeId="7251340091287912684" varName="leftTurn" />
       <varInfo nodeId="7251340091287912682" varName="stopNode" />
     </scopeInfo>
-    <scopeInfo nodeId="7247988578522008316" fileName="ParenthesisUtil.java" startLine="430" startPosition="60" endLine="448" endPosition="5">
+    <scopeInfo nodeId="7247988578522008316" fileName="ParenthesisUtil.java" startLine="425" startPosition="60" endLine="443" endPosition="5">
       <varInfo nodeId="7247988578525650416" varName="current" />
       <varInfo nodeId="3706019411776080143" varName="descendants" />
       <varInfo nodeId="3706019411776085629" varName="previousDescendants" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495062973465" fileName="ParenthesisUtil.java" startLine="250" startPosition="162" endLine="269" endPosition="72">
+    <scopeInfo nodeId="4985347495062973465" fileName="ParenthesisUtil.java" startLine="246" startPosition="162" endLine="265" endPosition="72">
       <varInfo nodeId="4985347495062974205" varName="bottomMostTernary" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000205" fileName="ParenthesisUtil.java" startLine="461" startPosition="83" endLine="480" endPosition="5">
-      <varInfo nodeId="4830579082341000220" varName="sideExpr" />
-    </scopeInfo>
-    <scopeInfo nodeId="4985347495059555932" fileName="ParenthesisUtil.java" startLine="308" startPosition="72" endLine="328" endPosition="7">
-      <varInfo nodeId="4985347495059555946" varName="current" />
-      <varInfo nodeId="4985347495059555953" varName="previous" />
-    </scopeInfo>
-    <scopeInfo nodeId="7251340091277411699" fileName="ParenthesisUtil.java" startLine="405" startPosition="73" endLine="425" endPosition="16">
+    <scopeInfo nodeId="7251340091277411699" fileName="ParenthesisUtil.java" startLine="401" startPosition="73" endLine="420" endPosition="16">
       <varInfo nodeId="2163970720691423905" varName="leafAncestors" />
       <varInfo nodeId="7251340091277418510" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="7247988578522008313" fileName="ParenthesisUtil.java" startLine="430" startPosition="0" endLine="450" endPosition="0">
+    <scopeInfo nodeId="4830579082341000205" fileName="ParenthesisUtil.java" startLine="456" startPosition="83" endLine="475" endPosition="5">
+      <varInfo nodeId="4830579082341000220" varName="sideExpr" />
+    </scopeInfo>
+    <scopeInfo nodeId="4985347495059555932" fileName="ParenthesisUtil.java" startLine="304" startPosition="72" endLine="324" endPosition="7">
+      <varInfo nodeId="4985347495059555946" varName="current" />
+      <varInfo nodeId="4985347495059555953" varName="previous" />
+    </scopeInfo>
+    <scopeInfo nodeId="7247988578522008313" fileName="ParenthesisUtil.java" startLine="425" startPosition="0" endLine="445" endPosition="0">
       <varInfo nodeId="7247988578522011617" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163692673096" fileName="ParenthesisUtil.java" startLine="250" startPosition="0" endLine="271" endPosition="0">
+    <scopeInfo nodeId="1742226163692673096" fileName="ParenthesisUtil.java" startLine="246" startPosition="0" endLine="267" endPosition="0">
       <varInfo nodeId="4985347495062973474" varName="leftAccumulator" />
       <varInfo nodeId="4985347495062973468" varName="leftTurn" />
       <varInfo nodeId="1742226163692547598" varName="node" />
@@ -14393,33 +14380,33 @@
       <varInfo nodeId="4985347495062973472" varName="rightAccumulator" />
       <varInfo nodeId="4985347495062973466" varName="rightTurn" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000198" fileName="ParenthesisUtil.java" startLine="461" startPosition="0" endLine="482" endPosition="0">
+    <scopeInfo nodeId="4830579082341000198" fileName="ParenthesisUtil.java" startLine="456" startPosition="0" endLine="477" endPosition="0">
       <varInfo nodeId="4830579082341000203" varName="isRight" />
       <varInfo nodeId="4830579082341000201" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="751045515425795830" fileName="ParenthesisUtil.java" startLine="193" startPosition="94" endLine="215" endPosition="18">
+    <scopeInfo nodeId="751045515425795830" fileName="ParenthesisUtil.java" startLine="189" startPosition="94" endLine="211" endPosition="18">
       <varInfo nodeId="751045515425795832" varName="leftAccumulator" />
       <varInfo nodeId="751045515425796014" varName="parens" />
       <varInfo nodeId="751045515425795835" varName="rightAccumulator" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973092197" fileName="ParenthesisUtil.java" startLine="123" startPosition="219" endLine="148" endPosition="44">
+    <scopeInfo nodeId="2329139813973092197" fileName="ParenthesisUtil.java" startLine="121" startPosition="219" endLine="144" endPosition="44">
       <varInfo nodeId="2441191009822216896" varName="candidateAncestors" />
       <varInfo nodeId="2441191009822211868" varName="leftSideExpression" />
       <varInfo nodeId="2441191009822217980" varName="myAncestors" />
       <varInfo nodeId="2441191009822213550" varName="rightSideExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="1742226163692305150" fileName="ParenthesisUtil.java" startLine="220" startPosition="158" endLine="245" endPosition="5">
+    <scopeInfo nodeId="1742226163692305150" fileName="ParenthesisUtil.java" startLine="216" startPosition="158" endLine="241" endPosition="5">
       <varInfo nodeId="1742226163692305195" varName="head" />
       <varInfo nodeId="1742226163692305177" varName="leftSide" />
       <varInfo nodeId="1742226163692305182" varName="rightSide" />
       <varInfo nodeId="1742226163692305226" varName="subtree" />
     </scopeInfo>
-    <scopeInfo nodeId="7251340091277411696" fileName="ParenthesisUtil.java" startLine="401" startPosition="0" endLine="427" endPosition="0">
+    <scopeInfo nodeId="7251340091277411696" fileName="ParenthesisUtil.java" startLine="397" startPosition="0" endLine="422" endPosition="0">
       <varInfo nodeId="7251340091277412762" varName="leaf" />
       <varInfo nodeId="3313213291217549636" varName="rightParen" />
     </scopeInfo>
     <scopeInfo nodeId="2163970720669091436" fileName="ParenthesisUtil.java" startLine="51" startPosition="29" endLine="78" endPosition="69" />
-    <scopeInfo nodeId="1742226163692321950" fileName="ParenthesisUtil.java" startLine="220" startPosition="0" endLine="247" endPosition="0">
+    <scopeInfo nodeId="1742226163692321950" fileName="ParenthesisUtil.java" startLine="216" startPosition="0" endLine="243" endPosition="0">
       <varInfo nodeId="1742226163692305267" varName="leftAccumulator" />
       <varInfo nodeId="1742226163692305261" varName="leftTurn" />
       <varInfo nodeId="1742226163692332730" varName="node" />
@@ -14427,34 +14414,34 @@
       <varInfo nodeId="1742226163692305265" varName="rightAccumulator" />
       <varInfo nodeId="1742226163692305259" varName="rightTurn" />
     </scopeInfo>
-    <scopeInfo nodeId="751045515425796148" fileName="ParenthesisUtil.java" startLine="186" startPosition="0" endLine="217" endPosition="0">
+    <scopeInfo nodeId="751045515425796148" fileName="ParenthesisUtil.java" startLine="182" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="751045515425796114" varName="firstCommonAncestor" />
       <varInfo nodeId="751045515425796112" varName="leftTurn" />
       <varInfo nodeId="751045515425796116" varName="rightTurn" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059529057" fileName="ParenthesisUtil.java" startLine="306" startPosition="94" endLine="339" endPosition="23">
+    <scopeInfo nodeId="4985347495059529057" fileName="ParenthesisUtil.java" startLine="302" startPosition="94" endLine="335" endPosition="23">
       <varInfo nodeId="4985347495059585326" varName="accumulator" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000259" fileName="ParenthesisUtil.java" startLine="483" startPosition="67" endLine="517" endPosition="5" />
+    <scopeInfo nodeId="4830579082341000259" fileName="ParenthesisUtil.java" startLine="478" startPosition="67" endLine="512" endPosition="5" />
     <scopeInfo nodeId="7247988578541696523" fileName="ParenthesisUtil.java" startLine="46" startPosition="86" endLine="81" endPosition="18">
       <varInfo nodeId="2163970720669193466" varName="candidates" />
       <varInfo nodeId="2163970720669087094" varName="current" />
       <varInfo nodeId="7247988578541783947" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="4830579082341000256" fileName="ParenthesisUtil.java" startLine="483" startPosition="0" endLine="519" endPosition="0">
+    <scopeInfo nodeId="4830579082341000256" fileName="ParenthesisUtil.java" startLine="478" startPosition="0" endLine="514" endPosition="0">
       <varInfo nodeId="4830579082341000357" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4985347495059529054" fileName="ParenthesisUtil.java" startLine="303" startPosition="0" endLine="341" endPosition="0">
+    <scopeInfo nodeId="2329139813973092182" fileName="ParenthesisUtil.java" startLine="109" startPosition="24" endLine="147" endPosition="14" />
+    <scopeInfo nodeId="4985347495059529054" fileName="ParenthesisUtil.java" startLine="299" startPosition="0" endLine="337" endPosition="0">
       <varInfo nodeId="4985347495059580917" varName="firstCommonAncestor" />
       <varInfo nodeId="4985347495059617922" varName="left" />
       <varInfo nodeId="4985347495059583484" varName="turn" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813973092182" fileName="ParenthesisUtil.java" startLine="110" startPosition="24" endLine="151" endPosition="14" />
     <scopeInfo nodeId="7247988578541910221" fileName="ParenthesisUtil.java" startLine="40" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="7247988578541857753" varName="completingByRightParen" />
       <varInfo nodeId="7247988578541700981" varName="expr" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813972819157" fileName="ParenthesisUtil.java" startLine="90" startPosition="112" endLine="181" endPosition="5">
+    <scopeInfo nodeId="2329139813972819157" fileName="ParenthesisUtil.java" startLine="90" startPosition="112" endLine="177" endPosition="5">
       <varInfo nodeId="2329139813973092169" varName="candidateExpression" />
       <varInfo nodeId="2329139813973092173" varName="candidateParentPath" />
       <varInfo nodeId="2329139813972958305" varName="candidateParenthedNodes" />
@@ -14465,14 +14452,14 @@
       <varInfo nodeId="2329139813973371996" varName="rightExpression" />
       <varInfo nodeId="2329139813972958299" varName="topExp" />
     </scopeInfo>
-    <scopeInfo nodeId="2329139813972819155" fileName="ParenthesisUtil.java" startLine="86" startPosition="0" endLine="183" endPosition="0">
+    <scopeInfo nodeId="2329139813972819155" fileName="ParenthesisUtil.java" startLine="86" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="2329139813973035129" varName="completingByRightParen" />
       <varInfo nodeId="2329139813972819170" varName="myExpression" />
     </scopeInfo>
     <unitInfo nodeId="6653651625802609011" fileName="ParenthesisUtil.java" startLine="93" startPosition="68" endLine="97" endPosition="5" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil$1" />
-    <unitInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="124" startPosition="80" endLine="128" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil$2" />
-    <unitInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="441" startPosition="54" endLine="445" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil$3" />
-    <unitInfo nodeId="4830579082340999665" fileName="ParenthesisUtil.java" startLine="22" startPosition="0" endLine="582" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil" />
+    <unitInfo nodeId="2329139813973092234" fileName="ParenthesisUtil.java" startLine="122" startPosition="80" endLine="126" endPosition="9" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil$2" />
+    <unitInfo nodeId="3706019411776094011" fileName="ParenthesisUtil.java" startLine="436" startPosition="54" endLine="440" endPosition="7" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil$3" />
+    <unitInfo nodeId="4830579082340999665" fileName="ParenthesisUtil.java" startLine="22" startPosition="0" endLine="577" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.ParenthesisUtil" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/5017341185733869578">
     <nodeInfo nodeId="5017341185733869604" fileName="IVisible_Behavior.java" startLine="15" startPosition="81" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
