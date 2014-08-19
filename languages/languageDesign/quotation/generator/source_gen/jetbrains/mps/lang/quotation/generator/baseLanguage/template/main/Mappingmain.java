@@ -24,6 +24,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.generator.template.TemplateArgumentContext;
 
 @Generated
 public class Mappingmain implements TemplateMappingConfiguration {
@@ -80,7 +81,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       SNode callInputNode1 = QueriesGenerated.sourceNodeQuery_8438065045294025901(new SourceSubstituteMacroNodeContext(context, callMacro_417xrn_b0a0a2a1p));
       TemplateContext context1 = context.subContext(null, callInputNode1);
       if (callInputNode1 != null) {
-        tlist1 = new TemplateQuotation__to__staticMethodCall().apply(environment, context1);
+        tlist1 = new TemplateQuotation__to__staticMethodCall(((SNode) QueriesGenerated.templateArgumentQuery_8438065045297103508(new TemplateArgumentContext(context, templArgCall_417xrn_b0a0a0a0a0a0e0b51)))).apply(environment, context1);
 
       }
       return tlist1;
@@ -109,4 +110,5 @@ public class Mappingmain implements TemplateMappingConfiguration {
     }
   }
   private static SNodePointer callMacro_417xrn_b0a0a2a1p = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8438065045294025872");
+  private static SNodePointer templArgCall_417xrn_b0a0a0a0a0a0e0b51 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8438065045297103506");
 }
