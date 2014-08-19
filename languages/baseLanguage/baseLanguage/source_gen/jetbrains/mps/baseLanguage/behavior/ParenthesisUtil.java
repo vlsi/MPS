@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -45,31 +45,39 @@ public class ParenthesisUtil {
    */
   private static List<SNode> descendInto(SNode expr, boolean completingByRightParen) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    if (expr == null) {
-      return result;
+    List<SNode> candidates = ListSequence.fromList(new ArrayList<SNode>());
+    SNode current = expr;
+
+    while (current != null) {
+      if (completingByRightParen && (AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
+        ListSequence.fromList(result).addElement(current);
+      }
+      if (!(completingByRightParen) && (AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null)) {
+        ListSequence.fromList(result).addElement(current);
+      }
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
+        SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
+        SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
+        if (completingByRightParen) {
+          if (left != null) {
+            ListSequence.fromList(candidates).addElement(left);
+          }
+          if (right != null) {
+            ListSequence.fromList(candidates).addElement(right);
+          }
+        }
+        if (!(completingByRightParen)) {
+          if (right != null) {
+            ListSequence.fromList(candidates).addElement(right);
+          }
+          if (left != null) {
+            ListSequence.fromList(candidates).addElement(left);
+          }
+        }
+      }
+      current = ListSequence.fromList(candidates).removeElementAt(0);
     }
 
-    List<SNode> leftDescent = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> rightDescent = ListSequence.fromList(new ArrayList<SNode>());
-    if (SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
-      leftDescent = descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}), completingByRightParen);
-      rightDescent = descendInto(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}), completingByRightParen);
-    }
-
-    if (completingByRightParen) {
-      if ((AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
-        ListSequence.fromList(result).addElement(expr);
-      }
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(leftDescent));
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(rightDescent));
-    }
-    if (!(completingByRightParen)) {
-      if ((AttributeOperations.getAttribute(expr, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null)) {
-        ListSequence.fromList(result).addElement(expr);
-      }
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(rightDescent));
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(leftDescent));
-    }
     return result;
   }
 
