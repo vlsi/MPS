@@ -70,7 +70,7 @@ public class SNodeOperations {
   public static List<SNode> getChildren(SNode node, boolean includeAttributes) {
     List<SNode> res = new ArrayList<SNode>();
     for (SNode child : node.getChildren()) {
-      if (child != null && AttributeOperations.isAttribute(child)) {
+      if (child != null && (includeAttributes || !(AttributeOperations.isAttribute(child)))) {
         res.add(((SNode) child));
       }
     }
