@@ -61,7 +61,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="MergeDriverInstaller.java" />
   </source>
@@ -126,9 +125,12 @@
     <file name="SvnInstaller.java" />
   </source>
   <source id="1376744028423385490" name="AbstractInstaller" hash="90kbl2ce6bilf2tpxo5o9wcwx11719t">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="AbstractInstaller.java" />
   </source>
   <source id="1016968294606525391" name="CommandLineGenerator" hash="-2j1xnr3rucd2guq1mqbv19vu7nncasx">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="CommandLineGenerator.java" />
   </source>
   <source id="5332772916083838064" name="ScriptGenerator" hash="-r2ic4di30liv0gfxn0bqz7fz17e4xg">

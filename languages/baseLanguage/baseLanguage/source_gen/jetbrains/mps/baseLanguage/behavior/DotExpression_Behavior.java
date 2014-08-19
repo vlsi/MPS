@@ -64,6 +64,14 @@ public class DotExpression_Behavior {
     return true;
   }
 
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "operand", true);
+  }
+
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "operand", expr, true);
+  }
+
   @Deprecated
   public static boolean call_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_allowsNullOperand_4585239809762176541", new Object[]{});
