@@ -16,7 +16,7 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return DotExpression_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return ISupportParentheses_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {

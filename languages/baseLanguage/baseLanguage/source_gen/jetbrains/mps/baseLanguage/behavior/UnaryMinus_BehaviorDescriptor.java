@@ -8,10 +8,6 @@ public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_
   public UnaryMinus_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return UnaryMinus_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
-  }
-
   public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
   }

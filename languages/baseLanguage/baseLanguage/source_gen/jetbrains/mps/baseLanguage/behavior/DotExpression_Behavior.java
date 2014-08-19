@@ -64,10 +64,6 @@ public class DotExpression_Behavior {
     return true;
   }
 
-  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return true;
-  }
-
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "operand", true);
   }
