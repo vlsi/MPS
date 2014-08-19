@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public abstract class BinaryOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ISupportParentheses_BehaviorDescriptor {
+public abstract class BinaryOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IBinaryLike_BehaviorDescriptor {
   public BinaryOperation_BehaviorDescriptor() {
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return ISupportParentheses_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return IBinaryLike_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {

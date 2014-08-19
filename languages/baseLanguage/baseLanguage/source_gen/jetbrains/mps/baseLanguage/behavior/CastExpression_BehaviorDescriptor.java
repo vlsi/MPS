@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISupportParentheses_BehaviorDescriptor {
+public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, IBinaryLike_BehaviorDescriptor {
   public CastExpression_BehaviorDescriptor() {
   }
 
@@ -14,7 +14,7 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
   }
 
   public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
-    return ISupportParentheses_Behavior.virtual_getSyntacticallyLeftSideExpression_1742226163722653708(thisNode);
+    return IBinaryLike_Behavior.virtual_getSyntacticallyLeftSideExpression_1742226163722653708(thisNode);
   }
 
   public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
@@ -22,11 +22,11 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
   }
 
   public void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
-    ISupportParentheses_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);
+    IBinaryLike_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);
   }
 
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    ISupportParentheses_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
+    IBinaryLike_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
 
   @Override

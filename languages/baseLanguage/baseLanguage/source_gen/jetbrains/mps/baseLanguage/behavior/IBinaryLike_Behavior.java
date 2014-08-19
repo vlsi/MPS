@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
-public class ISupportParentheses_Behavior {
+public class IBinaryLike_Behavior {
   public static void init(SNode thisNode) {
   }
 
@@ -44,7 +44,7 @@ public class ISupportParentheses_Behavior {
 
   @Deprecated
   public static boolean callSuper_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, String callerConceptFqName, SNode leaf, boolean rightParen) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"), callerConceptFqName, "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Class[]{SNode.class, SNode.class, Boolean.TYPE}, new Object[]{leaf, rightParen});
+    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), callerConceptFqName, "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Class[]{SNode.class, SNode.class, Boolean.TYPE}, new Object[]{leaf, rightParen});
   }
 
   @Deprecated
@@ -54,7 +54,7 @@ public class ISupportParentheses_Behavior {
 
   @Deprecated
   public static void callSuper_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, String callerConceptFqName, SNode expr) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"), callerConceptFqName, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), callerConceptFqName, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
   }
 
   @Deprecated
@@ -64,7 +64,7 @@ public class ISupportParentheses_Behavior {
 
   @Deprecated
   public static void callSuper_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, String callerConceptFqName, SNode expr) {
-    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"), callerConceptFqName, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
+    BehaviorManager.getInstance().invokeSuper(Void.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), callerConceptFqName, "virtual_setSyntacticallyRightSideExpression_1742226163722653694", new Class[]{SNode.class, SNode.class}, new Object[]{expr});
   }
 
   @Deprecated
@@ -74,7 +74,7 @@ public class ISupportParentheses_Behavior {
 
   @Deprecated
   public static SNode callSuper_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"), callerConceptFqName, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), callerConceptFqName, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Class[]{SNode.class}, new Object[]{});
   }
 
   @Deprecated
@@ -84,6 +84,6 @@ public class ISupportParentheses_Behavior {
 
   @Deprecated
   public static SNode callSuper_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"), callerConceptFqName, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Class[]{SNode.class}, new Object[]{});
+    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), callerConceptFqName, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Class[]{SNode.class}, new Object[]{});
   }
 }

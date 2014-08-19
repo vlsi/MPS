@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3bkspxg6mbb8kxu1oukpjvlqhudvjcg">
+<dependencies version="2" modelHash="-djw901ul7gx441xyp7lol3phih6ory9">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
@@ -343,7 +343,7 @@
   <source id="1070534604311" name="ByteType" hash="e7spme3groeuda14remymbzazfezt0d" />
   <source id="1070534644030" name="BooleanType" hash="cfo9kdpvdfpqympref4314iz8gg0lwc" />
   <source id="1070534760951" name="ArrayType" hash="99uwnm2yjh6mc3km4gfbr7ivbqcvx8r" />
-  <source id="1070534934090" name="CastExpression" hash="2geizxiw9d159nvrivsxhrmkx9hlqr6" />
+  <source id="1070534934090" name="CastExpression" hash="-26byk5vtj3z16lsmk1dcnbirua5qjhf" />
   <source id="1073063089578" name="SuperMethodCall" hash="-arinbb7c7ep5ljr7k6lurh8if6n76z" />
   <source id="1073239437375" name="NotEqualsExpression" hash="-2elntoh3nxmofph8epqf18t37377w39" />
   <source id="1076505808687" name="WhileStatement" hash="-b8z6hugs5b2ran26z2oizfoblsxi0m5" />
@@ -355,12 +355,11 @@
   <source id="1081256982272" name="InstanceOfExpression" hash="3w0382naq52rtkov6hklfgv3ku3v2gz" />
   <source id="1081516740877" name="NotExpression" hash="9rzxyw421vfmyiil8x80suwyzbicdj1" />
   <source id="1081855346303" name="BreakStatement" hash="973b0on47o4yxr0279luwzkiqtut1bv" />
-  <source id="1081773326031" name="BinaryOperation" hash="cvtuwuyiarkz64mz8r1weno3amcc7hl" />
+  <source id="1081773326031" name="BinaryOperation" hash="10h95wefo7hafmrpxv1o6ib3a8e8pxp" />
   <source id="1082113931046" name="ContinueStatement" hash="-b9qszd47bn1k3b6ue401ndqx92in4gl" />
   <source id="1082485599095" name="BlockStatement" hash="5ze0inu30oyzonibnxkw97032ef4ffr" />
   <source id="1083065718921" name="_Identifier_String" hash="332rwj27ao6jyebu99tk3edk2470gn1">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_Identifier_String_PropertySupport.java" />
   </source>
   <source id="1083245097125" name="EnumClass" hash="-8bllqnjcehe1q34uqk7k9ofgi9hw8rz" />
@@ -377,6 +376,7 @@
   <source id="1109283449304" name="TypeVariableReference" hash="dta21wyhhzajkymh408aqlj121v6fva" />
   <source id="1113006251687" name="_FPNumber_String" hash="-an4hjzmlbbtqai8f0qlsr6wd9qcwe54">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="aabb26s397wephah2yftkpb7izqmwvn" />
@@ -398,7 +398,7 @@
   <source id="1154542696413" name="ArrayCreatorWithInitializer" hash="4uv0ji6e8dxjccdtvpade0ft4kzy3wh" />
   <source id="1160998861373" name="AssertStatement" hash="enw5nj61zygn295reyv0r69mhpddmyn" />
   <source id="1070475354124" name="ThisExpression" hash="-dk4xj7kispovdcuwqrj2qyayojrr6r9" />
-  <source id="1163668896201" name="TernaryOperatorExpression" hash="480eu17b7a1ubp80t12763hsegv0pwr" />
+  <source id="1163668896201" name="TernaryOperatorExpression" hash="-e91jcjc8zt4u0kt9gbni67xlignguz7" />
   <source id="1163670490218" name="SwitchStatement" hash="dnmruum0p6harrh2cxayx2ydgkcl3mw" />
   <source id="1163670641947" name="SwitchCase" hash="-aj57xaa2x6ihzgk889sn9era1szdo1o" />
   <source id="1164118113764" name="PrimitiveType" hash="dlxvokk17bagxuqu1ttv4k2fnyo9wpe" />
@@ -429,12 +429,13 @@
   <source id="1188214545140" name="AnnotationInstanceValue" hash="-24n5h9ftestxilzzqjpr9tl9utb8aqs" />
   <source id="1188220165133" name="ArrayLiteral" hash="-dbvdij9mq5yk5husrmsonf6k6td16bz" />
   <source id="1194952169813" name="IMemberContainer" hash="-a5up0pltuelt5dvkfzyldbm45g70a75" />
-  <source id="1197027756228" name="DotExpression" hash="-6ol3w58oet9yil3tq39e8fwxb5lfglb" />
+  <source id="1197027756228" name="DotExpression" hash="-5wl242wvtritkf3pduk0m0wyuu5pvyq" />
   <source id="1197027803184" name="IOperation" hash="av2hv9t6fo9wia9fj4mif3cc4f7ls4j" />
   <source id="1197029447546" name="FieldReferenceOperation" hash="-dy50ds10dena6gibbyhfa9iqxqzn4dd" />
   <source id="1199653749349" name="IStatementListContainer" hash="4zlbfji2jvatn9r3rffmwsgfhz51a17" />
   <source id="1200397549879" name="_CharConstant_String" hash="-4zp5cmjj3gklz3mk5y512yh5vzz2pvs">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="_CharConstant_String_PropertySupport.java" />
   </source>
   <source id="1201183863028" name="TypeDerivable" hash="2e64nx11b7nytlxgvnix9c81424fqsw" />
@@ -494,6 +495,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />
@@ -510,7 +512,7 @@
   <source id="1239448985469" name="BinaryCompareOperation" hash="-dk2fid1lq9fg515daec5lz3l542gqa8" />
   <source id="1239709250944" name="PrefixIncrementExpression" hash="b0y59nqtt9qic0ur1hh3ts43h0tvv53" />
   <source id="1239709577448" name="PrefixDecrementExpression" hash="1hquevcv900wdsfvv2nzu7py74wfpeh" />
-  <source id="1239714755177" name="AbstractUnaryNumberOperation" hash="-6tdsjvt7b7l6awvqir5u2vbm9fnq0q1" />
+  <source id="1239714755177" name="AbstractUnaryNumberOperation" hash="-1ovzsxx3x8f42946f1km8xtvwn5afc9" />
   <source id="1241450588333" name="BLBottomType" hash="7rfw2ldlxdy7lnrrkf3upih1h8eun69" />
   <source id="1241540912639" name="ConstructorInvocationStatement" hash="-816zxb2159jf8s6i0kxtx4utfwn0b1g" />
   <source id="4269842503726207818" name="_LongType_String" hash="b4d3v7hxcqgt51bfg6mb9eh3vygjlz2">
@@ -522,7 +524,6 @@
     <file name="_FloatNumberValue_PropertySupport.java" />
   </source>
   <source id="6734604082923916973" name="_HexNumberValue" hash="55313jm0eigjlbteu8g7sstc0ocp7xj">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_HexNumberValue_PropertySupport.java" />
   </source>
   <source id="4972933694980447171" name="BaseVariableDeclaration" hash="-aajnhz183lu8yk5r8l8gqlnhfnezm7k" />
@@ -623,6 +624,6 @@
   <source id="4285773203949551198" name="CustomSetterPropertyImplementation" hash="m3mi7ak5e2b0w6p89ushvezwc78dyx" />
   <source id="7251340091268481742" name="IncompleteLeftParen" hash="da62xce2hucdd7r4dgdfzyxw8s0jyt3" />
   <source id="2329139813954029793" name="IncompleteRightParen" hash="9zptaz0wcvtmycwn4az1w9qzndshgcl" />
-  <source id="1742226163722651198" name="ISupportParentheses" hash="-3ytzlx6jihaqeptfypgv9unm1jmolqa" />
+  <source id="1742226163722651198" name="IBinaryLike" hash="-cdzz29wlzbxznih1l7ke9svo6wpaysu" />
 </dependencies>
 

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public interface ISupportParentheses_BehaviorDescriptor {
+public interface IBinaryLike_BehaviorDescriptor {
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen);
   public void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr);
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr);

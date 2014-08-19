@@ -7,7 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISupportParentheses_BehaviorDescriptor {
+public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, IBinaryLike_BehaviorDescriptor {
   public DotExpression_BehaviorDescriptor() {
   }
 
@@ -16,7 +16,7 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return ISupportParentheses_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return IBinaryLike_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
@@ -28,7 +28,7 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   }
 
   public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
-    return ISupportParentheses_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
+    return IBinaryLike_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
   }
 
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
@@ -52,7 +52,7 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   }
 
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    ISupportParentheses_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
+    IBinaryLike_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
 
   @Override

@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class TernaryOperatorExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ISupportParentheses_BehaviorDescriptor {
+public class TernaryOperatorExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IBinaryLike_BehaviorDescriptor {
   public TernaryOperatorExpression_BehaviorDescriptor() {
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return ISupportParentheses_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return IBinaryLike_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {

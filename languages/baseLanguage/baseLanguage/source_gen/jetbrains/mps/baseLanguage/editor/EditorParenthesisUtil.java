@@ -93,11 +93,11 @@ public class EditorParenthesisUtil {
   }
 
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.NotExpression") || !(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ISupportParentheses"))) {
+    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.NotExpression") || !(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
       return root;
     }
 
-    SNode parRoot = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ISupportParentheses");
+    SNode parRoot = SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
     if (rightmost && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) != null) {
       return findRightmostOrLeftmostLeafExpression(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), parRoot, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}), rightmost);
     }
