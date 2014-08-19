@@ -21,6 +21,10 @@ public class CastExpression_Behavior {
     return CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), leaf);
   }
 
+  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "expression", true);
+  }
+
   private static boolean eq_fzg371_a0a0a0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -13,15 +13,11 @@ public class PostfixDecrementExpression_Behavior {
     return true;
   }
 
-  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "expression", true);
-  }
-
-  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
-    return null;
-  }
-
   public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
     return !(rightParen);
+  }
+
+  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "expression", true);
   }
 }

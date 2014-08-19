@@ -6,7 +6,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.module.SModule;
-import java.util.List;
 
 public abstract class Expression_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Expression_BehaviorDescriptor() {
@@ -26,10 +25,6 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
 
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return Expression_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  }
-
-  public List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
-    return Expression_Behavior.virtual_getOrderedChildExpressions_7583777362095257106(thisNode);
   }
 
   public SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {

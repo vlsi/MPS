@@ -12,6 +12,10 @@ public class PrefixIncrementExpression_BehaviorDescriptor extends AbstractUnaryN
     return PrefixIncrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
   }
 
+  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return PrefixIncrementExpression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
+  }
+
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return PrefixIncrementExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }

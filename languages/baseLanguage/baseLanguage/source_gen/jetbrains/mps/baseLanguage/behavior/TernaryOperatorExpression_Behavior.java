@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.ArrayList;
 
 public class TernaryOperatorExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -28,7 +27,11 @@ public class TernaryOperatorExpression_Behavior {
     SLinkOperations.setTarget(thisNode, "ifFalse", expr, true);
   }
 
-  public static List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "condition", true), SLinkOperations.getTarget(thisNode, "ifTrue", true), SLinkOperations.getTarget(thisNode, "ifFalse", true));
+  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "condition", true);
+  }
+
+  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "ifFalse", true);
   }
 }

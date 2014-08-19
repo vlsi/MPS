@@ -27,10 +27,6 @@ public class DotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
     return DotExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_7583777362095214544(thisNode);
   }
 
-  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
-    return DotExpression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
-  }
-
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return DotExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }

@@ -9,10 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class Expression_Behavior {
@@ -71,27 +67,11 @@ public class Expression_Behavior {
   }
 
   public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
-    // In case of a single child, it is considerred to be the right child by default 
-    List<SNode> orderedChidExpressions = Expression_Behavior.call_getOrderedChildExpressions_7583777362095257106(thisNode);
-    return (ListSequence.fromList(orderedChidExpressions).count() > 1 ? ListSequence.fromList(orderedChidExpressions).first() : null);
+    return null;
   }
 
   public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
-    // In case of a single child, it is considerred to be the right child by default 
-    List<SNode> orderedChidExpressions = Expression_Behavior.call_getOrderedChildExpressions_7583777362095257106(thisNode);
-    return (ListSequence.fromList(orderedChidExpressions).count() > 0 ? ListSequence.fromList(orderedChidExpressions).last() : null);
-  }
-
-  public static List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
-    return ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Expression");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Expression");
-      }
-    }).toListSequence();
+    return null;
   }
 
   @Deprecated
@@ -202,15 +182,5 @@ public class Expression_Behavior {
   @Deprecated
   public static SNode callSuper_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode, String callerConceptFqName) {
     return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> call_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getOrderedChildExpressions_7583777362095257106", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<SNode> callSuper_getOrderedChildExpressions_7583777362095257106(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<SNode>>) ((Class) Object.class), jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Expression"), callerConceptFqName, "virtual_getOrderedChildExpressions_7583777362095257106", new Class[]{SNode.class}, new Object[]{});
   }
 }

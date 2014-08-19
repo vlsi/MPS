@@ -12,6 +12,10 @@ public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_
     return UnaryMinus_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
   }
 
+  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
+  }
+
   public void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
     UnaryMinus_Behavior.virtual_setSyntacticallyRightSideExpression_7583777362102706555(thisNode, expr);
   }

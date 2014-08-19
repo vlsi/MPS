@@ -5,9 +5,6 @@ package jetbrains.mps.baseLanguage.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 
 public class BinaryOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -29,7 +26,11 @@ public class BinaryOperation_Behavior {
     SLinkOperations.setTarget(thisNode, "rightExpression", expr, true);
   }
 
-  public static List<SNode> virtual_getOrderedChildExpressions_7583777362095257106(SNode thisNode) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "leftExpression", true), SLinkOperations.getTarget(thisNode, "rightExpression", true));
+  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "leftExpression", true);
+  }
+
+  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "rightExpression", true);
   }
 }

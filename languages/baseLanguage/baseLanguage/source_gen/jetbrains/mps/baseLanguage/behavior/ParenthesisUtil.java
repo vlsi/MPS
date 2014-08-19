@@ -77,6 +77,7 @@ public class ParenthesisUtil {
     List<SNode> myParentPath = parentPath(myExpression, completingByRightParen);
     SNode topExp = ListSequence.fromList(myParentPath).last();
     List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
+    System.out.println("CCCCCCC " + candidateParenthedNodes);
 
     int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
     SNode candidateExpression = null;
@@ -87,7 +88,7 @@ public class ParenthesisUtil {
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      if (eq_a65dpo_a0b0m0i(candidateExpression, myExpression)) {
+      if (eq_a65dpo_a0b0n0i(candidateExpression, myExpression)) {
         // they are both the same node 
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen);
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -122,6 +123,7 @@ public class ParenthesisUtil {
       // Continue to try another candidate parenthesis 
       index--;
     }
+    System.out.println("AAAAAAAAA");
     if (index == -1) {
       // no common ancestor with any of the candidate parens or swapped left-right -> can't parenthesise 
       if (completingByRightParen) {
@@ -133,7 +135,7 @@ public class ParenthesisUtil {
     }
 
     clearIncompleteParens(candidateExpression, completingByRightParen);
-
+    System.out.println("BBBBBBBBB");
     // Let's call them left and right parens from now, instead of 'my' and 'candidate' 
     SNode leftExpression = (completingByRightParen ? candidateExpression : myExpression);
     SNode rightExpression = (completingByRightParen ? myExpression : candidateExpression);
@@ -509,7 +511,7 @@ public class ParenthesisUtil {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
 
-  private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0n0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 
