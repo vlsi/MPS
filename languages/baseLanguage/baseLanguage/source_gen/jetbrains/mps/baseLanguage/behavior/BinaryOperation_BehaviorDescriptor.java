@@ -10,7 +10,7 @@ public abstract class BinaryOperation_BehaviorDescriptor extends Expression_Beha
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return BinaryOperation_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return ISupportParentheses_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {

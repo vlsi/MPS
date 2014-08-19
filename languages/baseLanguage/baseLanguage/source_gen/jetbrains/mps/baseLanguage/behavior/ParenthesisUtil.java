@@ -45,7 +45,6 @@ public class ParenthesisUtil {
    */
   private static List<SNode> descendInto(SNode expr, boolean completingByRightParen) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    System.out.println("DDDDDDD " + expr);
     if (expr == null) {
       return result;
     }
@@ -71,7 +70,6 @@ public class ParenthesisUtil {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(rightDescent));
       ListSequence.fromList(result).addSequence(ListSequence.fromList(leftDescent));
     }
-    System.out.println("EEEEEEE " + result);
     return result;
   }
 
@@ -92,7 +90,6 @@ public class ParenthesisUtil {
     if (topExp == null) {
       topExp = ListSequence.fromList(myParentPath).last();
     }
-
     List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
 
     int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
@@ -100,12 +97,10 @@ public class ParenthesisUtil {
     final Wrappers._T<List<SNode>> candidateParentPath = new Wrappers._T<List<SNode>>(null);
     // The bottom-most common ancestor 
     SNode firstCommonAncestor = null;
-    System.out.println("CCCCCCC " + myParentPath + ":" + candidateParentPath.value + ":" + candidateParenthedNodes + ":" + firstCommonAncestor);
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      System.out.println("AAAAAAAA " + myExpression + ":" + candidateExpression);
-      if (eq_a65dpo_a0c0o0i(candidateExpression, myExpression)) {
+      if (eq_a65dpo_a0b0m0i(candidateExpression, myExpression)) {
         // they are both the same node 
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen);
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -144,7 +139,6 @@ public class ParenthesisUtil {
       // Continue to try another candidate parenthesis 
       index--;
     }
-    System.out.println("BBBBBBB " + index);
     if (index == -1) {
       // no common ancestor with any of the candidate parens or swapped left-right -> can't parenthesise 
       if (completingByRightParen) {
@@ -533,7 +527,7 @@ public class ParenthesisUtil {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
 
-  private static boolean eq_a65dpo_a0c0o0i(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 

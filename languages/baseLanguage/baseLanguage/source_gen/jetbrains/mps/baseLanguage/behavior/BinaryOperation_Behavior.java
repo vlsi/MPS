@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BinaryOperation_Behavior {
@@ -13,11 +12,6 @@ public class BinaryOperation_Behavior {
 
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 0;
-  }
-
-  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.ISupportParentheses", "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen});
-    return true;
   }
 
   public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
