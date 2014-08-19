@@ -13,25 +13,25 @@ public class TernaryOperatorExpression_Behavior {
   public static void init(SNode thisNode) {
   }
 
-  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
     // true for condition and ifFalse 
     List<SNode> ancestors = SNodeOperations.getAncestors(leaf, null, true);
-    return ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyLeftSideExpression_7583777362095214544", new Object[]{})) || ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyRightSideExpression_7583777362095256690", new Object[]{}));
+    return ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{})) || ListSequence.fromList(ancestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
   }
 
-  public static void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "condition", expr, true);
   }
 
-  public static void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
+  public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "ifFalse", expr, true);
   }
 
-  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "condition", true);
   }
 
-  public static SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
+  public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "ifFalse", true);
   }
 }

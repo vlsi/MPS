@@ -8,16 +8,16 @@ public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_
   public UnaryMinus_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
-    return UnaryMinus_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
+  public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
+    return UnaryMinus_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
-  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
-    return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
+  public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
+    return UnaryMinus_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
   }
 
-  public void virtual_setSyntacticallyRightSideExpression_7583777362102706555(SNode thisNode, SNode expr) {
-    UnaryMinus_Behavior.virtual_setSyntacticallyRightSideExpression_7583777362102706555(thisNode, expr);
+  public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
+    UnaryMinus_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
 
   @Override

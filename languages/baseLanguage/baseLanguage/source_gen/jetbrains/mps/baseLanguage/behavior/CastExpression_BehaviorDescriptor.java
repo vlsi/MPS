@@ -5,16 +5,28 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
+public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, ISupportParentheses_BehaviorDescriptor {
   public CastExpression_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
-    return CastExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
+  public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
+    return CastExpression_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
-  public SNode virtual_getSyntacticallyRightSideExpression_7583777362095256690(SNode thisNode) {
-    return CastExpression_Behavior.virtual_getSyntacticallyRightSideExpression_7583777362095256690(thisNode);
+  public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return ISupportParentheses_Behavior.virtual_getSyntacticallyLeftSideExpression_1742226163722653708(thisNode);
+  }
+
+  public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
+    return CastExpression_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
+  }
+
+  public void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    ISupportParentheses_Behavior.virtual_setSyntacticallyLeftSideExpression_1742226163722653680(thisNode, expr);
+  }
+
+  public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
+    ISupportParentheses_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
 
   @Override

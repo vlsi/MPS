@@ -64,16 +64,16 @@ public class DotExpression_Behavior {
     return true;
   }
 
-  public static boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
+  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
     return true;
   }
 
-  public static void virtual_setSyntacticallyLeftSideExpression_7583777362102629706(SNode thisNode, SNode expr) {
-    SLinkOperations.setTarget(thisNode, "operand", expr, true);
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "operand", true);
   }
 
-  public static SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "operand", true);
+  public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "operand", expr, true);
   }
 
   @Deprecated

@@ -8,12 +8,12 @@ public class PostfixIncrementExpression_BehaviorDescriptor extends AbstractUnary
   public PostfixIncrementExpression_BehaviorDescriptor() {
   }
 
-  public boolean virtual_canPropagateUnmatchedParenUp_2572626204612659829(SNode thisNode, SNode leaf, boolean rightParen) {
-    return PostfixIncrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_2572626204612659829(thisNode, leaf, rightParen);
+  public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
+    return PostfixIncrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
-  public SNode virtual_getSyntacticallyLeftSideExpression_7583777362095214544(SNode thisNode) {
-    return PostfixIncrementExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_7583777362095214544(thisNode);
+  public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return PostfixIncrementExpression_Behavior.virtual_getSyntacticallyLeftSideExpression_1742226163722653708(thisNode);
   }
 
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
