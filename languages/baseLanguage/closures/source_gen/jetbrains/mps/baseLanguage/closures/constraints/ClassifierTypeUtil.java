@@ -267,6 +267,9 @@ with_meet:
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
+  private static boolean eq_zgotlq_a0a0a4(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_zgotlq_a0a0a0a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -317,8 +320,5 @@ with_meet:
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-  private static boolean eq_zgotlq_a0a0a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

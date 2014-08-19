@@ -326,6 +326,15 @@ public class ChangeSetBuilder {
     }
     return null;
   }
+  private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_nbyrtw_a0a0i0j_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_nbyrtw_a0a8a9(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static String check_nbyrtw_a0a8a9(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
@@ -349,15 +358,6 @@ public class ChangeSetBuilder {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
-  }
-  private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_nbyrtw_a0a0i0j_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_nbyrtw_a0a8a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
   private static <T> T as_nbyrtw_a0a0h0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);

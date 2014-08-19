@@ -136,11 +136,17 @@ public class SetReferenceChange extends NodeChange {
     }
     return null;
   }
+  private static boolean eq_mgdhcs_a0a0a9a5(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SModelReference check_mgdhcs_a0a0a9a5(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
+  }
+  private static boolean eq_mgdhcs_a0a0a9a5_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNodeId check_mgdhcs_a0a0a9a5_0(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -148,11 +154,23 @@ public class SetReferenceChange extends NodeChange {
     }
     return null;
   }
+  private static boolean neq_mgdhcs_a0h0n(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean neq_mgdhcs_a0i0n(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean neq_mgdhcs_a0j0n(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
   private static SModelReference check_mgdhcs_a0d0o(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
+  }
+  private static boolean eq_mgdhcs_a0e0o(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNodeId check_mgdhcs_e0a6a41(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -165,23 +183,5 @@ public class SetReferenceChange extends NodeChange {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
-  }
-  private static boolean eq_mgdhcs_a0a0a9a5(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_mgdhcs_a0a0a9a5_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_mgdhcs_a0h0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean neq_mgdhcs_a0i0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean neq_mgdhcs_a0j0n(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean eq_mgdhcs_a0e0o(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

@@ -69,7 +69,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a4(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a0e(), true) != null);
   }
   public static class Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_nodeType;
@@ -117,9 +117,9 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     public void performActions(Object o) {
     }
   }
-  public static class Pattern_f4oi2a_a1a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_f4oi2a_a1a0a0a0e extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_nodeType;
-    public Pattern_f4oi2a_a1a0a0a4() {
+    public Pattern_f4oi2a_a1a0a0a0e() {
     }
     public boolean match(SNode nodeToMatch) {
       {

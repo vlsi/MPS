@@ -5953,6 +5953,9 @@ __switch__:
     quotedNode_1.addChild("body", quotedNode_5);
     return quotedNode_1;
   }
+  private static boolean eq_x583g4_a0a0a0a0a0a4a0a0a0a01a0a0a0a0a0a1a2a0a1a55(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_wa99gi_a0a0a1a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -5994,6 +5997,18 @@ __switch__:
       quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
+  }
+  private static boolean isEmptyString(String str) {
+    return str == null || str.length() == 0;
+  }
+  private static boolean eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0zc(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a38(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_x583g4_a0a0a3a0a0a0a0a1a911(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_waf1l5_a0a0e0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -6052,24 +6067,6 @@ __switch__:
     quotedNode_2.addChild("localVariableDeclaration", quotedNode_3);
     return quotedNode_2;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a4a0a0a0a01a0a0a0a0a0a1a2a0a1a55(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean isEmptyString(String str) {
-    return str == null || str.length() == 0;
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0zc(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_x583g4_a0a0a38(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean eq_x583g4_a0a0a3a0a0a0a0a1a911(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a052(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a33 = Pattern.compile("-?\\d+", 0);
   private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0hb = Pattern.compile("-?\\d*", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a33 = Pattern.compile("-?\\d+(?:l|L)", 0);
@@ -6077,4 +6074,7 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0hb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a33 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a052(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
+  }
 }
