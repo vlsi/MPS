@@ -4,6 +4,9 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayAccessExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +14,13 @@ public class ArrayAccessExpression_Behavior {
 
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
+    return !(rightParen) && ListSequence.fromList(SNodeOperations.getAncestors(leaf, null, true)).contains(SLinkOperations.getTarget(thisNode, "array", true));
+  }
+
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "array", true);
   }
 }

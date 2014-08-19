@@ -105,10 +105,11 @@ public class ParenthesisUtil {
     final Wrappers._T<List<SNode>> candidateParentPath = new Wrappers._T<List<SNode>>(null);
     // The bottom-most common ancestor 
     SNode firstCommonAncestor = null;
+    System.out.println("AAAAAA " + myParentPath + ":" + candidateParenthedNodes);
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      if (eq_a65dpo_a0b0m0i(candidateExpression, myExpression)) {
+      if (eq_a65dpo_a0b0n0i(candidateExpression, myExpression)) {
         // they are both the same node 
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen);
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -118,6 +119,7 @@ public class ParenthesisUtil {
 
       // Find the bottom-most common ancestor 
       candidateParentPath.value = parentPath(candidateExpression, !(completingByRightParen));
+      System.out.println("BBBBBBB " + candidateParentPath.value + ":" + myExpression + ":" + myParentPath);
       if (ListSequence.fromList(myParentPath).contains(ListSequence.fromList(candidateParentPath.value).last()) || ListSequence.fromList(candidateParentPath.value).contains(ListSequence.fromList(myParentPath).last())) {
         firstCommonAncestor = ListSequence.fromList(myParentPath).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -125,7 +127,7 @@ public class ParenthesisUtil {
           }
         });
         assert firstCommonAncestor != null;
-
+        System.out.println("CCCCCCCC " + firstCommonAncestor);
         if (!(SNodeOperations.isInstanceOf(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
           continue;
         }
@@ -142,6 +144,7 @@ public class ParenthesisUtil {
         if (!(completingByRightParen) && (ListSequence.fromList(myAncestors).contains(leftSideExpression) || leftSideExpression == null) && (ListSequence.fromList(candidateAncestors).contains(rightSideExpression) || rightSideExpression == null)) {
           break;
         }
+        System.out.println("DDDDDDDD");
         // Break out if found a valid match 
       }
       // Continue to try another candidate parenthesis 
@@ -402,11 +405,20 @@ public class ParenthesisUtil {
   private static List<SNode> parentPath(SNode leaf, boolean rightParen) {
     List<SNode> path = new ArrayList<SNode>();
     ListSequence.fromList(path).addElement(leaf);
+    List<SNode> leafAncestors = SNodeOperations.getAncestors(leaf, null, true);
 
     for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"); currentNode = SNodeOperations.getParent(currentNode)) {
-      ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
-      if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen})) {
-        continue;
+      if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
+        SNode curr = SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
+
+        // Do not climb up into a disconnected parent, e.g. into Ternary from the ifTrue branch 
+        // Only syntactically left or right children may include their parents in their parent path 
+        if (ListSequence.fromList(leafAncestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), curr, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{})) || ListSequence.fromList(leafAncestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), curr, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}))) {
+          ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
+          if (BehaviorReflection.invokeVirtual(Boolean.TYPE, curr, "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen})) {
+            continue;
+          }
+        }
       }
       break;
     }
@@ -535,7 +547,7 @@ public class ParenthesisUtil {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
 
-  private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0n0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 

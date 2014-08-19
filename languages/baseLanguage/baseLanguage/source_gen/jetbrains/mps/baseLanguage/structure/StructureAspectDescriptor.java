@@ -47,7 +47,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator").super_("jetbrains.mps.baseLanguage.structure.AbstractCreator").parents("jetbrains.mps.baseLanguage.structure.AbstractCreator", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").children(new String[]{"cls"}, new boolean[]{false}).alias("anonymous class", "").staticScope(StaticScope.NONE).create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"array", "index"}, new boolean[]{false, false}).alias("[", "array access expression").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IBinaryLike").children(new String[]{"array", "index"}, new boolean[]{false, false}).alias("[", "array access expression").staticScope(StaticScope.NONE).create();
       case 17:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.ArrayClassExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"arrayType"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 18:
