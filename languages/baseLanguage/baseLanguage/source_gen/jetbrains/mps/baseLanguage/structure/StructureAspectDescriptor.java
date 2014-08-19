@@ -71,7 +71,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 27:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.BLBottomType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").alias("BLBottom", "").staticScope(StaticScope.NONE).create();
       case 28:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"lValue", "rValue"}, new boolean[]{false, false}).abstract_().staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IBinaryLike").children(new String[]{"lValue", "rValue"}, new boolean[]{false, false}).abstract_().staticScope(StaticScope.NONE).create();
       case 29:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.BaseMethodCall").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IMethodCall").abstract_().staticScope(StaticScope.NONE).create();
       case 30:

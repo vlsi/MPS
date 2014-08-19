@@ -28,7 +28,7 @@
   <unitInfo fileName="AssertStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssertStatement_BehaviorDescriptor" />
   <unitInfo fileName="AssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.AssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="BLBottomType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BLBottomType_BehaviorDescriptor" />
-  <unitInfo fileName="BaseAssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_BehaviorDescriptor" />
+  <unitInfo fileName="BaseAssignmentExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_BehaviorDescriptor" />
   <unitInfo fileName="BaseMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodCall_BehaviorDescriptor" />
   <unitInfo fileName="BaseMethodDeclaration_BehaviorDescriptor.java" startLine="16" startPosition="0" endLine="126" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BaseStringOperation_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseStringOperation_BehaviorDescriptor" />
@@ -10875,37 +10875,57 @@
     <unitInfo nodeId="1213877539511" fileName="SuperMethodCall_Behavior.java" startLine="18" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.SuperMethodCall_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1215696234405">
-    <nodeInfo nodeId="1215696269613" fileName="BaseAssignmentExpression_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239213187587" fileName="BaseAssignmentExpression_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="109" endLine="29" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="1215696234407" fileName="BaseAssignmentExpression_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="1215696236035" fileName="BaseAssignmentExpression_Behavior.java" startLine="14" startPosition="79" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="1239213178259" fileName="BaseAssignmentExpression_Behavior.java" startLine="18" startPosition="82" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="23" startPosition="76" endLine="24" endPosition="125" />
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="109" endLine="29" endPosition="268" />
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="1215696269613" fileName="BaseAssignmentExpression_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1239213187587" fileName="BaseAssignmentExpression_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6141629764081930861" fileName="BaseAssignmentExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6141629764080213989" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="102" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6141629764080217010" fileName="BaseAssignmentExpression_Behavior.java" startLine="32" startPosition="103" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="37" startPosition="76" endLine="38" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="42" startPosition="109" endLine="43" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyLeftSideExpression_1742226163722653708#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_isReadAsignment_1215696236033#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+    <scopeInfo nodeId="1215696234407" fileName="BaseAssignmentExpression_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1215696236035" fileName="BaseAssignmentExpression_Behavior.java" startLine="16" startPosition="79" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1239213178259" fileName="BaseAssignmentExpression_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="16" />
+    <scopeInfo nodeId="6141629764081928115" fileName="BaseAssignmentExpression_Behavior.java" startLine="24" startPosition="130" endLine="25" endPosition="160" />
+    <scopeInfo nodeId="6141629764080190182" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="102" endLine="29" endPosition="63" />
+    <scopeInfo nodeId="6141629764080216787" fileName="BaseAssignmentExpression_Behavior.java" startLine="32" startPosition="103" endLine="33" endPosition="63" />
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="37" startPosition="76" endLine="38" endPosition="125" />
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="42" startPosition="109" endLine="43" endPosition="268" />
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1215696234405" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1215696234405" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1215696234405" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="6141629764081928116" varName="leaf" />
+      <varInfo nodeId="6141629764081928118" varName="rightParen" />
       <varInfo nodeId="1215696234405" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="1215696234405" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+      <varInfo nodeId="1215696234405" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1215696234405" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="1215696234405" varName="callerConceptFqName" />
       <varInfo nodeId="1215696234405" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="10" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior" />
+    <unitInfo nodeId="1215696234405" fileName="BaseAssignmentExpression_Behavior.java" startLine="12" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.BaseAssignmentExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/1217845912587">
     <nodeInfo nodeId="1217845923289" fileName="IfStatement_Behavior.java" startLine="20" startPosition="77" endLine="21" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

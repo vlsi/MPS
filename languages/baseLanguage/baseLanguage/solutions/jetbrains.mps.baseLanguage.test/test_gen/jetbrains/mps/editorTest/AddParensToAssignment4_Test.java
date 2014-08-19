@@ -10,14 +10,14 @@ import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
-public class AddParensToArrayAccess9_Test extends BaseTransformationTest4 {
-  public AddParensToArrayAccess9_Test() {
+public class AddParensToAssignment4_Test extends BaseTransformationTest4 {
+  public AddParensToAssignment4_Test() {
   }
 
   @Test
-  public void test_AddParensToArrayAccess9() throws Throwable {
+  public void test_AddParensToAssignment4() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddParensToArrayAccess9_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.AddParensToAssignment4_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
@@ -27,7 +27,7 @@ public class AddParensToArrayAccess9_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6141629764077265188", "6141629764077265217");
+      final Editor editor = TestBody.this.initEditor("6141629764081844375", "6141629764081844397");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, ")");
     }
