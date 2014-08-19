@@ -108,15 +108,4 @@ public class EditorParenthesisUtil {
   }
 
 
-
-  /**
-   * todo remove if not used
-   */
-  public static SNode findRightmostOrLeftmostLeafExpressionIgnoringParens(SNode root, boolean rightmost) {
-    SNode currentRoot = root;
-    while (SNodeOperations.isInstanceOf(currentRoot, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
-      currentRoot = findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(SNodeOperations.cast(currentRoot, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true), rightmost);
-    }
-    return currentRoot;
-  }
 }
