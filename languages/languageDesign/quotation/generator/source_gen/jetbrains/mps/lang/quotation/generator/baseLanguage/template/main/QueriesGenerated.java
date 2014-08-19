@@ -25,6 +25,7 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -32,10 +33,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.textgen.trace.TracingUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.generator.template.TemplateQueryContext;
@@ -49,6 +47,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
@@ -183,7 +182,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false), "nodeId", true), "parametersFromExpressions");
   }
   public static Object referenceMacro_GetReferent_1201868926381(final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_6497389703574369327(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
@@ -209,12 +208,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(((SNode) _context.getVariable("var:quotedNode")), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_6497389703574369520(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-    SNode antiquotation = SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-    if (antiquotation == null) {
-      return null;
-    }
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "expression", true), "parametersFromExpressions");
   }
   public static Object referenceMacro_GetReferent_1196351887115(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getParent(_context.getNode()), "nodeVariable");
@@ -226,7 +220,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_1196351887203(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
     for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.Antiquotation")) {
@@ -249,7 +242,6 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "nodeVariable");
   }
   public static Object referenceMacro_GetReferent_1196351887411(final ReferenceMacroContext _context) {
-    SNode quotation = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
     for (SNode child : SNodeOperations.getChildren(_context.getNode())) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
@@ -361,6 +353,16 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_429601079676782080(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(((Tuples._2<SNode, Integer>) _context.getVariable("var:root"))._0(), "modelToCreate", true) != null);
   }
+  public static SNode sourceNodeQuery_8438065045294025901(final SourceSubstituteMacroNodeContext _context) {
+    // Here comes major trick with quotations. They are expected to see input model 
+    // the same way user did. First attempt to accomplish this was to use 'top-priority' mappings, 
+    // however, the attempt failed as the number of top-pri mappings grow and they appear in the generation plan 
+    // in unpredictable order (potentially running before quotations and altering e.g. targets of quotation-hosted  
+    // references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here. 
+    // As it's not expected for generators to produce Quotations, we are safe to assume original model is the home for the quotation 
+    SNode originalQuotation = (SNode) TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
+    return originalQuotation;
+  }
   public static SNode sourceNodeQuery_767161977424634934(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
@@ -418,25 +420,8 @@ public class QueriesGenerated {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
+      referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
       referenceNode.setProperty("role", ref.getRole());
-      if (targetNode != null && TracingUtil.getInput(targetNode) != null) {
-        SNodeReference originalInput = TracingUtil.getInput(targetNode);
-        referenceNode.setProperty("targetModel", originalInput.getModelReference().toString());
-        targetNode = originalInput.resolve(MPSModuleRepository.getInstance());
-      } else {
-        // Here comes odd logic: it didn't account for dynamic references (where ref.getTargetSModelReference == null) 
-        // and always creates static reference. Besides, I don't know why it tries to update reference during generation. 
-        // (due to 'make quotations generator stable' rev.323f93d) 
-        SModelReference targetModelRef;
-        if (ref.getTargetSModelReference() == null) {
-          targetModelRef = (targetNode == null || SNodeOperations.getModel(targetNode) == null ? null : SNodeOperations.getModel(targetNode).getReference());
-        } else {
-          targetModelRef = ((jetbrains.mps.smodel.SModelReference) ref.getTargetSModelReference()).update();
-        }
-        if (targetModelRef != null) {
-          referenceNode.setProperty("targetModel", targetModelRef.toString());
-        }
-      }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
       }
@@ -445,15 +430,7 @@ public class QueriesGenerated {
     return result;
   }
   public static Iterable<SNode> sourceNodesQuery_1196351886984(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes())).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
-      }
-    }).sort(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(AttributeOperations.getAttributeList(_context.getNode(), new IAttributeDescriptor.AllAttributes()), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "linkRole");
       }

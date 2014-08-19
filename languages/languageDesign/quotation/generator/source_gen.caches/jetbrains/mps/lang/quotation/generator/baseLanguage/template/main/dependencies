@@ -18,6 +18,8 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
+    <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.QueriesGenerated" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateNodeBuilder__to__methodCall" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotation__to__staticMethodCall" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.Templatereduce__NodeBuilderNode" />
@@ -105,14 +107,12 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.textgen.trace.TracingUtil" />
     <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
