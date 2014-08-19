@@ -29,7 +29,7 @@ public class AddParensToCast7_Test extends BaseTransformationTest4 {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("3455074683968164510", "3455074683968164520");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "(");
+      BaseEditorTestBody.typeString(editorComponent, ")");
     }
   }
 }

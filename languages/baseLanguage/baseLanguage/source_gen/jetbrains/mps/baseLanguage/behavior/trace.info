@@ -12844,44 +12844,25 @@
     <unitInfo nodeId="2572626204577884822" fileName="TernaryOperatorExpression_Behavior.java" startLine="8" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.TernaryOperatorExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2572626204612779323">
-    <nodeInfo nodeId="2572626204612779490" fileName="CastExpression_Behavior.java" startLine="13" startPosition="130" endLine="14" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612789701" fileName="CastExpression_Behavior.java" startLine="18" startPosition="104" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612814459" fileName="CastExpression_Behavior.java" startLine="20" startPosition="5" endLine="21" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1742226163711452600" fileName="CastExpression_Behavior.java" startLine="24" startPosition="103" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="28" startPosition="64" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canPropagateUnmatchedParenUp_1742226163722653670#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-    <nodeInfo nodeId="2572626204612789694" fileName="CastExpression_Behavior.java" startLine="17" startPosition="127" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_fzg371_a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isTheRightMostExpression_2572626204612789689#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="2572626204612779325" fileName="CastExpression_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="2572626204612779336" fileName="CastExpression_Behavior.java" startLine="13" startPosition="130" endLine="14" endPosition="172" />
-    <scopeInfo nodeId="2572626204612789700" fileName="CastExpression_Behavior.java" startLine="18" startPosition="104" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="1742226163711452373" fileName="CastExpression_Behavior.java" startLine="24" startPosition="103" endLine="25" endPosition="67" />
-    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="28" startPosition="64" endLine="29" endPosition="46" />
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
+    <nodeInfo nodeId="1742226163711452600" fileName="CastExpression_Behavior.java" startLine="12" startPosition="103" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6141629764102834074" fileName="CastExpression_Behavior.java" startLine="16" startPosition="114" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSyntacticallyRightSideExpression_1742226163722653714#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setSyntacticallyRightSideExpression_1742226163722653694#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="2572626204612779325" fileName="CastExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
+    <scopeInfo nodeId="1742226163711452373" fileName="CastExpression_Behavior.java" startLine="12" startPosition="103" endLine="13" endPosition="67" />
+    <scopeInfo nodeId="6141629764102833814" fileName="CastExpression_Behavior.java" startLine="16" startPosition="114" endLine="17" endPosition="66" />
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="2572626204612779337" varName="leaf" />
-      <varInfo nodeId="2572626204612779339" varName="rightParen" />
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="6141629764102833815" varName="expr" />
       <varInfo nodeId="2572626204612779323" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2572626204612789702" fileName="CastExpression_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="2572626204612789702" varName="a" />
-      <varInfo nodeId="2572626204612789702" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="2572626204612789693" fileName="CastExpression_Behavior.java" startLine="17" startPosition="127" endLine="21" endPosition="237" />
-    <scopeInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="2572626204612789719" varName="leaf" />
-      <varInfo nodeId="2572626204612789717" varName="root" />
-      <varInfo nodeId="2572626204612779323" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
+    <unitInfo nodeId="2572626204612779323" fileName="CastExpression_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.baseLanguage.behavior.CastExpression_Behavior" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/2622108313341288809">
     <nodeInfo nodeId="2622108313341288931" fileName="PropertyValueReference_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

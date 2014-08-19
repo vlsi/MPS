@@ -4,28 +4,16 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CastExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return rightParen && CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(thisNode, "expression", true), leaf);
-  }
-
-  public static boolean call_isTheRightMostExpression_2572626204612789689(SNode thisNode, final SNode root, final SNode leaf) {
-    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
-      return eq_fzg371_a0a0a0c(root, leaf);
-    }
-    return CastExpression_Behavior.call_isTheRightMostExpression_2572626204612789689(thisNode, SLinkOperations.getTarget(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true), leaf);
   }
 
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "expression", true);
   }
 
-  private static boolean eq_fzg371_a0a0a0c(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
+  public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
+    SLinkOperations.setTarget(thisNode, "expression", expr, true);
   }
 }

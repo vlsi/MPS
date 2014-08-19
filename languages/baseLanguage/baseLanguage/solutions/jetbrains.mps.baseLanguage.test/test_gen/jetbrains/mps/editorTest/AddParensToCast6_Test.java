@@ -30,7 +30,6 @@ public class AddParensToCast6_Test extends BaseTransformationTest4 {
       final Editor editor = TestBody.this.initEditor("1645633669434969403", "1645633669434969419");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "(");
-      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

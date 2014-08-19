@@ -10,7 +10,7 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
   }
 
   public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
-    return CastExpression_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+    return IBinaryLike_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
   }
 
   public SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
@@ -26,7 +26,7 @@ public class CastExpression_BehaviorDescriptor extends Expression_BehaviorDescri
   }
 
   public void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
-    IBinaryLike_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
+    CastExpression_Behavior.virtual_setSyntacticallyRightSideExpression_1742226163722653694(thisNode, expr);
   }
 
   @Override
