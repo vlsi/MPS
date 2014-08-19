@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.quotation.generator.baseLanguage.template.util.QuotationUtil;
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
@@ -119,7 +120,12 @@ public class QueriesGenerated {
     return _context.getNode().getProperty("role");
   }
   public static Object propertyMacro_GetPropertyValue_1025590056397541505(final PropertyMacroContext _context) {
-    return _context.createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(_context.getNode()));
+    // <node> 
+    // This is an ugly temporary solution to ensure method names do not change due to use 
+    // of original input node for quotation generation. I just can't afford regenerating 80+ 
+    // models right now, as these changes are unrelated to the task at hand.  
+    // FIXME shall use original code (above) and regenerate once dust settles. 
+    return ((GenerationSessionContext) _context.getGenerator().getGeneratorSessionContext()).createUniqueName(_context.getTemplateValue(), SNodeOperations.getContainingRoot(((SNode) _context.getVariable("transientQuotation"))), ((SNode) _context.getVariable("transientQuotation")));
   }
   public static Object propertyMacro_GetPropertyValue_429601079676709309(final PropertyMacroContext _context) {
     return "p" + MapSequence.fromMap(((Tuples._2<List<SNode>, Map<SNode, Integer>>) _context.getVariable("var:listAndIndex"))._1()).get(_context.getNode());
