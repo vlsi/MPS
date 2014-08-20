@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CastExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "expression", true);
   }
-
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "expression", expr, true);
   }

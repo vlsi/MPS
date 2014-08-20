@@ -11,11 +11,9 @@ public class PostfixDecrementExpression_Behavior {
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
     return !(rightParen);
   }
-
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "expression", true);
   }

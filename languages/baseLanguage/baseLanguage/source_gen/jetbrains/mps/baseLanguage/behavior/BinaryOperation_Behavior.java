@@ -12,19 +12,15 @@ public class BinaryOperation_Behavior {
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 0;
   }
-
   public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "leftExpression", expr, true);
   }
-
   public static void virtual_setSyntacticallyRightSideExpression_1742226163722653694(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "rightExpression", expr, true);
   }
-
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "leftExpression", true);
   }
-
   public static SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "rightExpression", true);
   }

@@ -23,19 +23,13 @@ public class ParenthesisUtil {
   public ParenthesisUtil() {
   }
 
-
-
   public static SNode createUnmatchedLeftParenthesis(@NotNull SNode leftExpression) {
     return createUnmatchedParenthesis(leftExpression, false);
   }
 
-
-
   public static SNode createUnmatchedRightParenthesis(@NotNull SNode rightExpression) {
     return createUnmatchedParenthesis(rightExpression, true);
   }
-
-
 
   /**
    * Returns an orderred list of nodes with incomplete left/right paren
@@ -80,8 +74,6 @@ public class ParenthesisUtil {
 
     return result;
   }
-
-
 
   /**
    * First search existing unmatched parens, whether they can be paired with the new one.
@@ -178,8 +170,6 @@ public class ParenthesisUtil {
     }
   }
 
-
-
   /**
    * Create a ParenthesisedExpression and hook it properly into the model
    * 
@@ -212,8 +202,6 @@ public class ParenthesisUtil {
     return parens;
   }
 
-
-
   private static void rebalanceBinOpAfterParething(SNode node, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     if (leftTurn == rightTurn) {
       SNodeOperations.replaceWithAnother(node, parens);
@@ -242,8 +230,6 @@ public class ParenthesisUtil {
     }
   }
 
-
-
   private static void rebalanceTernaryOpAfterParething(SNode node, SNode rightTurn, SNode leftTurn, SNode parens, SNode rightAccumulator, SNode leftAccumulator) {
     SNode bottomMostTernary = findBottomMostTernary(node);
     if (rightTurn != null) {
@@ -266,8 +252,6 @@ public class ParenthesisUtil {
     SLinkOperations.setTarget(node, "condition", leftAccumulator, true);
   }
 
-
-
   /**
    * Ternary expressions can be nested in one anothers ifFalse child. Find the right-most one.
    * 
@@ -281,8 +265,6 @@ public class ParenthesisUtil {
     return bottomMostTernary;
   }
 
-
-
   private static void rebalanceCastExpAfterParething(SNode node, SNode rightTurn, SNode parens, SNode rightAccumulator) {
     if (rightTurn != null) {
       SNodeOperations.replaceWithAnother(node, rightTurn);
@@ -293,8 +275,6 @@ public class ParenthesisUtil {
     SLinkOperations.setTarget(parens, "expression", node, true);
     SLinkOperations.setTarget(node, "expression", rightAccumulator, true);
   }
-
-
 
   /**
    * Accumulate the nodes that need to be added into the parentheses
@@ -335,8 +315,6 @@ public class ParenthesisUtil {
     return accumulator;
   }
 
-
-
   /**
    * Remove the found matching paren annotation from its node
    */
@@ -348,8 +326,6 @@ public class ParenthesisUtil {
     }
   }
 
-
-
   /**
    * Climb up the ancestor expressions and return the first binary operation, in which we come from the right sub-tree.
    * 
@@ -359,8 +335,6 @@ public class ParenthesisUtil {
     return findTurn(leaf, stopNode, true);
   }
 
-
-
   /**
    * Climb up the ancestor expressions and return the first binary operation, in which we come from the left sub-tree.
    * 
@@ -369,8 +343,6 @@ public class ParenthesisUtil {
   private static SNode findRightTurn(SNode leaf, SNode stopNode) {
     return findTurn(leaf, stopNode, false);
   }
-
-
 
   private static SNode findTurn(SNode leaf, SNode stopNode, boolean leftTurn) {
     SNode currentNode = SNodeOperations.getParent(leaf);
@@ -390,8 +362,6 @@ public class ParenthesisUtil {
     }
     return null;
   }
-
-
 
 
   /**
@@ -420,8 +390,6 @@ public class ParenthesisUtil {
     return path;
   }
 
-
-
   public static void checkExpressionPriorities(SNode expr) {
     SNode current = expr;
     // find the top-most expression 
@@ -443,15 +411,11 @@ public class ParenthesisUtil {
     }
   }
 
-
-
   public static void checkOperationWRTPriority(SNode binOp) {
     checkOperationChildWRTPriority(binOp, false);
     checkOperationChildWRTPriority(binOp, true);
     checkOperationParentWRTPriority(binOp);
   }
-
-
 
   private static void checkOperationChildWRTPriority(SNode node, boolean isRight) {
     SNode sideExpr = (isRight ? SLinkOperations.getTarget(node, "rightExpression", true) : SLinkOperations.getTarget(node, "leftExpression", true));
@@ -474,7 +438,6 @@ public class ParenthesisUtil {
       checkOperationWRTPriority(node);
     }
   }
-
   private static void checkOperationParentWRTPriority(SNode node) {
     if (SNodeOperations.getParent(node) == null) {
       return;
@@ -511,7 +474,6 @@ public class ParenthesisUtil {
       SLinkOperations.setTarget(node, "rightExpression", dotExpr, true);
     }
   }
-
   public static SNode getBinOp(SNode expr, boolean toRight) {
     SNode parent = SNodeOperations.getParent(expr);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
@@ -525,7 +487,6 @@ public class ParenthesisUtil {
     }
     return getBinOp(parentOp, toRight);
   }
-
   public static void rotateTree(SNode child, SNode op, boolean isRight) {
     SNode backsideExpr = (isRight ? SLinkOperations.getTarget(child, "leftExpression", true) : SLinkOperations.getTarget(child, "rightExpression", true));
     SNodeOperations.detachNode(child);
@@ -537,39 +498,30 @@ public class ParenthesisUtil {
       SLinkOperations.setTarget(op, "leftExpression", backsideExpr, true);
     }
   }
-
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
-
   private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_a65dpo_a0a1a02(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_a65dpo_a0a1a5a1a02(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean neq_a65dpo_a0f0b0u(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
-  private static boolean eq_a65dpo_a0a2a2a82(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_a65dpo_a0a3a2a82(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
   private static boolean neq_a65dpo_a0a2a82(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
+  private static boolean eq_a65dpo_a0a2a2a82(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_a65dpo_a0a3a2a82(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static boolean neq_a65dpo_a0h0hb(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

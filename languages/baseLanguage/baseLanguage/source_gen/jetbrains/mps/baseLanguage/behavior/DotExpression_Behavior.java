@@ -14,20 +14,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.lang.reflect.Method;
 import jetbrains.mps.reloading.ReflectionUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class DotExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "operation", true), "virtual_isLValue_1213877410080", new Object[]{});
   }
-
   public static SNode call_getClassifier_1213877410697(SNode thisNode) {
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(DotExpression_Behavior.call_getOperandType_8871623299328377715(thisNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false), "classifier", false);
   }
-
   public static SNode call_getOperandType_8871623299328377715(final SNode thisNode) {
     return RepositoryStateCacheUtils.getFromCache("DotExpression_Behavior", thisNode, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
@@ -36,11 +32,9 @@ public class DotExpression_Behavior {
       }
     });
   }
-
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "operation", true), "virtual_getVariableExpectedName_1213877410087", new Object[]{});
   }
-
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation")) {
       Object instance = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "operand", true), "virtual_eval_1213877519769", new Object[]{module});
@@ -51,34 +45,19 @@ public class DotExpression_Behavior {
     }
     return BehaviorReflection.invokeSuper(Object.class, thisNode, "jetbrains.mps.baseLanguage.structure.Expression", "virtual_eval_1213877519769", new Object[]{module});
   }
-
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "operation", true), "virtual_isDotExpressionLegalAsStatement_1239212437413", new Object[]{});
   }
-
   public static boolean virtual_allowsNullOperand_4585239809762176541(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "operand", true);
   }
-
   public static void virtual_setSyntacticallyLeftSideExpression_1742226163722653680(SNode thisNode, SNode expr) {
     SLinkOperations.setTarget(thisNode, "operand", expr, true);
-  }
-
-  @Deprecated
-  public static boolean call_allowsNullOperand_4585239809762176541(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_allowsNullOperand_4585239809762176541", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_allowsNullOperand_4585239809762176541(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), callerConceptFqName, "virtual_allowsNullOperand_4585239809762176541", new Class[]{SNode.class}, new Object[]{});
   }
 }

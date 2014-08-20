@@ -21,41 +21,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CleanUnmatchedParentheses_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CleanUnmatchedParentheses_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
   }
-
   public String getPresentation() {
     return "CleanUnmatchedParentheses";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.CleanUnmatchedParentheses_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.getParent(node) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Expression"))) && ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{})).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -63,30 +54,24 @@ public class CleanUnmatchedParentheses_Intention implements IntentionFactory {
       }
     });
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "528847182406392848");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CleanUnmatchedParentheses_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Clean Unmatched Parentheses";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -99,7 +84,6 @@ public class CleanUnmatchedParentheses_Intention implements IntentionFactory {
         }
       });
     }
-
     public IntentionDescriptor getDescriptor() {
       return CleanUnmatchedParentheses_Intention.this;
     }
