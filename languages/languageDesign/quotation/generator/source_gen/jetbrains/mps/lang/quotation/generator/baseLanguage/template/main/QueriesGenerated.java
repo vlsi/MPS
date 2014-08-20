@@ -365,9 +365,9 @@ public class QueriesGenerated {
     // however, the attempt failed as the number of top-pri mappings grow and they appear in the generation plan 
     // in unpredictable order (potentially running before quotations and altering e.g. targets of quotation-hosted  
     // references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here. 
-    // As it's not expected for generators to produce Quotations, we are safe to assume original model is the home for the quotation 
     SNode originalQuotation = (SNode) TracingUtil.getInputNode(_context.getNode(), _context.getOriginalInputModel().getRepository());
-    return originalQuotation;
+    // There are generators that produce Quotations, we shall use this quotation then, if no original one is available. 
+    return (originalQuotation == null ? _context.getNode() : originalQuotation);
   }
   public static SNode sourceNodeQuery_767161977424634934(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);

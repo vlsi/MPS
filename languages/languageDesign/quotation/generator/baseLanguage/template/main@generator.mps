@@ -2029,11 +2029,6 @@
                     <property name="text" nameId="tpee.6329021646629104958" value="references. Thus (to avoid adding 'top-top-priority), we decided to explicitly work against original model here." />
                   </node>
                 </node>
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8438065045294026030" nodeInfo="nn">
-                  <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8438065045294026031" nodeInfo="nn">
-                    <property name="text" nameId="tpee.6329021646629104958" value="As it's not expected for generators to produce Quotations, we are safe to assume original model is the home for the quotation" />
-                  </node>
-                </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8438065045294026032" nodeInfo="nn">
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8438065045294026033" nodeInfo="nr">
                     <property name="name" nameId="tpck.1169194664001" value="originalQuotation" />
@@ -2063,9 +2058,23 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="8438065045294026030" nodeInfo="nn">
+                  <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="8438065045294026031" nodeInfo="nn">
+                    <property name="text" nameId="tpee.6329021646629104958" value="There are generators that produce Quotations, we shall use this quotation then, if no original one is available." />
+                  </node>
+                </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="8438065045294026388" nodeInfo="nn">
-                  <node role="expression" roleId="tpee.1068581517676" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8438065045294027013" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8438065045294026033" resolveInfo="originalQuotation" />
+                  <node role="expression" roleId="tpee.1068581517676" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3505562578124590087" nodeInfo="nn">
+                    <node role="ifTrue" roleId="tpee.1163668922816" type="tpf8.TemplateFunctionParameter_sourceNode" typeId="tpf8.1167169188348" id="3505562578124590430" nodeInfo="nn" />
+                    <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3505562578124590899" nodeInfo="nn">
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8438065045294026033" resolveInfo="originalQuotation" />
+                    </node>
+                    <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="3505562578124588771" nodeInfo="nn">
+                      <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3505562578124589430" nodeInfo="nn" />
+                      <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="8438065045294027013" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8438065045294026033" resolveInfo="originalQuotation" />
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
