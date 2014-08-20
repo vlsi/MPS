@@ -38,6 +38,7 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "expr", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
     }
   }
+
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_3498370411873438848(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -50,12 +51,15 @@ public class QueriesGenerated {
             SPropertyOperations.set(n, "column", "" + (true));
             return n;
           }
+
           public String getDescriptionText(String pattern) {
             return "Matrix column constructor";
           }
+
           public String getMatchingText(String pattern) {
             return "<";
           }
+
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -64,6 +68,7 @@ public class QueriesGenerated {
     }
     return result;
   }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_LocalVariableDeclaration_5853558151363158390(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation"), _context.getSourceNode()) {
@@ -99,15 +104,19 @@ public class QueriesGenerated {
         SNodeOperations.replaceWithAnother(_context.getSourceNode(), lso);
         return SLinkOperations.getTarget(lso, "matrix", true);
       }
+
       public String getMatchingText(String pattern) {
         return ":";
       }
+
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
+
       public String getDescriptionText(String pattern) {
         return "Initialize as a vector satisfying linear equation";
       }
+
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -118,9 +127,11 @@ public class QueriesGenerated {
     });
     return result;
   }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LocalVariableDeclaration_5853558151363158391(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType");
   }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_6389121991274660119(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
@@ -130,15 +141,19 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
         return SLinkOperations.getTarget(result, "rowIndex", true);
       }
+
       public String getMatchingText(String pattern) {
         return "[";
       }
+
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
+
       public String getDescriptionText(String pattern) {
         return "Matrix element access";
       }
+
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -149,12 +164,11 @@ public class QueriesGenerated {
     });
     return result;
   }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_6389121991274660120(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    SNode matrixType = _quotation_createNode_fo7if3_a0a0a1();
-    SPropertyOperations.set(matrixType, "columns", "" + (0));
-    SPropertyOperations.set(matrixType, "rows", "" + (0));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), matrixType);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), _quotation_createNode_fo7if3_b0a0a0b());
   }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_963844843316088781(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), _context.getSourceNode()) {
@@ -162,15 +176,19 @@ public class QueriesGenerated {
         SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), _quotation_createNode_fo7if3_a0a0a0a0a2(_context.getSourceNode()));
         return SLinkOperations.getTarget(result, "exponent", true);
       }
+
       public String getMatchingText(String pattern) {
         return "^";
       }
+
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
+
       public String getDescriptionText(String pattern) {
         return "Raise to power";
       }
+
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -181,6 +199,7 @@ public class QueriesGenerated {
     });
     return result;
   }
+
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7255837154369265165(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -199,17 +218,21 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _quotation_createNode_fo7if3_a0a0a0a0a0d(_context.getSourceNode())));
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _context.getSourceNode()));
             }
+
             public String getMatchingText(String pattern) {
               return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
             }
+
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
+
             public String getDescriptionText(String pattern) {
               return SPropertyOperations.getString((item), "shortDescription");
             }
+
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -223,10 +246,12 @@ public class QueriesGenerated {
     }
     return result;
   }
+
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7388416617632092630(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.math.structure.MatrixType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.baseLanguage.math.structure.VectorType");
   }
-  private static SNode _quotation_createNode_fo7if3_a0a0a1() {
+
+  private static SNode _quotation_createNode_fo7if3_b0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -235,6 +260,7 @@ public class QueriesGenerated {
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
+
   private static SNode _quotation_createNode_fo7if3_a0a0a0a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -247,14 +273,6 @@ public class QueriesGenerated {
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, false);
     quotedNode_2.addChild("exponent", quotedNode_4);
-    return quotedNode_2;
-  }
-  private static SNode _quotation_createNode_fo7if3_a0a0a0a0a0d(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = (SNode) parameter_1;
-    if (quotedNode_2 != null) {
-    }
     return quotedNode_2;
   }
 }

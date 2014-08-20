@@ -7,9 +7,19 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PrefixDecrementExpression_BehaviorDescriptor extends AbstractUnaryNumberOperation_BehaviorDescriptor {
   public PrefixDecrementExpression_BehaviorDescriptor() {
   }
+
+  public boolean virtual_canPropagateUnmatchedParenUp_1742226163722653670(SNode thisNode, SNode leaf, boolean rightParen) {
+    return PrefixDecrementExpression_Behavior.virtual_canPropagateUnmatchedParenUp_1742226163722653670(thisNode, leaf, rightParen);
+  }
+
+  public SNode virtual_getSyntacticallyRightSideExpression_1742226163722653714(SNode thisNode) {
+    return PrefixDecrementExpression_Behavior.virtual_getSyntacticallyRightSideExpression_1742226163722653714(thisNode);
+  }
+
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return PrefixDecrementExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
+
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression";
