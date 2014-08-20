@@ -39,10 +39,11 @@ public class ParenthesisUtil {
    */
   private static List<SNode> descendInto(SNode expr, boolean completingByRightParen) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> candidates = ListSequence.fromList(new ArrayList<SNode>());
-    SNode current = expr;
+    List<SNode> candidates = ListSequence.fromListAndArray(new ArrayList<SNode>(), expr);
 
-    while (current != null) {
+    while (ListSequence.fromList(candidates).isNotEmpty()) {
+      SNode current = ListSequence.fromList(candidates).removeElementAt(0);
+
       if (completingByRightParen && (AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
         ListSequence.fromList(result).addElement(current);
       }
@@ -69,7 +70,6 @@ public class ParenthesisUtil {
           }
         }
       }
-      current = ListSequence.fromList(candidates).removeElementAt(0);
     }
 
     return result;
@@ -373,19 +373,8 @@ public class ParenthesisUtil {
     ListSequence.fromList(path).addElement(leaf);
     List<SNode> leafAncestors = SNodeOperations.getAncestors(leaf, null, true);
 
-    for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"); currentNode = SNodeOperations.getParent(currentNode)) {
-      if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
-        SNode curr = SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
-        // Do not climb up into a disconnected parent, e.g. into Ternary from the ifTrue branch 
-        // Only syntactically left or right children may include their parents in their parent path 
-        if (ListSequence.fromList(leafAncestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), curr, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{})) || ListSequence.fromList(leafAncestors).contains(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), curr, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}))) {
-          ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
-          if (BehaviorReflection.invokeVirtual(Boolean.TYPE, curr, "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen})) {
-            continue;
-          }
-        }
-      }
-      break;
+    for (SNode currentNode = SNodeOperations.getParent(leaf); SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_canPropagateUnmatchedParenUp_1742226163722653670", new Object[]{leaf, rightParen}); currentNode = SNodeOperations.getParent(currentNode)) {
+      ListSequence.fromList(path).addElement(SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.Expression"));
     }
     return path;
   }
