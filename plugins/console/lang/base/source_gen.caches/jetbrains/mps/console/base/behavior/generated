@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="99pn83hbam70nxbss5j71sucpg0773x">
+<dependencies version="2" modelHash="eblqxmwjj5032uqhwlf9buntso0gxdd">
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />
   <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
@@ -194,7 +194,7 @@
     <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" />
     <file name="NodeReferenceString_Behavior.java" />
   </source>
-  <source id="473081947980701637" name="HelpCommand_Behavior" hash="-d7vdra1txigjnmdet0oy98hbrhs6ici">
+  <source id="473081947980701637" name="HelpCommand_Behavior" hash="25v2a6eo4r90ay59ukthcly2zu3hqow">
     <dep root="3321948346081461817" />
     <dep root="473081947982699336" />
     <dep model="f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi(MPS.IDEA/com.intellij.openapi@java_stub)" />

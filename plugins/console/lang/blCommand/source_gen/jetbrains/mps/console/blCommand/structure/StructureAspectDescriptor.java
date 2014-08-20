@@ -30,7 +30,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.GlobalScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").alias("global", "").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "instances of concept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.InstancesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"conceptArg"}, new boolean[]{false}).alias("#instances", "instances of a concept").create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ModelScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").children(new String[]{"model"}, new boolean[]{true}).alias("models", "").create();
       case 10:
@@ -52,7 +52,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.PrintTextExpression").super_("jetbrains.mps.console.blCommand.structure.AbstractPrintExpression").parents("jetbrains.mps.console.blCommand.structure.AbstractPrintExpression").alias("#printText", "print as string").create();
       case 19:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#project", "current project").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").alias("#project", "the current project").create();
       case 20:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ProjectScope").super_("jetbrains.mps.console.blCommand.structure.ScopeParameter").parents("jetbrains.mps.console.blCommand.structure.ScopeParameter").alias("project", "").create();
       case 21:
@@ -72,7 +72,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 28:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.ShowExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").children(new String[]{"object"}, new boolean[]{false}).alias("#show", "show in usage view").create();
       case 29:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"node"}, new boolean[]{false}).alias("#usages", "direct references to node").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.blCommand.structure.UsagesExpression").super_("jetbrains.mps.console.blCommand.structure.QueryExpression").parents("jetbrains.mps.console.blCommand.structure.QueryExpression").children(new String[]{"node"}, new boolean[]{false}).alias("#usages", "direct references to a node").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }

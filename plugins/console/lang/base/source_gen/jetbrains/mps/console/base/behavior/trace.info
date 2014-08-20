@@ -318,8 +318,8 @@
     <nodeInfo nodeId="1433263869220324265" fileName="HelpCommand_Behavior.java" startLine="116" startPosition="202" endLine="117" endPosition="595" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6928665434439684406" fileName="HelpCommand_Behavior.java" startLine="118" startPosition="58" endLine="119" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6928665434440004412" fileName="HelpCommand_Behavior.java" startLine="120" startPosition="16" endLine="121" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="748410583119152993" fileName="HelpCommand_Behavior.java" startLine="128" startPosition="94" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7185170375691175706" fileName="HelpCommand_Behavior.java" startLine="132" startPosition="94" endLine="133" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="748410583119152993" fileName="HelpCommand_Behavior.java" startLine="128" startPosition="94" endLine="129" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7185170375691175706" fileName="HelpCommand_Behavior.java" startLine="132" startPosition="94" endLine="133" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="473081947980701637" fileName="HelpCommand_Behavior.java" startLine="136" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7185170375690669461" fileName="HelpCommand_Behavior.java" startLine="139" startPosition="36" endLine="140" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7185170375690669461" fileName="HelpCommand_Behavior.java" startLine="141" startPosition="5" endLine="142" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -386,8 +386,8 @@
     <scopeInfo nodeId="7006261637500126803" fileName="HelpCommand_Behavior.java" startLine="103" startPosition="155" endLine="104" endPosition="33" />
     <scopeInfo nodeId="6928665434439882326" fileName="HelpCommand_Behavior.java" startLine="118" startPosition="58" endLine="119" endPosition="56" />
     <scopeInfo nodeId="6928665434440001584" fileName="HelpCommand_Behavior.java" startLine="120" startPosition="16" endLine="121" endPosition="36" />
-    <scopeInfo nodeId="473081947983370828" fileName="HelpCommand_Behavior.java" startLine="128" startPosition="94" endLine="129" endPosition="58" />
-    <scopeInfo nodeId="7185170375691171353" fileName="HelpCommand_Behavior.java" startLine="132" startPosition="94" endLine="133" endPosition="123" />
+    <scopeInfo nodeId="473081947983370828" fileName="HelpCommand_Behavior.java" startLine="128" startPosition="94" endLine="129" endPosition="69" />
+    <scopeInfo nodeId="7185170375691171353" fileName="HelpCommand_Behavior.java" startLine="132" startPosition="94" endLine="133" endPosition="179" />
     <scopeInfo nodeId="7185170375690669461" fileName="HelpCommand_Behavior.java" startLine="139" startPosition="36" endLine="140" endPosition="207" />
     <scopeInfo nodeId="748410583116024892" fileName="HelpCommand_Behavior.java" startLine="146" startPosition="36" endLine="147" endPosition="40" />
     <scopeInfo nodeId="1114206087961102593" fileName="HelpCommand_Behavior.java" startLine="153" startPosition="36" endLine="154" endPosition="40" />

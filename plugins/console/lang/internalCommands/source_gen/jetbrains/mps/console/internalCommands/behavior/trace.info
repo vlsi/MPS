@@ -7,13 +7,13 @@
   <unitInfo fileName="ShowRepositoryCommand_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">
     <nodeInfo nodeId="5582028874770305527" fileName="ConsoleModelExpression_Behavior.java" startLine="12" startPosition="114" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7185170375692949481" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7185170375692949481" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5582028874770305521" fileName="ConsoleModelExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="5582028874770305521" fileName="ConsoleModelExpression_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="5582028874770305521" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="5582028874770305523" fileName="ConsoleModelExpression_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="5582028874770305526" fileName="ConsoleModelExpression_Behavior.java" startLine="12" startPosition="114" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="7185170375692949386" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="76" />
+    <scopeInfo nodeId="7185170375692949386" fileName="ConsoleModelExpression_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="93" />
     <scopeInfo nodeId="5582028874770305521" fileName="ConsoleModelExpression_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="5582028874770305521" varName="thisNode" />
     </scopeInfo>
@@ -66,7 +66,7 @@
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/8829647120617318761">
     <nodeInfo nodeId="8829647120617324524" fileName="InternalMode_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8829647120617324563" fileName="InternalMode_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="748410583119698921" fileName="InternalMode_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="748410583119698921" fileName="InternalMode_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <nodeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
@@ -74,7 +74,7 @@
     <scopeInfo nodeId="8829647120617318914" fileName="InternalMode_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="8829647120617319091" fileName="InternalMode_Behavior.java" startLine="12" startPosition="72" endLine="13" endPosition="16" />
     <scopeInfo nodeId="8829647120617324541" fileName="InternalMode_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="748410583119698902" fileName="InternalMode_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="50" />
+    <scopeInfo nodeId="748410583119698902" fileName="InternalMode_Behavior.java" startLine="20" startPosition="94" endLine="21" endPosition="51" />
     <scopeInfo nodeId="8829647120617318761" fileName="InternalMode_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="8829647120617318761" varName="thisNode" />
     </scopeInfo>
