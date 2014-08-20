@@ -54,9 +54,6 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_4592826945243770285(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(_context.getNode()), "jetbrains.mps.baseLanguage.structure.IVariableReference");
   }
-  public static Object propertyMacro_GetPropertyValue_4592826945245316721(final PropertyMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
-  }
   public static Object propertyMacro_GetPropertyValue_3987319776542716753(final PropertyMacroContext _context) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
   }
@@ -69,18 +66,19 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2696770507970471606(final PropertyMacroContext _context) {
     return jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(_context.getNode())) + ".StringUtils";
   }
-  public static Object propertyMacro_GetPropertyValue_4592826945245316688(final PropertyMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
+  public static Object referenceMacro_GetReferent_1482495884796568567(final ReferenceMacroContext _context) {
+    SNode firstOp = (SNode) _context.getSessionObject(((String) _context.getVariable("var:methodNameKey")));
+    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabel(firstOp, "IsNotEmptyExtractExpr"), "method", true);
   }
-  public static Object referenceMacro_GetReferent_2241002959597790075(final ReferenceMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
-  }
-  public static Object referenceMacro_GetReferent_6269300764714521734(final ReferenceMacroContext _context) {
-    return String.valueOf(_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))));
+  public static Object referenceMacro_GetReferent_1482495884796522426(final ReferenceMacroContext _context) {
+    // To destinguish generated isEmpty of the same session in different classes, need an object we've replaced 
+    // with extract statement. With it, can get output by label and input 
+    SNode firstOp = (SNode) _context.getSessionObject(((String) _context.getVariable("var:methodNameKey")));
+    return SLinkOperations.getTarget(_context.getOutputNodeByInputNodeAndMappingLabel(firstOp, "IsEmptyExtractExpr"), "method", true);
   }
   public static boolean ifMacro_Condition_6269300764715607368(final IfMacroContext _context) {
     if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
-      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isNotEmptyString");
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), _context.getNode());
       return true;
     }
     return false;
@@ -110,7 +108,7 @@ public class QueriesGenerated {
   }
   public static boolean ifMacro_Condition_6269300764714516440(final IfMacroContext _context) {
     if (_context.getSessionObject(((String) _context.getVariable("var:methodNameKey"))) == null) {
-      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), "isEmptyString");
+      _context.putSessionObject(((String) _context.getVariable("var:methodNameKey")), _context.getNode());
       return true;
     }
     return false;
@@ -118,7 +116,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4592826945244850127(final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
-  public static SNode sourceNodeQuery_2241002959597789621(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_1482495884796567805(final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
   public static SNode sourceNodeQuery_4723230619342922347(final SourceSubstituteMacroNodeContext _context) {
@@ -178,7 +176,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_4592826945244850077(final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
-  public static SNode sourceNodeQuery_6269300764714521727(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_3505562578125797802(final SourceSubstituteMacroNodeContext _context) {
     return IOperation_Behavior.call_getOperand_1213877410070(_context.getNode());
   }
   public static Object insertMacro_varValue_6269300764715623918(final TemplateQueryContext _context) {
