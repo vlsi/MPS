@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.DefaultCellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
@@ -98,7 +99,7 @@ class Memento {
 
   private void collectErrors(EditorComponent editor) {
     for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
-      if (cell instanceof EditorCell_Label) {
+      if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
         EditorCell_Label label = (EditorCell_Label) cell;
           myErrorTexts.put(label.getCellInfo(), label.getText());
       }
