@@ -37,7 +37,7 @@ public class TryCatchStatement_Behavior {
       Set<SNode> toRemove = SetSequence.fromSet(new HashSet<SNode>());
       for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_1bi1ep_a0b0c0e0c(thrownFromBody), catchedType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(_quotation_createNode_1bi1ep_a0a1a2a4a2(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
@@ -50,7 +50,7 @@ public class TryCatchStatement_Behavior {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(caatch, "catchBody", true), throwables, ignoreMayBeThrowables);
     }
   }
-  private static SNode _quotation_createNode_1bi1ep_a0b0c0e0c(Object parameter_1) {
+  private static SNode _quotation_createNode_1bi1ep_a0a1a2a4a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

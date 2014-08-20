@@ -32,7 +32,7 @@ public class FieldDeclaration_Behavior {
   }
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), _quotation_createNode_dh5t54_a0b0a())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), _quotation_createNode_dh5t54_b0a1a0())) {
       prefix = "is";
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
@@ -111,7 +111,7 @@ public class FieldDeclaration_Behavior {
     AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), null);
     AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
   }
-  private static SNode _quotation_createNode_dh5t54_a0b0a() {
+  private static SNode _quotation_createNode_dh5t54_b0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);

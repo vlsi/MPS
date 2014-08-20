@@ -92,7 +92,7 @@ public class Type_Behavior {
       IMatchingPattern pattern_smb55n_a0n = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_smb55n_a0n = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_smb55n_a0n);
       if (coercedNode_smb55n_a0n != null) {
-        return _quotation_createNode_smb55n_a0a0a31(SLinkOperations.getTarget(coercedNode_smb55n_a0n, "classifier", false));
+        return _quotation_createNode_smb55n_a0a2a0a31(SLinkOperations.getTarget(coercedNode_smb55n_a0n, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -163,7 +163,7 @@ public class Type_Behavior {
     public void performActions(Object o) {
     }
   }
-  private static SNode _quotation_createNode_smb55n_a0a0a31(Object parameter_1) {
+  private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
