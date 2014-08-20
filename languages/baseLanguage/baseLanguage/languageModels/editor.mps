@@ -22497,6 +22497,7 @@
         <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Property" typeId="tpc2.1073389658414" id="2622108313342889977" nodeInfo="ng">
           <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
           <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpee.1201371481316" resolveInfo="propertyName" />
+          <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1198595398954" resolveInfo="Field" />
         </node>
       </node>
     </node>

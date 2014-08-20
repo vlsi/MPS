@@ -16,9 +16,16 @@ import jetbrains.mps.smodel.runtime.base.BaseScopeProvider;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.scope.EmptyScope;
+import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.IClassifierType_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class PropertyValueReference_Constraints extends BaseConstraintsDescriptor {
@@ -58,8 +65,25 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
-              Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property"));
-              return (scope == null ? new EmptyScope() : scope);
+              SNode classifier = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              if (classifier == null) {
+                return new EmptyScope();
+              }
+              final SNode enclosingProperty = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Property", false, false);
+              SNode classifierType = _quotation_createNode_yrz94z_a0d0a0(classifier);
+              return new NamedElementsScope(Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
+                }
+              }).select(new ISelector<SNode, SNode>() {
+                public SNode select(SNode it) {
+                  return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+                }
+              }).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0d(it, enclosingProperty);
+                }
+              }));
             }
           }
         };
@@ -70,6 +94,16 @@ public class PropertyValueReference_Constraints extends BaseConstraintsDescripto
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false) != null;
   }
+  private static SNode _quotation_createNode_yrz94z_a0d0a0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    return quotedNode_2;
+  }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5139199381138640472");
-  private static SNodePointer breakingNode_yrz94z_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5139199381139047380");
+  private static SNodePointer breakingNode_yrz94z_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6799807267502118362");
+  private static boolean eq_yrz94z_a0a0a0a0a0a0e0a0b0a0a0b0a1a0b0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
 }
