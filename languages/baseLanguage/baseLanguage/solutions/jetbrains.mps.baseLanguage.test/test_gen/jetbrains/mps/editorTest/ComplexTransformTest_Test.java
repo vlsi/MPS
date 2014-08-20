@@ -49,6 +49,7 @@ public class ComplexTransformTest_Test extends BaseTransformationTest4 {
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       BaseEditorTestBody.typeString(editorComponent, "!");
       BaseEditorTestBody.invokeAction(editorComponent, "jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }

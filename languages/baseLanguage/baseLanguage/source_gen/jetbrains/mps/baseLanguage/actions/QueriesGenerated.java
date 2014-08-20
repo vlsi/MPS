@@ -66,7 +66,6 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
-import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
@@ -4385,10 +4384,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
-        SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(_context.getSourceNode(), true);
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-        return rightMostNode;
+        SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, parens, SelectionManager.LAST_CELL, -1);
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -4422,8 +4420,11 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
-        return _context.getSourceNode();
+        SNode parenthesisedNode = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        if (SNodeOperations.isInstanceOf(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "openParen", -1);
+        }
+        return null;
       }
 
       public String getMatchingText(String pattern) {
@@ -4561,11 +4562,51 @@ __switch__:
         return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), null));
       }
     });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.CastExpression", null);
+        SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+        SNodeOperations.replaceWithAnother(targetExpression, result);
+        SLinkOperations.setTarget(result, "expression", targetExpression, true);
+        PrecedenceUtil.parenthesiseIfNecessary(targetExpression);
+
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.Expression")) {
+          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+          SNodeOperations.replaceWithAnother(result, parens);
+          SLinkOperations.setTarget(parens, "expression", result, true);
+        }
+        return result;
+      }
+
+      public String getMatchingText(String pattern) {
+        return "()";
+      }
+
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+
+      public String getDescriptionText(String pattern) {
+        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+      }
+
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), null));
+      }
+    });
     return result;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8204117424323238091(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(ListSequence.fromList(SNodeOperations.getAncestors(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Expression", true)).last(), "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
+    SNode currentNode = _context.getSourceNode();
+    while ((SNodeOperations.getParent(currentNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      currentNode = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+    return ListSequence.fromList(SNodeOperations.getDescendants(currentNode, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
       }
