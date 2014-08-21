@@ -88,7 +88,7 @@ public class EditorParenthesisUtil {
     selectNode(context, expr, false);
   }
   public static SNode findRightmostOrLeftmostLeafExpression(SNode root, boolean rightmost) {
-    if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.NotExpression") || !(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
+    if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.IBinaryLike"))) {
       return root;
     }
 
