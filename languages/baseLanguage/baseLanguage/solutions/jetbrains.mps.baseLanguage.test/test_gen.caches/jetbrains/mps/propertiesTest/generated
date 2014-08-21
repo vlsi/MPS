@@ -55,9 +55,11 @@
     <dep root="6799807267508942864" />
     <dep root="6799807267508959428" />
     <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="CustomPropertyReferences1_Test.java" />
   </source>
   <source id="6799807267508942864" name="CustomPropertyReferences2" hash="90dmucqajfvh2so6oyws4d4p5lohf4y" dependsOnNodes="true">
@@ -67,6 +69,9 @@
     <dep root="6799807267508922150" />
     <dep root="6799807267508959428" />
     <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="CustomPropertyReferences2_Test.java" />
   </source>
   <source id="6799807267508959428" name="CustomPropertyReferences3" hash="4qobapnuxpgjneyfkf9cvn86szqihre" dependsOnNodes="true">
@@ -76,6 +81,9 @@
     <dep root="6799807267508922150" />
     <dep root="6799807267508942864" />
     <dep root="7319542056806110576" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="CustomPropertyReferences3_Test.java" />
   </source>
 </dependencies>
