@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,27 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview;
 
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.generator.TransientModelsModule;
+import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.ide.ui.tree.MPSTree;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.ide.ui.tree.module.DefaultNamespaceTreeBuilder;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModulesPoolTreeNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectTreeNode;
 import jetbrains.mps.ide.ui.tree.module.TransientModelsTreeNode;
-import jetbrains.mps.ide.ui.tree.MPSTree;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.ide.ui.tree.TextTreeNode;
 import jetbrains.mps.make.IMakeNotificationListener;
 import jetbrains.mps.make.IMakeNotificationListener.Stub;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.make.MakeNotification;
-import org.jetbrains.mps.openapi.module.SModule;import jetbrains.mps.project.*;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.smodel.Language;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
@@ -40,25 +44,16 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class ProjectTree extends MPSTree {
-  private Project myProject;
+  private MPSProject myProject;
   private ProjectTreeNode myProjectTreeNode;
   private ProjectModulesPoolTreeNode myModulesPoolTreeNode;
   private AtomicReference<IMakeNotificationListener> myMakeNotificationListener = new AtomicReference<IMakeNotificationListener>();
-  private final TreeStructureUpdate myStructureUpdate;
 
   public ProjectTree(Project project) {
-    myProject = project;
+    myProject = (MPSProject) project;
 
     getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
     scrollsOnExpand = false;
-    myStructureUpdate = new TreeStructureUpdate(this);
-    myStructureUpdate.init();
-  }
-
-  @Override
-  public void dispose() {
-    myStructureUpdate.dispose();
-    super.dispose();
   }
 
   @Override
@@ -67,31 +62,33 @@ public class ProjectTree extends MPSTree {
       return new TextTreeNode("Empty");
     }
 
-    MPSProject project = myProject.getComponent(MPSProject.class);
     MPSTreeNode root = new TextTreeNode("Empty");
-    ProjectTreeNode projectRoot = new ProjectTreeNode(project);
+    ProjectTreeNode projectRoot = new ProjectTreeNode(myProject);
 
     setRootVisible(false);
     List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
 
     for (Class<? extends SModule> cl: new Class[]{Solution.class,Language.class,DevKit.class}){
-      for (SModule module : project.getProjectModules(cl)) {
-        moduleNodes.add(ProjectModuleTreeNode.createFor(project,module,false));
+      for (SModule module : myProject.getProjectModules(cl)) {
+        moduleNodes.add(ProjectModuleTreeNode.createFor(myProject, module, false));
       }
     }
 
-    ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(project);
+    ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(myProject);
     for (MPSTreeNode mtn : moduleNodes) {
       builder.addNode(mtn);
     }
     builder.fillNode(projectRoot);
 
-    myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(project);
+    myModulesPoolTreeNode = new ProjectModulesPoolTreeNode(myProject);
     root.add(projectRoot);
     root.add(myModulesPoolTreeNode);
     if (!IMakeService.INSTANCE.isSessionActive()) {
-      for(TransientModelsModule module : myProject.getComponent(TransientModelsComponent.class).getModules()) {
-        root.add(new TransientModelsTreeNode(myProject, module));
+      final TransientModelsComponent tmc = myProject.getComponent(TransientModelsComponent.class);
+      if (tmc != null) {
+        for (TransientModelsModule module : tmc.getModules()) {
+          root.add(new TransientModelsTreeNode(myProject, module));
+        }
       }
     }
     else {
@@ -120,7 +117,7 @@ public class ProjectTree extends MPSTree {
     return myModulesPoolTreeNode;
   }
 
-  public Project getProject() {
+  public MPSProject getProject() {
     return myProject;
   }
 

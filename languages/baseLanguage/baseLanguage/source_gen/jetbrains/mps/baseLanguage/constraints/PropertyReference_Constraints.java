@@ -73,6 +73,7 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
               if ((SLinkOperations.getTarget(classifierType, "classifier", false) == null)) {
                 return new EmptyScope();
               }
+              final SNode enclosingProperty = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Property", false, false);
               return new NamedElementsScope(Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, _context.getContextNode())).where(new IWhereFilter<SNode>() {
                 public boolean accept(SNode it) {
                   return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Property");
@@ -80,6 +81,10 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
               }).select(new ISelector<SNode, SNode>() {
                 public SNode select(SNode it) {
                   return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Property");
+                }
+              }).where(new IWhereFilter<SNode>() {
+                public boolean accept(SNode it) {
+                  return enclosingProperty == null || neq_57atcm_a0a0a0a0a0a0a5a0a1a0a0a1a0b0a1a3(it, enclosingProperty);
                 }
               }));
             }
@@ -92,13 +97,16 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     SNode ancestor = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Property", false, false);
     if (ancestor != null) {
-      if ((SLinkOperations.getTarget(node, "property", false) == null) || eq_57atcm_a0a0a1a4(SLinkOperations.getTarget(node, "property", false), ancestor)) {
+      if (eq_57atcm_a0a0b0e(SLinkOperations.getTarget(node, "property", false), ancestor)) {
         return false;
       }
     }
     return true;
   }
-  private static boolean eq_57atcm_a0a0a1a4(Object a, Object b) {
+  private static boolean neq_57atcm_a0a0a0a0a0a0a5a0a1a0a0a1a0b0a1a3(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean eq_57atcm_a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "8045725502516138878");

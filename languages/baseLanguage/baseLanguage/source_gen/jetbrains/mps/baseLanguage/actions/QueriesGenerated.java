@@ -68,7 +68,6 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
-import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
@@ -3991,10 +3990,9 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
-        SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpressionIgnoringParens(_context.getSourceNode(), true);
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
-        return rightMostNode;
+        SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, parens, SelectionManager.LAST_CELL, -1);
+        return null;
       }
       public String getMatchingText(String pattern) {
         return ")";
@@ -4022,8 +4020,11 @@ __switch__:
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
-        return _context.getSourceNode();
+        SNode parenthesisedNode = ParenthesisUtil.createUnmatchedLeftParenthesis(_context.getSourceNode());
+        if (SNodeOperations.isInstanceOf(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(parenthesisedNode, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "openParen", -1);
+        }
+        return null;
       }
       public String getMatchingText(String pattern) {
         return "(";
@@ -4141,7 +4142,50 @@ __switch__:
         return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), null));
       }
     });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.CastExpression", null);
+        SNode targetExpression = PrecedenceUtil.getTargetForLeftTransform(_context.getSourceNode(), result);
+        SNodeOperations.replaceWithAnother(targetExpression, result);
+        SLinkOperations.setTarget(result, "expression", targetExpression, true);
+        PrecedenceUtil.parenthesiseIfNecessary(targetExpression);
+
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(result), "jetbrains.mps.baseLanguage.structure.Expression")) {
+          SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+          SNodeOperations.replaceWithAnother(result, parens);
+          SLinkOperations.setTarget(parens, "expression", result, true);
+        }
+        return result;
+      }
+      public String getMatchingText(String pattern) {
+        return "()";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      public String getDescriptionText(String pattern) {
+        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), null));
+      }
+    });
     return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_8204117424323238091(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    SNode currentNode = _context.getSourceNode();
+    while ((SNodeOperations.getParent(currentNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      currentNode = SNodeOperations.cast(SNodeOperations.getParent(currentNode), "jetbrains.mps.baseLanguage.structure.Expression");
+    }
+    return ListSequence.fromList(SNodeOperations.getDescendants(currentNode, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
+      }
+    }).isEmpty();
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_358937142748958384(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5282,7 +5326,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a052(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a152(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -5438,120 +5482,6 @@ __switch__:
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ArrayType_5695707814672713643(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_2509912883454713258(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-        SPropertyOperations.set(field, "isTransient", "" + (true));
-        return field;
-      }
-      public String getMatchingText(String pattern) {
-        return "transient";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), null));
-      }
-    });
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-        SPropertyOperations.set(field, "isVolatile", "" + (true));
-        return field;
-      }
-      public String getMatchingText(String pattern) {
-        return "volatile";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), null));
-      }
-    });
-    return result;
-  }
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2509912883454713381(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-  }
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_2509912883448097259(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-        SPropertyOperations.set(field, "isTransient", "" + (true));
-        return field;
-      }
-      public String getMatchingText(String pattern) {
-        return "transient";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
-      }
-    });
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-        SPropertyOperations.set(field, "isVolatile", "" + (true));
-        return field;
-      }
-      public String getMatchingText(String pattern) {
-        return "volatile";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
-      }
-    });
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-        SNode staticField = SNodeFactoryOperations.replaceWithNewChild(field, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-        return staticField;
-      }
-      public String getMatchingText(String pattern) {
-        return "static";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
-      }
-    });
-    return result;
-  }
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2509912883448109614(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
-  }
   public static List<SubstituteAction> sideTransform_ActionsFactory_InstanceMethodDeclaration_7272388447704118738(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), _context.getSourceNode()) {
@@ -5636,16 +5566,16 @@ __switch__:
     });
     return result;
   }
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_7272388447729995250(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_2509912883454713258(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
-        SPropertyOperations.set(method, "isSynchronized", "" + (true));
-        return method;
+        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        SPropertyOperations.set(field, "isTransient", "" + (true));
+        return field;
       }
       public String getMatchingText(String pattern) {
-        return "synchronized";
+        return "transient";
       }
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
@@ -5655,17 +5585,17 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), null));
       }
     });
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), _context.getSourceNode()) {
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
-        SPropertyOperations.set(method, "isFinal", "" + (true));
-        return method;
+        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        SPropertyOperations.set(field, "isVolatile", "" + (true));
+        return field;
       }
       public String getMatchingText(String pattern) {
-        return "final";
+        return "volatile";
       }
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
@@ -5675,60 +5605,13 @@ __switch__:
         SNode sourceNode = getSourceNode();
         SNode parent = SNodeOperations.getParent(sourceNode);
         SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), null));
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), null));
       }
     });
     return result;
   }
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_7272388447729995401(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
-  }
-  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_7272388447730058979(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        SPropertyOperations.set(method, "isAbstract", "" + (true));
-        return method;
-      }
-      public String getMatchingText(String pattern) {
-        return "abstract";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null));
-      }
-    });
-    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), _context.getSourceNode()) {
-      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-        SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-        return staticMethod;
-      }
-      public String getMatchingText(String pattern) {
-        return "static";
-      }
-      public String getVisibleMatchingText(String pattern) {
-        return getMatchingText(pattern);
-      }
-      @Override
-      protected boolean isEnabled() {
-        SNode sourceNode = getSourceNode();
-        SNode parent = SNodeOperations.getParent(sourceNode);
-        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
-        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), null));
-      }
-    });
-    return result;
-  }
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_7272388447730058980(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2509912883454713381(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_StaticFieldDeclaration_7272388447767921849(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5869,6 +5752,167 @@ __switch__:
       }
     });
     return result;
+  }
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_7272388447729995250(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
+        SPropertyOperations.set(method, "isSynchronized", "" + (true));
+        return method;
+      }
+      public String getMatchingText(String pattern) {
+        return "synchronized";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), null));
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
+        SPropertyOperations.set(method, "isFinal", "" + (true));
+        return method;
+      }
+      public String getMatchingText(String pattern) {
+        return "final";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"), null));
+      }
+    });
+    return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_7272388447729995401(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
+  }
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_7272388447730058979(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        SPropertyOperations.set(method, "isAbstract", "" + (true));
+        return method;
+      }
+      public String getMatchingText(String pattern) {
+        return "abstract";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), null));
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode method = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        SNode staticMethod = SNodeFactoryOperations.replaceWithNewChild(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+        return staticMethod;
+      }
+      public String getMatchingText(String pattern) {
+        return "static";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), null));
+      }
+    });
+    return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_7272388447730058980(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+  }
+  public static List<SubstituteAction> sideTransform_ActionsFactory_Type_2509912883448097259(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        SPropertyOperations.set(field, "isTransient", "" + (true));
+        return field;
+      }
+      public String getMatchingText(String pattern) {
+        return "transient";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        SPropertyOperations.set(field, "isVolatile", "" + (true));
+        return field;
+      }
+      public String getMatchingText(String pattern) {
+        return "volatile";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
+      }
+    });
+    ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), _context.getSourceNode()) {
+      public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
+        SNode field = SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        SNode staticField = SNodeFactoryOperations.replaceWithNewChild(field, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+        return staticField;
+      }
+      public String getMatchingText(String pattern) {
+        return "static";
+      }
+      public String getVisibleMatchingText(String pattern) {
+        return getMatchingText(pattern);
+      }
+      @Override
+      protected boolean isEnabled() {
+        SNode sourceNode = getSourceNode();
+        SNode parent = SNodeOperations.getParent(sourceNode);
+        SNode containingLink = SNodeOperations.getContainingLinkDeclaration(sourceNode);
+        return parent == null || containingLink == null || (ModelConstraints.canBeParent(parent, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), containingLink, null, null) && ModelConstraints.canBeAncestor(parent, null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), null));
+      }
+    });
+    return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Type_2509912883448109614(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
   private static SNode _quotation_createNode_ns07og_a0a0a0y() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -6074,7 +6118,7 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0hb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a33 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a052(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a152(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

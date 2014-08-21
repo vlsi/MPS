@@ -45,9 +45,6 @@ public class CleanUnmatchedParentheses_Intention implements IntentionFactory {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
-    if (editorContext.getSelectedNode() != node && !(isVisibleInChild(node, editorContext.getSelectedNode(), editorContext))) {
-      return false;
-    }
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
@@ -56,9 +53,6 @@ public class CleanUnmatchedParentheses_Intention implements IntentionFactory {
         return (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
       }
     });
-  }
-  private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return SNodeOperations.isInstanceOf(childNode, "jetbrains.mps.baseLanguage.structure.Expression");
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "528847182406392848");

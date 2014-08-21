@@ -7,6 +7,7 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
+    <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTree" />
     <classNode dependClassName="jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />

@@ -199,7 +199,7 @@ public class QueriesGenerated {
         for (final SNode item : parameterObjects) {
           ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"), item, _context.getSourceNode()) {
             public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _quotation_createNode_fo7if3_a0a0a0a0a0d(_context.getSourceNode())));
+              return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName((item)), _context.getSourceNode()));
             }
             public String getMatchingText(String pattern) {
               return "^" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName((item))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
@@ -247,14 +247,6 @@ public class QueriesGenerated {
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, false);
     quotedNode_2.addChild("exponent", quotedNode_4);
-    return quotedNode_2;
-  }
-  private static SNode _quotation_createNode_fo7if3_a0a0a0a0a0d(Object parameter_1) {
-    PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = (SNode) parameter_1;
-    if (quotedNode_2 != null) {
-    }
     return quotedNode_2;
   }
 }
