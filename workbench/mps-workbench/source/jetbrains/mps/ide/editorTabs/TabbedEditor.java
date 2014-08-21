@@ -128,10 +128,10 @@ public class TabbedEditor extends BaseNodeEditor {
     if (myTabsComponent != null) {
       myTabsComponent.dispose();
     }
-    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getComponent(), new NodeChangeCallback() {
+    myTabsComponent = TabComponentFactory.createTabsComponent(myBaseNode, myPossibleTabs, getEditorPanel(), new NodeChangeCallback() {
         @Override
         public void changeNode(SNode newNode) {
-          showNodeInternal(newNode, !(newNode.getModel() != null && newNode.getParent() == null), true);
+          showNodeInternal(newNode, true, true);
         }
       }, new CreateModeCallback() {
         @Override
@@ -267,7 +267,7 @@ public class TabbedEditor extends BaseNodeEditor {
       @Override
       public void changeNode(SNode node) {
         myTabsComponent.setLastNode(new jetbrains.mps.smodel.SNodePointer(node));
-        showNode(node, !(node.getModel() != null && node.getParent() == null));
+        showNode(node, true);
       }
     });
     for (DefaultActionGroup group : groups) {
