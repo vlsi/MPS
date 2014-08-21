@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7qh3gdvb9nov9fyp4lpbajbrbg7vec5">
+<dependencies version="2" modelHash="-61kqpog5um4xrsormn8xggknljc4dzl">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6coyx9cq8icm86dy9j1trq5a7ubwr79" />
@@ -7,7 +7,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="kgc3l2gv9hsv3l18n5ihspk0l2nybo" />
   <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" hash="-i5oe5ax91p271i0f9us1edf1fuz99x" />
   <dep model="r:359b1d2b-77c4-46df-9bf2-b25cbea32254(jetbrains.mps.console.base.structure)" hash="-a1p5gm2tk74jwijgkkw53yaon9dv2r7" />
-  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-d941ntvqcl3tbepwt1gt18gh2zu9c3q" />
+  <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="3xqchtirk8g8vpy5cpjg3m7s7690fj6" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-4kp9pz7vzux2q5w9urrxwicyxnsva3r" dependsOnNodes="true">
@@ -51,7 +51,7 @@
   </common>
   <source id="8483375838963817983" name="UnloadModelsCommand" hash="-arb6zdzrhdp33pdvm1lenoku2i2n7w" />
   <source id="8483375838963818242" name="RebuildProjectCommand" hash="4bwbkk3ny2agunraamd303rsf07xunl" />
-  <source id="7490254719522540696" name="StatCommand" hash="-76ijy3w7jdetr7a9p5tdo30wn4k5bjz" />
+  <source id="7490254719522540696" name="StatCommand" hash="-dc6y1n2qoh3dm5upljmz02h759f4xg2" />
   <source id="7490254719522675890" name="IStatisticsTarget" hash="cc9ayctb4030c2jtqchpfb70c0g9blm" />
   <source id="7490254719522675896" name="GlobalStatisticTarget" hash="8i7z3yjgndwqcgvyl2ppp8wxn9tq0yn" />
   <source id="7490254719522676278" name="ProjectStatisticsTarget" hash="-5186hoef04eo70jrykqkrynt7n5izpn" />
@@ -61,12 +61,12 @@
   <source id="5207260697411458113" name="INodeSetReference" hash="aeozx18ie1qebowoeuf7fkp8wph251p" />
   <source id="7820875636625377576" name="ModelReference" hash="b7lsr8aeoy9qf9gm9aayc2hi067umuv" />
   <source id="7820875636625654703" name="NodeReference" hash="7u6y9w76qg6s5sqq8h628g57ye46r3p" />
-  <source id="7057947030097724900" name="ShowGenPlan" hash="-7y0wo6ynhpfkbzmgwg97pjzo4ppy5x3" />
+  <source id="7057947030097724900" name="ShowGenPlan" hash="6pes6z37v0ado2pkwjgzm8cfwpv5kic" />
   <source id="3894227536041114995" name="ClickableGenerator" hash="7to1hrdao3nwjm6tj9c73n5ctufseu3" />
   <source id="5582028874769074087" name="ActionCallDeclaredParameter" hash="-825r87d29ek67pzb5ixbw5h6fv8sg0i" />
   <source id="5582028874769074089" name="ActionCallGlobalParameter" hash="-2vknwq1o7wyarqvkxce6768ojzx3dec" />
   <source id="5582028874769074091" name="ActionCallParameter" hash="-7s28d1k82ll0yw4bcrbzgs771es6d2q" />
-  <source id="5582028874769074093" name="CallActionExpression" hash="-8k95b6vhtd7sndjdl7mqumqeebxjv0j" />
+  <source id="5582028874769074093" name="CallActionExpression" hash="-3xvvd7k3vqf0bg00cmix0bh304ulsms" />
   <source id="5582028874769074096" name="ModelProperties" hash="-ch4szd531swm0r0erk6idceqbdo2jv7" />
   <source id="5582028874769074099" name="ModuleProperties" hash="cixzqajh0r30gab0a5izgda3y3p20na" />
   <source id="5582028874771853091" name="Make" hash="ategdh0e3ywe84z23kjhzazph3ellx4" />
@@ -74,6 +74,6 @@
   <source id="2840424593938220297" name="Clean" hash="6jzu60lh5sx1pof9j6z2199m8pxp09f" />
   <source id="2840424593984889115" name="RemoveGenSources" hash="9odhit8sqy94tffij7ebkpm95u2zt8i" />
   <source id="2840424593984889498" name="AbsractMake" hash="-7vdz83i39y75gjpghn9kt9im1pccvb1" />
-  <source id="5932042262275638696" name="OfAspectOperation" hash="-d3szxvw4yb55797g4fsarbdugsk9bn4" />
+  <source id="5932042262275638696" name="OfAspectOperation" hash="1c89bitoqxzwfvsclqqtt3mo8v1eh08" />
 </dependencies>
 

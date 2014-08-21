@@ -20,7 +20,7 @@ public class SPrimitiveDataTypeAdapter implements SPrimitiveDataType {
   public Object fromString(String string) {
     switch (type) {
       case SPrimitiveDataType.INT:
-        return Integer.valueOf(string);
+        return (string != null ? Integer.valueOf(string) : 0);
       case SPrimitiveDataType.BOOL:
         return Boolean.valueOf(string);
       default:

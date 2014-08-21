@@ -10,10 +10,10 @@ public class RefactorOperation_Behavior {
   }
 
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "apply function to manually selected nodes";
+    return "apply a function to manually selected nodes";
   }
 
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "Operates like forEach but asks user to select included/excluded nodes before refactoring.\n" + "Refactoring is applied not immediately but using invokelater, so there may be issues when using several times in the same command.";
+    return "Operates like the forEach operation, but additionally asks the user to include/exclude nodes before starting the refactoring.\n" + "Refactoring is not applied immediately, but after a random delay due to using Java's invokelater.\nMultiple usages of the command within a single query may result in consistency issues and are discouraged.";
   }
 }
