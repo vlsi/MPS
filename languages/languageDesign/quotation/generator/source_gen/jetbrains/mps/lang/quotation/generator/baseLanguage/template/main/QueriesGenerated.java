@@ -423,15 +423,36 @@ public class QueriesGenerated {
     if (originalNode == null) {
       originalNode = _context.getNode();
     }
+    SNode originalAncestor = SNodeOperations.getAncestor(originalNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
     for (SReference ref : Sequence.fromIterable(originalNode.getReferences())) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", ref.getRole())) != null)) {
         continue;
       }
       SNode targetNode = ((SNode) ref.getTargetNode());
       SNode targetAncestor = SNodeOperations.getAncestor(targetNode, "jetbrains.mps.lang.quotation.structure.Quotation", false, false);
-      // originalNode might not be under Quotation (e.g. pattern test lang wraps a regular node into quotation), 
-      // thus we compare ancestor of currrent(transient) node - assuming reference targets get updated and point to the same model. 
-      if (targetAncestor != null && targetAncestor == SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false)) {
+      boolean innerQuotationRef;
+      if (targetAncestor != null) {
+        innerQuotationRef = targetAncestor == originalAncestor;
+      } else {
+        // target node is not under any quotation, two possible cases: 
+        if (originalAncestor == null) {
+          // 1) source node is not under quotation, the case for regular nodes wrapped into quotation 
+          // (e.g. pattern test lang wraps a regular nodeToMatch into quotation) 
+          // I can't come up with a solution, here's a hack: assume if roots match, then 
+          // this is reference to quotaion internals 
+          innerQuotationRef = SNodeOperations.getContainingRoot(targetNode) == SNodeOperations.getContainingRoot(originalNode);
+        } else {
+          // 2) source node is under quotation, target node is external to the quotation then  
+          innerQuotationRef = false;
+        }
+      }
+      if (innerQuotationRef) {
+        continue;
+      }
+
+      // 
+      // thus we compare ancestor of current(transient) node - assuming reference targets get updated and point to the same model. 
+      if (targetAncestor != null && targetAncestor == originalAncestor) {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
