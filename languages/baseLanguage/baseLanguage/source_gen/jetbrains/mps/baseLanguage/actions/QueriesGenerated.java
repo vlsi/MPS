@@ -1897,12 +1897,7 @@ public class QueriesGenerated {
               }
 
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                // If a field can no longer be created, allow for completion with 'space' 
-                if (SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(curr, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-                  return name + ((pattern.endsWith("()") || pattern.endsWith("(") ? "()" : ""));
-                } else {
-                  return name + "()";
-                }
+                return name + "()";
               }
             }
             return null;
@@ -1950,9 +1945,9 @@ public class QueriesGenerated {
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
             if ((SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == null)) {
-              SelectionUtil.selectCell(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SelectionManager.LAST_EDITABLE_CELL);
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SelectionManager.LAST_EDITABLE_CELL, -1);
             } else {
-              SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL);
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL, -1);
             }
             return null;
           }
@@ -1962,10 +1957,6 @@ public class QueriesGenerated {
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
             if (SPropertyOperations.getBoolean(curr, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(curr, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(curr, "synchronized")) {
-              // workaround to allow for the to-method transform above to allow for completion with the 'space' char 
-              if ((pattern != null && pattern.length() > 0) && !(pattern.endsWith("(")) && !(pattern.endsWith("()"))) {
-                return pattern + ";";
-              }
               return null;
             }
             if (!((pattern == null || pattern.length() == 0))) {
