@@ -2113,6 +2113,29 @@
       <unit id="284804022096670765" at="10,0,30,0" name="jetbrains.mps.editorTest.BasicStaticMethodDefinition_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/284804022097044179">
+    <file name="AbstractFieldUnavailable_Test.java">
+      <node id="284804022097044179" at="15,64,16,107" concept="2" />
+      <node id="284804022097044179" at="16,107,17,105" concept="2" />
+      <node id="284804022097044179" at="24,51,25,61" concept="2" />
+      <node id="284804022097044191" at="25,61,26,42" concept="2" />
+      <node id="284804022097054757" at="26,42,27,74" concept="2" />
+      <node id="284804022097044179" at="12,0,14,0" concept="1" trace="AbstractFieldUnavailable_Test#()V" />
+      <node id="284804022097044179" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="284804022097044179" at="14,0,19,0" concept="5" trace="test_AbstractFieldUnavailable#()V" />
+      <node id="284804022097044179" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="284804022097044179" at="12,42,12,42" />
+      <scope id="284804022097044179" at="21,23,21,23" />
+      <scope id="284804022097044179" at="12,0,14,0" />
+      <scope id="284804022097044179" at="15,64,17,105" />
+      <scope id="284804022097044179" at="21,0,23,0" />
+      <scope id="284804022097044179" at="24,51,27,74" />
+      <scope id="284804022097044179" at="14,0,19,0" />
+      <scope id="284804022097044179" at="23,0,29,0" />
+      <unit id="284804022097044179" at="19,0,30,0" name="jetbrains.mps.editorTest.AbstractFieldUnavailable_Test$TestBody" />
+      <unit id="284804022097044179" at="10,0,31,0" name="jetbrains.mps.editorTest.AbstractFieldUnavailable_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2870455723671254292">
     <file name="AddNodeAttribute_Test.java">
       <node id="2870455723671254292" at="15,56,16,107" concept="2" />
