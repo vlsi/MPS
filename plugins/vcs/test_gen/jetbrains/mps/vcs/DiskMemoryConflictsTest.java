@@ -73,6 +73,8 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         final boolean[] resultArr = new boolean[1];
         try {
           myProject = project;
+          myModel = getModel();
+          myModule = (Solution) myModel.getModule();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               myModelBackup = CopyUtil.copyModel(((DefaultSModelDescriptor) getModel()).getSModel());
@@ -81,9 +83,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
           for (DiskMemoryConflictsTest.Action a : DiskMemoryConflictsTest.Action.values()) {
             for (DiskMemoryConflictsTest.DiskModification dm : DiskMemoryConflictsTest.DiskModification.values()) {
               for (DiskMemoryConflictsTest.VersionToChoose v : DiskMemoryConflictsTest.VersionToChoose.values()) {
-                myModel = getModel();
-                myModule = (Solution) myModel.getModule();
-
                 checkInitialState();
 
                 startedAction[0] = a;
@@ -115,7 +114,7 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) != null) {
+        if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) == myModel) {
           try {
             final org.jetbrains.mps.openapi.model.SModel modelDescriptor = myModel;
             Assert.assertNotNull(modelDescriptor);
@@ -299,7 +298,8 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
             e.printStackTrace();
             Assert.fail();
           }
-          myModel.reloadFromSource();
+          myModule.updateModelsSet();
+          myModel = getModel();
         }
       });
       DiskMemoryConflictsTest.waitEDT();
