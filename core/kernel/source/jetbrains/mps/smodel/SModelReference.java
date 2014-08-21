@@ -54,9 +54,9 @@ public final class SModelReference implements org.jetbrains.mps.openapi.model.SM
       }
       if (thrownWarnings < 10) {
         if (InternalFlag.isInternalMode()) {
-          LOG.error("Creating model reference without module reference.", new Throwable());
+          //LOG.error("Creating model reference without module reference.", new Throwable());
         } else {
-          LOG.warn("Creating model reference without module reference.", new Throwable());
+          //LOG.warn("Creating model reference without module reference.", new Throwable());
         }
         thrownWarnings ++;
       }
