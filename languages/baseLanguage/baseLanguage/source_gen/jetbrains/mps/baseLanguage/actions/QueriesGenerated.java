@@ -54,7 +54,6 @@ import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
@@ -68,6 +67,7 @@ import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelInternal;
@@ -1896,12 +1896,16 @@ public class QueriesGenerated {
                 return null;
               }
 
+              // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
+              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(_context.getCurrentTargetNode(), name.trim())) {
+                return null;
+              }
+
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                // If a field can no longer be created, allow for completion with 'space' 
-                if (SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(curr, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-                  return name + ((pattern.endsWith("()") || pattern.endsWith("(") ? "()" : ""));
-                } else {
-                  return name + "()";
+                return name + "()";
+              } else {
+                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(_context.getCurrentTargetNode(), name.trim())) {
+                  return name + "...";
                 }
               }
             }
@@ -1950,9 +1954,9 @@ public class QueriesGenerated {
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
             if ((SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == null)) {
-              SelectionUtil.selectCell(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SelectionManager.LAST_EDITABLE_CELL);
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), SelectionManager.LAST_EDITABLE_CELL, -1);
             } else {
-              SelectionUtil.selectCell(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL);
+              SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true), SelectionManager.FIRST_EDITABLE_CELL, -1);
             }
             return null;
           }
@@ -1962,32 +1966,24 @@ public class QueriesGenerated {
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
             if (SPropertyOperations.getBoolean(curr, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(curr, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(curr, "synchronized")) {
-              // workaround to allow for the to-method transform above to allow for completion with the 'space' char 
-              if ((pattern != null && pattern.length() > 0) && !(pattern.endsWith("(")) && !(pattern.endsWith("()"))) {
-                return pattern + ";";
-              }
               return null;
             }
             if (!((pattern == null || pattern.length() == 0))) {
-              final Wrappers._T<String> name = new Wrappers._T<String>(pattern);
+              String name = pattern;
               if (pattern.endsWith(";") || pattern.endsWith("=")) {
-                name.value = name.value.substring(0, name.value.length() - 1);
+                name = name.substring(0, name.length() - 1);
               }
-              // Visible classifiers should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && Sequence.fromIterable(ClassifierScopes.getVisibleClassifiersScope(_context.getCurrentTargetNode(), true).getAvailableElements(pattern)).where(new IWhereFilter<SNode>() {
-                public boolean accept(SNode it) {
-                  return eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0zc(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"), name.value);
-                }
-              }).isNotEmpty()) {
-                return null;
-              }
-              // Visible types should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && (pattern.equals("string") || pattern.equals("map") || pattern.equals("set") || pattern.equals("list") || pattern.equals("sorted_set") || pattern.equals("sorted_map"))) {
+              // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
+              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(_context.getCurrentTargetNode(), name.trim())) {
                 return null;
               }
 
-              if (JavaNameUtil.isJavaIdentifier(name.value.trim())) {
-                return name.value + ((pattern.endsWith("=") ? "=" : ""));
+              if (JavaNameUtil.isJavaIdentifier(name.trim())) {
+                return name + ((pattern.endsWith("=") ? "=" : ""));
+              } else {
+                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(_context.getCurrentTargetNode(), name.trim())) {
+                  return name + "...";
+                }
               }
             }
             return null;
@@ -4768,7 +4764,58 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3609453419515211747(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "visibility", true) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "visibility", true) == null) && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false;
+  }
+  public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_2834737865485829575(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SLinkOperations.setTarget(_context.getSourceNode(), "visibility", result, true);
+          editorContext.selectWRTFocusPolicy(_context.getSourceNode());
+          return null;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    {
+      final String[] lastPattern = new String[1];
+      List<SubstituteAction> list = ModelActions.createChildNodeSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility"), new AbstractChildNodeSetter() {
+        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, @Nullable EditorContext editorContext) {
+          return substitute(newChild, lastPattern[0], editorContext);
+        }
+        private SNode substitute(SNode result, String pattern, @Nullable EditorContext editorContext) {
+          SLinkOperations.setTarget(_context.getSourceNode(), "visibility", result, true);
+          editorContext.selectWRTFocusPolicy(_context.getSourceNode());
+          return null;
+        }
+      }, operationContext);
+      for (final SubstituteAction action : list) {
+        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
+          @Override
+          public SNode substitute(@Nullable EditorContext context, String pattern) {
+            lastPattern[0] = pattern;
+            return super.substitute(context, pattern);
+          }
+        });
+      }
+    }
+    return result;
+  }
+  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_2834737865485829592(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "visibility", true) == null) && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == true;
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_3731731823338056077(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -4875,7 +4922,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3731731823337580891(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "abstract") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "volatile") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "transient") == false;
+    return SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "volatile") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "transient") == false && IncompleteMemberDeclaration_Behavior.call_canBeMadeAbstract_6224545524881696659(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_3731731823337920299(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -5326,7 +5373,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a152(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a352(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -6045,9 +6092,6 @@ __switch__:
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_x583g4_a0a0a0a0a0a0d0c0d0a0a0a0c0a0c0zc(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
   private static boolean eq_x583g4_a0a0a38(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
@@ -6118,7 +6162,7 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0hb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a33 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a152(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a352(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

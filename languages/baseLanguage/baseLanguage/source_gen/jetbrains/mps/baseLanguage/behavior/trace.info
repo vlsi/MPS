@@ -11792,18 +11792,24 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/3609453419506351739">
     <file name="IncompleteMemberDeclaration_Behavior.java">
-      <node id="3609453419506372444" at="11,78,12,62" concept="13" />
-      <node id="3609453419506351739" at="9,0,11,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3609453419506351739" at="11,0,14,0" concept="17" trace="virtual_isStatic_8986964027630462944#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <scope id="3609453419506351904" at="9,43,9,43" />
-      <scope id="3609453419506371905" at="11,78,12,62" />
-      <scope id="3609453419506351739" at="9,0,11,0">
+      <node id="3609453419506372444" at="13,78,14,62" concept="13" />
+      <node id="6224545524881748688" at="16,84,17,217" concept="13" />
+      <node id="3609453419506351739" at="11,0,13,0" concept="17" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3609453419506351739" at="13,0,16,0" concept="17" trace="virtual_isStatic_8986964027630462944#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3609453419506351739" at="16,0,19,0" concept="17" trace="call_canBeMadeAbstract_6224545524881696659#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="3609453419506351904" at="11,43,11,43" />
+      <scope id="3609453419506371905" at="13,78,14,62" />
+      <scope id="6224545524881696813" at="16,84,17,217" />
+      <scope id="3609453419506351739" at="11,0,13,0">
         <var name="thisNode" id="3609453419506351739" />
       </scope>
-      <scope id="3609453419506351739" at="11,0,14,0">
+      <scope id="3609453419506351739" at="13,0,16,0">
         <var name="thisNode" id="3609453419506351739" />
       </scope>
-      <unit id="3609453419506351739" at="8,0,15,0" name="jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior" />
+      <scope id="3609453419506351739" at="16,0,19,0">
+        <var name="thisNode" id="3609453419506351739" />
+      </scope>
+      <unit id="3609453419506351739" at="10,0,20,0" name="jetbrains.mps.baseLanguage.behavior.IncompleteMemberDeclaration_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)/3718132079121388579">
