@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.vcs.DiskMemoryConflictsTest" file="DiskMemoryConflictsTest.java">
+    <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
+    <classNode dependClassName="com.intellij.openapi.application.ModalityState" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
     <classNode dependClassName="com.intellij.openapi.ui.TestDialog" />
     <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />

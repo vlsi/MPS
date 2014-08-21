@@ -39,6 +39,8 @@ import com.intellij.openapi.vfs.newvfs.RefreshQueue;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import java.io.IOException;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 
 /**
@@ -347,9 +349,14 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   }
   private static void waitEDT() {
     ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
+        return;
+      }
+    }, ModalityState.NON_MODAL);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        return;
       }
     });
   }
