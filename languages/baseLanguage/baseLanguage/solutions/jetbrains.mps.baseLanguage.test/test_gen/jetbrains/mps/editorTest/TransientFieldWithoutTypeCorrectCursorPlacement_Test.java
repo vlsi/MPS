@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class SynchronizedFieldUnavailable_Test extends BaseTransformationTest {
-  public SynchronizedFieldUnavailable_Test() {
+public class TransientFieldWithoutTypeCorrectCursorPlacement_Test extends BaseTransformationTest {
+  public TransientFieldWithoutTypeCorrectCursorPlacement_Test() {
   }
   @Test
-  public void test_SynchronizedFieldUnavailable() throws Throwable {
+  public void test_TransientFieldWithoutTypeCorrectCursorPlacement() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.TransientFieldWithoutTypeCorrectCursorPlacement_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,9 +22,8 @@ public class SynchronizedFieldUnavailable_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("284804022080833434", "284804022080833439");
-      this.typeString("bar");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Insert_Action");
+      initEditor("284804022097988345", "284804022097988350");
+      this.typeString("transient name");
     }
   }
 }

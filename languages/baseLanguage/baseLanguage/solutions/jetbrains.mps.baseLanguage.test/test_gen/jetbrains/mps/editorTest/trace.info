@@ -1987,20 +1987,21 @@
       <node id="284804022080833433" at="16,107,17,109" concept="2" />
       <node id="284804022080833433" at="24,51,25,61" concept="2" />
       <node id="284804022080833444" at="25,61,26,29" concept="2" />
+      <node id="284804022098101058" at="26,29,27,74" concept="2" />
       <node id="284804022080833433" at="12,0,14,0" concept="1" trace="SynchronizedFieldUnavailable_Test#()V" />
       <node id="284804022080833433" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="284804022080833433" at="14,0,19,0" concept="5" trace="test_SynchronizedFieldUnavailable#()V" />
-      <node id="284804022080833433" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="284804022080833433" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="284804022080833433" at="12,46,12,46" />
       <scope id="284804022080833433" at="21,23,21,23" />
       <scope id="284804022080833433" at="12,0,14,0" />
       <scope id="284804022080833433" at="15,68,17,109" />
       <scope id="284804022080833433" at="21,0,23,0" />
-      <scope id="284804022080833433" at="24,51,26,29" />
+      <scope id="284804022080833433" at="24,51,27,74" />
       <scope id="284804022080833433" at="14,0,19,0" />
-      <scope id="284804022080833433" at="23,0,28,0" />
-      <unit id="284804022080833433" at="19,0,29,0" name="jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody" />
-      <unit id="284804022080833433" at="10,0,30,0" name="jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test" />
+      <scope id="284804022080833433" at="23,0,29,0" />
+      <unit id="284804022080833433" at="19,0,30,0" name="jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test$TestBody" />
+      <unit id="284804022080833433" at="10,0,31,0" name="jetbrains.mps.editorTest.SynchronizedFieldUnavailable_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/284804022096291951">
@@ -2134,6 +2135,28 @@
       <scope id="284804022097044179" at="23,0,29,0" />
       <unit id="284804022097044179" at="19,0,30,0" name="jetbrains.mps.editorTest.AbstractFieldUnavailable_Test$TestBody" />
       <unit id="284804022097044179" at="10,0,31,0" name="jetbrains.mps.editorTest.AbstractFieldUnavailable_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/284804022097988344">
+    <file name="TransientFieldWithoutTypeCorrectCursorPlacement_Test.java">
+      <node id="284804022097988344" at="15,87,16,107" concept="2" />
+      <node id="284804022097988344" at="16,107,17,128" concept="2" />
+      <node id="284804022097988344" at="24,51,25,61" concept="2" />
+      <node id="284804022097988355" at="25,61,26,40" concept="2" />
+      <node id="284804022097988344" at="12,0,14,0" concept="1" trace="TransientFieldWithoutTypeCorrectCursorPlacement_Test#()V" />
+      <node id="284804022097988344" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="284804022097988344" at="14,0,19,0" concept="5" trace="test_TransientFieldWithoutTypeCorrectCursorPlacement#()V" />
+      <node id="284804022097988344" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="284804022097988344" at="12,65,12,65" />
+      <scope id="284804022097988344" at="21,23,21,23" />
+      <scope id="284804022097988344" at="12,0,14,0" />
+      <scope id="284804022097988344" at="15,87,17,128" />
+      <scope id="284804022097988344" at="21,0,23,0" />
+      <scope id="284804022097988344" at="24,51,26,40" />
+      <scope id="284804022097988344" at="14,0,19,0" />
+      <scope id="284804022097988344" at="23,0,28,0" />
+      <unit id="284804022097988344" at="19,0,29,0" name="jetbrains.mps.editorTest.TransientFieldWithoutTypeCorrectCursorPlacement_Test$TestBody" />
+      <unit id="284804022097988344" at="10,0,30,0" name="jetbrains.mps.editorTest.TransientFieldWithoutTypeCorrectCursorPlacement_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2870455723671254292">
