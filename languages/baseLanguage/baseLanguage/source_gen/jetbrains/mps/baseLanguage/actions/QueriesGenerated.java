@@ -1848,12 +1848,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode current = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            String name = pattern;
-            while (name.endsWith("(") || name.endsWith(")") || name.endsWith(" ")) {
-              name = name.substring(0, name.length() - 1);
-            }
-            name = name.trim();
-
+            String name = IncompleteMemberHelper.buildMethodName(pattern);
             SNode result;
             if (SPropertyOperations.getBoolean(current, "static")) {
               result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null);
@@ -1878,34 +1873,42 @@ public class QueriesGenerated {
             }
             return null;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
+            if (IncompleteMemberHelper.canBeMethod(curr)) {
+              if ((pattern == null || pattern.length() == 0)) {
+                return !(strictly);
+              }
+              String name = IncompleteMemberHelper.buildMethodName(pattern);
+              if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
+                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
+                  return (strictly ? ((pattern.endsWith("()") ? true : false)) : true);
+                } else {
+                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
+                    return false;
+                  }
+                }
+              }
+            }
+            return false;
+          }
           public String getDescriptionText(String pattern) {
             return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static method" : "method");
           }
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "transient")) {
-              return null;
-            }
-            if (!((pattern == null || pattern.length() == 0))) {
-              String name = pattern;
-              while (name.endsWith("(") || name.endsWith(")")) {
-                name = name.substring(0, name.length() - 1);
-              }
-              SNode clNode = SNodeOperations.as(SNodeOperations.getParent(curr), "jetbrains.mps.baseLanguage.structure.Classifier");
-              if (clNode != null && SPropertyOperations.getString(clNode, "name").equals(name.trim())) {
-                return null;
-              }
-
-              // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(curr, name.trim())) {
-                return null;
-              }
-
-              if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                return name + "()";
-              } else {
-                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                  return name + "...";
+            if (IncompleteMemberHelper.canBeMethod(curr) && (pattern != null && pattern.length() > 0)) {
+              String name = IncompleteMemberHelper.buildMethodName(pattern);
+              if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
+                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
+                  return name + "()";
+                } else {
+                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
+                    return name + "...";
+                  }
                 }
               }
             }
@@ -1924,11 +1927,7 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode current = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            String name = pattern;
-            if (pattern.endsWith(";") || pattern.endsWith("=")) {
-              name = name.substring(0, name.length() - 1).trim();
-            }
-            name = name.trim();
+            String name = IncompleteMemberHelper.buildFieldName(pattern);
 
             SNode result;
             if (SPropertyOperations.getBoolean(current, "static")) {
@@ -1960,29 +1959,42 @@ public class QueriesGenerated {
             }
             return null;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
+            if (IncompleteMemberHelper.canBeField(curr)) {
+              if ((pattern == null || pattern.length() == 0)) {
+                return !(strictly);
+              }
+              String name = IncompleteMemberHelper.buildFieldName(pattern);
+              if (IncompleteMemberHelper.isValidCandidateFieldName(curr, name)) {
+                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
+                  return (strictly ? pattern.endsWith("=") || pattern.endsWith(";") : true);
+                } else {
+                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
+                    return false;
+                  }
+                }
+              }
+            }
+            return false;
+          }
           public String getDescriptionText(String pattern) {
             return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static field" : "field");
           }
           public String getMatchingText(String pattern) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(curr, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(curr, "synchronized")) {
-              return null;
-            }
-            if (!((pattern == null || pattern.length() == 0))) {
-              String name = pattern;
-              if (pattern.endsWith(";") || pattern.endsWith("=")) {
-                name = name.substring(0, name.length() - 1);
-              }
-              // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(curr, name.trim())) {
-                return null;
-              }
-
-              if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                return name + ((pattern.endsWith("=") ? "=" : ""));
-              } else {
-                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                  return name + "...";
+            if (IncompleteMemberHelper.canBeField(curr) && (pattern != null && pattern.length() > 0)) {
+              String name = IncompleteMemberHelper.buildFieldName(pattern);
+              if (IncompleteMemberHelper.isValidCandidateFieldName(curr, name)) {
+                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
+                  return name + ((pattern.endsWith("=") ? "=" : ""));
+                } else {
+                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
+                    return name + "...";
+                  }
                 }
               }
             }
@@ -2009,15 +2021,20 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "visibility", SLinkOperations.getTarget(curr, "visibility", true), true);
             return result;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return IncompleteMemberHelper.canBeClass(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && IncompleteMemberHelper.canSubstitute(strictly, pattern, "class");
+          }
           public String getDescriptionText(String pattern) {
             return "Class declaration";
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "transient") || SPropertyOperations.getBoolean(curr, "volatile") || SLinkOperations.getTarget(curr, "type", true) != null) {
-              return null;
+            if (IncompleteMemberHelper.canBeClass(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
+              return "class";
             }
-            return "class";
+            return null;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2037,15 +2054,20 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "nonStatic", "" + (true));
             return result;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && IncompleteMemberHelper.canSubstitute(strictly, pattern, "interface");
+          }
           public String getDescriptionText(String pattern) {
             return "Interface declaration";
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "static") || SLinkOperations.getTarget(curr, "type", true) != null) {
-              return null;
+            if (IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
+              return "interface";
             }
-            return "interface";
+            return null;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2064,15 +2086,20 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "visibility", SLinkOperations.getTarget(curr, "visibility", true), true);
             return result;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return IncompleteMemberHelper.canBeEnum(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && IncompleteMemberHelper.canSubstitute(strictly, pattern, "enum");
+          }
           public String getDescriptionText(String pattern) {
             return "Enum declaration";
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "static") || SLinkOperations.getTarget(curr, "type", true) != null) {
-              return null;
+            if (IncompleteMemberHelper.canBeEnum(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
+              return "enum";
             }
-            return "enum";
+            return null;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2091,15 +2118,20 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "visibility", SLinkOperations.getTarget(curr, "visibility", true), true);
             return result;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            return IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && IncompleteMemberHelper.canSubstitute(strictly, pattern, "@interface");
+          }
           public String getDescriptionText(String pattern) {
             return "Annotation declaration";
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "static") || SLinkOperations.getTarget(curr, "type", true) != null) {
-              return null;
+            if (IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
+              return "@interface";
             }
-            return "@interface";
+            return null;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2125,17 +2157,23 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "visibility", ((current == null) ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null) : SLinkOperations.getTarget(current, "visibility", true)), true);
             return result;
           }
+          public boolean hasSubstitute() {
+            return true;
+          }
+          public boolean canSubstitute_internal(String pattern, boolean strictly) {
+            String candidateName = IncompleteMemberHelper.getNameOfConstructor(_context.getParentNode());
+            if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) {
+              return IncompleteMemberHelper.canBeConstructor(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && (candidateName != null && IncompleteMemberHelper.canSubstitute(strictly, pattern, candidateName) || IncompleteMemberHelper.canSubstitute(strictly, pattern, "constructor"));
+            }
+
+            return (candidateName != null && IncompleteMemberHelper.canSubstitute(strictly, pattern, candidateName)) || IncompleteMemberHelper.canSubstitute(strictly, pattern, "constructor");
+          }
           public String getDescriptionText(String pattern) {
             return "constructor";
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.as(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (curr != null && (SPropertyOperations.getBoolean(curr, "volatile") || SPropertyOperations.getBoolean(curr, "final") || SPropertyOperations.getBoolean(curr, "transient") || SPropertyOperations.getBoolean(curr, "abstract") || SPropertyOperations.getBoolean(curr, "synchronized") || SPropertyOperations.getBoolean(curr, "static") || (SLinkOperations.getTarget(curr, "type", true) != null))) {
-              return null;
-            }
-            SNode clNode = SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier");
-            if (clNode != null) {
-              return SPropertyOperations.getString(clNode, "name") + "()";
+            if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.PlaceholderMember") || SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration") && IncompleteMemberHelper.canBeConstructor(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
+              return IncompleteMemberHelper.getNameOfConstructor(_context.getParentNode());
             }
             return null;
           }

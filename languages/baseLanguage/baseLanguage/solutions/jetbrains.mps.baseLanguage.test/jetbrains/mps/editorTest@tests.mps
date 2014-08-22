@@ -23988,7 +23988,7 @@
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="284804022080456827" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="284804022080456828" nodeInfo="nn">
-        <property name="keys" nameId="tp5g.1227184461946" value="bar" />
+        <property name="keys" nameId="tp5g.1227184461946" value="bar;" />
       </node>
     </node>
   </root>
@@ -24298,7 +24298,7 @@
     </node>
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="284804022097988354" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="284804022097988355" nodeInfo="nn">
-        <property name="keys" nameId="tp5g.1227184461946" value="transient name" />
+        <property name="keys" nameId="tp5g.1227184461946" value="transient name;" />
       </node>
     </node>
   </root>

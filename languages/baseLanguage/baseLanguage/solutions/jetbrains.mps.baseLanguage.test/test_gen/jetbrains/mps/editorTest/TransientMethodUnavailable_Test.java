@@ -23,7 +23,7 @@ public class TransientMethodUnavailable_Test extends BaseTransformationTest {
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("284804022080456815", "284804022080456821");
-      this.typeString("bar");
+      this.typeString("bar;");
     }
   }
 }

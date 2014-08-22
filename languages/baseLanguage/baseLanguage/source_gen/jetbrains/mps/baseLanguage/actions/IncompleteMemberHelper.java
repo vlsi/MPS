@@ -37,7 +37,74 @@ public class IncompleteMemberHelper {
       }
     }).isNotEmpty();
   }
+
+  /*package*/ static boolean canSubstitute(boolean strictly, String pattern, String matchingText) {
+    return ((strictly && eq_fp5qrn_a0a0a0a0f(pattern.trim(), matchingText)) || (!(strictly) && matchingText.startsWith(pattern.trim())));
+  }
+
+  /*package*/ static boolean canBeField(SNode member) {
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized"));
+  }
+
+  /*package*/ static boolean canBeMethod(SNode member) {
+    return !(SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient"));
+  }
+
+  /*package*/ static boolean canBeConstructor(SNode member) {
+    return !(member != null && (SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "transient") || SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "static") || (SLinkOperations.getTarget(member, "type", true) != null)));
+  }
+
+  /*package*/ static boolean canBeClass(SNode member) {
+    return !(SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "transient") || SPropertyOperations.getBoolean(member, "volatile") || SLinkOperations.getTarget(member, "type", true) != null);
+  }
+
+  /*package*/ static boolean canBeEnum(SNode member) {
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "static") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
+  }
+
+  /*package*/ static boolean canBeInterface(SNode member) {
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "static") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
+  }
+
+  /*package*/ static String buildFieldName(final String pattern) {
+    return (pattern.endsWith(";") || pattern.endsWith("=") ? pattern.substring(0, pattern.length() - 1).trim() : pattern.trim());
+  }
+
+  /*package*/ static String buildMethodName(final String pattern) {
+    String name = pattern;
+    while (name.endsWith("(") || name.endsWith(")")) {
+      name = name.substring(0, name.length() - 1);
+    }
+    return name.trim();
+  }
+
+  /*package*/ static boolean isValidCandidateMethodName(SNode member, String memberName) {
+    // Visible types and classifiers should not be offered as potential member names, 
+    // if the type is still null (user convenience) 
+    // Classifier names should be excluded, they are matched by the constructor 
+    return !(hasNameEqualToSurroundingClassifier(member, memberName)) && isValidCandidateFieldName(member, memberName);
+  }
+
+  /*package*/ static boolean isValidCandidateFieldName(SNode member, String memberName) {
+    // Visible types and classifiers should not be offered as potential member names, 
+    // if the type is still null (user convenience) 
+    return !((SLinkOperations.getTarget(member, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(member, memberName));
+  }
+
+  /*package*/ static String getNameOfConstructor(SNode member) {
+    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return (clNode != null ? SPropertyOperations.getString(clNode, "name") + "()" : null);
+  }
+
+  /*package*/ static boolean hasNameEqualToSurroundingClassifier(SNode member, String memberName) {
+    SNode clNode = SNodeOperations.as(SNodeOperations.getParent(member), "jetbrains.mps.baseLanguage.structure.Classifier");
+    return clNode != null && SPropertyOperations.getString(clNode, "name").equals(memberName);
+  }
+
   private static boolean eq_fp5qrn_a0a0a0a0a0a0b0d(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_fp5qrn_a0a0a0a0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

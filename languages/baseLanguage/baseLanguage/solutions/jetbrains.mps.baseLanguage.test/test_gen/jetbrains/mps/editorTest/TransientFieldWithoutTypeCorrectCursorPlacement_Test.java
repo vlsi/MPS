@@ -23,7 +23,7 @@ public class TransientFieldWithoutTypeCorrectCursorPlacement_Test extends BaseTr
     @Override
     public void testMethodImpl() throws Exception {
       initEditor("284804022097988345", "284804022097988350");
-      this.typeString("transient name");
+      this.typeString("transient name;");
     }
   }
 }
