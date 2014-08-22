@@ -19,7 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class IncompleteMemberHelper {
 
   /*package*/ static boolean isJavaKeyWordNotApplicableAsModifier(SNode member, String pattern) {
-    List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type"), SNodeOperations.getModel(member));
+    List<SNode> subConcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveType"), SNodeOperations.getModel(member));
     Iterable<String> aliases = ListSequence.fromList(subConcepts).select(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "conceptAlias");

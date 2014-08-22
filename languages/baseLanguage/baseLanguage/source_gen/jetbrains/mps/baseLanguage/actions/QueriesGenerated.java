@@ -1897,14 +1897,14 @@ public class QueriesGenerated {
               }
 
               // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(_context.getCurrentTargetNode(), name.trim())) {
+              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(curr, name.trim())) {
                 return null;
               }
 
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
                 return name + "()";
               } else {
-                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(_context.getCurrentTargetNode(), name.trim())) {
+                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
                   return name + "...";
                 }
               }
@@ -1974,14 +1974,14 @@ public class QueriesGenerated {
                 name = name.substring(0, name.length() - 1);
               }
               // Visible types and classifiers should not be offered as potential member names, if the type is still null (user convenience) 
-              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(_context.getCurrentTargetNode(), name.trim())) {
+              if ((SLinkOperations.getTarget(curr, "type", true) == null) && IncompleteMemberHelper.isKnownTypeName(curr, name.trim())) {
                 return null;
               }
 
               if (JavaNameUtil.isJavaIdentifier(name.trim())) {
                 return name + ((pattern.endsWith("=") ? "=" : ""));
               } else {
-                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(_context.getCurrentTargetNode(), name.trim())) {
+                if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
                   return name + "...";
                 }
               }
