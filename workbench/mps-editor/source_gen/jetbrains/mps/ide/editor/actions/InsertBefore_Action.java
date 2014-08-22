@@ -13,6 +13,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -65,7 +67,14 @@ public class InsertBefore_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
+        public void run() {
+          if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property) {
+            ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit();
+          }
+          EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
+        }
+      });
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "InsertBefore", t);

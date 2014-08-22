@@ -25,8 +25,6 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class CellAction_UnfoldAll extends AbstractCellAction {
-
-
   @Override
   public boolean canExecute(EditorContext context) {
     return context.getEditorComponent().getRootCell() instanceof EditorCell_Collection;
@@ -48,10 +46,5 @@ public class CellAction_UnfoldAll extends AbstractCellAction {
         }
       }
     }
-  }
-
-  @Override
-  public boolean executeInCommand() {
-    return true;
   }
 }

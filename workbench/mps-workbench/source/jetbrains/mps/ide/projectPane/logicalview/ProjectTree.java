@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane.logicalview;
 
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.TextTreeNode;
@@ -84,7 +84,7 @@ public class ProjectTree extends MPSTree {
     root.add(projectRoot);
     root.add(myModulesPoolTreeNode);
     if (!IMakeService.INSTANCE.isSessionActive()) {
-      final TransientModelsComponent tmc = myProject.getComponent(TransientModelsComponent.class);
+      final TransientModelsProvider tmc = myProject.getComponent(TransientModelsProvider.class);
       if (tmc != null) {
         for (TransientModelsModule module : tmc.getModules()) {
           root.add(new TransientModelsTreeNode(myProject, module));

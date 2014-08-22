@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.selection;
 
 /**
- * This exception should be used to indicate that selection wa not properly restored
+ * This exception should be used to indicate that selection was not properly restored
  * most probably because of the changes in corresponding places in model. This is normal
  * situation, so this exception should be skipped and should not be logged as error.
  */

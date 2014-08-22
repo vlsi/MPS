@@ -198,7 +198,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_imlbz9_a0i0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_imlbz9_a0i0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   public static class ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {

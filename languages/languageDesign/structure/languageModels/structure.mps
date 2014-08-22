@@ -79,6 +79,9 @@
     <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1227629144741" nodeInfo="ig">
       <link role="intfc" roleId="1169127628841" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
     </node>
+    <node role="implements" roleId="1169129564478" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1591022479783404649" nodeInfo="ig">
+      <link role="intfc" roleId="1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="1071489090640" id="1071489288299" nodeInfo="ig">
     <property name="abstract" nameId="4628067390765956802" value="false" />

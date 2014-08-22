@@ -432,7 +432,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public int getCaretX() {
-    return myTextLine.getCaretX(myX);
+    return myTextLine.getCaretX(myX + myGapLeft);
   }
 
   @Override

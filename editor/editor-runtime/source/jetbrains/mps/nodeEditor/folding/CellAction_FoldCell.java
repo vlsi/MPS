@@ -24,17 +24,15 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import org.jetbrains.mps.util.Condition;
 
 public class CellAction_FoldCell extends AbstractCellAction {
+  public CellAction_FoldCell() {
+    super(false);
+  }
 
   @Override
   public boolean canExecute(EditorContext context) {
     EditorCell editorCell = ((EditorComponent) context.getEditorComponent()).getSelectedCell();
     if (editorCell == null) return false;
     return findCell(editorCell) != null;
-  }
-
-  @Override
-  public boolean executeInCommand() {
-    return false;
   }
 
   @Override

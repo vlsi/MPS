@@ -43,7 +43,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("intfc").create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("role", "metaClass", "sourceCardinality", "unordered", "doNotGenerate").references("specializedLink", "target").final_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("role", "metaClass", "sourceCardinality", "unordered", "doNotGenerate").references("specializedLink", "target").final_().create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").final_().create();
       case 17:

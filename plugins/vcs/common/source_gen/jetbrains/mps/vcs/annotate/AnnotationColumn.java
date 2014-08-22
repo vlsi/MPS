@@ -58,6 +58,7 @@ import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics2D;
+import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import java.awt.FontMetrics;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.annotations.Nullable;
@@ -289,9 +290,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
       graphics.setColor(ANNOTATION_COLOR);
       if (myRevisionRange.isFileLineHighlighted(fileLine)) {
-        graphics.setFont(myFont.deriveFont(Font.BOLD));
-      } else {
-        graphics.setFont(myFont);
+        graphics.setFont(FontRegistry.getInstance().getFont(myFont.getName(), myFont.getStyle() | Font.BOLD, myFont.getSize()));
       }
       FontMetrics metrics = graphics.getFontMetrics();
       if (height < metrics.getHeight()) {
@@ -409,7 +408,7 @@ __switch__:
   @Override
   public void relayout() {
     EditorComponent editor = getEditorComponent();
-    if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
+    if (editor == null || editor.isDisposed()) {
       return;
     }
     Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
@@ -443,7 +442,7 @@ __switch__:
         }
       }
     });
-    FontMetrics metrics = editor.getGraphics().getFontMetrics(myFont);
+    FontMetrics metrics = FontRegistry.getInstance().getFontMetrics(myFont);
     for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }

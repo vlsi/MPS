@@ -62,7 +62,7 @@
       <unit at="8,0,14,0" name="jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor" />
     </file>
     <file name="LinkDeclaration_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor" />
+      <unit at="10,0,27,0" name="jetbrains.mps.lang.structure.behavior.LinkDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
       <unit at="9,0,48,0" name="jetbrains.mps.lang.structure.behavior.BehaviorAspectDescriptor" />

@@ -71,7 +71,11 @@ public interface EditorCell {
   // TODO: same as inset?
   void setLeftGap(int gap);
 
+  int getLeftGap();
+
   void setRightGap(int gap);
+
+  int getRightGap();
 
   void moveTo(int x, int y);
 

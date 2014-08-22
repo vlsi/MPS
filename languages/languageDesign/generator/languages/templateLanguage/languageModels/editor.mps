@@ -2879,6 +2879,9 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399678141" nodeInfo="nn">
               <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
             </node>
+            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366769718225" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="templateName" />
+            </node>
           </node>
         </node>
       </node>
@@ -3405,6 +3408,9 @@
             <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="1214399677853" nodeInfo="nn">
               <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
             </node>
+            <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="6925838366768540126" nodeInfo="ng">
+              <property name="name" nameId="tpck.1169194664001" value="templateName" />
+            </node>
           </node>
         </node>
       </node>
@@ -3760,6 +3766,9 @@
               <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
               <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
               <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1194566785068" resolveInfo="reference" />
+              <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="7594711839997518326" nodeInfo="ng">
+                <property name="name" nameId="tpck.1169194664001" value="templateName" />
+              </node>
             </node>
           </node>
         </node>
@@ -4023,9 +4032,6 @@
             <property name="readOnly" nameId="tpc2.1140017977771" value="true" />
             <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="tpck.1169194664001" resolveInfo="name" />
             <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1216755869996" resolveInfo="mappingLabelReference" />
-            <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.PaddingLeftStyleClassItem" typeId="tpc2.1215007883204" id="7359536273012566755" nodeInfo="nn">
-              <property name="value" nameId="tpc2.1215007802031" value="1" />
-            </node>
           </node>
         </node>
         <node role="renderingCondition" roleId="tpc2.1142887637401" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="1200912701981" nodeInfo="nn">
