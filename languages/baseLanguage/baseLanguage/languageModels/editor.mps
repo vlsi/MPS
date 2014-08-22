@@ -1025,6 +1025,9 @@
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="1075140096042" nodeInfo="nn">
         <property name="text" nameId="tpc2.1073389577007" value="(" />
         <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="1234958090348" resolveInfo="LeftParenAfterName" />
+        <node role="id" roleId="tpc2.4323500428121274054" type="tpc2.EditorCellId" typeId="tpc2.4323500428121233431" id="346011455449568737" nodeInfo="ng">
+          <property name="name" nameId="tpck.1169194664001" value="leftParen" />
+        </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_RefNodeList" typeId="tpc2.1073390211982" id="1138337100850" nodeInfo="ng">
         <property name="vertical" nameId="tpc2.1140524450554" value="false" />

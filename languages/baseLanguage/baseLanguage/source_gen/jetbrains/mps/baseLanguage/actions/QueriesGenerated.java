@@ -1886,10 +1886,6 @@ public class QueriesGenerated {
               if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
                 if (JavaNameUtil.isJavaIdentifier(name.trim())) {
                   return (strictly ? ((pattern.endsWith("()") ? true : false)) : true);
-                } else {
-                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                    return false;
-                  }
                 }
               }
             }
@@ -1899,20 +1895,7 @@ public class QueriesGenerated {
             return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static method" : "method");
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (IncompleteMemberHelper.canBeMethod(curr) && (pattern != null && pattern.length() > 0)) {
-              String name = IncompleteMemberHelper.buildMethodName(pattern);
-              if (IncompleteMemberHelper.isValidCandidateMethodName(curr, name)) {
-                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                  return name + "()";
-                } else {
-                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                    return name + "...";
-                  }
-                }
-              }
-            }
-            return null;
+            return IncompleteMemberHelper.buildMethodName(pattern) + "()";
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -1972,10 +1955,6 @@ public class QueriesGenerated {
               if (IncompleteMemberHelper.isValidCandidateFieldName(curr, name)) {
                 if (JavaNameUtil.isJavaIdentifier(name.trim())) {
                   return (strictly ? pattern.endsWith("=") || pattern.endsWith(";") : true);
-                } else {
-                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                    return false;
-                  }
                 }
               }
             }
@@ -1985,21 +1964,7 @@ public class QueriesGenerated {
             return (SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"), "static") ? "static field" : "field");
           }
           public String getMatchingText(String pattern) {
-            SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (IncompleteMemberHelper.canBeField(curr) && (pattern != null && pattern.length() > 0)) {
-              String name = IncompleteMemberHelper.buildFieldName(pattern);
-              if (IncompleteMemberHelper.isValidCandidateFieldName(curr, name)) {
-                if (JavaNameUtil.isJavaIdentifier(name.trim())) {
-                  return name + ((pattern.endsWith("=") ? "=" : ""));
-                } else {
-                  if (IncompleteMemberHelper.isJavaKeyWordNotApplicableAsModifier(curr, name.trim())) {
-                    return name + "...";
-                  }
-                }
-              }
-            }
-            return null;
-
+            return IncompleteMemberHelper.buildFieldName(pattern);
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2031,10 +1996,7 @@ public class QueriesGenerated {
             return "Class declaration";
           }
           public String getMatchingText(String pattern) {
-            if (IncompleteMemberHelper.canBeClass(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
-              return "class";
-            }
-            return null;
+            return "class";
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2064,10 +2026,7 @@ public class QueriesGenerated {
             return "Interface declaration";
           }
           public String getMatchingText(String pattern) {
-            if (IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
-              return "interface";
-            }
-            return null;
+            return "interface";
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2096,10 +2055,7 @@ public class QueriesGenerated {
             return "Enum declaration";
           }
           public String getMatchingText(String pattern) {
-            if (IncompleteMemberHelper.canBeEnum(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
-              return "enum";
-            }
-            return null;
+            return "enum";
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2128,10 +2084,7 @@ public class QueriesGenerated {
             return "Annotation declaration";
           }
           public String getMatchingText(String pattern) {
-            if (IncompleteMemberHelper.canBeInterface(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
-              return "@interface";
-            }
-            return null;
+            return "@interface";
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2157,25 +2110,32 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(result, "visibility", ((current == null) ? SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null) : SLinkOperations.getTarget(current, "visibility", true)), true);
             return result;
           }
+          @Override
+          protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
+            SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(createdNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"), "leftParen", -1);
+            return null;
+          }
           public boolean hasSubstitute() {
             return true;
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
-            String candidateName = IncompleteMemberHelper.getNameOfConstructor(_context.getParentNode());
+            String candidateName = IncompleteMemberHelper.getNameOfConstructor(_context.getCurrentTargetNode());
             if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) {
               return IncompleteMemberHelper.canBeConstructor(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration")) && (candidateName != null && IncompleteMemberHelper.canSubstitute(strictly, pattern, candidateName) || IncompleteMemberHelper.canSubstitute(strictly, pattern, "constructor"));
+            } else {
+              return candidateName != null && IncompleteMemberHelper.canSubstitute(strictly, pattern, candidateName);
             }
 
-            return (candidateName != null && IncompleteMemberHelper.canSubstitute(strictly, pattern, candidateName)) || IncompleteMemberHelper.canSubstitute(strictly, pattern, "constructor");
           }
           public String getDescriptionText(String pattern) {
             return "constructor";
           }
           public String getMatchingText(String pattern) {
-            if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.PlaceholderMember") || SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration") && IncompleteMemberHelper.canBeConstructor(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration"))) {
-              return IncompleteMemberHelper.getNameOfConstructor(_context.getParentNode());
+            String candidate = IncompleteMemberHelper.getNameOfConstructor(_context.getCurrentTargetNode());
+            if (candidate == null) {
+              candidate = "constructor";
             }
-            return null;
+            return candidate;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
@@ -2184,6 +2144,9 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ClassifierMember_346011455449564639(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration") || SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.PlaceholderMember");
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassifierMember_459106287061180093(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -2266,7 +2229,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1778214689153983416(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression")) && eq_x583g4_a0a0a38(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"));
+    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression")) && eq_x583g4_a0a0a48(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"));
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1138168906052(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -2902,7 +2865,7 @@ public class QueriesGenerated {
         while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation") && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation"), "rightExpression", true) == current) {
           current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
         }
-        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_x583g4_a0a0a3a0a0a0a0a1a911(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), current))) {
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.BinaryOperation") || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression") && eq_x583g4_a0a0a3a0a0a0a0a1a021(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), current))) {
           SNode parens = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
           SLinkOperations.setTarget(parens, "expression", to, true);
           SNodeOperations.replaceWithAnother(current, parens);
@@ -5411,7 +5374,7 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         AbstractModule module = (AbstractModule) SNodeOperations.getModel(_context.getSourceNode()).getModule();
-        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a352(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
+        SModelInternal model = as_x583g4_a0a1a0a0a0a0a1a452(SNodeOperations.getModel(_context.getSourceNode()), SModelInternal.class);
         SModuleReference javadocLangReference = PersistenceFacade.getInstance().createModuleReference("f2801650-65d5-424e-bb1b-463a8781b786(jetbrains.mps.baseLanguage.javadoc)");
         if (!(model.importedLanguages().contains(javadocLangReference))) {
           module.addUsedLanguage(javadocLangReference);
@@ -6130,10 +6093,10 @@ __switch__:
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_x583g4_a0a0a38(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a48(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_x583g4_a0a0a3a0a0a0a0a1a911(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a3a0a0a0a0a1a021(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_waf1l5_a0a0e0a0a0(Object parameter_1) {
@@ -6200,7 +6163,7 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0hb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a33 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
-  private static <T> T as_x583g4_a0a1a0a0a0a0a1a352(Object o, Class<T> type) {
+  private static <T> T as_x583g4_a0a1a0a0a0a0a1a452(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }
