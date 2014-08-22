@@ -137,6 +137,7 @@
       <implementation-class>jetbrains.mps.project.StandaloneMPSProject</implementation-class>
     </component>
     <component>
+      <interface-class>jetbrains.mps.generator.TransientModelsProvider</interface-class>
       <implementation-class>jetbrains.mps.ide.generator.TransientModelsComponent</implementation-class>
     </component>
     <component>

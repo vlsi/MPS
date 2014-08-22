@@ -20,6 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInWeavingRule_Intention implements IntentionFactory {
@@ -101,6 +103,7 @@ public class NewTemplateInWeavingRule_Intention implements IntentionFactory {
       // make reference 
       SNode tr = SNodeFactoryOperations.setNewChild(node, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(tr, "template", t, false);
+      SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInWeavingRule_Intention.this;

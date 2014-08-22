@@ -110,7 +110,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_j4vm40_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_j4vm40_a0d0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_j4vm40_e0(EditorContext editorContext, SNode node) {
@@ -127,7 +127,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_j4vm40_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_j4vm40_a0e0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_j4vm40_f0(EditorContext editorContext, SNode node) {
@@ -147,7 +147,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_j4vm40_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_j4vm40_a0f0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createRefNodeList_j4vm40_g0(EditorContext editorContext, SNode node) {

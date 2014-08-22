@@ -94,7 +94,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0d0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_2sbeba_e0(EditorContext editorContext, SNode node) {
@@ -114,7 +114,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0e0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_2sbeba_f0(EditorContext editorContext, SNode node) {
@@ -134,7 +134,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_2sbeba_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_2sbeba_a0f0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createRefNode_2sbeba_g0(EditorContext editorContext, SNode node) {

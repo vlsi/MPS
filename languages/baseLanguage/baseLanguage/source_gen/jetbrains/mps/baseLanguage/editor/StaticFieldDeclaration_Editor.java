@@ -94,7 +94,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0d0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0d0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_e0(EditorContext editorContext, SNode node) {
@@ -114,7 +114,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0e0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0e0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_f0(EditorContext editorContext, SNode node) {
@@ -134,7 +134,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0f0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0f0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createConstant_t6d1qn_g0(EditorContext editorContext, SNode node) {
@@ -154,7 +154,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
   }
   public static class ApplySideTransforms_null_cellMenu_t6d1qn_a0g0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_t6d1qn_a0g0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
   private EditorCell createRefNode_t6d1qn_h0(EditorContext editorContext, SNode node) {
