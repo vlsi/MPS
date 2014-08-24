@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module version="4">
+<module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$/../../core">
@@ -506,6 +506,9 @@
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/test_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/../../plugins/execution-languages/languages/tests.data/classes_gen" />
     </content>
+    <content url="file://$MODULE_DIR$/../../plugins/migrationAssistant/actions/source_gen">
+      <sourceFolder url="file://$MODULE_DIR$/../../plugins/migrationAssistant/actions/source_gen" isTestSource="false" />
+    </content>
     <content url="file://$MODULE_DIR$/../../plugins/mps-build">
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.mps.tests/generator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../plugins/mps-build/languages/build.mps.tests/source_gen" isTestSource="false" />
@@ -934,6 +937,7 @@
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="testbench" />
     <orderEntry type="module" module-name="mps-testing" />
+    <orderEntry type="module" module-name="migrationAssistant" />
   </component>
 </module>
 
