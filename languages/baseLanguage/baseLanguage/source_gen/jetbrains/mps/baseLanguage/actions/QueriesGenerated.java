@@ -4129,13 +4129,17 @@ __switch__:
         return result;
       }
       public String getMatchingText(String pattern) {
+        // Avoid matching "(" in favour of the "()" transform defined below 
+        if (pattern.length() == 1) {
+          return null;
+        }
         return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "conceptAlias");
       }
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
       public String getDescriptionText(String pattern) {
-        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "conceptShortDescription");
       }
       @Override
       protected boolean isEnabled() {
@@ -4167,7 +4171,7 @@ __switch__:
         return getMatchingText(pattern);
       }
       public String getDescriptionText(String pattern) {
-        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "shortDescription");
+        return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression"), "conceptShortDescription");
       }
       @Override
       protected boolean isEnabled() {
