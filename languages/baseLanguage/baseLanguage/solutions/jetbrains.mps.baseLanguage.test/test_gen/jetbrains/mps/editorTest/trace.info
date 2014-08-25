@@ -6178,6 +6178,116 @@
       <unit id="6778605776625957377" at="10,0,30,0" name="jetbrains.mps.editorTest.PriorityProblem_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6866160649815059140">
+    <file name="SwapTernaryBranches1_Test.java">
+      <node id="6866160649815059140" at="15,60,16,107" concept="2" />
+      <node id="6866160649815059140" at="16,107,17,101" concept="2" />
+      <node id="6866160649815059140" at="24,51,25,63" concept="2" />
+      <node id="6866160649815062022" at="25,63,26,112" concept="2" />
+      <node id="6866160649815059140" at="12,0,14,0" concept="1" trace="SwapTernaryBranches1_Test#()V" />
+      <node id="6866160649815059140" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6866160649815059140" at="14,0,19,0" concept="5" trace="test_SwapTernaryBranches1#()V" />
+      <node id="6866160649815059140" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6866160649815059140" at="12,38,12,38" />
+      <scope id="6866160649815059140" at="21,23,21,23" />
+      <scope id="6866160649815059140" at="12,0,14,0" />
+      <scope id="6866160649815059140" at="15,60,17,101" />
+      <scope id="6866160649815059140" at="21,0,23,0" />
+      <scope id="6866160649815059140" at="24,51,26,112" />
+      <scope id="6866160649815059140" at="14,0,19,0" />
+      <scope id="6866160649815059140" at="23,0,28,0" />
+      <unit id="6866160649815059140" at="19,0,29,0" name="jetbrains.mps.editorTest.SwapTernaryBranches1_Test$TestBody" />
+      <unit id="6866160649815059140" at="10,0,30,0" name="jetbrains.mps.editorTest.SwapTernaryBranches1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6866160649815062186">
+    <file name="SwapTernaryBranches2_Test.java">
+      <node id="6866160649815062186" at="15,60,16,107" concept="2" />
+      <node id="6866160649815062186" at="16,107,17,101" concept="2" />
+      <node id="6866160649815062186" at="24,51,25,63" concept="2" />
+      <node id="6866160649815062207" at="25,63,26,112" concept="2" />
+      <node id="6866160649815062186" at="12,0,14,0" concept="1" trace="SwapTernaryBranches2_Test#()V" />
+      <node id="6866160649815062186" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6866160649815062186" at="14,0,19,0" concept="5" trace="test_SwapTernaryBranches2#()V" />
+      <node id="6866160649815062186" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6866160649815062186" at="12,38,12,38" />
+      <scope id="6866160649815062186" at="21,23,21,23" />
+      <scope id="6866160649815062186" at="12,0,14,0" />
+      <scope id="6866160649815062186" at="15,60,17,101" />
+      <scope id="6866160649815062186" at="21,0,23,0" />
+      <scope id="6866160649815062186" at="24,51,26,112" />
+      <scope id="6866160649815062186" at="14,0,19,0" />
+      <scope id="6866160649815062186" at="23,0,28,0" />
+      <unit id="6866160649815062186" at="19,0,29,0" name="jetbrains.mps.editorTest.SwapTernaryBranches2_Test$TestBody" />
+      <unit id="6866160649815062186" at="10,0,30,0" name="jetbrains.mps.editorTest.SwapTernaryBranches2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6866160649815090464">
+    <file name="SwapTernaryBranches3_Test.java">
+      <node id="6866160649815090464" at="15,60,16,107" concept="2" />
+      <node id="6866160649815090464" at="16,107,17,101" concept="2" />
+      <node id="6866160649815090464" at="24,51,25,63" concept="2" />
+      <node id="6866160649815090489" at="25,63,26,112" concept="2" />
+      <node id="6866160649815090464" at="12,0,14,0" concept="1" trace="SwapTernaryBranches3_Test#()V" />
+      <node id="6866160649815090464" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6866160649815090464" at="14,0,19,0" concept="5" trace="test_SwapTernaryBranches3#()V" />
+      <node id="6866160649815090464" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6866160649815090464" at="12,38,12,38" />
+      <scope id="6866160649815090464" at="21,23,21,23" />
+      <scope id="6866160649815090464" at="12,0,14,0" />
+      <scope id="6866160649815090464" at="15,60,17,101" />
+      <scope id="6866160649815090464" at="21,0,23,0" />
+      <scope id="6866160649815090464" at="24,51,26,112" />
+      <scope id="6866160649815090464" at="14,0,19,0" />
+      <scope id="6866160649815090464" at="23,0,28,0" />
+      <unit id="6866160649815090464" at="19,0,29,0" name="jetbrains.mps.editorTest.SwapTernaryBranches3_Test$TestBody" />
+      <unit id="6866160649815090464" at="10,0,30,0" name="jetbrains.mps.editorTest.SwapTernaryBranches3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6866160649815094102">
+    <file name="SwapTernaryBranches4_Test.java">
+      <node id="6866160649815094102" at="15,60,16,107" concept="2" />
+      <node id="6866160649815094102" at="16,107,17,101" concept="2" />
+      <node id="6866160649815094102" at="24,51,25,63" concept="2" />
+      <node id="6866160649815094132" at="25,63,26,112" concept="2" />
+      <node id="6866160649815094102" at="12,0,14,0" concept="1" trace="SwapTernaryBranches4_Test#()V" />
+      <node id="6866160649815094102" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6866160649815094102" at="14,0,19,0" concept="5" trace="test_SwapTernaryBranches4#()V" />
+      <node id="6866160649815094102" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6866160649815094102" at="12,38,12,38" />
+      <scope id="6866160649815094102" at="21,23,21,23" />
+      <scope id="6866160649815094102" at="12,0,14,0" />
+      <scope id="6866160649815094102" at="15,60,17,101" />
+      <scope id="6866160649815094102" at="21,0,23,0" />
+      <scope id="6866160649815094102" at="24,51,26,112" />
+      <scope id="6866160649815094102" at="14,0,19,0" />
+      <scope id="6866160649815094102" at="23,0,28,0" />
+      <unit id="6866160649815094102" at="19,0,29,0" name="jetbrains.mps.editorTest.SwapTernaryBranches4_Test$TestBody" />
+      <unit id="6866160649815094102" at="10,0,30,0" name="jetbrains.mps.editorTest.SwapTernaryBranches4_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6866160649815094574">
+    <file name="SwapTernaryBranches5_Test.java">
+      <node id="6866160649815094574" at="15,60,16,107" concept="2" />
+      <node id="6866160649815094574" at="16,107,17,101" concept="2" />
+      <node id="6866160649815094574" at="24,51,25,63" concept="2" />
+      <node id="6866160649815094604" at="25,63,26,112" concept="2" />
+      <node id="6866160649815094574" at="12,0,14,0" concept="1" trace="SwapTernaryBranches5_Test#()V" />
+      <node id="6866160649815094574" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6866160649815094574" at="14,0,19,0" concept="5" trace="test_SwapTernaryBranches5#()V" />
+      <node id="6866160649815094574" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6866160649815094574" at="12,38,12,38" />
+      <scope id="6866160649815094574" at="21,23,21,23" />
+      <scope id="6866160649815094574" at="12,0,14,0" />
+      <scope id="6866160649815094574" at="15,60,17,101" />
+      <scope id="6866160649815094574" at="21,0,23,0" />
+      <scope id="6866160649815094574" at="24,51,26,112" />
+      <scope id="6866160649815094574" at="14,0,19,0" />
+      <scope id="6866160649815094574" at="23,0,28,0" />
+      <unit id="6866160649815094574" at="19,0,29,0" name="jetbrains.mps.editorTest.SwapTernaryBranches5_Test$TestBody" />
+      <unit id="6866160649815094574" at="10,0,30,0" name="jetbrains.mps.editorTest.SwapTernaryBranches5_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6887089401948833622">
     <file name="DeletePrefixDecrementCaret_Test.java">
       <node id="6887089401948833622" at="15,66,16,107" concept="2" />
