@@ -5108,6 +5108,94 @@
       <unit id="6136581231959556347" at="10,0,31,0" name="jetbrains.mps.editorTest.NoImplementsAfterClass_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6136581231973306589">
+    <file name="AddStaticAfterPublic_Test.java">
+      <node id="6136581231973306589" at="15,60,16,107" concept="2" />
+      <node id="6136581231973306589" at="16,107,17,101" concept="2" />
+      <node id="6136581231973306589" at="24,51,25,63" concept="2" />
+      <node id="6136581231973306596" at="25,63,26,33" concept="2" />
+      <node id="6136581231973306589" at="12,0,14,0" concept="1" trace="AddStaticAfterPublic_Test#()V" />
+      <node id="6136581231973306589" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6136581231973306589" at="14,0,19,0" concept="5" trace="test_AddStaticAfterPublic#()V" />
+      <node id="6136581231973306589" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6136581231973306589" at="12,38,12,38" />
+      <scope id="6136581231973306589" at="21,23,21,23" />
+      <scope id="6136581231973306589" at="12,0,14,0" />
+      <scope id="6136581231973306589" at="15,60,17,101" />
+      <scope id="6136581231973306589" at="21,0,23,0" />
+      <scope id="6136581231973306589" at="24,51,26,33" />
+      <scope id="6136581231973306589" at="14,0,19,0" />
+      <scope id="6136581231973306589" at="23,0,28,0" />
+      <unit id="6136581231973306589" at="19,0,29,0" name="jetbrains.mps.editorTest.AddStaticAfterPublic_Test$TestBody" />
+      <unit id="6136581231973306589" at="10,0,30,0" name="jetbrains.mps.editorTest.AddStaticAfterPublic_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6136581231973317481">
+    <file name="AddStaticBeforeInterface_Test.java">
+      <node id="6136581231973317481" at="15,64,16,107" concept="2" />
+      <node id="6136581231973317481" at="16,107,17,105" concept="2" />
+      <node id="6136581231973317481" at="24,51,25,63" concept="2" />
+      <node id="6136581231973317488" at="25,63,26,32" concept="2" />
+      <node id="6136581231973317481" at="12,0,14,0" concept="1" trace="AddStaticBeforeInterface_Test#()V" />
+      <node id="6136581231973317481" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6136581231973317481" at="14,0,19,0" concept="5" trace="test_AddStaticBeforeInterface#()V" />
+      <node id="6136581231973317481" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6136581231973317481" at="12,42,12,42" />
+      <scope id="6136581231973317481" at="21,23,21,23" />
+      <scope id="6136581231973317481" at="12,0,14,0" />
+      <scope id="6136581231973317481" at="15,64,17,105" />
+      <scope id="6136581231973317481" at="21,0,23,0" />
+      <scope id="6136581231973317481" at="24,51,26,32" />
+      <scope id="6136581231973317481" at="14,0,19,0" />
+      <scope id="6136581231973317481" at="23,0,28,0" />
+      <unit id="6136581231973317481" at="19,0,29,0" name="jetbrains.mps.editorTest.AddStaticBeforeInterface_Test$TestBody" />
+      <unit id="6136581231973317481" at="10,0,30,0" name="jetbrains.mps.editorTest.AddStaticBeforeInterface_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6136581231973317558">
+    <file name="AddStaticBeforeVisibility_Test.java">
+      <node id="6136581231973317558" at="15,65,16,107" concept="2" />
+      <node id="6136581231973317558" at="16,107,17,106" concept="2" />
+      <node id="6136581231973317558" at="24,51,25,63" concept="2" />
+      <node id="6136581231973317565" at="25,63,26,32" concept="2" />
+      <node id="6136581231973317558" at="12,0,14,0" concept="1" trace="AddStaticBeforeVisibility_Test#()V" />
+      <node id="6136581231973317558" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6136581231973317558" at="14,0,19,0" concept="5" trace="test_AddStaticBeforeVisibility#()V" />
+      <node id="6136581231973317558" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6136581231973317558" at="12,43,12,43" />
+      <scope id="6136581231973317558" at="21,23,21,23" />
+      <scope id="6136581231973317558" at="12,0,14,0" />
+      <scope id="6136581231973317558" at="15,65,17,106" />
+      <scope id="6136581231973317558" at="21,0,23,0" />
+      <scope id="6136581231973317558" at="24,51,26,32" />
+      <scope id="6136581231973317558" at="14,0,19,0" />
+      <scope id="6136581231973317558" at="23,0,28,0" />
+      <unit id="6136581231973317558" at="19,0,29,0" name="jetbrains.mps.editorTest.AddStaticBeforeVisibility_Test$TestBody" />
+      <unit id="6136581231973317558" at="10,0,30,0" name="jetbrains.mps.editorTest.AddStaticBeforeVisibility_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6136581231973317670">
+    <file name="AddExtends_Test.java">
+      <node id="6136581231973317670" at="15,50,16,107" concept="2" />
+      <node id="6136581231973317670" at="16,107,17,91" concept="2" />
+      <node id="6136581231973317670" at="24,51,25,63" concept="2" />
+      <node id="6136581231973317676" at="25,63,26,44" concept="2" />
+      <node id="6136581231973317670" at="12,0,14,0" concept="1" trace="AddExtends_Test#()V" />
+      <node id="6136581231973317670" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6136581231973317670" at="14,0,19,0" concept="5" trace="test_AddExtends#()V" />
+      <node id="6136581231973317670" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6136581231973317670" at="12,28,12,28" />
+      <scope id="6136581231973317670" at="21,23,21,23" />
+      <scope id="6136581231973317670" at="12,0,14,0" />
+      <scope id="6136581231973317670" at="15,50,17,91" />
+      <scope id="6136581231973317670" at="21,0,23,0" />
+      <scope id="6136581231973317670" at="24,51,26,44" />
+      <scope id="6136581231973317670" at="14,0,19,0" />
+      <scope id="6136581231973317670" at="23,0,28,0" />
+      <unit id="6136581231973317670" at="19,0,29,0" name="jetbrains.mps.editorTest.AddExtends_Test$TestBody" />
+      <unit id="6136581231973317670" at="10,0,30,0" name="jetbrains.mps.editorTest.AddExtends_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764075431047">
     <file name="AddParensToArrayAccess1_Test.java">
       <node id="6141629764075431047" at="15,63,16,107" concept="2" />
