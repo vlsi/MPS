@@ -243,7 +243,6 @@ public abstract class BaseNodeEditor implements Editor {
           return;
         }
         editorContext.setMemento(s.myMemento);
-        editorContext.getEditorComponent().rebuildEditorContent();
       }
     });
     if (s.myInspectorMemento == null || !(getCurrentEditorComponent() instanceof NodeEditorComponent)) {
@@ -259,7 +258,6 @@ public abstract class BaseNodeEditor implements Editor {
       @Override
       public void performTask() {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
-        inspectorEditorContext.getEditorComponent().rebuildEditorContent();
       }
     });
   }

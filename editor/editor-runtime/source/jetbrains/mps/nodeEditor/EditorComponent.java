@@ -2471,14 +2471,26 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myMouseEventHandler != null;
   }
 
+  /**
+   * @deprecated since MPS 3.1 remove this method in MPS 3.2
+   */
+  @Deprecated
   public Object getUserData(Object key) {
     return myUserDataMap.get(key);
   }
 
+  /**
+   * @deprecated since MPS 3.1 remove this method in MPS 3.2
+   */
+  @Deprecated
   public void putUserData(Object key, Object data) {
     myUserDataMap.put(key, data);
   }
 
+  /**
+   * @deprecated since MPS 3.1 remove this method in MPS 3.2
+   */
+  @Deprecated
   public void clearUserData() {
     myUserDataMap.clear();
   }
@@ -3460,8 +3472,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myActionHandler;
   }
 
-  public synchronized void setEnabledHints(@NotNull Set<String> enabledHints) {
+  /**
+   * @return true if set of EnabledHints was changed by this operation
+   */
+  public synchronized boolean setEnabledHints(@NotNull Set<String> enabledHints) {
+    boolean result = !myEnabledHints.equals(enabledHints);
     myEnabledHints = enabledHints;
+    return result;
   }
 
   @NotNull
@@ -3469,8 +3486,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myEnabledHints;
   }
 
-  public void setUseCustomHints(boolean useDefaultsHints) {
+  /**
+   * @return true if UseCustomHints value was changed by this operation
+   */
+  public boolean setUseCustomHints(boolean useDefaultsHints) {
+    boolean result = myUseCustomHints != useDefaultsHints;
     myUseCustomHints = useDefaultsHints;
+    return result;
   }
 
   public boolean getUseCustomHints() {

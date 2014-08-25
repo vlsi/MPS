@@ -107,12 +107,20 @@ class Memento {
   }
 
   void restore(EditorComponent editor) {
+    boolean editorRebuildRequired = editor.setEnabledHints(myEnabledHints);
+    editorRebuildRequired = editor.setUseCustomHints(myUseCustomHints) || editorRebuildRequired;
+
     if (myEditedNodeReference != null && editor.getEditorContext() != null) {
       SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
       if (newEditedNode != null) {
         editor.editNode(newEditedNode);
         editor.flushEvents();
+        editorRebuildRequired = false;
       }
+    }
+    if (editorRebuildRequired) {
+      editor.rebuildEditorContent();
+      editor.flushEvents();
     }
 
     editor.clearFoldedCells();
@@ -143,9 +151,6 @@ class Memento {
     if (myViewPosition != null) {
       editor.getViewport().setViewPosition(myViewPosition);
     }
-
-    editor.setEnabledHints(myEnabledHints);
-    editor.setUseCustomHints(myUseCustomHints);
   }
 
   private boolean restoreErrors(EditorComponent editor) {
