@@ -25775,5 +25775,220 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231973317679" nodeInfo="nn" />
     </node>
   </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985890714" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddImplementsAfterClassName" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985890715" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985890716" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985900789" nodeInfo="ng">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985890718" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985890719" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value=" implements" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985890721" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985890722" nodeInfo="nn" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900798" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985900810" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddExtendsAfterClassName" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900811" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900812" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985900813" nodeInfo="ng">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985900814" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985900815" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value=" extends" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900816" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900817" nodeInfo="nn" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900842" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985900858" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddImplementsAfterExtends" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900859" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900860" nodeInfo="nn" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900890" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Object" resolveInfo="Object" />
+        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985900906" nodeInfo="ng">
+          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="6" />
+          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="6" />
+          <property name="cellId" nameId="tp5g.1229194968595" value="ReferencePresentation_91bvrs_a0a0" />
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985900862" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985900863" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value=" implements" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900864" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900865" nodeInfo="nn" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900924" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Object" resolveInfo="Object" />
+      </node>
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900930" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985900934" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddImplementsBeforeBrace" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900935" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900936" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985900979" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_uj0cpq_a31a" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985900938" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985900939" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="implements" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985900940" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985900941" nodeInfo="nn" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985900995" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985902342" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddExtendsBeforeBrace" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985902343" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902344" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985902345" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_uj0cpq_a31a" />
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985902346" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985902347" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="extends" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="6136581231985902348" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <property name="isFinal" nameId="tpee.1221565133444" value="true" />
+      <property name="abstractClass" nameId="tpee.1075300953594" value="false" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902349" nodeInfo="nn" />
+      <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985902374" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985902390" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddEnumImplementsBeforeBrace" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985902394" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985902395" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value="implements" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.EnumClass" typeId="tpee.1083245097125" id="6136581231985902417" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902418" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985902450" nodeInfo="ng">
+        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="Constant_y68cfu_a7a" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.EnumClass" typeId="tpee.1083245097125" id="6136581231985902469" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902470" nodeInfo="nn" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985902491" nodeInfo="in" />
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6136581231985902512" nodeInfo="ng">
+    <property name="name" nameId="tpck.1169194664001" value="AddEnumImplementsAfterName" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="classModifiers" />
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="6136581231985902513" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="6136581231985902514" nodeInfo="nn">
+        <property name="keys" nameId="tp5g.1227184461946" value=" implements" />
+      </node>
+    </node>
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.EnumClass" typeId="tpee.1083245097125" id="6136581231985902515" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902516" nodeInfo="nn" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6136581231985902568" nodeInfo="ng">
+        <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
+        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
+        <property name="cellId" nameId="tp5g.1229194968595" value="property_name" />
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.EnumClass" typeId="tpee.1083245097125" id="6136581231985902518" nodeInfo="ig">
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="Foo" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6136581231985902519" nodeInfo="nn" />
+      <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6136581231985902586" nodeInfo="in" />
+    </node>
+  </root>
 </model>
 

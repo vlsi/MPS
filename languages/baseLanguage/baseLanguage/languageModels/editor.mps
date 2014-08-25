@@ -4284,7 +4284,7 @@
           <property name="flag" nameId="tpc2.1186414551515" value="true" />
         </node>
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.SideTransformAnchorTagStyleClassItem" typeId="tpc2.1214320119173" id="2293171564565910238" nodeInfo="nn">
-          <property name="tag" nameId="tpc2.1214320119174" value="default_RTransform" />
+          <property name="tag" nameId="tpc2.1214320119174" value="ext_4_RTransform" />
         </node>
         <node role="focusPolicyApplicable" roleId="tpc2.1198512004906" type="tpc2.QueryFunction_NodeCondition" typeId="tpc2.1142886221719" id="8032461659218287066" nodeInfo="nn">
           <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8032461659218287067" nodeInfo="sn">

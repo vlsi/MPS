@@ -377,7 +377,6 @@
   <source id="1109279851642" name="GenericDeclaration" hash="-acei81qy9lz4p5sdos10qjrl4wl63my" />
   <source id="1109283449304" name="TypeVariableReference" hash="dta21wyhhzajkymh408aqlj121v6fva" />
   <source id="1113006251687" name="_FPNumber_String" hash="-an4hjzmlbbtqai8f0qlsr6wd9qcwe54">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="aabb26s397wephah2yftkpb7izqmwvn" />
@@ -493,6 +492,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />
@@ -517,6 +517,7 @@
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="bnhe8sj7ibnqiui9g2fi4t7zpifqwoe">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FloatNumberValue_PropertySupport.java" />
   </source>
   <source id="6734604082923916973" name="_HexNumberValue" hash="55313jm0eigjlbteu8g7sstc0ocp7xj">
