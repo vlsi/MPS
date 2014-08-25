@@ -24,19 +24,19 @@
       <node id="4671800353872912752" at="20,0,21,0" concept="5" trace="make#(Ljetbrains/mps/make/MakeSession;Ljava/lang/Iterable;Ljetbrains/mps/make/script/IScript;Ljetbrains/mps/make/script/IScriptController;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljava/util/concurrent/Future;" />
       <node id="8464977774480012402" at="21,0,22,0" concept="5" trace="addListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
       <node id="8464977774480012409" at="22,0,23,0" concept="5" trace="removeListener#(Ljetbrains/mps/make/IMakeNotificationListener;)V" />
-      <node id="5959771872497636036" at="25,0,26,0" concept="7" trace="Component" />
-      <node id="2572714605177025426" at="31,30,32,69" concept="12" />
-      <node id="5959771872497636055" at="33,7,34,23" concept="6" />
-      <node id="8540823926938077688" at="37,50,38,26" concept="2" />
-      <node id="2572714605176943598" at="41,45,42,83" concept="6" />
-      <node id="402740558444338550" at="45,44,46,31" concept="6" />
-      <node id="8695426379435177652" at="27,0,29,0" concept="1" trace="INSTANCE#()V" />
-      <node id="5959771872497636041" at="30,38,33,7" concept="4" />
-      <node id="8540823926938077682" at="37,0,40,0" concept="8" trace="set#(Ljetbrains/mps/make/IMakeService;)V" />
-      <node id="2572714605176943594" at="41,0,44,0" concept="8" trace="isSessionActive#()Z" />
-      <node id="402740558444338546" at="45,0,48,0" concept="8" trace="hasMakeService#()Z" />
-      <node id="8695426379435177666" at="30,0,36,0" concept="8" trace="get#()Ljetbrains/mps/make/IMakeService;" />
-      <scope id="8695426379435177655" at="27,24,27,24" />
+      <node id="5959771872497636036" at="24,0,25,0" concept="7" trace="Component" />
+      <node id="2572714605177025426" at="28,30,29,69" concept="12" />
+      <node id="5959771872497636055" at="30,7,31,23" concept="6" />
+      <node id="8540823926938077688" at="33,50,34,26" concept="2" />
+      <node id="2572714605176943598" at="36,45,37,83" concept="6" />
+      <node id="402740558444338550" at="39,44,40,31" concept="6" />
+      <node id="8695426379435177652" at="25,0,27,0" concept="1" trace="INSTANCE#()V" />
+      <node id="5959771872497636041" at="27,38,30,7" concept="4" />
+      <node id="8540823926938077682" at="33,0,36,0" concept="8" trace="set#(Ljetbrains/mps/make/IMakeService;)V" />
+      <node id="2572714605176943594" at="36,0,39,0" concept="8" trace="isSessionActive#()Z" />
+      <node id="402740558444338546" at="39,0,42,0" concept="8" trace="hasMakeService#()Z" />
+      <node id="8695426379435177666" at="27,0,33,0" concept="8" trace="get#()Ljetbrains/mps/make/IMakeService;" />
+      <scope id="8695426379435177655" at="25,24,25,24" />
       <scope id="8695426379435237628" at="14,0,15,0">
         <var name="session" id="8695426379435237643" />
       </scope>
@@ -72,20 +72,20 @@
       <scope id="8464977774480012409" at="22,0,23,0">
         <var name="listener" id="8464977774480012413" />
       </scope>
-      <scope id="5959771872497636042" at="31,30,32,69" />
-      <scope id="8540823926938077685" at="37,50,38,26" />
-      <scope id="2572714605176943597" at="41,45,42,83" />
-      <scope id="402740558444338549" at="45,44,46,31" />
-      <scope id="8695426379435177652" at="27,0,29,0" />
-      <scope id="8540823926938077682" at="37,0,40,0">
+      <scope id="5959771872497636042" at="28,30,29,69" />
+      <scope id="8540823926938077685" at="33,50,34,26" />
+      <scope id="2572714605176943597" at="36,45,37,83" />
+      <scope id="402740558444338549" at="39,44,40,31" />
+      <scope id="8695426379435177652" at="25,0,27,0" />
+      <scope id="8540823926938077682" at="33,0,36,0">
         <var name="service" id="8540823926938077686" />
       </scope>
-      <scope id="2572714605176943594" at="41,0,44,0" />
-      <scope id="402740558444338546" at="45,0,48,0" />
-      <scope id="8695426379435177669" at="30,38,34,23" />
-      <scope id="8695426379435177666" at="30,0,36,0" />
-      <unit id="8695426379435177650" at="24,0,49,0" name="jetbrains.mps.make.IMakeService$INSTANCE" />
-      <unit id="2082624981609760242" at="13,0,50,0" name="jetbrains.mps.make.IMakeService" />
+      <scope id="2572714605176943594" at="36,0,39,0" />
+      <scope id="402740558444338546" at="39,0,42,0" />
+      <scope id="8695426379435177669" at="27,38,31,23" />
+      <scope id="8695426379435177666" at="27,0,33,0" />
+      <unit id="8695426379435177650" at="23,0,43,0" name="jetbrains.mps.make.IMakeService$INSTANCE" />
+      <unit id="2082624981609760242" at="13,0,44,0" name="jetbrains.mps.make.IMakeService" />
     </file>
   </root>
   <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/2958721966247272985">
@@ -102,27 +102,27 @@
   <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8464977774479999203">
     <file name="MakeNotification.java">
       <node id="8464977774480012337" at="8,0,9,0" concept="3" trace="kind" />
-      <node id="8464977774480011644" at="10,76,11,18" concept="9" />
-      <node id="8464977774480012340" at="11,18,12,21" concept="2" />
-      <node id="8464977774480006578" at="16,35,17,44" concept="6" />
-      <node id="8464977774480012346" at="20,42,21,16" concept="6" />
-      <node id="8464977774480012303" at="30,0,32,0" concept="1" trace="Kind#()V" />
-      <node id="8464977774480012329" at="20,0,23,0" concept="5" trace="getKind#()Ljetbrains/mps/make/MakeNotification/Kind;" />
-      <node id="8464977774479999205" at="10,0,14,0" concept="1" trace="MakeNotification#(Ljetbrains/mps/make/IMakeService;Ljetbrains/mps/make/MakeNotification/Kind;)V" />
-      <node id="8464977774480006573" at="15,0,19,0" concept="5" trace="getSource#()Ljetbrains/mps/make/IMakeService;" />
-      <scope id="8464977774480012306" at="30,12,30,12" />
-      <scope id="8464977774480006576" at="16,35,17,44" />
-      <scope id="8464977774480012332" at="20,42,21,16" />
-      <scope id="8464977774479999208" at="10,76,12,21" />
-      <scope id="8464977774480012303" at="30,0,32,0" />
-      <scope id="8464977774480012329" at="20,0,23,0" />
-      <scope id="8464977774479999205" at="10,0,14,0">
+      <node id="8464977774480011644" at="9,76,10,18" concept="9" />
+      <node id="8464977774480012340" at="10,18,11,21" concept="2" />
+      <node id="8464977774480006578" at="14,35,15,44" concept="6" />
+      <node id="8464977774480012346" at="17,42,18,16" concept="6" />
+      <node id="8464977774480012303" at="26,0,28,0" concept="1" trace="Kind#()V" />
+      <node id="8464977774480012329" at="17,0,20,0" concept="5" trace="getKind#()Ljetbrains/mps/make/MakeNotification/Kind;" />
+      <node id="8464977774479999205" at="9,0,13,0" concept="1" trace="MakeNotification#(Ljetbrains/mps/make/IMakeService;Ljetbrains/mps/make/MakeNotification/Kind;)V" />
+      <node id="8464977774480006573" at="13,0,17,0" concept="5" trace="getSource#()Ljetbrains/mps/make/IMakeService;" />
+      <scope id="8464977774480012306" at="26,12,26,12" />
+      <scope id="8464977774480006576" at="14,35,15,44" />
+      <scope id="8464977774480012332" at="17,42,18,16" />
+      <scope id="8464977774479999208" at="9,76,11,21" />
+      <scope id="8464977774480012303" at="26,0,28,0" />
+      <scope id="8464977774480012329" at="17,0,20,0" />
+      <scope id="8464977774479999205" at="9,0,13,0">
         <var name="kind" id="8464977774480012334" />
         <var name="source" id="8464977774480006567" />
       </scope>
-      <scope id="8464977774480006573" at="15,0,19,0" />
-      <unit id="8464977774480012301" at="24,0,33,0" name="jetbrains.mps.make.MakeNotification$Kind" />
-      <unit id="8464977774479999203" at="7,0,34,0" name="jetbrains.mps.make.MakeNotification" />
+      <scope id="8464977774480006573" at="13,0,17,0" />
+      <unit id="8464977774480012301" at="20,0,29,0" name="jetbrains.mps.make.MakeNotification$Kind" />
+      <unit id="8464977774479999203" at="7,0,30,0" name="jetbrains.mps.make.MakeNotification" />
     </file>
   </root>
   <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8464977774480012290">
@@ -132,27 +132,27 @@
       <node id="8464977774480012370" at="9,0,10,0" concept="5" trace="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
       <node id="6702766394052812711" at="10,0,11,0" concept="5" trace="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
       <node id="6702766394052812717" at="11,0,12,0" concept="5" trace="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <node id="8464977774480012377" at="20,35,21,43" concept="2" />
-      <node id="8464977774480012381" at="21,43,22,16" concept="0" />
-      <node id="8464977774480012382" at="23,29,24,39" concept="2" />
-      <node id="8464977774480012389" at="24,39,25,16" concept="0" />
-      <node id="6702766394052812723" at="26,28,27,38" concept="2" />
-      <node id="6702766394052812727" at="27,38,28,16" concept="0" />
-      <node id="6702766394052812728" at="29,28,30,38" concept="2" />
-      <node id="6702766394052812732" at="30,38,31,16" concept="0" />
-      <node id="8464977774480012314" at="14,0,16,0" concept="1" trace="Stub#()V" />
-      <node id="8464977774480012396" at="36,0,39,0" concept="5" trace="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <node id="8464977774480012390" at="40,0,43,0" concept="5" trace="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <node id="6702766394052812739" at="44,0,47,0" concept="5" trace="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <node id="6702766394052812733" at="48,0,51,0" concept="5" trace="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <node id="8464977774480012325" at="18,73,33,7" concept="10" />
-      <node id="8464977774480012319" at="17,0,35,0" concept="5" trace="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
-      <scope id="8464977774480012317" at="14,19,14,19" />
-      <scope id="8464977774480012327" at="32,16,32,16" />
-      <scope id="8464977774480012401" at="37,67,37,67" />
-      <scope id="8464977774480012395" at="41,63,41,63" />
-      <scope id="6702766394052812744" at="45,62,45,62" />
-      <scope id="6702766394052812738" at="49,62,49,62" />
+      <node id="8464977774480012377" at="18,35,19,43" concept="2" />
+      <node id="8464977774480012381" at="19,43,20,16" concept="0" />
+      <node id="8464977774480012382" at="21,29,22,39" concept="2" />
+      <node id="8464977774480012389" at="22,39,23,16" concept="0" />
+      <node id="6702766394052812723" at="24,28,25,38" concept="2" />
+      <node id="6702766394052812727" at="25,38,26,16" concept="0" />
+      <node id="6702766394052812728" at="27,28,28,38" concept="2" />
+      <node id="6702766394052812732" at="28,38,29,16" concept="0" />
+      <node id="8464977774480012314" at="13,0,15,0" concept="1" trace="Stub#()V" />
+      <node id="8464977774480012396" at="33,0,36,0" concept="5" trace="scriptAboutToStart#(Ljetbrains/mps/make/MakeNotification;)V" />
+      <node id="8464977774480012390" at="36,0,39,0" concept="5" trace="scriptFinished#(Ljetbrains/mps/make/MakeNotification;)V" />
+      <node id="6702766394052812739" at="39,0,42,0" concept="5" trace="sessionOpened#(Ljetbrains/mps/make/MakeNotification;)V" />
+      <node id="6702766394052812733" at="42,0,45,0" concept="5" trace="sessionClosed#(Ljetbrains/mps/make/MakeNotification;)V" />
+      <node id="8464977774480012325" at="16,73,31,7" concept="10" />
+      <node id="8464977774480012319" at="15,0,33,0" concept="5" trace="handleNotification#(Ljetbrains/mps/make/MakeNotification;)V" />
+      <scope id="8464977774480012317" at="13,19,13,19" />
+      <scope id="8464977774480012327" at="30,16,30,16" />
+      <scope id="8464977774480012401" at="34,67,34,67" />
+      <scope id="8464977774480012395" at="37,63,37,63" />
+      <scope id="6702766394052812744" at="40,62,40,62" />
+      <scope id="6702766394052812738" at="43,62,43,62" />
       <scope id="8464977774480012292" at="7,0,8,0">
         <var name="notification" id="8464977774480012296" />
       </scope>
@@ -168,29 +168,29 @@
       <scope id="6702766394052812717" at="11,0,12,0">
         <var name="notification" id="6702766394052812721" />
       </scope>
-      <scope id="8464977774480012314" at="14,0,16,0" />
-      <scope id="8464977774480012355" at="20,35,22,16" />
-      <scope id="8464977774480012360" at="23,29,25,16" />
-      <scope id="6702766394052812708" at="26,28,28,16" />
-      <scope id="6702766394052812702" at="29,28,31,16" />
-      <scope id="8464977774480012396" at="36,0,39,0">
+      <scope id="8464977774480012314" at="13,0,15,0" />
+      <scope id="8464977774480012355" at="18,35,20,16" />
+      <scope id="8464977774480012360" at="21,29,23,16" />
+      <scope id="6702766394052812708" at="24,28,26,16" />
+      <scope id="6702766394052812702" at="27,28,29,16" />
+      <scope id="8464977774480012396" at="33,0,36,0">
         <var name="notification" id="8464977774480012397" />
       </scope>
-      <scope id="8464977774480012390" at="40,0,43,0">
+      <scope id="8464977774480012390" at="36,0,39,0">
         <var name="notification" id="8464977774480012391" />
       </scope>
-      <scope id="6702766394052812739" at="44,0,47,0">
+      <scope id="6702766394052812739" at="39,0,42,0">
         <var name="notification" id="6702766394052812742" />
       </scope>
-      <scope id="6702766394052812733" at="48,0,51,0">
+      <scope id="6702766394052812733" at="42,0,45,0">
         <var name="notification" id="6702766394052812736" />
       </scope>
-      <scope id="8464977774480012324" at="18,73,33,7" />
-      <scope id="8464977774480012319" at="17,0,35,0">
+      <scope id="8464977774480012324" at="16,73,31,7" />
+      <scope id="8464977774480012319" at="15,0,33,0">
         <var name="notification" id="8464977774480012320" />
       </scope>
-      <unit id="8464977774480012312" at="13,0,52,0" name="jetbrains.mps.make.IMakeNotificationListener$Stub" />
-      <unit id="8464977774480012290" at="6,0,53,0" name="jetbrains.mps.make.IMakeNotificationListener" />
+      <unit id="8464977774480012312" at="12,0,46,0" name="jetbrains.mps.make.IMakeNotificationListener$Stub" />
+      <unit id="8464977774480012290" at="6,0,47,0" name="jetbrains.mps.make.IMakeNotificationListener" />
     </file>
   </root>
   <root nodeRef="r:b25dd364-bc3f-4a66-97d1-262009610c5e(jetbrains.mps.make)/8695426379435232461">
@@ -199,61 +199,61 @@
       <node id="8695426379435237592" at="12,0,13,0" concept="3" trace="messageHandler" />
       <node id="8695426379435237601" at="13,0,14,0" concept="3" trace="cleanMake" />
       <node id="2181314052156513930" at="14,0,15,0" concept="3" trace="sticky" />
-      <node id="1841925426083462710" at="16,49,17,30" concept="11" />
-      <node id="2181314052156502142" at="20,100,21,52" concept="11" />
-      <node id="8695426379435237586" at="24,116,25,27" concept="2" />
-      <node id="8695426379435237595" at="25,27,26,41" concept="2" />
-      <node id="8695426379435237604" at="26,41,27,31" concept="2" />
-      <node id="2181314052156513933" at="27,31,28,25" concept="2" />
-      <node id="8695426379435237610" at="31,41,32,19" concept="6" />
-      <node id="8695426379435237612" at="35,46,36,26" concept="6" />
-      <node id="8695426379435237614" at="39,32,40,21" concept="6" />
-      <node id="2181314052156513939" at="43,29,44,18" concept="6" />
-      <node id="8695426379435237553" at="47,50,48,25" concept="2" />
-      <node id="7260781342054369291" at="51,56,52,36" concept="6" />
-      <node id="1841925426083462703" at="16,0,19,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-      <node id="2181314052156502107" at="20,0,23,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
-      <node id="8695426379435232473" at="31,0,34,0" concept="5" trace="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
-      <node id="8695426379435232480" at="35,0,38,0" concept="5" trace="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
-      <node id="8695426379435237569" at="39,0,42,0" concept="5" trace="isCleanMake#()Z" />
-      <node id="1841925426083462791" at="43,0,46,0" concept="5" trace="isSticky#()Z" />
-      <node id="8695426379435237541" at="47,0,50,0" concept="5" trace="doExecute#(Ljava/lang/Runnable;)V" />
-      <node id="7260781342054369284" at="51,0,54,0" concept="5" trace="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
-      <node id="8075512910924574289" at="24,0,30,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
-      <scope id="1841925426083462706" at="16,49,17,30" />
-      <scope id="2181314052156502110" at="20,100,21,52" />
-      <scope id="8695426379435232476" at="31,41,32,19" />
-      <scope id="8695426379435232483" at="35,46,36,26" />
-      <scope id="8695426379435237572" at="39,32,40,21" />
-      <scope id="1841925426083462794" at="43,29,44,18" />
-      <scope id="8695426379435237544" at="47,50,48,25" />
-      <scope id="7260781342054369287" at="51,56,52,36" />
-      <scope id="1841925426083462703" at="16,0,19,0">
+      <node id="1841925426083462710" at="15,49,16,30" concept="11" />
+      <node id="2181314052156502142" at="18,100,19,52" concept="11" />
+      <node id="8695426379435237586" at="21,116,22,27" concept="2" />
+      <node id="8695426379435237595" at="22,27,23,41" concept="2" />
+      <node id="8695426379435237604" at="23,41,24,31" concept="2" />
+      <node id="2181314052156513933" at="24,31,25,25" concept="2" />
+      <node id="8695426379435237610" at="27,41,28,19" concept="6" />
+      <node id="8695426379435237612" at="30,46,31,26" concept="6" />
+      <node id="8695426379435237614" at="33,32,34,21" concept="6" />
+      <node id="2181314052156513939" at="36,29,37,18" concept="6" />
+      <node id="8695426379435237553" at="39,50,40,25" concept="2" />
+      <node id="7260781342054369291" at="42,56,43,36" concept="6" />
+      <node id="1841925426083462703" at="15,0,18,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="2181314052156502107" at="18,0,21,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;Z)V" />
+      <node id="8695426379435232473" at="27,0,30,0" concept="5" trace="getContext#()Ljetbrains/mps/smodel/IOperationContext;" />
+      <node id="8695426379435232480" at="30,0,33,0" concept="5" trace="getMessageHandler#()Ljetbrains/mps/messages/IMessageHandler;" />
+      <node id="8695426379435237569" at="33,0,36,0" concept="5" trace="isCleanMake#()Z" />
+      <node id="1841925426083462791" at="36,0,39,0" concept="5" trace="isSticky#()Z" />
+      <node id="8695426379435237541" at="39,0,42,0" concept="5" trace="doExecute#(Ljava/lang/Runnable;)V" />
+      <node id="7260781342054369284" at="42,0,45,0" concept="5" trace="toScript#(Ljetbrains/mps/make/script/ScriptBuilder;)Ljetbrains/mps/make/script/IScript;" />
+      <node id="8075512910924574289" at="21,0,27,0" concept="1" trace="MakeSession#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/messages/IMessageHandler;ZZ)V" />
+      <scope id="1841925426083462706" at="15,49,16,30" />
+      <scope id="2181314052156502110" at="18,100,19,52" />
+      <scope id="8695426379435232476" at="27,41,28,19" />
+      <scope id="8695426379435232483" at="30,46,31,26" />
+      <scope id="8695426379435237572" at="33,32,34,21" />
+      <scope id="1841925426083462794" at="36,29,37,18" />
+      <scope id="8695426379435237544" at="39,50,40,25" />
+      <scope id="7260781342054369287" at="42,56,43,36" />
+      <scope id="1841925426083462703" at="15,0,18,0">
         <var name="context" id="1841925426083462707" />
       </scope>
-      <scope id="2181314052156502107" at="20,0,23,0">
+      <scope id="2181314052156502107" at="18,0,21,0">
         <var name="cleanMake" id="2181314052156502133" />
         <var name="context" id="2181314052156502129" />
         <var name="messageHandler" id="2181314052156502131" />
       </scope>
-      <scope id="8695426379435232473" at="31,0,34,0" />
-      <scope id="8695426379435232480" at="35,0,38,0" />
-      <scope id="8695426379435237569" at="39,0,42,0" />
-      <scope id="1841925426083462791" at="43,0,46,0" />
-      <scope id="8695426379435237541" at="47,0,50,0">
+      <scope id="8695426379435232473" at="27,0,30,0" />
+      <scope id="8695426379435232480" at="30,0,33,0" />
+      <scope id="8695426379435237569" at="33,0,36,0" />
+      <scope id="1841925426083462791" at="36,0,39,0" />
+      <scope id="8695426379435237541" at="39,0,42,0">
         <var name="scriptRunnable" id="8695426379435237550" />
       </scope>
-      <scope id="7260781342054369284" at="51,0,54,0">
+      <scope id="7260781342054369284" at="42,0,45,0">
         <var name="scriptBuilder" id="7260781342054369289" />
       </scope>
-      <scope id="8075512910924574292" at="24,116,28,25" />
-      <scope id="8075512910924574289" at="24,0,30,0">
+      <scope id="8075512910924574292" at="21,116,25,25" />
+      <scope id="8075512910924574289" at="21,0,27,0">
         <var name="cleanMake" id="8075512910924574297" />
         <var name="context" id="8075512910924574293" />
         <var name="messageHandler" id="8075512910924574295" />
         <var name="sticky" id="8075512910924574299" />
       </scope>
-      <unit id="8695426379435232461" at="10,0,55,0" name="jetbrains.mps.make.MakeSession" />
+      <unit id="8695426379435232461" at="10,0,46,0" name="jetbrains.mps.make.MakeSession" />
     </file>
   </root>
 </debug-info>

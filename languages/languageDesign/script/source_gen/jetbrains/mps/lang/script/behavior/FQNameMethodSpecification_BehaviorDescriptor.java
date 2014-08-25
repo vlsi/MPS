@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class FQNameMethodSpecification_BehaviorDescriptor extends AbstractMethodSpecification_BehaviorDescriptor {
   public FQNameMethodSpecification_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_7941431147614164371(SNode thisNode) {
     return FQNameMethodSpecification_Behavior.virtual_getPresentation_7941431147614164371(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.FQNameMethodSpecification";

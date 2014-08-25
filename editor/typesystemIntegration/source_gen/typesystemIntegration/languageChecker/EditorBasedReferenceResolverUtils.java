@@ -18,7 +18,6 @@ public class EditorBasedReferenceResolverUtils {
     }
     return substituteCell(cellWithRole, resolveInfo, editorComponent.getEditorContext());
   }
-
   public static boolean substituteCell(EditorCell editorCell, String pattern, EditorContext editorContext) {
     SubstituteInfo substituteInfo = editorCell.getSubstituteInfo();
     if (substituteInfo == null) {
@@ -32,12 +31,10 @@ public class EditorBasedReferenceResolverUtils {
     return true;
   }
 
-
-
   private static SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
     SubstituteAction result = null;
     substituteInfo.invalidateActions();
-    for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, true))) {
+    for (SubstituteAction nextAction : ListSequence.fromList(substituteInfo.getMatchingActions(resolveInfo, false))) {
       if (nextAction.canSubstitute(resolveInfo)) {
         if (result != null) {
           return null;
@@ -45,6 +42,6 @@ public class EditorBasedReferenceResolverUtils {
         result = nextAction;
       }
     }
-    return result;
+    return (result != null && result.canSubstituteStrictly(resolveInfo) ? result : null);
   }
 }

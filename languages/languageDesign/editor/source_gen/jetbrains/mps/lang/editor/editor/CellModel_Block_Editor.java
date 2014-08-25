@@ -23,11 +23,9 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_paqmtn_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_paqmtn_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_paqmtn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a");
@@ -40,7 +38,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_paqmtn_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_paqmtn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a0");
@@ -52,7 +49,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_paqmtn_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_paqmtn_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("header");
@@ -72,7 +68,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_paqmtn_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("openBrace");
@@ -96,7 +91,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_paqmtn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_b0");
@@ -108,12 +102,10 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_paqmtn_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_paqmtn_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_paqmtn_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -133,7 +125,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_paqmtn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("closeBrace");
@@ -157,7 +148,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_paqmtn_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_paqmtn_a_0");
@@ -166,7 +156,6 @@ public class CellModel_Block_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_paqmtn_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_paqmtn_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;

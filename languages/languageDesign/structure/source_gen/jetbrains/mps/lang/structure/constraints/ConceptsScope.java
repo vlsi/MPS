@@ -29,7 +29,6 @@ public class ConceptsScope extends SimpleScope {
     // todo: make better name for this scope 
     super(getAvailableConcepts(contextNode, metaConcept));
   }
-
   public static Iterable<SNode> getAvailableConcepts(SNode contextNode, final SNode metaConcept) {
     SModule contextModule = contextNode.getModel().getModule();
 
@@ -73,7 +72,6 @@ public class ConceptsScope extends SimpleScope {
       }
     });
   }
-
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {

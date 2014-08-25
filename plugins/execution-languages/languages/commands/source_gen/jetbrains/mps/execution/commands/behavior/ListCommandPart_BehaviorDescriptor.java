@@ -6,7 +6,6 @@ package jetbrains.mps.execution.commands.behavior;
 public class ListCommandPart_BehaviorDescriptor extends ProcessBuilderCommandPart_BehaviorDescriptor {
   public ListCommandPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ListCommandPart";

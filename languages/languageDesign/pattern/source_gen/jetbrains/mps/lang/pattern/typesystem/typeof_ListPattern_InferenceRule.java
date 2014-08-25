@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ListPattern_InferenceRule() {
   }
-
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode attributedNode = SNodeOperations.getParent(nodeToCheck);
     SNode parent = SNodeOperations.getParent(attributedNode);
@@ -38,29 +37,24 @@ public class typeof_ListPattern_InferenceRule extends AbstractInferenceRule_Runt
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.pattern.structure.ListPattern";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_4l3fn1_a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4l3fn1_a0c0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

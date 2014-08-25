@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ThreadPool_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ThreadPool_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool";

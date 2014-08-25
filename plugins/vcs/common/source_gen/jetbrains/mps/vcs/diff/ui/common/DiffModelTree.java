@@ -44,7 +44,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
   public static DataKey<Ref<SNodeId>> NODE_ID_DATAKEY = DataKey.create("MPS_SNodeId");
   private List<DiffModelTree.RootTreeNode> myRootNodes;
   private Iterable<BaseAction> myActions;
-
   public DiffModelTree() {
     rebuildNow();
     TreeUtil.expandAll(this);
@@ -75,7 +74,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
   }
-
   protected DiffModelTree.TreeNode rebuild() {
     DiffModelTree.ModelTreeNode modelNode = new DiffModelTree.ModelTreeNode();
     myRootNodes = Sequence.fromIterable(getAffectedRoots()).where(new IWhereFilter<SNodeId>() {
@@ -121,7 +119,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }
     return modelNode;
   }
-
   public void setSelected(@Nullable SNodeId rootId) {
     // todo: find path by rootId 
     TreePath path = null;
@@ -139,11 +136,9 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       scrollPathToVisible(path);
     }
   }
-
   public void rebuildLater() {
     rebuildNow();
   }
-
   public void rebuildNow() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -154,25 +149,17 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
   }
-
   protected abstract Iterable<SNodeId> getAffectedRoots();
-
   protected abstract Iterable<SModel> getModels();
-
   protected abstract void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode);
-
   protected abstract Iterable<BaseAction> getRootActions();
-
   protected boolean isMultipleRootNames() {
     return false;
   }
-
   protected void onUnselect() {
   }
-
   protected void onSelectRoot(@Nullable SNodeId rootId) {
   }
-
   private DiffModelTree.RootTreeNode findRootNode(@Nullable final SNodeId nodeId) {
     return ListSequence.fromList(myRootNodes).findFirst(new IWhereFilter<DiffModelTree.RootTreeNode>() {
       public boolean accept(DiffModelTree.RootTreeNode r) {
@@ -180,27 +167,22 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       }
     });
   }
-
   private int advanceIndex(int index, boolean next) {
     return (next ? index + 1 : index - 1);
   }
-
   public boolean hasNeighbour(SNodeId nodeId, boolean next) {
     int index = advanceIndex(ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId)), next);
     return index >= 0 && index < ListSequence.fromList(myRootNodes).count();
   }
-
   @Nullable
   public SNodeId getNeighbourRoot(@Nullable SNodeId nodeId, boolean next) {
     int index = advanceIndex(ListSequence.fromList(myRootNodes).indexOf(findRootNode(nodeId)), next);
     assert index >= 0 && index < ListSequence.fromList(myRootNodes).count();
     return ListSequence.fromList(myRootNodes).getElement(index).myRootId;
   }
-
   public String getNameForRoot(@Nullable SNodeId nodeId) {
     return check_5x0uld_a0a91(findRootNode(nodeId), this);
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
@@ -212,7 +194,6 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     }
     return null;
   }
-
   public class ModelTreeNode extends DiffModelTree.TreeNode {
     public ModelTreeNode() {
       setText("model");
@@ -220,24 +201,20 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       setIcon(IdeIcons.MODEL_ICON);
     }
   }
-
   private class PackageTreeNode extends DiffModelTree.TreeNode {
     private PackageTreeNode(String packageName) {
       setText(packageName);
     }
   }
-
   public class RootTreeNode extends DiffModelTree.TreeNode {
     private SNodeId myRootId;
     private String myPresentation = null;
     private String myVirtualPackage = null;
-
     public RootTreeNode(SNodeId rootId) {
       myRootId = rootId;
       setText("" + myRootId);
       doUpdatePresentation();
     }
-
     @Override
     protected void doUpdatePresentation() {
       myPresentation = null;
@@ -267,37 +244,31 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       setIcon(icon);
       updateRootCustomPresentation(this);
     }
-
     @Nullable
     public SNodeId getRootId() {
       return myRootId;
     }
-
     public String getPresentation() {
       return myPresentation;
     }
   }
-
   public class MetadataTreeNode extends DiffModelTree.RootTreeNode {
     public MetadataTreeNode() {
       super(null);
       setText("metadata");
       doUpdatePresentation();
     }
-
     @Override
     protected void doUpdatePresentation() {
       setText("Model Properties");
       setIcon(IdeIcons.PROPERTIES_ICON);
       updateRootCustomPresentation(this);
     }
-
     @Override
     public String getPresentation() {
       return "Model Properties";
     }
   }
-
   public class TreeNode extends DefaultMutableTreeNode {
     private String myText;
     private int myTextStyle = SimpleTextAttributes.STYLE_PLAIN;
@@ -305,10 +276,8 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
     private String myTooltipText;
     private Icon myIcon;
     private Color myColor;
-
     public TreeNode() {
     }
-
     public void renderTreeNode(ColoredTreeCellRenderer coloredRenderer) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -322,66 +291,51 @@ public abstract class DiffModelTree extends SimpleTree implements DataProvider {
       coloredRenderer.setToolTipText(myTooltipText);
       coloredRenderer.setIcon(getIcon());
     }
-
     protected void doUpdatePresentation() {
     }
-
     public String getText() {
       return myText;
     }
-
     public void setText(String text) {
       myText = text;
     }
-
     public String getAdditionalText() {
       return myAdditionalText;
     }
-
     public void setAdditionalText(String additionalText) {
       myAdditionalText = additionalText;
     }
-
     public String getTooltipText() {
       return myTooltipText;
     }
-
     public void setTooltipText(String tooltipText) {
       myTooltipText = tooltipText;
     }
-
     public Icon getIcon() {
       return myIcon;
     }
-
     public void setIcon(Icon icon) {
       myIcon = icon;
     }
-
     public Color getColor() {
       return myColor;
     }
-
     public void setColor(Color color) {
       myColor = color;
     }
-
     public void setTextStyle(int textStyle) {
       myTextStyle = textStyle;
     }
   }
-
   private static String check_5x0uld_a0a91(DiffModelTree.RootTreeNode checkedDotOperand, DiffModelTree checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPresentation();
     }
     return null;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }
-
   private static <T> T as_5x0uld_a0a0a2a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="15,0,60,0" name="testDefaultEditor.Language" />
+      <unit at="15,0,45,0" name="testDefaultEditor.Language" />
     </file>
   </root>
 </debug-info>

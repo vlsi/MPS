@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LetExpression_BehaviorDescriptor extends LambdaExpression_BehaviorDescriptor implements VariableOwner_BehaviorDescriptor {
   public LetExpression_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getVariables_8981808925914841576(SNode thisNode) {
     return LetExpression_Behavior.virtual_getVariables_8981808925914841576(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.LetExpression";

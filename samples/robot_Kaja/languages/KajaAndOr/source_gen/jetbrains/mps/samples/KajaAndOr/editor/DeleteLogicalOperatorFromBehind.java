@@ -13,19 +13,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DeleteLogicalOperatorFromBehind {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteLogicalOperatorFromBehind.DeleteLogicalOperatorFromBehind_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteLogicalOperatorFromBehind.DeleteLogicalOperatorFromBehind_BACKSPACE(node));
   }
-
   public static class DeleteLogicalOperatorFromBehind_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteLogicalOperatorFromBehind_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "right", true));
+    }
+  }
+  public static class DeleteLogicalOperatorFromBehind_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DeleteLogicalOperatorFromBehind_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "right", true));
     }

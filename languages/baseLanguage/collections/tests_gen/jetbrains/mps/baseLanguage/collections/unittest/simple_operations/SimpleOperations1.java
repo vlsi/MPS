@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class SimpleOperations1 extends TestCase {
   public SimpleOperations1() {
   }
-
   public void test_S1() {
     Iterable<Object> S = Sequence.fromIterable(Collections.<Object>emptyList());
     Assert.assertEquals(null, Sequence.fromIterable(S).first());
@@ -26,7 +25,6 @@ public class SimpleOperations1 extends TestCase {
     Assert.assertEquals(true, Sequence.fromIterable(S).isEmpty());
     Assert.assertEquals(-1, Sequence.fromIterable(S).indexOf("0"));
   }
-
   public void test_S2() {
     Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
@@ -34,7 +32,6 @@ public class SimpleOperations1 extends TestCase {
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -79,7 +76,6 @@ __switch__:
     Assert.assertEquals(2, Sequence.fromIterable(S).indexOf("2"));
     Assert.assertEquals(-1, Sequence.fromIterable(S).indexOf("3"));
   }
-
   public void test_S3() {
     Iterable<String> S = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
@@ -87,7 +83,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -131,7 +126,6 @@ __switch__:
       Assert.assertEquals(false, Sequence.fromIterable(S).isEmpty());
     }
   }
-
   public void test_L1() {
     List<String> L = ListSequence.fromList(new ArrayList<String>());
     Assert.assertEquals(null, ListSequence.fromList(L).first());
@@ -141,7 +135,6 @@ __switch__:
     Assert.assertEquals(0, ListSequence.fromList(L).count());
     Assert.assertEquals(true, ListSequence.fromList(L).isEmpty());
   }
-
   public void test_L2() {
     List<String> L = ListSequence.fromListAndArray(new ArrayList<String>(), "0", "1", "2");
     Assert.assertEquals("0", ListSequence.fromList(L).first());

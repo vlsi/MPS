@@ -77,48 +77,37 @@ public class RefactoringContext {
 
   private boolean myCachesAreUpToDate = false;
 
-
   public RefactoringContext(@NotNull Project project, IRefactoring refactoring) {
     myProject = project;
     setRefactoring(refactoring);
   }
-
   public SRepository getRepository() {
     return myProject.getRepository();
   }
-
   public StructureModification getStructureModification() {
     return myLoggedData;
   }
-
   public void addAdditionalParameters(Map<String, Object> parameters) {
     myParametersMap.putAll(parameters);
   }
-
   public Map<String, Object> getAdditionalParameters() {
     return new HashMap<String, Object>(myParametersMap);
   }
-
   public void markTransient(String parameterName) {
     myTransientParameters.add(parameterName);
   }
-
   public void markTransient(Collection<String> parameterNames) {
     myTransientParameters.addAll(parameterNames);
   }
-
   public boolean isTransient(String parameterName) {
     return myTransientParameters.contains(parameterName);
   }
-
   public Object getParameter(String parameterName) {
     return myParametersMap.get(parameterName);
   }
-
   public void setParameter(String parameterName, Object parameter) {
     myParametersMap.put(parameterName, parameter);
   }
-
   public void setParameters(List<Object> names, List<Object> parameters) {
     {
       Iterator<Object> name_it = ListSequence.fromList(names).iterator();
@@ -132,28 +121,22 @@ public class RefactoringContext {
       }
     }
   }
-
   public void clearParameters() {
     myParametersMap.clear();
   }
-
   @Nullable
   public UsagesList getUsages() {
     return myUsages;
   }
-
   public void setUsages(UsagesList usages) {
     myUsages = usages;
   }
-
   public boolean isLocal() {
     return myIsLocal;
   }
-
   public void setLocal(boolean local) {
     myIsLocal = local;
   }
-
   public List<SModel> getModelsFromUsages(SModel firstModel) {
     List<SModel> result = new ArrayList<SModel>();
     if (firstModel != null) {
@@ -168,14 +151,12 @@ public class RefactoringContext {
     }
     return result;
   }
-
   public SNode moveNodeToNode(SNode sourceNode, String role, SNode targetNode) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(sourceNode);
     List<SNode> result = moveNodesToNode(nodes, role, targetNode);
     return result.get(0);
   }
-
   public List<SNode> moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, mapping);
@@ -202,7 +183,6 @@ public class RefactoringContext {
     }
     return targetNodes;
   }
-
   public void replaceRefsToNodeWithNode(SNode whatNode, SNode withNode) {
     myMoveMap.put(new StructureModificationData.FullNodeId(whatNode), new StructureModificationData.FullNodeId(withNode));
     myCachesAreUpToDate = false;
@@ -210,14 +190,12 @@ public class RefactoringContext {
     ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.MoveNode(new SNodePointer(whatNode), new SNodePointer(withNode)));
     whatNode.delete();
   }
-
   public SNode moveNodeToModel(SNode sourceNode, SModel targetModel) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(sourceNode);
     List<SNode> result = moveNodesToModel(nodes, targetModel);
     return result.get(0);
   }
-
   public List<SNode> moveNodesToModel(List<SNode> sourceNodes, SModel targetModel) {
     if (sourceNodes.isEmpty()) {
       return new ArrayList<SNode>();
@@ -240,15 +218,12 @@ public class RefactoringContext {
     SModelOperations.validateLanguagesAndImports(targetModel, true, true);
     return targetNodes;
   }
-
   public void deleteFeature(SNode feature) {
     doChangeFeatureName(feature, null, null, true);
   }
-
   public void changeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName) {
     doChangeFeatureName(feature, newConceptFQName, newFeatureName, false);
   }
-
   private void doChangeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName, boolean delete) {
     String oldConceptFQName = "";
     String oldFeatureName = "";
@@ -313,7 +288,6 @@ public class RefactoringContext {
       }
     }
   }
-
   public void changeModelName(EditableSModel model, String newName) {
     if (LanguageAspect.STRUCTURE.is(model)) {
       for (SNode concept : ListSequence.fromList(jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.getNodes(((SModel) model), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
@@ -325,11 +299,9 @@ public class RefactoringContext {
     model.rename(newName, false);
     ListSequence.fromList(myLoggedData.getData()).addElement(new StructureModification.RenameModel(oldModelRef, model.getReference()));
   }
-
   public void updateByDefault(SModel model) {
     updateModelWithMaps(model);
   }
-
   public void computeCaches() {
     myFQNamesToConceptFeaturesCache.clear();
     myNodeIdsToFullNodeIdsCache.clear();
@@ -353,7 +325,6 @@ public class RefactoringContext {
     }
     myCachesAreUpToDate = true;
   }
-
   public void updateModelWithMaps(SModel model) {
     if (!(myCachesAreUpToDate)) {
       computeCaches();
@@ -456,7 +427,6 @@ public class RefactoringContext {
     }
     SModelOperations.validateLanguagesAndImports(model, true, true);
   }
-
   public void setUpMembersAccessModifier(RefactoringNodeMembersAccessModifier modifier) {
     for (StructureModification.Entry entry : myLoggedData.getData()) {
       if (!((entry instanceof StructureModification.RenameNode))) {
@@ -485,91 +455,69 @@ public class RefactoringContext {
       }
     }
   }
-
   public void setRefactoring(IRefactoring refactoring) {
     myRefactoring = refactoring;
   }
-
   public IRefactoring getRefactoring() {
     return myRefactoring;
   }
-
   public SNode getSelectedNode() {
     return mySelectedNode;
   }
-
   public void setSelectedNode(SNode selectedNode) {
     mySelectedNode = selectedNode;
   }
-
   public List<SNode> getSelectedNodes() {
     return new ArrayList<SNode>(mySelectedNodes);
   }
-
   public void setSelectedNodes(List<SNode> selectedNodes) {
     mySelectedNodes = selectedNodes;
   }
-
   public SModel getSelectedModel() {
     return mySelectedModel;
   }
-
   public void setSelectedModel(SModel selectedModel) {
     mySelectedModel = selectedModel;
   }
-
   public List<SModel> getSelectedModels() {
     return mySelectedModels;
   }
-
   public void setSelectedModels(List<SModel> selectedModels) {
     mySelectedModels = selectedModels;
   }
-
   public SModule getSelectedModule() {
     return mySelectedModule;
   }
-
   public void setSelectedModule(SModule selectedModule) {
     mySelectedModule = selectedModule;
   }
-
   public List<SModule> getSelectedModules() {
     return mySelectedModules;
   }
-
   public void setSelectedModules(List<SModule> modules) {
     mySelectedModules = modules;
   }
-
   public void setCurrentScope(SearchScope currentScope) {
     myCurrentScope = currentScope;
   }
-
   public void setCurrentOperationContext(IOperationContext currentOperationContext) {
     myCurrentOperationContext = currentOperationContext;
   }
-
   public Project getSelectedProject() {
     return myProject;
   }
-
   public SearchScope getCurrentScope() {
     return myCurrentScope;
   }
-
   public IOperationContext getCurrentOperationContext() {
     return myCurrentOperationContext;
   }
-
   public void setDoesGenerateModels(boolean b) {
     myDoesGenerateModels = b;
   }
-
   public boolean getDoesGenerateModels() {
     return myDoesGenerateModels;
   }
-
   private void setTarget(final Object target) {
     final IRefactoringTarget refTarget = myRefactoring.getRefactoringTarget();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -612,14 +560,12 @@ public class RefactoringContext {
       }
     });
   }
-
   private static String getRefactoringClassName(IRefactoring refactoring) {
     if (refactoring instanceof OldRefactoringAdapter) {
       return ((OldRefactoringAdapter) refactoring).getRefactoringClassName();
     }
     return refactoring.getClass().getName();
   }
-
   private static IRefactoring getRefactoring(String className) {
     IRefactoring result = null;
     try {
@@ -656,7 +602,6 @@ public class RefactoringContext {
     }
     return result;
   }
-
   public static RefactoringContext createRefactoringContext(IRefactoring refactoring, List names, List parameters, Object target, Project project) {
 
     RefactoringContext result = new RefactoringContext(project, refactoring);
@@ -665,7 +610,6 @@ public class RefactoringContext {
     result.setParameters(names, parameters);
     return result;
   }
-
   public static RefactoringContext createRefactoringContextByName(final String refName, List names, List parameters, Object target, Project project) {
     final Wrappers._T<IRefactoring> refactoring = new Wrappers._T<IRefactoring>();
     ModelAccess.instance().runReadAction(new Runnable() {

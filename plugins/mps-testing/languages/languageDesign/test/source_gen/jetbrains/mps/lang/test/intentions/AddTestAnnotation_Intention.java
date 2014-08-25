@@ -23,74 +23,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddTestAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddTestAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddTestAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.test";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return NodesTestCase_Behavior.call_isIntentionApplicable_1217250498008(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))), node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "1210673906861");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddTestAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Test Label Annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.TestNodeAnnotation", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.INodeAnnotation"), newAnnotation);
       SelectionUtil.selectNode(editorContext, newAnnotation);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddTestAnnotation_Intention.this;
     }

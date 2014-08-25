@@ -13,19 +13,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1228431352276(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
-
   public static boolean baseMappingRule_Condition_1228431396514(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228430808502(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static SNode sourceNodeQuery_1228431535919(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }

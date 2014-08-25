@@ -11,78 +11,78 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="11,0,252,0" name="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
+      <unit at="11,0,250,0" name="jetbrains.mps.lang.actions.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1140829206022">
     <file name="SideTransformTag.java">
       <node id="1140829206022" at="17,0,18,0" concept="2" trace="myName" />
-      <node id="1140829206022" at="19,27,20,23" concept="6" />
-      <node id="1140829206022" at="23,36,24,24" concept="6" />
-      <node id="1140829206022" at="27,55,28,92" concept="5" />
-      <node id="1140829206022" at="28,92,29,70" concept="1" />
-      <node id="1140829206022" at="29,70,30,67" concept="1" />
+      <node id="1140829206022" at="18,27,19,23" concept="6" />
+      <node id="1140829206022" at="21,36,22,24" concept="6" />
+      <node id="1140829206022" at="24,55,25,92" concept="5" />
+      <node id="1140829206022" at="25,92,26,70" concept="1" />
+      <node id="1140829206022" at="26,70,27,67" concept="1" />
+      <node id="1140829206022" at="27,67,28,67" concept="1" />
+      <node id="1140829206022" at="28,67,29,67" concept="1" />
+      <node id="1140829206022" at="29,67,30,67" concept="1" />
       <node id="1140829206022" at="30,67,31,67" concept="1" />
-      <node id="1140829206022" at="31,67,32,67" concept="1" />
-      <node id="1140829206022" at="32,67,33,67" concept="1" />
-      <node id="1140829206022" at="33,67,34,67" concept="1" />
-      <node id="1140829206022" at="34,67,35,16" concept="6" />
-      <node id="1140829206022" at="38,47,39,37" concept="6" />
-      <node id="1140829206022" at="43,24,44,43" concept="6" />
-      <node id="1140829206022" at="46,69,47,39" concept="6" />
-      <node id="1140829206022" at="49,66,50,36" concept="6" />
-      <node id="1140829206022" at="52,66,53,36" concept="6" />
-      <node id="1140829206022" at="55,66,56,36" concept="6" />
-      <node id="1140829206022" at="58,66,59,36" concept="6" />
-      <node id="1140829206022" at="61,66,62,36" concept="6" />
-      <node id="1140829206022" at="63,5,64,41" concept="6" />
-      <node id="1140829206022" at="67,0,68,0" concept="2" trace="myValue" />
-      <node id="1140829206022" at="69,47,70,23" concept="1" />
-      <node id="1140829206022" at="70,23,71,25" concept="1" />
-      <node id="1140829206022" at="74,28,75,24" concept="6" />
-      <node id="1140829206022" at="19,0,22,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1140829206022" at="23,0,26,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1140829206022" at="38,0,41,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/actions/structure/SideTransformTag;" />
-      <node id="1140829206022" at="42,59,45,5" concept="3" />
-      <node id="1140829206022" at="45,5,48,5" concept="3" />
-      <node id="1140829206022" at="48,5,51,5" concept="3" />
-      <node id="1140829206022" at="51,5,54,5" concept="3" />
-      <node id="1140829206022" at="54,5,57,5" concept="3" />
-      <node id="1140829206022" at="57,5,60,5" concept="3" />
-      <node id="1140829206022" at="60,5,63,5" concept="3" />
-      <node id="1140829206022" at="74,0,77,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1140829206022" at="69,0,73,0" concept="0" trace="SideTransformTag#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1140829206022" at="27,0,37,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1140829206022" at="42,0,66,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/actions/structure/SideTransformTag;" />
-      <scope id="1140829206022" at="19,27,20,23" />
-      <scope id="1140829206022" at="23,36,24,24" />
-      <scope id="1140829206022" at="38,47,39,37" />
-      <scope id="1140829206022" at="43,24,44,43" />
-      <scope id="1140829206022" at="46,69,47,39" />
-      <scope id="1140829206022" at="49,66,50,36" />
-      <scope id="1140829206022" at="52,66,53,36" />
-      <scope id="1140829206022" at="55,66,56,36" />
-      <scope id="1140829206022" at="58,66,59,36" />
-      <scope id="1140829206022" at="61,66,62,36" />
-      <scope id="1140829206022" at="74,28,75,24" />
-      <scope id="1140829206022" at="69,47,71,25" />
-      <scope id="1140829206022" at="19,0,22,0" />
-      <scope id="1140829206022" at="23,0,26,0" />
-      <scope id="1140829206022" at="38,0,41,0" />
-      <scope id="1140829206022" at="74,0,77,0" />
-      <scope id="1140829206022" at="69,0,73,0">
+      <node id="1140829206022" at="31,67,32,16" concept="6" />
+      <node id="1140829206022" at="34,47,35,37" concept="6" />
+      <node id="1140829206022" at="38,24,39,43" concept="6" />
+      <node id="1140829206022" at="41,69,42,39" concept="6" />
+      <node id="1140829206022" at="44,66,45,36" concept="6" />
+      <node id="1140829206022" at="47,66,48,36" concept="6" />
+      <node id="1140829206022" at="50,66,51,36" concept="6" />
+      <node id="1140829206022" at="53,66,54,36" concept="6" />
+      <node id="1140829206022" at="56,66,57,36" concept="6" />
+      <node id="1140829206022" at="58,5,59,41" concept="6" />
+      <node id="1140829206022" at="61,0,62,0" concept="2" trace="myValue" />
+      <node id="1140829206022" at="62,47,63,23" concept="1" />
+      <node id="1140829206022" at="63,23,64,25" concept="1" />
+      <node id="1140829206022" at="66,28,67,24" concept="6" />
+      <node id="1140829206022" at="18,0,21,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="1140829206022" at="21,0,24,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1140829206022" at="34,0,37,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/actions/structure/SideTransformTag;" />
+      <node id="1140829206022" at="37,59,40,5" concept="3" />
+      <node id="1140829206022" at="40,5,43,5" concept="3" />
+      <node id="1140829206022" at="43,5,46,5" concept="3" />
+      <node id="1140829206022" at="46,5,49,5" concept="3" />
+      <node id="1140829206022" at="49,5,52,5" concept="3" />
+      <node id="1140829206022" at="52,5,55,5" concept="3" />
+      <node id="1140829206022" at="55,5,58,5" concept="3" />
+      <node id="1140829206022" at="66,0,69,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1140829206022" at="62,0,66,0" concept="0" trace="SideTransformTag#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1140829206022" at="24,0,34,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1140829206022" at="37,0,61,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/actions/structure/SideTransformTag;" />
+      <scope id="1140829206022" at="18,27,19,23" />
+      <scope id="1140829206022" at="21,36,22,24" />
+      <scope id="1140829206022" at="34,47,35,37" />
+      <scope id="1140829206022" at="38,24,39,43" />
+      <scope id="1140829206022" at="41,69,42,39" />
+      <scope id="1140829206022" at="44,66,45,36" />
+      <scope id="1140829206022" at="47,66,48,36" />
+      <scope id="1140829206022" at="50,66,51,36" />
+      <scope id="1140829206022" at="53,66,54,36" />
+      <scope id="1140829206022" at="56,66,57,36" />
+      <scope id="1140829206022" at="66,28,67,24" />
+      <scope id="1140829206022" at="62,47,64,25" />
+      <scope id="1140829206022" at="18,0,21,0" />
+      <scope id="1140829206022" at="21,0,24,0" />
+      <scope id="1140829206022" at="34,0,37,0" />
+      <scope id="1140829206022" at="66,0,69,0" />
+      <scope id="1140829206022" at="62,0,66,0">
         <var name="name" id="1140829206022" />
         <var name="value" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="27,55,35,16">
+      <scope id="1140829206022" at="24,55,32,16">
         <var name="list" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="27,0,37,0" />
-      <scope id="1140829206022" at="42,59,64,41" />
-      <scope id="1140829206022" at="42,0,66,0">
+      <scope id="1140829206022" at="24,0,34,0" />
+      <scope id="1140829206022" at="37,59,59,41" />
+      <scope id="1140829206022" at="37,0,61,0">
         <var name="value" id="1140829206022" />
       </scope>
-      <unit id="1140829206022" at="9,0,78,0" name="jetbrains.mps.lang.actions.structure.SideTransformTag" />
+      <unit id="1140829206022" at="9,0,70,0" name="jetbrains.mps.lang.actions.structure.SideTransformTag" />
     </file>
     <file name="SideTransformTag_PropertySupport.java">
       <node id="1140829206022" at="11,24,12,18" concept="6" />
@@ -90,54 +90,54 @@
       <node id="1140829206022" at="15,33,16,51" concept="5" />
       <node id="1140829206022" at="17,45,18,20" concept="6" />
       <node id="1140829206022" at="20,5,21,17" concept="6" />
-      <node id="1140829206022" at="25,24,26,18" concept="6" />
-      <node id="1140829206022" at="27,5,28,109" concept="5" />
-      <node id="1140829206022" at="29,33,30,51" concept="5" />
-      <node id="1140829206022" at="31,45,32,43" concept="6" />
-      <node id="1140829206022" at="34,5,35,16" concept="6" />
-      <node id="1140829206022" at="38,49,39,67" concept="5" />
-      <node id="1140829206022" at="40,27,41,32" concept="6" />
-      <node id="1140829206022" at="42,5,43,14" concept="6" />
+      <node id="1140829206022" at="24,24,25,18" concept="6" />
+      <node id="1140829206022" at="26,5,27,109" concept="5" />
+      <node id="1140829206022" at="28,33,29,51" concept="5" />
+      <node id="1140829206022" at="30,45,31,43" concept="6" />
+      <node id="1140829206022" at="33,5,34,16" concept="6" />
+      <node id="1140829206022" at="36,49,37,67" concept="5" />
+      <node id="1140829206022" at="38,27,39,32" concept="6" />
+      <node id="1140829206022" at="40,5,41,14" concept="6" />
       <node id="1140829206022" at="10,44,13,5" concept="3" />
       <node id="1140829206022" at="16,51,19,7" concept="3" />
-      <node id="1140829206022" at="24,47,27,5" concept="3" />
-      <node id="1140829206022" at="30,51,33,7" concept="3" />
-      <node id="1140829206022" at="39,67,42,5" concept="3" />
+      <node id="1140829206022" at="23,47,26,5" concept="3" />
+      <node id="1140829206022" at="29,51,32,7" concept="3" />
+      <node id="1140829206022" at="37,67,40,5" concept="3" />
       <node id="1140829206022" at="14,109,20,5" concept="8" />
-      <node id="1140829206022" at="28,109,34,5" concept="8" />
-      <node id="1140829206022" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1140829206022" at="27,109,33,5" concept="8" />
+      <node id="1140829206022" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1140829206022" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1140829206022" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1140829206022" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1140829206022" at="11,24,12,18" />
       <scope id="1140829206022" at="17,45,18,20" />
-      <scope id="1140829206022" at="25,24,26,18" />
-      <scope id="1140829206022" at="31,45,32,43" />
-      <scope id="1140829206022" at="40,27,41,32" />
+      <scope id="1140829206022" at="24,24,25,18" />
+      <scope id="1140829206022" at="30,45,31,43" />
+      <scope id="1140829206022" at="38,27,39,32" />
       <scope id="1140829206022" at="15,33,19,7">
         <var name="constant" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="29,33,33,7">
+      <scope id="1140829206022" at="28,33,32,7">
         <var name="constant" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="38,49,43,14">
+      <scope id="1140829206022" at="36,49,41,14">
         <var name="constant" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="38,0,45,0">
+      <scope id="1140829206022" at="36,0,43,0">
         <var name="value" id="1140829206022" />
       </scope>
       <scope id="1140829206022" at="10,44,21,17">
         <var name="constants" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="24,47,35,16">
+      <scope id="1140829206022" at="23,47,34,16">
         <var name="constants" id="1140829206022" />
       </scope>
       <scope id="1140829206022" at="10,0,23,0">
         <var name="value" id="1140829206022" />
       </scope>
-      <scope id="1140829206022" at="24,0,37,0">
+      <scope id="1140829206022" at="23,0,36,0">
         <var name="value" id="1140829206022" />
       </scope>
-      <unit id="1140829206022" at="9,0,46,0" name="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
+      <unit id="1140829206022" at="9,0,44,0" name="jetbrains.mps.lang.actions.structure.SideTransformTag_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)/1215604970641">
@@ -147,111 +147,111 @@
       <node id="1215604970641" at="15,33,16,39" concept="5" />
       <node id="1215604970641" at="17,45,18,20" concept="6" />
       <node id="1215604970641" at="20,5,21,17" concept="6" />
-      <node id="1215604970641" at="25,24,26,18" concept="6" />
-      <node id="1215604970641" at="27,5,28,85" concept="5" />
-      <node id="1215604970641" at="29,33,30,39" concept="5" />
-      <node id="1215604970641" at="31,45,32,43" concept="6" />
-      <node id="1215604970641" at="34,5,35,16" concept="6" />
-      <node id="1215604970641" at="38,49,39,43" concept="5" />
-      <node id="1215604970641" at="40,27,41,32" concept="6" />
-      <node id="1215604970641" at="42,5,43,14" concept="6" />
+      <node id="1215604970641" at="24,24,25,18" concept="6" />
+      <node id="1215604970641" at="26,5,27,85" concept="5" />
+      <node id="1215604970641" at="28,33,29,39" concept="5" />
+      <node id="1215604970641" at="30,45,31,43" concept="6" />
+      <node id="1215604970641" at="33,5,34,16" concept="6" />
+      <node id="1215604970641" at="36,49,37,43" concept="5" />
+      <node id="1215604970641" at="38,27,39,32" concept="6" />
+      <node id="1215604970641" at="40,5,41,14" concept="6" />
       <node id="1215604970641" at="10,44,13,5" concept="3" />
       <node id="1215604970641" at="16,39,19,7" concept="3" />
-      <node id="1215604970641" at="24,47,27,5" concept="3" />
-      <node id="1215604970641" at="30,39,33,7" concept="3" />
-      <node id="1215604970641" at="39,43,42,5" concept="3" />
+      <node id="1215604970641" at="23,47,26,5" concept="3" />
+      <node id="1215604970641" at="29,39,32,7" concept="3" />
+      <node id="1215604970641" at="37,43,40,5" concept="3" />
       <node id="1215604970641" at="14,85,20,5" concept="8" />
-      <node id="1215604970641" at="28,85,34,5" concept="8" />
-      <node id="1215604970641" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1215604970641" at="27,85,33,5" concept="8" />
+      <node id="1215604970641" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1215604970641" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1215604970641" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1215604970641" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1215604970641" at="11,24,12,18" />
       <scope id="1215604970641" at="17,45,18,20" />
-      <scope id="1215604970641" at="25,24,26,18" />
-      <scope id="1215604970641" at="31,45,32,43" />
-      <scope id="1215604970641" at="40,27,41,32" />
+      <scope id="1215604970641" at="24,24,25,18" />
+      <scope id="1215604970641" at="30,45,31,43" />
+      <scope id="1215604970641" at="38,27,39,32" />
       <scope id="1215604970641" at="15,33,19,7">
         <var name="constant" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="29,33,33,7">
+      <scope id="1215604970641" at="28,33,32,7">
         <var name="constant" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="38,49,43,14">
+      <scope id="1215604970641" at="36,49,41,14">
         <var name="constant" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="38,0,45,0">
+      <scope id="1215604970641" at="36,0,43,0">
         <var name="value" id="1215604970641" />
       </scope>
       <scope id="1215604970641" at="10,44,21,17">
         <var name="constants" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="24,47,35,16">
+      <scope id="1215604970641" at="23,47,34,16">
         <var name="constants" id="1215604970641" />
       </scope>
       <scope id="1215604970641" at="10,0,23,0">
         <var name="value" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="24,0,37,0">
+      <scope id="1215604970641" at="23,0,36,0">
         <var name="value" id="1215604970641" />
       </scope>
-      <unit id="1215604970641" at="9,0,46,0" name="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
+      <unit id="1215604970641" at="9,0,44,0" name="jetbrains.mps.lang.actions.structure.Side_PropertySupport" />
     </file>
     <file name="Side.java">
       <node id="1215604970641" at="14,0,15,0" concept="2" trace="myName" />
-      <node id="1215604970641" at="16,27,17,23" concept="6" />
-      <node id="1215604970641" at="20,36,21,24" concept="6" />
-      <node id="1215604970641" at="24,43,25,68" concept="5" />
-      <node id="1215604970641" at="25,68,26,55" concept="1" />
-      <node id="1215604970641" at="26,55,27,54" concept="1" />
-      <node id="1215604970641" at="27,54,28,60" concept="1" />
-      <node id="1215604970641" at="28,60,29,16" concept="6" />
-      <node id="1215604970641" at="32,35,33,22" concept="6" />
-      <node id="1215604970641" at="37,24,38,31" concept="6" />
-      <node id="1215604970641" at="40,54,41,24" concept="6" />
-      <node id="1215604970641" at="43,53,44,23" concept="6" />
-      <node id="1215604970641" at="46,59,47,29" concept="6" />
-      <node id="1215604970641" at="48,5,49,29" concept="6" />
-      <node id="1215604970641" at="52,0,53,0" concept="2" trace="myValue" />
-      <node id="1215604970641" at="54,35,55,23" concept="1" />
-      <node id="1215604970641" at="55,23,56,25" concept="1" />
-      <node id="1215604970641" at="59,28,60,24" concept="6" />
-      <node id="1215604970641" at="16,0,19,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="1215604970641" at="20,0,23,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1215604970641" at="32,0,35,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/actions/structure/Side;" />
-      <node id="1215604970641" at="36,47,39,5" concept="3" />
-      <node id="1215604970641" at="39,5,42,5" concept="3" />
-      <node id="1215604970641" at="42,5,45,5" concept="3" />
-      <node id="1215604970641" at="45,5,48,5" concept="3" />
-      <node id="1215604970641" at="59,0,62,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="1215604970641" at="54,0,58,0" concept="0" trace="Side#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1215604970641" at="24,0,31,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="1215604970641" at="36,0,51,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/actions/structure/Side;" />
-      <scope id="1215604970641" at="16,27,17,23" />
-      <scope id="1215604970641" at="20,36,21,24" />
-      <scope id="1215604970641" at="32,35,33,22" />
-      <scope id="1215604970641" at="37,24,38,31" />
-      <scope id="1215604970641" at="40,54,41,24" />
-      <scope id="1215604970641" at="43,53,44,23" />
-      <scope id="1215604970641" at="46,59,47,29" />
-      <scope id="1215604970641" at="59,28,60,24" />
-      <scope id="1215604970641" at="54,35,56,25" />
-      <scope id="1215604970641" at="16,0,19,0" />
-      <scope id="1215604970641" at="20,0,23,0" />
-      <scope id="1215604970641" at="32,0,35,0" />
-      <scope id="1215604970641" at="59,0,62,0" />
-      <scope id="1215604970641" at="54,0,58,0">
+      <node id="1215604970641" at="15,27,16,23" concept="6" />
+      <node id="1215604970641" at="18,36,19,24" concept="6" />
+      <node id="1215604970641" at="21,43,22,68" concept="5" />
+      <node id="1215604970641" at="22,68,23,55" concept="1" />
+      <node id="1215604970641" at="23,55,24,54" concept="1" />
+      <node id="1215604970641" at="24,54,25,60" concept="1" />
+      <node id="1215604970641" at="25,60,26,16" concept="6" />
+      <node id="1215604970641" at="28,35,29,22" concept="6" />
+      <node id="1215604970641" at="32,24,33,31" concept="6" />
+      <node id="1215604970641" at="35,54,36,24" concept="6" />
+      <node id="1215604970641" at="38,53,39,23" concept="6" />
+      <node id="1215604970641" at="41,59,42,29" concept="6" />
+      <node id="1215604970641" at="43,5,44,29" concept="6" />
+      <node id="1215604970641" at="46,0,47,0" concept="2" trace="myValue" />
+      <node id="1215604970641" at="47,35,48,23" concept="1" />
+      <node id="1215604970641" at="48,23,49,25" concept="1" />
+      <node id="1215604970641" at="51,28,52,24" concept="6" />
+      <node id="1215604970641" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="1215604970641" at="18,0,21,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1215604970641" at="28,0,31,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/actions/structure/Side;" />
+      <node id="1215604970641" at="31,47,34,5" concept="3" />
+      <node id="1215604970641" at="34,5,37,5" concept="3" />
+      <node id="1215604970641" at="37,5,40,5" concept="3" />
+      <node id="1215604970641" at="40,5,43,5" concept="3" />
+      <node id="1215604970641" at="51,0,54,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1215604970641" at="47,0,51,0" concept="0" trace="Side#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1215604970641" at="21,0,28,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1215604970641" at="31,0,46,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/actions/structure/Side;" />
+      <scope id="1215604970641" at="15,27,16,23" />
+      <scope id="1215604970641" at="18,36,19,24" />
+      <scope id="1215604970641" at="28,35,29,22" />
+      <scope id="1215604970641" at="32,24,33,31" />
+      <scope id="1215604970641" at="35,54,36,24" />
+      <scope id="1215604970641" at="38,53,39,23" />
+      <scope id="1215604970641" at="41,59,42,29" />
+      <scope id="1215604970641" at="51,28,52,24" />
+      <scope id="1215604970641" at="47,35,49,25" />
+      <scope id="1215604970641" at="15,0,18,0" />
+      <scope id="1215604970641" at="18,0,21,0" />
+      <scope id="1215604970641" at="28,0,31,0" />
+      <scope id="1215604970641" at="51,0,54,0" />
+      <scope id="1215604970641" at="47,0,51,0">
         <var name="name" id="1215604970641" />
         <var name="value" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="24,43,29,16">
+      <scope id="1215604970641" at="21,43,26,16">
         <var name="list" id="1215604970641" />
       </scope>
-      <scope id="1215604970641" at="24,0,31,0" />
-      <scope id="1215604970641" at="36,47,49,29" />
-      <scope id="1215604970641" at="36,0,51,0">
+      <scope id="1215604970641" at="21,0,28,0" />
+      <scope id="1215604970641" at="31,47,44,29" />
+      <scope id="1215604970641" at="31,0,46,0">
         <var name="value" id="1215604970641" />
       </scope>
-      <unit id="1215604970641" at="9,0,63,0" name="jetbrains.mps.lang.actions.structure.Side" />
+      <unit id="1215604970641" at="9,0,55,0" name="jetbrains.mps.lang.actions.structure.Side" />
     </file>
   </root>
 </debug-info>

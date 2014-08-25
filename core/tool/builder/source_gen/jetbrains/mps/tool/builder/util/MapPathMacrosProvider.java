@@ -6,31 +6,32 @@ import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Map;
 import java.util.Set;
 import java.util.Collections;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class MapPathMacrosProvider implements PathMacrosProvider {
   private Map<String, String> macros;
-
   public MapPathMacrosProvider(Map<String, String> macros) {
     this.macros = macros;
   }
-
   @Override
   public String getValue(String name) {
     return macros.get(name);
   }
-
   @Override
   public Set<String> getUserNames() {
     return Collections.unmodifiableSet(macros.keySet());
   }
-
   @Override
   public Set<String> getNames() {
     return Collections.unmodifiableSet(macros.keySet());
   }
-
   @Override
   public void report(String message, String macro) {
-    System.out.println("Undefined macro: " + macro + ". " + message);
+    if (LOG.isEnabledFor(Level.WARN)) {
+      LOG.warn("Undefined macro: " + macro + ". " + message);
+    }
   }
+  protected static Logger LOG = LogManager.getLogger(MapPathMacrosProvider.class);
 }

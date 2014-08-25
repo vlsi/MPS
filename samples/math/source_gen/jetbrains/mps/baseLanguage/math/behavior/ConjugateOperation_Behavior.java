@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ConjugateOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getOperationSymbol_1262430001741497831(SAbstractConcept thisConcept) {
     return "*";
   }

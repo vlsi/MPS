@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class DevKitTools_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DevKitTools_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.DevKitTools_ActionGroup";
-
   public DevKitTools_ActionGroup() {
     super("DevKitTools", ID);
     this.setIsInternal(false);

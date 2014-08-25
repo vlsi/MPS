@@ -47,7 +47,6 @@ public class SettingsEditorPanel {
       reset();
     }
   };
-
   public SettingsEditorPanel(ITemplatePersistentConfiguration configuration) {
     myConfiguration = configuration;
     myEditor = (SettingsEditorEx<ITemplatePersistentConfiguration>) myConfiguration.getEditorEx();
@@ -65,26 +64,21 @@ public class SettingsEditorPanel {
     myMainPanel.add(myErrorLabel, BorderLayout.SOUTH);
     updateUi();
   }
-
   public JComponent getComponent() {
     return myMainPanel;
   }
-
   private void setModified(boolean modified) {
     myIsModified = modified;
     updateUi();
   }
-
   private void apply() {
     myEditor.apply(myConfiguration);
     setModified(false);
   }
-
   private void reset() {
     myEditor.resetFrom(myConfiguration);
     setModified(false);
   }
-
   private void updateUi() {
     try {
       check_gxk3ze_a0a0a51(myEditor.getSnapshot());
@@ -95,28 +89,22 @@ public class SettingsEditorPanel {
       myErrorLabel.setText(e.getMessage());
     }
   }
-
   public Action getOkAction() {
     return myOkAction;
   }
-
   public Action getApplyAction() {
     return myApplyAction;
   }
-
   public Action getResetAction() {
     return myResetAction;
   }
-
   public Action getCancelAction() {
     return myCancelAction;
   }
-
   public void dispose() {
     myEditor.removeSettingsEditorListener(myListener);
     Disposer.dispose(myEditor);
   }
-
   private static void check_gxk3ze_a0a0a51(ITemplatePersistentConfiguration checkedDotOperand) throws RuntimeConfigurationException {
     if (null != checkedDotOperand) {
       checkedDotOperand.checkConfiguration();

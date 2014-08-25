@@ -12,19 +12,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class DeleteFinalInIncompleteMember {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteFinalInIncompleteMember.DeleteFinalInIncompleteMember_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteFinalInIncompleteMember.DeleteFinalInIncompleteMember_BACKSPACE(node));
   }
-
   public static class DeleteFinalInIncompleteMember_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteFinalInIncompleteMember_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "final", "" + (false));
+    }
+  }
+  public static class DeleteFinalInIncompleteMember_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DeleteFinalInIncompleteMember_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "final", "" + (false));
     }

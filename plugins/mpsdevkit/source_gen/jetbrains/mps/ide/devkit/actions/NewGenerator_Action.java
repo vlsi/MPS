@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class NewGenerator_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Generator;
-
   public NewGenerator_Action() {
     super("Generator", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModule) MapSequence.fromMap(_params).get("module")) != null && ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language && ((Language) ((SModule) MapSequence.fromMap(_params).get("module"))).getGenerators().isEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class NewGenerator_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +63,6 @@ public class NewGenerator_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
@@ -88,6 +82,5 @@ public class NewGenerator_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewGenerator_Action.class);
 }

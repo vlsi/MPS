@@ -17,61 +17,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveMessage_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRemoveMessage_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.MessageHolder";
   }
-
   public String getPresentation() {
     return "AddRemoveMessage";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.unitTest";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:ae5a3427-e70c-4b57-99b6-7ec8fc28a394(jetbrains.mps.baseLanguage.unitTest.intentions)", "7080278351417190887");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveMessage_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null) ? "Add message" : "Remove message");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "message", true), "message", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "message", "jetbrains.mps.baseLanguage.unitTest.structure.Message");
@@ -79,7 +65,6 @@ public class AddRemoveMessage_Intention implements IntentionFactory {
         SLinkOperations.setTarget(node, "message", null, true);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRemoveMessage_Intention.this;
     }

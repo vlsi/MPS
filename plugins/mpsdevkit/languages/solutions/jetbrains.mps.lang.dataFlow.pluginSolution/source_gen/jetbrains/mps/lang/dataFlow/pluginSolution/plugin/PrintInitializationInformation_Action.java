@@ -21,18 +21,15 @@ import org.apache.log4j.LogManager;
 
 public class PrintInitializationInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PrintInitializationInformation_Action() {
     super("Print DFA Initialization Information", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -43,7 +40,6 @@ public class PrintInitializationInformation_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -59,7 +55,6 @@ public class PrintInitializationInformation_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -71,6 +66,5 @@ public class PrintInitializationInformation_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PrintInitializationInformation_Action.class);
 }

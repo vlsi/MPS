@@ -12,15 +12,12 @@ public enum ProjectionType {
   compact("compact", "compact");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<ProjectionType> getConstants() {
     List<ProjectionType> list = ListSequence.fromList(new LinkedList<ProjectionType>());
     ListSequence.fromList(list).addElement(ProjectionType.defaultEditor);
@@ -28,11 +25,9 @@ public enum ProjectionType {
     ListSequence.fromList(list).addElement(ProjectionType.compact);
     return list;
   }
-
   public static ProjectionType getDefault() {
     return ProjectionType.defaultEditor;
   }
-
   public static ProjectionType parseValue(String value) {
     if (value == null) {
       return ProjectionType.getDefault();
@@ -48,14 +43,11 @@ public enum ProjectionType {
     }
     return ProjectionType.getDefault();
   }
-
   private String myValue;
-
   ProjectionType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -26,14 +26,12 @@ public class UnpackHelper extends DependenciesHelper {
   private final List<SNode> statements = new ArrayList<SNode>();
   private PathProvider myPathProvider;
   private TemplateQueryContext genContext;
-
   public UnpackHelper(VisibleArtifacts visible, TemplateQueryContext genContext) {
     super(genContext, visible.getProject());
     this.visible = visible;
     this.myPathProvider = new PathProvider(genContext, visible.getProject());
     this.genContext = genContext;
   }
-
   /*package*/ void add(SNode n, boolean withContent, Object artifactId) {
     if (withContent) {
       requiredWithContent.add(n);
@@ -51,7 +49,6 @@ public class UnpackHelper extends DependenciesHelper {
     }
     ListSequence.fromList(required).addElement(n);
   }
-
   private void mapArtifactId(SNode n, Object artifactId) {
     Collection<Object> collection = artifactIds.get(n);
     if (collection == null) {
@@ -60,7 +57,6 @@ public class UnpackHelper extends DependenciesHelper {
     }
     collection.add(artifactId);
   }
-
   public void eval() {
     if (evaluated) {
       return;
@@ -72,27 +68,21 @@ public class UnpackHelper extends DependenciesHelper {
       BehaviorReflection.invokeVirtual(Void.class, n, "virtual_unpack_7128123785277710736", new Object[]{this, (artifacts != null ? artifacts : Collections.emptyList())});
     }
   }
-
   public boolean isRequired(SNode n) {
     return requiredSet.contains(n);
   }
-
   public boolean isContentRequired(SNode n) {
     return requiredWithContent.contains(n);
   }
-
   public void emit(SNode st) {
     ListSequence.fromList(statements).addElement(st);
   }
-
   public SNode parent(SNode node) {
     return visible.parent(node);
   }
-
   public List<SNode> getStatements() {
     return ListSequence.fromList(statements).asUnmodifiable();
   }
-
   public PathProvider getPathProvider() {
     return myPathProvider;
   }

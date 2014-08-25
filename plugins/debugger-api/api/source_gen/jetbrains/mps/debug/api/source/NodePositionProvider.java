@@ -18,7 +18,6 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 public class NodePositionProvider implements IPositionProvider<NodeSourcePosition> {
   public NodePositionProvider() {
   }
-
   @Nullable
   @Override
   public NodeSourcePosition getPosition(@Nullable ILocation location) {
@@ -31,7 +30,6 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     }
     return null;
   }
-
   @Nullable
   @Override
   public NodeSourcePosition getPosition(@NotNull String unitName, @NotNull String fileName, int lineNumber) {
@@ -41,7 +39,6 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     }
     return null;
   }
-
   @Nullable
   public SNodeReference getSNodePointer(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
@@ -49,7 +46,6 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     }
     return getSNodePointer(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
-
   @Nullable
   public SNodeReference getSNodePointer(@NonNls final String unitName, @NonNls final String fileName, final int position) {
     return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
@@ -63,7 +59,6 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
       }
     });
   }
-
   @Nullable
   public SNode getNode(@Nullable ILocation location) {
     if (location == null || location instanceof NullLocation) {
@@ -71,12 +66,10 @@ public class NodePositionProvider implements IPositionProvider<NodeSourcePositio
     }
     return getNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
-
   @Nullable
   public SNode getNode(@NonNls String unitName, @NonNls String fileName, int position) {
     return TraceInfoUtil.getNode(unitName, fileName, position);
   }
-
   @Override
   public boolean accepts(AbstractDebugSession session) {
     return true;

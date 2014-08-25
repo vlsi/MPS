@@ -10,30 +10,24 @@ public class FqName {
   private static final String DEFAULT_NS = "<default>";
   private String namespace;
   private String name;
-
   public FqName(String fqn) {
     init(fqn);
   }
-
   public String getNamespace() {
     return namespace;
   }
-
   public String getName() {
     return name;
   }
-
   @Override
   public String toString() {
     return namespace + "." + name;
   }
-
   @Override
   public int hashCode() {
     int h = namespace.hashCode();
     return h * 17 + name.hashCode();
   }
-
   @Override
   public boolean equals(Object that) {
     if (this == that) {
@@ -44,7 +38,6 @@ public class FqName {
     }
     return eq_hgd34b_a0a2a9(this.namespace, ((FqName) that).namespace) && eq_hgd34b_a0a2a9_0(this.name, ((FqName) that).name);
   }
-
   private void init(String fqn) {
     Matcher matcher = NAMESPACE.matcher(fqn);
     if (matcher.matches()) {
@@ -55,11 +48,9 @@ public class FqName {
       this.name = fqn;
     }
   }
-
   private static boolean eq_hgd34b_a0a2a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_hgd34b_a0a2a9_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

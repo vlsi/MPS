@@ -21,22 +21,18 @@ import org.apache.log4j.LogManager;
 
 public class AddLanguageImport_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AddLanguageImport_Action() {
     super("Add Language Import", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (((SModel) MapSequence.fromMap(_params).get("model")) != null && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel) || (((SModel) MapSequence.fromMap(_params).get("model")) == null && ((SModule) MapSequence.fromMap(_params).get("module")) instanceof DevKit);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -50,7 +46,6 @@ public class AddLanguageImport_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +61,6 @@ public class AddLanguageImport_Action extends BaseAction {
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.CONTEXT_MODEL));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ImportHelper.addLanguageImport(((Project) MapSequence.fromMap(_params).get("project")), ((SModule) MapSequence.fromMap(_params).get("module")), ((SModel) MapSequence.fromMap(_params).get("model")), AddLanguageImport_Action.this);
@@ -76,6 +70,5 @@ public class AddLanguageImport_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AddLanguageImport_Action.class);
 }

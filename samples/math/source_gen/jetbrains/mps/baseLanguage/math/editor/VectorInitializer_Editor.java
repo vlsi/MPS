@@ -21,7 +21,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8o7ns6_a(editorContext, node);
   }
-
   private EditorCell createCollection_8o7ns6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8o7ns6_a");
@@ -36,7 +35,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_8o7ns6_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_8o7ns6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vector");
     editorCell.setCellId("Constant_8o7ns6_a0");
@@ -46,7 +44,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_8o7ns6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_8o7ns6_b0");
@@ -56,7 +53,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8o7ns6_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rowsCount");
@@ -76,7 +72,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8o7ns6_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_8o7ns6_d0");
@@ -86,7 +81,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8o7ns6_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rowIndex");
@@ -106,14 +100,12 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8o7ns6_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_8o7ns6_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8o7ns6_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -133,7 +125,6 @@ public class VectorInitializer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8o7ns6_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_8o7ns6_h0");

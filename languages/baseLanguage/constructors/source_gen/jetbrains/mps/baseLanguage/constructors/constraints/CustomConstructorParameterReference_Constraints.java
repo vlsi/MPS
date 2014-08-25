@@ -26,12 +26,10 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
   public CustomConstructorParameterReference_Constraints() {
     super("jetbrains.mps.baseLanguage.constructors.structure.CustomConstructorParameterReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -42,12 +40,10 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
 
     return result;
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -58,7 +54,6 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -67,7 +62,6 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -85,7 +79,6 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
               return null;
             }
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5;
@@ -95,15 +88,12 @@ public class CustomConstructorParameterReference_Constraints extends BaseConstra
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return true;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369207575");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095369352259");
   private static SNodePointer breakingNode_3lmvlt_a0a1a0a0a1a0b0a1a5 = new SNodePointer("r:79d4c714-b426-4aae-a835-35e7add55090(jetbrains.mps.baseLanguage.constructors.constraints)", "3778783095368652009");

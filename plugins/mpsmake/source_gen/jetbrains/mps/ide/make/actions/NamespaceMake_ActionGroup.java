@@ -10,7 +10,6 @@ import com.intellij.openapi.extensions.PluginId;
 public class NamespaceMake_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(NamespaceMake_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.NamespaceMake_ActionGroup";
-
   public NamespaceMake_ActionGroup() {
     super("NamespaceMake", ID);
     this.setIsInternal(false);

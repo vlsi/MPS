@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class Closure_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getVariablesReferencedInClosure_1223989736803(SNode thisNode) {
     List<SNode> referencedInClosures = new ArrayList<SNode>();
     for (SNode varRef : SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
@@ -29,7 +28,6 @@ public class Closure_Behavior {
     }
     return referencedInClosures;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     final Wrappers._T<SNode> _child = new Wrappers._T<SNode>(child);
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.ClosureParameter")) {

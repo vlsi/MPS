@@ -19,8 +19,6 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     super(conceptName);
   }
 
-
-
   @Override
   public SAbstractLink getLink(String role) {
     // TODO fix all usages remove this hack 
@@ -29,8 +27,6 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     }
     return super.getLink(role);
   }
-
-
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {

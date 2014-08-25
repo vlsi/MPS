@@ -28,7 +28,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_snw1l8_a(editorContext, node);
   }
-
   private EditorCell createCollection_snw1l8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_snw1l8_a");
@@ -41,7 +40,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_snw1l8_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_snw1l8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -49,7 +47,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_snw1l8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_snw1l8_b0");
@@ -59,7 +56,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_snw1l8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("constraintsKind");
@@ -77,16 +73,13 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class GridBagConstraints_constraintsKind_cellMenu_snw1l8_a0c0 extends AbstractCellMenuPart_PropertyValues {
     public GridBagConstraints_constraintsKind_cellMenu_snw1l8_a0c0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "field", "label", "panel");
     }
   }
-
   private EditorCell createConstant_snw1l8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_snw1l8_d0");
@@ -97,7 +90,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_snw1l8_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("order");
@@ -117,7 +109,6 @@ public class GridBagConstraints_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_snw1l8_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_snw1l8_f0");

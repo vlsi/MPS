@@ -28,41 +28,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewCreateRootRule_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public NewCreateRootRule_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.INamedConcept";
   }
-
   public String getPresentation() {
     return "NewCreateRootRule";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.NewCreateRootRule_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode annotation = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
     if (annotation == null) {
@@ -87,32 +78,26 @@ public class NewCreateRootRule_Intention implements IntentionFactory {
     //  not used in rule yet? 
     return usage == null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1227216572218");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewCreateRootRule_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       //  Creates new 'conditional root rule' for a root tamplate 
       //  (if such rule is not exist yet) 
       return "Create Conditional Root Rule";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       List<SNode> configs = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
       if (ListSequence.fromList(configs).count() > 1) {
@@ -134,7 +119,6 @@ public class NewCreateRootRule_Intention implements IntentionFactory {
       //  open in editor 
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), rule, true, true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return NewCreateRootRule_Intention.this;
     }

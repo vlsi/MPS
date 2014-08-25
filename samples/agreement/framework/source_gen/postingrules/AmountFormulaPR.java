@@ -7,13 +7,11 @@ import mf.Money;
 public class AmountFormulaPR extends PostingRule {
   private double myMultiplier;
   private Money myFixedFee;
-
   public AmountFormulaPR(double multiplier, Money fixedFee, AccountType type, boolean isTaxable) {
     super(type, isTaxable);
     this.myMultiplier = multiplier;
     this.myFixedFee = fixedFee;
   }
-
   @Override
   protected Money calculateAmount(AccountingEvent evt) {
     Money eventAmount = ((MonetaryEvent) evt).getAmount();

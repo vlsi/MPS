@@ -30,7 +30,6 @@ import jetbrains.mps.project.structure.ProjectStructureModule;
 public class SModelOperations {
   public SModelOperations() {
   }
-
   public static List<SNode> getRoots(SModel model, final String conceptFqName) {
     if (model == null) {
       return new ArrayList<SNode>();
@@ -55,7 +54,6 @@ public class SModelOperations {
     }
     return list;
   }
-
   public static List<SNode> getRootsIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
@@ -70,7 +68,6 @@ public class SModelOperations {
 
     return allNodesIncludingImported(model, true, concept);
   }
-
   public static List<SNode> getNodesIncludingImported(SModel model, String conceptFqName) {
     if (model == null) {
       return Collections.emptyList();
@@ -84,7 +81,6 @@ public class SModelOperations {
     }
     return allNodesIncludingImported(model, false, concept);
   }
-
   private static List<SNode> allNodesIncludingImported(SModel sModel, boolean roots, @Nullable final SNode concept) {
     List<SModel> modelsList = new ArrayList<SModel>();
     modelsList.add(sModel);
@@ -109,7 +105,6 @@ public class SModelOperations {
     }
     return resultNodes;
   }
-
   public static List<SNode> getNodes(SModel model, final String conceptFqName) {
     if (model == null) {
       return new ArrayList<SNode>();
@@ -123,11 +118,9 @@ public class SModelOperations {
     }
     return result;
   }
-
   public static SNode createNewNode(SModel model, String conceptFqName) {
     return createNewNode(model, null, conceptFqName);
   }
-
   public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     if (conceptFqName == null) {
       return null;
@@ -148,33 +141,28 @@ public class SModelOperations {
     BehaviorReflection.initNode(result);
     return ((SNode) result);
   }
-
   @Deprecated
   public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
     return createNewNode(model, conceptFqName);
   }
-
   public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
     SNode newNode = createNewNode(model, conceptFqName);
     model.addRootNode(newNode);
     return newNode;
 
   }
-
   public static SNode addRootNode(SModel model, SNode node) {
     if (model != null && node != null) {
       model.addRootNode(node);
     }
     return node;
   }
-
   public static String getModelName(SModel model) {
     if (model == null) {
       return null;
     }
     return SNodeOperations.getModelLongName(model);
   }
-
   public static SNode getModuleStub(SModel model) {
     final SModule module = model.getModule();
     if (module instanceof Generator) {
@@ -194,7 +182,6 @@ public class SModelOperations {
       return (m == null ? null : ListSequence.fromList(SModelOperations.getRoots(m, "jetbrains.mps.lang.project.structure.Module")).first());
     }
   }
-
   private static boolean eq_kkj9n5_a0a0a0a0a0a4a1a21(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SNodePointer;
 public class HierarchyFeatureExtractor implements TreeNodeFeatureExtractor {
   public HierarchyFeatureExtractor() {
   }
-
   @Nullable
   @Override
   public Feature getFeature(@NotNull MPSTreeNode treeNode) {

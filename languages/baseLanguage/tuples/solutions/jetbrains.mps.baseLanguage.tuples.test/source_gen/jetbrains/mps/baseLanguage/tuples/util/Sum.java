@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class Sum {
   public Map<Integer, Tuples._2<Integer, Integer>> map = MapSequence.fromMap(new HashMap<Integer, Tuples._2<Integer, Integer>>());
-
   public Sum() {
     MapSequence.fromMap(map).put(42, MultiTuple.<Integer,Integer>from(5, 37));
   }

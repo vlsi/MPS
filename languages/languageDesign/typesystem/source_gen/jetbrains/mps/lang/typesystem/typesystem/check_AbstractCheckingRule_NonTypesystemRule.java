@@ -14,24 +14,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AbstractCheckingRule_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AbstractCheckingRule_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode abstractCheckingRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(abstractCheckingRule, "body", true) != null) {
       DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(abstractCheckingRule, "body", true));
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

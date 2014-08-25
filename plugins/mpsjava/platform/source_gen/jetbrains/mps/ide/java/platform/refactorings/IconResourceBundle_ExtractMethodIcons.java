@@ -15,18 +15,14 @@ public class IconResourceBundle_ExtractMethodIcons implements IconResourceBundle
       put("INTERFACE", IconContainer.ICON_a1);
     }
   };
-
   public IconResourceBundle_ExtractMethodIcons() {
   }
-
   public Iterable<String> getKeys() {
     return icons.keySet();
   }
-
   public Icon getResource(String key) {
     return icons.get(key);
   }
-
   public static IconResourceBundle_ExtractMethodIcons getInstance() {
     return IconResourceBundle_ExtractMethodIcons.INSTANCE;
   }

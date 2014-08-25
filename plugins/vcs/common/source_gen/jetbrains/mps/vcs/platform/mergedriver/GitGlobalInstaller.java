@@ -25,13 +25,11 @@ import org.apache.log4j.LogManager;
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   private File myConfigFile;
   private File myScriptFile;
-
   public GitGlobalInstaller(Project project) {
     super(project);
     myConfigFile = new File(System.getProperty("user.home") + File.separator + ".gitconfig");
     myScriptFile = new File(PathManager.getConfigPath() + File.separator + "mps-merger.sh");
   }
-
   @NotNull
   @Override
   protected AbstractInstaller.State install(boolean dryRun) {
@@ -141,23 +139,18 @@ import org.apache.log4j.LogManager;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   private void showSuccessfullInfoMessage() {
     Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
   }
-
   @Override
   public String getActionTitle() {
     return "Git global merge driver setting (~/.gitconfig)";
   }
-
   @Override
   public String getAffectedVcsName() {
     return "Git";
   }
-
   protected static Logger LOG = LogManager.getLogger(GitGlobalInstaller.class);
-
   private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

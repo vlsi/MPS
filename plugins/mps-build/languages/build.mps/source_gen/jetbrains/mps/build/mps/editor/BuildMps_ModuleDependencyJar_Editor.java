@@ -22,7 +22,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_z29e2a_a(editorContext, node);
   }
-
   private EditorCell createCollection_z29e2a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z29e2a_a");
@@ -34,7 +33,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_z29e2a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "jar");
     editorCell.setCellId("Constant_z29e2a_a0");
@@ -44,7 +42,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_z29e2a_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("path");
@@ -64,7 +61,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_z29e2a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z29e2a_c0");
@@ -75,11 +71,9 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_z29e2a_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_z29e2a_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "customLocation", true) != null);
   }
-
   private EditorCell createConstant_z29e2a_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "use from");
     editorCell.setCellId("Constant_z29e2a_a2a");
@@ -89,7 +83,6 @@ public class BuildMps_ModuleDependencyJar_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_z29e2a_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("customLocation");

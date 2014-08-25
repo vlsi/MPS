@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class DocMethodParameterReference_BehaviorDescriptor extends BaseParameterReference_BehaviorDescriptor {
   public DocMethodParameterReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference";

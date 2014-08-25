@@ -29,18 +29,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowNullDFA_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -51,7 +48,6 @@ public class ShowNullDFA_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +75,6 @@ public class ShowNullDFA_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>> runner = new Wrappers._T<AnalyzerRunner<Map<SNode, NullableState>>>();
@@ -97,6 +92,5 @@ public class ShowNullDFA_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowNullDFA_Action.class);
 }

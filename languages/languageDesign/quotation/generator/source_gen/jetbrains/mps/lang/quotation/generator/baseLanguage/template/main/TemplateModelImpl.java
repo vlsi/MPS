@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @Generated
 public class TemplateModelImpl implements TemplateModel {
@@ -22,30 +23,24 @@ public class TemplateModelImpl implements TemplateModel {
   private final Collection<TemplateSwitchMapping> switches;
   private final TemplateModule templateModule;
   private final SModelReference model;
-
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this), new Mappingpreprocess(this));
     switches = TemplateUtil.<TemplateSwitchMapping>asCollection();
     templateModule = module;
     model = PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)");
   }
-
   public String getLongName() {
     return "jetbrains.mps.lang.quotation.generator.baseLanguage.template.main";
   }
-
   public SModelReference getSModelReference() {
     return model;
   }
-
   public Collection<TemplateMappingConfiguration> getConfigurations() {
     return mappings;
   }
-
   public Collection<TemplateSwitchMapping> getSwitches() {
     return switches;
   }
-
   public TemplateDeclaration loadTemplate(SNodeReference template, Object... arguments) {
     if (!(model.equals(template.getModelReference()))) {
       return null;
@@ -61,11 +56,11 @@ public class TemplateModelImpl implements TemplateModel {
         return new TemplateQuotedNode__to__statementList();
       }
       if (idValue == 1025590056396628814L) {
-        if (arguments.length != 0) {
+        if (arguments.length != 1) {
           // TODO report `wrong arguments count` 
           return null;
         }
-        return new TemplateQuotation__to__staticMethodCall();
+        return new TemplateQuotation__to__staticMethodCall((SNode) arguments[0]);
       }
       if (idValue == 1006429225401295242L) {
         if (arguments.length != 0) {
@@ -84,7 +79,6 @@ public class TemplateModelImpl implements TemplateModel {
     }
     return null;
   }
-
   public TemplateModule getModule() {
     return templateModule;
   }

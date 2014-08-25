@@ -11,23 +11,33 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 public class Operation_symbol_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Operation_symbol_Actions.Operation_symbol_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new Operation_symbol_Actions.Operation_symbol_Actions_BACKSPACE(node));
   }
-
   public static class Operation_symbol_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public Operation_symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "disable delete";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+    }
+  }
+  public static class Operation_symbol_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public Operation_symbol_Actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public String getDescriptionText() {
+      return "disable delete";
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
     }
   }

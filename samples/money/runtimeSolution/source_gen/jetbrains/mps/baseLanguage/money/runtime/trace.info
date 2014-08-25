@@ -14,102 +14,102 @@
     <file name="Currency.java">
       <node id="3840741013873804941" at="8,0,9,0" concept="3" trace="myCurrency" />
       <node id="3840741013873804944" at="9,0,10,0" concept="3" trace="myAmount" />
-      <node id="3840741013873804955" at="11,51,12,43" concept="8" />
-      <node id="3840741013873804968" at="15,55,16,26" concept="2" />
-      <node id="3840741013873804972" at="16,26,17,27" concept="2" />
-      <node id="3840741013873804982" at="20,31,21,22" concept="7" />
-      <node id="3840741013873804988" at="24,29,25,31" concept="7" />
-      <node id="3840741013873805007" at="29,45,30,42" concept="9" />
-      <node id="3840741013873805017" at="34,66,35,32" concept="2" />
-      <node id="3840741013873805020" at="35,32,36,62" concept="7" />
-      <node id="3840741013873805037" at="39,66,40,32" concept="2" />
-      <node id="3840741013873805040" at="40,32,41,71" concept="7" />
-      <node id="3840741013873805059" at="44,30,45,79" concept="7" />
-      <node id="3840741013873805077" at="48,30,49,77" concept="7" />
-      <node id="3840741013873805095" at="52,67,53,32" concept="2" />
-      <node id="3840741013873805098" at="53,32,54,42" concept="7" />
-      <node id="3840741013873805110" at="58,28,59,33" concept="7" />
-      <node id="3840741013873805118" at="62,27,63,59" concept="7" />
-      <node id="3840741013873805171" at="68,37,69,19" concept="7" />
-      <node id="3840741013873805141" at="70,12,71,32" concept="6" />
-      <node id="3840741013873805168" at="72,79,73,20" concept="7" />
-      <node id="3840741013873805165" at="74,14,75,21" concept="7" />
-      <node id="3840741013873805177" at="81,25,82,61" concept="7" />
-      <node id="3840741013873805163" at="74,12,76,7" concept="0" />
-      <node id="3840741013873804947" at="11,0,14,0" concept="1" trace="Currency#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3840741013873804978" at="20,0,23,0" concept="5" trace="getCurrency#()Ljava/lang/String;" />
-      <node id="3840741013873804984" at="24,0,27,0" concept="5" trace="getAmount#()Ljava/lang/String;" />
-      <node id="3840741013873804998" at="28,86,31,5" concept="4" />
-      <node id="3840741013873805053" at="44,0,47,0" concept="5" trace="mul#(I)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
-      <node id="3840741013873805071" at="48,0,51,0" concept="5" trace="div#(I)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
-      <node id="3840741013873805114" at="62,0,65,0" concept="5" trace="isZero#()Z" />
-      <node id="3840741013873804960" at="15,0,19,0" concept="1" trace="Currency#(Ljava/math/BigDecimal;Ljava/lang/String;)V" />
-      <node id="3840741013873805011" at="34,0,38,0" concept="5" trace="add#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
-      <node id="3840741013873805031" at="39,0,43,0" concept="5" trace="sub#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
-      <node id="3840741013873805089" at="52,0,56,0" concept="5" trace="compareTo#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)I" />
-      <node id="3840741013873805106" at="57,0,61,0" concept="5" trace="toString#()Ljava/lang/String;" />
-      <node id="3840741013873805173" at="80,0,84,0" concept="5" trace="hashCode#()I" />
-      <node id="3840741013873804992" at="28,0,33,0" concept="5" trace="checkCurrencyCompability#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)V" />
-      <node id="3840741013873805147" at="71,32,76,7" concept="4" />
-      <node id="3840741013873805139" at="70,10,77,5" concept="0" />
-      <node id="3840741013873805133" at="67,35,77,5" concept="4" />
-      <node id="3840741013873805127" at="66,0,79,0" concept="5" trace="equals#(Ljava/lang/Object;)Z" />
-      <scope id="3840741013873804954" at="11,51,12,43" />
-      <scope id="3840741013873804981" at="20,31,21,22" />
-      <scope id="3840741013873804987" at="24,29,25,31" />
-      <scope id="3840741013873805006" at="29,45,30,42" />
-      <scope id="3840741013873805058" at="44,30,45,79" />
-      <scope id="3840741013873805076" at="48,30,49,77" />
-      <scope id="3840741013873805109" at="58,28,59,33" />
-      <scope id="3840741013873805117" at="62,27,63,59" />
-      <scope id="3840741013873805170" at="68,37,69,19" />
-      <scope id="3840741013873805167" at="72,79,73,20" />
-      <scope id="3840741013873805164" at="74,14,75,21" />
-      <scope id="3840741013873805176" at="81,25,82,61" />
-      <scope id="3840741013873804967" at="15,55,17,27" />
-      <scope id="3840741013873805016" at="34,66,36,62" />
-      <scope id="3840741013873805036" at="39,66,41,71" />
-      <scope id="3840741013873805094" at="52,67,54,42" />
-      <scope id="3840741013873804947" at="11,0,14,0">
+      <node id="3840741013873804955" at="10,51,11,43" concept="8" />
+      <node id="3840741013873804968" at="13,55,14,26" concept="2" />
+      <node id="3840741013873804972" at="14,26,15,27" concept="2" />
+      <node id="3840741013873804982" at="17,31,18,22" concept="7" />
+      <node id="3840741013873804988" at="20,29,21,31" concept="7" />
+      <node id="3840741013873805007" at="24,45,25,42" concept="9" />
+      <node id="3840741013873805017" at="28,66,29,32" concept="2" />
+      <node id="3840741013873805020" at="29,32,30,62" concept="7" />
+      <node id="3840741013873805037" at="32,66,33,32" concept="2" />
+      <node id="3840741013873805040" at="33,32,34,71" concept="7" />
+      <node id="3840741013873805059" at="36,30,37,79" concept="7" />
+      <node id="3840741013873805077" at="39,30,40,77" concept="7" />
+      <node id="3840741013873805095" at="42,67,43,32" concept="2" />
+      <node id="3840741013873805098" at="43,32,44,42" concept="7" />
+      <node id="3840741013873805110" at="47,28,48,33" concept="7" />
+      <node id="3840741013873805118" at="50,27,51,59" concept="7" />
+      <node id="3840741013873805171" at="55,37,56,19" concept="7" />
+      <node id="3840741013873805141" at="57,12,58,32" concept="6" />
+      <node id="3840741013873805168" at="59,79,60,20" concept="7" />
+      <node id="3840741013873805165" at="61,14,62,21" concept="7" />
+      <node id="3840741013873805177" at="67,25,68,61" concept="7" />
+      <node id="3840741013873805163" at="61,12,63,7" concept="0" />
+      <node id="3840741013873804947" at="10,0,13,0" concept="1" trace="Currency#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3840741013873804978" at="17,0,20,0" concept="5" trace="getCurrency#()Ljava/lang/String;" />
+      <node id="3840741013873804984" at="20,0,23,0" concept="5" trace="getAmount#()Ljava/lang/String;" />
+      <node id="3840741013873804998" at="23,86,26,5" concept="4" />
+      <node id="3840741013873805053" at="36,0,39,0" concept="5" trace="mul#(I)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
+      <node id="3840741013873805071" at="39,0,42,0" concept="5" trace="div#(I)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
+      <node id="3840741013873805114" at="50,0,53,0" concept="5" trace="isZero#()Z" />
+      <node id="3840741013873804960" at="13,0,17,0" concept="1" trace="Currency#(Ljava/math/BigDecimal;Ljava/lang/String;)V" />
+      <node id="3840741013873805011" at="28,0,32,0" concept="5" trace="add#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
+      <node id="3840741013873805031" at="32,0,36,0" concept="5" trace="sub#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)Ljetbrains/mps/baseLanguage/money/runtime/Currency;" />
+      <node id="3840741013873805089" at="42,0,46,0" concept="5" trace="compareTo#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)I" />
+      <node id="3840741013873805106" at="46,0,50,0" concept="5" trace="toString#()Ljava/lang/String;" />
+      <node id="3840741013873805173" at="66,0,70,0" concept="5" trace="hashCode#()I" />
+      <node id="3840741013873804992" at="23,0,28,0" concept="5" trace="checkCurrencyCompability#(Ljetbrains/mps/baseLanguage/money/runtime/Currency;)V" />
+      <node id="3840741013873805147" at="58,32,63,7" concept="4" />
+      <node id="3840741013873805139" at="57,10,64,5" concept="0" />
+      <node id="3840741013873805133" at="54,35,64,5" concept="4" />
+      <node id="3840741013873805127" at="53,0,66,0" concept="5" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="3840741013873804954" at="10,51,11,43" />
+      <scope id="3840741013873804981" at="17,31,18,22" />
+      <scope id="3840741013873804987" at="20,29,21,31" />
+      <scope id="3840741013873805006" at="24,45,25,42" />
+      <scope id="3840741013873805058" at="36,30,37,79" />
+      <scope id="3840741013873805076" at="39,30,40,77" />
+      <scope id="3840741013873805109" at="47,28,48,33" />
+      <scope id="3840741013873805117" at="50,27,51,59" />
+      <scope id="3840741013873805170" at="55,37,56,19" />
+      <scope id="3840741013873805167" at="59,79,60,20" />
+      <scope id="3840741013873805164" at="61,14,62,21" />
+      <scope id="3840741013873805176" at="67,25,68,61" />
+      <scope id="3840741013873804967" at="13,55,15,27" />
+      <scope id="3840741013873805016" at="28,66,30,62" />
+      <scope id="3840741013873805036" at="32,66,34,71" />
+      <scope id="3840741013873805094" at="42,67,44,42" />
+      <scope id="3840741013873804947" at="10,0,13,0">
         <var name="amount" id="3840741013873804950" />
         <var name="currency" id="3840741013873804952" />
       </scope>
-      <scope id="3840741013873804978" at="20,0,23,0" />
-      <scope id="3840741013873804984" at="24,0,27,0" />
-      <scope id="3840741013873804997" at="28,86,31,5" />
-      <scope id="3840741013873805053" at="44,0,47,0">
+      <scope id="3840741013873804978" at="17,0,20,0" />
+      <scope id="3840741013873804984" at="20,0,23,0" />
+      <scope id="3840741013873804997" at="23,86,26,5" />
+      <scope id="3840741013873805053" at="36,0,39,0">
         <var name="n" id="3840741013873805056" />
       </scope>
-      <scope id="3840741013873805071" at="48,0,51,0">
+      <scope id="3840741013873805071" at="39,0,42,0">
         <var name="n" id="3840741013873805074" />
       </scope>
-      <scope id="3840741013873805114" at="62,0,65,0" />
-      <scope id="3840741013873804960" at="15,0,19,0">
+      <scope id="3840741013873805114" at="50,0,53,0" />
+      <scope id="3840741013873804960" at="13,0,17,0">
         <var name="amount" id="3840741013873804963" />
         <var name="currency" id="3840741013873804965" />
       </scope>
-      <scope id="3840741013873805011" at="34,0,38,0">
+      <scope id="3840741013873805011" at="28,0,32,0">
         <var name="c" id="3840741013873805014" />
       </scope>
-      <scope id="3840741013873805031" at="39,0,43,0">
+      <scope id="3840741013873805031" at="32,0,36,0">
         <var name="c" id="3840741013873805034" />
       </scope>
-      <scope id="3840741013873805089" at="52,0,56,0">
+      <scope id="3840741013873805089" at="42,0,46,0">
         <var name="c" id="3840741013873805092" />
       </scope>
-      <scope id="3840741013873805106" at="57,0,61,0" />
-      <scope id="3840741013873805173" at="80,0,84,0" />
-      <scope id="3840741013873804992" at="28,0,33,0">
+      <scope id="3840741013873805106" at="46,0,50,0" />
+      <scope id="3840741013873805173" at="66,0,70,0" />
+      <scope id="3840741013873804992" at="23,0,28,0">
         <var name="c" id="3840741013873804995" />
       </scope>
-      <scope id="3840741013873805140" at="70,12,76,7">
+      <scope id="3840741013873805140" at="57,12,63,7">
         <var name="c" id="3840741013873805142" />
       </scope>
-      <scope id="3840741013873805132" at="67,35,77,5" />
-      <scope id="3840741013873805127" at="66,0,79,0">
+      <scope id="3840741013873805132" at="54,35,64,5" />
+      <scope id="3840741013873805127" at="53,0,66,0">
         <var name="o" id="3840741013873805130" />
       </scope>
-      <unit id="3840741013873804939" at="7,0,85,0" name="jetbrains.mps.baseLanguage.money.runtime.Currency" />
+      <unit id="3840741013873804939" at="7,0,71,0" name="jetbrains.mps.baseLanguage.money.runtime.Currency" />
     </file>
   </root>
   <root nodeRef="r:b41a3969-fb3d-4631-b2b9-af87e454b590(jetbrains.mps.baseLanguage.money.runtime)/3840741013873805187">

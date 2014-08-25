@@ -13,13 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
   private LineAnnotationAspect myAnnotationAspect;
   private int myWidth;
   private boolean myEnabled;
-
   public AnnotationAspectSubcolumn(AnnotationColumn annotationColumn, LineAnnotationAspect annotationAspect) {
     myAnnotationColumn = annotationColumn;
     myAnnotationAspect = annotationAspect;
     myEnabled = VcsUtil.isAspectAvailableByDefault(getId());
   }
-
   public String getTextForFileLine(int fileLine) {
     String value = myAnnotationAspect.getValue(fileLine);
     if (myAnnotationAspect.getId() == LineAnnotationAspect.AUTHOR && ViewAction.isSet(ViewAction.SHORTEN_NAMES)) {
@@ -28,11 +26,9 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       return value;
     }
   }
-
   public int getWidth() {
     return myWidth;
   }
-
   public void computeWidth(final FontMetrics fontMetrics, Iterable<Integer> fileLines) {
     myWidth = Sequence.fromIterable(fileLines).foldLeft(0, new ILeftCombinator<Integer, Integer>() {
       public Integer combine(Integer s, Integer fl) {
@@ -40,25 +36,20 @@ import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
       }
     });
   }
-
   public String getId() {
     return (myAnnotationAspect == null ? null : myAnnotationAspect.getId());
   }
-
   public boolean isEnabled() {
     return myEnabled;
   }
-
   public boolean isRightAligned() {
     return false;
   }
-
   public void setEnabled(boolean enabled) {
     VcsUtil.setAspectAvailability(getId(), enabled);
     myEnabled = enabled;
     myAnnotationColumn.invalidateLayout();
   }
-
   private static String shortenName(String longName) {
     if (longName != null) {
       String[] strings = longName.split(" ");

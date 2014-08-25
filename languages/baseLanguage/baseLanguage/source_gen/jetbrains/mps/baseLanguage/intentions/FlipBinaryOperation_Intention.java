@@ -17,75 +17,59 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class FlipBinaryOperation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public FlipBinaryOperation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   }
-
   public String getPresentation() {
     return "FlipBinaryOperation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.FlipBinaryOperation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647334600");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FlipBinaryOperation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Flip Binary Operation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
       SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
       SLinkOperations.setTarget(node, "leftExpression", SNodeOperations.copyNode(rightExpression), true);
       SLinkOperations.setTarget(node, "rightExpression", SNodeOperations.copyNode(leftExpression), true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return FlipBinaryOperation_Intention.this;
     }

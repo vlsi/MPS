@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class TypeUtil_Collections {
   public TypeUtil_Collections() {
   }
-
   public static SNode coerceTo_SequenceType(SNode type) {
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true);
     if (sequenceType != null) {
@@ -64,7 +63,6 @@ public class TypeUtil_Collections {
     // ========== 
     return null;
   }
-
   private static SNode _quotation_createNode_kv7ms9_a1a7a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -76,7 +74,6 @@ public class TypeUtil_Collections {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_kv7ms9_a0a12a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -88,7 +85,6 @@ public class TypeUtil_Collections {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_kv7ms9_a0a62a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

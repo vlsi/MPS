@@ -13,15 +13,12 @@ import jetbrains.mps.build.util.FileSetUtil;
 public class BuildLayout_File_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getApproximateName_5610619299013425878(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
   }
-
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
@@ -38,7 +35,6 @@ public class BuildLayout_File_Behavior {
     }
     return false;
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
@@ -51,7 +47,6 @@ public class BuildLayout_File_Behavior {
       }
     }
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if ((SLinkOperations.getTarget(thisNode, "path", true) != null)) {
       String lastSegment = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "path", true), "virtual_getLastSegment_1368030936106771141", new Object[]{null});
@@ -63,16 +58,13 @@ public class BuildLayout_File_Behavior {
       }
     }
   }
-
   public static boolean call_canHaveFilemode_9126048691955221297(SNode thisNode) {
     SNode filesetLayoutContainer = FileSetUtil.getFilesetLayoutContainer(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Node"));
     return (filesetLayoutContainer != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, filesetLayoutContainer, "virtual_hasFileModeAttribute_6408167411310575237", new Object[]{});
   }
-
   private static boolean eq_iewd47_a0b0b0a0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_iewd47_a0a0b0b0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

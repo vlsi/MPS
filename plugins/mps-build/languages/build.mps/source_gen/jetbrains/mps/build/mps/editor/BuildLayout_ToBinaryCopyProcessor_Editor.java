@@ -21,11 +21,9 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3hb8bt_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3hb8bt_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_3hb8bt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3hb8bt_a");
@@ -36,7 +34,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     }
     return editorCell;
   }
-
   private EditorCell createComponent_3hb8bt_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -44,7 +41,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_3hb8bt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(strip implementation)");
     editorCell.setCellId("Constant_3hb8bt_b0");
@@ -54,11 +50,9 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_3hb8bt_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "stripImplementation");
   }
-
   private EditorCell createCollection_3hb8bt_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3hb8bt_a_0");
@@ -67,7 +61,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createProperty_3hb8bt_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3hb8bt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strip implementation:");
     editorCell.setCellId("Constant_3hb8bt_a0");
@@ -77,7 +70,6 @@ public class BuildLayout_ToBinaryCopyProcessor_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_3hb8bt_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("stripImplementation");

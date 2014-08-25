@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExtensionPointType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public ExtensionPointType_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ExtensionPointType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionPointType";

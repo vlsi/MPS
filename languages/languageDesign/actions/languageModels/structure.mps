@@ -72,6 +72,9 @@
       <property name="role" nameId="tpce.1071599776563" value="commonInitializer" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1178781654714" resolveInfo="QueryFunction_Substitute_CommonInitializer" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7945085613657961214" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138079221458" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="SideTransformHintSubstituteActionsBuilder" />
@@ -114,6 +117,9 @@
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="commonInitializer" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1203349485621" resolveInfo="QueryFunction_ST_CommonInitializer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7945085613659991013" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1138079416598" nodeInfo="ig">

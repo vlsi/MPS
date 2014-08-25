@@ -30,7 +30,6 @@ public class NewLanguageDialog extends DialogWrapper {
   private NewLanguageSettings myLanguageSettings;
   private final String myVirtualFolder;
 
-
   public NewLanguageDialog(Project project, @Nullable String virtualFolder) {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Language");
@@ -42,7 +41,6 @@ public class NewLanguageDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   protected JComponent createCenterPanel() {
     if (myLanguageSettings == null) {
@@ -56,7 +54,6 @@ public class NewLanguageDialog extends DialogWrapper {
     }
     return myLanguageSettings;
   }
-
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -90,24 +87,19 @@ public class NewLanguageDialog extends DialogWrapper {
       }
     });
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myLanguageSettings.getPreferredFocusedComponent();
   }
 
-
-
   public Language getLangauge() {
     return myResult;
   }
-
   private boolean check() {
     myError = NewModuleUtil.check(MPSExtentions.DOT_LANGUAGE, myLanguageSettings.getLanguageName(), myLanguageSettings.getLanguageLocation());
     setErrorText(myError);
     return myError == null;
   }
-
   protected static Logger LOG = LogManager.getLogger(NewLanguageDialog.class);
 }

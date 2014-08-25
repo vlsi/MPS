@@ -20,73 +20,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddMessageAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddMessageAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.MessageStatement";
   }
-
   public String getPresentation() {
     return "AddMessageAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.test.intentions.AddMessageAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.test";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)", "9057440207251474622");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMessageAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Message Annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       BehaviorReflection.invokeVirtual(Void.class, node, "virtual_attachNewMessageAnnotation_8489045168661849665", new Object[]{});
       SelectionUtil.selectCell(editorContext, AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), SelectionManager.FIRST_EDITABLE_CELL);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddMessageAnnotation_Intention.this;
     }

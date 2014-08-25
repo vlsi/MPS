@@ -7,7 +7,6 @@ import java.util.Arrays;
 public class TestClass {
   public TestClass() {
   }
-
   public static void main() {
     String t = "1";
     switch (Arrays.binarySearch(stringSwitchCases_6lh81f_a0b0b, t)) {
@@ -19,6 +18,5 @@ public class TestClass {
         System.out.println(":-( again");
     }
   }
-
   private static String[] stringSwitchCases_6lh81f_a0b0b = new String[]{"1", "2"};
 }

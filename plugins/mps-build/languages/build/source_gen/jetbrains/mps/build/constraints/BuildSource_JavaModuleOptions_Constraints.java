@@ -25,7 +25,6 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
   public BuildSource_JavaModuleOptions_Constraints() {
     super("jetbrains.mps.build.structure.BuildSource_JavaModuleOptions");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -43,17 +41,14 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return ((isEmptyString(SPropertyOperations.getString(_context.getParameterNode(), "optionsName")) ? "<default options>" : SPropertyOperations.getString(_context.getParameterNode(), "optionsName")));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -66,10 +61,8 @@ public class BuildSource_JavaModuleOptions_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-
-  private static SNodePointer breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1659807394254175447");
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
+  private static SNodePointer breakingNode_q5t0js_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1659807394254175447");
 }

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SModelRoot_ConceptFunctionParameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public SModelRoot_ConceptFunctionParameter_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return SModelRoot_ConceptFunctionParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.stubs.structure.SModelRoot_ConceptFunctionParameter";

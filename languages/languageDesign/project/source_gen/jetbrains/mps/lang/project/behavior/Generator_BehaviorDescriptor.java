@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class Generator_BehaviorDescriptor extends Module_BehaviorDescriptor {
   public Generator_BehaviorDescriptor() {
   }
-
   public String virtual_getModuleReference_9020561928507315628(SNode thisNode) {
     return Generator_Behavior.virtual_getModuleReference_9020561928507315628(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.project.structure.Generator";

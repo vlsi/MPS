@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class SimpleMathTypedVarDeclaration_BehaviorDescriptor extends SimpleMathVarDeclaration_BehaviorDescriptor {
   public SimpleMathTypedVarDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathTypedVarDeclaration";

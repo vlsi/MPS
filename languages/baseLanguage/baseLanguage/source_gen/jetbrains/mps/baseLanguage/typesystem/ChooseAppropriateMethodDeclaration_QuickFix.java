@@ -22,11 +22,9 @@ import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 public class ChooseAppropriateMethodDeclaration_QuickFix extends QuickFix_Runtime {
   public ChooseAppropriateMethodDeclaration_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "choose appropriate method declaration";
   }
-
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.StaticMethodCall") || (SNodeOperations.isInstanceOf(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) ChooseAppropriateMethodDeclaration_QuickFix.this.getField("methodCall")[0]), "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")))) {
       // looks like wrong code (this part: methodCall.ancestor<concept = ClassConcept>) 

@@ -15,16 +15,13 @@ public abstract class ModelCheckerIssue {
   public static final CategoryKind CATEGORY_KIND_ISSUE_TYPE = new CategoryKind("Issue type", jetbrains.mps.ide.findusages.view.icons.Icons.CATEGORY_ICON, "Group by issue type");
   private String myMessage;
   private IModelCheckerFix myFix;
-
   private ModelCheckerIssue(String message, IModelCheckerFix fix) {
     myMessage = message;
     myFix = fix;
   }
-
   public String getMessage() {
     return myMessage;
   }
-
   public boolean fix() {
     if (myFix != null) {
       return myFix.doFix();
@@ -32,34 +29,27 @@ public abstract class ModelCheckerIssue {
       return false;
     }
   }
-
   public boolean isFixable() {
     return myFix != null;
   }
-
   public static SearchResult<ModelCheckerIssue> getSearchResultForNode(SNode node, String message, IModelCheckerFix fix, String severity, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.NodeIssue(node, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, node, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
-
   public static SearchResult<ModelCheckerIssue> getSearchResultForModule(SModule module, String message, IModelCheckerFix fix, String severity, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.ModuleIssue(message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, module, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
-
   public static SearchResult<ModelCheckerIssue> getSearchResultForModel(SModel model, String message, IModelCheckerFix fix, String severity, String issueType) {
     ModelCheckerIssue issue = new ModelCheckerIssue.ModelIssue(message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, model, new Pair<CategoryKind, String>(CATEGORY_KIND_SEVERITY, severity), new Pair<CategoryKind, String>(CATEGORY_KIND_ISSUE_TYPE, issueType));
   }
-
   public static class NodeIssue extends ModelCheckerIssue {
     private SNode myNode;
-
     public NodeIssue(SNode node, String message, IModelCheckerFix fix) {
       super(message, fix);
       myNode = node;
     }
-
     @Override
     public boolean fix() {
       if (myNode.getModel() == null) {
@@ -68,18 +58,15 @@ public abstract class ModelCheckerIssue {
         return super.fix();
       }
     }
-
     public SNode getNode() {
       return myNode;
     }
   }
-
   public static class ModuleIssue extends ModelCheckerIssue {
     public ModuleIssue(String message, IModelCheckerFix fix) {
       super(message, fix);
     }
   }
-
   public static class ModelIssue extends ModelCheckerIssue {
     public ModelIssue(String message, IModelCheckerFix fix) {
       super(message, fix);

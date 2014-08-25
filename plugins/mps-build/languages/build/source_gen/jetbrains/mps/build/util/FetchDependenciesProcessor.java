@@ -19,12 +19,10 @@ import jetbrains.mps.smodel.SReference;
 public class FetchDependenciesProcessor {
   private TemplateQueryContext genContext;
   private SNode project;
-
   public FetchDependenciesProcessor(SNode project, TemplateQueryContext genContext) {
     this.genContext = genContext;
     this.project = project;
   }
-
   public void process() {
     VisibleArtifacts artifacts = new VisibleArtifacts(project, genContext);
     artifacts.collect();
@@ -47,18 +45,15 @@ public class FetchDependenciesProcessor {
       ListSequence.fromList(SLinkOperations.getTargets(project, "aspects", true)).addElement(wf);
     }
   }
-
   private class RequiredDependenciesBuilderImpl implements RequiredDependenciesBuilder {
     protected final VisibleArtifacts artifacts;
     protected final SNode dep;
     private final UnpackHelper helper;
-
     public RequiredDependenciesBuilderImpl(VisibleArtifacts artifacts, SNode dep, UnpackHelper helper) {
       this.artifacts = artifacts;
       this.dep = dep;
       this.helper = helper;
     }
-
     @Override
     public void add(SNode node) {
       if (!(check(node))) {
@@ -66,7 +61,6 @@ public class FetchDependenciesProcessor {
       }
       helper.add(node, false, null);
     }
-
     @Override
     public void add(SNode node, Object artifactId) {
       if (!(check(node))) {
@@ -78,7 +72,6 @@ public class FetchDependenciesProcessor {
       }
       helper.add(node, false, artifactId);
     }
-
     @Override
     public void addWithContent(SNode node) {
       if (!(check(node))) {
@@ -86,7 +79,6 @@ public class FetchDependenciesProcessor {
       }
       helper.add(node, true, null);
     }
-
     private boolean check(SNode node) {
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
@@ -98,7 +90,6 @@ public class FetchDependenciesProcessor {
       }
       return true;
     }
-
     private boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
         // <node> 
@@ -108,7 +99,6 @@ public class FetchDependenciesProcessor {
       return true;
     }
   }
-
   private static SNode _quotation_createNode_t02zqv_a0a2a7a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

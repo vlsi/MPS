@@ -35,7 +35,6 @@ public class XmlExternalId_TextGen extends SNodeTextGen {
     }
 
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

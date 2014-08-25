@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkCircularCustomization_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkCircularCustomization_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode dailyPlan, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode plan = dailyPlan;
     List<SNode> visitedPlans = new ArrayList<SNode>();
@@ -38,22 +37,18 @@ public class checkCircularCustomization_NonTypesystemRule extends AbstractNonTyp
       ListSequence.fromList(visitedPlans).addElement(plan);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.heating.structure.DailyPlan";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_2rs9bj_a0b0c0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

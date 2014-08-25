@@ -26,7 +26,6 @@ public class SetNodePackageDialog extends DialogWrapper {
   private JPanel myMainPanel;
   private JComboBox myCbPackage;
   private String myPackage;
-
   public SetNodePackageDialog(Project project, List<String> existingPackages) {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("Set Virtual Package");
@@ -59,23 +58,19 @@ public class SetNodePackageDialog extends DialogWrapper {
 
     init();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myCbPackage;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myMainPanel;
   }
-
   public String getPackage() {
     return myPackage;
   }
-
   private void updatePackage() {
     String pack = ((String) myCbPackage.getEditor().getItem());
     if (pack != null && pack.length() == 0) {
@@ -83,18 +78,15 @@ public class SetNodePackageDialog extends DialogWrapper {
     }
     myPackage = pack;
   }
-
   public void setPackage(String pack) {
     if (pack == null) {
       pack = "";
     }
     myCbPackage.setSelectedItem(pack);
   }
-
   public boolean isCancelled() {
     return myIsCancelled;
   }
-
   @Override
   protected void doOKAction() {
     updatePackage();

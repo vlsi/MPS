@@ -11,31 +11,31 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference").super_("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").parents("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").references("binaryOperation").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator").super_("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").parents("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").references("declaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").references("container").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator").super_("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").parents("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").references("declaration").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage").super_("jetbrains.mps.baseLanguage.structure.BinaryOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryOperation").references("operator").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.INamedConcept").alias("left", "").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage").super_("jetbrains.mps.baseLanguage.structure.BinaryOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryOperation").references("operator").staticScope(StaticScope.NONE).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.INamedConcept").alias("left", "").staticScope(StaticScope.NONE).create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").properties("commutative").children(new String[]{"returnType", "leftType", "rightType", "operator"}, new boolean[]{false, false, false, false}).staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").abstract_().create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"operators", "customOperators"}, new boolean[]{true, true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator").super_("jetbrains.mps.baseLanguage.structure.ConceptFunction").parents("jetbrains.mps.baseLanguage.structure.ConceptFunction").properties("commutative").children(new String[]{"returnType", "leftType", "rightType", "operator"}, new boolean[]{false, false, false, false}).staticScope(StaticScope.NONE).create();
       case 8:
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"operators", "customOperators"}, new boolean[]{true, true}).create();
+      case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand").super_("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").parents("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter").alias("right", "").staticScope(StaticScope.NONE).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.LeftOperand", "jetbrains.mps.baseLanguage.overloadedOperators.structure.Operator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer", "jetbrains.mps.baseLanguage.overloadedOperators.structure.RightOperand"};
 }

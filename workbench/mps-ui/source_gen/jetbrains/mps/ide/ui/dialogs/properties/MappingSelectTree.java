@@ -19,12 +19,13 @@ import java.awt.event.ItemEvent;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MappingSelectTree extends Tree {
   public MappingSelectTree(boolean isLeft) {
@@ -37,10 +38,8 @@ public class MappingSelectTree extends Tree {
       setShowsRootHandles(true);
     }
   }
-
   private class CheckBoxNodeRenderer implements TreeCellRenderer {
     private JCheckBox myRenderer = new JCheckBox();
-
     public CheckBoxNodeRenderer() {
       Font font = UIManager.getFont("Tree.font");
       if (font != null) {
@@ -49,11 +48,9 @@ public class MappingSelectTree extends Tree {
       Boolean iconBorder = (Boolean) UIManager.get("Tree.drawsFocusBorderAroundIcon");
       myRenderer.setFocusPainted((iconBorder != null) && iconBorder);
     }
-
     public JCheckBox getRenderer() {
       return myRenderer;
     }
-
     @Override
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       Color selectionForeground = UIManager.getColor("Tree.selectionForeground");
@@ -86,14 +83,11 @@ public class MappingSelectTree extends Tree {
       return myRenderer;
     }
   }
-
   private class CheckBoxNodeEditor extends AbstractCellEditor implements TreeCellEditor {
     private MappingSelectTree.CheckBoxNodeRenderer myRenderer = new MappingSelectTree.CheckBoxNodeRenderer();
     private MappingSelectTree.NodeData myObject;
-
     public CheckBoxNodeEditor() {
     }
-
     @Override
     public Object getCellEditorValue() {
       JCheckBox checkbox = myRenderer.getRenderer();
@@ -115,7 +109,6 @@ public class MappingSelectTree extends Tree {
       data.setSelected(checkbox.isSelected());
       return data;
     }
-
     @Override
     public Component getTreeCellEditorComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row) {
       Component editor = myRenderer.getTreeCellRendererComponent(tree, value, true, expanded, leaf, row, true);
@@ -135,103 +128,83 @@ public class MappingSelectTree extends Tree {
       return editor;
     }
   }
-
   public static class RootNodeData extends MappingSelectTree.NodeData {
     private String myText;
-
     public RootNodeData(String text) {
       super(null);
       myText = text;
     }
-
     @Override
     public String getText() {
       return myText;
     }
   }
-
   public static class GenRefNodeData extends MappingSelectTree.NodeData {
     public GenRefNodeData(SModuleReference ref) {
       super(ref);
     }
-
     @Override
     public SModuleReference getObject() {
       return (ModuleReference) super.getObject();
     }
-
     @Override
     public String getText() {
-      Generator generator = (Generator) MPSModuleRepository.getInstance().getModule(getObject());
+      Generator generator = (Generator) ModuleRepositoryFacade.getInstance().getModule(getObject());
       if (generator == null) {
         return "unknown generator";
       }
       return generator.getAlias();
     }
   }
-
   public static class ModelRefNodeData extends MappingSelectTree.NodeData {
     public ModelRefNodeData(SModelReference reference) {
       super(reference);
     }
-
     @Override
     public SModelReference getObject() {
       return (SModelReference) super.getObject();
     }
-
     @Override
     public String getText() {
       return NameUtil.shortNameFromLongName(SModelStereotype.withoutStereotype(getObject().getModelName()));
     }
   }
-
   public static class NodeRefNodeData extends MappingSelectTree.NodeData {
     public NodeRefNodeData(SNodeReference ref) {
       super(ref);
     }
-
     @Override
     public SNodeReference getObject() {
       return (SNodePointer) super.getObject();
     }
-
     @Override
     public String getText() {
       return getObject().resolve(MPSModuleRepository.getInstance()).getName();
     }
   }
-
   public static abstract class NodeData {
     private boolean mySelected;
     private Object myObject;
     private boolean myChecksUnder;
-
     public NodeData(Object object) {
       myObject = object;
       myChecksUnder = false;
     }
-
     public Object getObject() {
       return myObject;
     }
-
     public boolean isChecksUnder() {
       return myChecksUnder;
     }
-
     public void setChecksUnder(boolean checksUnder) {
       myChecksUnder = checksUnder;
     }
-
     public boolean isSelected() {
       return mySelected;
     }
-
     public void setSelected(boolean newValue) {
       mySelected = newValue;
     }
-
     public abstract String getText();
   }
 }

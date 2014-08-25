@@ -9,11 +9,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class SimpleMathVarDeclaration_BehaviorDescriptor extends SimpleMathExpression_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public SimpleMathVarDeclaration_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathVarDeclaration";

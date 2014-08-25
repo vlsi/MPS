@@ -24,7 +24,6 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
   public JUnit3TestCaseRef_Constraints() {
     super("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -42,7 +40,6 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return JUnit3TestCaseRef_Behavior.call_getTestClassesForModule_1514755338275898928(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef"))), SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.testbench.suite.structure.ModuleSuite", true, false));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1;
@@ -52,6 +49,5 @@ public class JUnit3TestCaseRef_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_qx1fe9_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:137cc691-13a2-4fdd-885a-88f9405e83c0(jetbrains.mps.testbench.suite.constraints)", "1280144168199457729");
 }

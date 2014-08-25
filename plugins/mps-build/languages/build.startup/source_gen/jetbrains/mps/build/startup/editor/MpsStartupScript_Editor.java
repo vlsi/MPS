@@ -29,7 +29,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gszs7u_a(editorContext, node);
   }
-
   private EditorCell createCollection_gszs7u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_a");
@@ -49,7 +48,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_gszs7u_m0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_gszs7u_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -67,7 +65,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gszs7u_b0");
@@ -77,7 +74,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gszs7u_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_c0");
@@ -88,14 +84,12 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_gszs7u_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "class");
     editorCell.setCellId("Constant_gszs7u_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gszs7u_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("startupClass");
@@ -113,7 +107,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gszs7u_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_d0");
@@ -124,14 +117,12 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_gszs7u_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "startup folder");
     editorCell.setCellId("Constant_gszs7u_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gszs7u_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("startupFolder");
@@ -149,7 +140,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gszs7u_e0");
@@ -159,14 +149,12 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "boot classpath");
     editorCell.setCellId("Constant_gszs7u_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gszs7u_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_g0");
@@ -174,12 +162,10 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_gszs7u_b6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_gszs7u_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_gszs7u_b6a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MpsStartupScript_Editor.bootClasspathListHandler_gszs7u_b6a(node, "bootClasspath", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -187,35 +173,31 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class bootClasspathListHandler_gszs7u_b6a extends RefNodeListHandler {
     public bootClasspathListHandler_gszs7u_b6a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -223,7 +205,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_gszs7u_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gszs7u_h0");
@@ -233,14 +214,12 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vm options (64 bit)");
     editorCell.setCellId("Constant_gszs7u_i0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gszs7u_j0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_j0");
@@ -251,12 +230,10 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_gszs7u_b9a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_gszs7u_a9a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_gszs7u_b9a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MpsStartupScript_Editor.vmOptions64ListHandler_gszs7u_b9a(node, "vmOptions64", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -264,35 +241,31 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class vmOptions64ListHandler_gszs7u_b9a extends RefNodeListHandler {
     public vmOptions64ListHandler_gszs7u_b9a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -300,7 +273,6 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_gszs7u_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gszs7u_k0");
@@ -310,14 +282,12 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gszs7u_l0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "vm options (32 bit)");
     editorCell.setCellId("Constant_gszs7u_l0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gszs7u_m0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gszs7u_m0");
@@ -328,12 +298,10 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_gszs7u_b21a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_gszs7u_a21a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNodeList_gszs7u_b21a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MpsStartupScript_Editor.vmOptionsListHandler_gszs7u_b21a(node, "vmOptions", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -341,35 +309,31 @@ public class MpsStartupScript_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class vmOptionsListHandler_gszs7u_b21a extends RefNodeListHandler {
     public vmOptionsListHandler_gszs7u_b21a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));

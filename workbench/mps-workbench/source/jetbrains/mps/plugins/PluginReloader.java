@@ -262,8 +262,12 @@ public class PluginReloader implements ApplicationComponent {
       return result;
     }
 
+    // FIXME: Risky place for those who uses the classes (managed by MPS) in plugins' load/unload
+    // Here we have an asynchronous call, so there is no guarantee that the classloader will be valid at the time of execution
+    // We cannot make it synchronous (at least in a simple way) since this method is called on the project opening in
+    // runInEDTWithProgressSynchronously block
     private void schedulePluginsReload() {
-      //write action is needed the because user can acquire write action inside of this [see MPS-9139]
+    //write action is needed the because user can acquire write action inside of this [see MPS-9139]
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         @Override
         public void run() {

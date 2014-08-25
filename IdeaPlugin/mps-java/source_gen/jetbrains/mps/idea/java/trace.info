@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:7ef5e488-ffbd-46d7-b31e-58c7f710bbdf(jetbrains.mps.idea.java)/5993361350499286549">
-    <nodeInfo nodeId="5993361350499562679" fileName="Constants.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Classifier" />
-    <nodeInfo nodeId="5993361350499344579" fileName="Constants.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ClassConcept" />
-    <nodeInfo nodeId="5993361350499365758" fileName="Constants.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="Interface" />
-    <nodeInfo nodeId="5993361350499365811" fileName="Constants.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EnumClass" />
-    <nodeInfo nodeId="5993361350499365906" fileName="Constants.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ClassifierType" />
-    <nodeInfo nodeId="5993361350499473171" fileName="Constants.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="StringType" />
-    <nodeInfo nodeId="5993361350499366016" fileName="Constants.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PrimitiveType" />
-    <nodeInfo nodeId="5993361350499366141" fileName="Constants.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="UpperBoundType" />
-    <nodeInfo nodeId="5993361350499386276" fileName="Constants.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LowerBoundType" />
-    <nodeInfo nodeId="5993361350499386442" fileName="Constants.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WildCardType" />
-    <nodeInfo nodeId="5993361350499473587" fileName="Constants.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ArrayType" />
-    <nodeInfo nodeId="5993361350499484928" fileName="Constants.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VariableArityType" />
-    <nodeInfo nodeId="5993361350499485345" fileName="Constants.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ConstructorDeclaration" />
-    <nodeInfo nodeId="5993361350499564089" fileName="Constants.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BaseMethodDeclaration" />
-    <nodeInfo nodeId="5993361350499485680" fileName="Constants.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MethodDeclaration" />
-    <nodeInfo nodeId="5993361350499485867" fileName="Constants.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ParameterDeclaration" />
-    <nodeInfo nodeId="5993361350499563372" fileName="Constants.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="VariableDeclaration" />
-    <nodeInfo nodeId="5993361350499513035" fileName="Constants.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TypeVariableDeclaration" />
-    <nodeInfo nodeId="5993361350499513387" fileName="Constants.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TypeVariableReference" />
-    <nodeInfo nodeId="5993361350499513596" fileName="Constants.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FieldDeclaration" />
-    <nodeInfo nodeId="5993361350499513813" fileName="Constants.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EnumConstantDeclaration" />
-    <nodeInfo nodeId="5993361350499514038" fileName="Constants.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="StaticFieldDeclaration" />
-    <nodeInfo nodeId="5993361350499514443" fileName="Constants.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SequenceType" />
-    <nodeInfo nodeId="5993361350499561713" fileName="Constants.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ListType" />
-    <nodeInfo nodeId="5993361350499561930" fileName="Constants.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SetType" />
-    <nodeInfo nodeId="5993361350499562155" fileName="Constants.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MapType" />
-    <unitInfo nodeId="5993361350499385230" fileName="Constants.java" startLine="7" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.idea.java.Constants$ConceptNames" />
-    <unitInfo nodeId="5993361350499286549" fileName="Constants.java" startLine="6" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.idea.java.Constants" />
+    <file name="Constants.java">
+      <node id="5993361350499562679" at="8,0,9,0" concept="0" trace="Classifier" />
+      <node id="5993361350499344579" at="9,0,10,0" concept="0" trace="ClassConcept" />
+      <node id="5993361350499365758" at="10,0,11,0" concept="0" trace="Interface" />
+      <node id="5993361350499365811" at="11,0,12,0" concept="0" trace="EnumClass" />
+      <node id="5993361350499365906" at="13,0,14,0" concept="0" trace="ClassifierType" />
+      <node id="5993361350499473171" at="14,0,15,0" concept="0" trace="StringType" />
+      <node id="5993361350499366016" at="15,0,16,0" concept="0" trace="PrimitiveType" />
+      <node id="5993361350499366141" at="16,0,17,0" concept="0" trace="UpperBoundType" />
+      <node id="5993361350499386276" at="17,0,18,0" concept="0" trace="LowerBoundType" />
+      <node id="5993361350499386442" at="18,0,19,0" concept="0" trace="WildCardType" />
+      <node id="5993361350499473587" at="19,0,20,0" concept="0" trace="ArrayType" />
+      <node id="5993361350499484928" at="20,0,21,0" concept="0" trace="VariableArityType" />
+      <node id="5993361350499485345" at="22,0,23,0" concept="0" trace="ConstructorDeclaration" />
+      <node id="5993361350499564089" at="23,0,24,0" concept="0" trace="BaseMethodDeclaration" />
+      <node id="5993361350499485680" at="24,0,25,0" concept="0" trace="MethodDeclaration" />
+      <node id="5993361350499485867" at="25,0,26,0" concept="0" trace="ParameterDeclaration" />
+      <node id="5993361350499563372" at="26,0,27,0" concept="0" trace="VariableDeclaration" />
+      <node id="5993361350499513035" at="27,0,28,0" concept="0" trace="TypeVariableDeclaration" />
+      <node id="5993361350499513387" at="28,0,29,0" concept="0" trace="TypeVariableReference" />
+      <node id="5993361350499513596" at="29,0,30,0" concept="0" trace="FieldDeclaration" />
+      <node id="5993361350499513813" at="30,0,31,0" concept="0" trace="EnumConstantDeclaration" />
+      <node id="5993361350499514038" at="31,0,32,0" concept="0" trace="StaticFieldDeclaration" />
+      <node id="5993361350499514443" at="33,0,34,0" concept="0" trace="SequenceType" />
+      <node id="5993361350499561713" at="34,0,35,0" concept="0" trace="ListType" />
+      <node id="5993361350499561930" at="35,0,36,0" concept="0" trace="SetType" />
+      <node id="5993361350499562155" at="36,0,37,0" concept="0" trace="MapType" />
+      <unit id="5993361350499385230" at="7,0,40,0" name="jetbrains.mps.idea.java.Constants$ConceptNames" />
+      <unit id="5993361350499286549" at="6,0,43,0" name="jetbrains.mps.idea.java.Constants" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

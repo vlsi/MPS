@@ -24,61 +24,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeProperty_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangeProperty_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Property";
   }
-
   public String getPresentation() {
     return "ChangeProperty";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.ChangeProperty_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1235489867936");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeProperty_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Concept Property by Transactional Property";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode transactional = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", node);
       SLinkOperations.setTarget(transactional, "property", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
@@ -96,7 +82,6 @@ public class ChangeProperty_Intention implements IntentionFactory {
       }
       jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, transactional);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangeProperty_Intention.this;
     }

@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class MappingConfiguration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "rootMappingRule", true)));
@@ -28,7 +27,6 @@ public class MappingConfiguration_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "mappingLabel", true)));
     return members;
   }
-
   public static void call_addMember_3166264919334415805(SNode thisNode, SNode newMember) {
     if ((AttributeOperations.getAttribute(newMember, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) != null)) {
       SNode ruleNode = SLinkOperations.addNewChild(thisNode, "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
@@ -42,7 +40,6 @@ public class MappingConfiguration_Behavior {
       SLinkOperations.setTarget(mappingRule, "ruleConsequence", templateRef, true);
     }
   }
-
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode mapConfChild : SNodeOperations.getChildren(thisNode)) {
@@ -54,7 +51,6 @@ public class MappingConfiguration_Behavior {
     }
     return result;
   }
-
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return false;
   }

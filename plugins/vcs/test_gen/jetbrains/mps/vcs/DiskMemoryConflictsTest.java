@@ -7,15 +7,17 @@ import java.io.File;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.junit.Test;
 import jetbrains.mps.testbench.junit.runners.ProjectTestsSupport;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import org.junit.Assert;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import jetbrains.mps.smodel.CopyUtil;
-import org.junit.Assert;
-import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Scanner;
@@ -34,9 +36,11 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.newvfs.RefreshSession;
 import com.intellij.openapi.vfs.newvfs.RefreshQueue;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.project.SModuleOperations;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 import java.io.IOException;
+import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.ThreadUtils;
 
 /**
@@ -54,12 +58,10 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
   private static final String FIELD_NAME_IN_MODEL = "theFieldInModel";
   private Project myProject;
   private Solution myModule;
-  private SNode myNodeBackup;
+  private SModel myModelBackup;
   private EditableSModel myModel;
-
   public DiskMemoryConflictsTest() {
   }
-
   @Test
   public void testDiskMemoryConflicts() {
     final DiskMemoryConflictsTest.Action[] startedAction = new DiskMemoryConflictsTest.Action[1];
@@ -71,21 +73,22 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
         final boolean[] resultArr = new boolean[1];
         try {
           myProject = project;
-          myModel = (EditableSModel) SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID));
+          myModel = getModel();
           myModule = (Solution) myModel.getModule();
-          myProject.getModelAccess().runReadAction(new Runnable() {
-            @Override
+          ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              myNodeBackup = CopyUtil.copyAndPreserveId(myModel.getRootNodes().iterator().next());
+              myModelBackup = CopyUtil.copyModel(((DefaultSModelDescriptor) getModel()).getSModel());
             }
           });
-          checkInitialState();
           for (DiskMemoryConflictsTest.Action a : DiskMemoryConflictsTest.Action.values()) {
             for (DiskMemoryConflictsTest.DiskModification dm : DiskMemoryConflictsTest.DiskModification.values()) {
               for (DiskMemoryConflictsTest.VersionToChoose v : DiskMemoryConflictsTest.VersionToChoose.values()) {
+                checkInitialState();
+
                 startedAction[0] = a;
                 startedVersion[0] = v;
                 startedDiskModification[0] = dm;
+
                 provokeAndCheckConflict(a, dm, v);
                 restoreAndCheckOriginalState();
               }
@@ -103,15 +106,17 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       Assert.fail("Last started check action=" + startedAction[0] + ", disk modification=" + startedDiskModification[0] + ", version=" + startedVersion[0]);
     }
   }
-
+  private EditableSModel getModel() {
+    return (EditableSModel) SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(MODEL_UID));
+  }
   private String processFieldNameInModel(final String nameToWrite) {
     final String[] result = new String[1];
     myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
-        if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) != null) {
+        if (SModelRepository.getInstance().getModelDescriptor(myModel.getReference()) == myModel) {
           try {
-            final SModel modelDescriptor = myModel;
+            final org.jetbrains.mps.openapi.model.SModel modelDescriptor = myModel;
             Assert.assertNotNull(modelDescriptor);
             SNode node = modelDescriptor.getNode(SNodeId.fromString("6010389230754495469"));
             Assert.assertNotNull(node);
@@ -128,15 +133,12 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     DiskMemoryConflictsTest.waitEDT();
     return result[0];
   }
-
   private void setFieldNameInModel(String value) {
     processFieldNameInModel(value);
   }
-
   private String getFieldNameFromModel() {
     return processFieldNameInModel(null);
   }
-
   private String processFieldNameInFile(final String nameToWrite) {
     //  File stuff 
     if (!(MODEL_FILE.exists())) {
@@ -183,19 +185,15 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     return null;
   }
-
   private String getFieldNameFromFile() {
     return processFieldNameInFile(null);
   }
-
   private void setFieldNameInFile(String name) {
     processFieldNameInFile(name);
   }
-
   private void checkInitialState() {
     checkSynchronizedState(FIELD_DEFAULT_NAME);
   }
-
   private void checkSynchronizedState(@Nullable String fieldName) {
     Assert.assertEquals(fieldName, getFieldNameFromModel());
     Assert.assertEquals(fieldName, getFieldNameFromFile());
@@ -205,7 +203,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       Assert.assertFalse(myModel.isChanged());
     }
   }
-
   private void provokeAndCheckConflict(DiskMemoryConflictsTest.Action action, final DiskMemoryConflictsTest.DiskModification diskModification, final DiskMemoryConflictsTest.VersionToChoose versionToChoose) {
     setFieldNameInModel(FIELD_NAME_IN_MODEL);
     if (DiskMemoryConflictsTest.DiskModification.MODIFY == diskModification) {
@@ -269,7 +266,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     checkSynchronizedState(expectedFieldName);
   }
-
   private void refreshVfs() {
     VirtualFile vf = LocalFileSystem.getInstance().findFileByIoFile(MODEL_FILE);
     if (vf == null || !(vf.exists())) {
@@ -280,13 +276,11 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     rs.addFile(vf);
     rs.launch();
   }
-
   private void restoreAndCheckOriginalState() {
     if (MODEL_FILE.exists()) {
       setFieldNameInFile(FIELD_DEFAULT_NAME);
       refreshVfs();
       ModelAccess.instance().runWriteAction(new Runnable() {
-        @Override
         public void run() {
           myModel.reloadFromSource();
         }
@@ -296,16 +290,22 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
       myProject.getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          myModel = ((EditableSModel) SModuleOperations.createModelWithAdjustments(PersistenceFacade.getInstance().createModelReference(DiskMemoryConflictsTest.MODEL_UID).getModelName(), myModule.getModelRoots().iterator().next()));
-          myModel.addRootNode(CopyUtil.copyAndPreserveId(myNodeBackup));
-          myModel.save();
+          try {
+            DefaultSModelDescriptor model = (DefaultSModelDescriptor) myModel;
+            ModelPersistence.saveModel(myModelBackup, ((StreamDataSource) myModel.getSource()), model.getPersistenceVersion());
+            refreshVfs();
+          } catch (IOException e) {
+            e.printStackTrace();
+            Assert.fail();
+          }
+          myModule.updateModelsSet();
+          myModel = getModel();
         }
       });
       DiskMemoryConflictsTest.waitEDT();
     }
     checkInitialState();
   }
-
   private static File getModelFile() {
     File modelFile = new File(DESTINATION_PROJECT_DIR, "solutions/simpleProject/simpleModel.mps");
     try {
@@ -315,7 +315,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     return modelFile;
   }
-
   private static void setLastModified(long timeStamp) {
     //  this is a workaround of JRE bug #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
@@ -332,7 +331,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
-
   private static void delete() {
     //  this is a workaround of JRE bug similar to #4243868 
     //  http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4243868 
@@ -349,16 +347,19 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     }
     Assert.assertTrue(count < 10);
   }
-
   private static void waitEDT() {
     ModelAccess.instance().flushEventQueue();
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      @Override
+    ApplicationManager.getApplication().invokeAndWait(new Runnable() {
       public void run() {
+        return;
+      }
+    }, ModalityState.NON_MODAL);
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        return;
       }
     });
   }
-
   private static   enum Action {
     SAVE(),
     RELOAD();
@@ -366,7 +367,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     Action() {
     }
   }
-
   private static   enum VersionToChoose {
     MEMORY(),
     DISK();
@@ -374,7 +374,6 @@ public class DiskMemoryConflictsTest extends WorkbenchMpsTest {
     VersionToChoose() {
     }
   }
-
   private static   enum DiskModification {
     MODIFY(),
     DELETE();

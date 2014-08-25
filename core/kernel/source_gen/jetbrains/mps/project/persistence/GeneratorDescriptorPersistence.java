@@ -8,11 +8,11 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.xml.XmlUtil;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.project.structure.modules.mappingpriorities.RuleType;
-import org.apache.log4j.Level;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -22,13 +22,10 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefSet;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 
 public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
   }
-
   public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, IFile file, final String contentRoot, final MacroHelper macroHelper) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {
@@ -45,8 +42,8 @@ public class GeneratorDescriptorPersistence {
 
         String uuid = generatorElement.getAttributeValue("uuid");
         if (uuid != null) {
-          final String result_wk2vdq_a0a7a0a0a0b = uuid;
-          result_wk2vdq_a0a0a0b.setUUID(result_wk2vdq_a0a7a0a0a0b);
+          final ModuleId result_wk2vdq_a0a7a0a0a0b = ModuleId.fromString(uuid);
+          result_wk2vdq_a0a0a0b.setId(result_wk2vdq_a0a7a0a0a0b);
         }
 
         String generatorName = generatorElement.getAttributeValue("name");
@@ -77,27 +74,17 @@ public class GeneratorDescriptorPersistence {
 
         for (Element ruleElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(generatorElement, "mapping-priorities"), "mapping-priority-rule"))) {
           final MappingPriorityRule result_wk2vdq_a0a32a0a0a0b = new MappingPriorityRule();
-          // TODO: remove when the error disappear. 
-          try {
-            final RuleType result_wk2vdq_a0a1a0a32a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
-            result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a0a1a0a32a0a0a0b);
-          } catch (IllegalArgumentException e) {
-            if (LOG.isEnabledFor(Level.ERROR)) {
-              LOG.error(e.getMessage() + " Rule type for generator " + genUID + " is set to EQUALS. You can change this in Generator Properties dialog.", e);
-            }
-            final RuleType result_wk2vdq_a1a0b0a0x0a0a0a1 = RuleType.STRICTLY_TOGETHER;
-            result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a1a0b0a0x0a0a0a1);
-          }
-
+          final RuleType result_wk2vdq_a0a0a32a0a0a0b = RuleType.parse(ruleElement.getAttributeValue("kind"));
+          result_wk2vdq_a0a32a0a0a0b.setType(result_wk2vdq_a0a0a32a0a0a0b);
           Element greaterPM = XmlUtil.first(ruleElement, "greater-priority-mapping");
           if (greaterPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a32a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
-            result_wk2vdq_a0a32a0a0a0b.setLeft(result_wk2vdq_a0a4a0a32a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a2a0a32a0a0a0b = loadGeneratorMappingConfigRef(greaterPM, genUID, false);
+            result_wk2vdq_a0a32a0a0a0b.setLeft(result_wk2vdq_a0a2a0a32a0a0a0b);
           }
           Element lesserPM = XmlUtil.first(ruleElement, "lesser-priority-mapping");
           if (lesserPM != null) {
-            final MappingConfig_AbstractRef result_wk2vdq_a0a6a0a32a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
-            result_wk2vdq_a0a32a0a0a0b.setRight(result_wk2vdq_a0a6a0a32a0a0a0b);
+            final MappingConfig_AbstractRef result_wk2vdq_a0a4a0a32a0a0a0b = loadGeneratorMappingConfigRef(lesserPM, genUID, false);
+            result_wk2vdq_a0a32a0a0a0b.setRight(result_wk2vdq_a0a4a0a32a0a0a0b);
           }
           result_wk2vdq_a0a0a0b.getPriorityRules().add(result_wk2vdq_a0a32a0a0a0b);
         }
@@ -107,7 +94,6 @@ public class GeneratorDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
-
   public static void saveGeneratorDescriptor(Element languageGeneratorsElement, GeneratorDescriptor descriptor, MacroHelper macroHelper) {
     Element generator = new Element("generator");
     if (descriptor.getNamespace() != null) {
@@ -116,8 +102,8 @@ public class GeneratorDescriptorPersistence {
     if (descriptor.getGeneratorUID() != null) {
       generator.setAttribute("generatorUID", descriptor.getGeneratorUID());
     }
-    if (descriptor.getUUID() != null) {
-      generator.setAttribute("uuid", descriptor.getUUID());
+    if (descriptor.getId() != null) {
+      generator.setAttribute("uuid", descriptor.getId().toString());
     }
     if (descriptor.isGenerateTemplates()) {
       generator.setAttribute("generate-templates", Boolean.toString(descriptor.isGenerateTemplates()));
@@ -168,7 +154,6 @@ public class GeneratorDescriptorPersistence {
 
     languageGeneratorsElement.addContent(generator);
   }
-
   private static void saveGeneratorMappingConfigRef(MappingConfig_AbstractRef mappingRef, Element parentElement) {
     if (mappingRef instanceof MappingConfig_RefAllLocal) {
       parentElement.addContent(new Element("all-local-mappings"));
@@ -193,8 +178,9 @@ public class GeneratorDescriptorPersistence {
       parentElement.addContent(mappingSet);
     }
   }
-
   public static MappingConfig_AbstractRef loadGeneratorMappingConfigRef(final Element parentElement, final String genUID, boolean childOfGen) {
+    // FIXME there seems to be little reason (if any) to change MCref structure during read. Consider removing childOfGen 
+    // attribute altogether 
     if (Sequence.fromIterable(XmlUtil.children(parentElement, "all-mappings")).isNotEmpty()) {
       return new MappingConfig_RefAllGlobal();
     } else if (Sequence.fromIterable(XmlUtil.children(parentElement, "all-local-mappings")).isNotEmpty()) {
@@ -205,56 +191,42 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a3a0a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a3a0a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a3a0a0e.setGenerator(result_wk2vdq_a0a0a3a0a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0a0e = local;
-          result_wk2vdq_a0a3a0a0e.setMappingConfig(result_wk2vdq_a1a0a3a0a0e);
-          return result_wk2vdq_a0a3a0a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a3a0c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a3a0c0e = PersistenceFacade.getInstance().createModuleReference(genUID);
+          result_wk2vdq_a0a3a0c0e.setGenerator(result_wk2vdq_a0a0a3a0c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a3a0c0e = local;
+          result_wk2vdq_a0a3a0c0e.setMappingConfig(result_wk2vdq_a1a0a3a0c0e);
+          return result_wk2vdq_a0a3a0c0e;
         }
       }.invoke();
     } else if (XmlUtil.first(parentElement, "mapping-set") != null) {
-      final MappingConfig_RefSet mappingSet = new MappingConfig_RefSet();
+      MappingConfig_RefSet mappingSet = new MappingConfig_RefSet();
       for (Element mappingSetElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(parentElement, "mapping-set"), "mapping-set-element"))) {
-        mappingSet.getMappingConfigs().add(loadGeneratorMappingConfigRef(mappingSetElement, genUID, true));
+        mappingSet.getMappingConfigs().add(loadGeneratorMappingConfigRef(mappingSetElement, genUID, childOfGen));
       }
-
-      if (childOfGen) {
-        return mappingSet;
-      }
-
-      return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
-        public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a5a1a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a5a1a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a5a1a0e.setGenerator(result_wk2vdq_a0a0a5a1a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a5a1a0e = mappingSet;
-          result_wk2vdq_a0a5a1a0e.setMappingConfig(result_wk2vdq_a1a0a5a1a0e);
-          return result_wk2vdq_a0a5a1a0e;
-        }
-      }.invoke();
+      return mappingSet;
     } else if (XmlUtil.first(parentElement, "generator") != null) {
       // external reference 
       final Element generator = XmlUtil.first(parentElement, "generator");
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a2a2a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a2a2a0e = PersistenceFacade.getInstance().createModuleReference(generator.getAttributeValue("generatorUID"));
-          result_wk2vdq_a0a2a2a0e.setGenerator(result_wk2vdq_a0a0a2a2a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a2a2a0e = loadGeneratorMappingConfigRef(XmlUtil.first(parentElement, "external-mapping"), generator.getAttributeValue("generatorUID"), true);
-          result_wk2vdq_a0a2a2a0e.setMappingConfig(result_wk2vdq_a1a0a2a2a0e);
-          return result_wk2vdq_a0a2a2a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a2a2c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a2a2c0e = PersistenceFacade.getInstance().createModuleReference(generator.getAttributeValue("generatorUID"));
+          result_wk2vdq_a0a2a2c0e.setGenerator(result_wk2vdq_a0a0a2a2c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a2a2c0e = loadGeneratorMappingConfigRef(XmlUtil.first(parentElement, "external-mapping"), generator.getAttributeValue("generatorUID"), true);
+          result_wk2vdq_a0a2a2c0e.setMappingConfig(result_wk2vdq_a1a0a2a2c0e);
+          return result_wk2vdq_a0a2a2c0e;
         }
       }.invoke();
     } else if (XmlUtil.first(parentElement, "mapping-node") != null) {
       // simple reference 
       Element mappingNode = XmlUtil.first(parentElement, "mapping-node");
       final MappingConfig_SimpleRef mapping_SimpleRef = new MappingConfig_SimpleRef();
-      MappingConfig_SimpleRef result_wk2vdq_a3a3a0e = mapping_SimpleRef;
-      final String result_wk2vdq_a0a3a3a0e = mappingNode.getAttributeValue("modelUID");
-      result_wk2vdq_a3a3a0e.setModelUID(result_wk2vdq_a0a3a3a0e);
-      final String result_wk2vdq_a1a3a3a0e = mappingNode.getAttributeValue("nodeID");
-      result_wk2vdq_a3a3a0e.setNodeID(result_wk2vdq_a1a3a3a0e);
+      MappingConfig_SimpleRef result_wk2vdq_a3a3c0e = mapping_SimpleRef;
+      final String result_wk2vdq_a0a3a3c0e = mappingNode.getAttributeValue("modelUID");
+      result_wk2vdq_a3a3c0e.setModelUID(result_wk2vdq_a0a3a3c0e);
+      final String result_wk2vdq_a1a3a3c0e = mappingNode.getAttributeValue("nodeID");
+      result_wk2vdq_a3a3c0e.setNodeID(result_wk2vdq_a1a3a3c0e);
 
       if (childOfGen) {
         return mapping_SimpleRef;
@@ -262,12 +234,12 @@ public class GeneratorDescriptorPersistence {
 
       return new _FunctionTypes._return_P0_E0<MappingConfig_ExternalRef>() {
         public MappingConfig_ExternalRef invoke() {
-          final MappingConfig_ExternalRef result_wk2vdq_a0a7a3a0e = new MappingConfig_ExternalRef();
-          final SModuleReference result_wk2vdq_a0a0a7a3a0e = PersistenceFacade.getInstance().createModuleReference(genUID);
-          result_wk2vdq_a0a7a3a0e.setGenerator(result_wk2vdq_a0a0a7a3a0e);
-          final MappingConfig_AbstractRef result_wk2vdq_a1a0a7a3a0e = mapping_SimpleRef;
-          result_wk2vdq_a0a7a3a0e.setMappingConfig(result_wk2vdq_a1a0a7a3a0e);
-          return result_wk2vdq_a0a7a3a0e;
+          final MappingConfig_ExternalRef result_wk2vdq_a0a7a3c0e = new MappingConfig_ExternalRef();
+          final SModuleReference result_wk2vdq_a0a0a7a3c0e = PersistenceFacade.getInstance().createModuleReference(genUID);
+          result_wk2vdq_a0a7a3c0e.setGenerator(result_wk2vdq_a0a0a7a3c0e);
+          final MappingConfig_AbstractRef result_wk2vdq_a1a0a7a3c0e = mapping_SimpleRef;
+          result_wk2vdq_a0a7a3c0e.setMappingConfig(result_wk2vdq_a1a0a7a3c0e);
+          return result_wk2vdq_a0a7a3c0e;
         }
       }.invoke();
     }
@@ -275,6 +247,4 @@ public class GeneratorDescriptorPersistence {
     // empty? 
     return new MappingConfig_AbstractRef();
   }
-
-  protected static Logger LOG = LogManager.getLogger(GeneratorDescriptorPersistence.class);
 }

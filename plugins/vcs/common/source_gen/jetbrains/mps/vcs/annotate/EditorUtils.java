@@ -12,7 +12,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 public class EditorUtils {
   public EditorUtils() {
   }
-
   public static Iterable<EditorCell> getCellDescendants(final EditorCell _this) {
     return new _FunctionTypes._return_P1_E0<Iterable<EditorCell>, EditorCell>() {
       public Iterable<EditorCell> invoke(final EditorCell c) {
@@ -20,7 +19,6 @@ public class EditorUtils {
           public Iterator<EditorCell> iterator() {
             return new YieldingIterator<EditorCell>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -83,7 +81,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private EditorCell _5_childCell;
               private Iterator<EditorCell> _5_childCell_it;
               private Iterable<EditorCell> _9_cells;

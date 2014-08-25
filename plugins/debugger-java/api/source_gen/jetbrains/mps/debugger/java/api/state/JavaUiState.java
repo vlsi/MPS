@@ -14,15 +14,11 @@ public abstract class JavaUiState extends AbstractUiState {
   protected JavaUiState(AbstractDebugSession debugSession) {
     super(debugSession);
   }
-
   public abstract ObjectReference getThisObject();
-
   @Override
   public abstract JavaStackFrame getStackFrame();
-
   @Override
   public abstract JavaThread getThread();
-
   /**
    * Invokes evaluation while blocking current thread (must be EDT by the way) and showing a progress window.
    */

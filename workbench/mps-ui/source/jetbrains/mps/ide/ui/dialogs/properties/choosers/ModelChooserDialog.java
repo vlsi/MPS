@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,7 +30,8 @@ import java.util.List;
 class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
 
   ModelChooserDialog(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels, boolean multiSelection) throws HeadlessException {
-    super(project, models, nonProjectModels, "model", multiSelection);
+    super(project, models, nonProjectModels, multiSelection);
+    setTitle("Choose model");
   }
 
   @Override
@@ -45,8 +46,8 @@ class ModelChooserDialog extends BaseReferenceChooserDialog<SModelReference> {
   }
 
   @Override
-  protected BaseMPSChooseModel<SModelReference> getMPSChooseModel(Project project, String entityString) {
-    return new BaseModelModel(project) {
+  protected BaseMPSChooseModel<SModelReference> getMPSChooseModel() {
+    return new BaseModelModel(myProject) {
       @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {

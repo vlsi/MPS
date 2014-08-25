@@ -10,11 +10,9 @@ public enum Bar_Option implements IOption {
   __VOID__("__VOID__");
 
   private String text;
-
   Bar_Option(String text) {
     this.text = text;
   }
-
   public String getText() {
     return text;
   }

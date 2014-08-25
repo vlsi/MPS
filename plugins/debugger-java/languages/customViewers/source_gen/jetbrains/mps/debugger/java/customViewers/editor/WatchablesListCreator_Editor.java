@@ -12,7 +12,6 @@ public class WatchablesListCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7frh84_a(editorContext, node);
   }
-
   private EditorCell createCollection_7frh84_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7frh84_a");
@@ -20,7 +19,6 @@ public class WatchablesListCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_7frh84_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_7frh84_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     return editorCell;

@@ -50,7 +50,6 @@ public class LogReporting_Test extends MockTestCase {
     pro.advanceWork("Bot", 9);
     pro.finishWork("Top");
   }
-
   public LogReporting_Test() {
   }
 }

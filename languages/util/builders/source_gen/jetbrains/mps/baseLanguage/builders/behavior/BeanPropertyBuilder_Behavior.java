@@ -15,23 +15,18 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class BeanPropertyBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "setter", false), "parameter", true)).first(), "type", true), "virtual_getJavaType_1213877337345", new Object[]{});
   }
-
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return SLinkOperations.getTarget(thisNode, "value", true);
   }
-
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
     return _quotation_createNode_ec1xrx_a0a2(parentRef, childRef, SLinkOperations.getTarget(thisNode, "setter", false));
   }
-
   public static boolean virtual_leaf_1262430001741498370(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static String call_getPropertyName_2679357232284040711(SAbstractConcept thisConcept, String methodName) {
     String prefix = "set";
     if (methodName == null) {
@@ -46,7 +41,6 @@ public class BeanPropertyBuilder_Behavior {
     String suffix = methodName.substring(prefix.length());
     return Character.toLowerCase(suffix.charAt(0)) + suffix.substring(1);
   }
-
   private static SNode _quotation_createNode_ec1xrx_a0a2(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;

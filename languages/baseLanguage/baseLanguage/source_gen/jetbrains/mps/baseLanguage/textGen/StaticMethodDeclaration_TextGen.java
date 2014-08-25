@@ -105,6 +105,5 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(StaticMethodDeclaration_TextGen.class);
 }

@@ -19,7 +19,6 @@ public class ActionTestSidetransformAnotherAbstractChild_Editor extends DefaultN
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_oo5wc4_a(editorContext, node);
   }
-
   private EditorCell createCollection_oo5wc4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_oo5wc4_a");
@@ -27,7 +26,6 @@ public class ActionTestSidetransformAnotherAbstractChild_Editor extends DefaultN
     editorCell.addEditorCell(this.createConstant_oo5wc4_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_oo5wc4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "sidetransform another abstract child");
     editorCell.setCellId("Constant_oo5wc4_a0");

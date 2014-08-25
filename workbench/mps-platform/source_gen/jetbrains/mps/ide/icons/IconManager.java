@@ -61,29 +61,23 @@ public class IconManager {
     @Override
     public void paintIcon(Component c, Graphics g, int x, int y) {
     }
-
     @Override
     public int getIconWidth() {
       return 18;
     }
-
     @Override
     public int getIconHeight() {
       return 18;
     }
   };
-
   public IconManager() {
   }
-
   public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
     return getIconFor(node, true);
   }
-
   public static Icon getIconFor(@NotNull final SNode node) {
     return getIconFor(node, false);
   }
-
   public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       @Override
@@ -140,7 +134,6 @@ public class IconManager {
       }
     });
   }
-
   private static Icon getIconForConcept(SNode conceptDeclaration) {
     while (conceptDeclaration != null) {
       Icon icon = getIconForConcept(conceptDeclaration, SPropertyOperations.getString(conceptDeclaration, "iconPath"));
@@ -151,7 +144,6 @@ public class IconManager {
     }
     return null;
   }
-
   private static Icon getIconForConcept(SNode conceptDeclaration, String path) {
     Language language = SModelUtil.getDeclaringLanguage(conceptDeclaration);
     if (language != null) {
@@ -165,7 +157,6 @@ public class IconManager {
     }
     return null;
   }
-
   public static Icon getIconForConceptFQName(String conceptFQName) {
     SNode acd = SModelUtil.findConceptDeclaration(conceptFQName);
     SNode cd = null;
@@ -183,7 +174,6 @@ public class IconManager {
     }
     return icon;
   }
-
   public static Icon getIconForNamespace(String namespace) {
     String className = namespace + ".icons.Icons";
     try {
@@ -191,7 +181,7 @@ public class IconManager {
       if (language == null) {
         LOG.error("Can't find a language " + namespace);
       } else {
-        Class icons = ClassLoaderManager.getInstance().getClass(language, className);
+        Class icons = ClassLoaderManager.getInstance().getOwnClass(language, className);
         if (icons != null) {
           Method method;
           try {
@@ -210,7 +200,6 @@ public class IconManager {
     }
     return EMPTY_ICON;
   }
-
   public static Icon getIconForModelReference(@NotNull SModelReference modelReference) {
     String stereotype = SModelStereotype.getStereotype(modelReference.getModelName());
     if (stereotype != null) {
@@ -222,7 +211,6 @@ public class IconManager {
     }
     return IdeIcons.MODEL_ICON;
   }
-
   public static Icon getIconFor(SModel model) {
     if (model == null) {
       return IdeIcons.UNKNOWN_ICON;
@@ -242,7 +230,6 @@ public class IconManager {
     }
     return IdeIcons.MODEL_ICON;
   }
-
   public static Icon getIconFor(SModule module) {
     if (module instanceof Generator) {
       return IdeIcons.GENERATOR_ICON;
@@ -258,7 +245,6 @@ public class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
-
   public static Icon getIconFor(MPSModuleOwner owner) {
     if (owner instanceof MPSProject) {
       return IdeIcons.PROJECT_ICON;
@@ -268,7 +254,6 @@ public class IconManager {
     }
     return IdeIcons.DEFAULT_ICON;
   }
-
   public static Icon getIconFor(IFile file) {
     ImageIcon icon = null;
     if (file.exists()) {
@@ -303,7 +288,6 @@ public class IconManager {
     }
     return icon;
   }
-
   public static Icon loadIcon(@NonNls String iconPath, boolean cache) {
     Icon icon = ourPathsToIcons.get(iconPath);
     if (icon == null) {
@@ -315,7 +299,6 @@ public class IconManager {
     }
     return icon;
   }
-
   public static Icon getIconForAspect(LanguageAspect aspect) {
     Icon icon = MapSequence.fromMap(ourAspectsToIcons).get(aspect);
     if (icon == null) {
@@ -323,7 +306,6 @@ public class IconManager {
     }
     return icon;
   }
-
   static {
     ourAspectsToIcons = new EnumMap<LanguageAspect, Icon>(LanguageAspect.class);
     MapSequence.fromMap(ourAspectsToIcons).put(LanguageAspect.ACTIONS, IdeIcons.ACTIONS_MODEL_ICON);

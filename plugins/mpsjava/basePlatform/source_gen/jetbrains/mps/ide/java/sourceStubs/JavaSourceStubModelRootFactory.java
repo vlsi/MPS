@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 public class JavaSourceStubModelRootFactory implements ModelRootFactory {
   public JavaSourceStubModelRootFactory() {
   }
-
   @Override
   public ModelRoot create() {
     return new JavaSourceStubModelRoot();

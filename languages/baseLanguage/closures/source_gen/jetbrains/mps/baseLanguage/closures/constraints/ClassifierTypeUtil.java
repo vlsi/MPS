@@ -55,7 +55,6 @@ public class ClassifierTypeUtil {
     }
     return coerced;
   }
-
   private static SNode unmeet(SNode possiblyMeet) {
     SNode tmp = possiblyMeet;
 with_meet:
@@ -79,7 +78,6 @@ with_meet:
     }
     return tmp;
   }
-
   private static SNode coerceToClassifierType(SNode type) {
     SNode cType = ClassifierTypeUtil.coerceToClassifierTypeIgnoreParameters(type);
     if ((cType != null)) {
@@ -96,7 +94,6 @@ with_meet:
     }
     return type;
   }
-
   private static SNode coerceToClassifierTypeOrPrimitive(SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       return type;
@@ -116,11 +113,9 @@ with_meet:
     }
     return type;
   }
-
   private static boolean isFunctionTypeClassifier(SNode classifier) {
     return SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.Interface") && eq_zgotlq_a0a0a4(SNodeOperations.getModel(classifier).getReference().getModelName(), SNodeOperations.getModel(SLinkOperations.getTarget(_quotation_createNode_zgotlq_a0a0a0a0a0e(), "classifier", false)).getReference().getModelName());
   }
-
   private static boolean isFunctionTypeClassifierReturningValue(SNode classifier) {
     if (isFunctionTypeClassifier(classifier)) {
       String cname = SPropertyOperations.getString(classifier, "name");
@@ -130,7 +125,6 @@ with_meet:
     }
     return false;
   }
-
   @Deprecated
   private static SNode resolveTypeUsingSupertypes(SNode type, SNode concrete) {
     List<SNode> visitedClassifiers = ListSequence.fromList(new ArrayList<SNode>());
@@ -160,7 +154,6 @@ with_meet:
     }
     return resType;
   }
-
   public static SNode resolveType(SNode type, SNode concrete) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
       return SNodeOperations.copyNode(type);
@@ -169,7 +162,6 @@ with_meet:
     List<SNode> vars = SLinkOperations.getTargets(SLinkOperations.getTarget(concrete, "classifier", false), "typeVariableDeclaration", true);
     return resolveType(SNodeOperations.copyNode(type), ptypes, vars);
   }
-
   private static SNode resolveType(SNode type, List<SNode> actTypes, List<SNode> vars) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") && ListSequence.fromList(actTypes).isNotEmpty()) {
       int idx = 0;
@@ -202,7 +194,6 @@ with_meet:
     }
     return type;
   }
-
   public static SNode copyTypeRecursively(SNode type, boolean covariant) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       SNode copy = SNodeOperations.copyNode(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"));
@@ -223,7 +214,6 @@ with_meet:
       return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ? SNodeOperations.copyNode(type) : _quotation_createNode_zgotlq_a0a0a0a9(SNodeOperations.copyNode(type)));
     }
   }
-
   public static SNode copyTypeRecursively(SNode type) {
     type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true) : type);
     type = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType"), "bound", true) : type);
@@ -245,7 +235,6 @@ with_meet:
       return SNodeOperations.copyNode(type);
     }
   }
-
   private static SNode coerceToClassifierTypeIgnoreParameters(SNode type) {
     SNode cType = (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") ? SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType") : null);
     if ((cType != null)) {
@@ -265,7 +254,6 @@ with_meet:
     }
     return null;
   }
-
   private static SNode _quotation_createNode_zgotlq_a0a6a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -273,14 +261,15 @@ with_meet:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_zgotlq_a1a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
+  private static boolean eq_zgotlq_a0a0a4(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static SNode _quotation_createNode_zgotlq_a0a0a0a0a0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -288,7 +277,6 @@ with_meet:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), facade.createNodeId("~_FunctionTypes")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_zgotlq_a0a0a4a0a9(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -300,7 +288,6 @@ with_meet:
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_zgotlq_a0a0e0a0j(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -312,7 +299,6 @@ with_meet:
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_zgotlq_a0a0a0a9(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -324,7 +310,6 @@ with_meet:
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_zgotlq_a0a0a0a9_0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -335,9 +320,5 @@ with_meet:
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-
-  private static boolean eq_zgotlq_a0a0a4(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }

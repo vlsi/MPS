@@ -10,7 +10,6 @@ import org.jetbrains.mps.openapi.model.SNode;
   public BreakpointPainter(ILocationBreakpoint mpsBreakpoint) {
     super(mpsBreakpoint);
   }
-
   @Override
   protected SNode getSNode() {
     return myBreakpoint.getLocation().getSNode();

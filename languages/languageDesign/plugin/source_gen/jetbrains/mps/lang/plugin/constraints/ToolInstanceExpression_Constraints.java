@@ -14,12 +14,10 @@ public class ToolInstanceExpression_Constraints extends BaseConstraintsDescripto
   public ToolInstanceExpression_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.ToolInstanceExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class ToolInstanceExpression_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", false, false) != null;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213107437649");
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.make.facet.IFacet;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.make.facet.FacetRegistry;
@@ -21,25 +22,21 @@ public class Cluster {
   private final Iterable<String> myUsedLang;
   private IScript myScript;
 
-
   /*package*/ Cluster(@NotNull Iterable<? extends IResource> resources, @NotNull Iterable<String> usedLang) {
     myResources = ListSequence.fromListWithValues(new ArrayList<IResource>(), resources);
     myUsedLang = usedLang;
   }
-
   public Iterable<String> allUsedLangNamespaces() {
     return myUsedLang;
   }
-
   public Iterable<IResource> getResources() {
     return myResources;
   }
-
   public ScriptBuilder createScriptBuilder() {
     ScriptBuilder scb = new ScriptBuilder();
     for (String ns : allUsedLangNamespaces()) {
       LanguageRuntime lr = LanguageRegistry.getInstance().getLanguage(ns);
-      Iterable<IFacet> fcts = lr.getFacetProvider().getDescriptor(null).getManifest().facets();
+      Iterable<IFacet> fcts = lr.getAspect(MakeAspectDescriptor.class).getManifest().facets();
       scb.withFacetNames(Sequence.fromIterable(fcts).select(new ISelector<IFacet, IFacet.Name>() {
         public IFacet.Name select(IFacet fct) {
           return fct.getName();
@@ -53,11 +50,9 @@ public class Cluster {
     }
     return scb.withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
-
   public void setScript(IScript script) {
     myScript = script;
   }
-
   public IScript getScript() {
     return myScript;
   }

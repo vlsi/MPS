@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class RedirectOutputExpression_DataFlow extends DataFlowBuilder {
   public RedirectOutputExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "processHandler", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "listener", true));

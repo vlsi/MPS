@@ -22,23 +22,18 @@ public class SEnumOperations {
       }
     }).first());
   }
-
   public static List<SNode> getEnumMembers(SNode enumm) {
     return SLinkOperations.getTargets(enumm, "member", true);
   }
-
   public static SNode getEnumMember(SNode enumm, String name) {
     return enumMemberForName(enumm, name);
   }
-
   public static String getEnumMemberName(SNode member) {
     return BehaviorReflection.invokeNonVirtual(String.class, ((SNode) member), "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "call_getName_1240169660918", new Object[]{});
   }
-
   public static String getEnumMemberValue(SNode member) {
     return SPropertyOperations.getString(((SNode) member), "internalValue");
   }
-
   public static SNode enumMemberForName(SNode enumm, final String name) {
     SNode enumNode = (SNode) enumm;
     return ((SNode) ListSequence.fromList(SLinkOperations.getTargets(enumNode, "member", true)).findFirst(new IWhereFilter<SNode>() {
@@ -47,7 +42,6 @@ public class SEnumOperations {
       }
     }));
   }
-
   public static SNode enumMemberForValue(SNode enumm, final String value) {
     if (value == null) {
       return ((SNode) BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), enumm, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "call_getDefaultMember_1213877397785", new Object[]{}));

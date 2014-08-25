@@ -12,23 +12,18 @@ import java.net.URLDecoder;
 
 public class GenModuleXmlTask extends MpsLoadTask {
   private Path myClasspath = null;
-
   public GenModuleXmlTask() {
   }
-
   @Override
   protected String getWorkerClass() {
     return "jetbrains.mps.build.mps.runtime.anttask.GenModuleXmlWorker";
   }
-
   public void addConfiguredGenModule(ModuleXml moduleXml) {
     myWhatToDo.addParameter(encode(moduleXml));
   }
-
   public void addConfiguredClassPath(Path path) {
     myClasspath = path;
   }
-
   @Override
   protected Set<File> calculateClassPath(boolean fork) {
     if (myClasspath == null) {
@@ -40,14 +35,12 @@ public class GenModuleXmlTask extends MpsLoadTask {
     }
     return path;
   }
-
   public static String encode(ModuleXml moduleXml) {
     StringBuilder sb = new StringBuilder();
     sb.append(moduleXml.getRef()).append("\n").append(moduleXml.getDestfile()).append("\n");
     sb.append(moduleXml.getInnerText(GenModuleXmlWorker.INDENT_INNER_XML, GenModuleXmlWorker.INDENT_WITH));
     return URLEncoder.encode(sb.toString());
   }
-
   public static ModuleXml decode(String s) {
     ModuleXml result = new ModuleXml();
     String[] param = URLDecoder.decode(s).split("\n");

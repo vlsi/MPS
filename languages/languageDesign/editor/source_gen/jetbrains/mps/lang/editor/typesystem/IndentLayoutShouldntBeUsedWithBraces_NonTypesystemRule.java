@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode editorCellModel, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(editorCellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
       SNode collection = SNodeOperations.cast(editorCellModel, "jetbrains.mps.lang.editor.structure.CellModel_Collection");
@@ -45,18 +44,15 @@ public class IndentLayoutShouldntBeUsedWithBraces_NonTypesystemRule extends Abst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.EditorCellModel";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

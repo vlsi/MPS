@@ -25,7 +25,6 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 public class ConcurrencyUtil {
   public ConcurrencyUtil() {
   }
-
   /**
    * * invokes and waits all tasks using threadPool, avoiding thread starvation on the way
    * * @lookat http://gafter.blogspot.com/2006/11/thread-pool-puzzler.html
@@ -69,7 +68,6 @@ public class ConcurrencyUtil {
     }
     return futures;
   }
-
   /**
    * * @return defaultValue if there is no entry in the map (in that case defaultValue is placed into the map), or corresponding value if entry already exists
    */
@@ -82,12 +80,10 @@ public class ConcurrencyUtil {
     V prev = map.putIfAbsent(key, defaultValue);
     return (prev == null ? defaultValue : prev);
   }
-
   @NotNull
   public static ThreadPoolExecutor newSingleThreadExecutor(@NotNull @NonNls final String threadFactoryName) {
     return ConcurrencyUtil.newSingleThreadExecutor(threadFactoryName, Thread.NORM_PRIORITY);
   }
-
   @NotNull
   public static ThreadPoolExecutor newSingleThreadExecutor(@NotNull final String threadFactoryName, final int threadPriority) {
     return new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue<Runnable>(), new ThreadFactory() {
@@ -99,12 +95,10 @@ public class ConcurrencyUtil {
       }
     });
   }
-
   @NotNull
   public static ScheduledThreadPoolExecutor newSingleScheduledThreadExecutor(@NotNull @NonNls final String threadFactoryName) {
     return ConcurrencyUtil.newSingleScheduledThreadExecutor(threadFactoryName, Thread.NORM_PRIORITY);
   }
-
   @NotNull
   public static ScheduledThreadPoolExecutor newSingleScheduledThreadExecutor(@NotNull final String threadFactoryName, final int threadPriority) {
     ScheduledThreadPoolExecutor executor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {

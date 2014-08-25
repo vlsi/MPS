@@ -6,7 +6,6 @@ package jetbrains.mps.lang.actions.testLanguage.behavior;
 public class ActionTestDefaultChild1_BehaviorDescriptor extends ActionTestDefaultAbstractChild_BehaviorDescriptor {
   public ActionTestDefaultChild1_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1";

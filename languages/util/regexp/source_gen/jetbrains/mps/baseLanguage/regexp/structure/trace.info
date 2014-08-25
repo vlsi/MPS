@@ -8,7 +8,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="11,0,146,0" name="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor" />
+      <unit at="11,0,144,0" name="jetbrains.mps.baseLanguage.regexp.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)/1203415512996">

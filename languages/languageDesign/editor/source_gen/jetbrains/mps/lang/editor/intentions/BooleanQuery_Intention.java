@@ -19,64 +19,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class BooleanQuery_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public BooleanQuery_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem";
   }
-
   public String getPresentation() {
     return "BooleanQuery";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.BooleanQuery_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_useQuery_1223387362946", new Object[]{});
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1223387565994");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new BooleanQuery_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, "query", true) == null)) {
         return "Add Query";
@@ -84,7 +70,6 @@ public class BooleanQuery_Intention implements IntentionFactory {
         return "Remove Query";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, "query", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "query", "jetbrains.mps.lang.editor.structure.QueryFunction_Boolean");
@@ -92,7 +77,6 @@ public class BooleanQuery_Intention implements IntentionFactory {
         SNodeOperations.detachNode(SLinkOperations.getTarget(node, "query", true));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return BooleanQuery_Intention.this;
     }

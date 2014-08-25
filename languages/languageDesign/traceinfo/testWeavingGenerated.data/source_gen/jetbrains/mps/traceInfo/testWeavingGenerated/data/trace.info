@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="Generator.java">
-      <unit at="16,0,77,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.Generator" />
+      <unit at="17,0,69,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="15,0,60,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.Language" />
+      <unit at="14,0,41,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.Language" />
     </file>
   </root>
 </debug-info>

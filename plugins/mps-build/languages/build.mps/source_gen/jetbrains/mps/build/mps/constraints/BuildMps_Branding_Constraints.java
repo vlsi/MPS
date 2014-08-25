@@ -15,7 +15,6 @@ public class BuildMps_Branding_Constraints extends BaseConstraintsDescriptor {
   public BuildMps_Branding_Constraints() {
     super("jetbrains.mps.build.mps.structure.BuildMps_Branding");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class BuildMps_Branding_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

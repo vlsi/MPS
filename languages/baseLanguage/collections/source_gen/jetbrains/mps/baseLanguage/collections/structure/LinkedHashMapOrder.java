@@ -11,26 +11,21 @@ public enum LinkedHashMapOrder {
   access_order("access_order", true);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<LinkedHashMapOrder> getConstants() {
     List<LinkedHashMapOrder> list = ListSequence.fromList(new LinkedList<LinkedHashMapOrder>());
     ListSequence.fromList(list).addElement(LinkedHashMapOrder.insertion_order);
     ListSequence.fromList(list).addElement(LinkedHashMapOrder.access_order);
     return list;
   }
-
   public static LinkedHashMapOrder getDefault() {
     return LinkedHashMapOrder.insertion_order;
   }
-
   public static LinkedHashMapOrder parseValue(String value) {
     if (value == null) {
       return LinkedHashMapOrder.getDefault();
@@ -43,14 +38,11 @@ public enum LinkedHashMapOrder {
     }
     return LinkedHashMapOrder.getDefault();
   }
-
   private boolean myValue;
-
   LinkedHashMapOrder(String name, boolean value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public boolean getValue() {
     return this.myValue;
   }

@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class VariableReferenceUtil {
   public VariableReferenceUtil() {
   }
-
   public static boolean isUninitializedOrBad(SNode thisNode) {
     SNode declContainer = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     if (declContainer == null) {
@@ -48,7 +47,6 @@ public class VariableReferenceUtil {
       return true;
     }
   }
-
   public static boolean isAssigned(Iterable<SNode> references) {
     for (SNode ref : references) {
       if (CheckingUtil.isAssigned(ref)) {
@@ -57,7 +55,6 @@ public class VariableReferenceUtil {
     }
     return false;
   }
-
   public static boolean isRead(Iterable<SNode> references) {
     for (SNode ref : references) {
       if (!(CheckingUtil.isAssigned(ref))) {
@@ -66,7 +63,6 @@ public class VariableReferenceUtil {
     }
     return false;
   }
-
   @CheckingMethod
   public static void checkField(final TypeCheckingContext typeCheckingContext, SNode field, Iterable<SNode> references) {
     if (Sequence.fromIterable(references).isEmpty()) {

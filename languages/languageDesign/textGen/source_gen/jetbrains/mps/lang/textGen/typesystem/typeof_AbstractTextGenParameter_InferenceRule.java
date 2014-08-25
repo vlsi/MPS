@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_AbstractTextGenParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AbstractTextGenParameter_InferenceRule() {
   }
-
   public void applyRule(final SNode parameter, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode textGen = SNodeOperations.getAncestor(parameter, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false);
     if ((textGen == null)) {
@@ -26,18 +25,15 @@ public class typeof_AbstractTextGenParameter_InferenceRule extends AbstractInfer
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -6,11 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExpressionStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_canServeAsReturn_1239355137616(SNode thisNode) {
     SNode methodLike = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     if (SNodeOperations.isInstanceOf(methodLike, "jetbrains.mps.baseLanguage.structure.IStatementListContainer")) {
@@ -18,7 +18,12 @@ public class ExpressionStatement_Behavior {
         return false;
       }
     }
+    // no return inside void methods or constructors 
     SNode retType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getExpectedRetType_1239354342632", new Object[]{});
+    if (retType == null || SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      return false;
+    }
+    // statement 'a.b()' where b returns void can't produce return valur 
     SNode methodCall = null;
     SNode expression = SLinkOperations.getTarget(thisNode, "expression", true);
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
@@ -30,6 +35,31 @@ public class ExpressionStatement_Behavior {
     if (methodCall != null && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;
     }
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{}) == thisNode && retType != null && !(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"));
+    // 
+    // Check our position within IMethodLike 
+    SNode lastStatement = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodLike, "virtual_getLastStatement_1239354409446", new Object[]{});
+    // trivial case: this statement is the last one 
+    if (lastStatement == thisNode) {
+      return true;
+    }
+    // check if body ends with if and this statement completes this if 
+    if (SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.IfStatement") && SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false) == lastStatement) {
+      SNode ifStmt = SNodeOperations.cast(lastStatement, "jetbrains.mps.baseLanguage.structure.IfStatement");
+      if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStmt, "ifTrue", true), "statement", true)).last() == thisNode || SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true) == thisNode) {
+        return true;
+      }
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+        SNode elseBlock = SNodeOperations.cast(SLinkOperations.getTarget(ifStmt, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(elseBlock, "statements", true), "statement", true)).last() == thisNode) {
+          return true;
+        }
+      }
+      for (SNode elsif : SLinkOperations.getTargets(ifStmt, "elsifClauses", true)) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(elsif, "statementList", true), "statement", true)).last() == thisNode) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

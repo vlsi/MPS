@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 public class ProjectStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
@@ -45,7 +44,6 @@ public class ProjectStatisticsTarget_Behavior {
 
     return result;
   }
-
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     Iterable<? extends SModule> modules = context.getProject().getModules();
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {

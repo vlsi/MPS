@@ -11,7 +11,6 @@ public abstract class BaseTaskQueue<T> {
   private final Object LOCK = new Object();
   private List<T> myTasks = new LinkedList<T>();
   protected Timer myTimer;
-
   public BaseTaskQueue() {
     myTimer = new Timer("Task Queue", 500) {
       @Override
@@ -20,7 +19,6 @@ public abstract class BaseTaskQueue<T> {
       }
     };
   }
-
   public void addTask(T task) {
     synchronized (LOCK) {
       myTasks.add(task);
@@ -35,7 +33,6 @@ public abstract class BaseTaskQueue<T> {
       });
     }
   }
-
   private void process() {
     myTimer.suspend();
     if (myTasks.isEmpty()) {
@@ -48,8 +45,6 @@ public abstract class BaseTaskQueue<T> {
     }
     processTask(tasks);
   }
-
   protected abstract boolean isProcessingAllowed();
-
   protected abstract void processTask(List<T> tasks);
 }

@@ -15,34 +15,26 @@ public class RemoveNot {
     editorCell.setAction(CellActionType.DELETE, new RemoveNot.RemoveNot_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new RemoveNot.RemoveNot_BACKSPACE(node));
   }
-
   public static class RemoveNot_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RemoveNot_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "original", true));
     }
   }
-
   public static class RemoveNot_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public RemoveNot_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "original", true));
     }

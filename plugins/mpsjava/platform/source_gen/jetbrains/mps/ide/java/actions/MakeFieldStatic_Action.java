@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class MakeFieldStatic_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MakeFieldStatic_Action() {
     super("Make Field Static", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.baseLanguage.refactorings" + "." + "MakeFieldStatic"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class MakeFieldStatic_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -73,7 +68,6 @@ public class MakeFieldStatic_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelAccess.instance().runReadInEDT(new Runnable() {
@@ -92,6 +86,5 @@ public class MakeFieldStatic_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MakeFieldStatic_Action.class);
 }

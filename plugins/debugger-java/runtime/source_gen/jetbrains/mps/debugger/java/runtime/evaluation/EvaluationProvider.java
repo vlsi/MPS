@@ -38,7 +38,6 @@ public class EvaluationProvider implements IEvaluationProvider {
   private SModuleReference myContainerModule;
   private final List<IEvaluationContainer> myWatches = new ArrayList<IEvaluationContainer>();
   private final List<EvaluationProvider.IWatchListener> myWatchListeners = new ArrayList<EvaluationProvider.IWatchListener>();
-
   public EvaluationProvider(@NotNull DebugSession debugSession) {
     myDebugSession = debugSession;
     DebugSessionManagerComponent.getInstance(myDebugSession.getIdeaProject()).addDebugSessionListener(new DebugSessionManagerComponent.DebugSessionAdapter() {
@@ -48,7 +47,6 @@ public class EvaluationProvider implements IEvaluationProvider {
           init();
         }
       }
-
       @Override
       public void detached(AbstractDebugSession session) {
         if (myDebugSession.equals(session)) {
@@ -58,7 +56,6 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
-
   private synchronized void init() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -68,7 +65,6 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
-
   private synchronized void dispose() {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -77,17 +73,14 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
-
   @Override
   public boolean canEvaluate() {
     return myDebugSession.isStepEnabled();
   }
-
   @Override
   public void showEvaluationDialog(IOperationContext context) {
     showEvaluationDialog(context, ListSequence.fromList(new ArrayList<SNodeReference>()));
   }
-
   @Override
   public void showEvaluationDialog(final IOperationContext context, final List<SNodeReference> selectedNodes) {
     final JavaUiState state = myDebugSession.getUiState();
@@ -105,7 +98,6 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     }, state.getThread().getThread());
   }
-
   public void showEditWatchDialog(IOperationContext context, final IEvaluationContainer model) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     final EditWatchDialog editWatchDialog = new EditWatchDialog(context, this, model);
@@ -117,12 +109,10 @@ public class EvaluationProvider implements IEvaluationProvider {
     });
     editWatchDialog.show();
   }
-
   @Override
   public JComponent createWatchesPanel() {
     return new WatchesPanel(this);
   }
-
   public void addWatch(final IEvaluationContainer evaluationModel) {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -137,7 +127,6 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
-
   public void createWatch() {
     myDebugSession.getEventsProcessor().schedule(new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -156,18 +145,15 @@ public class EvaluationProvider implements IEvaluationProvider {
       }
     });
   }
-
   public void removeWatch(IEvaluationContainer model) {
     synchronized (myWatches) {
       myWatches.remove(model);
     }
     fireWatchRemoved(model);
   }
-
   public DebugSession getDebugSession() {
     return myDebugSession;
   }
-
   @Nullable
   private synchronized IEvaluationContainer createEvaluationContainer(boolean isWatch, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     if (myContainerModule == null) {
@@ -175,7 +161,6 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, ListSequence.fromList(new ArrayList<SNodeReference>()), isWatch, onNodeSetUp);
   }
-
   @Nullable
   private synchronized IEvaluationContainer createEvaluationContainer(boolean isWatch, List<SNodeReference> selectedNodes, _FunctionTypes._void_P1_E0<? super IEvaluationContainer> onNodeSetUp) {
     if (myContainerModule == null) {
@@ -183,7 +168,6 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return new EvaluationWithContextContainer(myDebugSession.getProject(), myDebugSession, myContainerModule, selectedNodes, isWatch, onNodeSetUp);
   }
-
   public List<IEvaluationContainer> getWatches() {
     List<IEvaluationContainer> watchesCopy = new ArrayList<IEvaluationContainer>();
     synchronized (myWatches) {
@@ -191,7 +175,6 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return watchesCopy;
   }
-
   private List<EvaluationProvider.IWatchListener> getListeners() {
     List<EvaluationProvider.IWatchListener> listeners = new ArrayList<EvaluationProvider.IWatchListener>();
     synchronized (myWatchListeners) {
@@ -199,55 +182,45 @@ public class EvaluationProvider implements IEvaluationProvider {
     }
     return listeners;
   }
-
   private void fireWatchAdded(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchAdded(model);
     }
   }
-
   private void fireWatchUpdated(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchUpdated(model);
     }
   }
-
   private void fireWatchRemoved(IEvaluationContainer model) {
     for (EvaluationProvider.IWatchListener listener : getListeners()) {
       listener.watchRemoved(model);
     }
   }
-
   public void addWatchListener(@NotNull EvaluationProvider.IWatchListener listener) {
     synchronized (myWatchListeners) {
       myWatchListeners.add(listener);
     }
   }
-
   public void removeWatchListener(@NotNull EvaluationProvider.IWatchListener listener) {
     synchronized (myWatchListeners) {
       myWatchListeners.remove(listener);
     }
   }
-
   public static interface IWatchListener {
     public void watchAdded(IEvaluationContainer model);
     public void watchUpdated(IEvaluationContainer model);
     public void watchRemoved(IEvaluationContainer model);
   }
-
   public static class WatchAdapter implements EvaluationProvider.IWatchListener {
     public WatchAdapter() {
     }
-
     @Override
     public void watchAdded(IEvaluationContainer model) {
     }
-
     @Override
     public void watchUpdated(IEvaluationContainer model) {
     }
-
     @Override
     public void watchRemoved(IEvaluationContainer model) {
     }

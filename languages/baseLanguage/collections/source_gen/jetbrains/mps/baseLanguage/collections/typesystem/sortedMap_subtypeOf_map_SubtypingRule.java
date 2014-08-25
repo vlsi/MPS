@@ -15,26 +15,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class sortedMap_subtypeOf_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public sortedMap_subtypeOf_map_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode sortedMapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_nvaqgh_a0a1(SLinkOperations.getTarget(sortedMapType, "keyType", true), SLinkOperations.getTarget(sortedMapType, "valueType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedMapType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_nvaqgh_a0a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

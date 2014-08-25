@@ -39,23 +39,18 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
             return quantity;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.matches("\\$([0-9]+\\.?[0-9]*)?");
           }
-
           public String getDescriptionText(String pattern) {
             return "quantity dollars";
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -79,23 +74,18 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
             return quantity;
           }
-
           public boolean hasSubstitute() {
             return true;
           }
-
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             return pattern.matches("[0-9]+\\.?[0-9]*");
           }
-
           public String getDescriptionText(String pattern) {
             return "quantity";
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }

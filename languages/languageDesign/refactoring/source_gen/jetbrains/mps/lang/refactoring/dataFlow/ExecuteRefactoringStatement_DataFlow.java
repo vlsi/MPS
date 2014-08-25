@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class ExecuteRefactoringStatement_DataFlow extends DataFlowBuilder {
   public ExecuteRefactoringStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "target", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "project", true));

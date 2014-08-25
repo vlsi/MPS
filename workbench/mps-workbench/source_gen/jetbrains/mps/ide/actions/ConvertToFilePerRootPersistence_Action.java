@@ -36,18 +36,15 @@ import org.apache.log4j.LogManager;
 
 public class ConvertToFilePerRootPersistence_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ConvertToFilePerRootPersistence_Action() {
     super("Convert to file-per-root format", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     FolderModelFactory filePerRootFactory = PersistenceRegistry.getInstance().getFolderModelFactory("file-per-root");
     if (filePerRootFactory == null) {
@@ -61,7 +58,6 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       }
     });
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -75,7 +71,6 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -94,7 +89,6 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModel> m = ((List<SModel>) MapSequence.fromMap(_params).get("models"));
@@ -164,6 +158,5 @@ public class ConvertToFilePerRootPersistence_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ConvertToFilePerRootPersistence_Action.class);
 }

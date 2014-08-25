@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StylePriorityGroup_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode stylePriorityGroup, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (StyleClass_Behavior.call_hasCycles_7417001528577667349(stylePriorityGroup)) {
       {
@@ -32,18 +31,15 @@ public class check_StylePriorityGroup_NonTypesystemRule extends AbstractNonTypes
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.StyleClass";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

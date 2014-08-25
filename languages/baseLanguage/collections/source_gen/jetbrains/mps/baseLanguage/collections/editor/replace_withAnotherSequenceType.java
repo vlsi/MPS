@@ -23,11 +23,9 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
   public replace_withAnotherSequenceType() {
     super(new SubstituteInfoPartExt[]{new replace_withAnotherSequenceType.Type_customReplace_cellMenu_qhej2e_a0()});
   }
-
   public static class Type_customReplace_cellMenu_qhej2e_a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public Type_customReplace_cellMenu_qhej2e_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> others = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetType"));
       SNode act = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType");
@@ -37,15 +35,12 @@ public class replace_withAnotherSequenceType extends AbstractCellMenuComponent {
         }
       }).concat(ListSequence.fromList(others)).toListSequence();
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

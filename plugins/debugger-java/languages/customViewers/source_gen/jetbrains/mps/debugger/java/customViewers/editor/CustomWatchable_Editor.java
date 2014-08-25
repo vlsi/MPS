@@ -33,7 +33,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_rpujt6_a(editorContext, node);
   }
-
   private EditorCell createCollection_rpujt6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a");
@@ -42,7 +41,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_rpujt6_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_rpujt6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a0");
@@ -53,14 +51,12 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_rpujt6_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rpujt6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "watchable");
     editorCell.setCellId("Constant_rpujt6_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_rpujt6_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -78,7 +74,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_rpujt6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_b0");
@@ -90,7 +85,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createJComponent_rpujt6_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_rpujt6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon:");
     editorCell.setCellId("Constant_rpujt6_a1a");
@@ -100,7 +94,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAlternation_rpujt6_b1a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = CustomWatchable_Editor.renderingCondition_rpujt6_a1b0(node, editorContext);
@@ -112,7 +105,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_rpujt6_a1b0(SNode node, EditorContext editorContext) {
     String path = null;
     SModule module = SNodeOperations.getModel(node).getModule();
@@ -121,7 +113,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     }
     return path != null && FileSystem.getInstance().getFileByPath(path).exists();
   }
-
   private EditorCell createCollection_rpujt6_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_rpujt6_a1b0");
@@ -132,7 +123,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_rpujt6_b0b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createImage_rpujt6_a0b1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
@@ -144,7 +134,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.setDescent(0);
     return editorCell;
   }
-
   private EditorCell createProperty_rpujt6_b0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("iconPath");
@@ -162,7 +151,6 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_rpujt6_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_rpujt6_a1b0");
@@ -172,13 +160,11 @@ public class CustomWatchable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createJComponent_rpujt6_c1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, CustomWatchable_Editor._QueryFunction_JComponent_rpujt6_a2b0(node, editorContext), "_rpujt6_c1a");
     editorCell.setCellId("JComponent_rpujt6_c1a");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_rpujt6_a2b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, "iconPath", editorContext);
   }

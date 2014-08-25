@@ -24,7 +24,6 @@ public class Repeat_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b86mo8_a(editorContext, node);
   }
-
   private EditorCell createCollection_b86mo8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b86mo8_a");
@@ -36,7 +35,6 @@ public class Repeat_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_b86mo8_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_b86mo8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -45,7 +43,6 @@ public class Repeat_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_b86mo8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("count");
@@ -66,7 +63,6 @@ public class Repeat_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_b86mo8_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "times");
     editorCell.setCellId("Constant_b86mo8_c0");
@@ -79,15 +75,12 @@ public class Repeat_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_b86mo8_a0c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isEmpty();
   }
-
   private static boolean _StyleParameter_QueryFunction_b86mo8_a1c0(EditorContext editorContext, SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "commands", true)).isNotEmpty();
   }
-
   private EditorCell createRefNode_b86mo8_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -111,7 +104,6 @@ public class Repeat_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_b86mo8_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "end");
     editorCell.setCellId("Constant_b86mo8_e0");

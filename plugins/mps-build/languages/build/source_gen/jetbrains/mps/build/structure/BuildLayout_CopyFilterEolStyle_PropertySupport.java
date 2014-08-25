@@ -20,7 +20,6 @@ public class BuildLayout_CopyFilterEolStyle_PropertySupport extends PropertySupp
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class BuildLayout_CopyFilterEolStyle_PropertySupport extends PropertySupp
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     BuildLayout_CopyFilterEolStyle constant = BuildLayout_CopyFilterEolStyle.parseValue(value);
     if (constant != null) {

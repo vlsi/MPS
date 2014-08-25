@@ -39,10 +39,8 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 
 public class SideTransformUtil {
   private static final Logger LOG = LogManager.getLogger(SideTransformUtil.class);
-
   public SideTransformUtil() {
   }
-
   public static Iterable<SNode> getApplicableActionsBuilders(final SNode node, Set<String> stringTags, final CellSide cellSide, final IOperationContext context) {
 
     final Set<SNode> tags = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(stringTags).select(new ISelector<String, SNode>() {
@@ -72,7 +70,6 @@ public class SideTransformUtil {
     }
     return result;
   }
-
   public static List<SubstituteAction> createActions(SNode node, Set<String> stringTags, CellSide cellSide, IOperationContext context) {
 
     Set<SNode> conceptsToRemove = SetSequence.fromSet(new HashSet<SNode>());
@@ -109,7 +106,6 @@ public class SideTransformUtil {
 
     return result;
   }
-
   private static boolean isApplicable(SNode node, Set<SNode> tags, CellSide cellSide, SNode actionsBuilder, IOperationContext context) {
     if (!(SetSequence.fromSet(tags).contains(SEnumOperations.enumMemberForValue(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)", "SideTransformTag"), SPropertyOperations.getString_def(actionsBuilder, "transformTag", "default_RTransform"))))) {
       return false;
@@ -132,7 +128,6 @@ public class SideTransformUtil {
 
     return true;
   }
-
   private static void invokeRemoveByCondition(SNode removeByCondition, Iterator<SubstituteAction> actions, SNode node, IOperationContext context) {
     try {
       QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, removeByCondition, "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", "call_getQueryMethodName_1220279474449", new Object[]{}), context, new RemoveSideTransformActionByConditionContext(actions, node), SNodeOperations.getModel(removeByCondition));
@@ -140,7 +135,6 @@ public class SideTransformUtil {
       LOG.error(null, e);
     }
   }
-
   private static List<SubstituteAction> invokeActionBuilder(SNode actionsBuilder, SNode node, CellSide cellSide, IOperationContext context) {
     try {
       return (List<SubstituteAction>) QueryMethodGenerated.invoke(BehaviorReflection.invokeNonVirtual(String.class, actionsBuilder, "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220279234749", new Object[]{}), context, new SideTransformActionsBuilderContext(node, SNodeOperations.getModel(node), cellSide, null), SNodeOperations.getModel(actionsBuilder));

@@ -14,10 +14,8 @@ public final class MpsPlatform {
   private MPSTypesystem myMPSTypesystem;
   private MPSGenerator myMPSGenerator;
   private MPSBaseLanguage myMPSBaseLanguage;
-
   public MpsPlatform() {
   }
-
   public void init() {
     myMPSCore = new MPSCore();
     myMPSPersistence = new MPSPersistence();
@@ -30,7 +28,6 @@ public final class MpsPlatform {
     myMPSGenerator.init();
     myMPSBaseLanguage.init();
   }
-
   public void dispose() {
     myMPSBaseLanguage.dispose();
     myMPSGenerator.dispose();

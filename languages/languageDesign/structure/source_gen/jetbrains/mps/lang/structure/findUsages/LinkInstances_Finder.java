@@ -22,25 +22,20 @@ import org.jetbrains.mps.openapi.model.SReference;
 
 public class LinkInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.LinkInstances_Finder");
-
   public LinkInstances_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Link Instances";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -76,7 +71,6 @@ public class LinkInstances_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Link Instances";

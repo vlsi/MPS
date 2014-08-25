@@ -18,13 +18,11 @@ public class Disjunct_Test extends Util_Test {
     ISequence<Integer> test = input.disjunction(Sequence.fromArray(1, 2, 2, 3, 3, 4));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 4), test);
   }
-
   public void test_discjunctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 2, 3, 4, 4);
     Iterable<Integer> test = Sequence.fromIterable(input).disjunction(ListSequence.fromList(Arrays.asList(1, 2, 4, 4, 5)));
     this.assertIterableEqualsIgnoreOrder(Arrays.asList(2, 3, 5), test);
   }
-
   public void test_disjunctOpCovariant() throws Exception {
     Foo foo1 = new Foo();
     Foo foo2 = new Foo();
@@ -36,14 +34,12 @@ public class Disjunct_Test extends Util_Test {
     Iterable<Foo> res = Sequence.fromIterable(first).disjunction(Sequence.fromIterable(second));
     assertIterableEquals(Sequence.fromArray(new Foo[]{foo1, foo2, bar2}), res);
   }
-
   public void test_disjunctionEquivalence() throws Exception {
     Iterable<String> a = Arrays.asList("X", "W", "Z", "Y", "X", "Z", "X", "Y", "W");
     Iterable<String> b = Arrays.asList("V", "X", "V", "Z", "Z", "Z", "Y");
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).union(Sequence.fromIterable(b)).subtract(Sequence.fromIterable(a).intersect(Sequence.fromIterable(b))));
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(a).disjunction(Sequence.fromIterable(b)), Sequence.fromIterable(a).subtract(Sequence.fromIterable(b)).union(Sequence.fromIterable(b).subtract(Sequence.fromIterable(a))));
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4)).disjunction(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 3, 4, 5, 6))).iterator();
     Assert.assertSame(1, it.next());

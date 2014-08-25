@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class AbsractMake_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_legalAsStatement_1262430001741498032(SNode thisNode) {
     return true;
   }
-
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return null;
   }

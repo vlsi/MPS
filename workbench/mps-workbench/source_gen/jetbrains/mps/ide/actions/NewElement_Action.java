@@ -27,19 +27,16 @@ import org.apache.log4j.LogManager;
 
 public class NewElement_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public NewElement_Action() {
     super("New...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
     this.addPlace(null);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -50,7 +47,6 @@ public class NewElement_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -59,7 +55,6 @@ public class NewElement_Action extends BaseAction {
     MapSequence.fromMap(_params).put("group", event.getData(MPSEditorDataKeys.EDITOR_CREATE_GROUP));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<ListPopup> popup = new Wrappers._T<ListPopup>(null);
@@ -85,6 +80,5 @@ public class NewElement_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewElement_Action.class);
 }

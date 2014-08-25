@@ -14,7 +14,6 @@ public class SelectConstructorsDialog extends GroupedNodesChooser {
   public SelectConstructorsDialog(SNodeReference[] ctors, Project project) {
     super(ctors, false, true, ProjectHelper.toIdeaProject(project));
   }
-
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {

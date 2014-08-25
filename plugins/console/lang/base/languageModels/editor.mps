@@ -241,6 +241,7 @@
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="eynw.1377757278865717087" resolveInfo="OutputConsoleRoot" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefNode" typeId="tpc2.1073389882823" id="1377757278865723133" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930415" />
+      <link role="parentStyleClass" roleId="tpc2.1381004262292426837" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5637103006919121966" nodeInfo="ng">

@@ -14,16 +14,13 @@ import javax.swing.JComponent;
 public class TodoViewer_Tool extends GeneratedTool {
   private static final Icon ICON = AllIcons.Toolwindows.ToolWindowTodo;
   private TodoViewer myComponent;
-
   public TodoViewer_Tool(Project project) {
     super(project, "TODO", -1, ICON, ToolWindowAnchor.BOTTOM, false);
   }
-
   public void init(Project project) {
     super.init(project);
     TodoViewer_Tool.this.myComponent = new TodoViewer(project.getComponent(MPSProject.class), TodoViewer_Tool.this);
   }
-
   public void dispose() {
     Container container = TodoViewer_Tool.this.myComponent.getParent();
     if (container != null) {
@@ -33,7 +30,6 @@ public class TodoViewer_Tool extends GeneratedTool {
     TodoViewer_Tool.this.myComponent = null;
     super.dispose();
   }
-
   public JComponent getComponent() {
     return TodoViewer_Tool.this.myComponent;
   }

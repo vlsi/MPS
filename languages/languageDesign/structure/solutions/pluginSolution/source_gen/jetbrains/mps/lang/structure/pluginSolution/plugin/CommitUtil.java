@@ -52,7 +52,6 @@ public class CommitUtil {
       }
     });
   }
-
   public static boolean commitRename(EditorContext editorContext, SNode node, String oldValue, String newValue) {
     if (oldValue == null) {
       return false;

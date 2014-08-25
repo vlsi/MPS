@@ -22,7 +22,6 @@ public class EventVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d70nsb_a(editorContext, node);
   }
-
   private EditorCell createCollection_d70nsb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d70nsb_a");
@@ -31,7 +30,6 @@ public class EventVariable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_d70nsb_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_d70nsb_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("type");
@@ -53,7 +51,6 @@ public class EventVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_d70nsb_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class Utils {
   public Utils() {
   }
-
   public static void insertElementAt(List<SNode> list, SNode newElement, int index) {
     assert index >= 0 && index <= ListSequence.fromList(list).count();
     if (ListSequence.fromList(list).isEmpty() || index == ListSequence.fromList(list).count()) {

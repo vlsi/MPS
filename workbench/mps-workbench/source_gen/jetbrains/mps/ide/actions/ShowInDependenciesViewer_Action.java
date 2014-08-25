@@ -22,18 +22,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowInDependenciesViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowInDependenciesViewer_Action() {
     super("Show Usages", "show usages in dependencies viewer", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof DependencyTreeNode)) {
       return false;
@@ -41,7 +38,6 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     DependencyUtil.LinkType linktype = ((DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getLink().linktype;
     return linktype == DependencyUtil.LinkType.Depends || linktype == DependencyUtil.LinkType.ReexportsDep || linktype == DependencyUtil.LinkType.ExtendsLanguage || linktype == DependencyUtil.LinkType.ExportsRuntime || linktype == DependencyUtil.LinkType.UsesLanguage;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -55,7 +51,6 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +69,6 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
@@ -87,16 +81,13 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowInDependenciesViewer_Action.class);
-
   private static SModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static <T> T as_nkoo1o_a0a0b0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

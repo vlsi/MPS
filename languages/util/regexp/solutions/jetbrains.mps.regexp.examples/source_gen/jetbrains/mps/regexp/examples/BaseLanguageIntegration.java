@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
 /*package*/ class BaseLanguageIntegration {
   public BaseLanguageIntegration() {
   }
-
   public static void email(String emailToAnalyse) {
     {
       Pattern _pattern_0 = REGEXP_efh9at_a0a0a0b;
@@ -20,7 +19,6 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
       }
     }
   }
-
   public static void contains(String s) {
     {
       Pattern _pattern_0 = REGEXP_efh9at_a0a0a0c;
@@ -30,7 +28,6 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
       }
     }
   }
-
   public static void forEach(String test) {
     {
       Pattern _pattern_0 = REGEXP_efh9at_a0a0a0d;
@@ -40,18 +37,15 @@ import jetbrains.mps.baseLanguage.regexp.runtime.RegexpOperations;
       }
     }
   }
-
   public static String replaceAll(String s) {
     s = RegexpOperations.replace(s, REGEXP_efh9at_b0a0a4, new _Replacer_efh9at_a0a0a0e(null, null));
     return s;
   }
-
   public static void split(String s) {
     for (String st : RegexpOperations.split(s, REGEXP_efh9at_b0a0f)) {
       System.out.println("s = " + st);
     }
   }
-
   private static Pattern REGEXP_efh9at_a0a0a0b = Pattern.compile("(\\w+)@(\\w+(?:\\.\\w+))", 0);
   private static Pattern REGEXP_efh9at_a0a0a0c = Pattern.compile("(\\d+)", 0);
   private static Pattern REGEXP_efh9at_a0a0a0d = Pattern.compile("(\\d+)", 0);

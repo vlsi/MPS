@@ -34,7 +34,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tdrdn7_a(editorContext, node);
   }
-
   private EditorCell createCollection_tdrdn7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tdrdn7_a");
@@ -44,7 +43,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_tdrdn7_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_tdrdn7_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
@@ -65,7 +63,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_tdrdn7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -78,20 +75,16 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BinaryOperation_Editor.ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0(), new BinaryOperation_Editor.BinaryOperation_generic_cellMenu_tdrdn7_b0b0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BinaryOperation_cellMenu_tdrdn7_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
     }
   }
-
   public static class BinaryOperation_generic_cellMenu_tdrdn7_b0b0 extends AbstractCellMenuPart_Generic_Group {
     public BinaryOperation_generic_cellMenu_tdrdn7_b0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       // hack before actions are refactored 
       List<SubstituteAction> actions = ModelActions.createChildNodeSubstituteActions(SNodeOperations.getParent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), new AbstractChildNodeSetter() {
@@ -107,37 +100,29 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
       }, operationContext);
       return actions;
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SubstituteAction) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SubstituteAction parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode resultNode = parameterObject.substitute(editorContext, parameterObject.getMatchingText(null));
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(resultNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "ALIAS_EDITOR_COMPONENT", -1);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SubstituteAction) parameterObject);
     }
-
     public String getMatchingText_internal(SubstituteAction parameterObject) {
       return parameterObject.getMatchingText(null);
     }
-
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SubstituteAction) parameterObject);
     }
-
     public String getDescriptionText_internal(SubstituteAction parameterObject) {
       return parameterObject.getDescriptionText(null);
     }
   }
-
   private EditorCell createRefNode_tdrdn7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");

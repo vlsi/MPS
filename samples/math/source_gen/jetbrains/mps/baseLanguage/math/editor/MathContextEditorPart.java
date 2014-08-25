@@ -23,11 +23,9 @@ public class MathContextEditorPart implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qri1nn_a(editorContext, node);
   }
-
   private EditorCell createCollection_qri1nn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_a");
@@ -40,7 +38,6 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_qri1nn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_a0");
@@ -52,14 +49,12 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_qri1nn_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qri1nn_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "predefined precision setting:");
     editorCell.setCellId("Constant_qri1nn_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qri1nn_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("precisionSetting");
@@ -77,7 +72,6 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_qri1nn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_b0");
@@ -89,18 +83,15 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_qri1nn_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_qri1nn_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
   }
-
   private EditorCell createConstant_qri1nn_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rounding mode:");
     editorCell.setCellId("Constant_qri1nn_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qri1nn_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("roundingMode");
@@ -118,7 +109,6 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_qri1nn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qri1nn_c0");
@@ -130,18 +120,15 @@ public class MathContextEditorPart implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_qri1nn_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_qri1nn_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getInteger_def(node, "precisionSetting", "0") == 0;
   }
-
   private EditorCell createConstant_qri1nn_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "precision:");
     editorCell.setCellId("Constant_qri1nn_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qri1nn_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("precision");

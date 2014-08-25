@@ -11,14 +11,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class PrivateFieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "fieldDeclaration", false) == null)) {
       return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
   }
-
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return false;
   }

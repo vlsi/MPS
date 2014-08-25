@@ -32,7 +32,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_igv5hf_a(editorContext, node);
   }
-
   private EditorCell createCollection_igv5hf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_igv5hf_a");
@@ -42,7 +41,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_igv5hf_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_igv5hf_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumClass");
@@ -64,20 +62,16 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_igv5hf_a0a extends InlineCellProvider {
     public _Inline_igv5hf_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_igv5hf_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_igv5hf_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -97,7 +91,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_igv5hf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_igv5hf_b0");
@@ -107,7 +100,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_igv5hf_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumConstantDeclaration");
@@ -132,20 +124,16 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_igv5hf_a2a extends InlineCellProvider {
     public _Inline_igv5hf_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_igv5hf_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_igv5hf_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -169,23 +157,18 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   public static class EnumConstantReference_customReplace_cellMenu_igv5hf_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public EnumConstantReference_customReplace_cellMenu_igv5hf_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
     }
-
     public boolean isReferentPresentation() {
       return true;
     }

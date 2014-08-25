@@ -6,7 +6,6 @@ package jetbrains.mps.build.workflow.behavior;
 public class BwfJavaClassPath_BehaviorDescriptor extends BwfJavaDependency_BehaviorDescriptor {
   public BwfJavaClassPath_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfJavaClassPath";

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class LeftTurn_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public LeftTurn_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.LeftTurn";

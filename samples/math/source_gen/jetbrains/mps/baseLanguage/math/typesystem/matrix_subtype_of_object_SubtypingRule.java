@@ -14,26 +14,21 @@ import jetbrains.mps.smodel.SReference;
 public class matrix_subtype_of_object_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public matrix_subtype_of_object_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode matrixType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_9nrg6k_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_9nrg6k_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

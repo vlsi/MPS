@@ -18,27 +18,27 @@
       <node id="2990235398088186554" at="13,5,14,46" concept="1" />
       <node id="2990235398088186554" at="14,46,15,47" concept="1" />
       <node id="2990235398088186554" at="15,47,16,49" concept="1" />
-      <node id="2990235398088186554" at="23,37,24,26" concept="4" />
-      <node id="2990235398088186554" at="27,39,28,26" concept="4" />
-      <node id="2990235398088186554" at="31,59,32,48" concept="4" />
-      <node id="2990235398088186554" at="20,0,22,0" concept="0" trace="IconResourceBundle_Behavior#()V" />
-      <node id="2990235398088186554" at="23,0,26,0" concept="3" trace="getKeys#()Ljava/lang/Iterable;" />
-      <node id="2990235398088186554" at="27,0,30,0" concept="3" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-      <node id="2990235398088186554" at="31,0,34,0" concept="6" trace="getInstance#()Ljetbrains/mps/baseLanguage/plugin/IconResourceBundle_Behavior;" />
+      <node id="2990235398088186554" at="21,37,22,26" concept="4" />
+      <node id="2990235398088186554" at="24,39,25,26" concept="4" />
+      <node id="2990235398088186554" at="27,59,28,48" concept="4" />
+      <node id="2990235398088186554" at="19,0,21,0" concept="0" trace="IconResourceBundle_Behavior#()V" />
+      <node id="2990235398088186554" at="21,0,24,0" concept="3" trace="getKeys#()Ljava/lang/Iterable;" />
+      <node id="2990235398088186554" at="24,0,27,0" concept="3" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="2990235398088186554" at="27,0,30,0" concept="6" trace="getInstance#()Ljetbrains/mps/baseLanguage/plugin/IconResourceBundle_Behavior;" />
       <node id="2990235398088186554" at="12,0,19,0" concept="2" trace="icons" />
-      <scope id="2990235398088186554" at="20,40,20,40" />
-      <scope id="2990235398088186554" at="23,37,24,26" />
-      <scope id="2990235398088186554" at="27,39,28,26" />
-      <scope id="2990235398088186554" at="31,59,32,48" />
-      <scope id="2990235398088186554" at="20,0,22,0" />
+      <scope id="2990235398088186554" at="19,40,19,40" />
+      <scope id="2990235398088186554" at="21,37,22,26" />
+      <scope id="2990235398088186554" at="24,39,25,26" />
+      <scope id="2990235398088186554" at="27,59,28,48" />
+      <scope id="2990235398088186554" at="19,0,21,0" />
       <scope id="2990235398088186554" at="13,5,16,49" />
-      <scope id="2990235398088186554" at="23,0,26,0" />
-      <scope id="2990235398088186554" at="27,0,30,0">
+      <scope id="2990235398088186554" at="21,0,24,0" />
+      <scope id="2990235398088186554" at="24,0,27,0">
         <var name="key" id="2990235398088186554" />
       </scope>
-      <scope id="2990235398088186554" at="31,0,34,0" />
+      <scope id="2990235398088186554" at="27,0,30,0" />
       <unit id="2990235398088186554" at="12,40,18,3" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior$1" />
-      <unit id="2990235398088186554" at="10,0,35,0" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
+      <unit id="2990235398088186554" at="10,0,31,0" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)/349375443596798661">
@@ -48,27 +48,27 @@
       <node id="349375443596798661" at="14,52,15,45" concept="1" />
       <node id="349375443596798661" at="15,45,16,46" concept="1" />
       <node id="349375443596798661" at="16,46,17,46" concept="1" />
-      <node id="349375443596798661" at="24,37,25,26" concept="4" />
-      <node id="349375443596798661" at="28,39,29,26" concept="4" />
-      <node id="349375443596798661" at="32,61,33,50" concept="4" />
-      <node id="349375443596798661" at="21,0,23,0" concept="0" trace="IconResourceBundle_Visibility#()V" />
-      <node id="349375443596798661" at="24,0,27,0" concept="3" trace="getKeys#()Ljava/lang/Iterable;" />
-      <node id="349375443596798661" at="28,0,31,0" concept="3" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
-      <node id="349375443596798661" at="32,0,35,0" concept="6" trace="getInstance#()Ljetbrains/mps/baseLanguage/plugin/IconResourceBundle_Visibility;" />
+      <node id="349375443596798661" at="22,37,23,26" concept="4" />
+      <node id="349375443596798661" at="25,39,26,26" concept="4" />
+      <node id="349375443596798661" at="28,61,29,50" concept="4" />
+      <node id="349375443596798661" at="20,0,22,0" concept="0" trace="IconResourceBundle_Visibility#()V" />
+      <node id="349375443596798661" at="22,0,25,0" concept="3" trace="getKeys#()Ljava/lang/Iterable;" />
+      <node id="349375443596798661" at="25,0,28,0" concept="3" trace="getResource#(Ljava/lang/String;)Ljavax/swing/Icon;" />
+      <node id="349375443596798661" at="28,0,31,0" concept="6" trace="getInstance#()Ljetbrains/mps/baseLanguage/plugin/IconResourceBundle_Visibility;" />
       <node id="349375443596798661" at="12,0,20,0" concept="2" trace="icons" />
-      <scope id="349375443596798661" at="21,42,21,42" />
-      <scope id="349375443596798661" at="24,37,25,26" />
-      <scope id="349375443596798661" at="28,39,29,26" />
-      <scope id="349375443596798661" at="32,61,33,50" />
-      <scope id="349375443596798661" at="21,0,23,0" />
-      <scope id="349375443596798661" at="24,0,27,0" />
-      <scope id="349375443596798661" at="28,0,31,0">
+      <scope id="349375443596798661" at="20,42,20,42" />
+      <scope id="349375443596798661" at="22,37,23,26" />
+      <scope id="349375443596798661" at="25,39,26,26" />
+      <scope id="349375443596798661" at="28,61,29,50" />
+      <scope id="349375443596798661" at="20,0,22,0" />
+      <scope id="349375443596798661" at="22,0,25,0" />
+      <scope id="349375443596798661" at="25,0,28,0">
         <var name="key" id="349375443596798661" />
       </scope>
-      <scope id="349375443596798661" at="32,0,35,0" />
+      <scope id="349375443596798661" at="28,0,31,0" />
       <scope id="349375443596798661" at="13,5,17,46" />
       <unit id="349375443596798661" at="12,40,19,3" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility$1" />
-      <unit id="349375443596798661" at="10,0,36,0" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility" />
+      <unit id="349375443596798661" at="10,0,32,0" name="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Visibility" />
     </file>
   </root>
 </debug-info>

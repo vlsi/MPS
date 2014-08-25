@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_EqualsMethodTypes_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_EqualsMethodTypes_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instanceMethodCallOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (instanceMethodCallOperation != null && SLinkOperations.getTarget(instanceMethodCallOperation, "baseMethodDeclaration", false) != null && "equals".equals(SPropertyOperations.getString(SLinkOperations.getTarget(instanceMethodCallOperation, "baseMethodDeclaration", false), "name"))) {
       if (!(RulesFunctions_BaseLanguage.typesAreComparable(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(instanceMethodCallOperation)), TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(instanceMethodCallOperation, "actualArgument", true)).first())))) {
@@ -31,18 +30,15 @@ public class check_EqualsMethodTypes_NonTypesystemRule extends AbstractNonTypesy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

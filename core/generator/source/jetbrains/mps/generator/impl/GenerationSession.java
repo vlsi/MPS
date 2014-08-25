@@ -38,10 +38,10 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.Conflict;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
+import jetbrains.mps.generator.impl.plan.MapCfgComparator;
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
-import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
@@ -71,7 +71,6 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -325,18 +324,7 @@ class GenerationSession {
     }
 
     // -- prepare generator
-    Collections.sort(mappingConfigurations, new Comparator<TemplateMappingConfiguration>() {
-      @Override
-      public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
-        TemplateModel m1 = o1.getModel();
-        TemplateModel m2 = o2.getModel();
-        int result = m1 == m2 ? 0 : m1.getLongName().compareTo(m2.getLongName());
-        if (result != 0) {
-          return result;
-        }
-        return o1.getName().compareTo(o2.getName());
-      }
-    });
+    Collections.sort(mappingConfigurations, new MapCfgComparator());
     RuleManager ruleManager = new RuleManager(myGenerationPlan, mappingConfigurations, myLogger);
 
     try {
@@ -405,12 +393,6 @@ class GenerationSession {
         break;
       }
 
-      if (++secondaryMappingRepeatCount > 10) {
-        // TODO I'm not quite sure present log+GenericException is better than SpecificExceptionWithData and handling outside
-        logTenMinorStepsCountReached(realOutputModel);
-        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
-      }
-
       // next iteration ...
       mySessionContext.clearTransientObjects();
       isPrimary = false;
@@ -432,6 +414,13 @@ class GenerationSession {
         // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
         recycleWasteModel(currentOutputModel, true);
       }
+
+      if (++secondaryMappingRepeatCount > 10) {
+        // TODO I'm not quite sure present log+GenericException is better than SpecificExceptionWithData and handling outside
+        logTenMinorStepsCountReached(realOutputModel);
+        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
+      }
+
       currentOutputModel = createTransientModel();
     }
 
@@ -644,7 +633,14 @@ class GenerationSession {
     if (generationPlan.hasConflictingPriorityRules()) {
       myLogger.error("Conflicting mapping priority rules encountered:");
       for (Conflict c : generationPlan.getConflicts()) {
-        myLogger.error(c.getOrigin(), c.getText());
+        SModuleReference origin = c.getOrigin();
+        if (origin == null) {
+          // there might be conflicts due to implicit rules GenerationPlan adds. These rules don't belong to any
+          // generator, thus we use current input model as the origin of the conflict.
+          // XXX it might be reasonable to keep this logic deep in GP and restrict Conflict.getOrigin != null.
+          origin = myOriginalInputModel.getModule().getModuleReference();
+        }
+        myLogger.error(origin, c.getText());
       }
       myLogger.error("");
       return false;

@@ -18,7 +18,6 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4hi0d_a(editorContext, node);
   }
-
   private EditorCell createCollection_4hi0d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4hi0d_a");
@@ -27,7 +26,6 @@ public class DotRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4hi0d_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4hi0d_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_4hi0d_a0");

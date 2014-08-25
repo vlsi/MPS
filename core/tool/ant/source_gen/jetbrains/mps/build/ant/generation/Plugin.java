@@ -7,14 +7,11 @@ import java.io.File;
 
 public class Plugin extends DataType {
   private File myDir;
-
   public Plugin() {
   }
-
   public void setPath(File dir) {
     myDir = dir;
   }
-
   public File getPath() {
     return myDir;
   }

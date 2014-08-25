@@ -31,18 +31,15 @@ import org.apache.log4j.LogManager;
 @Deprecated
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private SModel myModel;
-
   @Deprecated
   public ReachableClassifiersScope(SModel model, int constraint) {
     // use ClassifierScopes.getReachableClassifiersScope instead 
     super(constraint);
     this.myModel = model;
   }
-
   public SModel getModel() {
     return this.myModel;
   }
-
   @NotNull
   @Override
   public List<SNode> getClassifiers() {
@@ -54,7 +51,6 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
     return result;
   }
-
   @Override
   public IReferenceInfoResolver getReferenceInfoResolver(SNode referenceNode, SNode targetConcept) {
     if (SModelUtil.isAssignableConcept(targetConcept, "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -62,14 +58,11 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
     }
     return super.getReferenceInfoResolver(referenceNode, targetConcept);
   }
-
   protected static class ClassifierReferenceInfoResolver implements IReferenceInfoResolver {
     private SModel myModel;
-
     public ClassifierReferenceInfoResolver(SModel model) {
       this.myModel = model;
     }
-
     @Override
     public SNode resolve(String referenceInfo, @Nullable SModelReference targetModelReference) {
       String classname = referenceInfo;
@@ -106,7 +99,6 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       String modelName = targetModelReference.getModelName();
       return resolveClass(SModelStereotype.withoutStereotype(modelName), SModelStereotype.getStereotype(modelName), classname);
     }
-
     public SNode resolveClass(String longName, String stereotype, String nestedClassName) {
       Collection<SModule> visibleModules = new GlobalModuleDependenciesManager(myModel.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE);
       String modelName = (stereotype != null ? longName + "@" + stereotype : longName);
@@ -167,14 +159,12 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       }
       return ListSequence.fromList(classifiers).getElement(0);
     }
-
     private static SModule check_x9ho2v_a0b0a0h0d5(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
       }
       return null;
     }
-
     private static SModule check_x9ho2v_a0b0a0h0d5_0(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();
@@ -182,6 +172,5 @@ public class ReachableClassifiersScope extends AbstractClassifiersScope {
       return null;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReachableClassifiersScope.class);
 }

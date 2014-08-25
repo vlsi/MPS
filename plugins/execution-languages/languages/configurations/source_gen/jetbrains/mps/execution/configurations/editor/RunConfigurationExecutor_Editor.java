@@ -26,11 +26,9 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_g7zihj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_g7zihj_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_g7zihj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_a");
@@ -42,16 +40,16 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_g7zihj_e0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_g7zihj_f0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_g7zihj_g0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_g7zihj_h0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_g7zihj_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_g7zihj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_a0");
     editorCell.addEditorCell(this.createComponent_g7zihj_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_g7zihj_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -59,7 +57,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_g7zihj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_b0");
@@ -73,12 +70,10 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_g7zihj_e1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_g7zihj_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createConstant_g7zihj_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_g7zihj_b1a");
@@ -88,7 +83,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_g7zihj_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("runConfiguration");
@@ -110,20 +104,16 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_g7zihj_a2b0 extends InlineCellProvider {
     public _Inline_g7zihj_a2b0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_g7zihj_a0c1a(editorContext, node);
     }
-
     private EditorCell createProperty_g7zihj_a0c1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -143,7 +133,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_g7zihj_d1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_g7zihj_d1a");
@@ -153,7 +142,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_g7zihj_e1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("configurationName");
@@ -174,7 +162,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_g7zihj_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_c0");
@@ -187,30 +174,24 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createIndentCell_g7zihj_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createComponent_g7zihj_b2a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.configurations.editor.ComplexCanRunAndDebug");
     return editorCell;
   }
-
   private static boolean renderingCondition_g7zihj_a1c0(SNode node, EditorContext editorContext) {
     return !(RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node));
   }
-
   private EditorCell createComponent_g7zihj_c2a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.configurations.editor.SimpleCanRunAndDebug");
     return editorCell;
   }
-
   private static boolean renderingCondition_g7zihj_a2c0(SNode node, EditorContext editorContext) {
     return RunConfigurationExecutor_Behavior.call_isSimple_6226796386650421097(node);
   }
-
   private EditorCell createConstant_g7zihj_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g7zihj_d0");
@@ -220,12 +201,10 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_g7zihj_e0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.execution.configurations.editor.BeforeTasksComponent");
     return editorCell;
   }
-
   private EditorCell createConstant_g7zihj_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_g7zihj_f0");
@@ -235,7 +214,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_g7zihj_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_g0");
@@ -246,12 +224,10 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_g7zihj_b6a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_g7zihj_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_g7zihj_b6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("execute");
@@ -271,7 +247,18 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
+  private EditorCell createConstant_g7zihj_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_g7zihj_h0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createConstant_g7zihj_i0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_g7zihj_i0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
   private EditorCell createCollection_g7zihj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_g7zihj_a_0");
@@ -284,12 +271,10 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_g7zihj_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_g7zihj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createConstant_g7zihj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "debugger:");
     editorCell.setCellId("Constant_g7zihj_b0");
@@ -299,7 +284,6 @@ public class RunConfigurationExecutor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_g7zihj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("debuggerConfiguration");

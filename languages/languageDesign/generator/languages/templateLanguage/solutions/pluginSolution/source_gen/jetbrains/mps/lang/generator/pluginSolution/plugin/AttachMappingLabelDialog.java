@@ -30,7 +30,6 @@ public class AttachMappingLabelDialog extends DialogWrapper {
   private List<String> myExistingLabels;
   private String myResultLabelName = "";
   private JComboBox myNameCombo;
-
   public AttachMappingLabelDialog(SNode templateNode, List<String> existingLabels, EditorContext editorContext) {
     super(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()));
     setTitle("Attach Mapping Label");
@@ -39,7 +38,6 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     this.myTemplateNode = templateNode;
     init();
   }
-
   private JPanel createNamePanel() {
     JPanel namePanel = new JPanel(new GridBagLayout());
     GridBagConstraints c = new GridBagConstraints();
@@ -66,7 +64,6 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     }
     return namePanel;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -83,19 +80,16 @@ public class AttachMappingLabelDialog extends DialogWrapper {
     panel.add(createNamePanel(), c);
     return panel;
   }
-
   @Override
   protected void doOKAction() {
     super.doOKAction();
     doAttachMappingLabel();
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myNameCombo;
   }
-
   protected void doAttachMappingLabel() {
     myEditorContext.getRepository().getModelAccess().executeCommand(new Runnable() {
       public void run() {

@@ -21,11 +21,9 @@ import jetbrains.mps.smodel.SReference;
 public class SetType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "set");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
@@ -43,15 +41,12 @@ public class SetType_Behavior {
     }
     return variableSuffixes;
   }
-
   public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return true;
   }
-
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_q66uze_a0a1a4(SLinkOperations.getTarget(thisNode, "elementType", true)));
@@ -59,18 +54,15 @@ public class SetType_Behavior {
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_q66uze_a0a5();
   }
-
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName)) {
       return false;
     }
     return true;
   }
-
   private static SNode _quotation_createNode_q66uze_a0a1a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -82,7 +74,6 @@ public class SetType_Behavior {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_q66uze_a0a2a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -94,7 +85,6 @@ public class SetType_Behavior {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_q66uze_a0a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

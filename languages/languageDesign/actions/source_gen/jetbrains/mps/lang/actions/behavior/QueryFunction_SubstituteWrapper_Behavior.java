@@ -16,7 +16,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class QueryFunction_SubstituteWrapper_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     if (SNodeOperations.isInstanceOf(parameter, "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap")) {
       return false;
@@ -29,13 +28,11 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     }
     return true;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
     SNode concept = SLinkOperations.getTarget(hostMenuPart, "concept", false);
     return _quotation_createNode_e9b8sb_a2a1(concept);
   }
-
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToWrap"));
@@ -47,7 +44,6 @@ public class QueryFunction_SubstituteWrapper_Behavior {
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext"));
     return result;
   }
-
   private static SNode _quotation_createNode_e9b8sb_a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class PasteOriginalNode_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PasteOriginalNode_Action() {
     super("Paste Original Node", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return PlatformDataKeys.PASTE_PROVIDER.getData(((EditorComponent) MapSequence.fromMap(_params).get("editor"))) instanceof BaseConsoleTab.MyPasteProvider;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,12 +49,17 @@ public class PasteOriginalNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editor", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editor", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editor") == null) {
       return false;
     }
@@ -68,7 +69,6 @@ public class PasteOriginalNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ConsoleTool.class).runWithoutPasteAsRef(new Runnable() {
@@ -82,6 +82,5 @@ public class PasteOriginalNode_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PasteOriginalNode_Action.class);
 }

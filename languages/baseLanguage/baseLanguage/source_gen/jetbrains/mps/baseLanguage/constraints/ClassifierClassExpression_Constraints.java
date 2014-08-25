@@ -23,7 +23,6 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
   public ClassifierClassExpression_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             String nameInContext = Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(_context.getParameterNode(), _context.getEnclosingNode());
@@ -50,12 +47,10 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
             }
             return nameInContext;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_w155fn_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ClassifierScopes.getWithClassExpressionClassifiers(_context.getContextNode());
@@ -65,6 +60,5 @@ public class ClassifierClassExpression_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   private static SNodePointer breakingNode_w155fn_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136857");
 }

@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel.language;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+
 /**
  * In the meantime, just a marker interface to break circular dependency between kernel and generator.
  * Might need revision once better idea about:
@@ -24,4 +27,9 @@ package jetbrains.mps.smodel.language;
  * @author Artem Tikhomirov
  */
 public interface GeneratorRuntime {
+  /**
+   * Identifies this generator runtime module
+   */
+  @NotNull
+  public SModuleReference getModuleReference();
 }

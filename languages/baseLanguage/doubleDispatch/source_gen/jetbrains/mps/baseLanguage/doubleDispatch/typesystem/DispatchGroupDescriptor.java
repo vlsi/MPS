@@ -20,7 +20,6 @@ public class DispatchGroupDescriptor {
   private String methodName;
   private boolean isStatic;
   private Iterable<SNode> otherParamTypes;
-
   public DispatchGroupDescriptor(SNode pattern) {
     methodName = SPropertyOperations.getString(pattern, "name");
     isStatic = SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
@@ -30,7 +29,6 @@ public class DispatchGroupDescriptor {
       }
     });
   }
-
   @Override
   public boolean equals(Object o) {
     if (!(o instanceof DispatchGroupDescriptor)) {
@@ -65,7 +63,6 @@ public class DispatchGroupDescriptor {
 
     return true;
   }
-
   @Override
   public int hashCode() {
     return methodName.hashCode() + ((isStatic ? 1 : 0)) + Sequence.fromIterable(otherParamTypes).foldLeft(0, new ILeftCombinator<SNode, Integer>() {
@@ -74,7 +71,6 @@ public class DispatchGroupDescriptor {
       }
     });
   }
-
   private boolean typesEqual(SNode typ1, SNode typ2) {
     {
       SNode cls = typ1;
@@ -93,7 +89,6 @@ public class DispatchGroupDescriptor {
     }
     return BehaviorReflection.invokeVirtual(String.class, typ1, "virtual_getPresentation_1213877396640", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, typ2, "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   private int typeHashCode(SNode typ) {
     {
       SNode cls = typ;

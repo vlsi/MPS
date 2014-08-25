@@ -11,12 +11,9 @@ import com.intellij.execution.filters.HyperlinkInfo;
 
 public class StandaloneMPSStackTraceFilter extends MPSStackTraceFilter {
 
-
   public StandaloneMPSStackTraceFilter(Project project) {
     super(project);
   }
-
-
 
   @Override
   protected Filter.Result detectTarget(int hlStart, int hlEnd, final String unitName, final String fileName, final int lineNumber, Project project) {

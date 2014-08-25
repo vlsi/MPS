@@ -11,17 +11,14 @@ public class DefaultExecutionConsole implements ExecutionConsole {
   @Nullable
   private final _FunctionTypes._void_P0_E0 myDispose;
   private final JComponent myComponent;
-
   public DefaultExecutionConsole(JComponent component, @Nullable _FunctionTypes._void_P0_E0 dispose) {
     myDispose = dispose;
     myComponent = component;
   }
-
   @Override
   public JComponent getPreferredFocusableComponent() {
     return myComponent;
   }
-
   @Override
   public void dispose() {
     if (myDispose == null) {
@@ -29,7 +26,6 @@ public class DefaultExecutionConsole implements ExecutionConsole {
     }
     myDispose.invoke();
   }
-
   @Override
   public JComponent getComponent() {
     return myComponent;

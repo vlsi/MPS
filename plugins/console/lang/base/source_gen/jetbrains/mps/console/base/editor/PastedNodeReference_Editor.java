@@ -17,7 +17,6 @@ public class PastedNodeReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_7k9x8q_a(editorContext, node);
   }
-
   private EditorCell createComponent_7k9x8q_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.console.base.editor.INodeWithReference_EditorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

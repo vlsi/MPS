@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MoveNodeToNodeExpression_DataFlow extends DataFlowBuilder {
   public MoveNodeToNodeExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "whatToMove", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "destination", true));

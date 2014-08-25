@@ -12,5 +12,4 @@ public class TestLanguage_StyleSheet_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
 
-
 }

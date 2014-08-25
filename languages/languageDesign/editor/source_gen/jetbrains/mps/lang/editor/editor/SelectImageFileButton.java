@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class SelectImageFileButton extends JButton {
   private SNode myNode;
-
   public SelectImageFileButton(SNode node) {
     this.myNode = node;
     this.setFont(EditorSettings.getInstance().getDefaultEditorFont());

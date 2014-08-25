@@ -23,11 +23,9 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_utw2vv_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_utw2vv_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_utw2vv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_a");
@@ -38,14 +36,12 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_utw2vv_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "reference");
     editorCell.setCellId("Constant_utw2vv_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_utw2vv_b0");
@@ -60,7 +56,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_utw2vv_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("linkQualifier");
@@ -80,7 +75,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_utw2vv_d0");
@@ -93,7 +87,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_utw2vv_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_a_0");
@@ -106,7 +99,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_utw2vv_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The 'reference' operation");
     editorCell.setCellId("Constant_utw2vv_a0_0");
@@ -117,14 +109,12 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_utw2vv_b0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_utw2vv_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_c0");
@@ -136,7 +126,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_utw2vv_c2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns target of the reference specified by");
     editorCell.setCellId("Constant_utw2vv_a2a");
@@ -146,14 +135,12 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkQualifier");
     editorCell.setCellId("Constant_utw2vv_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameter");
     editorCell.setCellId("Constant_utw2vv_c2a");
@@ -163,14 +150,12 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_d0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_utw2vv_d0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Parameter:");
     editorCell.setCellId("Constant_utw2vv_e0");
@@ -180,7 +165,6 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_utw2vv_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_utw2vv_f0");
@@ -191,14 +175,12 @@ public class Node_GetReferenceOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_utw2vv_b5a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "linkQualifier");
     editorCell.setCellId("Constant_utw2vv_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_utw2vv_b5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "LinkDeclaration of requested reference");
     editorCell.setCellId("Constant_utw2vv_b5a");

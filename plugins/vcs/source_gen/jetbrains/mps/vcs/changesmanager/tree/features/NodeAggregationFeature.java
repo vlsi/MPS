@@ -9,7 +9,6 @@ public abstract class NodeAggregationFeature extends AbstractNodeFeature {
   protected NodeAggregationFeature(@NotNull SNodeReference nodePointer) {
     super(nodePointer);
   }
-
   @NotNull
   @Override
   public Feature getParent() {

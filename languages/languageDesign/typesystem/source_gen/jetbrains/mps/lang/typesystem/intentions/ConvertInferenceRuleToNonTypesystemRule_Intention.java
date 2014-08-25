@@ -22,69 +22,54 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertInferenceRuleToNonTypesystemRule_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertInferenceRuleToNonTypesystemRule_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.InferenceRule";
   }
-
   public String getPresentation() {
     return "ConvertInferenceRuleToNonTypesystemRule";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.typesystem.intentions.ConvertInferenceRuleToNonTypesystemRule_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.typesystem";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement", "jetbrains.mps.lang.typesystem.structure.TypeVarDeclaration", "jetbrains.mps.lang.typesystem.structure.TypeVarReference", "jetbrains.mps.lang.typesystem.structure.TypeOfExpression", "jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement"}, false, new String[]{});
     return ListSequence.fromList(descendants).isEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "1195490883262");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInferenceRuleToNonTypesystemRule_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Non-Typesystem Rule";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nonTypesystemRule = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.typesystem.structure.NonTypesystemRule", null);
       SPropertyOperations.set(nonTypesystemRule, "overrides", "" + (SPropertyOperations.getBoolean(node, "overrides")));
@@ -99,7 +84,6 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
       SNodeOperations.deleteNode(node);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), nonTypesystemRule, true, !(jetbrains.mps.util.SNodeOperations.isRoot(nonTypesystemRule)));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertInferenceRuleToNonTypesystemRule_Intention.this;
     }

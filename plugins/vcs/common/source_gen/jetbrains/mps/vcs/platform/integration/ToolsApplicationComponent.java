@@ -10,23 +10,19 @@ public class ToolsApplicationComponent implements ApplicationComponent {
   private final ModelDiffTool myModelDiffTool = new ModelDiffTool();
   private final ModelMergeTool myModelMergeTool = new ModelMergeTool();
   private final DiffManager myDiffManager;
-
   public ToolsApplicationComponent(DiffManager diffManager) {
     myDiffManager = diffManager;
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return ToolsApplicationComponent.class.getSimpleName();
   }
-
   @Override
   public void initComponent() {
     myDiffManager.registerDiffTool(myModelDiffTool);
     myDiffManager.registerDiffTool(myModelMergeTool);
   }
-
   @Override
   public void disposeComponent() {
     myDiffManager.unregisterDiffTool(myModelDiffTool);

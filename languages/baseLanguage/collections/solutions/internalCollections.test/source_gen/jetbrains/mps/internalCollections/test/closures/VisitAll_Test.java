@@ -25,7 +25,6 @@ public class VisitAll_Test extends Util_Test {
     });
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_visitorVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     final ArrayList<Integer> res = new ArrayList<Integer>();
@@ -37,7 +36,6 @@ public class VisitAll_Test extends Util_Test {
     seq.visitAll(visitor);
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_visitOperation() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
@@ -47,7 +45,6 @@ public class VisitAll_Test extends Util_Test {
     });
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_visitorVarOperation() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     _FunctionTypes._void_P1_E0<? super Integer> cl = new _FunctionTypes._void_P1_E0<Integer>() {
@@ -58,7 +55,6 @@ public class VisitAll_Test extends Util_Test {
     Sequence.fromIterable(this.input5()).visitAll(cl);
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_legacyForEach() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input5()).visitAll(new IVisitor<Integer>() {
@@ -68,7 +64,6 @@ public class VisitAll_Test extends Util_Test {
     });
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_skipStop() throws Exception {
     final ArrayList<Integer> res = new ArrayList<Integer>();
     Sequence.fromIterable(this.input10()).visitAll(new IVisitor<Integer>() {
@@ -103,7 +98,6 @@ __skip__:
     });
     this.assertIterableEquals(Arrays.asList(4, 8, 12), res);
   }
-
   public void test_parameterizedAdaptation() throws Exception {
     List<String> ls = ListSequence.fromListAndArray(new ArrayList<String>(), "A", "BB", "CCC", "DDDD");
     final Wrappers._int len = new Wrappers._int(0);
@@ -114,7 +108,6 @@ __skip__:
     });
     Assert.assertEquals(10, len.value);
   }
-
   public void test_typing() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 2, 4, 6);
     final List<Integer> out = ListSequence.fromList(new ArrayList<Integer>());
@@ -125,7 +118,6 @@ __skip__:
     });
     this.assertIterableEquals(this.expectOdd5(), out);
   }
-
   public void forEach(Iterable<String> seqs, IVisitor<String> visitor) {
     Sequence.fromIterable(seqs).visitAll(visitor);
   }

@@ -17,7 +17,6 @@ import java.util.HashMap;
 public class SwitchGenUtil {
   public SwitchGenUtil() {
   }
-
   public static Iterable<SNode> getNodes(SNode node) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "case", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -33,7 +32,6 @@ public class SwitchGenUtil {
       }
     }, true);
   }
-
   public static Map<String, Integer> getMap(SNode node, TemplateQueryContext genContext) {
     Map<String, Integer> m = (Map<String, Integer>) genContext.getTransientObject("switch" + node.getNodeId().toString());
     if (m != null) {

@@ -12,11 +12,9 @@ import java.util.Arrays;
 
 public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
   private static final long serialVersionUID = 4639602987002419231L;
-
   protected QueueSequence(Queue<T> queue) {
     super(queue);
   }
-
   public static <U> IQueueSequence<U> fromQueue(Queue<U> queue) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (queue == null) {
@@ -28,7 +26,6 @@ public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<
     }
     return new QueueSequence<U>(queue);
   }
-
   public static <U> IQueueSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -55,7 +52,6 @@ public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<
     }
     return new QueueSequence<U>(queue);
   }
-
   public static <U> IQueueSequence<U> fromQueueAndArray(Queue<U> queue, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -91,7 +87,6 @@ public class QueueSequence<T> extends AbstractQueueSequence<T> implements Queue<
     }
     return new QueueSequence<U>(queue);
   }
-
   public static <U> IQueueSequence<U> fromQueueWithValues(Queue<U> queue, Iterable<? extends U> it) {
     Queue<U> tmp = queue;
     if (Sequence.USE_NULL_SEQUENCE) {

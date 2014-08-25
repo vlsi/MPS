@@ -6,7 +6,6 @@ package jetbrains.mps.samples.KajaSceneConstruction.behavior;
 public class DropMark_BehaviorDescriptor extends AbstractBuilderCommand_BehaviorDescriptor {
   public DropMark_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.KajaSceneConstruction.structure.DropMark";

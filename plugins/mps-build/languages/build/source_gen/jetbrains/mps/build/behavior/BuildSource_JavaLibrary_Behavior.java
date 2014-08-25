@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildSource_JavaLibrary_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_canExportByParts_5610619299014309362(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elements", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

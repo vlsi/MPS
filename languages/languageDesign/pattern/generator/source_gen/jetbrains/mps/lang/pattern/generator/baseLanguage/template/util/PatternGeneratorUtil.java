@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class PatternGeneratorUtil {
   public PatternGeneratorUtil() {
   }
-
   public static SNode get(TemplateQueryContext genContext, SNode var) {
     List<SNode> nodes = genContext.getAllOutputNodesByInputNodeAndMappingLabel(var, "patternVarField");
     if (ListSequence.fromList(nodes).count() == 1) {

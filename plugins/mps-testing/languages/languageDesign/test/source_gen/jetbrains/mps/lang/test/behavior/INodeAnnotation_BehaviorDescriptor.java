@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class INodeAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public INodeAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.INodeAnnotation";

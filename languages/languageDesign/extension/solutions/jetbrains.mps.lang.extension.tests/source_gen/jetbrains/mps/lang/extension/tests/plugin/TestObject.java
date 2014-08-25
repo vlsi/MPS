@@ -6,23 +6,17 @@ package jetbrains.mps.lang.extension.tests.plugin;
 public class TestObject {
   public TestObject() {
   }
-
   private boolean myShutDown;
-
   public boolean isShutDown() {
     return this.myShutDown;
   }
-
   public void setShutDown(boolean value) {
     this.myShutDown = value;
   }
-
   private String myValue;
-
   public String getValue() {
     return this.myValue;
   }
-
   public void setValue(String value) {
     this.myValue = value;
   }

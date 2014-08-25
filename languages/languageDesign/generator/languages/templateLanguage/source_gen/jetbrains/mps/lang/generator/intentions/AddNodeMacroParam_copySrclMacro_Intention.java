@@ -24,53 +24,42 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public class AddNodeMacroParam_copySrclMacro_Intention implements IntentionFactory {
   public AddNodeMacroParam_copySrclMacro_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public String getPresentation() {
     return "AddNodeMacroParam_copySrclMacro";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.AddNodeMacroParam_copySrclMacro_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(MacroIntentionsUtil.isInGeneratorModel(node))) {
       return false;
     }
     return EditingUtil.isNodeMacroApplicable(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240595864245");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
@@ -81,23 +70,18 @@ public class AddNodeMacroParam_copySrclMacro_Intention implements IntentionFacto
     }
     return list;
   }
-
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     SNode sourceNode = MacroIntentionsUtil.getContextNodeConcept(node);
     return MacroIntentionsUtil.getLinks(sourceNode, true);
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
-
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Apply COPY__SRCL over node." + MacroIntentionsUtil.getPresentaion(myParameter);
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nodeMacro = EditingUtil.addNodeMacro(node);
       SNode copySrcListMacro = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.CopySrcListMacro", null);
@@ -115,7 +99,6 @@ public class AddNodeMacroParam_copySrclMacro_Intention implements IntentionFacto
       // set caret 
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, copySrcListMacro, SelectionManager.FIRST_CELL, 1);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddNodeMacroParam_copySrclMacro_Intention.this;
     }

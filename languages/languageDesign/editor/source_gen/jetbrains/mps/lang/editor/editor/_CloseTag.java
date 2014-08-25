@@ -24,25 +24,22 @@ public class _CloseTag implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createReadOnlyModelAccessor_abi8e8_a(editorContext, node);
   }
-
   private EditorCell createReadOnlyModelAccessor_abi8e8_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node);
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_abi8e8_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
@@ -51,7 +48,6 @@ public class _CloseTag implements ConceptEditorComponent {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_abi8e8_a0a(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }

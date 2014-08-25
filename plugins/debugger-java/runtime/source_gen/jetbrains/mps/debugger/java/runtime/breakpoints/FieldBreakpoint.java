@@ -28,16 +28,13 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
   private static final Logger LOG = LogManager.getLogger(FieldBreakpoint.class);
   private final BreakpointLocation myLocation;
   private String myFieldName;
-
   public FieldBreakpoint(@NotNull SNodeReference nodePointer, Project project) {
     super(project);
     myLocation = new BreakpointLocation(nodePointer);
   }
-
   public FieldBreakpoint(@NotNull SNode node, Project project) {
     this(new SNodePointer(node), project);
   }
-
   private boolean updateFieldName() {
     if (myFieldName != null) {
       return true;
@@ -45,30 +42,25 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
     myFieldName = myLocation.getTargetCodePosition().getPropertyString();
     return myFieldName != null;
   }
-
   @NotNull
   @Override
   public BreakpointLocation getLocation() {
     return myLocation;
   }
-
   @Override
   @Nullable
   protected String getClassNameToPrepare() {
     return myLocation.getTargetUnitName();
   }
-
   @NotNull
   @Override
   public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.FIELD_BREAKPOINT;
   }
-
   @Override
   public String getPresentation() {
     return myLocation.getPresentation();
   }
-
   @Override
   protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
@@ -92,7 +84,6 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
       LOG.error(null, ex);
     }
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -104,14 +95,12 @@ public class FieldBreakpoint extends JavaBreakpoint implements ILocationBreakpoi
 
     return eq_he6f5h_a0d0l(myLocation, ((FieldBreakpoint) o).myLocation);
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((myLocation != null ? ((Object) myLocation).hashCode() : 0));
     return result;
   }
-
   private static boolean eq_he6f5h_a0d0l(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

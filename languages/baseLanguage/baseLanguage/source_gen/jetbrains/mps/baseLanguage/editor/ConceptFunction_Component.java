@@ -31,11 +31,9 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_trik0f_a(editorContext, node);
   }
-
   private EditorCell createCollection_trik0f_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_trik0f_a");
@@ -43,21 +41,19 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createCollection_trik0f_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_trik0f_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return ConceptFunction_Behavior.call_getHeader_2866018809101862250(node);
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_trik0f_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);
@@ -67,7 +63,6 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_trik0f_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_trik0f_b0");
@@ -81,7 +76,6 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_trik0f_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_trik0f_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_trik0f_a1a");
@@ -93,7 +87,6 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_trik0f_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -120,7 +113,6 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_trik0f_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_trik0f_c1a");
@@ -131,7 +123,6 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_trik0f_a1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.ConceptFunction_Folded_Component");
     return editorCell;

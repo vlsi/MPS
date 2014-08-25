@@ -12,7 +12,6 @@ public class DoNotGenerateOptionChange extends MetadataChange {
   public DoNotGenerateOptionChange(@NotNull ChangeSet changeSet) {
     super(changeSet);
   }
-
   @Override
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SModelHeader mh = ((DefaultSModel) model).getSModelHeader();
@@ -20,19 +19,16 @@ public class DoNotGenerateOptionChange extends MetadataChange {
       mh.setDoNotGenerate(!(mh.isDoNotGenerate()));
     }
   }
-
   @NotNull
   @Override
   protected ModelChange createOppositeChange() {
     return new DoNotGenerateOptionChange(getChangeSet().getOppositeChangeSet());
   }
-
   @NotNull
   @Override
   public ChangeType getType() {
     return ChangeType.CHANGE;
   }
-
   @Override
   public String toString() {
     return "Change Do Not Generate Option";

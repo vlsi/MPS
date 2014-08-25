@@ -24,7 +24,6 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qyzwn3_a(editorContext, node);
   }
-
   private EditorCell createCollection_qyzwn3_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qyzwn3_a");
@@ -35,7 +34,6 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createAlternation_qyzwn3_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlTextValue_Editor.renderingCondition_qyzwn3_a0a(node, editorContext);
@@ -47,11 +45,9 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_qyzwn3_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_3080189811177340422", new Object[]{});
   }
-
   private EditorCell createProperty_qyzwn3_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -75,16 +71,13 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.core.xml.structure.XmlValuePart";
     }
   }
-
   private EditorCell createProperty_qyzwn3_a0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -107,16 +100,13 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlValuePart_cellMenu_qyzwn3_a0a0a_0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.core.xml.structure.XmlValuePart";
     }
   }
-
   private EditorCell createConstant_qyzwn3_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qyzwn3_b0");
@@ -127,7 +117,6 @@ public class XmlTextValue_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_qyzwn3_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_3080189811177340429", new Object[]{});
   }

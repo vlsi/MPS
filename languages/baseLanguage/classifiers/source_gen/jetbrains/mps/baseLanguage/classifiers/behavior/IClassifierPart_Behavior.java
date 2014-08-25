@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class IClassifierPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getMembers_1213877255431(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(thisNode)) {

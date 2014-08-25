@@ -11,17 +11,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class NodeErrorCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
     return SNodeOperations.isInstanceOf(reference, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement");
   }
-
   public static void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
     assert BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_canAttachReference_2893471348147804024", new Object[]{reference});
     SLinkOperations.setTarget(thisNode, "errorRef", SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ReportErrorStatementReference", null), true);
     SLinkOperations.setTarget(SLinkOperations.getTarget(thisNode, "errorRef", true), "declaration", SNodeOperations.cast(reference, "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement"), false);
   }
-
   public static SNode virtual_getReference_8333855927540237654(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "errorRef", true);
   }

@@ -29,26 +29,21 @@ import jetbrains.mps.errors.QuickFixProvider;
 
 public class SpecificModelChecker extends SpecificChecker implements ITypeContextOwner {
   private List<INodeChecker> myLanguageCheckers;
-
   public SpecificModelChecker() {
     myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
   }
-
   @Override
   public boolean reuseTypecheckingContext() {
     return true;
   }
-
   @Override
   public SubtypingCache createSubtypingCache() {
     return new ConcurrentSubtypingCache();
   }
-
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
     return new DefaultTypecheckingContextOwner().createTypecheckingContext(node, manager);
   }
-
   @Override
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor monitor, final SRepository repository) {
     final List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
@@ -91,14 +86,12 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     monitor.done();
     return results;
   }
-
   private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0e0d0f(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
-
   private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a4a3a5(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();

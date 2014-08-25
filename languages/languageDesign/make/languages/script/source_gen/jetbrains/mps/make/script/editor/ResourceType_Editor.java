@@ -21,7 +21,6 @@ public class ResourceType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nzilxu_a(editorContext, node);
   }
-
   private EditorCell createCollection_nzilxu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nzilxu_a");
@@ -32,7 +31,6 @@ public class ResourceType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nzilxu_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_nzilxu_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -40,7 +38,6 @@ public class ResourceType_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_nzilxu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_nzilxu_b0");
@@ -50,7 +47,6 @@ public class ResourceType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nzilxu_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("classifierType");
@@ -70,7 +66,6 @@ public class ResourceType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nzilxu_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_nzilxu_d0");

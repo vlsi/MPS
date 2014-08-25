@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SwitchStatement_DataFlow extends DataFlowBuilder {
   public SwitchStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     for (SNode switchCase : SLinkOperations.getTargets(_context.getNode(), "case", true)) {

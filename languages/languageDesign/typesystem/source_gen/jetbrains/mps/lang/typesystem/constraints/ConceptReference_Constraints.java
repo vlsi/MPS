@@ -26,7 +26,6 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
   public ConceptReference_Constraints() {
     super("jetbrains.mps.lang.typesystem.structure.ConceptReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,12 +34,10 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnOnReferenceSetHandler() {
         return true;
       }
-
       @Override
       public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         return true;
       }
-
       @Override
       public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         if ((newReferentNode != null) && newReferentNode != oldReferentNode) {
@@ -50,12 +47,10 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
           }
         }
       }
-
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -64,7 +59,6 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_dyivod_a0a0a0a0a4a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
@@ -74,6 +68,5 @@ public class ConceptReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_dyivod_a0a0a0a0a4a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)", "1203412650363816661");
 }

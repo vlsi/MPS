@@ -13,7 +13,6 @@ public class Icons {
   public static final Icon THREAD_RUNNING = IconContainer.ICON_a5;
   public static final Icon THREAD_SUSPENDED = IconContainer.ICON_a6;
   public static final Icon THREAD_AT_BREAKPOINT = IconContainer.ICON_a7;
-
   public Icons() {
   }
 }

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellLayout_Superscript_BehaviorDescriptor extends CellLayout_BehaviorDescriptor {
   public CellLayout_Superscript_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Superscript";

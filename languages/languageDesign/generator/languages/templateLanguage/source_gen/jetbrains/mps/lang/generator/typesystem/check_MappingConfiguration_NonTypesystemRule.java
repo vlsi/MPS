@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_MappingConfiguration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode mc, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode scriptReference : ListSequence.fromList(SLinkOperations.getTargets(mc, "preMappingScript", true))) {
       if (!(SPropertyOperations.hasValue(SLinkOperations.getTarget(scriptReference, "mappingScript", false), "scriptKind", "pre_processing", "post_processing"))) {
@@ -34,18 +33,15 @@ public class check_MappingConfiguration_NonTypesystemRule extends AbstractNonTyp
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.MappingConfiguration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

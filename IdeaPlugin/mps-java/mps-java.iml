@@ -60,6 +60,7 @@
     <orderEntry type="library" name="mps.MPS.Platform" level="project" />
     <orderEntry type="library" name="mps.MPS.Editor" level="project" />
     <orderEntry type="library" name="mps.jetbrains.mps.tool.common" level="project" />
+    <orderEntry type="library" name="junit-4.11" level="project" />
   </component>
 </module>
 

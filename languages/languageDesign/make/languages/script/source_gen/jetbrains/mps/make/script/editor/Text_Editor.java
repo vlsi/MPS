@@ -22,7 +22,6 @@ public class Text_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wlph7j_a(editorContext, node);
   }
-
   private EditorCell createCollection_wlph7j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_wlph7j_a");
@@ -32,7 +31,6 @@ public class Text_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_wlph7j_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_wlph7j_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_wlph7j_a0");
@@ -43,7 +41,6 @@ public class Text_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_wlph7j_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");
@@ -70,7 +67,6 @@ public class Text_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_wlph7j_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "\"");
     editorCell.setCellId("Constant_wlph7j_c0");

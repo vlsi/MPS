@@ -20,70 +20,54 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class DivExpressionDivToFraction_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public DivExpressionDivToFraction_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.DivExpression";
   }
-
   public String getPresentation() {
     return "DivExpressionDivToFraction";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.math.intentions.DivExpressionDivToFraction_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.math";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1237104500799");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new DivExpressionDivToFraction_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Use fraction notation for division operation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_drx02_a0a0a0(SLinkOperations.getTarget(node, "leftExpression", true), SLinkOperations.getTarget(node, "rightExpression", true)));
     }
-
     public IntentionDescriptor getDescriptor() {
       return DivExpressionDivToFraction_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_drx02_a0a0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

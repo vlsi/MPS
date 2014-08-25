@@ -29,12 +29,10 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public SLinkImplicitSelect_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -45,7 +43,6 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -54,7 +51,6 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -63,7 +59,6 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d(), true), "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3;
@@ -73,17 +68,13 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a4(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a0e(), true) != null);
   }
-
   public static class Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_nodeType;
-
     public Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
@@ -109,34 +100,27 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_nodeType = (SNode) pattern.getFieldValue("patternVar_nodeType");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_nodeType".equals(fieldName)) {
         return patternVar_nodeType;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
-  public static class Pattern_f4oi2a_a1a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_f4oi2a_a1a0a0a0e extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_nodeType;
-
-    public Pattern_f4oi2a_a1a0a0a4() {
+    public Pattern_f4oi2a_a1a0a0a0e() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_f4oi2a_a0a0a0a0 = nodeToMatch;
@@ -162,28 +146,23 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_nodeType = (SNode) pattern.getFieldValue("patternVar_nodeType");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_nodeType".equals(fieldName)) {
         return patternVar_nodeType;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");
   private static SNodePointer breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074490");
 }

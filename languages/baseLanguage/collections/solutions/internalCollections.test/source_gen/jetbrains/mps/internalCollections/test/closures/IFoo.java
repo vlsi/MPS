@@ -5,11 +5,9 @@ package jetbrains.mps.internalCollections.test.closures;
 
 public interface IFoo {
   public Iterable<? extends IBar> get();
-
   public static class Foo implements IFoo {
     public Foo() {
     }
-
     @Override
     public Iterable<IBar.Bar> get() {
       return null;

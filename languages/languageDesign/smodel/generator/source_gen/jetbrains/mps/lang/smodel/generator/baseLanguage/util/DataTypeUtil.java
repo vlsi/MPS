@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DataTypeUtil {
   public DataTypeUtil() {
   }
-
   public static SNode getDefaultMember(SNode enumDatatype) {
     SNode defMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(enumDatatype);
     if (defMember != null) {

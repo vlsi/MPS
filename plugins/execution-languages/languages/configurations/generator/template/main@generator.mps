@@ -6287,5 +6287,17 @@
       </node>
     </node>
   </root>
+  <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="181393747411171236" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+    <property name="name" nameId="tpck.1169194664001" value="reduce_Executor_Parameter" />
+    <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="uhxm.181393747410936990" resolveInfo="Executor_Parameter" />
+    <node role="contentNode" roleId="tpf8.1092060348987" type="tp68.InternalPartialFieldReference" typeId="tp68.1177590007607" id="181393747411171467" nodeInfo="nn">
+      <property name="fieldName" nameId="tp68.1177590059093" value="myDebuggerSettings" />
+      <node role="fieldType" roleId="tp68.1177590063781" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="181393747411171468" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="1l1h.4474271214082913334" resolveInfo="IDebuggerSettings" />
+      </node>
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="181393747411171469" nodeInfo="ng" />
+    </node>
+  </root>
 </model>
 

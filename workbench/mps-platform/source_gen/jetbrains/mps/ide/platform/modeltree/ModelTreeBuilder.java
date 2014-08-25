@@ -21,12 +21,10 @@ import java.util.Enumeration;
 
 public abstract class ModelTreeBuilder implements TreeExpansionListener {
   private JTree myTree;
-
   public ModelTreeBuilder(JTree tree) {
     myTree = tree;
     myTree.addTreeExpansionListener(this);
   }
-
   @Override
   public void treeExpanded(TreeExpansionEvent event) {
     Object lastNode = event.getPath().getLastPathComponent();
@@ -38,17 +36,13 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
       }
     }
   }
-
   @Override
   public void treeCollapsed(TreeExpansionEvent event) {
   }
-
   protected abstract void initTreeNode(ModelTreeNode node);
-
   protected void notifyNodeStructureChanged(ModelTreeNode modelTreeNode) {
     ((DefaultTreeModel) myTree.getModel()).nodeStructureChanged(modelTreeNode);
   }
-
   public static ModelTreeNode createSModelTreeNode(SModel descriptor) {
     SModelReference sModelReference = descriptor.getReference();
     String label = SModelStereotype.withoutStereotype(sModelReference.getModelName());
@@ -59,15 +53,12 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     node.setInitialized(false);
     return node;
   }
-
   public static ModelTreeNode createSNodeTreeNode(SNode node) {
     return new ModelTreeNode(node.getPresentation(), IconManager.getIconFor(node), new SNodePointer(node));
   }
-
   public static ModelTreeNode createFolderTreeNode(String folderName) {
     return new ModelTreeNode(folderName, IdeIcons.CLOSED_FOLDER, IdeIcons.OPENED_FOLDER);
   }
-
   public static Iterable<SNode> sortChildNodes(Iterable<SNode> nodes) {
     return Sequence.fromIterable(nodes).sort(new ISelector<SNode, String>() {
       public String select(SNode node) {
@@ -75,7 +66,6 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
       }
     }, true);
   }
-
   public static void insertChildSNodeTreeNode(ModelTreeNode sModelTreeNode, ModelTreeNode sNodeTreeNode, String virtualPackage) {
     ModelTreeNode parentTreeNode = sModelTreeNode;
     if ((virtualPackage != null && virtualPackage.length() > 0)) {
@@ -90,7 +80,6 @@ public abstract class ModelTreeBuilder implements TreeExpansionListener {
     }
     parentTreeNode.add(sNodeTreeNode);
   }
-
   public static ModelTreeNode findChildNodeByText(ModelTreeNode parentTreeNode, String childName) {
     for (Enumeration children = parentTreeNode.children(); children.hasMoreElements();) {
       Object nextChild = children.nextElement();

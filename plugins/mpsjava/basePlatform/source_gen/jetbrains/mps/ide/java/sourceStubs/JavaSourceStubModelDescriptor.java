@@ -45,13 +45,10 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
 
-
   public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource) {
     super(modelRef, dataSource);
     myModelRef = modelRef;
   }
-
-
 
   private SModel createModel() {
     SModel model = new SModel(myModelRef);
@@ -59,15 +56,11 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     return model;
   }
 
-
-
   @Override
   public void attach(SRepository repository) {
     getSource().addListener(this);
     super.attach(repository);
   }
-
-
 
   @Override
   public void detach() {
@@ -75,15 +68,11 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     getSource().removeListener(this);
   }
 
-
-
   @Override
   @NotNull
   public MultiStreamDataSource getSource() {
     return (MultiStreamDataSource) super.getSource();
   }
-
-
 
   @Override
   public void changed(DataSource source, Iterable<String> changedItems) {
@@ -108,21 +97,15 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     cloned.setModelDescriptor(this);
   }
 
-
-
   @Override
   public boolean needsReloading() {
     return false;
   }
 
-
-
   @Override
   public void changed(DataSource source) {
     // ignore 
   }
-
-
 
   public void processStreams(Iterable<String> names, SModelData into) {
     JavaParser parser = new JavaParser();
@@ -184,9 +167,7 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     }
   }
 
-
   private static final int BUFSIZE = 65536;
-
   private String readInputStream(InputStream is) throws IOException {
 
     List<byte[]> blocks = ListSequence.fromList(new LinkedList<byte[]>());
@@ -230,13 +211,9 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     }
   }
 
-
-
   protected SModel getCurrentModelInternal() {
     return myModel;
   }
-
-
 
   @Deprecated
   public SModel getSModelInternal() {
@@ -252,12 +229,9 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
     return myModel;
   }
 
-
-
   public boolean isLoaded() {
     return myModel != null;
   }
-
   @Override
   public void unload() {
     ModelAccess.assertLegalWrite();
@@ -269,8 +243,6 @@ public class JavaSourceStubModelDescriptor extends ReloadableSModelBase implemen
       fireModelStateChanged(ModelLoadingState.NOT_LOADED);
     }
   }
-
-
 
   public void reloadFromDiskSafe() {
     changed(getSource(), getSource().getAvailableStreams());

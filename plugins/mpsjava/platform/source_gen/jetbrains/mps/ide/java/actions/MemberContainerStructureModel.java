@@ -19,7 +19,6 @@ import org.jetbrains.annotations.Nullable;
 public class MemberContainerStructureModel extends NodeTreeModel implements StructureViewModel {
   private final SNodeReference container;
   private final SNodeReference[] members;
-
   public MemberContainerStructureModel(SNode memberContainer) {
     container = new SNodePointer(memberContainer);
     members = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), memberContainer, "virtual_getMembers_1213877531970", new Object[]{})).select(new ISelector<SNode, SNodePointer>() {
@@ -32,12 +31,10 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
       }
     }).toGenericArray(SNodePointer.class);
   }
-
   @Override
   public SNodeReference[] getRootNodes() {
     return new SNodeReference[]{container};
   }
-
   @Override
   public SNodeReference[] getChildren(SNodeReference node) {
     if (((SNodePointer) node).equals(container)) {
@@ -46,32 +43,25 @@ public class MemberContainerStructureModel extends NodeTreeModel implements Stru
       return new SNodeReference[0];
     }
   }
-
   @Override
   public boolean shouldEnterElement(Object object) {
     return false;
   }
-
   @Override
   public void dispose() {
   }
-
   @Override
   public void removeModelListener(ModelListener listener) {
   }
-
   @Override
   public void addModelListener(ModelListener listener) {
   }
-
   @Override
   public void removeEditorPositionListener(FileEditorPositionListener listener) {
   }
-
   @Override
   public void addEditorPositionListener(FileEditorPositionListener listener) {
   }
-
   @Nullable
   @Override
   public Object getCurrentEditorElement() {

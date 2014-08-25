@@ -13,45 +13,36 @@ public class NamespaceData implements NodeData {
   private String myText;
   private final List<NodeData> myData = ListSequence.fromList(new LinkedList<NodeData>());
   private NodeData myParent;
-
   public NamespaceData(String text) {
     this.myText = text;
   }
-
   @Override
   public String getText() {
     return this.myText;
   }
-
   public void setText(String text) {
     this.myText = text;
   }
-
   @Override
   public List<NodeData> getChildren() {
     return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myData);
   }
-
   @Override
   public Icon getIcon(boolean expanded) {
     return (expanded ? IdeIcons.OPENED_FOLDER : IdeIcons.CLOSED_FOLDER);
   }
-
   @Override
   public boolean canHaveChildren() {
     return true;
   }
-
   @Override
   public void addChildren(NodeData nodeData) {
     ListSequence.fromList(this.myData).addElement(nodeData);
   }
-
   @Override
   public NodeData getParent() {
     return this.myParent;
   }
-
   @Override
   public void setParent(NodeData parent) {
     this.myParent = parent;

@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class LocalBehaviorMethodCall_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isVirtualMethodCall_7148319044498537586(SNode thisNode) {
     return (LocalBehaviorMethodCall_Behavior.call_getVirtualMethodDeclaration_7148319044498527612(thisNode) != null);
   }
-
   public static SNode call_getVirtualMethodDeclaration_7148319044498527612(SNode thisNode) {
     SNode methodDeclaration = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
     if ((SLinkOperations.getTarget(methodDeclaration, "overriddenMethod", false) != null)) {
@@ -25,7 +23,6 @@ public class LocalBehaviorMethodCall_Behavior {
       return null;
     }
   }
-
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return true;
   }

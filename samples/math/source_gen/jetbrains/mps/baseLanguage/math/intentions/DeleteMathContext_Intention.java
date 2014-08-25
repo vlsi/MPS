@@ -17,65 +17,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class DeleteMathContext_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public DeleteMathContext_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation";
   }
-
   public String getPresentation() {
     return "DeleteMathContext";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.math.intentions.DeleteMathContext_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.math";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:57529505-426f-4f87-bbc0-2843f12bd318(jetbrains.mps.baseLanguage.math.intentions)", "1238942880468");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new DeleteMathContext_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Use default math context";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, MathUtil.convert1(node));
     }
-
     public IntentionDescriptor getDescriptor() {
       return DeleteMathContext_Intention.this;
     }

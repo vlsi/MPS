@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ResourceClassifierType_replaceWith_ClassifierType_QuickFix extends QuickFix_Runtime {
   public ResourceClassifierType_replaceWith_ClassifierType_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Replace with ClassifierType";
   }
-
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.make.facet.structure.ResourceClassifierType") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"))) {
       SNode resource = SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.make.facet.structure.ResourceClassifierType"), "classifier", false);

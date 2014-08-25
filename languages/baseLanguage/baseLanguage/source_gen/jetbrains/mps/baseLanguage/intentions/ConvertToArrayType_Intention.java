@@ -18,75 +18,59 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToArrayType_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertToArrayType_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
   public String getPresentation() {
     return "ConvertToArrayType";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ConvertToArrayType_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) && !(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ArrayCreator", "componentType"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1226917954178");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToArrayType_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Array Type";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode result = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
       SLinkOperations.setTarget(result, "componentType", SNodeOperations.copyNode(node), true);
       SNodeOperations.replaceWithAnother(node, result);
       editorContext.selectWRTFocusPolicy(result);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertToArrayType_Intention.this;
     }

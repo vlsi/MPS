@@ -21,7 +21,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5jxfrn_a(editorContext, node);
   }
-
   private EditorCell createCollection_5jxfrn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_a");
@@ -40,7 +39,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_5jxfrn_l0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_5jxfrn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_a0");
@@ -52,14 +50,12 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_5jxfrn_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom viewer");
     editorCell.setCellId("Constant_5jxfrn_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_5jxfrn_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -77,7 +73,6 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_5jxfrn_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_c0a");
@@ -88,14 +83,12 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_5jxfrn_b2a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_5jxfrn_a2a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_5jxfrn_b2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("alias");
@@ -114,14 +107,12 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5jxfrn_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_5jxfrn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_5jxfrn_c0");
@@ -129,14 +120,12 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_5jxfrn_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for type:");
     editorCell.setCellId("Constant_5jxfrn_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5jxfrn_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueType");
@@ -156,21 +145,18 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5jxfrn_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "can wrap:");
     editorCell.setCellId("Constant_5jxfrn_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5jxfrn_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("canWrap");
@@ -190,21 +176,18 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5jxfrn_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get presentation:");
     editorCell.setCellId("Constant_5jxfrn_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5jxfrn_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getPresentation");
@@ -224,21 +207,18 @@ public class HighLevelCustomViewer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_5jxfrn_j0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5jxfrn_k0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get custom watchables");
     editorCell.setCellId("Constant_5jxfrn_k0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5jxfrn_l0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getWatchables");

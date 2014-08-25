@@ -51,7 +51,6 @@ public class ConceptEditorOpenHelper {
     }
     return baseNode;
   }
-
   private static SNode getBaseNode2(SNode node) {
     if (node == null) {
       return null;
@@ -62,7 +61,6 @@ public class ConceptEditorOpenHelper {
     }
     return baseNode;
   }
-
   private static boolean canOpen(SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return false;
@@ -75,7 +73,6 @@ public class ConceptEditorOpenHelper {
     }
     return true;
   }
-
   private static SNode findBaseNodeMultiTab(SNode node) {
     SNode baseNode = null;
     if (jetbrains.mps.util.SNodeOperations.isRoot(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.BaseConcept")) {

@@ -34,7 +34,6 @@ public class Node_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_aofvvp_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_aofvvp_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new Node_Editor.BlockCellImpl_aofvvp_a(editorContext, node);
     editorCell.setCellId("DiagramNode_aofvvp_a");
@@ -42,18 +41,15 @@ public class Node_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_aofvvp_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_aofvvp_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_aofvvp_a1a;
-
     private BlockCellImpl_aofvvp_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_aofvvp_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -64,7 +60,6 @@ public class Node_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -73,13 +68,11 @@ public class Node_Editor extends DefaultNodeEditor {
       myPropertyCell_aofvvp_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_aofvvp_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_aofvvp_a0a.synchronize();
       myPropertyCell_aofvvp_a1a.synchronize();
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -151,7 +144,6 @@ public class Node_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

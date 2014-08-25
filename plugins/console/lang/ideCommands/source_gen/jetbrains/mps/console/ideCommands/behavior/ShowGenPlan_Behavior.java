@@ -10,20 +10,14 @@ import jetbrains.mps.console.ideCommands.util.PartitioningHelper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ShowGenPlan_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     if (ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "targetModel", true)) == null) {
       return;
     }
     PartitioningHelper.showMappingPartitioning(ProjectHelper.toIdeaProject(context.getProject()), Sequence.fromIterable(Sequence.<SModel>singleton(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "targetModel", true)))).toListSequence(), console);
-  }
-
-  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "show generation plan";
   }
 }

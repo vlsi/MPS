@@ -24,7 +24,6 @@ public class Property_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_d21pjf_a(editorContext, node);
   }
-
   private EditorCell createAlternation_d21pjf_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Property_Editor.renderingCondition_d21pjf_a0(node, editorContext);
@@ -40,11 +39,9 @@ public class Property_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_d21pjf_a0(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"));
   }
-
   private EditorCell createCollection_d21pjf_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d21pjf_a0");
@@ -56,12 +53,10 @@ public class Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_d21pjf_f0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_d21pjf_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
-
   private EditorCell createRefNode_d21pjf_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -81,7 +76,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_d21pjf_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("propertyName");
@@ -102,7 +96,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d21pjf_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_d21pjf_d0a");
@@ -113,7 +106,6 @@ public class Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_d21pjf_e0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("propertyImplementation");
@@ -133,7 +125,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d21pjf_f0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_d21pjf_f0a");
@@ -144,7 +135,6 @@ public class Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_d21pjf_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_d21pjf_a0_0");
@@ -156,12 +146,10 @@ public class Property_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_d21pjf_f0a_0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_d21pjf_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
-
   private EditorCell createRefNode_d21pjf_b0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -181,7 +169,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_d21pjf_c0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("propertyName");
@@ -202,7 +189,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d21pjf_d0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_d21pjf_d0a_0");
@@ -213,7 +199,6 @@ public class Property_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_d21pjf_e0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("propertyImplementation");
@@ -237,7 +222,6 @@ public class Property_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d21pjf_f0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_d21pjf_f0a_0");

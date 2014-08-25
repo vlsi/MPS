@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LambdaAbstraction_InferenceRule() {
   }
-
   public void applyRule(final SNode lambdaAbstraction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode R_typevar_627759474950188093 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -47,22 +46,18 @@ public class typeof_LambdaAbstraction_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8c01d5e0-82c3-43e7-9986-af954df6cb8b(jetbrains.mps.samples.lambdaCalculus.typesystem)", "6115593414628019727", true), (SNode) result, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.LambdaAbstraction";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_e7wm7n_a0c0f0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

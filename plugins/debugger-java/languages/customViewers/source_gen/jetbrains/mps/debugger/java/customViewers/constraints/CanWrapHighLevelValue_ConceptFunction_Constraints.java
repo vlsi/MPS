@@ -14,12 +14,10 @@ public class CanWrapHighLevelValue_ConceptFunction_Constraints extends BaseConst
   public CanWrapHighLevelValue_ConceptFunction_Constraints() {
     super("jetbrains.mps.debugger.java.customViewers.structure.CanWrapHighLevelValue_ConceptFunction");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class CanWrapHighLevelValue_ConceptFunction_Constraints extends BaseConst
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.debugger.java.customViewers.structure.HighLevelCustomViewer");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:90c5d87d-81cd-4991-8860-6ac3ba3269c4(jetbrains.mps.debugger.java.customViewers.constraints)", "43370322128276353");
 }

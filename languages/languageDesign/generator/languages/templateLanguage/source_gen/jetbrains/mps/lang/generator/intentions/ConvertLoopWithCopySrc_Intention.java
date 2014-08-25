@@ -20,41 +20,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertLoopWithCopySrc_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertLoopWithCopySrc_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.LoopMacro";
   }
-
   public String getPresentation() {
     return "ConvertLoopWithCopySrc";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.ConvertLoopWithCopySrc_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     Iterable<SNode> nodes = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -80,30 +71,24 @@ public class ConvertLoopWithCopySrc_Intention implements IntentionFactory {
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "7834938100936599479");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertLoopWithCopySrc_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to $COPY-SRCL$";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       Iterable<SNode> nodes = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.getParent(node))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -123,7 +108,6 @@ public class ConvertLoopWithCopySrc_Intention implements IntentionFactory {
         }
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertLoopWithCopySrc_Intention.this;
     }

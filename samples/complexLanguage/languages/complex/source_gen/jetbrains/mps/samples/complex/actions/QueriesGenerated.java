@@ -28,19 +28,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "re";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex real part";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -56,19 +52,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "im";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex imaginary part";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -84,19 +76,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "abs";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex absolute value";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -112,19 +100,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "arg";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex argument";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -140,19 +124,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "conj";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex conjugative";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -168,19 +148,15 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(result, "complexExpression", _context.getSourceNode(), true);
         return result;
       }
-
       public String getMatchingText(String pattern) {
         return "^";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       public String getDescriptionText(String pattern) {
         return "complex degree";
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

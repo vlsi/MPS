@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class MathSymbolIndex_BehaviorDescriptor extends AbstractIndex_BehaviorDescriptor {
   public MathSymbolIndex_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex";

@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class XmlAttribute_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isMultiline_3080189811177259788(SNode thisNode) {
     boolean result = false;
     for (SNode part : SLinkOperations.getTargets(thisNode, "value", true)) {

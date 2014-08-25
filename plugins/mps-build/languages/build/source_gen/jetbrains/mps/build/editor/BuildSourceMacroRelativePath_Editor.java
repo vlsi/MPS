@@ -29,7 +29,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3is4rg_a(editorContext, node);
   }
-
   private EditorCell createCollection_3is4rg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3is4rg_a");
@@ -41,7 +40,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_3is4rg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$");
     editorCell.setCellId("Constant_3is4rg_a0");
@@ -53,16 +51,13 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildSourceMacroRelativePath_Editor.ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildSourceProjectRelativePath_cellMenu_3is4rg_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildSourceProjectRelativePath";
     }
   }
-
   private EditorCell createRefCell_3is4rg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("macro");
@@ -87,20 +82,16 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_3is4rg_a1a extends InlineCellProvider {
     public _Inline_3is4rg_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_3is4rg_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_3is4rg_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -123,7 +114,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_3is4rg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3is4rg_c0");
@@ -135,11 +125,9 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_3is4rg_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_3is4rg_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "compositePart", true) != null);
   }
-
   private EditorCell createConstant_3is4rg_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_3is4rg_a2a");
@@ -151,7 +139,6 @@ public class BuildSourceMacroRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_3is4rg_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("compositePart");

@@ -26,7 +26,6 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
   public NodeFactory_Constraints() {
     super("jetbrains.mps.lang.actions.structure.NodeFactory");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -35,7 +34,6 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
@@ -44,7 +42,6 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -53,7 +50,6 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -65,7 +61,6 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
             SModel structureModel = language.getStructureModelDescriptor();
             return new ModelNodesSearchScope(structureModel);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_i503fz_a0a1a0a0a1a0b0a1a2;
@@ -75,6 +70,5 @@ public class NodeFactory_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_i503fz_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)", "1213104859361");
 }

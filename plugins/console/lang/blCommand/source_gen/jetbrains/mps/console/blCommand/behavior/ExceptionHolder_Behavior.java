@@ -14,14 +14,12 @@ import jetbrains.mps.ide.project.ProjectHelper;
 public class ExceptionHolder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     StringSelection contents = new StringSelection(SPropertyOperations.getString(thisNode, "stackTrace"));
     CopyPasteManagerEx.getInstanceEx().setContents(contents);
     final AnalyzeStacktraceDialog dialog = new AnalyzeStacktraceDialog(project, new ProjectOperationContext(ProjectHelper.toMPSProject(project)));
     dialog.show();
   }
-
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "stackTrace") != null;
   }

@@ -26,36 +26,34 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateGenerator implements TemplateDeclaration {
   public TemplateGenerator() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_g5r92k_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
       environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1698302279987270980");
       SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1698302279987411159(new PropertyMacroContext(context, "Generator", propertyMacro_g5r92k_c0a0c0b0b0c))));
       {
-        final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final SNode tnode2 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
         try {
-          environment.nodeCopied(context, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1698302279987270981");
+          environment.nodeCopied(context, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/6509264768608431317");
+          tnode2.setReference("classifier", SReference.create("classifier", tnode2, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateModuleBase")));
         } finally {
         }
         if (tnode2 != null) {
-          tnode1.addChild("visibility", tnode2);
+          tnode1.addChild("superclass", tnode2);
         }
         // TODO validate child 
       }
       {
-        final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
+        final SNode tnode3 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
-          environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571646252");
-          tnode3.setReference("classifier", SReference.create("classifier", tnode3, PersistenceFacade.getInstance().createModelReference("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), PersistenceFacade.getInstance().createNodeId("~TemplateModule")));
+          environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1698302279987270981");
         } finally {
         }
         if (tnode3 != null) {
-          tnode1.addChild("implementedInterface", tnode3);
+          tnode1.addChild("visibility", tnode3);
         }
         // TODO validate child 
       }
@@ -2142,7 +2140,6 @@ public class TemplateGenerator implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_g5r92k_a0a1 = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987270980");
   private static SNodePointer propertyMacro_g5r92k_c0a0c0b0b0c = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987411158");
   private static SNodePointer propertyMacro_g5r92k_c0a0c0b0b0e0b0e0b0c = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "7633657384060768609");

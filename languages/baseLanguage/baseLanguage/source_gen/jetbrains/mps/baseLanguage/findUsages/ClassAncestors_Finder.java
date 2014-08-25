@@ -16,34 +16,27 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ClassAncestors_Finder");
-
   public ClassAncestors_Finder() {
   }
-
   public boolean isVisible(SNode node, SearchScope scope) {
     return SLinkOperations.getTarget(node, "superclass", true) != null;
   }
-
   @Override
   public boolean isVisible(SNode node) {
     return isVisible(node, new ModelsScope(node.getModel()));
   }
-
   @Override
   public String getDescription() {
     return "Ancestors";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
@@ -62,7 +55,6 @@ public class ClassAncestors_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";

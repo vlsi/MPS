@@ -12,35 +12,27 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_8981739865593616941(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "code");
   }
-
   public static Object propertyMacro_GetPropertyValue_8981739865593616976(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "targetClass");
   }
-
   public static Object propertyMacro_GetPropertyValue_8981739865593616871(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_8981739865593616909(final PropertyMacroContext _context) {
     return "" + SPropertyOperations.getInteger(_context.getNode(), "start");
   }
-
   public static Object propertyMacro_GetPropertyValue_8981739865593616926(final PropertyMacroContext _context) {
     return "" + SPropertyOperations.getInteger(_context.getNode(), "end");
   }
-
   public static Object propertyMacro_GetPropertyValue_8981739865593585265(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Iterable<SNode> sourceNodesQuery_8981739865593616827(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_8981739865593616836(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "field", true);
   }

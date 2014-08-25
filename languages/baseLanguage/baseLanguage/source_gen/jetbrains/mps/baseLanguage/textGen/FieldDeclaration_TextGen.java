@@ -57,6 +57,5 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(FieldDeclaration_TextGen.class);
 }

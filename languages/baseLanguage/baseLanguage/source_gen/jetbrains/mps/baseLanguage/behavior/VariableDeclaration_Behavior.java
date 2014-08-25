@@ -17,7 +17,6 @@ import jetbrains.mps.project.Project;
 public class VariableDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
@@ -25,21 +24,17 @@ public class VariableDeclaration_Behavior {
     }
     return markIcons;
   }
-
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
     throw new RuntimeException();
   }
-
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return false;
   }
-
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "type", true));
     return result;
   }
-
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer")) {
@@ -47,19 +42,15 @@ public class VariableDeclaration_Behavior {
     }
     return type;
   }
-
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     return "";
   }
-
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     return "";
   }
-
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "type", true);
   }
-
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
     return null;
   }

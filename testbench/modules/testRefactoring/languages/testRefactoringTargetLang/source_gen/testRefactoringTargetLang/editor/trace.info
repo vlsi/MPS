@@ -6,32 +6,32 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="EditorAspectDescriptorImpl.java">
-      <unit at="13,0,33,0" name="testRefactoringTargetLang.editor.EditorAspectDescriptorImpl" />
+      <unit at="13,0,30,0" name="testRefactoringTargetLang.editor.EditorAspectDescriptorImpl" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8a4661d2(testRefactoringTargetLang.editor)/1198682124391">
     <file name="AnsotherGoodConcept_Editor.java">
       <node id="1198682124391" at="12,79,13,61" concept="3" />
-      <node id="1198682124392" at="16,87,17,93" concept="2" />
-      <node id="1198682124392" at="17,93,18,46" concept="0" />
-      <node id="1198682124392" at="18,46,19,28" concept="0" />
-      <node id="1198682124392" at="19,28,20,34" concept="0" />
-      <node id="1198682124392" at="20,34,21,22" concept="3" />
+      <node id="1198682124392" at="15,87,16,93" concept="2" />
+      <node id="1198682124392" at="16,93,17,46" concept="0" />
+      <node id="1198682124392" at="17,46,18,28" concept="0" />
+      <node id="1198682124392" at="18,28,19,34" concept="0" />
+      <node id="1198682124392" at="19,34,20,22" concept="3" />
       <node id="1198682124391" at="12,0,15,0" concept="1" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="1198682124392" at="16,0,23,0" concept="1" trace="createConstant_x6a4n9_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1198682124392" at="15,0,22,0" concept="1" trace="createConstant_x6a4n9_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <scope id="1198682124391" at="12,79,13,61" />
       <scope id="1198682124391" at="12,0,15,0">
         <var name="editorContext" id="1198682124391" />
         <var name="node" id="1198682124391" />
       </scope>
-      <scope id="1198682124392" at="16,87,21,22">
+      <scope id="1198682124392" at="15,87,20,22">
         <var name="editorCell" id="1198682124392" />
       </scope>
-      <scope id="1198682124392" at="16,0,23,0">
+      <scope id="1198682124392" at="15,0,22,0">
         <var name="editorContext" id="1198682124392" />
         <var name="node" id="1198682124392" />
       </scope>
-      <unit id="1198682124391" at="11,0,24,0" name="testRefactoringTargetLang.editor.AnsotherGoodConcept_Editor" />
+      <unit id="1198682124391" at="11,0,23,0" name="testRefactoringTargetLang.editor.AnsotherGoodConcept_Editor" />
     </file>
   </root>
 </debug-info>

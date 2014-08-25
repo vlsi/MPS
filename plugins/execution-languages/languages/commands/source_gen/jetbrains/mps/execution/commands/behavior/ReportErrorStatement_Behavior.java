@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ReportErrorStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, SLinkOperations.getTarget(thisNode, "message", true));
@@ -23,7 +22,6 @@ public class ReportErrorStatement_Behavior {
     }
     SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getException_856705193941282181", new Object[]{}), "classifier", false));
   }
-
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return true;
   }

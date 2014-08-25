@@ -12,19 +12,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class _ConceptDeclaration_DeleteFinal_Action {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new _ConceptDeclaration_DeleteFinal_Action._ConceptDeclaration_DeleteFinal_Action_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new _ConceptDeclaration_DeleteFinal_Action._ConceptDeclaration_DeleteFinal_Action_BACKSPACE(node));
   }
-
   public static class _ConceptDeclaration_DeleteFinal_Action_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public _ConceptDeclaration_DeleteFinal_Action_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "final", "" + (false));
+    }
+  }
+  public static class _ConceptDeclaration_DeleteFinal_Action_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public _ConceptDeclaration_DeleteFinal_Action_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "final", "" + (false));
     }

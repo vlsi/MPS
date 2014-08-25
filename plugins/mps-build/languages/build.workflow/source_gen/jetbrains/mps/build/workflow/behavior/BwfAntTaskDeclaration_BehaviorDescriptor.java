@@ -9,15 +9,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class BwfAntTaskDeclaration_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public BwfAntTaskDeclaration_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public int virtual_getPriority_2059109515400548718(SNode thisNode) {
     return BwfAntTaskDeclaration_Behavior.virtual_getPriority_2059109515400548718(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.workflow.structure.BwfAntTaskDeclaration";

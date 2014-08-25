@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class IncompleteLeftParen_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public IncompleteLeftParen_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen";

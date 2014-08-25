@@ -7,6 +7,7 @@ import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -23,10 +24,9 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
       return ModelOrNodeChooser.this.myTree;
     }
   };
-
   /*package*/ ModelOrNodeChooser(Project project, final Object initialValue) {
     super();
-    myTree = new ProjectTree(project);
+    myTree = new ProjectTree(ProjectHelper.toMPSProject(project));
     setViewportView(myTree);
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
@@ -48,7 +48,6 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
       }
     });
   }
-
   @Override
   public Object getSelectedObject() {
     Object selection = myTree.getSelectionPath().getLastPathComponent();
@@ -60,7 +59,6 @@ public class ModelOrNodeChooser extends JBScrollPane implements ModelElementTarg
     }
     return result;
   }
-
   @Override
   public JComponent getComponent() {
     return this;

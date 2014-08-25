@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class LanguageHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public LanguageHierarchy_Action() {
     super("Language Diagram", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class LanguageHierarchy_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +63,6 @@ public class LanguageHierarchy_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Language language = (Language) ((SModule) MapSequence.fromMap(_params).get("module"));
@@ -83,6 +77,5 @@ public class LanguageHierarchy_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(LanguageHierarchy_Action.class);
 }

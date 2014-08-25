@@ -20,7 +20,6 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
   public WeakClassReference_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.WeakClassReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -29,7 +28,6 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -38,7 +36,6 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.Classifier");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_z4yh41_a0a1a0a0a1a0b0a1a1;
@@ -48,6 +45,5 @@ public class WeakClassReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_z4yh41_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "3928209435773827188");
 }

@@ -27,15 +27,12 @@ public class AnonymousClass_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
   }
-
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     return AnonymousClass_Behavior.call_getJavaName_2977939203456914071(thisNode);
   }
-
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getSuperclass_1240936569950", new Object[]{}));
   }
-
   public static String call_getJavaName_2977939203456914071(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, true);
     if ((ancestor == null)) {
@@ -43,11 +40,9 @@ public class AnonymousClass_Behavior {
     }
     return BehaviorReflection.invokeVirtual(String.class, ancestor, "virtual_getFqName_1213877404258", new Object[]{}) + "$" + AnonymousClass_Behavior.call_getIndexInContainingClass_4164197659856373643(thisNode);
   }
-
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return _quotation_createNode_mhnjwj_a0a3(SLinkOperations.getTargets(thisNode, "typeParameter", true), SLinkOperations.getTarget(thisNode, "classifier", false));
   }
-
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -56,7 +51,6 @@ public class AnonymousClass_Behavior {
       return ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"));
     }
   }
-
   public static int call_getIndexInContainingClass_4164197659856373643(SNode thisNode) {
     final SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     int index;
@@ -71,17 +65,14 @@ public class AnonymousClass_Behavior {
     }
     return index;
   }
-
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ? AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getNestedName_8540045600162184125", new Object[]{}) : BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getNestedName_8540045600162184125", new Object[]{}));
   }
-
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return (containingClassifier != null ? AnonymousClass_Behavior.call_getAnonymousClassPresentation_7523932196475740197(thisNode, containingClassifier) + BehaviorReflection.invokeVirtual(String.class, containingClassifier, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getFqName_1213877404258", new Object[]{}));
   }
-
   public static String call_getAnonymousClassPresentation_7523932196475740197(SNode thisNode, @NotNull SNode containingClassifier) {
     String result = "Anonymous in ";
     SNode containingMethod = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
@@ -90,14 +81,12 @@ public class AnonymousClass_Behavior {
     }
     return result;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (ScopeUtils.comeFrom("actualArgument", thisNode, child)) {
       return ScopeUtils.lazyParentScope(thisNode, kind);
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
-
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
@@ -121,13 +110,10 @@ public class AnonymousClass_Behavior {
       }
     }
   }
-
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return false;
   }
-
   protected static Logger LOG = LogManager.getLogger(AnonymousClass_Behavior.class);
-
   private static SNode _quotation_createNode_mhnjwj_a0a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

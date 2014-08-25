@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode rct, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(rct), "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration"))) {
       {
@@ -30,18 +29,15 @@ public class ResourceClassifierType_notIn_ResourceTypeDeclaration_NonTypesystemR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.make.facet.structure.ResourceClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

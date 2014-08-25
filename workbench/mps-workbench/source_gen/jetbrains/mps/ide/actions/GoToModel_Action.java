@@ -33,18 +33,15 @@ import org.apache.log4j.LogManager;
 
 public class GoToModel_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToModel_Action() {
     super("Go to Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -55,14 +52,6 @@ public class GoToModel_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = event.getData(PlatformDataKeys.PROJECT);
@@ -81,7 +70,6 @@ public class GoToModel_Action extends BaseAction {
             }
           };
         }
-
         @Override
         public SModelReference[] find(SearchScope scope) {
           Condition<SModel> cond = new Condition<SModel>() {
@@ -110,6 +98,5 @@ public class GoToModel_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToModel_Action.class);
 }

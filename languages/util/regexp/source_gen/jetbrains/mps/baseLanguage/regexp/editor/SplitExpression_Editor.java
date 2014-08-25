@@ -20,7 +20,6 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_b94n19_a(editorContext, node);
   }
-
   private EditorCell createCollection_b94n19_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_b94n19_a");
@@ -30,7 +29,6 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_b94n19_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_b94n19_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
@@ -50,7 +48,6 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_b94n19_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "split with");
     editorCell.setCellId("Constant_b94n19_b0");
@@ -60,7 +57,6 @@ public class SplitExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_b94n19_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");

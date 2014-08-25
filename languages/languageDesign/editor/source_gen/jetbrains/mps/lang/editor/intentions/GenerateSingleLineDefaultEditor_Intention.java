@@ -17,72 +17,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class GenerateSingleLineDefaultEditor_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public GenerateSingleLineDefaultEditor_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration";
   }
-
   public String getPresentation() {
     return "GenerateSingleLineDefaultEditor";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.GenerateSingleLineDefaultEditor_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5469351333089013987");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new GenerateSingleLineDefaultEditor_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Generate Default (Expression-like)";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       ConceptEditorDeclaration_Behavior.call_createDefaultEditor_2970389781192937380(node, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return GenerateSingleLineDefaultEditor_Intention.this;
     }

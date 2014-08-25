@@ -27,10 +27,8 @@ public class MergeDriverMain {
   public static final String SVN_OPTION = "--svn";
   public static final String GIT_OPTION = "--git";
   public static final String NO_FILETYPE = "undefined";
-
   private MergeDriverMain() {
   }
-
   public static void main(String[] args) {
     byte[] conflictStart = CONFLICT_START.getBytes();
     byte[] conflictEnd = CONFLICT_END.getBytes();
@@ -82,7 +80,6 @@ public class MergeDriverMain {
     mpsCore.dispose();
     System.exit(status);
   }
-
   public static boolean hasCRLF(File f) {
     // getting directlry from the file, but can get from git core.autcrlf + core.eol 
     Reader r = null;
@@ -102,7 +99,6 @@ public class MergeDriverMain {
     }
     return false;
   }
-
   @Nullable
   private static AbstractContentMerger selectMerger(final String filetype, File... files) {
     FileType fileType = Sequence.fromIterable(Sequence.fromArray(files)).select(new ISelector<File, FileType>() {
@@ -136,7 +132,6 @@ public class MergeDriverMain {
         return new TextMerger();
     }
   }
-
   private static void configureLog4j() {
     String logPath = System.getProperty(LOG_PROPERTY);
     if ((logPath == null || logPath.length() == 0)) {

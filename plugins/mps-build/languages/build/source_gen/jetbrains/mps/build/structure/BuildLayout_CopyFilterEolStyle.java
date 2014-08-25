@@ -14,15 +14,12 @@ public enum BuildLayout_CopyFilterEolStyle {
   crlf("convert to the pair CRLF", "crlf");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<BuildLayout_CopyFilterEolStyle> getConstants() {
     List<BuildLayout_CopyFilterEolStyle> list = ListSequence.fromList(new LinkedList<BuildLayout_CopyFilterEolStyle>());
     ListSequence.fromList(list).addElement(BuildLayout_CopyFilterEolStyle.local);
@@ -32,11 +29,9 @@ public enum BuildLayout_CopyFilterEolStyle {
     ListSequence.fromList(list).addElement(BuildLayout_CopyFilterEolStyle.crlf);
     return list;
   }
-
   public static BuildLayout_CopyFilterEolStyle getDefault() {
     return BuildLayout_CopyFilterEolStyle.local;
   }
-
   public static BuildLayout_CopyFilterEolStyle parseValue(String value) {
     if (value == null) {
       return BuildLayout_CopyFilterEolStyle.getDefault();
@@ -58,14 +53,11 @@ public enum BuildLayout_CopyFilterEolStyle {
     }
     return BuildLayout_CopyFilterEolStyle.getDefault();
   }
-
   private String myValue;
-
   BuildLayout_CopyFilterEolStyle(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

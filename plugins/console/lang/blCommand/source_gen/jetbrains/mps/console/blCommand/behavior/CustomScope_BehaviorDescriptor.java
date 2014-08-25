@@ -6,7 +6,6 @@ package jetbrains.mps.console.blCommand.behavior;
 public class CustomScope_BehaviorDescriptor extends ScopeParameter_BehaviorDescriptor {
   public CustomScope_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.CustomScope";

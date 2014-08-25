@@ -20,41 +20,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertInlineTemplateToTemplateFragment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertInlineTemplateToTemplateFragment_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence";
   }
-
   public String getPresentation() {
     return "ConvertInlineTemplateToTemplateFragment";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.ConvertInlineTemplateToTemplateFragment_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
     if (!(SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"))) {
@@ -62,30 +53,24 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
     }
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1203775431223");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInlineTemplateToTemplateFragment_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Template Fragment";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode templateNode = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
       SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
@@ -99,7 +84,6 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
 
       SelectionUtil.selectNode(editorContext, templateNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertInlineTemplateToTemplateFragment_Intention.this;
     }

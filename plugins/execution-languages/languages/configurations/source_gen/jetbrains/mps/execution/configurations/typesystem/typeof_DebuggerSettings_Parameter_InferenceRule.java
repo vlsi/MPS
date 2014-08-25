@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_DebuggerSettings_Parameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_DebuggerSettings_Parameter_InferenceRule() {
   }
-
   public void applyRule(final SNode debuggerConnectionSettings, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(debuggerConnectionSettings), "jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor")) {
       {
@@ -25,18 +24,15 @@ public class typeof_DebuggerSettings_Parameter_InferenceRule extends AbstractInf
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

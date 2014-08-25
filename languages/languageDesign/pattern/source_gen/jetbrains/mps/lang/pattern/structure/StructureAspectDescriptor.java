@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -37,7 +36,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.ListPattern").super_("jetbrains.mps.lang.pattern.structure.AsPattern").parents("jetbrains.mps.lang.pattern.structure.AsPattern").alias("*", "list pattern").create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern").children(new String[]{"clause", "variable"}, new boolean[]{true, true}).alias("[|]", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.ISuppressErrors").children(new String[]{"clause", "variable"}, new boolean[]{true, true}).alias("[|]", "").create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPatternClause").super_("jetbrains.mps.lang.pattern.structure.PatternExpression").parents("jetbrains.mps.lang.pattern.structure.PatternExpression").children(new String[]{"expression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 13:
@@ -58,6 +57,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.pattern.structure.ActionAsPattern", "jetbrains.mps.lang.pattern.structure.ActionStatement", "jetbrains.mps.lang.pattern.structure.AsPattern", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ChildDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor", "jetbrains.mps.lang.pattern.structure.GeneratorInternal_ReferenceDescriptor", "jetbrains.mps.lang.pattern.structure.InsertAfterPosition", "jetbrains.mps.lang.pattern.structure.InsertBeforePosition", "jetbrains.mps.lang.pattern.structure.InsertPosition", "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.ListPattern", "jetbrains.mps.lang.pattern.structure.OrPattern", "jetbrains.mps.lang.pattern.structure.OrPatternClause", "jetbrains.mps.lang.pattern.structure.OrPatternVariableReference", "jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.pattern.structure.PatternExpression", "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.PatternVariableReference", "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", "jetbrains.mps.lang.pattern.structure.WildcardPattern"};
 }

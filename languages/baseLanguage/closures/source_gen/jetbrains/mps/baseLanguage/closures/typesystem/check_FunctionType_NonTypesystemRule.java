@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_FunctionType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode ft, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) != null)) {
       SNode rt = SLinkOperations.getTarget(ft, "runtimeIface", false);
@@ -47,18 +46,15 @@ public class check_FunctionType_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

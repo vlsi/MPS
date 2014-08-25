@@ -21,20 +21,16 @@ public class Option_unmakeDefault extends KeyMapImpl {
     action = new Option_unmakeDefault.Option_unmakeDefault_Action0();
     this.putAction("any", "VK_DELETE", action);
   }
-
   public static class Option_unmakeDefault_Action0 extends KeyMapActionImpl {
     public Option_unmakeDefault_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "Make not default";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -49,20 +45,16 @@ public class Option_unmakeDefault extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return SNodeOperations.getIndexInParent(node) == SPropertyOperations.getInteger(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption");
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + (-1));
     }
-
     public String getKeyStroke() {
       return " DELETE";
     }

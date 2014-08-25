@@ -14,32 +14,27 @@ public class Attributes {
     List<SNode> macros = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"));
     SNode firstMacro = ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.NodeMacro"))).first();
   }
-
   public void accessToPropertyAttribute_1(SNode node) {
     SNode propertyMacro = AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name"));
     SNode concept = SNodeOperations.getConceptDeclaration(AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name")));
     SNode propertyMacro1 = AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name"));
   }
-
   public void accessToPropertyAttribute_2(SNode node) {
     SNode propMacro = null;
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name"), propMacro);
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name"), propMacro);
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", "name"), propMacro);
   }
-
   public void accessToReferenceAttribute_1(SNode node) {
     SNode referenceMacro = AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", "localVariableDeclaration"));
     SNode referenceMacro1 = AttributeOperations.getAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", "localVariableDeclaration"));
   }
-
   public void accessToReferenceAttribute_2(SNode node) {
     SNode refMacro = null;
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", "localVariableDeclaration"), refMacro);
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", "localVariableDeclaration"), refMacro);
     AttributeOperations.setAttribute(node, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", "localVariableDeclaration"), refMacro);
   }
-
   public void other(SNode node) {
     SNodeOperations.isAttribute(node);
     List<SNode> nodes = AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes());

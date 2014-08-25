@@ -16,7 +16,6 @@ public class ActionTestSidetransformAnotherChild1_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_po6iq8_a(editorContext, node);
   }
-
   private EditorCell createCollection_po6iq8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_po6iq8_a");
@@ -25,14 +24,12 @@ public class ActionTestSidetransformAnotherChild1_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createConstant_po6iq8_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_po6iq8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test sidetransform another child1");
     editorCell.setCellId("Constant_po6iq8_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_po6iq8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_po6iq8_b0");

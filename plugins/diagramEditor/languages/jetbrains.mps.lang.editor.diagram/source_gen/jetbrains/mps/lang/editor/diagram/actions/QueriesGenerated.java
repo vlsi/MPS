@@ -38,7 +38,6 @@ public class QueriesGenerated {
       SPropertyOperations.set(_context.getNewNode(), "name", SPropertyOperations.getString(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_EditorCellModel_4088443785018002411(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -52,11 +51,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(diagramNodeCell, "figure", nodeToWrap, true);
             return diagramNodeCell;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return true;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -69,7 +66,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_AbstractArgument_285670992217709792(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -97,17 +93,14 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(parameter, "link", (item), false);
                 return parameter;
               }
-
               @Override
               protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
                 SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
                 return null;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "role");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -141,17 +134,14 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(parameter, "property", (item), false);
                 return parameter;
               }
-
               @Override
               protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
                 SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
                 return null;
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -168,17 +158,14 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             return SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.diagram.structure.BLQueryArgument", _context.getCurrentTargetNode());
           }
-
           @Override
           protected SNode selectChildNode(SNode createdNode, SModel model, String pattern, EditorContext editorContext) {
             SelectionUtil.selectLabelCellAnSetCaret(editorContext, createdNode, SelectionManager.LAST_EDITABLE_CELL, -1);
             return null;
           }
-
           public String getMatchingText(String pattern) {
             return "#<expression>";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }

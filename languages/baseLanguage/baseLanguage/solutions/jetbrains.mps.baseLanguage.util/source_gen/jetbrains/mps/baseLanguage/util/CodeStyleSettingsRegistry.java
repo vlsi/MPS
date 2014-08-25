@@ -9,18 +9,14 @@ import java.util.HashMap;
 
 public class CodeStyleSettingsRegistry {
   private static Map<Project, CodeStyleSettings> myProjectToSettingsMap = MapSequence.fromMap(new HashMap<Project, CodeStyleSettings>());
-
   private CodeStyleSettingsRegistry() {
   }
-
   public static CodeStyleSettings getSettings(Project project) {
     return MapSequence.fromMap(myProjectToSettingsMap).get(project);
   }
-
   public static void registerSettings(Project project, CodeStyleSettings settings) {
     MapSequence.fromMap(myProjectToSettingsMap).put(project, settings);
   }
-
   public static void unregisterSettings(Project project) {
     MapSequence.fromMap(myProjectToSettingsMap).removeKey(project);
   }

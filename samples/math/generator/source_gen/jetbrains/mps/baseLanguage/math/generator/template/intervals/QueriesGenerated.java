@@ -16,51 +16,39 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1236432114222(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "startIncluded");
   }
-
   public static Object propertyMacro_GetPropertyValue_1236432114249(final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "endIncluded");
   }
-
   public static boolean ifMacro_Condition_1236432114203(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "start", true) != null);
   }
-
   public static boolean ifMacro_Condition_1236432114230(final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "end", true) != null);
   }
-
   public static SNode sourceNodeQuery_1236432114189(final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(_context.getNode(), "elementType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
-
   public static SNode sourceNodeQuery_1236432114214(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "start", true);
   }
-
   public static SNode sourceNodeQuery_1236432114241(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "end", true);
   }
-
   public static SNode sourceNodeQuery_1236433938657(final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "end", true)), "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getBoxedType_1213877337320", new Object[]{});
   }
-
   public static SNode sourceNodeQuery_4615859720716233387(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }
-
   public static SNode sourceNodeQuery_1236432114269(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_4615859720716233408(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftExpression", true);
   }
-
   public static SNode sourceNodeQuery_1236432114289(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rightExpression", true);
   }

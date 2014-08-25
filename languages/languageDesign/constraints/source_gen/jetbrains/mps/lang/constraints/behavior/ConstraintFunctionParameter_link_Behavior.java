@@ -11,15 +11,12 @@ import jetbrains.mps.smodel.SReference;
 public class ConstraintFunctionParameter_link_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_o122au_a0a1();
   }
-
   private static SNode _quotation_createNode_o122au_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

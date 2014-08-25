@@ -19,11 +19,9 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware {
   public Templateweave__InputRoot() {
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878724212");
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
@@ -33,7 +31,6 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
     }
     return tnode1;
   }
-
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode2 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
@@ -43,11 +40,9 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
     }
     return tnode2;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     return TemplateUtil.asList(applyPart0(environment, context), applyPart1(environment, context));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     SNode tnodepart0 = applyPart0(environment, context);
     SNodeReference weaveTf0 = weaveTfConst_ww46pe_a0b0f;
@@ -57,7 +52,6 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
     environment.weaveNode(outputContextNode, "outputChild", tnodepart1, weaveTf1, context.getInput());
     return TemplateUtil.asList(tnodepart0, tnodepart1);
   }
-
   private static SNodePointer weaveTfConst_ww46pe_a0b0f = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878724217");
   private static SNodePointer weaveTfConst_ww46pe_a0e0f = new SNodePointer("r:00000000-0000-4000-0000-011c895905f9(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ReduceInheritors@generator)", "8417539822878724218");
 }

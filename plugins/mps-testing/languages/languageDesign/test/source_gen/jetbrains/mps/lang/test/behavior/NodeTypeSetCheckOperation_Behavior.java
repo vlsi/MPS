@@ -13,7 +13,6 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 public class NodeTypeSetCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     final SNode operation = thisNode;
     PerformUtil.checkNodeWithTypeCheckingAction(node, new NodeTypeCheckingAction(operation) {
@@ -32,7 +31,6 @@ public class NodeTypeSetCheckOperation_Behavior {
       }
     });
   }
-
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeTypeSetCheck";
   }

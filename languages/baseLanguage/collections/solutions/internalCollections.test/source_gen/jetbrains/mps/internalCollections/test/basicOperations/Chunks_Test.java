@@ -24,7 +24,6 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(5, 6, 7), input.page(4, 7));
     this.assertIterableEquals(input.skip(3).take(5), input.page(3, 8));
   }
-
   public void test_chunkOperations() throws Exception {
     Iterable<Integer> input = this.input10();
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).take(3));
@@ -34,14 +33,12 @@ public class Chunks_Test extends Util_Test {
     this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(4, 7));
     this.assertIterableEquals(Sequence.fromIterable(input).skip(3).take(5), Sequence.fromIterable(input).page(3, 8));
   }
-
   public void test_pageOperationNoSideEffects() throws Exception {
     Iterable<Integer> input = this.input10();
     int from = 3;
     int to = 8;
     this.assertIterableEquals(Arrays.asList(5, 6, 7), Sequence.fromIterable(input).page(from = from + 1, to = to - 1));
   }
-
   public void test_takeAll() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -49,7 +46,6 @@ public class Chunks_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -87,7 +83,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -96,7 +91,6 @@ __switch__:
     });
     Assert.assertSame(100, Sequence.fromIterable(test).take(Integer.MAX_VALUE).count());
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
     this.assertIteratorYields(ListSequence.fromList(test).take(3).iterator(), 1, 2, 3);

@@ -9,6 +9,7 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Element;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.util.xml.XmlUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -26,7 +27,6 @@ import org.apache.log4j.LogManager;
 public class LanguageDescriptorPersistence {
   private LanguageDescriptorPersistence() {
   }
-
   public static LanguageDescriptor loadLanguageDescriptor(final IFile file, final MacroHelper macroHelper) {
     LanguageDescriptor descriptor;
 
@@ -40,10 +40,10 @@ public class LanguageDescriptorPersistence {
           final LanguageDescriptor result_v3r4p8_a0a0e0c0b = new LanguageDescriptor();
           final String result_v3r4p8_a0a0a0e0c0b = languageElement.getAttributeValue("namespace");
           result_v3r4p8_a0a0e0c0b.setNamespace(result_v3r4p8_a0a0a0e0c0b);
-          String uuidValue = languageElement.getAttributeValue("uuid");
-          if (uuidValue != null) {
-            final String result_v3r4p8_a0a2a0a0e0c0b = uuidValue;
-            result_v3r4p8_a0a0e0c0b.setUUID(result_v3r4p8_a0a2a0a0e0c0b);
+          String uuid = languageElement.getAttributeValue("uuid");
+          if (uuid != null) {
+            final ModuleId result_v3r4p8_a0a2a0a0e0c0b = ModuleId.fromString(uuid);
+            result_v3r4p8_a0a0e0c0b.setId(result_v3r4p8_a0a2a0a0e0c0b);
           }
 
           String genOutput = languageElement.getAttributeValue("generatorOutputPath");
@@ -108,7 +108,6 @@ public class LanguageDescriptorPersistence {
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
     return descriptor;
   }
-
   public static void saveLanguageDescriptor(IFile file, LanguageDescriptor descriptor, MacroHelper macroHelper) {
     if (file.isReadOnly()) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -119,9 +118,8 @@ public class LanguageDescriptorPersistence {
 
     Element languageElement = new Element("language");
     languageElement.setAttribute("namespace", descriptor.getNamespace());
-    String uuid = descriptor.getUUID();
-    if (uuid != null) {
-      languageElement.setAttribute("uuid", uuid);
+    if (descriptor.getId() != null) {
+      languageElement.setAttribute("uuid", descriptor.getId().toString());
     }
     if (descriptor.getGenPath() != null) {
       languageElement.setAttribute("generatorOutputPath", macroHelper.shrinkPath(descriptor.getGenPath()));
@@ -180,6 +178,5 @@ public class LanguageDescriptorPersistence {
     }
     ModuleDescriptorPersistence.setTimestamp(descriptor, file);
   }
-
   protected static Logger LOG = LogManager.getLogger(LanguageDescriptorPersistence.class);
 }

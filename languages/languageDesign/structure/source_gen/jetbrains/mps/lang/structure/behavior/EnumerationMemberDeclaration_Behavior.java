@@ -10,18 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class EnumerationMemberDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "externalValue") != null) {
       return SPropertyOperations.getString(thisNode, "externalValue");
     }
     return "<no external value>";
   }
-
   public static String call_getConstantName_1240164579791(SNode thisNode) {
     return NameUtil.toValidIdentifier(EnumerationMemberDeclaration_Behavior.call_getName_1240169660918(thisNode));
   }
-
   public static String call_getName_1240169660918(SNode thisNode) {
     SNode enumType = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
     if (SPropertyOperations.hasValue(enumType, "memberIdentifierPolicy", "derive_from_internal_value", "derive_from_presentation")) {

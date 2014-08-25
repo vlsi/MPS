@@ -15,19 +15,16 @@ public abstract class SimpleRoleScope extends Scope {
   private final SNode myNode;
   private final SNode myLink;
   private final String conceptFqName;
-
   public SimpleRoleScope(SNode node, SNode link, String conceptFqName) {
     this.myNode = node;
     this.myLink = link;
     this.conceptFqName = conceptFqName;
   }
-
   public SimpleRoleScope(SNode node, SNode link) {
     this.myNode = node;
     this.myLink = link;
     this.conceptFqName = null;
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
@@ -46,7 +43,6 @@ public abstract class SimpleRoleScope extends Scope {
     }
     return result;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
@@ -61,7 +57,6 @@ public abstract class SimpleRoleScope extends Scope {
     }
     return result;
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (node == null || SNodeOperations.getParent(node) != myNode) {
@@ -87,9 +82,7 @@ public abstract class SimpleRoleScope extends Scope {
     }
     return result;
   }
-
   public abstract String getName(SNode child);
-
   public static SimpleRoleScope forNamedElements(SNode node, SNode linkDeclaration) {
     return new SimpleRoleScope(node, linkDeclaration) {
       @Override

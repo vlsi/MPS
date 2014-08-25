@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_RequiredParametersArePassed_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_RequiredParametersArePassed_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode callAction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<SNode> requiredParameters = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(callAction, "action", false), "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -50,18 +49,15 @@ public class check_RequiredParametersArePassed_NonTypesystemRule extends Abstrac
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.ideCommands.structure.CallActionExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

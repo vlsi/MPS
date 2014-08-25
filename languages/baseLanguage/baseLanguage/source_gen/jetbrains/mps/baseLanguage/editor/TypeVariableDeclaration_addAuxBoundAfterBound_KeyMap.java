@@ -21,17 +21,14 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
     action = new TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap.TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap_Action0();
     this.putAction("any", "&", action);
   }
-
   public static class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap_Action0 extends KeyMapActionImpl {
     public TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap_Action0() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -43,12 +40,10 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
@@ -70,12 +65,10 @@ public class TypeVariableDeclaration_addAuxBoundAfterBound_KeyMap extends KeyMap
       SNode nextCellNode = (SNode) nextLeaf.getSNode();
       return nextCellNode != null && nextCellNode != typeVarDeclaration;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode typeVarDeclaration = SNodeOperations.getAncestor(ListSequence.fromList(selectedNodes).first(), "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", true, false);
       SNodeFactoryOperations.addNewChild(typeVarDeclaration, "auxBounds", "jetbrains.mps.baseLanguage.structure.ClassifierType");
     }
-
     public String getKeyStroke() {
       return " &";
     }

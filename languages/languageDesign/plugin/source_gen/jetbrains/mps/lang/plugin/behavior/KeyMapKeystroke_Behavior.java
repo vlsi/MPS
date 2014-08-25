@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class KeyMapKeystroke_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getKeyStroke_1213877278942(SNode thisNode) {
     String modifiers = SPropertyOperations.getString(thisNode, "modifiers");
     if (modifiers == null) {

@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class BuildMps_DevKit_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_getExportedModules_7391870795496918763(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "exports", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

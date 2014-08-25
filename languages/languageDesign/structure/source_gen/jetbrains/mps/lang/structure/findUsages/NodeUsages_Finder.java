@@ -18,30 +18,24 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class NodeUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.NodeUsages_Finder");
-
   public NodeUsages_Finder() {
   }
-
   @Override
   public boolean isUsedByDefault(SNode node) {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
   }
-
   @Override
   public String getDescription() {
     return "Node Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -53,7 +47,6 @@ public class NodeUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Node Usages";

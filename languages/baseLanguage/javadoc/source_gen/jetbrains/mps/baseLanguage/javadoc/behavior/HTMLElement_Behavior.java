@@ -14,7 +14,6 @@ public class HTMLElement_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.addNewChild(thisNode, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
   }
-
   public static NodeCaretPair virtual_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
     SNode line = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     int index = SNodeOperations.getIndexInParent(thisNode);
@@ -73,7 +72,6 @@ public class HTMLElement_Behavior {
     }
     return new NodeCaretPair(nodeToSelect, caret);
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

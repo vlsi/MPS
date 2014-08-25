@@ -16,18 +16,15 @@ import org.apache.log4j.LogManager;
 
 public class StepInto_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.TraceInto;
-
   public StepInto_Action() {
     super("Step Into", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -41,14 +38,6 @@ public class StepInto_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DebugActionsUtil.getDebugSession(event).stepInto();
@@ -58,6 +47,5 @@ public class StepInto_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(StepInto_Action.class);
 }

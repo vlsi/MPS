@@ -15,6 +15,13 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
+/**
+ * @deprecated Of no use
+ */
+@Deprecated
+@ToRemove(version = 3.2)
 public abstract class BaseIntention extends AbstractIntention{
   
 }

@@ -15,26 +15,19 @@ public class AnalyzeDependenciesViewTool extends BaseProjectTool {
 
   private DependenciesPanel myDependenciesPanel;
 
-
   public AnalyzeDependenciesViewTool(Project project) {
     super(project, "Dependencies Viewer", -1, AllIcons.Toolwindows.ToolWindowInspection, ToolWindowAnchor.BOTTOM, false);
   }
-
-
 
   @Override
   protected void createTool() {
     myDependenciesPanel = new DependenciesPanel(this, getProject());
   }
 
-
-
   public void setContent(DependencyViewerScope scope) {
     myDependenciesPanel.resetContent(scope, ProjectHelper.toMPSProject(getProject()), false);
     myDependenciesPanel.revalidate();
   }
-
-
 
   @Override
   public JComponent getComponent() {

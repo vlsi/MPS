@@ -29,15 +29,12 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "TupleInterface";
       }
-
       public String getAdditionalInfo() {
         return "TupleInterface";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return "jetbrains.mps.baseLanguage.tuples.runtime.Tuples".equals(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getFqName_1213877404258", new Object[]{})) && !(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -45,7 +42,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
           }
         }));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode ifc = null;
         for (int i = 0; i < 10; i++) {
@@ -88,14 +84,12 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
           ListSequence.fromList(SLinkOperations.getTargets(node, "member", true)).addElement(ifc);
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
     // whitespace 
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0a1a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -103,7 +97,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0a4a1a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -111,7 +104,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0a7a1a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -140,7 +132,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0a8a1a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -160,7 +151,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0l0b0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -175,7 +165,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0n0b0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -209,7 +198,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a0a0a0p0b0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -221,7 +209,6 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_yti4yq_a0a61a1a0a(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;

@@ -5,16 +5,13 @@ package jetbrains.mps.ide.hierarchy;
 
 public class CircularHierarchyException extends Exception {
   private Object myRepeatedObject;
-
   public CircularHierarchyException(Object repeatedObject, String message) {
     super(message);
     myRepeatedObject = repeatedObject;
   }
-
   public CircularHierarchyException(String message) {
     this(message, null);
   }
-
   public Object getRepeatedObject() {
     return myRepeatedObject;
   }

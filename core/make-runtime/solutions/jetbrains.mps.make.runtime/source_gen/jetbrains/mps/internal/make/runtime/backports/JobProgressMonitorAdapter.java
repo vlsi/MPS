@@ -13,11 +13,9 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
   private String myTitle;
   private String myStep;
   private boolean myCalledSetTitleInternal = false;
-
   public JobProgressMonitorAdapter(IJobMonitor monitor) {
     myJobMonitor = monitor;
   }
-
   @Override
   protected void update(double frac) {
     if (myName != null) {
@@ -25,7 +23,6 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
       myJobMonitor.currentProgress().advanceWork(myName, (int) (WORK_AMOUNT * (Math.max(0., frac - currFrac))), this.comment());
     }
   }
-
   @Override
   protected void setTitleInternal(String text) {
     if ((text == null || text.length() == 0)) {
@@ -37,7 +34,6 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     }
     myTitle = text;
   }
-
   @Override
   protected void setStepInternal(String step) {
     myStep = step;
@@ -45,7 +41,6 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
       myJobMonitor.currentProgress().advanceWork(myName, 0, comment());
     }
   }
-
   @Override
   protected void startInternal(String text) {
     if ((text == null || text.length() == 0)) {
@@ -54,7 +49,6 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     this.myName = text;
     myJobMonitor.currentProgress().beginWork(text, WORK_AMOUNT, 0);
   }
-
   @Override
   protected void doneInternal(String text) {
     if ((text == null || text.length() == 0)) {
@@ -62,54 +56,44 @@ public class JobProgressMonitorAdapter extends ProgressMonitorBase {
     }
     myJobMonitor.currentProgress().finishWork(text);
   }
-
   private String comment() {
     String currsubtitle = ((myTitle == null || myTitle.length() == 0) || myTitle.startsWith(myName) ? "" : myTitle);
     String currstep = ((myStep != null && myStep.length() > 0) ? myStep : "");
     return ((currsubtitle == null || currsubtitle.length() == 0) ? currstep : currsubtitle + (((currstep == null || currstep.length() == 0) ? "" : " " + currstep)));
   }
-
   @Override
   protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
     return new JobProgressMonitorAdapter.SubProgressMonitor(this, getTaskName(), work, kind);
   }
-
   @Override
   public void done() {
     super.done();
   }
-
   @Override
   public boolean isCanceled() {
     return myJobMonitor.stopRequested();
   }
-
   @Override
   public void cancel() {
   }
-
   protected class SubProgressMonitor extends ProgressMonitorBase.SubProgressMonitor {
     private String myParentTask;
-
     private SubProgressMonitor(ProgressMonitorBase parent, String parentTask, int work, SubProgressKind kind) {
       super(parent, work, kind);
       this.myParentTask = parentTask;
     }
-
     @Override
     protected void doneInternal(String text) {
       if (!((text == null || text.length() == 0)) && (myParentTask == null || myParentTask.length() == 0)) {
         JobProgressMonitorAdapter.this.doneInternal(text);
       }
     }
-
     @Override
     protected void startInternal(String text) {
       if (!((text == null || text.length() == 0)) && (myParentTask == null || myParentTask.length() == 0)) {
         JobProgressMonitorAdapter.this.startInternal(text);
       }
     }
-
     @Override
     protected ProgressMonitorBase.SubProgressMonitor subTaskInternal(int work, SubProgressKind kind) {
       return new JobProgressMonitorAdapter.SubProgressMonitor(this, getTaskName(), work, kind);

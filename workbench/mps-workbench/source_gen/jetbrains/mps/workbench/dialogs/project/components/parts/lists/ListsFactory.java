@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.ide.ui.dialogs.properties.StateUtil;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
@@ -28,7 +28,6 @@ public final class ListsFactory {
       }
       return SModelStereotype.withoutStereotype(o1.getModelName()).compareTo(SModelStereotype.withoutStereotype(o2.getModelName()));
     }
-
     @Override
     public boolean isEqual(SModelReference o1, SModelReference o2) {
       if (super.isEqual(o1, o2)) {
@@ -44,14 +43,13 @@ public final class ListsFactory {
     public int compare(SModuleReference o1, SModuleReference o2) {
       return o1.getModuleName().compareTo(o2.getModuleName());
     }
-
     @Override
     public boolean isEqual(SModuleReference o1, SModuleReference o2) {
       if (super.isEqual(o1, o2)) {
         return true;
       }
-      SModule m1 = MPSModuleRepository.getInstance().getModule(o1);
-      SModule m2 = MPSModuleRepository.getInstance().getModule(o2);
+      SModule m1 = ModuleRepositoryFacade.getInstance().getModule(o1);
+      SModule m2 = ModuleRepositoryFacade.getInstance().getModule(o2);
       return EqualUtil.equals(m1, m2);
     }
   };
@@ -64,7 +62,6 @@ public final class ListsFactory {
       }
       return ListsFactory.MODULE_REF_COMPARATOR.compare(o1, o2);
     }
-
     @Override
     public boolean isEqual(SModuleReference o1, SModuleReference o2) {
       return ListsFactory.MODULE_REF_COMPARATOR.isEqual(o1, o2);
@@ -81,14 +78,13 @@ public final class ListsFactory {
     public int compare(Dependency o1, Dependency o2) {
       return o1.getModuleRef().getModuleName().compareTo(o2.getModuleRef().getModuleName());
     }
-
     @Override
     public boolean isEqual(Dependency o1, Dependency o2) {
       if (super.isEqual(o1, o2)) {
         return true;
       }
-      SModule m1 = MPSModuleRepository.getInstance().getModule(o1.getModuleRef());
-      SModule m2 = MPSModuleRepository.getInstance().getModule(o2.getModuleRef());
+      SModule m1 = ModuleRepositoryFacade.getInstance().getModule(o1.getModuleRef());
+      SModule m2 = ModuleRepositoryFacade.getInstance().getModule(o2.getModuleRef());
       return EqualUtil.equals(m1, m2);
     }
   };
@@ -96,7 +92,6 @@ public final class ListsFactory {
     private String getPathString(Path path) {
       return ((path == null) ? "null" : path.getPath() + "#" + path.getMPSFolder());
     }
-
     @Override
     public int compare(Path o1, Path o2) {
       if (o1 == o2) {
@@ -117,22 +112,17 @@ public final class ListsFactory {
       return ListsFactory.PATH_COMPARATOR.compare(o1, o2);
     }
   };
-
   public ListsFactory() {
   }
-
   public static <T> List<T> createSortedList(ListsFactory.ListComparator<T> comparator) {
     return new SortedList<T>(comparator);
   }
-
   public static <T> List<T> create(ListsFactory.ListComparator<T> comparator) {
     return ObservableCollections.observableList(ListsFactory.createSortedList(comparator));
   }
-
   public static abstract class ListComparator<T> implements Comparator<T> {
     public ListComparator() {
     }
-
     public boolean isEqual(T o1, T o2) {
       return EqualUtil.equals(o1, o2);
     }

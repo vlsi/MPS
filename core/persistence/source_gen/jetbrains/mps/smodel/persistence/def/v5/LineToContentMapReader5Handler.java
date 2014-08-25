@@ -26,19 +26,15 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
   private Locator myLocator;
   private List<LineContent> myResult;
   private LineContentAccumulator fieldaccumulator;
-
   public LineToContentMapReader5Handler() {
   }
-
   public List<LineContent> getResult() {
     return myResult;
   }
-
   @Override
   public void setDocumentLocator(Locator locator) {
     myLocator = locator;
   }
-
   @Override
   public void characters(char[] array, int start, int len) throws SAXException {
     globalHandleText(myValues.firstElement(), new String(array, start, len));
@@ -47,7 +43,6 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       current.handleText(myValues.peek(), new String(array, start, len));
     }
   }
-
   @Override
   public void endElement(String uri, String localName, String qName) throws SAXException {
     LineToContentMapReader5Handler.ElementHandler current = myHandlersStack.pop();
@@ -62,7 +57,6 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       }
     }
   }
-
   @Override
   public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
     LineToContentMapReader5Handler.ElementHandler current = (myHandlersStack.empty() ? (LineToContentMapReader5Handler.ElementHandler) null : myHandlersStack.peek());
@@ -94,58 +88,45 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
     myHandlersStack.push(current);
     myValues.push(result);
   }
-
   public void globalHandleText(Object resultObject, String value) {
     List<LineContent> result = (List<LineContent>) resultObject;
     fieldaccumulator.processText(value, myLocator);
   }
-
   private static interface ChildHandler {
     public void apply(Object resultObject, Object value) throws SAXException;
   }
-
   private class ElementHandler {
     private ElementHandler() {
     }
-
     protected Object createObject(Attributes attrs) throws SAXException {
       return null;
     }
-
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
     }
-
     protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       throw new SAXParseException("unknown tag: " + tagName, null);
     }
-
     protected void handleText(Object resultObject, String value) throws SAXException {
       if (value.trim().length() == 0) {
         return;
       }
       throw new SAXParseException("text is not accepted: '" + value + "'", null);
     }
-
     protected String[] requiredAttributes() {
       return LineToContentMapReader5Handler.EMPTY_ARRAY;
     }
-
     protected void validate(Object resultObject) throws SAXException {
     }
   }
-
   public class ModelElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public ModelElementHandler() {
     }
-
     @Override
     protected List<LineContent> createObject(Attributes attrs) throws SAXException {
       fieldaccumulator = new LineContentAccumulator();
       return fieldaccumulator.getLineToContentMap();
     }
-
     @Override
     protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("persistence".equals(tagName)) {
@@ -191,24 +172,19 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_7606567306781657986(Object resultObject, Object value) throws SAXException {
       Object child = (Object) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
-
   public class NodeElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"type"};
-
     public NodeElementHandler() {
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       Object result = (Object) resultObject;
@@ -221,7 +197,6 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       }
       super.handleAttribute(resultObject, name, value);
     }
-
     @Override
     protected LineToContentMapReader5Handler.ElementHandler createChild(Object resultObject, String tagName, Attributes attrs) throws SAXException {
       if ("property".equals(tagName)) {
@@ -253,43 +228,35 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       }
       return super.createChild(resultObject, tagName, attrs);
     }
-
     private void handleChild_651246788329828900(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
       if (child != null) {
         fieldaccumulator.saveProperty(child, myLocator);
       }
     }
-
     private void handleChild_651246788329828923(Object resultObject, Object value) throws SAXException {
       String child = (String) value;
       if (child != null) {
         fieldaccumulator.saveProperty(child, myLocator);
       }
     }
-
     private void handleChild_651246788329828952(Object resultObject, Object value) throws SAXException {
       Object child = (Object) value;
       fieldaccumulator.popNode(myLocator);
     }
   }
-
   public class PropertyElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"name"};
-
     public PropertyElementHandler() {
     }
-
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
       return VersionUtil.getRole(attrs.getValue("name"));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
@@ -299,23 +266,18 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class LinkElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{"role"};
-
     public LinkElementHandler() {
     }
-
     @Override
     protected String createObject(Attributes attrs) throws SAXException {
       return VersionUtil.getRole(attrs.getValue("role"));
     }
-
     @Override
     protected String[] requiredAttributes() {
       return requiredAttributes;
     }
-
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       String result = (String) resultObject;
@@ -325,10 +287,8 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
       super.handleAttribute(resultObject, name, value);
     }
   }
-
   public class NullElementHandler extends LineToContentMapReader5Handler.ElementHandler {
     private String[] requiredAttributes = new String[]{};
-
     public NullElementHandler() {
     }
   }

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class DragMouseStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public DragMouseStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.DragMouseStatement";

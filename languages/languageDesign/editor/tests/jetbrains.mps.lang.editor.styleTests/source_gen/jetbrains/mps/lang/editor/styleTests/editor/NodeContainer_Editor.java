@@ -17,7 +17,6 @@ public class NodeContainer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_atja1y_a(editorContext, node);
   }
-
   private EditorCell createCollection_atja1y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_atja1y_a");
@@ -26,14 +25,12 @@ public class NodeContainer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_atja1y_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_atja1y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node");
     editorCell.setCellId("Constant_atja1y_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_atja1y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("node");

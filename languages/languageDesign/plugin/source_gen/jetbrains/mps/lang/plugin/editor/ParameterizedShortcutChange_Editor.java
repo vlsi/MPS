@@ -36,7 +36,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ecw4ny_a(editorContext, node);
   }
-
   private EditorCell createCollection_ecw4ny_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a");
@@ -45,7 +44,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ecw4ny_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_ecw4ny_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("action");
@@ -70,20 +68,16 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ecw4ny_a0a extends InlineCellProvider {
     public _Inline_ecw4ny_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_ecw4ny_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_ecw4ny_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -103,7 +97,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_ecw4ny_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b0");
@@ -117,7 +110,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_ecw4ny_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a1a");
@@ -130,14 +122,12 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_ecw4ny_a0b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_a0b0");
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_ecw4ny_a0a1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_ecw4ny_a0a1a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
@@ -150,19 +140,17 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
         }
         return "(" + params + ")";
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ecw4ny_a0a1a");
     return editorCell;
   }
-
   private EditorCell createConstant_ecw4ny_b0b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ecw4ny_b0b0");
@@ -174,11 +162,9 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ecw4ny_a1a1a(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }
-
   private EditorCell createCollection_ecw4ny_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ecw4ny_b1a");
@@ -189,12 +175,10 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ecw4ny_b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_ecw4ny_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_ecw4ny_b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -214,7 +198,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ecw4ny_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ecw4ny_c1a");
@@ -226,7 +209,6 @@ public class ParameterizedShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_ecw4ny_a2b0(SNode node, EditorContext editorContext) {
     return BlockCells.useBraces();
   }

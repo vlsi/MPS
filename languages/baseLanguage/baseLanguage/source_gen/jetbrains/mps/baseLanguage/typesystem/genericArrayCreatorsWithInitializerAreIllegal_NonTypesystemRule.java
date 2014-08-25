@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class genericArrayCreatorsWithInitializerAreIllegal_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public genericArrayCreatorsWithInitializerAreIllegal_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode arrayCreatorWithInitializer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode componentType = SLinkOperations.getTarget(arrayCreatorWithInitializer, "componentType", true);
     if ((SNodeOperations.getConceptDeclaration(componentType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.getConceptDeclaration(componentType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty()) {
@@ -62,18 +61,15 @@ public class genericArrayCreatorsWithInitializerAreIllegal_NonTypesystemRule ext
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

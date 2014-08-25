@@ -15,7 +15,6 @@ public class BwfDependency_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_8e04l4_a(editorContext, node);
   }
-
   private EditorCell createProperty_8e04l4_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");

@@ -19,91 +19,69 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1029302639053656988(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
   }
-
   public static boolean baseMappingRule_Condition_1029302639053657563(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
   }
-
   public static boolean baseMappingRule_Condition_1029302639053657573(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
   }
-
   public static boolean baseMappingRule_Condition_1029302639053657583(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier", false, false) != null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1205839158549(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1214000545856(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5211959367043582897(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "member", false), "name");
   }
-
   public static Object referenceMacro_GetReferent_1029302639053561728(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierField");
   }
-
   public static SNode sourceNodeQuery_1205839150885(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "returnType", true);
   }
-
   public static SNode sourceNodeQuery_1205839142188(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "visibility", true);
   }
-
   public static SNode sourceNodeQuery_1205839180997(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
-
   public static SNode sourceNodeQuery_1214005141189(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "visibility", true);
   }
-
   public static SNode sourceNodeQuery_1214004231654(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
-
   public static SNode sourceNodeQuery_1214001997064(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "initializer", true);
   }
-
   public static SNode sourceNodeQuery_5211959367043582924(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "member", false), "returnType", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1205839173800(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1221310523876(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_2922006788899445646(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "throwsItem", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_6720970695571357581(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "typeVariableDeclaration", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1221310499193(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_5211959367043582912(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "actualArgument", true);
   }
-
   public static boolean mappingConfiguration_Condition_2948912184536575088(final TemplateQueryContext _context) {
     return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifier")).isNotEmpty();
   }

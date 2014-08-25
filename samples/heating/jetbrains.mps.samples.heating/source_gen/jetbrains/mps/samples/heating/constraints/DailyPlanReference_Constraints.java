@@ -29,7 +29,6 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
   public DailyPlanReference_Constraints() {
     super("jetbrains.mps.samples.heating.structure.DailyPlanReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -38,7 +37,6 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -47,17 +45,14 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "displayName");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ListScope(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getContextNode(), "jetbrains.mps.samples.heating.structure.HeatingPlan", false, false), "dailyPlans", true)).where(new IWhereFilter<SNode>() {
@@ -75,10 +70,8 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
-  private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "935069066463107223");
-
   private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
+  private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "935069066463107223");
 }

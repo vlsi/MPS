@@ -23,11 +23,9 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ttb7ur_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ttb7ur_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_ttb7ur_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a");
@@ -38,7 +36,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ttb7ur_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ttb7ur_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a0");
@@ -52,7 +49,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ttb7ur_e0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ttb7ur_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "bootstrap");
     editorCell.setCellId("Constant_ttb7ur_a0a");
@@ -62,14 +58,12 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ttb7ur_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "group");
     editorCell.setCellId("Constant_ttb7ur_b0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ttb7ur_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -87,14 +81,12 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ttb7ur_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "internal-id");
     editorCell.setCellId("Constant_ttb7ur_d0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ttb7ur_e0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("groupID");
@@ -114,7 +106,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_ttb7ur_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contents");
@@ -134,7 +125,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ttb7ur_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ttb7ur_c0");
@@ -144,12 +134,10 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_ttb7ur_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.plugin.editor.ModificationsEditor");
     return editorCell;
   }
-
   private EditorCell createCollection_ttb7ur_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a_0");
@@ -157,7 +145,6 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ttb7ur_a0_0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ttb7ur_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ttb7ur_a0_0");
@@ -165,14 +152,12 @@ public class InterfaceGroup_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ttb7ur_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ttb7ur_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "register via plugin.xml:");
     editorCell.setCellId("Constant_ttb7ur_a0a_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ttb7ur_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isPluginXmlGroup");

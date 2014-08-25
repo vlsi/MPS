@@ -26,68 +26,53 @@ import org.apache.log4j.LogManager;
 
 public class ReloadModulesFromDisk_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReloadModulesFromDisk_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.build.structure.BuildProject";
   }
-
   public String getPresentation() {
     return "ReloadModulesFromDisk";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.build.mps.intentions.ReloadModulesFromDisk_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.build.mps";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})).isNotEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "1753793013241722025");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReloadModulesFromDisk_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Reload modules from disk";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       VisibleModules visible = new VisibleModules(node);
       visible.collect();
@@ -113,11 +98,9 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
         }
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReloadModulesFromDisk_Intention.this;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReloadModulesFromDisk_Intention.class);
 }

@@ -24,45 +24,35 @@ public class SearchQuery implements IExternalizeable {
   private static final String HOLDER_CLASS = "holder_class";
   private SearchScope myScope;
   private IHolder myObjectHolder = new VoidHolder();
-
   public SearchQuery(Element element, Project project) throws CantLoadSomethingException {
     read(element, project);
   }
-
   public SearchQuery(IHolder objectHolder, SearchScope scope) {
     myScope = scope;
     myObjectHolder = objectHolder;
   }
-
   public SearchQuery(SModelReference modelReference, SearchScope scope) {
     this(new ModelHolder(modelReference), scope);
   }
-
   public SearchQuery(SNode node, SearchScope scope) {
     this(new NodeHolder(node), scope);
   }
-
   public SearchQuery(SModule module, SearchScope scope) {
     this(new ModuleHolder(module), scope);
   }
-
   public SearchQuery(SearchScope scope) {
     this(new VoidHolder(), scope);
   }
-
   public SearchScope getScope() {
     return myScope;
   }
-
   public IHolder getObjectHolder() {
     return myObjectHolder;
   }
-
   @NotNull
   public String getCaption() {
     return myObjectHolder.getCaption();
   }
-
   @Override
   public void write(Element element, Project project) throws CantSaveSomethingException {
     if (myScope instanceof FindUsagesScope) {
@@ -75,7 +65,6 @@ public class SearchQuery implements IExternalizeable {
     myObjectHolder.write(holderXML, project);
     element.addContent(holderXML);
   }
-
   @Override
   public void read(Element element, Project project) throws CantLoadSomethingException {
     myScope = FindUsagesScope.load(element, project);

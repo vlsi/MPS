@@ -6,7 +6,6 @@ package jetbrains.mps.samples.KajaSceneConstruction.behavior;
 public class DestroyWall_BehaviorDescriptor extends AbstractBuilderCommand_BehaviorDescriptor {
   public DestroyWall_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.KajaSceneConstruction.structure.DestroyWall";

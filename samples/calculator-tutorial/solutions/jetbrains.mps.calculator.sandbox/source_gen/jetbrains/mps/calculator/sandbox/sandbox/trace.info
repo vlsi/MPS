@@ -11,80 +11,80 @@
   <root nodeRef="r:1ce92b75-a0c5-43f1-a14e-cfe3b58c4978(jetbrains.mps.calculator.sandbox.sandbox)/1241366278147">
     <file name="mySalary.java">
       <node id="1241366278147" at="15,48,16,15" concept="2" />
-      <node id="1241366278147" at="19,48,20,15" concept="2" />
-      <node id="1241366278147" at="23,49,24,15" concept="2" />
-      <node id="1241366278147" at="27,0,28,0" concept="3" trace="inputField_a" />
-      <node id="1241366278147" at="28,0,29,0" concept="3" trace="inputField_b" />
-      <node id="1241366278147" at="29,0,30,0" concept="3" trace="outputField_a" />
-      <node id="1241366278147" at="31,21,32,25" concept="2" />
-      <node id="1241366278147" at="32,25,33,36" concept="2" />
-      <node id="1241366278147" at="33,36,34,66" concept="2" />
-      <node id="1241366278147" at="34,66,35,34" concept="2" />
-      <node id="1241366278147" at="35,34,36,22" concept="2" />
-      <node id="1241366278147" at="36,22,37,66" concept="2" />
-      <node id="1241366278147" at="37,66,38,33" concept="2" />
-      <node id="1241366278147" at="38,33,39,22" concept="2" />
-      <node id="1241366278147" at="39,22,40,30" concept="2" />
-      <node id="1241366278147" at="40,30,41,28" concept="2" />
-      <node id="1241366278147" at="41,28,42,13" concept="2" />
-      <node id="1241366278147" at="42,13,43,54" concept="2" />
-      <node id="1241366278147" at="43,54,44,11" concept="2" />
-      <node id="1241366278147" at="44,11,45,21" concept="2" />
-      <node id="1241366278147" at="48,24,49,16" concept="5" />
-      <node id="1241366278147" at="49,16,50,16" concept="5" />
-      <node id="1241366278147" at="51,9,52,53" concept="2" />
-      <node id="1241366278147" at="52,53,53,53" concept="2" />
-      <node id="1241366278147" at="55,5,56,53" concept="2" />
-      <node id="1241366278147" at="61,25,62,23" concept="2" />
-      <node id="1241366278147" at="39,22,41,28" concept="0" />
+      <node id="1241366278147" at="18,48,19,15" concept="2" />
+      <node id="1241366278147" at="21,49,22,15" concept="2" />
+      <node id="1241366278147" at="25,0,26,0" concept="3" trace="inputField_a" />
+      <node id="1241366278147" at="26,0,27,0" concept="3" trace="inputField_b" />
+      <node id="1241366278147" at="27,0,28,0" concept="3" trace="outputField_a" />
+      <node id="1241366278147" at="28,21,29,25" concept="2" />
+      <node id="1241366278147" at="29,25,30,36" concept="2" />
+      <node id="1241366278147" at="30,36,31,66" concept="2" />
+      <node id="1241366278147" at="31,66,32,34" concept="2" />
+      <node id="1241366278147" at="32,34,33,22" concept="2" />
+      <node id="1241366278147" at="33,22,34,66" concept="2" />
+      <node id="1241366278147" at="34,66,35,33" concept="2" />
+      <node id="1241366278147" at="35,33,36,22" concept="2" />
+      <node id="1241366278147" at="36,22,37,30" concept="2" />
+      <node id="1241366278147" at="37,30,38,28" concept="2" />
+      <node id="1241366278147" at="38,28,39,13" concept="2" />
+      <node id="1241366278147" at="39,13,40,54" concept="2" />
+      <node id="1241366278147" at="40,54,41,11" concept="2" />
+      <node id="1241366278147" at="41,11,42,21" concept="2" />
+      <node id="1241366278147" at="44,24,45,16" concept="5" />
+      <node id="1241366278147" at="45,16,46,16" concept="5" />
+      <node id="1241366278147" at="47,9,48,53" concept="2" />
+      <node id="1241366278147" at="48,53,49,53" concept="2" />
+      <node id="1241366278147" at="51,5,52,53" concept="2" />
+      <node id="1241366278147" at="56,25,57,23" concept="2" />
+      <node id="1241366278147" at="36,22,38,28" concept="0" />
       <node id="1241366278147" at="15,0,18,0" concept="4" trace="insertUpdate#(Ljavax/swing/event/DocumentEvent;)V" />
-      <node id="1241366278147" at="19,0,22,0" concept="4" trace="removeUpdate#(Ljavax/swing/event/DocumentEvent;)V" />
-      <node id="1241366278147" at="23,0,26,0" concept="4" trace="changedUpdate#(Ljavax/swing/event/DocumentEvent;)V" />
-      <node id="1241366278147" at="33,36,36,22" concept="0" />
-      <node id="1241366278147" at="36,22,39,22" concept="0" />
-      <node id="1241366278147" at="61,0,64,0" concept="4" trace="run#()V" />
-      <node id="1241366278147" at="50,16,55,5" concept="7" />
-      <node id="1241366278147" at="59,42,64,7" concept="2" />
-      <node id="1241366278147" at="59,0,66,0" concept="6" trace="main#([Ljava/lang/String;)V" />
-      <node id="1241366278147" at="48,0,58,0" concept="4" trace="update#()V" />
-      <node id="1241366278147" at="14,0,27,0" concept="3" trace="listener" />
-      <node id="1241366278147" at="31,0,47,0" concept="1" trace="mySalary#()V" />
-      <scope id="1241366278147" at="54,0,54,39">
+      <node id="1241366278147" at="18,0,21,0" concept="4" trace="removeUpdate#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="1241366278147" at="21,0,24,0" concept="4" trace="changedUpdate#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="1241366278147" at="30,36,33,22" concept="0" />
+      <node id="1241366278147" at="33,22,36,22" concept="0" />
+      <node id="1241366278147" at="56,0,59,0" concept="4" trace="run#()V" />
+      <node id="1241366278147" at="46,16,51,5" concept="7" />
+      <node id="1241366278147" at="54,42,59,7" concept="2" />
+      <node id="1241366278147" at="54,0,61,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="1241366278147" at="44,0,54,0" concept="4" trace="update#()V" />
+      <node id="1241366278147" at="14,0,25,0" concept="3" trace="listener" />
+      <node id="1241366278147" at="28,0,44,0" concept="1" trace="mySalary#()V" />
+      <scope id="1241366278147" at="50,0,50,39">
         <var name="e" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="54,39,54,39" />
+      <scope id="1241366278147" at="50,39,50,39" />
       <scope id="1241366278147" at="15,48,16,15" />
-      <scope id="1241366278147" at="19,48,20,15" />
-      <scope id="1241366278147" at="23,49,24,15" />
-      <scope id="1241366278147" at="61,25,62,23" />
-      <scope id="1241366278147" at="39,22,41,28" />
-      <scope id="1241366278147" at="51,9,53,53" />
+      <scope id="1241366278147" at="18,48,19,15" />
+      <scope id="1241366278147" at="21,49,22,15" />
+      <scope id="1241366278147" at="56,25,57,23" />
+      <scope id="1241366278147" at="36,22,38,28" />
+      <scope id="1241366278147" at="47,9,49,53" />
       <scope id="1241366278147" at="15,0,18,0">
         <var name="p0" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="19,0,22,0">
+      <scope id="1241366278147" at="18,0,21,0">
         <var name="p0" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="23,0,26,0">
+      <scope id="1241366278147" at="21,0,24,0">
         <var name="p0" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="33,36,36,22" />
-      <scope id="1241366278147" at="36,22,39,22" />
-      <scope id="1241366278147" at="61,0,64,0" />
-      <scope id="1241366278147" at="59,42,64,7" />
-      <scope id="1241366278147" at="59,0,66,0">
+      <scope id="1241366278147" at="30,36,33,22" />
+      <scope id="1241366278147" at="33,22,36,22" />
+      <scope id="1241366278147" at="56,0,59,0" />
+      <scope id="1241366278147" at="54,42,59,7" />
+      <scope id="1241366278147" at="54,0,61,0">
         <var name="args" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="48,24,56,53">
+      <scope id="1241366278147" at="44,24,52,53">
         <var name="i_a" id="1241366278147" />
         <var name="i_b" id="1241366278147" />
       </scope>
-      <scope id="1241366278147" at="48,0,58,0" />
-      <scope id="1241366278147" at="31,21,45,21" />
-      <scope id="1241366278147" at="31,0,47,0" />
-      <unit id="1241366278147" at="60,35,64,5" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
-      <unit id="1241366278147" at="14,42,26,3" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
-      <unit id="1241366278147" at="13,0,67,0" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
+      <scope id="1241366278147" at="44,0,54,0" />
+      <scope id="1241366278147" at="28,21,42,21" />
+      <scope id="1241366278147" at="28,0,44,0" />
+      <unit id="1241366278147" at="55,35,59,5" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary$2" />
+      <unit id="1241366278147" at="14,42,24,3" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary$1" />
+      <unit id="1241366278147" at="13,0,62,0" name="jetbrains.mps.calculator.sandbox.sandbox.mySalary" />
     </file>
   </root>
 </debug-info>

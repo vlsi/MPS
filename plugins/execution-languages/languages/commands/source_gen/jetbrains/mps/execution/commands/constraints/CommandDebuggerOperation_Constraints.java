@@ -15,12 +15,10 @@ public class CommandDebuggerOperation_Constraints extends BaseConstraintsDescrip
   public CommandDebuggerOperation_Constraints() {
     super("jetbrains.mps.execution.commands.structure.CommandDebuggerOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -31,10 +29,8 @@ public class CommandDebuggerOperation_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), "jetbrains.mps.execution.commands.structure.CommandReferenceExpression");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:fa479534-722a-48ea-9a2e-0d6cd7ab1559(jetbrains.mps.execution.commands.constraints)", "856705193941282458");
 }

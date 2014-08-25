@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AbstractNodeErrorCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     String errorName;
     if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}) == null)) {
@@ -19,11 +18,9 @@ public class AbstractNodeErrorCheckOperation_Behavior {
     }
     return "Node" + errorName + "Check";
   }
-
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     PerformUtil.checkNodeHasError(thisNode);
   }
-
   public static SNode virtual_getReferencedRuleNode_2893471348147987869(SNode thisNode) {
     return SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReference_8333855927540237654", new Object[]{}), "declaration", false);
   }

@@ -25,8 +25,6 @@ public final class StockPriceCalculator {
 
   }
 
-
-
   private static List<DailyStockPrice> retrievePricesWithin(List<DailyStockPrice> prices) {
     return ListSequence.fromList(prices).subListSequence(0, 10);
   }

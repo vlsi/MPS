@@ -22,7 +22,6 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
   public ReferenceContainer_Constraints() {
     super("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,17 +38,14 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Root");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a1a1;
@@ -63,7 +58,6 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -72,17 +66,14 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a2a1;
@@ -95,7 +86,6 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -104,17 +94,14 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "name");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.lang.smodelTests.structure.Child");
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5tia2e_a0a3a0a0a1a0b0a3a1;
@@ -124,7 +111,6 @@ public class ReferenceContainer_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029091796");
   private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a2a1 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029225986");
   private static SNodePointer breakingNode_5tia2e_a0a3a0a0a1a0b0a3a1 = new SNodePointer("r:c3114115-c401-467f-8766-388ee2aa9908(jetbrains.mps.lang.smodelTests.constraints)", "8758390115029226005");

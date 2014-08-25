@@ -13,10 +13,8 @@ import org.apache.log4j.LogManager;
 
 public class ModuleChecker {
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
-
   public ModuleChecker() {
   }
-
   public void checkModule(SModule module, ProgressMonitor monitor) {
     String moduleName = module.getModuleName();
     monitor.start("Checking " + moduleName + " module properties...", 1);
@@ -38,10 +36,8 @@ public class ModuleChecker {
       monitor.done();
     }
   }
-
   public SearchResults<ModelCheckerIssue> getSearchResults() {
     return myResults;
   }
-
   protected static Logger LOG = LogManager.getLogger(ModuleChecker.class);
 }

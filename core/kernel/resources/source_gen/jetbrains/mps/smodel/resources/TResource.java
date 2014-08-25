@@ -13,69 +13,54 @@ import jetbrains.mps.project.AbstractModule;
 
 public class TResource extends DResource implements Tuples._3<Iterable<IDelta>, SModule, SModel>, ITResource, IResourceWithProperties {
   private MultiTuple._2<SModule, SModel> tuple;
-
   public TResource() {
     super();
   }
-
   public TResource(Iterable<IDelta> delta, SModule module, SModel modelDescriptor) {
     super(delta);
     this.tuple = new MultiTuple._2<SModule, SModel>(module, modelDescriptor);
   }
-
   public SModule module(SModule value) {
     return this._1(value);
   }
-
   public SModel modelDescriptor(SModel value) {
     return this._2(value);
   }
-
   public SModule module() {
     return this._1();
   }
-
   public SModel modelDescriptor() {
     return this._2();
   }
-
   public SModule _1(SModule module) {
     return tuple._0();
   }
-
   public SModel _2(SModel modelDescriptor) {
     return tuple._1();
   }
-
   public SModule _1() {
     return tuple._0();
   }
-
   public SModel _2() {
     return tuple._1();
   }
-
   public Tuples._2<Iterable<IDelta>, SModule> assign(Tuples._2<? extends Iterable<IDelta>, ? extends SModule> from) {
     super.assign(from);
     tuple.assign(from._1());
     return this;
   }
-
   public Tuples._3<Iterable<IDelta>, SModule, SModel> assign(Tuples._3<? extends Iterable<IDelta>, ? extends SModule, ? extends SModel> from) {
     super.assign(from);
     tuple.assign(from._1(), from._2());
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   public TResource assignFrom(Tuples._2<SModule, SModel> from) {
     return (TResource) super.assign(from);
   }
-
   public String describe() {
     return null;
   }
-
   public IPropertiesIO getProperties() {
     return new FlatFilePropertiesIO(((AbstractModule) this.module()).getDescriptorFile());
   }

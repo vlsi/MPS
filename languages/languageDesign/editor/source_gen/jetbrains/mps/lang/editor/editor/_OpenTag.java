@@ -24,25 +24,22 @@ public class _OpenTag implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createReadOnlyModelAccessor_mtiojs_a(editorContext, node);
   }
-
   private EditorCell createReadOnlyModelAccessor_mtiojs_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node);
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_mtiojs_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);
@@ -51,7 +48,6 @@ public class _OpenTag implements ConceptEditorComponent {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_mtiojs_a0a(EditorContext editorContext, SNode node) {
     return _EditorUtil.grayIfNotSelectable(node);
   }

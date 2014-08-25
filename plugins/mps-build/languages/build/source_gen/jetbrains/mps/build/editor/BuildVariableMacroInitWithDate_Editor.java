@@ -19,7 +19,6 @@ public class BuildVariableMacroInitWithDate_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_idjuyr_a(editorContext, node);
   }
-
   private EditorCell createCollection_idjuyr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_idjuyr_a");
@@ -28,7 +27,6 @@ public class BuildVariableMacroInitWithDate_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_idjuyr_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_idjuyr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "date");
     editorCell.setCellId("Constant_idjuyr_a0");
@@ -38,7 +36,6 @@ public class BuildVariableMacroInitWithDate_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_idjuyr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("pattern");

@@ -41,25 +41,21 @@ import org.apache.log4j.LogManager;
 
 public class ShowSurroundWithIntentions_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowSurroundWithIntentions_Action() {
     super("Surround with...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (ShowSurroundWithIntentions_Action.this.getAnchorCell(_params) == null) {
       return false;
     }
     return Sequence.fromIterable(ShowSurroundWithIntentions_Action.this.getAvailableIntentions(_params)).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -73,7 +69,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -88,7 +83,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final EditorCell selectedCell = ShowSurroundWithIntentions_Action.this.getAnchorCell(_params);
@@ -117,7 +111,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       }
     }
   }
-
   private EditorCell getAnchorCell(final Map<String, Object> _params) {
     Selection selection = ((EditorComponent) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent()).getSelectionManager().getSelection();
     if (selection == null) {
@@ -129,7 +122,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
     }
     return null;
   }
-
   private ActionGroup getActionGroup(final Map<String, Object> _params) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
 
@@ -156,7 +148,6 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
 
     return actionGroup;
   }
-
   private Iterable<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     final IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
@@ -169,10 +160,8 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
       }
     });
   }
-
   private String getDescriptior(Pair<IntentionExecutable, SNode> pair, final Map<String, Object> _params) {
     return pair.o1.getDescription(pair.o2, ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowSurroundWithIntentions_Action.class);
 }

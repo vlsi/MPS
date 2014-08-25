@@ -28,34 +28,26 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public TurnEnumToClassAndBack_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public String getPresentation() {
     return "TurnEnumToClassAndBack";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.TurnEnumToClassAndBack_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
@@ -65,38 +57,30 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") || (SLinkOperations.getTarget(node, "superclass", true) == null);
   }
-
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "visibility") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "annotation") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface") || SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "superclass");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4063776913609769409");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnEnumToClassAndBack_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass") ? "Turn Enum to Class" : "Turn Class to Enum");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       final SNode classNode = (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass")) ? SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.EnumClass") : SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       SPropertyOperations.set(classNode, "name", SPropertyOperations.getString(node, "name"));
@@ -148,16 +132,13 @@ public class TurnEnumToClassAndBack_Intention implements IntentionFactory {
 
       editorContext.selectWRTFocusPolicy(classNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return TurnEnumToClassAndBack_Intention.this;
     }
   }
-
   private static boolean eq_ck6aau_a0a0a0a0a0a71a2o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_ck6aau_a0a0a0a0a0a81a2o(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -20,12 +20,10 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
   public ConfigurationFromExecutorReference_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.ConfigurationFromExecutorReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -36,7 +34,6 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -45,7 +42,6 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -54,10 +50,8 @@ public class ConfigurationFromExecutorReference_Constraints extends BaseConstrai
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(parentNode), "jetbrains.mps.execution.configurations.structure.AbstractRunConfigurationExecutor");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d6e5159c-3299-41f5-8a8a-81b5b79d5073(jetbrains.mps.execution.configurations.constraints)", "7806358006983738929");
 }

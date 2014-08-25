@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class ModelRootRenderer extends DefaultListCellRenderer {
   public ModelRootRenderer() {
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     ModelRootDescriptor rootDescriptor = (ModelRootDescriptor) value;

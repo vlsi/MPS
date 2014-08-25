@@ -31,14 +31,12 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private final AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
   private final CoreMakeTask coreTask;
   private boolean isCanceled = false;
-
   public MakeTask(@Nullable Project project, @NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
     super(project, title, true, bgoption);
     // XXX might be nice to pass CoreMakeTask here, instead of long list of arguments to construct one. 
     // however not it's too much of refactoring for WorkbenchMakeTask 
     coreTask = new MakeTask.WorkbenchMakeTask(title, makeSeq, ctl, mh);
   }
-
   @Override
   public void run(@NotNull final ProgressIndicator pi) {
     if (myState.compareAndSet(MakeTask.TaskState.NOT_STARTED, MakeTask.TaskState.RUNNING)) {
@@ -49,7 +47,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
     }
   }
-
   private void spawnMakeThreadThenDoRunRelayingLog(final ProgressMonitor monitor) {
     ThreadGroup tg = new ThreadGroup("MPS Make Thread Group") {
       @Override
@@ -78,27 +75,22 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
       }
     } while (makeThread.isAlive());
   }
-
   @Override
   public void onCancel() {
     isCanceled = true;
   }
-
   @Override
   public boolean cancel(boolean b) {
     return false;
   }
-
   @Override
   public boolean isCancelled() {
     return myState.get() == MakeTask.TaskState.CANCELLED;
   }
-
   @Override
   public boolean isDone() {
     return myState.get() != MakeTask.TaskState.NOT_STARTED && myState.get() != MakeTask.TaskState.RUNNING;
   }
-
   @Override
   public IResult get() throws InterruptedException, ExecutionException {
     myLatch.await();
@@ -107,7 +99,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     }
     return coreTask.getResult();
   }
-
   @Override
   public IResult get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
     myLatch.await(timeout, unit);
@@ -116,21 +107,16 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
     }
     return coreTask.getResult();
   }
-
   protected void displayInfo(String info) {
   }
-
   protected void aboutToStart() {
   }
-
   protected void done() {
   }
-
   public class WorkbenchMakeTask extends CoreMakeTask {
     public WorkbenchMakeTask(@NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh) {
       super(title, makeSeq, ctl, mh);
     }
-
     @Override
     protected void reconcile() {
       MakeTask.this.myState.set(MakeTask.TaskState.DONE);
@@ -144,24 +130,20 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
         done();
       }
     }
-
     @Override
     protected void doRun(ProgressMonitor monitor) {
       super.doRun(monitor);
       MakeTask.this.myState.set(MakeTask.TaskState.INDETERMINATE);
     }
-
     @Override
     protected void displayInfo(String info) {
       MakeTask.this.displayInfo(info);
     }
-
     @Override
     protected void aboutToStart() {
       MakeTask.this.aboutToStart();
     }
   }
-
   private static   enum TaskState {
     NOT_STARTED(),
     RUNNING(),

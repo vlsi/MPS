@@ -23,7 +23,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hfot0g_a(editorContext, node);
   }
-
   private EditorCell createCollection_hfot0g_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_hfot0g_a");
@@ -34,7 +33,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_hfot0g_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_hfot0g_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hfot0g_a0");
@@ -46,14 +44,12 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_hfot0g_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hfot0g_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "foreach");
     editorCell.setCellId("Constant_hfot0g_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hfot0g_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_hfot0g_b0a");
@@ -64,7 +60,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_hfot0g_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodesQuery");
@@ -84,7 +79,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_hfot0g_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hfot0g_b0");
@@ -96,7 +90,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_hfot0g_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hfot0g_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "apply");
     editorCell.setCellId("Constant_hfot0g_a1a");
@@ -106,7 +99,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hfot0g_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_hfot0g_b1a");
@@ -117,7 +109,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_hfot0g_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("template");
@@ -139,20 +130,16 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_hfot0g_a2b0 extends InlineCellProvider {
     public _Inline_hfot0g_a2b0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_hfot0g_a0c1a(editorContext, node);
     }
-
     private EditorCell createProperty_hfot0g_a0c1a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -160,7 +147,7 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       provider.setReadOnly(true);
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name");
+      editorCell.setCellId("templateName");
       Style style = new StyleImpl();
       Styles_StyleSheet.apply_reference(style, editorCell);
       editorCell.getStyle().putAll(style);
@@ -175,7 +162,6 @@ public class WeaveEach_RuleConsequence_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_hfot0g_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_hfot0g_c0");

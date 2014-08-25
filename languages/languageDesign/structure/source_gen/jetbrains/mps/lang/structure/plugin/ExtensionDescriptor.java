@@ -9,10 +9,8 @@ import java.util.Arrays;
 
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)};
-
   public ExtensionDescriptor() {
   }
-
   @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
     return Arrays.asList(extensionPoints);

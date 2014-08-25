@@ -27,7 +27,6 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
   public ConceptMethodDeclaration_Constraints() {
     super("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,12 +35,10 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnOnReferenceSetHandler() {
         return true;
       }
-
       @Override
       public boolean validate(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         return true;
       }
-
       @Override
       public void onReferenceSet(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode) {
         if (newReferentNode != null && referenceNode != null) {
@@ -55,12 +52,10 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
           SLinkOperations.setTarget(referenceNode, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(newReferentNode, "returnType", true)), true);
         }
       }
-
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -75,7 +70,6 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_sgoqec_a0a1a0a0a4a0b0a1a1;
@@ -85,6 +79,5 @@ public class ConceptMethodDeclaration_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-
   private static SNodePointer breakingNode_sgoqec_a0a1a0a0a4a0b0a1a1 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "1225194475680");
 }

@@ -32,11 +32,9 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xpsq7t_a(editorContext, node);
   }
-
   private EditorCell createCollection_xpsq7t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_xpsq7t_a");
@@ -48,7 +46,6 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_xpsq7t_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_xpsq7t_a0");
@@ -57,11 +54,9 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_xpsq7t_c0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_xpsq7t_a0a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getFieldDeclaration_1171743928471867409", new Object[]{}) != null;
   }
-
   private EditorCell createReadOnlyModelAccessor_xpsq7t_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
@@ -84,22 +79,20 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
         String descriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(description, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
         return descriptionString;
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_xpsq7t_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_xpsq7t_b0a");
@@ -109,7 +102,6 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_xpsq7t_c0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
@@ -132,22 +124,20 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
         String longDescriptionString = SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(longDescription, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
         return longDescriptionString;
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_c0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static SNode _quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -155,7 +145,6 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys$Description")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_xpsq7t_a0a0a0a0a0a0a0a0a2a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

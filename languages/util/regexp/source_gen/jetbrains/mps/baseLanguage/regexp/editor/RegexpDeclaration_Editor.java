@@ -33,11 +33,9 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_879g1p_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_879g1p_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_879g1p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_879g1p_a");
@@ -53,7 +51,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_879g1p_i0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexp");
     editorCell.setCellId("Constant_879g1p_a0");
@@ -63,7 +60,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_879g1p_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -81,7 +77,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_879g1p_c0");
@@ -93,7 +88,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_879g1p_d0");
@@ -103,7 +97,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
     editorCell.setCellId("Constant_879g1p_e0");
@@ -113,7 +106,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_879g1p_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
@@ -136,7 +128,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "  ");
     editorCell.setCellId("Constant_879g1p_g0");
@@ -146,7 +137,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_879g1p_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("regexp");
@@ -169,7 +159,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_879g1p_i0");
@@ -180,7 +169,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_879g1p_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_879g1p_a_0");
@@ -188,7 +176,6 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_879g1p_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_879g1p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_879g1p_a0");
@@ -199,28 +186,25 @@ public class RegexpDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_879g1p_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_879g1p_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "regexp:");
     editorCell.setCellId("Constant_879g1p_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_879g1p_b0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(node, "regexp", true), "virtual_isValid_4759120547781297301", new Object[]{}) ? "/" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "regexp", true), "virtual_toString_1213877429451", new Object[]{}) + "/" : "<invalid>");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_879g1p_b0a");
     return editorCell;
   }

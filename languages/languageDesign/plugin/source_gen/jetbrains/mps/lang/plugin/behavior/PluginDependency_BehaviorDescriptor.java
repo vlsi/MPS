@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class PluginDependency_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PluginDependency_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PluginDependency";
   }
-
   public abstract String virtual_getPluginId_5864553086652219131(SNode thisNode);
 }

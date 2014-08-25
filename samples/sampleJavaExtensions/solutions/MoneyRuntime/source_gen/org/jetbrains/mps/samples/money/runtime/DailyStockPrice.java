@@ -15,7 +15,6 @@ public final class DailyStockPrice {
   private BigDecimal adjustedClose;
 
 
-
   public DailyStockPrice(Date date1, String open1, String high1, String low1, String close1, String volume1, String adjustedClose1) {
     date = date1;
     open = BigDecimal.valueOf(Double.parseDouble(open1));
@@ -26,32 +25,24 @@ public final class DailyStockPrice {
     adjustedClose = BigDecimal.valueOf(Double.parseDouble(adjustedClose1));
   }
 
-
-
   public Date getDate() {
     return date;
   }
-
   public BigDecimal getOpen() {
     return open;
   }
-
   public BigDecimal getHigh() {
     return high;
   }
-
   public BigDecimal getLow() {
     return low;
   }
-
   public BigDecimal getClose() {
     return close;
   }
-
   public BigDecimal getVolume() {
     return volume;
   }
-
   public BigDecimal getAdjustedClose() {
     return adjustedClose;
   }

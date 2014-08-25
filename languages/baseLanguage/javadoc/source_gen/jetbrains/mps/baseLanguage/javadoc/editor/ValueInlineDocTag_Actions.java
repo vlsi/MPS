@@ -13,18 +13,14 @@ public class ValueInlineDocTag_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new ValueInlineDocTag_Actions.ValueInlineDocTag_Actions_RIGHT_TRANSFORM(node));
   }
-
   public static class ValueInlineDocTag_Actions_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ValueInlineDocTag_Actions_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.setNewChild(node, "variableReference", "jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference");
     }

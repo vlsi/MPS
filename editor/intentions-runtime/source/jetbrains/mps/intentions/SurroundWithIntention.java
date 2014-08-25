@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 /**
- * User: Andrey.Borisenko
- * Date: Nov 20, 2009
+ * @deprecated Of no use
  */
+@Deprecated
+@ToRemove(version = 3.2)
 public abstract class SurroundWithIntention extends AbstractIntention {
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class HandleEvent_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public HandleEvent_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent";

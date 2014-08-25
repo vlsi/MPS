@@ -10,19 +10,15 @@ import javax.swing.border.EmptyBorder;
 public class ToolTipData {
   private String myText;
   private Component myComponent;
-
   /*package*/ ToolTipData(String text) {
     myText = text;
   }
-
   public ToolTipData(Component component) {
     myComponent = component;
   }
-
   /*package*/ String getText() {
     return myText;
   }
-
   /*package*/ Component getComponent() {
     if (myComponent != null) {
       return myComponent;

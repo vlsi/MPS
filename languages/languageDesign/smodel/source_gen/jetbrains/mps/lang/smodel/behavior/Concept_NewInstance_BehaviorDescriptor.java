@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Concept_NewInstance_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Concept_NewInstance_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return Concept_NewInstance_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
   }
-
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Concept_NewInstance_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Concept_NewInstance";

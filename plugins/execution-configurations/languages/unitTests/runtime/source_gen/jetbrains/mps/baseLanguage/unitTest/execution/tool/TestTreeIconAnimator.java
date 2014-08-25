@@ -20,17 +20,14 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
   private Alarm myAlarm;
   private TestRunState myState;
   private TestTree myTestTree;
-
   public TestTreeIconAnimator(TestTree testTree) {
     Disposer.register(testTree, this);
     myTestTree = testTree;
   }
-
   public void init(TestRunState state) {
     myState = state;
     myAlarm = new Alarm();
   }
-
   @Override
   public void run() {
     String methodName = myState.getCurrentMethod();
@@ -47,7 +44,6 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
     }
     scheduleRepaint();
   }
-
   public void scheduleRepaint() {
     if (myAlarm == null) {
       return;
@@ -57,16 +53,13 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
       myAlarm.addRequest(this, FRAME_TIME);
     }
   }
-
   public void stopMovie() {
     cancelAlarm();
   }
-
   @Override
   public void dispose() {
     cancelAlarm();
   }
-
   private void updateTreeNode(@Nullable final BaseTestTreeNode node) {
     if (node == null) {
       return;
@@ -77,19 +70,16 @@ public class TestTreeIconAnimator implements Disposable, Runnable {
       }
     });
   }
-
   private void cancelAlarm() {
     if (myAlarm != null) {
       myAlarm.cancelAllRequests();
       myAlarm = null;
     }
   }
-
   public static Icon getCurrentFrame() {
     final int index = (int) ((System.currentTimeMillis() % MOVIE_TIME) / FRAME_TIME);
     return FRAMES[index];
   }
-
   static {
     FRAMES[0] = AllIcons.RunConfigurations.TestInProgress1;
     FRAMES[1] = AllIcons.RunConfigurations.TestInProgress2;

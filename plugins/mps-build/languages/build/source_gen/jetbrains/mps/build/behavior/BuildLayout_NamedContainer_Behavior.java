@@ -13,19 +13,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class BuildLayout_NamedContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.build.structure.BuildLayout_Container")) {
       sb.append("/");
     }
     sb.append(BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), null));
   }
-
   public static String virtual_getChildrenOutputDir_WithMacro_4701820937132344011(SNode thisNode, Context context) {
     SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
     return context.getTempPath(thisNode, SPropertyOperations.getString(thisNode, "name"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
-
   public static String call_getOutputPath_WithMacro_280273048052535414(SNode thisNode, Context context) {
     if ((SNodeOperations.getParent(thisNode) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container")) {
       String parentChildrenTargetDir = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildLayout_Container"), "virtual_getChildrenOutputDir_WithMacro_4701820937132344011", new Object[]{context});
@@ -33,15 +30,12 @@ public class BuildLayout_NamedContainer_Behavior {
     }
     return null;
   }
-
   public static String virtual_getApproximateName_5610619299014531547(SNode thisNode) {
     return BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(thisNode, "containerName", true), null);
   }
-
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     return !(propertyValue.contains("$") || propertyValue.contains("/") || propertyValue.contains("\\"));
   }
-
   public static boolean virtual_hasInputDir_1262430001741498038(SAbstractConcept thisConcept) {
     return false;
   }

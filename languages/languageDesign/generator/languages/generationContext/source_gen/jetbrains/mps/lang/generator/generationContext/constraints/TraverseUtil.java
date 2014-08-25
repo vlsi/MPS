@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class TraverseUtil {
   public TraverseUtil() {
   }
-
   public static SNode parent(SNode n) {
     if (SNodeOperations.isAttribute(n)) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.core.structure.NodeAttribute")) {

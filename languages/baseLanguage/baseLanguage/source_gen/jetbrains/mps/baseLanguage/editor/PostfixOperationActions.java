@@ -15,19 +15,30 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 public class PostfixOperationActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new PostfixOperationActions.PostfixOperationActions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new PostfixOperationActions.PostfixOperationActions_BACKSPACE(node));
   }
-
   public static class PostfixOperationActions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public PostfixOperationActions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode expression = SLinkOperations.getTarget(node, "expression", true);
+      SNodeOperations.replaceWithAnother(node, expression);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, expression, SelectionManager.LAST_EDITABLE_CELL, -1);
+    }
+  }
+  public static class PostfixOperationActions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public PostfixOperationActions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expression = SLinkOperations.getTarget(node, "expression", true);
       SNodeOperations.replaceWithAnother(node, expression);

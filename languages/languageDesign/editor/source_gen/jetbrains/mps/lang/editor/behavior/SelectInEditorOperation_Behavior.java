@@ -22,15 +22,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SelectInEditorOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration") || kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellId")) {
       {
@@ -49,7 +46,6 @@ public class SelectInEditorOperation_Behavior {
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
-
   public static Scope call_getPropertyDeclarationScope_4323500428150818454(SNode thisNode, SNode concept) {
     return new SimpleScope(AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(concept)) {
       @Nullable
@@ -58,7 +54,6 @@ public class SelectInEditorOperation_Behavior {
       }
     };
   }
-
   public static Scope call_getEditorCellIdScope_4323500428150952879(SNode thisNode, SNode concept) {
     return new EditorCellIdScope(SNodeOperations.getModel(thisNode), concept);
   }

@@ -15,7 +15,6 @@ public class DirUtil {
   private static Pattern URL = Pattern.compile("[a-zA-Z]://(.*)");
   private static final char SLASH_CHAR = '/';
   private static final String SLASH = "/";
-
   public static String[] sortDirs(Iterable<String> dirPaths) {
     return Sequence.fromIterable(dirPaths).select(new ISelector<String, String>() {
       public String select(String p) {
@@ -27,7 +26,6 @@ public class DirUtil {
       }
     }, true).toGenericArray(String.class);
   }
-
   public static int findPrefixAsDir(String dirPath, String[] sortedPaths) {
     String dir = asDir(straighten(urlToPath(dirPath)));
     int idx = Arrays.binarySearch(sortedPaths, dir);
@@ -37,32 +35,25 @@ public class DirUtil {
     }
     return idx;
   }
-
   public static String normalize(String path) {
     return straighten(urlToPath(path));
   }
-
   public static String normalizeAsDir(String dirPath) {
     return asDir(straighten(urlToPath(dirPath)));
   }
-
   public static String asDir(String path) {
     return (path.endsWith(SLASH) ? path : path + SLASH);
   }
-
   public static String urlToPath(String maybeUrl) {
     Matcher m = URL.matcher(maybeUrl);
     return (m.matches() ? m.group(1) : maybeUrl);
   }
-
   public static String straighten(String syspath) {
     return syspath.replace(File.separatorChar, SLASH_CHAR);
   }
-
   public static boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
   }
-
   public static String withoutPrefix(String path, String prefix) {
     if (!(startsWith(path, prefix))) {
       throw new IllegalArgumentException("invalid prefix");
@@ -76,7 +67,6 @@ public class DirUtil {
     }
     return path.substring(prefixLength);
   }
-
   public static boolean same(String path1, String path2) {
     if (path1.equals(path2)) {
       return true;

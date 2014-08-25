@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class supertypesOfUpperBoundType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOfUpperBoundType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode upperBoundType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return SLinkOperations.getTarget(upperBoundType, "bound", true);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UpperBoundType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

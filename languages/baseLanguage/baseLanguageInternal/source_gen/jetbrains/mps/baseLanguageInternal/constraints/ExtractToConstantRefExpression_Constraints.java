@@ -22,7 +22,6 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
   public ExtractToConstantRefExpression_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,17 +38,14 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "fieldName");
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", false, new String[]{});
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_o7daap_a0a3a0a0a1a0b0a1a1;
@@ -60,6 +55,5 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
     });
     return references;
   }
-
   private static SNodePointer breakingNode_o7daap_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "99767819676013261");
 }

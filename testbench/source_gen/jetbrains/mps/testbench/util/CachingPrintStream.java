@@ -17,36 +17,30 @@ public class CachingPrintStream extends PrintStream implements Output {
   private StringBuilder buffer = new StringBuilder();
   private String name;
   private boolean caching;
-
   public CachingPrintStream(OutputStream out, String name) {
     super(out);
     this.name = name;
     this.LS_BYTES = System.getProperty("line.separator").getBytes().length;
   }
-
   public CachingPrintStream(OutputStream out, String name, Pattern[] ignoredOutputPatterns) {
     this(out, name);
     myIgnoredOutputPatterns = ignoredOutputPatterns;
   }
-
   public PrintStream getOut() {
     return (PrintStream) out;
   }
-
   public void startCaching() {
     if (caching) {
       throw new IllegalStateException("Already caching");
     }
     this.caching = true;
   }
-
   public void stopCaching() {
     if (!(caching)) {
       throw new IllegalStateException("Not caching");
     }
     this.caching = false;
   }
-
   public void clear() {
     if (caching) {
       throw new IllegalStateException("Currently caching");
@@ -54,7 +48,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     this.buffer.setLength(0);
     this.bytes = 0;
   }
-
   @Override
   public synchronized boolean isNotEmpty() {
     if (myIgnoredOutputPatterns != null && bytes > 0) {
@@ -67,35 +60,28 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     return bytes > 0;
   }
-
   @Override
   public synchronized String getDescription() {
     return bytes + " bytes in " + name;
   }
-
   @Override
   public synchronized String getText() {
     return buffer.toString();
   }
-
   public synchronized int getBytesCount() {
     return bytes;
   }
-
   public synchronized String getBuffer() {
     return buffer.toString();
   }
-
   @Override
   public synchronized void flush() {
     super.flush();
   }
-
   @Override
   public synchronized void close() {
     super.close();
   }
-
   @Override
   public synchronized void write(int buf) {
     if (caching) {
@@ -104,7 +90,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.write(buf);
   }
-
   @Override
   public synchronized void write(byte[] buf) throws IOException {
     if (caching) {
@@ -113,7 +98,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.write(buf);
   }
-
   @Override
   public synchronized void write(byte[] buf, int off, int len) {
     if (caching) {
@@ -122,7 +106,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.write(buf, off, len);
   }
-
   @Override
   public synchronized void print(boolean b) {
     if (caching) {
@@ -130,7 +113,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(b);
   }
-
   @Override
   public synchronized void print(char c) {
     if (caching) {
@@ -138,7 +120,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(c);
   }
-
   @Override
   public synchronized void print(int i) {
     if (caching) {
@@ -146,7 +127,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(i);
   }
-
   @Override
   public synchronized void print(long lo) {
     if (caching) {
@@ -154,7 +134,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(lo);
   }
-
   @Override
   public synchronized void print(float f) {
     if (caching) {
@@ -162,7 +141,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(f);
   }
-
   @Override
   public synchronized void print(double d) {
     if (caching) {
@@ -170,7 +148,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(d);
   }
-
   @Override
   public synchronized void print(char[] s) {
     if (caching) {
@@ -178,7 +155,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(s);
   }
-
   @Override
   public synchronized void print(String s) {
     if (caching) {
@@ -186,7 +162,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(s);
   }
-
   @Override
   public synchronized void print(Object obj) {
     if (caching) {
@@ -194,7 +169,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.print(obj);
   }
-
   @Override
   public synchronized void println() {
     if (caching) {
@@ -202,7 +176,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println();
   }
-
   @Override
   public synchronized void println(boolean x) {
     if (caching) {
@@ -210,7 +183,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(char x) {
     if (caching) {
@@ -218,7 +190,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(int x) {
     if (caching) {
@@ -226,7 +197,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(long x) {
     if (caching) {
@@ -234,7 +204,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(float x) {
     if (caching) {
@@ -242,7 +211,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(double x) {
     if (caching) {
@@ -250,7 +218,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(char[] x) {
     if (caching) {
@@ -258,7 +225,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(String x) {
     if (caching) {
@@ -266,7 +232,6 @@ public class CachingPrintStream extends PrintStream implements Output {
     }
     super.println(x);
   }
-
   @Override
   public synchronized void println(Object x) {
     if (caching) {

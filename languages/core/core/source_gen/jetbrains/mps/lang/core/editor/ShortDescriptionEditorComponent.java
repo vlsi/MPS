@@ -20,25 +20,22 @@ public class ShortDescriptionEditorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createReadOnlyModelAccessor_37ao6w_a(editorContext, node);
   }
-
   private EditorCell createReadOnlyModelAccessor_37ao6w_a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptShortDescription");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_37ao6w_a");
     return editorCell;
   }

@@ -40,7 +40,6 @@ public class BreakpointsIconCache implements ProjectComponent {
       breakpoint.addBreakpointListener(myBreakpointListener);
       myUpdateFromCurrent.invoke();
     }
-
     @Override
     public void breakpointRemoved(@NotNull IBreakpoint breakpoint) {
       myUpdateFromCurrent.invoke();
@@ -61,14 +60,12 @@ public class BreakpointsIconCache implements ProjectComponent {
         updateIcons(null);
       }
     }
-
     @Override
     public void registered(AbstractDebugSession session) {
       if (session instanceof DebugSession) {
         ((DebugSession) session).getEventsProcessor().getRequestManager().addWarningsListener(myUpdateFromCurrent);
       }
     }
-
     @Override
     public void detached(AbstractDebugSession session) {
       if (session instanceof DebugSession) {
@@ -85,36 +82,30 @@ public class BreakpointsIconCache implements ProjectComponent {
       myUpdateFromCurrent.invoke();
     }
   };
-
   public BreakpointsIconCache(Project project, BreakpointManagerComponent breakpointManager, DebugSessionManagerComponent debugSessionManager, BreakpointsUiComponent breakpointsUiComponent) {
     myProject = project;
     myBreakpointManager = breakpointManager;
     myDebugSessionManager = debugSessionManager;
     myBreakpointsUiComponent = breakpointsUiComponent;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
     myBreakpointManager.addChangeListener(myBreakpointsManagerListener);
     myDebugSessionManager.addDebugSessionListener(myDebugSessionAdapter);
     CleanupManager.getInstance().addCleanupListener(myCleanupListener);
   }
-
   @Override
   public void disposeComponent() {
     CleanupManager.getInstance().removeCleanupListener(myCleanupListener);
     myDebugSessionManager.removeDebugSessionListener(myDebugSessionAdapter);
     myBreakpointManager.removeChangeListener(myBreakpointsManagerListener);
   }
-
   @Nullable
   private DebugSession currentSession() {
     AbstractDebugSession session = myDebugSessionManager.getDebugSessionByCurrentTab();
@@ -123,7 +114,6 @@ public class BreakpointsIconCache implements ProjectComponent {
     }
     return null;
   }
-
   public void updateIcons(@Nullable final DebugSession session) {
     final _FunctionTypes._void_P0_E0 update = new _FunctionTypes._void_P0_E0() {
       public void invoke() {
@@ -152,7 +142,6 @@ public class BreakpointsIconCache implements ProjectComponent {
       update.invoke();
     }
   }
-
   public Icon getIcon(@NotNull JavaBreakpoint breakpoint, @Nullable AbstractDebugSession session) {
     if (session != null && session.isMute()) {
       return Icons.MUTED_BREAKPOINT;
@@ -161,7 +150,6 @@ public class BreakpointsIconCache implements ProjectComponent {
       return MapSequence.fromMap(myCache).get(breakpoint);
     }
   }
-
   private Icon getIconInternal(JavaBreakpoint breakpoint, @Nullable DebugSession session) {
     String warning = (session == null ? null : session.getEventsProcessor().getRequestManager().getWarning(breakpoint));
     switch (breakpoint.getKind()) {
@@ -177,18 +165,15 @@ public class BreakpointsIconCache implements ProjectComponent {
     }
     return null;
   }
-
   public IBreakpointListener getBreakpointListener() {
     return myBreakpointListener;
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Breakpoints Icon Cache";
   }
-
   public static BreakpointsIconCache getInstance(Project project) {
     return project.getComponent(BreakpointsIconCache.class);
   }

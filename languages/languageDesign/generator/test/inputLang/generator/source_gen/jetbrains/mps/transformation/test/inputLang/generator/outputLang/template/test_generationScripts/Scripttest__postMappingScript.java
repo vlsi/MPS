@@ -14,26 +14,20 @@ import jetbrains.mps.smodel.SNodePointer;
 public class Scripttest__postMappingScript implements TemplateMappingScript {
   public Scripttest__postMappingScript() {
   }
-
   public SNodeReference getScriptNode() {
     return mappingScriptNode;
   }
-
   public String getLongName() {
     return "'test_postMappingScript' (jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)";
   }
-
   public boolean modifiesModel() {
     return false;
   }
-
   public int getKind() {
     return POSTPROCESS;
   }
-
   public void apply(SModel model, ITemplateGenerator generator) {
     QueriesGenerated.mappingScript_CodeBlock_1195510384869(new MappingScriptContext(model, getScriptNode(), generator));
   }
-
   private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195510384868");
 }

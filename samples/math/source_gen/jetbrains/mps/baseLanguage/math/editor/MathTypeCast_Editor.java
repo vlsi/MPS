@@ -22,7 +22,6 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gtxowl_a(editorContext, node);
   }
-
   private EditorCell createCollection_gtxowl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gtxowl_a");
@@ -33,7 +32,6 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gtxowl_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gtxowl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_gtxowl_a0");
@@ -44,7 +42,6 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gtxowl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("target");
@@ -62,7 +59,6 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gtxowl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_gtxowl_c0");
@@ -73,7 +69,6 @@ public class MathTypeCast_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gtxowl_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("castedExpr");

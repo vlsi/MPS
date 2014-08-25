@@ -16,7 +16,6 @@ import javax.swing.border.TitledBorder;
 
 public final class PreviewFactory {
 
-
   public static JPanel createPanel(final SNode thisCanvas) {
     return new JPanel() {
       @Override
@@ -33,14 +32,10 @@ public final class PreviewFactory {
         });
       }
 
-
-
       @Override
       public Dimension getPreferredSize() {
         return new Dimension(500, 500);
       }
-
-
 
       @Override
       public Border getBorder() {

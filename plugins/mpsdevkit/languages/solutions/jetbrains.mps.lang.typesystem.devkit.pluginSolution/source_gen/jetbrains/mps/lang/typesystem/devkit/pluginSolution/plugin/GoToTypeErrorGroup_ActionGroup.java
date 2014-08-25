@@ -25,7 +25,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(GoToTypeErrorGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin.GoToTypeErrorGroup_ActionGroup";
   private Set<Pair<ActionPlace, Condition<BaseAction>>> myPlaces = SetSequence.fromSet(new HashSet<Pair<ActionPlace, Condition<BaseAction>>>());
-
   public GoToTypeErrorGroup_ActionGroup() {
     super("Go to Rule Which Caused Error", ID);
     this.setIsAlwaysVisible(false);
@@ -36,7 +35,6 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       LOG.error("User group error", t);
     }
   }
-
   public void doUpdate(AnActionEvent event) {
     try {
       SNode node = event.getData(MPSCommonDataKeys.NODE);
@@ -68,11 +66,9 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
       this.addPlace(p.first, p.second);
     }
   }
-
   public void addPlace(ActionPlace place, @Nullable Condition<BaseAction> cond) {
     SetSequence.fromSet(this.myPlaces).addElement(new Pair<ActionPlace, Condition<BaseAction>>(place, cond));
   }
-
   public boolean isStrict() {
     return false;
   }

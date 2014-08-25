@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class TrimOperation_BehaviorDescriptor extends BaseStringOperation_BehaviorDescriptor {
   public TrimOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.TrimOperation";

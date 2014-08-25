@@ -17,11 +17,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class SurroundExceptionWithTryCatch_QuickFix extends QuickFix_Runtime {
   public SurroundExceptionWithTryCatch_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return (((Boolean) SurroundExceptionWithTryCatch_QuickFix.this.getField("createNew")[0]) ? "Surround with try/catch" : "Add Catch Clause(s)");
   }
-
   public void execute(SNode node) {
     if (ListSequence.fromList(((List<SNode>) SurroundExceptionWithTryCatch_QuickFix.this.getField("throwableTypes")[0])).isEmpty()) {
       return;

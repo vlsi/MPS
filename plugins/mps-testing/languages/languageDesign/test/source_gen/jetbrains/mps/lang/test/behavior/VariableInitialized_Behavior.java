@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class VariableInitialized_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     NodeDataFlowCheckerUtil.checkDataFlow(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.StatementList", false, false));
   }
-
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "NodeVariableInitializedCheck";
   }

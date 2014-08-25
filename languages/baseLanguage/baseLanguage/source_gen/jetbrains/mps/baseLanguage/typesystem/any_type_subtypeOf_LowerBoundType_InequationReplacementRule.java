@@ -19,35 +19,28 @@ import jetbrains.mps.smodel.SReference;
 
 public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
-
   public any_type_subtypeOf_LowerBoundType_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return MatchingUtil.matchNodes(((SNode) status.getPattern2().getFieldValue("patternVar_TYPE")), _quotation_createNode_w2c88q_a0a0a2()) || MatchingUtil.matchNodes(subtype, ((SNode) status.getPattern2().getFieldValue("patternVar_TYPE")));
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     // 'nuff said 
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     // 'nuff said 
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       GeneratedMatchingPattern pattern = new any_type_subtypeOf_LowerBoundType_InequationReplacementRule.Pattern_w2c88q_a0a0a0a7();
@@ -56,21 +49,16 @@ public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LowerBoundType";
   }
-
   public static class Pattern_w2c88q_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_TYPE;
-
     public Pattern_w2c88q_a0a0a0a7() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_y0gkvf_a0a = nodeToMatch;
@@ -90,28 +78,23 @@ public class any_type_subtypeOf_LowerBoundType_InequationReplacementRule extends
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_TYPE = (SNode) pattern.getFieldValue("patternVar_TYPE");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_TYPE".equals(fieldName)) {
         return patternVar_TYPE;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_w2c88q_a0a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

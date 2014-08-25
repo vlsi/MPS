@@ -2,16 +2,16 @@
 <debug-info>
   <root>
     <file name="ReaderConfiguration_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.ReaderConfiguration_BehaviorDescriptor" />
     </file>
     <file name="Field_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Field_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Field_BehaviorDescriptor" />
     </file>
     <file name="Mapping_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Mapping_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.Mapping_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,26,0" name="jetbrains.mps.samples.readerConfigLanguage.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

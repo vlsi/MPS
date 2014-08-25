@@ -7,7 +7,6 @@ public class DescriptorIOException extends Exception {
   public DescriptorIOException(Throwable cause) {
     super(cause);
   }
-
   public DescriptorIOException(String msg) {
     super(msg);
   }

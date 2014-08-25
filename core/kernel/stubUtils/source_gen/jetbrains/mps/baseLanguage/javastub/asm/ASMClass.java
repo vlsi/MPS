@@ -25,7 +25,6 @@ public class ASMClass {
   private List<ASMMethod> myConstructors = new ArrayList<ASMMethod>();
   private List<ASMAnnotation> myAnnotations;
   private ASMType myGenericSuperclass;
-
   public ASMClass(ClassReader reader) {
     myNode = new ClassNode();
     try {
@@ -47,7 +46,6 @@ public class ASMClass {
             }
           };
         }
-
         @Override
         public SignatureVisitor visitInterface() {
           return new ASMClass.ClassifierSignatureVisitor() {
@@ -98,86 +96,66 @@ public class ASMClass {
       }
     }
   }
-
   public boolean isAbstract() {
     return (myNode.access & Opcodes.ACC_ABSTRACT) != 0;
   }
-
   public boolean isStatic() {
     return (myNode.access & Opcodes.ACC_STATIC) != 0;
   }
-
   public boolean isPublic() {
     return (myNode.access & Opcodes.ACC_PUBLIC) != 0;
   }
-
   public boolean isFinal() {
     return (myNode.access & Opcodes.ACC_FINAL) != 0;
   }
-
   public boolean isDeprecated() {
     return (Opcodes.ACC_DEPRECATED & myNode.access) != 0;
   }
-
   public ClassifierKind getClassifierKind() {
     return ClassifierKind.getClassifierKind(myNode.access);
   }
-
   public String getName() {
     return (myNode.name == null ? "" : myNode.name);
   }
-
   public String getFqName() {
     if (myNode.name == null) {
       return "";
     }
     return myNode.name.replace('/', '.');
   }
-
   public List<InnerClassNode> getInnerClasses() {
     return myNode.innerClasses;
   }
-
   public List<ASMTypeVariable> getTypeParameters() {
     return Collections.unmodifiableList(myTypeVariables);
   }
-
   public List<ASMType> getGenericInterfaces() {
     return Collections.unmodifiableList(myGenericInterfaces);
   }
-
   public List<ASMAnnotation> getAnnotations() {
     return ((List<ASMAnnotation>) ((myAnnotations == null ? Collections.emptyList() : Collections.unmodifiableList(myAnnotations))));
   }
-
   public ASMType getGenericSuperclass() {
     return myGenericSuperclass;
   }
-
   public List<ASMField> getDeclaredFields() {
     return Collections.unmodifiableList(myFields);
   }
-
   public List<ASMMethod> getDeclaredMethods() {
     return Collections.unmodifiableList(myMethods);
   }
-
   public List<ASMMethod> getDeclaredConstructors() {
     return Collections.unmodifiableList(myConstructors);
   }
-
   private class ClassifierSignatureVisitor extends SignatureVisitorAdapter {
     /*package*/ String myName;
     /*package*/ List<ASMType> myParameters;
     /*package*/ ASMClass.ClassifierSignatureVisitor myParentVisitor = null;
-
     public ClassifierSignatureVisitor() {
     }
-
     public ClassifierSignatureVisitor(ASMClass.ClassifierSignatureVisitor parentVisitor) {
       myParentVisitor = parentVisitor;
     }
-
     @Override
     public SignatureVisitor visitTypeArgument(char wildcard) {
       return new ASMClass.ClassifierSignatureVisitor(this) {
@@ -190,7 +168,6 @@ public class ASMClass {
             myParentVisitor.myParameters.add(new ASMTypeVariable(name));
           }
         }
-
         @Override
         public void visitEnd() {
           if (myParentVisitor != null) {
@@ -203,7 +180,6 @@ public class ASMClass {
         }
       };
     }
-
     @Override
     public void visitClassType(String name) {
       myName = name.replace('/', '.');

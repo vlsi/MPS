@@ -6,7 +6,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class WarningStatementAnnotation_BehaviorDescriptor extends MessageStatementAnnotation_BehaviorDescriptor {
   public WarningStatementAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.WarningStatementAnnotation";

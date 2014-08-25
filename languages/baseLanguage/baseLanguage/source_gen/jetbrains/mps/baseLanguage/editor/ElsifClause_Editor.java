@@ -30,7 +30,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_m61dlm_a(editorContext, node);
   }
-
   private EditorCell createCollection_m61dlm_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_m61dlm_a");
@@ -47,7 +46,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_m61dlm_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_m61dlm_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "else if");
     editorCell.setCellId("Constant_m61dlm_a0");
@@ -59,11 +57,9 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ElsifClause_Editor.ElsifClause_generic_cellMenu_m61dlm_a0a0()}));
     return editorCell;
   }
-
   public static class ElsifClause_generic_cellMenu_m61dlm_a0a0 extends AbstractCellMenuPart_Generic_Group {
     public ElsifClause_generic_cellMenu_m61dlm_a0a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       // todo: this is quite a hackish stuff but we need it 
       // todo: but we need it since we can't enable/disable 
@@ -76,22 +72,18 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
       ListSequence.fromList(result).addElement("else if");
       return result;
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if ("else".equals(parameterObject)) {
         ElsifClause_Behavior.call_convertToElseClause_1217846674032(node);
       }
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createConstant_m61dlm_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_m61dlm_b0");
@@ -101,7 +93,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_m61dlm_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("condition");
@@ -121,7 +112,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_m61dlm_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_m61dlm_d0");
@@ -131,7 +121,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_m61dlm_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_m61dlm_e0");
@@ -142,7 +131,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_m61dlm_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementList");
@@ -166,7 +154,6 @@ public class ElsifClause_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_m61dlm_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_m61dlm_g0");

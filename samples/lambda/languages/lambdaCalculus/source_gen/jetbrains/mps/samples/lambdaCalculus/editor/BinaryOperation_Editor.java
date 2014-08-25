@@ -16,7 +16,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_tdrdn7_a(editorContext, node);
   }
-
   private EditorCell createCollection_tdrdn7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tdrdn7_a");
@@ -26,7 +25,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_tdrdn7_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_tdrdn7_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("left");
@@ -46,13 +44,11 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_tdrdn7_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     BinaryOperation_Right_actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private EditorCell createRefNode_tdrdn7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("right");

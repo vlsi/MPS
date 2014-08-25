@@ -25,12 +25,10 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
   public BuildMps_ModuleDependencyExtendLanguage_Constraints() {
     super("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -41,7 +39,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -50,7 +47,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -59,7 +55,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_x6a53i_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -72,11 +67,9 @@ public class BuildMps_ModuleDependencyExtendLanguage_Constraints extends BaseCon
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_Language") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.build.mps.structure.BuildMps_Language");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "4278635856200794938");
   private static SNodePointer breakingNode_x6a53i_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "1224588814561902804");
 }

@@ -18,7 +18,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_ConstraintsFunctionParameter_node_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConstraintsFunctionParameter_node_InferenceRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode applicableConcept;
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAParent", false, false) != null) || (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAnAncestor", false, false) != null)) {
@@ -40,29 +39,24 @@ public class typeof_ConstraintsFunctionParameter_node_InferenceRule extends Abst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_5j2flj_a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5j2flj_a0a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

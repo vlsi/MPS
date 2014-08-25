@@ -40,18 +40,15 @@ import org.apache.log4j.LogManager;
 
 public class GetModelContentsFromSource_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GetModelContentsFromSource_Action() {
     super("Get Model Contents from Source", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SModule module = ((SModel) MapSequence.fromMap(_params).get("model")).getModule();
     if (module == null) {
@@ -59,7 +56,6 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     }
     return !(module instanceof TransientModelsModule);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -73,7 +69,6 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -99,7 +94,6 @@ public class GetModelContentsFromSource_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
 
@@ -141,6 +135,5 @@ public class GetModelContentsFromSource_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GetModelContentsFromSource_Action.class);
 }

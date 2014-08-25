@@ -18,25 +18,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ExpressionStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ExpressionStatement_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode expressionStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(expressionStatement, "expression", true), "virtual_isLegalAsStatement_1239211900844", new Object[]{}) || ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(expressionStatement))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expressionStatement, "Not a statement", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1239212949442", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

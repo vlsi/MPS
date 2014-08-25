@@ -24,7 +24,6 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
   public EnumConstantReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.EnumConstantReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -42,7 +40,6 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_xpgkri_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             if ((SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false) != null)) {
@@ -56,6 +53,5 @@ public class EnumConstantReference_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_xpgkri_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136870");
 }

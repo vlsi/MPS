@@ -16,7 +16,6 @@ public class GetSelectedTabOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_wg9wvo_a(editorContext, node);
   }
-
   private EditorCell createCollection_wg9wvo_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_wg9wvo_a");
@@ -26,7 +25,6 @@ public class GetSelectedTabOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_wg9wvo_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_wg9wvo_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -34,7 +32,6 @@ public class GetSelectedTabOperation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_wg9wvo_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_wg9wvo_b0");
@@ -44,7 +41,6 @@ public class GetSelectedTabOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_wg9wvo_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_wg9wvo_c0");

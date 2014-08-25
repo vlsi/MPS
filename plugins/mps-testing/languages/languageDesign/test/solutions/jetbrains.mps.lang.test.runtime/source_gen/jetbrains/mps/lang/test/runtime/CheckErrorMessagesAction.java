@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -17,21 +16,18 @@ public class CheckErrorMessagesAction implements Runnable {
   private boolean allowsWarnings;
   private boolean allowsErrors;
 
-
   public CheckErrorMessagesAction(SNode node, boolean allowsWarnings, boolean allowsErrors) {
     this.node = node;
     this.allowsWarnings = allowsWarnings;
     this.allowsErrors = allowsErrors;
   }
 
-
-
   @Override
   public void run() {
+    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
       if (!(hasErrorOrWarningCheckOperationTag(child))) {
-        TestsErrorsChecker checker = new TestsErrorsChecker(child);
-        final List<IErrorReporter> reporters = checker.getErrorReporters();
+        final Iterable<IErrorReporter> reporters = checker.getErrors(child);
         for (IErrorReporter reporter : reporters) {
           final String messageString = getErrorString(reporter, child);
           checkWarnings(reporter, messageString);
@@ -41,8 +37,6 @@ public class CheckErrorMessagesAction implements Runnable {
       }
     }
   }
-
-
 
   private static boolean hasErrorOrWarningCheckOperationTag(SNode node) {
     if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) == null) {
@@ -57,23 +51,17 @@ public class CheckErrorMessagesAction implements Runnable {
     return false;
   }
 
-
-
   private void checkWarnings(IErrorReporter reporter, String warningMsg) {
     if (!(allowsWarnings)) {
       Assert.assertTrue(warningMsg, reporter.getMessageStatus() != MessageStatus.WARNING);
     }
   }
 
-
-
   private void checkErrors(IErrorReporter reporter, String errorMsg) {
     if (!(allowsErrors)) {
       Assert.assertTrue(errorMsg, reporter.getMessageStatus() != MessageStatus.ERROR);
     }
   }
-
-
 
   private String getErrorString(IErrorReporter reporter, SNode node) {
     return reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(node) + "'";

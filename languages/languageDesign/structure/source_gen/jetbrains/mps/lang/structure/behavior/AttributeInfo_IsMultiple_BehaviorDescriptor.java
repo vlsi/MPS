@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class AttributeInfo_IsMultiple_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public AttributeInfo_IsMultiple_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple";

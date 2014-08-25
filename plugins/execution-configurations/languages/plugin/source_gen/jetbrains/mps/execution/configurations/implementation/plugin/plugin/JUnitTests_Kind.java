@@ -17,39 +17,31 @@ import com.intellij.openapi.extensions.Extensions;
 public class JUnitTests_Kind implements ConfigurationType {
   private static final Icon ICON = AllIcons.RunConfigurations.Junit;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-
   public JUnitTests_Kind() {
   }
-
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new JUnitTests_Configuration_Factory(this));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
-
   @NonNls
   @NotNull
   public String getId() {
     return "JUnit Tests";
   }
-
   public Icon getIcon() {
     return ICON;
   }
-
   public String getConfigurationTypeDescription() {
     return null;
   }
-
   public String getDisplayName() {
     return "JUnit Tests";
   }
-
   public void addForeignFactory(ConfigurationFactory factory) {
     ListSequence.fromList(myForeignFactories).addElement(factory);
   }
-
   public static JUnitTests_Kind getInstance() {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JUnitTests_Kind.class);
   }

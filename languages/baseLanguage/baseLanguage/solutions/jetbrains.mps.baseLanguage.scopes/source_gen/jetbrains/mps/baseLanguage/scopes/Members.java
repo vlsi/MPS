@@ -13,7 +13,6 @@ public class Members {
   private Members() {
     // todo: extension methods? 
   }
-
   public static Iterable<SNode> visibleInstanceFields(SNode classifierType, SNode contextNode) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -21,7 +20,6 @@ public class Members {
       }
     });
   }
-
   public static Iterable<SNode> visibleStaticFields(SNode classifier, SNode contextNode) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -29,7 +27,6 @@ public class Members {
       }
     });
   }
-
   public static Iterable<SNode> visibleInstanceMethods(SNode classifierType, SNode contextNode) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(classifierType, contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -37,7 +34,6 @@ public class Members {
       }
     });
   }
-
   public static Iterable<SNode> visibleStaticMethods(SNode classifier, SNode contextNode) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -45,7 +41,6 @@ public class Members {
       }
     });
   }
-
   public static Iterable<SNode> visibleEnumConstants(SNode classifier) {
     return (Iterable<SNode>) Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

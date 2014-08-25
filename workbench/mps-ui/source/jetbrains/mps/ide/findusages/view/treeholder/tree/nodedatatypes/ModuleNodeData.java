@@ -25,6 +25,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -77,7 +78,7 @@ public class ModuleNodeData extends BaseNodeData {
   }
 
   public SModule getModule() {
-    return MPSModuleRepository.getInstance().getModule(myModuleReference);
+    return ModuleRepositoryFacade.getInstance().getModule(myModuleReference);
   }
 
   public SModuleReference getModuleReference() {
@@ -86,7 +87,7 @@ public class ModuleNodeData extends BaseNodeData {
 
   @Override
   public Object getIdObject() {
-    return isResultNode() ? (getModuleReference().toString() + "/" + getPlainText()) : getModule();
+    return getModuleReference().toString() + "/" + getPlainText();
   }
 
   @Override

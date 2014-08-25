@@ -15,7 +15,6 @@ public class PlaceholderMethodDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_s75wnn_a(editorContext, node);
   }
-
   private EditorCell createConstant_s75wnn_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "A deprecated type of empty line. Run migrations or use PlaceholderMember instead.");
     editorCell.setCellId("Constant_s75wnn_a");

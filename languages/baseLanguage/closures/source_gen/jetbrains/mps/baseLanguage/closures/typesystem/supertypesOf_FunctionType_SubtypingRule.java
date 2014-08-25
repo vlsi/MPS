@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_FunctionType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode ft, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) == null)) {
       return FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft);
@@ -25,22 +24,18 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
       return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a1(SLinkOperations.getTarget(ft, "runtimeIface", false)), ft);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_8hodjs_a0a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

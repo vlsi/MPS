@@ -16,19 +16,40 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class UnaryRegexp_Regexp_actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new UnaryRegexp_Regexp_actions.UnaryRegexp_Regexp_actions_BACKSPACE(node));
   }
-
   public static class UnaryRegexp_Regexp_actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UnaryRegexp_Regexp_actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode nn = SLinkOperations.getTarget(node, "regexp", true);
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "regexp", true));
 
+      editorContext.flushEvents();
+      EditorComponent editor = editorContext.getEditorComponent();
+      EditorCell cell = editor.findNodeCell(nn);
+      if (cell != null) {
+        EditorCell lastLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getLastLeaf(CellConditions.SELECTABLE);
+        editor.changeSelection(lastLeaf);
+        if (lastLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label) lastLeaf).end();
+        }
+      }
+    }
+  }
+  public static class UnaryRegexp_Regexp_actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public UnaryRegexp_Regexp_actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode nn = SLinkOperations.getTarget(node, "regexp", true);
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "regexp", true));

@@ -10,11 +10,9 @@ public class XmlDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "version", "1.0");
   }
-
   public static boolean virtual_isSingle_1262430001741497810(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static boolean virtual_isFirst_1262430001741498376(SAbstractConcept thisConcept) {
     return true;
   }

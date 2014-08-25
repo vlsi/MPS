@@ -60,8 +60,8 @@
              url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+3.1+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="1">
-      <build number="135.944" version="3.1">
-        <message>JetBrains MPS 3.1 is available.</message>
+      <build number="135.1254" version="3.1.2">
+        <message>JetBrains MPS 3.1.2 is available.</message>
       </build>
     </channel>
 
@@ -69,8 +69,8 @@
              url="http://confluence.jetbrains.com/display/MPS/JetBrains+MPS+3.1+Download+Page"
              feedback="http://youtrack.jetbrains.net"
              majorVersion="3" minorVersoin="1">
-      <build number="135.944" version="3.1">
-        <message>JetBrains MPS 3.1 is available.</message>
+      <build number="135.1254" version="3.1.2">
+        <message>JetBrains MPS 3.1.2 is available.</message>
       </build>
     </channel>
 

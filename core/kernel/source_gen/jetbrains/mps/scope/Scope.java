@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public abstract class Scope {
   public Scope() {
   }
-
   /**
    * Returns all available elements in the scope.
    * 
@@ -23,7 +22,6 @@ public abstract class Scope {
    * @return list of nodes in the scope
    */
   public abstract Iterable<SNode> getAvailableElements(@Nullable String prefix);
-
   /**
    * Returns <tt>true</tt> if this scope contains the specified element.
    * 
@@ -35,7 +33,6 @@ public abstract class Scope {
   public boolean contains(SNode node) {
     return Sequence.fromIterable(getAvailableElements(null)).contains(node);
   }
-
   /**
    * Resolves element by reference text.
    * 
@@ -47,7 +44,6 @@ public abstract class Scope {
    */
   @Nullable
   public abstract SNode resolve(SNode contextNode, @NotNull String refText);
-
   /**
    * Creates textual reference for scope element. If element has no textual representation
    * for the reference, returns null.
@@ -60,7 +56,6 @@ public abstract class Scope {
    */
   @Nullable
   public abstract String getReferenceText(SNode contextNode, @NotNull SNode node);
-
   /**
    * Get scope for existing node.
    */
@@ -79,7 +74,6 @@ public abstract class Scope {
     }
     return null;
   }
-
   /**
    * Get scope for smart reference, when node doesn't exist yet
    */
@@ -92,7 +86,6 @@ public abstract class Scope {
     }
     return getScope(parent(node), node, kind);
   }
-
   public static SNode parent(SNode n) {
     if (SNodeOperations.isAttribute(n)) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.lang.core.structure.NodeAttribute")) {

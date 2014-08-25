@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_FieldReferenceOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode fieldReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode fieldDecl = SLinkOperations.getTarget(fieldReference, "fieldDeclaration", false);
     if ((fieldDecl == null)) {
@@ -62,22 +61,18 @@ public class typeof_FieldReferenceOperation_InferenceRule extends AbstractInfere
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_7hlfbz_a0e0g0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

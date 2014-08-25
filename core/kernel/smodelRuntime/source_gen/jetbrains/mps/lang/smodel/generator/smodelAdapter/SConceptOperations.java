@@ -29,14 +29,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public final class SConceptOperations {
   private SConceptOperations() {
   }
-
   public static boolean isExactly(SNode conceptDeclarationNode, String conceptFqName) {
     if (conceptDeclarationNode == null) {
       return false;
     }
     return NameUtil.nodeFQName(conceptDeclarationNode).equals(conceptFqName);
   }
-
   @Deprecated
   public static boolean isAssignableFrom(SNode conceptDeclarationNode, SNode fromConceptDeclarationNode) {
     if (conceptDeclarationNode == null || fromConceptDeclarationNode == null) {
@@ -44,7 +42,6 @@ public final class SConceptOperations {
     }
     return SModelUtil.isAssignableConcept(NameUtil.nodeFQName(fromConceptDeclarationNode), NameUtil.nodeFQName(conceptDeclarationNode));
   }
-
   public static boolean isSuperConceptOf(SNode superConcept, String subConceptFQName) {
     if (superConcept == null) {
       return false;
@@ -52,7 +49,6 @@ public final class SConceptOperations {
     String superConceptFQName = NameUtil.nodeFQName(superConcept);
     return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
   }
-
   public static boolean isSubConceptOf(SNode subConcept, String superConceptFQName) {
     if (subConcept == null) {
       return false;
@@ -60,16 +56,13 @@ public final class SConceptOperations {
     String subConceptFQName = NameUtil.nodeFQName(subConcept);
     return SModelUtil.isAssignableConcept(subConceptFQName, superConceptFQName);
   }
-
   public static SNode findConceptDeclaration(@NotNull String conceptFqName) {
     return SModelUtil.findConceptDeclaration(conceptFqName);
   }
-
   @Deprecated
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode) {
     return getDirectSuperConcepts(conceptDeclarationNode, false);
   }
-
   public static List<SNode> getDirectSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null || !(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclarationNode))) {
       return Collections.emptyList();
@@ -81,12 +74,10 @@ public final class SConceptOperations {
     }
     return Collections.unmodifiableList(result);
   }
-
   @Deprecated
   public static List<SNode> getAllSuperConcepts(SNode conceptDeclarationNode) {
     return getAllSuperConcepts(conceptDeclarationNode, false);
   }
-
   public static List<SNode> getAllSuperConcepts(SNode conceptDeclarationNode, boolean inclusion) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -98,18 +89,15 @@ public final class SConceptOperations {
     }
     return result;
   }
-
   public static List<SNode> getConceptHierarchy(SNode conceptDeclarationNode) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
     }
     return SModelUtil_new.getConceptAndSuperConcepts(conceptDeclarationNode);
   }
-
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, SModel model) {
     return getAllSubConcepts(conceptDeclarationNode, new HashSet<Language>(SModelOperations.getLanguages(model)));
   }
-
   public static List<SNode> getAllSubConcepts(SNode conceptDeclarationNode, Set<Language> availableLanguages) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -125,7 +113,6 @@ public final class SConceptOperations {
     }
     return result;
   }
-
   public static List<SNode> findConceptInstances(SNode conceptDeclarationNode, SearchScope scope) {
     if (conceptDeclarationNode == null) {
       return new ArrayList<SNode>();
@@ -138,11 +125,9 @@ public final class SConceptOperations {
     Set<SNode> usages = FindUsagesFacade.getInstance().findInstances(scope, Collections.singleton(concept), false, new EmptyProgressMonitor());
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
-
   public static SNode createNewNode(String conceptFqName) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
-
   @Deprecated
   public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     return ((jetbrains.mps.smodel.SNode) jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName));

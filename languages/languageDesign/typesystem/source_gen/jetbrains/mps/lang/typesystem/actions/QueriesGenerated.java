@@ -45,21 +45,18 @@ public class QueriesGenerated {
       ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "helginsIntention", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement"), "helginsIntention", true)));
     }
   }
-
   public static void nodeFactory_NodeSetup_IsSubtypeExpression_1177408248540(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "subtypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "subtypeExpression", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "supertypeExpression", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression"), "supertypeExpression", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_CoerceExpression_1178879020941(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "nodeToCoerce", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "nodeToCoerce", true), true);
       SLinkOperations.setTarget(_context.getNewNode(), "pattern", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.CoerceExpression"), "pattern", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_TypeOfExpression_1179476271704(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       if (!(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression"))) {
@@ -69,7 +66,6 @@ public class QueriesGenerated {
       }
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TypeClause_1185801400389(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -83,11 +79,9 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
             return normalTypeClause;
           }
-
           public boolean returnSmallPart(SNode nodeToWrap) {
             return false;
           }
-
           @Override
           public SNode doExecute(SNode pn, SNode oc, SNode nc, @Nullable EditorContext editorContext) {
             SNode wrappedNode = wrapNode(nc, nc.getModel(), editorContext);
@@ -100,18 +94,15 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1201875763403(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation"), _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1201878705329(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return !(RulesUtil.withinInferenceItem(_context.getParentNode())) && !(RulesUtil.withinTypeManagingItem(_context.getParentNode()));
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_7750890258732378172(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -140,7 +131,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_7750890258733139493(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     if ((SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
       return true;
@@ -152,7 +142,6 @@ public class QueriesGenerated {
     }
     return false;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -181,7 +170,6 @@ public class QueriesGenerated {
               SLinkOperations.setTarget(result, "leftExpression", left, true);
               return result;
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();

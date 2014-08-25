@@ -12,16 +12,13 @@ public class Java_Configuration_Factory extends ConfigurationFactory {
   public Java_Configuration_Factory(JavaApplication_Kind type) {
     super(type);
   }
-
   public RunConfiguration createTemplateConfiguration(Project project) {
     return new Java_Configuration(project, this, "Template Configuration");
   }
-
   @Override
   public String getName() {
     return "Java";
   }
-
   @Override
   public Icon getIcon() {
     Icon icon = super.getIcon();

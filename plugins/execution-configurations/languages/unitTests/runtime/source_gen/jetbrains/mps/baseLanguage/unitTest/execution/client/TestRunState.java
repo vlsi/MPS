@@ -12,12 +12,13 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.util.Key;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.unitTest.execution.TestEvent;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class TestRunState {
   private static final Object lock = new Object();
@@ -28,28 +29,27 @@ public class TestRunState {
   private String myCurrentClass;
   private String myCurrentMethod;
   private String myCurrentToken;
+  private volatile boolean myCurrentCompleted = true;
   private String myLostTest;
   private String myLostMethod;
   private int myTotalTests = 0;
   private int myCompletedTests = 0;
-  private int myDefectTests = 0;
+  private int myFailedTests = 0;
   private boolean myIsTerminated;
   private String myAvailableText = null;
   private Key myKey = null;
-
-  public TestRunState(List<ITestNodeWrapper> tests) {
-    this.initTestState(ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+  public TestRunState(Iterable<? extends ITestNodeWrapper> tests) {
+    this.initTestState(Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return it.isTestCase();
       }
-    }), ListSequence.fromList(tests).where(new IWhereFilter<ITestNodeWrapper>() {
+    }), Sequence.fromIterable(tests).where(new IWhereFilter<ITestNodeWrapper>() {
       public boolean accept(ITestNodeWrapper it) {
         return !(it.isTestCase());
       }
     }));
   }
-
-  private void initTestState(final Iterable<ITestNodeWrapper> testCases, final Iterable<ITestNodeWrapper> testMethods) {
+  private void initTestState(final Iterable<? extends ITestNodeWrapper> testCases, final Iterable<? extends ITestNodeWrapper> testMethods) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         TestRunState.this.addTestCases(testCases);
@@ -65,16 +65,14 @@ public class TestRunState {
 
     this.initView();
   }
-
-  private void addTestCases(Iterable<ITestNodeWrapper> testCases) {
+  private void addTestCases(Iterable<? extends ITestNodeWrapper> testCases) {
     for (ITestNodeWrapper testCase : Sequence.fromIterable(testCases)) {
       List<ITestNodeWrapper> testMethods = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
       ListSequence.fromList(testMethods).addSequence(Sequence.fromIterable(testCase.getTestMethods()));
+      MapSequence.fromMap(this.myTestToMethodsMap).put(testCase, testMethods);
     }
   }
-
-  private void addTestMethods(Iterable<ITestNodeWrapper> testMethods) {
+  private void addTestMethods(Iterable<? extends ITestNodeWrapper> testMethods) {
     for (ITestNodeWrapper testMethod : Sequence.fromIterable(testMethods)) {
       ITestNodeWrapper testCase = testMethod.getTestCase();
       List<ITestNodeWrapper> curTestMethods = MapSequence.fromMap(this.myTestToMethodsMap).get(testCase);
@@ -87,24 +85,20 @@ public class TestRunState {
       }
     }
   }
-
   private void updateView() {
     for (TestView view : this.myViewsList) {
       view.update();
     }
   }
-
   private void initView() {
     for (TestView view : this.myViewsList) {
       view.init();
     }
   }
-
   public void addView(TestView testView) {
     SetSequence.fromSet(this.myViewsList).addElement(testView);
   }
-
-  public void startTest(final TestEvent event) {
+  public void onTestStarted(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestStart(event);
@@ -112,32 +106,30 @@ public class TestRunState {
     });
     this.startTest(event.getTestCaseName(), event.getTestMethodName());
   }
-
-  public void endTest(final TestEvent event) {
+  public void onTestFinished(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
-        it.onTestEnd(event);
+        it.onTestFinish(event);
       }
     });
-    this.endTest();
+    this.finishTest();
+    this.completeTestEvent(event);
   }
-
-  public void testError(final TestEvent event) {
-    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
-      public void visit(TestStateListener it) {
-        it.onTestError(event);
-      }
-    });
-    this.defectTest();
-  }
-
-  public void testFailure(final TestEvent event) {
+  public void onTestFailure(final TestEvent event) {
     ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
       public void visit(TestStateListener it) {
         it.onTestFailure(event);
       }
     });
-    this.defectTest();
+    this.failTest();
+  }
+  public void onTestAssumptionFailure(final TestEvent event) {
+    ListSequence.fromList(this.myListeners).visitAll(new IVisitor<TestStateListener>() {
+      public void visit(TestStateListener it) {
+        it.onTestAssumptionFailure(event);
+      }
+    });
+    this.ignoreTest();
   }
 
   public void looseTest(final String className, final String testName) {
@@ -150,51 +142,57 @@ public class TestRunState {
   }
 
   private void startTest(String className, String methodName) {
-    if (className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)) {
-      return;
-    }
+    assert !((className.equals(this.myCurrentClass) && methodName.equals(this.myCurrentMethod)));
     synchronized (lock) {
+      checkConsistency();
       this.myCurrentClass = className;
       this.myCurrentMethod = methodName;
+      this.myCurrentCompleted = true;
       this.updateView();
     }
   }
-
-  private void endTest() {
+  private void finishTest() {
     synchronized (lock) {
-      this.myCompletedTests++;
+      if (this.myCurrentCompleted) {
+        this.myCompletedTests++;
+      }
       this.updateView();
       this.myCurrentClass = null;
       this.myCurrentMethod = null;
     }
   }
-
-  private void defectTest() {
+  private void failTest() {
     synchronized (lock) {
-      this.myDefectTests++;
+      this.myFailedTests++;
       this.updateView();
     }
   }
-
+  private void ignoreTest() {
+    synchronized (lock) {
+      this.myCurrentCompleted = false;
+      this.updateView();
+    }
+  }
   private void looseTestInternal(String test, String method) {
     synchronized (lock) {
       this.myLostTest = test;
       this.myLostMethod = method;
-      this.myDefectTests++;
-      this.myCompletedTests++;
       this.updateView();
       this.myLostTest = null;
       this.myLostMethod = null;
     }
   }
-
   public void terminate() {
     synchronized (lock) {
+      checkConsistency();
       this.myIsTerminated = true;
       this.updateView();
     }
   }
-
+  private void checkConsistency() {
+    assert this.myCompletedTests <= this.myTotalTests;
+    assert this.myFailedTests <= this.myCompletedTests;
+  }
   public void outputText(String text, @NotNull Key key) {
     synchronized (lock) {
       this.myAvailableText = text;
@@ -204,81 +202,90 @@ public class TestRunState {
       this.myKey = null;
     }
   }
-
-  public void completeTestEvent(TestEvent event) {
-    String token = event.getToken();
-    if (token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
-      String testClassName = event.getTestCaseName();
-      String testMethodName = event.getTestMethodName();
-      String key = testClassName + '.' + testMethodName;
-      synchronized (this.myTestMethods) {
-        if (ListSequence.fromList(this.myTestMethods).contains(key)) {
-          ListSequence.fromList(this.myTestMethods).removeElement(key);
+  private void completeTestEvent(TestEvent event) {
+    String testCaseName = event.getTestCaseName();
+    String testMethodName = event.getTestMethodName();
+    if (testMethodName == null) {
+      removeUsedTestCase(testCaseName);
+    } else {
+      removeUsedMethod(testCaseName, testMethodName);
+    }
+  }
+  private void removeUsedMethod(String testCaseName, String testMethodName) {
+    String methodKey = testCaseName + '.' + testMethodName;
+    synchronized (this.myTestMethods) {
+      if (ListSequence.fromList(this.myTestMethods).contains(methodKey)) {
+        ListSequence.fromList(this.myTestMethods).removeElement(methodKey);
+      }
+    }
+  }
+  private void removeUsedTestCase(final String testCaseName) {
+    final List<String> methodsToRemove = ListSequence.fromList(new LinkedList<String>());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (ITestNodeWrapper testCase : MapSequence.fromMap(TestRunState.this.myTestToMethodsMap).keySet()) {
+          if (testCase.getFqName().equals(testCaseName)) {
+            for (ITestNodeWrapper testMethod : MapSequence.fromMap(myTestToMethodsMap).get(testCase)) {
+              String methodKey = testCaseName + '.' + testMethod.getName();
+              ListSequence.fromList(methodsToRemove).addElement(methodKey);
+            }
+          }
+        }
+      }
+    });
+    synchronized (this.myTestMethods) {
+      for (String methodKey : methodsToRemove) {
+        if (ListSequence.fromList(this.myTestMethods).contains(methodKey)) {
+          ListSequence.fromList(this.myTestMethods).removeElement(methodKey);
         }
       }
     }
   }
-
   public List<String> getUnusedMethods() {
     return this.myTestMethods;
   }
-
   public int getTotalTests() {
     return this.myTotalTests;
   }
-
-  public int getDefectTests() {
-    return this.myDefectTests;
+  public int getFailedTests() {
+    return this.myFailedTests;
   }
-
   public int getCompletedTests() {
     return this.myCompletedTests;
   }
-
   public String getCurrentClass() {
     return this.myCurrentClass;
   }
-
   public String getCurrentMethod() {
     return this.myCurrentMethod;
   }
-
   public void setToken(String token) {
     this.myCurrentToken = token;
   }
-
   public String getToken() {
     return this.myCurrentToken;
   }
-
   public String getLostMethod() {
     return this.myLostMethod;
   }
-
   public String getLostClass() {
     return this.myLostTest;
   }
-
   public boolean isTerminated() {
     return this.myIsTerminated;
   }
-
   public String getAvailableText() {
     return this.myAvailableText;
   }
-
   public Key getKey() {
     return this.myKey;
   }
-
   public void addListener(TestStateListener listener) {
     ListSequence.fromList(this.myListeners).addElement(listener);
   }
-
   public void removeListener(TestStateListener listener) {
     ListSequence.fromList(this.myListeners).removeElement(listener);
   }
-
   public Map<ITestNodeWrapper, List<ITestNodeWrapper>> getTestsMap() {
     return this.myTestToMethodsMap;
   }

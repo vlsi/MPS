@@ -9,11 +9,9 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 public class StrikeOutStyleSheet_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return true;
   }
-
   public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.STRIKE_OUT;
   }

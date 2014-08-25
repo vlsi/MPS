@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,6 +14,9 @@
  * limitations under the License.
  */
 package org.jetbrains.mps.openapi.module;
+
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * There are several types of dependencies between two modules.
@@ -30,31 +33,74 @@ package org.jetbrains.mps.openapi.module;
  */
 public enum SDependencyScope {
   /* all types of modules */
-  DEFAULT("Default"),
-  DESIGN("Design"),
-  COMPILE("Compile"),
-  RUNTIME("Runtime"),
-  PROVIDED("Provided"),
+  DEFAULT("regular", "Default"),
+  /**
+   * DESIGN dependency between generator indicates there's no run-time bound between the two.
+   * Unlike DEFAULT and EXTENDS, which require target generator to be available at generation time,
+   * DESIGN dependency serves primarily the purpose to declare priorities between generator without actually
+   * enforcing inclusion of all dependant generators into generation process.
+   */
+  DESIGN("design", "Design"),
+  COMPILE("compile", "Compile"),
+  RUNTIME("rt", "Runtime"),
+  PROVIDED("external", "Provided"),
 
   /* only between language modules  */
 
   /**
    * Applicable between either two language or two generator modules
    */
-  EXTENDS("Extends"),
+  EXTENDS("extend", "Extends"),
 
   /**
-   * Applicable only between two language modules
+   * GENERATES_INTO indicates target languages this language's generators produce.
+   * Effectively this mandates use of run-time dependencies of these target languages when models use dependant language.
+   *
+   * Applicable between two language modules only. HOWEVER, we shall consider to have this dependency for generator, either
+   * as user-controlled way to state which languages generator uses for templates, or as a derived value based on generator's own
+   * description of target languages. We need to state these languages anyway (instead of present approach to calculate them with TemplateModelScanner)
+   * and we might collect these in addition to generator source language's GENERATES_INTO dependencies.
+   * Note, present approach would change once generators are separate from the language, and multiple generators are possible - provided
+   * each generator may target different languages, would be stupid to specify complete set of dependant runtimes with the source language.
+   *
+   * Given L1 and L2, with L1 GENERATES_INTO L2, L2 with run-time solution S2, and model M1 using L1, the dependency tells to include S2 of L2
+   * as a runtime dependency for M1 outcome.
    */
-  GENERATES_INTO("Generates into");
+  GENERATES_INTO("generate-into", "Generation Target");
 
+  private final String myIdentity;
   private final String myPresentation;
-  private SDependencyScope(String presentation) {
+  private SDependencyScope(String identity, String presentation) {
+    myIdentity = identity;
     myPresentation = presentation;
   }
 
   @Override
   public String toString() {
     return myPresentation;
+  }
+
+  /**
+   * scope to string
+   * @return identity one may use to persist the {@link #fromIdentity(String) scope}
+   */
+  @NotNull
+  public String identify() {
+    return myIdentity;
+  }
+
+  /**
+   * string to scope
+   * @param identity value obtained from {@link #identify()}
+   * @return scope instance with specified identity
+   */
+  @Nullable
+  public static SDependencyScope fromIdentity(@Nullable String identity) {
+    for (SDependencyScope sd : SDependencyScope.values()) {
+      if (sd.myIdentity.equals(identity)) {
+        return sd;
+      }
+    }
+    return null;
   }
 }

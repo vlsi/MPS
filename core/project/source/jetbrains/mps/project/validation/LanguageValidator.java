@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.project.validation;
 
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
@@ -23,6 +22,7 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
@@ -37,9 +37,20 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     super(module);
   }
 
-  public static boolean checkCyclicInheritance(Language lang) {
+  private static List<Language> refsToLanguages(Iterable<SModuleReference> refs) {
+    List<Language> result = new ArrayList<Language>();
+    for (SModuleReference ref : refs) {
+      Language l = ModuleRepositoryFacade.getInstance().getModule(ref, Language.class);
+      if (l == null) continue;
+      result.add(l);
+    }
 
-    List<Language> frontier = ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs());
+    return result;
+  }
+
+  public static boolean checkCyclicInheritance(Language lang) {
+    // FIXME this code seems quite generic to deal with any SModule and #getDeclaredDependencies()
+    List<Language> frontier = refsToLanguages(lang.getExtendedLanguageRefs());
     ArrayList<Language> passed = new ArrayList<Language>();
     while (!frontier.isEmpty()) {
       List<Language> newFrontier = new ArrayList<Language>();
@@ -49,7 +60,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
         }
         if (!passed.contains(extendedLang)) {
 
-          newFrontier.addAll(ModuleUtil.refsToLanguages(extendedLang.getExtendedLanguageRefs()));
+          newFrontier.addAll(refsToLanguages(extendedLang.getExtendedLanguageRefs()));
         }
         passed.add(extendedLang);
       }
@@ -74,13 +85,13 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
     for (SModuleReference lang : myModule.getExtendedLanguageRefs()) {
-      if (MPSModuleRepository.getInstance().getModule(lang) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(lang) == null) {
         errors.add("Can't find extended language: " + lang.getModuleName());
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
     for (SModuleReference mr : myModule.getRuntimeModulesReferences()) {
-      SModule runtimeModule = MPSModuleRepository.getInstance().getModule(mr);
+      SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (runtimeModule == null) continue;
       if (!(runtimeModule instanceof Solution)) {
         errors.add("Runtime module " + runtimeModule + " is not a solution");
@@ -97,7 +108,7 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     for (SModuleReference ref : myModule.getModuleDescriptor().getRuntimeModules()) {
-      if (MPSModuleRepository.getInstance().getModule(ref) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(ref) == null) {
         errors.add("Can't find runtime module: " + ref.getModuleName());
       }
     }

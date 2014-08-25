@@ -26,7 +26,6 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ge4r0w_a(editorContext, node);
   }
-
   private EditorCell createCollection_ge4r0w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ge4r0w_a");
@@ -36,7 +35,6 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ge4r0w_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ge4r0w_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export as java library");
     editorCell.setCellId("Constant_ge4r0w_a0");
@@ -48,16 +46,13 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_ExportAsJavaLibrary_Editor.ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildLayout_AbstractContainer_cellMenu_ge4r0w_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_AbstractContainer";
     }
   }
-
   private EditorCell createRefCell_ge4r0w_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("library");
@@ -82,20 +77,16 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ge4r0w_a1a extends InlineCellProvider {
     public _Inline_ge4r0w_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_ge4r0w_a0b0(editorContext, node);
     }
-
     private EditorCell createProperty_ge4r0w_a0b0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -115,7 +106,6 @@ public class BuildLayout_ExportAsJavaLibrary_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createComponent_ge4r0w_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();

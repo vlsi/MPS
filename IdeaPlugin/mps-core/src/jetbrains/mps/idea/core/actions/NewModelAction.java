@@ -195,7 +195,7 @@ public class NewModelAction extends AnAction {
             model.save();
 
             ModelsAutoImportsManager.doAutoImport(myModelRoot.getModule(), model);
-            MissingDependenciesFixer.fixDependencies(model);
+            new MissingDependenciesFixer(model).fixModuleDependencies();
 
             return model;
           }

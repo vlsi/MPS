@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ISuppressErrors_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return true;
   }

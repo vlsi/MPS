@@ -24,7 +24,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_e4lyhc_a(editorContext, node);
   }
-
   private EditorCell createCollection_e4lyhc_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_e4lyhc_a");
@@ -38,7 +37,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_e4lyhc_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("unit");
@@ -60,11 +58,9 @@ public class Quantity_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_e4lyhc_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH");
   }
-
   private EditorCell createRefNode_e4lyhc_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("amount");
@@ -84,7 +80,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_e4lyhc_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("unit");
@@ -106,7 +101,6 @@ public class Quantity_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_e4lyhc_a2a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "unit", "USD", "USD_KWH"));
   }

@@ -42,7 +42,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2l0gvl_a(editorContext, node);
   }
-
   private EditorCell createCollection_2l0gvl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2l0gvl_a");
@@ -57,7 +56,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     }
     return editorCell;
   }
-
   private EditorCell createComponent_2l0gvl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -66,23 +64,19 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SideTransformAnchorTagStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_2l0gvl_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_2l0gvl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_2l0gvl_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_2l0gvl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tag");
@@ -100,49 +94,39 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_2l0gvl_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isEmpty();
   }
-
   public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "RightTransformAnchorTag"));
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).clear();
       SPropertyOperations.set(node, "tag", SEnumOperations.getEnumMemberValue(parameterObject));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   public static class SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0 extends AbstractCellMenuPart_Generic_Item {
     public SideTransformAnchorTagStyleClassItem_generic_cellMenu_2l0gvl_b0c0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode tagWrapper = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.RightTransformAnchorTagWrapper", null);
       SPropertyOperations.set(tagWrapper, "tag", SPropertyOperations.getString_def(node, "tag", null));
       ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).addElement(tagWrapper);
       SPropertyOperations.set(node, "tag", null);
     }
-
     public String getMatchingText() {
       return "Composite tag";
     }
   }
-
   private EditorCell createRefNodeList_2l0gvl_d0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new SideTransformAnchorTagStyleClassItem_Editor.tagsListHandler_2l0gvl_d0(node, "tags", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Horizontal(), false);
@@ -151,35 +135,31 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class tagsListHandler_2l0gvl_d0 extends RefNodeListHandler {
     public tagsListHandler_2l0gvl_d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
@@ -187,7 +167,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -201,7 +180,6 @@ public class SideTransformAnchorTagStyleClassItem_Editor extends DefaultNodeEdit
       return editorCell;
     }
   }
-
   private static boolean renderingCondition_2l0gvl_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "tags", true)).isNotEmpty();
   }

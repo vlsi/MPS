@@ -26,17 +26,14 @@ import com.sun.jdi.StringReference;
 
 /*package*/ class ObjectValueProxy extends ValueProxy implements IObjectValueProxy {
   private ClassType myReferenceType;
-
   public ObjectValueProxy(ObjectReference v) {
     super(v);
     myReferenceType = (ClassType) v.referenceType();
   }
-
   @NotNull
   private ObjectReference getObjectValue() {
     return (ObjectReference) myValue;
   }
-
   @NotNull
   @Override
   public IValueProxy getFieldValue(String fieldName) throws InvalidEvaluatedExpressionException {
@@ -45,7 +42,6 @@ import com.sun.jdi.StringReference;
     Value result = value.getValue(f);
     return MirrorUtil.getInstance().getValueProxy(result);
   }
-
   public List<IValueProxy> getFieldValues() {
     List<Field> fields = EvaluationUtils.getInstance().findFields(myReferenceType);
     List<IValueProxy> fieldValues = new ArrayList<IValueProxy>();
@@ -54,14 +50,12 @@ import com.sun.jdi.StringReference;
     }
     return fieldValues;
   }
-
   @Override
   public IValueProxy invokeMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     ClassType classType = myReferenceType;
     int options = 0;
     return invoke(name, jniSignature, classType, options, threadReference, args);
   }
-
   @Override
   public IValueProxy invokeSuperMethod(String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException {
     ClassType classType = myReferenceType;
@@ -72,12 +66,10 @@ import com.sun.jdi.StringReference;
     int options = ObjectReference.INVOKE_NONVIRTUAL;
     return invoke(name, jniSignature, superclass, options, threadReference, args);
   }
-
   @Override
   public boolean isInstanceOf(String typename) throws EvaluationException {
     return EvaluationUtils.getInstance().instanceOf(myReferenceType, typename, myValue.virtualMachine());
   }
-
   protected IValueProxy invoke(String name, String jniSignature, ClassType classType, final int options, final ThreadReference threadReference, Object[] args) throws EvaluationException {
     // TODO merge with Evaluator methods invocation 
     final Method method = classType.concreteMethodByName(name, jniSignature);
@@ -93,12 +85,10 @@ import com.sun.jdi.StringReference;
       }
     });
   }
-
   @Override
   public boolean javaEquals(IValueProxy proxy) {
     return myValue.equals(proxy.getJDIValue());
   }
-
   public String getPresentation() {
     if (myValue instanceof StringReference) {
       return "\"" + ((StringReference) myValue).value() + "\"";

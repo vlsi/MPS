@@ -20,26 +20,21 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "MapMigration";
       }
-
       public String getAdditionalInfo() {
         return "MapMigration";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForType(node, 2, ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~Map"), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~HashMap")));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);
         SLinkOperations.setTarget(result, "keyType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SLinkOperations.setTarget(result, "valueType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -48,26 +43,21 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "Get ";
       }
-
       public String getAdditionalInfo() {
         return "Get ";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForMap(node, "get", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
         SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), operation);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -76,19 +66,15 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "Put ";
       }
-
       public String getAdditionalInfo() {
         return "Put ";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForMap(node, "put", ListSequence.fromListAndArray(new ArrayList<ParameterType>(), ParameterType.NOT_INT, ParameterType.NOT_INT));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
         SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
@@ -98,7 +84,6 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
         SLinkOperations.setTarget(assignment, "rValue", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), assignment);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -107,24 +92,19 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "values ";
       }
-
       public String getAdditionalInfo() {
         return "values ";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForMap(node, "values", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -133,24 +113,19 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "keys ";
       }
-
       public String getAdditionalInfo() {
         return "keys ";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForMap(node, "keySet", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -159,24 +134,19 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "clear";
       }
-
       public String getAdditionalInfo() {
         return "clear";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return ListMigrationUtil.isApplicableForMap(node, "clear", ListSequence.fromList(new ArrayList<ParameterType>()));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -185,32 +155,26 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       public String getName() {
         return "HashMap";
       }
-
       public String getAdditionalInfo() {
         return "HashMap";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassCreator";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return eq_ds6c8y_a0a0a0d0a0a0a0h0a(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"), "HashMap") && ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).count() == 2 && ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", null);
         SLinkOperations.setTarget(result, "keyType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         SLinkOperations.setTarget(result, "valueType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last(), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static boolean eq_ds6c8y_a0a0a0d0a0a0a0h0a(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

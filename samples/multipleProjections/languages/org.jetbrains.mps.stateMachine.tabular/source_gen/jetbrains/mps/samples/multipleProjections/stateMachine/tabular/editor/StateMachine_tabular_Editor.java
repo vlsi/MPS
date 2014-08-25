@@ -24,16 +24,13 @@ import jetbrains.mps.lang.editor.table.runtime.EditorCell_Table;
 
 public class StateMachine_tabular_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowPresentations.tabular"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createTable_9yuogs_a(editorContext, node);
   }
-
   private EditorCell createTable_9yuogs_a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {
@@ -42,12 +39,10 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
           public int getColumnCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).count();
           }
-
           @Override
           public int getRowCount() {
             return 1 + ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).count();
           }
-
           @Override
           public SNode getValueAt(int row, int column) {
             if (row == 0 && column > 0) {
@@ -67,7 +62,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             }
             return null;
           }
-
           @Override
           public void createElement(int row, int column) {
             if (row > 0 && column > 0) {
@@ -81,7 +75,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
               ListSequence.fromList(SLinkOperations.getTargets(node, "transitions", true)).addElement(transition);
             }
           }
-
           @Override
           public void insertColumn(int columnNumber) {
             if (columnNumber <= 0) {
@@ -89,7 +82,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "events", true)).insertElement(columnNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.Event", null));
           }
-
           @Override
           public void insertRow(int rowNumber) {
             if (rowNumber <= 0) {
@@ -97,7 +89,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             }
             ListSequence.fromList(SLinkOperations.getTargets(node, "states", true)).insertElement(rowNumber - 1, SNodeFactoryOperations.createNewNode("jetbrains.mps.samples.multipleProjections.stateMachine.structure.State", null));
           }
-
           @Override
           public void deleteColumn(int columnNumber) {
             if (columnNumber <= 0) {
@@ -111,7 +102,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
             }
             SNodeOperations.deleteNode(event);
           }
-
           @Override
           public SubstituteInfo getSubstituteInfo(final int row, final int column) {
             SNode linkDeclaration = null;
@@ -131,7 +121,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
               @Override
               protected DefaultChildNodeSetter createDefaultNodeSetter() {
                 return new DefaultChildNodeSetter(getLinkDeclaration()) {
-
 
                   @Override
                   public SNode doExecute(SNode parentSNode, SNode oldChildSNode, SNode newChildSNode, @Nullable EditorContext editorContext) {
@@ -166,7 +155,6 @@ public class StateMachine_tabular_Editor extends DefaultNodeEditor {
               }
             };
           }
-
           @Override
           public void deleteRow(int rowNumber) {
             if (rowNumber <= 0) {

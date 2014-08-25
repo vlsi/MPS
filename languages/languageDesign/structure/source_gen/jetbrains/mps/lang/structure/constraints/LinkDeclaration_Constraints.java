@@ -31,7 +31,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
   public LinkDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -40,7 +39,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "sourceCardinality";
@@ -52,7 +50,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "role";
@@ -61,7 +58,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -70,7 +66,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -98,7 +93,6 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a2;
@@ -108,6 +102,5 @@ public class LinkDeclaration_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_nfyhm3_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104841302");
 }

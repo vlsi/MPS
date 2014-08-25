@@ -8,25 +8,19 @@ import java.io.File;
 public class ModuleChunkPart extends DataType {
   private File myModuleFile;
   private boolean myBootstrap;
-
   public ModuleChunkPart() {
   }
-
   public void setFile(File file) {
     myModuleFile = file;
   }
-
   public File getFile() {
     return myModuleFile;
   }
-
   public void setBootstrap(boolean bootstrap) {
     myBootstrap = bootstrap;
   }
-
   public boolean getBootstrap() {
     return myBootstrap;
   }
-
 
 }

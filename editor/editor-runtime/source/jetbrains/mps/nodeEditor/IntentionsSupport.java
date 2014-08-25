@@ -48,6 +48,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
@@ -353,8 +354,9 @@ public class IntentionsSupport {
         collectActionsAsIntentions(child, actions, dataContext);
       }
     } else if (action instanceof BaseAction) {
-      Presentation presentation = new Presentation();
-      presentation.setDescription(action.getTemplatePresentation().getDescription());
+      Presentation presentation = action.getTemplatePresentation();
+      if (presentation.getIcon() == null)
+        presentation.setIcon(Icons.REAL_INTENTION);
       action.update(new AnActionEvent(null, dataContext, "", presentation, ActionManager.getInstance(), 0));
       if (presentation.isVisible()) {
         actions.add(action);
@@ -401,7 +403,6 @@ public class IntentionsSupport {
     final EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
       final QueryDescriptor query = new QueryDescriptor();
-      query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
       final Collection<Pair<IntentionExecutable, SNode>> availableIntentions =
           TypeContextManager.getInstance().runTypeCheckingComputation(myEditor.getTypecheckingContextOwner(), myEditor.getEditedNode(),

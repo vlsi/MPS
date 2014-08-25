@@ -14,13 +14,11 @@ import org.apache.log4j.LogManager;
 public class MPSProgramRunner extends DefaultProgramRunner {
   public MPSProgramRunner() {
   }
-
   @NotNull
   @Override
   public String getRunnerId() {
     return "Default Runner";
   }
-
   @Override
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
     try {
@@ -32,6 +30,5 @@ public class MPSProgramRunner extends DefaultProgramRunner {
       return false;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MPSProgramRunner.class);
 }

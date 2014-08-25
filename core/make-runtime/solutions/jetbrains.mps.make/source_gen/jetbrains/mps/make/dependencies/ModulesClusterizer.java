@@ -36,10 +36,8 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class ModulesClusterizer {
   private static Logger LOG = LogManager.getLogger(ModulesCluster.class);
-
   public ModulesClusterizer() {
   }
-
   public Iterable<Cluster> clusterize(Iterable<? extends IResource> res) {
     final Iterable<MResource> mres = Sequence.fromIterable(res).where(new IWhereFilter<IResource>() {
       public boolean accept(IResource r) {
@@ -74,31 +72,18 @@ public class ModulesClusterizer {
       ListSequence.fromList(result).addElement(new Cluster(s, allUsedLangNamespaces(s)));
     }
     if (Sequence.fromIterable(rest).isNotEmpty()) {
-      ListSequence.fromList(result).addElement(new Cluster(rest, allUsedLangNamespaces(rest)));
+      ListSequence.fromList(result).addElement(new Cluster(rest, ListSequence.fromList(new ArrayList<String>())));
     }
     return result;
   }
 
-
-
-  public static Iterable<String> allUsedLangNamespaces(Iterable<? extends IResource> cluster) {
-    Iterable<MResource> mres = Sequence.fromIterable(cluster).where(new IWhereFilter<IResource>() {
-      public boolean accept(IResource r) {
-        return r instanceof MResource;
-      }
-    }).select(new ISelector<IResource, MResource>() {
-      public MResource select(IResource r) {
-        return ((MResource) r);
-      }
-    }).toListSequence();
-    Iterable<SModule> mods = Sequence.fromIterable(mres).select(new ISelector<MResource, SModule>() {
+  private static Iterable<String> allUsedLangNamespaces(Iterable<MResource> cluster) {
+    return allNamespaces(Sequence.fromIterable(cluster).select(new ISelector<MResource, SModule>() {
       public SModule select(MResource r) {
         return r.module();
       }
-    });
-    return allNamespaces(mods);
+    }));
   }
-
   private static Iterable<String> allNamespaces(Iterable<SModule> modules) {
     final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
     Set<GeneratorRuntime> seen = SetSequence.fromSet(new HashSet<GeneratorRuntime>());

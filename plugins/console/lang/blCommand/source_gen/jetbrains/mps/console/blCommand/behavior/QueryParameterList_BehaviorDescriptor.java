@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class QueryParameterList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public QueryParameterList_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.QueryParameterList";

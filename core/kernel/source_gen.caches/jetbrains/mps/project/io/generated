@@ -9,6 +9,7 @@
   <source id="557142600900286111" name="DescriptorIOFacade" hash="2mu0eng1bwf841oowovj29b5b2mbmgu">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DescriptorIOFacade.java" />
   </source>
   <source id="557142600900286148" name="DescriptorIO" hash="-5dhqxx0no26yvdbqajcp503i91nl5uj">
@@ -24,7 +25,6 @@
     <file name="IdeaDescriptorIOProvider.java" />
   </source>
   <source id="9081946191808704816" name="DescriptorIOException" hash="-2wup1nghbhwi0xrl9cylaoywq7bn2rb">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DescriptorIOException.java" />
   </source>
 </dependencies>

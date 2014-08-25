@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildSource_JavaOptions_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildSource_JavaOptions_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode opts, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ("IntelliJ".equals(SPropertyOperations.getString(opts, "compiler"))) {
       SNode project = SNodeOperations.getAncestor(opts, "jetbrains.mps.build.structure.BuildProject", false, false);
@@ -39,18 +38,15 @@ public class check_BuildSource_JavaOptions_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaOptions";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

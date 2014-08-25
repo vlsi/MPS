@@ -22,7 +22,6 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
   protected NodeListCellRenderer() {
     super(new BorderLayout());
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
     removeAll();
@@ -42,26 +41,20 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
     setBackground((isSelected ? UIUtil.getListSelectionBackground() : UIUtil.getListBackground()));
     return this;
   }
-
   @Nullable
   protected DefaultListCellRenderer getRightCellRenderer() {
     return null;
   }
-
   public abstract String getElementText(T element);
-
   @Nullable
   protected abstract String getContainerText(T element, final String name);
-
   protected abstract Icon getIcon(T element);
-
   public Comparator<T> getComparator() {
     return new Comparator<T>() {
       @Override
       public int compare(T o1, T o2) {
         return getText(o1).compareTo(getText(o2));
       }
-
       private String getText(T element) {
         String elementText = getElementText(element);
         String containerText = getContainerText(element, elementText);
@@ -69,14 +62,11 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
       }
     };
   }
-
   private class LeftRenderer extends ColoredListCellRenderer {
     private final String myModuleName;
-
     public LeftRenderer(final String moduleName) {
       myModuleName = moduleName;
     }
-
     @Override
     protected void customizeCellRenderer(JList list, Object value, int index, boolean selected, boolean hasFocus) {
       T element = (T) value;

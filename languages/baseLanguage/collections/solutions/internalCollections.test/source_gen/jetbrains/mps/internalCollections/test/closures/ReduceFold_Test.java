@@ -49,7 +49,6 @@ public class ReduceFold_Test extends Util_Test {
       }
     }));
   }
-
   public void test_reduceRight() throws Exception {
     Iterable<Integer> in = this.input10();
     Assert.assertSame(1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10, Sequence.fromIterable(in).reduceRight(new IRightCombinator<Integer, Integer>() {
@@ -85,7 +84,6 @@ public class ReduceFold_Test extends Util_Test {
       }
     }));
   }
-
   public void test_foldLeft() throws Exception {
     Iterable<Integer> in = this.input10();
     Assert.assertEquals("12345678910", Sequence.fromIterable(in).foldLeft("", new ILeftCombinator<Integer, String>() {
@@ -116,7 +114,6 @@ public class ReduceFold_Test extends Util_Test {
       }
     }));
   }
-
   public void test_foldRight() throws Exception {
     Iterable<Integer> in = this.input10();
     Assert.assertEquals("10987654321", Sequence.fromIterable(in).foldRight("", new IRightCombinator<Integer, String>() {
@@ -147,7 +144,6 @@ public class ReduceFold_Test extends Util_Test {
       }
     }));
   }
-
   public void test_mps10786() throws Exception {
     List<IntHolder> input = ListSequence.fromListAndArray(new ArrayList<IntHolder>(), new IntHolder(3), new IntHolder(5));
     int res = ListSequence.fromList(input).select(new ISelector<IntHolder, Integer>() {
@@ -161,7 +157,6 @@ public class ReduceFold_Test extends Util_Test {
     }) + 1;
     Assert.assertSame(9, res);
   }
-
   public ReduceFold_Test() {
   }
 }

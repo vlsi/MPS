@@ -21,22 +21,18 @@ public final class GenerateFacetInitializer {
   private IOperationContext myContext;
   private boolean myCleanMake;
   private GenerationOptions.OptionsBuilder myGenOptions;
-
   public GenerateFacetInitializer(MakeSession makeSession) {
     myContext = makeSession.getContext();
     myCleanMake = makeSession.isCleanMake();
   }
-
   public GenerateFacetInitializer cleanMake(boolean cleanMake) {
     myCleanMake = cleanMake;
     return this;
   }
-
   public GenerateFacetInitializer setGenerationOptions(GenerationOptions.OptionsBuilder optionsBuilder) {
     myGenOptions = optionsBuilder;
     return this;
   }
-
   public void populate(IPropertiesPool ppool) {
     Tuples._3<Project, IOperationContext, Boolean> vars = (Tuples._3<Project, IOperationContext, Boolean>) ppool.properties(new ITarget.Name("jetbrains.mps.lang.core.Generate.checkParameters"), Object.class);
     if (vars != null) {

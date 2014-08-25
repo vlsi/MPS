@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class StatementCommentPart_BehaviorDescriptor extends CommentPart_BehaviorDescriptor {
   public StatementCommentPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StatementCommentPart";

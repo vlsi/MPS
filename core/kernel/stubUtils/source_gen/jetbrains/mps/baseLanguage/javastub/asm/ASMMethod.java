@@ -23,7 +23,6 @@ public class ASMMethod {
   private List<ASMType> myExceptions;
   private List<ASMAnnotation> myAnnotations;
   private Object myAnnotationDefault;
-
   /*package*/ ASMMethod(MethodNode method) {
     myMethod = method;
     myReturnType = TypeUtil.fromType(Type.getReturnType(method.desc));
@@ -132,99 +131,75 @@ public class ASMMethod {
       myAnnotationDefault = ASMAnnotation.processValue(method.annotationDefault);
     }
   }
-
   public Object getAnnotationDefault() {
     return myAnnotationDefault;
   }
-
   public String getName() {
     return myMethod.name;
   }
-
   public boolean isVarArg() {
     return (Opcodes.ACC_VARARGS & myMethod.access) != 0;
   }
-
   public boolean isPrivate() {
     return (Opcodes.ACC_PRIVATE & myMethod.access) != 0;
   }
-
   public boolean isPublic() {
     return (Opcodes.ACC_PUBLIC & myMethod.access) != 0;
   }
-
   public boolean isProtected() {
     return (Opcodes.ACC_PROTECTED & myMethod.access) != 0;
   }
-
   public boolean isPackageProtected() {
     return !(isPublic()) && !(isPrivate()) && !(isProtected());
   }
-
   public boolean isStatic() {
     return (Opcodes.ACC_STATIC & myMethod.access) != 0;
   }
-
   public boolean isDeprecated() {
     return (Opcodes.ACC_DEPRECATED & myMethod.access) != 0;
   }
-
   public boolean isFinal() {
     return (Opcodes.ACC_FINAL & myMethod.access) != 0;
   }
-
   public boolean isAbstract() {
     return (Opcodes.ACC_ABSTRACT & myMethod.access) != 0;
   }
-
   public boolean isBridge() {
     return (Opcodes.ACC_BRIDGE & myMethod.access) != 0;
   }
-
   public boolean isSynthetic() {
     return (Opcodes.ACC_SYNTHETIC & myMethod.access) != 0;
   }
-
   public boolean isConstructor() {
     return myMethod.name.equals("<init>");
   }
-
   public boolean isCompilerGenerated() {
     return myMethod.name.startsWith("access$") || myMethod.name.equals("<clinit>");
   }
-
   public List<ASMTypeVariable> getTypeParameters() {
     return myTypeVariables;
   }
-
   public ASMType getReturnType() {
     return myReturnType;
   }
-
   public ASMType getGenericReturnType() {
     return myGenericReturnType;
   }
-
   public List<ASMAnnotation> getAnnotations() {
     return (myAnnotations == null ? ((List<ASMAnnotation>) ((List) Collections.emptyList())) : Collections.unmodifiableList(myAnnotations));
   }
-
   public List<ASMType> getParameterTypes() {
     return Collections.unmodifiableList(myParameterTypes);
   }
-
   public List<ASMType> getGenericParameterTypes() {
     return Collections.unmodifiableList(myGenericParameterTypes);
   }
-
   public List<String> getParameterNames() {
     return ((myParameterNames == null ? ((List<String>) ((List) Collections.emptyList())) : Collections.unmodifiableList(myParameterNames)));
   }
-
   public List<List<ASMAnnotation>> getParameterAnnotations() {
     return Collections.unmodifiableList(myParameterAnnotations);
   }
-
   public List<ASMType> getExceptionTypes() {
     return Collections.unmodifiableList(myExceptions);
   }

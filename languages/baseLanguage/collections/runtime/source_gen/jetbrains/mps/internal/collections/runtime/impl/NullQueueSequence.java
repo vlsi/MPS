@@ -9,80 +9,64 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class NullQueueSequence<T> extends NullCollectionSequence<T> implements IQueueSequence<T>, Queue<T> {
   private static final NullQueueSequence<Object> INSTANCE = new NullQueueSequence<Object>();
-
   protected NullQueueSequence() {
   }
-
   @Override
   public T addLastElement(T t) {
     return null;
   }
-
   @Override
   public T first() {
     return null;
   }
-
   @Override
   public T removeFirstElement() {
     return null;
   }
-
   @Override
   public IQueueSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public IQueueSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IQueueSequence<T>) super.removeWhere(filter);
   }
-
   @Override
   public IQueueSequence<T> asUnmodifiable() {
     return this;
   }
-
   @Override
   public IQueueSequence<T> asSynchronized() {
     return this;
   }
-
   @Override
   public Queue<T> toQueue() {
     return this;
   }
-
   @Override
   public T element() {
     return null;
   }
-
   @Override
   public boolean offer(T o) {
     return false;
   }
-
   @Override
   public T peek() {
     return null;
   }
-
   @Override
   public T poll() {
     return null;
   }
-
   @Override
   public T remove() {
     return null;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullQueueSequence<U> instance() {
     return (NullQueueSequence<U>) INSTANCE;

@@ -19,12 +19,10 @@ public class CustomNamedBoxFigure extends NamedBoxFigure {
 
   private TextCell myCell = new TextCell();
 
-
   public CustomNamedBoxFigure() {
     this(new CustomNamedBoxFigure.CustomNamedBoxFigureMapperFactory());
     background().set(Color.LIGHT_YELLOW);
   }
-
   public CustomNamedBoxFigure(CustomNamedBoxFigure.CustomNamedBoxFigureMapperFactory factory) {
     CellView cellView = new CellView();
     myCell.textColor().set(Color.BLACK);
@@ -35,12 +33,9 @@ public class CustomNamedBoxFigure extends NamedBoxFigure {
       factory.createMapper(this).attachRoot();
     }
   }
-
   public Property<String> idText() {
     return myCell.text();
   }
-
-
 
   private static class CustomNamedBoxFigureMapperFactory implements MapperFactory<CustomNamedBoxFigure, CustomNamedBoxFigure> {
     public Mapper<? extends CustomNamedBoxFigure, ? extends CustomNamedBoxFigure> createMapper(final CustomNamedBoxFigure figure) {
@@ -62,6 +57,5 @@ public class CustomNamedBoxFigure extends NamedBoxFigure {
       };
     }
   }
-
 
 }

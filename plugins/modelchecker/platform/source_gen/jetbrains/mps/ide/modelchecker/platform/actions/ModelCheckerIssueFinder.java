@@ -24,11 +24,9 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 public class ModelCheckerIssueFinder implements IFinder {
   public ModelCheckerIssueFinder() {
   }
-
   protected List<SpecificChecker> getSpecificCheckers() {
     return null;
   }
-
   @Override
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     IHolder objectHolder = searchQuery.getObjectHolder();

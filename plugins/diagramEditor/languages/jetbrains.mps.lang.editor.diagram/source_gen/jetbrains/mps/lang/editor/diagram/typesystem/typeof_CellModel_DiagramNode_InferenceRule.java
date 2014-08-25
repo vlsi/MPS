@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_CellModel_DiagramNode_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CellModel_DiagramNode_InferenceRule() {
   }
-
   public void applyRule(final SNode cellModel_DiagramNode, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -33,22 +32,18 @@ public class typeof_CellModel_DiagramNode_InferenceRule extends AbstractInferenc
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_wv7zpe_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -56,7 +51,6 @@ public class typeof_CellModel_DiagramNode_InferenceRule extends AbstractInferenc
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Iterable")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_wv7zpe_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

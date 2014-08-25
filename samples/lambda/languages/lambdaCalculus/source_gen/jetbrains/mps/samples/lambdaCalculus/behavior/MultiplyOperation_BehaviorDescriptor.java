@@ -6,7 +6,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class MultiplyOperation_BehaviorDescriptor extends BinaryNumericOperation_BehaviorDescriptor {
   public MultiplyOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.MultiplyOperation";

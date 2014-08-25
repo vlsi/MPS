@@ -22,11 +22,9 @@ import jetbrains.mps.build.util.JavaExportUtil;
 public class BuildMps_Module_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isCompilable_7454762407073969360(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "doNotCompile") == false;
   }
-
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     MPSModulesClosure closure = new MPSModulesClosure(thisNode).closure();
 
@@ -152,7 +150,6 @@ public class BuildMps_Module_Behavior {
       artifacts.needsFetch(thisNode);
     }
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

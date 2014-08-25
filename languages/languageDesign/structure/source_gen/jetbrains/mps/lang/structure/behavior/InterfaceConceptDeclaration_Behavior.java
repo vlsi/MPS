@@ -18,7 +18,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class InterfaceConceptDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode interfaceConceptReference : SLinkOperations.getTargets(thisNode, "extends", true)) {
@@ -26,14 +25,12 @@ public class InterfaceConceptDeclaration_Behavior {
     }
     return result;
   }
-
   public static List<SNode> call_getAllMethodsInPriorityOrder_9106339407519386413(SNode thisNode) {
     List<SNode> methods = ListSequence.fromList(new ArrayList<SNode>());
     Set<SNode> concepts = SetSequence.fromSet(new HashSet<SNode>());
     InterfaceConceptDeclaration_Behavior.call_collectAllMethodsInPriorityOrder_4038300048412704204(thisNode, methods, concepts);
     return methods;
   }
-
   public static void call_collectAllMethodsInPriorityOrder_4038300048412704204(SNode thisNode, List<SNode> methods, Set<SNode> concepts) {
     if (SetSequence.fromSet(concepts).contains(thisNode)) {
       return;

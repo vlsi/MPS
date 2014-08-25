@@ -21,12 +21,10 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
   public DataFlowBuilderDeclaration_Constraints() {
     super("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -37,7 +35,6 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -46,7 +43,6 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -55,10 +51,8 @@ public class DataFlowBuilderDeclaration_Constraints extends BaseConstraintsDescr
     });
     return properties;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.DATA_FLOW.is(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590377(jetbrains.mps.lang.dataFlow.constraints)", "1227089120379");
 }

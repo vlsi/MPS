@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_InstancesExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InstancesExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode instancesExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(instancesExpression, "conceptArg", true);
@@ -62,29 +61,24 @@ public class typeof_InstancesExpression_InferenceRule extends AbstractInferenceR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.blCommand.structure.InstancesExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_dwt96n_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_dwt96n_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -94,7 +88,6 @@ public class typeof_InstancesExpression_InferenceRule extends AbstractInferenceR
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_dwt96n_a0a0b0a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -104,7 +97,6 @@ public class typeof_InstancesExpression_InferenceRule extends AbstractInferenceR
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_dwt96n_a0a0a1a0a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -115,7 +107,6 @@ public class typeof_InstancesExpression_InferenceRule extends AbstractInferenceR
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_dwt96n_a0a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -21,7 +21,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_yk866h_a(editorContext, node);
   }
-
   private EditorCell createCollection_yk866h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_yk866h_a");
@@ -34,7 +33,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     editorCell.addEditorCell(this.createRefNode_yk866h_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_yk866h_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "replace");
     editorCell.setCellId("Constant_yk866h_a0");
@@ -44,7 +42,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_yk866h_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_yk866h_b0");
@@ -54,7 +51,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_yk866h_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("key");
@@ -72,7 +68,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_yk866h_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_yk866h_d0");
@@ -82,7 +77,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_yk866h_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_yk866h_e0");
@@ -92,7 +86,6 @@ public class BuildLayout_CopyFilterReplaceTokens_Editor extends DefaultNodeEdito
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_yk866h_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");

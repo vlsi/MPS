@@ -20,12 +20,10 @@ import jetbrains.mps.project.AbstractModule;
 public class ModelsToResources {
   private Iterable<SModel> models;
   private IOperationContext context;
-
   public ModelsToResources(IOperationContext context, Iterable<SModel> models) {
     this.models = models;
     this.context = context;
   }
-
   public Iterable<IResource> resources(boolean dirtyOnly) {
     Iterable<SModel> smds = Sequence.fromIterable(models).distinct();
     smds = Sequence.fromIterable(smds).sort(new ISelector<SModel, String>() {
@@ -38,7 +36,6 @@ public class ModelsToResources {
     }
     return arrangeByModule(smds);
   }
-
   private Iterable<IResource> arrangeByModule(Iterable<SModel> smds) {
     final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>(null);
     return (Iterable<IResource>) Sequence.fromIterable(smds).concat(Sequence.fromIterable(Sequence.<SModel>singleton(null))).translate(new ITranslator2<SModel, MResource>() {
@@ -47,7 +44,6 @@ public class ModelsToResources {
           public Iterator<MResource> iterator() {
             return new YieldingIterator<MResource>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {

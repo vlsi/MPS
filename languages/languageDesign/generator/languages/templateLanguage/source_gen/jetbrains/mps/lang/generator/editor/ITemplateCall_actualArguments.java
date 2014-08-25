@@ -30,11 +30,9 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1xd1xh_a(editorContext, node);
   }
-
   private EditorCell createCollection_1xd1xh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1xd1xh_a");
@@ -46,7 +44,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_1xd1xh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1xd1xh_a0");
@@ -58,11 +55,9 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_1xd1xh_c0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_1xd1xh_a0a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty() || (SLinkOperations.getTarget(node, "template", false) != null) && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "template", false), "parameter", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_1xd1xh_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_1xd1xh_a0a");
@@ -72,7 +67,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_1xd1xh_b0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ITemplateCall_actualArguments.actualArgumentListHandler_1xd1xh_b0a(node, "actualArgument", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -86,39 +80,34 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class actualArgumentListHandler_1xd1xh_b0a extends RefNodeListHandler {
     public actualArgumentListHandler_1xd1xh_b0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_1xd1xh_a1a0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
@@ -126,7 +115,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -139,7 +127,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
-
     private EditorCell createConstant_1xd1xh_a1a0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_1xd1xh_a1a0");
@@ -152,7 +139,6 @@ public class ITemplateCall_actualArguments implements ConceptEditorComponent {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_1xd1xh_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_1xd1xh_c0a");

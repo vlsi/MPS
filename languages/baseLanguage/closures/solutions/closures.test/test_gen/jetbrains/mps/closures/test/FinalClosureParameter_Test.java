@@ -23,7 +23,6 @@ public class FinalClosureParameter_Test extends TestCase {
     });
     Assert.assertEquals("BAR", foo.value);
   }
-
   public void test_logging() throws Exception {
     final Wrappers._int count = new Wrappers._int(0);
     acceptFunction(new _FunctionTypes._void_P1_E0<String>() {
@@ -36,10 +35,8 @@ public class FinalClosureParameter_Test extends TestCase {
     */
     Assert.assertSame(1, count.value);
   }
-
   public FinalClosureParameter_Test() {
   }
-
   public void acceptFunction(_FunctionTypes._void_P1_E0<? super String> fun) {
     fun.invoke("BAR");
   }

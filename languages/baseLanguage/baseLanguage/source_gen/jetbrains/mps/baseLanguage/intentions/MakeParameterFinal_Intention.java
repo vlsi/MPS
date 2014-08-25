@@ -19,41 +19,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeParameterFinal_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeParameterFinal_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public String getPresentation() {
     return "MakeParameterFinal";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.MakeParameterFinal_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
       return false;
@@ -69,34 +60,27 @@ public class MakeParameterFinal_Intention implements IntentionFactory {
     }
     return ListSequence.fromList(SNodeOperations.getAncestors(classNode, null, false)).contains(methodNode);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3898325814824766814");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeParameterFinal_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Make Parameter Final";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(SLinkOperations.getTarget(node, "variableDeclaration", false), "isFinal", "" + (true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeParameterFinal_Intention.this;
     }

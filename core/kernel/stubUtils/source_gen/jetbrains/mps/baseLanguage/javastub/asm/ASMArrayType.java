@@ -5,11 +5,9 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 
 public class ASMArrayType extends ASMType {
   private ASMType myElementType;
-
   /*package*/ ASMArrayType(ASMType elementType) {
     myElementType = elementType;
   }
-
   public ASMType getElementType() {
     return myElementType;
   }

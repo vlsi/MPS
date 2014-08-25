@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation";

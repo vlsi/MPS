@@ -12,11 +12,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 
 public class FieldWithPathChooseDialog extends TextFieldWithBrowseButton.NoPathCompletion {
   private final FileChooserDescriptor myChooser;
-
   public FieldWithPathChooseDialog() {
     this(new FileChooserDescriptor(false, true, false, false, false, false));
   }
-
   public FieldWithPathChooseDialog(FileChooserDescriptor descriptor) {
     this.myChooser = descriptor;
     addActionListener(new ActionListener() {
@@ -30,20 +28,16 @@ public class FieldWithPathChooseDialog extends TextFieldWithBrowseButton.NoPathC
       }
     });
   }
-
   public void setEditable(boolean editable) {
     super.setEditable(editable);
     getButton().setEnabled(editable);
   }
-
   public boolean getEditable() {
     return isEditable();
   }
-
   public void setTitle(String title) {
     this.myChooser.setTitle(title);
   }
-
   public String getTitle() {
     return this.myChooser.getTitle();
   }

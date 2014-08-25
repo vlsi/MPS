@@ -14,12 +14,10 @@ public class ExtractStatementListInnerExpression_Constraints extends BaseConstra
   public ExtractStatementListInnerExpression_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class ExtractStatementListInnerExpression_Constraints extends BaseConstra
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "8733626498296461356");
 }

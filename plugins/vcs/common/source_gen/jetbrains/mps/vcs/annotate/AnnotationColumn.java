@@ -58,6 +58,7 @@ import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Graphics2D;
+import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import java.awt.FontMetrics;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import org.jetbrains.annotations.Nullable;
@@ -135,7 +136,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
   private AnnotationColumn.MyDifferenceListener myDifferenceListener = new AnnotationColumn.MyDifferenceListener();
   private boolean myShowAdditionalInfo = false;
   private MessageBusConnection myMessageBusConnection;
-
   public AnnotationColumn(LeftEditorHighlighter leftEditorHighlighter, SNode root, FileAnnotation fileAnnotation, final AbstractVcs vcs, VirtualFile virtualFile) {
     super(leftEditorHighlighter);
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
@@ -229,7 +229,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
     myMessageBusConnection = getProject().getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, new AnnotationColumn.MyEditorComponentCreateListener());
   }
-
   private void saveChange(ModelChange ch) {
     if (ch instanceof SetPropertyChange) {
       SetPropertyChange spc = (SetPropertyChange) ch;
@@ -247,7 +246,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }).toGenericArray(NodeLineContent.class));
     }
   }
-
   private void calculateCurrentPseudoLinesLater() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -261,12 +259,10 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     });
   }
-
   @Override
   public String getName() {
     return "Annotations";
   }
-
   @Override
   public void paint(Graphics graphics) {
     graphics.setFont(myFont);
@@ -294,9 +290,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
 
       graphics.setColor(ANNOTATION_COLOR);
       if (myRevisionRange.isFileLineHighlighted(fileLine)) {
-        graphics.setFont(myFont.deriveFont(Font.BOLD));
-      } else {
-        graphics.setFont(myFont);
+        graphics.setFont(FontRegistry.getInstance().getFont(myFont.getName(), myFont.getStyle() | Font.BOLD, myFont.getSize()));
       }
       FontMetrics metrics = graphics.getFontMetrics();
       if (height < metrics.getHeight()) {
@@ -316,7 +310,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }
   }
-
   @Override
   public int getWidth() {
     return (ListSequence.fromList(myAspectSubcolumns).isEmpty() ? 0 : ListSequence.fromList(myAspectSubcolumns).select(new ISelector<AnnotationAspectSubcolumn, Integer>() {
@@ -329,7 +322,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
       }
     }) + 1 + mySubcolumnInterval / 2);
   }
-
   @Nullable
   private EditorCell findCellForContent(@Nullable LineContent content) {
     if (content == null) {
@@ -353,7 +345,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
     }
 
   }
-
   private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
     EditorCell cell = findCellForContent(content);
     if (cell == null) {
@@ -370,7 +361,6 @@ public class AnnotationColumn extends AbstractLeftColumn {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -408,7 +398,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_pseudoLine;
             };
           }
@@ -416,11 +405,10 @@ __switch__:
       }
     }.invoke();
   }
-
   @Override
   public void relayout() {
     EditorComponent editor = getEditorComponent();
-    if (editor == null || editor.isDisposed() || editor.getGraphics() == null) {
+    if (editor == null || editor.isDisposed()) {
       return;
     }
     Iterable<EditorCell> nonTrivialCells = Sequence.fromIterable(EditorUtils.getCellDescendants(editor.getRootCell())).where(new IWhereFilter<EditorCell>() {
@@ -454,14 +442,13 @@ __switch__:
         }
       }
     });
-    FontMetrics metrics = editor.getGraphics().getFontMetrics(myFont);
+    FontMetrics metrics = FontRegistry.getInstance().getFontMetrics(myFont);
     for (AnnotationAspectSubcolumn aspectSubcolumn : ListSequence.fromList(myAspectSubcolumns)) {
       aspectSubcolumn.computeWidth(metrics, myPseudoLinesToFileLines);
     }
     mySubcolumnInterval = metrics.stringWidth(" ");
     calculateCurrentPseudoLinesLater();
   }
-
   @Override
   public String getTooltipText(MouseEvent event) {
     int fileLine = findFileLineByY(event.getY());
@@ -471,13 +458,11 @@ __switch__:
       return myFileAnnotation.getToolTip(fileLine);
     }
   }
-
   @Nullable
   @Override
   public Cursor getCursor(MouseEvent event) {
     return (findFileLineByY(event.getY()) == -1 ? null : new Cursor(Cursor.HAND_CURSOR));
   }
-
   @Override
   public void mousePressed(MouseEvent event) {
     if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_RELEASED) {
@@ -488,7 +473,6 @@ __switch__:
       super.mousePressed(event);
     }
   }
-
   @Override
   public void dispose() {
     myMessageBusConnection.disconnect();
@@ -500,12 +484,10 @@ __switch__:
       }
     });
   }
-
   public void close() {
     getLeftEditorHighlighter().removeLeftColumn(this);
     dispose();
   }
-
   private int findPseudoLineByY(int y) {
     int pseudoLine = Collections.binarySearch((List) myPseudoLinesY, y);
     if (pseudoLine < 0) {
@@ -516,7 +498,6 @@ __switch__:
     }
     return pseudoLine;
   }
-
   private int findFileLineByY(int y) {
     int pseudoLine = findPseudoLineByY(y);
     if (pseudoLine == -1) {
@@ -528,7 +509,6 @@ __switch__:
       return ListSequence.fromList(myPseudoLinesToFileLines).getElement(pseudoLine);
     }
   }
-
   @Override
   public JPopupMenu getPopupMenu(MouseEvent event) {
     List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());
@@ -558,7 +538,6 @@ __switch__:
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(ListSequence.fromList(actions).toGenericArray(AnAction.class));
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, actionGroup).getComponent();
   }
-
   private int getFileLineWithMaxRevision(int a, int b) {
     if (b == -1) {
       return a;
@@ -583,7 +562,6 @@ __switch__:
     }
     return a;
   }
-
   public void invalidateLayout() {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
@@ -591,52 +569,41 @@ __switch__:
       }
     });
   }
-
   public boolean isShowAdditionalInfo() {
     return myShowAdditionalInfo;
   }
-
   public void setShowAdditionalInfo(boolean showAdditionalInfo) {
     myShowAdditionalInfo = showAdditionalInfo;
     invalidateLayout();
   }
-
   public List<VcsFileRevision> getRevisions() {
     return myFileAnnotation.getRevisions();
   }
-
   public Project getProject() {
     return myVcs.getProject();
   }
-
   private class MyDifferenceListener extends CurrentDifferenceAdapter {
     public MyDifferenceListener() {
     }
-
     @Override
     public void changeUpdateFinished() {
       calculateCurrentPseudoLinesLater();
     }
-
     @Override
     public void changeRemoved(@NotNull ModelChange change) {
       MapSequence.fromMap(myChangesToLineContents).removeKey(change);
     }
-
     @Override
     public void changeAdded(@NotNull ModelChange change) {
       saveChange(change);
     }
   }
-
   private class ShowDiffFromAnnotationAction extends AnAction {
     private int myFileLine;
-
     public ShowDiffFromAnnotationAction(int fileLine) {
       super("Show Diff");
       myFileLine = fileLine;
     }
-
     @Override
     public void actionPerformed(AnActionEvent event) {
       final VcsRevisionNumber revisionNumber = myFileAnnotation.getLineRevisionNumber(myFileLine);
@@ -741,15 +708,12 @@ __switch__:
       }
     }
   }
-
   private class MyEditorComponentCreateListener implements EditorComponentCreateListener {
     public MyEditorComponentCreateListener() {
     }
-
     @Override
     public void editorComponentCreated(@NotNull EditorComponent ec) {
     }
-
     @Override
     public void editorComponentDisposed(@NotNull EditorComponent ec) {
       if (ec == getEditorComponent()) {
@@ -757,49 +721,42 @@ __switch__:
       }
     }
   }
-
   private static SNodeId check_5mnya_a0b0k0v(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
-
   private static List<ModelChange> check_5mnya_a0a0a0a1a0a0v0v(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelChanges();
     }
     return null;
   }
-
   private static FilePath check_5mnya_a0a2a2a0a0a0a1a1a2tb(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
-
   private static FilePath check_5mnya_a0a0c0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSecond();
     }
     return null;
   }
-
   private static CommittedChangeList check_5mnya_a0d0c0a0a0a0b0b0c54(Pair<CommittedChangeList, FilePath> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getFirst();
     }
     return null;
   }
-
   private static SNodeId check_5mnya_a0a0a0a22a8a2a0a0a0a1a1a2tb(LineContent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();
     }
     return null;
   }
-
   private static SNodeId check_5mnya_a0d0a0a22a8a2a0a0a0a1a1a2tb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeId();

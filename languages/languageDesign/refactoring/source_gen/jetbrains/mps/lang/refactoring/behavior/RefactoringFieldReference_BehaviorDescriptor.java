@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class RefactoringFieldReference_BehaviorDescriptor extends BaseVariableReference_BehaviorDescriptor implements RefactoringArgumentReference_BehaviorDescriptor {
   public RefactoringFieldReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return RefactoringFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference";

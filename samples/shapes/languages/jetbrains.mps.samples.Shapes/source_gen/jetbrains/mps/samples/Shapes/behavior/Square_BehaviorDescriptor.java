@@ -8,15 +8,12 @@ import java.awt.Graphics;
 public class Square_BehaviorDescriptor extends Shape_BehaviorDescriptor {
   public Square_BehaviorDescriptor() {
   }
-
   public void virtual_drawShapeAt_4001135958238383544(SNode thisNode, Graphics graphics, int x, int y) {
     Square_Behavior.virtual_drawShapeAt_4001135958238383544(thisNode, graphics, x, y);
   }
-
   public void virtual_drawShape_1082824515535573731(SNode thisNode, Graphics graphics) {
     Square_Behavior.virtual_drawShape_1082824515535573731(thisNode, graphics);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Shapes.structure.Square";

@@ -30,7 +30,6 @@ public class RenameLanguageDialog extends RenameDialog {
   private JCheckBox myRegenerateLanguage;
   private Language myLanguage;
   private Project myProject;
-
   public RenameLanguageDialog(com.intellij.openapi.project.Project project, Language language) throws HeadlessException {
     super(project, language.getModuleName(), "language");
     myLanguage = language;
@@ -45,7 +44,6 @@ public class RenameLanguageDialog extends RenameDialog {
     });
     myRegenerateLanguage.getModel().setSelected(regenerateHolder[0]);
   }
-
   @Override
   protected JComponent createNorthPanel() {
     super.createNorthPanel();
@@ -58,7 +56,6 @@ public class RenameLanguageDialog extends RenameDialog {
     myPanel.add(myRegenerateLanguage, c);
     return myPanel;
   }
-
   @Override
   protected void doRefactoringAction() {
     final boolean needToRegenerate = myRegenerateLanguage.getModel().isSelected();

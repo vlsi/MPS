@@ -64,7 +64,7 @@ public abstract class AbstractCellMenuPart_ReplaceNode_CustomNodeConcept extends
         @Override
         public SNode substitute(@Nullable EditorContext context, String pattern) {
           String selectedCellId = null;
-          if (context != null) {
+          if (context != null && context.getSelectedCell() != null) {
             selectedCellId = context.getSelectedCell().getCellId();
           }
 

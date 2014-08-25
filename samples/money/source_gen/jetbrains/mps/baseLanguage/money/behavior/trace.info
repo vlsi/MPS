@@ -5,28 +5,28 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="MoneyIsZeroMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyGetAmountMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
     </file>
     <file name="MoneyMethodCall_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,34,0" name="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,32,0" name="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="MoneyLiteral_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
     </file>
     <file name="MoneyType_BehaviorDescriptor.java">
-      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+      <unit at="8,0,19,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
     </file>
     <file name="MoneyCreator_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877266178">
@@ -41,21 +41,21 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877287607">
     <file name="MoneyType_Behavior.java">
-      <node id="1213877287612" at="12,80,13,118" concept="0" />
-      <node id="1213877287618" at="13,118,14,19" concept="1" />
+      <node id="1213877287612" at="11,80,12,118" concept="0" />
+      <node id="1213877287618" at="12,118,13,19" concept="1" />
       <node id="1213877287607" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1213877287607" at="12,0,16,0" concept="2" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877287607" at="11,0,15,0" concept="2" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="1213877287609" at="9,43,9,43" />
       <scope id="1213877287607" at="9,0,11,0">
         <var name="thisNode" id="1213877287607" />
       </scope>
-      <scope id="1213877287611" at="12,80,14,19">
+      <scope id="1213877287611" at="11,80,13,19">
         <var name="creator" id="1213877287613" />
       </scope>
-      <scope id="1213877287607" at="12,0,16,0">
+      <scope id="1213877287607" at="11,0,15,0">
         <var name="thisNode" id="1213877287607" />
       </scope>
-      <unit id="1213877287607" at="8,0,17,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
+      <unit id="1213877287607" at="8,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877300004">

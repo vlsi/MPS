@@ -18,12 +18,10 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
   private SModel myModel;
   private boolean myRootsOnly;
   private List<SModel> myModels;
-
   public ModelAndImportedModelsScope(SModel model, boolean rootsOnly) {
     myModel = model;
     myRootsOnly = rootsOnly;
   }
-
   @NotNull
   public List<SModel> getModels() {
     if (myModels == null) {
@@ -36,7 +34,6 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
     }
     return myModels;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

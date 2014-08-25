@@ -19,18 +19,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public SortedSet_comparableTo_sorted_set_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_9omwya_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_ELEMENT")));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new SortedSet_comparableTo_sorted_set_SubtypingRule.Pattern_9omwya_a0a0a0a4();
@@ -39,17 +35,13 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public static class Pattern_9omwya_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT;
-
     public Pattern_9omwya_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_h9rz5k_a0a = nodeToMatch;
@@ -75,28 +67,23 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ELEMENT = (SNode) pattern.getFieldValue("patternVar_ELEMENT");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ELEMENT".equals(fieldName)) {
         return patternVar_ELEMENT;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_9omwya_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -108,6 +95,5 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
     }
     return quotedNode_2;
   }
-
   private static SNodePointer SNODE_POINTER_9omwya_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~SortedSet");
 }

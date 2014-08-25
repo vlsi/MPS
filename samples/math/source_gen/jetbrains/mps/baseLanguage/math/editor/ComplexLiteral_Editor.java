@@ -17,7 +17,6 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_g5m0o6_a(editorContext, node);
   }
-
   private EditorCell createCollection_g5m0o6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_g5m0o6_a");
@@ -27,7 +26,6 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_g5m0o6_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_g5m0o6_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("real");
@@ -47,14 +45,12 @@ public class ComplexLiteral_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_g5m0o6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_g5m0o6_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_g5m0o6_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("imag");

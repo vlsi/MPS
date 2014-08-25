@@ -13,21 +13,17 @@ import java.util.Collection;
 
 public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
   private static final long serialVersionUID = 541380543157727748L;
-
   protected SetSequence(Set<T> set) {
     super(set);
   }
-
   @Override
   public ISetSequence<T> asUnmodifiable() {
     return new SetSequence<T>(Collections.unmodifiableSet(getSet()));
   }
-
   @Override
   public ISetSequence<T> asSynchronized() {
     return new SetSequence<T>(Collections.unmodifiableSet(getSet()));
   }
-
   public static <U> ISetSequence<U> fromArray(U... array) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (array == null) {
@@ -36,7 +32,6 @@ public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequen
     }
     return SetSequence.fromSetAndArray(new HashSet<U>(), array);
   }
-
   public static <U> ISetSequence<U> fromSet(Set<U> set) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (set == null) {
@@ -48,7 +43,6 @@ public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequen
     }
     return new SetSequence<U>(set);
   }
-
   public static <U> ISetSequence<U> fromSetAndArray(Set<U> set, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -84,7 +78,6 @@ public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequen
     }
     return new SetSequence<U>(set);
   }
-
   public static <U> ISetSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -111,7 +104,6 @@ public class SetSequence<T> extends AbstractSetSequence<T> implements ISetSequen
     }
     return new SetSequence<U>(set);
   }
-
   public static <U> ISetSequence<U> fromSetWithValues(Set<U> set, Iterable<? extends U> it) {
     Set<U> tmp = set;
     if (Sequence.USE_NULL_SEQUENCE) {

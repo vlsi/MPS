@@ -19,8 +19,6 @@ import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.Environment;
@@ -84,14 +82,13 @@ public class ProjectCreationTest {
 
   @BeforeClass
   public static void init() {
-    IdeMain.setTestMode(TestMode.CORE_TEST);
     CREATED_ENV = MpsTestsSupport.initEnv(true);
   }
 
   @AfterClass
   public static void dispose() {
     if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
+      CREATED_ENV.dispose();
     }
   }
 

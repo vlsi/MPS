@@ -7,7 +7,6 @@ import org.jetbrains.mps.samples.money.runtime.Money;
 public class MoneySample {
   public MoneySample() {
   }
-
   public static void main(String[] args) {
     // To create a money literal, just type the number immediately followed by the desired currency symbol 
     // E.g. type "10EUR" to get 10 EUR money literal 
@@ -20,7 +19,6 @@ public class MoneySample {
     // Code with the classes from org.jetbrains.mps.samples.MoneyRuntime will be generated and then used at run-time 
     // Try "Preview Generated Text (Control|Cmd + Alt + Shift + F9)" 
   }
-
   private static Money getDonation() {
     return new Money(30, "EUR");
   }

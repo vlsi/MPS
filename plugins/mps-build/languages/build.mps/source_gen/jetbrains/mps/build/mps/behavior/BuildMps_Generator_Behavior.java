@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildMps_Generator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getSourceLanguage_9200313594510517119(SNode thisNode) {
     return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") ? SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.mps.structure.BuildMps_Language") : SLinkOperations.getTarget(thisNode, "sourceLanguage", false));
   }

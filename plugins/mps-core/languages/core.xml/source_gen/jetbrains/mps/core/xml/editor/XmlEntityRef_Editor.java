@@ -27,7 +27,6 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_40aq2x_a(editorContext, node);
   }
-
   private EditorCell createCollection_40aq2x_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_40aq2x_a");
@@ -37,7 +36,6 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_40aq2x_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_40aq2x_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "&");
     editorCell.setCellId("Constant_40aq2x_a0");
@@ -49,11 +47,9 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_40aq2x_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
-
   private EditorCell createProperty_40aq2x_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("entityName");
@@ -74,16 +70,13 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class XmlEntityRef_entityName_cellMenu_40aq2x_a0b0 extends AbstractCellMenuPart_PropertyValues {
     public XmlEntityRef_entityName_cellMenu_40aq2x_a0b0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return Sequence.fromIterable(Sequence.fromArray(XmlNameUtil.getDefaultEntities())).toListSequence();
     }
   }
-
   private EditorCell createConstant_40aq2x_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_40aq2x_c0");
@@ -95,7 +88,6 @@ public class XmlEntityRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_40aq2x_a1c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }

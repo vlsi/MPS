@@ -19,12 +19,10 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
   public QueryExpression_Constraints() {
     super("jetbrains.mps.console.blCommand.structure.QueryExpression");
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -35,7 +33,6 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     // QueryParameter is abstract, so it is already highlighted as invalid 
     if (SConceptOperations.isExactly(childConcept, "jetbrains.mps.console.blCommand.structure.QueryParameter")) {
@@ -46,6 +43,5 @@ public class QueryExpression_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
-
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:aef526b1-5019-472a-a761-72ac88ef58a4(jetbrains.mps.console.blCommand.constraints)", "7284872370239728936");
 }

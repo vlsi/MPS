@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SReference;
 public class check_UsingStatement_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UsingStatement_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode usingStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
 outer:
     for (SNode resource : SLinkOperations.getTargets(usingStatement, "resource", true)) {
@@ -52,22 +51,18 @@ outer:
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UsingStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_o2kqy_b0a1a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

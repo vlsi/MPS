@@ -3,165 +3,140 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
-  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025660">
     <file name="AddPropertyAttribute_Test.java">
-      <node id="3447504547919025660" at="18,60,19,112" concept="1" />
-      <node id="3447504547919025660" at="19,112,20,112" concept="1" />
-      <node id="3447504547919025660" at="29,51,30,99" concept="3" />
-      <node id="3447504547919025660" at="30,99,31,93" concept="3" />
-      <node id="3447504547919025664" at="31,93,32,137" concept="1" />
-      <node id="3447504547919025660" at="14,0,16,0" concept="0" trace="AddPropertyAttribute_Test#()V" />
-      <node id="3447504547919025660" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919025660" at="17,0,22,0" concept="2" trace="test_AddPropertyAttribute#()V" />
-      <node id="3447504547919025660" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919025660" at="14,38,14,38" />
-      <scope id="3447504547919025660" at="25,23,25,23" />
-      <scope id="3447504547919025660" at="14,0,16,0" />
-      <scope id="3447504547919025660" at="18,60,20,112" />
-      <scope id="3447504547919025660" at="25,0,27,0" />
-      <scope id="3447504547919025660" at="29,51,32,137">
-        <var name="editor" id="3447504547919025660" />
-        <var name="editorComponent" id="3447504547919025660" />
-      </scope>
-      <scope id="3447504547919025660" at="17,0,22,0" />
-      <scope id="3447504547919025660" at="28,0,34,0" />
-      <unit id="3447504547919025660" at="23,0,35,0" name="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test$TestBody" />
-      <unit id="3447504547919025660" at="12,0,36,0" name="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test" />
+      <node id="3447504547919025660" at="15,60,16,112" concept="1" />
+      <node id="3447504547919025660" at="16,112,17,112" concept="1" />
+      <node id="3447504547919025660" at="24,51,25,63" concept="1" />
+      <node id="3447504547919025664" at="25,63,26,129" concept="1" />
+      <node id="3447504547919025660" at="12,0,14,0" concept="0" trace="AddPropertyAttribute_Test#()V" />
+      <node id="3447504547919025660" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919025660" at="14,0,19,0" concept="2" trace="test_AddPropertyAttribute#()V" />
+      <node id="3447504547919025660" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919025660" at="12,38,12,38" />
+      <scope id="3447504547919025660" at="21,23,21,23" />
+      <scope id="3447504547919025660" at="12,0,14,0" />
+      <scope id="3447504547919025660" at="15,60,17,112" />
+      <scope id="3447504547919025660" at="21,0,23,0" />
+      <scope id="3447504547919025660" at="24,51,26,129" />
+      <scope id="3447504547919025660" at="14,0,19,0" />
+      <scope id="3447504547919025660" at="23,0,28,0" />
+      <unit id="3447504547919025660" at="19,0,29,0" name="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test$TestBody" />
+      <unit id="3447504547919025660" at="10,0,30,0" name="jetbrains.mps.lang.editor.attribues.AddPropertyAttribute_Test" />
     </file>
   </root>
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025668">
     <file name="RemovePropertyAttribute_Test.java">
-      <node id="3447504547919025668" at="18,63,19,112" concept="1" />
-      <node id="3447504547919025668" at="19,112,20,115" concept="1" />
-      <node id="3447504547919025668" at="29,51,30,99" concept="3" />
-      <node id="3447504547919025668" at="30,99,31,93" concept="3" />
-      <node id="3447504547919025673" at="31,93,32,108" concept="1" />
-      <node id="3447504547919025668" at="14,0,16,0" concept="0" trace="RemovePropertyAttribute_Test#()V" />
-      <node id="3447504547919025668" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919025668" at="17,0,22,0" concept="2" trace="test_RemovePropertyAttribute#()V" />
-      <node id="3447504547919025668" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919025668" at="14,41,14,41" />
-      <scope id="3447504547919025668" at="25,23,25,23" />
-      <scope id="3447504547919025668" at="14,0,16,0" />
-      <scope id="3447504547919025668" at="18,63,20,115" />
-      <scope id="3447504547919025668" at="25,0,27,0" />
-      <scope id="3447504547919025668" at="29,51,32,108">
-        <var name="editor" id="3447504547919025668" />
-        <var name="editorComponent" id="3447504547919025668" />
-      </scope>
-      <scope id="3447504547919025668" at="17,0,22,0" />
-      <scope id="3447504547919025668" at="28,0,34,0" />
-      <unit id="3447504547919025668" at="23,0,35,0" name="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test$TestBody" />
-      <unit id="3447504547919025668" at="12,0,36,0" name="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test" />
+      <node id="3447504547919025668" at="15,63,16,112" concept="1" />
+      <node id="3447504547919025668" at="16,112,17,115" concept="1" />
+      <node id="3447504547919025668" at="24,51,25,63" concept="1" />
+      <node id="3447504547919025673" at="25,63,26,77" concept="1" />
+      <node id="3447504547919025668" at="12,0,14,0" concept="0" trace="RemovePropertyAttribute_Test#()V" />
+      <node id="3447504547919025668" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919025668" at="14,0,19,0" concept="2" trace="test_RemovePropertyAttribute#()V" />
+      <node id="3447504547919025668" at="23,0,28,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919025668" at="12,41,12,41" />
+      <scope id="3447504547919025668" at="21,23,21,23" />
+      <scope id="3447504547919025668" at="12,0,14,0" />
+      <scope id="3447504547919025668" at="15,63,17,115" />
+      <scope id="3447504547919025668" at="21,0,23,0" />
+      <scope id="3447504547919025668" at="24,51,26,77" />
+      <scope id="3447504547919025668" at="14,0,19,0" />
+      <scope id="3447504547919025668" at="23,0,28,0" />
+      <unit id="3447504547919025668" at="19,0,29,0" name="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test$TestBody" />
+      <unit id="3447504547919025668" at="10,0,30,0" name="jetbrains.mps.lang.editor.attribues.RemovePropertyAttribute_Test" />
     </file>
   </root>
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025677">
     <file name="RemovingLeftTransformForAttributedProperty_Test.java">
-      <node id="3447504547919025677" at="18,82,19,112" concept="1" />
-      <node id="3447504547919025677" at="19,112,20,134" concept="1" />
-      <node id="3447504547919025677" at="29,51,30,99" concept="3" />
-      <node id="3447504547919025677" at="30,99,31,93" concept="3" />
-      <node id="3447504547919025689" at="31,93,32,58" concept="1" />
-      <node id="3447504547919025690" at="32,58,33,105" concept="1" />
-      <node id="3447504547919025677" at="14,0,16,0" concept="0" trace="RemovingLeftTransformForAttributedProperty_Test#()V" />
-      <node id="3447504547919025677" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919025677" at="17,0,22,0" concept="2" trace="test_RemovingLeftTransformForAttributedProperty#()V" />
-      <node id="3447504547919025677" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919025677" at="14,60,14,60" />
-      <scope id="3447504547919025677" at="25,23,25,23" />
-      <scope id="3447504547919025677" at="14,0,16,0" />
-      <scope id="3447504547919025677" at="18,82,20,134" />
-      <scope id="3447504547919025677" at="25,0,27,0" />
-      <scope id="3447504547919025677" at="29,51,33,105">
-        <var name="editor" id="3447504547919025677" />
-        <var name="editorComponent" id="3447504547919025677" />
-      </scope>
-      <scope id="3447504547919025677" at="17,0,22,0" />
-      <scope id="3447504547919025677" at="28,0,35,0" />
-      <unit id="3447504547919025677" at="23,0,36,0" name="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test$TestBody" />
-      <unit id="3447504547919025677" at="12,0,37,0" name="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test" />
+      <node id="3447504547919025677" at="15,82,16,112" concept="1" />
+      <node id="3447504547919025677" at="16,112,17,134" concept="1" />
+      <node id="3447504547919025677" at="24,51,25,63" concept="1" />
+      <node id="3447504547919025689" at="25,63,26,27" concept="1" />
+      <node id="3447504547919025690" at="26,27,27,74" concept="1" />
+      <node id="3447504547919025677" at="12,0,14,0" concept="0" trace="RemovingLeftTransformForAttributedProperty_Test#()V" />
+      <node id="3447504547919025677" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919025677" at="14,0,19,0" concept="2" trace="test_RemovingLeftTransformForAttributedProperty#()V" />
+      <node id="3447504547919025677" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919025677" at="12,60,12,60" />
+      <scope id="3447504547919025677" at="21,23,21,23" />
+      <scope id="3447504547919025677" at="12,0,14,0" />
+      <scope id="3447504547919025677" at="15,82,17,134" />
+      <scope id="3447504547919025677" at="21,0,23,0" />
+      <scope id="3447504547919025677" at="24,51,27,74" />
+      <scope id="3447504547919025677" at="14,0,19,0" />
+      <scope id="3447504547919025677" at="23,0,29,0" />
+      <unit id="3447504547919025677" at="19,0,30,0" name="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test$TestBody" />
+      <unit id="3447504547919025677" at="10,0,31,0" name="jetbrains.mps.lang.editor.attribues.RemovingLeftTransformForAttributedProperty_Test" />
     </file>
   </root>
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919025692">
     <file name="LeftTransformForAttributedProperty_Test.java">
-      <node id="3447504547919025692" at="18,74,19,112" concept="1" />
-      <node id="3447504547919025692" at="19,112,20,126" concept="1" />
-      <node id="3447504547919025692" at="29,51,30,99" concept="3" />
-      <node id="3447504547919025692" at="30,99,31,93" concept="3" />
-      <node id="3447504547919025705" at="31,93,32,58" concept="1" />
-      <node id="3447504547919025706" at="32,58,33,58" concept="1" />
-      <node id="3447504547919025692" at="14,0,16,0" concept="0" trace="LeftTransformForAttributedProperty_Test#()V" />
-      <node id="3447504547919025692" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919025692" at="17,0,22,0" concept="2" trace="test_LeftTransformForAttributedProperty#()V" />
-      <node id="3447504547919025692" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919025692" at="14,52,14,52" />
-      <scope id="3447504547919025692" at="25,23,25,23" />
-      <scope id="3447504547919025692" at="14,0,16,0" />
-      <scope id="3447504547919025692" at="18,74,20,126" />
-      <scope id="3447504547919025692" at="25,0,27,0" />
-      <scope id="3447504547919025692" at="29,51,33,58">
-        <var name="editor" id="3447504547919025692" />
-        <var name="editorComponent" id="3447504547919025692" />
-      </scope>
-      <scope id="3447504547919025692" at="17,0,22,0" />
-      <scope id="3447504547919025692" at="28,0,35,0" />
-      <unit id="3447504547919025692" at="23,0,36,0" name="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test$TestBody" />
-      <unit id="3447504547919025692" at="12,0,37,0" name="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test" />
+      <node id="3447504547919025692" at="15,74,16,112" concept="1" />
+      <node id="3447504547919025692" at="16,112,17,126" concept="1" />
+      <node id="3447504547919025692" at="24,51,25,63" concept="1" />
+      <node id="3447504547919025705" at="25,63,26,27" concept="1" />
+      <node id="3447504547919025706" at="26,27,27,27" concept="1" />
+      <node id="3447504547919025692" at="12,0,14,0" concept="0" trace="LeftTransformForAttributedProperty_Test#()V" />
+      <node id="3447504547919025692" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919025692" at="14,0,19,0" concept="2" trace="test_LeftTransformForAttributedProperty#()V" />
+      <node id="3447504547919025692" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919025692" at="12,52,12,52" />
+      <scope id="3447504547919025692" at="21,23,21,23" />
+      <scope id="3447504547919025692" at="12,0,14,0" />
+      <scope id="3447504547919025692" at="15,74,17,126" />
+      <scope id="3447504547919025692" at="21,0,23,0" />
+      <scope id="3447504547919025692" at="24,51,27,27" />
+      <scope id="3447504547919025692" at="14,0,19,0" />
+      <scope id="3447504547919025692" at="23,0,29,0" />
+      <unit id="3447504547919025692" at="19,0,30,0" name="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test$TestBody" />
+      <unit id="3447504547919025692" at="10,0,31,0" name="jetbrains.mps.lang.editor.attribues.LeftTransformForAttributedProperty_Test" />
     </file>
   </root>
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919057576">
     <file name="RemovingRightTransformForAttributedProperty_Test.java">
-      <node id="3447504547919057576" at="18,83,19,112" concept="1" />
-      <node id="3447504547919057576" at="19,112,20,135" concept="1" />
-      <node id="3447504547919057576" at="29,51,30,99" concept="3" />
-      <node id="3447504547919057576" at="30,99,31,93" concept="3" />
-      <node id="3447504547919057588" at="31,93,32,58" concept="1" />
-      <node id="3447504547919057589" at="32,58,33,108" concept="1" />
-      <node id="3447504547919057576" at="14,0,16,0" concept="0" trace="RemovingRightTransformForAttributedProperty_Test#()V" />
-      <node id="3447504547919057576" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919057576" at="17,0,22,0" concept="2" trace="test_RemovingRightTransformForAttributedProperty#()V" />
-      <node id="3447504547919057576" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919057576" at="14,61,14,61" />
-      <scope id="3447504547919057576" at="25,23,25,23" />
-      <scope id="3447504547919057576" at="14,0,16,0" />
-      <scope id="3447504547919057576" at="18,83,20,135" />
-      <scope id="3447504547919057576" at="25,0,27,0" />
-      <scope id="3447504547919057576" at="29,51,33,108">
-        <var name="editor" id="3447504547919057576" />
-        <var name="editorComponent" id="3447504547919057576" />
-      </scope>
-      <scope id="3447504547919057576" at="17,0,22,0" />
-      <scope id="3447504547919057576" at="28,0,35,0" />
-      <unit id="3447504547919057576" at="23,0,36,0" name="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody" />
-      <unit id="3447504547919057576" at="12,0,37,0" name="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test" />
+      <node id="3447504547919057576" at="15,83,16,112" concept="1" />
+      <node id="3447504547919057576" at="16,112,17,135" concept="1" />
+      <node id="3447504547919057576" at="24,51,25,63" concept="1" />
+      <node id="3447504547919057588" at="25,63,26,27" concept="1" />
+      <node id="3447504547919057589" at="26,27,27,77" concept="1" />
+      <node id="3447504547919057576" at="12,0,14,0" concept="0" trace="RemovingRightTransformForAttributedProperty_Test#()V" />
+      <node id="3447504547919057576" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919057576" at="14,0,19,0" concept="2" trace="test_RemovingRightTransformForAttributedProperty#()V" />
+      <node id="3447504547919057576" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919057576" at="12,61,12,61" />
+      <scope id="3447504547919057576" at="21,23,21,23" />
+      <scope id="3447504547919057576" at="12,0,14,0" />
+      <scope id="3447504547919057576" at="15,83,17,135" />
+      <scope id="3447504547919057576" at="21,0,23,0" />
+      <scope id="3447504547919057576" at="24,51,27,77" />
+      <scope id="3447504547919057576" at="14,0,19,0" />
+      <scope id="3447504547919057576" at="23,0,29,0" />
+      <unit id="3447504547919057576" at="19,0,30,0" name="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test$TestBody" />
+      <unit id="3447504547919057576" at="10,0,31,0" name="jetbrains.mps.lang.editor.attribues.RemovingRightTransformForAttributedProperty_Test" />
     </file>
   </root>
   <root nodeRef="r:09fb198f-3544-4746-9d3e-f773f4bfde46(jetbrains.mps.lang.editor.attribues)/3447504547919057591">
     <file name="RightTransformForAttributedProperty_Test.java">
-      <node id="3447504547919057591" at="18,75,19,112" concept="1" />
-      <node id="3447504547919057591" at="19,112,20,127" concept="1" />
-      <node id="3447504547919057591" at="29,51,30,99" concept="3" />
-      <node id="3447504547919057591" at="30,99,31,93" concept="3" />
-      <node id="3447504547919057604" at="31,93,32,58" concept="1" />
-      <node id="3447504547919057605" at="32,58,33,58" concept="1" />
-      <node id="3447504547919057591" at="14,0,16,0" concept="0" trace="RightTransformForAttributedProperty_Test#()V" />
-      <node id="3447504547919057591" at="25,0,27,0" concept="0" trace="TestBody#()V" />
-      <node id="3447504547919057591" at="17,0,22,0" concept="2" trace="test_RightTransformForAttributedProperty#()V" />
-      <node id="3447504547919057591" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
-      <scope id="3447504547919057591" at="14,53,14,53" />
-      <scope id="3447504547919057591" at="25,23,25,23" />
-      <scope id="3447504547919057591" at="14,0,16,0" />
-      <scope id="3447504547919057591" at="18,75,20,127" />
-      <scope id="3447504547919057591" at="25,0,27,0" />
-      <scope id="3447504547919057591" at="29,51,33,58">
-        <var name="editor" id="3447504547919057591" />
-        <var name="editorComponent" id="3447504547919057591" />
-      </scope>
-      <scope id="3447504547919057591" at="17,0,22,0" />
-      <scope id="3447504547919057591" at="28,0,35,0" />
-      <unit id="3447504547919057591" at="23,0,36,0" name="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test$TestBody" />
-      <unit id="3447504547919057591" at="12,0,37,0" name="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test" />
+      <node id="3447504547919057591" at="15,75,16,112" concept="1" />
+      <node id="3447504547919057591" at="16,112,17,127" concept="1" />
+      <node id="3447504547919057591" at="24,51,25,63" concept="1" />
+      <node id="3447504547919057604" at="25,63,26,27" concept="1" />
+      <node id="3447504547919057605" at="26,27,27,27" concept="1" />
+      <node id="3447504547919057591" at="12,0,14,0" concept="0" trace="RightTransformForAttributedProperty_Test#()V" />
+      <node id="3447504547919057591" at="21,0,23,0" concept="0" trace="TestBody#()V" />
+      <node id="3447504547919057591" at="14,0,19,0" concept="2" trace="test_RightTransformForAttributedProperty#()V" />
+      <node id="3447504547919057591" at="23,0,29,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3447504547919057591" at="12,53,12,53" />
+      <scope id="3447504547919057591" at="21,23,21,23" />
+      <scope id="3447504547919057591" at="12,0,14,0" />
+      <scope id="3447504547919057591" at="15,75,17,127" />
+      <scope id="3447504547919057591" at="21,0,23,0" />
+      <scope id="3447504547919057591" at="24,51,27,27" />
+      <scope id="3447504547919057591" at="14,0,19,0" />
+      <scope id="3447504547919057591" at="23,0,29,0" />
+      <unit id="3447504547919057591" at="19,0,30,0" name="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test$TestBody" />
+      <unit id="3447504547919057591" at="10,0,31,0" name="jetbrains.mps.lang.editor.attribues.RightTransformForAttributedProperty_Test" />
     </file>
   </root>
 </debug-info>

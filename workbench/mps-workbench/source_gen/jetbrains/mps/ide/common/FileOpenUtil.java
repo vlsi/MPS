@@ -23,7 +23,6 @@ import com.intellij.openapi.editor.ScrollType;
 public class FileOpenUtil {
   public FileOpenUtil() {
   }
-
   @Nullable
   public static VirtualFile findFile(final Project project, String unitName, final String fileName) {
     final Wrappers._T<String> fullFileName = new Wrappers._T<String>(unitName.replace(".", "/"));
@@ -59,7 +58,6 @@ public class FileOpenUtil {
     }
     return null;
   }
-
   public static void openFile(Project project, VirtualFile file, int lineNumber) {
     FileEditor[] result = FileEditorManager.getInstance(project).openFile(file, true, true);
     if (result.length == 1 && result[0] instanceof TextEditor) {

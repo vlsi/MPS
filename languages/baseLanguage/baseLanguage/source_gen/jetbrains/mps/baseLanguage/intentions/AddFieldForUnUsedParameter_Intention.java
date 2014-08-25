@@ -23,41 +23,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddFieldForUnUsedParameter_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddFieldForUnUsedParameter_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
   }
-
   public String getPresentation() {
     return "AddFieldForUnUsedParameter";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.AddFieldForUnUsedParameter_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))) {
       return false;
@@ -66,30 +57,24 @@ public class AddFieldForUnUsedParameter_Intention implements IntentionFactory {
     Set<SNode> unusedAssignments = DataFlow.getUnusedAssignments(SLinkOperations.getTarget(parent, "body", true));
     return SetSequence.fromSet(unusedAssignments).contains(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1224168785803");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddFieldForUnUsedParameter_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Field for Unused Parameter";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode clazz = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode field = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
@@ -110,7 +95,6 @@ public class AddFieldForUnUsedParameter_Intention implements IntentionFactory {
       SLinkOperations.setTarget(expr, "rValue", paramRef, true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", true)).addElement(newStatement);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddFieldForUnUsedParameter_Intention.this;
     }

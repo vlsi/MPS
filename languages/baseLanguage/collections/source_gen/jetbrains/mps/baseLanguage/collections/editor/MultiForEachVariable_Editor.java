@@ -28,7 +28,6 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bqabhr_a(editorContext, node);
   }
-
   private EditorCell createCollection_bqabhr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bqabhr_a");
@@ -39,7 +38,6 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_bqabhr_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_bqabhr_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -57,11 +55,9 @@ public class MultiForEachVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class MultiForEachVariable_name_postfixCellMenu_bqabhr_a0a0 extends AbstractCellMenuPart_PropertyPostfixHints {
     public MultiForEachVariable_name_postfixCellMenu_bqabhr_a0a0() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> postfixes = ListSequence.fromList(new ArrayList<String>());
       if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {

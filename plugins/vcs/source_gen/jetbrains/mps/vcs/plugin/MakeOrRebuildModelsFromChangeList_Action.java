@@ -27,19 +27,16 @@ import org.apache.log4j.LogManager;
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
   private boolean rebuild;
-
   public MakeOrRebuildModelsFromChangeList_Action(boolean rebuild_par) {
     super("Make Models", "", ICON);
     this.rebuild = rebuild_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
     if (!(VcsActionsUtil.isMakePluginInstalled()) || IMakeService.INSTANCE.get().isSessionActive() || ListSequence.fromList(models).isEmpty()) {
@@ -52,7 +49,6 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -66,7 +62,6 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -81,7 +76,6 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModel>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
@@ -92,7 +86,6 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -102,6 +95,5 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   protected static Logger LOG = LogManager.getLogger(MakeOrRebuildModelsFromChangeList_Action.class);
 }

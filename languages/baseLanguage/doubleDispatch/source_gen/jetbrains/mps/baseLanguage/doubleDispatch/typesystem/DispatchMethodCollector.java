@@ -16,11 +16,9 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 
 public class DispatchMethodCollector {
   private Map<DispatchGroupDescriptor, DispatchGroup> groups = MapSequence.fromMap(new HashMap<DispatchGroupDescriptor, DispatchGroup>());
-
   public DispatchMethodCollector(SNode classToCheck) {
     fill(classToCheck);
   }
-
   private void fill(SNode classToCheck) {
 
     // Instance methods 
@@ -52,13 +50,11 @@ public class DispatchMethodCollector {
       addMethod(m);
     }
   }
-
   private void startNewClass(SNode cls) {
     for (IMapping<DispatchGroupDescriptor, DispatchGroup> g : MapSequence.fromMap(groups)) {
       g.value().startNewClass(cls);
     }
   }
-
   private void addMethod(SNode method) {
 
     DispatchGroupDescriptor desc = new DispatchGroupDescriptor(method);
@@ -70,7 +66,6 @@ public class DispatchMethodCollector {
 
     group.addMethod(method);
   }
-
   public Iterable<DispatchGroup> getGroups() {
     return MapSequence.fromMap(groups).values();
   }

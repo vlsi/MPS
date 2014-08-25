@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DeprecatedReference_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode baseConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SReference ref : baseConcept.getReferences()) {
       SNode node = ref.getTargetNode();
@@ -32,18 +31,15 @@ public class check_DeprecatedReference_NonTypesystemRule extends AbstractNonType
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

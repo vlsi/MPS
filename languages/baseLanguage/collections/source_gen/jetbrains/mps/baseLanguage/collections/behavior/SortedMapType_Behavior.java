@@ -17,18 +17,15 @@ import jetbrains.mps.smodel.SReference;
 public class SortedMapType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_zek8do_a0a1a0(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_zek8do_a0a1();
   }
-
   private static SNode _quotation_createNode_zek8do_a0a1a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -45,7 +42,6 @@ public class SortedMapType_Behavior {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_zek8do_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

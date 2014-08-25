@@ -11,11 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class IConceptAspect_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return null;
   }
-
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode node = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBaseConcept_2621449412040133768", new Object[]{});
@@ -24,10 +22,8 @@ public class IConceptAspect_Behavior {
     }
     return result;
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
   }
-
   public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
     return true;
   }

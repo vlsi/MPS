@@ -9,26 +9,21 @@ import jetbrains.mps.build.util.MacroHelper;
 public class BuildStringPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_punctuationLeft_5096397858823356723(SNode thisNode) {
     if (SNodeOperations.getIndexInParent(thisNode) == 0) {
       return false;
     }
     return eq_cuvs1r_a0b0b(SNodeOperations.getConceptDeclaration(SNodeOperations.getPrevSibling(thisNode)), SNodeOperations.getConceptDeclaration(thisNode));
   }
-
   public static boolean virtual_isFirstPositionAllowed_624440001685459414(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isLastPositionAllowed_624440001685490925(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getText_4380385936562037054(SNode thisNode, MacroHelper helper) {
     return "";
   }
-
   private static boolean eq_cuvs1r_a0b0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

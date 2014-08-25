@@ -16,31 +16,24 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class Builder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getContextBuilder_7057666463730306577(SNode thisNode) {
     return Builder_Behavior.call_getContextBuilder_7057666463730366732(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder"))), SNodeOperations.getParent(thisNode));
   }
-
   public static boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_leaf_1262430001741498370", new Object[]{});
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return null;
   }
-
   public static SNode virtual_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), childBuilder, "virtual_getAttachStatementChild_4797501453850305563", new Object[]{thisNode, parentRef, childRef});
   }
-
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
     throw new UnsupportedOperationException();
   }
-
   public static boolean virtual_leaf_1262430001741498370(SAbstractConcept thisConcept) {
     return false;
   }
-
   public static SNode call_getContextBuilder_7057666463730366732(SAbstractConcept thisConcept, SNode context) {
     return SLinkOperations.getTarget(ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.builders.structure.BuilderContainer", false)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

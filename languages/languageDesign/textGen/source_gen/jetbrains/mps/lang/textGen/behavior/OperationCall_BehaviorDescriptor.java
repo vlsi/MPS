@@ -6,7 +6,6 @@ package jetbrains.mps.lang.textGen.behavior;
 public class OperationCall_BehaviorDescriptor extends AbstractAppendPart_BehaviorDescriptor {
   public OperationCall_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.OperationCall";

@@ -16,72 +16,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddCustomPackaging_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddCustomPackaging_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup";
   }
-
   public String getPresentation() {
     return "AddCustomPackaging";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.build.mps.intentions.AddCustomPackaging_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.build.mps";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTargets(node, "customPackaging", true).isEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "4034578608468929409");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddCustomPackaging_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Customize Packaging for modules";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SLinkOperations.addNewChild(node, "customPackaging", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule");
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddCustomPackaging_Intention.this;
     }

@@ -26,19 +26,13 @@ public abstract class AbstractMigrationScriptHelper {
     context.getComponent(MigrationScriptsTool.class).startMigration(scripts, scope, context);
   }
 
-
-
   public static SearchScope createMigrationScope(Iterable<SModule> selectedModules, Iterable<SModel> selectedModels) {
     return createMigrationScopeInternal(selectedModules, selectedModels);
   }
 
-
-
   public static SearchScope createMigrationScope(Project project) {
     return createMigrationScopeInternal(project.getModulesWithGenerators(), (Iterable<SModel>) Collections.<SModel>emptySet());
   }
-
-
 
   private static SearchScope createMigrationScopeInternal(Iterable<? extends SModule> modules, Iterable<? extends SModel> models) {
     Set<SModel> result = SetSequence.fromSet(new HashSet<SModel>());
@@ -62,7 +56,6 @@ public abstract class AbstractMigrationScriptHelper {
     }));
     return new ModelsScope(result);
   }
-
   private static boolean includeModel(SModel model) {
     if (!(((model instanceof EditableSModel)))) {
       return false;

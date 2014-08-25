@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SNodeListType_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> supertypes = ListSequence.fromList(new ArrayList<SNode>());
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
@@ -36,22 +35,18 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     ListSequence.fromList(supertypes).addElement(_quotation_createNode_f6ipu3_a0a4a1());
     return supertypes;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeListType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_f6ipu3_a0a0a1a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -59,14 +54,12 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_f6ipu3_a0a3a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_f6ipu3_a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -77,7 +70,6 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_f6ipu3_a0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

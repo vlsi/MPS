@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class HeadSetOperation_BehaviorDescriptor extends SortedSetOperation_BehaviorDescriptor {
   public HeadSetOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation";

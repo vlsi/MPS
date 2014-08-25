@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
 public class PrimitiveTypeRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor {
   public PrimitiveTypeRef_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef";

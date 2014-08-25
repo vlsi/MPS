@@ -8,15 +8,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class C_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_abstractVirtualMethod_4731970554577217984(SNode thisNode, int x) {
     return "C";
   }
-
   public static String virtual_virtualAbstractFromInterfaceConcept_4731970554577185906(SNode thisNode, int dummy) {
     return "C";
   }
-
   public static void call_doInvokeAll_4731970554577271015(SNode thisNode) {
     BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.behavior.test.structure.B", "virtual_abstractVirtualMethod_4731970554577217984", new Object[]{0});
     BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.lang.behavior.test.structure.B", "virtual_finalVirtualMethod_4731970554577187301", new Object[]{"", 0});

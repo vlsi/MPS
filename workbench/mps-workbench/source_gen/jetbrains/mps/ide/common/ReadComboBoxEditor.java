@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.ModelAccess;
 public class ReadComboBoxEditor extends BasicComboBoxEditor {
   public ReadComboBoxEditor() {
   }
-
   @Override
   public void setItem(final Object anObject) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -17,7 +16,6 @@ public class ReadComboBoxEditor extends BasicComboBoxEditor {
       }
     });
   }
-
   private void setItemInternal(final Object anObject) {
     super.setItem(anObject);
   }

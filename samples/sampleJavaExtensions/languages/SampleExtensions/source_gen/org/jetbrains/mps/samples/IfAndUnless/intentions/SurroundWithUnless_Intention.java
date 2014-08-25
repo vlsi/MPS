@@ -20,61 +20,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithUnless_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SurroundWithUnless_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Statement";
   }
-
   public String getPresentation() {
     return "SurroundWithUnless";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.IfAndUnless.intentions.SurroundWithUnless_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024647596");
   }
-
   public boolean isSurroundWith() {
     return true;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithUnless_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Unless";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode unlessStatement = SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.UnlessStatement", null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
@@ -85,7 +71,6 @@ public class SurroundWithUnless_Intention implements IntentionFactory {
       editorContext.select(SLinkOperations.getTarget(unlessStatement, "condition", true));
 
     }
-
     public IntentionDescriptor getDescriptor() {
       return SurroundWithUnless_Intention.this;
     }

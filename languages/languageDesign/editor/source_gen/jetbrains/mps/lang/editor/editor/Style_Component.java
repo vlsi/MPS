@@ -17,11 +17,9 @@ public class Style_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_zdjsuv_a(editorContext, node);
   }
-
   private EditorCell createCollection_zdjsuv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_zdjsuv_a");
@@ -29,7 +27,6 @@ public class Style_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createComponent_zdjsuv_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_zdjsuv_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Style:");
     editorCell.setCellId("Constant_zdjsuv_a0");
@@ -39,7 +36,6 @@ public class Style_Component implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_zdjsuv_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellStyle_Component");
     return editorCell;

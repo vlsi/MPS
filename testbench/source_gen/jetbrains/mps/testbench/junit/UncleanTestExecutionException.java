@@ -11,7 +11,6 @@ public class UncleanTestExecutionException extends Exception {
   public UncleanTestExecutionException(Output... outputs) {
     super(outputToMessage(outputs));
   }
-
   private static String outputToMessage(Output... outputs) {
     StringBuilder sb = new StringBuilder();
     String sep = "\n";

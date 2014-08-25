@@ -15,16 +15,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class State_hidden_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor.TabularSM_internal_hints.hidden"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_o24u2i_a(editorContext, node);
   }
-
   private EditorCell createProperty_o24u2i_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

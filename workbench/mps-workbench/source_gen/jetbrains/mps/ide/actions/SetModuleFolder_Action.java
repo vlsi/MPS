@@ -22,22 +22,18 @@ import org.apache.log4j.LogManager;
 
 public class SetModuleFolder_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SetModuleFolder_Action() {
     super("Set Folder", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((MPSProject) MapSequence.fromMap(_params).get("project")).isProjectModule(((SModule) MapSequence.fromMap(_params).get("module")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -51,7 +47,6 @@ public class SetModuleFolder_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +69,6 @@ public class SetModuleFolder_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ProjectPane pane = ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("ideaProject")));
@@ -95,6 +89,5 @@ public class SetModuleFolder_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SetModuleFolder_Action.class);
 }

@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CustomOperatorUsage_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getVisibleCustomOperators_1141736782992984505(SAbstractConcept thisConcept, SModel model) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> containers = SModelOperations.getRootsIncludingImported(model, "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer");

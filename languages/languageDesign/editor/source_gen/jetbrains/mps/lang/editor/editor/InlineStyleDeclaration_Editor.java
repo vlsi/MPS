@@ -12,7 +12,6 @@ public class InlineStyleDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_tl5ft1_a(editorContext, node);
   }
-
   private EditorCell createComponent_tl5ft1_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor.CellStyle_Component");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

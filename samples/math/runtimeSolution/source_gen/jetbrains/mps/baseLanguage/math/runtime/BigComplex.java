@@ -8,22 +8,18 @@ import java.math.MathContext;
 public class BigComplex extends Number {
   private BigDecimal myRealPart;
   private BigDecimal myImagPart;
-
   public BigComplex(Complex c) {
     myRealPart = BigDecimal.valueOf(c.re());
     myImagPart = BigDecimal.valueOf(c.im());
   }
-
   public BigComplex(BigDecimal bd1, BigDecimal bd2) {
     myRealPart = bd1;
     myImagPart = bd2;
   }
-
   public BigComplex(double d1, double d2) {
     myRealPart = BigDecimal.valueOf(d1);
     myImagPart = BigDecimal.valueOf(d2);
   }
-
   @Override
   public boolean equals(Object obj) {
     if ((obj == null) || !((obj instanceof BigComplex))) {
@@ -32,7 +28,6 @@ public class BigComplex extends Number {
     BigComplex Cobj = (BigComplex) obj;
     return (Cobj.myRealPart.compareTo(myRealPart) == 0) && (Cobj.myImagPart.compareTo(myImagPart) == 0);
   }
-
   @Override
   public String toString() {
     if (myImagPart.signum() == 0) {
@@ -43,84 +38,65 @@ public class BigComplex extends Number {
     }
     return "(" + myRealPart + ((myImagPart.signum() > 0 ? "+" : "-")) + myImagPart.abs() + "*I)";
   }
-
   public BigDecimal re() {
     return myRealPart;
   }
-
   public BigDecimal im() {
     return myImagPart;
   }
-
   public BigDecimal abs(MathContext mc) {
     return MathRuntime.sqrt(re().pow(2).add(im().pow(2)), mc);
   }
-
   public BigComplex add(BigComplex b) {
     return new BigComplex(myRealPart.add(b.myRealPart), myImagPart.add(b.myImagPart));
   }
-
   public BigComplex sub(BigComplex b) {
     return new BigComplex(myRealPart.subtract(b.myRealPart), myImagPart.subtract(b.myImagPart));
   }
-
   public BigComplex mul(BigComplex b) {
     return new BigComplex(myRealPart.multiply(b.myRealPart).subtract(myImagPart.multiply(b.myImagPart)), myRealPart.multiply(b.myImagPart).add(b.myRealPart.multiply(myImagPart)));
   }
-
   public BigComplex inv() {
     BigDecimal s = myRealPart.multiply(myRealPart).add(myImagPart.multiply(myImagPart));
     return new BigComplex(myRealPart.divide(s), myImagPart.divide(s).negate());
   }
-
   public BigComplex div(BigComplex b) {
     return mul(b.inv());
   }
-
   public BigComplex conj() {
     return new BigComplex(myRealPart, myImagPart.negate());
   }
-
   public BigComplex add(BigComplex b, MathContext mc) {
     return new BigComplex(myRealPart.add(b.myRealPart, mc), myImagPart.add(b.myImagPart, mc));
   }
-
   public BigComplex sub(BigComplex b, MathContext mc) {
     return new BigComplex(myRealPart.subtract(b.myRealPart, mc), myImagPart.subtract(b.myImagPart, mc));
   }
-
   public BigComplex mul(BigComplex b, MathContext mc) {
     return new BigComplex(myRealPart.multiply(b.myRealPart, mc).subtract(myImagPart.multiply(b.myImagPart, mc), mc), myRealPart.multiply(b.myImagPart, mc).add(b.myRealPart.multiply(myImagPart, mc), mc));
   }
-
   public BigComplex inv(MathContext mc) {
     BigDecimal s = myRealPart.multiply(myRealPart, mc).add(myImagPart.multiply(myImagPart), mc);
     return new BigComplex(myRealPart.divide(s, mc), myImagPart.divide(s, mc).negate());
   }
-
   public BigComplex div(BigComplex b, MathContext mc) {
     return mul(b.inv(mc));
   }
-
   public Complex toComplex() {
     return new Complex(myRealPart.doubleValue(), myImagPart.doubleValue());
   }
-
   @Override
   public int intValue() {
     return this.myRealPart.intValue();
   }
-
   @Override
   public long longValue() {
     return this.myRealPart.longValue();
   }
-
   @Override
   public float floatValue() {
     return this.myRealPart.floatValue();
   }
-
   @Override
   public double doubleValue() {
     return this.myRealPart.doubleValue();

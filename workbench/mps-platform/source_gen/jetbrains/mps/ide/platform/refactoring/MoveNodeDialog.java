@@ -18,14 +18,12 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
   private SNode myNodeToMove;
   private MoveNodeDialog.NodeFilter myNodeFilter;
   private SNode mySelectedObject;
-
   public MoveNodeDialog(@NotNull Project project, SNode node) {
     super(project);
     myNodeToMove = node;
     init();
     setTitle(REFACTORING_NAME + " " + "node");
   }
-
   @Override
   protected void doRefactoringAction() {
     final Object selectedObject = myChooser.getSelectedObject();
@@ -46,11 +44,9 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
       super.doRefactoringAction();
     }
   }
-
   public void setFilter(MoveNodeDialog.NodeFilter filter) {
     myNodeFilter = filter;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
@@ -63,37 +59,30 @@ public class MoveNodeDialog extends ModelOrNodeChooserDialog {
     centerPanel.setPreferredSize(new Dimension(400, 900));
     return centerPanel;
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return getClass().getName();
   }
-
   public static SNode getSelectedObject(@NotNull Project project, SNode node) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.show();
     return dialog.mySelectedObject;
   }
-
   public static SNode getSelectedObject(@NotNull Project project, SNode node, MoveNodeDialog.NodeFilter filter) {
     MoveNodeDialog dialog = new MoveNodeDialog(project, node);
     dialog.setFilter(filter);
     dialog.show();
     return dialog.mySelectedObject;
   }
-
   public static abstract class NodeFilter extends ModelOrNodeChooserDialog.Filter {
     public NodeFilter() {
     }
-
     public NodeFilter(String errorMessage) {
       super(errorMessage);
     }
-
     public abstract boolean check(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode);
-
     private boolean checkForObject(SNode selectedObject, SNode nodeToMove, SModel modelOfSelectedNode, JComponent component) {
       if (!(check(selectedObject, nodeToMove, modelOfSelectedNode))) {
         showError("Nodes can't be moved", component);

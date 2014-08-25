@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,12 +17,15 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-public class MigrationRefactoringAdapter extends BaseIntention {
+import java.util.Collection;
+import java.util.Collections;
+
+public class MigrationRefactoringAdapter extends BaseIntentionFactory {
   private final AbstractMigrationRefactoring myRefactoring;
   private final SNodeReference myIntentionNodeReference;
   private final String myPresentation;
@@ -46,16 +49,6 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   }
 
   @Override
-  public boolean isParameterized() {
-    return false;  
-  }
-
-  @Override
-  public String getDescription(SNode node, EditorContext editorContext) {
-    return "Migration: " + NameUtil.multiWordCapitalize(myRefactoring.getName());
-  }
-
-  @Override
   public boolean isApplicable(SNode node, EditorContext editorContext) {
     return myRefactoring.isApplicableInstanceNode(node);
   }
@@ -66,18 +59,8 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   }
 
   @Override
-  public void execute(SNode node, EditorContext editorContext) {
-    myRefactoring.doUpdateInstanceNode(node);
-  }
-
-  @Override
   public IntentionType getType() {
     return IntentionType.MIGRATION;
-  }
-
-  @Override
-  public SNode getNodeByIntention() {
-    return null;
   }
 
   @Override
@@ -93,5 +76,33 @@ public class MigrationRefactoringAdapter extends BaseIntention {
   @Override
   public String getPresentation() {
     return myPresentation;
+  }
+
+  @Override
+  public boolean isSurroundWith() {
+    return false;
+  }
+
+  @Override
+  public Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext) {
+    return Collections.<IntentionExecutable>singleton(new Executable());
+  }
+
+  private class Executable implements IntentionExecutable {
+
+    @Override
+    public String getDescription(SNode node, EditorContext editorContext) {
+      return "Migration: " + NameUtil.multiWordCapitalize(myRefactoring.getName());
+    }
+
+    @Override
+    public void execute(SNode node, EditorContext editorContext) {
+      myRefactoring.doUpdateInstanceNode(node);
+    }
+
+    @Override
+    public IntentionDescriptor getDescriptor() {
+      return MigrationRefactoringAdapter.this;
+    }
   }
 }

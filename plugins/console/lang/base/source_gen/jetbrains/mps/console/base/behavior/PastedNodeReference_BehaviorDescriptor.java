@@ -10,23 +10,18 @@ import com.intellij.openapi.project.Project;
 public class PastedNodeReference_BehaviorDescriptor extends AbstractNodeRefExpression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor, INodeWithReference_BehaviorDescriptor {
   public PastedNodeReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return INodeWithReference_Behavior.virtual_canExecute_3282455643657932881(thisNode);
   }
-
   public void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     INodeWithReference_Behavior.virtual_execute_8517397753922085153(thisNode, project);
   }
-
   public SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return PastedNodeReference_Behavior.virtual_getTargetNode_3575813534625153815(thisNode);
   }
-
   public String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return PastedNodeReference_Behavior.virtual_getTextWhenBroken_328850564593858078(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.PastedNodeReference";

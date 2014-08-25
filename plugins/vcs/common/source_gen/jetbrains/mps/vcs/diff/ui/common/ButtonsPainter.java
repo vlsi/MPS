@@ -32,7 +32,6 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
   private boolean myHighlightLeft;
   private List<FoldingAreaButton> myButtons = null;
   private FoldingAreaButton myCurrentButton = null;
-
   public ButtonsPainter(int iconCount, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(editorComponent.getLeftEditorHighlighter());
     myWidth = (GAP + ICON_SIZE) * iconCount + LEFT_MARGIN;
@@ -44,26 +43,21 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       }
     });
   }
-
   protected boolean isHighlightLeft() {
     return myHighlightLeft;
   }
-
   @Override
   public int getWeight() {
     return 2;
   }
-
   @Override
   public int getLeftAreaWidth() {
     return (myHighlightLeft ? 0 : myWidth);
   }
-
   @Override
   public int getRightAreaWidth() {
     return (myHighlightLeft ? myWidth : 0);
   }
-
   @Override
   protected void paintInLocalCoordinates(Graphics graphics) {
     ensureButtonsCreated();
@@ -72,7 +66,6 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       b.paint(graphics);
     }
   }
-
   private void ensureButtonsCreated() {
     if (myButtons == null) {
       myButtons = ListSequence.fromList(new ArrayList<FoldingAreaButton>());
@@ -85,9 +78,7 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       }
     }
   }
-
   protected abstract Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y);
-
   @Override
   public void mouseMoved(MouseEvent event) {
     myCurrentButton = findButtonUnder(event.getPoint());
@@ -97,12 +88,10 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       event.getComponent().setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
     }
   }
-
   @Override
   public String getToolTipText() {
     return check_of7u5x_a0a81(myCurrentButton);
   }
-
   @Override
   public void mousePressed(MouseEvent event) {
     if (event.getButton() == MouseEvent.BUTTON1 && event.getID() == MouseEvent.MOUSE_CLICKED) {
@@ -110,13 +99,11 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       event.consume();
     }
   }
-
   @Override
   public void mouseExited(MouseEvent event) {
     myCurrentButton = null;
     event.getComponent().setCursor(null);
   }
-
   @Nullable
   private FoldingAreaButton findButtonUnder(@NotNull final Point p) {
     ensureButtonsCreated();
@@ -128,12 +115,10 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
       }
     });
   }
-
   @Override
   public void relayout() {
     myButtons = null;
   }
-
   protected int getX(int index) {
     int x = (1 + index) * (-GAP - ICON_SIZE) - LEFT_MARGIN;
     if (myHighlightLeft) {
@@ -141,7 +126,6 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     }
     return x;
   }
-
   static {
     Icon icon = IdeIcons.APPLY;
     BufferedImage image = new BufferedImage(icon.getIconWidth(), icon.getIconHeight(), BufferedImage.TYPE_INT_ARGB);
@@ -150,14 +134,12 @@ public abstract class ButtonsPainter extends AbstractFoldingAreaPainter {
     icon.paintIcon(null, g2d, -icon.getIconWidth(), 0);
     MIRRORED_APPLY_ICON = new ImageIcon(image);
   }
-
   private static String check_of7u5x_a0a81(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getToolTipText();
     }
     return null;
   }
-
   private static void check_of7u5x_a0a0a91(FoldingAreaButton checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.performAction();

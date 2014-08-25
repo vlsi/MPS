@@ -7,7 +7,6 @@ import jetbrains.mps.sampleXML.behavior.ElementPart_BehaviorDescriptor;
 public class Label_BehaviorDescriptor extends ElementPart_BehaviorDescriptor {
   public Label_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.generator_demo.demoLang6.structure.Label";

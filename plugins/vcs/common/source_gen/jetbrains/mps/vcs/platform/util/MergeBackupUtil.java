@@ -33,7 +33,6 @@ import org.apache.log4j.LogManager;
 public class MergeBackupUtil {
   public MergeBackupUtil() {
   }
-
   public static File zipModel(DiffContent[] contents, VirtualFile file) throws IOException {
     File tmpDir = FileUtil.createTmpDir();
     MergeDriverBackupUtil.writeContentsToFile(contents[MergeConstants.ORIGINAL].getDocument().getText().getBytes(FileUtil.DEFAULT_CHARSET), file.getName(), tmpDir, MergeVersion.BASE.getSuffix());
@@ -45,7 +44,6 @@ public class MergeBackupUtil {
     FileUtil.delete(tmpDir);
     return zipfile;
   }
-
   public static void packMergeResult(File file, String fileName, String resultContent) {
     try {
       File tmp = FileUtil.createTmpDir();
@@ -73,15 +71,12 @@ public class MergeBackupUtil {
       }
     }
   }
-
   public static String getMergeBackupDirPath() {
     return PathManager.getSystemPath() + File.separator + "merge-backup";
   }
-
   private static void writeContentsToFile(DiffContent contents, VirtualFile file, File tmpDir, String suffix) throws IOException {
     MergeDriverBackupUtil.writeContentsToFile(contents.getBytes(), file.getName(), tmpDir, suffix);
   }
-
   @Nullable
   public static String[] loadZippedModelsAsText(File zipfile, ModelVersion[] versions) throws IOException {
     File tmpdir = FileUtil.createTmpDir();
@@ -108,7 +103,6 @@ public class MergeBackupUtil {
     FileUtil.delete(tmpdir);
     return models;
   }
-
   @Nullable
   public static SModel[] loadZippedModels(File zipfile, ModelVersion[] versions) throws IOException, ModelReadException {
     String[] modelsAsText = MergeBackupUtil.loadZippedModelsAsText(zipfile, versions);
@@ -121,13 +115,11 @@ public class MergeBackupUtil {
     }
     return models;
   }
-
   public static File chooseZipFileForModelFile(IFile file) {
     MergeDriverBackupUtil.setMergeBackupDirPath(getMergeBackupDirPath());
     org.jetbrains.mps.openapi.model.SModel model = SModelFileTracker.getInstance().findModel(file);
     return MergeDriverBackupUtil.chooseZipFileForModelLongName(file.getName(), (model != null ? SModelStereotype.withoutStereotype(model.getModelName()) : null));
   }
-
   public static Iterable<File> findZipFilesForModelFile(final String modelFileName) {
     File[] files = new File(MergeBackupUtil.getMergeBackupDirPath()).listFiles(new FilenameFilter() {
       public boolean accept(File dir, String name) {
@@ -140,6 +132,5 @@ public class MergeBackupUtil {
       }
     }, false);
   }
-
   protected static Logger LOG = LogManager.getLogger(MergeBackupUtil.class);
 }

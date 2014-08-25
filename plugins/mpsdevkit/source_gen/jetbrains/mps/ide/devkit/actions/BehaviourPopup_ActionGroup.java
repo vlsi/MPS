@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class BehaviourPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(BehaviourPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.BehaviourPopup_ActionGroup";
-
   public BehaviourPopup_ActionGroup() {
     super("BehaviourPopup", ID);
     this.setIsInternal(false);

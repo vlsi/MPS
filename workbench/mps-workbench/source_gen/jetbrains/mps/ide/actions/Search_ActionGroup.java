@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class Search_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Search_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Search_ActionGroup";
-
   public Search_ActionGroup() {
     super("Search", ID);
     this.setIsInternal(false);

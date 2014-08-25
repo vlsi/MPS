@@ -74,7 +74,6 @@ public class ModuleGenerationHolder {
   private final ModuleGenerationHolder.MyMessageHandler myMessageHandler = new ModuleGenerationHolder.MyMessageHandler();
   private boolean isSucessful;
 
-
   public ModuleGenerationHolder(SModule module, Project project) {
     this.module = module;
     this.project = project;
@@ -88,8 +87,6 @@ public class ModuleGenerationHolder {
     }
     this.tmpPath = tmpDir.getAbsolutePath();
   }
-
-
 
   public void build() throws Exception {
     if (!(needsGeneration())) {
@@ -145,23 +142,18 @@ public class ModuleGenerationHolder {
     }
     isSucessful = result.value.isSucessful();
   }
-
   public boolean isBuildSucessful() {
     return isSucessful;
   }
-
   public List<String> buildErrors() {
     return myMessageHandler.getGenerationErrors();
   }
-
   public List<String> buildWarns() {
     return myMessageHandler.getGenerationWarnings();
   }
-
   /*package*/ boolean hasFilesGenerated() {
     return !(MapSequence.fromMap(path2tmp).isEmpty());
   }
-
   public List<String> diff() {
     List<String> diffs = ListSequence.fromList(new ArrayList<String>());
     for (IMapping<String, String> p2t : MapSequence.fromMap(path2tmp).mappingsSet()) {
@@ -181,7 +173,6 @@ public class ModuleGenerationHolder {
     }
     return diffs;
   }
-
   private IFile tmpFile(String path) {
     if (MapSequence.fromMap(path2tmp).containsKey(path)) {
       return FileSystem.getInstance().getFileByPath(MapSequence.fromMap(path2tmp).get(path));
@@ -192,7 +183,6 @@ public class ModuleGenerationHolder {
     MapSequence.fromMap(path2tmp).put(path, tmp);
     return FileSystem.getInstance().getFileByPath(tmp);
   }
-
   private void diffDirs(final File orig, File revd, final List<String> diffs) {
     Iterable<String> onames = Sequence.fromArray(orig.list());
     Iterable<String> rnames = Sequence.fromArray(revd.list());
@@ -236,11 +226,9 @@ public class ModuleGenerationHolder {
       }
     }
   }
-
   private boolean ignoredFile(String fileName) {
     return SetSequence.fromSet(ignoredFiles).contains(fileName) || (fileName != null && fileName.startsWith(".hash"));
   }
-
   private List<String> fileToStrings(File f) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     BufferedReader in = null;
@@ -262,7 +250,6 @@ public class ModuleGenerationHolder {
     }
     return result;
   }
-
   public void cleanUp() {
     for (Queue<File> dirs = QueueSequence.fromQueueAndArray(new LinkedList<File>(), new File(tmpPath)); QueueSequence.fromQueue(dirs).isNotEmpty();) {
       File dir = QueueSequence.fromQueue(dirs).removeFirstElement();
@@ -279,7 +266,6 @@ public class ModuleGenerationHolder {
     MapSequence.fromMap(path2tmp).clear();
     myMessageHandler.cleanUp();
   }
-
   /*package*/ boolean needsGeneration() {
     return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
       public Boolean compute() {
@@ -292,11 +278,9 @@ public class ModuleGenerationHolder {
       }
     });
   }
-
   private static ScriptBuilder defaultScriptBuilder() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make"));
   }
-
   private static Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -308,7 +292,6 @@ public class ModuleGenerationHolder {
       }
     }));
   }
-
   private static Iterable<IResource> collectResources(IOperationContext context, final SModule module) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -328,14 +311,11 @@ public class ModuleGenerationHolder {
       }
     })).resources(false);
   }
-
   private static class MyMessageHandler implements IMessageHandler {
     private final List<String> myGenerationErrors = new ArrayList<String>();
     private final List<String> myGenerationWarnings = new ArrayList<String>();
-
     private MyMessageHandler() {
     }
-
     @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
@@ -356,20 +336,16 @@ public class ModuleGenerationHolder {
         default:
       }
     }
-
     public List<String> getGenerationErrors() {
       return myGenerationErrors;
     }
-
     public List<String> getGenerationWarnings() {
       return myGenerationWarnings;
     }
-
     public void cleanUp() {
       myGenerationErrors.clear();
       myGenerationWarnings.clear();
     }
-
     @Override
     public void clear() {
     }

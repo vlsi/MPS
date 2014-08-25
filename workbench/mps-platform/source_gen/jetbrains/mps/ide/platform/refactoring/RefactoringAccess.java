@@ -12,25 +12,18 @@ import jetbrains.mps.refactoring.framework.IRefactoring;
 public abstract class RefactoringAccess {
   private static RefactoringAccess ourInstance;
   private RefactoringFacade myRefactoringFacade;
-
   public RefactoringAccess() {
   }
-
   public RefactoringFacade getRefactoringFacade() {
     if (myRefactoringFacade == null) {
       myRefactoringFacade = new RefactoringFacade();
     }
     return myRefactoringFacade;
   }
-
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SNode node);
-
   public abstract ModelElementTargetChooser createTargetChooser(Project project, SModel model);
-
   public abstract void showRefactoringView(Project project, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
-
   public abstract boolean showRefactoringDialog(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate);
-
   public boolean showRefactoringDialogBase(Project project, RefactoringContext refactoringContext, IRefactoring refactoring, boolean hasModelsToGenerate) {
     if (!(RefactoringOptionsDialog.needToBeShown(refactoring, hasModelsToGenerate))) {
       return false;
@@ -39,13 +32,10 @@ public abstract class RefactoringAccess {
     dialog.show();
     return dialog.isCancelled();
   }
-
   public abstract void showRefactoringView(RefactoringContext refactoringContext, RefactoringViewAction callback, SearchResults searchResults, boolean hasModelsToGenerate, String name);
-
   public static RefactoringAccess getInstance() {
     return ourInstance;
   }
-
   protected static void setInstance(RefactoringAccess instance) {
     ourInstance = instance;
   }

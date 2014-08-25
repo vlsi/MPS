@@ -13,35 +13,27 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 public abstract class AbstractStyledTextOperation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IOperation_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public AbstractStyledTextOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
     return AbstractStyledTextOperation_Behavior.virtual_getMethodToGenerate_1262430001741492328(thisConcept);
   }
-
   public List<SNode> virtual_getOperationArgumentType_6575219246652510406(SConcept thisConcept) {
     return AbstractStyledTextOperation_Behavior.virtual_getOperationArgumentType_6575219246652510406(thisConcept);
   }
-
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
   }
-
   public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
   }
-
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
   }
-
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
   }
-
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation";

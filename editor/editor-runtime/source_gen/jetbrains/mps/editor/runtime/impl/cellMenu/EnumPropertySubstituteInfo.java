@@ -20,13 +20,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myNode;
   private SNode myPropertyDeclaration;
-
   public EnumPropertySubstituteInfo(SNode node, SNode propertyDeclaration, EditorContext editorContext) {
     super(editorContext);
     myNode = node;
     myPropertyDeclaration = propertyDeclaration;
   }
-
   @Override
   protected List<SubstituteAction> createActions() {
     SNode enumDataType = (SNode) SLinkOperations.getTarget(myPropertyDeclaration, "dataType", false);
@@ -37,7 +35,6 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
         public String getMatchingText(String pattern) {
           return SPropertyOperations.getString(enumMemberDeclaration, "externalValue");
         }
-
         @Override
         protected SNode doSubstitute(@Nullable EditorContext editorContext, String pattern) {
           String propertyName = SPropertyOperations.getString(myPropertyDeclaration, "name");

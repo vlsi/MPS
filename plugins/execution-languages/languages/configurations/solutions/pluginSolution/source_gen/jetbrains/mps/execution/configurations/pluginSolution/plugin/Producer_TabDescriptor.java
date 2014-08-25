@@ -18,30 +18,24 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class Producer_TabDescriptor extends RelationDescriptor {
   public Producer_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Producer";
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new Producer_Order().compare(this, descriptor);
   }
-
   public void startListening() {
     throw new RuntimeException("NOT IMPLEMENTED");
   }
-
   public SNode getBaseNode(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"), "configuration", true), "persistentConfiguration", false);
     }
     return null;
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.execution.configurations.structure.RunConfiguration");
   }
-
   public List<SNode> getNodes(SNode node) {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")).where(new IWhereFilter<SNode>() {
@@ -50,22 +44,18 @@ public class Producer_TabDescriptor extends RelationDescriptor {
       }
     }).toListSequence();
   }
-
   public boolean isSingle() {
     return false;
   }
-
   public List<SNode> getConcepts(final SNode node) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer"));
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     SNode producer = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
     SLinkOperations.setTarget(producer, "configuration", createPersistentConfigurationType_rqzr2x_a0b0a0(node), true);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
     return producer;
   }
-
   private static SNode createPersistentConfigurationType_rqzr2x_a0b0a0(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, false);

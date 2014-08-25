@@ -23,7 +23,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class RenamePropertyRefactoringTester_Simple implements IRefactoringTester {
   public RenamePropertyRefactoringTester_Simple() {
   }
-
   @Override
   public boolean testRefactoring(final Project project, final SModel sandbox1, final SModel sandbox2, final Language testRefactoringLanguage, final Language testRefactoringTargetLanguage) {
     final ModelAccess modelAccess = project.getRepository().getModelAccess();

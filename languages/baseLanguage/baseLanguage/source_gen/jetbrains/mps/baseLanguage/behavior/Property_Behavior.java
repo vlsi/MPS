@@ -28,23 +28,18 @@ public class Property_Behavior {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
     SLinkOperations.setTarget(thisNode, "propertyImplementation", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", null), true);
   }
-
   public static boolean call_isDefaultImplementation_1213877383134(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation");
   }
-
   public static boolean call_isCustomImplementation_1213877383144(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
-
   public static boolean call_isCustomSetterOnlyImplementation_2622108313329276688(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
   }
-
   public static SNode call_getCustomPropertyImplementation_1213877383154(SNode thisNode) {
     return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
   }
-
   public static List<SNode> call_getCustomSetterStatements_2622108313339491118(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation")) {
       return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
@@ -52,19 +47,15 @@ public class Property_Behavior {
       return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation"), "setAccessor", true), "statementList", true), "statement", true);
     }
   }
-
   public static String call_getPropertyNameWithId_1213877383162(SNode thisNode) {
     return NameUtil.capitalize(SPropertyOperations.getString(thisNode, "propertyName"));
   }
-
   public static String call_getGetterMethodName_1213877383170(SNode thisNode) {
     return (check_9xvv7i_a0a0g(SLinkOperations.getTarget(thisNode, "type", true)) ? "is" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode) : "get" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode));
   }
-
   public static String call_getSetterMethodName_1213877383179(SNode thisNode) {
     return "set" + Property_Behavior.call_getPropertyNameWithId_1213877383162(thisNode);
   }
-
   public static SNode call_getSetterVisibility_1213877383188(SNode thisNode) {
     SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
     if (Property_Behavior.call_isDefaultImplementation_1213877383134(thisNode)) {
@@ -75,7 +66,6 @@ public class Property_Behavior {
     }
     return visibility;
   }
-
   public static boolean call_isSetterVisible_6861608246233143251(SNode thisNode, final SNode contextClassifier, SNode contextNode) {
     SNode setterVisibility = Property_Behavior.call_getSetterVisibility_1213877383188(thisNode);
     // public 
@@ -122,31 +112,25 @@ public class Property_Behavior {
 
     return false;
   }
-
   public static boolean call_hasSetter_1213877383224(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "propertyImplementation", true), "virtual_hasSetter_1213877430658", new Object[]{});
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     // todo: just populate for now, make it right! 
     context.addMember(thisNode, null);
   }
-
   private static boolean check_9xvv7i_a0a0g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SNodeOperations.isInstanceOf(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.BooleanType");
     }
     return false;
   }
-
   private static boolean eq_9xvv7i_a0a0i0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_9xvv7i_a0b0k0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class ModuleTarget_BehaviorDescriptor extends RefactoringTarget_BehaviorDescriptor {
   public ModuleTarget_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.ModuleTarget";

@@ -12,30 +12,30 @@
   <root nodeRef="r:e54ee518-0377-432d-bc34-b3be6fdddf5b(jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox)/3196018662491356444">
     <file name="ABC.java">
       <node id="4021391592916227669" at="22,0,23,0" concept="3" trace="y" />
-      <node id="4021391592917060957" at="36,7,37,16" concept="5" />
-      <node id="7344646339284604304" at="52,6,53,12" concept="2" />
-      <node id="8970989240999294857" at="54,6,55,26" concept="2" />
-      <node id="4021391592915198829" at="55,26,56,13" concept="6" />
-      <node id="8970989240998551037" at="51,52,54,6" concept="0" />
+      <node id="4021391592917060957" at="34,7,35,16" concept="5" />
+      <node id="7344646339284604304" at="50,6,51,12" concept="2" />
+      <node id="8970989240999294857" at="52,6,53,26" concept="2" />
+      <node id="4021391592915198829" at="53,26,54,13" concept="6" />
+      <node id="8970989240998551037" at="49,52,52,6" concept="0" />
       <node id="5562345046718955349" at="12,0,16,0" concept="7" trace="SOME_CONSTANT" />
       <node id="6832197706140999820" at="16,0,22,0" concept="3" trace="x" />
-      <node id="4021391592916173800" at="24,0,31,0" concept="1" trace="ABC#()V" />
-      <node id="4021391592916173790" at="82,0,89,0" concept="8" trace="foo#()V" />
-      <node id="4021391592915624548" at="59,0,81,0" concept="4" trace="foo#(null)V" />
-      <node id="7344646339283099538" at="32,0,58,0" concept="4" trace="foo#(I)I" />
-      <scope id="4021391592916173803" at="29,16,29,16" />
-      <scope id="4021391592915624551" at="79,32,79,32" />
-      <scope id="4021391592916173793" at="87,28,87,28" />
-      <scope id="7344646339283099541" at="51,52,56,13" />
-      <scope id="4021391592916173800" at="24,0,31,0" />
-      <scope id="4021391592916173790" at="82,0,89,0" />
-      <scope id="4021391592915624548" at="59,0,81,0">
+      <node id="4021391592916173800" at="23,0,30,0" concept="1" trace="ABC#()V" />
+      <node id="4021391592916173790" at="78,0,85,0" concept="8" trace="foo#()V" />
+      <node id="4021391592915624548" at="56,0,78,0" concept="4" trace="foo#(null)V" />
+      <node id="7344646339283099538" at="30,0,56,0" concept="4" trace="foo#(I)I" />
+      <scope id="4021391592916173803" at="28,16,28,16" />
+      <scope id="4021391592915624551" at="76,32,76,32" />
+      <scope id="4021391592916173793" at="83,28,83,28" />
+      <scope id="7344646339283099541" at="49,52,54,13" />
+      <scope id="4021391592916173800" at="23,0,30,0" />
+      <scope id="4021391592916173790" at="78,0,85,0" />
+      <scope id="4021391592915624548" at="56,0,78,0">
         <var name="s" id="4021391592915636740" />
       </scope>
-      <scope id="7344646339283099538" at="32,0,58,0">
+      <scope id="7344646339283099538" at="30,0,56,0">
         <var name="a" id="7344646339283099547" />
       </scope>
-      <unit id="3196018662491356444" at="6,0,90,0" name="jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC" />
+      <unit id="3196018662491356444" at="6,0,86,0" name="jetbrains.mps.baseLanguage.javadoc.sandbox.sandbox.ABC" />
     </file>
   </root>
 </debug-info>

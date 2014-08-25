@@ -31,131 +31,99 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_3571912445009978241(final BaseMappingRuleContext _context) {
     return (SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", false, false) != null);
   }
-
   public static boolean baseMappingRule_Condition_4112907264514778044(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference") && SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) == SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_yy")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false) && SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SNodeOperations.cast(((SNode) _context.getPatternVariable("patternVar_xx")), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
-
   public static boolean baseMappingRule_Condition_8900764248744322639(final BaseMappingRuleContext _context) {
     return false;
   }
-
   public static boolean baseMappingRule_Condition_8371596541809088659(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inner", true), "jetbrains.mps.baseLanguage.structure.IntegerLiteral");
   }
-
   public static boolean baseMappingRule_Condition_8371596541809090605(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "inner", true), "jetbrains.mps.baseLanguage.structure.PlusExpression");
   }
-
   public static Object propertyMacro_GetPropertyValue_2163819695913945867(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(((SNode) _context.getPatternVariable("patternVar_aaa")), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_6010543442198681251(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name1");
   }
-
   public static Object propertyMacro_GetPropertyValue_6010543442198681260(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name2");
   }
-
   public static Object propertyMacro_GetPropertyValue_2721957369897795324(final PropertyMacroContext _context) {
     return ((Integer) _context.getVariable("var:var1"));
   }
-
   public static Object propertyMacro_GetPropertyValue_2681305894288695070(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("name")) + ((Boolean) _context.getVariable("b"));
   }
-
   public static Object propertyMacro_GetPropertyValue_2163819695913280744(final PropertyMacroContext _context) {
     return ((String) _context.getVariable("name2"));
   }
-
   public static Object propertyMacro_GetPropertyValue_2681305894288695040(final PropertyMacroContext _context) {
     return "var" + ((Integer) _context.getVariable("i"));
   }
-
   public static Object propertyMacro_GetPropertyValue_5857536350883039219(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, ((SNode) _context.getVariable("node")), "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   public static Object propertyMacro_GetPropertyValue_3571912445009937377(final PropertyMacroContext _context) {
     return _context.getNode().getConcept().getQualifiedName();
   }
-
   public static Object propertyMacro_GetPropertyValue_3571912445009934894(final PropertyMacroContext _context) {
     return "statement" + _context.getNode().getNodeId().toString();
   }
-
   public static Object propertyMacro_GetPropertyValue_3571912445009937427(final PropertyMacroContext _context) {
     return "in ctor " + _context.getNode().getNodeId().toString();
   }
-
   public static Object referenceMacro_GetReferent_1473665232107455264(final ReferenceMacroContext _context) {
     return "a";
   }
-
   public static Object referenceMacro_GetReferent_5955416080080987363(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByMappingLabel("testlabel");
   }
-
   public static SNode sourceNodeQuery_2681305894288283515(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_right"));
   }
-
   public static SNode sourceNodeQuery_2681305894288283498(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_left"));
   }
-
   public static SNode sourceNodeQuery_2681305894288387824(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_right"));
   }
-
   public static SNode sourceNodeQuery_2681305894288387821(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getPatternVariable("patternVar_left"));
   }
-
   public static SNode sourceNodeQuery_1473665232107485240(final SourceSubstituteMacroNodeContext _context) {
     return null;
   }
-
   public static SNode sourceNodeQuery_4146564171992412788(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "statement", true);
   }
-
   public static SNode sourceNodeQuery_4146564171992617089(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("left"));
   }
-
   public static SNode sourceNodeQuery_4146564171992617085(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("right"));
   }
-
   public static SNode sourceNodeQuery_2681305894288695056(final SourceSubstituteMacroNodeContext _context) {
     return ((SNode) _context.getVariable("expr"));
   }
-
   public static Object templateArgumentQuery_4816349095291000368(final TemplateQueryContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Iterable<SNode> sourceNodesQuery_3571912445009918069(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "statements", true), "statement", true);
   }
-
   public static SNode templateFragment_ContextNodeQuery_3571912445009937447(final TemplateFragmentContext _context) {
     return SLinkOperations.getTarget(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), "body", true);
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_3571912445009918066(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.transformation.test.outputLang.structure.CustomRoot", false, false), "rootcustom");
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_4146564171992608883(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a23();
     if (!(pattern.match(_context.getNode()))) {
@@ -167,7 +135,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_2681305894288275225(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a33();
     if (!(pattern.match(_context.getNode()))) {
@@ -175,7 +142,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_2681305894288382558(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a43();
     if (!(pattern.match(_context.getNode()))) {
@@ -183,7 +149,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_2681305894288486365(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a53();
     if (!(pattern.match(_context.getNode()))) {
@@ -191,7 +156,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_2163819695913701566(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a63();
     if (!(pattern.match(_context.getNode()))) {
@@ -199,7 +163,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_5857536350883030949(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a73();
     if (!(pattern.match(_context.getNode()))) {
@@ -207,7 +170,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_933643154465852759(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a83();
     if (!(pattern.match(_context.getNode()))) {
@@ -215,7 +177,6 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static GeneratedMatchingPattern patternRule_Condition_8371596541809088644(final PatternRuleContext _context) {
     GeneratedMatchingPattern pattern = new QueriesGenerated.Pattern_x583g4_a0a0a93();
     if (!(pattern.match(_context.getNode()))) {
@@ -223,23 +184,18 @@ public class QueriesGenerated {
     }
     return pattern;
   }
-
   public static Object insertMacro_varValue_5015072279636761109(final TemplateQueryContext _context) {
     return 42;
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }
-
   public static class Pattern_x583g4_a0a0a23 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_right;
     /*package*/ SNode patternVar_xx;
     /*package*/ SNode patternVar_yy;
-
     public Pattern_x583g4_a0a0a23() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a23 = nodeToMatch;
@@ -309,11 +265,9 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
@@ -321,7 +275,6 @@ public class QueriesGenerated {
         patternVar_yy = (SNode) pattern.getFieldValue("patternVar_yy");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_right".equals(fieldName)) {
         return patternVar_right;
@@ -334,18 +287,14 @@ public class QueriesGenerated {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a33 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_left;
     /*package*/ SNode patternVar_right;
-
     public Pattern_x583g4_a0a0a33() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a33 = nodeToMatch;
@@ -375,18 +324,15 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_left".equals(fieldName)) {
         return patternVar_left;
@@ -396,18 +342,14 @@ public class QueriesGenerated {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a43 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_right;
     /*package*/ SNode patternVar_left;
-
     public Pattern_x583g4_a0a0a43() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a43 = nodeToMatch;
@@ -452,18 +394,15 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_right = (SNode) pattern.getFieldValue("patternVar_right");
         patternVar_left = (SNode) pattern.getFieldValue("patternVar_left");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_right".equals(fieldName)) {
         return patternVar_right;
@@ -473,18 +412,14 @@ public class QueriesGenerated {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a53 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_myExpr;
     /*package*/ String patternVar_jobName;
-
     public Pattern_x583g4_a0a0a53() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a53 = nodeToMatch;
@@ -505,18 +440,15 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_myExpr = (SNode) pattern.getFieldValue("patternVar_myExpr");
         patternVar_jobName = (String) pattern.getFieldValue("patternVar_jobName");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_myExpr".equals(fieldName)) {
         return patternVar_myExpr;
@@ -526,18 +458,14 @@ public class QueriesGenerated {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a63 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_aaa;
     /*package*/ String patternVar_null;
-
     public Pattern_x583g4_a0a0a63() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a63 = nodeToMatch;
@@ -552,18 +480,15 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_aaa = (SNode) pattern.getFieldValue("patternVar_aaa");
         patternVar_null = (String) pattern.getFieldValue("patternVar_null");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_aaa".equals(fieldName)) {
         return patternVar_aaa;
@@ -573,17 +498,13 @@ public class QueriesGenerated {
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a73 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ref;
-
     public Pattern_x583g4_a0a0a73() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a73 = nodeToMatch;
@@ -597,34 +518,27 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ref".equals(fieldName)) {
         return patternVar_ref;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a83 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ref;
-
     public Pattern_x583g4_a0a0a83() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a83 = nodeToMatch;
@@ -638,34 +552,27 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ref".equals(fieldName)) {
         return patternVar_ref;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   public static class Pattern_x583g4_a0a0a93 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ref;
-
     public Pattern_x583g4_a0a0a93() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_x583g4_a0a0a93 = nodeToMatch;
@@ -679,24 +586,20 @@ public class QueriesGenerated {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_ref = (SNode) pattern.getFieldValue("patternVar_ref");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_ref".equals(fieldName)) {
         return patternVar_ref;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

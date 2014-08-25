@@ -16,7 +16,6 @@ public class ConceptProperties {
     SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "conceptAlias", "foo");
     SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "conceptAlias", "bar");
   }
-
   public void booleanConceptProperty(SNode node) {
     boolean isAbstract = false;
     if (SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract")) {
@@ -26,7 +25,6 @@ public class ConceptProperties {
     SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "abstract", "" + (true));
     SPropertyOperations.set(SNodeOperations.getConceptDeclaration(node), "abstract", "" + (false));
   }
-
   public void m1(SNode node) {
     SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "conceptAlias");
   }

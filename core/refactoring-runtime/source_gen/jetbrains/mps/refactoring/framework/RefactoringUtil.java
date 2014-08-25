@@ -36,10 +36,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class RefactoringUtil {
   private static final Logger LOG = LogManager.getLogger(RefactoringUtil.class);
-
   public RefactoringUtil() {
   }
-
   public static IRefactoring getRefactoringByClassName(String className) {
     for (IRefactoring r : RefactoringUtil.getAllRefactorings()) {
       Class refClass = (r instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) r).getRefactoringClass() : r.getClass());
@@ -49,7 +47,6 @@ public class RefactoringUtil {
     }
     return null;
   }
-
   public static List<SNode> getAllRefactoringNodes() {
     final List<SNode> availableRefactorings = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -62,7 +59,6 @@ public class RefactoringUtil {
     });
     return availableRefactorings;
   }
-
   public static List<IRefactoring> getAllRefactorings() {
     List<IRefactoring> allRefactorings = new ArrayList<IRefactoring>();
     for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
@@ -70,7 +66,6 @@ public class RefactoringUtil {
     }
     return allRefactorings;
   }
-
   public static Set<IRefactoring> getRefactorings(Language language) {
     Set<IRefactoring> result = new HashSet<IRefactoring>();
     {
@@ -102,7 +97,6 @@ public class RefactoringUtil {
     }
     return result;
   }
-
   public static RefactoringUtil.Applicability getApplicability(IRefactoring refactoring, Collection entities) {
     assert !(entities.isEmpty());
     assert (entities.size() == 1 || refactoring.getRefactoringTarget().allowMultipleTargets());
@@ -135,7 +129,6 @@ public class RefactoringUtil {
     }
     return RefactoringUtil.Applicability.APPLICABLE;
   }
-
   private static boolean isApplicableToEntities(String refactoringName, IRefactoringTarget target, Collection entities) {
     if (!(target.allowMultipleTargets()) && entities.size() > 1) {
       return false;
@@ -154,7 +147,6 @@ public class RefactoringUtil {
     }
     return true;
   }
-
   public static boolean isApplicable(IRefactoring refactoring, Object target) {
     IRefactoringTarget refTarget = refactoring.getRefactoringTarget();
     boolean oneEntity = !(refTarget.allowMultipleTargets());
@@ -168,13 +160,11 @@ public class RefactoringUtil {
     boolean disabled = (targetList.isEmpty() || RefactoringUtil.getApplicability(refactoring, targetList).lessThan(RefactoringUtil.Applicability.APPLICABLE));
     return !(disabled);
   }
-
   public static Map<SModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(Project project, Language language) {
     final Map<SModule, List<SModel>> langs = new LinkedHashMap<SModule, List<SModel>>();
     fillLanguageAndItsExtendingLanguageModels(language, langs);
     return langs;
   }
-
   public static void fillLanguageAndItsExtendingLanguageModels(Language language, Map<SModule, List<SModel>> toFill) {
     Collection<Language> extendingLangs = ModuleRepositoryFacade.getInstance().getAllExtendingLanguages(language);
     toFill.put(language, RefactoringUtil.getLanguageModelsList(language));
@@ -184,7 +174,6 @@ public class RefactoringUtil {
       }
     }
   }
-
   public static List<SModel> getLanguageModelsList(Language l) {
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
     ListSequence.fromList(models).addSequence(ListSequence.fromList(l.getModels()));
@@ -194,7 +183,6 @@ public class RefactoringUtil {
       }
     }).toListSequence();
   }
-
   public static   enum Applicability {
     APPLICABLE() {
       public boolean lessThan(RefactoringUtil.Applicability level) {
@@ -217,7 +205,6 @@ public class RefactoringUtil {
 
     Applicability() {
     }
-
     public abstract boolean lessThan(RefactoringUtil.Applicability level);
   }
 }

@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_DependentComputationNode_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_DependentComputationNode_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_DependentComputationNode";

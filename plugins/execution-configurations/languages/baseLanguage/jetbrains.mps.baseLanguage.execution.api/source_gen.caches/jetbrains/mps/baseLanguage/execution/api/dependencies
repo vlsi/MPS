@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" file="JavaConfigurationOptions.java">
+  <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" file="JavaConfigurationEditorComponent.java">
     <classNode dependClassName="com.intellij.ui.components.JBCheckBox" />
     <classNode dependClassName="com.intellij.ui.components.JBLabel" />
     <classNode dependClassName="java.awt.GridBagLayout" />
@@ -46,7 +46,7 @@
   <dependency className="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" file="JavaRunParameters_Configuration_Editor.java">
     <classNode dependClassName="com.intellij.openapi.options.ConfigurationException" />
     <classNode dependClassName="com.intellij.openapi.util.Factory" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationOptions" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.execution.api.settings.SettingsEditorEx" />

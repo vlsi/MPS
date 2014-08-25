@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class PrivateStaticFieldReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "variableDeclaration", false) == null)) {
       return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", "virtual_getPresentation_1213877396640", new Object[]{});
@@ -22,7 +21,6 @@ public class PrivateStaticFieldReference_Behavior {
     }
     return classifierPresentation + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "name");
   }
-
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return false;
   }

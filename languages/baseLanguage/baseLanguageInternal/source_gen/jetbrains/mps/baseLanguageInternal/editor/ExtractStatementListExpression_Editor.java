@@ -25,7 +25,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_416fys_a(editorContext, node);
   }
-
   private EditorCell createCollection_416fys_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_416fys_a");
@@ -38,7 +37,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_416fys_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_416fys_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_416fys_a0");
@@ -48,7 +46,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_416fys_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_416fys_b0");
@@ -58,7 +55,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_416fys_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_416fys_c0");
@@ -70,7 +66,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_416fys_a2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_416fys_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_416fys_a2a");
@@ -80,7 +75,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_416fys_a0c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_416fys_a0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("stmts");
@@ -100,7 +94,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_416fys_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=>");
     editorCell.setCellId("Constant_416fys_d0");
@@ -111,7 +104,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_416fys_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("innerExpr");
@@ -131,7 +123,6 @@ public class ExtractStatementListExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_416fys_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_416fys_f0");

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class IdSelector_BehaviorDescriptor extends AbstractCellSelector_BehaviorDescriptor {
   public IdSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.IdSelector";

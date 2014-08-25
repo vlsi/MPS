@@ -31,7 +31,6 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_igyl5p_a(editorContext, node);
   }
-
   private EditorCell createCollection_igyl5p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_igyl5p_a");
@@ -42,7 +41,6 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_igyl5p_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_igyl5p_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_igyl5p_a0");
@@ -54,20 +52,16 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ParensRegexp_Editor.ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0(), new ParensRegexp_Editor.ParensRegexp_customReplace_cellMenu_igyl5p_b0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_ParensRegexp_cellMenu_igyl5p_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp";
     }
   }
-
   public static class ParensRegexp_customReplace_cellMenu_igyl5p_b0a0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public ParensRegexp_customReplace_cellMenu_igyl5p_b0a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> res = ListSequence.fromList(new LinkedList<SNode>());
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookAheadRegexp"));
@@ -77,20 +71,16 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
       ListSequence.fromList(res).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"));
       return res;
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), node);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createRefNode_igyl5p_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
@@ -110,7 +100,6 @@ public class ParensRegexp_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_igyl5p_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_igyl5p_c0");

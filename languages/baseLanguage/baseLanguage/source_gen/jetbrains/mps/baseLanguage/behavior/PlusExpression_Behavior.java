@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class PlusExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     Object result;
     Object leftExpression = BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "leftExpression", true), "virtual_eval_1213877519769", new Object[]{module});
@@ -23,7 +22,6 @@ public class PlusExpression_Behavior {
     }
     return result;
   }
-
   public static int virtual_getPriority_1262430001741497858(SAbstractConcept thisConcept) {
     return 10;
   }

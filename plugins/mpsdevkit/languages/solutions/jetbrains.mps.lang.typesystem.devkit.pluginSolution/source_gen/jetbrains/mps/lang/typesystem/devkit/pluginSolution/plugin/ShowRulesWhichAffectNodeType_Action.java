@@ -27,18 +27,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowRulesWhichAffectNodeType_Action() {
     super("Show Rules Which Affect Node's Type", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -49,7 +46,6 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -69,7 +65,6 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<SearchQuery> query = new Wrappers._T<SearchQuery>();
@@ -88,6 +83,5 @@ public class ShowRulesWhichAffectNodeType_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowRulesWhichAffectNodeType_Action.class);
 }

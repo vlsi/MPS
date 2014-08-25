@@ -35,24 +35,19 @@ public class DirParser {
   private ModelAccess myModelAccess;
   private JavaParser myJavaParser = new JavaParser();
 
-
   public DirParser(SModule module, Project project) {
     myModule = module;
     myModelAccess = project.getRepository().getModelAccess();
   }
-
   public DirParser(SModule module, Project project, IFile sourceDir) {
     this(module, project);
     mySourceDirs = ListSequence.fromListAndArray(new ArrayList<IFile>(), sourceDir);
     mySuccessfulFiles = ListSequence.fromList(new ArrayList<IFile>());
   }
 
-
-
   public void addDirectory(IFile dir) {
     ListSequence.fromList(mySourceDirs).addElement(dir);
   }
-
   public void parseDirs() throws IOException, JavaParseException {
     for (IFile sourceDir : ListSequence.fromList(mySourceDirs)) {
       addSourceFromDirectory(sourceDir);
@@ -77,19 +72,13 @@ public class DirParser {
 
   }
 
-
-
   public List<IFile> getSuccessfulFiles() {
     return mySuccessfulFiles;
   }
 
-
-
   public List<SModel> getAffectedModels() {
     return myAffectedModels;
   }
-
-
 
   public void addSourceFromDirectory(final IFile dir) throws IOException, JavaParseException {
     assert dir.isDirectory();
@@ -172,12 +161,10 @@ public class DirParser {
       LOG.info("skipping directory " + dir.getAbsolutePath());
     }
   }
-
   private JavaParser.JavaParseResult parseFile(IFile file) throws IOException, JavaParseException {
     String contents = IFileUtils.getTextContents(file);
     return myJavaParser.parseCompilationUnit(contents);
   }
-
   private SModel registerModelForPackage(String fqName) {
     SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(fqName);
     if (modelDescriptor != null) {
@@ -192,7 +179,6 @@ public class DirParser {
       return createModel(fqName);
     }
   }
-
   private SModel createModel(String packageName) {
     // first check if it is possible 
     if (getRootToCreateModel(packageName) == null) {
@@ -205,7 +191,6 @@ public class DirParser {
 
     return modelDescr;
   }
-
   @Nullable
   private ModelRoot getRootToCreateModel(String packageName) {
     for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
@@ -215,7 +200,6 @@ public class DirParser {
     }
     return null;
   }
-
   public static boolean checkPackageMatchesSourceDirectory(String pkg, IFile sourceDir) {
     String pathPostfix = NameUtil.pathFromNamespace(pkg);
     // pathFromNamespace returns system-dependent path 

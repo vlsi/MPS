@@ -22,7 +22,6 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
   public SNode getApplicableConcept() {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression");
   }
-
   public void postProcesNode(SNode pastedNode) {
 
     if (ListSequence.fromList(SNodeOperations.getAncestors(pastedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false)).where(new IWhereFilter<SNode>() {

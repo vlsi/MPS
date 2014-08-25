@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,22,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="DispatchModifier_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.DispatchModifier_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.DispatchModifier_BehaviorDescriptor" />
     </file>
   </root>
 </debug-info>

@@ -11,12 +11,10 @@ public class RuleTypeDescriptor extends VoidColumnDescriptor {
   public RuleTypeDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellEditor createEditor() {
     return new RuleTypeEditor();
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new RuleTypeRenderer();

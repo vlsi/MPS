@@ -10,19 +10,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class NodesTestMethod_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor {
   public NodesTestMethod_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_getTestCase_1216134500045(thisNode);
   }
-
   public String virtual_getTestName_1216136419751(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_getTestName_1216136419751(thisNode);
   }
-
   public boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return NodesTestMethod_Behavior.virtual_isMpsStartRequired_3310779261129403089(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodesTestMethod";

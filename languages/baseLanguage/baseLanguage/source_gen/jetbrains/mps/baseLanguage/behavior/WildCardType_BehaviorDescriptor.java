@@ -8,27 +8,21 @@ import java.util.Map;
 public class WildCardType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public WildCardType_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return WildCardType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   public boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return WildCardType_Behavior.virtual_isReifiable_2817265908000464118(thisNode);
   }
-
   public boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return WildCardType_Behavior.virtual_isSupersetOf_1220438914705(thisNode, t);
   }
-
   public boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     return WildCardType_Behavior.virtual_isSupersetOf_9029841626175335449(thisNode, t, substitutions);
   }
-
   public boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return WildCardType_Behavior.virtual_isValueType_4836112446988592019(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.WildCardType";

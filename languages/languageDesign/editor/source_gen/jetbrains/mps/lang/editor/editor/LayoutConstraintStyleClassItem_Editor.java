@@ -23,7 +23,6 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_43k0hh_a(editorContext, node);
   }
-
   private EditorCell createCollection_43k0hh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_43k0hh_a");
@@ -33,7 +32,6 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_43k0hh_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_43k0hh_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -42,23 +40,19 @@ public class LayoutConstraintStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new LayoutConstraintStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_43k0hh_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_43k0hh_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_43k0hh_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_43k0hh_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_43k0hh_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_43k0hh_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("layoutConstraint");

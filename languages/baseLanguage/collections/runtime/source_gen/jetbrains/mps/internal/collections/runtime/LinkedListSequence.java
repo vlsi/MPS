@@ -16,131 +16,105 @@ import java.util.Arrays;
 
 public class LinkedListSequence<T> extends AbstractListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T>, Serializable {
   private static final long serialVersionUID = 3534032475696821184L;
-
   protected LinkedListSequence(LinkedList<T> list) {
     super(list);
   }
-
   protected LinkedListSequence(LinkedListSequence<T> other) {
     super(other);
   }
-
   @Override
   public void addFirst(T t) {
     getList().addFirst(t);
   }
-
   @Override
   public void addLast(T t) {
     getList().addLast(t);
   }
-
   @Override
   public boolean offerFirst(T t) {
     return getList().offerFirst(t);
   }
-
   @Override
   public boolean offerLast(T t) {
     return getList().offerLast(t);
   }
-
   @Override
   public T removeFirst() {
     return getList().removeFirst();
   }
-
   @Override
   public T removeLast() {
     return getList().removeLast();
   }
-
   @Override
   public T pollLast() {
     return getList().pollLast();
   }
-
   @Override
   public T getFirst() {
     return getList().getFirst();
   }
-
   @Override
   public T getLast() {
     return getList().getLast();
   }
-
   @Override
   public T peekFirst() {
     return getList().peekFirst();
   }
-
   @Override
   public T peekLast() {
     return getList().peekLast();
   }
-
   @Override
   public boolean removeFirstOccurrence(Object o) {
     return getList().removeFirstOccurrence(o);
   }
-
   @Override
   public boolean offer(T t) {
     return getList().offer(t);
   }
-
   @Override
   public T remove() {
     return getList().remove();
   }
-
   @Override
   public T poll() {
     return getList().poll();
   }
-
   @Override
   public T element() {
     return getList().element();
   }
-
   @Override
   public T peek() {
     return getList().peek();
   }
-
   @Override
   public void push(T t) {
     getList().push(t);
   }
-
   @Override
   public T pop() {
     return getList().pop();
   }
-
   @Override
   public Iterator<T> descendingIterator() {
     return null;
   }
-
   @Override
   public T pollFirst() {
     return getList().pollFirst();
   }
-
   @Override
   public boolean removeLastOccurrence(Object o) {
     return getList().removeLastOccurrence(o);
   }
-
   @Override
   public T addLastElement(T t) {
     getList().addLast(t);
     return t;
   }
-
   @Override
   public T removeFirstElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -150,12 +124,10 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return getList().removeFirst();
   }
-
   @Override
   public Queue<T> toQueue() {
     return getList();
   }
-
   @Override
   public T addFirstElement(T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -166,7 +138,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     getList().addFirst(t);
     return t;
   }
-
   @Override
   public T peekElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -176,7 +147,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return getList().peek();
   }
-
   @Override
   public T popElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -186,70 +156,57 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return getList().pop();
   }
-
   @Override
   public T pushElement(T t) {
     getList().push(t);
     return t;
   }
-
   @Override
   public Deque<T> toDeque() {
     return getList();
   }
-
   @Override
   public LinkedListSequence<T> asUnmodifiable() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public LinkedListSequence<T> asSynchronized() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public ILinkedListSequence<T> addSequence(ISequence<? extends T> seq) {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public ILinkedListSequence<T> removeSequence(ISequence<? extends T> seq) {
     return (ILinkedListSequence<T>) super.removeSequence(seq);
   }
-
   @Override
   public ILinkedListSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (ILinkedListSequence<T>) super.removeWhere(filter);
   }
-
   @Override
   public IListSequence<T> reversedList() {
     LinkedListSequence<T> reversed = new LinkedListSequence<T>(this);
     reversed._reverse();
     return reversed;
   }
-
   @Override
   public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, upToIdx));
   }
-
   @Override
   public IListSequence<T> headListSequence(int upToIdx) {
     return new ListSequence<T>(getList().subList(0, upToIdx));
   }
-
   @Override
   public IListSequence<T> tailListSequence(int fromIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, getList().size()));
   }
-
   @Override
   protected LinkedList<T> getList() {
     return (LinkedList<T>) super.getList();
   }
-
   public static <U> ILinkedListSequence<U> fromLinkedList(Deque<U> list) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (list == null) {
@@ -264,7 +221,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return LinkedListSequence.fromIterable(list);
   }
-
   public static <U> ILinkedListSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -291,7 +247,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return new LinkedListSequence<U>(list);
   }
-
   public static <U> ILinkedListSequence<U> fromListAndArray(LinkedList<U> list, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -327,7 +282,6 @@ public class LinkedListSequence<T> extends AbstractListSequence<T> implements IL
     }
     return new LinkedListSequence<U>(list);
   }
-
   public static <U> ILinkedListSequence<U> fromListWithValues(LinkedList<U> list, Iterable<? extends U> it) {
     LinkedList<U> tmp = list;
     if (Sequence.USE_NULL_SEQUENCE) {

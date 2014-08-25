@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 /*package*/ class JavaDependenciesMerger extends AbstractContentMerger {
   /*package*/ JavaDependenciesMerger() {
   }
-
   @Nullable
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
@@ -43,15 +42,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
       return null;
     }
   }
-
   private static ModelDependencies loadDependencies(FileContent content) throws IOException, JDOMException {
     return ModelDependencies.fromXml(JDOMUtil.loadDocument(content.openInputStream()).getRootElement());
   }
-
   private static void saveDependencies(ModelDependencies deps, OutputStream out) throws IOException {
     JDOMUtil.writeDocument(new Document(deps.toXml()), out);
   }
-
   private static void copyDependencies(ModelDependencies from, ModelDependencies to) throws JavaDependenciesMerger.MergeException {
     for (RootDependencies fromRootDep : Sequence.fromIterable(from.getDependencies())) {
       RootDependencies toRootDep = to.getDependency(fromRootDep.getFileName());
@@ -62,7 +58,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
       }
     }
   }
-
   private static RootDependencies mergeRootDependencies(RootDependencies rd1, RootDependencies rd2) throws JavaDependenciesMerger.MergeException {
     if (neq_bqsatu_a0a0f(rd1.getClassName(), rd2.getClassName())) {
       throw new JavaDependenciesMerger.MergeException("Different class names: " + rd1.getClassName() + " and " + rd2.getClassName());
@@ -73,13 +68,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
     SetSequence.fromSet(extendsNodes).addSequence(SetSequence.fromSet(rd2.getExtends()));
     return new RootDependencies(rd1.getClassName(), rd1.getFileName(), SetSequence.fromSet(dependNodes).toListSequence(), SetSequence.fromSet(extendsNodes).toListSequence());
   }
-
   private static class MergeException extends Exception {
     private MergeException(String msg) {
       super(msg);
     }
   }
-
   private static boolean neq_bqsatu_a0a0f(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

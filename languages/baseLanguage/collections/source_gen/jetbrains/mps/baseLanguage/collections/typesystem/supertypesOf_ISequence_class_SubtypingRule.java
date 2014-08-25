@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_ISequence_class_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     if (SLinkOperations.getTarget(_quotation_createNode_gd2fo6_a0a1a1(), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
@@ -32,22 +31,18 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
     }
     return res;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_gd2fo6_a0a1a2a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -59,7 +54,6 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_gd2fo6_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

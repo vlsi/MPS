@@ -11,40 +11,32 @@ public class MethodParameterModel {
   private String myName;
   private int myOrder;
   private String myType;
-
   public MethodParameterModel() {
     this.myOrder = -1;
     this.setTypeName("");
     this.setName("");
   }
-
   public MethodParameterModel(SNode param, int i) {
     this.myDeclaration = param;
     this.myOrder = i;
     this.setTypeName(SLinkOperations.getTarget(param, "type", true).getPresentation());
     this.setName(SPropertyOperations.getString(param, "name"));
   }
-
   public String getName() {
     return this.myName;
   }
-
   public void setName(String name) {
     this.myName = name;
   }
-
   public String getTypeName() {
     return this.myType;
   }
-
   public void setTypeName(String type) {
     this.myType = type;
   }
-
   public int getOrder() {
     return this.myOrder;
   }
-
   public SNode getDeclaration() {
     return this.myDeclaration;
   }

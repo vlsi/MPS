@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class BuildFolderMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_evaluate_4959435991187146982(SNode thisNode, Context context) {
     String key = "usedMacro";
     Set<String> usedMacro = context.<Set<String>>get(key);

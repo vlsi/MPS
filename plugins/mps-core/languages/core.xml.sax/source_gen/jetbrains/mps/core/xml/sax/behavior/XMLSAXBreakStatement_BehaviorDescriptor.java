@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class XMLSAXBreakStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public XMLSAXBreakStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement";

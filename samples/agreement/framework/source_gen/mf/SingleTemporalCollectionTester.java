@@ -8,12 +8,10 @@ public class SingleTemporalCollectionTester extends TemporalCollectionTester {
   public SingleTemporalCollectionTester(String name) {
     super(name);
   }
-
   @Override
   protected void createSubject() {
     mySubject = new SingleTemporalCollection();
   }
-
   public void testCopy() {
     TemporalCollection copy = ((SingleTemporalCollection) mySubject).copy();
     Assert.assertEquals("after dec ish", copy.get(1999, 12, 30));

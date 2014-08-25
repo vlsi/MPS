@@ -72,7 +72,6 @@ public class MergeRootsPane {
   private DefaultActionGroup myActionGroup;
   private NextPreviousTraverser myTraverser;
 
-
   public MergeRootsPane(Project project, MergeSession mergeSession, SNodeId rootId, String rootName, String[] titles, DiffStatusBar statusBar) {
     myProject = project;
     myMergeSession = mergeSession;
@@ -120,7 +119,6 @@ public class MergeRootsPane {
     highlightAllChanges();
     myTraverser.goToFirstChangeLater();
   }
-
   private void createActionGroup(String rootName) {
     myActionGroup = new DefaultActionGroup();
     myActionGroup.add(new ApplyNonConflictsForRoot(this));
@@ -133,37 +131,29 @@ public class MergeRootsPane {
       public boolean isSelected(AnActionEvent e) {
         return isInspectorShown;
       }
-
       public void setSelected(AnActionEvent e, boolean b) {
         showInspector(b);
       }
     });
   }
-
   public ActionGroup getActions() {
     return myActionGroup;
   }
-
   public void registerShortcuts(JComponent component) {
     myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, component);
     myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, component);
   }
-
   public void unregisterShortcuts(JComponent component) {
     myTraverser.previousAction().unregisterCustomShortcutSet(component);
     myTraverser.nextAction().unregisterCustomShortcutSet(component);
   }
-
   public JPanel getPanel() {
     return myPanel;
   }
 
-
-
   public SNodeId getRootId() {
     return myRootId;
   }
-
   public void setRootId(SNodeId rootId) {
     myRootId = rootId;
     myStateToRestore = myMergeSession.getCurrentState();
@@ -173,7 +163,6 @@ public class MergeRootsPane {
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
-
   public void setRoodId(SNodeId rootId, final MergeSession mergeSession) {
     myMergeSession = mergeSession;
     MapSequence.fromMap(myDiffLayoutPart).visitAll(new IVisitor<IMapping<DiffChangeGroupLayout, Boolean>>() {
@@ -183,7 +172,6 @@ public class MergeRootsPane {
     });
     setRootId(rootId);
   }
-
   private void showInspector(boolean show) {
     if (isInspectorShown == show) {
       return;
@@ -193,14 +181,11 @@ public class MergeRootsPane {
     myPanel.setSecondComponent((isInspectorShown ? myBottomPanel : null));
   }
 
-
-
   private ChangeGroupLayout createChangeGroupLayout(boolean mine, boolean inspector) {
     DiffChangeGroupLayout layout = new DiffChangeGroupLayout(myConflictChecker, (mine ? myMergeSession.getMyChangeSet() : myMergeSession.getRepositoryChangeSet()), (mine ? myMineEditor : myResultEditor), (mine ? myResultEditor : myRepositoryEditor), inspector);
     MapSequence.fromMap(myDiffLayoutPart).put(layout, mine);
     return layout;
   }
-
   public void rehighlight() {
     if (myDisposed) {
       return;
@@ -221,7 +206,6 @@ public class MergeRootsPane {
 
     highlightAllChanges();
   }
-
   private void highlightAllChanges() {
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -258,11 +242,9 @@ public class MergeRootsPane {
     }).count();
     myStatusBar.setText(MergeModelsDialog.generateUnresolvedChangesText(ListSequence.fromList(changesForRoot).count(), conflictingChanges));
   }
-
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
     diffEditor.highlightChange(model, change, myConflictChecker);
   }
-
   private void linkEditors(boolean mine, boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
@@ -276,7 +258,6 @@ public class MergeRootsPane {
     ListSequence.fromList(myEdtiorSeparators).addElement(separator);
     MergeButtonsPainter.addTo(this, (mine ? myMineEditor : myRepositoryEditor), layout, inspector);
   }
-
   private SNodeId getRootNodeId(SModel model) {
     SNode node = model.getNode(myRootId);
     if (node != null && node.getParent() == null) {
@@ -291,8 +272,6 @@ public class MergeRootsPane {
     return null;
   }
 
-
-
   private DiffEditor addEditor(int index, SModel model) {
     SNodeId rootId = getRootNodeId(model);
     SNode root = (rootId == null ? null : model.getNode(rootId));
@@ -306,17 +285,12 @@ public class MergeRootsPane {
     return result;
   }
 
-
-
   /*package*/ MergeSession getMergeSession() {
     return myMergeSession;
   }
-
   public void restoreState() {
     myMergeSession.restoreState(myStateToRestore);
   }
-
-
 
   public void dispose() {
     synchronized (this) {

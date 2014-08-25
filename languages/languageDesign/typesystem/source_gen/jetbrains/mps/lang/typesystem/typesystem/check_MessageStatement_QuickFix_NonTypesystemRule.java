@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_MessageStatement_QuickFix_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_MessageStatement_QuickFix_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode messageStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> intentions = SLinkOperations.getTargets(messageStatement, "helginsIntention", true);
     if (ListSequence.fromList(intentions).count() > 1) {
@@ -33,18 +32,15 @@ public class check_MessageStatement_QuickFix_NonTypesystemRule extends AbstractN
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.typesystem.structure.MessageStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

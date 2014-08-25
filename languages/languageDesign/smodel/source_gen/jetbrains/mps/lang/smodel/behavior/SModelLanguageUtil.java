@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class SModelLanguageUtil {
   private SModelLanguageUtil() {
   }
-
   public static SNode getDatatypeFromLeft_SPropertyAccess(SNode operation) {
     SNode property = getPropertyDeclarationFromLeft_SPropertyAccess(operation);
     if ((property != null)) {
@@ -18,7 +17,6 @@ public class SModelLanguageUtil {
     }
     return null;
   }
-
   private static SNode getPropertyDeclarationFromLeft_SPropertyAccess(SNode operation) {
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     SNode leftOp = SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
@@ -27,7 +25,6 @@ public class SModelLanguageUtil {
     }
     return null;
   }
-
   public static SNode getConcept(SNode expression) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       SNode operation = SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);

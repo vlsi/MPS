@@ -23,23 +23,18 @@ import jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_5273477653284538095(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
-
   public static boolean baseMappingRule_Condition_5273477653284538097(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
-
   public static boolean baseMappingRule_Condition_5273477653284538099(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("panel");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228678752604(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value").equals("true");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228678752743(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -47,11 +42,9 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228678752793(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1228678752860(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -59,23 +52,18 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228678752910(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1228679651679(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object referenceMacro_GetReferent_1228678752646(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value");
   }
-
   public static Object referenceMacro_GetReferent_1228680490546(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "factory_method");
   }
-
   public static boolean ifMacro_Condition_1228678752765(final IfMacroContext _context) {
     return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -83,7 +71,6 @@ public class QueriesGenerated {
       }
     }) != null);
   }
-
   public static boolean ifMacro_Condition_1228678752882(final IfMacroContext _context) {
     return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -91,11 +78,9 @@ public class QueriesGenerated {
       }
     }) != null);
   }
-
   public static SNode sourceNodeQuery_1228680307376(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }
-
   public static SNode sourceNodeQuery_1228678752614(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -103,7 +88,6 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static SNode sourceNodeQuery_1228678752653(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -111,19 +95,15 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static Iterable<SNode> sourceNodesQuery_1228680239721(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Document");
   }
-
   public static Iterable<SNode> sourceNodesQuery_5273477653284500112(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
-
   public static Iterable<SNode> sourceNodesQuery_1228681296814(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "content", true);
   }
-
   public static void mappingScript_CodeBlock_3978102045101460213(final MappingScriptContext _context) {
     // find all text nodes 
     List<SNode> texts = SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.sampleXML.structure.Text");
@@ -137,7 +117,6 @@ public class QueriesGenerated {
       SPropertyOperations.set(attribute, "value", SPropertyOperations.getString(text, "text"));
     }
   }
-
   public static void mappingScript_CodeBlock_3978102045101811010(final MappingScriptContext _context) {
     TextUtil.fixText(_context.getModel());
   }

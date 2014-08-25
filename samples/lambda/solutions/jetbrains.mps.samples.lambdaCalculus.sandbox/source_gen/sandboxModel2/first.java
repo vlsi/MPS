@@ -9,27 +9,21 @@ import java.util.ArrayList;
 public class first {
   public first() {
   }
-
   public static void main(String[] args) {
     System.out.println((eval()));
   }
-
   public static Object eval() {
     return lambdaAbstr_816130369292799546(3);
   }
-
   public static class Function_816130369292799568 extends Function {
     private List myOuterVars = new ArrayList();
-
     public Function_816130369292799568() {
       myType = "(number->(number->number))";
     }
-
     public Function_816130369292799568(List outerVars) {
       myType = "(number->(number->number))";
       myOuterVars.addAll(outerVars);
     }
-
     public Object eval() {
       int i = 0;
       int j = 0;
@@ -37,24 +31,19 @@ public class first {
       Integer z = (Integer) myArgs.get(i++);
       return (y + z) * (y + z);
     }
-
     public int getParamsCount() {
       return 2;
     }
-
     public Function copy() {
       return new first.Function_816130369292799568(myOuterVars);
     }
   }
-
   public static Integer lambdaAbstr_816130369292799546(Integer x) {
     return (Integer) let_816130369292799560(new first.Function_816130369292799568(), x);
   }
-
   public static Object let_816130369292799560(Function sum_sq, Integer x) {
     return lambdaAbstr_816130369292799665(x, x, sum_sq);
   }
-
   public static Integer lambdaAbstr_816130369292799665(Integer a, Integer x, Function sum_sq) {
     return (Integer) ((Function) sum_sq.copy()).apply(2, x) - a;
   }

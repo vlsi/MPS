@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class CellMenuPart_PropertyValues_BehaviorDescriptor extends CellMenuPart_Abstract_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public CellMenuPart_PropertyValues_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues";

@@ -33,7 +33,6 @@ public class XmlDeclaration_TextGen extends SNodeTextGen {
     }
     this.append("?>");
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

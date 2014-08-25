@@ -17,11 +17,9 @@ import org.apache.log4j.LogManager;
 
 /*package*/ class GitGlobalConfigFixesInstaller extends AbstractInstaller {
   private static final String CORE_AUTOCRLF = "core.autocrlf";
-
   public GitGlobalConfigFixesInstaller(Project project) {
     super(project);
   }
-
   @NotNull
   @Override
   protected AbstractInstaller.State install(boolean dryRun) {
@@ -57,22 +55,18 @@ import org.apache.log4j.LogManager;
       return AbstractInstaller.State.NOT_INSTALLED;
     }
   }
-
   @Override
   public String getActionTitle() {
     return "Git global autocrlf setting (~/.gitconfig)";
   }
-
   @Override
   public String getActionTooltip() {
     return "Set core.autocrlf to input";
   }
-
   @Override
   public String getAffectedVcsName() {
     return "Git";
   }
-
   private static void setGlobalProperty(Project project, String key, String value) throws VcsException {
     GitSimpleHandler h = new GitSimpleHandler(project, project.getBaseDir(), GitCommand.CONFIG);
     h.setSilent(true);
@@ -80,10 +74,8 @@ import org.apache.log4j.LogManager;
     h.addParameters("--global", key, value);
     h.run();
   }
-
   private static String getCoreAutocrlfValue() {
     return (SystemInfo.isWindows ? "true" : "input");
   }
-
   protected static Logger LOG = LogManager.getLogger(GitGlobalConfigFixesInstaller.class);
 }

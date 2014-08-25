@@ -34,7 +34,6 @@ public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
   private ShowCFGDialog.MyComponent myComponent;
   private ControlFlowGraph<InstructionWrapper> myControlFlowGraph;
-
   public ShowCFGDialog(@NotNull ControlFlowGraph<InstructionWrapper> graph, @NotNull final IOperationContext operationContext, @NotNull Project project, @NotNull String title) {
     super(project);
     this.myComponent = new ShowCFGDialog.MyComponent();
@@ -78,7 +77,6 @@ public class ShowCFGDialog extends DialogWrapper {
     setTitle(title);
     init();
   }
-
   private void openNode(final IOperationContext operationContext, final SNodeReference nodeReference) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -92,24 +90,19 @@ public class ShowCFGDialog extends DialogWrapper {
     });
   }
 
-
-
   public Color getBackground() {
     return Color.LIGHT_GRAY;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myScrollPane;
   }
-
   @Override
   @NotNull
   protected Action[] createActions() {
     return new Action[0];
   }
-
   private class MyComponent extends JComponent implements Scrollable {
     public MyComponent() {
       this.setLayout(new BorderLayout());
@@ -120,44 +113,36 @@ public class ShowCFGDialog extends DialogWrapper {
         }
       });
     }
-
     @Override
     public Color getBackground() {
       return ShowCFGDialog.this.getBackground();
     }
-
     @Override
     public void paint(Graphics g) {
       g.setColor(this.getBackground());
       g.fillRect(0, 0, this.getWidth(), this.getHeight());
       ShowCFGDialog.this.myControlFlowGraph.paint(g);
     }
-
     @Override
     public Dimension getPreferredScrollableViewportSize() {
       return this.getPreferredSize();
     }
-
     @Override
     public Dimension getPreferredSize() {
       return new Dimension(ShowCFGDialog.this.myControlFlowGraph.getWidth(), ShowCFGDialog.this.myControlFlowGraph.getHeight());
     }
-
     @Override
     public int getScrollableUnitIncrement(Rectangle visibleRect, int orientation, int direction) {
       return 20;
     }
-
     @Override
     public int getScrollableBlockIncrement(Rectangle visibleRect, int orientation, int direction) {
       return visibleRect.height;
     }
-
     @Override
     public boolean getScrollableTracksViewportWidth() {
       return false;
     }
-
     @Override
     public boolean getScrollableTracksViewportHeight() {
       return false;

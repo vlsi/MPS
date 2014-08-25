@@ -11,12 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class ModulesExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SAbstractConcept thisConcept) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"), SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterIncludeReadOnly"));
-  }
-
-  public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "lazy sequence containing all modules";
   }
 }

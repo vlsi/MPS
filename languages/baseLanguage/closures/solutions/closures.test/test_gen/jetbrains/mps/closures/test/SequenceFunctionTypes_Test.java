@@ -23,7 +23,6 @@ public class SequenceFunctionTypes_Test extends ClosuresBase_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -66,7 +65,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -99,7 +97,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -127,7 +124,6 @@ __switch__:
       }
     };
   }
-
   public void test_acceptSequence() throws Exception {
     _FunctionTypes._void_P1_E0<? super Iterable<Integer>> fun1 = new _FunctionTypes._void_P1_E0<Iterable<Integer>>() {
       public void invoke(Iterable<Integer> p) {
@@ -140,7 +136,6 @@ __switch__:
     fun1 = fun2;
     fun2 = fun1;
   }
-
   public void test_resultsReturnSequence() throws Exception {
     final Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -148,7 +143,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -193,7 +187,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -229,7 +222,6 @@ __switch__:
       }
     });
   }
-
   public SequenceFunctionTypes_Test() {
   }
 }

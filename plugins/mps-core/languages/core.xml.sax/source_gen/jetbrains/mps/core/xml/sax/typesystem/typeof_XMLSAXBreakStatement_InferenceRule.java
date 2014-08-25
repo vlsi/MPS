@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_XMLSAXBreakStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_XMLSAXBreakStatement_InferenceRule() {
   }
-
   public void applyRule(final SNode stmt, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(stmt, "result", true) != null)) {
       {
@@ -25,18 +24,15 @@ public class typeof_XMLSAXBreakStatement_InferenceRule extends AbstractInference
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXBreakStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

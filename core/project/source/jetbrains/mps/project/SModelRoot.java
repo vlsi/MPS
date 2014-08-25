@@ -149,7 +149,7 @@ public class SModelRoot extends FolderModelRootBase {
 
 
   private static IModelRootManager create(String moduleId, String className) {
-    SModule mod = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId));
+    SModule mod = MPSModuleRepository.getInstance().getModule(ModuleId.fromString(moduleId));
     if (mod == null) {
       return new InvalidModelRootManager(moduleId, className, "module is absent");
     }

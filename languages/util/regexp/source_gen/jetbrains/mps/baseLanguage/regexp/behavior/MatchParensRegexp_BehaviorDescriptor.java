@@ -13,23 +13,18 @@ import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;
 public class MatchParensRegexp_BehaviorDescriptor extends Regexp_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IVariableAssignment_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public MatchParensRegexp_BehaviorDescriptor() {
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return MatchParensRegexp_Behavior.virtual_getString_1222432436326(thisNode, vars);
   }
-
   public SNode virtual_getValue_1224857430232(SNode thisNode) {
     return MatchParensRegexp_Behavior.virtual_getValue_1224857430232(thisNode);
   }
-
   public boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
     return IVariableAssignment_Behavior.virtual_isCanBeUnused_1223985713603(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp";

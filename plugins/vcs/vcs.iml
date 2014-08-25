@@ -28,7 +28,7 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="module" module-name="mpsmake" />
+    <orderEntry type="module" module-name="mps-make" />
     <orderEntry type="module" module-name="vcs-core" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />

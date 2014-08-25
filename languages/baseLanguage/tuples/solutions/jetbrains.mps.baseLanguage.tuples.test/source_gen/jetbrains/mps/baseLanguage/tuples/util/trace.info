@@ -11,219 +11,219 @@
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/1240933467754">
     <file name="SharedPair.java">
       <node id="1240933467754" at="9,23,10,12" concept="6" />
-      <node id="1240933467754" at="13,40,14,25" concept="6" />
-      <node id="1240933467754" at="17,27,18,27" concept="4" />
-      <node id="1240933467754" at="21,28,22,27" concept="4" />
-      <node id="1240933467754" at="25,20,26,22" concept="4" />
-      <node id="1240933467754" at="29,21,30,22" concept="4" />
-      <node id="1240933467754" at="34,54,35,43" concept="4" />
+      <node id="1240933467754" at="12,40,13,25" concept="6" />
+      <node id="1240933467754" at="15,27,16,27" concept="4" />
+      <node id="1240933467754" at="18,28,19,27" concept="4" />
+      <node id="1240933467754" at="21,20,22,22" concept="4" />
+      <node id="1240933467754" at="24,21,25,22" concept="4" />
+      <node id="1240933467754" at="28,54,29,43" concept="4" />
       <node id="1240933467754" at="9,0,12,0" concept="0" trace="SharedPair#()V" />
-      <node id="1240933467754" at="13,0,16,0" concept="0" trace="SharedPair#(nullnull)V" />
-      <node id="1240933467754" at="17,0,20,0" concept="3" trace="first#(null)null" />
-      <node id="1240933467754" at="21,0,24,0" concept="3" trace="second#(null)null" />
-      <node id="1240933467754" at="25,0,28,0" concept="3" trace="first#()null" />
-      <node id="1240933467754" at="29,0,32,0" concept="3" trace="second#()null" />
-      <node id="1240933467754" at="33,0,37,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/SharedPair;" />
+      <node id="1240933467754" at="12,0,15,0" concept="0" trace="SharedPair#(nullnull)V" />
+      <node id="1240933467754" at="15,0,18,0" concept="3" trace="first#(null)null" />
+      <node id="1240933467754" at="18,0,21,0" concept="3" trace="second#(null)null" />
+      <node id="1240933467754" at="21,0,24,0" concept="3" trace="first#()null" />
+      <node id="1240933467754" at="24,0,27,0" concept="3" trace="second#()null" />
+      <node id="1240933467754" at="27,0,31,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/SharedPair;" />
       <scope id="1240933467754" at="9,23,10,12" />
-      <scope id="1240933467754" at="13,40,14,25" />
-      <scope id="1240933467754" at="17,27,18,27" />
-      <scope id="1240933467754" at="21,28,22,27" />
-      <scope id="1240933467754" at="25,20,26,22" />
-      <scope id="1240933467754" at="29,21,30,22" />
-      <scope id="1240933467754" at="34,54,35,43" />
+      <scope id="1240933467754" at="12,40,13,25" />
+      <scope id="1240933467754" at="15,27,16,27" />
+      <scope id="1240933467754" at="18,28,19,27" />
+      <scope id="1240933467754" at="21,20,22,22" />
+      <scope id="1240933467754" at="24,21,25,22" />
+      <scope id="1240933467754" at="28,54,29,43" />
       <scope id="1240933467754" at="9,0,12,0" />
-      <scope id="1240933467754" at="13,0,16,0">
+      <scope id="1240933467754" at="12,0,15,0">
         <var name="first" id="1240933467754" />
         <var name="second" id="1240933467754" />
       </scope>
-      <scope id="1240933467754" at="17,0,20,0">
+      <scope id="1240933467754" at="15,0,18,0">
         <var name="value" id="1240933467754" />
       </scope>
-      <scope id="1240933467754" at="21,0,24,0">
+      <scope id="1240933467754" at="18,0,21,0">
         <var name="value" id="1240933467754" />
       </scope>
-      <scope id="1240933467754" at="25,0,28,0" />
-      <scope id="1240933467754" at="29,0,32,0" />
-      <scope id="1240933467754" at="33,0,37,0">
+      <scope id="1240933467754" at="21,0,24,0" />
+      <scope id="1240933467754" at="24,0,27,0" />
+      <scope id="1240933467754" at="27,0,31,0">
         <var name="from" id="1240933467754" />
       </scope>
-      <unit id="1240933467754" at="8,0,38,0" name="jetbrains.mps.baseLanguage.tuples.util.SharedPair" />
+      <unit id="1240933467754" at="8,0,32,0" name="jetbrains.mps.baseLanguage.tuples.util.SharedPair" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/1543650586506860264">
     <file name="MPS11114.java">
-      <node id="1543650586506860268" at="15,65,16,176" concept="4" />
+      <node id="1543650586506860268" at="14,65,15,176" concept="4" />
       <node id="1543650586506860289" at="12,0,14,0" concept="0" trace="MPS11114#()V" />
-      <node id="1543650586506860265" at="15,0,18,0" concept="5" trace="returnTuples#()Ljava/util/List;" />
+      <node id="1543650586506860265" at="14,0,17,0" concept="5" trace="returnTuples#()Ljava/util/List;" />
       <scope id="1543650586506860292" at="12,21,12,21" />
-      <scope id="1543650586506860267" at="15,65,16,176" />
+      <scope id="1543650586506860267" at="14,65,15,176" />
       <scope id="1543650586506860289" at="12,0,14,0" />
-      <scope id="1543650586506860265" at="15,0,18,0" />
-      <unit id="1543650586506860264" at="11,0,19,0" name="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
+      <scope id="1543650586506860265" at="14,0,17,0" />
+      <unit id="1543650586506860264" at="11,0,18,0" name="jetbrains.mps.baseLanguage.tuples.util.MPS11114" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/1654804677203278474">
     <file name="Tpl.java">
       <node id="1654804677203278474" at="9,16,10,12" concept="6" />
-      <node id="1654804677203278474" at="13,35,14,16" concept="6" />
-      <node id="1654804677203278474" at="17,33,18,27" concept="4" />
-      <node id="1654804677203278474" at="21,35,22,27" concept="4" />
-      <node id="1654804677203278474" at="25,21,26,22" concept="4" />
-      <node id="1654804677203278474" at="29,22,30,22" concept="4" />
-      <node id="1654804677203278474" at="34,58,35,36" concept="4" />
+      <node id="1654804677203278474" at="12,35,13,16" concept="6" />
+      <node id="1654804677203278474" at="15,33,16,27" concept="4" />
+      <node id="1654804677203278474" at="18,35,19,27" concept="4" />
+      <node id="1654804677203278474" at="21,21,22,22" concept="4" />
+      <node id="1654804677203278474" at="24,22,25,22" concept="4" />
+      <node id="1654804677203278474" at="28,58,29,36" concept="4" />
       <node id="1654804677203278474" at="9,0,12,0" concept="0" trace="Tpl#()V" />
-      <node id="1654804677203278474" at="13,0,16,0" concept="0" trace="Tpl#(Ljava/lang/String;Ljava/lang/Integer;)V" />
-      <node id="1654804677203278474" at="17,0,20,0" concept="3" trace="s#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="1654804677203278474" at="21,0,24,0" concept="3" trace="i#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-      <node id="1654804677203278474" at="25,0,28,0" concept="3" trace="s#()Ljava/lang/String;" />
-      <node id="1654804677203278474" at="29,0,32,0" concept="3" trace="i#()Ljava/lang/Integer;" />
-      <node id="1654804677203278474" at="33,0,37,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Tpl;" />
+      <node id="1654804677203278474" at="12,0,15,0" concept="0" trace="Tpl#(Ljava/lang/String;Ljava/lang/Integer;)V" />
+      <node id="1654804677203278474" at="15,0,18,0" concept="3" trace="s#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1654804677203278474" at="18,0,21,0" concept="3" trace="i#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="1654804677203278474" at="21,0,24,0" concept="3" trace="s#()Ljava/lang/String;" />
+      <node id="1654804677203278474" at="24,0,27,0" concept="3" trace="i#()Ljava/lang/Integer;" />
+      <node id="1654804677203278474" at="27,0,31,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Tpl;" />
       <scope id="1654804677203278474" at="9,16,10,12" />
-      <scope id="1654804677203278474" at="13,35,14,16" />
-      <scope id="1654804677203278474" at="17,33,18,27" />
-      <scope id="1654804677203278474" at="21,35,22,27" />
-      <scope id="1654804677203278474" at="25,21,26,22" />
-      <scope id="1654804677203278474" at="29,22,30,22" />
-      <scope id="1654804677203278474" at="34,58,35,36" />
+      <scope id="1654804677203278474" at="12,35,13,16" />
+      <scope id="1654804677203278474" at="15,33,16,27" />
+      <scope id="1654804677203278474" at="18,35,19,27" />
+      <scope id="1654804677203278474" at="21,21,22,22" />
+      <scope id="1654804677203278474" at="24,22,25,22" />
+      <scope id="1654804677203278474" at="28,58,29,36" />
       <scope id="1654804677203278474" at="9,0,12,0" />
-      <scope id="1654804677203278474" at="13,0,16,0">
+      <scope id="1654804677203278474" at="12,0,15,0">
         <var name="i" id="1654804677203278474" />
         <var name="s" id="1654804677203278474" />
       </scope>
-      <scope id="1654804677203278474" at="17,0,20,0">
+      <scope id="1654804677203278474" at="15,0,18,0">
         <var name="value" id="1654804677203278474" />
       </scope>
-      <scope id="1654804677203278474" at="21,0,24,0">
+      <scope id="1654804677203278474" at="18,0,21,0">
         <var name="value" id="1654804677203278474" />
       </scope>
-      <scope id="1654804677203278474" at="25,0,28,0" />
-      <scope id="1654804677203278474" at="29,0,32,0" />
-      <scope id="1654804677203278474" at="33,0,37,0">
+      <scope id="1654804677203278474" at="21,0,24,0" />
+      <scope id="1654804677203278474" at="24,0,27,0" />
+      <scope id="1654804677203278474" at="27,0,31,0">
         <var name="from" id="1654804677203278474" />
       </scope>
-      <unit id="1654804677203278474" at="8,0,38,0" name="jetbrains.mps.baseLanguage.tuples.util.Tpl" />
+      <unit id="1654804677203278474" at="8,0,32,0" name="jetbrains.mps.baseLanguage.tuples.util.Tpl" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/2682363017137668870">
     <file name="Questionnable.java">
       <node id="2682363017137668870" at="9,26,10,12" concept="6" />
-      <node id="2682363017137668870" at="13,57,14,28" concept="6" />
-      <node id="2682363017137668870" at="17,40,18,27" concept="4" />
-      <node id="2682363017137668870" at="21,40,22,27" concept="4" />
-      <node id="2682363017137668870" at="25,28,26,22" concept="4" />
-      <node id="2682363017137668870" at="29,27,30,22" concept="4" />
-      <node id="2682363017137668870" at="34,68,35,46" concept="4" />
-      <node id="2682363017137673906" at="38,21,39,33" concept="7" />
+      <node id="2682363017137668870" at="12,57,13,28" concept="6" />
+      <node id="2682363017137668870" at="15,40,16,27" concept="4" />
+      <node id="2682363017137668870" at="18,40,19,27" concept="4" />
+      <node id="2682363017137668870" at="21,28,22,22" concept="4" />
+      <node id="2682363017137668870" at="24,27,25,22" concept="4" />
+      <node id="2682363017137668870" at="28,68,29,46" concept="4" />
+      <node id="2682363017137673906" at="31,21,32,33" concept="7" />
       <node id="2682363017137668870" at="9,0,12,0" concept="0" trace="Questionnable#()V" />
-      <node id="2682363017137668870" at="13,0,16,0" concept="0" trace="Questionnable#(Ljava/lang/String;Ljava/lang/Integer;)V" />
-      <node id="2682363017137668870" at="17,0,20,0" concept="3" trace="question#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="2682363017137668870" at="21,0,24,0" concept="3" trace="answer#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-      <node id="2682363017137668870" at="25,0,28,0" concept="3" trace="question#()Ljava/lang/String;" />
-      <node id="2682363017137668870" at="29,0,32,0" concept="3" trace="answer#()Ljava/lang/Integer;" />
-      <node id="2682363017137673901" at="38,0,41,0" concept="3" trace="run#()V" />
-      <node id="2682363017137668870" at="33,0,37,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Questionnable;" />
+      <node id="2682363017137668870" at="12,0,15,0" concept="0" trace="Questionnable#(Ljava/lang/String;Ljava/lang/Integer;)V" />
+      <node id="2682363017137668870" at="15,0,18,0" concept="3" trace="question#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2682363017137668870" at="18,0,21,0" concept="3" trace="answer#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="2682363017137668870" at="21,0,24,0" concept="3" trace="question#()Ljava/lang/String;" />
+      <node id="2682363017137668870" at="24,0,27,0" concept="3" trace="answer#()Ljava/lang/Integer;" />
+      <node id="2682363017137673901" at="31,0,34,0" concept="3" trace="run#()V" />
+      <node id="2682363017137668870" at="27,0,31,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Questionnable;" />
       <scope id="2682363017137668870" at="9,26,10,12" />
-      <scope id="2682363017137668870" at="13,57,14,28" />
-      <scope id="2682363017137668870" at="17,40,18,27" />
-      <scope id="2682363017137668870" at="21,40,22,27" />
-      <scope id="2682363017137668870" at="25,28,26,22" />
-      <scope id="2682363017137668870" at="29,27,30,22" />
-      <scope id="2682363017137668870" at="34,68,35,46" />
-      <scope id="2682363017137673904" at="38,21,39,33" />
+      <scope id="2682363017137668870" at="12,57,13,28" />
+      <scope id="2682363017137668870" at="15,40,16,27" />
+      <scope id="2682363017137668870" at="18,40,19,27" />
+      <scope id="2682363017137668870" at="21,28,22,22" />
+      <scope id="2682363017137668870" at="24,27,25,22" />
+      <scope id="2682363017137668870" at="28,68,29,46" />
+      <scope id="2682363017137673904" at="31,21,32,33" />
       <scope id="2682363017137668870" at="9,0,12,0" />
-      <scope id="2682363017137668870" at="13,0,16,0">
+      <scope id="2682363017137668870" at="12,0,15,0">
         <var name="answer" id="2682363017137668870" />
         <var name="question" id="2682363017137668870" />
       </scope>
-      <scope id="2682363017137668870" at="17,0,20,0">
+      <scope id="2682363017137668870" at="15,0,18,0">
         <var name="value" id="2682363017137668870" />
       </scope>
-      <scope id="2682363017137668870" at="21,0,24,0">
+      <scope id="2682363017137668870" at="18,0,21,0">
         <var name="value" id="2682363017137668870" />
       </scope>
-      <scope id="2682363017137668870" at="25,0,28,0" />
-      <scope id="2682363017137668870" at="29,0,32,0" />
-      <scope id="2682363017137673901" at="38,0,41,0" />
-      <scope id="2682363017137668870" at="33,0,37,0">
+      <scope id="2682363017137668870" at="21,0,24,0" />
+      <scope id="2682363017137668870" at="24,0,27,0" />
+      <scope id="2682363017137673901" at="31,0,34,0" />
+      <scope id="2682363017137668870" at="27,0,31,0">
         <var name="from" id="2682363017137668870" />
       </scope>
-      <unit id="2682363017137668870" at="8,0,42,0" name="jetbrains.mps.baseLanguage.tuples.util.Questionnable" />
+      <unit id="2682363017137668870" at="8,0,35,0" name="jetbrains.mps.baseLanguage.tuples.util.Questionnable" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/429408675341322626">
     <file name="Sum.java">
       <node id="429408675341322632" at="12,0,13,0" concept="2" trace="map" />
-      <node id="429408675341322652" at="14,16,15,78" concept="1" />
-      <node id="429408675341322628" at="14,0,17,0" concept="0" trace="Sum#()V" />
-      <scope id="429408675341322631" at="14,16,15,78" />
-      <scope id="429408675341322628" at="14,0,17,0" />
-      <unit id="429408675341322626" at="11,0,18,0" name="jetbrains.mps.baseLanguage.tuples.util.Sum" />
+      <node id="429408675341322652" at="13,16,14,78" concept="1" />
+      <node id="429408675341322628" at="13,0,16,0" concept="0" trace="Sum#()V" />
+      <scope id="429408675341322631" at="13,16,14,78" />
+      <scope id="429408675341322628" at="13,0,16,0" />
+      <unit id="429408675341322626" at="11,0,17,0" name="jetbrains.mps.baseLanguage.tuples.util.Sum" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/8836955480108767185">
     <file name="Foo.java">
-      <node id="8836955480108772148" at="12,55,13,54" concept="4" />
+      <node id="8836955480108772148" at="11,55,12,54" concept="4" />
       <node id="8836955480108767187" at="9,0,11,0" concept="0" trace="Foo#()V" />
-      <node id="8836955480108767191" at="12,0,15,0" concept="5" trace="getTuple#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+      <node id="8836955480108767191" at="11,0,14,0" concept="5" trace="getTuple#()Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
       <scope id="8836955480108767190" at="9,16,9,16" />
-      <scope id="8836955480108767194" at="12,55,13,54" />
+      <scope id="8836955480108767194" at="11,55,12,54" />
       <scope id="8836955480108767187" at="9,0,11,0" />
-      <scope id="8836955480108767191" at="12,0,15,0" />
-      <unit id="8836955480108767185" at="8,0,16,0" name="jetbrains.mps.baseLanguage.tuples.util.Foo" />
+      <scope id="8836955480108767191" at="11,0,14,0" />
+      <unit id="8836955480108767185" at="8,0,15,0" name="jetbrains.mps.baseLanguage.tuples.util.Foo" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/9171470541351200515">
     <file name="Sample.java">
       <node id="9171470541351200515" at="9,19,10,12" concept="6" />
-      <node id="9171470541351200515" at="13,42,14,22" concept="6" />
-      <node id="9171470541351200515" at="17,37,18,27" concept="4" />
-      <node id="9171470541351200515" at="21,33,22,27" concept="4" />
-      <node id="9171470541351200515" at="25,24,26,22" concept="4" />
-      <node id="9171470541351200515" at="29,23,30,22" concept="4" />
-      <node id="9171470541351200515" at="34,59,35,39" concept="4" />
+      <node id="9171470541351200515" at="12,42,13,22" concept="6" />
+      <node id="9171470541351200515" at="15,37,16,27" concept="4" />
+      <node id="9171470541351200515" at="18,33,19,27" concept="4" />
+      <node id="9171470541351200515" at="21,24,22,22" concept="4" />
+      <node id="9171470541351200515" at="24,23,25,22" concept="4" />
+      <node id="9171470541351200515" at="28,59,29,39" concept="4" />
       <node id="9171470541351200515" at="9,0,12,0" concept="0" trace="Sample#()V" />
-      <node id="9171470541351200515" at="13,0,16,0" concept="0" trace="Sample#(Ljava/lang/Integer;Ljava/lang/Long;)V" />
-      <node id="9171470541351200515" at="17,0,20,0" concept="3" trace="num#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-      <node id="9171470541351200515" at="21,0,24,0" concept="3" trace="count#(Ljava/lang/Long;)Ljava/lang/Long;" />
-      <node id="9171470541351200515" at="25,0,28,0" concept="3" trace="num#()Ljava/lang/Integer;" />
-      <node id="9171470541351200515" at="29,0,32,0" concept="3" trace="count#()Ljava/lang/Long;" />
-      <node id="9171470541351200515" at="33,0,37,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Sample;" />
+      <node id="9171470541351200515" at="12,0,15,0" concept="0" trace="Sample#(Ljava/lang/Integer;Ljava/lang/Long;)V" />
+      <node id="9171470541351200515" at="15,0,18,0" concept="3" trace="num#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="9171470541351200515" at="18,0,21,0" concept="3" trace="count#(Ljava/lang/Long;)Ljava/lang/Long;" />
+      <node id="9171470541351200515" at="21,0,24,0" concept="3" trace="num#()Ljava/lang/Integer;" />
+      <node id="9171470541351200515" at="24,0,27,0" concept="3" trace="count#()Ljava/lang/Long;" />
+      <node id="9171470541351200515" at="27,0,31,0" concept="3" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/baseLanguage/tuples/util/Sample;" />
       <scope id="9171470541351200515" at="9,19,10,12" />
-      <scope id="9171470541351200515" at="13,42,14,22" />
-      <scope id="9171470541351200515" at="17,37,18,27" />
-      <scope id="9171470541351200515" at="21,33,22,27" />
-      <scope id="9171470541351200515" at="25,24,26,22" />
-      <scope id="9171470541351200515" at="29,23,30,22" />
-      <scope id="9171470541351200515" at="34,59,35,39" />
+      <scope id="9171470541351200515" at="12,42,13,22" />
+      <scope id="9171470541351200515" at="15,37,16,27" />
+      <scope id="9171470541351200515" at="18,33,19,27" />
+      <scope id="9171470541351200515" at="21,24,22,22" />
+      <scope id="9171470541351200515" at="24,23,25,22" />
+      <scope id="9171470541351200515" at="28,59,29,39" />
       <scope id="9171470541351200515" at="9,0,12,0" />
-      <scope id="9171470541351200515" at="13,0,16,0">
+      <scope id="9171470541351200515" at="12,0,15,0">
         <var name="count" id="9171470541351200515" />
         <var name="num" id="9171470541351200515" />
       </scope>
-      <scope id="9171470541351200515" at="17,0,20,0">
+      <scope id="9171470541351200515" at="15,0,18,0">
         <var name="value" id="9171470541351200515" />
       </scope>
-      <scope id="9171470541351200515" at="21,0,24,0">
+      <scope id="9171470541351200515" at="18,0,21,0">
         <var name="value" id="9171470541351200515" />
       </scope>
-      <scope id="9171470541351200515" at="25,0,28,0" />
-      <scope id="9171470541351200515" at="29,0,32,0" />
-      <scope id="9171470541351200515" at="33,0,37,0">
+      <scope id="9171470541351200515" at="21,0,24,0" />
+      <scope id="9171470541351200515" at="24,0,27,0" />
+      <scope id="9171470541351200515" at="27,0,31,0">
         <var name="from" id="9171470541351200515" />
       </scope>
-      <unit id="9171470541351200515" at="8,0,38,0" name="jetbrains.mps.baseLanguage.tuples.util.Sample" />
+      <unit id="9171470541351200515" at="8,0,32,0" name="jetbrains.mps.baseLanguage.tuples.util.Sample" />
     </file>
   </root>
   <root nodeRef="r:f52cb0e4-0aa9-419b-85cb-0e6e9e8071aa(jetbrains.mps.baseLanguage.tuples.util)/974579920306753652">
     <file name="A.java">
-      <node id="974579920306753718" at="14,60,15,134" concept="4" />
+      <node id="974579920306753718" at="13,60,14,134" concept="4" />
       <node id="974579920306753663" at="11,0,13,0" concept="0" trace="A#()V" />
-      <node id="974579920306753653" at="14,0,17,0" concept="5" trace="foo#()Ljava/lang/Iterable;" />
+      <node id="974579920306753653" at="13,0,16,0" concept="5" trace="foo#()Ljava/lang/Iterable;" />
       <scope id="974579920306753666" at="11,14,11,14" />
-      <scope id="974579920306753655" at="14,60,15,134" />
+      <scope id="974579920306753655" at="13,60,14,134" />
       <scope id="974579920306753663" at="11,0,13,0" />
-      <scope id="974579920306753653" at="14,0,17,0" />
-      <unit id="974579920306753652" at="10,0,18,0" name="jetbrains.mps.baseLanguage.tuples.util.A" />
+      <scope id="974579920306753653" at="13,0,16,0" />
+      <unit id="974579920306753652" at="10,0,17,0" name="jetbrains.mps.baseLanguage.tuples.util.A" />
     </file>
   </root>
 </debug-info>

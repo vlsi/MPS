@@ -14,26 +14,21 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_d1kmw7_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.checkedName.structure.PropertyRefType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_d1kmw7_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

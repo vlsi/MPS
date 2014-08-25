@@ -28,8 +28,7 @@ import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
 import com.intellij.ui.TreeUIHelper;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
@@ -183,28 +182,32 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
 
     focusManager.requestFocus(this, true);
 
+    TreePath path = getClosestPathForLocation(e.getX(), e.getY());
+    if (path == null) return;
+
+    Object lastPathComponent = path.getLastPathComponent();
+    MPSTreeNode nodeToClick=null;
+    if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
+      nodeToClick = (MPSTreeNode) lastPathComponent;
+      if ((e.getClickCount() == 1 && isAutoOpen())) {
+        autoscroll(nodeToClick);
+      } else if (e.getClickCount() == 2) {
+        e.consume();
+      }
+    } else if (e.getButton() == MouseEvent.BUTTON3) {
+      if (!isPathSelected(path)) {
+        setSelectionPath(path);
+      }
+    }
+
     //workaround for context acquiers
+    final MPSTreeNode node2dc = e.getClickCount()==2?nodeToClick:null;
     focusManager.doWhenFocusSettlesDown(new Runnable() {
       @Override
       public void run() {
-        TreePath path = getClosestPathForLocation(e.getX(), e.getY());
-        if (path == null) return;
-
-        Object lastPathComponent = path.getLastPathComponent();
-        if (lastPathComponent instanceof MPSTreeNode && ((MPSTreeNode) lastPathComponent).canBeOpened()) {
-          MPSTreeNode nodeToClick = (MPSTreeNode) lastPathComponent;
-          if ((e.getClickCount() == 1 && isAutoOpen())) {
-            autoscroll(nodeToClick);
-          } else if (e.getClickCount() == 2) {
-            doubleClick(nodeToClick);
-            e.consume();
-          }
-        } else if (e.getButton() == MouseEvent.BUTTON3) {
-          if (!isPathSelected(path)) {
-            setSelectionPath(path);
-          }
+        if (node2dc != null) {
+          doubleClick(node2dc);
         }
-
         if (e.isPopupTrigger()) showPopup(e.getX(), e.getY());
       }
     });
@@ -217,6 +220,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   protected void doubleClick(@NotNull MPSTreeNode nodeToClick) {
     nodeToClick.doubleClick();
   }
+
   /**
    * Single point to dispatch auto scrolling event.
    * By default, delegates to {@link MPSTreeNode#autoscroll()} ()}
@@ -368,7 +372,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   public void runRebuildAction(final Runnable rebuildAction, final boolean saveExpansion) {
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
+    if (MPSCore.getInstance().isTestMode()) {
       return;
     }
     if (!ThreadUtils.isEventDispatchThread()) {

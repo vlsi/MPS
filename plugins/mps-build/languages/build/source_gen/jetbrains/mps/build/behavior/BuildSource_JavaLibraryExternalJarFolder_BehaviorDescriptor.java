@@ -9,11 +9,9 @@ import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 public class BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor extends BuildSource_JavaCP_BehaviorDescriptor implements BuildExternalDependency_BehaviorDescriptor {
   public BuildSource_JavaLibraryExternalJarFolder_BehaviorDescriptor() {
   }
-
   public void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     BuildSource_JavaLibraryExternalJarFolder_Behavior.virtual_fetchDependencies_5908258303322131137(thisNode, artifacts, builder);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaLibraryExternalJarFolder";

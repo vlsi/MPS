@@ -24,7 +24,6 @@ public class XmlText_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_crdhdg_a(editorContext, node);
   }
-
   private EditorCell createCollection_crdhdg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_crdhdg_a");
@@ -35,7 +34,6 @@ public class XmlText_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_crdhdg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
@@ -58,20 +56,16 @@ public class XmlText_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_crdhdg_a0a0(EditorContext editorContext, SNode node) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_onNewLine_2133624044437631588", new Object[]{});
   }
-
   public static class ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_XmlContent_cellMenu_crdhdg_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.core.xml.structure.XmlContent";
     }
   }
-
   private EditorCell createConstant_crdhdg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_crdhdg_b0");
@@ -82,7 +76,6 @@ public class XmlText_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_crdhdg_a1a(SNode node, EditorContext editorContext) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
   }

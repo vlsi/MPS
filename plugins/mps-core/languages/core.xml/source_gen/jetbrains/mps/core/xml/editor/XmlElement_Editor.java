@@ -37,7 +37,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vc3gub_a(editorContext, node);
   }
-
   private EditorCell createCollection_vc3gub_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a");
@@ -54,7 +53,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAlternation_vc3gub_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_vc3gub_a0");
@@ -66,7 +64,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vc3gub_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tagName");
@@ -89,7 +86,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_vc3gub_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_c0");
@@ -101,11 +97,9 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_vc3gub_a2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_vc3gub_a2a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "attributes", true)).isNotEmpty();
   }
-
   private EditorCell createRefNodeList_vc3gub_a2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlElement_Editor.attributesListHandler_vc3gub_a2a(node, "attributes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -113,35 +107,31 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class attributesListHandler_vc3gub_a2a extends RefNodeListHandler {
     public attributesListHandler_vc3gub_a2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -149,7 +139,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createAlternation_vc3gub_d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a3a(node, editorContext);
@@ -161,11 +150,9 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_vc3gub_a3a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "content", true)).isEmpty() && SPropertyOperations.getBoolean(node, "shortEmptyNotation");
   }
-
   private EditorCell createCollection_vc3gub_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a3a");
@@ -173,7 +160,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vc3gub_b0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_vc3gub_a0d0");
@@ -185,7 +171,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_b0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_b0d0");
@@ -197,7 +182,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_vc3gub_a3a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a3a_0");
@@ -209,7 +193,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vc3gub_c0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_vc3gub_a0d0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = XmlElement_Editor.renderingCondition_vc3gub_a0a3a(node, editorContext);
@@ -221,11 +204,9 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_vc3gub_a0a3a(SNode node, EditorContext editorContext) {
     return XmlElement_Behavior.call_isMultiline_8886258982030574875(node);
   }
-
   private EditorCell createCollection_vc3gub_a0a3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a0a3a");
@@ -237,7 +218,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vc3gub_c0a0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_a0a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_a0a0d0");
@@ -249,7 +229,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_vc3gub_b0a0d0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlElement_Editor.contentListHandler_vc3gub_b0a0d0(node, "content", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -262,39 +241,34 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class contentListHandler_vc3gub_b0a0d0 extends RefNodeListHandler {
     public contentListHandler_vc3gub_b0a0d0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return this.nodeFactory(listOwner, editorContext);
     }
-
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -302,7 +276,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_vc3gub_c0a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_vc3gub_c0a0d0");
@@ -313,7 +286,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_vc3gub_a0a3a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a0a3a_0");
@@ -324,7 +296,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_vc3gub_a0a0d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_vc3gub_a0a0d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vc3gub_a0a0d0");
@@ -337,7 +308,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vc3gub_c0a0a3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_a0a0a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_a0a0a3a");
@@ -350,7 +320,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_vc3gub_b0a0a3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new XmlElement_Editor.contentListHandler_vc3gub_b0a0a3a(node, "content", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -358,50 +327,43 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class contentListHandler_vc3gub_b0a0a3a extends RefNodeListHandler {
     public contentListHandler_vc3gub_b0a0a3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return this.nodeFactory(listOwner, editorContext);
     }
-
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
       return SConceptOperations.createNewNode("jetbrains.mps.core.xml.structure.XmlText", null);
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = this.createEmptyCell_internal(editorContext, this.getOwner());
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
       return this.createConstant_vc3gub_a1a0a0d0(editorContext, node);
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
         }
       }
     }
-
     private EditorCell createConstant_vc3gub_a1a0a0d0(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_vc3gub_a1a0a0d0");
@@ -412,7 +374,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_vc3gub_c0a0a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_vc3gub_c0a0a3a");
@@ -424,21 +385,19 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_vc3gub_b0d0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(node, "tagName");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_vc3gub_b0d0");
     Style style = new StyleImpl();
     XmlSS_StyleSheet.apply_xmlTagName(style, editorCell);
@@ -448,7 +407,6 @@ public class XmlElement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_vc3gub_c0d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_vc3gub_c0d0");

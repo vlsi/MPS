@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class NotExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public NotExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";

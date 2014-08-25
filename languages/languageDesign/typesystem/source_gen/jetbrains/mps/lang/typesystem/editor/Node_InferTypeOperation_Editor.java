@@ -13,11 +13,9 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_ljpfyw_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ljpfyw_a(editorContext, node);
   }
-
   private EditorCell createConstant_ljpfyw_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inferType");
     editorCell.setCellId("Constant_ljpfyw_a");
@@ -25,7 +23,6 @@ public class Node_InferTypeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_ljpfyw_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.typesystem.editor._NotInRules_Component");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

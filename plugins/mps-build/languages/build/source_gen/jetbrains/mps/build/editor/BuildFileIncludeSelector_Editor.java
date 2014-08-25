@@ -19,7 +19,6 @@ public class BuildFileIncludeSelector_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_83ypxz_a(editorContext, node);
   }
-
   private EditorCell createCollection_83ypxz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_83ypxz_a");
@@ -28,7 +27,6 @@ public class BuildFileIncludeSelector_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_83ypxz_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_83ypxz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "include");
     editorCell.setCellId("Constant_83ypxz_a0");
@@ -38,7 +36,6 @@ public class BuildFileIncludeSelector_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_83ypxz_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("pattern");

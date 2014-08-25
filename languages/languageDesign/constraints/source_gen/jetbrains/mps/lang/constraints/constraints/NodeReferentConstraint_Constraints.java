@@ -24,7 +24,6 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
   public NodeReferentConstraint_Constraints() {
     super("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -52,7 +50,6 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
             }
             return AbstractConceptDeclaration_Behavior.call_getReferenceLinkDeclarations_1213877394496(applicableConcept);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_hkfysg_a0a1a0a0a1a0b0a1a1;
@@ -62,6 +59,5 @@ public class NodeReferentConstraint_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   private static SNodePointer breakingNode_hkfysg_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)", "1213104781933");
 }

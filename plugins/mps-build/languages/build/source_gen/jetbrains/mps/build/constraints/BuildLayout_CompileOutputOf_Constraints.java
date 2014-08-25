@@ -25,12 +25,10 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
   public BuildLayout_CompileOutputOf_Constraints() {
     super("jetbrains.mps.build.structure.BuildLayout_CompileOutputOf");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -41,7 +39,6 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -50,7 +47,6 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -59,7 +55,6 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yp60el_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -72,11 +67,9 @@ public class BuildLayout_CompileOutputOf_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildLayout_Jar");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "2591537044435952572");
   private static SNodePointer breakingNode_yp60el_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1224588814561883819");
 }

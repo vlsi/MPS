@@ -9,27 +9,21 @@ public class Sample extends MultiTuple._2<Integer, Long> {
   public Sample() {
     super();
   }
-
   public Sample(Integer num, Long count) {
     super(num, count);
   }
-
   public Integer num(Integer value) {
     return super._0(value);
   }
-
   public Long count(Long value) {
     return super._1(value);
   }
-
   public Integer num() {
     return super._0();
   }
-
   public Long count() {
     return super._1();
   }
-
   @SuppressWarnings(value = "unchecked")
   public Sample assignFrom(Tuples._2<Integer, Long> from) {
     return (Sample) super.assign(from);

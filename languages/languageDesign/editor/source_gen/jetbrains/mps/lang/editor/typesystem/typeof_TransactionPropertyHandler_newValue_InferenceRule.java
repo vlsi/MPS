@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_TransactionPropertyHandler_newValue_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_TransactionPropertyHandler_newValue_InferenceRule() {
   }
-
   public void applyRule(final SNode value, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode transactionalProperty = SNodeOperations.getAncestor(value, "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", false, false);
     SNode property = SLinkOperations.getTarget(transactionalProperty, "property", false);
@@ -26,18 +25,15 @@ public class typeof_TransactionPropertyHandler_newValue_InferenceRule extends Ab
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "2735767332089497946", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(property, "dataType", false), "virtual_toBaseLanguageType_1213877229718", new Object[]{}), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

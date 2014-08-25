@@ -23,41 +23,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddRemoveFigureParameterAttributePropertySpecification_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRemoveFigureParameterAttributePropertySpecification_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   }
-
   public String getPresentation() {
     return "AddRemoveFigureParameterAttributePropertySpecification";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor.figures";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility"))) {
       return false;
@@ -70,31 +61,25 @@ public class AddRemoveFigureParameterAttributePropertySpecification_Intention im
     Set<SNode> allExtendedClassifiers = Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985482(SLinkOperations.getTarget(classifierType, "classifier", false));
     return SetSequence.fromSet(allExtendedClassifiers).contains(SNodeOperations.getNode("f:java_stub#67b3c41d-58b3-4756-b971-30bf8a9d63e6#jetbrains.jetpad.projectional.view(jetbrains.jetpad/jetbrains.jetpad.projectional.view@java_stub)", "~ViewPropertySpec"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)", "7319867929567458791");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRemoveFigureParameterAttributePropertySpecification_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty")) == null ? "Add figure parameter attribute" : "Remove figure parameter attribute");
 
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty")) != null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"), null);
@@ -102,7 +87,6 @@ public class AddRemoveFigureParameterAttributePropertySpecification_Intention im
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.figures.structure.FigureParameterAttributeViewProperty", null));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRemoveFigureParameterAttributePropertySpecification_Intention.this;
     }

@@ -8,10 +8,10 @@
   <root>
     <file name="QueriesGenerated.java">
       <unit at="34,42,42,9" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$1" />
-      <unit at="73,42,81,9" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$3" />
-      <unit at="45,57,55,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$2" />
-      <unit at="84,57,94,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
-      <unit at="27,0,106,0" name="jetbrains.mps.execution.settings.actions.QueriesGenerated" />
+      <unit at="70,42,78,9" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$3" />
+      <unit at="45,57,54,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$2" />
+      <unit at="81,57,90,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
+      <unit at="27,0,101,0" name="jetbrains.mps.execution.settings.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:dafed770-9895-4759-9aa8-4b79aa8a5f0f(jetbrains.mps.execution.settings.actions)/943668161921858892">
@@ -20,48 +20,48 @@
       <node id="943668161921866878" at="46,98,47,154" concept="2" />
       <node id="943668161921866886" at="47,154,48,90" concept="0" />
       <node id="943668161921859106" at="48,90,49,28" concept="3" />
-      <node id="943668161921859028" at="52,64,53,89" concept="3" />
-      <node id="943668161921858949" at="63,183,64,142" concept="3" />
-      <node id="943668161921929034" at="76,47,77,177" concept="3" />
-      <node id="943668161921866960" at="85,98,86,146" concept="2" />
-      <node id="943668161921866966" at="86,146,87,90" concept="0" />
-      <node id="943668161921866973" at="87,90,88,28" concept="3" />
-      <node id="943668161921866978" at="91,64,92,94" concept="3" />
-      <node id="943668161921866996" at="102,183,103,145" concept="3" />
+      <node id="943668161921859028" at="51,64,52,89" concept="3" />
+      <node id="943668161921858949" at="61,183,62,142" concept="3" />
+      <node id="943668161921929034" at="73,47,74,177" concept="3" />
+      <node id="943668161921866960" at="82,98,83,146" concept="2" />
+      <node id="943668161921866966" at="83,146,84,90" concept="0" />
+      <node id="943668161921866973" at="84,90,85,28" concept="3" />
+      <node id="943668161921866978" at="87,64,88,94" concept="3" />
+      <node id="943668161921866996" at="97,183,98,145" concept="3" />
       <node id="943668161921929148" at="37,0,40,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="943668161921858894" at="63,0,66,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921858894#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <node id="943668161921929030" at="76,0,79,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="943668161921866947" at="102,0,105,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921866947#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
+      <node id="943668161921858894" at="61,0,64,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921858894#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
+      <node id="943668161921929030" at="73,0,76,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="943668161921866947" at="97,0,100,0" concept="4" trace="nodeSubstituteActionsBuilder_Precondition_Type_943668161921866947#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <node id="943668161921858991" at="35,44,40,32" concept="3" />
-      <node id="943668161921866953" at="74,44,79,32" concept="3" />
+      <node id="943668161921866953" at="71,44,76,32" concept="3" />
       <scope id="943668161921929149" at="37,47,38,177" />
-      <scope id="943668161921859027" at="52,64,53,89" />
-      <scope id="943668161921858895" at="63,183,64,142" />
-      <scope id="943668161921929031" at="76,47,77,177" />
-      <scope id="943668161921866977" at="91,64,92,94" />
-      <scope id="943668161921866948" at="102,183,103,145" />
+      <scope id="943668161921859027" at="51,64,52,89" />
+      <scope id="943668161921858895" at="61,183,62,142" />
+      <scope id="943668161921929031" at="73,47,74,177" />
+      <scope id="943668161921866977" at="87,64,88,94" />
+      <scope id="943668161921866948" at="97,183,98,145" />
       <scope id="943668161921929148" at="37,0,40,0">
         <var name="it" id="943668161921929148" />
       </scope>
       <scope id="943668161921858986" at="46,98,49,28">
         <var name="node" id="943668161921866879" />
       </scope>
-      <scope id="943668161921858894" at="63,0,66,0">
+      <scope id="943668161921858894" at="61,0,64,0">
         <var name="_context" id="943668161921858894" />
         <var name="operationContext" id="943668161921858894" />
       </scope>
-      <scope id="943668161921929030" at="76,0,79,0">
+      <scope id="943668161921929030" at="73,0,76,0">
         <var name="it" id="943668161921929030" />
       </scope>
-      <scope id="943668161921866959" at="85,98,88,28">
+      <scope id="943668161921866959" at="82,98,85,28">
         <var name="node" id="943668161921866961" />
       </scope>
-      <scope id="943668161921866947" at="102,0,105,0">
+      <scope id="943668161921866947" at="97,0,100,0">
         <var name="_context" id="943668161921866947" />
         <var name="operationContext" id="943668161921866947" />
       </scope>
       <unit id="943668161921929148" at="36,194,40,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$2" />
-      <unit id="943668161921929030" at="75,186,79,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
+      <unit id="943668161921929030" at="72,186,76,13" name="jetbrains.mps.execution.settings.actions.QueriesGenerated$4" />
     </file>
   </root>
 </debug-info>

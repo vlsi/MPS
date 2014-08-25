@@ -18,10 +18,8 @@ public class ClassRunner {
   public static final String CLASS_PREFIX = "c";
   public static final String FILE_PREFIX = "f";
   public static final String CLASSPATH_PREFIX = "p";
-
   public ClassRunner() {
   }
-
   public static void main(String[] args) {
     String className = null;
     String fileName = null;
@@ -106,7 +104,6 @@ public class ClassRunner {
     }
 
   }
-
   public static List<String> readArguments(String fileName) throws IOException {
     List<String> result = new ArrayList<String>();
     new File(fileName).deleteOnExit();
@@ -123,7 +120,6 @@ public class ClassRunner {
     }
     return result;
   }
-
   private static String getCommandLineFromPrefix(String prefix) {
     return "-" + prefix;
   }

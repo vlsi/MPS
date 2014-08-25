@@ -37,35 +37,29 @@ public class FileMPSProject extends Project {
   private static Logger LOG = LogManager.getLogger(FileMPSProject.class);
   private String myErrors;
   private FileMPSProject.ProjectDescriptor myDescriptor;
-
   public FileMPSProject(File file) {
     super();
     setProjectFile(file);
   }
-
   @Override
   public String getName() {
     File projectFile = getProjectFile();
     assert projectFile != null;
     return projectFile.getName();
   }
-
   @Override
   public void projectOpened() {
     super.projectOpened();
   }
-
   @Override
   public void projectClosed() {
     super.projectClosed();
   }
-
   @Deprecated
   @Override
   public <T> T getComponent(Class<T> cls) {
     return null;
   }
-
   @Override
   public void dispose() {
     super.dispose();
@@ -78,7 +72,6 @@ public class FileMPSProject extends Project {
       }
     });
   }
-
   protected void readModules(FileMPSProject.ProjectDescriptor projDesc) {
     myErrors = null;
     //  load solutions 
@@ -106,7 +99,6 @@ public class FileMPSProject extends Project {
       super.removeModule(ref);
     }
   }
-
   private void error(String text) {
     if (myErrors == null) {
       this.myErrors = text;
@@ -115,7 +107,6 @@ public class FileMPSProject extends Project {
     }
     LOG.error(text);
   }
-
   public void init(FileMPSProject.ProjectDescriptor desc) {
     this.myDescriptor = desc;
     if (getProjectFile() == null) {
@@ -133,24 +124,19 @@ public class FileMPSProject extends Project {
       }
     });
   }
-
   public FileMPSProject.ProjectDescriptor getDescriptor() {
     return myDescriptor;
   }
-
   @Override
   public List<String> getWatchedModulesPaths() {
     return Collections.emptyList();
   }
-
   public static class ProjectDescriptor {
     private String name;
     private List<Path> myModulePaths = new ArrayList<Path>();
-
     public ProjectDescriptor(File project) {
       load(project);
     }
-
     private void load(File project) {
       if (project == null) {
         return;
@@ -162,7 +148,6 @@ public class FileMPSProject extends Project {
         load(project, project);
       }
     }
-
     private void load(File project, File modulesFile) {
       if (modulesFile == null) {
         return;
@@ -189,7 +174,6 @@ public class FileMPSProject extends Project {
         load(project, projectElement);
       }
     }
-
     private void load(File project, Element modulesXml) {
       FileMPSProject.ProjectDescriptor result_dkknya_a0a5o = this;
       final String result_dkknya_a0a0a5o = project.getName();
@@ -215,19 +199,15 @@ public class FileMPSProject extends Project {
         result_dkknya_a0a5o.addModule(modulePath);
       }
     }
-
     public void setName(String name) {
       this.name = name;
     }
-
     public String getName() {
       return name;
     }
-
     public List<Path> getModules() {
       return Collections.unmodifiableList(myModulePaths);
     }
-
     public void addModule(Path p) {
       myModulePaths.add(p);
     }

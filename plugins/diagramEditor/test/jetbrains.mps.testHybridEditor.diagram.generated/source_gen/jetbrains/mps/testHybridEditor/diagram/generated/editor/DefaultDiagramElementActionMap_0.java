@@ -13,18 +13,14 @@ public class DefaultDiagramElementActionMap_0 {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DefaultDiagramElementActionMap_0.DefaultDiagramElementActionMap_0_DELETE(node));
   }
-
   public static class DefaultDiagramElementActionMap_0_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DefaultDiagramElementActionMap_0_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }

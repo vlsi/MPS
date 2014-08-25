@@ -8,35 +8,35 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:6d2c46f2-5c85-46df-a816-3a08e3f327c8(jetbrains.mps.lang.pattern.generator.baseLanguage.template.util)/8288845019109238320">
     <file name="PatternGeneratorUtil.java">
-      <node id="8288845019109253872" at="15,71,16,103" concept="3" />
-      <node id="8288845019109253924" at="17,52,18,50" concept="4" />
-      <node id="8288845019109253847" at="19,5,20,128" concept="3" />
-      <node id="8288845019109253865" at="20,128,21,104" concept="3" />
-      <node id="8288845019109253905" at="23,130,24,21" concept="4" />
-      <node id="8288845019109253933" at="26,5,27,16" concept="4" />
+      <node id="8288845019109253872" at="14,71,15,103" concept="3" />
+      <node id="8288845019109253924" at="16,52,17,50" concept="4" />
+      <node id="8288845019109253847" at="18,5,19,128" concept="3" />
+      <node id="8288845019109253865" at="19,128,20,104" concept="3" />
+      <node id="8288845019109253905" at="22,130,23,21" concept="4" />
+      <node id="8288845019109253933" at="25,5,26,16" concept="4" />
       <node id="8288845019109238322" at="12,0,14,0" concept="0" trace="PatternGeneratorUtil#()V" />
-      <node id="8288845019109253910" at="16,103,19,5" concept="2" />
-      <node id="8288845019109253887" at="22,31,25,7" concept="2" />
-      <node id="8288845019109253880" at="21,104,26,5" concept="1" />
-      <node id="8288845019109238330" at="15,0,29,0" concept="5" trace="get#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8288845019109253910" at="15,103,18,5" concept="2" />
+      <node id="8288845019109253887" at="21,31,24,7" concept="2" />
+      <node id="8288845019109253880" at="20,104,25,5" concept="1" />
+      <node id="8288845019109238330" at="14,0,28,0" concept="5" trace="get#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="8288845019109238325" at="12,33,12,33" />
-      <scope id="8288845019109253911" at="17,52,18,50" />
-      <scope id="8288845019109253888" at="23,130,24,21" />
+      <scope id="8288845019109253911" at="16,52,17,50" />
+      <scope id="8288845019109253888" at="22,130,23,21" />
       <scope id="8288845019109238322" at="12,0,14,0" />
-      <scope id="8288845019109253882" at="22,31,25,7" />
-      <scope id="8288845019109253880" at="21,104,26,5">
+      <scope id="8288845019109253882" at="21,31,24,7" />
+      <scope id="8288845019109253880" at="20,104,25,5">
         <var name="field" id="8288845019109253881" />
       </scope>
-      <scope id="8288845019109238333" at="15,71,27,16">
+      <scope id="8288845019109238333" at="14,71,26,16">
         <var name="nodes" id="8288845019109253873" />
         <var name="patternClass" id="8288845019109253866" />
         <var name="varPattern" id="8288845019109253848" />
       </scope>
-      <scope id="8288845019109238330" at="15,0,29,0">
+      <scope id="8288845019109238330" at="14,0,28,0">
         <var name="genContext" id="8288845019109252778" />
         <var name="var" id="8288845019109252780" />
       </scope>
-      <unit id="8288845019109238320" at="11,0,30,0" name="jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil" />
+      <unit id="8288845019109238320" at="11,0,29,0" name="jetbrains.mps.lang.pattern.generator.baseLanguage.template.util.PatternGeneratorUtil" />
     </file>
   </root>
 </debug-info>

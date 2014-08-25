@@ -50,11 +50,15 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   private final Map<String, List<NavigationItem>> myProjectNamesCache = new HashMap<String, List<NavigationItem>>();
   private final Map<String, List<NavigationItem>> myGlobalNamesCache = new HashMap<String, List<NavigationItem>>();
 
-  private String myEntityName = "";
+  protected String myCheckboxName, myPromptText, myNotInProjectMessage, myNotFoundMessage;
+
 
   protected BaseMPSChooseModel(Project project, String entityName) {
     myProject = project;
-    myEntityName = entityName;
+    myCheckboxName = String.format("Include &non-&&project %s", NameUtil.pluralize(entityName));
+    myPromptText = String.format("%s name:", NameUtil.capitalize(entityName));
+    myNotInProjectMessage = String.format("no %s found in project", NameUtil.pluralize(entityName));
+    myNotFoundMessage = "no matches found";
   }
 
   //---------------------FIND STUFF------------------------
@@ -175,23 +179,23 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   }
 
   protected String doGetCheckBoxName() {
-    return "Include &non-&&project " + NameUtil.pluralize(myEntityName);
+    return myCheckboxName;
   }
 
   @Override
   public String getNotInMessage() {
-    return "no " + NameUtil.pluralize(myEntityName) + " found in project";
+    return myNotInProjectMessage;
   }
 
   @Override
   public String getNotFoundMessage() {
-    return "no mathches found";
+    return myNotFoundMessage;
   }
 
   @Override
   @Nullable
   public String getPromptText() {
-    return NameUtil.capitalize(myEntityName) + " name:";
+    return myPromptText;
   }
 
   @Override

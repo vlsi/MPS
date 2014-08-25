@@ -16,7 +16,13 @@
 package jetbrains.mps.smodel.structure;
 
 import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.util.annotation.ToRemove;
 
+/**
+ * @deprecated Use {@link jetbrains.mps.smodel.runtime.MakeAspectDescriptor}
+ */
+@Deprecated
+@ToRemove(version = 3.2)
 public abstract class FacetDescriptor {
 
   public abstract IFacetManifest getManifest ();

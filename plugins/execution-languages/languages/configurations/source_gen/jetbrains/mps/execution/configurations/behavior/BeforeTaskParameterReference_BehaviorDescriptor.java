@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class BeforeTaskParameterReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public BeforeTaskParameterReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return BeforeTaskParameterReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.BeforeTaskParameterReference";

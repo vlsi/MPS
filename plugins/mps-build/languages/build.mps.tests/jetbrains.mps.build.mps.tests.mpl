@@ -10,7 +10,7 @@
     <model modelUID="r:e6234636-faf1-4112-be6c-55df7ec7314a(jetbrains.mps.build.mps.tests.accessories)" />
   </accessoryModels>
   <generators>
-    <generator name="" generatorUID="jetbrains.mps.build.mps.tests#4560297596904874237" uuid="46acce8c-467e-474a-98fc-a13494168c35" needs-opctx="false">
+    <generator name="" generatorUID="jetbrains.mps.build.mps.tests#4560297596904874237" uuid="46acce8c-467e-474a-98fc-a13494168c35">
       <models>
         <modelRoot contentPath="${module}/generator/template" type="default">
           <sourceRoot location="." />
@@ -58,24 +58,7 @@
                 <mapping-set-element>
                   <mapping-node modelUID="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" nodeID="7655580649838775665" />
                 </mapping-set-element>
-                <mapping-set-element>
-                  <mapping-node modelUID="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" nodeID="6354776497035427841" />
-                </mapping-set-element>
               </mapping-set>
-            </external-mapping>
-          </lesser-priority-mapping>
-        </mapping-priority-rule>
-        <mapping-priority-rule kind="strictly_together">
-          <greater-priority-mapping>
-            <generator generatorUID="46acce8c-467e-474a-98fc-a13494168c35(jetbrains.mps.build.mps.tests#4560297596904874237)" />
-            <external-mapping>
-              <mapping-node modelUID="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" nodeID="4005526075822445737" />
-            </external-mapping>
-          </greater-priority-mapping>
-          <lesser-priority-mapping>
-            <generator generatorUID="14663b86-7294-4d82-bdbf-e858bd3af9b1(jetbrains.mps.build#3595702787188034882)" />
-            <external-mapping>
-              <mapping-node modelUID="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" nodeID="3595702787188034883" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>

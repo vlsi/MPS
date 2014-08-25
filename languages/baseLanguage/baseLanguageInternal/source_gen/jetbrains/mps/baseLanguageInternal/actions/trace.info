@@ -6,15 +6,15 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="18,0,35,0" name="jetbrains.mps.baseLanguageInternal.actions.QueriesGenerated" />
+      <unit at="18,0,33,0" name="jetbrains.mps.baseLanguageInternal.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:f599a1c2-90b0-429a-b372-3b4a6f9a3400(jetbrains.mps.baseLanguageInternal.actions)/4672968395964803372">
     <file name="QueriesGenerated.java">
-      <node id="4672968395964803376" at="31,202,32,852" concept="2" />
-      <node id="4672968395964803374" at="31,0,34,0" concept="3" trace="nodeSubstituteActionsBuilder_Precondition_InternalClassifierType_4672968395964803374#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
-      <scope id="4672968395964803375" at="31,202,32,852" />
-      <scope id="4672968395964803374" at="31,0,34,0">
+      <node id="4672968395964803376" at="29,202,30,852" concept="2" />
+      <node id="4672968395964803374" at="29,0,32,0" concept="3" trace="nodeSubstituteActionsBuilder_Precondition_InternalClassifierType_4672968395964803374#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
+      <scope id="4672968395964803375" at="29,202,30,852" />
+      <scope id="4672968395964803374" at="29,0,32,0">
         <var name="_context" id="4672968395964803374" />
         <var name="operationContext" id="4672968395964803374" />
       </scope>

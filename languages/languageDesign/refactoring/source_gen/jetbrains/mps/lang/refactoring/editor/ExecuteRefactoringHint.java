@@ -12,15 +12,12 @@ import jetbrains.mps.editor.runtime.style.StyledTextPrinter;
 public class ExecuteRefactoringHint implements ParametersInformation<SNode> {
   public ExecuteRefactoringHint() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return Sequence.<SNode>singleton(SLinkOperations.getTarget(node, "refactoring", false));
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     RefExpressionParamUtil.xxx(node, parameterObject, styledText, true);
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return true;
   }

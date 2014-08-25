@@ -33,11 +33,9 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_j36akn_a(editorContext, node);
   }
-
   private EditorCell createProperty_j36akn_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -62,7 +60,6 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_j36akn_a0(SNode node, EditorContext editorContext) {
     boolean condition = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "type", true)) != SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type");
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.Type")) {
@@ -71,11 +68,9 @@ public class VariableDeclaration_NameCellComponent implements ConceptEditorCompo
       return condition;
     }
   }
-
   public static class VariableDeclaration_name_postfixCellMenu_j36akn_a0a extends AbstractCellMenuPart_PropertyPostfixHints {
     public VariableDeclaration_name_postfixCellMenu_j36akn_a0a() {
     }
-
     public List<String> getPostfixes(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);

@@ -7,32 +7,25 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 public abstract class AbstractTableModel implements TableModel {
   public AbstractTableModel() {
   }
-
   @Override
   public void deleteRow(int rowNumber) {
   }
-
   @Override
   public void createElement(int row, int column) {
   }
-
   @Override
   public void insertRow(int rowNumber) {
   }
-
   @Override
   public SubstituteInfo getSubstituteInfo(int row, int column) {
     return null;
   }
-
   @Override
   public void deleteColumn(int columnNumber) {
   }
-
   @Override
   public void insertColumn(int columnNumber) {
   }
-
   @Override
   public int getMaxColumnWidth(int columnNumber) {
     return -1;

@@ -77,7 +77,7 @@ public class ModuleClassLoadersHolder {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-//        LOG.warn("CustomClassLoading Facet for module " + module + " is not valid", new Throwable());
+        LOG.warn("Facet of the module " + module + " is not valid");
         return null;
       }
     }

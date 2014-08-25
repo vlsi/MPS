@@ -15,7 +15,6 @@ public class DebuggerSettingsCommandParameterDeclaration_Constraints extends Bas
   public DebuggerSettingsCommandParameterDeclaration_Constraints() {
     super("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class DebuggerSettingsCommandParameterDeclaration_Constraints extends Bas
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

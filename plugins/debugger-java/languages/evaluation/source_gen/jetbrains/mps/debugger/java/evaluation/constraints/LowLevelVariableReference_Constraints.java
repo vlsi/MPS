@@ -27,7 +27,6 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
   public LowLevelVariableReference_Constraints() {
     super("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -53,7 +51,6 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
               }
             });
           }
-
           @Override
           public ISearchScope createSearchScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
@@ -62,7 +59,6 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
               }
             };
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8w715n_a0a2a0a0a1a0b0a1a1;
@@ -72,6 +68,5 @@ public class LowLevelVariableReference_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   private static SNodePointer breakingNode_8w715n_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6146091894852366855");
 }

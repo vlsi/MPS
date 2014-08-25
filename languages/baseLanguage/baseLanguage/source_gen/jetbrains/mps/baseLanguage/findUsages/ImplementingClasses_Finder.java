@@ -17,25 +17,20 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ImplementingClasses_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder");
-
   public ImplementingClasses_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Implementing Classes";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 3);
@@ -66,7 +61,6 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     ListSequence.fromList(_results).addElement(node);
@@ -74,7 +68,6 @@ public class ImplementingClasses_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(derivedInterface);
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Implementing Classes";

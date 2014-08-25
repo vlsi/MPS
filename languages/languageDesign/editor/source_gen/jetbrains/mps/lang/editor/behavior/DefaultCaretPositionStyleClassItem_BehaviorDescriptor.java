@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class DefaultCaretPositionStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public DefaultCaretPositionStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem";

@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class AnnotationInstanceParameterInformationQuery implements ParametersInformation<SNode> {
   public AnnotationInstanceParameterInformationQuery() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     if (SLinkOperations.getTarget(node, "annotation", false) != null) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "annotation", false));
@@ -24,7 +23,6 @@ public class AnnotationInstanceParameterInformationQuery implements ParametersIn
       return ListSequence.fromList(new ArrayList<SNode>());
     }
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     SNode selectedAnnotationMethod = this.getSelectedAnnotationMethod(editorContext, node);
     if (SPropertyOperations.getString(parameterObject, "name") != null) {
@@ -53,11 +51,9 @@ public class AnnotationInstanceParameterInformationQuery implements ParametersIn
     }
     styledText.append(")");
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "annotation", false) == parameterObject;
   }
-
   private SNode getSelectedAnnotationMethod(EditorContext editorContext, SNode annotationInstance) {
     for (SNode argument = editorContext.getSelectedNode(); argument != null; argument = SNodeOperations.getParent(argument)) {
       if (SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue") && SNodeOperations.getParent(argument) == annotationInstance) {

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Modifier_BehaviorDescriptor;
 public class DispatchModifier_BehaviorDescriptor extends Modifier_BehaviorDescriptor {
   public DispatchModifier_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.doubleDispatch.structure.DispatchModifier";

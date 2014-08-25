@@ -20,7 +20,6 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class EquationDirection_Enum_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     EquationDirection_Enum constant = EquationDirection_Enum.parseValue(value);
     if (constant != null) {

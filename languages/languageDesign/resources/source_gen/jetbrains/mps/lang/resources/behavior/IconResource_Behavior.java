@@ -21,7 +21,6 @@ import javax.swing.ImageIcon;
 public class IconResource_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_generate_8974276187400030152(final SNode thisNode) {
     ModelAccess.instance().writeFilesInEDT(new Runnable() {
       public void run() {
@@ -38,7 +37,6 @@ public class IconResource_Behavior {
       }
     });
   }
-
   public static boolean call_isValid_8974276187400030063(SNode thisNode) {
     SModule module = SNodeOperations.getModel(thisNode).getModule();
     if (!(module instanceof AbstractModule)) {
@@ -63,7 +61,6 @@ public class IconResource_Behavior {
       return false;
     }
   }
-
   public static String call_getFilename_8974276187400030131(SNode thisNode) {
     String fullPath = SPropertyOperations.getString(thisNode, "path");
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);

@@ -35,10 +35,8 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 public class AutoResolver extends EditorCheckerAdapter {
   private boolean myForceAutofix = false;
 
-
   public AutoResolver() {
   }
-
   @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
@@ -56,7 +54,6 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
     return messages;
   }
-
   private void runAutofix(final Set<SReference> badReferences, final EditorContext editorContext) {
     if (editorContext.getOperationContext() == null) {
       return;
@@ -129,7 +126,6 @@ public class AutoResolver extends EditorCheckerAdapter {
       }
     });
   }
-
   private Set<SReference> collectBadReferences(SNode cellNode) {
     jetbrains.mps.smodel.SReference.disableLogging();
     try {
@@ -146,22 +142,18 @@ public class AutoResolver extends EditorCheckerAdapter {
       jetbrains.mps.smodel.SReference.enableLogging();
     }
   }
-
   private boolean isAutofix(SModel model, SRepository repository) {
     return model instanceof EditableSModel && !(model instanceof TransientSModel) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
   }
-
   @Override
   public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
   }
-
   @Override
   protected void resetCheckerState() {
     myForceAutofix = true;
     super.resetCheckerState();
   }
-
   @Override
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
     if (EditorSettings.getInstance().isAutoQuickFix() && "name".equals(event.getPropertyName())) {

@@ -16,67 +16,52 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class convertToNamed_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public convertToNamed_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp";
   }
-
   public String getPresentation() {
     return "convertToNamed";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.regexp.intentions.convertToNamed_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.regexp";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:5c2005a8-261b-4759-9059-c2decf025b8a(jetbrains.mps.baseLanguage.regexp.intentions)", "305848682816615072");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convertToNamed_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert parentheses to named capturing group";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode n = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp");
       editorContext.flushEvents();
       editorContext.selectWRTFocusPolicy(n);
     }
-
     public IntentionDescriptor getDescriptor() {
       return convertToNamed_Intention.this;
     }

@@ -15,19 +15,16 @@ import org.apache.log4j.LogManager;
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
   private AnAction action;
-
   public GoToNamedNode_Action(AnAction action_par) {
     super("Go to Symbol", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToNamedNode_Action.this.action.update(event);
@@ -38,14 +35,6 @@ public class GoToNamedNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       GoToNamedNode_Action.this.action.actionPerformed(event);
@@ -55,7 +44,6 @@ public class GoToNamedNode_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -65,10 +53,8 @@ public class GoToNamedNode_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String action_State(AnAction object) {
     return "";
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToNamedNode_Action.class);
 }

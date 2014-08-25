@@ -16,6 +16,7 @@
 package jetbrains.mps.project.validation;
 
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
@@ -40,17 +41,17 @@ public class DevkitValidator implements ModuleValidator {
     }
 
     for (SModuleReference extDevkit : myModule.getModuleDescriptor().getExtendedDevkits()) {
-      if (MPSModuleRepository.getInstance().getModule(extDevkit) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(extDevkit) == null) {
         errors.add("Can't find extended devkit: " + extDevkit.getModuleName());
       }
     }
     for (SModuleReference expLang : myModule.getModuleDescriptor().getExportedLanguages()) {
-      if (MPSModuleRepository.getInstance().getModule(expLang) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(expLang) == null) {
         errors.add("Can't find exported language: " + expLang.getModuleName());
       }
     }
     for (SModuleReference expSol : myModule.getModuleDescriptor().getExportedSolutions()) {
-      if (MPSModuleRepository.getInstance().getModule(expSol) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(expSol) == null) {
         errors.add("Can't find exported language: " + expSol.getModuleName());
       }
     }

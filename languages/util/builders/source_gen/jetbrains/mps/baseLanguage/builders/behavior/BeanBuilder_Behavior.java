@@ -14,15 +14,12 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class BeanBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return _quotation_createNode_ef9w03_a0a0(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return _quotation_createNode_ef9w03_a0a1(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
-
   private static SNode _quotation_createNode_ef9w03_a0a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -40,7 +37,6 @@ public class BeanBuilder_Behavior {
     quotedNode_3.addChild("creator", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_ef9w03_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

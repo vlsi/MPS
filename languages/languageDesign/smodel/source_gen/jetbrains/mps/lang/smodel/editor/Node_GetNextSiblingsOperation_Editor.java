@@ -12,7 +12,6 @@ public class Node_GetNextSiblingsOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_4cp5nl_a(editorContext, node);
   }
-
   private EditorCell createComponent_4cp5nl_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

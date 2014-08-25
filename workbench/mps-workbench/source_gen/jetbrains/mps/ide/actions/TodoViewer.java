@@ -42,7 +42,6 @@ public class TodoViewer extends JPanel {
   private UsagesView myUsagesView;
   private Project myProject;
   private TodoViewer_Tool myTool;
-
   public TodoViewer(final Project project, TodoViewer_Tool tool) {
     this.myTool = tool;
     myProject = project;
@@ -58,21 +57,17 @@ public class TodoViewer extends JPanel {
       }
     });
   }
-
   public void dispose() {
     if (myUsagesView != null) {
       myUsagesView.dispose();
     }
   }
-
   private BaseGeneratedTool getTool() {
     return this.myTool;
   }
-
   private Project getProject() {
     return myProject;
   }
-
   private void refresh() {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     removeAll();
@@ -96,27 +91,22 @@ public class TodoViewer extends JPanel {
       }
     });
   }
-
   public static class MyNodeRepresentator implements INodeRepresentator<SNode> {
     public MyNodeRepresentator() {
     }
-
     @NotNull
     @Override
     public String getPresentation(SNode node) {
       return "<font color=blue>" + SNodeAccessUtil.getProperty(node, "text") + "</font>";
     }
-
     @Override
     public String getResultsText(TextOptions options) {
       return "<strong>" + NameUtil.formatNumericalString(options.mySubresultsCount, "TODO item") + " found</strong>";
     }
-
     @Override
     public Icon getResultsIcon() {
       return TodoViewer.TODO_ICON;
     }
-
     @Override
     public String getCategoryText(TextOptions options, String category, boolean isResultsSection) {
       String counter = "";
@@ -126,21 +116,17 @@ public class TodoViewer extends JPanel {
       }
       return "<strong>TODO items" + counter + "</strong>";
     }
-
     @Override
     public Icon getCategoryIcon(String category) {
       return IdeIcons.CLOSED_FOLDER;
     }
-
     @Override
     public List<CategoryKind> getCategoryKinds() {
       return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
     }
-
     @Override
     public void read(Element element, Project project) throws CantLoadSomethingException {
     }
-
     @Override
     public void write(Element element, Project project) throws CantSaveSomethingException {
     }

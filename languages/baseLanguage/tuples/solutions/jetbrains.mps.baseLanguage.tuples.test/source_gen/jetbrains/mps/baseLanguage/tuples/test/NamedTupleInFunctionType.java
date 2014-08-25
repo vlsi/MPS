@@ -12,64 +12,49 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 public class NamedTupleInFunctionType {
   public NamedTupleInFunctionType() {
   }
-
   public void foo(Map<String, TwoStrings> map, _FunctionTypes._void_P1_E0<? super IMapping<String, TwoStrings>> mpng) {
     MapSequence.fromMap(map).visitAll(mpng);
   }
-
   public void m(_FunctionTypes._void_P1_E0<? super NamedTupleInFunctionType.G<TwoStrings>> fun) {
     fun.invoke(new NamedTupleInFunctionType.G<TwoStrings>());
   }
-
   public void _void_P1(_FunctionTypes._void_P1_E0<? super Pair<IntPair, TwoStrings>> fun) {
     fun.invoke(new Pair<IntPair, TwoStrings>(new IntPair(1, 2), new TwoStrings("one", "two")));
   }
-
   public void _void_P2(_FunctionTypes._void_P2_E0<? super IntPair, ? super Pair> fun) {
     _void_P2(fun);
   }
-
   public void _value_P0(_FunctionTypes._return_P0_E0<? extends Pair<IntPair, TwoStrings>> fun) {
     Pair<IntPair, TwoStrings> pair = fun.invoke();
   }
-
   public class G<T> {
     public G() {
     }
-
     public T get() {
       return null;
     }
-
     public void set(T t) {
     }
   }
-
   public static class TwoStrings extends MultiTuple._2<String, String> {
     public TwoStrings() {
       super();
     }
-
     public TwoStrings(String s1, String s2) {
       super(s1, s2);
     }
-
     public String s1(String value) {
       return super._0(value);
     }
-
     public String s2(String value) {
       return super._1(value);
     }
-
     public String s1() {
       return super._0();
     }
-
     public String s2() {
       return super._1();
     }
-
     @SuppressWarnings(value = "unchecked")
     public NamedTupleInFunctionType.TwoStrings assignFrom(Tuples._2<String, String> from) {
       return (NamedTupleInFunctionType.TwoStrings) super.assign(from);

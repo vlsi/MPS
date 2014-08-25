@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildLayout_CopyHandler_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements BuildLayout_CopyParameter_BehaviorDescriptor {
   public BuildLayout_CopyHandler_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyHandler";

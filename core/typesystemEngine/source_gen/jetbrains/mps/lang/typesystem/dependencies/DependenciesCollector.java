@@ -22,7 +22,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class DependenciesCollector {
   public DependenciesCollector() {
   }
-
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference", false, new String[]{})) {
@@ -135,7 +134,6 @@ public class DependenciesCollector {
       }
     }
   }
-
   private static SNode _quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a1a1a2a5a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -173,7 +171,6 @@ public class DependenciesCollector {
     SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a0c0b0b0c0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -211,7 +208,6 @@ public class DependenciesCollector {
     SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_bcwvc2_b0a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -249,7 +245,6 @@ public class DependenciesCollector {
     SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_bcwvc2_b0a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

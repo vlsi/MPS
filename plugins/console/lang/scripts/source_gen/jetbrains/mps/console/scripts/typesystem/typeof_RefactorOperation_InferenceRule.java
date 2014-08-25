@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_RefactorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_RefactorOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode refactorOperation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode paramType_typevar_1225883650310 = typeCheckingContext.createNewRuntimeTypesVariable();
     if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -49,29 +48,24 @@ public class typeof_RefactorOperation_InferenceRule extends AbstractInferenceRul
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:52a00659-de5e-42a5-97ab-47bf270f55a9(jetbrains.mps.console.scripts.typesystem)", "1205842235753", true), (SNode) _quotation_createNode_u2w4di_a0g0b(), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.console.scripts.structure.RefactorOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_u2w4di_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_u2w4di_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -83,7 +77,6 @@ public class typeof_RefactorOperation_InferenceRule extends AbstractInferenceRul
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_u2w4di_a0e0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -98,7 +91,6 @@ public class typeof_RefactorOperation_InferenceRule extends AbstractInferenceRul
     quotedNode_2.addChild("resultType", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_u2w4di_a0g0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BoundTypeinBoundType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BoundTypeinBoundType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(SNodeOperations.cast(nodeToCheck, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), "virtual_isValueType_4836112446988592019", new Object[]{}))) {
       {
@@ -33,18 +32,15 @@ public class check_BoundTypeinBoundType_NonTypesystemRule extends AbstractNonTyp
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -12,11 +12,9 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class SubnodesSearchScope extends AbstractSearchScope {
   private SNode myEnclosingNode;
-
   public SubnodesSearchScope(SNode enclosingNode) {
     myEnclosingNode = enclosingNode;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

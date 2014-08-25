@@ -36,50 +36,42 @@ public class Ant_Command {
   private String myOptions_String;
   private String myTargetName_String;
   private List<String> myMacroToDefine_ListString = null;
-
   public Ant_Command() {
   }
-
   public Ant_Command setTarget_NodeINamedConcept(SNode target) {
     if (target != null) {
       myTarget_NodeINamedConcept = target;
     }
     return this;
   }
-
   public Ant_Command setAntLocation_String(String antLocation) {
     if (antLocation != null) {
       myAntLocation_String = antLocation;
     }
     return this;
   }
-
   public Ant_Command setOptions_String(String options) {
     if (options != null) {
       myOptions_String = options;
     }
     return this;
   }
-
   public Ant_Command setTargetName_String(String targetName) {
     if (targetName != null) {
       myTargetName_String = targetName;
     }
     return this;
   }
-
   public Ant_Command setMacroToDefine_ListString(List<String> macroToDefine) {
     if (macroToDefine != null) {
       myMacroToDefine_ListString = macroToDefine;
     }
     return this;
   }
-
   public ProcessHandler createProcess(SNode project) throws ExecutionException {
     String targetName = Ant_Command.getTargetName(myTarget_NodeINamedConcept);
     return new Ant_Command().setAntLocation_String(myAntLocation_String).setOptions_String(myOptions_String).setTargetName_String(targetName).createProcess(Ant_Command.getGeneratedFileName(project));
   }
-
   public ProcessHandler createProcess(String antFilePath) throws ExecutionException {
     String jdkHome = Java_Command.getJdkHome();
     if ((jdkHome == null || jdkHome.length() == 0)) {
@@ -87,11 +79,9 @@ public class Ant_Command {
     }
     return new Java_Command().createProcess(new ListCommandPart(ListSequence.fromListAndArray(new ArrayList(), new PropertyCommandPart("java.home", jdkHome), new PropertyCommandPart("ant.home", myAntLocation_String), new ListCommandPart(Sequence.fromIterable(Ant_Command.getMacroValues(myMacroToDefine_ListString)).toListSequence()), (((myOptions_String != null && myOptions_String.length() > 0) ? myOptions_String + " " : "")), new KeyValueCommandPart("-" + "f", new File(antFilePath)), (((myTargetName_String == null || myTargetName_String.length() == 0) ? "" : " " + myTargetName_String)))), "org.apache.tools.ant.launch.Launcher", Ant_Command.getAntClassPath(myAntLocation_String));
   }
-
   private static String getDefaultAntHome() {
     return PathManager.getHomePath() + File.separator + "lib" + File.separator + "ant";
   }
-
   private static List<File> getAntClassPath(String antHome) throws ExecutionException {
     String antlib = antHome + File.separator + "lib";
     File antLibFile = new File(antlib);
@@ -110,7 +100,6 @@ public class Ant_Command {
 
     return classPath;
   }
-
   private static Iterable<CommandPart> getMacroValues(final List<String> toDefine) {
     final PathMacros pathMacros = PathMacros.getInstance();
     List<CommandPart> macroValues = ListSequence.fromList(new ArrayList<CommandPart>());
@@ -131,7 +120,6 @@ public class Ant_Command {
       }
     }));
   }
-
   private static String getGeneratedFileName(final SNode project) {
     final Wrappers._T<IFile> file = new Wrappers._T<IFile>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -142,7 +130,6 @@ public class Ant_Command {
     });
     return file.value.getPath();
   }
-
   private static String getTargetName(final SNode target) {
     final Wrappers._T<String> name = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
@@ -152,7 +139,6 @@ public class Ant_Command {
     }));
     return name.value;
   }
-
   private static String check_11bn_a0a0a0a1a4(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SPropertyOperations.getString(checkedDotOperand, "name");

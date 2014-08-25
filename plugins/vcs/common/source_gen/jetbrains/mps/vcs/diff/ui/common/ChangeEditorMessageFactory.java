@@ -27,7 +27,6 @@ import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 public class ChangeEditorMessageFactory {
   private ChangeEditorMessageFactory() {
   }
-
   public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker, boolean highlighted) {
     List<ChangeEditorMessage> messages = ListSequence.fromList(new LinkedList<ChangeEditorMessage>());
     SNodeId id;
@@ -90,7 +89,6 @@ public class ChangeEditorMessageFactory {
     ListSequence.fromList(messages).addElement(new ChangeEditorMessage(node, messageTarget, owner, change, conflictChecker, highlighted));
     return messages;
   }
-
   public static List<ChangeEditorMessage> createMessages(SModel editedModel, ModelChange change, EditorMessageOwner owner, ChangeEditorMessage.ConflictChecker conflictChecker) {
     return ChangeEditorMessageFactory.createMessages(editedModel, change, owner, conflictChecker, true);
   }

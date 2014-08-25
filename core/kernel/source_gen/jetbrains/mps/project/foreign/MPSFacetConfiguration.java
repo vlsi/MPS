@@ -26,10 +26,8 @@ public class MPSFacetConfiguration {
   public boolean useTransientOutputFolder = false;
   public String[] usedLanguages;
   public ModelRootDescriptor[] rootDescriptors;
-
   public MPSFacetConfiguration() {
   }
-
   public void readFromXml(Element config) throws FacetConfigurationFormatException {
     List<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
     for (Element ch : XmlUtil.children(config, "option")) {
@@ -66,7 +64,6 @@ public class MPSFacetConfiguration {
     }
     rootDescriptors = descriptors.toArray(new ModelRootDescriptor[descriptors.size()]);
   }
-
   private Set<ModelRoot> readModelRoots(Element array) {
     Set<ModelRoot> res = SetSequence.fromSet(new HashSet<ModelRoot>());
     for (Element o : XmlUtil.children(array, "ModelRoot")) {
@@ -77,7 +74,6 @@ public class MPSFacetConfiguration {
     }
     return res;
   }
-
   private String getPath(Element modelRootElement) {
     for (Element optionChild : Sequence.fromIterable(XmlUtil.children(modelRootElement, "option"))) {
       if ("path".equals(optionChild.getAttributeValue("name")) && optionChild.getAttributeValue("value") != null) {
@@ -86,7 +82,6 @@ public class MPSFacetConfiguration {
     }
     return null;
   }
-
   private String[] readArray(Element array) {
     List<String> res = ListSequence.fromList(new ArrayList<String>());
     for (Element o : XmlUtil.children(array, "option")) {

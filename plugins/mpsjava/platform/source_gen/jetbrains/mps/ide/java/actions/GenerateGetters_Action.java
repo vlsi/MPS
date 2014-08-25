@@ -35,23 +35,19 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGetters_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GenerateGetters_Action() {
     super("Getter", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateGetters_Action.this.getClassConcept(_params);
     return classConcept != null && Sequence.fromIterable(GenerateGetters_Action.this.getFieldDeclarationsWithoutGetters(classConcept, _params)).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -65,7 +61,6 @@ public class GenerateGetters_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -80,7 +75,6 @@ public class GenerateGetters_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodeReference[] fields;
@@ -122,11 +116,9 @@ public class GenerateGetters_Action extends BaseAction {
       }
     }
   }
-
   private SNode getClassConcept(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) ((SNode) MapSequence.fromMap(_params).get("node"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
   }
-
   private Iterable<SNode> getFieldDeclarationsWithoutGetters(final SNode classConcept, final Map<String, Object> _params) {
     final Project project = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext().getProject();
     return Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{})).where(new IWhereFilter<SNode>() {
@@ -140,9 +132,7 @@ public class GenerateGetters_Action extends BaseAction {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(GenerateGetters_Action.class);
-
   private static SNode _quotation_createNode_xzx12x_a0a0f0o0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;

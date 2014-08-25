@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DuplicateEnumConstants_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DuplicateEnumConstants_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode enumClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode constant : SLinkOperations.getTargets(enumClass, "enumConstant", true)) {
       int namesakes = 0;
@@ -34,18 +33,15 @@ public class check_DuplicateEnumConstants_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.EnumClass";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

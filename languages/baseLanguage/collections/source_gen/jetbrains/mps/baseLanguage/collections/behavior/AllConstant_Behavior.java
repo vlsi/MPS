@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class AllConstant_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return false;
   }

@@ -17,8 +17,6 @@ import jetbrains.mps.smodel.structure.ExtensionPoint;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.openapi.editor.cells.CellActionType;
-import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
@@ -34,11 +32,9 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lnae77_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_lnae77_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_lnae77_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a");
@@ -46,12 +42,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTransactionalProperty_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_lnae77_b0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_lnae77_c0(editorContext, node));
-    if (renderingCondition_lnae77_a3a(node, editorContext)) {
-      editorCell.addEditorCell(this.createConstant_lnae77_d0(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_lnae77_d0(editorContext, node));
+    if (renderingCondition_lnae77_a4a(node, editorContext)) {
+      editorCell.addEditorCell(this.createConstant_lnae77_e0(editorContext, node));
     }
     return editorCell;
   }
-
   private EditorCell createTransactionalProperty_lnae77_a0(final EditorContext editorContext, final SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -61,7 +57,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
         public void doCommit(final String oldValue, final String newValue) {
           this.doCommitImpl(oldValue, newValue);
         }
-
         public void doCommitImpl(final String oldValue, final String newValue) {
           if (!(Sequence.fromIterable(ExtensionPoint.<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>generify(new ExtensionPoint("jetbrains.mps.lang.structure.NodeRenamer", _FunctionTypes._return_P4_E0.class)).getObjects()).any(new IWhereFilter<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>>() {
             public boolean accept(_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> it) {
@@ -77,8 +72,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
         }
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
-      editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
-      editorCell.setCellId("TransactionalProperty_lnae77_a0");
+      editorCell.setCellId("name");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
       style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
@@ -95,17 +89,12 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_lnae77_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_lnae77_b0");
-    Style style = new StyleImpl();
-    style.set(StyleAttributes.SELECTABLE, false);
-    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_lnae77_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("dataType");
@@ -117,6 +106,7 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       editorCell.setReferenceCell(true);
       editorCell.setRole("dataType");
     }
+    PropertyDeclarationDeleteActions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -127,20 +117,16 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_lnae77_a2a extends InlineCellProvider {
     public _Inline_lnae77_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_lnae77_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_lnae77_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -160,30 +146,37 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
-  private EditorCell createConstant_lnae77_d0(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_lnae77_d0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_lnae77_d0");
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
+    return editorCell;
+  }
+  private EditorCell createConstant_lnae77_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-G");
-    editorCell.setCellId("Constant_lnae77_d0");
+    editorCell.setCellId("Constant_lnae77_e0");
     Style style = new StyleImpl();
     structure_StyleSheet.apply_Keyword(style, editorCell);
     editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }
-
-  private static boolean renderingCondition_lnae77_a3a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_lnae77_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "doNotGenerate");
   }
-
   private EditorCell createCollection_lnae77_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_lnae77_a_0");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.SELECTABLE, false);
+    editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createConstant_lnae77_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_lnae77_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_lnae77_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do not generate:");
     editorCell.setCellId("Constant_lnae77_a0");
@@ -193,7 +186,6 @@ public class PropertyDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_lnae77_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("doNotGenerate");

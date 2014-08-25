@@ -17,7 +17,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_MultiForEachVariable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_MultiForEachVariable_InferenceRule() {
   }
-
   public void applyRule(final SNode mfv, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(mfv), "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair")) {
       final SNode INPUT_typevar_8293956702610254515 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -33,22 +32,18 @@ public class typeof_MultiForEachVariable_InferenceRule extends AbstractInference
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_gk7o1k_a0b0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

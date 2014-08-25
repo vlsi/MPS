@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class ScopesTest_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SReference call_getCheckingReference_5449224527592367549(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "checkingReference", false) == null) {
       return ((SNode) SNodeOperations.getParent(thisNode)).getReferences().iterator().next();
@@ -26,11 +25,9 @@ public class ScopesTest_Behavior {
     }
     return null;
   }
-
   public static boolean call_isSimple_5449224527592395483(SAbstractConcept thisConcept, SNode node) {
     return ListSequence.fromList(SNodeOperations.getReferences(node)).count() == 1;
   }
-
   public static boolean call_isApplicable_5449224527592368025(SAbstractConcept thisConcept, SNode node) {
     return ListSequence.fromList(SNodeOperations.getReferences(node)).isNotEmpty() && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.ScopesTest")) == null) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.test.structure.ScopesTest"));
   }

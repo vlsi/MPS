@@ -27,7 +27,6 @@ public class AttributedFigureReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hdcr7q_a(editorContext, node);
   }
-
   private EditorCell createCollection_hdcr7q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_hdcr7q_a");
@@ -35,7 +34,6 @@ public class AttributedFigureReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_hdcr7q_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_hdcr7q_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("figureAttribute");
@@ -57,34 +55,29 @@ public class AttributedFigureReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_hdcr7q_a0a extends InlineCellProvider {
     public _Inline_hdcr7q_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReadOnlyModelAccessor_hdcr7q_a0a0(editorContext, node);
     }
-
     private EditorCell createReadOnlyModelAccessor_hdcr7q_a0a0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
           return SPropertyOperations.getString(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(node), "name");
         }
-
         public void setText(String s) {
         }
-
         public boolean isValidText(String s) {
           return EqualUtil.equals(s, getText());
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hdcr7q_a0a0");
       Style style = new StyleImpl();
       style.set(StyleAttributes.AUTO_DELETABLE, true);

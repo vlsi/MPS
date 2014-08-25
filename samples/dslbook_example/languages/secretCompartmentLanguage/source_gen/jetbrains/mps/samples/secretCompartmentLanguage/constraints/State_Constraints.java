@@ -14,7 +14,6 @@ public class State_Constraints extends BaseConstraintsDescriptor {
   public State_Constraints() {
     super("jetbrains.mps.samples.secretCompartmentLanguage.structure.State");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class State_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

@@ -26,21 +26,21 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class SLanguageAdapter implements SLanguage {
   private String myLanguage;
-
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguage = language;
   }
-
   @Override
   public String getQualifiedName() {
     return myLanguage;
   }
-
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
     LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguage);
@@ -71,7 +71,6 @@ public class SLanguageAdapter implements SLanguage {
     }));
     return c;
   }
-
   public Iterable<SEnumeration> getEnumerations() {
     // TODO rewrite using LanguageRuntime 
     Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
@@ -86,32 +85,36 @@ public class SLanguageAdapter implements SLanguage {
       }
     }));
     return c;
-
   }
-
   @Override
   public Iterable<SModuleReference> getLanguageRuntimes() {
     Set<SModuleReference> runtimes = new HashSet<SModuleReference>();
     Language sourceModule = getSourceModule();
     assert sourceModule != null;
-    for (Language language : SetSequence.fromSet(sourceModule.getAllExtendedLanguages())) {
+    for (Language language : SetSequence.fromSet(LanguageDependenciesManager.getAllExtendedLanguages(sourceModule))) {
       runtimes.addAll(language.getRuntimeModulesReferences());
+      for (SDependency dep : language.getDeclaredDependencies()) {
+        if (dep.getScope() == SDependencyScope.GENERATES_INTO) {
+          Language generatesIntoLang = as_c5k5j6_a0a0a0a1a3a5(dep.getTarget(), Language.class);
+          runtimes.addAll(generatesIntoLang.getRuntimeModulesReferences());
+        }
+      }
     }
     return runtimes;
   }
-
   @Override
   public Language getSourceModule() {
-    return (Language) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguage));
+    return ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguage), Language.class);
   }
-
   @Override
   public int hashCode() {
     return myLanguage.hashCode();
   }
-
   @Override
   public boolean equals(Object object) {
     return object instanceof SLanguageAdapter && myLanguage.equals(((SLanguageAdapter) object).myLanguage);
+  }
+  private static <T> T as_c5k5j6_a0a0a0a1a3a5(Object o, Class<T> type) {
+    return (type.isInstance(o) ? (T) o : null);
   }
 }

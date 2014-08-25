@@ -12,11 +12,9 @@ public class FilteringScope extends DelegatingScope {
   public FilteringScope(@NotNull Scope scope) {
     super(scope);
   }
-
   public boolean isExcluded(SNode node) {
     return false;
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode resolved = super.resolve(contextNode, refText);
@@ -25,7 +23,6 @@ public class FilteringScope extends DelegatingScope {
     }
     return resolved;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     Iterable<SNode> availableElements = super.getAvailableElements(prefix);
@@ -35,7 +32,6 @@ public class FilteringScope extends DelegatingScope {
       }
     });
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (isExcluded(node)) {
@@ -43,7 +39,6 @@ public class FilteringScope extends DelegatingScope {
     }
     return super.getReferenceText(contextNode, node);
   }
-
   @Override
   public boolean contains(SNode node) {
     if (isExcluded(node)) {

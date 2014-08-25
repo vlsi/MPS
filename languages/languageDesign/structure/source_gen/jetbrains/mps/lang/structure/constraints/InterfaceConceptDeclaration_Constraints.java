@@ -21,12 +21,10 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
   public InterfaceConceptDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -34,19 +32,16 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_vsd8pt_a0a0a0a0a2;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration"));
       }
     };
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -57,11 +52,9 @@ public class InterfaceConceptDeclaration_Constraints extends BaseConstraintsDesc
 
     return result;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer breakingNode_vsd8pt_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216493587");
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087672328");
 }

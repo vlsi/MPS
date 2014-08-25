@@ -27,6 +27,11 @@ import java.util.Comparator;
 import java.util.LinkedHashSet;
 import java.util.TreeSet;
 
+/**
+ * This class captures persistence and editing aspects of SModule. Client code shall not use this class
+ * unless its purpose is to edit or persist module properties. Use SModule API (or Language/Generator/Solution/DevKit subclasses)
+ * to read module dependencies and identity information.
+ */
 public class ModuleDescriptor {
   private static final SModuleReferenceComparator MODULE_REFERENCE_COMPARATOR = new SModuleReferenceComparator();
   private static final DependencyComparator DEPENDENCY_COMPARATOR = new DependencyComparator(MODULE_REFERENCE_COMPARATOR);
@@ -55,17 +60,6 @@ public class ModuleDescriptor {
     myUsedDevkits = new TreeSet<SModuleReference>(MODULE_REFERENCE_COMPARATOR);
     myAdditionalJavaStubPaths = new LinkedHashSet<String>();
     mySourcePaths = new LinkedHashSet<String>();
-  }
-
-  @Deprecated //replaced with ModuleId
-  public String getUUID() {
-    ModuleId id = getId();
-    return id == null ? null : id.toString();
-  }
-
-  @Deprecated //replaced with ModuleId
-  public void setUUID(String UUID) {
-    setId(ModuleId.fromString(UUID));
   }
 
   public ModuleId getId() {

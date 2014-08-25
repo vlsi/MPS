@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor extends ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor implements NodeScopeFactory_BehaviorDescriptor {
   public ConstraintFunction_ReferentSearchScope_Scope_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ConstraintFunction_ReferentSearchScope_Scope_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Scope";

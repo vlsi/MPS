@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PrintStatement_DataFlow extends DataFlowBuilder {
   public PrintStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode textExpression : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "textExpression", true))) {
       _context.getBuilder().build((SNode) textExpression);

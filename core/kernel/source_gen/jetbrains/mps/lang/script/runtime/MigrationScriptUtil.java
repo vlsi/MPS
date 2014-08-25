@@ -28,16 +28,13 @@ import jetbrains.mps.kernel.model.SModelUtil;
 
 public class MigrationScriptUtil {
   private static final Logger LOG = LogManager.getLogger(MigrationScriptUtil.class);
-
   public MigrationScriptUtil() {
   }
-
   public static List<SNode> getMigrationScripts(Language language) {
     SModel modelDescr = LanguageAspect.SCRIPTS.get(language);
     SModel model = (modelDescr == null ? null : modelDescr);
     return SModelOperations.getRoots(model, "jetbrains.mps.lang.script.structure.MigrationScript");
   }
-
   public static List<BaseMigrationScript> getScriptInstances(List<SNodeReference> scriptNodePointers, IOperationContext context) {
     List<BaseMigrationScript> scriptInstances = new ArrayList<BaseMigrationScript>();
     for (SNodeReference scriptNodePointer : scriptNodePointers) {
@@ -49,7 +46,6 @@ public class MigrationScriptUtil {
     }
     return scriptInstances;
   }
-
   public static BaseMigrationScript getBaseScriptForNode(IOperationContext context, SNode scriptNode) {
     if (scriptNode == null) {
       return null;
@@ -73,7 +69,7 @@ public class MigrationScriptUtil {
       LOG.error("Module can't load classes: " + languageNamespace);
       return null;
     }
-    aClass = ClassLoaderManager.getInstance().getClass(mod, fqClassName);
+    aClass = ClassLoaderManager.getInstance().getOwnClass(mod, fqClassName);
     if (aClass == null) {
       return null;
     }
@@ -90,11 +86,9 @@ public class MigrationScriptUtil {
       throw new RuntimeException(e);
     }
   }
-
   public static SNode getApplicableConcept(AbstractMigrationRefactoring migrationRefactoring) {
     return SModelUtil.findConceptDeclaration(migrationRefactoring.getFqNameOfConceptToSearchInstances());
   }
-
   public static boolean isApplicableRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
     try {
       return migrationRefactoring.isApplicableInstanceNode(node);
@@ -103,7 +97,6 @@ public class MigrationScriptUtil {
     }
     return false;
   }
-
   public static void performRefactoring(SNode node, AbstractMigrationRefactoring migrationRefactoring) {
     try {
       migrationRefactoring.doUpdateInstanceNode(node);

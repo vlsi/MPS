@@ -14,24 +14,19 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class IdeaModuleConfiguration {
   private MPSFacetConfiguration myMpsFacetConfiguration;
   private IFile myFile;
-
   private IdeaModuleConfiguration(IFile file) {
     this.myFile = file;
   }
-
   public IFile getModuleFile() {
     return myFile;
   }
-
   public MPSFacetConfiguration getMPSFacetConfiguration() {
     return myMpsFacetConfiguration;
   }
-
   private void setMPSFacetConfiguration(MPSFacetConfiguration mpsFacet) {
     this.myMpsFacetConfiguration = mpsFacet;
 
   }
-
   public static IdeaModuleConfiguration readFile(IFile moduleFile) throws JDOMException, IOException, FacetConfigurationFormatException {
     IdeaModuleConfiguration imc = new IdeaModuleConfiguration(moduleFile);
     Element module = JDOMUtil.loadDocument(moduleFile).getRootElement();

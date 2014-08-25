@@ -15,12 +15,10 @@ import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class ExternalViewClassifierScope extends FilteringScope {
   private SModel myModel;
-
   public ExternalViewClassifierScope(SModel model) {
     super(new ModelPlusImportedScope(model, false, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     myModel = model;
   }
-
   @Override
   public boolean isExcluded(SNode node) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");

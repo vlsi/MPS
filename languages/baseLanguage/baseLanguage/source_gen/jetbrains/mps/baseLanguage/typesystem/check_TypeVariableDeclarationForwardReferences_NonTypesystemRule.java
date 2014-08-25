@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_TypeVariableDeclarationForwardReferences_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode typeVariableDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<SNode> fwdRefs = ListSequence.fromList(SNodeOperations.getDescendants(typeVariableDeclaration, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -45,22 +44,18 @@ public class check_TypeVariableDeclarationForwardReferences_NonTypesystemRule ex
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_pivjqh_a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

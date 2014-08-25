@@ -25,11 +25,9 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
   private JCheckBox myInsertOverride;
   private JCheckBox myAddReturn;
   private OverrideImplementMethodComponent.State myOptions;
-
   public OverrideImplementMethodsDialog(SNodeReference[] methods, Project project) {
     super(methods, false, true, project);
   }
-
   @Override
   protected void initOptions() {
     try {
@@ -48,11 +46,9 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
       myInsertOverride.setMnemonic('O');
     }
   }
-
   protected boolean showInsertOverride() {
     return true;
   }
-
   @Override
   protected String getText(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -60,7 +56,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }
     return super.getText(node);
   }
-
   @Override
   protected void customizeOptionsPanel() {
     myAddReturn.setSelected((myOptions != null ? myOptions.addReturnsOnImplement : false));
@@ -69,19 +64,15 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
       myInsertOverride.setSelected((myOptions != null ? myOptions.addOverrideAnnotation : true));
     }
   }
-
   public boolean isInsertOverrideAnnotation() {
     return (myInsertOverride != null ? myInsertOverride.isSelected() : false);
   }
-
   public boolean isAddReturn() {
     return myAddReturn.isSelected();
   }
-
   public boolean isRemoveAttributes() {
     return myRemoveAttributes.isSelected();
   }
-
   @Override
   public void dispose() {
     if (myOptions != null) {
@@ -93,7 +84,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }
     super.dispose();
   }
-
   public static Iterable<SNode> sortMethods(List<SNode> allSuperClassifiers, Iterable<SNode> methods) {
     final Map<SNode, Integer> containerIndex = MapSequence.fromMap(new HashMap<SNode, Integer>());
     int i = 1;
@@ -121,13 +111,9 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
     }, true);
   }
 
-
-
   public static Iterable<SNode> sortMethods(SNode baseClass, Iterable<SNode> methods) {
     return sortMethods(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), baseClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_getAllSuperClassifiers_4892662966716545618", new Object[]{}), methods);
   }
-
-
 
   public static SNodeReference[] toNodePointers(Iterable<SNode> methods) {
     return Sequence.fromIterable(methods).select(new ISelector<SNode, SNodePointer>() {
@@ -136,7 +122,6 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
       }
     }).toGenericArray(SNodePointer.class);
   }
-
   private static boolean neq_sivw9t_a0d0c0a0a0a0d0n(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

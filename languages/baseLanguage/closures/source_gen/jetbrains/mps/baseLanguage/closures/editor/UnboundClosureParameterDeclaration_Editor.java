@@ -17,7 +17,6 @@ public class UnboundClosureParameterDeclaration_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_iex8ea_a(editorContext, node);
   }
-
   private EditorCell createCollection_iex8ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_iex8ea_a");
@@ -26,14 +25,12 @@ public class UnboundClosureParameterDeclaration_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createProperty_iex8ea_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_iex8ea_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_iex8ea_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_iex8ea_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

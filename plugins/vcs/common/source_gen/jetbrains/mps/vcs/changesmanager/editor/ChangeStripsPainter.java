@@ -41,7 +41,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
   private ChangeGroup myGroupUnderMouse;
   private PopupPanel myPopupToolbar = null;
   private ChangeGroupMessages myGroupMessages;
-
   public ChangeStripsPainter(@NotNull EditorHighlighter editorHighlighter) {
     super(editorHighlighter.getLeftEditorHighlighter());
     myEditorHighlighter = editorHighlighter;
@@ -49,18 +48,15 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     myGroupMessages = new ChangeGroupMessages(myChangeGroupLayout, true);
     myGroupMessages.startMaintaining();
   }
-
   @NotNull
   @Override
   protected EditorComponent getEditorComponent() {
     return super.getEditorComponent();
   }
-
   @Override
   public int getWeight() {
     return 0;
   }
-
   @Override
   protected void paintInLocalCoordinates(Graphics g) {
     Rectangle clipBounds = g.getClipBounds();
@@ -99,17 +95,14 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       g.drawLine(-AREA_WIDTH, y, -AREA_WIDTH, y + height);
     }
   }
-
   @Override
   public int getLeftAreaWidth() {
     return AREA_WIDTH;
   }
-
   @Override
   public void relayout() {
     myChangeGroupLayout.invalidate();
   }
-
   @Override
   public String getToolTipText() {
     if (myGroupUnderMouse == null) {
@@ -129,7 +122,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       return NameUtil.formatNumericalString(ListSequence.fromList(changes).count(), "change");
     }
   }
-
   @Nullable
   private ChangeGroup findMessageGroupUnder(@NotNull final Point p) {
     double localX = p.getX() - getLeftHighlighter().getFoldingLineX();
@@ -144,7 +136,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       return null;
     }
   }
-
   /*package*/ void setGroupHighlighted(@Nullable ChangeGroup group, final boolean highlighted) {
     if (group != null) {
       ListSequence.fromList(group.getChanges()).translate(new ITranslator2<ModelChange, ChangeEditorMessage>() {
@@ -158,7 +149,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       });
     }
   }
-
   private void setGroupUnderMouse(@Nullable ChangeGroup group) {
     if (myGroupUnderMouse == group) {
       return;
@@ -172,7 +162,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     }
     myEditorHighlighter.getHighlightManager().repaintAndRebuildEditorMessages();
   }
-
   @Override
   public void mouseMoved(MouseEvent event) {
     ChangeGroup changeGroup = findMessageGroupUnder(event.getPoint());
@@ -186,13 +175,11 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       event.getComponent().setCursor(null);
     }
   }
-
   @Override
   public void mouseExited(MouseEvent event) {
     event.getComponent().setCursor(null);
     setGroupUnderMouse(null);
   }
-
   @Override
   public void mousePressed(MouseEvent event) {
     if (event.getID() != MouseEvent.MOUSE_CLICKED) {
@@ -209,7 +196,6 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       }
     }
   }
-
   private void showPopupForGroup(@NotNull ChangeGroup changeGroup, int y) {
     int foldingLineX = getEditorComponent().getLeftEditorHighlighter().getFoldingLineX();
     EditorCell cell = getEditorComponent().findCellWeak(foldingLineX, y);
@@ -219,11 +205,9 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
     myPopupToolbar = new PopupPanel(this, changeGroup);
     myPopupToolbar.show(0, y);
   }
-
   /*package*/ void popupClosed() {
     myPopupToolbar = null;
   }
-
   @Nullable
   /*package*/ ChangeGroup getNeighbourChangeGroup(@Nullable EditorCell contextCell, boolean next) {
     if (contextCell == null) {
@@ -245,39 +229,33 @@ public class ChangeStripsPainter extends AbstractFoldingAreaPainter {
       });
     }
   }
-
   @Nullable
   /*package*/ ChangeGroup getCurrentChangeGroup() {
     return check_h84zmo_a0a42(myPopupToolbar);
   }
-
   /*package*/ void showPopupForGroup(@Nullable ChangeGroup group) {
     check_h84zmo_a0a52(myPopupToolbar);
     if (group != null) {
       showPopupForGroup(group, (int) group.getBounds(true).start());
     }
   }
-
   @Override
   public void dispose() {
     myGroupMessages.dispose();
     super.dispose();
   }
-
   private static void check_h84zmo_a1a02(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();
     }
 
   }
-
   private static ChangeGroup check_h84zmo_a0a42(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getChangeGroup();
     }
     return null;
   }
-
   private static void check_h84zmo_a0a52(PopupPanel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.dispose();

@@ -51,7 +51,6 @@ public class LanguageErrorsComponent {
   private SModel myModel;
   private boolean myUpdateInspector = false;
 
-
   private static <T> void addToMappedSet(Map<SNode, Set<T>> map, SNode key, T value) {
     Set<T> setOfNodes = MapSequence.fromMap(map).get(key);
     if (setOfNodes == null) {
@@ -61,25 +60,20 @@ public class LanguageErrorsComponent {
     SetSequence.fromSet(setOfNodes).addElement(value);
   }
 
-
-
   public LanguageErrorsComponent(SModel model) {
     myModel = model;
     SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
-
   public void dispose() {
     this.removeModelListener();
     SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
   }
-
   private void removeModelListener() {
     for (SModel modelDescriptor : myListenedModels) {
       ((SModelInternal) modelDescriptor).removeModelListener(myModelListener);
     }
     SetSequence.fromSet(myListenedModels).clear();
   }
-
   public void addDependency(SNode dependency) {
     if (myCurrentNode == null) {
       return;
@@ -91,13 +85,10 @@ public class LanguageErrorsComponent {
     addModelListener(SNodeOperations.getModel(dependency));
   }
 
-
-
   private void addDependencyMapping(@NotNull SNode node, @NotNull SNode dependency) {
     addToMappedSet(myNodesToDependecies, node, dependency);
     addToMappedSet(myDependenciesToNodes, dependency, node);
   }
-
   private Set<SNode> removeDependencyFromMapping(@NotNull SNode dependency) {
     // removing dependency node from any mappings together with all checked nodes 
     // denending on this dependency node 
@@ -128,7 +119,6 @@ public class LanguageErrorsComponent {
     // returning a set of checked nodes removed from mapping 
     return nodes;
   }
-
   private Set<SNode> getDependenciesToInvalidate(SModel model) {
     Set<SNode> result = new HashSet<SNode>();
     for (SNode dependency : MapSequence.fromMap(myDependenciesToNodes).keySet()) {
@@ -138,8 +128,6 @@ public class LanguageErrorsComponent {
     }
     return result;
   }
-
-
 
   private void addModelListener(SModel modelDescriptor) {
     if (modelDescriptor == null) {
@@ -151,19 +139,15 @@ public class LanguageErrorsComponent {
     }
   }
 
-
-
   public void addError(SNode node, String errorString, SNode ruleNode) {
     for (SNode anc : ListSequence.fromList(SNodeOperations.getAncestors(node, null, false))) {
       addDependency(anc);
     }
     addError(node, errorString, ruleNode, new NodeMessageTarget());
   }
-
   public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget) {
     addError(errorNode, errorString, ruleNode, messageTarget, null);
   }
-
   public void addError(SNode errorNode, String errorString, SNode ruleNode, MessageTarget messageTarget, QuickFixProvider intentionProvider) {
     if (!(ErrorReportUtil.shouldReportError(errorNode))) {
       return;
@@ -178,8 +162,6 @@ public class LanguageErrorsComponent {
     addToMappedSet(myNodesToErrors, errorNode, reporter);
   }
 
-
-
   private void invalidate() {
     if (SetSequence.fromSet(myDependenciesToInvalidate).isEmpty()) {
       return;
@@ -189,7 +171,6 @@ public class LanguageErrorsComponent {
     }
     SetSequence.fromSet(myDependenciesToInvalidate).clear();
   }
-
   private void invalidateDependency(SNode dependency) {
     Set<SNode> checkedNodes = removeDependencyFromMapping(dependency);
     if (checkedNodes != null) {
@@ -202,7 +183,6 @@ public class LanguageErrorsComponent {
       }
     }
   }
-
   public boolean check(SNode root, Set<AbstractConstraintsChecker> checkers, SRepository repository) {
     // returns whether state has been changed after check 
     if (root == null) {
@@ -235,7 +215,6 @@ public class LanguageErrorsComponent {
     myUpdateInspector = true;
     return true;
   }
-
   public boolean checkInspector() {
     if (myUpdateInspector) {
       myUpdateInspector = false;
@@ -243,7 +222,6 @@ public class LanguageErrorsComponent {
     }
     return false;
   }
-
   public Set<IErrorReporter> getErrors() {
     Set<IErrorReporter> result = new HashSet<IErrorReporter>(1);
     for (Set<IErrorReporter> errorReporters : MapSequence.fromMap(myNodesToErrors).values()) {
@@ -251,7 +229,6 @@ public class LanguageErrorsComponent {
     }
     return result;
   }
-
   public void clear() {
     myCheckedRoot = false;
     SetSequence.fromSet(myDependenciesToInvalidate).clear();
@@ -263,8 +240,6 @@ public class LanguageErrorsComponent {
     removeModelListener();
   }
 
-
-
   private void processEvent(SModelChildEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getParent());
     if (event.isRemoved()) {
@@ -275,15 +250,12 @@ public class LanguageErrorsComponent {
       SetSequence.fromSet(myInvalidNodes).addElement(event.getChild());
     }
   }
-
   private void processEvent(SModelReferenceEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getReference().getSourceNode());
   }
-
   private void processEvent(SModelPropertyEvent event) {
     SetSequence.fromSet(myDependenciesToInvalidate).addElement(event.getNode());
   }
-
   public <Result> Result runCheckingAction(_FunctionTypes._return_P0_E0<? extends Result> action) {
     final Set<SNode> accessedNodes = new HashSet<SNode>();
     final Object[] result = new Object[1];
@@ -293,18 +265,15 @@ public class LanguageErrorsComponent {
         public void nodeUnclassifiedReadAccess(SNode node) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
-
         @Override
         public void nodePropertyReadAccess(SNode node, String name, String value) {
           SetSequence.fromSet(accessedNodes).addElement(node);
         }
-
         @Override
         public void nodeReferentReadAccess(SNode node, String role, SNode referent) {
           SetSequence.fromSet(accessedNodes).addElement(node);
           SetSequence.fromSet(accessedNodes).addElement(referent);
         }
-
         @Override
         public void nodeChildReadAccess(SNode node, String role, SNode child) {
           SetSequence.fromSet(accessedNodes).addElement(node);
@@ -321,7 +290,6 @@ public class LanguageErrorsComponent {
     }
     return (Result) result[0];
   }
-
   public class MyModelListener extends SModelAdapter {
     @Override
     public void beforeModelDisposed(SModel model) {
@@ -332,40 +300,33 @@ public class LanguageErrorsComponent {
         invalidateDependency(dependencyToInvalidate);
       }
     }
-
     @Override
     public void referenceRemoved(SModelReferenceEvent event) {
       processEvent(event);
     }
-
     @Override
     public void referenceAdded(SModelReferenceEvent event) {
       processEvent(event);
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       processEvent(event);
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       processEvent(event);
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       processEvent(event);
     }
   }
-
   public class MyModelRepositoryListener extends SModelRepositoryAdapter {
     @Override
     public void modelRemoved(SModel descriptor) {
       SetSequence.fromSet(myListenedModels).removeElement(descriptor);
     }
   }
-
   private static SModelReference check_29uvfh_a0a0c0cb(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

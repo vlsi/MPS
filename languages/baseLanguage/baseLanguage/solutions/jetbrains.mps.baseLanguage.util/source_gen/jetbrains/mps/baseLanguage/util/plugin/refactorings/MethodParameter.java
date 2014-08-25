@@ -23,7 +23,6 @@ public class MethodParameter extends MethodParameterModel {
   private boolean mySelected = true;
   private List<String> myAvailableTypes;
   private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
-
   public MethodParameter(SNode variable, SNode type, String name, SNode reference) {
     this.myDeclaration = variable;
     this.myType = type;
@@ -36,7 +35,6 @@ public class MethodParameter extends MethodParameterModel {
     this.myVariableReference = SNodeOperations.cast(reference, "jetbrains.mps.baseLanguage.structure.Expression");
     this.myAvailableTypes = this.createAvailableTypes();
   }
-
   public List<String> createAvailableTypes() {
     if (this.myType == null) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
@@ -64,41 +62,32 @@ public class MethodParameter extends MethodParameterModel {
     }
     return result;
   }
-
   public SNode getType() {
     return this.myType;
   }
-
   public void setType(SNode node) {
     this.myType = node;
   }
-
   public void setTypeByName(String name) {
     this.setTypeName(name);
     this.setType(MapSequence.fromMap(this.myTypesMap).get(name));
   }
-
   @Override
   public SNode getDeclaration() {
     return this.myDeclaration;
   }
-
   public boolean isSelected() {
     return this.mySelected;
   }
-
   public void setSelected(boolean selected) {
     this.mySelected = selected;
   }
-
   public List<String> getAvailableTypes() {
     return this.myAvailableTypes;
   }
-
   public SNode getReference() {
     return SNodeOperations.copyNode(this.myVariableReference);
   }
-
   public boolean isFinal() {
     if (SNodeOperations.isInstanceOf(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       return SPropertyOperations.getBoolean(SNodeOperations.cast(this.myDeclaration, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal");

@@ -25,17 +25,14 @@ import org.apache.log4j.LogManager;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
-
   public ClosuresUtil() {
   }
-
   public static boolean isClosureContextOwner(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       return true;
     }
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Closure"));
   }
-
   public static SNode findEnclosingClosureContextOwner(SNode node) {
     if (node == null) {
       return null;
@@ -52,28 +49,23 @@ public class ClosuresUtil {
       }
     }));
   }
-
   public static List<SNode> getVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
     return getClosureContextData(contextOwner, generator).getVariables();
   }
-
   public static String getVariableNameInClosureContext(SNode contextOwner, SNode var, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
     return getClosureContextData(contextOwner, generator).getVariableName(var);
   }
-
   public static boolean isVariableUsedInClosure(SNode contextOwner, SNode var, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
     ClosuresUtil.ClosureContextData contextData = getClosureContextData(contextOwner, generator);
     return (contextData != null ? contextData.hasVariable(var) : false);
   }
-
   public static boolean hasVariablesUsedInClosure(SNode contextOwner, ITemplateGenerator generator) {
     ensureClosureContextOwnerProcessed(contextOwner, generator);
     return !(getClosureContextData(contextOwner, generator).isEmpty());
   }
-
   private static void ensureClosureContextOwnerProcessed(SNode node, ITemplateGenerator generator) {
     if (!(isClosureContextOwner(node))) {
       throw new RuntimeException("node can't be owner of a closure context " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
@@ -87,7 +79,6 @@ public class ClosuresUtil {
       }
     }
   }
-
   private static Map<SNode, ClosuresUtil.ClosureContextData> getClosureContext(ITemplateGenerator generator) {
     // init ClosureContextData 
     synchronized (CLOSURE_CONTEXT_DATA) {
@@ -100,7 +91,6 @@ public class ClosuresUtil {
       return closureContexts;
     }
   }
-
   private static boolean processMethodDeclaration(SNode method, ITemplateGenerator generator) {
     if (SLinkOperations.getTarget(method, "body", true) == null) {
       return false;
@@ -111,7 +101,6 @@ public class ClosuresUtil {
     Set<SNode> varDecl = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(method, "parameter", true));
     return processNode(method, SLinkOperations.getTarget(method, "body", true), varDecl, generator);
   }
-
   private static boolean processConceptFunction(SNode concFunc, ITemplateGenerator generator) {
     if (SLinkOperations.getTarget(concFunc, "body", true) == null) {
       return false;
@@ -121,7 +110,6 @@ public class ClosuresUtil {
     }
     return processNode(concFunc, SLinkOperations.getTarget(concFunc, "body", true), SetSequence.fromSet(new HashSet<SNode>()), generator);
   }
-
   private static boolean processNode(SNode contextOwner, SNode node, Set<SNode> localVariables, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
@@ -138,14 +126,12 @@ public class ClosuresUtil {
     }
     return outerVarsFound;
   }
-
   private static boolean processClosure(SNode contextOwner, SNode closure, Set<SNode> localVars, ITemplateGenerator generator) {
     if (SLinkOperations.getTarget(closure, "body", true) == null) {
       return false;
     }
     return processClosureNode(contextOwner, SLinkOperations.getTarget(closure, "body", true), localVars, generator);
   }
-
   private static boolean processClosureNode(SNode contextOwner, SNode node, Set<SNode> localVars, ITemplateGenerator generator) {
     boolean outerVarsFound = false;
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node))) {
@@ -167,7 +153,6 @@ public class ClosuresUtil {
     }
     return outerVarsFound;
   }
-
   private static ClosuresUtil.ClosureContextData getClosureContextData(SNode contextOwner, ITemplateGenerator generator) {
     GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
     Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
@@ -176,37 +161,30 @@ public class ClosuresUtil {
     }
     return MapSequence.fromMap(closureContexts).get(contextOwner);
   }
-
   public static class ClosureContextData {
     private Map<SNode, String> myVar2Name;
     private Map<String, SNode> myName2Var;
     private List<SNode> myVars;
-
     public ClosureContextData() {
     }
-
     public List<SNode> getVariables() {
       if (this.myVars == null) {
         return new ArrayList<SNode>();
       }
       return this.myVars;
     }
-
     public String getVariableName(SNode var) {
       return MapSequence.fromMap(this.myVar2Name).get(var);
     }
-
     public boolean isEmpty() {
       return this.myVars == null || ListSequence.fromList(this.myVars).isEmpty();
     }
-
     public boolean hasVariable(SNode var) {
       if (this.myVar2Name == null) {
         return false;
       }
       return MapSequence.fromMap(this.myVar2Name).containsKey(var);
     }
-
     /*package*/ void putVariable(SNode var) {
       this.ensureInitialized();
       if (this.hasVariable(var)) {
@@ -221,7 +199,6 @@ public class ClosuresUtil {
       MapSequence.fromMap(this.myVar2Name).put(var, name);
       ListSequence.fromList(this.myVars).addElement(var);
     }
-
     private void ensureInitialized() {
       if (this.myVars == null) {
         this.myVar2Name = MapSequence.fromMap(new HashMap<SNode, String>());
@@ -230,6 +207,5 @@ public class ClosuresUtil {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ClosuresUtil.class);
 }

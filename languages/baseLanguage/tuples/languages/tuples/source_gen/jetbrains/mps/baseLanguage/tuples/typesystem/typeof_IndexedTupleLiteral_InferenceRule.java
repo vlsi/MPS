@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IndexedTupleLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode tuple, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> memberTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode mbr : SLinkOperations.getTargets(tuple, "component", true)) {
@@ -31,22 +30,18 @@ public class typeof_IndexedTupleLiteral_InferenceRule extends AbstractInferenceR
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238854050913", true), (SNode) _quotation_createNode_6bpfww_a0c0b(memberTypes), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_6bpfww_a0c0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

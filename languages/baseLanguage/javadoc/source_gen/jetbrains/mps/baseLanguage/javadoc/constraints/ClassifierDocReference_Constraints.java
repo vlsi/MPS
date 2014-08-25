@@ -26,7 +26,6 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
   public ClassifierDocReference_Constraints() {
     super("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -48,7 +46,6 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9t8845_a0a1a0a0a1a0b0a1a1;
@@ -58,13 +55,11 @@ public class ClassifierDocReference_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   private static SNode _quotation_createNode_9t8845_a0a0a0a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNodePointer breakingNode_9t8845_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "2546654756694393841");
 }

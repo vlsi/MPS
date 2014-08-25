@@ -7,7 +7,6 @@ import jetbrains.mps.components.ComponentPlugin;
 public final class MPSBaseLanguage extends ComponentPlugin {
   public MPSBaseLanguage() {
   }
-
   @Override
   public void init() {
     super.init();

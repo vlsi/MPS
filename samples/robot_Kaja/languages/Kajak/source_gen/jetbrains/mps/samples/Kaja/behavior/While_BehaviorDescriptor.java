@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class While_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public While_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.While";

@@ -34,11 +34,9 @@ public class DateRangeTester extends TestCase {
   /*package*/ DateRange[] myComplete = {myR1_15, myR16_2, myF3_9};
   /*package*/ DateRange[] myWithGap = {myR1_15, myF3_9};
   /*package*/ DateRange[] myOverlap = {myR1_15, myR1_10, myR16_2, myF3_9};
-
   public DateRangeTester(String arg) {
     super(arg);
   }
-
   public void testBasic() {
     Assert.assertTrue(myR15_15.includes(myJan1));
     Assert.assertTrue(myR15_15.includes(myJan15));
@@ -46,20 +44,17 @@ public class DateRangeTester extends TestCase {
     Assert.assertTrue(!(myR15_15.includes(myJan16)));
     Assert.assertTrue(!(myR15_15.includes(myDec14)));
   }
-
   public void testOneDate() {
     Assert.assertTrue(myR2_2.includes(myFeb2));
     Assert.assertTrue(myR2_2.includes(myR2_2));
     Assert.assertTrue(myR16_2.includes(myR2_2));
   }
-
   public void testEmpty() {
     Assert.assertTrue(!(myR15_15.isEmpty()));
     Assert.assertTrue(!(new DateRange(myDec15, myDec15).isEmpty()));
     Assert.assertTrue(new DateRange(myDec15, myDec14).isEmpty());
     Assert.assertTrue(DateRange.EMPTY.isEmpty());
   }
-
   public void testOverlaps() {
     Assert.assertTrue(myR1_15.overlaps(myR1_16));
     Assert.assertTrue(myR1_16.overlaps(myR1_15));
@@ -70,20 +65,17 @@ public class DateRangeTester extends TestCase {
     Assert.assertTrue(!(myR15_15.overlaps(myR16_2)));
     Assert.assertTrue(!(myR16_2.overlaps(myR15_15)));
   }
-
   public void testIncludesRange() {
     Assert.assertTrue(myR15_15.includes(myR15_15));
     Assert.assertTrue(myR15_15.includes(myR1_15));
     Assert.assertTrue(!(myR1_15.includes(myR15_15)));
     Assert.assertTrue(!(myR1_16.includes(myR15_15)));
   }
-
   public void testEquals() {
     Assert.assertEquals(myR1_15, new DateRange(myJan1, myJan15));
     Assert.assertTrue(!(myR1_15.equals(myR1_16)));
     Assert.assertTrue(!(myR15_15.equals(myR15_16)));
   }
-
   public void testCompare() {
     Assert.assertTrue(myDec15.compareTo(myJan1) < 0);
     Assert.assertTrue(myR15_15.compareTo(myR1_15) < 0);
@@ -92,7 +84,6 @@ public class DateRangeTester extends TestCase {
     Assert.assertTrue(myR1_16.compareTo(myR1_15) > 0);
     Assert.assertTrue(myR15_15.compareTo(myR1_10) < 0);
   }
-
   public void testGap() {
     DateRange expected = new DateRange(myJan11, myJan15);
     Assert.assertEquals(expected, myR1_10.gap(myR16_2));
@@ -101,24 +92,20 @@ public class DateRangeTester extends TestCase {
     Assert.assertTrue(myR1_15.gap(myR15_16).isEmpty());
     Assert.assertTrue(myR1_15.gap(myR16_2).isEmpty());
   }
-
   public void testAbuts() {
     Assert.assertTrue(myR1_15.abuts(myR16_2));
     Assert.assertTrue(myR16_2.abuts(myR1_15));
     Assert.assertTrue(!(myR1_15.abuts(myR15_15)));
     Assert.assertTrue(!(myR1_10.abuts(myR15_16)));
   }
-
   public void testCombine() {
     Assert.assertEquals(myJ1_f9, DateRange.combination(myComplete));
   }
-
   public void testContiguous() {
     Assert.assertTrue(DateRange.isContiguous(myComplete));
     Assert.assertTrue(!(DateRange.isContiguous(myWithGap)));
     Assert.assertTrue(!(DateRange.isContiguous(myOverlap)));
   }
-
   public void testPartition() {
     Assert.assertTrue(myJ1_f9.partitionedBy(myComplete));
     Assert.assertTrue(!(myJ1_f9.partitionedBy(myWithGap)));
@@ -130,12 +117,10 @@ public class DateRangeTester extends TestCase {
     DateRange[] missingEnd = {myR1_15, myR16_2, myF3_8};
     Assert.assertTrue(!(myJ1_f9.partitionedBy(missingEnd)));
   }
-
   public void testStarting() {
     DateRange dr = DateRange.startingOn(myDec15);
     Assert.assertTrue(dr.includes(myJan2));
   }
-
   public static void main(String[] args) {
     TestRunner.run(new TestSuite(DateRangeTester.class));
   }

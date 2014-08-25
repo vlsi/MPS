@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class NodeActionsAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(NodeActionsAddition_ActionGroup.class);
   public static final String ID = "jetbrains.mps.calculator.pluginSolution.plugin.NodeActionsAddition_ActionGroup";
-
   public NodeActionsAddition_ActionGroup() {
     super("NodeActionsAddition", ID);
     this.setIsInternal(false);

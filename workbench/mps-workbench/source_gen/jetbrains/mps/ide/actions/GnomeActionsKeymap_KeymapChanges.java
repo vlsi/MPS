@@ -18,11 +18,9 @@ public class GnomeActionsKeymap_KeymapChanges extends BaseKeymapChanges {
     // simple parameterized 
     // complex 
   }
-
   public String getScheme() {
     return "Default for GNOME";
   }
-
   public static Shortcut getShortcut(String stroke) {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }

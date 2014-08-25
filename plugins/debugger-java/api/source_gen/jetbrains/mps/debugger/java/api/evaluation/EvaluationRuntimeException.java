@@ -7,15 +7,12 @@ public class EvaluationRuntimeException extends RuntimeException {
   public EvaluationRuntimeException() {
     super();
   }
-
   public EvaluationRuntimeException(String message) {
     super(message);
   }
-
   public EvaluationRuntimeException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public EvaluationRuntimeException(Throwable cause) {
     super(cause);
   }

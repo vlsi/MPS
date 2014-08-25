@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.Generator;
 public class ConflictingModelsWarnings implements EditorWarningsProvider {
   public ConflictingModelsWarnings() {
   }
-
   @Nullable
   @Override
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull final Project project) {
@@ -61,7 +60,6 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
       }
     }
   }
-
   @Nullable
   private static String getModuleType(@NotNull SModule module) {
     if (module instanceof Language) {
@@ -73,7 +71,6 @@ public class ConflictingModelsWarnings implements EditorWarningsProvider {
     }
     return null;
   }
-
   private static SModule check_bmsafs_a0a2a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

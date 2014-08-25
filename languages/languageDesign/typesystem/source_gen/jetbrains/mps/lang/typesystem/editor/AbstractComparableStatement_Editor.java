@@ -36,11 +36,9 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2gd5o_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2gd5o_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_2gd5o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_a");
@@ -51,7 +49,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_2gd5o_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_2gd5o_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
@@ -71,7 +68,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_2gd5o_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -80,7 +76,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new AbstractComparableStatement_Editor.ReplaceWith_AbstractEquationStatement_cellMenu_2gd5o_a0b0()}));
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_2gd5o_a0b0(EditorContext editorContext, SNode node) {
     if (SPropertyOperations.getBoolean(node, "checkOnly")) {
       return Color.GRAY;
@@ -88,16 +83,13 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
       return Color.BLACK;
     }
   }
-
   public static class ReplaceWith_AbstractEquationStatement_cellMenu_2gd5o_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractEquationStatement_cellMenu_2gd5o_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement";
     }
   }
-
   private EditorCell createRefNode_2gd5o_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightExpression");
@@ -117,14 +109,12 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2gd5o_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_2gd5o_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_a_0");
@@ -138,7 +128,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_2gd5o_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_2gd5o_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_a0");
@@ -146,14 +135,12 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_2gd5o_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node to check =");
     editorCell.setCellId("Constant_2gd5o_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_2gd5o_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToCheck");
@@ -173,7 +160,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_2gd5o_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_b0");
@@ -181,14 +167,12 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_2gd5o_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "error string =");
     editorCell.setCellId("Constant_2gd5o_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_2gd5o_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("errorString");
@@ -208,7 +192,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2gd5o_c0");
@@ -218,7 +201,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_2gd5o_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_d0");
@@ -229,14 +211,12 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_2gd5o_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inference");
     editorCell.setCellId("Constant_2gd5o_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_2gd5o_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("infer");
@@ -254,7 +234,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2gd5o_e0");
@@ -264,7 +243,6 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_2gd5o_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2gd5o_f0");
@@ -275,14 +253,12 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_2gd5o_a5a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2gd5o_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "intention to fix error");
     editorCell.setCellId("Constant_2gd5o_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_2gd5o_g0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new AbstractComparableStatement_Editor.helginsIntentionListHandler_2gd5o_g0(node, "helginsIntention", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -290,35 +266,31 @@ public class AbstractComparableStatement_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class helginsIntentionListHandler_2gd5o_g0 extends RefNodeListHandler {
     public helginsIntentionListHandler_2gd5o_g0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));

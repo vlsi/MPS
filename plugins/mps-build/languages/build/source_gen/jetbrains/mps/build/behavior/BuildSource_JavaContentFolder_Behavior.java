@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildSource_JavaContentFolder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getAntPath_2389279258816946193(SNode thisNode, Context context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildSource_JavaContentRoot"), "basePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{context}) + "/" + SPropertyOperations.getString(thisNode, "relativePath");
   }

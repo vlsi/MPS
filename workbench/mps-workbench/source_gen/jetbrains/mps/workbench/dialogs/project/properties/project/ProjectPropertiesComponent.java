@@ -36,7 +36,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
   private ProjectProperties myProperties = new ProjectProperties();
   private ProjectPrefsExtraPanel[] myExtraPanels;
 
-
   public ProjectPropertiesComponent(Project project, ProjectPrefsExtraPanel[] extraPanels) {
     super(true);
     myProject = (StandaloneMPSProject) project.getComponent(MPSProject.class);
@@ -44,12 +43,9 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     myProperties.loadFrom(myProject);
     init();
   }
-
   public ProjectPropertiesComponent(Project project) {
     this(project, Extensions.getExtensions(ProjectPrefsExtraPanel.EP_NAME, project));
   }
-
-
 
   private Object getGridConstraints(int row, boolean fill) {
     if (fill) {
@@ -57,7 +53,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     }
     return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
   }
-
   private JComponent createProjectModulesList() {
     final JBList list = new JBList(new ProjectPropertiesComponent.PathsListModel());
 
@@ -92,8 +87,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     return panel;
   }
 
-
-
   @Override
   public void init() {
     int rowCount = 2 + ((myExtraPanels == null ? 0 : myExtraPanels.length));
@@ -105,7 +98,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       this.add(extraPanel.getComponent(), getGridConstraints(rowIndex++, false));
     }
   }
-
   @Override
   public boolean isModified() {
     return !(myProperties.isSame(myProject.getProjectDescriptor())) || Sequence.fromIterable(Sequence.fromArray(myExtraPanels)).any(new IWhereFilter<ProjectPrefsExtraPanel>() {
@@ -114,7 +106,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       }
     });
   }
-
   @Override
   public void apply() {
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -127,7 +118,6 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
       ep.apply();
     }
   }
-
   public void reset() {
     try {
       myProperties.loadFrom(myProject);
@@ -139,34 +129,26 @@ public class ProjectPropertiesComponent extends JBPanel implements Modifiable {
     }
   }
 
-
-
   private class PathsListModel extends AbstractListModel {
     public PathsListModel() {
     }
-
-
 
     @Override
     public int getSize() {
       return myProperties.getModules().size();
     }
-
     @Override
     public Object getElementAt(int i) {
       return myProperties.getModules().get(i);
     }
-
     public List<Path> getPaths() {
       return myProperties.getModules();
     }
-
     public void addPath(Path path) {
       myProperties.getModules().add(path);
       int i = myProperties.getModules().indexOf(path);
       fireIntervalAdded(this, i, i);
     }
-
     public void removePath(Object path) {
       int i = myProperties.getModules().indexOf(path);
       myProperties.getModules().remove(path);

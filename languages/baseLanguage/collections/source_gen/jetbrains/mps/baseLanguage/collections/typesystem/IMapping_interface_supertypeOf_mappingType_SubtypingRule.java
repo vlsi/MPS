@@ -16,26 +16,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public IMapping_interface_supertypeOf_mappingType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode mappingType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_chrt0k_a0a1(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MappingType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_chrt0k_a0a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

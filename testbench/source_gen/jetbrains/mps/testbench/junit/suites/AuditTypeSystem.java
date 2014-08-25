@@ -14,7 +14,6 @@ public class AuditTypeSystem extends BaseCheckModulesTest {
   public AuditTypeSystem(SModule module) {
     super(module);
   }
-
   @Test
   public void checkTypeSystem() {
     Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();

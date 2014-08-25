@@ -13,7 +13,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 public class RunConfigurationProducerPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "source", true) == null)) {

@@ -14,19 +14,33 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DeleteFirstForLoopVar {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteFirstForLoopVar.DeleteFirstForLoopVar_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteFirstForLoopVar.DeleteFirstForLoopVar_BACKSPACE(node));
   }
-
   public static class DeleteFirstForLoopVar_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteFirstForLoopVar_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isEmpty()) {
+        SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "variable", true));
+      } else {
+        SNode var = ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).removeElementAt(0);
+        SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(node, "variable", true), var);
+      }
+    }
+  }
+  public static class DeleteFirstForLoopVar_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DeleteFirstForLoopVar_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isEmpty()) {
         SNodeOperations.deleteNode(SLinkOperations.getTarget(node, "variable", true));

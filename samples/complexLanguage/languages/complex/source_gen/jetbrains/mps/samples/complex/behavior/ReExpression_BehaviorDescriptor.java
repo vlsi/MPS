@@ -6,7 +6,6 @@ package jetbrains.mps.samples.complex.behavior;
 public class ReExpression_BehaviorDescriptor extends SingleComplexExpression_BehaviorDescriptor {
   public ReExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.ReExpression";

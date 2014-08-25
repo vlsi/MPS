@@ -30,22 +30,16 @@ import jetbrains.mps.util.MacroHelper;
 public class EditorUtil {
   public EditorUtil() {
   }
-
   public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context, boolean copy) {
     return EditorUtil.createSelectIconButton(sourceNode, "iconPath", context, copy);
   }
 
-
-
   public static JComponent createSelectIconButton(SNode sourceNode, final EditorContext context) {
     return EditorUtil.createSelectIconButton(sourceNode, "iconPath", context);
   }
-
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context) {
     return createSelectIconButton(sourceNode, propertyName, context, false);
   }
-
-
 
   public static JComponent createSelectIconButton(final SNode sourceNode, final String propertyName, final EditorContext context, boolean copy) {
     final AbstractModule module = (AbstractModule) sourceNode.getModel().getModule();
@@ -60,12 +54,9 @@ public class EditorUtil {
       }
     }, copy);
   }
-
   public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
     return createSelectButton(sourceNode, propertyName, context, files, shrinkPath, expandPath, false);
   }
-
-
 
   public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath, final boolean copy) {
     String filename = expandPath.invoke(SNodeAccessUtil.getProperty(sourceNode, propertyName));
@@ -117,14 +108,12 @@ public class EditorUtil {
     button.setPreferredSize(new Dimension(20, 20));
     return button;
   }
-
   private static String check_3m4h3r_a0a4a2a6(MacroHelper checkedDotOperand, String fullPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.shrinkPath(fullPath);
     }
     return null;
   }
-
   private static String check_3m4h3r_a0a5a2a6(MacroHelper checkedDotOperand, String shortPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.expandPath(shortPath);

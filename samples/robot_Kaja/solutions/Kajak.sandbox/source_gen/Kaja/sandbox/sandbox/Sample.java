@@ -8,7 +8,6 @@ import JavaKaja.runtime.Direction;
 public class Sample extends KajaFrame {
   public Sample() {
   }
-
   protected void perform() {
     if (canMove()) {
       moveKaja();
@@ -36,14 +35,12 @@ public class Sample extends KajaFrame {
     }
     turn_SPACE_right_routine();
   }
-
   public void turn_SPACE_right_routine() {
     for (int indexVariable_kf1bs5_a0a = 0; indexVariable_kf1bs5_a0a < 3; indexVariable_kf1bs5_a0a++) {
       turnLeft();
       pause();
     }
   }
-
   public static void main(String[] args) {
     Sample script = new Sample();
     script.initializeComponents();

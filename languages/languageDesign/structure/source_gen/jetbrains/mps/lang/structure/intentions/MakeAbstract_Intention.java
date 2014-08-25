@@ -16,68 +16,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeAbstract_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
-
   public String getPresentation() {
     return "MakeAbstract";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.structure.intentions.MakeAbstract_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.structure";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "4672725010143198841");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "abstract") ? "Make Not Abstract" : "Make Abstract");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "abstract", "" + (!(SPropertyOperations.getBoolean(node, "abstract"))));
       if (SPropertyOperations.getBoolean(node, "abstract")) {
         SPropertyOperations.set(node, "final", "" + (false));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeAbstract_Intention.this;
     }

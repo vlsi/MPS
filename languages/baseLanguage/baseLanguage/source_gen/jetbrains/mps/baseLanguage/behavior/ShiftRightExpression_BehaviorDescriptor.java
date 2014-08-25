@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ShiftRightExpression_BehaviorDescriptor extends BinaryBitwiseOperation_BehaviorDescriptor {
   public ShiftRightExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return ShiftRightExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ShiftRightExpression";

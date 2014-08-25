@@ -21,18 +21,15 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4TestWrapper(SNode clazz) {
     super(clazz);
   }
-
   @Override
   public boolean isTestCase() {
     return true;
   }
-
   @NonNls
   @Override
   public String getFqName() {
     return check_rdmqn1_a0a2(getNode(), this);
   }
-
   @NotNull
   @Override
   public Iterable<ITestNodeWrapper> getTestMethods() {
@@ -51,7 +48,6 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
       }
     });
   }
-
   public static boolean isJUnit4TestCase(SNode clazz) {
     if (SPropertyOperations.getBoolean(SNodeOperations.cast(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) {
       return false;
@@ -63,7 +59,6 @@ public class JUnit4TestWrapper extends AbstractTestWrapper<SNode> {
     }
     return false;
   }
-
   private static String check_rdmqn1_a0a2(SNode checkedDotOperand, JUnit4TestWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});

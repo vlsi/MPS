@@ -35,6 +35,7 @@ import jetbrains.mps.project.persistence.ProjectDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.project.Path;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.Computable;
@@ -135,6 +136,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   @Override
   public void projectOpened() {
+    LOG.info("Project opened");
     super.projectOpened();
     initProject();
   }
@@ -160,6 +162,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   // public for tests only!
   public void init(final ProjectDescriptor projectDescriptor) {
+    LOG.info("Initializing project");
     if (myProject.isDefault()) return;
 
     assert !isDisposed();
@@ -208,6 +211,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   protected void readModules() {
+    LOG.info("Reading modules");
     myErrors = null;
 
     // load solutions
@@ -235,6 +239,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
+    ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   private void error(String text) {
@@ -302,7 +307,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     //todo hack
     if (myProject != null) {
       if (RuntimeFlags.isTestMode() && !(myProject.isDisposed())) {
-        //second check if for MPS-12881, we invoked this method reqursively and tried to dispose a disposed project
+        //second check if for MPS-12881, we invoked this method recursively and tried to dispose a disposed project
         ProjectUtil.closeAndDispose(myProject);
       }
     }

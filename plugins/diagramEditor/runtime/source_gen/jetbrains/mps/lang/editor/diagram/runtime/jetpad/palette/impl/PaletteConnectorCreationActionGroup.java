@@ -34,7 +34,6 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
   private _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> mySetConnectorCallBack;
   private DiagramCell myDiagramCell;
   private Icon myIcon;
-
   public PaletteConnectorCreationActionGroup(DiagramCell diagramCell, SNode container, SNode childNodeConcept, SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
     myDiagramCell = diagramCell;
     myEditorContext = diagramCell.getContext();
@@ -43,7 +42,6 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
     mySubstituteInfo = new CompositeSubstituteInfo(myEditorContext, new BasicCellContext(diagramCell.getSNode()), new SubstituteInfoPartExt[]{createNewDiagramConnectorActions(container, childNodeConcept, containingLink, canCreateConnector, setConnectorCallback)});
     myIcon = IconManager.getIconForConceptFQName(NameUtil.nodeFQName(childNodeConcept));
   }
-
   public PaletteElement[] getElements() {
     mySubstituteInfo.invalidateActions();
     return ListSequence.fromList(((List<SubstituteAction>) mySubstituteInfo.getMatchingActions("", false))).select(new ISelector<SubstituteAction, PaletteConnectorCreationAction>() {
@@ -52,19 +50,15 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
       }
     }).toGenericArray(PaletteConnectorCreationAction.class);
   }
-
   public boolean isPopup() {
     return true;
   }
-
   public Icon getIcon() {
     return myIcon;
   }
-
   public String getText() {
     return null;
   }
-
   public SubstituteInfoPartExt createNewDiagramConnectorActions(final SNode container, final SNode childNodeConcept, final SNode containingLink, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback) {
     // TMP solution: manually creating instance of connection instead of using 
     // ModelActions.createChildNodeSubstituteActions() because of mbeddr reqirements: 
@@ -83,7 +77,6 @@ public class PaletteConnectorCreationActionGroup implements PaletteActionGroup {
       }
     };
   }
-
 
 
 }

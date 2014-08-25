@@ -24,7 +24,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4ccleb_a(editorContext, node);
   }
-
   private EditorCell createCollection_4ccleb_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4ccleb_a");
@@ -35,7 +34,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     editorCell.addEditorCell(this.createConstant_4ccleb_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_4ccleb_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -44,16 +42,13 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new GenerationContextOp_UserObjectAccessBase_Editor.ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_GenerationContextOp_UserObjectAccessBase_cellMenu_4ccleb_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase";
     }
   }
-
   private EditorCell createConstant_4ccleb_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_4ccleb_b0");
@@ -64,7 +59,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_4ccleb_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("userKey");
@@ -84,7 +78,6 @@ public class GenerationContextOp_UserObjectAccessBase_Editor extends DefaultNode
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_4ccleb_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_4ccleb_d0");

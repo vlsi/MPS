@@ -9,10 +9,8 @@ import java.util.HashMap;
 
 public class MoneyConversion {
   private Map<String, BigDecimal> exchangeRates = MapSequence.fromMap(new HashMap<String, BigDecimal>());
-
   public MoneyConversion() {
   }
-
   public BigDecimal convert(BigDecimal amount, String from, String to) {
     return null;
   }

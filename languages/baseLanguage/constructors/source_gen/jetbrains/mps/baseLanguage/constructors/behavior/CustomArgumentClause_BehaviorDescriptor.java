@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 public class CustomArgumentClause_BehaviorDescriptor extends ArgumentClause_BehaviorDescriptor {
   public CustomArgumentClause_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.constructors.structure.CustomArgumentClause";

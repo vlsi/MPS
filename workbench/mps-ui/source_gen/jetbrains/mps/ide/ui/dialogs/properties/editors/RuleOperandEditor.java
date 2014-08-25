@@ -22,18 +22,15 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
   private Generator myGenerator;
   private List<SModuleReference> myDepGens;
   private boolean myLeft;
-
   public RuleOperandEditor(Generator generator, List<SModuleReference> depGens, boolean isLeft) {
     myGenerator = generator;
     myDepGens = depGens;
     myLeft = isLeft;
   }
-
   @Override
   public Object getCellEditorValue() {
     return myOperand;
   }
-
   @Override
   public boolean isCellEditable(EventObject e) {
     if (e == null) {
@@ -44,12 +41,10 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
     }
     return true;
   }
-
   @Override
   public boolean shouldSelectCell(EventObject e) {
     return false;
   }
-
   @Override
   public Component getTableCellEditorComponent(final JTable table, Object value, boolean isSelected, final int row, final int column) {
     myOperand = (MappingConfig_AbstractRef) value;
@@ -70,7 +65,6 @@ public class RuleOperandEditor extends AbstractTableCellEditor {
     });
     return createRenderer(table, myOperand, row, column);
   }
-
   private JComponent createRenderer(JTable table, Object value, int row, int column) {
     return (JComponent) new RuleOperandRenderer().getTableCellRendererComponent(table, value, true, true, row, column);
   }

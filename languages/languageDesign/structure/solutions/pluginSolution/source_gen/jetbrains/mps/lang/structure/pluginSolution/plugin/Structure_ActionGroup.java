@@ -13,7 +13,6 @@ public class Structure_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Structure_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.structure.pluginSolution.plugin.Structure_ActionGroup";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
-
   public Structure_ActionGroup() {
     super("Structure", ID);
     this.setIsInternal(false);

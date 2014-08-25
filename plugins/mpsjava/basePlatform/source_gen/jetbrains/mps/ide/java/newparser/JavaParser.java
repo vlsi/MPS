@@ -45,15 +45,12 @@ import jetbrains.mps.smodel.DynamicReference;
 
 public class JavaParser {
   private static Logger LOG = LogManager.getLogger(JavaParser.class);
-
   public JavaParser() {
   }
-
   @NotNull
   public JavaParser.JavaParseResult parseCompilationUnit(String code) throws JavaParseException {
     return parse(code, FeatureKind.CLASS, null, true);
   }
-
   @NotNull
   public JavaParser.JavaParseResult parse(String code, FeatureKind what, SNode context, boolean recovery) throws JavaParseException {
     // in eclipse there is full recovery and statement recovery 
@@ -143,7 +140,6 @@ public class JavaParser {
 
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
-
   public void attachComments(char[] source, ASTConverter converter, RecordedParsingInformation parseInfo) {
 
     char[] content = source;
@@ -218,7 +214,6 @@ public class JavaParser {
       }
     }
   }
-
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
     SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
 
@@ -244,7 +239,6 @@ public class JavaParser {
     // <node> 
     // <node> 
   }
-
   private SNode makeImport(ImportReference impRef) {
     SNode imp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
 
@@ -264,7 +258,6 @@ public class JavaParser {
     SPropertyOperations.set(imp, "tokens", sb.toString());
     return imp;
   }
-
   private String problemDescription(RecordedParsingInformation info) {
     if (info == null) {
       return null;
@@ -275,7 +268,6 @@ public class JavaParser {
       return null;
     }
   }
-
   @Nullable
   public static String peekPackage(String source) {
     // WILL GO AWAY COMPLETELY 
@@ -290,38 +282,31 @@ public class JavaParser {
     }
     return (packageName.length() == 0 ? null : packageName.toString());
   }
-
   public static class JavaParseResult {
     public static final JavaParser.JavaParseResult UNKNOWN_ERROR = new JavaParser.JavaParseResult(new ArrayList<SNode>(), "Parse failed and return no errors");
     @NotNull
     private List<SNode> nodes;
     private String pakage;
     private String errorMsg;
-
     public JavaParseResult(List<SNode> ns, String error) {
       nodes = ns;
       errorMsg = error;
     }
-
     public JavaParseResult(List<SNode> ns, String pkg, String error) {
       this(ns, error);
       pakage = pkg;
     }
-
     @NotNull
     public List<SNode> getNodes() {
       return nodes;
     }
-
     public String getPackage() {
       return pakage;
     }
-
     public String getErrorMsg() {
       return errorMsg;
     }
   }
-
   public static void tryResolveUnknowns(Iterable<SNode> roots) {
     for (SNode node : Sequence.fromIterable(roots)) {
       List<SNode> unknowns = SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.IYetUnresolved", false, new String[]{});
@@ -357,7 +342,6 @@ public class JavaParser {
       }
     }
   }
-
   public static void tryResolveDynamicRefs(Iterable<SNode> nodes) {
     Deque<SNode> stack = DequeSequence.fromDeque(new LinkedList<SNode>());
     DequeSequence.fromDeque(stack).addSequence(Sequence.fromIterable(nodes));

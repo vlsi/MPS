@@ -82,7 +82,7 @@ public class ModelRules {
       if (language == null) return false;
       IHelginsDescriptor typeSystemDescriptor = null;
       try {
-        typeSystemDescriptor = language.getTypesystem();
+        typeSystemDescriptor = language.getAspect(IHelginsDescriptor.class);
       } catch (Throwable t) {
         LOG.error("Error while loading language: " + languageNamespace, t);
       }

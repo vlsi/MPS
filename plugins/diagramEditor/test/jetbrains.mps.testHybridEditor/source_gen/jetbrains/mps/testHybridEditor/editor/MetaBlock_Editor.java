@@ -40,11 +40,9 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_liyxwi_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_liyxwi_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_liyxwi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_liyxwi_a");
@@ -56,14 +54,12 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_liyxwi_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "meta block");
     editorCell.setCellId("Constant_liyxwi_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_liyxwi_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -81,7 +77,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_liyxwi_c0");
@@ -92,7 +87,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_liyxwi_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_liyxwi_d0");
@@ -108,14 +102,12 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_liyxwi_g3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "in meta ports");
     editorCell.setCellId("Constant_liyxwi_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_liyxwi_b3a");
@@ -126,7 +118,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_liyxwi_c3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MetaBlock_Editor.inMetaPortsListHandler_liyxwi_c3a(node, "inMetaPorts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -139,35 +130,31 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class inMetaPortsListHandler_liyxwi_c3a extends RefNodeListHandler {
     public inMetaPortsListHandler_liyxwi_c3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -175,7 +162,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_liyxwi_d3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_liyxwi_d3a");
@@ -185,14 +171,12 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_e3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "out meta ports");
     editorCell.setCellId("Constant_liyxwi_e3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_f3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_liyxwi_f3a");
@@ -203,7 +187,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_liyxwi_g3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MetaBlock_Editor.outMetaPortsListHandler_liyxwi_g3a(node, "outMetaPorts", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -216,35 +199,31 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class outMetaPortsListHandler_liyxwi_g3a extends RefNodeListHandler {
     public outMetaPortsListHandler_liyxwi_g3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -252,7 +231,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_liyxwi_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_liyxwi_e0");
@@ -262,7 +240,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_liyxwi_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_liyxwi_a_0");
@@ -273,7 +250,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_liyxwi_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_liyxwi_a0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = MetaBlock_Editor.renderingCondition_liyxwi_a0a(node, editorContext);
@@ -285,7 +261,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_liyxwi_a0a(SNode node, EditorContext editorContext) {
     SModule module = SNodeOperations.getModel(node).getModule();
     if (!(module instanceof AbstractModule)) {
@@ -298,7 +273,6 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     return FileSystem.getInstance().getFileByPath(s).exists();
 
   }
-
   private EditorCell createImage_liyxwi_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
     editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
@@ -310,14 +284,12 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.setDescent(0);
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<no icon>");
     editorCell.setCellId("Constant_liyxwi_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_liyxwi_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_liyxwi_b0");
@@ -329,14 +301,12 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createJComponent_liyxwi_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_liyxwi_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "icon");
     editorCell.setCellId("Constant_liyxwi_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_liyxwi_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("iconPath");
@@ -358,24 +328,20 @@ public class MetaBlock_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createJComponent_liyxwi_c1a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = EditorCell_Component.createComponentCell(editorContext, node, MetaBlock_Editor._QueryFunction_JComponent_liyxwi_a2b0(node, editorContext), "_liyxwi_c1a");
     editorCell.setCellId("JComponent_liyxwi_c1a");
     return editorCell;
   }
-
   private static JComponent _QueryFunction_JComponent_liyxwi_a2b0(final SNode node, final EditorContext editorContext) {
     return EditorUtil.createSelectIconButton(node, editorContext);
   }
-
   private EditorCell createConstant_liyxwi_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "path:");
     editorCell.setCellId("Constant_liyxwi_c0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_liyxwi_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("path");

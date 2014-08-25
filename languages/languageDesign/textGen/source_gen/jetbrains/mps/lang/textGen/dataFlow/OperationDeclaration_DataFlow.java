@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class OperationDeclaration_DataFlow extends DataFlowBuilder {
   public OperationDeclaration_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode(), "r:812dd537-4bc6-4b23-8ff0-eed686398e8b(jetbrains.mps.lang.textGen.dataFlow)/1234274829010");
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));

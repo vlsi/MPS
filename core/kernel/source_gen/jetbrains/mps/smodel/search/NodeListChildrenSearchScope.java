@@ -11,11 +11,9 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class NodeListChildrenSearchScope extends AbstractSearchScope {
   private ArrayList<SNode> myNodes;
-
   public NodeListChildrenSearchScope(List<SNode> nodes) {
     this.myNodes = new ArrayList<SNode>(nodes);
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

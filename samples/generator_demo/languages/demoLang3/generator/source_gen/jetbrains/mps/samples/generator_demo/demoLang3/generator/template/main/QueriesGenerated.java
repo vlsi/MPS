@@ -19,15 +19,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_5273477653284544323(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
-
   public static boolean baseMappingRule_Condition_5273477653284544332(final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("label");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228530847854(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -35,11 +32,9 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228531189338(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1228530922047(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -47,23 +42,18 @@ public class QueriesGenerated {
       }
     }), "value");
   }
-
   public static Object propertyMacro_GetPropertyValue_1228531236411(final PropertyMacroContext _context) {
     return _context.createUniqueName(_context.getTemplateValue(), null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1228532289178(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value").equals("true");
   }
-
   public static Object referenceMacro_GetReferent_5273477653284546101(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "method");
   }
-
   public static Object referenceMacro_GetReferent_1228532742086(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "value");
   }
-
   public static boolean ifMacro_Condition_1228530695049(final IfMacroContext _context) {
     return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -71,7 +61,6 @@ public class QueriesGenerated {
       }
     }) != null);
   }
-
   public static boolean ifMacro_Condition_1228530922069(final IfMacroContext _context) {
     return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -79,7 +68,6 @@ public class QueriesGenerated {
       }
     }) != null);
   }
-
   public static SNode sourceNodeQuery_1228532217556(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -87,7 +75,6 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static SNode sourceNodeQuery_1228532713788(final SourceSubstituteMacroNodeContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -95,11 +82,9 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static Iterable<SNode> sourceNodesQuery_5273477653284544939(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }
-
   public static Iterable<SNode> sourceNodesQuery_5273477653284544347(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.sampleXML.structure.Element");
   }

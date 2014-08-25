@@ -10,14 +10,12 @@ import jetbrains.mps.util.NameUtil;
 public class CoerceUtil {
   public CoerceUtil() {
   }
-
   public static boolean canBeCoerced(SNode type, String conceptFqName) {
     if (conceptFqName == null) {
       return true;
     }
     return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.Type") ? BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_canBeCoerced_6321644624958501287", new Object[]{conceptFqName}) : true);
   }
-
   public static boolean canBeCoerced(SNode type, SNode conceptNode) {
     return canBeCoerced(type, NameUtil.nodeFQName(conceptNode));
   }

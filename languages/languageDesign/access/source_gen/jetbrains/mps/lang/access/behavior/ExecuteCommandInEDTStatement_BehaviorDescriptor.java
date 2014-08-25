@@ -6,7 +6,6 @@ package jetbrains.mps.lang.access.behavior;
 public class ExecuteCommandInEDTStatement_BehaviorDescriptor extends BaseExecuteCommandStatement_BehaviorDescriptor {
   public ExecuteCommandInEDTStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement";

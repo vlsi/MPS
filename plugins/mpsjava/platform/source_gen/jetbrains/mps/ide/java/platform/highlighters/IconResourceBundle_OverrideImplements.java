@@ -17,18 +17,14 @@ public class IconResourceBundle_OverrideImplements implements IconResourceBundle
       put("OVERRIDING", IconContainer.ICON_a3);
     }
   };
-
   public IconResourceBundle_OverrideImplements() {
   }
-
   public Iterable<String> getKeys() {
     return icons.keySet();
   }
-
   public Icon getResource(String key) {
     return icons.get(key);
   }
-
   public static IconResourceBundle_OverrideImplements getInstance() {
     return IconResourceBundle_OverrideImplements.INSTANCE;
   }

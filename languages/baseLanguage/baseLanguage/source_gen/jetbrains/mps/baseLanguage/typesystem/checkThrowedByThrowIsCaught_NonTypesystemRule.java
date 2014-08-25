@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkThrowedByThrowIsCaught_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode throwStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode throwable = SLinkOperations.getTarget(throwStatement, "throwable", true);
     if ((throwable == null)) {
@@ -33,18 +32,15 @@ public class checkThrowedByThrowIsCaught_NonTypesystemRule extends AbstractNonTy
       RulesFunctions_BaseLanguage.check(typeCheckingContext, throwables, throwStatement);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ThrowStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -18,11 +18,9 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c52lpr_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c52lpr_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_c52lpr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c52lpr_a");
@@ -32,28 +30,24 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_c52lpr_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c52lpr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id[");
     editorCell.setCellId("Constant_c52lpr_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_c52lpr_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_c52lpr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_c52lpr_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_c52lpr_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_c52lpr_a_0");
@@ -65,14 +59,12 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_c52lpr_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_c52lpr_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_c52lpr_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c52lpr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modelId");
@@ -90,21 +82,18 @@ public class OriginalNodeId_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c52lpr_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_c52lpr_c0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_c52lpr_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node");
     editorCell.setCellId("Constant_c52lpr_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_c52lpr_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("nodeId");

@@ -16,12 +16,25 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class EditorTestCase_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6iwt9a_a(editorContext, node);
   }
-
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_6iwt9a_a_0(editorContext, node);
+  }
   private EditorCell createCollection_6iwt9a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_6iwt9a_a");
@@ -38,14 +51,12 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_6iwt9a_j0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6iwt9a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Editor test case");
     editorCell.setCellId("Constant_6iwt9a_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6iwt9a_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -66,14 +77,12 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6iwt9a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
     editorCell.setCellId("Constant_6iwt9a_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6iwt9a_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
@@ -95,14 +104,12 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6iwt9a_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "before:");
     editorCell.setCellId("Constant_6iwt9a_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6iwt9a_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeToEdit");
@@ -126,14 +133,12 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6iwt9a_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "result:");
     editorCell.setCellId("Constant_6iwt9a_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6iwt9a_h0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("result");
@@ -157,7 +162,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6iwt9a_i0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "code:");
     editorCell.setCellId("Constant_6iwt9a_i0");
@@ -167,7 +171,6 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_6iwt9a_j0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("code");
@@ -190,5 +193,69 @@ public class EditorTestCase_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  private EditorCell createCollection_6iwt9a_a_0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
+    editorCell.setCellId("Collection_6iwt9a_a_0");
+    editorCell.setBig(true);
+    editorCell.addEditorCell(this.createCollection_6iwt9a_a0(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createCollection_6iwt9a_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_6iwt9a_a0");
+    editorCell.addEditorCell(this.createConstant_6iwt9a_a0a(editorContext, node));
+    editorCell.addEditorCell(this.createModelAccess_6iwt9a_b0a(editorContext, node));
+    return editorCell;
+  }
+  private EditorCell createConstant_6iwt9a_a0a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Can execute-in-process:");
+    editorCell.setCellId("Constant_6iwt9a_a0a");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createModelAccess_6iwt9a_b0a(final EditorContext editorContext, final SNode node) {
+    ModelAccessor modelAccessor = new ModelAccessor() {
+      public String getText() {
+        return ITestCase_Behavior.call_canRunInProcess_6436735966448788391(node) + "";
+      }
+      public void setText(String text) {
+        if (text.equals("true")) {
+          SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+        } else if (text.equals("false")) {
+          SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+        }
+      }
+      public boolean isValidText(String text) {
+        return text.equals("true") || text.equals("false");
+      }
+    };
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ModelAccess_6iwt9a_b0a");
+    editorCell.setDefaultText(" ");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EditorTestCase_Editor.EditorTestCase_generic_cellMenu_6iwt9a_a0b0a(), new EditorTestCase_Editor.EditorTestCase_generic_cellMenu_6iwt9a_b0b0a()}));
+    return editorCell;
+  }
+  public static class EditorTestCase_generic_cellMenu_6iwt9a_a0b0a extends AbstractCellMenuPart_Generic_Item {
+    public EditorTestCase_generic_cellMenu_6iwt9a_a0b0a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canNotRunInProcess", "" + (true));
+    }
+    public String getMatchingText() {
+      return "false";
+    }
+  }
+  public static class EditorTestCase_generic_cellMenu_6iwt9a_b0b0a extends AbstractCellMenuPart_Generic_Item {
+    public EditorTestCase_generic_cellMenu_6iwt9a_b0b0a() {
+    }
+    public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canNotRunInProcess", "" + (false));
+    }
+    public String getMatchingText() {
+      return "true";
+    }
   }
 }

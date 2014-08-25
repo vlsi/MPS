@@ -18,88 +18,67 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1197167547634(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateMachineName") + "_StateMachineFactory";
   }
-
   public static Object propertyMacro_GetPropertyValue_1197225159986(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "eventName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197225159995(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "eventName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197225160003(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "code");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197225513007(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197225513016(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197242046925(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "trigger", false), "eventName");
   }
-
   public static Object propertyMacro_GetPropertyValue_199058371937543681(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "stateName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197251191969(final PropertyMacroContext _context) {
     return StateMachineTest_Behavior.call_getStateMachineName_1197251245696(_context.getNode()) + "_StateMachine";
   }
-
   public static Object propertyMacro_GetPropertyValue_199058371937525698(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "finalState", false), "stateName");
   }
-
   public static Object propertyMacro_GetPropertyValue_199058371937525715(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "methodName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197256634488(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "event", false), "code");
   }
-
   public static Object referenceMacro_GetReferent_5891355986060738160(final ReferenceMacroContext _context) {
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest"), "stateMachine", false), "StateMachineFactory"))).first();
   }
-
   public static SNode sourceNodeQuery_1197241620516(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
-
   public static SNode sourceNodeQuery_1217888432439(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "target", false);
   }
-
   public static SNode sourceNodeQuery_1197239764838(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "startState", false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197225142618(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "event", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197225498374(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "state", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197241595255(final SourceSubstituteMacroNodesContext _context) {
     SLinkOperations.getTargets(_context.getNode(), "state", true);
     return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", false, new String[]{});
   }
-
   public static Iterable<SNode> sourceNodesQuery_199058371937525658(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "testMethod", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_199058371937526736(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "handleEvent", true);
   }

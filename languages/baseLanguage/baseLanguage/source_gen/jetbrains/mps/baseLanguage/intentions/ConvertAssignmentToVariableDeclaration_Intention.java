@@ -20,41 +20,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertAssignmentToVariableDeclaration_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertAssignmentToVariableDeclaration_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public String getPresentation() {
     return "ConvertAssignmentToVariableDeclaration";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ConvertAssignmentToVariableDeclaration_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"))) {
       return false;
@@ -65,30 +56,24 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
     SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
     return AssignmentExpression_Behavior.call_canConvertToLocalVariableDeclaration_1221573334330(assignment) && SLinkOperations.getTarget(assignment, "lValue", true) == node;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1221573777472");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertAssignmentToVariableDeclaration_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Variable Declaration";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode assignment = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
       EditorCell selectedCell = editorContext.getSelectedCell();
@@ -102,7 +87,6 @@ public class ConvertAssignmentToVariableDeclaration_Intention implements Intenti
       SNode result = AssignmentExpression_Behavior.call_convertToLocalVariableDeclaration_1221573391693(assignment, suggestedName);
       editorContext.selectWRTFocusPolicy(result);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertAssignmentToVariableDeclaration_Intention.this;
     }

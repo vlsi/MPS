@@ -9,17 +9,14 @@ import org.jetbrains.annotations.Nullable;
 public abstract class ValueProxy implements IValueProxy {
   @NotNull
   protected final Value myValue;
-
   public ValueProxy(@NotNull Value v) {
     myValue = v;
   }
-
   @Override
   @NotNull
   public Value getJDIValue() {
     return myValue;
   }
-
   @Override
   @Nullable
   public Object getJavaValue() {

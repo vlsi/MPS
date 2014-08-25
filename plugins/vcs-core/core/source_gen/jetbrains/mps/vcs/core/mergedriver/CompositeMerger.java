@@ -8,18 +8,15 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 /*package*/ class CompositeMerger extends AbstractContentMerger {
   private AbstractContentMerger myPrimaryMerger;
   private AbstractContentMerger mySecondaryMerger;
-
   /*package*/ CompositeMerger(AbstractContentMerger primaryMerger, AbstractContentMerger secondaryMerger) {
     myPrimaryMerger = primaryMerger;
     mySecondaryMerger = secondaryMerger;
   }
-
   @Override
   public void setConflictMarks(byte[] conflictStart, byte[] conflictEnd, byte[] separator) {
     myPrimaryMerger.setConflictMarks(conflictStart, conflictEnd, separator);
     mySecondaryMerger.setConflictMarks(conflictStart, conflictEnd, separator);
   }
-
   @Nullable
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {

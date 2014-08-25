@@ -9,70 +9,63 @@ import java.util.regex.Pattern;
 public class PerlReplace_Test extends TestCase {
   public void test_simple() throws Exception {
     String input = "aaabbccddeeffffffff";
-    Assert.assertEquals("a!b!c!d!e!f!", REPLREGEXP_a1a0a.matcher(input).replaceAll("$1!"));
-    Assert.assertEquals("a!bbccddeeffffffff", REPLREGEXP_a2a0a.matcher(input).replaceFirst("$1!"));
+    Assert.assertEquals("a!b!c!d!e!f!", REPLREGEXP_b0b0a.matcher(input).replaceAll("$1!"));
+    Assert.assertEquals("a!bbccddeeffffffff", REPLREGEXP_b0c0a.matcher(input).replaceFirst("$1!"));
   }
-
   public void test_swap() throws Exception {
-    Assert.assertEquals("word2 first", REPLREGEXP_a0a1a.matcher("   first   word2").replaceFirst("$2 $1"));
-    REPLREGEXP_a1a1a.matcher("").replaceFirst("[$1]");
+    Assert.assertEquals("word2 first", REPLREGEXP_b0a0b.matcher("   first   word2").replaceFirst("$2 $1"));
+    REPLREGEXP_a1a1.matcher("").replaceFirst("[$1]");
   }
-
   public void test_oneLetter() throws Exception {
-    Assert.assertEquals("A", REPLREGEXP_a0a2a.matcher("A").replaceFirst("AA"));
-    Assert.assertEquals("AA", REPLREGEXP_a1a2a.matcher("A").replaceFirst("AA"));
+    Assert.assertEquals("A", REPLREGEXP_b0a0c.matcher("A").replaceFirst("AA"));
+    Assert.assertEquals("AA", REPLREGEXP_b0b0c.matcher("A").replaceFirst("AA"));
   }
-
   public void test_dotAllMode() throws Exception {
-    Assert.assertEquals("!\n!\n!", REPLREGEXP_a0a3a.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
-    Assert.assertEquals("!", REPLREGEXP_a1a3a.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
+    Assert.assertEquals("!\n!\n!", REPLREGEXP_b0a0d.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
+    Assert.assertEquals("!", REPLREGEXP_b0b0d.matcher("aaaaa\nddddd\nwwwww").replaceAll("!"));
   }
-
   public void test_multiLine() throws Exception {
-    Assert.assertEquals("sada\n[asdad]\nasda\n[asada]", REPLREGEXP_a0a4a.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
-    Assert.assertEquals("sada\nasdad:\nasda\nasada:", REPLREGEXP_a1a4a.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
+    Assert.assertEquals("sada\n[asdad]\nasda\n[asada]", REPLREGEXP_b0a0e.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
+    Assert.assertEquals("sada\nasdad:\nasda\nasada:", REPLREGEXP_b0b0e.matcher("sada\nasdad:\nasda\nasada:").replaceAll("[$1]"));
   }
-
   public void test_checkLiterals() throws Exception {
-    Assert.assertEquals("\\", REPLREGEXP_a0a5a.matcher("a").replaceFirst("\\\\"));
-    Assert.assertEquals("[]", REPLREGEXP_a1a5a.matcher("a").replaceFirst("[]"));
-    Assert.assertEquals("$", REPLREGEXP_a2a5a.matcher("a").replaceFirst("\\$"));
-    Assert.assertEquals("\"", REPLREGEXP_a3a5a.matcher("a").replaceFirst("\""));
-    Assert.assertEquals("\"", REPLREGEXP_a4a5a.matcher("a").replaceFirst("\""));
-    Assert.assertEquals("()", REPLREGEXP_a5a5a.matcher("a").replaceFirst("()"));
-    Assert.assertEquals("{}", REPLREGEXP_a6a5a.matcher("a").replaceFirst("{}"));
-    Assert.assertEquals("\n", REPLREGEXP_a7a5a.matcher("a").replaceFirst("\n"));
-    Assert.assertEquals("^", REPLREGEXP_a8a5a.matcher("a").replaceFirst("^"));
-    Assert.assertEquals("'", REPLREGEXP_a9a5a.matcher("a").replaceFirst("'"));
-    Assert.assertEquals("'", REPLREGEXP_a01a5a.matcher("a").replaceFirst("\'"));
-    Assert.assertEquals("\u2606", REPLREGEXP_a11a5a.matcher("a").replaceFirst("\u2606"));
-    Assert.assertEquals("\r", REPLREGEXP_a21a5a.matcher("a").replaceFirst("\r"));
+    Assert.assertEquals("\\", REPLREGEXP_b0a0f.matcher("a").replaceFirst("\\\\"));
+    Assert.assertEquals("[]", REPLREGEXP_b0b0f.matcher("a").replaceFirst("[]"));
+    Assert.assertEquals("$", REPLREGEXP_b0c0f.matcher("a").replaceFirst("\\$"));
+    Assert.assertEquals("\"", REPLREGEXP_b0d0f.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("\"", REPLREGEXP_b0e0f.matcher("a").replaceFirst("\""));
+    Assert.assertEquals("()", REPLREGEXP_b0f0f.matcher("a").replaceFirst("()"));
+    Assert.assertEquals("{}", REPLREGEXP_b0g0f.matcher("a").replaceFirst("{}"));
+    Assert.assertEquals("\n", REPLREGEXP_b0h0f.matcher("a").replaceFirst("\n"));
+    Assert.assertEquals("^", REPLREGEXP_b0i0f.matcher("a").replaceFirst("^"));
+    Assert.assertEquals("'", REPLREGEXP_b0j0f.matcher("a").replaceFirst("'"));
+    Assert.assertEquals("'", REPLREGEXP_b0k0f.matcher("a").replaceFirst("\'"));
+    Assert.assertEquals("\u2606", REPLREGEXP_b0l0f.matcher("a").replaceFirst("\u2606"));
+    Assert.assertEquals("\r", REPLREGEXP_b0m0f.matcher("a").replaceFirst("\r"));
   }
-
   public PerlReplace_Test() {
   }
-
-  private static Pattern REPLREGEXP_a1a0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
-  private static Pattern REPLREGEXP_a2a0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
-  private static Pattern REPLREGEXP_a0a1a = Pattern.compile("\\s*(\\w+)\\s+(\\w+)", 0);
-  private static Pattern REPLREGEXP_a1a1a = Pattern.compile("(\\w)", 0);
-  private static Pattern REPLREGEXP_a0a2a = Pattern.compile("a", 0);
-  private static Pattern REPLREGEXP_a1a2a = Pattern.compile("a", 2);
-  private static Pattern REPLREGEXP_a0a3a = Pattern.compile(".+", 0);
-  private static Pattern REPLREGEXP_a1a3a = Pattern.compile(".+", 32);
-  private static Pattern REPLREGEXP_a0a4a = Pattern.compile("^(\\w+):", 8);
-  private static Pattern REPLREGEXP_a1a4a = Pattern.compile("^(\\w+):", 0);
-  private static Pattern REPLREGEXP_a0a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a1a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a2a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a3a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a4a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a5a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a6a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a7a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a8a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a9a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a01a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a11a5a = Pattern.compile("\\w", 0);
-  private static Pattern REPLREGEXP_a21a5a = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0b0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
+  private static Pattern REPLREGEXP_b0c0a = Pattern.compile("(\\w)\\1*(?:\\s*)", 0);
+  private static Pattern REPLREGEXP_b0a0b = Pattern.compile("\\s*(\\w+)\\s+(\\w+)", 0);
+  private static Pattern REPLREGEXP_a1a1 = Pattern.compile("(\\w)", 0);
+  private static Pattern REPLREGEXP_b0a0c = Pattern.compile("a", 0);
+  private static Pattern REPLREGEXP_b0b0c = Pattern.compile("a", 2);
+  private static Pattern REPLREGEXP_b0a0d = Pattern.compile(".+", 0);
+  private static Pattern REPLREGEXP_b0b0d = Pattern.compile(".+", 32);
+  private static Pattern REPLREGEXP_b0a0e = Pattern.compile("^(\\w+):", 8);
+  private static Pattern REPLREGEXP_b0b0e = Pattern.compile("^(\\w+):", 0);
+  private static Pattern REPLREGEXP_b0a0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0b0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0c0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0d0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0e0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0f0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0g0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0h0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0i0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0j0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0k0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0l0f = Pattern.compile("\\w", 0);
+  private static Pattern REPLREGEXP_b0m0f = Pattern.compile("\\w", 0);
 }

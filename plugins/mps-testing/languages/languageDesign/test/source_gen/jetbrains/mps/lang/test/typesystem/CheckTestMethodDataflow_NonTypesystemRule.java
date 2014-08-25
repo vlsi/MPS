@@ -14,22 +14,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class CheckTestMethodDataflow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public CheckTestMethodDataflow_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode nodesTestMethod, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodesTestMethod, "body", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.test.structure.NodesTestMethod";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

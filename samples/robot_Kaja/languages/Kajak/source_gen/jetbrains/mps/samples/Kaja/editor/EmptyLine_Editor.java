@@ -19,7 +19,6 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_s23fc5_a(editorContext, node);
   }
-
   private EditorCell createConstant_s23fc5_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_s23fc5_a");
@@ -31,11 +30,9 @@ public class EmptyLine_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EmptyLine_Editor.ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a()}));
     return editorCell;
   }
-
   public static class ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_AbstractCommand_cellMenu_s23fc5_a0a() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.Kaja.structure.AbstractCommand";
     }

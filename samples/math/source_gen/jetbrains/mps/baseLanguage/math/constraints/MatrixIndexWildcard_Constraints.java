@@ -16,12 +16,10 @@ public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
   public MatrixIndexWildcard_Constraints() {
     super("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -32,7 +30,6 @@ public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (!(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression"))) {
       return false;
@@ -41,6 +38,5 @@ public class MatrixIndexWildcard_Constraints extends BaseConstraintsDescriptor {
       return !(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "expression", true)), "jetbrains.mps.baseLanguage.math.structure.VectorType"));
     }
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "964810815943407927");
 }

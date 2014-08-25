@@ -21,7 +21,6 @@ import jetbrains.mps.lang.dataFlow.framework.AnalysisDirection;
 
 public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, NullableState>> {
   private SNode myNode;
-
   public NullableAnalyzerRunner(SNode node) {
     super(null, null);
     myNode = node;
@@ -29,20 +28,16 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
     prepareProgram();
     myAnalyzer = new NullableAnalyzerRunner.NullableAnalyzer();
   }
-
   private void prepareProgram() {
     NullableAnalyzerRules.getInstance().apply(myNode, myProgram);
   }
-
   public static class NullableAnalyzer implements DataFlowAnalyzer<Map<SNode, NullableState>> {
     public NullableAnalyzer() {
     }
-
     public Map<SNode, NullableState> initial(Program program) {
       Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
       return result;
     }
-
     public Map<SNode, NullableState> merge(Program program, List<Map<SNode, NullableState>> input) {
       Map<SNode, NullableState> result = new HashMap<SNode, NullableState>();
       for (Map<SNode, NullableState> inputElement : input) {
@@ -58,7 +53,6 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
       }
       return result;
     }
-
     public Map<SNode, NullableState> fun(Map<SNode, NullableState> input, ProgramState state) {
       Map<SNode, NullableState> result = input;
       Instruction instruction = state.getInstruction();
@@ -95,7 +89,6 @@ public class NullableAnalyzerRunner extends CustomAnalyzerRunner<Map<SNode, Null
       }
       return result;
     }
-
     public AnalysisDirection getDirection() {
       return AnalysisDirection.FORWARD;
     }

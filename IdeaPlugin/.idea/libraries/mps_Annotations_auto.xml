@@ -1,8 +1,5 @@
 <component name="libraryTable">
-  <library name="mps.Annotations_auto" type="mps.solution.library">
-    <MPS_MODULE_XML>
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-openapi.jar!/modules/Annotations/Annotations.msd" />
-    </MPS_MODULE_XML>
+  <library name="mps.Annotations_auto">
     <CLASSES>
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-openapi.jar!/" />
     </CLASSES>

@@ -8,10 +8,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Main {
   public static final String MESSAGE = "Live long and prosper!";
-
   public Main() {
   }
-
   public static void main(String[] args) {
     final Tuples._2<String, String> pair = MultiTuple.<String,String>from(MESSAGE, MESSAGE);
     new _FunctionTypes._void_P0_E0() {

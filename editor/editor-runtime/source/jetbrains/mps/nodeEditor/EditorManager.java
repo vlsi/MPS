@@ -34,26 +34,18 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.smodel.event.SModelReferenceEvent;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
-import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -76,6 +68,14 @@ public class EditorManager {
   private Stack<SNode> myAttributesStack = new Stack<SNode>();
 
   @Nullable
+  public static EditorManager getInstanceFromContext(EditorContext editorContext) {
+    // TODO: Create API interface for EditorManager & move this method to EditorContext
+    // TODO: get rid of all usages of getInstanceFromContext(Project project) / getInstanceFromContext(IOperationContext context) methods
+    IOperationContext operationContext = editorContext.getOperationContext();
+    return operationContext.getComponent(EditorManager.class);
+  }
+
+  @Nullable
   public static EditorManager getInstanceFromContext(Project project) {
     if (project == null) return null;
     com.intellij.openapi.project.Project ideaProject = ProjectHelper.toIdeaProject(project);
@@ -88,48 +88,24 @@ public class EditorManager {
     return context.getComponent(EditorManager.class);
   }
 
-  static List<Pair<SNode, SNodeReference>> convert(List<SModelEvent> events) {
-    if (events == null) {
-      return null;
-    }
-    LinkedHashSet<Pair<SNode, SNodeReference>> result = new LinkedHashSet<Pair<SNode, SNodeReference>>();
-    for (SModelEvent event : events) {
-      SNode eventNode;
-      if (event instanceof SModelChildEvent) {
-        eventNode = ((SModelChildEvent) event).getParent();
-      } else if (event instanceof SModelReferenceEvent) {
-        eventNode = ((SModelReferenceEvent) event).getReference().getSourceNode();
-      } else if (event instanceof SModelPropertyEvent) {
-        eventNode = ((SModelPropertyEvent) event).getNode();
-      } else continue;
-      result.add(new Pair<SNode, SNodeReference>(eventNode,
-          new jetbrains.mps.smodel.SNodePointer((SModelReference) event.getModel().getReference(), eventNode.getNodeId()) {
-            int myHashCode = -1;
-
-            @Override
-            public int hashCode() {
-              if (myHashCode == -1) {
-                myHashCode = super.hashCode();
-              }
-              return myHashCode;
-            }
-          }
-      ));
-    }
-    return new ArrayList<Pair<SNode, SNodeReference>>(result);
-  }
-
+  /**
+   * @deprecated starting form MPS 3.1 use EditorContext.createRootCell(SNode node, java.util.List<SModelEvent> events)
+   */
+  @Deprecated
   public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
-    return createRootCell(context, node, events, false);
+    return createRootCell(context, node, new SModelModificationsCollector(events).getModifications(), false);
   }
 
-  private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
+  EditorCell createRootEditorCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications) {
+    return createRootCell(context, node, modifications, false);
+  }
+
+  EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, boolean isInspectorCell) {
     try {
       pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
       EditorComponent nodeEditorComponent = getEditorComponent(context);
       EditorCell rootCell = nodeEditorComponent.getRootCell();
       ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
-      List<Pair<SNode, SNodeReference>> modifications = convert(events);
       assert myContextToOldCellMap.isEmpty();
       myContextToOldCellMap.push(new HashMap<ReferencedNodeContext, EditorCell>());
       if (rootCell != null && modifications != null) {
@@ -614,8 +590,8 @@ public class EditorManager {
     return sideTransformHintCell.install();
   }
 
-  EditorCell createInspectedCell(EditorContext context, SNode node, List<SModelEvent> events) {
-    return createRootCell(context, node, events, true);
+  EditorCell createInspectedCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications) {
+    return createRootCell(context, node, modifications, true);
   }
 
   private EditorComponent getEditorComponent(EditorContext context) {

@@ -6,7 +6,6 @@ package jetbrains.mps.build.util;
 public class NameUtil {
   public NameUtil() {
   }
-
   public static boolean isValidProjectPartName(String name) {
     return !(name.contains(" ")) && !(name.contains("(")) && !(name.contains(")"));
   }

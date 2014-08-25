@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class InternalVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public InternalVariableReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return InternalVariableReference_Behavior.virtual_isLValue_1213877519786(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference";

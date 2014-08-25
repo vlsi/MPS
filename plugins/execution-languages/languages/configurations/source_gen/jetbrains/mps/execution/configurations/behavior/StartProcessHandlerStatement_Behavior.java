@@ -12,19 +12,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class StartProcessHandlerStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getComponent_1594211126127708543(SNode thisNode) {
     return StartProcessHandlerStatement_Behavior.call_getComponentByName_1594211126127708848(thisNode, "component");
   }
-
   public static SNode call_getDispose_1594211126127708769(SNode thisNode) {
     return StartProcessHandlerStatement_Behavior.call_getComponentByName_1594211126127708848(thisNode, "dispose");
   }
-
   public static SNode call_getListener_1594211126127708805(SNode thisNode) {
     return StartProcessHandlerStatement_Behavior.call_getComponentByName_1594211126127708848(thisNode, "listener");
   }
-
   public static SNode call_getComponentByName_1594211126127708848(SNode thisNode, final String name) {
     if ((SLinkOperations.getTarget(thisNode, "tool", true) == null)) {
       return null;

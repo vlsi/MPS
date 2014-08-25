@@ -6,7 +6,6 @@ package jetbrains.mps.samples.formulaLanguage.behavior;
 public class IfFunction_BehaviorDescriptor extends Function_BehaviorDescriptor {
   public IfFunction_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.formulaLanguage.structure.IfFunction";

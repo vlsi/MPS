@@ -20,7 +20,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kyhw7q_a(editorContext, node);
   }
-
   private EditorCell createCollection_kyhw7q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kyhw7q_a");
@@ -34,14 +33,12 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createConstant_kyhw7q_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kyhw7q_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child");
     editorCell.setCellId("Constant_kyhw7q_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kyhw7q_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -59,7 +56,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kyhw7q_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_kyhw7q_c0");
@@ -70,7 +66,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kyhw7q_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default property");
     editorCell.setCellId("Constant_kyhw7q_d0");
@@ -80,7 +75,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kyhw7q_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_kyhw7q_e0");
@@ -90,7 +84,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kyhw7q_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("defaultProperty");
@@ -111,7 +104,6 @@ public class MultipleEditorsTestMostSpecificChild_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kyhw7q_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_kyhw7q_g0");

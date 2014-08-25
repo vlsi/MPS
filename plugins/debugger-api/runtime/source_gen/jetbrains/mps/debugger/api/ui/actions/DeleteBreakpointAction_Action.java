@@ -22,18 +22,15 @@ import org.apache.log4j.LogManager;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Debug.DeleteBreakpoint;
-
   public DeleteBreakpointAction_Action() {
     super("Delete", "Delete Breakpoint", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -47,7 +44,6 @@ public class DeleteBreakpointAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -62,7 +58,6 @@ public class DeleteBreakpointAction_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
@@ -81,6 +76,5 @@ public class DeleteBreakpointAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteBreakpointAction_Action.class);
 }

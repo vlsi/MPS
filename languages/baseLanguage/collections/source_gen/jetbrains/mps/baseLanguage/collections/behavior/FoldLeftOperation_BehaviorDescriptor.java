@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class FoldLeftOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public FoldLeftOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.FoldLeftOperation";

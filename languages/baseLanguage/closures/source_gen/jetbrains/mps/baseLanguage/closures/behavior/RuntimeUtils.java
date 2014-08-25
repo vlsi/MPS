@@ -21,18 +21,14 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class RuntimeUtils {
   private static Map<String, SNode> RUNTIME_CLASSIFIERS = null;
   private static Map<String, SNode> STATIC_RUNTIME_CLASSIFIERS = null;
-
   public RuntimeUtils() {
   }
-
   public static SModel getRuntimeModel() {
     return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedClosures"));
   }
-
   public static SModel getStaticRuntimeModel() {
     return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes"));
   }
-
   public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized (RuntimeUtils.class) {
       if (RUNTIME_CLASSIFIERS == null) {
@@ -53,7 +49,6 @@ public class RuntimeUtils {
     }
     return RUNTIME_CLASSIFIERS;
   }
-
   public static Map<String, SNode> getStaticRuntimeClassifier() {
     synchronized (RuntimeUtils.class) {
       if (STATIC_RUNTIME_CLASSIFIERS == null) {

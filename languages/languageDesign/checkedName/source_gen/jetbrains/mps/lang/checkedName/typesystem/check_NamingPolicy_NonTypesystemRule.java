@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NamingPolicy_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode node, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String warningMessage = "Naming policies violated: " + "all words except prepositions, articles and particles should be capitalized";
     for (SNode s : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), node, "virtual_getDescendantsToCheck_4844813484172611413", new Object[]{})) {
@@ -79,18 +78,15 @@ public class check_NamingPolicy_NonTypesystemRule extends AbstractNonTypesystemR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.checkedName.structure.ICheckedNamePolicy";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

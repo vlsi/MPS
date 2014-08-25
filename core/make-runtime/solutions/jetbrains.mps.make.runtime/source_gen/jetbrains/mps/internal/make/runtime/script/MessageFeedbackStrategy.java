@@ -9,11 +9,9 @@ import jetbrains.mps.messages.Message;
 
 public class MessageFeedbackStrategy {
   private final IMessageHandler handler;
-
   public MessageFeedbackStrategy(IMessageHandler handler) {
     this.handler = handler;
   }
-
   public void reportFeedback(IFeedback fdk) {
     MessageKind messageKind;
     switch (fdk.getSeverity()) {

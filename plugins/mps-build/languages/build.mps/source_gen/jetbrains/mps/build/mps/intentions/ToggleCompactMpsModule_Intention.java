@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ToggleCompactMpsModule_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ToggleCompactMpsModule_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule";
   }
-
   public String getPresentation() {
     return "ToggleCompactMpsModule";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.build.mps.intentions.ToggleCompactMpsModule_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.build.mps";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "8369506495128778230");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleCompactMpsModule_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "compact") ? "Unfold " + SPropertyOperations.getString(node, "name") : "Fold " + SPropertyOperations.getString(node, "name"));
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "compact", "" + (!(SPropertyOperations.getBoolean(node, "compact"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ToggleCompactMpsModule_Intention.this;
     }

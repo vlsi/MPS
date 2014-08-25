@@ -26,14 +26,12 @@ public class JavaThread extends ProxyForJava implements IThread {
   private final List<IStackFrame> myStackFrames = ListSequence.fromList(new ArrayList<IStackFrame>());
   private boolean myInitialized = false;
   private final String myPresentation;
-
   public JavaThread(@NotNull ThreadReference threadReference) {
     super(threadReference);
     myThreadReference = threadReference;
     myPresentation = calculatePresentation();
     myCachedIcon = calculateIcon();
   }
-
   public synchronized void initializeFrames() {
     if (myInitialized) {
       return;
@@ -53,47 +51,38 @@ public class JavaThread extends ProxyForJava implements IThread {
       }
     }
   }
-
   @Override
   public synchronized List<IStackFrame> getFrames() {
     return myStackFrames;
   }
-
   @Override
   public synchronized int getFramesCount() {
     return ListSequence.fromList(myStackFrames).count();
   }
-
   @Nullable
   public synchronized IStackFrame getFrame(int index) {
     return ListSequence.fromList(myStackFrames).getElement(index);
   }
-
   @NotNull
   public ThreadReference getThread() {
     return myThreadReference;
   }
-
   @Override
   public String getName() {
     return myThreadReference.name();
   }
-
   @Override
   public String getPresentation() {
     return myPresentation;
   }
-
   private String calculatePresentation() {
     assert !(ModelAccess.instance().isInEDT());
     return myThreadReference.name() + " (" + myThreadReference.referenceType().name() + " from group " + myThreadReference.threadGroup().name() + ") : " + JavaThread.getThreadStatusText(myThreadReference.status());
   }
-
   @Override
   public Icon getPresentationIcon() {
     return myCachedIcon;
   }
-
   private Icon calculateIcon() {
     assert !(ModelAccess.instance().isInEDT());
     if (myThreadReference.isAtBreakpoint()) {
@@ -105,7 +94,6 @@ public class JavaThread extends ProxyForJava implements IThread {
       return Icons.THREAD_RUNNING;
     }
   }
-
   private static String getThreadStatusText(int statusId) {
     switch (statusId) {
       case ThreadReference.THREAD_STATUS_MONITOR:
@@ -126,6 +114,5 @@ public class JavaThread extends ProxyForJava implements IThread {
         return "UNDEFINED";
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(JavaThread.class);
 }

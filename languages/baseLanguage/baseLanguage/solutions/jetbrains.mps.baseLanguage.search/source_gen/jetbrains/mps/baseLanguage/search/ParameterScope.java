@@ -15,7 +15,6 @@ import org.jetbrains.mps.util.Condition;
 @Deprecated
 public class ParameterScope extends AbstractSearchScope {
   private List<SNode> params;
-
   @Deprecated
   public ParameterScope(SNode contextNode) {
     // use Adapters.getParameterScope in jetbrains.mps.baseLanguage.scopes instead 
@@ -36,7 +35,6 @@ public class ParameterScope extends AbstractSearchScope {
       }
     }
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

@@ -21,13 +21,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CustomContainersRegistry {
   /*package*/ static CustomContainersRegistry INSTANCE = new CustomContainersRegistry();
   private List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providers = ListSequence.fromList(new ArrayList<_FunctionTypes._return_P0_E0<? extends List<SNode>>>());
-
   private CustomContainersRegistry() {
     for (_FunctionTypes._return_P0_E0<? extends List<SNode>> provider : ExtensionPoint.<_FunctionTypes._return_P0_E0<? extends List<SNode>>>generify(new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)).getObjects()) {
       ListSequence.fromList(providers).addElement(provider);
     }
   }
-
   public List<SNode> allCustomContainerDeclarations() {
     Iterable<SNode> allCustomContainers = this.primAllCustomContainers();
     List<SNode> res = new ArrayList<SNode>();
@@ -38,7 +36,6 @@ public class CustomContainersRegistry {
     }));
     return res;
   }
-
   public List<SNode> accessibleCustomContainerDeclarations(SModel fromModel) {
     List<SNode> res = new ArrayList<SNode>();
     SModule om = this.getOwningModule(fromModel);
@@ -59,12 +56,10 @@ public class CustomContainersRegistry {
     }
     return res;
   }
-
   public SModule getOwningModule(SModel model) {
     SModel fmdesc = model;
     return (fmdesc != null ? fmdesc.getModule() : null);
   }
-
   private Iterable<SNode> primAllCustomContainers() {
     List<_FunctionTypes._return_P0_E0<? extends List<SNode>>> providersCopy;
     synchronized (this) {

@@ -18,40 +18,33 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaWatchpointWatchable extends JavaWatchable {
   private final FieldWatchpointValue myValue;
-
   public JavaWatchpointWatchable(Field field, Value currentValue, Value newValue, ThreadReference threadReference) {
     super(threadReference);
     JavaValue current = CustomViewersManager.getInstance().fromJdi(currentValue, threadReference);
     JavaValue neww = CustomViewersManager.getInstance().fromJdi(newValue, threadReference);
     myValue = new FieldWatchpointValue(field, false, current, neww, threadReference);
   }
-
   public JavaWatchpointWatchable(Field field, Value currentValue, ThreadReference threadReference) {
     super(threadReference);
     JavaValue current = CustomViewersManager.getInstance().fromJdi(currentValue, threadReference);
     myValue = new FieldWatchpointValue(field, true, current, null, threadReference);
   }
-
   @Override
   public String getName() {
     return "field watchpoint";
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.FIELD_WATCHPOINT;
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return Icons.VALUE_OBJECT;
   }
-
   @Override
   public SNode getNode() {
     return null;

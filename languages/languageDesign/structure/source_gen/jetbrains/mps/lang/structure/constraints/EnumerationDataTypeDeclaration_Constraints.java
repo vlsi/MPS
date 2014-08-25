@@ -29,12 +29,10 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
   public EnumerationDataTypeDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -45,7 +43,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -54,7 +51,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       public boolean hasOwnSetter() {
         return true;
       }
-
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "hasNoDefaultMember";
@@ -66,7 +62,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -75,7 +70,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -85,7 +79,6 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
             // members declared here 
             return new SubnodesSearchScope(_context.getReferenceNode());
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8h501v_a0a1a0a0a1a0b0a1a4;
@@ -95,11 +88,9 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
     });
     return references;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087688291");
   private static SNodePointer breakingNode_8h501v_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1213104847177");
 }

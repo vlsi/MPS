@@ -39,8 +39,8 @@ public class ReferenceUpdater {
     for (SModel sm : SModelRepository.getInstance().getModelDescriptors()) {
       if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(sm))) continue;
 
-      SModel model = sm;
-      if ((((jetbrains.mps.smodel.SModelInternal) model).updateSModelReferences() | ((jetbrains.mps.smodel.SModelInternal) model).updateModuleReferences()) && (sm instanceof EditableSModel)) {
+      final SModelInternal model = (SModelInternal) sm;
+      if ((model.updateSModelReferences() | model.updateModuleReferences()) && (sm instanceof EditableSModel)) {
         ((EditableSModel) sm).setChanged(true);
       }
     }
@@ -49,9 +49,8 @@ public class ReferenceUpdater {
   public void updateModuleReferences() {
     ModelAccess.assertLegalWrite();
 
-    for (SModule m : MPSModuleRepository.getInstance().getAllModules()) {
+    for (SModule m : MPSModuleRepository.getInstance().getModules()) {
       AbstractModule module = (AbstractModule) m;
-
       module.updateSModelReferences();
       module.updateModuleReferences();
     }

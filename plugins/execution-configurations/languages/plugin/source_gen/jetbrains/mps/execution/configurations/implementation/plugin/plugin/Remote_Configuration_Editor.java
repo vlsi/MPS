@@ -8,23 +8,18 @@ import com.intellij.openapi.options.ConfigurationException;
 
 public class Remote_Configuration_Editor extends SettingsEditorEx<Remote_Configuration> {
   private RemoteSettingsEditor myEditor;
-
   public void disposeEditor() {
   }
-
   @NotNull
   public RemoteSettingsEditor createEditor() {
     return myEditor = new RemoteSettingsEditor();
   }
-
   public void applyEditorTo(final Remote_Configuration configuration) throws ConfigurationException {
     myEditor.apply(configuration.getSettings());
   }
-
   public void resetEditorFrom(final Remote_Configuration configuration) {
     myEditor.reset(configuration.getSettings());
   }
-
   public Remote_Configuration_Editor() {
   }
 }

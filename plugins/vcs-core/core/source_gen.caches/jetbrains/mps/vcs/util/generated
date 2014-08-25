@@ -13,7 +13,6 @@
     <file name="MergeDriverBackupUtil.java" />
   </source>
   <source id="3531370237490043789" name="MergeVersion" hash="6a6hv4dt8o1ob0qxz556t8wkqvrairy">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="MergeVersion.java" />
   </source>
   <source id="3531370237490043817" name="ModelVersion" hash="-4e04ziuhryj05rqlo3hlc6kq5yrbruj">

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class LookRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }

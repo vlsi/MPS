@@ -15,20 +15,15 @@ import com.intellij.openapi.application.ApplicationManager;
 public abstract class CustomViewersManager implements ApplicationComponent {
   public CustomViewersManager() {
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Custom Viewers Manager";
   }
-
   public abstract void addFactory(@NotNull ValueWrapperFactory factory);
-
   public abstract void removeFactory(@NotNull ValueWrapperFactory factory);
-
   public abstract JavaValue fromJdi(@Nullable Value value, @NotNull ThreadReference threadReference);
-
   public static CustomViewersManager getInstance() {
     return ApplicationManager.getApplication().getComponent(CustomViewersManager.class);
   }

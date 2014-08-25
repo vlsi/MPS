@@ -23,18 +23,17 @@ import org.apache.log4j.LogManager;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
-
-  public GoToRootNode_Action() {
+  private String savedText;
+  public GoToRootNode_Action(String savedText_par) {
     super("Go to Root Node", "", ICON);
+    this.savedText = savedText_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -45,14 +44,6 @@ public class GoToRootNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.goto.rootNode");
@@ -61,13 +52,13 @@ public class GoToRootNode_Action extends BaseAction {
       assert project != null;
 
       RootChooseModel chooseSNodeResult = new RootChooseModel(project, new RootNodeNameIndex());
-      ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
+      final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         @Override
         public void onClose() {
+          GoToRootNode_Action.this.savedText = popup.getEnteredText();
         }
-
         @Override
         public void elementChosen(Object element) {
           ((NavigationItem) element).navigate(true);
@@ -79,6 +70,17 @@ public class GoToRootNode_Action extends BaseAction {
       }
     }
   }
-
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(savedText_State((String) this.savedText));
+    res.append("!");
+    return res.toString();
+  }
+  public static String savedText_State(String object) {
+    return "";
+  }
   protected static Logger LOG = LogManager.getLogger(GoToRootNode_Action.class);
 }

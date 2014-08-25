@@ -22,11 +22,9 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ql48ef_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ql48ef_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_ql48ef_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ql48ef_a");
@@ -37,7 +35,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ql48ef_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_ql48ef_a0");
@@ -47,7 +44,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell");
     editorCell.setCellId("Constant_ql48ef_b0");
@@ -58,14 +54,12 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_ql48ef_c0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_ql48ef_d0");
@@ -75,7 +69,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ql48ef_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ql48ef_a_0");
@@ -91,14 +84,12 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is in inspector");
     editorCell.setCellId("Constant_ql48ef_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ql48ef_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isInInspector");
@@ -119,14 +110,12 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "cell id:");
     editorCell.setCellId("Constant_ql48ef_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ql48ef_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("cellId");
@@ -147,14 +136,12 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "position:");
     editorCell.setCellId("Constant_ql48ef_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAlternation_ql48ef_f0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = AnonymousCellAnnotation_Editor.renderingCondition_ql48ef_a5a(node, editorContext);
@@ -169,18 +156,15 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean renderingCondition_ql48ef_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isLastPosition");
   }
-
   private EditorCell createConstant_ql48ef_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "last");
     editorCell.setCellId("Constant_ql48ef_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createNonEmptyProperty_ql48ef_a5a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("caretPosition");
@@ -199,7 +183,6 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_ql48ef_g0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ql48ef_g0");
@@ -213,18 +196,15 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ql48ef_d6a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_ql48ef_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "useLabelSelection");
   }
-
   private EditorCell createConstant_ql48ef_a6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection start:");
     editorCell.setCellId("Constant_ql48ef_a6a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ql48ef_b6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("selectionStart");
@@ -245,14 +225,12 @@ public class AnonymousCellAnnotation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ql48ef_c6a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "selection end:");
     editorCell.setCellId("Constant_ql48ef_c6a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ql48ef_d6a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("selectionEnd");

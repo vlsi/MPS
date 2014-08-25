@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class AnonymousCellAnnotation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void call_setupSelection_6268941039745707957(final SNode thisNode, final NodeEditorComponent nodeEditorComponent, final SNode node, final Map<SNode, SNode> map) {
     final Wrappers._T<EditorComponent> editorComponent = new Wrappers._T<EditorComponent>(nodeEditorComponent);
     final Wrappers._T<EditorCell> cellWithId = new Wrappers._T<EditorCell>();
@@ -47,7 +46,6 @@ public class AnonymousCellAnnotation_Behavior {
       }
     });
   }
-
   public static int call_getCaretPosition_6268941039745717986(SNode thisNode, EditorCell_Label label) {
     if (SPropertyOperations.getBoolean(thisNode, "isLastPosition")) {
       return label.getText().length();
@@ -55,7 +53,6 @@ public class AnonymousCellAnnotation_Behavior {
       return SPropertyOperations.getInteger(thisNode, "caretPosition");
     }
   }
-
   public static void call_setupCaretAndSelection_9114978211826243747(SNode thisNode, EditorCell cellWithId) {
     if (cellWithId instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cellWithId;
@@ -64,7 +61,6 @@ public class AnonymousCellAnnotation_Behavior {
       label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));
     }
   }
-
   public static EditorComponent call_setupInspector_5681471431307922086(SNode thisNode, SNode node, NodeEditorComponent nodeEditorComponent) {
     SNode nodeToSelect = node;
     while (nodeToSelect != null && nodeEditorComponent.findNodeCell(nodeToSelect) == null) {

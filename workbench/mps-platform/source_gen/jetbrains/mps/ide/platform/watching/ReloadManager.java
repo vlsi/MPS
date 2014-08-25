@@ -7,29 +7,19 @@ import jetbrains.mps.util.Computable;
 public abstract class ReloadManager {
   private static ReloadManager INSTANCE;
 
-
   public static ReloadManager getInstance() {
     return INSTANCE;
   }
-
   protected static void setInstance(ReloadManager instance) {
     INSTANCE = instance;
   }
 
-
-
   protected ReloadManager() {
   }
 
-
-
   public abstract <T extends ReloadParticipant> void runReload(Class<T> participantClass, ReloadAction<T> reloadAction);
-
   public abstract void addReloadListener(ReloadListener listener);
-
   public abstract void removeReloadListener(ReloadListener listener);
-
   public abstract <T> T computeNoReload(Computable<T> computable);
-
   public abstract void flush();
 }

@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 /*package*/ class EmailExample {
   public EmailExample() {
   }
-
   public static void msain(String emailToAnalyse) {
     {
       Pattern _pattern_0 = REGEXP_qkhp2f_a0a0a0b;
@@ -22,7 +21,6 @@ import java.util.regex.Matcher;
       System.out.println("");
     }
   }
-
   private static Pattern REGEXP_qkhp2f_a0a0a0b = Pattern.compile("(\\w+)@(\\w+(?:\\.\\w+))", 0);
   private static Pattern REGEXP_qkhp2f_a0a1a1 = Pattern.compile("(\\A+)", 0);
 }

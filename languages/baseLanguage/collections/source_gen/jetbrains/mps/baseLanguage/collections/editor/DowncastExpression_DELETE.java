@@ -13,19 +13,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DowncastExpression_DELETE {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DowncastExpression_DELETE.DowncastExpression_DELETE_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DowncastExpression_DELETE.DowncastExpression_DELETE_BACKSPACE(node));
   }
-
   public static class DowncastExpression_DELETE_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DowncastExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
+    }
+  }
+  public static class DowncastExpression_DELETE_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DowncastExpression_DELETE_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }

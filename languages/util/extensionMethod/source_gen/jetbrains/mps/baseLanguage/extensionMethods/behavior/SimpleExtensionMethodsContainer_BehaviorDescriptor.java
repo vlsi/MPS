@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.extensionMethods.behavior;
 public class SimpleExtensionMethodsContainer_BehaviorDescriptor extends BaseExtensionMethodContainer_BehaviorDescriptor {
   public SimpleExtensionMethodsContainer_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer";

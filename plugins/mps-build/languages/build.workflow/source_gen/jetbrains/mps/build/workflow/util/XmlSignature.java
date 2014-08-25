@@ -16,11 +16,9 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class XmlSignature {
   private final StringBuilder sb = new StringBuilder();
   private boolean hasErrors;
-
   public XmlSignature() {
     hasErrors = false;
   }
-
   public XmlSignature add(SNode element) {
     if (element == null || hasErrors) {
       return this;
@@ -37,7 +35,6 @@ public class XmlSignature {
     }
     return this;
   }
-
   private XmlSignature addElement(SNode element) {
     sb.append("<");
     sb.append(SPropertyOperations.getString(element, "tagName"));
@@ -70,7 +67,6 @@ public class XmlSignature {
     sb.append(">");
     return this;
   }
-
   private void addAttribute(SNode attr) {
     sb.append(SPropertyOperations.getString(attr, "attrName"));
     sb.append("=");
@@ -104,15 +100,12 @@ public class XmlSignature {
     }
     sb.append('"');
   }
-
   public String getResult() {
     return sb.toString();
   }
-
   public boolean hasErrors() {
     return hasErrors;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

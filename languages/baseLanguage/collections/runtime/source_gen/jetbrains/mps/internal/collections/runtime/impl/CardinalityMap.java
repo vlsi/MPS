@@ -6,21 +6,17 @@ import java.util.HashMap;
 
 /*package*/ class CardinalityMap<U> {
   private HashMap<U, Integer> map = new HashMap<U, Integer>();
-
   /*package*/ CardinalityMap() {
   }
-
   public int card(U u) {
     Integer c = map.get(u);
     return (c != null ? c : 0);
   }
-
   public int postInc(U u) {
     Integer c = map.get(u);
     map.put(u, (c != null ? c + 1 : 1));
     return (c != null ? c : 0);
   }
-
   public int postDec(U u) {
     Integer c = map.get(u);
     if (c != null && c > 1) {
@@ -35,7 +31,6 @@ import java.util.HashMap;
       return 0;
     }
   }
-
   public void clear() {
     map.clear();
   }

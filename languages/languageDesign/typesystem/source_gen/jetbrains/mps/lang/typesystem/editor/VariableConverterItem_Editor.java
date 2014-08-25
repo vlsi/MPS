@@ -20,7 +20,6 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_knkyai_a(editorContext, node);
   }
-
   private EditorCell createCollection_knkyai_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_knkyai_a");
@@ -33,14 +32,12 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_knkyai_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_knkyai_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "is applicable:");
     editorCell.setCellId("Constant_knkyai_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_knkyai_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableBlock");
@@ -60,7 +57,6 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_knkyai_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_knkyai_c0");
@@ -70,14 +66,12 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_knkyai_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "convertor:");
     editorCell.setCellId("Constant_knkyai_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_knkyai_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("convertBlock");
@@ -97,7 +91,6 @@ public class VariableConverterItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_knkyai_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_knkyai_f0");

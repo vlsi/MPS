@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ClassifierDocComment_BehaviorDescriptor extends BaseDocComment_BehaviorDescriptor {
   public ClassifierDocComment_BehaviorDescriptor() {
   }
-
   public boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return ClassifierDocComment_Behavior.virtual_isTagSectionEmpty_8465538089690623795(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment";

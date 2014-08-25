@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CellModel_HierarchycalTable_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getContainingConceptDeclaration_6216065619544944230(SNode thisNode) {
     SNode editorComponent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});

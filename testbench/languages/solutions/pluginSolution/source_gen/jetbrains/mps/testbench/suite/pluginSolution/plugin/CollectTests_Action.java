@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.ide.ThreadUtils;
@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.wm.IdeFrame;
@@ -48,22 +47,18 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class CollectTests_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CollectTests_Action() {
     super("Collect Tests", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return InternalFlag.isInternalMode() && CollectTests_Action.this.isUserEditableModel(((SModel) MapSequence.fromMap(_params).get("modelDesc")), _params) && ((SModelInternal) ((SModel) MapSequence.fromMap(_params).get("modelDesc"))).importedLanguages().contains(PersistenceFacade.getInstance().createModuleReference("d3c5a46f-b8c2-47db-ad0a-30b8f19c2055(jetbrains.mps.testbench.suite)"));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -77,7 +72,6 @@ public class CollectTests_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -92,7 +86,6 @@ public class CollectTests_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._boolean done = new Wrappers._boolean(false);
@@ -117,7 +110,6 @@ public class CollectTests_Action extends BaseAction {
       }
     }
   }
-
   private boolean doExecute(ProgressIndicator proInd, final Map<String, Object> _params) {
     final Logger LOG = LogManager.getLogger("jetbrains.mps.testbench.suite");
     final SModel model = ((SModel) MapSequence.fromMap(_params).get("modelDesc"));
@@ -137,7 +129,7 @@ public class CollectTests_Action extends BaseAction {
         return false;
       }
       proInd.setText("Processing " + mref.getModuleName());
-      final SModule module = MPSModuleRepository.getInstance().getModule(mref);
+      final SModule module = ModuleRepositoryFacade.getInstance().getModule(mref);
       if (module != null) {
         final Wrappers._T<SNode> suite = new Wrappers._T<SNode>(null);
         for (final SModel smodel : module.getModels()) {
@@ -176,18 +168,15 @@ public class CollectTests_Action extends BaseAction {
     }
     return true;
   }
-
   private boolean isUserEditableModel(SModel md, final Map<String, Object> _params) {
     if (!(SModelStereotype.isUserModel(md))) {
       return false;
     }
     return md instanceof EditableSModel && !(md.isReadOnly());
   }
-
   private boolean isUserEditableGeneratableModel(SModel md, final Map<String, Object> _params) {
     return CollectTests_Action.this.isUserEditableModel(md, _params) && SNodeOperations.isGeneratable(md);
   }
-
   private List<SModuleReference> allSolutions(final Map<String, Object> _params) {
     Iterable<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
     return Sequence.fromIterable(allSolutions).select(new ISelector<Solution, SModuleReference>() {
@@ -196,14 +185,12 @@ public class CollectTests_Action extends BaseAction {
       }
     }).toListSequence();
   }
-
   private void displayInfo(String info, final Map<String, Object> _params) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(((Project) MapSequence.fromMap(_params).get("project")));
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
   }
-
   private List<SModuleReference> existingSolutions(SModel model, final Map<String, Object> _params) {
     return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.testbench.suite.structure.ModuleSuite")).select(new ISelector<SNode, SModuleReference>() {
       public SModuleReference select(SNode ms) {
@@ -211,6 +198,5 @@ public class CollectTests_Action extends BaseAction {
       }
     }).toListSequence();
   }
-
   protected static Logger LOG = LogManager.getLogger(CollectTests_Action.class);
 }

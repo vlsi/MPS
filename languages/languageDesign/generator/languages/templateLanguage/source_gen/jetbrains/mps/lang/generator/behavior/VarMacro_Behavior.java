@@ -14,11 +14,9 @@ import jetbrains.mps.lang.scopes.runtime.SimpleScope;
 public class VarMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getName_2721957369897649366(SNode thisNode) {
     return "var:" + SPropertyOperations.getString(thisNode, "name");
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind != SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.VarMacro")) {
       return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});

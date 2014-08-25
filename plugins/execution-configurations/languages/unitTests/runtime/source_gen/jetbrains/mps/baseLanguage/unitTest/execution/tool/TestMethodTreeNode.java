@@ -13,14 +13,12 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 public class TestMethodTreeNode extends BaseTestTreeNode {
   @NotNull
   protected final ITestNodeWrapper myTestMethod;
-
   public TestMethodTreeNode(@NotNull IOperationContext operationContext, @NotNull ITestNodeWrapper testMethod) {
     super(operationContext);
     myTestMethod = testMethod;
     setNodeIdentifier(((SNodePointer) myTestMethod.getNodePointer()).toString());
     setText(myTestMethod.getName());
   }
-
   public String getClassName() {
     final Wrappers._T<String> className = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -33,7 +31,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     });
     return className.value;
   }
-
   public String getMethodName() {
     final Wrappers._T<String> methodName = new Wrappers._T<String>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -43,12 +40,10 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
     });
     return methodName.value;
   }
-
   @Override
   public boolean isLeaf() {
     return true;
   }
-
   @Override
   public void doubleClick() {
     Runnable nav = new Runnable() {
@@ -61,7 +56,6 @@ public class TestMethodTreeNode extends BaseTestTreeNode {
       ModelAccess.instance().runWriteInEDT(nav);
     }
   }
-
   @Override
   public Object getUserObject() {
     return myTestMethod;

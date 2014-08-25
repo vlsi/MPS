@@ -39,7 +39,6 @@ public abstract class EvaluationUi extends JPanel {
   private EvaluationUi.IErrorTextListener myErrorListener;
   private final boolean myAutoUpdate;
   private final SessionChangeAdapter mySessionChangeAdapter = new EvaluationUi.MySessionChangeAdapter();
-
   public EvaluationUi(@NotNull DebugSession session, boolean autoUpdate) {
     super(new BorderLayout());
     myDebugSession = session;
@@ -47,16 +46,12 @@ public abstract class EvaluationUi extends JPanel {
     myDebugSession.addChangeListener(mySessionChangeAdapter);
     myTree = new EvaluationTree(myDebugSession);
   }
-
   protected abstract void update();
-
   public abstract void evaluate();
-
   public void dispose() {
     myDebugSession.removeChangeListener(mySessionChangeAdapter);
     myTree.dispose();
   }
-
   protected void evaluate(final IEvaluationContainer model) {
     if (!(myDebugSession.getEvaluationProvider().canEvaluate())) {
       setErrorText("Program should be paused on breakpoint to evaluate");
@@ -98,7 +93,6 @@ public abstract class EvaluationUi extends JPanel {
       LOG.error(null, t);
     }
   }
-
   private void setSuccess(@NotNull final JavaValue evaluatedValue, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       @Override
@@ -108,7 +102,6 @@ public abstract class EvaluationUi extends JPanel {
       }
     });
   }
-
   private void setEvaluating(final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       @Override
@@ -118,7 +111,6 @@ public abstract class EvaluationUi extends JPanel {
       }
     });
   }
-
   private void setFailure(@Nullable final Throwable error, @Nullable final String message, final IEvaluationContainer model) {
     invokeLaterIfNeeded(new Runnable() {
       @Override
@@ -132,13 +124,11 @@ public abstract class EvaluationUi extends JPanel {
       }
     });
   }
-
   protected void setErrorText(String text) {
     if (myErrorListener != null) {
       myErrorListener.updateErrorText(text);
     }
   }
-
   private void invokeLaterIfNeeded(Runnable runnable) {
     if (ApplicationManager.getApplication().isDispatchThread()) {
       runnable.run();
@@ -146,19 +136,15 @@ public abstract class EvaluationUi extends JPanel {
       ApplicationManager.getApplication().invokeLater(runnable, ModalityState.NON_MODAL);
     }
   }
-
   public void setErrorTextListener(EvaluationUi.IErrorTextListener listener) {
     myErrorListener = listener;
   }
-
   public static interface IErrorTextListener {
     public void updateErrorText(String text);
   }
-
   private class MySessionChangeAdapter extends SessionChangeAdapter {
     public MySessionChangeAdapter() {
     }
-
     @Override
     public void paused(AbstractDebugSession session) {
       if (myDebugSession == session) {
@@ -179,7 +165,6 @@ public abstract class EvaluationUi extends JPanel {
         });
       }
     }
-
     @Override
     public void stateChanged(AbstractDebugSession session) {
       if (myDebugSession == session) {
@@ -191,7 +176,6 @@ public abstract class EvaluationUi extends JPanel {
         });
       }
     }
-
     @Override
     public void resumed(AbstractDebugSession session) {
       if (myDebugSession == session) {
@@ -204,21 +188,18 @@ public abstract class EvaluationUi extends JPanel {
       }
     }
   }
-
   private static ThreadReference check_4q63yg_a0c0b0m(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }
     return null;
   }
-
   private static String check_4q63yg_a0b0a0b02(JavaLocation checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUnitName();
     }
     return null;
   }
-
   private static JavaLocation check_4q63yg_a0a1a0a1u(JavaStackFrame checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getLocation();

@@ -13,15 +13,12 @@ public enum CellKeyMapCaretPolicy {
   INTERMEDIATE_POSITION("INTERMEDIATE_POSITION", "caret_at_intermediate_position");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<CellKeyMapCaretPolicy> getConstants() {
     List<CellKeyMapCaretPolicy> list = ListSequence.fromList(new LinkedList<CellKeyMapCaretPolicy>());
     ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.ANY_POSITION);
@@ -30,11 +27,9 @@ public enum CellKeyMapCaretPolicy {
     ListSequence.fromList(list).addElement(CellKeyMapCaretPolicy.INTERMEDIATE_POSITION);
     return list;
   }
-
   public static CellKeyMapCaretPolicy getDefault() {
     return CellKeyMapCaretPolicy.ANY_POSITION;
   }
-
   public static CellKeyMapCaretPolicy parseValue(String value) {
     if (value == null) {
       return CellKeyMapCaretPolicy.getDefault();
@@ -53,14 +48,11 @@ public enum CellKeyMapCaretPolicy {
     }
     return CellKeyMapCaretPolicy.getDefault();
   }
-
   private String myValue;
-
   CellKeyMapCaretPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

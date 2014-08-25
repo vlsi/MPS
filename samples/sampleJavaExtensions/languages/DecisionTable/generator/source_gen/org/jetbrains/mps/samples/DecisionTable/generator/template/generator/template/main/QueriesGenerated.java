@@ -21,70 +21,54 @@ import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_3863300516938156376(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_3863300516938159716(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_3863300516938126188(final PropertyMacroContext _context) {
     return _context.createUniqueName("decisionTable", SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }
-
   public static Object referenceMacro_GetReferent_3863300516938126286(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "decisionTable2Method");
   }
-
   public static Object referenceMacro_GetReferent_3863300516938168935(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object referenceMacro_GetReferent_3863300516938168975(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static SNode sourceNodeQuery_3863300516938155499(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
-
   public static SNode sourceNodeQuery_3863300516938159701(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
-
   public static SNode sourceNodeQuery_3863300516938171105(final SourceSubstituteMacroNodeContext _context) {
     SNode t = SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false);
     SNode rowHeader = _context.getNode();
     SNode colHeader = (SNode) _context.getNode().getUserObject("colHeader");
     return ListSequence.fromList(SLinkOperations.getTargets(t, "resultValues", true)).getElement(SNodeOperations.getIndexInParent(rowHeader) * ListSequence.fromList(SLinkOperations.getTargets(t, "colHeaders", true)).count() + SNodeOperations.getIndexInParent(colHeader));
   }
-
   public static SNode sourceNodeQuery_3863300516938155197(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "defaultValue", true);
   }
-
   public static SNode sourceNodeQuery_3863300516938155177(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "expectedType", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938168918(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938168959(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938155488(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedLVDs_3863300516938155424(_context.getNode())).toListSequence();
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938159683(final SourceSubstituteMacroNodesContext _context) {
     return SetSequence.fromSet(DecisionTable_Behavior.call_referencedParams_3863300516938159619(_context.getNode())).toListSequence();
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938171067(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> rowHeaders = SLinkOperations.getTargets(SNodeOperations.getAncestor(_context.getNode(), "org.jetbrains.mps.samples.DecisionTable.structure.DecisionTable", false, false), "rowHeaders", true);
     ListSequence.fromList(rowHeaders).visitAll(new IVisitor<SNode>() {
@@ -94,11 +78,9 @@ public class QueriesGenerated {
     });
     return rowHeaders;
   }
-
   public static Iterable<SNode> sourceNodesQuery_3863300516938170992(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "colHeaders", true);
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_3863300516938090623(final WeavingMappingRuleContext _context) {
     return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
   }

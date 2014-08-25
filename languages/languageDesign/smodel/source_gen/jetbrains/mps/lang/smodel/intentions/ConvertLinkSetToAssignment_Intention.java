@@ -19,61 +19,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertLinkSetToAssignment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertLinkSetToAssignment_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation";
   }
-
   public String getPresentation() {
     return "ConvertLinkSetToAssignment";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.smodel.intentions.ConvertLinkSetToAssignment_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.smodel";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "1224751635787");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertLinkSetToAssignment_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Assignment";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode lValue = IOperation_Behavior.call_getOperand_1213877410070(node);
       SNode rValue = SLinkOperations.getTarget(node, "linkTarget", true);
@@ -85,7 +71,6 @@ public class ConvertLinkSetToAssignment_Intention implements IntentionFactory {
       SLinkOperations.setTarget(assignment, "rValue", rValue, true);
       SNodeOperations.replaceWithAnother(dotExpression, assignment);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertLinkSetToAssignment_Intention.this;
     }

@@ -13,11 +13,9 @@ import java.util.Stack;
 /*package*/ class TypeUtil {
   /*package*/ TypeUtil() {
   }
-
   /*package*/ static ASMType fromDescriptor(String desc) {
     return TypeUtil.fromType(Type.getType(desc));
   }
-
   /*package*/ static ASMType fromType(Type type) {
     switch (type.getSort()) {
       case Type.VOID:
@@ -52,7 +50,6 @@ import java.util.Stack;
     }
     return null;
   }
-
   /*package*/ static ASMType getReturnType(String signature) {
     if (signature == null) {
       return null;
@@ -67,7 +64,6 @@ import java.util.Stack;
     });
     return builder.getResult();
   }
-
   /*package*/ static List<ASMType> getParameterTypes(String signature) {
     if (signature == null) {
       return Collections.emptyList();
@@ -88,7 +84,6 @@ import java.util.Stack;
     }
     return types;
   }
-
   public static List<ASMFormalTypeParameter> getFormalTypeParameters(String signature) {
     final List<ASMFormalTypeParameter> result = new ArrayList<ASMFormalTypeParameter>();
     if (signature == null) {
@@ -99,7 +94,6 @@ import java.util.Stack;
       private String name = null;
       private TypeUtil.TypeBuilderVisitor classBoundVisitor = new TypeUtil.TypeBuilderVisitor();
       private List<TypeUtil.TypeBuilderVisitor> interfaceBoundVisitors = new ArrayList<TypeUtil.TypeBuilderVisitor>();
-
       @Override
       public void visitFormalTypeParameter(String name) {
         if (this.name != null) {
@@ -107,20 +101,17 @@ import java.util.Stack;
         }
         this.name = name;
       }
-
       @Override
       public SignatureVisitor visitClassBound() {
         classBoundVisitor = new TypeUtil.TypeBuilderVisitor();
         return classBoundVisitor;
       }
-
       @Override
       public SignatureVisitor visitInterfaceBound() {
         TypeUtil.TypeBuilderVisitor visitor = new TypeUtil.TypeBuilderVisitor();
         interfaceBoundVisitors.add(visitor);
         return visitor;
       }
-
       @Override
       public SignatureVisitor visitReturnType() {
         if (name != null) {
@@ -128,7 +119,6 @@ import java.util.Stack;
         }
         return super.visitReturnType();
       }
-
       @Override
       public SignatureVisitor visitSuperclass() {
         if (name != null) {
@@ -136,7 +126,6 @@ import java.util.Stack;
         }
         return super.visitSuperclass();
       }
-
       private void flush() {
         List<ASMType> interfaceBounds = new ArrayList<ASMType>(interfaceBoundVisitors.size());
         for (TypeUtil.TypeBuilderVisitor v : interfaceBoundVisitors) {
@@ -160,7 +149,6 @@ import java.util.Stack;
     });
     return result;
   }
-
   public static List<ASMType> getExceptionTypes(String signature) {
     if (signature == null) {
       return Collections.emptyList();
@@ -181,7 +169,6 @@ import java.util.Stack;
     }
     return types;
   }
-
   public static ASMType getFieldType(String signature) {
     if (signature == null) {
       return null;
@@ -191,20 +178,16 @@ import java.util.Stack;
     reader.acceptType(builder);
     return builder.getResult();
   }
-
   /*package*/ static class TypeBuilderVisitor extends SignatureVisitorAdapter {
     private ASMType myResult;
     private Stack<ASMType> myTypes = new Stack<ASMType>();
     private char myWildcard;
     private TypeUtil.TypeBuilderVisitor myArrayVisitor = null;
-
     public TypeBuilderVisitor() {
     }
-
     protected void setResult(ASMType type) {
       myResult = type;
     }
-
     protected void addPart(ASMType type) {
       if (myTypes.isEmpty()) {
         myTypes.add(type);
@@ -239,7 +222,6 @@ import java.util.Stack;
         myTypes.push(wrapped);
       }
     }
-
     private void finish() {
       if (myTypes.size() == 1) {
         setResult(myTypes.peek());
@@ -248,7 +230,6 @@ import java.util.Stack;
         myTypes.pop();
       }
     }
-
     private ASMType wrap(ASMType type) {
       if (myWildcard == '+') {
         myWildcard = '=';
@@ -260,7 +241,6 @@ import java.util.Stack;
       }
       return type;
     }
-
     private ASMType unwrap(ASMType type) {
       if (type instanceof ASMBoundedType) {
         return ((ASMBoundedType) type).getBound();
@@ -268,38 +248,31 @@ import java.util.Stack;
         return type;
       }
     }
-
     @Override
     public void visitTypeArgument() {
       addPart(new ASMUnboundedType());
     }
-
     @Override
     public SignatureVisitor visitTypeArgument(char wildcard) {
       myWildcard = wildcard;
       return this;
     }
-
     @Override
     public void visitBaseType(char descriptor) {
       addPart(TypeUtil.fromType(Type.getType("" + descriptor)));
     }
-
     @Override
     public void visitTypeVariable(String name) {
       addPart(new ASMTypeVariable(name));
     }
-
     @Override
     public SignatureVisitor visitArrayType() {
       return myArrayVisitor = new TypeUtil.TypeBuilderVisitor();
     }
-
     @Override
     public void visitClassType(String name) {
       addPart(new ASMClassType(name.replace('/', '.')));
     }
-
     @Override
     public void visitEnd() {
       if (myArrayVisitor != null) {
@@ -309,7 +282,6 @@ import java.util.Stack;
         finish();
       }
     }
-
     /*package*/ ASMType getResult() {
       if (myArrayVisitor != null) {
         addPart(new ASMArrayType(myArrayVisitor.getResult()));

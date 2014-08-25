@@ -13,33 +13,27 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;
   private final String myName;
-
   public CalculatedWatchable(String name, JavaValue value, ThreadReference threadReference) {
     super(threadReference);
     myName = name;
     myValue = value;
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.CALCULATED_VALUE;
   }
-
   @Override
   public String getName() {
     return myName;
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return myValue.getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     return null;

@@ -37,5 +37,4 @@ public class NamespaceInternalActionsUtil {
     return newGroup;
   }
 
-
 }

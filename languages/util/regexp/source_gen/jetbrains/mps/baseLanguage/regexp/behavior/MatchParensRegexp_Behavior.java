@@ -12,19 +12,16 @@ import java.util.ArrayList;
 public class MatchParensRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     ListSequence.fromList(vars).addElement(thisNode);
     return "(" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars}) + ")";
   }
-
   public static int call_getIndex_1223361984345(SNode thisNode) {
     SNode parens = thisNode;
     List<SNode> parensList = new ArrayList<SNode>();
     BehaviorReflection.invokeVirtual(String.class, Regexp_Behavior.call_getTopLevelRegexp_1223362823237(thisNode), "virtual_getString_1222432436326", new Object[]{parensList});
     return 1 + ListSequence.fromList(parensList).indexOf(parens);
   }
-
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {
     throw new UnsupportedOperationException();
   }

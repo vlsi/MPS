@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class SideTransformHintSubstituteActions_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode nodeFactory : SLinkOperations.getTargets(thisNode, "actionsBuilder", true)) {
@@ -20,7 +19,6 @@ public class SideTransformHintSubstituteActions_Behavior {
     }
     return result;
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode actionsBuilder = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null);
     SLinkOperations.setTarget(actionsBuilder, "applicableConcept", baseConcept, false);

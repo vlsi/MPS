@@ -17,23 +17,18 @@ public class TargetDeclaration_resourcesPolicy extends AbstractCellMenuComponent
   public TargetDeclaration_resourcesPolicy() {
     super(new SubstituteInfoPartExt[]{new TargetDeclaration_resourcesPolicy.TargetDeclaration_generic_cellMenu_2gyyww_a0()});
   }
-
   public static class TargetDeclaration_generic_cellMenu_2gyyww_a0 extends AbstractCellMenuPart_Generic_Group {
     public TargetDeclaration_generic_cellMenu_2gyyww_a0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SEnumOperations.getEnumMembers(SEnumOperations.getEnum("r:b16ff46d-fa06-479d-9f5c-5b6e17e7f1b2(jetbrains.mps.make.facet.structure)", "ResourcesPolicy"));
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "resourcesPolicy", SEnumOperations.getEnumMemberValue(parameterObject));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

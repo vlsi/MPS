@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class IsFull_BehaviorDescriptor extends LogicalExpression_BehaviorDescriptor {
   public IsFull_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.IsFull";

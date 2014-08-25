@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class DependenciesUtil {
   public DependenciesUtil() {
   }
-
   public static SearchResults analyzeDependencies(SModule from, SModule to, Project project, MPSProject mpsProject, boolean isMeta, boolean openTool) {
     DependencyViewerScope fromScope = new DependencyViewerScope();
     fromScope.add(from);
@@ -30,7 +29,6 @@ public class DependenciesUtil {
     }
     return panel.updateReferencesView(toScope);
   }
-
   public static SearchResults analyzeDependencies(Iterable<SModule> from, Iterable<SModule> to, Project project, MPSProject mpsProject, boolean isMeta) {
     final DependencyViewerScope fromScope = new DependencyViewerScope();
     final DependencyViewerScope toScope = new DependencyViewerScope();
@@ -52,7 +50,6 @@ public class DependenciesUtil {
     tool.openToolLater(true);
     return panel.updateReferencesView(toScope);
   }
-
   public static void openDependenciesTool(Project ideaProject, DependencyViewerScope scope, boolean setActive) {
     AnalyzeDependenciesViewTool tool = ideaProject.getComponent(AnalyzeDependenciesViewTool.class);
     if (scope != null) {
@@ -61,12 +58,9 @@ public class DependenciesUtil {
     tool.openToolLater(setActive);
   }
 
-
-
   private static <T> T as_ehks51_a0a6a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_ehks51_a0a6a2(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.collections.behavior.ForEachStatement_Behavior
 public class GeneratedForeach_BehaviorDescriptor extends ForEachStatement_BehaviorDescriptor {
   public GeneratedForeach_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.traceInfo.tracemacro.testlang.structure.GeneratedForeach";

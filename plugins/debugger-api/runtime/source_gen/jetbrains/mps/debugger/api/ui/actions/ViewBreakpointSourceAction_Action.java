@@ -20,18 +20,15 @@ import org.apache.log4j.LogManager;
 
 public class ViewBreakpointSourceAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.ShowViewer;
-
   public ViewBreakpointSourceAction_Action() {
     super("View Source", "View Source", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -45,7 +42,6 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -56,7 +52,6 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IBreakpoint breakpoint = BreakpointsUtil.MPS_BREAKPOINT.getData(event.getDataContext());
@@ -70,6 +65,5 @@ public class ViewBreakpointSourceAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ViewBreakpointSourceAction_Action.class);
 }

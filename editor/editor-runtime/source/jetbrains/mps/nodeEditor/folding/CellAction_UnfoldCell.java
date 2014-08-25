@@ -22,6 +22,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.util.Condition;
 
 public class CellAction_UnfoldCell extends AbstractCellAction {
+  public CellAction_UnfoldCell() {
+    super(false);
+  }
 
   @Override
   public boolean canExecute(EditorContext context) {
@@ -35,11 +38,6 @@ public class CellAction_UnfoldCell extends AbstractCellAction {
     EditorCell selectedCell = (EditorCell) context.getSelectedCell();
     EditorCell_Collection targetCell = findCell(selectedCell);
     targetCell.unfold();
-  }
-
-  @Override
-  public boolean executeInCommand() {
-    return false;
   }
 
   private static EditorCell_Collection findCell(EditorCell editorCell) {

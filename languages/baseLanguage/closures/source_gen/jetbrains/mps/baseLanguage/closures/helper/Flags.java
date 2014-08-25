@@ -15,29 +15,23 @@ public enum Flags {
   FUNCTION_METHOD("function_method");
 
   private String name;
-
   Flags(String name) {
     this.name = PREFIX(name);
   }
-
   public void flag(TemplateQueryContext gtx, SNode node) {
     gtx.putSessionObject(this.toString() + "_" + node.getNodeId().toString(), Boolean.TRUE);
   }
-
   public void clear(TemplateQueryContext gtx, SNode node) {
     gtx.putSessionObject(this.toString() + "_" + node.getNodeId().toString(), null);
   }
-
   public boolean isFlagged(TemplateQueryContext gtx, SNode node) {
     Object val = gtx.getSessionObject(this.toString() + "_" + node.getNodeId().toString());
     return val != null;
   }
-
   @Override
   public String toString() {
     return this.name;
   }
-
   private static String PREFIX(String str) {
     return "jetbrains.mps.baselanguage.closures.generator." + str;
   }

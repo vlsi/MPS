@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CheckDataFlowOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor {
   public CheckDataFlowOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return CheckDataFlowOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
-
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     CheckDataFlowOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.CheckDataFlowOperation";

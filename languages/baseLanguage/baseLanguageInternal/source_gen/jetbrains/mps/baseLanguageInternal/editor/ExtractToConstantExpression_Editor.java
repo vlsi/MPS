@@ -22,11 +22,9 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kpooje_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kpooje_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_kpooje_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kpooje_a");
@@ -39,7 +37,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kpooje_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kpooje_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "extract");
     editorCell.setCellId("Constant_kpooje_a0");
@@ -49,7 +46,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kpooje_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_kpooje_b0");
@@ -59,7 +55,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_kpooje_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -79,7 +74,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kpooje_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to constant");
     editorCell.setCellId("Constant_kpooje_d0");
@@ -89,7 +83,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kpooje_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fieldName");
@@ -107,7 +100,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kpooje_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_kpooje_f0");
@@ -117,7 +109,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kpooje_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_kpooje_a_0");
@@ -125,7 +116,6 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_kpooje_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_kpooje_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kpooje_a0");
@@ -136,14 +126,12 @@ public class ExtractToConstantExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_kpooje_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kpooje_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "make unique");
     editorCell.setCellId("Constant_kpooje_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kpooje_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("makeUnique");

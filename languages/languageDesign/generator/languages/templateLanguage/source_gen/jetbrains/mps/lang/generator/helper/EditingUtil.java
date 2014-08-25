@@ -21,8 +21,6 @@ public final class EditingUtil {
     return isAnyMacroApplicable(node);
   }
 
-
-
   public static boolean isPropertyMacroApplicable(SNode node, EditorCell cell) {
     if (cell == null) {
       return false;
@@ -42,7 +40,6 @@ public final class EditingUtil {
     }
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", propertyName)) == null;
   }
-
   public static boolean isReferenceMacroApplicable(SNode node, EditorCell cell) {
     if (cell == null) {
       return false;
@@ -57,7 +54,6 @@ public final class EditingUtil {
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
     return AttributeOperations.getAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole)) == null;
   }
-
   public static boolean isAnyMacroApplicable(SNode node) {
     // not inside 'root template annotation' 
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", true, false) != null) {
@@ -82,7 +78,6 @@ public final class EditingUtil {
     }
     return false;
   }
-
   public static SNode addNodeMacro(SNode node) {
     // do not hang $$ on other attributes 
     SNode applyToNode = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
@@ -104,7 +99,6 @@ public final class EditingUtil {
     }
     return nodeMacro;
   }
-
   public static SNode addPropertyMacro(SNode node, EditorCell cell) {
     // surround with <TF> if necessary 
     if (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.lang.generator.structure.TemplateDeclaration", "jetbrains.mps.lang.generator.structure.InlineTemplateWithContext_RuleConsequence"}, false, false) != null) {
@@ -116,7 +110,6 @@ public final class EditingUtil {
     SNode propertyMacro = SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.generator.structure.PropertyMacro", propertyName), "jetbrains.mps.lang.generator.structure.PropertyMacro");
     return propertyMacro;
   }
-
   public static SNode addReferenceMacro(SNode node, EditorCell cell) {
     String linkRole = EditingUtil.getEditedLinkRole(cell);
     SNode referentNode = EditingUtil.getEditedLinkReferentNode(cell);
@@ -129,7 +122,6 @@ public final class EditingUtil {
     SNode referenceMacro = SNodeFactoryOperations.setNewAttribute(referentNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.generator.structure.ReferenceMacro", linkRole), "jetbrains.mps.lang.generator.structure.ReferenceMacro");
     return referenceMacro;
   }
-
   public static boolean isInsideTemplateFragment(SNode node) {
     Iterable<SNode> ancestorTFs = ListSequence.fromList(SNodeOperations.getAncestors(node, null, true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -138,7 +130,6 @@ public final class EditingUtil {
     });
     return Sequence.fromIterable(ancestorTFs).isNotEmpty();
   }
-
   public static void createTemplateFragment(final SNode node) {
     SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.TemplateFragment"), "jetbrains.mps.lang.generator.structure.TemplateFragment");
     // remove subordinate template fragments 
@@ -161,7 +152,6 @@ public final class EditingUtil {
       }
     });
   }
-
   public static String getEditedPropertyName(EditorCell cell) {
     if (cell instanceof EditorCell_Property) {
       ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
@@ -172,14 +162,12 @@ public final class EditingUtil {
     }
     return null;
   }
-
   public static String getEditedLinkRole(EditorCell cell) {
     if (!(cell.isReferenceCell())) {
       return null;
     }
     return cell.getRole();
   }
-
   public static SNode getEditedLinkReferentNode(EditorCell cell) {
     return cell.getSNode();
   }

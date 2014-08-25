@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.testbench.junit.runners.ContextProjextSupport;
+import jetbrains.mps.testbench.junit.runners.ContextProjectSupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
 import org.junit.Test;
@@ -53,19 +53,15 @@ public class ScopesTest {
       }
     });
   }
-
   public static Project initTestEnvironmentAndLoadContextProject() throws InvocationTargetException, InterruptedException {
     MpsTestsSupport.initEnv(false);
-    return ContextProjextSupport.getContextProject();
+    return ContextProjectSupport.loadContextProject();
   }
 
-
   private SNode myNode;
-
   public ScopesTest(SNode node) {
     myNode = node;
   }
-
   public List<SNode> getExpectedNodes(SNode forNode) {
     List<SNode> expected = new ArrayList<SNode>();
     for (SNode child : SLinkOperations.getTargets(forNode, "nodes", true)) {
@@ -73,7 +69,6 @@ public class ScopesTest {
     }
     return expected;
   }
-
   public List<SNode> getScopeNodes(Scope scope) {
     List<SNode> scopeSet = new ArrayList<SNode>();
     for (SNode node : scope.getAvailableElements(null)) {
@@ -81,7 +76,6 @@ public class ScopesTest {
     }
     return scopeSet;
   }
-
   public StringBuilder getFailMessage(List<SNode> unExpected, List<SNode> notFounded) {
     StringBuilder builder = new StringBuilder(System.getProperty("line.separator"));
     builder.append("\tIn node " + SLinkOperations.getTarget(myNode, "checkingReference", false));
@@ -110,7 +104,6 @@ public class ScopesTest {
 
     return builder;
   }
-
   @Test
   public void test() {
     ModelAccess.instance().runReadAction(new Runnable() {

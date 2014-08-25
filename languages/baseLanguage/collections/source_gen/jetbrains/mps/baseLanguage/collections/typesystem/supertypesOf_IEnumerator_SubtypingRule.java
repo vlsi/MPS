@@ -19,18 +19,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public supertypesOf_IEnumerator_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode enumerator, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_24ecqj_a0a2(((SNode) status.getPattern().getFieldValue("patternVar_p")));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new supertypesOf_IEnumerator_SubtypingRule.Pattern_24ecqj_a0a0a0a4();
@@ -39,17 +35,13 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public static class Pattern_24ecqj_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_p;
-
     public Pattern_24ecqj_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_4sudxd_a0a = nodeToMatch;
@@ -75,28 +67,23 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_p".equals(fieldName)) {
         return patternVar_p;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_24ecqj_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -108,6 +95,5 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
     }
     return quotedNode_2;
   }
-
   private static SNodePointer SNODE_POINTER_24ecqj_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024971");
 }

@@ -19,10 +19,8 @@ import org.apache.log4j.LogManager;
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
   private List<RuntimeConfigurationProducer> myRegisteredProducers = ListSequence.fromList(new ArrayList<RuntimeConfigurationProducer>());
-
   public RunConfigurationsInitializer_CustomApplicationPlugin() {
   }
-
   public void doInit() {
     // register kinds 
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
@@ -84,7 +82,6 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
       }
     }
   }
-
   public void doDispose() {
     ExtensionPoint<ConfigurationType> configurationExtensionPoint = Extensions.getArea(null).getExtensionPoint(ConfigurationType.CONFIGURATION_TYPE_EP);
     for (ConfigurationType configurationKind : ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredKinds).reversedList()) {
@@ -98,6 +95,5 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     }
     ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
-
   protected static Logger LOG = LogManager.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
 }

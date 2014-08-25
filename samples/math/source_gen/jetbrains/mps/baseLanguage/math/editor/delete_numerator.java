@@ -13,19 +13,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class delete_numerator {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new delete_numerator.delete_numerator_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new delete_numerator.delete_numerator_BACKSPACE(node));
   }
-
   public static class delete_numerator_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_numerator_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "denominator", true));
+    }
+  }
+  public static class delete_numerator_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public delete_numerator_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "denominator", true));
     }

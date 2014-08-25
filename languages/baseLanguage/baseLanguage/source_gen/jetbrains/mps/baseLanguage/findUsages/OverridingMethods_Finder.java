@@ -18,30 +18,24 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 
 public class OverridingMethods_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingMethods_Finder");
-
   public OverridingMethods_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Overriding Methods";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -57,7 +51,6 @@ public class OverridingMethods_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Overriding Methods";

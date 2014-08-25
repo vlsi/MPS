@@ -10,19 +10,15 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignature
 public class ChangeMethodSignature_Target implements IRefactoringTarget {
   public ChangeMethodSignature_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return false;
   }
-
   public boolean isApplicableToEntityType(final Object entity) {
     return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

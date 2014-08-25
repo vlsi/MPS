@@ -15,5 +15,4 @@ public class ProjectStructure_StyleSheet {
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.BOLD);
   }
 
-
 }

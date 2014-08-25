@@ -17,7 +17,6 @@ public class Message_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ok3mgi_a(editorContext, node);
   }
-
   private EditorCell createCollection_ok3mgi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ok3mgi_a");
@@ -26,14 +25,12 @@ public class Message_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ok3mgi_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ok3mgi_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ok3mgi_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ok3mgi_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");

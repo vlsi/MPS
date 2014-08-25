@@ -18,65 +18,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddSimplePropertyAttribute_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddSimplePropertyAttribute_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer";
   }
-
   public String getPresentation() {
     return "AddSimplePropertyAttribute";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.editorTest.intentions.AddSimplePropertyAttribute_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor.editorTest";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)", "5527270534710867991");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddSimplePropertyAttribute_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "add simple property attribute";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "property"), SConceptOperations.createNewNode("jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", null));
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddSimplePropertyAttribute_Intention.this;
     }

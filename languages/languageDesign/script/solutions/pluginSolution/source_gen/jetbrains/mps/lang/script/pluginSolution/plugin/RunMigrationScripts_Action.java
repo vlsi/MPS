@@ -30,7 +30,6 @@ public class RunMigrationScripts_Action extends BaseAction {
   private static final Icon ICON = null;
   private List<SNode> scripts;
   private boolean selectionOnly;
-
   public RunMigrationScripts_Action(List<SNode> scripts_par, boolean selectionOnly_par) {
     super("All Scripts...", "", ICON);
     this.scripts = scripts_par;
@@ -38,12 +37,10 @@ public class RunMigrationScripts_Action extends BaseAction {
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -54,7 +51,6 @@ public class RunMigrationScripts_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +75,6 @@ public class RunMigrationScripts_Action extends BaseAction {
     MapSequence.fromMap(_params).put("modules", event.getData(MPSCommonDataKeys.MODULES));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SearchScope scope;
@@ -109,7 +104,6 @@ public class RunMigrationScripts_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -121,10 +115,8 @@ public class RunMigrationScripts_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   public static String scripts_State(List<SNode> object) {
     return "";
   }
-
   protected static Logger LOG = LogManager.getLogger(RunMigrationScripts_Action.class);
 }

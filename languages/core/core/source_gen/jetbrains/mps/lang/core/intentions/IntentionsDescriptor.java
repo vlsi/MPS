@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddMissingLanguageImport_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new SetExportAnnotation_Intention());

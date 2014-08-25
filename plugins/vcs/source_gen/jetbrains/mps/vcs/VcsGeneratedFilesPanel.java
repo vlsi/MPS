@@ -13,7 +13,6 @@ import javax.swing.JComponent;
 public class VcsGeneratedFilesPanel extends JPanel implements ProjectPrefsExtraPanel {
   private JCheckBox myIgnoreGeneratedFilesCheckBox = new JCheckBox("Do not store generated files in repository");
   private Project myProject;
-
   public VcsGeneratedFilesPanel(Project project) {
     myProject = project;
     setLayout(new BorderLayout());
@@ -23,26 +22,21 @@ public class VcsGeneratedFilesPanel extends JPanel implements ProjectPrefsExtraP
     generatedFilesPanel.add(myIgnoreGeneratedFilesCheckBox);
     add(generatedFilesPanel, BorderLayout.NORTH);
   }
-
   @Override
   public boolean isModified() {
     return myIgnoreGeneratedFilesCheckBox.isSelected() != getConfiguration().isIgnoreGeneratedFiles();
   }
-
   @Override
   public void apply() {
     getConfiguration().setIgnoreGeneratedFiles(myIgnoreGeneratedFilesCheckBox.isSelected());
   }
-
   @Override
   public void reset() {
     myIgnoreGeneratedFilesCheckBox.setSelected(getConfiguration().isIgnoreGeneratedFiles());
   }
-
   private MPSVcsProjectConfiguration getConfiguration() {
     return myProject.getComponent(MPSVcsProjectConfiguration.class);
   }
-
   @Override
   public JComponent getComponent() {
     return this;

@@ -26,12 +26,10 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
   public EvaluatorsSuperMethodCall_Constraints() {
     super("jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -42,7 +40,6 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -51,7 +48,6 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -63,7 +59,6 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
             SNode enclosingClass = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
             return new SuperMethodCall_InstanceMethodScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), enclosingClass, "virtual_getSuperclass_1240936569950", new Object[]{}), _context.getEnclosingNode());
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cyzmhi_a0a1a0a0a1a0b0a1a3;
@@ -73,11 +68,9 @@ public class EvaluatorsSuperMethodCall_Constraints extends BaseConstraintsDescri
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(DebuggedType_Behavior.call_getHighClassifierType_4544608336420723238(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(parentNode, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorConcept", false, false), "thisNode", true), "debuggedType", true)), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325225");
   private static SNodePointer breakingNode_cyzmhi_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:edfcb13b-e239-462c-8aae-e4b4a03e7c8b(jetbrains.mps.debugger.java.evaluation.constraints)", "6036237525966325249");
 }

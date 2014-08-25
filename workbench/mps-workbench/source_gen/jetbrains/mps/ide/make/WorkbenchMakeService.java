@@ -18,8 +18,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
@@ -34,6 +32,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -57,6 +56,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -68,16 +68,9 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
   private volatile AtomicReference<Future<IResult>> currentProcess = new AtomicReference<Future<IResult>>();
   private List<IMakeNotificationListener> listeners = Collections.synchronizedList(ListSequence.fromList(new ArrayList<IMakeNotificationListener>()));
   private ReloadManagerComponent reloadManager;
-
   public WorkbenchMakeService(ReloadManagerComponent reloadManager) {
     this.reloadManager = reloadManager;
   }
-
-  @Deprecated
-  public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this.currentSessionStickyMark.set(new MakeSession(context, context.getComponent(MessagesViewTool.class).newHandler("Make"), cleanMake), false);
-  }
-
   @Override
   public void initComponent() {
     INSTANCE = this;
@@ -85,7 +78,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     reloadManager.setMakeService(this);
     GenerationSettingsProvider.getInstance().setGenerationSettings(GenerationSettings.getInstance());
   }
-
   @Override
   public void disposeComponent() {
     GenerationSettingsProvider.getInstance().setGenerationSettings(null);
@@ -93,18 +85,15 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     IMakeService.INSTANCE.set(null);
     INSTANCE = null;
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Workbench Make Service";
   }
-
   private boolean isInstance() {
     return this == INSTANCE;
   }
-
   @Override
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {
     this.checkValidUsage();
@@ -120,18 +109,16 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
     return result;
   }
-
   @Override
   public boolean isSessionActive() {
     this.checkValidUsage();
     return this.getSession() != null;
   }
-
   @Override
   public boolean openNewSession(MakeSession session) {
     this.checkValidUsage();
     if (DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).isDumb()) {
-      DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).showDumbModeNotification("Generation is not available until indices are built.");
+      DumbService.getInstance(ProjectHelper.toIdeaProject(session.getContext().getProject())).showDumbModeNotification("Generation is not available until indices are built");
       return false;
     }
     if (!(currentSessionStickyMark.compareAndSet(null, session, false, session.isSticky()))) {
@@ -140,7 +127,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_OPENED));
     return true;
   }
-
   @Override
   public void closeSession(MakeSession session) {
     this.checkValidUsage();
@@ -153,23 +139,19 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     }
   }
-
   private MakeSession getSession() {
     return currentSessionStickyMark.getReference();
   }
-
   @Override
   public void addListener(IMakeNotificationListener listener) {
     checkValidUsage();
     ListSequence.fromList(listeners).addElement(listener);
   }
-
   @Override
   public void removeListener(IMakeNotificationListener listener) {
     checkValidUsage();
     ListSequence.fromList(listeners).removeElement(listener);
   }
-
   private void notifyListeners(final MakeNotification notification) {
     ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<IMakeNotificationListener>(), listeners)).visitAll(new IVisitor<IMakeNotificationListener>() {
       public void visit(IMakeNotificationListener li) {
@@ -177,7 +159,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       }
     });
   }
-
   private void attemptCloseSession() {
     boolean[] mark = new boolean[1];
     MakeSession sess = currentSessionStickyMark.get(mark);
@@ -185,7 +166,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
     }
   }
-
   private void abortSession() {
     boolean[] mark = new boolean[1];
     MakeSession sess = currentSessionStickyMark.get(mark);
@@ -194,7 +174,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       notifyListeners(new MakeNotification(this, MakeNotification.Kind.SESSION_CLOSED));
     }
   }
-
   private synchronized void awaitCurrentProcess() {
     Future<IResult> proc = this.currentProcess.get();
     try {
@@ -207,7 +186,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       this.currentProcess.set(null);
     }
   }
-
   private Future<IResult> _doMake(Iterable<? extends IResource> inputRes, final IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
 
     String scrName = ((this.getSession().isCleanMake() ? "Rebuild" : "Make"));
@@ -225,7 +203,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         this.displayInfo(msg);
         return new FutureValue<IResult>(new IResult.FAILURE(null));
       } else {
-        this.displayInfo("Everything up to date");
+        this.displayInfo("Everything is up to date");
         return new FutureValue<IResult>(new IResult.SUCCESS(null));
       }
     }
@@ -241,14 +219,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       protected void aboutToStart() {
         notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_ABOUT_TO_START));
       }
-
       @Override
       protected void done() {
         currentProcess.compareAndSet(this, null);
         attemptCloseSession();
         notifyListeners(new MakeNotification(WorkbenchMakeService.this, MakeNotification.Kind.SCRIPT_FINISHED));
       }
-
       @Override
       protected void displayInfo(String info) {
         WorkbenchMakeService.this.displayInfo(info);
@@ -264,7 +240,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
               if (currentProcess.compareAndSet(null, task)) {
                 ProgressManager.getInstance().run(task);
               } else {
-                throw new IllegalStateException("unexpected: make process already running");
+                throw new IllegalStateException("unexpected: make process is already running");
               }
               IdeEventQueue.getInstance().flushQueue();
             }
@@ -282,7 +258,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
     return task;
   }
-
   private void checkValidUsage() {
     if (INSTANCE == null) {
       throw new IllegalStateException("already disposed");
@@ -291,24 +266,20 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
       throw new IllegalStateException("invalid usage of service");
     }
   }
-
   public void checkValidSession(MakeSession session) {
     if (!(this.getSession() == session)) {
       throw new IllegalStateException("invalid session");
     }
   }
-
   private void displayInfo(String info) {
     IdeFrame frame = WindowManager.getInstance().getIdeFrame(ProjectHelper.toIdeaProject(this.getSession().getContext().getProject()));
     if (frame != null) {
       frame.getStatusBar().setInfo(info);
     }
   }
-
   public static IScript defaultMakeScript() {
     return new ScriptBuilder().withFacetNames(new IFacet.Name("jetbrains.mps.lang.resources.Binaries"), new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.lang.core.TextGen"), new IFacet.Name("jetbrains.mps.make.facets.JavaCompile"), new IFacet.Name("jetbrains.mps.make.facets.ReloadClasses"), new IFacet.Name("jetbrains.mps.make.facets.Make")).withFinalTarget(new ITarget.Name("jetbrains.mps.make.facets.Make.make")).toScript();
   }
-
   private class Controller extends IScriptController.Stub {
     private final ProgressMonitorProgressStrategy pmps;
     private final IScriptController delegateScrCtr;
@@ -317,14 +288,12 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     private IJobMonitor jobMon;
     private IMessageHandler mh;
     private IPropertiesPool predParamPool;
-
     public Controller(IScriptController delegate, IMessageHandler mh) {
       this.delegateScrCtr = delegate;
       this.pmps = new ProgressMonitorProgressStrategy();
       this.mh = mh;
       init();
     }
-
     @Override
     public void runConfigWithMonitor(final _FunctionTypes._void_P1_E0<? super IConfigMonitor> code) {
       if (delegateScrCtr != null) {
@@ -342,7 +311,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         code.invoke(confMon);
       }
     }
-
     @Override
     public void runJobWithMonitor(_FunctionTypes._void_P1_E0<? super IJobMonitor> code) {
       final boolean oldFlag = ApplicationImpl.setExceptionalThreadWithReadAccessFlag(true);
@@ -356,7 +324,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         ApplicationImpl.setExceptionalThreadWithReadAccessFlag(oldFlag);
       }
     }
-
     @Override
     public void setup(IPropertiesPool ppool, Iterable<ITarget> targets, Iterable<? extends IResource> input) {
       // todo: why should we specify project only for Generate facet? 
@@ -386,12 +353,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         delegateScrCtr.setup(ppool, targets, input);
       }
     }
-
     @Override
     public void useMonitor(ProgressMonitor monitor) {
       pmps.reset(monitor);
     }
-
     private void init() {
       this.confMon = new IConfigMonitor.Stub() {
         @Override
@@ -408,12 +373,10 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         public boolean stopRequested() {
           return pmps.isCanceled();
         }
-
         @Override
         public void reportFeedback(IFeedback fdbk) {
           new UIFeedbackStrategy(mh).reportFeedback(fdbk);
         }
-
         @Override
         public IProgress currentProgress() {
           return pmps.currentProgress();

@@ -25,11 +25,9 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_37ht8c_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_37ht8c_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_37ht8c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_37ht8c_a");
@@ -40,7 +38,6 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_37ht8c_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("target");
@@ -62,27 +59,22 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_37ht8c_a0a extends InlineCellProvider {
     public _Inline_37ht8c_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_37ht8c_a0a0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_37ht8c_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_37ht8c_a0a0");
       return editorCell;
     }
   }
-
   private EditorCell createConstant_37ht8c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(custom packaging)");
     editorCell.setCellId("Constant_37ht8c_b0");
@@ -92,11 +84,9 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_37ht8c_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "customPackaging");
   }
-
   private EditorCell createCollection_37ht8c_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_37ht8c_a_0");
@@ -105,7 +95,6 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_37ht8c_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_37ht8c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "custom packaging");
     editorCell.setCellId("Constant_37ht8c_a0");
@@ -115,7 +104,6 @@ public class BuildMps_IdeaPluginModule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_37ht8c_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("customPackaging");

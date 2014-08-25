@@ -26,18 +26,15 @@ import jetbrains.mps.vfs.IFile;
 
 public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SetPluginIdToCompileInIdeaModules_Action() {
     super("Set pluginId to compile in idea modules", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -48,14 +45,6 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SModule module : MPSModuleRepository.getInstance().getModules()) {
@@ -81,7 +70,6 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
       }
     }
   }
-
   /*package*/ String getPluginIdForModule(SModule module, final Map<String, Object> _params) {
     String path = check_ta15vl_a0a0a(((AbstractModule) module).getModuleSourceDir());
     if (path == null) {
@@ -97,7 +85,6 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
 
     return ((PluginClassLoader) classLoader).getPluginId().getIdString();
   }
-
   /*package*/ void setPluginId(SModule module, String pluginId, final Map<String, Object> _params) {
     IdeaPluginModuleFacetImpl facet = new IdeaPluginModuleFacetImpl();
     facet.setModule(module);
@@ -117,9 +104,7 @@ public class SetPluginIdToCompileInIdeaModules_Action extends BaseAction {
     ((AbstractModule) module).getModuleDescriptor().getModuleFacetDescriptors().add(facetDescriptor);
     ((AbstractModule) module).save();
   }
-
   protected static Logger LOG = LogManager.getLogger(SetPluginIdToCompileInIdeaModules_Action.class);
-
   private static String check_ta15vl_a0a0a(IFile checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getPath();

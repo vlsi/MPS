@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class RulesFunctions_Collections {
   public RulesFunctions_Collections() {
   }
-
   @CheckingMethod
   public static SNode getInput(final TypeCheckingContext typeCheckingContext, SNode op) {
     SNode input = null;
@@ -34,7 +33,6 @@ public class RulesFunctions_Collections {
     }
     return input;
   }
-
   public static SNode getOutput(SNode op) {
     SNode output;
     SNode parent = SNodeOperations.getParent(op);
@@ -45,7 +43,6 @@ public class RulesFunctions_Collections {
       return null;
     }
   }
-
   @InferenceMethod
   public static void setInputSequenceType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression 
@@ -66,7 +63,6 @@ public class RulesFunctions_Collections {
       }
     }
   }
-
   @InferenceMethod
   public static void setInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression 
@@ -87,7 +83,6 @@ public class RulesFunctions_Collections {
       }
     }
   }
-
   @InferenceMethod
   public static void isInputElementType(final TypeCheckingContext typeCheckingContext, SNode op, SNode target) {
     // 1. Take input expression 
@@ -108,7 +103,6 @@ public class RulesFunctions_Collections {
       }
     }
   }
-
   private static SNode _quotation_createNode_m3rnkt_a0b0e0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -120,7 +114,6 @@ public class RulesFunctions_Collections {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_m3rnkt_a0c0e0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -132,7 +125,6 @@ public class RulesFunctions_Collections {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_m3rnkt_a0b0e0e(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -144,7 +136,6 @@ public class RulesFunctions_Collections {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_m3rnkt_a0b0e0f(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

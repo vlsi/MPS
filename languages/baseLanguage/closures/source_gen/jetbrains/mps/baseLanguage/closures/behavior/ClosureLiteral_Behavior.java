@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class ClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder("{");
     String sep = " ";
@@ -30,41 +29,32 @@ public class ClosureLiteral_Behavior {
     }
     return sb.append(" => <body> }").toString();
   }
-
   public static String call_getFunctionInterfaceName_1213877338544(SNode thisNode) {
     return "_function_" + ((SNode) thisNode).getNodeId().toString();
   }
-
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return _quotation_createNode_l77foe_a0a2(paramTypes, resultType, throwsTypes);
   }
-
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return !(SPropertyOperations.getBoolean(thisNode, "forceMultiLine"));
   }
-
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "body", true);
   }
-
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     // everything which is not void and null is good, 
     // look at ExpressionStatement.canServeAsReturn 
     return _quotation_createNode_l77foe_a2a5();
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return new ArrayList<SNode>();
   }
-
   public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
     return true;
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
@@ -73,7 +63,6 @@ public class ClosureLiteral_Behavior {
     }
     return null;
   }
-
   private static SNode _quotation_createNode_l77foe_a0a2(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -99,7 +88,6 @@ public class ClosureLiteral_Behavior {
     }
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_l77foe_a2a5() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class Rule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getFqName_8716397433969716516(SNode thisNode) {
     String longName = SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode));
     if (longName.equals("")) {

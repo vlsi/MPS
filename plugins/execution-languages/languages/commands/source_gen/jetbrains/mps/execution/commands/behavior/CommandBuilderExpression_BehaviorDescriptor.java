@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CommandBuilderExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CommandBuilderExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return CommandBuilderExpression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return CommandBuilderExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.CommandBuilderExpression";

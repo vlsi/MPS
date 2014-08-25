@@ -7,9 +7,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public abstract class ILeftCombinator<T, S> implements _FunctionTypes._return_P2_E0<S, S, T> {
   public ILeftCombinator() {
   }
-
   public abstract S combine(S s, T t);
-
   public S invoke(S s, T t) {
     return combine(s, t);
   }

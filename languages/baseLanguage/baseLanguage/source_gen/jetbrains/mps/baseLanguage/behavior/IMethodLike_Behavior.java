@@ -14,11 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class IMethodLike_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
     return IMethodLike_Behavior.call_getLastStatement_2432385533253965663(thisNode, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getBody_1239354440022", new Object[]{}));
   }
-
   public static SNode call_getLastStatement_2432385533253965663(SNode thisNode, SNode statementList) {
     List<SNode> statements = new ArrayList<SNode>();
     ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)));
@@ -36,11 +34,9 @@ public class IMethodLike_Behavior {
     }
     return lastStatement;
   }
-
   public static boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return true;
   }

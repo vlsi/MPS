@@ -20,61 +20,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddFieldDocComment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddFieldDocComment_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.FieldDeclaration";
   }
-
   public String getPresentation() {
     return "AddFieldDocComment";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions.AddFieldDocComment_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "6832197706140958200");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddFieldDocComment_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")) == null) ? "Add Documentation Comment" : "Remove Documentation Comment");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       DocCommentHelper.addJavadocLangIfMissing(node);
 
@@ -88,7 +74,6 @@ public class AddFieldDocComment_Intention implements IntentionFactory {
 
       editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), "body", true)).first());
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddFieldDocComment_Intention.this;
     }

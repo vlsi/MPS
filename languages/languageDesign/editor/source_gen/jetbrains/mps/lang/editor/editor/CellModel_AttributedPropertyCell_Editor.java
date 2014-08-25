@@ -17,11 +17,9 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6qfxmi_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6qfxmi_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_6qfxmi_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6qfxmi_a");
@@ -34,7 +32,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_6qfxmi_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6qfxmi_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[/>");
     editorCell.setCellId("Constant_6qfxmi_a0");
@@ -46,7 +43,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6qfxmi_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attributed property");
     editorCell.setCellId("Constant_6qfxmi_b0");
@@ -56,7 +52,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6qfxmi_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</]");
     editorCell.setCellId("Constant_6qfxmi_c0");
@@ -68,7 +63,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_6qfxmi_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6qfxmi_a_0");
@@ -79,7 +73,6 @@ public class CellModel_AttributedPropertyCell_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_6qfxmi_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_6qfxmi_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     return editorCell;

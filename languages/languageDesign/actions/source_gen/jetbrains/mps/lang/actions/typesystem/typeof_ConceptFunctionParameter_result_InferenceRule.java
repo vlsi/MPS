@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_ConceptFunctionParameter_result_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConceptFunctionParameter_result_InferenceRule() {
   }
-
   public void applyRule(final SNode result, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode conceptOfResult = SLinkOperations.getTarget(SNodeOperations.getAncestor(result, "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", false, false), "concept", false);
     {
@@ -26,22 +25,18 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule extends Abstra
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1219184766217", true), (SNode) _quotation_createNode_11uozh_a0b0b(conceptOfResult), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_11uozh_a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

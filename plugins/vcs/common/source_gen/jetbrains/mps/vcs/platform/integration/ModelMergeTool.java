@@ -36,10 +36,8 @@ import org.jetbrains.annotations.Nullable;
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = LogManager.getLogger(ModelMergeTool.class);
   private static final Set<FileType> SUPPORTED_TYPES = SetSequence.fromSetAndArray(new HashSet<FileType>(), ModelDiffTool.DIFF_SUPPORTED_TYPES);
-
   public ModelMergeTool() {
   }
-
   @Override
   public void show(final DiffRequest request) {
     MergeRequestImpl mrequest = (MergeRequestImpl) request;
@@ -98,7 +96,6 @@ public class ModelMergeTool extends MergeTool {
       LOG.error(null, e);
     }
   }
-
   @Override
   public boolean canShow(DiffRequest request) {
     if (!(super.canShow(request))) {
@@ -117,7 +114,6 @@ public class ModelMergeTool extends MergeTool {
     }
     return true;
   }
-
   private static void resolved(MergeRequestImpl req, final String result) {
     req.setResult(DialogWrapper.OK_EXIT_CODE);
     final VirtualFile modelFile = getFileFromMergeRequest(req);
@@ -133,7 +129,6 @@ public class ModelMergeTool extends MergeTool {
       }
     });
   }
-
   @Nullable
   private static VirtualFile getFileFromMergeRequest(MergeRequestImpl mergeRequest) {
     DiffContent resultContent = mergeRequest.getResultContent();
@@ -142,9 +137,7 @@ public class ModelMergeTool extends MergeTool {
     }
     return null;
   }
-
   protected static Logger LOG_705910402 = LogManager.getLogger(ModelMergeTool.class);
-
   private static <T> T as_7qvsj_a0a0a0a1a71a1a3(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

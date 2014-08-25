@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class HexIntegerLiteral_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor {
   public HexIntegerLiteral_BehaviorDescriptor() {
   }
-
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return HexIntegerLiteral_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.HexIntegerLiteral";

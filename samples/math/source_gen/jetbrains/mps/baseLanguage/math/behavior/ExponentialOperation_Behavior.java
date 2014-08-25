@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ExponentialOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getOperationSymbol_1262430001741497831(SAbstractConcept thisConcept) {
     return "?";
   }
-
   public static List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SAbstractConcept thisConcept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)", "7255837154369354272"));

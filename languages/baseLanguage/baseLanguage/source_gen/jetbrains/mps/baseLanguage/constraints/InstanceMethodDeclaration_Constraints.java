@@ -10,7 +10,6 @@ public class InstanceMethodDeclaration_Constraints extends BaseConstraintsDescri
   public InstanceMethodDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
   }
-
   public String getAlternativeIcon(SNode node) {
     if (SPropertyOperations.getBoolean(node, "isAbstract")) {
       return "${language_descriptor}/icons/abstractMethod.png";

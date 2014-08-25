@@ -17,187 +17,187 @@
       <node id="831786216887884126" at="11,0,12,0" concept="2" trace="myBoolean" />
       <node id="831786216887884130" at="12,0,13,0" concept="2" trace="myInt" />
       <node id="2400318052853024222" at="13,0,14,0" concept="2" trace="element" />
-      <node id="2400318052853024228" at="15,36,16,27" concept="1" />
-      <node id="53796356308657402" at="19,60,20,25" concept="1" />
-      <node id="53796356308657436" at="21,34,22,44" concept="1" />
-      <node id="53796356308817622" at="22,44,23,32" concept="1" />
-      <node id="3905905920761720857" at="23,32,24,0" concept="9" />
-      <node id="2319519288049912850" at="28,29,29,31" concept="1" />
-      <node id="3905905920761566044" at="29,31,30,31" concept="1" />
-      <node id="3905905920761566055" at="30,31,31,35" concept="1" />
-      <node id="3905905920761566071" at="31,35,32,31" concept="1" />
-      <node id="2400318052853024397" at="32,31,33,53" concept="8" />
-      <node id="2400318052853024269" at="33,53,34,31" concept="1" />
-      <node id="2319519288049912862" at="37,24,38,13" concept="7" />
-      <node id="1023687332192250976" at="41,26,42,72" concept="6" />
-      <node id="1023687332192250993" at="42,72,43,19" concept="6" />
-      <node id="1023687332192250999" at="44,28,45,33" concept="1" />
-      <node id="831786216887884121" at="49,42,50,53" concept="8" />
-      <node id="831786216887884124" at="50,53,51,69" concept="1" />
-      <node id="1023687332192249984" at="54,46,55,35" concept="1" />
-      <node id="4741735385321338886" at="55,35,56,20" concept="7" />
-      <node id="1023687332192250962" at="59,56,60,35" concept="1" />
-      <node id="831786216887884113" at="60,35,61,16" concept="7" />
-      <node id="53796356308657408" at="65,36,66,41" concept="7" />
-      <node id="53796356308657408" at="67,5,68,13" concept="7" />
-      <node id="53796356308657442" at="72,36,73,40" concept="1" />
-      <node id="53796356308657442" at="74,5,75,0" concept="9" />
-      <node id="53796356308818305" at="79,36,80,41" concept="7" />
-      <node id="53796356308818305" at="81,5,82,16" concept="7" />
-      <node id="53796356308657431" at="86,36,87,41" concept="7" />
-      <node id="53796356308657431" at="88,5,89,17" concept="7" />
-      <node id="2319519288049912980" at="93,36,94,74" concept="7" />
-      <node id="2319519288049912980" at="95,5,96,13" concept="7" />
-      <node id="3905905920761566045" at="100,36,101,74" concept="7" />
-      <node id="3905905920761566045" at="102,5,103,13" concept="7" />
-      <node id="3905905920761566061" at="107,36,108,48" concept="7" />
-      <node id="3905905920761566061" at="109,5,110,17" concept="7" />
-      <node id="3905905920761566072" at="114,36,115,73" concept="7" />
-      <node id="3905905920761566072" at="116,5,117,17" concept="7" />
-      <node id="2400318052853024347" at="121,36,122,79" concept="7" />
-      <node id="2400318052853024347" at="123,5,124,17" concept="7" />
-      <node id="1023687332192251005" at="128,36,129,44" concept="7" />
-      <node id="1023687332192251005" at="130,5,131,13" concept="7" />
-      <node id="831786216887884151" at="135,36,136,132" concept="1" />
-      <node id="831786216887884151" at="137,5,138,0" concept="9" />
-      <node id="53796356308657386" at="15,0,18,0" concept="0" trace="FooCheckedDots#(null)V" />
-      <node id="2319519288049912857" at="37,0,40,0" concept="5" trace="intFunc#()I" />
-      <node id="1023687332192250971" at="43,19,46,5" concept="3" />
-      <node id="53796356308657408" at="64,67,67,5" concept="4" />
-      <node id="53796356308657442" at="71,118,74,5" concept="4" />
-      <node id="53796356308818305" at="78,81,81,5" concept="4" />
-      <node id="53796356308657431" at="85,80,88,5" concept="4" />
-      <node id="2319519288049912980" at="92,128,95,5" concept="4" />
-      <node id="3905905920761566045" at="99,128,102,5" concept="4" />
-      <node id="3905905920761566061" at="106,87,109,5" concept="4" />
-      <node id="3905905920761566072" at="113,131,116,5" concept="4" />
-      <node id="2400318052853024347" at="120,131,123,5" concept="4" />
-      <node id="1023687332192251005" at="127,78,130,5" concept="4" />
-      <node id="831786216887884151" at="134,136,137,5" concept="4" />
-      <node id="831786216887884117" at="49,0,53,0" concept="5" trace="checkThisBeforCheckedDot#()V" />
-      <node id="4741735385321338875" at="54,0,58,0" concept="5" trace="getString#(IZ)Ljava/lang/String;" />
-      <node id="831786216887884103" at="59,0,63,0" concept="5" trace="getInstance#(IZ)Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;" />
-      <node id="53796356308657414" at="20,25,25,5" concept="4" />
-      <node id="53796356308657408" at="64,0,70,0" concept="10" trace="check_7013wl_a0a5#(Ljava/lang/String;)C" />
-      <node id="53796356308657442" at="71,0,77,0" concept="10" trace="check_7013wl_a0a1a5#(Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
-      <node id="53796356308818305" at="78,0,84,0" concept="10" trace="check_7013wl_a1a1a5#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="53796356308657431" at="85,0,91,0" concept="10" trace="check_7013wl_a1a5#(Ljava/lang/Object;Ljava/lang/String;)Z" />
-      <node id="2319519288049912980" at="92,0,98,0" concept="10" trace="check_7013wl_a0a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)C" />
-      <node id="3905905920761566045" at="99,0,105,0" concept="10" trace="check_7013wl_a1a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)C" />
-      <node id="3905905920761566061" at="106,0,112,0" concept="10" trace="check_7013wl_a2a6#(Ljava/lang/String;Ljava/lang/String;)Z" />
-      <node id="3905905920761566072" at="113,0,119,0" concept="10" trace="check_7013wl_a3a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)Z" />
-      <node id="2400318052853024347" at="120,0,126,0" concept="10" trace="check_7013wl_a5a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)Z" />
-      <node id="1023687332192251005" at="127,0,133,0" concept="10" trace="check_7013wl_a0a2a8#(Ljava/lang/String;Ljava/lang/String;)I" />
-      <node id="831786216887884151" at="134,0,140,0" concept="10" trace="check_7013wl_a1a9#(Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
-      <node id="1023687332192249974" at="41,0,48,0" concept="5" trace="MPS14570#()V" />
-      <node id="53796356308657390" at="19,0,27,0" concept="5" trace="bar#(Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
-      <node id="2319519288049912844" at="28,0,36,0" concept="5" trace="foo#(Ljava/lang/String;)V" />
-      <scope id="53796356308657389" at="15,36,16,27" />
-      <scope id="2319519288049912860" at="37,24,38,13" />
-      <scope id="1023687332192250974" at="44,28,45,33" />
-      <scope id="53796356308657408" at="65,36,66,41" />
-      <scope id="53796356308657442" at="72,36,73,40" />
-      <scope id="53796356308818305" at="79,36,80,41" />
-      <scope id="53796356308657431" at="86,36,87,41" />
-      <scope id="2319519288049912980" at="93,36,94,74" />
-      <scope id="3905905920761566045" at="100,36,101,74" />
-      <scope id="3905905920761566061" at="107,36,108,48" />
-      <scope id="3905905920761566072" at="114,36,115,73" />
-      <scope id="2400318052853024347" at="121,36,122,79" />
-      <scope id="1023687332192251005" at="128,36,129,44" />
-      <scope id="831786216887884151" at="135,36,136,132" />
-      <scope id="831786216887884120" at="49,42,51,69" />
-      <scope id="4741735385321338878" at="54,46,56,20" />
-      <scope id="831786216887884106" at="59,56,61,16" />
-      <scope id="53796356308657386" at="15,0,18,0">
+      <node id="2400318052853024228" at="14,36,15,27" concept="1" />
+      <node id="53796356308657402" at="17,60,18,25" concept="1" />
+      <node id="53796356308657436" at="19,34,20,44" concept="1" />
+      <node id="53796356308817622" at="20,44,21,32" concept="1" />
+      <node id="3905905920761720857" at="21,32,22,0" concept="9" />
+      <node id="2319519288049912850" at="25,29,26,31" concept="1" />
+      <node id="3905905920761566044" at="26,31,27,31" concept="1" />
+      <node id="3905905920761566055" at="27,31,28,35" concept="1" />
+      <node id="3905905920761566071" at="28,35,29,31" concept="1" />
+      <node id="2400318052853024397" at="29,31,30,53" concept="8" />
+      <node id="2400318052853024269" at="30,53,31,31" concept="1" />
+      <node id="2319519288049912862" at="33,24,34,13" concept="7" />
+      <node id="1023687332192250976" at="36,26,37,72" concept="6" />
+      <node id="1023687332192250993" at="37,72,38,19" concept="6" />
+      <node id="1023687332192250999" at="39,28,40,33" concept="1" />
+      <node id="831786216887884121" at="43,42,44,53" concept="8" />
+      <node id="831786216887884124" at="44,53,45,69" concept="1" />
+      <node id="1023687332192249984" at="47,46,48,35" concept="1" />
+      <node id="4741735385321338886" at="48,35,49,20" concept="7" />
+      <node id="1023687332192250962" at="51,56,52,35" concept="1" />
+      <node id="831786216887884113" at="52,35,53,16" concept="7" />
+      <node id="53796356308657408" at="56,36,57,41" concept="7" />
+      <node id="53796356308657408" at="58,5,59,13" concept="7" />
+      <node id="53796356308657442" at="62,36,63,40" concept="1" />
+      <node id="53796356308657442" at="64,5,65,0" concept="9" />
+      <node id="53796356308818305" at="68,36,69,41" concept="7" />
+      <node id="53796356308818305" at="70,5,71,16" concept="7" />
+      <node id="53796356308657431" at="74,36,75,41" concept="7" />
+      <node id="53796356308657431" at="76,5,77,17" concept="7" />
+      <node id="2319519288049912980" at="80,36,81,74" concept="7" />
+      <node id="2319519288049912980" at="82,5,83,13" concept="7" />
+      <node id="3905905920761566045" at="86,36,87,74" concept="7" />
+      <node id="3905905920761566045" at="88,5,89,13" concept="7" />
+      <node id="3905905920761566061" at="92,36,93,48" concept="7" />
+      <node id="3905905920761566061" at="94,5,95,17" concept="7" />
+      <node id="3905905920761566072" at="98,36,99,73" concept="7" />
+      <node id="3905905920761566072" at="100,5,101,17" concept="7" />
+      <node id="2400318052853024347" at="104,36,105,79" concept="7" />
+      <node id="2400318052853024347" at="106,5,107,17" concept="7" />
+      <node id="1023687332192251005" at="110,36,111,44" concept="7" />
+      <node id="1023687332192251005" at="112,5,113,13" concept="7" />
+      <node id="831786216887884151" at="116,36,117,132" concept="1" />
+      <node id="831786216887884151" at="118,5,119,0" concept="9" />
+      <node id="53796356308657386" at="14,0,17,0" concept="0" trace="FooCheckedDots#(null)V" />
+      <node id="2319519288049912857" at="33,0,36,0" concept="5" trace="intFunc#()I" />
+      <node id="1023687332192250971" at="38,19,41,5" concept="3" />
+      <node id="53796356308657408" at="55,67,58,5" concept="4" />
+      <node id="53796356308657442" at="61,118,64,5" concept="4" />
+      <node id="53796356308818305" at="67,81,70,5" concept="4" />
+      <node id="53796356308657431" at="73,80,76,5" concept="4" />
+      <node id="2319519288049912980" at="79,128,82,5" concept="4" />
+      <node id="3905905920761566045" at="85,128,88,5" concept="4" />
+      <node id="3905905920761566061" at="91,87,94,5" concept="4" />
+      <node id="3905905920761566072" at="97,131,100,5" concept="4" />
+      <node id="2400318052853024347" at="103,131,106,5" concept="4" />
+      <node id="1023687332192251005" at="109,78,112,5" concept="4" />
+      <node id="831786216887884151" at="115,136,118,5" concept="4" />
+      <node id="831786216887884117" at="43,0,47,0" concept="5" trace="checkThisBeforCheckedDot#()V" />
+      <node id="4741735385321338875" at="47,0,51,0" concept="5" trace="getString#(IZ)Ljava/lang/String;" />
+      <node id="831786216887884103" at="51,0,55,0" concept="5" trace="getInstance#(IZ)Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;" />
+      <node id="53796356308657414" at="18,25,23,5" concept="4" />
+      <node id="53796356308657408" at="55,0,61,0" concept="10" trace="check_7013wl_a0a5#(Ljava/lang/String;)C" />
+      <node id="53796356308657442" at="61,0,67,0" concept="10" trace="check_7013wl_a0a1a5#(Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
+      <node id="53796356308818305" at="67,0,73,0" concept="10" trace="check_7013wl_a1a1a5#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="53796356308657431" at="73,0,79,0" concept="10" trace="check_7013wl_a1a5#(Ljava/lang/Object;Ljava/lang/String;)Z" />
+      <node id="2319519288049912980" at="79,0,85,0" concept="10" trace="check_7013wl_a0a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)C" />
+      <node id="3905905920761566045" at="85,0,91,0" concept="10" trace="check_7013wl_a1a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)C" />
+      <node id="3905905920761566061" at="91,0,97,0" concept="10" trace="check_7013wl_a2a6#(Ljava/lang/String;Ljava/lang/String;)Z" />
+      <node id="3905905920761566072" at="97,0,103,0" concept="10" trace="check_7013wl_a3a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)Z" />
+      <node id="2400318052853024347" at="103,0,109,0" concept="10" trace="check_7013wl_a5a6#(Ljava/lang/String;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)Z" />
+      <node id="1023687332192251005" at="109,0,115,0" concept="10" trace="check_7013wl_a0a2a8#(Ljava/lang/String;Ljava/lang/String;)I" />
+      <node id="831786216887884151" at="115,0,121,0" concept="10" trace="check_7013wl_a1a9#(Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
+      <node id="1023687332192249974" at="36,0,43,0" concept="5" trace="MPS14570#()V" />
+      <node id="53796356308657390" at="17,0,25,0" concept="5" trace="bar#(Ljava/lang/String;Ljava/lang/Object;Ljetbrains/mps/baseLanguage/checkedbox/sandbox/test/FooCheckedDots;)V" />
+      <node id="2319519288049912844" at="25,0,33,0" concept="5" trace="foo#(Ljava/lang/String;)V" />
+      <scope id="53796356308657389" at="14,36,15,27" />
+      <scope id="2319519288049912860" at="33,24,34,13" />
+      <scope id="1023687332192250974" at="39,28,40,33" />
+      <scope id="53796356308657408" at="56,36,57,41" />
+      <scope id="53796356308657442" at="62,36,63,40" />
+      <scope id="53796356308818305" at="68,36,69,41" />
+      <scope id="53796356308657431" at="74,36,75,41" />
+      <scope id="2319519288049912980" at="80,36,81,74" />
+      <scope id="3905905920761566045" at="86,36,87,74" />
+      <scope id="3905905920761566061" at="92,36,93,48" />
+      <scope id="3905905920761566072" at="98,36,99,73" />
+      <scope id="2400318052853024347" at="104,36,105,79" />
+      <scope id="1023687332192251005" at="110,36,111,44" />
+      <scope id="831786216887884151" at="116,36,117,132" />
+      <scope id="831786216887884120" at="43,42,45,69" />
+      <scope id="4741735385321338878" at="47,46,49,20" />
+      <scope id="831786216887884106" at="51,56,53,16" />
+      <scope id="53796356308657386" at="14,0,17,0">
         <var name="element" id="2400318052853024226" />
       </scope>
-      <scope id="53796356308657415" at="21,34,24,0" />
-      <scope id="2319519288049912857" at="37,0,40,0" />
-      <scope id="1023687332192250971" at="43,19,46,5">
+      <scope id="53796356308657415" at="19,34,22,0" />
+      <scope id="2319519288049912857" at="33,0,36,0" />
+      <scope id="1023687332192250971" at="38,19,41,5">
         <var name="s" id="1023687332192250972" />
       </scope>
-      <scope id="831786216887884117" at="49,0,53,0" />
-      <scope id="4741735385321338875" at="54,0,58,0">
+      <scope id="831786216887884117" at="43,0,47,0" />
+      <scope id="4741735385321338875" at="47,0,51,0">
         <var name="b" id="4741735385321338883" />
         <var name="i" id="4741735385321338881" />
       </scope>
-      <scope id="831786216887884103" at="59,0,63,0">
+      <scope id="831786216887884103" at="51,0,55,0">
         <var name="b" id="831786216887884110" />
         <var name="i" id="831786216887884108" />
       </scope>
-      <scope id="53796356308657408" at="64,67,68,13" />
-      <scope id="53796356308657442" at="71,118,75,0" />
-      <scope id="53796356308818305" at="78,81,82,16" />
-      <scope id="53796356308657431" at="85,80,89,17" />
-      <scope id="2319519288049912980" at="92,128,96,13" />
-      <scope id="3905905920761566045" at="99,128,103,13" />
-      <scope id="3905905920761566061" at="106,87,110,17" />
-      <scope id="3905905920761566072" at="113,131,117,17" />
-      <scope id="2400318052853024347" at="120,131,124,17" />
-      <scope id="1023687332192251005" at="127,78,131,13" />
-      <scope id="831786216887884151" at="134,136,138,0" />
-      <scope id="1023687332192249977" at="41,26,46,5">
+      <scope id="53796356308657408" at="55,67,59,13" />
+      <scope id="53796356308657442" at="61,118,65,0" />
+      <scope id="53796356308818305" at="67,81,71,16" />
+      <scope id="53796356308657431" at="73,80,77,17" />
+      <scope id="2319519288049912980" at="79,128,83,13" />
+      <scope id="3905905920761566045" at="85,128,89,13" />
+      <scope id="3905905920761566061" at="91,87,95,17" />
+      <scope id="3905905920761566072" at="97,131,101,17" />
+      <scope id="2400318052853024347" at="103,131,107,17" />
+      <scope id="1023687332192251005" at="109,78,113,13" />
+      <scope id="831786216887884151" at="115,136,119,0" />
+      <scope id="1023687332192249977" at="36,26,41,5">
         <var name="s2" id="1023687332192250994" />
         <var name="sList" id="1023687332192250977" />
       </scope>
-      <scope id="53796356308657393" at="19,60,25,5" />
-      <scope id="2319519288049912847" at="28,29,34,31" />
-      <scope id="53796356308657408" at="64,0,70,0">
+      <scope id="53796356308657393" at="17,60,23,5" />
+      <scope id="2319519288049912847" at="25,29,31,31" />
+      <scope id="53796356308657408" at="55,0,61,0">
         <var name="checkedDotOperand" id="53796356308657408" />
       </scope>
-      <scope id="53796356308657442" at="71,0,77,0">
+      <scope id="53796356308657442" at="61,0,67,0">
         <var name="checkedDotOperand" id="53796356308657442" />
         <var name="foo2" id="53796356308657442" />
         <var name="s" id="53796356308657442" />
         <var name="t" id="53796356308657442" />
       </scope>
-      <scope id="53796356308818305" at="78,0,84,0">
+      <scope id="53796356308818305" at="67,0,73,0">
         <var name="checkedDotOperand" id="53796356308818305" />
         <var name="s" id="53796356308818305" />
       </scope>
-      <scope id="53796356308657431" at="85,0,91,0">
+      <scope id="53796356308657431" at="73,0,79,0">
         <var name="checkedDotOperand" id="53796356308657431" />
         <var name="s" id="53796356308657431" />
       </scope>
-      <scope id="2319519288049912980" at="92,0,98,0">
+      <scope id="2319519288049912980" at="79,0,85,0">
         <var name="checkedDotOperand" id="2319519288049912980" />
         <var name="checkedDotThisExpression" id="2319519288049912980" />
       </scope>
-      <scope id="3905905920761566045" at="99,0,105,0">
+      <scope id="3905905920761566045" at="85,0,91,0">
         <var name="checkedDotOperand" id="3905905920761566045" />
         <var name="checkedDotThisExpression" id="3905905920761566045" />
       </scope>
-      <scope id="3905905920761566061" at="106,0,112,0">
+      <scope id="3905905920761566061" at="91,0,97,0">
         <var name="checkedDotOperand" id="3905905920761566061" />
         <var name="myString" id="3905905920761566061" />
       </scope>
-      <scope id="3905905920761566072" at="113,0,119,0">
+      <scope id="3905905920761566072" at="97,0,103,0">
         <var name="checkedDotOperand" id="3905905920761566072" />
         <var name="checkedDotThisExpression" id="3905905920761566072" />
       </scope>
-      <scope id="2400318052853024347" at="120,0,126,0">
+      <scope id="2400318052853024347" at="103,0,109,0">
         <var name="checkedDotOperand" id="2400318052853024347" />
         <var name="checkedDotThisExpression" id="2400318052853024347" />
       </scope>
-      <scope id="1023687332192251005" at="127,0,133,0">
+      <scope id="1023687332192251005" at="109,0,115,0">
         <var name="checkedDotOperand" id="1023687332192251005" />
         <var name="s" id="1023687332192251005" />
       </scope>
-      <scope id="831786216887884151" at="134,0,140,0">
+      <scope id="831786216887884151" at="115,0,121,0">
         <var name="checkedDotOperand" id="831786216887884151" />
         <var name="checkedDotThisExpression" id="831786216887884151" />
       </scope>
-      <scope id="1023687332192249974" at="41,0,48,0" />
-      <scope id="53796356308657390" at="19,0,27,0">
+      <scope id="1023687332192249974" at="36,0,43,0" />
+      <scope id="53796356308657390" at="17,0,25,0">
         <var name="foo2" id="53796356308657399" />
         <var name="s" id="53796356308657394" />
         <var name="t" id="53796356308657396" />
       </scope>
-      <scope id="2319519288049912844" at="28,0,36,0">
+      <scope id="2319519288049912844" at="25,0,33,0">
         <var name="s" id="2319519288049912848" />
       </scope>
-      <unit id="53796356308657384" at="9,0,141,0" name="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.FooCheckedDots" />
+      <unit id="53796356308657384" at="9,0,122,0" name="jetbrains.mps.baseLanguage.checkedbox.sandbox.test.FooCheckedDots" />
     </file>
   </root>
 </debug-info>

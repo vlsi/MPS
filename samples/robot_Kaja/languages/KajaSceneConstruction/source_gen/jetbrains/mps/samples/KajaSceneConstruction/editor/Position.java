@@ -22,11 +22,9 @@ public class Position implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_6pusv8_a(editorContext, node);
   }
-
   private EditorCell createCollection_6pusv8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_6pusv8_a");
@@ -37,7 +35,6 @@ public class Position implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createProperty_6pusv8_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_6pusv8_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "at");
     editorCell.setCellId("Constant_6pusv8_a0");
@@ -47,14 +44,12 @@ public class Position implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_6pusv8_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "row:");
     editorCell.setCellId("Constant_6pusv8_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6pusv8_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("row");
@@ -72,14 +67,12 @@ public class Position implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_6pusv8_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "col:");
     editorCell.setCellId("Constant_6pusv8_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_6pusv8_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("col");

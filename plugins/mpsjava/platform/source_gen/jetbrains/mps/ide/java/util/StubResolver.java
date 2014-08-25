@@ -46,12 +46,10 @@ import org.apache.log4j.LogManager;
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
   private Set<SModelReference> myUsedModels;
-
   public StubResolver() {
     // resolve to any nonstub model 
     myUsedModels = null;
   }
-
   public StubResolver(Iterable<SModel> models) {
     // resolve only to models from sequence 
     myUsedModels = SetSequence.fromSetWithValues(new HashSet<SModelReference>(), Sequence.fromIterable(models).select(new ISelector<SModel, SModelReference>() {
@@ -60,7 +58,6 @@ public class StubResolver {
       }
     }));
   }
-
   private List<SReference> getReferencesToResolve(SModel sourceModel, Map<SModelReference, SModelReference> models) {
     // fills models map with stub -> model correspondance 
     List<SReference> result = ListSequence.fromList(new ArrayList<SReference>());
@@ -83,7 +80,6 @@ public class StubResolver {
     }
     return result;
   }
-
   public void resolveInModel(final SModel model, IOperationContext context) {
     Map<SModelReference, SModelReference> models = MapSequence.fromMap(new HashMap<SModelReference, SModelReference>());
     List<SReference> toResolve = getReferencesToResolve(model, models);
@@ -102,7 +98,7 @@ public class StubResolver {
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
-      MissingDependenciesFixer.fixDependencies(model);
+      new MissingDependenciesFixer(model).fixModuleDependencies();
     }
 
     int cnt = StubResolver.resolveReferences(toResolve, models, context);
@@ -112,13 +108,11 @@ public class StubResolver {
       LOG.info(cnt + " stub references were re-resolved in model " + SModelOperations.getModelName(model) + ". (" + ListSequence.fromList(toResolve).count() + ")");
     }
   }
-
   public void resolveInModels(List<SModel> models, IOperationContext context) {
     for (SModel model : ListSequence.fromList(models)) {
       resolveInModel(model, context);
     }
   }
-
   public void resolveInProject(MPSProject project, IOperationContext context) {
     for (SModule module : ListSequence.fromList(project.getModulesWithGenerators())) {
       if (module.isReadOnly()) {
@@ -131,7 +125,6 @@ public class StubResolver {
       }
     }
   }
-
   public static int resolveReferences(List<SReference> toResolve, Map<SModelReference, SModelReference> models, IOperationContext context) {
     int cnt = 0;
     boolean found;
@@ -172,9 +165,7 @@ public class StubResolver {
     } while (found);
     return cnt;
   }
-
   protected static Logger LOG = LogManager.getLogger(StubResolver.class);
-
   private static SModelReference check_ar1im2_a0d0a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

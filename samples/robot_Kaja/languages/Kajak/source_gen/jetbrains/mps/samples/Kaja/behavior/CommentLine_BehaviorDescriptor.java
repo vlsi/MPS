@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class CommentLine_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public CommentLine_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.CommentLine";

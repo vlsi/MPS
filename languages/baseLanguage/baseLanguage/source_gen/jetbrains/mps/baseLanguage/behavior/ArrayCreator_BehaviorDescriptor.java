@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ArrayCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public ArrayCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreator";

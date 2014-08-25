@@ -46,32 +46,26 @@ public class Script {
   private boolean myLoadBootstrapLibraries = true;
   private final Map<List<String>, Boolean> myChunks = new LinkedHashMap<List<String>, Boolean>();
   private final List<String> myLibraryJars = new ArrayList<String>();
-
   public Script() {
   }
-
   public void addModuleFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
     myModules.add(file);
   }
-
   public void addModelFile(File file) {
     assert file.exists() && !(file.isDirectory()) : "bad file: " + file.toString();
     myModels.add(file);
   }
-
   public void excludeFileFromDiff(File file) {
     assert file.exists() && !(file.isDirectory());
     myExcludedFromDiff.add(file);
   }
-
   public void addProjectFile(File projectFile) {
     assert projectFile.exists() && projectFile.isFile();
     if (!(myMPSProjects.containsKey(projectFile))) {
       myMPSProjects.put(projectFile, new ArrayList<String>());
     }
   }
-
   public void addProjectFile(File projectFile, String... property) {
     assert projectFile.exists() && projectFile.isFile();
     List<String> projectProperties = myMPSProjects.get(projectFile);
@@ -81,144 +75,109 @@ public class Script {
     }
     projectProperties.addAll(Arrays.asList(property));
   }
-
   public void addChunk(List<String> modules, boolean isBootstrap) {
     myChunks.put(modules, isBootstrap);
   }
-
   public void addLibraryJar(String libraryJar) {
     myLibraryJars.add(libraryJar);
   }
 
-
-
   public Set<File> getModels() {
     return Collections.unmodifiableSet(myModels);
   }
-
   public void updateModels(Set<File> models) {
     myModels.addAll(models);
   }
-
   public Set<File> getExcludedFromDiffFiles() {
     return Collections.unmodifiableSet(myExcludedFromDiff);
   }
-
   public void updateExcludedFromDiffFiles(Set<File> excluded) {
     myExcludedFromDiff.addAll(excluded);
   }
-
   public Set<File> getModules() {
     return Collections.unmodifiableSet(myModules);
   }
-
   public void updateModules(Set<File> modules) {
     myModules.addAll(modules);
   }
-
   public Map<File, List<String>> getMPSProjectFiles() {
     return Collections.unmodifiableMap(myMPSProjects);
   }
-
   public void updateMPSProjectFiles(Map<File, List<String>> mpsProjects) {
     myMPSProjects.putAll(mpsProjects);
   }
-
   public boolean getFailOnError() {
     return myFailOnError;
   }
-
   public void updateFailOnError(boolean showError) {
     myFailOnError = showError;
   }
-
   public Map<String, String> getProperties() {
     return Collections.unmodifiableMap(myProperties);
   }
-
   public void updateProperties(Map<String, String> properties) {
     myProperties.putAll(properties);
   }
-
   public void addLibrary(String name, File dir, boolean compile) {
     myLibraries.put(name, dir);
     if (compile) {
       myCompiledLibraries.add(name);
     }
   }
-
   public Map<String, File> getLibraries() {
     return Collections.unmodifiableMap(myLibraries);
   }
-
   public void updateLibraries(Map<String, File> libraries) {
     myLibraries.putAll(libraries);
   }
-
   public Set<String> getCompiledLibraries() {
     return Collections.unmodifiableSet(myCompiledLibraries);
   }
-
   public void updateCompiledLibraries(Set<String> libraries) {
     myCompiledLibraries.addAll(libraries);
   }
-
   public void addMacro(String name, String value) {
     myMacro.put(name, value);
   }
-
   public Map<String, String> getMacro() {
     return Collections.unmodifiableMap(myMacro);
   }
-
   public void updateMacro(Map<String, String> macro) {
     myMacro.putAll(macro);
   }
-
   public void updateLogLevel(Level level) {
     myLogLevel = level;
   }
-
   public Level getLogLevel() {
     return myLogLevel;
   }
-
   public void addParameter(String parameter) {
     myParameters.add(parameter);
   }
-
   public List<String> getParameters() {
     return myParameters;
   }
-
   public void updateParameters(List<String> parameters) {
     myParameters.addAll(parameters);
   }
-
   public boolean isLoadBootstrapLibraries() {
     return myLoadBootstrapLibraries;
   }
-
   public void setLoadBootstrapLibraries(boolean load) {
     myLoadBootstrapLibraries = load;
   }
-
   public Map<List<String>, Boolean> getChunks() {
     return Collections.unmodifiableMap(myChunks);
   }
-
   public void updateChunks(Map<List<String>, Boolean> chunks) {
     myChunks.putAll(chunks);
   }
-
   public List<String> getLibraryJars() {
     return Collections.unmodifiableList(myLibraryJars);
   }
-
   public void updateLibraryJars(List<String> libraryJars) {
     myLibraryJars.addAll(libraryJars);
   }
-
   public void cloneTo(Object dest) {
     // TODO get rid of generic cloneTo 
     Class<? extends Script> srcClass = this.getClass();
@@ -241,7 +200,6 @@ public class Script {
       }
     }
   }
-
   private Element prepareData() {
     Element data = new Element(ELEMENT_TODO);
     for (File f : myModels) {
@@ -276,7 +234,6 @@ public class Script {
 
     return data;
   }
-
   public void parseData(Element elem) {
     for (Object o : elem.getChildren()) {
       Element e = (Element) o;
@@ -316,7 +273,6 @@ public class Script {
       }
     }
   }
-
   public File dumpToTmpFile() throws FileNotFoundException {
     File tmpFile = Script.createTmpFile();
     ScriptData data = new ScriptData();
@@ -334,15 +290,12 @@ public class Script {
     }
     return tmpFile;
   }
-
   public void putProperty(String name, String value) {
     myProperties.put(name, value);
   }
-
   public String getProperty(String name) {
     return myProperties.get(name);
   }
-
   public void addPerfomanceReport(String s) {
     String reports = myProperties.get(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
     if (reports == null) {
@@ -354,7 +307,6 @@ public class Script {
     reports += s;
     myProperties.put(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
   }
-
   public static File createTmpFile() {
     File tmp = new File(System.getProperty("java.io.tmpdir"));
     int i = 0;
@@ -372,7 +324,6 @@ public class Script {
     }
     return result;
   }
-
   public static Script fromDumpInFile(File file) {
     ScriptData data = new ScriptData();
     try {

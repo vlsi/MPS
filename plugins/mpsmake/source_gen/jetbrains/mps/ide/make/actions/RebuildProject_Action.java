@@ -22,22 +22,18 @@ import org.apache.log4j.LogManager;
 
 public class RebuildProject_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RebuildProject_Action() {
     super("_Rebuild Project", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return !(IMakeService.INSTANCE.get().isSessionActive());
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -51,7 +47,6 @@ public class RebuildProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +61,6 @@ public class RebuildProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules());
@@ -77,6 +71,5 @@ public class RebuildProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RebuildProject_Action.class);
 }

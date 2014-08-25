@@ -16,23 +16,18 @@ public class SystemMessagesReporter {
   private volatile ProcessHandler myProcessHandler;
   private final SystemMessagesReporter.MyDebugProcessAdapter myDebugProcessListener = new SystemMessagesReporter.MyDebugProcessAdapter();
   private final List<Pair<String, Key>> myPostponedMessages = new ArrayList<Pair<String, Key>>();
-
   public SystemMessagesReporter(DebugProcessMulticaster multicaster) {
     multicaster.addListener(myDebugProcessListener);
   }
-
   public void setProcessName(String processName) {
     myName = processName;
   }
-
   public void reportInformation(String message) {
     reportOrPostpone(message, ProcessOutputTypes.SYSTEM);
   }
-
   public void reportError(String message) {
     reportOrPostpone(message, ProcessOutputTypes.STDERR);
   }
-
   private synchronized void reportOrPostpone(String message, Key key) {
     if (myProcessHandler == null) {
       myPostponedMessages.add(new Pair<String, Key>(message, key));
@@ -40,27 +35,22 @@ public class SystemMessagesReporter {
       reportInternal(message, key);
     }
   }
-
   public synchronized void setProcessHandler(ProcessHandler processHandler) {
     myProcessHandler = processHandler;
     for (Pair<String, Key> message : myPostponedMessages) {
       reportInternal(message.first, message.second);
     }
   }
-
   private void reportInternal(String message, Key key) {
     myProcessHandler.notifyTextAvailable(message + "\n", key);
   }
-
   private class MyDebugProcessAdapter extends DebugProcessAdapter {
     private MyDebugProcessAdapter() {
     }
-
     @Override
     public void processAttached(@NotNull EventsProcessor process) {
       reportInformation("Connected to the target VM, " + myName);
     }
-
     @Override
     public void processDetached(@NotNull EventsProcessor process, boolean closedByUser) {
       reportInformation("Disconnected from the target VM, " + myName);

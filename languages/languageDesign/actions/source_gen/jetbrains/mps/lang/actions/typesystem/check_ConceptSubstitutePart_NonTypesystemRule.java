@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptSubstitutePart_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode nodeToCheck, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", false, false);
     SNode substituteConcept = SLinkOperations.getTarget(builder, "applicableConcept", false);
@@ -32,18 +31,15 @@ public class check_ConceptSubstitutePart_NonTypesystemRule extends AbstractNonTy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.actions.structure.ConceptSubstitutePart";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

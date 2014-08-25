@@ -9,50 +9,40 @@ import java.util.Comparator;
 
 public class NullSortedSetSequence<T> extends NullSetSequence<T> implements ISortedSetSequence<T>, SortedSet<T> {
   private static final NullSortedSetSequence<Object> INSTANCE = new NullSortedSetSequence<Object>();
-
   protected NullSortedSetSequence() {
   }
-
   @Override
   public ISortedSetSequence<T> headSet(T toElement) {
     return this;
   }
-
   @Override
   public ISortedSetSequence<T> subSet(T fromElement, T toElement) {
     return this;
   }
-
   @Override
   public ISortedSetSequence<T> tailSet(T fromElement) {
     return this;
   }
-
   @Override
   public ISortedSetSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public ISortedSetSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public Comparator<? super T> comparator() {
     return null;
   }
-
   @Override
   public ISortedSetSequence<T> asUnmodifiable() {
     return this;
   }
-
   @Override
   public ISortedSetSequence<T> asSynchronized() {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullSortedSetSequence<U> instance() {
     return (NullSortedSetSequence<U>) INSTANCE;

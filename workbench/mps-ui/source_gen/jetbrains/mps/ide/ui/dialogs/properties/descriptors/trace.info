@@ -11,75 +11,75 @@
       <node id="3995997045458428840" at="9,0,10,0" concept="2" trace="myName" />
       <node id="3995997045458428843" at="10,0,11,0" concept="2" trace="myHeader" />
       <node id="3995997045458428846" at="11,0,12,0" concept="2" trace="myWidth" />
-      <node id="3995997045458428858" at="13,66,14,18" concept="1" />
-      <node id="3995997045458428862" at="14,18,15,22" concept="1" />
-      <node id="3995997045458428866" at="15,22,16,20" concept="1" />
-      <node id="3995997045458428874" at="19,27,20,18" concept="4" />
-      <node id="3995997045458428880" at="23,29,24,20" concept="4" />
-      <node id="3995997045458428886" at="27,25,28,19" concept="4" />
-      <node id="3995997045458428888" at="31,0,32,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <node id="3995997045458428892" at="33,0,34,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-      <node id="3995997045458428870" at="19,0,22,0" concept="3" trace="getName#()Ljava/lang/String;" />
-      <node id="3995997045458428876" at="23,0,26,0" concept="3" trace="getHeader#()Ljava/lang/String;" />
-      <node id="3995997045458428882" at="27,0,30,0" concept="3" trace="getWidth#()I" />
-      <node id="3995997045458428849" at="13,0,18,0" concept="0" trace="ColumnDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <scope id="3995997045458428873" at="19,27,20,18" />
-      <scope id="3995997045458428879" at="23,29,24,20" />
-      <scope id="3995997045458428885" at="27,25,28,19" />
-      <scope id="3995997045458428888" at="31,0,32,0" />
-      <scope id="3995997045458428892" at="33,0,34,0" />
-      <scope id="3995997045458428857" at="13,66,16,20" />
-      <scope id="3995997045458428870" at="19,0,22,0" />
-      <scope id="3995997045458428876" at="23,0,26,0" />
-      <scope id="3995997045458428882" at="27,0,30,0" />
-      <scope id="3995997045458428849" at="13,0,18,0">
+      <node id="3995997045458428858" at="12,66,13,18" concept="1" />
+      <node id="3995997045458428862" at="13,18,14,22" concept="1" />
+      <node id="3995997045458428866" at="14,22,15,20" concept="1" />
+      <node id="3995997045458428874" at="17,27,18,18" concept="4" />
+      <node id="3995997045458428880" at="20,29,21,20" concept="4" />
+      <node id="3995997045458428886" at="23,25,24,19" concept="4" />
+      <node id="3995997045458428888" at="26,0,27,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="3995997045458428892" at="27,0,28,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="3995997045458428870" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="3995997045458428876" at="20,0,23,0" concept="3" trace="getHeader#()Ljava/lang/String;" />
+      <node id="3995997045458428882" at="23,0,26,0" concept="3" trace="getWidth#()I" />
+      <node id="3995997045458428849" at="12,0,17,0" concept="0" trace="ColumnDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <scope id="3995997045458428873" at="17,27,18,18" />
+      <scope id="3995997045458428879" at="20,29,21,20" />
+      <scope id="3995997045458428885" at="23,25,24,19" />
+      <scope id="3995997045458428888" at="26,0,27,0" />
+      <scope id="3995997045458428892" at="27,0,28,0" />
+      <scope id="3995997045458428857" at="12,66,15,20" />
+      <scope id="3995997045458428870" at="17,0,20,0" />
+      <scope id="3995997045458428876" at="20,0,23,0" />
+      <scope id="3995997045458428882" at="23,0,26,0" />
+      <scope id="3995997045458428849" at="12,0,17,0">
         <var name="header" id="3995997045458428853" />
         <var name="name" id="3995997045458428851" />
         <var name="width" id="3995997045458428855" />
       </scope>
-      <unit id="3995997045458428838" at="8,0,35,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.ColumnDescriptor" />
+      <unit id="3995997045458428838" at="8,0,29,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.ColumnDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428896">
     <file name="VoidColumnDescriptor.java">
       <node id="3995997045458428908" at="9,70,10,31" concept="5" />
-      <node id="3995997045458428916" at="14,45,15,16" concept="4" />
-      <node id="3995997045458428922" at="19,41,20,16" concept="4" />
+      <node id="3995997045458428916" at="13,45,14,16" concept="4" />
+      <node id="3995997045458428922" at="17,41,18,16" concept="4" />
       <node id="3995997045458428899" at="9,0,12,0" concept="0" trace="VoidColumnDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="3995997045458428912" at="13,0,17,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <node id="3995997045458428918" at="18,0,22,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="3995997045458428912" at="12,0,16,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="3995997045458428918" at="16,0,20,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
       <scope id="3995997045458428907" at="9,70,10,31" />
-      <scope id="3995997045458428915" at="14,45,15,16" />
-      <scope id="3995997045458428921" at="19,41,20,16" />
+      <scope id="3995997045458428915" at="13,45,14,16" />
+      <scope id="3995997045458428921" at="17,41,18,16" />
       <scope id="3995997045458428899" at="9,0,12,0">
         <var name="header" id="3995997045458428903" />
         <var name="name" id="3995997045458428901" />
         <var name="width" id="3995997045458428905" />
       </scope>
-      <scope id="3995997045458428912" at="13,0,17,0" />
-      <scope id="3995997045458428918" at="18,0,22,0" />
-      <unit id="3995997045458428896" at="8,0,23,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor" />
+      <scope id="3995997045458428912" at="12,0,16,0" />
+      <scope id="3995997045458428918" at="16,0,20,0" />
+      <unit id="3995997045458428896" at="8,0,21,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.VoidColumnDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428924">
     <file name="RuleTypeDescriptor.java">
       <node id="3995997045458428936" at="11,68,12,31" concept="5" />
-      <node id="3995997045458428944" at="16,41,17,32" concept="4" />
-      <node id="3995997045458428951" at="21,45,22,34" concept="4" />
+      <node id="3995997045458428944" at="15,41,16,32" concept="4" />
+      <node id="3995997045458428951" at="19,45,20,34" concept="4" />
       <node id="3995997045458428927" at="11,0,14,0" concept="0" trace="RuleTypeDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-      <node id="3995997045458428940" at="15,0,19,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-      <node id="3995997045458428947" at="20,0,24,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="3995997045458428940" at="14,0,18,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="3995997045458428947" at="18,0,22,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
       <scope id="3995997045458428935" at="11,68,12,31" />
-      <scope id="3995997045458428943" at="16,41,17,32" />
-      <scope id="3995997045458428950" at="21,45,22,34" />
+      <scope id="3995997045458428943" at="15,41,16,32" />
+      <scope id="3995997045458428950" at="19,45,20,34" />
       <scope id="3995997045458428927" at="11,0,14,0">
         <var name="header" id="3995997045458428931" />
         <var name="name" id="3995997045458428929" />
         <var name="width" id="3995997045458428933" />
       </scope>
-      <scope id="3995997045458428940" at="15,0,19,0" />
-      <scope id="3995997045458428947" at="20,0,24,0" />
-      <unit id="3995997045458428924" at="10,0,25,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.RuleTypeDescriptor" />
+      <scope id="3995997045458428940" at="14,0,18,0" />
+      <scope id="3995997045458428947" at="18,0,22,0" />
+      <unit id="3995997045458428924" at="10,0,23,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.RuleTypeDescriptor" />
     </file>
   </root>
   <root nodeRef="r:e9efebb1-6ff9-4935-9cf2-1e8d7c0eed5f(jetbrains.mps.ide.ui.dialogs.properties.descriptors)/3995997045458428954">
@@ -87,21 +87,21 @@
       <node id="3995997045458428957" at="14,0,15,0" concept="2" trace="myGenerator" />
       <node id="3995997045458428960" at="15,0,16,0" concept="2" trace="myDepGenerators" />
       <node id="3995997045458428964" at="16,0,17,0" concept="2" trace="myLeft" />
-      <node id="3995997045458428983" at="18,145,19,31" concept="5" />
-      <node id="3995997045458428987" at="19,31,20,28" concept="1" />
-      <node id="3995997045458428991" at="20,28,21,36" concept="1" />
-      <node id="3995997045458428995" at="21,36,22,18" concept="1" />
-      <node id="3995997045458429003" at="26,45,27,37" concept="4" />
-      <node id="3995997045458429010" at="31,41,32,71" concept="4" />
-      <node id="3995997045458428999" at="25,0,29,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-      <node id="3995997045458429006" at="30,0,34,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-      <node id="3995997045458428967" at="18,0,24,0" concept="0" trace="PriorityRuleDescriptor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;ZLjava/lang/String;Ljava/lang/String;I)V" />
-      <scope id="3995997045458429002" at="26,45,27,37" />
-      <scope id="3995997045458429009" at="31,41,32,71" />
-      <scope id="3995997045458428982" at="18,145,22,18" />
-      <scope id="3995997045458428999" at="25,0,29,0" />
-      <scope id="3995997045458429006" at="30,0,34,0" />
-      <scope id="3995997045458428967" at="18,0,24,0">
+      <node id="3995997045458428983" at="17,145,18,31" concept="5" />
+      <node id="3995997045458428987" at="18,31,19,28" concept="1" />
+      <node id="3995997045458428991" at="19,28,20,36" concept="1" />
+      <node id="3995997045458428995" at="20,36,21,18" concept="1" />
+      <node id="3995997045458429003" at="24,45,25,37" concept="4" />
+      <node id="3995997045458429010" at="28,41,29,71" concept="4" />
+      <node id="3995997045458428999" at="23,0,27,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="3995997045458429006" at="27,0,31,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="3995997045458428967" at="17,0,23,0" concept="0" trace="PriorityRuleDescriptor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;ZLjava/lang/String;Ljava/lang/String;I)V" />
+      <scope id="3995997045458429002" at="24,45,25,37" />
+      <scope id="3995997045458429009" at="28,41,29,71" />
+      <scope id="3995997045458428982" at="17,145,21,18" />
+      <scope id="3995997045458428999" at="23,0,27,0" />
+      <scope id="3995997045458429006" at="27,0,31,0" />
+      <scope id="3995997045458428967" at="17,0,23,0">
         <var name="depGenerators" id="3995997045458428971" />
         <var name="generator" id="3995997045458428969" />
         <var name="header" id="3995997045458428978" />
@@ -109,7 +109,7 @@
         <var name="name" id="3995997045458428976" />
         <var name="width" id="3995997045458428980" />
       </scope>
-      <unit id="3995997045458428954" at="13,0,35,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.PriorityRuleDescriptor" />
+      <unit id="3995997045458428954" at="13,0,32,0" name="jetbrains.mps.ide.ui.dialogs.properties.descriptors.PriorityRuleDescriptor" />
     </file>
   </root>
 </debug-info>

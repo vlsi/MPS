@@ -51,4 +51,23 @@ public final class SDependencyImpl implements SDependency {
   public SModule getTarget() {
     return myTarget;
   }
+
+  @Override
+  public int hashCode() {
+    return myTarget.hashCode();
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (!(obj instanceof SDependencyImpl)) {
+      return false;
+    }
+    SDependencyImpl o = (SDependencyImpl) obj;
+    return myTarget == o.myTarget && myScope == o.myScope && myIsExport == o.myIsExport;
+  }
+
+  @Override
+  public String toString() {
+    return String.format("{%s} %s", myScope, myTarget);
+  }
 }

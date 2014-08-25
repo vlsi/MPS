@@ -15,19 +15,23 @@
  */
 package jetbrains.mps.generator.impl.plan;
 
+import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.FastNodeFinderManager;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.mps.util.DescendantsTreeIterator;
 import org.jetbrains.mps.util.TreeFilterIterator;
 
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
@@ -60,23 +64,36 @@ public final class ModelScanner {
   public ModelScanner scan(SModel model) {
 //    assert SModelStereotype.isGeneratorModel(model);
     FastNodeFinder fnf = FastNodeFinderManager.get(model);
-    processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_TemplateFragment, false));
-    processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false));
-    final NodeScanner ns = new NodeScanner(new MacroFilter());
-    for (SNode rc : fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false)) {
-      SNode templateNode = RuleUtil.getInlineTemplate_templateNode(rc);
-      ns.scan(templateNode);
-    }
-    myTargetLanguages.addAll(ns.getUsedLanguages());
-    // FIXME scripts: pre/readonly - to queries only, modify - both to queries and templateNodes if create
+    Translate<SNode, SNode> parentExtractor = new Translate<SNode, SNode>() {
+      @Override
+      public SNode translate(SNode t) {
+        return t.getParent();
+      }
+    };
+    Translate<SNode, SNode> inlineTemplateExtractor = new Translate<SNode, SNode>() {
+      @Override
+      public SNode translate(SNode rc) {
+        return RuleUtil.getInlineTemplate_templateNode(rc);
+      }
+    };
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_TemplateFragment, false), parentExtractor);
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false), parentExtractor);
+    processTemplateNode(fnf.getNodes(RuleUtil.concept_InlineTemplate_RuleConsequence, false), inlineTemplateExtractor);
+    //
+    // Mapping scripts: pre/readonly - to queries only, modify - both to queries and templateNodes if create anything
+    // XXX What about utility models with change operations?
+    //
+    scanScriptsForChangeOperations(fnf);
+
+    // MappingScript_CodeBlock is subclass of TemplateQueryBase
     processQueryNodes(fnf.getNodes(RuleUtil.concept_TemplateQueryBase, true));
     return this;
   }
 
-  private void processTemplateNodeAttribute(Iterable<SNode> attrOfTemplateNode) {
+  private void processTemplateNode(Collection<SNode> templateNodes, Translate<SNode, SNode> t) {
     final NodeScanner ns = new NodeScanner(new MacroFilter());
-    for (SNode attr : attrOfTemplateNode) {
-      ns.scan(attr.getParent());
+    for (SNode tn : templateNodes) {
+      ns.scanStructure(t.translate(tn));
     }
     myTargetLanguages.addAll(ns.getUsedLanguages());
   }
@@ -84,15 +101,42 @@ public final class ModelScanner {
   private void processQueryNodes(Iterable<SNode> nodes) {
     final NodeScanner ns = new NodeScanner();
     for (SNode n : nodes) {
-     ns.scan(n);
+     ns.scanStructure(n);
     }
     myQueryLanguages.addAll(ns.getUsedLanguages());
+  }
+
+
+  private void scanScriptsForChangeOperations(FastNodeFinder fnf) {
+    NodeScanner refScanner = new NodeScanner();
+    for (String modelChangeOperation : RuleUtil.getModelChangeOperations()) {
+      // Though it's possible to be quite specific and to look for particular instantiated concepts referenced
+      // from within change operation, present approach is to find scripts with change operations and process
+      // references to concept declarations in bulk.
+      //
+      // MappingScripts are root nodes
+      HashSet<SNode> roots = new HashSet<SNode>();
+      for (SNode op : fnf.getNodes(modelChangeOperation, true)) {
+        roots.add(op.getContainingRoot());
+      }
+      for (SNode rootWithChangeOps : roots) {
+        if (!RuleUtil.concept_MappingScript.equals(rootWithChangeOps.getConcept().getQualifiedName())) {
+          continue;
+        }
+        refScanner.scanReferences(rootWithChangeOps);
+      }
+    }
+    myTargetLanguages.addAll(refScanner.getUsedLanguages());
+  }
+
+  private interface Translate<T1, T2> {
+    T2 translate(T1 t);
   }
 
   /**
    * Facility to collect meta-dependencies (used concepts and languages) of a node hierarchy or a collection of nodes.
    * <pre>
-   *   new ModelScanner().scan(nodeA).scan(nodeB).getUsedLanguages();
+   *   new NodeScanner().scanStructure(nodeA).scanReferences(nodeB).getUsedLanguages();
    * </pre>
    */
   private static final class NodeScanner {
@@ -111,19 +155,42 @@ public final class ModelScanner {
     /**
      * Collect meta-dependencies of the node, including all its children
      */
-    public NodeScanner scan(SNode node) {
+    public NodeScanner scanStructure(@NotNull SNode node) {
       myLanguagesInUse = null;
-      Iterator<SNode> it = myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
-      while(it.hasNext()) {
+      for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
         SNode n = it.next();
         myConceptsInUse.add(n.getConcept().getQualifiedName());
       }
       return this;
     }
 
-    public Set<String> getUsedConcepts() {
-      return myConceptsInUse;
+    /**
+     * Collect meta-dependencies of references from the node and its children
+     */
+    public NodeScanner scanReferences(@NotNull SNode node) {
+      myLanguagesInUse = null;
+      for (Iterator<SNode> it = getNodeIterator(node); it.hasNext(); ) {
+        SNode n = it.next();
+        for (SReference r : n.getReferences()) {
+          final SNode tn = r.getTargetNode();
+          if (tn == null) {
+            continue;
+          }
+          String targetNodeConcept = tn.getConcept().getQualifiedName();
+          if (RuleUtil.concept_AbstractConceptDeclaration.equals(targetNodeConcept) || RuleUtil.concept_ConceptDeclaration.equals(targetNodeConcept)) {
+            // n points with r to a concept node tn
+            myConceptsInUse.add(GeneratorUtil.getConceptQualifiedName(tn));
+          }
+        }
+      }
+      return this;
     }
+
+
+    private Iterator<SNode> getNodeIterator(SNode node) {
+      return myCondition == null ? new DescendantsTreeIterator(node) : new TreeFilterIterator<SNode>(new DescendantsTreeIterator(node), myCondition);
+    }
+
     public Set<String> getUsedLanguages() {
       if(myLanguagesInUse == null) {
         final HashSet<String> usedLanguageQualifiedNames = new HashSet<String>(myConceptsInUse.size());
@@ -136,6 +203,7 @@ public final class ModelScanner {
       return myLanguagesInUse;
     }
   }
+
 
   // walk hierarchy of nodes, excluding template macros
   private static class MacroFilter implements Condition<SNode> {

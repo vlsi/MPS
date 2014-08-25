@@ -24,11 +24,9 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fao2ea_a(editorContext, node);
   }
-
   private EditorCell createCollection_fao2ea_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fao2ea_a");
@@ -42,7 +40,6 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     editorCell.addEditorCell(this.createConstant_fao2ea_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fao2ea_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fao2ea_a0");
@@ -54,11 +51,9 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_fao2ea_a0a0(EditorContext editorContext, SNode node) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node))));
   }
-
   private EditorCell createRefNode_fao2ea_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -82,11 +77,9 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     } else
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_fao2ea_a0b0(EditorContext editorContext, SNode node) {
     return !(SModelStereotype.isStubModelStereotype(SNodeOperations.getModelStereotype(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node))));
   }
-
   private EditorCell createConstant_fao2ea_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fao2ea_c0");
@@ -97,7 +90,6 @@ public class BaseMethodDeclaration_BodyComponent implements ConceptEditorCompone
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_fao2ea_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.GenericDeclaration_FoldedCodeBlock_Component");
     return editorCell;

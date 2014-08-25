@@ -21,7 +21,6 @@ public class Applicability_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_j44m5v_a(editorContext, node);
   }
-
   private EditorCell createCollection_j44m5v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_j44m5v_a");
@@ -30,7 +29,6 @@ public class Applicability_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_j44m5v_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_j44m5v_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "on");
     editorCell.setCellId("Constant_j44m5v_a0");
@@ -40,7 +38,6 @@ public class Applicability_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_j44m5v_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -49,11 +46,9 @@ public class Applicability_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Applicability_Editor.ReplaceWith_Applicability_cellMenu_j44m5v_a0b0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_Applicability_cellMenu_j44m5v_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Applicability_cellMenu_j44m5v_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.heating.structure.Applicability";
     }

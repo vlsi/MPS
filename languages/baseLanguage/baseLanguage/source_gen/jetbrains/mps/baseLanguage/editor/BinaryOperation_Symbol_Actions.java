@@ -16,23 +16,48 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 public class BinaryOperation_Symbol_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_BACKSPACE(node));
   }
-
   public static class BinaryOperation_Symbol_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryOperation_Symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+      if (newExpression == null) {
+        newExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+      }
+      SNodeOperations.replaceWithAnother(node, newExpression);
+      editorContext.flushEvents();
+      EditorComponent editor = editorContext.getEditorComponent();
+      EditorCell cell = editor.findNodeCell(newExpression);
+      if (cell != null) {
+        EditorCell firstLeaf = ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFirstLeaf(CellConditions.SELECTABLE);
+        editor.changeSelection(firstLeaf);
+        if (firstLeaf instanceof EditorCell_Label) {
+          ((EditorCell_Label) firstLeaf).home();
+        }
+      }
+    }
+  }
+  public static class BinaryOperation_Symbol_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public BinaryOperation_Symbol_Actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public String getDescriptionText() {
+      return "delete";
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
       if (newExpression == null) {

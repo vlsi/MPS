@@ -11,19 +11,15 @@ import java.util.ArrayList;
 public class BuildPlugin_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getProject_1224588814561866657(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.build.structure.BuildProject");
   }
-
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, SNode kind) {
     return null;
   }
-
   public static Scope virtual_getLayoutScope_1224588814561807654(SNode thisNode, SNode kind) {
     return null;
   }
-
   public static Iterable<SNode> virtual_getImportedLibraries_4101476690142937969(SNode thisNode) {
     return ListSequence.fromList(new ArrayList<SNode>());
   }

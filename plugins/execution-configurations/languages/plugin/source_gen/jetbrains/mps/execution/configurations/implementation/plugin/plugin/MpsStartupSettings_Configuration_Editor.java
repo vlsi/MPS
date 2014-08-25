@@ -9,23 +9,18 @@ import com.intellij.openapi.util.Factory;
 
 public class MpsStartupSettings_Configuration_Editor extends SettingsEditorEx<MpsStartupSettings_Configuration> {
   private MpsStartupSettingsEditorComponent myComponent = new MpsStartupSettingsEditorComponent();
-
   public void disposeEditor() {
   }
-
   @NotNull
   public MpsStartupSettingsEditorComponent createEditor() {
     return myComponent;
   }
-
   public void applyEditorTo(final MpsStartupSettings_Configuration configuration) throws ConfigurationException {
     myComponent.applyTo(configuration);
   }
-
   public void resetEditorFrom(final MpsStartupSettings_Configuration configuration) {
     myComponent.resetFrom(configuration);
   }
-
   public MpsStartupSettings_Configuration_Editor() {
     super(new Factory<MpsStartupSettings_Configuration>() {
       public MpsStartupSettings_Configuration create() {

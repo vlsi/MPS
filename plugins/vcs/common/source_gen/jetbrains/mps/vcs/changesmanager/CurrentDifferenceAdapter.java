@@ -8,19 +8,15 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 public abstract class CurrentDifferenceAdapter implements CurrentDifferenceListener {
   public CurrentDifferenceAdapter() {
   }
-
   @Override
   public void changeAdded(@NotNull ModelChange change) {
   }
-
   @Override
   public void changeRemoved(@NotNull ModelChange change) {
   }
-
   @Override
   public void changeUpdateStarted() {
   }
-
   @Override
   public void changeUpdateFinished() {
   }

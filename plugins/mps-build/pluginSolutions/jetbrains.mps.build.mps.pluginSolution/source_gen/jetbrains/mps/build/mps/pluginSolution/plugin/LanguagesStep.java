@@ -32,13 +32,11 @@ public class LanguagesStep extends AbstractStep {
   private CheckBoxTree myCheckTree;
   private final Project myMpsProject;
   private final IErrorHandler myHandler;
-
   public LanguagesStep(Project project, AbstractBuildGenerator generator, IErrorHandler handler) {
     this.myGenerator = generator;
     this.myMpsProject = project;
     this.myHandler = handler;
   }
-
   @Override
   public void _init() {
     super._init();
@@ -48,13 +46,11 @@ public class LanguagesStep extends AbstractStep {
     }
     this.myHandler.setErrorText(errorText);
   }
-
   @Override
   public JComponent createMainComponent() {
     this.myCheckTree = this.createCheckTree();
     return this.myCheckTree;
   }
-
   public CheckBoxTree createCheckTree() {
     Iterable<? extends SModule> allModules = this.myMpsProject.getModules();
     ModulesListData data = new ModulesListData(allModules);
@@ -86,7 +82,6 @@ public class LanguagesStep extends AbstractStep {
     tree.checkNodeRecursively(allModulesNode, true);
     return tree;
   }
-
   public <N extends NodeData> void fillChildren(CheckBoxNode<N> node) {
     int childCount = node.getChildCount();
     for (int i = 0; i < childCount; i++) {
@@ -98,12 +93,10 @@ public class LanguagesStep extends AbstractStep {
       this.fillChildren(child);
     }
   }
-
   @Override
   public String getDescription() {
     return "Select languages and solutions included in build script.";
   }
-
   @Override
   public void _commit(boolean finish) {
     Set<NodeData> selectedItems = this.myCheckTree.getSelectedItems();
@@ -124,14 +117,12 @@ public class LanguagesStep extends AbstractStep {
     }, true);
     this.myGenerator.setModules(toSort);
   }
-
   public void fillWithParents(NodeData item, Set<NodeData> collection) {
     SetSequence.fromSet(collection).addElement(item);
     if (item.getParent() != null) {
       this.fillWithParents(item.getParent(), collection);
     }
   }
-
   @Override
   protected JPanel createStepPanel() {
     JPanel stepPanel = new JPanel(new GridBagLayout());
@@ -141,38 +132,31 @@ public class LanguagesStep extends AbstractStep {
     stepPanel.add(mainComponent, LayoutUtil.createPanelConstraints(1));
     return stepPanel;
   }
-
   @NotNull
   @Override
   public String getImageText() {
     return "Included Modules";
   }
-
   @Override
   protected boolean doLimitStepPanelHeight() {
     return true;
   }
-
   public static class MyTreeBuilder extends NamespaceTreeBuilder<CheckBoxNode, CheckBoxNamespaceNode> {
     private Project myMpsProject;
-
     public MyTreeBuilder(Project mpsProject) {
       super(new NamespaceTreeBuilder.NamespaceNodeBuilder<CheckBoxNamespaceNode>() {
         @Override
         public CheckBoxNamespaceNode createNamespaceNode(String text, IOperationContext context) {
           return new CheckBoxNamespaceNode(new NamespaceData(text));
         }
-
         @Override
         public String getName(CheckBoxNamespaceNode p0) {
           return p0.getName();
         }
-
         @Override
         public boolean isNamespaceNode(MPSTreeNode p0) {
           return p0 instanceof CheckBoxNamespaceNode;
         }
-
         @Override
         public void setName(CheckBoxNamespaceNode p0, String p1) {
           p0.setName(p1);
@@ -180,7 +164,6 @@ public class LanguagesStep extends AbstractStep {
       });
       this.myMpsProject = mpsProject;
     }
-
     @Override
     protected String getNamespace(CheckBoxNode node) {
       NodeData data = node.getData();

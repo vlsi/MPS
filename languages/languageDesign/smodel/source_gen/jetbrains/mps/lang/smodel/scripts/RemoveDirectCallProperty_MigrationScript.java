@@ -15,23 +15,18 @@ public class RemoveDirectCallProperty_MigrationScript extends BaseMigrationScrip
       public String getName() {
         return "Remove directCall property in nodes";
       }
-
       public String getAdditionalInfo() {
         return "Remove directCall property in nodes";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SPropertyOperations.set(node, "directCall", null);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

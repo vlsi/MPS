@@ -12,19 +12,15 @@ public class ConvertAnonymousClass extends BaseRefactoring {
   public ConvertAnonymousClass() {
     this.addTransientParameter("name");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new ConvertAnonymousClass_Target();
   }
-
   public String getUserFriendlyName() {
     return "Convert Anonymous to Inner Class";
   }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     new ConvertAnonymousRefactoring(refactoringContext.getSelectedNode(), ((String) refactoringContext.getParameter("name"))).doRefactor();
   }

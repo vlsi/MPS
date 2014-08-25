@@ -23,8 +23,6 @@ public class AlterStatementListContainerFactoryUtils {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.WhileStatement") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DoWhileStatement");
   }
 
-
-
   private static SNode getCondition(SNode node) {
     assert hasCondition(node);
     return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
@@ -33,8 +31,6 @@ public class AlterStatementListContainerFactoryUtils {
       }
     }).first(), "jetbrains.mps.baseLanguage.structure.Expression");
   }
-
-
 
   private static void buildContainer(SNode sampleNode, final SNode newNode) {
     ListSequence.fromList(SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(sampleNode), "statement", true)).visitAll(new IVisitor<SNode>() {
@@ -158,26 +154,22 @@ public class AlterStatementListContainerFactoryUtils {
       }
     }
   }
-
   public static void buildContainerIfPossible(SNode sampleNode, SNode newNode) {
     if (SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")) {
       buildContainer(SNodeOperations.cast(sampleNode, "jetbrains.mps.baseLanguage.structure.IContainsStatementList"), newNode);
     }
   }
-
   private static SNode createIntegerConstant_kz5t2g_a0a1a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, false);
     n1.setProperty("value", "" + 0);
     return n1;
   }
-
   private static SNode createIntegerType_kz5t2g_a0a2a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, false);
     return n1;
   }
-
   private static SNode createLessThanExpression_kz5t2g_a0a4a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanExpression", null, false);
@@ -195,7 +187,6 @@ public class AlterStatementListContainerFactoryUtils {
     }
     return n1;
   }
-
   private static SNode createPostfixIncrementExpression_kz5t2g_a0a5a01a2a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null, false);
@@ -205,7 +196,6 @@ public class AlterStatementListContainerFactoryUtils {
     }
     return n1;
   }
-
   private static SNode createArrayAccessExpression_kz5t2g_a0l0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null, false);
@@ -217,7 +207,6 @@ public class AlterStatementListContainerFactoryUtils {
     }
     return n1;
   }
-
   private static SNode createDotExpression_kz5t2g_a0a1a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, false);
@@ -229,7 +218,6 @@ public class AlterStatementListContainerFactoryUtils {
     }
     return n1;
   }
-
   private static SNode createDotExpression_kz5t2g_a0a11a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, false);
@@ -242,7 +230,6 @@ public class AlterStatementListContainerFactoryUtils {
     }
     return n1;
   }
-
   private static SNode createDotExpression_kz5t2g_a0a71a0k0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, false);

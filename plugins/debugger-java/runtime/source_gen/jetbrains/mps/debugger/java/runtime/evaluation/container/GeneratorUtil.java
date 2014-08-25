@@ -17,7 +17,7 @@ import java.util.Collections;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
+import jetbrains.mps.generator.TransientModelsProvider;
 import com.intellij.openapi.util.Disposer;
 import java.lang.reflect.InvocationTargetException;
 import jetbrains.mps.debugger.java.api.evaluation.InvocationTargetEvaluationException;
@@ -38,7 +38,7 @@ public class GeneratorUtil {
       handler.setCompilationListener(compilationResult);
       IMessageHandler messageHandler = new GeneratorUtil.MyMessageHandler(project, developerMode);
       ProgressWindow progressWindow = new ProgressWindow(false, ProjectHelper.toIdeaProject(project));
-      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsComponent.class));
+      boolean successful = GenerationFacade.generateModels(context.getProject(), Collections.singletonList(modelDescriptor), context, handler, new ProgressMonitorAdapter(progressWindow), messageHandler, GenerationOptions.getDefaults().incremental(new DefaultNonIncrementalStrategy()).saveTransientModels(developerMode).rebuildAll(false).reporting(false, false, false, 0).create(), context.getProject().getComponent(TransientModelsProvider.class));
 
       Disposer.dispose(progressWindow);
 
@@ -66,7 +66,6 @@ public class GeneratorUtil {
       throw new EvaluationException(e);
     }
   }
-
   public static <E> E createInstance(Class clazz, Class[] parameterClasses, Object[] parameters) throws EvaluationException {
     try {
       return (E) clazz.getConstructor(parameterClasses).newInstance(parameters);
@@ -80,14 +79,11 @@ public class GeneratorUtil {
       throw new EvaluationException(e);
     }
   }
-
   private static class MyCompilationResultAdapter extends CompilationResultAdapter {
     private final StringBuffer myBuffer = new StringBuffer();
     private boolean myHasErrors;
-
     public MyCompilationResultAdapter() {
     }
-
     @Override
     public void onCompilationResult(CompilationResult result) {
       if (result.hasErrors()) {
@@ -98,25 +94,20 @@ public class GeneratorUtil {
         }
       }
     }
-
     public boolean hasErrors() {
       return myHasErrors;
     }
-
     public String getMessage() {
       return myBuffer.toString();
     }
   }
-
   private static class MyMessageHandler implements IMessageHandler {
     private final DefaultMessageHandler myInternalHandler;
     private final boolean myDeveloperMode;
-
     private MyMessageHandler(Project project, boolean developerMode) {
       myInternalHandler = new DefaultMessageHandler(ProjectHelper.toIdeaProject(project));
       myDeveloperMode = developerMode;
     }
-
     @Override
     public void handle(IMessage message) {
       if (myDeveloperMode && message.getKind().equals(MessageKind.ERROR)) {
@@ -124,7 +115,6 @@ public class GeneratorUtil {
       }
       myInternalHandler.handle(message);
     }
-
     @Override
     public void clear() {
       myInternalHandler.clear();

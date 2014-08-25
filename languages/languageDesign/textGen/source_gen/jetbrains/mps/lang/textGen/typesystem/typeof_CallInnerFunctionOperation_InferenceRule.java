@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_CallInnerFunctionOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode opcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode opdecl = SLinkOperations.getTarget(opcall, "function", false);
     if (opdecl == null) {
@@ -39,18 +38,15 @@ public class typeof_CallInnerFunctionOperation_InferenceRule extends AbstractInf
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.textGen.structure.OperationCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

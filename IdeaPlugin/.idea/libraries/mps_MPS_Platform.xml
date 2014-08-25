@@ -1,8 +1,5 @@
 <component name="libraryTable">
-  <library name="mps.MPS.Platform" type="mps.solution.library">
-    <MPS_MODULE_XML>
-      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/modules/MPS.Platform/MPS.Platform.msd" />
-    </MPS_MODULE_XML>
+  <library name="mps.MPS.Platform">
     <CLASSES>
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-icons.jar!/" />
       <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-platform.jar!/" />

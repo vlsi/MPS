@@ -12,11 +12,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
   private static final int TYPE_COLUMN_INDEX = 1;
   private static final int NAME_COLUMN_INDEX = 2;
   private List<MethodParameter> myParameters;
-
   /*package*/ ParametersTableModel(List<MethodParameter> parameters) {
     this.myParameters = parameters;
   }
-
   @Override
   public Class<?> getColumnClass(int columnIndex) {
     switch (columnIndex) {
@@ -30,24 +28,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
         return null;
     }
   }
-
   @Override
   public int getRowCount() {
     return ListSequence.fromList(this.myParameters).count();
   }
-
   @Override
   public int getColumnCount() {
     return 3;
   }
-
   public void swapRows(int a, int b) {
     MethodParameter param = ListSequence.fromList(this.myParameters).getElement(a);
     ListSequence.fromList(this.myParameters).setElement(a, ListSequence.fromList(this.myParameters).getElement(b));
     ListSequence.fromList(this.myParameters).setElement(b, param);
     fireTableRowsUpdated(a, b);
   }
-
   @Override
   public Object getValueAt(int row, int column) {
     switch (column) {
@@ -61,7 +55,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
         return null;
     }
   }
-
   @Override
   public void setValueAt(Object value, int row, int column) {
     switch (column) {
@@ -78,7 +71,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
     }
     this.fireTableCellUpdated(row, column);
   }
-
   @Override
   public boolean isCellEditable(int row, int column) {
     return true;

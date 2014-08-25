@@ -27,12 +27,10 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
   public ImplicitAnnotationInstanceValue_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ImplicitAnnotationInstanceValue");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -43,7 +41,6 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -52,7 +49,6 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -61,7 +57,6 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_b29p6n_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -74,7 +69,6 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       SNode annotationInstance = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
@@ -86,7 +80,6 @@ public class ImplicitAnnotationInstanceValue_Constraints extends BaseConstraints
     }
     return false;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2580416627845354230");
   private static SNodePointer breakingNode_b29p6n_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137098");
 }

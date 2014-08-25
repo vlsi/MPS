@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NonNls;
 
 public class ExceptionChooserDialog extends StubsClassChooserDialog {
   private final SNode myThrowableClassifier;
-
   public ExceptionChooserDialog(Project project, String title) throws HeadlessException {
     super(project, title);
     final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
@@ -26,7 +25,6 @@ public class ExceptionChooserDialog extends StubsClassChooserDialog {
     });
     myThrowableClassifier = node.value;
   }
-
   @Override
   protected boolean isValid(SNode node) {
     SNode base = node;
@@ -35,14 +33,12 @@ public class ExceptionChooserDialog extends StubsClassChooserDialog {
     }
     return (base != null) && SNodeOperations.isInstanceOf(base, "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   @Nullable
   @NonNls
   @Override
   protected String getDimensionServiceKey() {
     return ExceptionChooserDialog.class.getName();
   }
-
   private static boolean eq_lt001m_a0a0a1a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

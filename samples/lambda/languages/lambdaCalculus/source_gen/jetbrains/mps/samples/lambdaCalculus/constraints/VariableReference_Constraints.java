@@ -25,7 +25,6 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
   public VariableReference_Constraints() {
     super("jetbrains.mps.samples.lambdaCalculus.structure.VariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -48,7 +46,6 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3k454j_a0a1a0a0a1a0b0a1a1;
@@ -58,6 +55,5 @@ public class VariableReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_3k454j_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:3d08e5ef-3618-477b-9827-f996a0e87a53(jetbrains.mps.samples.lambdaCalculus.constraints)", "7125334522320417175");
 }

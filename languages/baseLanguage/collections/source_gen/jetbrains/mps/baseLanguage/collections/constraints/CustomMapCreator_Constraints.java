@@ -29,7 +29,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
   public CustomMapCreator_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -38,7 +37,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
@@ -47,7 +45,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -56,7 +53,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -66,7 +62,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
             SNode expr = SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Expression");
             return ((expr != null) ? CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{expr})) : Sequence.fromIterable(Collections.<SNode>emptyList()));
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_rduypo_a0a1a0a0a1a0b0a1a2;
@@ -76,6 +71,5 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
 }

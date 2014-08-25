@@ -16,7 +16,6 @@ import jetbrains.mps.util.NameUtil;
 public class CopyPasteHandlers_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     final List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "preProcessor", true)).visitAll(new IVisitor<SNode>() {
@@ -31,7 +30,6 @@ public class CopyPasteHandlers_Behavior {
     });
     return result;
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
     SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);

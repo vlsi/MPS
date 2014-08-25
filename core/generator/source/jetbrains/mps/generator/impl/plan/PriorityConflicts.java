@@ -21,6 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
@@ -85,7 +86,11 @@ final class PriorityConflicts {
   }
 
   public boolean hasConflicts() {
-    for (Kind k : Kind.values()) {
+    return hasConflicts(Arrays.asList(Kind.values()));
+  }
+
+  public boolean hasConflicts(Collection<Kind> kinds) {
+    for (Kind k : kinds) {
       if (!myConflictingRules.get(k).isEmpty()) {
         return  true;
       }
@@ -94,8 +99,12 @@ final class PriorityConflicts {
   }
 
   public List<Conflict> getConflicts() {
+    return getConflicts(Arrays.asList(Kind.values()));
+  }
+
+  public List<Conflict> getConflicts(Collection<Kind> kinds) {
     ArrayList<Conflict> rv = new ArrayList<Conflict>();
-    for (Kind k : Kind.values()) {
+    for (Kind k : kinds) {
       rv.addAll(myConflictingRules.get(k));
     }
     return rv;

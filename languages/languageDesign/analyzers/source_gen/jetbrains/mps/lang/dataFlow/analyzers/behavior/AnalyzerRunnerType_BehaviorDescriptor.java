@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class AnalyzerRunnerType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public AnalyzerRunnerType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerRunnerType";

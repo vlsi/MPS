@@ -22,7 +22,6 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
   public ValueReference_Constraints() {
     super("jetbrains.mps.samples.agreementLanguage.structure.ValueReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
             SNode plan = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Plan", true, false);
             return new SubnodesSearchScope(plan);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r7tp2g_a0a1a0a0a1a0b0a1a1;
@@ -51,6 +48,5 @@ public class ValueReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_r7tp2g_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590408(jetbrains.mps.samples.agreementLanguage.constraints)", "1214253543334");
 }

@@ -21,22 +21,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowClassInHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowClassInHierarchy_Action() {
     super("Show Class in Hierarchy", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (ShowClassInHierarchy_Action.this.getContextClassifier(_params) != null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -50,7 +46,6 @@ public class ShowClassInHierarchy_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +69,6 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode classNode = ShowClassInHierarchy_Action.this.getContextClassifier(_params);
@@ -87,7 +81,6 @@ public class ShowClassInHierarchy_Action extends BaseAction {
       }
     }
   }
-
   private SNode getContextClassifier(final Map<String, Object> _params) {
     SNode refNode = APICellAdapter.getSNodeWRTReference(((EditorCell) MapSequence.fromMap(_params).get("editorCell")));
     if (SNodeOperations.isInstanceOf(refNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -102,6 +95,5 @@ public class ShowClassInHierarchy_Action extends BaseAction {
     SNode outerClass = SNodeOperations.cast(SNodeOperations.getAncestorWhereConceptInList(((SNode) MapSequence.fromMap(_params).get("node")), new String[]{"jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.baseLanguage.structure.Interface"}, true, false), "jetbrains.mps.baseLanguage.structure.Classifier");
     return outerClass;
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowClassInHierarchy_Action.class);
 }

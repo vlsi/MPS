@@ -9,7 +9,6 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 public class BaseLineCell_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return StyleAttributes.BASE_LINE_CELL;
   }

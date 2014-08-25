@@ -8,8 +8,6 @@ import jetbrains.mps.lang.dataFlow.framework.Program;
 public abstract class DataFlowConstructor {
   public DataFlowConstructor() {
   }
-
   public abstract boolean isApplicable(SNode node);
-
   public abstract void performActions(Program program, SNode node);
 }

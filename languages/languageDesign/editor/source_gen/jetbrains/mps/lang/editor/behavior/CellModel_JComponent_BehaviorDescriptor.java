@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellModel_JComponent_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_JComponent_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_JComponent";

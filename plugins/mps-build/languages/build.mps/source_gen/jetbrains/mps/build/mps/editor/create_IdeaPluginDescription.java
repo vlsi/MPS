@@ -21,16 +21,13 @@ public class create_IdeaPluginDescription extends KeyMapImpl {
     action = new create_IdeaPluginDescription.create_IdeaPluginDescription_Action0();
     this.putAction("any", "letter or digit", action);
   }
-
   public static class create_IdeaPluginDescription_Action0 extends KeyMapActionImpl {
     public create_IdeaPluginDescription_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -45,20 +42,16 @@ public class create_IdeaPluginDescription extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SLinkOperations.getTarget(node, "description", true) == null);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewChild(node, "description", "jetbrains.mps.build.structure.BuildStringNotEmpty");
     }
-
     public String getKeyStroke() {
       return " letter or digit";
     }

@@ -21,7 +21,6 @@ public class Icons {
   public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_ROOT = IconContainer.ICON_a31;
   public static final Icon BREAKPOINTS_DIALOG_VIEW_SOURCE = IconContainer.ICON_a41;
   public static final Icon BREAKPOINTS_DIALOG_TREE_VIEW = IconContainer.ICON_a51;
-
   public Icons() {
   }
 }

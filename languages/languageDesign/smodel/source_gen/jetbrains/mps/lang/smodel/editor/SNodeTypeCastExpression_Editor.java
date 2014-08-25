@@ -28,7 +28,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_x0l1fn_a(editorContext, node);
   }
-
   private EditorCell createCollection_x0l1fn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x0l1fn_a");
@@ -43,7 +42,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_x0l1fn_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_x0l1fn_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftExpression");
@@ -63,7 +61,6 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_x0l1fn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_x0l1fn_b0");
@@ -73,11 +70,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_x0l1fn_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.getBoolean(node, "asCast"));
   }
-
   private EditorCell createConstant_x0l1fn_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "as");
     editorCell.setCellId("Constant_x0l1fn_c0");
@@ -87,11 +82,9 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_x0l1fn_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "asCast");
   }
-
   private EditorCell createRefCell_x0l1fn_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -114,20 +107,16 @@ public class SNodeTypeCastExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_x0l1fn_a3a extends InlineCellProvider {
     public _Inline_x0l1fn_a3a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_x0l1fn_a0d0(editorContext, node);
     }
-
     private EditorCell createProperty_x0l1fn_a0d0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

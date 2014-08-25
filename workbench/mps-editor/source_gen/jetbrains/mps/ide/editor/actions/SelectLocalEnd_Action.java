@@ -19,22 +19,18 @@ import org.apache.log4j.LogManager;
 
 public class SelectLocalEnd_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SelectLocalEnd_Action() {
     super("Move Caret to Next Word with Selection", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return EditorActionUtils.isReadonlyActionEnabled(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))) && ((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Label;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -48,7 +44,6 @@ public class SelectLocalEnd_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +52,13 @@ public class SelectLocalEnd_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("editorCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
@@ -67,7 +68,6 @@ public class SelectLocalEnd_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getActionHandler().executeAction(((EditorCell) MapSequence.fromMap(_params).get("editorCell")), CellActionType.SELECT_LOCAL_END);
@@ -78,6 +78,5 @@ public class SelectLocalEnd_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SelectLocalEnd_Action.class);
 }

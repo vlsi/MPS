@@ -12,31 +12,30 @@ import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
 
 public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
 
-
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
         return Collections.<ConceptEditor>singletonList(new BinaryOperationReference_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
+        return Collections.<ConceptEditor>singletonList(new ContainerImport_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomOperator_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomOperatorDeclaration_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomOperatorUsage_Editor());
       case 5:
+        return Collections.<ConceptEditor>singletonList(new OverloadedBinaryOperator_Editor());
+      case 6:
         return Collections.<ConceptEditor>singletonList(new OverloadedOperatorContainer_Editor());
       default:
     }
     return Collections.<ConceptEditor>emptyList();
   }
-
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
-
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference", "jetbrains.mps.baseLanguage.overloadedOperators.structure.ContainerImport", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorDeclaration", "jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedBinaryOperator", "jetbrains.mps.baseLanguage.overloadedOperators.structure.OverloadedOperatorContainer"};
 }

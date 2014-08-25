@@ -10,12 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class NodeRuleFactory {
   private IErrorReporter reporter;
 
-
   public NodeRuleFactory(IErrorReporter reporter) {
     this.reporter = reporter;
   }
-
-
 
   public SNode createNodeFromRuleMsg(SNode reference) {
     NodeRuleReference ruleReference = new NodeRuleReference(reference);
@@ -30,8 +27,6 @@ public class NodeRuleFactory {
     }
   }
 
-
-
   private SNode createTypeSystemCheckOperation() {
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemErrorCheckOperation", null);
@@ -39,8 +34,6 @@ public class NodeRuleFactory {
       return SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation", null);
     }
   }
-
-
 
   private SNode createConstraintsCheckOperation(SNode reference) {
     SNode result;
@@ -52,8 +45,6 @@ public class NodeRuleFactory {
     return result;
   }
 
-
-
   private SNode createMessageStatementCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
@@ -64,8 +55,6 @@ public class NodeRuleFactory {
     return result;
   }
 
-
-
   private SNode createDefaultCheckOperation(SNode reference) {
     SNode result;
     if (reporter.getMessageStatus() == MessageStatus.ERROR) {
@@ -75,6 +64,5 @@ public class NodeRuleFactory {
     }
     return result;
   }
-
 
 }

@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class Node_GetPrevSiblingsOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_GetPrevSiblingsOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_GetPrevSiblingsOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }
-
   public List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
     return Node_GetPrevSiblingsOperation_Behavior.virtual_getApplicableParameter_3044950653914717056(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Node_GetPrevSiblingsOperation";

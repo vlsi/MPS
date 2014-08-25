@@ -16,19 +16,23 @@
 package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.application.PathManager;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.tool.environment.Environment;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.ModelDigestUtil;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
 import jetbrains.mps.generator.impl.DefaultNonIncrementalStrategy;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.persistence.DefaultModelPersistence;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.ModuleContext;
@@ -40,16 +44,12 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
@@ -71,7 +71,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * Evgeny Gryaznov, Oct 6, 2010
+ * @author Evgeny Gryaznov, Oct 6, 2010
  */
 public class GenerationTestBase {
   private static boolean DEBUG = false;
@@ -86,7 +86,7 @@ public class GenerationTestBase {
     MpsTestsSupport.makeAllInCreatedEnvironment();
 
     Logger.getRootLogger().setLevel(Level.INFO);
-    IdeMain.setTestMode(TestMode.CORE_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
@@ -101,7 +101,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsProvider.class));
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
 
@@ -116,7 +116,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsProvider.class));
     long singleThread = System.nanoTime() - start;
 
     // Stage 3. Regenerate in parallel
@@ -130,7 +130,7 @@ public class GenerationTestBase {
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
         new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-        p.getComponent(TransientModelsComponent.class));
+        p.getComponent(TransientModelsProvider.class));
     long severalThreads = System.nanoTime() - start;
 
     assertNoDiff(generationHandler.getExistingContent(), generationHandler.getGeneratedContent());
@@ -190,7 +190,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-          p.getComponent(TransientModelsComponent.class));
+          p.getComponent(TransientModelsProvider.class));
 
       Map<String, String> generated = replaceInContent(generationHandler.getGeneratedContent(),
           new String[]{randomName, originalModel.getModule().getModuleName()},
@@ -237,7 +237,7 @@ public class GenerationTestBase {
             Collections.singletonList(descr), ModuleContext.create(descr, p),
             generationHandler,
             new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-            p.getComponent(TransientModelsComponent.class));
+            p.getComponent(TransientModelsProvider.class));
         time.add(System.nanoTime() - start);
 
         incrementalGenerationResults = generationHandler.getGeneratedContent();
@@ -255,7 +255,7 @@ public class GenerationTestBase {
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
           new EmptyProgressMonitor(), generationHandler.getMessageHandler(), options,
-          p.getComponent(TransientModelsComponent.class));
+          p.getComponent(TransientModelsProvider.class));
       time.add(System.nanoTime() - start);
 
       assertNoDiff(incrementalGenerationResults, generationHandler.getGeneratedContent());
@@ -310,12 +310,12 @@ public class GenerationTestBase {
   }
 
   protected static Project loadProject(File projectFile) {
-    return ActiveEnvironment.get().openProject(projectFile);
+    return ActiveEnvironment.getInstance().openProject(projectFile);
   }
 
   protected static void cleanup(final Project p) {
     if (CREATED_ENV != null) {
-      CREATED_ENV.disposeEnvironment();
+      CREATED_ENV.dispose();
     }
   }
 

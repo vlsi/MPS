@@ -6,7 +6,6 @@ package jetbrains.mps.lang.script.behavior;
 public class WhitespaceMigrationScriptPart_BehaviorDescriptor extends MigrationScriptPart_BehaviorDescriptor {
   public WhitespaceMigrationScriptPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.WhitespaceMigrationScriptPart";

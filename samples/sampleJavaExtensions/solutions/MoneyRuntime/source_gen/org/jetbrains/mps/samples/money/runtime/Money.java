@@ -9,21 +9,17 @@ public class Money {
     this.setAmount(amount);
     this.setCurrency(currency);
   }
-
   public Money(int amount, String currency) {
     this.setAmount(new BigDecimal(amount));
     this.setCurrency(currency);
   }
-
   public Money to(String targetCurrency) {
     return new Money(this.getAmount(), targetCurrency);
   }
-
   @Override
   public String toString() {
     return this.getAmount() + " " + this.getCurrency();
   }
-
   public Money plus(final Money other) {
     if (!(this.getCurrency().equals(other.getCurrency()))) {
       throw new IllegalArgumentException("The currencies do not match: " + this.getCurrency() + ":" + other.getCurrency());
@@ -31,7 +27,6 @@ public class Money {
       return new Money(this.getAmount().add(other.getAmount()), this.getCurrency());
     }
   }
-
   public Money minus(final Money other) {
     if (!(this.getCurrency().equals(other.getCurrency()))) {
       throw new IllegalArgumentException("The currencies do not match: " + this.getCurrency() + ":" + other.getCurrency());
@@ -39,23 +34,17 @@ public class Money {
       return new Money(this.getAmount().subtract(other.getAmount()), this.getCurrency());
     }
   }
-
   private BigDecimal myAmount;
-
   public BigDecimal getAmount() {
     return this.myAmount;
   }
-
   private void setAmount(BigDecimal value) {
     this.myAmount = value;
   }
-
   private String myCurrency;
-
   public String getCurrency() {
     return this.myCurrency;
   }
-
   private void setCurrency(String value) {
     this.myCurrency = value;
   }

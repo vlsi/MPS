@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class TurnReturnToContinue_QuickFix extends QuickFix_Runtime {
   public TurnReturnToContinue_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Turn return into continue";
   }
-
   public void execute(SNode node) {
     SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement");
   }

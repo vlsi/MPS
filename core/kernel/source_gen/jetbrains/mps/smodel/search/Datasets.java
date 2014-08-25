@@ -40,10 +40,8 @@ import jetbrains.mps.util.FlattenIterable;
       return new Datasets.LinkDeclarationsDataSet(ownerCache);
     }
   };
-
   /*package*/ Datasets() {
   }
-
   private static void collectImplementedAndExtended(@NotNull SNode top, Set<SNode> result) {
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -78,28 +76,23 @@ import jetbrains.mps.util.FlattenIterable;
       newFrontier = new LinkedHashSet<SNode>();
     }
   }
-
   /*package*/ static class ConceptsDataSet extends DataSet {
     public static final String ID = "CONCEPTS_DATASET";
     @NotNull
     private final SNode myTopConcept;
     private SNode[] myConcepts;
     private Set<SNode> myDependsOnNodes;
-
     public ConceptsDataSet(ConceptAndSuperConceptsCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_OWNER_CACHE);
       myTopConcept = ownerCache.getTopConcept();
     }
-
     public SNode[] getConcepts() {
       return myConcepts;
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return myDependsOnNodes;
     }
-
     @Override
     protected void init() {
       Set<SNode> result = new LinkedHashSet<SNode>();
@@ -128,7 +121,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       //  event handling 
@@ -140,7 +132,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
@@ -151,35 +142,28 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
     }
   }
-
   /*package*/ static class PropertyDeclarationsDataSet extends DataSet {
     public static final String ID = "PROPERTY_DECLARATIONS_DATASET";
     private Map<String, SNode> myPropertyByName = null;
     private List<SNode> myProperties = null;
     private Set<SNode> myDependsOnNodes;
-
     public PropertyDeclarationsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return myDependsOnNodes;
     }
-
     public SNode getPropertyDeclarationByName(String name) {
       return (myPropertyByName == null ? null : myPropertyByName.get(name));
     }
-
     public List<SNode> getPropertyDeclarations() {
       return (myProperties == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myProperties));
     }
-
     @Override
     protected void init() {
       List<SNode> allProperties = new ArrayList<SNode>();
@@ -216,7 +200,6 @@ import jetbrains.mps.util.FlattenIterable;
         myDependsOnNodes.add(prop);
       }
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       // ------event handling 
@@ -228,7 +211,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
@@ -239,7 +221,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       //  don't process unless it is property name 
@@ -248,27 +229,22 @@ import jetbrains.mps.util.FlattenIterable;
       }
     }
   }
-
   /*package*/ static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
     private Map<String, SNode> myLinkByRole = null;
     private Map<SNode, SNode> myMostSpecificLinkBySpecializedLink = null;
     private List<SNode> myMostSpecificLinks = null;
     private Set<SNode> myDependsOnNodes;
-
     public LinkDeclarationsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return myDependsOnNodes;
     }
-
     public SNode getLinkDeclarationByRole(String role) {
       return (myLinkByRole == null ? null : myLinkByRole.get(role));
     }
-
     public SNode getMostSpecificLinkDeclarationByRole(String role) {
       SNode linkDeclaration = getLinkDeclarationByRole(role);
       if (linkDeclaration == null) {
@@ -283,11 +259,9 @@ import jetbrains.mps.util.FlattenIterable;
       }
       return mostSpecificLinkDeclaration;
     }
-
     public List<SNode> getLinkDeclarationsExcludingOverridden() {
       return (myMostSpecificLinks == null ? Collections.<SNode>emptyList() : new ArrayList<SNode>(myMostSpecificLinks));
     }
-
     @Override
     protected void init() {
       myLinkByRole = null;
@@ -343,7 +317,6 @@ import jetbrains.mps.util.FlattenIterable;
         myDependsOnNodes.add(link);
       }
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       //  event handling 
@@ -355,7 +328,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeUtil.isInstanceOfAbstractConceptDeclaration(event.getParent())) {
@@ -366,7 +338,6 @@ import jetbrains.mps.util.FlattenIterable;
         }
       }
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       //  don't process unless it is link's role 

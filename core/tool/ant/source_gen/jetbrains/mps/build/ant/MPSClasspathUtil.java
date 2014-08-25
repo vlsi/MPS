@@ -19,8 +19,7 @@ public class MPSClasspathUtil {
   private static final String PROTOCOL_DELIMITER = ":";
 
   private static final String[] CLASSPATH = new String[]{"trove4j.jar", "mps-collections.jar", "mps-closures.jar", "mps-tuples.jar", "mps-openapi.jar", "mps-core.jar", "mps-tool.jar"};
-  private static final String[] FORK_CLASSPATH = new String[]{"jdom.jar", "log4j.jar", "ecj-4.3.2.jar", "xstream-1.4.3.jar", "asm4-all.jar", "diffutils-1.2.1.jar", "junit-4.11.jar"};
-
+  private static final String[] FORK_CLASSPATH = new String[]{"jdom.jar", "log4j.jar", "ecj-4.3.2.jar", "xstream-1.4.3.jar", "asm4-all.jar", "asm-all.jar", "diffutils-1.2.1.jar", "junit-4.11.jar"};
 
 
   public static Collection<File> buildClasspath(Project antProject, File mpsHomeArg, boolean fork) {
@@ -53,7 +52,6 @@ public class MPSClasspathUtil {
     MPSClasspathUtil.collectClasspath(CLASSPATH, homeFolders, result);
     return result;
   }
-
   public static List<File> getHomeFolders(Project antProject, File mpsHomeArg) {
     List<File> homeFolders = new ArrayList<File>();
 
@@ -73,7 +71,6 @@ public class MPSClasspathUtil {
 
     return homeFolders;
   }
-
   private static void collectClasspath(String[] fileNames, List<File> homeFolders, List<File> result) {
     for (String name : fileNames) {
       File file = null;
@@ -91,7 +88,6 @@ public class MPSClasspathUtil {
       }
     }
   }
-
   public static File resolveMPSHome(Project antProject, boolean failOtherwise) {
     String mpsHomePath = antProject.getProperty("mps.home");
     if ((mpsHomePath == null || mpsHomePath.length() == 0)) {
@@ -106,7 +102,6 @@ public class MPSClasspathUtil {
     }
     return antProject.resolveFile(mpsHomePath);
   }
-
   private static File getAntJARRelativeHome() {
     String containingJar = getAntMPSJar();
     if (!(containingJar.toLowerCase().endsWith(".jar"))) {
@@ -124,13 +119,11 @@ public class MPSClasspathUtil {
     }
     throw new BuildException("cannot detect jar location, no mps-core.jar `" + containingJar + "'");
   }
-
   @NotNull
   private static String getAntMPSJar() {
     Class aClass = MPSClasspathUtil.class;
     return getResourceRoot(aClass, "/" + aClass.getName().replace('.', '/') + ".class");
   }
-
   /**
    * Attempts to detect classpath entry which contains given resource
    */
@@ -145,7 +138,6 @@ public class MPSClasspathUtil {
     }
     return extractRoot(url, path);
   }
-
   /**
    * Attempts to extract classpath entry part from passed URL.
    */
@@ -185,7 +177,6 @@ public class MPSClasspathUtil {
 
     return replace(resultPath, "%20", " ");
   }
-
   @NotNull
   private static String replace(@NotNull String text, @NotNull String from, @NotNull String to) {
     final StringBuilder result = new StringBuilder(text.length());
@@ -200,7 +191,6 @@ public class MPSClasspathUtil {
     }
     return result.toString();
   }
-
   public static List<File> getClassPathRootsFromDependencies(Project project) {
     List<File> roots = new ArrayList<File>();
 
@@ -228,7 +218,6 @@ public class MPSClasspathUtil {
 
     return roots;
   }
-
   public static void gatherAllClassesAndJarsUnder(File dir, Set<File> result) {
     if (dir.getName().equals("classes") || dir.getName().equals("classes_gen") || dir.getName().equals("apiclasses")) {
       result.add(dir);

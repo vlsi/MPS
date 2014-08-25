@@ -24,18 +24,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1170282608160(final BaseMappingRuleContext _context) {
     return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static boolean baseMappingRule_Condition_1170282061477(final BaseMappingRuleContext _context) {
     if (!(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure"))) {
       return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     }
     return false;
   }
-
   public static boolean baseMappingRule_Condition_1170198286262(final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode());
     if (ClosuresUtil.isClosureContextOwner(parent)) {
@@ -43,11 +40,9 @@ public class QueriesGenerated {
     }
     return false;
   }
-
   public static boolean baseMappingRule_Condition_1170198485461(final BaseMappingRuleContext _context) {
     return SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure", false, false) != null;
   }
-
   public static boolean baseMappingRule_Condition_1842587602196092389(final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     if (!(SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration") || SNodeOperations.isInstanceOf(var, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration"))) {
@@ -59,7 +54,6 @@ public class QueriesGenerated {
     }
     return false;
   }
-
   public static boolean baseMappingRule_Condition_1170199119856(final BaseMappingRuleContext _context) {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true);
     if (SLinkOperations.getTarget(var, "initializer", true) != null) {
@@ -70,127 +64,97 @@ public class QueriesGenerated {
     }
     return false;
   }
-
   public static Object propertyMacro_GetPropertyValue_1170707207731(final PropertyMacroContext _context) {
     return _context.createUniqueName("zClosureContext", null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1170347597854(final PropertyMacroContext _context) {
     return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static Object propertyMacro_GetPropertyValue_1170707554571(final PropertyMacroContext _context) {
     return _context.createUniqueName("_zClosureContext", null);
   }
-
   public static Object propertyMacro_GetPropertyValue_1170874110540(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object referenceMacro_GetReferent_1170294467354(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   public static Object referenceMacro_GetReferent_1170295650824(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object referenceMacro_GetReferent_1170295049904(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_1170287949033(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   public static Object referenceMacro_GetReferent_5351366134229433399(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.Classifier");
   }
-
   public static Object referenceMacro_GetReferent_1170350646244(final ReferenceMacroContext _context) {
     return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static Object referenceMacro_GetReferent_1170348563863(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_1170288676089(final ReferenceMacroContext _context) {
     return SNodeOperations.cast(_QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator()), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
   }
-
   public static Object referenceMacro_GetReferent_1170293907670(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "closureParameter", false), "name");
   }
-
   public static SNode sourceNodeQuery_1170347410888(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "type", true);
   }
-
   public static SNode sourceNodeQuery_1170294125679(final SourceSubstituteMacroNodeContext _context) {
     return SNodeOperations.getParent(_context.getNode());
   }
-
   public static SNode sourceNodeQuery_1185918144604(final SourceSubstituteMacroNodeContext _context) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static SNode sourceNodeQuery_5351366134229433414(final SourceSubstituteMacroNodeContext _context) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static SNode sourceNodeQuery_1170348623270(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true), "initializer", true);
   }
-
   public static SNode sourceNodeQuery_1196118817337(final SourceSubstituteMacroNodeContext _context) {
     return QueriesUtil.create_enclosingClassObject(_context.getNode());
   }
-
   public static Iterable<SNode> sourceNodesQuery_1170347169279(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
-
   public static Iterable<SNode> sourceNodesQuery_5351366134229435466(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
-
   public static Iterable<SNode> sourceNodesQuery_5351366134229435491(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
-
   public static Iterable<SNode> sourceNodesQuery_1170295259476(final SourceSubstituteMacroNodesContext _context) {
     List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     return (List<SNode>) list;
   }
-
   public static Iterable<SNode> sourceNodesQuery_1170294170225(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "statement", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1170874089896(final SourceSubstituteMacroNodesContext _context) {
     return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_context.getNode());
   }
-
   public static SNode mapSrcMacro_mapper_1170898169592(final MapSrcMacroContext _context) {
     return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static SNode mapSrcMacro_mapper_1170899386077(final MapSrcMacroContext _context) {
     return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static SNode mapSrcMacro_mapper_1196117121002(final MapSrcMacroContext _context) {
     return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "closure_adapterClass");
   }
-
   public static boolean mappingConfiguration_Condition_354504345955325245(final TemplateQueryContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.baseLanguage.structure.Closure").size() > 0;
   }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class BreakpointableNodeItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BreakpointableNodeItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.api.lang.structure.BreakpointableNodeItem";

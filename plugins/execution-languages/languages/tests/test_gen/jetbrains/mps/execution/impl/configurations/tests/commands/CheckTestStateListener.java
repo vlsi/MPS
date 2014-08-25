@@ -19,12 +19,10 @@ public class CheckTestStateListener implements TestStateListener {
   private final Set<String> myFailExpected = SetSequence.fromSet(new HashSet<String>());
   private final Set<String> myFailed = SetSequence.fromSet(new HashSet<String>());
   private final StringBuilder myMessages = new StringBuilder();
-
   public CheckTestStateListener(List<ITestNodeWrapper> success, List<ITestNodeWrapper> failed) {
     SetSequence.fromSet(mySuccessExpected).addSequence(Sequence.fromIterable(selectNames(success)));
     SetSequence.fromSet(myFailExpected).addSequence(Sequence.fromIterable(selectNames(failed)));
   }
-
   private Iterable<String> selectNames(List<ITestNodeWrapper> tests) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (final ITestNodeWrapper test : ListSequence.fromList(tests)) {
@@ -40,12 +38,18 @@ public class CheckTestStateListener implements TestStateListener {
     }
     return result;
   }
-
   @Override
   public void onLooseTest(String className, String methodName) {
     myMessages.append("Lost test: ").append(className).append(".").append(methodName).append("\n");
   }
-
+  @Override
+  public void onTestAssumptionFailure(TestEvent event) {
+    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
+    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
+      myMessages.append("Unexpected assumption failure: ").append(this.getNameFromEvent(event)).append("\n");
+    } else {
+    }
+  }
   @Override
   public void onTestFailure(TestEvent event) {
     SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
@@ -54,33 +58,20 @@ public class CheckTestStateListener implements TestStateListener {
     } else {
     }
   }
-
-  @Override
-  public void onTestError(TestEvent event) {
-    SetSequence.fromSet(myFailed).addElement(this.getNameFromEvent(event));
-    if (!(SetSequence.fromSet(myFailExpected).contains(this.getNameFromEvent(event)))) {
-      myMessages.append("Unexpected error: ").append(this.getNameFromEvent(event)).append("\n");
-    } else {
-    }
-  }
-
   private String getNameFromEvent(TestEvent event) {
     return event.getTestCaseName() + "." + event.getTestMethodName();
   }
-
   @Override
-  public void onTestEnd(TestEvent event) {
+  public void onTestFinish(TestEvent event) {
     if (!(SetSequence.fromSet(myFailed).contains(this.getNameFromEvent(event)))) {
       if (!(SetSequence.fromSet(mySuccessExpected).contains(this.getNameFromEvent(event)))) {
         myMessages.append("Unexpected success: ").append(this.getNameFromEvent(event)).append("\n");
       }
     }
   }
-
   @Override
   public void onTestStart(TestEvent event) {
   }
-
   public String getMessages() {
     return myMessages.toString();
   }

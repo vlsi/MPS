@@ -27,11 +27,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
   public TemplateFindUsagesDescriptor() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_a7jb2i_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -272,11 +270,9 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                                   public Object resolve(SNode outputNode, TemplateContext context) {
                                     return QueriesGenerated.referenceMacro_GetReferent_7991477654791738442(new ReferenceMacroContext(context, tnode25, referenceMacro_a7jb2i_c0a0a0a0a0a0b0b0b0b0c0b0b0d0c0b0b0f0b0f0b0c, "baseMethodDeclaration"));
                                   }
-
                                   public String getDefaultResolveInfo() {
                                     return "FinderClass";
                                   }
-
                                   public SNodeReference getTemplateNode() {
                                     return referenceMacro_a7jb2i_c0a0a0a0a0a0b0b0b0b0c0b0b0d0c0b0b0f0b0f0b0c;
                                   }
@@ -343,7 +339,6 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_a7jb2i_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791670136");
   private static SNodePointer propertyMacro_a7jb2i_c0a0c0b0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "7991477654791693977");
   private static SNodePointer propertyMacro_a7jb2i_c0a0c0b0b0c0b0c0b0c0b0b0b0d0b0e0b0c = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "4081282727750608487");

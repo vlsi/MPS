@@ -27,7 +27,6 @@ public class Differ {
   private Set<String> ignoredFiles = SetSequence.fromSetAndArray(new HashSet<String>(), "generated", "trace.info", "dependencies", ".dependencies", ".generated", ".debug");
   private String[] retainedPaths;
   private Set<File> excludedFiles;
-
   public Differ(Set<String> retainedFilePaths, Set<File> excludedFiles) {
     this.retainedPaths = SetSequence.fromSet(retainedFilePaths).select(new ISelector<String, String>() {
       public String select(String it) {
@@ -40,7 +39,6 @@ public class Differ {
     }, true).toListSequence().toGenericArray(String.class);
     this.excludedFiles = excludedFiles;
   }
-
   public List<String> diff(String origPath, String revdPath) {
     List<String> diffs = ListSequence.fromList(new ArrayList<String>());
     if (origPath != null && revdPath != null) {
@@ -68,7 +66,6 @@ public class Differ {
     }
     return diffs;
   }
-
   private void diffDirs(final File orig, File revd, final List<String> diffs) {
     Iterable<String> onames = Sequence.fromArray(orig.list());
     Iterable<String> rnames = Sequence.fromArray(revd.list());
@@ -118,15 +115,12 @@ public class Differ {
       }
     }
   }
-
   private boolean ignoredFile(String fileName) {
     return SetSequence.fromSet(ignoredFiles).contains(fileName) || (fileName != null && fileName.startsWith(".hash"));
   }
-
   private boolean excluded(File file) {
     return SetSequence.fromSet(excludedFiles).contains(file);
   }
-
   private List<String> fileToStrings(File f) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     BufferedReader in = null;
@@ -148,22 +142,18 @@ public class Differ {
     }
     return result;
   }
-
   private boolean isRetained(String dir) {
     String path = asDir(straighten(dir));
     int idx = Arrays.binarySearch(retainedPaths, path);
     idx = (idx < 0 ? -1 - idx : idx);
     return idx < retainedPaths.length && startsWith(retainedPaths[idx], path);
   }
-
   private String straighten(String path) {
     return path.replace(File.separatorChar, SLASH_CHAR);
   }
-
   private String asDir(String path) {
     return (path.endsWith(SLASH) ? path : path + SLASH);
   }
-
   private boolean startsWith(String path, String prefix) {
     return path.startsWith(prefix) && (path.length() == prefix.length() || prefix.endsWith(SLASH) || path.charAt(prefix.length()) == SLASH_CHAR);
   }

@@ -30,12 +30,9 @@ import org.apache.log4j.LogManager;
 
 public class ConsoleUtil {
 
-
   public static String getGeneratedModelName(ConsoleContext context) {
     return context.getConsoleTab().getConsoleModel().getModelName() + ".Main";
   }
-
-
 
   public static boolean make(final Project project, final SModel model) {
     if (SwingUtilities.isEventDispatchThread()) {
@@ -75,7 +72,6 @@ public class ConsoleUtil {
     }
     return false;
   }
-
 
   protected static Logger LOG = LogManager.getLogger(ConsoleUtil.class);
 }

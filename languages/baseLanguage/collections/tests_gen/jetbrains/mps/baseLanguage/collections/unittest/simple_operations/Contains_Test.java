@@ -20,7 +20,6 @@ public class Contains_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -58,7 +57,6 @@ __switch__:
     Assert.assertTrue(Sequence.fromIterable(intS).contains(10));
     Assert.assertFalse(Sequence.fromIterable(intS).contains(15));
   }
-
   public void test_test2() throws Exception {
     List<Integer> intL = ListSequence.fromListAndArray(new ArrayList<Integer>(), 10, 20, 30);
     Assert.assertTrue(ListSequence.fromList(intL).contains(10));

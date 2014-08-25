@@ -27,7 +27,6 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
   public MatchVariableReferenceReplacement_Constraints() {
     super("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -45,12 +43,10 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return (_context.getSmartReference() ? "\\" + SPropertyOperations.getString(_context.getParameterNode(), "name") : SPropertyOperations.getString(_context.getParameterNode(), "name"));
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> matches = new ArrayList<SNode>();
@@ -60,7 +56,6 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
             }
             return matches;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1;
@@ -70,6 +65,5 @@ public class MatchVariableReferenceReplacement_Constraints extends BaseConstrain
     });
     return references;
   }
-
   private static SNodePointer breakingNode_v9mr27_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590515(jetbrains.mps.baseLanguage.regexp.constraints)", "3796137614137558194");
 }

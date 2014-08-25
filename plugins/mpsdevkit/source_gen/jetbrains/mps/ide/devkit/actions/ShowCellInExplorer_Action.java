@@ -20,18 +20,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowCellInExplorer_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Actions.ShowCellInExplorer;
-
   public ShowCellInExplorer_Action() {
     super("Show Cell In Explorer", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -42,7 +39,6 @@ public class ShowCellInExplorer_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +53,6 @@ public class ShowCellInExplorer_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(CellExplorerView.class).showCell(((EditorCell) MapSequence.fromMap(_params).get("cell")));
@@ -67,6 +62,5 @@ public class ShowCellInExplorer_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowCellInExplorer_Action.class);
 }

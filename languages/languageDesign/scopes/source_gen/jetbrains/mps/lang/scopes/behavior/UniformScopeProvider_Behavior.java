@@ -10,11 +10,9 @@ import jetbrains.mps.lang.scopes.runtime.ScopeProviderContext;
 public class UniformScopeProvider_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode context) {
     return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_2995585510566823862", new Object[]{kind, ScopeProviderContext.childContext(context)});
   }
-
   public static Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return BehaviorReflection.invokeVirtual(Scope.class, thisNode, "virtual_getScope_2995585510566823862", new Object[]{kind, ScopeProviderContext.rolePlusIndexContext(role, index)});
   }

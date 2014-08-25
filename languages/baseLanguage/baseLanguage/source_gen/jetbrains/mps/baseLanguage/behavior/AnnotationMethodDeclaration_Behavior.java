@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AnnotationMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return false;
   }
-
   public static boolean call_isGoodReturnType_6624237184120289968(SNode thisNode, SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       return false;

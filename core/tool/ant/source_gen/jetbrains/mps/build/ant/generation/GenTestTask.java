@@ -9,15 +9,12 @@ public class GenTestTask extends GenerateTask {
   protected String getWorkerClass() {
     return "jetbrains.mps.tool.builder.make.GenTestWorker";
   }
-
   public boolean getShowDiff() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SHOW_DIFF));
   }
-
   public void setShowDiff(boolean isDifferenceCalculated) {
     myWhatToDo.putProperty(ScriptProperties.SHOW_DIFF, Boolean.toString(isDifferenceCalculated));
   }
-
   public void addConfiguredModule(ModuleChunkPart module) {
     myWhatToDo.addModuleFile(module.getFile());
   }

@@ -11,7 +11,6 @@ public class DebuggerSettingsCommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "type", _quotation_createNode_9qz3p8_a0a0a0(), true);
   }
-
   private static SNode _quotation_createNode_9qz3p8_a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

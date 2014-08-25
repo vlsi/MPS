@@ -54,18 +54,15 @@ public class Script implements IScript {
   private TargetRange targetRange;
   private List<ValidationError> errors = ListSequence.fromList(new ArrayList<ValidationError>());
   private boolean validated = false;
-
   public Script(TargetRange targetRange, ITarget.Name defaultTargetName) {
     this.targetRange = targetRange;
     this.finalTarget = defaultTargetName;
   }
-
   public Script(TargetRange targetRange, ITarget.Name finalTarget, ITarget.Name startingTarget) {
     this.targetRange = targetRange;
     this.finalTarget = finalTarget;
     this.startingTarget = startingTarget;
   }
-
   public void validate() {
     ListSequence.fromList(errors).clear();
     if (startingTarget != null && !(targetRange.hasTarget(startingTarget))) {
@@ -86,26 +83,21 @@ public class Script implements IScript {
     }
     validated = true;
   }
-
   public void invalidate() {
     this.validated = false;
   }
-
   @Override
   public boolean isValid() {
     return validated && ListSequence.fromList(errors).isEmpty();
   }
-
   @Override
   public Iterable<IMessage> validationErrors() {
     return ListSequence.fromList(errors).ofType(IMessage.class);
   }
-
   @Override
   public Iterable<ITarget> allTargets() {
     return targetRange.sortedTargets();
   }
-
   @Override
   public ITarget finalTarget() {
     ITarget trg = targetRange.getTarget(finalTarget);
@@ -114,7 +106,6 @@ public class Script implements IScript {
     }
     return trg;
   }
-
   @Override
   public ITarget startingTarget() {
     if (startingTarget == null) {
@@ -126,17 +117,14 @@ public class Script implements IScript {
     }
     return trg;
   }
-
   @Override
   public String toString() {
     return "Script<" + finalTarget + ">";
   }
-
   private void error(Object o, String message) {
     LOG.debug(message);
     ListSequence.fromList(this.errors).addElement(new ValidationError(o, message));
   }
-
   @Override
   public IResult execute(IScriptController controller, Iterable<? extends IResource> scriptInput, ProgressMonitor monitor) {
     monitor.start("", 20);
@@ -155,7 +143,6 @@ public class Script implements IScript {
             public Iterator<ITarget> iterator() {
               return new YieldingIterator<ITarget>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -234,14 +221,12 @@ __switch__:
       monitor.done();
     }
   }
-
   private int workEstimate(ITarget target) {
     if (target instanceof ITargetEx2) {
       return ((ITargetEx2) target).workEstimate();
     }
     return (target.requiresInput() || target.producesOutput() ? 100 : 10);
   }
-
   private void executeTargets(final IScriptController ctl, final Iterable<ITarget> toExecute, final Iterable<? extends IResource> scriptInput, final Script.ParametersPool pool, final CompositeResult results, final ProgressMonitor monitor) {
     final Map<ITarget.Name, Long> timeStatistic = MapSequence.fromMap(new HashMap<ITarget.Name, Long>());
     // add time statistic result first - in composite result output() is the last one 
@@ -349,7 +334,6 @@ with_targets:
       }
     });
   }
-
   private void configureTargets(IScriptController ctl, final Iterable<ITarget> toExecute, final Script.ParametersPool pool, final CompositeResult results) {
     ctl.runConfigWithMonitor(new _FunctionTypes._void_P1_E0<IConfigMonitor>() {
       public void invoke(IConfigMonitor cmon) {
@@ -373,14 +357,11 @@ with_targets:
       }
     });
   }
-
   private class ParametersPool implements IPropertiesPool {
     private Map<ITarget.Name, Object> cache = MapSequence.fromMap(new HashMap<ITarget.Name, Object>());
     private Map<ITarget.Name, Object> copyFrom;
-
     public ParametersPool() {
     }
-
     @Override
     public <T> T properties(ITarget.Name target, Class<T> cls) {
       if (!(MapSequence.fromMap(cache).containsKey(target))) {
@@ -408,12 +389,10 @@ with_targets:
       }
       return cls.cast(MapSequence.fromMap(cache).get(target));
     }
-
     @Override
     public boolean hasProperties(ITarget.Name target) {
       return MapSequence.fromMap(cache).containsKey(target) || MapSequence.fromMap(copyFrom).containsKey(target);
     }
-
     @Override
     public void setPredecessor(IPropertiesPool ppool) {
       if (ppool != null) {
@@ -421,20 +400,17 @@ with_targets:
       }
     }
   }
-
   private class PropertiesWithBackstore implements IPropertiesPool {
     private final IPropertiesPool transProps;
     private final IPropertiesPool persProps = new Script.ParametersPool();
     private final Set<IFacet.Name> loadedFacets = SetSequence.fromSet(new HashSet<IFacet.Name>());
     private final IPropertiesIO propio;
     private Map<String, String> rawProps;
-
     public PropertiesWithBackstore(IPropertiesPool transProps, IPropertiesIO propio) {
       this.transProps = transProps;
       this.propio = propio;
       init();
     }
-
     @Override
     public void setPredecessor(IPropertiesPool ppool) {
       if (ppool instanceof Script.PropertiesWithBackstore) {
@@ -442,7 +418,6 @@ with_targets:
       }
       transProps.setPredecessor(ppool);
     }
-
     @Override
     public <T> T properties(ITarget.Name target, Class<T> cls) {
       if (transProps.hasProperties(target)) {
@@ -451,7 +426,6 @@ with_targets:
       this.loadProperties(target.parentName());
       return persProps.<T>properties(target, cls);
     }
-
     @Override
     public boolean hasProperties(ITarget.Name target) {
       if (transProps.hasProperties(target)) {
@@ -460,14 +434,12 @@ with_targets:
       loadProperties(target.parentName());
       return persProps.hasProperties(target);
     }
-
     private void init() {
       try {
         this.rawProps = propio.readProperties();
       } catch (IOException ignore) {
       }
     }
-
     private void loadProperties(IFacet.Name facetName) {
       if (!(SetSequence.fromSet(loadedFacets).contains(facetName))) {
         IFacet fct = FacetRegistry.getInstance().lookup(facetName);
@@ -481,20 +453,16 @@ with_targets:
       }
     }
   }
-
   private class PropertiesAccessor implements IPropertiesAccessor {
     private Map<Object, IPropertiesPool> allProperties = MapSequence.fromMap(new HashMap<Object, IPropertiesPool>());
     private final IPropertiesPool transProps;
-
     public PropertiesAccessor(IPropertiesPool transProps) {
       this.transProps = transProps;
     }
-
     @Override
     public IPropertiesPool global() {
       return transProps;
     }
-
     @Override
     public IPropertiesPool forResource(IResource res) {
       if (!(res instanceof IResourceWithProperties)) {
@@ -508,22 +476,18 @@ with_targets:
       return MapSequence.fromMap(allProperties).get(pio.getKey());
     }
   }
-
   private static class SubsOutputResult implements IResult {
     private IResult result;
     private Iterable<? extends IResource> output;
-
     public SubsOutputResult(IResult result, Iterable<? extends IResource> output) {
       this.result = result;
       this.output = output;
     }
-
     @SuppressWarnings(value = {"unchecked"})
     @Override
     public Iterable<IResource> output() {
       return (Iterable<IResource>) output;
     }
-
     @Override
     public boolean isSucessful() {
       return result.isSucessful();

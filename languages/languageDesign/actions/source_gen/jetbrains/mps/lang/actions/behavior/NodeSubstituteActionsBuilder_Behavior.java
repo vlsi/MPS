@@ -5,19 +5,45 @@ package jetbrains.mps.lang.actions.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.scope.Scope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.scopes.Scopes;
 
 public class NodeSubstituteActionsBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getPreconditionQueryMethodName_1220278671791(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
     SNode precondition = SLinkOperations.getTarget(thisNode, "precondition", true);
     return "nodeSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondition.getNodeId().toString();
   }
-
   public static String call_getBuilderQueryMethodName_1220278926652(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
     return "nodeSubstituteActionsBuilder_ActionsFactory_" + conceptName + "_" + thisNode.getNodeId().toString();
+  }
+  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
+    if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration")) {
+      if (ScopeUtils.comeFrom("precondition", thisNode, child)) {
+        // all SubstituteNodeBuilderVariables are invisible in precondition block 
+        return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
+      }
+
+      SNode thisVarDecl = SNodeOperations.as(child, "jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration");
+      List<SNode> result = new ArrayList<SNode>();
+      for (SNode nextVarDecl : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "variable", true))) {
+        if (nextVarDecl == thisVarDecl) {
+          break;
+        }
+        ListSequence.fromList(result).addElement(nextVarDecl);
+      }
+      return Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableDeclaration"), result, ScopeUtils.lazyParentScope(thisNode, kind));
+    }
+    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
 }

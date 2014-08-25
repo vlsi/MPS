@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test;
 public class StringOperators {
   public StringOperators() {
   }
-
   public static boolean apply_customOperator_4888428037514503287_string_string(String left, String right) {
     return left.contains(right);
   }

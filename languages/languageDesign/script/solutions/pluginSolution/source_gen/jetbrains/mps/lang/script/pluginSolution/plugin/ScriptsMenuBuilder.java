@@ -16,7 +16,6 @@ public class ScriptsMenuBuilder {
   private boolean applyToSelection;
   private List<Language> allLanguages;
   private List<SNode> allScripts;
-
   public ScriptsMenuBuilder(boolean applyToSelection) {
     this.applyToSelection = applyToSelection;
     this.allLanguages = ListSequence.fromListWithValues(new ArrayList<Language>(), ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
@@ -27,21 +26,18 @@ public class ScriptsMenuBuilder {
     }, true);
     this.allScripts = ScriptsActionGroupHelper.getMigrationScripts(this.allLanguages);
   }
-
   public BaseGroup create_ByCategoryPopup() {
     BaseGroup byCategoryGroup = new BaseGroup("By Category");
     byCategoryGroup.setPopup(true);
     ScriptsActionGroupHelper.populateByCategoryGroup(this.allScripts, byCategoryGroup, this.applyToSelection);
     return byCategoryGroup;
   }
-
   public BaseGroup create_ByBuildPopup() {
     BaseGroup byBuildGroup = new BaseGroup("By Build");
     byBuildGroup.setPopup(true);
     ScriptsActionGroupHelper.populateByBuildGroup(this.allScripts, byBuildGroup, this.applyToSelection);
     return byBuildGroup;
   }
-
   public BaseGroup create_ByLanguagePopup() {
     BaseGroup byLanguageGroup = new BaseGroup("By Language");
     byLanguageGroup.setPopup(true);
@@ -50,7 +46,6 @@ public class ScriptsMenuBuilder {
     }
     return byLanguageGroup;
   }
-
   public List<SNode> getAllScripts() {
     return this.allScripts;
   }

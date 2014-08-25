@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ConceptEditorHintDeclarationReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ConceptEditorHintDeclarationReferenceExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclarationReferenceExpression";

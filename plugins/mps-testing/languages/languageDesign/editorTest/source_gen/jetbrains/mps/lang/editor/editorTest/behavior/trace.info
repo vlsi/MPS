@@ -2,71 +2,83 @@
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
-    <file name="TestBlockList_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
-    </file>
     <file name="ClassReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ClassReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ClassReference_BehaviorDescriptor" />
     </file>
-    <file name="PlusExpression_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.PlusExpression_BehaviorDescriptor" />
+    <file name="TestBlockList_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.TestBlockList_BehaviorDescriptor" />
     </file>
     <file name="ReferenceAnnotataion_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
-    </file>
-    <file name="VariableDeclarationReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.ReferenceAnnotataion_BehaviorDescriptor" />
     </file>
     <file name="Composition_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.Composition_BehaviorDescriptor" />
-    </file>
-    <file name="NotEditableVaraileReference_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NotEditableVaraileReference_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.Composition_BehaviorDescriptor" />
     </file>
     <file name="VariableDeclarationBlock_BehaviorDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationBlock_BehaviorDescriptor" />
     </file>
     <file name="VerticalLayoutBlockList_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VerticalLayoutBlockList_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VerticalLayoutBlockList_BehaviorDescriptor" />
     </file>
     <file name="BinaryExpression_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BinaryExpression_BehaviorDescriptor" />
-    </file>
-    <file name="BracesBlock_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesBlock_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BinaryExpression_BehaviorDescriptor" />
     </file>
     <file name="StubBlock_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
-    </file>
-    <file name="SimplePropertyContainer_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyContainer_BehaviorDescriptor" />
-    </file>
-    <file name="SideTranformWrapper_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
-    </file>
-    <file name="BracesStubBlock_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesStubBlock_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.StubBlock_BehaviorDescriptor" />
     </file>
     <file name="InspectorBlock_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />
     </file>
-    <file name="NonEmptyProperty_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NonEmptyProperty_BehaviorDescriptor" />
+    <file name="BracesStubBlock_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesStubBlock_BehaviorDescriptor" />
     </file>
-    <file name="SimplePropertyAttribute_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" />
-    </file>
-    <file name="IntegerLiteral_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IntegerLiteral_BehaviorDescriptor" />
+    <file name="DelTestRoot_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestRoot_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,60,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,66,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
     </file>
-    <file name="AttractsFocusBlock_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
+    <file name="DelTestAbstractChild_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestAbstractChild_BehaviorDescriptor" />
     </file>
     <file name="IBaseTestBlock_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
+    </file>
+    <file name="PlusExpression_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.PlusExpression_BehaviorDescriptor" />
+    </file>
+    <file name="VariableDeclarationReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.VariableDeclarationReference_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestChildContainer_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChildContainer_BehaviorDescriptor" />
+    </file>
+    <file name="NotEditableVaraileReference_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NotEditableVaraileReference_BehaviorDescriptor" />
+    </file>
+    <file name="BracesBlock_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.BracesBlock_BehaviorDescriptor" />
+    </file>
+    <file name="NonEmptyProperty_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.NonEmptyProperty_BehaviorDescriptor" />
+    </file>
+    <file name="SideTranformWrapper_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SideTranformWrapper_BehaviorDescriptor" />
+    </file>
+    <file name="SimplePropertyContainer_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyContainer_BehaviorDescriptor" />
+    </file>
+    <file name="DelTestChild1_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChild1_BehaviorDescriptor" />
+    </file>
+    <file name="SimplePropertyAttribute_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.SimplePropertyAttribute_BehaviorDescriptor" />
+    </file>
+    <file name="IntegerLiteral_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.IntegerLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="AttractsFocusBlock_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:a3bb1fed-5e98-4e77-bc2b-c6a4a4239f53(jetbrains.mps.lang.editor.editorTest.behavior)/1262430001741704766">

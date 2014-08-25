@@ -39,7 +39,6 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4z471d_a(editorContext, node);
   }
-
   private EditorCell createCollection_4z471d_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4z471d_a");
@@ -49,7 +48,6 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_4z471d_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_4z471d_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("archivePath");
@@ -69,7 +67,6 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_4z471d_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "!/");
     editorCell.setCellId("Constant_4z471d_b0");
@@ -83,7 +80,6 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_4z471d_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("compositePart");
@@ -110,11 +106,9 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public BuildSourceArchiveRelativePath_generic_cellMenu_4z471d_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       IFile file = FileSystem.getInstance().getFileByPath(BehaviorReflection.invokeVirtual(String.class, node, "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
       if (!(file.exists())) {
@@ -135,19 +129,16 @@ public class BuildSourceArchiveRelativePath_Editor extends DefaultNodeEditor {
         }
       }, true).toListSequence();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       if ((SLinkOperations.getTarget(node, "compositePart", true) == null)) {
         SNodeFactoryOperations.setNewChild(node, "compositePart", "jetbrains.mps.build.structure.BuildCompositePath");
       }
       SPropertyOperations.set(SLinkOperations.getTarget(node, "compositePart", true), "head", parameterObject);
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), CellIdManager.createPropertyId("head"), -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, SLinkOperations.getTarget(node, "compositePart", true), "*" + CellIdManager.createPropertyId("head"), -1);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

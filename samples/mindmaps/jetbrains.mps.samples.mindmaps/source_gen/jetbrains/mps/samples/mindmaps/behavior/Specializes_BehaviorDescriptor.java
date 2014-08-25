@@ -6,7 +6,6 @@ package jetbrains.mps.samples.mindmaps.behavior;
 public class Specializes_BehaviorDescriptor extends Relationship_BehaviorDescriptor {
   public Specializes_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.mindmaps.structure.Specializes";

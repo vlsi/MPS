@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ExplicitHintsSpecification_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ContextHintsSpecification_BehaviorDescriptor {
   public ExplicitHintsSpecification_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ExplicitHintsSpecification";

@@ -16,7 +16,6 @@ public class StubBlock_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_yipinq_a(editorContext, node);
   }
-
   private EditorCell createConstant_yipinq_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stub");
     editorCell.setCellId("Constant_yipinq_a");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-import jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest;
 import junit.framework.TestSuite;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
@@ -22,7 +21,7 @@ import org.junit.runners.Suite;
 // todo: !!!should be WatchingSuite!!!
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
-    InitializedVariablesAnalysisTest.class,
+    jetbrains.mps.dataFlow.lang.InitializedVariablesAnalysisTest.class,
     jetbrains.mps.dataFlow.lang.LivenessAnalysisTest.class,
     jetbrains.mps.dataFlow.lang.ProgramTest.class,
     jetbrains.mps.dataFlow.lang.ReachabilityAnaysisTest.class,
@@ -33,14 +32,14 @@ import org.junit.runners.Suite;
     jetbrains.mps.ide.platform.dependencyViewer.DependenciesViewerTest.class,
     jetbrains.mps.classloading.ClassLoadingDescriptorChangedTest.class,
     jetbrains.mps.ide.messages.MessageViewListModelTest.class,
-    jetbrains.mps.ide.moduleDependencyViewer.ModuleDependenciesTest.class,
+    jetbrains.mps.ide.depanalyzer.ModuleDependenciesTest.class,
     jetbrains.mps.make.TestMakeOnRealProject.class,
     jetbrains.mps.make.dependencies.FindStronglyConnectedComponentsTestCase.class,
     jetbrains.mps.make.dependencies.GraphTestCase.class,
     jetbrains.mps.packaged.PackagedLanguageTest.class,
     jetbrains.mps.refactoring.RefactoringTest.class,
     jetbrains.mps.vcs.DiskMemoryConflictsTest.class,
-//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled]
+//  jetbrains.mps.vcs.changesmanager.ChangesManagerTest.class, [temporarily disabled] //TODO: enable test
     jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
@@ -50,5 +49,5 @@ import org.junit.runners.Suite;
     jetbrains.mps.editor.runtime.style.StyleTests.class,
     jetbrains.mps.smodel.TreeIteratorTest.class
 })
-public class GlobalTestSuite extends TestSuite {
+public class GlobalTestSuite {
 }

@@ -72,10 +72,12 @@
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
   </dependency>
   <dependency className="jetbrains.mps.tool.gentest.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacetManifest" />
     <classNode dependClassName="jetbrains.mps.smodel.structure.FacetDescriptor" />
     <classNode dependClassName="jetbrains.mps.tool.gentest.plugin.FacetManifest" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.MakeAspectDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.structure.DescriptorProvider" />
   </dependency>
   <dependency className="jetbrains.mps.tool.gentest.plugin.FacetManifest" file="FacetManifest.java">

@@ -37,7 +37,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vi48ux_a(editorContext, node);
   }
-
   private EditorCell createCollection_vi48ux_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vi48ux_a");
@@ -52,7 +51,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vi48ux_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vi48ux_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "create");
     editorCell.setCellId("Constant_vi48ux_a0");
@@ -62,7 +60,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_vi48ux_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_vi48ux_b0");
@@ -72,7 +69,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vi48ux_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("kindPresentation");
@@ -93,11 +89,9 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public CreateBreakpointOperation_generic_cellMenu_vi48ux_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       SNode debuggerType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.debugger.api.lang.structure.DebuggerType"), true);
       if (debuggerType != null && isNotEmptyString(SPropertyOperations.getString(debuggerType, "name"))) {
@@ -108,33 +102,26 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
       }
       return ListSequence.fromList(new ArrayList<IBreakpointKind>());
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((IBreakpointKind) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(IBreakpointKind parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "kindName", parameterObject.getName());
       SPropertyOperations.set(node, "kindPresentation", parameterObject.getPresentation());
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((IBreakpointKind) parameterObject);
     }
-
     public String getMatchingText_internal(IBreakpointKind parameterObject) {
       return parameterObject.getPresentation();
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }
-
   private EditorCell createConstant_vi48ux_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_d0");
@@ -144,7 +131,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_vi48ux_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("nodeExpression");
@@ -164,7 +150,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vi48ux_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_vi48ux_f0");
@@ -174,7 +159,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_vi48ux_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("projectExpression");
@@ -194,7 +178,6 @@ public class CreateBreakpointOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vi48ux_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_vi48ux_h0");

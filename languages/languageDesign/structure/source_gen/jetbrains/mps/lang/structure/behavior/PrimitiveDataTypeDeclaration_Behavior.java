@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class PrimitiveDataTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     if (Primitives.INTEGER_TYPE.equals(SPropertyOperations.getString(thisNode, "name"))) {
       return _quotation_createNode_qjn9ch_a0a0a0();
@@ -21,33 +20,27 @@ public class PrimitiveDataTypeDeclaration_Behavior {
     }
     return _quotation_createNode_qjn9ch_a2a0();
   }
-
   public static boolean call_isString_1220268752134(SNode thisNode) {
     return Primitives.STRING_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static boolean call_isInteger_1220268780075(SNode thisNode) {
     return Primitives.INTEGER_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static boolean call_isBoolean_1220268791641(SNode thisNode) {
     return Primitives.BOOLEAN_TYPE.equals(SPropertyOperations.getString(thisNode, "name"));
   }
-
   private static SNode _quotation_createNode_qjn9ch_a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_qjn9ch_a0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_qjn9ch_a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

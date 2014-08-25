@@ -19,26 +19,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class ExtensionPointType_supertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public ExtensionPointType_supertypes_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode ept, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_bg8j1f_a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(ept, "extensionPoint", false), "objectType", true)));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.extension.structure.ExtensionPointType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_bg8j1f_a0a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

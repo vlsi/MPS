@@ -20,16 +20,13 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bdtuju_a(editorContext, node);
   }
-
   private EditorCell createCollection_bdtuju_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bdtuju_a");
@@ -41,7 +38,6 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bdtuju_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_bdtuju_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -59,7 +55,6 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bdtuju_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bdtuju_b0");
@@ -72,7 +67,6 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_bdtuju_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("compactProperty");
@@ -90,7 +84,6 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bdtuju_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bdtuju_d0");
@@ -103,7 +96,6 @@ public class MultipleEditorsTestChild_compact_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bdtuju_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_bdtuju_e0");

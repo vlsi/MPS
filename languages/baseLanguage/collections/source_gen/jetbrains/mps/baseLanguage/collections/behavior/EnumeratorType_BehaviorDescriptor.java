@@ -9,19 +9,15 @@ import java.util.List;
 public class EnumeratorType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public EnumeratorType_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return EnumeratorType_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return EnumeratorType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
   }
-
   public boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return EnumeratorType_Behavior.virtual_hasPluralVariableSuffixes_1447667470349154499(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.EnumeratorType";

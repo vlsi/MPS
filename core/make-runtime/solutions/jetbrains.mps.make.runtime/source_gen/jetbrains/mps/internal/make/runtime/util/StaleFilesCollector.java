@@ -27,11 +27,9 @@ public class StaleFilesCollector {
   private IFile rootDir;
   private Map<IFile, List<IFile>> generatedChildren = MapSequence.fromMap(new HashMap<IFile, List<IFile>>());
 
-
   public StaleFilesCollector(IFile rootDir) {
     this.rootDir = rootDir;
   }
-
   private List<IFile> collectFilesToDelete(Iterable<IFile> filesToKeep) {
     String[] pathsToKeep = Sequence.fromIterable(filesToKeep).select(new ISelector<IFile, String>() {
       public String select(IFile f) {
@@ -83,8 +81,6 @@ public class StaleFilesCollector {
     return filesToDelete;
   }
 
-
-
   /**
    * Read cached state of generated files, if any, assuming files were generated under rootDir.
    * 
@@ -99,7 +95,6 @@ public class StaleFilesCollector {
       MapSequence.fromMap(generatedChildren).put(rootDir, ListSequence.fromListWithValues(new ArrayList<IFile>(), genChildren));
     }
   }
-
   public void updateDelta(FilesDelta delta) {
     final Set<IFile> filesToKeep = SetSequence.fromSet(new HashSet<IFile>());
     delta.acceptVisitor(new FilesDelta.Visitor() {
@@ -108,7 +103,6 @@ public class StaleFilesCollector {
         SetSequence.fromSet(filesToKeep).addElement(file);
         return true;
       }
-
       @Override
       public boolean acceptKept(IFile file) {
         SetSequence.fromSet(filesToKeep).addElement(file);
@@ -119,7 +113,6 @@ public class StaleFilesCollector {
       delta.stale(f);
     }
   }
-
   private Iterable<IFile> getChildren(IFile dir) {
     Iterable<IFile> realChilren = (Iterable<IFile>) dir.getChildren();
     if (GeneratorPathsComponent.getInstance().isForeign(dir)) {
@@ -128,6 +121,5 @@ public class StaleFilesCollector {
     }
     return realChilren;
   }
-
 
 }

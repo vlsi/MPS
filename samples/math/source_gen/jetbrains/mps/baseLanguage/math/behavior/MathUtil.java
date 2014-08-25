@@ -17,13 +17,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MathUtil {
   private static SNode[] operations = {_quotation_createNode_30uc9x_a0a(), _quotation_createNode_30uc9x_b0a(), _quotation_createNode_30uc9x_c0a(), _quotation_createNode_30uc9x_d0a(), _quotation_createNode_30uc9x_e0a(), _quotation_createNode_30uc9x_f0a(), _quotation_createNode_30uc9x_g0a(), _quotation_createNode_30uc9x_h0a(), _quotation_createNode_30uc9x_i0a(), _quotation_createNode_30uc9x_j0a()};
-
   public static boolean applicable(SNode contextParent) {
     boolean operation_ok = SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.PlusExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.DivExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.MulExpression") || SNodeOperations.isInstanceOf(contextParent, "jetbrains.mps.baseLanguage.structure.MinusExpression");
     boolean types_ok = SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(contextParent), "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
     return operation_ok && types_ok;
   }
-
   public static SNode convert1(SNode bmc) {
     {
       SNode matchedNode_30uc9x_a0c = bmc;
@@ -75,7 +73,6 @@ public class MathUtil {
       }
     }
   }
-
   public static SNode convert2(SNode bmc) {
     {
       SNode matchedNode_30uc9x_a0d = bmc;
@@ -127,7 +124,6 @@ public class MathUtil {
       }
     }
   }
-
   public static SNode getMathContext(SNode node) {
     SNode mc;
     {
@@ -183,7 +179,6 @@ public class MathUtil {
         return _quotation_createNode_30uc9x_a2a2a4(c, MathUtil.getRoundingMode(SPropertyOperations.getInteger_def(mc, "roundingMode", "4")));
     }
   }
-
   public static SNode getRoundingMode(int roundingMode) {
     switch (roundingMode) {
       case 0:
@@ -206,7 +201,6 @@ public class MathUtil {
         return null;
     }
   }
-
   public static SNode getUnboxedElementType(SNode t) {
     {
       SNode matchedNode_30uc9x_a0g = t;
@@ -236,7 +230,6 @@ public class MathUtil {
       }
     }
   }
-
   public static int getIndex(SNode node) {
     if (MatchingUtil.matchNodes(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), _quotation_createNode_30uc9x_a0a0h())) {
       return 1;
@@ -267,7 +260,6 @@ public class MathUtil {
     }
     return 0;
   }
-
   public static SNode operConstant(SNode node) {
     boolean b1 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigDecimalType");
     boolean b2 = SNodeOperations.isInstanceOf(getUnboxedElementType(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.math.structure.BigComplexType");
@@ -288,14 +280,12 @@ public class MathUtil {
       return operations[getIndex(node)];
     }
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -304,7 +294,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861416")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -313,7 +302,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861463")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_d0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -322,7 +310,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861510")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_e0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -331,7 +318,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861557")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_f0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -340,7 +326,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861604")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_g0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -349,7 +334,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861651")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_h0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -358,7 +342,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861698")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_i0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -367,7 +350,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861745")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_j0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -376,7 +358,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), facade.createNodeId("877422884702861792")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a1a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -393,7 +374,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0b0a0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -410,7 +390,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -427,7 +406,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0c(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -444,7 +422,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a1a0a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -461,7 +438,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0b0a0d(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -478,7 +454,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -495,7 +470,6 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0d(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -512,14 +486,12 @@ public class MathUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0c0a2a0c0b0b0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -528,7 +500,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~MathContext.DECIMAL32")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a1c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -537,7 +508,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~MathContext.DECIMAL64")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a2c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -546,7 +516,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~MathContext.DECIMAL128")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a3c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -555,7 +524,6 @@ public class MathUtil {
     quotedNode_1.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~MathContext.UNLIMITED")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a2a2a4(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -576,7 +544,6 @@ public class MathUtil {
     quotedNode_3.addChild("creator", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -585,7 +552,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.CEILING")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a1a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -594,7 +560,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.DOWN")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a2a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -603,7 +568,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.FLOOR")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a3a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -612,7 +576,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.HALF_DOWN")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a4a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -621,7 +584,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.HALF_EVEN")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a5a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -630,7 +592,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.HALF_UP")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a6a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -639,7 +600,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.UNNECESSARY")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a7a0f() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -648,7 +608,6 @@ public class MathUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.math(JDK/java.math@java_stub)"), facade.createNodeId("~RoundingMode.UP")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -656,7 +615,6 @@ public class MathUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Short")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0b0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -664,7 +622,6 @@ public class MathUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0c0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -672,7 +629,6 @@ public class MathUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Long")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0d0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -680,7 +636,6 @@ public class MathUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Float")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0e0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -688,14 +643,12 @@ public class MathUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0c0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0d0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -711,7 +664,6 @@ public class MathUtil {
     quotedNode_2.addChild("creator", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_30uc9x_a0a0e0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

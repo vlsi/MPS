@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildStringNotEmpty_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildStringNotEmpty_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode str, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (isEmptyString(BuildString_Behavior.call_getText_4380385936562005550(str, null))) {
       {
@@ -25,22 +24,18 @@ public class check_BuildStringNotEmpty_NonTypesystemRule extends AbstractNonType
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildStringNotEmpty";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CellMenuUtil {
   private CellMenuUtil() {
   }
-
   public static SNode getEditedFeature(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract")) {
       return getEditedFeature(SNodeOperations.getParent(node));

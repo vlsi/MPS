@@ -18,7 +18,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_List_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode elemType = SLinkOperations.getTarget(type, "elementType", true);
@@ -27,22 +26,18 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     ListSequence.fromList(result).addElement(_quotation_createNode_w26thq_a0a4a1());
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_w26thq_a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -54,7 +49,6 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_w26thq_a0a3a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -66,7 +60,6 @@ public class supertypesOf_List_SubtypingRule extends SubtypingRule_Runtime imple
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_w26thq_a0a4a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

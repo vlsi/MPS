@@ -26,7 +26,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ksgn1c_a(editorContext, node);
   }
-
   private EditorCell createCollection_ksgn1c_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_a");
@@ -36,17 +35,16 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createEmpty_ksgn1c_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createEmpty_ksgn1c_a0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_ksgn1c_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ksgn1c_b0");
@@ -59,7 +57,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ksgn1c_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_ksgn1c_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("numerator");
@@ -80,7 +77,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCustom_ksgn1c_b1a(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
       public HLineCellProvider invoke() {
@@ -94,7 +90,6 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_ksgn1c_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("denominator");
@@ -115,10 +110,10 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createEmpty_ksgn1c_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_ksgn1c_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class NodeCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getName_1217435265700(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "name") == null || SPropertyOperations.getString(thisNode, "name").length() == 0) {
       return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getDefaultName_8578280453511146306", new Object[]{});
@@ -18,19 +17,15 @@ public class NodeCheckOperation_Behavior {
       return SPropertyOperations.getString(thisNode, "name");
     }
   }
-
   public static boolean virtual_isMpsStartRequired_3310779261129403089(SNode thisNode) {
     return true;
   }
-
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.test.structure.NodesTestCase", false, false);
   }
-
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     return "test_" + NodeCheckOperation_Behavior.call_getName_1217435265700(thisNode) + thisNode.getNodeId().toString();
   }
-
   public static SNode call_getAnnotatedNode_2912288420882528229(SNode thisNode) {
     SNode container = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.test.structure.NodeOperationsContainer");
     return SNodeOperations.getParent(container);

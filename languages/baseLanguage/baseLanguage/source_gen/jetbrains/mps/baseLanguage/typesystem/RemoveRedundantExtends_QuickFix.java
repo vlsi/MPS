@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveRedundantExtends_QuickFix extends QuickFix_Runtime {
   public RemoveRedundantExtends_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove redundunt 'extends Object'";
   }
-
   public void execute(SNode node) {
     SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.WildCardType");
   }

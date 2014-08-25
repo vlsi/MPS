@@ -12,11 +12,9 @@ import jetbrains.mps.util.ConditionalIterable;
 
 public class ModelNodesSearchScope extends AbstractSearchScope {
   private SModel myModel;
-
   public ModelNodesSearchScope(SModel model) {
     myModel = model;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

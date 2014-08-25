@@ -12,7 +12,6 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
   private final AbstractSequence<U> input;
   private final PagingSequence.Page page;
   private final int length;
-
   public PagingSequence(AbstractSequence<U> input, PagingSequence.Page page, int length) {
     if (input == null) {
       throw new NullPointerException();
@@ -24,12 +23,10 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     this.page = page;
     this.length = length;
   }
-
   @Override
   public Iterator<U> iterator() {
     return new PagingSequence.PagingIterator();
   }
-
   public static   enum Page {
     TAKE(),
     SKIP(),
@@ -39,17 +36,14 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
     Page() {
     }
   }
-
   private class PagingIterator implements Iterator<U> {
     private Iterator<U> inputIt;
     private HasNextState hasNext = HasNextState.UNKNOWN;
     private U next;
     private int countDown;
     private ArrayList<U> cache;
-
     private PagingIterator() {
     }
-
     @Override
     public boolean hasNext() {
       if (inputIt == null) {
@@ -60,7 +54,6 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       }
       return hasNext.hasNext();
     }
-
     @Override
     public U next() {
       if (inputIt == null) {
@@ -74,12 +67,10 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
       }
       return clearNext();
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
-
     private void init() {
       switch (page) {
         case TAKE:
@@ -100,7 +91,6 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
           break;
       }
     }
-
     private void destroy() {
       switch (page) {
         case TAKE:
@@ -114,7 +104,6 @@ public class PagingSequence<U> extends Sequence<U> implements Iterable<U> {
           break;
       }
     }
-
     @SuppressWarnings(value = "unused")
     private void moveToNext() {
       if (countDown > 0) {
@@ -150,14 +139,12 @@ skipping:
           break;
       }
     }
-
     private U clearNext() {
       U tmp = next;
       next = null;
       hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
-
     private boolean skipNext() {
       if (inputIt.hasNext()) {
         inputIt.next();
@@ -168,13 +155,11 @@ skipping:
         return false;
       }
     }
-
     private void stop() {
       hasNext = HasNextState.AT_END;
       next = null;
       destroy();
     }
-
     private void takeNext() {
       if (inputIt.hasNext()) {
         next = inputIt.next();

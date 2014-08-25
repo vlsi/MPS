@@ -18,13 +18,11 @@ public class ChangeGroupMessages {
   private ChangeGroupLayout myLayout;
   private boolean myLeft;
   private MessagesGutter myGutter;
-
   public ChangeGroupMessages(ChangeGroupLayout layout, boolean left) {
     myLayout = layout;
     myLeft = left;
     myGutter = ((left ? myLayout.getLeftComponent() : myLayout.getRightComponent())).getMessagesGutter();
   }
-
   public void startMaintaining() {
     myLayout.addInvalidateListener(new ChangeGroupInvalidateListener() {
       public void changeGroupsInvalidated() {
@@ -36,11 +34,9 @@ public class ChangeGroupMessages {
       }
     });
   }
-
   public void dispose() {
     myGutter.removeMessages(ourOwner);
   }
-
   private void rebuildGutterMessages() {
     myGutter.removeMessages(ourOwner);
     ListSequence.fromList(myLayout.getChangeGroups()).visitAll(new IVisitor<ChangeGroup>() {
@@ -49,39 +45,31 @@ public class ChangeGroupMessages {
       }
     });
   }
-
   public static void startMaintaining(ChangeGroupLayout layout) {
     new ChangeGroupMessages(layout, false).startMaintaining();
     new ChangeGroupMessages(layout, true).startMaintaining();
   }
-
   private class MyChangeGroupMessage implements SimpleEditorMessage {
     private ChangeGroup myChangeGroup;
-
     private MyChangeGroupMessage(ChangeGroup changeGroup) {
       myChangeGroup = changeGroup;
     }
-
     @Override
     public EditorMessageOwner getOwner() {
       return ChangeGroupMessages.ourOwner;
     }
-
     @Override
     public Color getColor() {
       return ChangeColors.get(myChangeGroup.getChangeType());
     }
-
     @Override
     public String getMessage() {
       return null;
     }
-
     @Override
     public int getStart(EditorComponent component) {
       return (int) myChangeGroup.getBounds(myLeft).start();
     }
-
     @Override
     public int getHeight(EditorComponent component) {
       return myChangeGroup.getBounds(myLeft).length();
@@ -89,24 +77,18 @@ public class ChangeGroupMessages {
 
 
 
-
-
     public MessageStatus getStatus() {
       return MessageStatus.OK;
     }
-
     public SNode getNode() {
       return null;
     }
-
     public boolean sameAs(SimpleEditorMessage message) {
       return message instanceof ChangeGroupMessages && this.equals(message);
     }
-
     public int getPriority() {
       return 0;
     }
-
     public boolean showInGutter() {
       return false;
     }

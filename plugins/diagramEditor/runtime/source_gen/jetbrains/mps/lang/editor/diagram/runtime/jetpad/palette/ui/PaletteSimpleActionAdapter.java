@@ -9,14 +9,11 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 /*package*/ class PaletteSimpleActionAdapter extends AnAction {
   private PaletteSimpleAction myAction;
   private DiagramPalette myPalette;
-
   public PaletteSimpleActionAdapter(PaletteSimpleAction action, DiagramPalette palette) {
     super(action.getText(), action.getText(), action.getIcon());
     myAction = action;
     myPalette = palette;
   }
-
-
 
 
 

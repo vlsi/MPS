@@ -13,7 +13,6 @@ public class Make_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(Make_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.Make_ActionGroup";
   public static final String LABEL_ID_preview = ID + "preview";
-
   public Make_ActionGroup() {
     super("Make", ID);
     this.setIsInternal(false);

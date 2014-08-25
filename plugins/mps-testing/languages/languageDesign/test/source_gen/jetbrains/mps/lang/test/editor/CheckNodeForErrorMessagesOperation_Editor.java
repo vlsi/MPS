@@ -21,11 +21,9 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_djd04t_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_djd04t_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_djd04t_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_djd04t_a");
@@ -36,7 +34,6 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     }
     return editorCell;
   }
-
   private EditorCell createComponent_djd04t_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -46,7 +43,6 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     Annotation_Actions.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private EditorCell createNonEmptyProperty_djd04t_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -68,7 +64,6 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_djd04t_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_djd04t_a_0");
@@ -81,14 +76,12 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     editorCell.addEditorCell(this.createProperty_djd04t_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_djd04t_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_djd04t_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_djd04t_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -110,14 +103,12 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_djd04t_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow errors:");
     editorCell.setCellId("Constant_djd04t_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_djd04t_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("allowErrors");
@@ -138,14 +129,12 @@ public class CheckNodeForErrorMessagesOperation_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_djd04t_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "allow warnings:");
     editorCell.setCellId("Constant_djd04t_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_djd04t_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("allowWarnings");

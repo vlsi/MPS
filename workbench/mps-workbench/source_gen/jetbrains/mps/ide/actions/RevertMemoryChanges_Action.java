@@ -16,22 +16,18 @@ import org.apache.log4j.LogManager;
 
 public class RevertMemoryChanges_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RevertMemoryChanges_Action() {
     super("Revert Memory Changes", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -45,7 +41,6 @@ public class RevertMemoryChanges_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -59,7 +54,6 @@ public class RevertMemoryChanges_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((EditableSModel) ((SModel) MapSequence.fromMap(_params).get("model"))).reloadFromSource();
@@ -69,6 +63,5 @@ public class RevertMemoryChanges_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RevertMemoryChanges_Action.class);
 }

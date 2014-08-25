@@ -5,12 +5,10 @@ package jetbrains.mps.lang.editor.table.runtime;
 
 public abstract class AbstractTableRow implements TableRow {
   private int myNumber;
-
   public AbstractTableRow(int number) {
     myNumber = number;
     assert myNumber >= 0;
   }
-
   @Override
   public int getRowNumber() {
     return myNumber;

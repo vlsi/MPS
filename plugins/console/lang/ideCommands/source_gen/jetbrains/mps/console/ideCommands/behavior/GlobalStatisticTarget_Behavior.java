@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNodeUtil;
 public class GlobalStatisticTarget_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     List<Tuples._2<String, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._2<String, Integer>>());
 
@@ -30,7 +29,6 @@ public class GlobalStatisticTarget_Behavior {
 
     return result;
   }
-
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext c) {
     Iterable<SModule> modules = MPSModuleRepository.getInstance().getModules();
     return Sequence.fromIterable(modules).translate(new ITranslator2<SModule, SModel>() {

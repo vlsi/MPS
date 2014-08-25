@@ -9,10 +9,8 @@ public class _Replacer_x5qji9_a0a0b0c implements Replacer {
   public String replace(Matcher matcher) {
     return "<" + matcher.group(1) + ">";
   }
-
   /*package*/ SimpleReplace _enclosingClass;
   /*package*/ Object _closureContext;
-
   public _Replacer_x5qji9_a0a0b0c(SimpleReplace enclosingClass, Object closureContext) {
     this._enclosingClass = enclosingClass;
     this._closureContext = (Object) closureContext;

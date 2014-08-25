@@ -8,7 +8,6 @@ import java.util.regex.Matcher;
 /*package*/ class FindMatch {
   public FindMatch() {
   }
-
   /*package*/ void main() {
     String s = "abcdef2323";
     {
@@ -19,6 +18,5 @@ import java.util.regex.Matcher;
       }
     }
   }
-
   private static Pattern REGEXP_jzh4fq_a0a0b0b = Pattern.compile("(\\d+)", 0);
 }

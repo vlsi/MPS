@@ -15,12 +15,10 @@ public class LanguageTextGenDeclaration_Constraints extends BaseConstraintsDescr
   public LanguageTextGenDeclaration_Constraints() {
     super("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -31,10 +29,8 @@ public class LanguageTextGenDeclaration_Constraints extends BaseConstraintsDescr
 
     return result;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.TEXT_GEN.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1233929745439");
 }

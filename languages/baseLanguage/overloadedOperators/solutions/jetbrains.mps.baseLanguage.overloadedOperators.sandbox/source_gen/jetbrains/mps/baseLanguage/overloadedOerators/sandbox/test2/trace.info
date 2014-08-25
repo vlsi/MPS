@@ -9,47 +9,47 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:e4719969-9321-4bfc-bd9e-22fe8453d7da(jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test2)/3855395826139545516">
     <file name="TestModel.java">
-      <node id="4888428037514503305" at="13,22,14,20" concept="4" />
-      <node id="4888428037514503314" at="14,20,15,27" concept="1" />
-      <node id="4888428037514503326" at="15,27,16,20" concept="1" />
-      <node id="3855395826139545530" at="19,42,20,32" concept="4" />
-      <node id="3855395826139545535" at="20,32,21,32" concept="4" />
-      <node id="3855395826139545540" at="21,32,22,17" concept="1" />
-      <node id="3855395826139545546" at="22,17,23,16" concept="1" />
-      <node id="3855395826139545552" at="23,16,24,79" concept="4" />
-      <node id="3855395826139545558" at="24,79,25,133" concept="4" />
-      <node id="3855395826139545564" at="25,133,26,14" concept="1" />
-      <node id="3855395826139545568" at="26,14,27,14" concept="1" />
-      <node id="3855395826139545572" at="27,14,28,14" concept="1" />
-      <node id="3855395826139545576" at="28,14,29,14" concept="1" />
-      <node id="4888428037514503335" at="33,36,34,43" concept="5" />
-      <node id="4888428037514503335" at="35,5,36,16" concept="5" />
+      <node id="4888428037514503305" at="12,22,13,20" concept="4" />
+      <node id="4888428037514503314" at="13,20,14,27" concept="1" />
+      <node id="4888428037514503326" at="14,27,15,20" concept="1" />
+      <node id="3855395826139545530" at="17,42,18,32" concept="4" />
+      <node id="3855395826139545535" at="18,32,19,32" concept="4" />
+      <node id="3855395826139545540" at="19,32,20,17" concept="1" />
+      <node id="3855395826139545546" at="20,17,21,16" concept="1" />
+      <node id="3855395826139545552" at="21,16,22,79" concept="4" />
+      <node id="3855395826139545558" at="22,79,23,133" concept="4" />
+      <node id="3855395826139545564" at="23,133,24,14" concept="1" />
+      <node id="3855395826139545568" at="24,14,25,14" concept="1" />
+      <node id="3855395826139545572" at="25,14,26,14" concept="1" />
+      <node id="3855395826139545576" at="26,14,27,14" concept="1" />
+      <node id="4888428037514503335" at="30,36,31,43" concept="5" />
+      <node id="4888428037514503335" at="32,5,33,16" concept="5" />
       <node id="3855395826139545518" at="10,0,12,0" concept="0" trace="TestModel#()V" />
-      <node id="4888428037514503335" at="32,69,35,5" concept="2" />
-      <node id="4888428037514503301" at="13,0,18,0" concept="3" trace="test#()V" />
-      <node id="4888428037514503335" at="32,0,38,0" concept="6" trace="check_6o96ff_a1a1#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="3855395826139545526" at="19,0,31,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="4888428037514503335" at="29,69,32,5" concept="2" />
+      <node id="4888428037514503301" at="12,0,17,0" concept="3" trace="test#()V" />
+      <node id="4888428037514503335" at="29,0,35,0" concept="6" trace="check_6o96ff_a1a1#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3855395826139545526" at="17,0,29,0" concept="6" trace="main#([Ljava/lang/String;)V" />
       <scope id="3855395826139545521" at="10,22,10,22" />
-      <scope id="4888428037514503335" at="33,36,34,43" />
+      <scope id="4888428037514503335" at="30,36,31,43" />
       <scope id="3855395826139545518" at="10,0,12,0" />
-      <scope id="4888428037514503304" at="13,22,16,20">
+      <scope id="4888428037514503304" at="12,22,15,20">
         <var name="str" id="4888428037514503306" />
       </scope>
-      <scope id="4888428037514503335" at="32,69,36,16" />
-      <scope id="4888428037514503301" at="13,0,18,0" />
-      <scope id="4888428037514503335" at="32,0,38,0">
+      <scope id="4888428037514503335" at="29,69,33,16" />
+      <scope id="4888428037514503301" at="12,0,17,0" />
+      <scope id="4888428037514503335" at="29,0,35,0">
         <var name="checkedDotOperand" id="4888428037514503335" />
       </scope>
-      <scope id="3855395826139545529" at="19,42,29,14">
+      <scope id="3855395826139545529" at="17,42,27,14">
         <var name="a" id="3855395826139545531" />
         <var name="b" id="3855395826139545536" />
         <var name="c" id="3855395826139545553" />
         <var name="d" id="3855395826139545559" />
       </scope>
-      <scope id="3855395826139545526" at="19,0,31,0">
+      <scope id="3855395826139545526" at="17,0,29,0">
         <var name="args" id="3855395826139545580" />
       </scope>
-      <unit id="3855395826139545516" at="9,0,39,0" name="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test2.TestModel" />
+      <unit id="3855395826139545516" at="9,0,36,0" name="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test2.TestModel" />
     </file>
   </root>
 </debug-info>

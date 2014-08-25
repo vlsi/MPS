@@ -18,11 +18,9 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jf7bj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_jf7bj_a(editorContext, node);
   }
-
   private EditorCell createCollection_jf7bj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jf7bj_a");
@@ -36,16 +34,13 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_jf7bj_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._OpenTag");
     return editorCell;
   }
-
   private static boolean renderingCondition_jf7bj_a0a(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getOpeningTag_1220340471382(node).length() > 0;
   }
-
   private EditorCell createComponent_jf7bj_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -53,16 +48,13 @@ public class CellModel_ReferencePresentation_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createComponent_jf7bj_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CloseTag");
     return editorCell;
   }
-
   private static boolean renderingCondition_jf7bj_a2a(SNode node, EditorContext editorContext) {
     return EditorCellModel_Behavior.call_getClosingTag_1220340488560(node).length() > 0;
   }
-
   private EditorCell createComponent_jf7bj_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.editor.editor._CellModel_Common");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

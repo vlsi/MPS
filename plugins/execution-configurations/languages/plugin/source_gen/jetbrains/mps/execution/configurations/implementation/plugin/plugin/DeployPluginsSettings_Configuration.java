@@ -22,15 +22,12 @@ import org.apache.log4j.LogManager;
 public class DeployPluginsSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private DeployPluginsSettings_Configuration.MyState myState = new DeployPluginsSettings_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -38,19 +35,15 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public ClonableList<String> getPluginsToDeploy() {
     return myState.myPluginsToDeploy;
   }
-
   public void setPluginsToDeploy(ClonableList<String> value) {
     myState.myPluginsToDeploy = value;
   }
-
   public List<SNodeReference> getPluginsListToDeploy() {
     return PointerUtils.clonableListToNodes(this.getPluginsToDeploy());
   }
-
   @Override
   public DeployPluginsSettings_Configuration clone() {
     DeployPluginsSettings_Configuration clone = null;
@@ -65,13 +58,10 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
     }
     return clone;
   }
-
   public class MyState {
     public ClonableList<String> myPluginsToDeploy = new ClonableList<String>();
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       DeployPluginsSettings_Configuration.MyState state = new DeployPluginsSettings_Configuration.MyState();
@@ -81,26 +71,20 @@ public class DeployPluginsSettings_Configuration implements IPersistentConfigura
       return state;
     }
   }
-
   public DeployPluginsSettings_Configuration() {
   }
-
   private SettingsEditorEx<DeployPluginsSettings_Configuration> myEditorEx;
-
   public DeployPluginsSettings_Configuration createCloneTemplate() {
     return new DeployPluginsSettings_Configuration();
   }
-
   public DeployPluginsSettings_Configuration_Editor getEditor() {
     return new DeployPluginsSettings_Configuration_Editor();
   }
-
   public SettingsEditorEx<DeployPluginsSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(DeployPluginsSettings_Configuration.class);
 }

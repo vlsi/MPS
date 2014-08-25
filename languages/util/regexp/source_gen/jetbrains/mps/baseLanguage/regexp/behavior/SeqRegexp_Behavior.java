@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SeqRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getString_1222432436326", new Object[]{vars}) + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getString_1222432436326", new Object[]{vars});
   }
-
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return true;
   }

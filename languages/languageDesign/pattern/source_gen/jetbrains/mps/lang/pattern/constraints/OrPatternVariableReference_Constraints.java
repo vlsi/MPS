@@ -23,7 +23,6 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
   public OrPatternVariableReference_Constraints() {
     super("jetbrains.mps.lang.pattern.structure.OrPatternVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -42,7 +40,6 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
             SNode orPattern = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.pattern.structure.OrPattern", false, false);
             return check_8aolto_a1a0a(orPattern);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8aolto_a0a1a0a0a1a0b0a1a1;
@@ -52,13 +49,11 @@ public class OrPatternVariableReference_Constraints extends BaseConstraintsDescr
     });
     return references;
   }
-
   private static List<SNode> check_8aolto_a1a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTargets(checkedDotOperand, "variable", true);
     }
     return null;
   }
-
   private static SNodePointer breakingNode_8aolto_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)", "5642650895629225739");
 }

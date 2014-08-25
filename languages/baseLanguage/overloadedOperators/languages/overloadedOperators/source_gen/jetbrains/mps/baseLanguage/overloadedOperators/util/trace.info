@@ -2,169 +2,203 @@
 <debug-info>
   <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:9657ec16-7dab-4be4-9ea2-13982a8c441b(jetbrains.mps.baseLanguage.overloadedOperators.util)/5035379201237126028">
     <file name="BinaryOperationUtil.java">
-      <node id="5035379201237126043" at="22,264,23,19" concept="5" />
-      <node id="5035379201237126061" at="26,283,27,20" concept="5" />
-      <node id="5035379201237126094" at="30,368,31,20" concept="5" />
-      <node id="5035379201237126107" at="33,5,34,17" concept="5" />
-      <node id="5035379201237126120" at="37,128,38,84" concept="4" />
-      <node id="5035379201237126131" at="39,104,40,20" concept="5" />
-      <node id="5035379201237126142" at="43,141,44,57" concept="1" />
-      <node id="5035379201237126156" at="46,200,47,56" concept="1" />
-      <node id="5035379201237126175" at="49,5,50,18" concept="5" />
-      <node id="5035379201237126205" at="55,63,56,20" concept="5" />
-      <node id="5035379201237126215" at="58,200,59,20" concept="5" />
-      <node id="5035379201237126230" at="61,5,62,17" concept="5" />
-      <node id="5035379201237126238" at="66,193,67,19" concept="5" />
-      <node id="5035379201237126249" at="69,193,70,18" concept="5" />
-      <node id="5035379201237126260" at="72,195,73,19" concept="5" />
-      <node id="5035379201237126269" at="74,5,75,16" concept="5" />
-      <node id="5035379201237126281" at="79,194,80,19" concept="5" />
-      <node id="5035379201237126292" at="82,194,83,18" concept="5" />
-      <node id="5035379201237126303" at="85,194,86,19" concept="5" />
-      <node id="5035379201237126312" at="87,5,88,16" concept="5" />
-      <node id="5035379201237126324" at="92,22,93,67" concept="5" />
-      <node id="5035379201237126330" at="94,5,95,65" concept="5" />
-      <node id="5035379201237126345" at="99,104,100,18" concept="5" />
-      <node id="5035379201237126352" at="101,5,102,60" concept="4" />
-      <node id="5035379201237126365" at="103,25,104,20" concept="5" />
-      <node id="5035379201237126370" at="105,5,106,177" concept="4" />
-      <node id="5035379201237126383" at="107,53,108,18" concept="5" />
-      <node id="5035379201237126390" at="109,5,110,60" concept="1" />
-      <node id="5035379201237126398" at="110,60,111,78" concept="4" />
-      <node id="5035379201237126410" at="112,85,113,43" concept="4" />
-      <node id="5035379201237126416" at="113,43,114,65" concept="4" />
-      <node id="5035379201237126426" at="115,58,116,26" concept="1" />
-      <node id="5035379201237126430" at="116,26,117,47" concept="1" />
-      <node id="5035379201237126440" at="119,5,120,43" concept="1" />
-      <node id="5035379201237126447" at="120,43,121,51" concept="1" />
-      <node id="5035379201237126454" at="121,51,122,18" concept="5" />
-      <node id="5035379201237126466" at="18,0,20,0" concept="0" trace="BinaryOperationUtil#()V" />
-      <node id="5035379201237126041" at="21,100,24,5" concept="3" />
-      <node id="5035379201237126059" at="25,179,28,7" concept="3" />
-      <node id="5035379201237126092" at="29,294,32,7" concept="3" />
-      <node id="5035379201237126129" at="38,84,41,5" concept="3" />
-      <node id="5035379201237126140" at="42,38,45,7" concept="3" />
-      <node id="5035379201237126154" at="45,7,48,7" concept="3" />
-      <node id="5035379201237126203" at="54,38,57,7" concept="3" />
-      <node id="5035379201237126213" at="57,7,60,7" concept="3" />
-      <node id="5035379201237126236" at="65,91,68,5" concept="3" />
-      <node id="5035379201237126247" at="68,5,71,5" concept="3" />
-      <node id="5035379201237126258" at="71,5,74,5" concept="3" />
-      <node id="5035379201237126279" at="78,91,81,5" concept="3" />
-      <node id="5035379201237126290" at="81,5,84,5" concept="3" />
-      <node id="5035379201237126301" at="84,5,87,5" concept="3" />
-      <node id="5035379201237126322" at="91,101,94,5" concept="3" />
-      <node id="5035379201237126343" at="98,112,101,5" concept="3" />
-      <node id="5035379201237126363" at="102,60,105,5" concept="3" />
-      <node id="5035379201237126381" at="106,177,109,5" concept="3" />
-      <node id="5035379201237126424" at="114,65,118,7" concept="3" />
-      <node id="5035379201237126318" at="91,0,97,0" concept="6" trace="isSubTypeOperator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
-      <node id="5035379201237126138" at="41,5,49,5" concept="2" />
-      <node id="5035379201237126201" at="53,116,61,5" concept="2" />
-      <node id="5035379201237126406" at="111,78,119,5" concept="2" />
-      <node id="5035379201237126057" at="24,5,33,5" concept="3" />
-      <node id="5035379201237126180" at="53,0,64,0" concept="6" trace="hasOverloadedOperators#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Z" />
-      <node id="5035379201237126232" at="65,0,77,0" concept="6" trace="isSubTypeOperatorStraight#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5035379201237126275" at="78,0,90,0" concept="6" trace="isReversedSubTypeOperator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5035379201237126029" at="21,0,36,0" concept="6" trace="isOverloading#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="5035379201237126109" at="37,0,52,0" concept="6" trace="getOverloadedOperators#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Ljava/util/Map;" />
-      <node id="5035379201237126340" at="98,0,124,0" concept="6" trace="getNearestOverloaded#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/List;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="5035379201237126469" at="18,32,18,32" />
-      <scope id="5035379201237126042" at="22,264,23,19" />
-      <scope id="5035379201237126060" at="26,283,27,20" />
-      <scope id="5035379201237126093" at="30,368,31,20" />
-      <scope id="5035379201237126130" at="39,104,40,20" />
-      <scope id="5035379201237126141" at="43,141,44,57" />
-      <scope id="5035379201237126155" at="46,200,47,56" />
-      <scope id="5035379201237126204" at="55,63,56,20" />
-      <scope id="5035379201237126214" at="58,200,59,20" />
-      <scope id="5035379201237126237" at="66,193,67,19" />
-      <scope id="5035379201237126248" at="69,193,70,18" />
-      <scope id="5035379201237126259" at="72,195,73,19" />
-      <scope id="5035379201237126280" at="79,194,80,19" />
-      <scope id="5035379201237126291" at="82,194,83,18" />
-      <scope id="5035379201237126302" at="85,194,86,19" />
-      <scope id="5035379201237126323" at="92,22,93,67" />
-      <scope id="5035379201237126344" at="99,104,100,18" />
-      <scope id="5035379201237126364" at="103,25,104,20" />
-      <scope id="5035379201237126382" at="107,53,108,18" />
-      <scope id="5035379201237126466" at="18,0,20,0" />
-      <scope id="5035379201237126425" at="115,58,117,47" />
-      <scope id="5035379201237126058" at="25,179,28,7" />
-      <scope id="5035379201237126091" at="29,294,32,7" />
-      <scope id="5035379201237126321" at="91,101,95,65" />
-      <scope id="5035379201237126139" at="42,38,48,7" />
-      <scope id="5035379201237126202" at="54,38,60,7" />
-      <scope id="5035379201237126318" at="91,0,97,0">
+      <node id="7363434029342477689" at="24,0,25,0" concept="2" trace="myModel" />
+      <node id="7363434029342477693" at="25,40,26,16" concept="1" />
+      <node id="7363434029342665815" at="30,39,31,75" concept="7" />
+      <node id="7363434029342665815" at="34,37,35,65" concept="7" />
+      <node id="7363434029342668897" at="38,61,39,166" concept="1" />
+      <node id="7363434029342681890" at="42,50,43,65" concept="7" />
+      <node id="5035379201237126205" at="49,63,50,20" concept="7" />
+      <node id="5035379201237126215" at="52,200,53,20" concept="7" />
+      <node id="5035379201237126230" at="55,5,56,17" concept="7" />
+      <node id="5035379201237126120" at="58,99,59,84" concept="6" />
+      <node id="5035379201237126131" at="60,104,61,20" concept="7" />
+      <node id="5035379201237126142" at="64,141,65,57" concept="1" />
+      <node id="5035379201237126156" at="67,200,68,56" concept="1" />
+      <node id="5035379201237126175" at="70,5,71,18" concept="7" />
+      <node id="5035379201237126043" at="74,264,75,19" concept="7" />
+      <node id="5035379201237126061" at="78,283,79,20" concept="7" />
+      <node id="5035379201237126094" at="82,368,83,20" concept="7" />
+      <node id="5035379201237126107" at="85,5,86,17" concept="7" />
+      <node id="5035379201237126238" at="89,193,90,19" concept="7" />
+      <node id="5035379201237126249" at="92,193,93,18" concept="7" />
+      <node id="5035379201237126260" at="95,195,96,19" concept="7" />
+      <node id="5035379201237126269" at="97,5,98,16" concept="7" />
+      <node id="5035379201237126281" at="101,194,102,19" concept="7" />
+      <node id="5035379201237126292" at="104,194,105,18" concept="7" />
+      <node id="5035379201237126303" at="107,194,108,19" concept="7" />
+      <node id="5035379201237126312" at="109,5,110,16" concept="7" />
+      <node id="5035379201237126324" at="113,22,114,67" concept="7" />
+      <node id="5035379201237126330" at="115,5,116,65" concept="7" />
+      <node id="5035379201237126345" at="119,104,120,18" concept="7" />
+      <node id="5035379201237126352" at="121,5,122,60" concept="6" />
+      <node id="5035379201237126365" at="123,25,124,20" concept="7" />
+      <node id="5035379201237126370" at="125,5,126,166" concept="6" />
+      <node id="5035379201237126383" at="127,53,128,18" concept="7" />
+      <node id="5035379201237126390" at="129,5,130,60" concept="1" />
+      <node id="5035379201237126398" at="130,60,131,78" concept="6" />
+      <node id="5035379201237126410" at="132,85,133,43" concept="6" />
+      <node id="5035379201237126416" at="133,43,134,65" concept="6" />
+      <node id="5035379201237126426" at="135,58,136,26" concept="1" />
+      <node id="5035379201237126430" at="136,26,137,47" concept="1" />
+      <node id="5035379201237126440" at="139,5,140,43" concept="1" />
+      <node id="5035379201237126447" at="140,43,141,51" concept="1" />
+      <node id="5035379201237126454" at="141,51,142,18" concept="7" />
+      <node id="5035379201237126466" at="25,0,28,0" concept="0" trace="BinaryOperationUtil#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="7363434029342665815" at="30,0,33,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7363434029342665815" at="34,0,37,0" concept="5" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7363434029342666476" at="37,7,40,5" concept="4" />
+      <node id="7363434029342681890" at="42,0,45,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="5035379201237126203" at="48,52,51,7" concept="4" />
+      <node id="5035379201237126213" at="51,7,54,7" concept="4" />
+      <node id="5035379201237126129" at="59,84,62,5" concept="4" />
+      <node id="5035379201237126140" at="63,52,66,7" concept="4" />
+      <node id="5035379201237126154" at="66,7,69,7" concept="4" />
+      <node id="5035379201237126041" at="73,101,76,5" concept="4" />
+      <node id="5035379201237126059" at="77,179,80,7" concept="4" />
+      <node id="5035379201237126092" at="81,294,84,7" concept="4" />
+      <node id="5035379201237126236" at="88,92,91,5" concept="4" />
+      <node id="5035379201237126247" at="91,5,94,5" concept="4" />
+      <node id="5035379201237126258" at="94,5,97,5" concept="4" />
+      <node id="5035379201237126279" at="100,92,103,5" concept="4" />
+      <node id="5035379201237126290" at="103,5,106,5" concept="4" />
+      <node id="5035379201237126301" at="106,5,109,5" concept="4" />
+      <node id="5035379201237126322" at="112,102,115,5" concept="4" />
+      <node id="5035379201237126343" at="118,82,121,5" concept="4" />
+      <node id="5035379201237126363" at="122,60,125,5" concept="4" />
+      <node id="5035379201237126381" at="126,166,129,5" concept="4" />
+      <node id="5035379201237126424" at="134,65,138,7" concept="4" />
+      <node id="7363434029342671208" at="40,5,45,7" concept="7" />
+      <node id="5035379201237126318" at="112,0,118,0" concept="8" trace="isSubTypeOperator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Z)Z" />
+      <node id="5035379201237126201" at="47,86,55,5" concept="3" />
+      <node id="5035379201237126138" at="62,5,70,5" concept="3" />
+      <node id="5035379201237126406" at="131,78,139,5" concept="3" />
+      <node id="7363434029342665813" at="28,51,37,7" concept="6" />
+      <node id="5035379201237126057" at="76,5,85,5" concept="4" />
+      <node id="7363434029342596281" at="47,0,58,0" concept="5" trace="hasOverloadedOperators#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5035379201237126232" at="88,0,100,0" concept="8" trace="isSubTypeOperatorStraight#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5035379201237126275" at="100,0,112,0" concept="8" trace="isReversedSubTypeOperator#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7363434029342656085" at="58,0,73,0" concept="5" trace="getOverloadedOperators#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
+      <node id="5035379201237126029" at="73,0,88,0" concept="8" trace="isOverloading#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7363434029342477050" at="28,0,47,0" concept="5" trace="getOperatorContainers#()Ljava/lang/Iterable;" />
+      <node id="7363434029342647987" at="118,0,144,0" concept="5" trace="getNearestOverloaded#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5035379201237126469" at="25,40,26,16" />
+      <scope id="7363434029342665815" at="30,39,31,75" />
+      <scope id="7363434029342665815" at="34,37,35,65" />
+      <scope id="7363434029342666479" at="38,61,39,166" />
+      <scope id="7363434029342681890" at="42,50,43,65" />
+      <scope id="5035379201237126204" at="49,63,50,20" />
+      <scope id="5035379201237126214" at="52,200,53,20" />
+      <scope id="5035379201237126130" at="60,104,61,20" />
+      <scope id="5035379201237126141" at="64,141,65,57" />
+      <scope id="5035379201237126155" at="67,200,68,56" />
+      <scope id="5035379201237126042" at="74,264,75,19" />
+      <scope id="5035379201237126060" at="78,283,79,20" />
+      <scope id="5035379201237126093" at="82,368,83,20" />
+      <scope id="5035379201237126237" at="89,193,90,19" />
+      <scope id="5035379201237126248" at="92,193,93,18" />
+      <scope id="5035379201237126259" at="95,195,96,19" />
+      <scope id="5035379201237126280" at="101,194,102,19" />
+      <scope id="5035379201237126291" at="104,194,105,18" />
+      <scope id="5035379201237126302" at="107,194,108,19" />
+      <scope id="5035379201237126323" at="113,22,114,67" />
+      <scope id="5035379201237126344" at="119,104,120,18" />
+      <scope id="5035379201237126364" at="123,25,124,20" />
+      <scope id="5035379201237126382" at="127,53,128,18" />
+      <scope id="5035379201237126425" at="135,58,137,47" />
+      <scope id="5035379201237126466" at="25,0,28,0">
+        <var name="m" id="7363434029342468096" />
+      </scope>
+      <scope id="7363434029342665815" at="30,0,33,0">
+        <var name="it" id="7363434029342665815" />
+      </scope>
+      <scope id="7363434029342665815" at="34,0,37,0">
+        <var name="it" id="7363434029342665815" />
+      </scope>
+      <scope id="7363434029342681890" at="42,0,45,0">
+        <var name="it" id="7363434029342681890" />
+      </scope>
+      <scope id="5035379201237126058" at="77,179,80,7" />
+      <scope id="5035379201237126091" at="81,294,84,7" />
+      <scope id="5035379201237126321" at="112,102,116,65" />
+      <scope id="5035379201237126202" at="48,52,54,7" />
+      <scope id="5035379201237126139" at="63,52,69,7" />
+      <scope id="5035379201237126318" at="112,0,118,0">
         <var name="reversed" id="5035379201237126338" />
         <var name="subOperator" id="5035379201237126334" />
         <var name="superOperator" id="5035379201237126336" />
       </scope>
-      <scope id="5035379201237126409" at="112,85,118,7">
+      <scope id="5035379201237126409" at="132,85,138,7">
         <var name="operator" id="5035379201237126411" />
         <var name="reversed" id="5035379201237126417" />
       </scope>
-      <scope id="5035379201237126138" at="41,5,49,5">
-        <var name="operator" id="5035379201237126173" />
-      </scope>
-      <scope id="5035379201237126201" at="53,116,61,5">
+      <scope id="5035379201237126201" at="47,86,55,5">
         <var name="operator" id="5035379201237126228" />
       </scope>
-      <scope id="5035379201237126406" at="111,78,119,5">
+      <scope id="5035379201237126138" at="62,5,70,5">
+        <var name="operator" id="5035379201237126173" />
+      </scope>
+      <scope id="5035379201237126406" at="131,78,139,5">
         <var name="operatorEntry" id="5035379201237126407" />
       </scope>
-      <scope id="5035379201237126191" at="53,116,62,17" />
-      <scope id="5035379201237126235" at="65,91,75,16" />
-      <scope id="5035379201237126278" at="78,91,88,16" />
-      <scope id="5035379201237126180" at="53,0,64,0">
+      <scope id="5035379201237126191" at="47,86,56,17" />
+      <scope id="5035379201237126235" at="88,92,98,16" />
+      <scope id="5035379201237126278" at="100,92,110,16" />
+      <scope id="7363434029342596281" at="47,0,58,0">
         <var name="leftType" id="5035379201237126183" />
         <var name="node" id="5035379201237126181" />
-        <var name="operators" id="5035379201237126187" />
         <var name="rightType" id="5035379201237126185" />
       </scope>
-      <scope id="5035379201237126232" at="65,0,77,0">
+      <scope id="5035379201237126232" at="88,0,100,0">
         <var name="subOperator" id="5035379201237126271" />
         <var name="superOperator" id="5035379201237126273" />
       </scope>
-      <scope id="5035379201237126275" at="78,0,90,0">
+      <scope id="5035379201237126275" at="100,0,112,0">
         <var name="subOperator" id="5035379201237126314" />
         <var name="superOperator" id="5035379201237126316" />
       </scope>
-      <scope id="5035379201237126040" at="21,100,34,17" />
-      <scope id="5035379201237126119" at="37,128,50,18">
+      <scope id="5035379201237126119" at="58,99,71,18">
         <var name="result" id="5035379201237126121" />
       </scope>
-      <scope id="5035379201237126029" at="21,0,36,0">
+      <scope id="5035379201237126040" at="73,101,86,17" />
+      <scope id="7363434029342656085" at="58,0,73,0">
+        <var name="leftType" id="5035379201237126112" />
+        <var name="node" id="5035379201237126110" />
+        <var name="rightType" id="5035379201237126114" />
+      </scope>
+      <scope id="5035379201237126029" at="73,0,88,0">
         <var name="leftType" id="5035379201237126032" />
         <var name="node" id="5035379201237126030" />
         <var name="operator" id="5035379201237126036" />
         <var name="rightType" id="5035379201237126034" />
       </scope>
-      <scope id="5035379201237126109" at="37,0,52,0">
-        <var name="leftType" id="5035379201237126112" />
-        <var name="node" id="5035379201237126110" />
-        <var name="operators" id="5035379201237126116" />
-        <var name="rightType" id="5035379201237126114" />
+      <scope id="7363434029342451680" at="28,51,45,7">
+        <var name="visibleContainers" id="7363434029342665814" />
       </scope>
-      <scope id="5035379201237126342" at="98,112,122,18">
+      <scope id="7363434029342477050" at="28,0,47,0" />
+      <scope id="5035379201237126342" at="118,82,142,18">
         <var name="operatorMap" id="5035379201237126371" />
         <var name="result" id="5035379201237126353" />
         <var name="resultReversed" id="5035379201237126399" />
       </scope>
-      <scope id="5035379201237126340" at="98,0,124,0">
+      <scope id="7363434029342647987" at="118,0,144,0">
         <var name="leftType" id="5035379201237126459" />
         <var name="node" id="5035379201237126457" />
-        <var name="operators" id="5035379201237126463" />
         <var name="rightType" id="5035379201237126461" />
       </scope>
-      <unit id="5035379201237126028" at="17,0,125,0" name="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" />
+      <unit id="7363434029342665815" at="29,184,33,5" name="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil$1" />
+      <unit id="7363434029342665815" at="33,18,37,5" name="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil$2" />
+      <unit id="7363434029342681890" at="41,66,45,5" name="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil$3" />
+      <unit id="5035379201237126028" at="23,0,145,0" name="jetbrains.mps.baseLanguage.overloadedOperators.util.BinaryOperationUtil" />
     </file>
   </root>
 </debug-info>

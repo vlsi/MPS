@@ -18,19 +18,15 @@ public class MoveStaticMethod extends BaseRefactoring {
     this.addTransientParameter("destination");
     this.addTransientParameter("refactor");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveStaticMethod_Target();
   }
-
   public String getUserFriendlyName() {
     return "Move Static Method";
   }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     refactoringContext.setParameter("refactor", new MoveStaticMethodRefactoring(refactoringContext.getSelectedNode(), ((SNode) refactoringContext.getParameter("destination"))));
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -40,11 +36,9 @@ public class MoveStaticMethod extends BaseRefactoring {
     });
     return true;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).doRefactoring();
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return ((MoveStaticMethodRefactoring) refactoringContext.getParameter("refactor")).getUsages();
   }

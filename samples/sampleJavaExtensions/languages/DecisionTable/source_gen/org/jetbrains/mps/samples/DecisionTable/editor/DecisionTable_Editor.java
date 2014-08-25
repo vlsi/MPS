@@ -22,7 +22,6 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_h1ymql_a(editorContext, node);
   }
-
   private EditorCell createCollection_h1ymql_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h1ymql_a");
@@ -33,7 +32,6 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTable_h1ymql_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_h1ymql_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expectedType");
@@ -53,14 +51,12 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_h1ymql_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Default:");
     editorCell.setCellId("Constant_h1ymql_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_h1ymql_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("defaultValue");
@@ -80,7 +76,6 @@ public class DecisionTable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createTable_h1ymql_d0(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {

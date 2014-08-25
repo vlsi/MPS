@@ -22,12 +22,10 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
   public AbstractConceptDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -35,14 +33,12 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_c1kwet_a0a0a0a0a2;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return new ConceptsScope(_context.getContextNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"));
       }
     };
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -51,7 +47,6 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
@@ -60,6 +55,5 @@ public class AbstractConceptDeclaration_Constraints extends BaseConstraintsDescr
     });
     return properties;
   }
-
   private static SNodePointer breakingNode_c1kwet_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "8857655676216499631");
 }

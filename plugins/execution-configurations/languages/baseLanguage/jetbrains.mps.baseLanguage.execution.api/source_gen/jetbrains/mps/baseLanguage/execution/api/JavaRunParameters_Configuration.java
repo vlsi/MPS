@@ -18,15 +18,12 @@ import org.apache.log4j.LogManager;
 public class JavaRunParameters_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private JavaRunParameters_Configuration.MyState myState = new JavaRunParameters_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -34,15 +31,12 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public JavaRunParameters getJavaRunParameters() {
     return myState.myJavaRunParameters;
   }
-
   public void setJavaRunParameters(JavaRunParameters value) {
     myState.myJavaRunParameters = value;
   }
-
   @Override
   public JavaRunParameters_Configuration clone() {
     JavaRunParameters_Configuration clone = null;
@@ -57,13 +51,10 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
     }
     return clone;
   }
-
   public class MyState {
     public JavaRunParameters myJavaRunParameters = new JavaRunParameters(null, null, null, null, false);
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       JavaRunParameters_Configuration.MyState state = new JavaRunParameters_Configuration.MyState();
@@ -73,26 +64,20 @@ public class JavaRunParameters_Configuration implements IPersistentConfiguration
       return state;
     }
   }
-
   public JavaRunParameters_Configuration() {
   }
-
   private SettingsEditorEx<JavaRunParameters_Configuration> myEditorEx;
-
   public JavaRunParameters_Configuration createCloneTemplate() {
     return new JavaRunParameters_Configuration();
   }
-
   public JavaRunParameters_Configuration_Editor getEditor() {
     return new JavaRunParameters_Configuration_Editor();
   }
-
   public SettingsEditorEx<JavaRunParameters_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(JavaRunParameters_Configuration.class);
 }

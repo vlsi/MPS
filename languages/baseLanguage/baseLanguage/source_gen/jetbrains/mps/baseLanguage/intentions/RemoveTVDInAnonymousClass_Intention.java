@@ -17,72 +17,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class RemoveTVDInAnonymousClass_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public RemoveTVDInAnonymousClass_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
-
   public String getPresentation() {
     return "RemoveTVDInAnonymousClass";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.RemoveTVDInAnonymousClass_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.ERROR;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4138629533259838060");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveTVDInAnonymousClass_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Remove Type Variable Declaration in Anonymous Class";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).clear();
     }
-
     public IntentionDescriptor getDescriptor() {
       return RemoveTVDInAnonymousClass_Intention.this;
     }

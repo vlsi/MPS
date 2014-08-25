@@ -23,42 +23,34 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
   private final SNodeReference myNodePointer;
   private boolean myInvisible = false;
   private Rectangle myCachedCoverageArea = null;
-
   public CurrentLinePainter(SNodeReference pointer) {
     myNodePointer = pointer;
   }
-
   public CurrentLinePainter(SNode node) {
     myNodePointer = new SNodePointer(node);
   }
-
   @Override
   @NotNull
   public SNodeReference getItem() {
     return myNodePointer;
   }
-
   @Override
   protected Color getCellBackgroundColor() {
     return STRIPE_COLOR;
   }
-
   @Override
   protected Color getStripeBackgroundColor() {
     return STRIPE_COLOR;
   }
-
   @Override
   protected Color getFrameColor() {
     return Color.black;
   }
-
   @Override
   @Nullable
   protected SNode getSNode() {
     return ((SNodePointer) getItem()).resolve(MPSModuleRepository.getInstance());
   }
-
   @Override
   public Rectangle getCoverageArea(EditorComponent editorComponent) {
     if (myInvisible) {
@@ -70,7 +62,6 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
     myCachedCoverageArea = calculateCoverageArea(editorComponent);
     return myCachedCoverageArea;
   }
-
   @Override
   public Color getCellsFontColor(EditorCell_Label cell) {
     if (myInvisible) {
@@ -78,7 +69,6 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
     }
     return Color.WHITE;
   }
-
   @Override
   public boolean isAbove(AdditionalPainter additionalPainter, EditorComponent editorComponent) {
     if (additionalPainter instanceof CurrentLinePainter) {
@@ -89,7 +79,6 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
     }
     return false;
   }
-
   @Override
   public void paint(Graphics g, EditorComponent editorComponent) {
     if (myInvisible) {
@@ -97,17 +86,14 @@ public class CurrentLinePainter extends DebuggerCellPainter<SNodeReference> {
     }
     super.paint(g, editorComponent);
   }
-
   public void setVisible(boolean visible) {
     myInvisible = !(visible);
     myCachedCoverageArea = null;
   }
-
   @Override
   public boolean paintsBackground() {
     return !(myInvisible);
   }
-
   @Override
   public void beforeRemoval(EditorComponent editorComponent) {
     super.beforeRemoval(editorComponent);

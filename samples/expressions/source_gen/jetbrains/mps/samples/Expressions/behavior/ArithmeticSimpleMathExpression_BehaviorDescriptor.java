@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class ArithmeticSimpleMathExpression_BehaviorDescriptor extends BinarySimpleMathExpression_BehaviorDescriptor {
   public ArithmeticSimpleMathExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.ArithmeticSimpleMathExpression";

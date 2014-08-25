@@ -14,37 +14,30 @@ import jetbrains.mps.smodel.SReference;
 public class comparable_NamedTupleType_Object_ComparisonRule extends ComparisonRule_Runtime {
   public comparable_NamedTupleType_Object_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     return SLinkOperations.getTarget(node2, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_6f56oq_a0a0a1(), "classifier", false);
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   private static SNode _quotation_createNode_6f56oq_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

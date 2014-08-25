@@ -108,9 +108,7 @@ public class InterpretedBehaviorDescriptor extends BaseBehaviorDescriptor {
               continue;
             }
             String fqName = NameUtil.nodeFQName(currentConcept);
-            String behaviorClass = behaviorClassByConceptFqName(fqName);
-
-            Class cls = ClassLoaderManager.getInstance().getClass(language, behaviorClass);
+            Class cls = getGeneratedClass(fqName, behaviorClassByConceptFqName(fqName));
             if (cls != null) {
               for (Method method : cls.getMethods()) {
                 if (method.getName().equals(methodName)) {

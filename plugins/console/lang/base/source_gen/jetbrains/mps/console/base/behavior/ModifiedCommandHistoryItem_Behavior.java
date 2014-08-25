@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ModifiedCommandHistoryItem_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getCommandToEdit_691634242167796942(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "modifiedCommand", true);
   }

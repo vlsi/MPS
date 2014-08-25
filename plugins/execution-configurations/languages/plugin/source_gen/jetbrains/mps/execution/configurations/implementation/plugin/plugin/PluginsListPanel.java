@@ -35,21 +35,17 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 
 public class PluginsListPanel extends ListPanel<SNodeReference> {
 
-
   public PluginsListPanel() {
     super("Plugins to deploy");
   }
-
   @Override
   protected SNodeReference wrap(SNode node) {
     return new SNodePointer(node);
   }
-
   @Override
   protected SNodeReference unwrap(SNodeReference reference) {
     return reference;
   }
-
   @Override
   protected String getFqName(final SNodeReference element) {
     final Wrappers._T<String> fqName = new Wrappers._T<String>();
@@ -60,7 +56,6 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
     });
     return fqName.value;
   }
-
   @Override
   protected void collectCandidates() {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -76,7 +71,6 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
       }
     });
   }
-
   @Override
   public NodeChooserDialog createNodeChooserDialog(final List<SNodeReference> nodesList) {
     // todo: rewrite 
@@ -87,7 +81,6 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
           @Override
           public void navigate(boolean requestFocus) {
           }
-
           @Nullable
           @Override
           public ItemPresentation getPresentation() {
@@ -110,22 +103,18 @@ public class PluginsListPanel extends ListPanel<SNodeReference> {
           }
         };
       }
-
       @Override
       public SNodeReference[] find(boolean checkboxState) {
         return ListSequence.fromList(nodesList).toGenericArray(SNodeReference.class);
       }
-
       @Override
       public SNodeReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
-
       @Override
       public boolean loadInitialCheckBoxState() {
         return false;
       }
-
       @Override
       public boolean willOpenEditor() {
         return false;

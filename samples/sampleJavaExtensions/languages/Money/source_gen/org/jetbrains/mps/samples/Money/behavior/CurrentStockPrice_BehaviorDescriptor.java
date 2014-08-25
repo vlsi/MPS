@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class CurrentStockPrice_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CurrentStockPrice_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.Money.structure.CurrentStockPrice";

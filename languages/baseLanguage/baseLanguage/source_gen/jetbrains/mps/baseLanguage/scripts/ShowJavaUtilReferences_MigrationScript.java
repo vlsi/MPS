@@ -15,15 +15,12 @@ public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript 
       public String getName() {
         return "find java util refrences";
       }
-
       public String getAdditionalInfo() {
         return "find java util refrences";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         for (SReference ref : node.getReferences()) {
           String targetModelFQName = ref.getTargetSModelReference().getModelName();
@@ -33,10 +30,8 @@ public class ShowJavaUtilReferences_MigrationScript extends BaseMigrationScript 
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

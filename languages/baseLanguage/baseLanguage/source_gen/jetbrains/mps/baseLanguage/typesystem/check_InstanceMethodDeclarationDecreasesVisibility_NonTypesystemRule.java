@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instanceMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode nearestOverriddenMethod = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), instanceMethodDeclaration, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((nearestOverriddenMethod == null)) {
@@ -57,22 +56,18 @@ public class check_InstanceMethodDeclarationDecreasesVisibility_NonTypesystemRul
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_68cpna_a0a7a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

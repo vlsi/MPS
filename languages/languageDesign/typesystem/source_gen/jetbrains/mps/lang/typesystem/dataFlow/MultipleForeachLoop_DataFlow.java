@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MultipleForeachLoop_DataFlow extends DataFlowBuilder {
   public MultipleForeachLoop_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode variable : SLinkOperations.getTargets(_context.getNode(), "loopVariable", true)) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(variable, "iterable", true));

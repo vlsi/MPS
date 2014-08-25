@@ -22,12 +22,10 @@ import jetbrains.mps.util.CollectionUtil;
 public class MappingConfigFinder implements IFinder {
   private Generator myGenerator;
   private SNode myNodeToFindUsages;
-
   public MappingConfigFinder(Generator generator, SNode nodeToFindUsages) {
     myGenerator = generator;
     myNodeToFindUsages = nodeToFindUsages;
   }
-
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     List<SearchResult<SNode>> results = new ArrayList<SearchResult<SNode>>();
@@ -55,7 +53,6 @@ public class MappingConfigFinder implements IFinder {
     }
     return new SearchResults<SNode>(CollectionUtil.set(myNodeToFindUsages), results);
   }
-
   private void collectChildrenThatMayHaveReferenceOnTemplate(SNode parent, List<SNode> result) {
     List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(parent, false);
     for (SNode child : children) {

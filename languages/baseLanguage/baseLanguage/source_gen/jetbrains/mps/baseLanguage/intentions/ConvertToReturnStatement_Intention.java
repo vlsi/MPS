@@ -19,74 +19,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToReturnStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertToReturnStatement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
   }
-
   public String getPresentation() {
     return "ConvertToReturnStatement";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ConvertToReturnStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(node);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "7288587046701126243");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToReturnStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Return Statement";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode returnStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
       SLinkOperations.setTarget(returnStatement, "expression", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
       SNodeOperations.replaceWithAnother(node, returnStatement);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertToReturnStatement_Intention.this;
     }

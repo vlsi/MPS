@@ -8,7 +8,6 @@ import junit.textui.TestRunner;
 public class MfTester {
   public MfTester() {
   }
-
   public static TestSuite suite() {
     TestSuite result = new TestSuite();
     result.addTest(new TestSuite(MfDateTester.class));
@@ -20,7 +19,6 @@ public class MfTester {
     result.addTest(new TestSuite(BitemporalCollectionSuperclassTester.class));
     return result;
   }
-
   public static void main(String[] args) {
     TestRunner.run(MfTester.suite());
   }

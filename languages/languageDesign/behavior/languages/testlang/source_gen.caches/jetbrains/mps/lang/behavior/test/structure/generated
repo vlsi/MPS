@@ -1,25 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="79jozh7cjka2m0falodc05b6whrg5xq">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
-  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-cqgdrp80tjsos1413o6g4vmrvv1i320" dependsOnNodes="true">
-    <dep root="4731970554577181482" />
-    <dep root="4731970554577181534" />
-    <dep root="4731970554577184788" />
-    <dep root="4731970554577184883" />
-    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
-    <file name="StructureAspectDescriptor.java" />
-  </common>
-  <source id="4731970554577181482" name="A" hash="cli5rvashtlkzzcmo7z19pi9y05z958" />
-  <source id="4731970554577181534" name="B" hash="-eg8r8ecdnhmke7p7ptmbay6itqgkfac" />
-  <source id="4731970554577184788" name="I" hash="49er1cwo8tpqesqbrgosbdajlc9h7e6" />
-  <source id="4731970554577184883" name="C" hash="1voz8bz0rc0jfybrq0yzrooz7x5s7xo" />
-</dependencies>
+<dependencies version="2" modelHash="79jozh7cjka2m0falodc05b6whrg5xq" />
 

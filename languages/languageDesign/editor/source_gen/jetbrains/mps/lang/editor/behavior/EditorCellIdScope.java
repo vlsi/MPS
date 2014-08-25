@@ -26,13 +26,10 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorCellIdScope extends FilteringScope {
   private SNode myConceptDeclaration;
-
   public EditorCellIdScope(SModel model, SNode conceptDeclaration) {
     super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorCellId"));
     myConceptDeclaration = conceptDeclaration;
   }
-
-
 
   private static Iterable<SModel> getModels(SModel model) {
     Iterable<Language> depLanguages = Sequence.fromIterable(((Iterable<SModule>) new GlobalModuleDependenciesManager(model.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))).ofType(Language.class);
@@ -46,7 +43,6 @@ public class EditorCellIdScope extends FilteringScope {
       }
     });
   }
-
   private static Iterable<Language> withExtendedLanguages(Iterable<Language> languages, SRepository repository) {
     Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
     for (Language language : Sequence.fromIterable(languages)) {
@@ -60,7 +56,6 @@ public class EditorCellIdScope extends FilteringScope {
     }
     return result;
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (isExcluded(node)) {
@@ -68,7 +63,6 @@ public class EditorCellIdScope extends FilteringScope {
     }
     return SPropertyOperations.getString(SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId"), "name");
   }
-
   @Override
   public boolean isExcluded(SNode node) {
     SNode editorCellId = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId");

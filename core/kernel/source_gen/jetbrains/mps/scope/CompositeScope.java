@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class CompositeScope extends Scope {
   private List<Scope> myScopes;
-
   public CompositeScope(Scope... scopeChain) {
     myScopes = new ArrayList<Scope>();
     for (Scope scope : scopeChain) {
@@ -24,7 +23,6 @@ public class CompositeScope extends Scope {
       }
     }
   }
-
   public void addScope(Scope scope) {
     if (scope instanceof CompositeScope) {
       myScopes.addAll(((CompositeScope) scope).getScopes());
@@ -32,11 +30,9 @@ public class CompositeScope extends Scope {
       myScopes.add(scope);
     }
   }
-
   public Collection<Scope> getScopes() {
     return Collections.unmodifiableCollection(myScopes);
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
@@ -53,7 +49,6 @@ public class CompositeScope extends Scope {
     }
     return result;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
@@ -62,7 +57,6 @@ public class CompositeScope extends Scope {
     }
     return result;
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     String result = null;
@@ -79,7 +73,6 @@ public class CompositeScope extends Scope {
     }
     return result;
   }
-
   public static Scope createComposite(Scope... scopes) {
     Scope last = null;
     for (Scope s : scopes) {

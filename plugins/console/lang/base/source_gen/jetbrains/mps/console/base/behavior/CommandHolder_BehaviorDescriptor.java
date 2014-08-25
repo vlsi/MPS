@@ -10,15 +10,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class CommandHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements HistoryItem_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {
   public CommandHolder_BehaviorDescriptor() {
   }
-
   public SNode virtual_getCommandToEdit_691634242167796942(SNode thisNode) {
     return CommandHolder_Behavior.virtual_getCommandToEdit_691634242167796942(thisNode);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.CommandHolder";

@@ -16,14 +16,14 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.library.LibraryInitializer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.ProtectionDomainUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.iterable.IterableEnumeration;
 import jetbrains.mps.vfs.IFile;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.IOException;
@@ -53,14 +53,29 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
+  // FIXME we cannot use this method because of PluginReloader#schedulePluginsReload
+  // It forces us to use the objects of classes with disposed classloaders
+  private void checkNotDisposed() {
+    if (myDisposed)
+      throw new AssertionError("MPS ClassLoader is disposed and not operable!");
+  }
+
   public ModuleClassLoader(ClassLoaderManager manager, ModuleClassLoaderSupport classLoaderSupport) {
     super(getParentPluginClassLoader(classLoaderSupport.getModule()));
     myManager = manager;
     mySupport = classLoaderSupport;
   }
 
+  public Class<?> loadOwnClass(String name) throws ClassNotFoundException {
+    if (mySupport.canFindClass(name)) {
+      return loadClass(name);
+    }
+    throw new ClassNotFoundException(name);
+  }
+
   @Override
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+//    checkNotDisposed();
     if (name.startsWith("java.")) {
       return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
     }
@@ -92,6 +107,9 @@ public class ModuleClassLoader extends ClassLoader {
       } finally {
         if (clazz != null) {
           myClasses.put(name, clazz);
+        } else {
+          LOG.warn("Unable to load class: " + name + " using ModuleClassLoader of " + mySupport.getModule().getModuleName() +
+              " module. It is recommended to use loadOwnClass() in such cases.", new Throwable());
         }
         myLoadedClasses.add(name);
       }
@@ -99,6 +117,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
+//    checkNotDisposed();
     if (myLoadedClasses.contains(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
@@ -108,6 +127,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromSelf(String name) {
+//    checkNotDisposed();
     Class c = findLoadedClass(name);
     if (c != null) return c;
 
@@ -163,6 +183,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
+//    checkNotDisposed();
     for (ClassLoader dep : getDependencyClassLoaders()) {
       if (dep instanceof ModuleClassLoader) {
         URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
@@ -177,6 +198,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
+//    checkNotDisposed();
     ArrayList<URL> result = new ArrayList<URL>();
     for (ClassLoader dep : getDependencyClassLoaders()) {
       if (dep instanceof ModuleClassLoader) {

@@ -11,26 +11,21 @@ public enum WorkflowPresentation {
   tabular("tabular", "tabular");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<WorkflowPresentation> getConstants() {
     List<WorkflowPresentation> list = ListSequence.fromList(new LinkedList<WorkflowPresentation>());
     ListSequence.fromList(list).addElement(WorkflowPresentation.structural);
     ListSequence.fromList(list).addElement(WorkflowPresentation.tabular);
     return list;
   }
-
   public static WorkflowPresentation getDefault() {
     return WorkflowPresentation.structural;
   }
-
   public static WorkflowPresentation parseValue(String value) {
     if (value == null) {
       return WorkflowPresentation.getDefault();
@@ -43,14 +38,11 @@ public enum WorkflowPresentation {
     }
     return WorkflowPresentation.getDefault();
   }
-
   private String myValue;
-
   WorkflowPresentation(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

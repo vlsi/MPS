@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class XmlCharRef_BehaviorDescriptor extends XmlContent_BehaviorDescriptor {
   public XmlCharRef_BehaviorDescriptor() {
   }
-
   public boolean virtual_oneLineBlock_1262430001741497816(SConcept thisConcept) {
     return XmlCharRef_Behavior.virtual_oneLineBlock_1262430001741497816(thisConcept);
   }
-
   public boolean virtual_textLike_1262430001741498277(SConcept thisConcept) {
     return XmlCharRef_Behavior.virtual_textLike_1262430001741498277(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlCharRef";

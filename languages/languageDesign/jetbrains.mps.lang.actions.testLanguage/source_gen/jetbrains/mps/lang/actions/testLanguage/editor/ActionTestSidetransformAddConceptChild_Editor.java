@@ -16,7 +16,6 @@ public class ActionTestSidetransformAddConceptChild_Editor extends DefaultNodeEd
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_f8pdpu_a(editorContext, node);
   }
-
   private EditorCell createCollection_f8pdpu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_f8pdpu_a");
@@ -26,14 +25,12 @@ public class ActionTestSidetransformAddConceptChild_Editor extends DefaultNodeEd
     editorCell.addEditorCell(this.createConstant_f8pdpu_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_f8pdpu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test sidetransform add concept child");
     editorCell.setCellId("Constant_f8pdpu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_f8pdpu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f8pdpu_b0");
@@ -45,7 +42,6 @@ public class ActionTestSidetransformAddConceptChild_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_f8pdpu_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_f8pdpu_c0");

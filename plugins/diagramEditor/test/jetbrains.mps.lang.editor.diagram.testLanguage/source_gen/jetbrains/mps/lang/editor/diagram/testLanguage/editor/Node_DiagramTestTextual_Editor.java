@@ -20,16 +20,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 
 public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jzym6o_a(editorContext, node);
   }
-
   private EditorCell createCollection_jzym6o_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jzym6o_a");
@@ -46,14 +43,12 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_jzym6o_j0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node");
     editorCell.setCellId("Constant_jzym6o_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_jzym6o_b0");
@@ -65,14 +60,12 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_jzym6o_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_jzym6o_d0");
@@ -82,7 +75,6 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_jzym6o_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
@@ -100,7 +92,6 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_jzym6o_f0");
@@ -110,14 +101,12 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y");
     editorCell.setCellId("Constant_jzym6o_g0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_jzym6o_h0");
@@ -127,7 +116,6 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_jzym6o_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
@@ -145,7 +133,6 @@ public class Node_DiagramTestTextual_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_jzym6o_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_jzym6o_j0");

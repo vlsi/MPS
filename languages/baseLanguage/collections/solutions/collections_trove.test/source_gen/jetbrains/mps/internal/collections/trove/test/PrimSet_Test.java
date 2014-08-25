@@ -37,13 +37,11 @@ public class PrimSet_Test extends Util_Test {
     Assert.assertSame(3, SetSequence.fromSet(bs).count());
     Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Byte>(), (byte) 192, (byte) 168, (byte) 1), bs);
   }
-
   public void test_doubleSet() throws Exception {
     Set<Double> ds = SetSequence.fromSetAndArray(new TDoubleHashSetDecorator(new TDoubleHashSet()), 1.1, 2.2, 3.3, 2.2, 1.1);
     Assert.assertSame(3, SetSequence.fromSet(ds).count());
     Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Double>(), 3.3, 2.2, 1.1), ds);
   }
-
   public void test_floatSet() throws Exception {
     Set<Float> fs = SetSequence.fromSet(new TFloatHashSetDecorator(new TFloatHashSet()));
     Set<Float> exp = SetSequence.fromSetAndArray(new HashSet<Float>(), 5.5f, 6.6f, 7.7f, 8.8f, 9.9f);
@@ -52,7 +50,6 @@ public class PrimSet_Test extends Util_Test {
     Assert.assertSame(5, SetSequence.fromSet(fs).count());
     Assert.assertEquals(exp, fs);
   }
-
   public void test_intSet() throws Exception {
     Set<Integer> is = SetSequence.fromSet(new TIntHashSetDecorator(new TIntHashSet()));
     SetSequence.fromSet(is).addSequence(Sequence.fromIterable(Sequence.fromClosure(new ISequenceClosure<Integer>() {
@@ -61,7 +58,6 @@ public class PrimSet_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -99,7 +95,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -108,7 +103,6 @@ __switch__:
     })));
     this.assertIterableEqualsAsSet(this.input10(), is);
   }
-
   public void test_longSet() throws Exception {
     final Set<Long> ls = SetSequence.fromSet(new TLongHashSetDecorator(new TLongHashSet()));
     Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5, 4, 3, 2, 1, 2, 3, 4, 5})).visitAll(new IVisitor<Long>() {
@@ -122,14 +116,12 @@ __switch__:
       }
     }));
   }
-
   public void test_shortSet() throws Exception {
     Set<Short> shs = SetSequence.fromSet(new TShortHashSetDecorator(new TShortHashSet()));
     SetSequence.fromSet(shs).addElement((short) 65535);
     SetSequence.fromSet(shs).addElement((short) -1);
     Assert.assertSame(1, SetSequence.fromSet(shs).count());
   }
-
   public PrimSet_Test() {
   }
 }

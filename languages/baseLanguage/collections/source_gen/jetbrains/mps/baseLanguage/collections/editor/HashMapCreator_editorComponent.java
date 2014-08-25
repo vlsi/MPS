@@ -37,11 +37,9 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_s4nv53_a(editorContext, node);
   }
-
   private EditorCell createCollection_s4nv53_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s4nv53_a");
@@ -57,21 +55,19 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_s4nv53_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return (SPropertyOperations.getString(node, "alias") != null ? SPropertyOperations.getString(node, "alias") : SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias"));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new HashMapCreator_editorComponent.ReplaceWith_HashMapCreator_cellMenu_s4nv53_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_s4nv53_a0");
     Style style = new StyleImpl();
@@ -81,16 +77,13 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   public static class ReplaceWith_HashMapCreator_cellMenu_s4nv53_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_HashMapCreator_cellMenu_s4nv53_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
     }
   }
-
   private EditorCell createCollection_s4nv53_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s4nv53_b0");
@@ -104,11 +97,9 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_s4nv53_e1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_s4nv53_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "keyType", true) != null) || (SLinkOperations.getTarget(node, "valueType", true) != null);
   }
-
   private EditorCell createConstant_s4nv53_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_s4nv53_a1a");
@@ -118,7 +109,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_s4nv53_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("keyType");
@@ -138,7 +128,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s4nv53_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_s4nv53_c1a");
@@ -148,7 +137,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_s4nv53_d1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("valueType");
@@ -168,7 +156,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s4nv53_e1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_s4nv53_e1a");
@@ -180,7 +167,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_s4nv53_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initializer");
@@ -200,11 +186,9 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_s4nv53_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initializer", true) != null);
   }
-
   private EditorCell createCollection_s4nv53_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_s4nv53_d0");
@@ -216,11 +200,9 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_s4nv53_c3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_s4nv53_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initSize", true) != null);
   }
-
   private EditorCell createConstant_s4nv53_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_s4nv53_a3a");
@@ -230,7 +212,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_s4nv53_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initSize");
@@ -250,7 +231,6 @@ public class HashMapCreator_editorComponent implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_s4nv53_c3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_s4nv53_c3a");

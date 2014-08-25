@@ -59,13 +59,11 @@ public class VmCreator extends AbstractDebugSessionCreator {
   private final List<ProcessListener> myProcessListeners = new ArrayList<ProcessListener>();
   private ExecutionResult myExecutionResult;
   private final DebugSession myDebuggerSession;
-
   public VmCreator(Project project) {
     myEventsProcessor = new EventsProcessor(project, BreakpointManagerComponent.getInstance(project));
     myDebuggerSession = new DebugSession(myEventsProcessor, project);
     myDebuggerSession.setEvaluationProvider(new EvaluationProvider(myDebuggerSession));
   }
-
   private DebugConnectionSettings createLocalConnectionSettings(RunProfileState state) throws ExecutionException {
     if (state instanceof DebuggerRunProfileState) {
       IDebuggerSettings debuggerSettings = ((DebuggerRunProfileState) state).getDebuggerSettings();
@@ -77,7 +75,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       throw new ExecutionException("Unknown Run Profile State");
     }
   }
-
   @Nullable
   @Override
   public ExecutionResult startSession(final Executor executor, final ProgramRunner runner, final RunProfileState state, Project project) throws ExecutionException {
@@ -107,17 +104,14 @@ public class VmCreator extends AbstractDebugSessionCreator {
     }
     return myExecutionResult;
   }
-
   private void createVmFailed(Throwable t) {
     createVmFailed(t.getMessage());
     LOG.warn("Create VM failed", t);
   }
-
   private void createVmFailed(String message) {
     myEventsProcessor.getSystemMessagesReporter().reportError(message);
     fail();
   }
-
   private void fixStopBugUnderLinux(final ProcessHandler processHandler, final DebugSession session) {
     if (!((processHandler instanceof RemoteProcessHandler))) {
       //  add listener only to non-remote process handler: 
@@ -143,7 +137,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       });
     }
   }
-
   private void fail() {
     synchronized (this) {
       if (myIsFailed) {
@@ -153,7 +146,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
     }
     myEventsProcessor.stop(false);
   }
-
   private void createVirtualMachine() {
     final Semaphore semaphore = new Semaphore();
     // semaphore - maybe not to call this method multiple times when a VM is not ready 
@@ -208,7 +200,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
     });
     semaphore.waitFor();
   }
-
   private VirtualMachine doCreateVirtualMachine() throws RunFailedException {
     try {
       if (myArguments != null) {
@@ -254,7 +245,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       myArguments = null;
     }
   }
-
   private void fillConnectorArguments(Connector connector) throws RunFailedException {
     if (connector == null) {
       throw new RunFailedException("debug connector not found");
@@ -281,7 +271,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       hostArgument.setValue(myConnectionSettings.getHostName());
     }
   }
-
   private Connector findConnector(String connectorName) throws RunFailedException {
     VirtualMachineManager virtualMachineManager = null;
     try {
@@ -306,7 +295,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
     }
     return null;
   }
-
   public void addProcessListener(ProcessListener processListener) {
     synchronized (myProcessListeners) {
       if (myExecutionResult != null) {
@@ -316,7 +304,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
     }
   }
-
   public void removeProcessListener(ProcessListener processListener) {
     synchronized (myProcessListeners) {
       if (myExecutionResult != null) {
@@ -326,7 +313,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
     }
   }
-
   private void executeAfterProcessStarted(final Runnable run) {
     VmCreator.RunsAfterProcessStarted processListener = new VmCreator.RunsAfterProcessStarted(run);
     addProcessListener(processListener);
@@ -336,24 +322,19 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
     }
   }
-
   @Override
   public DebugSession getDebugSession() {
     return myDebuggerSession;
   }
-
   public DebugConnectionSettings getConnectionSettings() {
     return myConnectionSettings;
   }
-
   private class RunsAfterProcessStarted extends ProcessAdapter {
     private Runnable myRunnable;
     private boolean alreadyRun = false;
-
     public RunsAfterProcessStarted(Runnable runnable) {
       myRunnable = runnable;
     }
-
     public synchronized void run() {
       if (!(alreadyRun)) {
         alreadyRun = true;
@@ -361,7 +342,6 @@ public class VmCreator extends AbstractDebugSessionCreator {
       }
       removeProcessListener(this);
     }
-
     @Override
     public void startNotified(ProcessEvent event) {
       run();

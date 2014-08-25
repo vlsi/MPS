@@ -8,7 +8,6 @@ import junit.framework.Assert;
 public abstract class AbstractTestClass extends TestCase {
   public AbstractTestClass() {
   }
-
   public void testtest() {
     Assert.assertEquals("", "abc");
   }

@@ -6,7 +6,6 @@ package jetbrains.mps.sampleXML.behavior;
 public class Element_BehaviorDescriptor extends ElementPart_BehaviorDescriptor {
   public Element_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.sampleXML.structure.Element";

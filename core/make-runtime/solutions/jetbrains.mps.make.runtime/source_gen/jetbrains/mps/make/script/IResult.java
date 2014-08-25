@@ -7,37 +7,29 @@ import jetbrains.mps.make.resources.IResource;
 public interface IResult {
   public boolean isSucessful();
   public Iterable<IResource> output();
-
   public static class SUCCESS implements IResult {
     private Iterable<IResource> output;
-
     public SUCCESS(Iterable<IResource> output) {
       this.output = output;
     }
-
     @Override
     public boolean isSucessful() {
       return true;
     }
-
     @Override
     public Iterable<IResource> output() {
       return output;
     }
   }
-
   public static class FAILURE implements IResult {
     private Iterable<IResource> output;
-
     public FAILURE(Iterable<IResource> output) {
       this.output = output;
     }
-
     @Override
     public boolean isSucessful() {
       return false;
     }
-
     @Override
     public Iterable<IResource> output() {
       return output;

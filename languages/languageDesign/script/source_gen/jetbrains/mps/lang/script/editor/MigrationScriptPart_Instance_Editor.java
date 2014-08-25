@@ -26,7 +26,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nl0fz6_a(editorContext, node);
   }
-
   private EditorCell createCollection_nl0fz6_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_a");
@@ -36,7 +35,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nl0fz6_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_nl0fz6_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_a0");
@@ -53,7 +51,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_nl0fz6_e0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_nl0fz6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_a0a");
@@ -65,7 +62,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nl0fz6_c0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description");
     editorCell.setCellId("Constant_nl0fz6_a0a0");
@@ -75,7 +71,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nl0fz6_b0a0");
@@ -86,7 +81,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_nl0fz6_c0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
@@ -107,7 +101,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_nl0fz6_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_b0a");
@@ -119,7 +112,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nl0fz6_c1a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "show as intention");
     editorCell.setCellId("Constant_nl0fz6_a1a0");
@@ -129,7 +121,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nl0fz6_b1a0");
@@ -140,7 +131,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_nl0fz6_c1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("showAsIntention");
@@ -158,7 +148,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_nl0fz6_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_c0a");
@@ -170,7 +159,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_nl0fz6_c2a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_a2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for each");
     editorCell.setCellId("Constant_nl0fz6_a2a0");
@@ -180,7 +168,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b2a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nl0fz6_b2a0");
@@ -191,7 +178,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_nl0fz6_c2a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("affectedInstanceConcept");
@@ -213,20 +199,16 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_nl0fz6_a2c0a extends InlineCellProvider {
     public _Inline_nl0fz6_a2c0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_nl0fz6_a0c2a0(editorContext, node);
     }
-
     private EditorCell createProperty_nl0fz6_a0c2a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -249,7 +231,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_nl0fz6_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_d0a");
@@ -261,7 +242,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_nl0fz6_c3a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_a3a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "where");
     editorCell.setCellId("Constant_nl0fz6_a3a0");
@@ -271,7 +251,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b3a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nl0fz6_b3a0");
@@ -282,7 +261,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nl0fz6_c3a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("affectedInstancePredicate");
@@ -302,7 +280,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_nl0fz6_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nl0fz6_e0a");
@@ -314,7 +291,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_nl0fz6_c4a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_a4a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "do");
     editorCell.setCellId("Constant_nl0fz6_a4a0");
@@ -324,7 +300,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b4a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nl0fz6_b4a0");
@@ -335,7 +310,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nl0fz6_c4a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("affectedInstanceUpdater");
@@ -355,7 +329,6 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nl0fz6_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_nl0fz6_b0");

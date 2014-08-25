@@ -16,72 +16,59 @@ import jetbrains.mps.nodeEditor.CreateFromUsageUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
+import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInInlineSwitchDefault_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public NewTemplateInInlineSwitchDefault_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence";
   }
-
   public String getPresentation() {
     return "NewTemplateInInlineSwitchDefault";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.NewTemplateInInlineSwitchDefault_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "defaultConsequence", true) == null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "8004199436029429270");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewTemplateInInlineSwitchDefault_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "New Default Template";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       String name = CreateFromUsageUtil.getText(editorContext);
       if (name == null || name.length() == 0) {
@@ -98,8 +85,8 @@ public class NewTemplateInInlineSwitchDefault_Intention implements IntentionFact
       SNode tr = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
       SLinkOperations.setTarget(tr, "template", t, false);
       SLinkOperations.setTarget(node, "defaultConsequence", tr, true);
+      SelectionUtil.selectCell(editorContext, tr, SelectionManager.FIRST_EDITABLE_CELL);
     }
-
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInInlineSwitchDefault_Intention.this;
     }

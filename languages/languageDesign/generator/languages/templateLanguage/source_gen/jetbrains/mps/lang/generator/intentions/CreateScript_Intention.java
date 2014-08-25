@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateScript_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateScript_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.MappingScriptReference";
   }
-
   public String getPresentation() {
     return "CreateScript";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.CreateScript_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "mappingScript", false) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "2357139912674486242");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateScript_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Script";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode script = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingScript", null);
       SPropertyOperations.set(script, "name", "script");
@@ -89,7 +74,6 @@ public class CreateScript_Intention implements IntentionFactory {
       }
       SLinkOperations.setTarget(node, "mappingScript", script, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateScript_Intention.this;
     }

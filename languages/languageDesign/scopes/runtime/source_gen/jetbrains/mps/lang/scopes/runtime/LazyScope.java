@@ -10,11 +10,9 @@ public class LazyScope extends DelegatingScope {
   private final _FunctionTypes._return_P0_E0<? extends Scope> scopePromise;
   private Scope scope;
   private boolean isCalculated = false;
-
   public LazyScope(_FunctionTypes._return_P0_E0<? extends Scope> scopePromise) {
     this.scopePromise = scopePromise;
   }
-
   @Override
   protected Scope getScope() {
     if (!(isCalculated)) {

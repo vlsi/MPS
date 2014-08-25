@@ -27,7 +27,6 @@ public class QueriesUtil {
     }
     return result;
   }
-
   public static List<SNode> getNodeOperation_StopList_concepts(SNode operation) {
     SNode parm_StopList = SNodeOperations.cast(SModelLanguageUtil.findNodeOperationParameter(operation, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList")), "jetbrains.mps.lang.smodel.structure.OperationParm_StopConceptList");
     List<SNode> result = new ArrayList<SNode>();
@@ -41,19 +40,15 @@ public class QueriesUtil {
     }
     return result;
   }
-
   public static boolean operationHasParm_Inclusion(SNode inputNode) {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion")) != null;
   }
-
   public static boolean operationHasParm_SameMetaLevel(SNode inputNode) {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_SameMetaLevel")) != null;
   }
-
   public static boolean operationHasParm_Root(SNode inputNode) {
     return SModelLanguageUtil.findNodeOperationParameter(inputNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root")) != null;
   }
-
   public static SNode get_SPropertyAccess_simple_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     String methodName = "getString";
@@ -73,7 +68,6 @@ public class QueriesUtil {
     }
     return null;
   }
-
   public static SNode get_SPropertyAccess_enum_getterMethod(SNode operation) {
     SNode datatype = SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false);
     SNode primitiveDatatype = SLinkOperations.getTarget((SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "memberDataType", false);
@@ -91,11 +85,9 @@ public class QueriesUtil {
     }
     return null;
   }
-
   public static String get_SPropertyAccess_enum_defaultValue(SNode operation) {
     return SPropertyOperations.getString(DataTypeUtil.getDefaultMember(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "property", false), "dataType", false), "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration")), "internalValue");
   }
-
   public static boolean nodeOp_noParm_conceptList(SNode op) {
     SNode parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept"));
     if (parm != null) {
@@ -104,19 +96,16 @@ public class QueriesUtil {
     parm = SModelLanguageUtil.findNodeOperationParameter(op, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList"));
     return parm == null;
   }
-
   public static boolean isProperty_hasValueEnum_notNullDefaultValue(SNode op) {
     SNode dataTypeDeclaration = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
     SNode defMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(dataTypeDeclaration, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMember, "internalValue") != null;
   }
-
   public static boolean isProperty_hasValueEnum_nullDefaultValue(SNode op) {
     SNode datatype = jetbrains.mps.lang.smodel.behavior.SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(op);
     SNode defMemberNode = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1213877397785(SNodeOperations.cast(datatype, "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration"));
     return SPropertyOperations.getString(defMemberNode, "internalValue") == null;
   }
-
   public static String getConceptFqName(SNode concept) {
     return NameUtil.nodeFQName(concept);
   }

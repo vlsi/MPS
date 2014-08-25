@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.testLanguage.behavior;
 public class NodeWithPorts_BehaviorDescriptor extends NodeWithSize_BehaviorDescriptor {
   public NodeWithPorts_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.testLanguage.structure.NodeWithPorts";

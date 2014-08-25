@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildSource_JavaLibraryElement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildSource_JavaLibraryElement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaLibraryElement";

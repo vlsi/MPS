@@ -12,7 +12,6 @@ public class BuildVariableMacroInitValue_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_pq7gae_a(editorContext, node);
   }
-
   private EditorCell createError_pq7gae_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "no value");
     editorCell.setCellId("Error_pq7gae_a");

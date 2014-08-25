@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,20 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.components.CoreComponent;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IllegalModelChangeError;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.lang.reflect.Field;
@@ -38,18 +43,19 @@ import java.util.concurrent.ConcurrentMap;
 public class QueryMethodGenerated implements CoreComponent {
   private static final Logger LOG = LogManager.getLogger(QueryMethodGenerated.class);
 
-  private static ConcurrentMap<SModelReference, Map<String, Method>> ourMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
-  private static Set<String> ourClassesReportedAsNotFound = new ConcurrentHashSet<String>();
-  private static ConcurrentMap<Class<?>, Boolean> ourNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
+  private static QueryMethodGenerated ourInstance;
 
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private ConcurrentMap<SModelReference, Map<String, Method>> myMethods = new ConcurrentHashMap<SModelReference, Map<String, Method>>();
+  private Set<String> myMissingClasses = new ConcurrentHashSet<String>();
+  private ConcurrentMap<Class<?>, Boolean> myNeedOpContext = new ConcurrentHashMap<Class<?>, Boolean>();
+
+  private final ClassLoaderManager myClassLoaderManager;
+  private final MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       clearCaches();
     }
   };
-
-  private ClassLoaderManager myClassLoaderManager;
 
   public QueryMethodGenerated(ClassLoaderManager manager) {
     myClassLoaderManager = manager;
@@ -57,25 +63,28 @@ public class QueryMethodGenerated implements CoreComponent {
 
   @Override
   public void init() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
+    ourInstance = this;
+    myClassLoaderManager.addClassesHandler(myReloadHandler);
   }
 
   @Override
   public void dispose() {
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myReloadHandler);
+    ourInstance.clearCaches();
+    ourInstance = null;
   }
 
-  public static void clearCaches() {
-    ourMethods.clear();
-    ourClassesReportedAsNotFound.clear();
-    ourNeedOpContext.clear();
+  /*package*/ void clearCaches() {
+    myMethods.clear();
+    myMissingClasses.clear();
+    myNeedOpContext.clear();
   }
 
-  public static boolean needReport(String className) {
-    return ourClassesReportedAsNotFound.add(className);
+  private boolean needReport(String className) {
+    return myMissingClasses.add(className);
   }
 
-  private static void reportErrorWhileClassLoading(String className, boolean suppressErrorLogging, String message) throws ClassNotFoundException {
+  private void reportErrorWhileClassLoading(String className, boolean suppressErrorLogging, String message) throws ClassNotFoundException {
     if (!suppressErrorLogging) {
       if (needReport(className)) {
         LOG.error(message);
@@ -88,39 +97,37 @@ public class QueryMethodGenerated implements CoreComponent {
   public static Class getQueriesGeneratedClassFor(@NotNull SModelReference sm, boolean suppressErrorLogging) throws ClassNotFoundException {
     String packageName = SModelStereotype.withoutStereotype(sm.getModelName());
     String queriesClassName = packageName + ".QueriesGenerated";
+    return ourInstance.getGeneratedClass(sm, queriesClassName, suppressErrorLogging);
+  }
+
+  private Class getGeneratedClass(@NotNull SModelReference sm, String className, boolean suppressErrorLogging) throws ClassNotFoundException {
 
     SModel m = sm.resolve(MPSModuleRepository.getInstance());
 
     SModule module = m == null ? null : m.getModule();
     if (module == null) {
-      reportErrorWhileClassLoading(
-        queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': no module for model '" + sm + "'");
+      reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s': no module for model '%s", className,sm));
+      return null;
     }
-    if (!ClassLoaderManager.getInstance().canLoad(module)) {
-      reportErrorWhileClassLoading(
-        queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated': module " + module.getModuleName() + " not classloading");
+    if (!myClassLoaderManager.canLoad(module)) {
+      reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s': module %s couldn't be loaded", className, module.getModuleName()));
+      return null;
     }
 
-    Class queriesClass = ClassLoaderManager.getInstance().getClass(module, queriesClassName);
+    Class queriesClass = myClassLoaderManager.getClass(module, className);
     if (queriesClass == null) {
-      reportErrorWhileClassLoading(
-        queriesClassName, suppressErrorLogging,
-        "couldn't find class 'QueriesGenerated' for model '" + sm + "' : TRY TO GENERATE"
-      );
+      reportErrorWhileClassLoading(className, suppressErrorLogging, String.format("couldn't find class '%s' for model '%s' : TRY TO GENERATE", className, sm));
     }
-
     return queriesClass;
   }
 
-  private static Method getQueryMethod(SModelReference sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Map<String, Method> methods = ourMethods.get(sourceModel);
+  private Method getQueryMethod(SModelReference sourceModel, String methodName, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
+    Map<String, Method> methods = myMethods.get(sourceModel);
 
     if (methods == null) {
       Class queriesClass = getQueriesGeneratedClassFor(sourceModel, suppressErrorLogging);
 
-      methods = ourMethods.get(sourceModel);
+      methods = myMethods.get(sourceModel);
       if (methods == null) {
         methods = new HashMap<String, Method>();
         Method[] declaredMethods = queriesClass.getDeclaredMethods();
@@ -130,7 +137,7 @@ public class QueryMethodGenerated implements CoreComponent {
           methods.put(name, declaredMethod);
         }
 
-        ourMethods.putIfAbsent(sourceModel, methods);
+        myMethods.putIfAbsent(sourceModel, methods);
       }
     }
 
@@ -154,10 +161,10 @@ public class QueryMethodGenerated implements CoreComponent {
   }
 
   public static <T> T invoke(String methodName, IOperationContext context, Object contextObject, SModelReference sourceModel, boolean suppressErrorLogging) throws ClassNotFoundException, NoSuchMethodException {
-    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
+    Method method = ourInstance.getQueryMethod(sourceModel, methodName, suppressErrorLogging);
     try {
       Object[] arguments;
-      if (needsOpContext(method.getDeclaringClass())) {
+      if (ourInstance.needsOpContext(method.getDeclaringClass())) {
         arguments = new Object[] { context, contextObject };
       } else {
         arguments = new Object[] { contextObject };
@@ -178,8 +185,9 @@ public class QueryMethodGenerated implements CoreComponent {
       throw new RuntimeException(message, e.getCause());
     }
   }
-  private static boolean needsOpContext(Class<?> cls) {
-    Boolean rv = ourNeedOpContext.get(cls);
+
+  private boolean needsOpContext(Class<?> cls) {
+    Boolean rv = myNeedOpContext.get(cls);
     if (rv != null) {
       return rv;
     }
@@ -190,7 +198,7 @@ public class QueryMethodGenerated implements CoreComponent {
         break;
       }
     }
-    ourNeedOpContext.putIfAbsent(cls, result);
+    myNeedOpContext.putIfAbsent(cls, result);
     // highly unlikely for another thread (if any) do get different result, ignore race condition chance
     return result;
   }
@@ -199,8 +207,8 @@ public class QueryMethodGenerated implements CoreComponent {
    * EXPERIMENTAL CODE. DO NOT USE
    */
   public static <T> QueryMethod<T> getQueryMethod(SModelReference sourceModel, String methodName) throws NoSuchMethodException, ClassNotFoundException {
-    final Method method = getQueryMethod(sourceModel, methodName, true);
-    final boolean needOpContext = needsOpContext(method.getDeclaringClass());
+    final Method method = ourInstance.getQueryMethod(sourceModel, methodName, true);
+    final boolean needOpContext = ourInstance.needsOpContext(method.getDeclaringClass());
     return new QueryMethod<T>() {
       @Override
       @SuppressWarnings("unchecked")

@@ -28,7 +28,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_boi5ax_a(editorContext, node);
   }
-
   private EditorCell createCollection_boi5ax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_boi5ax_a");
@@ -36,7 +35,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_boi5ax_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_boi5ax_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("inequation");
@@ -58,20 +56,16 @@ public class InequationReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_boi5ax_a0a extends InlineCellProvider {
     public _Inline_boi5ax_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createCollection_boi5ax_a0a0(editorContext, node);
     }
-
     private EditorCell createCollection_boi5ax_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
       editorCell.setCellId("Collection_boi5ax_a0a0");
@@ -79,22 +73,20 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createProperty_boi5ax_b0a0a(editorContext, node));
       return editorCell;
     }
-
     private EditorCell createModelAccess_boi5ax_a0a0a(final EditorContext editorContext, final SNode node) {
       ModelAccessor modelAccessor = new ModelAccessor() {
         public String getText() {
           return SModelOperations.getModelName(SNodeOperations.getModel(node)) + (SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getAncestor(node, null, false, true), "jetbrains.mps.lang.core.structure.INamedConcept"), "name"));
         }
-
         public void setText(String text) {
         }
-
         public boolean isValidText(String text) {
           return true;
         }
       };
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ModelAccess_boi5ax_a0a0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
@@ -102,7 +94,6 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       editorCell.setDefaultText("<no name>");
       return editorCell;
     }
-
     private EditorCell createProperty_boi5ax_b0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("label");

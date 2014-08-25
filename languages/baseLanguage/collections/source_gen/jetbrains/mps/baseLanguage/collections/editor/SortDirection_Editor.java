@@ -20,7 +20,6 @@ public class SortDirection_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_hdhct1_a(editorContext, node);
   }
-
   private EditorCell createAlternation_hdhct1_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = SortDirection_Editor.renderingCondition_hdhct1_a0(node, editorContext);
@@ -36,11 +35,9 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_hdhct1_a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "value");
   }
-
   private EditorCell createConstant_hdhct1_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "asc");
     editorCell.setCellId("Constant_hdhct1_a0");
@@ -51,7 +48,6 @@ public class SortDirection_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_hdhct1_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "desc");
     editorCell.setCellId("Constant_hdhct1_a0_0");

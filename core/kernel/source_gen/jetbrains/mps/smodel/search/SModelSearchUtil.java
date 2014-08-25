@@ -18,22 +18,18 @@ import jetbrains.mps.smodel.SModelOperations;
 public class SModelSearchUtil {
   public SModelSearchUtil() {
   }
-
   public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly) {
     return new ModelAndImportedModelsScope(model, rootsOnly);
   }
-
   public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
     return new SModelSearchUtil._ConceptsFromModelLanguagesScope(model, rootsOnly);
   }
-
   public static SNode findLinkDeclaration(SNode conceptDeclaration, String role) {
     if (role == null) {
       return null;
     }
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getLinkDeclarationByRole(role);
   }
-
   public static SNode findMostSpecificLinkDeclaration(SNode conceptDeclaration, String role) {
     // LinkDeclaration 
     if (role == null) {
@@ -41,11 +37,9 @@ public class SModelSearchUtil {
     }
     return new ConceptAndSuperConceptsScope(conceptDeclaration).getMostSpecificLinkDeclarationByRole(role);
   }
-
   public static List<SNode> getLinkDeclarations(SNode concept) {
     return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
-
   public static List<SNode> getAggregationLinkDeclarations(SNode concept) {
     List<SNode> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<SNode> result = new ArrayList<SNode>();
@@ -56,7 +50,6 @@ public class SModelSearchUtil {
     }
     return result;
   }
-
   public static List<SNode> getReferenceLinkDeclarations(final SNode concept) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<List<SNode>>() {
       @Override
@@ -72,11 +65,9 @@ public class SModelSearchUtil {
       }
     });
   }
-
   public static List<SNode> getPropertyDeclarations(SNode concept) {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
-
   @Nullable
   public static SNode findPropertyDeclaration(SNode concept, String propertyName) {
     if (concept == null || propertyName == null) {
@@ -84,17 +75,14 @@ public class SModelSearchUtil {
     }
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);
   }
-
   private static class _ConceptsFromModelLanguagesScope extends AbstractSearchScope {
     private SModel myModel;
     private boolean myRootsOnly;
     private List<SNode> myConcepts;
-
     public _ConceptsFromModelLanguagesScope(SModel model, boolean rootsOnly) {
       myModel = model;
       myRootsOnly = rootsOnly;
     }
-
     @NotNull
     @Override
     public List<SNode> getNodes(Condition<SNode> condition) {

@@ -22,18 +22,15 @@ import org.apache.log4j.LogManager;
 
 public class PrintReachingDefinintionsInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PrintReachingDefinintionsInformation_Action() {
     super("Print DFA Reaching Definitions Information", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -44,7 +41,6 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -60,7 +56,6 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Program program = DataFlowManager.getInstance().buildProgramFor(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -72,6 +67,5 @@ public class PrintReachingDefinintionsInformation_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PrintReachingDefinintionsInformation_Action.class);
 }

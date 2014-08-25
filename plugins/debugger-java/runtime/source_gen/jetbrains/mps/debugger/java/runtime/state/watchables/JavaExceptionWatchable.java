@@ -16,32 +16,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaExceptionWatchable extends JavaWatchable {
   private final JavaValue myValue;
-
   public JavaExceptionWatchable(ObjectReference exception, ThreadReference threadReference) {
     super(threadReference);
     myValue = CustomViewersManager.getInstance().fromJdi(exception, myThreadReference);
   }
-
   @Override
   public String getName() {
     return "exception";
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.THROWN_EXCEPTION;
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return Icons.EXCEPTION_BREAKPOINT;
   }
-
   @Override
   public SNode getNode() {
     return null;

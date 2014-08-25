@@ -46,33 +46,26 @@ import org.apache.log4j.LogManager;
 
 public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> {
   private static final Key<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> KEY = Key.create("jetbrains.mps.execution.configurations.implementation.plugin.plugin.DeployPlugins_BeforeTask");
-
   public DeployPlugins_BeforeTask() {
     super("DeployPlugins", "Deploy plugins");
   }
-
   protected DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask createTaskImpl() {
     return new DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask();
   }
-
   public Key<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> getId() {
     return KEY;
   }
-
   public static class DeployPlugins_BeforeTask_RunTask extends BaseMpsBeforeTaskProvider.BaseMpsBeforeRunTask<DeployPlugins_BeforeTask.DeployPlugins_BeforeTask_RunTask> {
     private List<SNodeReference> myPlugins;
     private File myDeployLocation;
-
     public DeployPlugins_BeforeTask_RunTask() {
       super(KEY);
     }
-
     public boolean configure(List<SNodeReference> plugins, File deployLocation) {
       myPlugins = plugins;
       myDeployLocation = deployLocation;
       return true;
     }
-
     public boolean execute(Project project, ExecutionEnvironment environment) {
       if (ListSequence.fromList(myPlugins).isEmpty()) {
         return true;
@@ -151,6 +144,5 @@ public class DeployPlugins_BeforeTask extends BaseMpsBeforeTaskProvider<DeployPl
       return true;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DeployPlugins_BeforeTask.class);
 }

@@ -24,19 +24,16 @@ import org.apache.log4j.LogManager;
 
 public class CheckModule_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
-
   public CheckModule_Action() {
     super("Check [Module]", "Check [module] for structure and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
     this.addPlace(null);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -68,7 +65,6 @@ public class CheckModule_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -85,7 +81,6 @@ public class CheckModule_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModule> modulesToCheck = new ArrayList<SModule>();
@@ -111,6 +106,5 @@ public class CheckModule_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CheckModule_Action.class);
 }

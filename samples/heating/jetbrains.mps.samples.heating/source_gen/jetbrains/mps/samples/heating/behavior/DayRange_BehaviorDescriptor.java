@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DayRange_BehaviorDescriptor extends Applicability_BehaviorDescriptor {
   public DayRange_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return DayRange_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.heating.structure.DayRange";

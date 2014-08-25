@@ -21,15 +21,12 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       public String getName() {
         return "ConvertToIncrements";
       }
-
       public String getAdditionalInfo() {
         return "ConvertToIncrements";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
@@ -53,7 +50,6 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
         }
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
@@ -62,7 +58,6 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
         SLinkOperations.setTarget(inc, "expression", ref, true);
         SNodeOperations.replaceWithAnother(node, inc);
       }
-
       public boolean isShowAsIntention() {
         return true;
       }
@@ -71,15 +66,12 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       public String getName() {
         return "ConvertToDecrements";
       }
-
       public String getAdditionalInfo() {
         return "ConvertToDecrements";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")))) {
           return false;
@@ -103,7 +95,6 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
         }
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
         SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
@@ -112,7 +103,6 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
         SLinkOperations.setTarget(dec, "expression", ref, true);
         SNodeOperations.replaceWithAnother(node, dec);
       }
-
       public boolean isShowAsIntention() {
         return true;
       }
@@ -121,29 +111,23 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
       public String getName() {
         return "String classifiers";
       }
-
       public String getAdditionalInfo() {
         return "String classifiers";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierType";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_gtfam0_a0a0a0c(), "classifier", false);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.StringType");
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
     });
   }
-
   private static SNode _quotation_createNode_gtfam0_a0a0a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

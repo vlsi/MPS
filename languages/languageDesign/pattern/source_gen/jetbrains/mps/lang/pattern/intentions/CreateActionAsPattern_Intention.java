@@ -20,74 +20,58 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreateActionAsPattern_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateActionAsPattern_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";
   }
-
   public String getPresentation() {
     return "CreateActionAsPattern";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.pattern.intentions.CreateActionAsPattern_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.pattern";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return PatternAddingUtil.isPatternApplicable(editorContext);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590344(jetbrains.mps.lang.pattern.intentions)", "4413230749907735528");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateActionAsPattern_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Action Pattern";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
       SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
       SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern")), "varName", "action_var_" + currentNode.getNodeId().toString());
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateActionAsPattern_Intention.this;
     }

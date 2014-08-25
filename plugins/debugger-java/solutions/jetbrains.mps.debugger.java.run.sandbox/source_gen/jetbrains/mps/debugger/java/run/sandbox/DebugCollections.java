@@ -20,7 +20,6 @@ import java.util.HashSet;
 public class DebugCollections {
   public DebugCollections() {
   }
-
   public static void main(String[] args) {
     int[] i = {1, 2};
     int k = 0;
@@ -32,7 +31,6 @@ public class DebugCollections {
     DebugCollections.testForeach();
     System.out.println(i);
   }
-
   public static void testMap() {
     Map<String, String> strings = MapSequence.fromMap(new HashMap<String, String>());
     MapSequence.fromMap(strings).put("one", "1");
@@ -41,7 +39,6 @@ public class DebugCollections {
     // <node> 
     System.out.println(strings);
   }
-
   public static void testSortedMap() {
     Map<String, String> strings = SortedMapSequence.fromMap(new TreeMap<String, String>());
     MapSequence.fromMap(strings).put("one", "1");
@@ -50,7 +47,6 @@ public class DebugCollections {
     MapSequence.fromMap(strings).put(string, "3");
     System.out.println(strings);
   }
-
   private static void testList() {
     List<String> strings = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(strings).addElement("alpha");
@@ -58,7 +54,6 @@ public class DebugCollections {
     ListSequence.fromList(strings).addElement("gamma");
     System.out.println(strings);
   }
-
   private static void testLinkedList() {
     Deque<String> strings = LinkedListSequence.fromLinkedList(new LinkedList<String>());
     LinkedListSequence.fromLinkedList(strings).addElement("alpha");
@@ -66,7 +61,6 @@ public class DebugCollections {
     LinkedListSequence.fromLinkedList(strings).addElement("gamma");
     System.out.println(strings);
   }
-
   public static void testSet() {
     Set<String> strings = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(strings).addElement("alpha");
@@ -74,7 +68,6 @@ public class DebugCollections {
     SetSequence.fromSet(strings).addElement("gamma");
     System.out.println(strings);
   }
-
   public static void testForeach() {
     Set<String> strings = SetSequence.fromSet(new HashSet<String>());
     SetSequence.fromSet(strings).addElement("alpha");

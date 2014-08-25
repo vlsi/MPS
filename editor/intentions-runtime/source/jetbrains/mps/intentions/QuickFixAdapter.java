@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,7 +29,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
-public class QuickFixAdapter extends BaseIntention {
+import java.util.Collection;
+import java.util.Collections;
+
+public class QuickFixAdapter extends BaseIntentionFactory {
   private QuickFix_Runtime myQuickFix;
   private boolean myIsError;
 
@@ -44,13 +47,8 @@ public class QuickFixAdapter extends BaseIntention {
   }
 
   @Override
-  public boolean isParameterized() {
-    return false;
-  }
-
-  @Override
-  public String getDescription(SNode node, EditorContext editorContext) {
-    return myQuickFix.getDescription(node);
+  public String getPersistentStateKey() {
+    return getClass().getName();
   }
 
   @Override
@@ -67,26 +65,11 @@ public class QuickFixAdapter extends BaseIntention {
   }
 
   @Override
-  public void execute(SNode node, EditorContext editorContext) {
-    EditorCell selectedCell = editorContext.getSelectedCell();
-    int caretX = -1;
-    int caretY = -1;
-    boolean restoreCaretPosition = false;
-    if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
-      caretX = selectedCell.getCaretX();
-      caretY = selectedCell.getBaseline();
-      restoreCaretPosition = true;
-    }
-    myQuickFix.execute(node);
-    if (restoreCaretPosition) {
-      editorContext.flushEvents();
-      EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
-      EditorCell leaf = rootCell.findLeaf(caretX, caretY);
-      if (leaf != null) {
-        editorContext.getEditorComponent().changeSelection(leaf);
-        leaf.setCaretX(caretX);
-      }
-    }
+  public String getLanguageFqName() {
+    // base implementation used to look for intention's language, but QuickFix doesn't get any associated
+    // as it is created n demand and is not registered with IntentionsManager.
+    // Besides, the way return value is used makes me think it's merely filtering, and as thus not relevant for quick fixes
+    return null;
   }
 
   @Override
@@ -95,24 +78,15 @@ public class QuickFixAdapter extends BaseIntention {
     //return IntentionType.QUICKFIX;
   }
 
-  @Override
-  public String getLocationString() {
-    return null;  //todo?
-  }
-
   //if generated returns source, if not returns null
-  @Override
-  public SNode getNodeByIntention() {
+  private SNode getQuickFixSourceNode() {
     String classFQName = myQuickFix.getClass().getName();
     SModelReference reference = PersistenceFacade.getInstance().createModelReference(NameUtil.namespaceFromLongName(classFQName));
-    SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(reference);
-    if (sModelDescriptor != null) {
-      SModel model = sModelDescriptor;
-      if (model != null) {
-        String shortName = NameUtil.shortNameFromLongName(classFQName);
-        String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
-        return SModelOperations.getRootByName(model, rootName);
-      }
+    SModel model = SModelRepository.getInstance().getModelDescriptor(reference);
+    if (model != null) {
+      String shortName = NameUtil.shortNameFromLongName(classFQName);
+      String rootName = shortName.substring(0, shortName.length() - "_QuickFix".length());
+      return SModelOperations.getRootByName(model, rootName);
     }
     return null;
   }
@@ -123,7 +97,7 @@ public class QuickFixAdapter extends BaseIntention {
     return ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
       @Override
       public SNodeReference compute() {
-        SNode node = getNodeByIntention();
+        SNode node = getQuickFixSourceNode();
         return node != null ? node.getReference() : null;
       }
     });
@@ -132,5 +106,50 @@ public class QuickFixAdapter extends BaseIntention {
   @Override
   public String getPresentation() {
     return myQuickFix.getClass().getName();
+  }
+
+  @Override
+  public boolean isSurroundWith() {
+    return false;
+  }
+
+  @Override
+  public Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext) {
+    return Collections.<IntentionExecutable>singleton(new Executable());
+  }
+
+  private class Executable implements IntentionExecutable {
+    @Override
+    public String getDescription(SNode node, EditorContext editorContext) {
+      return myQuickFix.getDescription(node);
+    }
+
+    @Override
+    public void execute(SNode node, EditorContext editorContext) {
+      EditorCell selectedCell = editorContext.getSelectedCell();
+      int caretX = -1;
+      int caretY = -1;
+      boolean restoreCaretPosition = false;
+      if (selectedCell != null && jetbrains.mps.util.SNodeOperations.isAncestor(node, selectedCell.getSNode())) {
+        caretX = selectedCell.getCaretX();
+        caretY = selectedCell.getBaseline();
+        restoreCaretPosition = true;
+      }
+      myQuickFix.execute(node);
+      if (restoreCaretPosition) {
+        editorContext.flushEvents();
+        EditorCell rootCell = editorContext.getEditorComponent().getRootCell();
+        EditorCell leaf = rootCell.findLeaf(caretX, caretY);
+        if (leaf != null) {
+          editorContext.getEditorComponent().changeSelection(leaf);
+          leaf.setCaretX(caretX);
+        }
+      }
+    }
+
+    @Override
+    public IntentionDescriptor getDescriptor() {
+      return QuickFixAdapter.this;
+    }
   }
 }

@@ -11,26 +11,21 @@ public enum SelectPosition {
   after("after", "after");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<SelectPosition> getConstants() {
     List<SelectPosition> list = ListSequence.fromList(new LinkedList<SelectPosition>());
     ListSequence.fromList(list).addElement(SelectPosition.before);
     ListSequence.fromList(list).addElement(SelectPosition.after);
     return list;
   }
-
   public static SelectPosition getDefault() {
     return SelectPosition.before;
   }
-
   public static SelectPosition parseValue(String value) {
     if (value == null) {
       return SelectPosition.getDefault();
@@ -43,14 +38,11 @@ public enum SelectPosition {
     }
     return SelectPosition.getDefault();
   }
-
   private String myValue;
-
   SelectPosition(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

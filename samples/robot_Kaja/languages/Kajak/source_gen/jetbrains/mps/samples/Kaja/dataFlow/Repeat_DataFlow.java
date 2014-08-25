@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class Repeat_DataFlow extends DataFlowBuilder {
   public Repeat_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SPropertyOperations.getInteger(_context.getNode(), "count") <= 0) {
       _context.getBuilder().emitJump(_context.getBuilder().label(_context.getNode(), "end"), "r:5784598d-868b-437e-9c58-15fb07e7f373(jetbrains.mps.samples.Kaja.dataFlow)/6630310702469930424");

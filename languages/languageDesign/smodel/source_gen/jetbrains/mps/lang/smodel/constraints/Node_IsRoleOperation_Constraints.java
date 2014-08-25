@@ -22,7 +22,6 @@ public class Node_IsRoleOperation_Constraints extends BaseConstraintsDescriptor 
   public Node_IsRoleOperation_Constraints() {
     super("jetbrains.mps.lang.smodel.structure.Node_IsRoleOperation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class Node_IsRoleOperation_Constraints extends BaseConstraintsDescriptor 
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class Node_IsRoleOperation_Constraints extends BaseConstraintsDescriptor 
             SNode conceptOfParent = SLinkOperations.getTarget(_context.getReferenceNode(), "conceptOfParent", false);
             return AbstractConceptDeclaration_Behavior.call_getAggregationLinkDeclarations_1213877394521(conceptOfParent);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_gpgb0w_a0a1a0a0a1a0b0a1a1;
@@ -51,6 +48,5 @@ public class Node_IsRoleOperation_Constraints extends BaseConstraintsDescriptor 
     });
     return references;
   }
-
   private static SNodePointer breakingNode_gpgb0w_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "1213104847807");
 }

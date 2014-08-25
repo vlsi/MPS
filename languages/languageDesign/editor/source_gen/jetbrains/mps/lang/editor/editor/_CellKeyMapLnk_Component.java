@@ -23,18 +23,15 @@ public class _CellKeyMapLnk_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_teu4t0_a(editorContext, node);
   }
-
   private EditorCell createCollection_teu4t0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_teu4t0_a");
     editorCell.addEditorCell(this.createRefCell_teu4t0_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_teu4t0_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("keyMap");
@@ -59,20 +56,16 @@ public class _CellKeyMapLnk_Component implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   public static class _Inline_teu4t0_a0a extends InlineCellProvider {
     public _Inline_teu4t0_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_teu4t0_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_teu4t0_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");

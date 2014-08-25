@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("22e72e4c-0f69-46ce-8403-6750153aa615(jetbrains.mps.execution.configurations)"), PersistenceFacade.getInstance().createModelReference("r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddExecutor_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new AddProducer_Intention());

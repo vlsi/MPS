@@ -8,18 +8,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public abstract class TableRemoveAction extends BaseValidatedAction {
   private JTable myTable;
-
   public TableRemoveAction(JTable table) {
     super("Remove", "Remove", AllIcons.General.Remove);
     myTable = table;
   }
-
   @Override
   public void update(AnActionEvent e) {
     super.update(e);
     e.getPresentation().setEnabled(myTable.getSelectedRowCount() != 0);
   }
-
   @Override
   public final void doPerform(AnActionEvent e) {
     int index = myTable.getSelectedRow();
@@ -40,6 +37,5 @@ public abstract class TableRemoveAction extends BaseValidatedAction {
       myTable.getSelectionModel().setSelectionInterval(index, index);
     }
   }
-
   protected abstract void doRemove(AnActionEvent e);
 }

@@ -22,7 +22,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qlhzuh_a(editorContext, node);
   }
-
   private EditorCell createCollection_qlhzuh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qlhzuh_a");
@@ -34,7 +33,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_qlhzuh_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_qlhzuh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qlhzuh_a0");
@@ -45,14 +43,12 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_qlhzuh_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping script");
     editorCell.setCellId("Constant_qlhzuh_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qlhzuh_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -70,7 +66,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qlhzuh_b0");
@@ -80,7 +75,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_qlhzuh_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qlhzuh_c0");
@@ -94,7 +88,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_qlhzuh_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qlhzuh_a2a");
@@ -106,14 +99,12 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_qlhzuh_c0c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "script kind");
     editorCell.setCellId("Constant_qlhzuh_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_qlhzuh_b0c0");
@@ -123,7 +114,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qlhzuh_c0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("scriptKind");
@@ -144,7 +134,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_qlhzuh_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qlhzuh_b2a");
@@ -156,18 +145,15 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_qlhzuh_c1c0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_qlhzuh_a1c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "scriptKind", "pre_processing", "post_processing");
   }
-
   private EditorCell createConstant_qlhzuh_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "modifies model");
     editorCell.setCellId("Constant_qlhzuh_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_qlhzuh_b1c0");
@@ -177,7 +163,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_qlhzuh_c1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modifiesModel");
@@ -198,7 +183,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_qlhzuh_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_qlhzuh_d0");
@@ -208,7 +192,6 @@ public class MappingScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_qlhzuh_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("codeBlock");

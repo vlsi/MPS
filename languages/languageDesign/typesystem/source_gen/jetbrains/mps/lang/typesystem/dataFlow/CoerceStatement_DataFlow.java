@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CoerceStatement_DataFlow extends DataFlowBuilder {
   public CoerceStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToCoerce", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "pattern", true));

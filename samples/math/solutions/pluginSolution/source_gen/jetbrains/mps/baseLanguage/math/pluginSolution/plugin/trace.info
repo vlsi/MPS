@@ -12,114 +12,114 @@
   <root nodeRef="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)/5487985028841941376">
     <file name="HLineCellProvider.java">
       <node id="5487985028841941377" at="15,0,16,0" concept="3" trace="myNode" />
-      <node id="5487985028841941387" at="17,40,18,23" concept="2" />
-      <node id="5487985028841941417" at="26,85,27,34" concept="2" />
-      <node id="5487985028841941430" at="28,16,29,34" concept="2" />
-      <node id="5487985028841941435" at="30,9,31,40" concept="6" />
-      <node id="5487985028841941443" at="31,40,32,48" concept="6" />
-      <node id="5487985028841941451" at="32,48,33,29" concept="2" />
-      <node id="5487985028841941456" at="33,29,34,21" concept="2" />
-      <node id="5487985028841941461" at="34,21,35,49" concept="2" />
-      <node id="5487985028841941477" at="39,30,40,50" concept="7" />
-      <node id="5487985028841941489" at="44,34,45,26" concept="2" />
-      <node id="5487985028841941495" at="45,26,46,26" concept="2" />
-      <node id="5487985028841941505" at="48,6,49,18" concept="7" />
-      <node id="5487985028841941428" at="28,14,30,9" concept="0" />
-      <node id="5487985028841941381" at="17,0,20,0" concept="1" trace="HLineCellProvider#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5487985028841941473" at="38,0,42,0" concept="5" trace="getAscent#()I" />
-      <node id="5487985028841941415" at="25,75,30,9" concept="4" />
-      <node id="5487985028841941485" at="43,0,48,0" concept="5" trace="relayoutImpl#()V" />
-      <node id="5487985028841941407" at="24,0,37,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
-      <node id="5487985028841941400" at="22,56,48,6" concept="6" />
-      <node id="5487985028841941394" at="21,0,51,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5487985028841941386" at="17,40,18,23" />
-      <scope id="5487985028841941416" at="26,85,27,34" />
-      <scope id="5487985028841941429" at="28,16,29,34" />
-      <scope id="5487985028841941476" at="39,30,40,50" />
-      <scope id="5487985028841941488" at="44,34,46,26" />
-      <scope id="5487985028841941381" at="17,0,20,0">
+      <node id="5487985028841941387" at="16,40,17,23" concept="2" />
+      <node id="5487985028841941417" at="24,85,25,34" concept="2" />
+      <node id="5487985028841941430" at="26,16,27,34" concept="2" />
+      <node id="5487985028841941435" at="28,9,29,40" concept="6" />
+      <node id="5487985028841941443" at="29,40,30,48" concept="6" />
+      <node id="5487985028841941451" at="30,48,31,29" concept="2" />
+      <node id="5487985028841941456" at="31,29,32,21" concept="2" />
+      <node id="5487985028841941461" at="32,21,33,49" concept="2" />
+      <node id="5487985028841941477" at="36,30,37,50" concept="7" />
+      <node id="5487985028841941489" at="40,34,41,26" concept="2" />
+      <node id="5487985028841941495" at="41,26,42,26" concept="2" />
+      <node id="5487985028841941505" at="44,6,45,18" concept="7" />
+      <node id="5487985028841941428" at="26,14,28,9" concept="0" />
+      <node id="5487985028841941381" at="16,0,19,0" concept="1" trace="HLineCellProvider#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5487985028841941473" at="35,0,39,0" concept="5" trace="getAscent#()I" />
+      <node id="5487985028841941415" at="23,75,28,9" concept="4" />
+      <node id="5487985028841941485" at="39,0,44,0" concept="5" trace="relayoutImpl#()V" />
+      <node id="5487985028841941407" at="22,0,35,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+      <node id="5487985028841941400" at="20,56,44,6" concept="6" />
+      <node id="5487985028841941394" at="19,0,47,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5487985028841941386" at="16,40,17,23" />
+      <scope id="5487985028841941416" at="24,85,25,34" />
+      <scope id="5487985028841941429" at="26,16,27,34" />
+      <scope id="5487985028841941476" at="36,30,37,50" />
+      <scope id="5487985028841941488" at="40,34,42,26" />
+      <scope id="5487985028841941381" at="16,0,19,0">
         <var name="node" id="5487985028841941382" />
       </scope>
-      <scope id="5487985028841941473" at="38,0,42,0" />
-      <scope id="5487985028841941485" at="43,0,48,0" />
-      <scope id="5487985028841941414" at="25,75,35,49">
+      <scope id="5487985028841941473" at="35,0,39,0" />
+      <scope id="5487985028841941485" at="39,0,44,0" />
+      <scope id="5487985028841941414" at="23,75,33,49">
         <var name="width" id="5487985028841941444" />
         <var name="x" id="5487985028841941436" />
       </scope>
-      <scope id="5487985028841941407" at="24,0,37,0">
+      <scope id="5487985028841941407" at="22,0,35,0">
         <var name="g" id="5487985028841941410" />
         <var name="parentSettings" id="5487985028841941412" />
       </scope>
-      <scope id="5487985028841941399" at="22,56,49,18">
+      <scope id="5487985028841941399" at="20,56,45,18">
         <var name="result" id="5487985028841941401" />
       </scope>
-      <scope id="5487985028841941394" at="21,0,51,0">
+      <scope id="5487985028841941394" at="19,0,47,0">
         <var name="p0" id="5487985028841941397" />
       </scope>
-      <unit id="5487985028841941405" at="23,34,48,5" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider$1" />
-      <unit id="5487985028841941376" at="14,0,52,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" />
+      <unit id="5487985028841941405" at="21,34,44,5" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider$1" />
+      <unit id="5487985028841941376" at="14,0,48,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" />
     </file>
   </root>
   <root nodeRef="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)/5487985028841941507">
     <file name="EditorCell_VerticalLine.java">
       <node id="5487985028841941605" at="14,0,15,0" concept="3" trace="isCaretShown" />
-      <node id="5487985028841941613" at="16,69,17,25" concept="8" />
-      <node id="5487985028841941518" at="22,28,23,30" concept="2" />
-      <node id="5487985028841941523" at="23,30,24,54" concept="6" />
-      <node id="5487985028841941529" at="24,54,25,28" concept="6" />
-      <node id="5487985028841941535" at="25,28,26,28" concept="6" />
-      <node id="5487985028841941541" at="26,28,27,36" concept="6" />
-      <node id="5487985028841941547" at="27,36,28,38" concept="6" />
-      <node id="5487985028841941553" at="28,38,29,42" concept="2" />
-      <node id="5487985028841941563" at="29,42,30,42" concept="2" />
-      <node id="5487985028841941580" at="35,36,36,45" concept="2" />
-      <node id="5487985028841941593" at="40,30,41,21" concept="2" />
-      <node id="5487985028841941599" at="41,21,42,22" concept="2" />
-      <node id="5487985028841941609" at="16,0,19,0" concept="1" trace="EditorCell_VerticalLine#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5487985028841941576" at="34,0,38,0" concept="5" trace="switchCaretVisible#()V" />
-      <node id="5487985028841941589" at="39,0,44,0" concept="5" trace="relayoutImpl#()V" />
-      <node id="5487985028841941516" at="21,71,31,5" concept="4" />
-      <node id="5487985028841941508" at="20,0,33,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
-      <scope id="5487985028841941612" at="16,69,17,25" />
-      <scope id="5487985028841941579" at="35,36,36,45" />
-      <scope id="5487985028841941592" at="40,30,42,22" />
-      <scope id="5487985028841941609" at="16,0,19,0">
+      <node id="5487985028841941613" at="15,69,16,25" concept="8" />
+      <node id="5487985028841941518" at="20,28,21,30" concept="2" />
+      <node id="5487985028841941523" at="21,30,22,54" concept="6" />
+      <node id="5487985028841941529" at="22,54,23,28" concept="6" />
+      <node id="5487985028841941535" at="23,28,24,28" concept="6" />
+      <node id="5487985028841941541" at="24,28,25,36" concept="6" />
+      <node id="5487985028841941547" at="25,36,26,38" concept="6" />
+      <node id="5487985028841941553" at="26,38,27,42" concept="2" />
+      <node id="5487985028841941563" at="27,42,28,42" concept="2" />
+      <node id="5487985028841941580" at="32,36,33,45" concept="2" />
+      <node id="5487985028841941593" at="36,30,37,21" concept="2" />
+      <node id="5487985028841941599" at="37,21,38,22" concept="2" />
+      <node id="5487985028841941609" at="15,0,18,0" concept="1" trace="EditorCell_VerticalLine#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5487985028841941576" at="31,0,35,0" concept="5" trace="switchCaretVisible#()V" />
+      <node id="5487985028841941589" at="35,0,40,0" concept="5" trace="relayoutImpl#()V" />
+      <node id="5487985028841941516" at="19,71,29,5" concept="4" />
+      <node id="5487985028841941508" at="18,0,31,0" concept="5" trace="paintContent#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/cells/ParentSettings;)V" />
+      <scope id="5487985028841941612" at="15,69,16,25" />
+      <scope id="5487985028841941579" at="32,36,33,45" />
+      <scope id="5487985028841941592" at="36,30,38,22" />
+      <scope id="5487985028841941609" at="15,0,18,0">
         <var name="context" id="5487985028841941616" />
         <var name="node" id="5487985028841941618" />
       </scope>
-      <scope id="5487985028841941576" at="34,0,38,0" />
-      <scope id="5487985028841941589" at="39,0,44,0" />
-      <scope id="5487985028841941517" at="22,28,30,42">
+      <scope id="5487985028841941576" at="31,0,35,0" />
+      <scope id="5487985028841941589" at="35,0,40,0" />
+      <scope id="5487985028841941517" at="20,28,28,42">
         <var name="height" id="5487985028841941548" />
         <var name="parent" id="5487985028841941524" />
         <var name="width" id="5487985028841941542" />
         <var name="x" id="5487985028841941530" />
         <var name="y" id="5487985028841941536" />
       </scope>
-      <scope id="5487985028841941515" at="21,71,31,5" />
-      <scope id="5487985028841941508" at="20,0,33,0">
+      <scope id="5487985028841941515" at="19,71,29,5" />
+      <scope id="5487985028841941508" at="18,0,31,0">
         <var name="g" id="5487985028841941511" />
         <var name="parentSettings" id="5487985028841941513" />
       </scope>
-      <unit id="5487985028841941507" at="13,0,45,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" />
+      <unit id="5487985028841941507" at="13,0,41,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" />
     </file>
   </root>
   <root nodeRef="r:7c9a0254-28cb-4041-adae-094f9953a599(jetbrains.mps.baseLanguage.math.pluginSolution.plugin)/5487985028841941621">
     <file name="VLineCellProvider.java">
       <node id="5487985028841941622" at="11,0,12,0" concept="3" trace="myNode" />
-      <node id="5487985028841941632" at="13,40,14,23" concept="2" />
-      <node id="5487985028841941645" at="18,56,19,56" concept="7" />
-      <node id="5487985028841941626" at="13,0,16,0" concept="1" trace="VLineCellProvider#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5487985028841941639" at="17,0,21,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="5487985028841941631" at="13,40,14,23" />
-      <scope id="5487985028841941644" at="18,56,19,56" />
-      <scope id="5487985028841941626" at="13,0,16,0">
+      <node id="5487985028841941632" at="12,40,13,23" concept="2" />
+      <node id="5487985028841941645" at="16,56,17,56" concept="7" />
+      <node id="5487985028841941626" at="12,0,15,0" concept="1" trace="VLineCellProvider#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5487985028841941639" at="15,0,19,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="5487985028841941631" at="12,40,13,23" />
+      <scope id="5487985028841941644" at="16,56,17,56" />
+      <scope id="5487985028841941626" at="12,0,15,0">
         <var name="node" id="5487985028841941627" />
       </scope>
-      <scope id="5487985028841941639" at="17,0,21,0">
+      <scope id="5487985028841941639" at="15,0,19,0">
         <var name="p0" id="5487985028841941642" />
       </scope>
-      <unit id="5487985028841941621" at="10,0,22,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider" />
+      <unit id="5487985028841941621" at="10,0,20,0" name="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider" />
     </file>
   </root>
 </debug-info>

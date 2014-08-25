@@ -24,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 public class StaticFieldDeclarationScope extends Scope {
   private final Map<String, SNode> nameToField;
   private final Iterable<Scope> extendsScopes;
-
   @Deprecated
   public StaticFieldDeclarationScope(Iterable<SNode> fields, Iterable<Scope> extendsScopes) {
     nameToField = MapSequence.fromMap(new HashMap<String, SNode>(Sequence.fromIterable(fields).count()));
@@ -33,7 +32,6 @@ public class StaticFieldDeclarationScope extends Scope {
     }
     this.extendsScopes = extendsScopes;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
@@ -79,7 +77,6 @@ public class StaticFieldDeclarationScope extends Scope {
 
     return result;
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
@@ -101,14 +98,12 @@ public class StaticFieldDeclarationScope extends Scope {
       return result;
     }
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     // todo: look! mixin "INamedConcept" 
     return SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"), "name");
   }
-
   @Override
   public boolean contains(SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {

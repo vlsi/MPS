@@ -8,22 +8,18 @@ public class PropertyDifferense extends DifferanceItem {
   private String myActualValue;
   private String myExpectedValue;
 
-
   public PropertyDifferense(String property, String actualValue, String expectedValue) {
     myProperty = property;
     myActualValue = actualValue;
     myExpectedValue = expectedValue;
   }
-
   public PropertyDifferense(String role, boolean b) {
     super();
   }
-
   @Override
   public String toString() {
     return "Different property: " + myProperty + " = " + myActualValue + ", expected: " + myExpectedValue;
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj == null) {

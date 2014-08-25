@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Node_CopyWithTraceOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_CopyWithTraceOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return Node_CopyWithTraceOperation_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
   }
-
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_CopyWithTraceOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.traceable.operations.structure.Node_CopyWithTraceOperation";

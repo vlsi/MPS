@@ -18,7 +18,6 @@ import jetbrains.mps.project.Project;
 public class TestsUtil {
   public TestsUtil() {
   }
-
   public static String getProjectPath(SModel model, IOperationContext operationContext) {
     String projectPath = TestInfo_Behavior.call_getProjectPath_5097124989038916375(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo"))), model);
     if (projectPath != null) {
@@ -30,18 +29,15 @@ public class TestsUtil {
     }
     return "";
   }
-
   public static String getTestBodyClassName(SNode testCase) {
     return BehaviorReflection.invokeVirtual(String.class, testCase, "virtual_getClassName_1216136193905", new Object[]{}) + "$" + NodesTestCase_Behavior.call_getTestBodyName_1224602741295(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase"))));
   }
-
   private static String check_6yh4up_a0c0b(File checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getAbsolutePath();
     }
     return null;
   }
-
   private static File check_6yh4up_a0a2a1(Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProjectFile();

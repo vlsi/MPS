@@ -20,11 +20,9 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_4l84js_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4l84js_a(editorContext, node);
   }
-
   private EditorCell createComponent_4l84js_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAliasAndParms_Comp");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +31,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_4l84js_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4l84js_a");
@@ -46,7 +43,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_4l84js_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "The 'ancestor' operation");
     editorCell.setCellId("Constant_4l84js_a0");
@@ -58,7 +54,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4l84js_b0");
@@ -68,7 +63,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns ancestor node (if no parameters returns direct parent)");
     editorCell.setCellId("Constant_4l84js_c0");
@@ -79,7 +73,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_4l84js_d0");
@@ -89,7 +82,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Optional parameters:");
     editorCell.setCellId("Constant_4l84js_e0");
@@ -100,7 +92,6 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_4l84js_f0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4l84js_f0");
@@ -118,14 +109,12 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4l84js_h5a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_a5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "root");
     editorCell.setCellId("Constant_4l84js_a5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_b5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get top ancestor");
     editorCell.setCellId("Constant_4l84js_b5a");
@@ -136,14 +125,12 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_c5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept");
     editorCell.setCellId("Constant_4l84js_c5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_d5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get ancestor which is instance of concept");
     editorCell.setCellId("Constant_4l84js_d5a");
@@ -154,14 +141,12 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_e5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concept in");
     editorCell.setCellId("Constant_4l84js_e5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_f5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "get ancestor which is instance of one of concepts");
     editorCell.setCellId("Constant_4l84js_f5a");
@@ -172,14 +157,12 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_g5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "+");
     editorCell.setCellId("Constant_4l84js_g5a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4l84js_h5a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "return current node if it meets the requirements");
     editorCell.setCellId("Constant_4l84js_h5a");

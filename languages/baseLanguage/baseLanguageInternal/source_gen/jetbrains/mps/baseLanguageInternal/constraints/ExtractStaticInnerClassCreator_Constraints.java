@@ -31,7 +31,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
   public ExtractStaticInnerClassCreator_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -40,7 +39,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -49,7 +47,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (_context.getInEditor()) {
@@ -61,7 +58,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
               return SPropertyOperations.getString(_context.getParameterNode(), "name");
             }
           }
-
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> res = new ArrayList<SNode>();
@@ -73,7 +69,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
             }
             return res;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1;
@@ -83,6 +78,5 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
     });
     return references;
   }
-
   private static SNodePointer breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
 }

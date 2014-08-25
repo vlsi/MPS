@@ -23,15 +23,12 @@ public class PaletteConnectorCreationAction extends AbstractPaletteCreationActio
   private _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> mySetConnectorCallBack;
   private ViewTrait myTrait;
   private EditorContext myEditorContext;
-
   public PaletteConnectorCreationAction(DiagramCell diagramCell, SubstituteAction action, final _FunctionTypes._return_P4_E0<? extends Boolean, ? super SNode, ? super Object, ? super SNode, ? super Object> canCreateConnector, final _FunctionTypes._void_P5_E0<? super SNode, ? super SNode, ? super Object, ? super SNode, ? super Object> setConnectorCallback, EditorContext editorContext) {
     super(diagramCell, action);
     myCanCreateConnectorCallback = canCreateConnector;
     mySetConnectorCallBack = setConnectorCallback;
     myEditorContext = myDiagramCell.getContext();
   }
-
-
 
   protected SubstituteAction createSubstituteAction(SubstituteAction action) {
     return new NodeSubstituteActionWrapper(action) {
@@ -44,8 +41,6 @@ public class PaletteConnectorCreationAction extends AbstractPaletteCreationActio
 
       }
 
-
-
       @Override
       public boolean canSubstitute(String string) {
         if (!(super.canSubstitute(string))) {
@@ -56,7 +51,6 @@ public class PaletteConnectorCreationAction extends AbstractPaletteCreationActio
       }
     };
   }
-
   protected ViewTrait getTrait() {
     if (myTrait == null) {
       myTrait = new ViewTraitBuilder().on(ViewEvents.MOUSE_DRAGGED, new ViewEventHandler<MouseEvent>() {
@@ -100,8 +94,6 @@ public class PaletteConnectorCreationAction extends AbstractPaletteCreationActio
     }
     return myTrait;
   }
-
-
 
 
   private static boolean check_y3ke3n_a0a1a0a0a0b0a0a0a0a0h(Boolean checkedDotOperand) {

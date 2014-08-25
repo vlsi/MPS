@@ -12,11 +12,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class XmlContent_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isOneLineBlock_2133624044437631438(SNode thisNode) {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_oneLineBlock_1262430001741497816", new Object[]{});
   }
-
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart")) {
       SNode left = SNodeOperations.cast(SNodeOperations.getPrevSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart");
@@ -30,7 +28,6 @@ public class XmlContent_Behavior {
     }
     return true;
   }
-
   public static boolean virtual_isLastPositionAllowed_2133624044437631519(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart")) {
       SNode right = SNodeOperations.cast(SNodeOperations.getNextSibling(thisNode), "jetbrains.mps.core.xml.structure.XmlPart");
@@ -44,23 +41,18 @@ public class XmlContent_Behavior {
     }
     return true;
   }
-
   public static boolean virtual_onNewLine_2133624044437631588(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_hasNewLineAfter_2133624044437631594(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_textLike_1262430001741498277", new Object[]{});
   }
-
   public static boolean virtual_oneLineBlock_1262430001741497816(SAbstractConcept thisConcept) {
     return false;
   }
-
   public static boolean virtual_textLike_1262430001741498277(SAbstractConcept thisConcept) {
     return true;
   }

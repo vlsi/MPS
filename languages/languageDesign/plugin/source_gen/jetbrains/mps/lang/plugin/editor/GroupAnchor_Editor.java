@@ -17,7 +17,6 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gu53j0_a(editorContext, node);
   }
-
   private EditorCell createCollection_gu53j0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gu53j0_a");
@@ -26,14 +25,12 @@ public class GroupAnchor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_gu53j0_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gu53j0_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_gu53j0_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gu53j0_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -30,32 +30,26 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TransformationUtil {
   private static Logger LOG = Logger.wrap(LogManager.getLogger(TransformationUtil.class));
-
   public TransformationUtil() {
   }
-
   public static void replaceArrayConstructor(SNode newArrayExpression, SNode fqNameNode, SNode size) {
     SNode invokeConstructorMethodCall = _quotation_createNode_crriw5_a0a0c(fqNameNode);
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(invokeConstructorMethodCall, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).addElement(size);
     SNodeOperations.replaceWithAnother(newArrayExpression, invokeConstructorMethodCall);
   }
-
   public static void replaceArrayWithInitializerConstructor(SNode newArrayExpression, SNode fqNameNode, List<SNode> values) {
     SNode invokeConstructorMethodCall = _quotation_createNode_crriw5_a0a0d(fqNameNode);
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(invokeConstructorMethodCall, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).addSequence(ListSequence.fromList(values));
     SNodeOperations.replaceWithAnother(newArrayExpression, invokeConstructorMethodCall);
   }
-
   public static void replaceConstructor(SNode newExpression, SNode fqNameNode, SNode jnSignature, List<SNode> actualArguments) {
     SNode invokeConstructorMethodCall = _quotation_createNode_crriw5_a0a0e(fqNameNode, jnSignature);
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(invokeConstructorMethodCall, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).addSequence(ListSequence.fromList(actualArguments));
     SNodeOperations.replaceWithAnother(newExpression, invokeConstructorMethodCall);
   }
-
   public static void replaceThisExpression(SNode thisExpression) {
     SNodeOperations.replaceWithAnother(thisExpression, createThisNodeReplacement());
   }
-
   public static void replaceSuper(SNode superMethodCall, String methodName, String jniSignature, SNode returnType, List<SNode> arguments) {
     SNode returnProxyType = getValueProxyTypeFromType(returnType);
     SNode thisNode = TransformationUtil.createThisNodeReplacement();
@@ -63,7 +57,6 @@ public class TransformationUtil {
     ListSequence.fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
     SNodeOperations.replaceWithAnother(superMethodCall, _quotation_createNode_crriw5_a0a4a6(invokeMethodCall, returnProxyType));
   }
-
   public static void replaceAssignment(SNode baseAssignment) {
     // todo get rid of copy & paste 
     SNode lvalueType = ((SNode) baseAssignment.getUserObject(TransformatorImpl.LTYPE));
@@ -99,45 +92,37 @@ public class TransformationUtil {
     AttributeOperations.createAndSetAttrbiute(rightExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
     AttributeOperations.createAndSetAttrbiute(baseAssignment, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation"), "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation");
   }
-
   public static void replaceLowLevelVariableReference(String variableName, SNode variableType, SNode variableRef) {
     SNode returnType = getValueProxyTypeFromType(variableType);
     SNode getValueCall = _quotation_createNode_crriw5_a0b0i(createStringLiteral(variableName));
     SNodeOperations.replaceWithAnother(variableRef, _quotation_createNode_crriw5_a0a2a8(returnType, getValueCall));
   }
-
   public static void replaceStaticFieldReference(SNode staticFieldReference, String fieldName, SNode fieldType, SNode classFqNameNode) {
     SNodeOperations.replaceWithAnother(staticFieldReference, _quotation_createNode_crriw5_a0a0a9(classFqNameNode, createStringLiteral(fieldName), getValueProxyTypeFromType(fieldType)));
   }
-
   public static void replaceFieldReference(SNode wholeExpression, SNode instance, String fieldName, SNode fieldType) {
     SNodeOperations.replaceWithAnother(wholeExpression, _quotation_createNode_crriw5_a0a0a01(getValueProxyTypeFromType(fieldType), getValueProxyTypeFromType(fieldType), instance, createStringLiteral(fieldName)));
   }
-
   public static void replaceStaticMethodCall(SNode staticMethodCall, SNode classFqNameNode, String methodName, String jniSignature, SNode returnType, List<SNode> arguments) {
     SNode methodCall = _quotation_createNode_crriw5_a0a0l(classFqNameNode, createStringLiteral(methodName), createStringLiteral(jniSignature));
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(methodCall, "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
     SNodeOperations.replaceWithAnother(staticMethodCall, _quotation_createNode_crriw5_a0a2a11(getValueProxyTypeFromType(returnType), methodCall));
   }
-
   public static void replaceMethodCall(SNode wholeExpression, SNode instance, SNode methodCall, String methodName, String jniSignature, SNode returnType, List<SNode> arguments) {
     SNode valueProxyReturnType = getValueProxyTypeFromType(returnType);
     SNode invokeMethodCall = _quotation_createNode_crriw5_a0b0m(createStringLiteral(methodName), createStringLiteral(jniSignature), valueProxyReturnType, instance);
     ListSequence.fromList(SLinkOperations.getTargets(invokeMethodCall, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
     SNodeOperations.replaceWithAnother(wholeExpression, _quotation_createNode_crriw5_a0a3a21(valueProxyReturnType, invokeMethodCall));
   }
-
   public static void replaceReturnedExpressionIfNeeded(SNode expression) {
     SNode type = TypeChecker.getInstance().getTypeOf(expression);
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_crriw5_b0a0a1a31())) || SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType")) {
       SNodeOperations.replaceWithAnother(expression, _quotation_createNode_crriw5_a0a0a1a31(expression));
     }
   }
-
   public static void replaceClassExpression(SNode classExpression, SNode classFqNameNode) {
     SNodeOperations.replaceWithAnother(classExpression, _quotation_createNode_crriw5_a0a0a41(classFqNameNode));
   }
-
   public static void checkForAnonimousClassCreations(SNode evaluator) {
     // TODO in some cases, we might actually support anonymous classes creation 
     SNode evalMethod = findEvaluateMethod(evaluator);
@@ -145,16 +130,13 @@ public class TransformationUtil {
       throw new UnsupportedOperationException("Anonimous classes evaluation is not supported.");
     }
   }
-
   public static boolean isNotNullProxy(SNode n) {
     SNode type = TypeChecker.getInstance().getTypeOf(n);
     return !(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.NullType")) && TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_crriw5_b0a0b0q());
   }
-
   public static boolean isUnprocessed(SNode node) {
     return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation")) != null) && (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.debugger.java.evaluation.structure.DoNotTransformAnnotation")) == null);
   }
-
   public static boolean isLowLevelVariableReference(SNode variableRef) {
     if (SNodeOperations.isInstanceOf(variableRef, "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference")) {
       return true;
@@ -164,7 +146,6 @@ public class TransformationUtil {
     }
     return false;
   }
-
   private static SNode findEvaluateMethod(SNode evaluator) {
     // TODO use this method everywhere 
     return ListSequence.fromList(SNodeOperations.getDescendants(evaluator, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
@@ -173,7 +154,6 @@ public class TransformationUtil {
       }
     });
   }
-
   public static SNode getBoxedTypeIfNeeded(SNode rawType) {
     if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType")) {
       rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(rawType, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "lowType", true));
@@ -201,11 +181,9 @@ public class TransformationUtil {
       return rawType;
     }
   }
-
   public static SNode createThisNodeReplacement() {
     return _quotation_createNode_crriw5_a0a12();
   }
-
   public static SNode createClassFqNameNode(SModel model, SNode classConcept) {
     SNode fqNameNode;
     // TODO this is not completely correct: model can contain several classes 
@@ -216,7 +194,6 @@ public class TransformationUtil {
     }
     return fqNameNode;
   }
-
   public static SNode getValueProxyTypeFromType(SNode type) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType")) {
       type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.debugger.java.evaluation.structure.DebuggedType"), "lowType", true);
@@ -235,12 +212,10 @@ public class TransformationUtil {
     LOG.warning("Could not deduce type" + type);
     return _quotation_createNode_crriw5_a3a32();
   }
-
   public static SNode getPrimitiveType() {
     SNode primitive = SLinkOperations.getTarget(_quotation_createNode_crriw5_a0a0a42(), "descriptor", false);
     return _quotation_createNode_crriw5_a1a42(primitive);
   }
-
   public static String getJniSignature(SNode methodDeclaration) {
     return getJniSignature(ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -248,7 +223,6 @@ public class TransformationUtil {
       }
     }), SLinkOperations.getTarget(methodDeclaration, "returnType", true));
   }
-
   public static String getJniSignature(Iterable<SNode> arguments, SNode returnType) {
     final Wrappers._T<String> signature = new Wrappers._T<String>("(");
     Sequence.fromIterable(arguments).visitAll(new IVisitor<SNode>() {
@@ -260,7 +234,6 @@ public class TransformationUtil {
     signature.value += getJniSignatureFromType(returnType);
     return signature.value;
   }
-
   public static String getJniSignatureFromType(SNode type) {
     if ((type == null)) {
       return "V";
@@ -321,29 +294,23 @@ public class TransformationUtil {
     }
     return "V";
   }
-
   public static SNode createStringLiteral(String value) {
     SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(stringLiteral, "value", value);
     return stringLiteral;
   }
-
   public static void replaceTypeWithArrayProxyType(SNode variableDeclaration) {
     SLinkOperations.setTarget(variableDeclaration, "type", _quotation_createNode_crriw5_a0a0a92(TransformationUtil.getValueProxyTypeFromType(SLinkOperations.getTarget(variableDeclaration, "type", true))), true);
   }
-
   public static void replaceExpressionWithProxy(SNode expression) {
     SNodeOperations.replaceWithAnother(expression, _quotation_createNode_crriw5_a0a0a03(expression, getValueProxyTypeFromType(TypeChecker.getInstance().getTypeOf(expression))));
   }
-
   public static void replaceExpressionWithBox(SNode expression) {
     SNodeOperations.replaceWithAnother(expression, _quotation_createNode_crriw5_a0a0a13(expression));
   }
-
   public static void replaceExpressionWithUnbox(SNode expression) {
     SNodeOperations.replaceWithAnother(expression, _quotation_createNode_crriw5_a0a0a23(expression));
   }
-
   public static boolean replaceAssignment(SNode variableDeclaration, SNode expression) {
     if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(variableDeclaration), _quotation_createNode_crriw5_b0a0a0a33())) && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(expression), _quotation_createNode_crriw5_b0a0a0hb())) {
       TransformationUtil.replaceTypeWithArrayProxyType(variableDeclaration);
@@ -362,11 +329,9 @@ public class TransformationUtil {
     }
     return true;
   }
-
   public static boolean canBeMirrored(SNode expressionType) {
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, _quotation_createNode_crriw5_b0a0a0a43())) && (TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, getPrimitiveType()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, _quotation_createNode_crriw5_b0a0a0a0a43()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expressionType, _quotation_createNode_crriw5_b0a0a0a0ib()));
   }
-
   public static void replaceForEachStatement(SNode foreachStatement) {
     SNode valueProxyType = getValueProxyTypeFromType(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true));
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(foreachStatement, "iterable", true)), _quotation_createNode_crriw5_b0a1a53())) {
@@ -378,7 +343,6 @@ public class TransformationUtil {
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(foreachStatement, "iterable", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "typeArgument", true)).addElement(SNodeOperations.copyNode(valueProxyType));
     SLinkOperations.setTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", _quotation_createNode_crriw5_a0a4a53(valueProxyType), true);
   }
-
   public static SNode getVariableDeclaration(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
@@ -388,7 +352,6 @@ public class TransformationUtil {
     }
     return null;
   }
-
   public static boolean canMakeReturnStatement(SNode lastStatement) {
     if (!(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
       return false;
@@ -430,7 +393,6 @@ public class TransformationUtil {
     }
     return canAdjust;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -462,7 +424,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -494,7 +455,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0e(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -531,7 +491,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("operation", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0c0g(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -570,7 +529,6 @@ public class TransformationUtil {
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a4a6(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -590,7 +548,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0f0h(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -607,7 +564,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -624,7 +580,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0b5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -641,7 +596,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0c5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -658,7 +612,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0d5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -675,7 +628,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0e5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -692,7 +644,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0f5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -709,7 +660,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0g5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -726,7 +676,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0h5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -743,7 +692,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0i5a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -760,7 +708,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a6a7(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -777,7 +724,6 @@ public class TransformationUtil {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0b0i(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -809,7 +755,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a2a8(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -829,7 +774,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a9(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -877,7 +821,6 @@ public class TransformationUtil {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a01(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -911,7 +854,6 @@ public class TransformationUtil {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0l(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -953,7 +895,6 @@ public class TransformationUtil {
     quotedNode_4.addChild("operation", quotedNode_6);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a2a11(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -973,7 +914,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0b0m(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1012,7 +952,6 @@ public class TransformationUtil {
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a3a21(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1032,7 +971,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a1a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1064,7 +1002,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a1a31() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1072,7 +1009,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a41(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1114,7 +1050,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("expression", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0b0q() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1122,7 +1057,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a4a02() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1130,7 +1064,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Integer")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1138,7 +1071,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Byte")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a1e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1146,7 +1078,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Short")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a2e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1154,7 +1085,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Long")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a3e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1162,7 +1092,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Float")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a4e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1170,7 +1099,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Double")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a5e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1178,7 +1106,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Boolean")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a6e0u() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1186,7 +1113,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Character")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a12() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1201,7 +1127,6 @@ public class TransformationUtil {
     quotedNode_1.addChild("instance", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0c0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1215,7 +1140,6 @@ public class TransformationUtil {
     quotedNode_1.addChild("instance", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1223,7 +1147,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a1b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1231,7 +1154,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a1b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1239,14 +1161,12 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a2b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a2b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1254,7 +1174,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563868")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a3b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1262,7 +1181,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a1a32() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1270,7 +1188,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070562884")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a3a32() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1278,7 +1195,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a42() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1286,7 +1202,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a1a42(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1295,70 +1210,60 @@ public class TransformationUtil {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a4a72() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a1e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a2e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a3e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a4e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a5e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a6e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a7e0bb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a92(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1367,7 +1272,6 @@ public class TransformationUtil {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a03(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1410,7 +1314,6 @@ public class TransformationUtil {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a13(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1442,7 +1345,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a23(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1474,7 +1376,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a33() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1482,7 +1383,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0hb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1490,7 +1390,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a33_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1498,7 +1397,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a0hb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1506,7 +1404,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0b0a33() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1514,7 +1411,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0b0a33_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1522,7 +1418,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0c0a33() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1530,7 +1425,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0c0a33_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1538,7 +1432,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a0ib() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1577,7 +1470,6 @@ public class TransformationUtil {
     quotedNode_1.addChild("argument", quotedNode_9);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a0a43() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1585,7 +1477,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a0a0a43() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1593,7 +1484,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a1a53(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1625,7 +1515,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a0a0b0jb(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1646,7 +1535,6 @@ public class TransformationUtil {
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_crriw5_b0a1a53() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1654,7 +1542,6 @@ public class TransformationUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_crriw5_a0a4a53(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

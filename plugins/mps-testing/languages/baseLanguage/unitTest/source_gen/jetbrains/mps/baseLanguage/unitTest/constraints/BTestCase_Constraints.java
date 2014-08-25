@@ -14,7 +14,6 @@ public class BTestCase_Constraints extends BaseConstraintsDescriptor {
   public BTestCase_Constraints() {
     super("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class BTestCase_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

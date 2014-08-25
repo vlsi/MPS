@@ -13,12 +13,12 @@ import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.EditorCellLabelSelection;
 import jetbrains.mps.nodeEditor.selection.EditorCellSelection;
@@ -35,18 +35,15 @@ import org.apache.log4j.LogManager;
 
 public class EvaluateExpression_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Debugger.EvaluateExpression;
-
   public EvaluateExpression_Action() {
     super("Evaluate Expression", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -60,7 +57,6 @@ public class EvaluateExpression_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -69,10 +65,15 @@ public class EvaluateExpression_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("operationContext") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("component", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("component", editorComponent);
+    }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
@@ -104,6 +105,5 @@ public class EvaluateExpression_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(EvaluateExpression_Action.class);
 }

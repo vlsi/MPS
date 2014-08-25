@@ -10,85 +10,85 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)/1241010420895">
     <file name="TupleDeclarationUtil.java">
-      <node id="8911874220955530338" at="13,63,14,136" concept="5" />
-      <node id="8911874220955530346" at="14,136,15,152" concept="5" />
-      <node id="8911874220955530359" at="16,47,17,82" concept="6" />
-      <node id="8911874220955530380" at="18,5,19,18" concept="6" />
+      <node id="8911874220955530338" at="12,63,13,136" concept="5" />
+      <node id="8911874220955530346" at="13,136,14,152" concept="5" />
+      <node id="8911874220955530359" at="15,47,16,82" concept="6" />
+      <node id="8911874220955530380" at="17,5,18,18" concept="6" />
       <node id="1241010420897" at="10,0,12,0" concept="0" trace="TupleDeclarationUtil#()V" />
-      <node id="8911874220955530357" at="15,152,18,5" concept="3" />
-      <node id="8911874220955530330" at="13,0,21,0" concept="7" trace="getResolveInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="8911874220955530357" at="14,152,17,5" concept="3" />
+      <node id="8911874220955530330" at="12,0,20,0" concept="7" trace="getResolveInfo#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
       <scope id="1241010420900" at="10,33,10,33" />
-      <scope id="8911874220955530358" at="16,47,17,82" />
+      <scope id="8911874220955530358" at="15,47,16,82" />
       <scope id="1241010420897" at="10,0,12,0" />
-      <scope id="8911874220955530333" at="13,63,19,18">
+      <scope id="8911874220955530333" at="12,63,18,18">
         <var name="fqName" id="8911874220955530339" />
         <var name="packageName" id="8911874220955530347" />
       </scope>
-      <scope id="8911874220955530330" at="13,0,21,0">
+      <scope id="8911874220955530330" at="12,0,20,0">
         <var name="tupleDeclaration" id="8911874220955530335" />
       </scope>
-      <unit id="1241010420895" at="9,0,22,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.TupleDeclarationUtil" />
+      <unit id="1241010420895" at="9,0,21,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.TupleDeclarationUtil" />
     </file>
   </root>
   <root nodeRef="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)/1241091679770">
     <file name="Keys.java">
       <node id="1241091679792" at="12,0,13,0" concept="2" trace="name" />
-      <node id="1241091679810" at="14,21,15,29" concept="1" />
-      <node id="1241091679775" at="18,35,19,47" concept="6" />
-      <node id="1241091679798" at="22,44,23,64" concept="6" />
-      <node id="1241091679806" at="14,0,17,0" concept="0" trace="Keys#(Ljava/lang/String;)V" />
-      <node id="1241091679771" at="18,0,21,0" concept="4" trace="compose#(Ljava/lang/Object;)Ljava/lang/String;" />
-      <node id="1241091679795" at="22,0,25,0" concept="7" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1241091679809" at="14,21,15,29" />
-      <scope id="1241091679774" at="18,35,19,47" />
-      <scope id="1241091679797" at="22,44,23,64" />
-      <scope id="1241091679806" at="14,0,17,0">
+      <node id="1241091679810" at="13,21,14,29" concept="1" />
+      <node id="1241091679775" at="16,35,17,47" concept="6" />
+      <node id="1241091679798" at="19,44,20,64" concept="6" />
+      <node id="1241091679806" at="13,0,16,0" concept="0" trace="Keys#(Ljava/lang/String;)V" />
+      <node id="1241091679771" at="16,0,19,0" concept="4" trace="compose#(Ljava/lang/Object;)Ljava/lang/String;" />
+      <node id="1241091679795" at="19,0,22,0" concept="7" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1241091679809" at="13,21,14,29" />
+      <scope id="1241091679774" at="16,35,17,47" />
+      <scope id="1241091679797" at="19,44,20,64" />
+      <scope id="1241091679806" at="13,0,16,0">
         <var name="name" id="1241091679817" />
       </scope>
-      <scope id="1241091679771" at="18,0,21,0">
+      <scope id="1241091679771" at="16,0,19,0">
         <var name="o" id="1241091679784" />
       </scope>
-      <scope id="1241091679795" at="22,0,25,0">
+      <scope id="1241091679795" at="19,0,22,0">
         <var name="str" id="1241091679803" />
       </scope>
-      <unit id="1241091679770" at="6,0,26,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Keys" />
+      <unit id="1241091679770" at="6,0,23,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Keys" />
     </file>
   </root>
   <root nodeRef="r:ff802b39-fe8b-448c-92e1-659087928d82(jetbrains.mps.baseLanguage.tuples.generator.template.helpers)/1241092045116">
     <file name="Values.java">
       <node id="1241092045201" at="11,0,12,0" concept="2" trace="name" />
-      <node id="1241092045191" at="13,23,14,29" concept="1" />
-      <node id="1241092045125" at="17,45,18,36" concept="1" />
-      <node id="1241092045135" at="21,33,22,36" concept="6" />
-      <node id="1241092045147" at="25,36,26,44" concept="6" />
-      <node id="1241092045161" at="29,44,30,64" concept="6" />
-      <node id="1241092045187" at="13,0,16,0" concept="0" trace="Values#(Ljava/lang/String;)V" />
-      <node id="1241092045117" at="17,0,20,0" concept="4" trace="set#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
-      <node id="1241092045132" at="21,0,24,0" concept="4" trace="get#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-      <node id="1241092045144" at="25,0,28,0" concept="4" trace="isSet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="1241092045158" at="29,0,32,0" concept="7" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-      <scope id="1241092045190" at="13,23,14,29" />
-      <scope id="1241092045124" at="17,45,18,36" />
-      <scope id="1241092045134" at="21,33,22,36" />
-      <scope id="1241092045146" at="25,36,26,44" />
-      <scope id="1241092045160" at="29,44,30,64" />
-      <scope id="1241092045187" at="13,0,16,0">
+      <node id="1241092045191" at="12,23,13,29" concept="1" />
+      <node id="1241092045125" at="15,45,16,36" concept="1" />
+      <node id="1241092045135" at="18,33,19,36" concept="6" />
+      <node id="1241092045147" at="21,36,22,44" concept="6" />
+      <node id="1241092045161" at="24,44,25,64" concept="6" />
+      <node id="1241092045187" at="12,0,15,0" concept="0" trace="Values#(Ljava/lang/String;)V" />
+      <node id="1241092045117" at="15,0,18,0" concept="4" trace="set#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+      <node id="1241092045132" at="18,0,21,0" concept="4" trace="get#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1241092045144" at="21,0,24,0" concept="4" trace="isSet#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1241092045158" at="24,0,27,0" concept="7" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1241092045190" at="12,23,13,29" />
+      <scope id="1241092045124" at="15,45,16,36" />
+      <scope id="1241092045134" at="18,33,19,36" />
+      <scope id="1241092045146" at="21,36,22,44" />
+      <scope id="1241092045160" at="24,44,25,64" />
+      <scope id="1241092045187" at="12,0,15,0">
         <var name="name" id="1241092045198" />
       </scope>
-      <scope id="1241092045117" at="17,0,20,0">
+      <scope id="1241092045117" at="15,0,18,0">
         <var name="node" id="1241092045118" />
         <var name="value" id="1241092045120" />
       </scope>
-      <scope id="1241092045132" at="21,0,24,0">
+      <scope id="1241092045132" at="18,0,21,0">
         <var name="node" id="1241092045142" />
       </scope>
-      <scope id="1241092045144" at="25,0,28,0">
+      <scope id="1241092045144" at="21,0,24,0">
         <var name="node" id="1241092045156" />
       </scope>
-      <scope id="1241092045158" at="29,0,32,0">
+      <scope id="1241092045158" at="24,0,27,0">
         <var name="str" id="1241092045166" />
       </scope>
-      <unit id="1241092045116" at="7,0,33,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Values" />
+      <unit id="1241092045116" at="7,0,28,0" name="jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Values" />
     </file>
   </root>
 </debug-info>

@@ -4,7 +4,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,25,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.diagram.testLanguage.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:f56dfe8c-2b17-4ddf-bca2-8224945b3e91(jetbrains.mps.lang.editor.diagram.testLanguage.constraints)/8794120090377793827">

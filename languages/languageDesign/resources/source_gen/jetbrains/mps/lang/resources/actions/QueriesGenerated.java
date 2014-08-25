@@ -38,11 +38,9 @@ public class QueriesGenerated {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
                 return _quotation_createNode_u7cy7b_a0a0a0a((item));
               }
-
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference"), "conceptAlias") + "<" + SPropertyOperations.getString((item), "name") + ">";
               }
-
               public String getVisibleMatchingText(String pattern) {
                 return getMatchingText(pattern);
               }
@@ -53,7 +51,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_u7cy7b_a0a0a0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

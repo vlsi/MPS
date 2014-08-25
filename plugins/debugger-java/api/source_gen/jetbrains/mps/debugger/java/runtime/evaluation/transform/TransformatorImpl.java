@@ -38,7 +38,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   private final SModel myModel;
   @NotNull
   private final SNode myWhatToEvaluate;
-
   public TransformatorImpl(@NotNull SNode node, boolean insideEvaluation) {
     if (insideEvaluation) {
       myModel = SNodeOperations.getModel(node);
@@ -69,13 +68,11 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       myWhatToEvaluate = node;
     }
   }
-
   @Override
   public void transformEvaluator() {
     transform();
     wrapReturn();
   }
-
   @Override
   public void transform() {
     preprocess();
@@ -119,7 +116,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
 
     postprocess();
   }
-
   private void postprocess() {
     // clean annotations 
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, null, false, new String[]{}))) {
@@ -140,7 +136,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       SNodeOperations.deleteNode(var);
     }
   }
-
   private void preprocess() {
     // remove downcasts 
     for (SNode downcast : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debugger.java.evaluation.structure.DownCastToLowLevel", false, new String[]{}))) {
@@ -188,7 +183,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       ternaryOperator.putUserObject(TransformatorImpl.CTYPE, TransformationUtil.getBoxedTypeIfNeeded(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(ternaryOperator, "condition", true)))));
     }
   }
-
   private void wrapReturn() {
 
     SNode evaluateMethod = SNodeOperations.getAncestor(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
@@ -205,7 +199,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
 
   }
-
   private void replaceConstructors() {
     for (SNode newExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -259,7 +252,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       }
     }
   }
-
   private void replaceThis() {
     for (SNode thisExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -283,7 +275,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       TransformationUtil.replaceThisExpression(thisExpression);
     }
   }
-
   private void replaceSupers() {
     for (SNode superMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.debugger.java.evaluation.structure.EvaluatorsSuperMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -296,7 +287,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       TransformationUtil.replaceSuper(superMethodCall, methodName, jniSignature, returnType, SLinkOperations.getTargets(superMethodCall, "actualArgument", true));
     }
   }
-
   private void replaceLowLevelVariableReferences() {
     for (SNode variableRef : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseVariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -324,7 +314,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       TransformationUtil.replaceLowLevelVariableReference(SPropertyOperations.getString(variableRef, "name"), SLinkOperations.getTarget(variableRef, "type", true), variableRef);
     }
   }
-
   private void replaceAssignmentsWithBinaryOperations() {
     for (SNode baseAssignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -334,7 +323,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       TransformationUtil.replaceAssignment(baseAssignment);
     }
   }
-
   private void replaceClassExpressions() {
     for (SNode classifierClassExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -352,7 +340,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       TransformationUtil.replaceClassExpression(classExpression, TransformationUtil.createClassFqNameNode(myModel, SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(classExpression, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false)));
     }
   }
-
   private void replaceLocalMemberReferences() {
     // convert local static method calls to qualified static method calls 
     for (SNode localStaticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -423,7 +410,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       SNodeOperations.replaceWithAnother(localInstanceFieldReference, _quotation_createNode_s72qk1_a0a3a7a71(fieldReferenceOperation, TransformationUtil.createThisNodeReplacement()));
     }
   }
-
   private boolean replaceLocalVariableDeclarations() {
     boolean finished = true;
     for (SNode variableDeclaration : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -435,7 +421,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   public boolean replaceForeachVariable() {
     boolean finished = true;
     for (SNode foreachStatement : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ForeachStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -450,7 +435,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceAssignments() {
     boolean finished = true;
     for (SNode assignment : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -462,7 +446,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceNotExpressions() {
     boolean finished = true;
     {
@@ -485,7 +468,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceBinaryOperations() {
     boolean finished = true;
     for (SNode binaryOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.BinaryOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -527,7 +509,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   public boolean replaceTernaryOperators() {
     boolean finished = true;
     for (SNode ternaryOperator : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -548,7 +529,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceInternalStaticFieldReferences() {
     boolean finished = true;
     for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", false, new String[]{}))) {
@@ -557,7 +537,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceStaticFieldReferences() {
     boolean finished = true;
     for (SNode staticFieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -571,7 +550,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceInternalPartialFieldReferences() {
     boolean finished = true;
     for (SNode fieldReference : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -584,7 +562,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceFieldReferenceOperations() {
     boolean finished = true;
     for (SNode fieldReferenceOperation : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -599,7 +576,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceInternalStaticMethodCalls() {
     boolean finished = true;
     for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -616,7 +592,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceStaticMethodCalls() {
     boolean finished = true;
     for (SNode staticMethodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.StaticMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -630,7 +605,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceInternalPartialInstanceMethodCalls() {
     boolean finished = true;
     for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -647,7 +621,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceInstanceMethodCalls() {
     boolean finished = true;
     for (SNode methodCall : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -666,7 +639,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private void replaceInstanceofs() {
     for (SNode instanceofExpression : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -678,7 +650,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       }
     }
   }
-
   private boolean replaceArrayOperations() {
     boolean finished = true;
     for (SNode arrayAccess : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -707,7 +678,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private boolean replaceCasts() {
     boolean finished = true;
     for (SNode cast : ListSequence.fromList(SNodeOperations.getDescendants(myWhatToEvaluate, "jetbrains.mps.baseLanguage.structure.CastExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -734,7 +704,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return finished;
   }
-
   private static void normalizeAllDotExpressions(SNode root) {
     ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -746,7 +715,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
       }
     });
   }
-
   private static void normalizeDotExpression(SNode dotExpression) {
     List<SNode> order = getOrder(dotExpression, ListSequence.fromList(new ArrayList<SNode>()));
     final Wrappers._T<SNode> normalizedDotExpression = new Wrappers._T<SNode>(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null));
@@ -767,7 +735,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     });
     SNodeOperations.replaceWithAnother(dotExpression, SLinkOperations.getTarget(normalizedDotExpression.value, "operand", true));
   }
-
   private static List<SNode> getOrder(SNode node, List<SNode> order) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       ListSequence.fromList(order).addElement(node);
@@ -777,14 +744,12 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return order;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0c0a0a0c0l() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a4a3a71(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -801,7 +766,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a3a7a71(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -818,7 +782,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a1a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -826,7 +789,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0b0t() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -834,7 +796,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a2a2a1a12(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -861,7 +822,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("expression", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a2a1a22(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -880,7 +840,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -888,7 +847,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a2a1a22() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -896,7 +854,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0c0b0w(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -918,7 +875,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a2a1a22_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -926,7 +882,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -934,7 +889,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a0c0b0w(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -988,7 +942,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("expression", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a2a1a22() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -996,14 +949,12 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0a2a1a22_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1011,7 +962,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1019,7 +969,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a0a2a1a22(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1047,7 +996,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3.addChild("expression", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a1a0c0b0w(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1101,7 +1049,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("expression", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a1a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1109,14 +1056,12 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0a1a0c0b0w() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0b0a2a1a22() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1124,7 +1069,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a0a0b0a2a1a22_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1132,7 +1076,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0b0a2a1a22(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1160,7 +1103,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3.addChild("expression", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a1a1a32(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1187,7 +1129,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0b0b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1195,7 +1136,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a2a1a32(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1221,7 +1161,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0c0b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1229,7 +1168,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a3a1a32(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1255,7 +1193,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0x() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1263,7 +1200,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~String")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a1a72() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1271,7 +1207,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a1a1a13() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1279,7 +1214,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a0a23(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -1310,7 +1244,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_3.addChild("instance", quotedNode_6);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0b0hb() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1318,7 +1251,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a2a0a1a33(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -1352,7 +1284,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_5.addChild("expression", quotedNode_6);
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a1a33() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1360,7 +1291,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_a0a0a0a2a33(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -1386,7 +1316,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_2.addChild("returnType", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a2a33() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1394,7 +1323,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0ib() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1402,7 +1330,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0d0b0ib_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1410,7 +1337,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563929")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a3a1a43() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1418,7 +1344,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070563570")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0a1d0b0ib() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -1426,7 +1351,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:ea2e6d1f-eab5-4a08-8299-1abe57148f37(jetbrains.mps.debugger.java.api.evaluation.proxies)"), facade.createNodeId("4727801710070560812")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_s72qk1_b0a0b3a1a43() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

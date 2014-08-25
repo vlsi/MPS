@@ -8,7 +8,6 @@ import jetbrains.mps.ide.persistence.ModelRootSettingsEditor;
 public class JavaSourceStubModelRootSettingsProvider implements ModelRootSettingsEditorProvider {
   public JavaSourceStubModelRootSettingsProvider() {
   }
-
   @Override
   public ModelRootSettingsEditor createEditor() {
     return new JavaSourceStubModelRootSettingsEditor();

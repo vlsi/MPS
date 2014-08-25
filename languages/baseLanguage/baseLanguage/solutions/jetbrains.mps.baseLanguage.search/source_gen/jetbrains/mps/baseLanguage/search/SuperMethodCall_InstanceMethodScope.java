@@ -18,7 +18,6 @@ public class SuperMethodCall_InstanceMethodScope extends ClassifierVisibleMember
     // use classifier.getMembers(concept/SuperMethodKind) 
     super(superclassType, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {

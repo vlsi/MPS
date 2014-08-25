@@ -10,7 +10,6 @@ import jetbrains.mps.samples.secretCompartmentLanguage.runtime.State;
 public class MrsH_StateMachineFactory extends StateMachineFactory {
   public MrsH_StateMachineFactory() {
   }
-
   public StateMachine getStateMachine() {
     this.putEvent("doorClosed", new Event("doorClosed", "D1CL"));
     this.putEvent("drawOpened", new Event("drawOpened", "D2OP"));

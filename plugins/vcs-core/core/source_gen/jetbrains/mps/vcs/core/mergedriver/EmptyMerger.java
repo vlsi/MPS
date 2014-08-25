@@ -9,7 +9,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 /*package*/ class EmptyMerger extends AbstractContentMerger {
   public EmptyMerger() {
   }
-
   @Nullable
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {

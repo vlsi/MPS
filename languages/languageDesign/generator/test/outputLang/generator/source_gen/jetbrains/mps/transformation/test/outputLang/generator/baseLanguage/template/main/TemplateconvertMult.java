@@ -22,23 +22,19 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   private SNode myLeft;
   private SNode myRight;
-
   public TemplateconvertMult(SNode left, SNode right) {
     this.myLeft = left;
     this.myRight = right;
   }
-
   public SNodeReference getTemplateNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617065");
   }
-
   private Map<String, Object> getParametersAsMap() {
     Map<String, Object> result = MapSequence.fromMap(new HashMap<String, Object>());
     MapSequence.fromMap(result).put("left", myLeft);
     MapSequence.fromMap(result).put("right", myRight);
     return result;
   }
-
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     try {
@@ -76,12 +72,10 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
     }
     return tnode1;
   }
-
   public Collection<SNode> apply(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     return TemplateUtil.singletonList(applyPart0(environment, contextWithParams));
   }
-
   public Collection<SNode> weave(@NotNull TemplateExecutionEnvironment environment, @NotNull TemplateContext context, @NotNull SNode outputContextNode) throws GenerationException {
     TemplateContext contextWithParams = context.subContext(getParametersAsMap());
     SNode tnodepart0 = applyPart0(environment, contextWithParams);
@@ -89,7 +83,6 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
     environment.weaveNode(outputContextNode, "statement", tnodepart0, weaveTf0, contextWithParams.getInput());
     return TemplateUtil.singletonList(tnodepart0);
   }
-
   private static SNodePointer copySrcMacro_eum2xg_b0a0c0b0b0b0b0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617088");
   private static SNodePointer copySrcMacro_eum2xg_b0a0c0c0b0b0b0f = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617084");
   private static SNodePointer weaveTfConst_eum2xg_a0c0h = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "4146564171992617082");

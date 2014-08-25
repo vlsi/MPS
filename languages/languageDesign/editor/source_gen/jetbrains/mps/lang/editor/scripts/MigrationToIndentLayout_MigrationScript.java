@@ -20,23 +20,18 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       public String getName() {
         return "MoveEditor to indent Layout";
       }
-
       public String getAdditionalInfo() {
         return "MoveEditor to indent Layout";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.editor.structure.CellModel_Collection";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent"));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         IndentLayoutUtil.moveToIndentLayout(node);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -45,19 +40,15 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
       public String getName() {
         return "CellModel_RefNodeList migration";
       }
-
       public String getAdditionalInfo() {
         return "CellModel_RefNodeList migration";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "cellLayout", true) == null;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Indent", null), true);
         if (SPropertyOperations.getBoolean(node, "vertical")) {
@@ -67,7 +58,6 @@ public class MigrationToIndentLayout_MigrationScript extends BaseMigrationScript
           ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(indentStyle);
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

@@ -20,7 +20,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_sf63zn_a(editorContext, node);
   }
-
   private EditorCell createCollection_sf63zn_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_sf63zn_a");
@@ -34,7 +33,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_sf63zn_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_sf63zn_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "filemode");
     editorCell.setCellId("Constant_sf63zn_a0");
@@ -44,7 +42,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_sf63zn_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "folders:");
     editorCell.setCellId("Constant_sf63zn_b0");
@@ -54,7 +51,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_sf63zn_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("dirmode");
@@ -73,7 +69,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_sf63zn_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_sf63zn_d0");
@@ -84,7 +79,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_sf63zn_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "files:");
     editorCell.setCellId("Constant_sf63zn_e0");
@@ -94,7 +88,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_sf63zn_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("filemode");
@@ -116,7 +109,6 @@ public class BuildLayout_Filemode_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_sf63zn_g0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.build.editor.BuildLayout_containerElements");
     Style style = new StyleImpl();

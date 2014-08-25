@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildLayout_CopyProcessor_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getTempFolder_1330375798096391716(SNode thisNode, TemplateQueryContext genContext) {
     SNode project = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildProject", false, false);
     ConcurrentMap<SNode, String> map = GenerationUtil.<SNode,String>getTransientMap(project, genContext, "handlerOutputPath");
@@ -37,7 +36,6 @@ public class BuildLayout_CopyProcessor_Behavior {
     map.put(thisNode, outpath);
     return outpath;
   }
-
   public static String call_representativeName_1330375798101242503(SAbstractConcept thisConcept, SNode path) {
     StringBuilder res = new StringBuilder();
     if (SNodeOperations.isInstanceOf(path, "jetbrains.mps.build.structure.BuildRelativePath")) {
@@ -60,7 +58,6 @@ public class BuildLayout_CopyProcessor_Behavior {
     }
     return res.toString();
   }
-
   public static String call_filesetName_1330375798101726877(SAbstractConcept thisConcept, SNode fileset) {
     if (SNodeOperations.isInstanceOf(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile")) {
       return BuildLayout_CopyProcessor_Behavior.call_representativeName_1330375798101242503(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_CopyProcessor"))), SLinkOperations.getTarget(SNodeOperations.cast(fileset, "jetbrains.mps.build.structure.BuildInputSingleFile"), "path", true));

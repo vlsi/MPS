@@ -28,7 +28,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class ClassifierScopeUtils {
   private ClassifierScopeUtils() {
   }
-
   @Deprecated
   public static String createMethodParameterTypesString(SNode method, Map<SNode, SNode> typeByTypeVar) {
     // use MethodSignature instead 
@@ -47,34 +46,29 @@ public class ClassifierScopeUtils {
     }
     return result.toString();
   }
-
   @Deprecated
   public static String getMethodSignatureForOverriding(SNode contextClassifier, SNode method) {
     // use MethodSignature instead 
     return SPropertyOperations.getString(method, "name") + "(" + createMethodParameterTypesString(method, resolveClassifierTypeVars(contextClassifier)) + ")";
   }
-
   public static Map<SNode, SNode> resolveClassifierTypeVars(@Nullable SNode classifier) {
     if (classifier == null) {
       return Collections.emptyMap();
     }
     return getClassifierAndSuperClassifiersData(classifier).typeByTypeVariable;
   }
-
   public static Set<SNode> getExtendedClassifiers(@Nullable SNode classifier) {
     if (classifier == null) {
       return Collections.emptySet();
     }
     return getClassifierAndSuperClassifiersData(classifier).classifiers;
   }
-
   public static boolean isHierarchyCyclic(@Nullable SNode classifier) {
     if (classifier == null) {
       return false;
     }
     return getClassifierAndSuperClassifiersData(classifier).isCyclic;
   }
-
   private static ClassifierScopeUtils.ClassifierAndSuperClassifiersData getClassifierAndSuperClassifiersData(@NotNull final SNode classifier) {
     if (check_uu0vlb_a0a0g(SNodeOperations.getModel(classifier)) instanceof TransientModelsModule) {
       return new ClassifierScopeUtils.ClassifierAndSuperClassifiersData(classifier);
@@ -86,18 +80,15 @@ public class ClassifierScopeUtils {
       });
     }
   }
-
   private static class ClassifierAndSuperClassifiersData {
     /*package*/ final Set<SNode> classifiers;
     /*package*/ final Map<SNode, SNode> typeByTypeVariable;
     /*package*/ final boolean isCyclic;
-
     /*package*/ ClassifierAndSuperClassifiersData(SNode topClassifier) {
       typeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
       classifiers = SetSequence.fromSet(new LinkedHashSet<SNode>());
       isCyclic = collectImplementedAndExtended(topClassifier, SetSequence.fromSet(new HashSet<SNode>()), null);
     }
-
     /**
      * 
      * 
@@ -137,7 +128,6 @@ public class ClassifierScopeUtils {
       return false;
     }
   }
-
   private static SModule check_uu0vlb_a0a0g(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

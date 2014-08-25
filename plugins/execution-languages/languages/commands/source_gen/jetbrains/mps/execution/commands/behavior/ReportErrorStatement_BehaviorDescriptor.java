@@ -9,19 +9,15 @@ import java.util.Set;
 public abstract class ReportErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ReportErrorStatement_BehaviorDescriptor() {
   }
-
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     ReportErrorStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
-
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return ReportErrorStatement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ReportErrorStatement";
   }
-
   public abstract SNode virtual_getException_856705193941282181(SNode thisNode);
 }

@@ -30,7 +30,6 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
   private TextView myMetaText = new TextView();
   public Property<Integer> contentWidth = new ValueProperty<Integer>(WIDTH);
   public Property<Integer> contentHeight = new ValueProperty<Integer>(HEIGHT);
-
   public PolygonContentView() {
     color().set(Color.LIGHT_BLUE);
     children().add(myPolyLine);
@@ -73,7 +72,6 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
       }
     }.attachRoot();
   }
-
   @Override
   protected void doValidate(View.ValidationContext context) {
     super.doValidate(context);
@@ -109,7 +107,6 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
       super.validate();
     }
   }
-
   private void initPoints() {
     points.add(new Vector(FOLDING_SIZE, 0));
     points.add(new Vector(WIDTH, 0));
@@ -125,7 +122,6 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
     myPolyLine.points.add(new Vector(0, FOLDING_SIZE));
     myPolyLine.points.add(new Vector(FOLDING_SIZE, 0));
   }
-
   private void adjustPoints(int width, int height) {
     points.set(1, new Vector(width, 0).add(getBounds().origin));
     points.set(2, new Vector(width, height).add(getBounds().origin));
@@ -135,15 +131,12 @@ public class PolygonContentView extends PolygonView implements ResizableContentV
     myPolyLine.points.set(2, new Vector(width, height).add(myPolyLine.getBounds().origin));
     myPolyLine.points.set(3, new Vector(0, height).add(myPolyLine.getBounds().origin));
   }
-
   public Property<String> text() {
     return myCell.text();
   }
-
   public Property<String> metaText() {
     return myMetaText.text();
   }
-
   private void setPreferredSize(Integer width, Integer height) {
     assert width != null || height != null;
     Vector prefSize = prop(ResizableContentView.PREFERRED_SIZE).get();

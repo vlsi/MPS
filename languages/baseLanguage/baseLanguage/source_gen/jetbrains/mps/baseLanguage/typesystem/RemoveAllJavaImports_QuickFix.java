@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class RemoveAllJavaImports_QuickFix extends QuickFix_Runtime {
   public RemoveAllJavaImports_QuickFix() {
   }
-
   public void execute(SNode node) {
     SNodeOperations.deleteNode(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.JavaImports")));
   }

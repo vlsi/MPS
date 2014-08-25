@@ -28,22 +28,18 @@ import org.apache.log4j.LogManager;
 
 public class RenameProperty_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RenameProperty_Action() {
     super("Rename Property", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return RefactoringUtil.isApplicable(RefactoringUtil.getRefactoringByClassName("jetbrains.mps.lang.structure.refactorings" + "." + "RenameProperty"), ((SNode) MapSequence.fromMap(_params).get("target")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -57,7 +53,6 @@ public class RenameProperty_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -80,7 +75,6 @@ public class RenameProperty_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<String> oldName = new Wrappers._T<String>();
@@ -111,6 +105,5 @@ public class RenameProperty_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RenameProperty_Action.class);
 }

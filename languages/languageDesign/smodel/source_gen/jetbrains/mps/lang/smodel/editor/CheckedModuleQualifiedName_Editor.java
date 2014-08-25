@@ -31,7 +31,6 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_e6mmbg_a(editorContext, node);
   }
-
   private EditorCell createCollection_e6mmbg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_e6mmbg_a");
@@ -42,7 +41,6 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_e6mmbg_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_e6mmbg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "module qualified name");
     editorCell.setCellId("Constant_e6mmbg_a0");
@@ -53,7 +51,6 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_e6mmbg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_e6mmbg_b0");
@@ -64,7 +61,6 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_e6mmbg_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("moduleId");
@@ -82,11 +78,9 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class CheckedModuleQualifiedName_generic_cellMenu_e6mmbg_a0c0 extends AbstractCellMenuPart_Generic_Group {
     public CheckedModuleQualifiedName_generic_cellMenu_e6mmbg_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> res = ListSequence.fromList(new ArrayList<String>());
       for (SModule m : MPSModuleRepository.getInstance().getModules()) {
@@ -94,20 +88,16 @@ public class CheckedModuleQualifiedName_Editor extends DefaultNodeEditor {
       }
       return res;
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "moduleId", parameterObject);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createConstant_e6mmbg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_e6mmbg_d0");

@@ -10,7 +10,6 @@ import org.jetbrains.annotations.NonNls;
 public class BuildStringContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @Nullable
   public static Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     return null;

@@ -16,7 +16,6 @@ public class PropertiesTest_Test extends TestCase {
     Assert.assertEquals(1, testClass.value);
     Assert.assertEquals(1, testClass.getSecondPropertyValue());
   }
-
   public PropertiesTest_Test() {
   }
 }

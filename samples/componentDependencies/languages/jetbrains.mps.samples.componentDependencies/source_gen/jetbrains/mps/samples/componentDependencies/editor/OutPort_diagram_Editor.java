@@ -27,29 +27,24 @@ import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class OutPort_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramPort_dwqpkk_a(editorContext, node);
   }
-
   private EditorCell createDiagramPort_dwqpkk_a(final EditorContext editorContext, final SNode node) {
     final EditorCell editorCell = new OutPort_diagram_Editor.PortCellImpl_dwqpkk_a(editorContext, node);
     editorCell.setCellId("DiagramPort_dwqpkk_a");
     editorCell.setBig(true);
     return editorCell;
   }
-
   private class PortCellImpl_dwqpkk_a extends PortCell {
     private PortCellImpl_dwqpkk_a(EditorContext editorContext, SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public Mapper<SNode, RectView> createMapper() {
       return new Mapper<SNode, RectView>(getSNode(), createPortView()) {
         @Override
@@ -96,10 +91,8 @@ public class OutPort_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public void synchronize() {
     }
-
     private RectView createPortView() {
       RectView portView = new RectView();
       configureView(portView, new _FunctionTypes._return_P0_E0<Boolean>() {
@@ -111,8 +104,6 @@ public class OutPort_diagram_Editor extends DefaultNodeEditor {
       portView.focusable().set(true);
       return portView;
     }
-
-
 
     public Mapper<SNode, PortDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, PortDecoratorView>(getSNode(), new PortDecoratorView()) {
@@ -138,7 +129,6 @@ public class OutPort_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
 
   }
 }

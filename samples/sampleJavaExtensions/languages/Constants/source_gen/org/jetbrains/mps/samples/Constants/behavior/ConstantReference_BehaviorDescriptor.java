@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ConstantReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ConstantReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.Constants.structure.ConstantReference";

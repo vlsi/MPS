@@ -7,39 +7,39 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)/1127341420738">
     <file name="Config1.java">
-      <node id="1127341420738" at="14,40,15,52" concept="1" />
-      <node id="1127341420738" at="15,52,16,46" concept="1" />
-      <node id="1127341420738" at="19,48,20,74" concept="3" />
-      <node id="1127341420738" at="20,74,21,52" concept="1" />
-      <node id="1127341420738" at="21,52,22,51" concept="1" />
-      <node id="1127341420738" at="22,51,23,53" concept="1" />
-      <node id="1127341420738" at="23,53,24,57" concept="1" />
-      <node id="1127341420738" at="24,57,25,18" concept="4" />
-      <node id="1127341420738" at="28,42,29,68" concept="3" />
-      <node id="1127341420738" at="29,68,30,49" concept="1" />
-      <node id="1127341420738" at="30,49,31,52" concept="1" />
-      <node id="1127341420738" at="31,52,32,46" concept="1" />
-      <node id="1127341420738" at="32,46,33,49" concept="1" />
-      <node id="1127341420738" at="33,49,34,18" concept="4" />
+      <node id="1127341420738" at="13,40,14,52" concept="1" />
+      <node id="1127341420738" at="14,52,15,46" concept="1" />
+      <node id="1127341420738" at="17,48,18,74" concept="3" />
+      <node id="1127341420738" at="18,74,19,52" concept="1" />
+      <node id="1127341420738" at="19,52,20,51" concept="1" />
+      <node id="1127341420738" at="20,51,21,53" concept="1" />
+      <node id="1127341420738" at="21,53,22,57" concept="1" />
+      <node id="1127341420738" at="22,57,23,18" concept="4" />
+      <node id="1127341420738" at="25,42,26,68" concept="3" />
+      <node id="1127341420738" at="26,68,27,49" concept="1" />
+      <node id="1127341420738" at="27,49,28,52" concept="1" />
+      <node id="1127341420738" at="28,52,29,46" concept="1" />
+      <node id="1127341420738" at="29,46,30,49" concept="1" />
+      <node id="1127341420738" at="30,49,31,18" concept="4" />
       <node id="1127341420738" at="11,0,13,0" concept="0" trace="Config1#()V" />
-      <node id="1127341420738" at="14,0,18,0" concept="2" trace="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
-      <node id="1127341420738" at="19,0,27,0" concept="2" trace="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
-      <node id="1127341420738" at="28,0,36,0" concept="2" trace="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+      <node id="1127341420738" at="13,0,17,0" concept="2" trace="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
+      <node id="1127341420738" at="17,0,25,0" concept="2" trace="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+      <node id="1127341420738" at="25,0,33,0" concept="2" trace="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
       <scope id="1127341420738" at="11,20,11,20" />
       <scope id="1127341420738" at="11,0,13,0" />
-      <scope id="1127341420738" at="14,40,16,46" />
-      <scope id="1127341420738" at="14,0,18,0">
+      <scope id="1127341420738" at="13,40,15,46" />
+      <scope id="1127341420738" at="13,0,17,0">
         <var name="target" id="1127341420738" />
       </scope>
-      <scope id="1127341420738" at="19,48,25,18">
+      <scope id="1127341420738" at="17,48,23,18">
         <var name="result" id="1127341420738" />
       </scope>
-      <scope id="1127341420738" at="28,42,34,18">
+      <scope id="1127341420738" at="25,42,31,18">
         <var name="result" id="1127341420738" />
       </scope>
-      <scope id="1127341420738" at="19,0,27,0" />
-      <scope id="1127341420738" at="28,0,36,0" />
-      <unit id="1127341420738" at="10,0,37,0" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+      <scope id="1127341420738" at="17,0,25,0" />
+      <scope id="1127341420738" at="25,0,33,0" />
+      <unit id="1127341420738" at="10,0,34,0" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
     </file>
     <file name="Config1.xml">
       <unit id="1127341420738" at="1,0,14,22" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />

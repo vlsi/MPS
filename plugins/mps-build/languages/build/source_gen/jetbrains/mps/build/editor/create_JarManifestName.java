@@ -21,16 +21,13 @@ public class create_JarManifestName extends KeyMapImpl {
     action = new create_JarManifestName.create_JarManifestName_Action0();
     this.putAction("any", "letter", action);
   }
-
   public static class create_JarManifestName_Action0 extends KeyMapActionImpl {
     public create_JarManifestName_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -45,20 +42,16 @@ public class create_JarManifestName extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (SLinkOperations.getTarget(node, "name", true) == null);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewChild(node, "name", "jetbrains.mps.build.structure.BuildStringNotEmpty");
     }
-
     public String getKeyStroke() {
       return " letter";
     }

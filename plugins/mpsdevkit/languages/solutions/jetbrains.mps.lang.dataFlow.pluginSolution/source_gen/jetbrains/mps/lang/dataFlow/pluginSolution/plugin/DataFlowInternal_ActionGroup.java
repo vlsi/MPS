@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class DataFlowInternal_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(DataFlowInternal_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.dataFlow.pluginSolution.plugin.DataFlowInternal_ActionGroup";
-
   public DataFlowInternal_ActionGroup() {
     super("DataFlowInternal", ID);
     this.setIsInternal(false);

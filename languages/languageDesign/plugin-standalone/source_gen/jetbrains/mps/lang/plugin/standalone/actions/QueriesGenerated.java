@@ -44,7 +44,6 @@ public class QueriesGenerated {
                 SLinkOperations.setTarget(result, "key", (item), false);
                 return result;
               }
-
               public String getDescriptionText(String pattern) {
                 return ActionDataParameterDeclaration_Behavior.call_getDescription_47694270442103157(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration"))), (item));
               }
@@ -55,7 +54,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   private static SNode _quotation_createNode_f4i0bg_a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

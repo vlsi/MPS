@@ -6,8 +6,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="25,49,47,5" name="jetbrains.mps.lang.pattern.actions.QueriesGenerated$1" />
-      <unit at="22,0,55,0" name="jetbrains.mps.lang.pattern.actions.QueriesGenerated" />
+      <unit at="25,49,44,5" name="jetbrains.mps.lang.pattern.actions.QueriesGenerated$1" />
+      <unit at="22,0,51,0" name="jetbrains.mps.lang.pattern.actions.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:648ce703-8771-4046-8e4d-8e951de8478e(jetbrains.mps.lang.pattern.actions)/2879868312063092084">
@@ -15,13 +15,13 @@
       <node id="2879868312063132786" at="26,94,27,119" concept="1" />
       <node id="2879868312063132777" at="27,119,28,80" concept="0" />
       <node id="2879868312063132876" at="28,80,29,174" concept="2" />
-      <node id="2879868312063105848" at="51,202,52,145" concept="2" />
-      <node id="2879868312063095317" at="51,0,54,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2879868312063095317#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
-      <scope id="2879868312063095318" at="51,202,52,145" />
+      <node id="2879868312063105848" at="47,202,48,145" concept="2" />
+      <node id="2879868312063095317" at="47,0,50,0" concept="3" trace="sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2879868312063095317#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/SideTransformPreconditionContext;)Z" />
+      <scope id="2879868312063095318" at="47,202,48,145" />
       <scope id="2879868312063132775" at="26,94,29,174">
         <var name="orPattern" id="2879868312063132787" />
       </scope>
-      <scope id="2879868312063095317" at="51,0,54,0">
+      <scope id="2879868312063095317" at="47,0,50,0">
         <var name="_context" id="2879868312063095317" />
         <var name="operationContext" id="2879868312063095317" />
       </scope>

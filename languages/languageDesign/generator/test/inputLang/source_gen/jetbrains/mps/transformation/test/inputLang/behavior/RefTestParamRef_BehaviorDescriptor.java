@@ -6,7 +6,6 @@ package jetbrains.mps.transformation.test.inputLang.behavior;
 public class RefTestParamRef_BehaviorDescriptor extends RefTestExpression_BehaviorDescriptor {
   public RefTestParamRef_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.transformation.test.inputLang.structure.RefTestParamRef";

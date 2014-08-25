@@ -10,15 +10,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConstraintFunctionParameter_link_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConstraintFunctionParameter_link_BehaviorDescriptor() {
   }
-
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConstraintFunctionParameter_link_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_link_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_link";

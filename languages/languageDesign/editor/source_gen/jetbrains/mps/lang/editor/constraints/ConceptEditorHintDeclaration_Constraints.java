@@ -19,12 +19,10 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
   public ConceptEditorHintDeclaration_Constraints() {
     super("jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -35,7 +33,6 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -44,7 +41,6 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
@@ -53,10 +49,8 @@ public class ConceptEditorHintDeclaration_Constraints extends BaseConstraintsDes
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "5944657839039155481");
 }

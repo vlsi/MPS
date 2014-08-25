@@ -54,7 +54,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
 
     for (Dependency dep : descriptor.getDependencies()) {
       SModuleReference moduleRef = dep.getModuleRef();
-      if (MPSModuleRepository.getInstance().getModule(moduleRef) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(moduleRef) == null) {
         errors.add("Can't find dependency: " + moduleRef.getModuleName());
       }
     }
@@ -64,7 +64,7 @@ public class BaseModuleValidator<T extends AbstractModule> implements ModuleVali
       }
     }
     for (SModuleReference reference : descriptor.getUsedDevkits()) {
-      if (MPSModuleRepository.getInstance().getModule(reference) == null) {
+      if (ModuleRepositoryFacade.getInstance().getModule(reference) == null) {
         errors.add("Can't find used devkit: " + reference.getModuleName());
       }
     }

@@ -13,22 +13,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StaticInitializer_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StaticInitializer_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode staticInitializer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(staticInitializer, "statementList", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StaticInitializer";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -25,15 +25,12 @@ public class HidingByNameScope extends Scope {
   private final Scope scope;
   private final Scope parentScope;
   private final Set<String> names;
-
   public HidingByNameScope(SNode hidingRoot, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
     this(NameUtil.nodeFQName(hidingRoot), NameUtil.nodeFQName(kind), scope, parentScope);
   }
-
   public HidingByNameScope(String hidingRootConceptFQName, SNode kind, @NotNull Scope scope, @NotNull Scope parentScope) {
     this(hidingRootConceptFQName, NameUtil.nodeFQName(kind), scope, parentScope);
   }
-
   public HidingByNameScope(String hidingRootConceptFQName, String kindConceptFQName, @NotNull Scope scope, @NotNull Scope parentScope) {
     // hiding root: all subconcepts of hidingRoot hide each other 
     this.scope = scope;
@@ -50,7 +47,6 @@ public class HidingByNameScope extends Scope {
       }
     }
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
@@ -70,20 +66,17 @@ public class HidingByNameScope extends Scope {
     }));
     return result;
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
     // todo: recheck this code 
     return (SetSequence.fromSet(names).contains(refText) ? scope.resolve(contextNode, refText) : parentScope.resolve(contextNode, refText));
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
     return node.getName();
   }
-
   @Override
   public boolean contains(SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {

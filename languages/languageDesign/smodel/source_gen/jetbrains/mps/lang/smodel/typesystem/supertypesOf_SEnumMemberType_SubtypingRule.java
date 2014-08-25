@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SReference;
 public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SEnumMemberType_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> list = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(list).addElement(_quotation_createNode_qj2lih_a0a1a1());
@@ -27,22 +26,18 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
     }
     return list;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.SEnumMemberType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_qj2lih_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -50,7 +45,6 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
     quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)"), facade.createNodeId("1083171877298")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_qj2lih_a0a0a2a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

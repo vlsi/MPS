@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface ConstraintsAspectDescriptor {
+public interface ConstraintsAspectDescriptor extends LanguageAspectDescriptor {
   ConstraintsDescriptor getDescriptor(String fqName);
 }

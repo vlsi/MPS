@@ -15,7 +15,6 @@ import java.util.HashSet;
 
 public class NodeHierarchyChooser extends JBScrollPane {
   private NodeHierarchyChooser.MyHierarchyTree myTree;
-
   public NodeHierarchyChooser(final SNode node) {
     super();
     this.myTree = new NodeHierarchyChooser.MyHierarchyTree();
@@ -31,7 +30,6 @@ public class NodeHierarchyChooser extends JBScrollPane {
       }
     });
   }
-
   public Object getSelectedObject() {
     TreePath path = myTree.getSelectionPath();
     if (path == null) {
@@ -39,34 +37,27 @@ public class NodeHierarchyChooser extends JBScrollPane {
     }
     return myTree.getSelectionPath().getLastPathComponent();
   }
-
   public static class MyHierarchyTree extends AbstractHierarchyTree {
     private ConceptAncestorsProvider ancestorsProvider;
-
     public MyHierarchyTree() {
       super(null, "jetbrains.mps.lang.core.structure.BaseConcept", false);
     }
-
     public void setHierarchyNode(SNode node) {
       this.myHierarchyNode = node;
     }
-
     @Override
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
       this.ancestorsProvider = new ConceptAncestorsProvider();
       return this.ancestorsProvider.getDescendants(node);
     }
-
     @Override
     protected SNode getParent(SNode node) {
       return null;
     }
-
     @Override
     protected Set<SNode> getParents(SNode node, Set<SNode> visited) {
       return new HashSet<SNode>();
     }
-
     @Override
     protected String noNodeString() {
       return "no node";

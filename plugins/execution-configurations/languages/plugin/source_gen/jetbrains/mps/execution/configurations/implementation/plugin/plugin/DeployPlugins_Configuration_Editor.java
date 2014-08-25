@@ -15,11 +15,9 @@ public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployP
   private JBCheckBox mySkipModulesLoading;
   private JBCheckBox myRestartCurrentInstanceCheckbox;
   private DeployPluginsSettings_Configuration_Editor myPluginsSettings;
-
   public void disposeEditor() {
     Disposer.dispose(myPluginsSettings);
   }
-
   @NotNull
   public JPanel createEditor() {
     JPanel plugins = myPluginsSettings.createEditor();
@@ -33,19 +31,16 @@ public class DeployPlugins_Configuration_Editor extends SettingsEditorEx<DeployP
 
     return panel;
   }
-
   public void applyEditorTo(final DeployPlugins_Configuration configuration) throws ConfigurationException {
     myPluginsSettings.applyEditorTo(configuration.getPluginsSettings());
     configuration.setSkipModulesLoading(mySkipModulesLoading.isSelected());
     configuration.setRestartCurrentInstance(myRestartCurrentInstanceCheckbox.isSelected());
   }
-
   public void resetEditorFrom(final DeployPlugins_Configuration configuration) {
     myPluginsSettings.resetEditorFrom(configuration.getPluginsSettings());
     mySkipModulesLoading.setSelected(configuration.getSkipModulesLoading());
     myRestartCurrentInstanceCheckbox.setSelected(configuration.getRestartCurrentInstance());
   }
-
   public DeployPlugins_Configuration_Editor(DeployPluginsSettings_Configuration_Editor pluginsSettings) {
     myPluginsSettings = pluginsSettings;
   }

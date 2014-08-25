@@ -12,36 +12,28 @@ import java.util.ArrayList;
 public class ClassifierSuccessors implements CoreComponent {
   private static ClassifierSuccessors INSTANCE;
   private ClassifierSuccessors.Finder myFastFinder;
-
   public ClassifierSuccessors() {
   }
-
   @Override
   public void dispose() {
     INSTANCE = null;
   }
-
   @Override
   public void init() {
     INSTANCE = this;
   }
-
   public boolean isIndexReady(Project project) {
     return (myFastFinder != null ? myFastFinder.isIndexReady(project) : false);
   }
-
   public List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope) {
     return (myFastFinder != null ? myFastFinder.getDerivedClassifiers(classifier, scope) : new ArrayList<SNode>());
   }
-
   public void setFinder(ClassifierSuccessors.Finder finder) {
     myFastFinder = finder;
   }
-
   public static ClassifierSuccessors getInstance() {
     return INSTANCE;
   }
-
   public static interface Finder {
     public List<SNode> getDerivedClassifiers(SNode classifier, SearchScope scope);
     public boolean isIndexReady(Project project);

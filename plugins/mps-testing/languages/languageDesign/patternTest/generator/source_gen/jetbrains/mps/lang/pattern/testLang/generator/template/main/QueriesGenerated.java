@@ -18,75 +18,57 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_815823070325289644(final PropertyMacroContext _context) {
     return PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode());
   }
-
   public static Object propertyMacro_GetPropertyValue_602731281382637730(final PropertyMacroContext _context) {
     return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), _context.getGenerator().getGeneratorSessionContext());
   }
-
   public static Object propertyMacro_GetPropertyValue_602731281382637740(final PropertyMacroContext _context) {
     return _context.getOriginalInputModel().getReference().toString();
   }
-
   public static Object propertyMacro_GetPropertyValue_602731281382637757(final PropertyMacroContext _context) {
     return SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())) + "." + PatternTest_Behavior.call_getPatternTestName_394224946578869064(_context.getNode()) + "$TestBody";
   }
-
   public static Object propertyMacro_GetPropertyValue_602731281382637766(final PropertyMacroContext _context) {
     return "test" + SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_602731281382641311(final PropertyMacroContext _context) {
     return "test" + SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1563914226484903755(final PropertyMacroContext _context) {
     return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1563914226484925040(final PropertyMacroContext _context) {
     return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "declaration", false), "varName");
   }
-
   public static Object propertyMacro_GetPropertyValue_1563914226484968044(final PropertyMacroContext _context) {
     return "patternVar_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "variable", true), "listPattern", false), "varName");
   }
-
   public static boolean ifMacro_Condition_1563914226484976394(final IfMacroContext _context) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "matches", true), "value") == true;
   }
-
   public static SNode sourceNodeQuery_1563914226484903651(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToMatch", true);
   }
-
   public static SNode sourceNodeQuery_1563914226484903662(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pattern", true);
   }
-
   public static SNode sourceNodeQuery_1563914226484903741(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
-
   public static SNode sourceNodeQuery_1563914226484925028(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "value", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1563914226484903732(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "variable", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1563914226484925018(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "property", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1563914226484968076(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "value", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1563914226484968027(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "list", true);
   }

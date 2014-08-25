@@ -66,9 +66,9 @@
     <orderEntry type="module" module-name="mps-platform" scope="PROVIDED" />
     <orderEntry type="module" module-name="mps-ui" scope="PROVIDED" />
     <orderEntry type="module" module-name="mps-workbench" scope="PROVIDED" />
-    <orderEntry type="module" module-name="mpsdevkit" scope="PROVIDED" />
-    <orderEntry type="module" module-name="mpsjava" scope="PROVIDED" />
-    <orderEntry type="module" module-name="mpsmake" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-devkit" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-java" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-make" scope="PROVIDED" />
     <orderEntry type="module" module-name="MPSSupport" scope="PROVIDED" />
     <orderEntry type="module" module-name="openapi" scope="PROVIDED" />
     <orderEntry type="module" module-name="persistence" scope="PROVIDED" />

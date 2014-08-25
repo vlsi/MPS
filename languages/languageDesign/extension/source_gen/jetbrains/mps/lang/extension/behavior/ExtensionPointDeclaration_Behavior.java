@@ -13,7 +13,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class ExtensionPointDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getId_63012922130945363(SNode thisNode) {
     SModule module = SNodeOperations.getModel(thisNode).getModule();
     String moduleFqName = module.getModuleName();
@@ -23,7 +22,6 @@ public class ExtensionPointDeclaration_Behavior {
     }
     return moduleFqName + "." + SPropertyOperations.getString(thisNode, "extensionName");
   }
-
   public static SNode call_getObjectClassifierType_6778078592468845406(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "objectType", true), "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType")) {
       return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "objectType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");

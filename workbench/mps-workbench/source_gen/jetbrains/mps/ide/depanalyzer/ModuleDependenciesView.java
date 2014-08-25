@@ -10,9 +10,8 @@ import java.awt.BorderLayout;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.CloseAction;
-import jetbrains.mps.ide.projectPane.Icons;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -20,19 +19,8 @@ import com.intellij.openapi.ui.Splitter;
 import com.intellij.ui.components.JBScrollPane;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import javax.swing.tree.TreePath;
-import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.ide.ui.tree.MPSTree;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -44,27 +32,18 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 public class ModuleDependenciesView extends JPanel implements DataProvider {
   private DependencyTree myLeftTree;
   private DependencyPathTree myRightTree;
-
   public ModuleDependenciesView(BaseTool tool, Project project) {
     super(new BorderLayout());
     myLeftTree = new DependencyTree(project);
     myRightTree = new DependencyPathTree(project);
 
-    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Hide source modules", Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
-      public void invoke(Boolean b) {
-        setHideSourceModules(b);
-      }
-    }), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", MPSIcons.General.Runtime, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    ActionGroup group = ActionUtils.groupFromActions(new CloseAction(tool), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", MPSIcons.General.Runtime, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowRuntime(b);
       }
     }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", MPSIcons.Nodes.Language, true, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
-      }
-    }), new ModuleDependenciesView.MyToggleAction("Show all paths", Icons.DEFAULT_ICON, false, new _FunctionTypes._void_P1_E0<Boolean>() {
-      public void invoke(Boolean b) {
-        setShowAllPaths(b);
       }
     }));
 
@@ -84,130 +63,39 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       }
     });
   }
-
-  public void setModules(List<SModule> modules) {
+  public void setModules(SModule modules) {
     myLeftTree.setModules(modules);
     resetAll();
+    myLeftTree.expandRoot();
   }
-
   public void rebuildDependencies() {
     // rebuild right tree based on selection in the left 
     myRightTree.resetDependencies();
     TreePath[] paths = myLeftTree.getSelectionPaths();
     if (paths != null) {
-      Map<List<SModule>, List<SModule>> dependencies = MapSequence.fromMap(new HashMap<List<SModule>, List<SModule>>());
-      Map<List<SModule>, List<SModule>> usedlanguages = MapSequence.fromMap(new HashMap<List<SModule>, List<SModule>>());
       for (TreePath path : paths) {
         Object o = path.getLastPathComponent();
-        if (o instanceof ModuleDependencyNode) {
+        if (o instanceof ModuleDependencyNode && o != myLeftTree.getRootNode()) {
           ModuleDependencyNode node = (ModuleDependencyNode) o;
-          List<SModule> from = check_jxc64t_a0b0b0c0d0e(node.getFromNode());
-          if (from != null) {
-            Map<List<SModule>, List<SModule>> collection = (node.isUsedLanguage() ? usedlanguages : dependencies);
-            if (!(MapSequence.fromMap(collection).containsKey(from))) {
-              MapSequence.fromMap(collection).put(from, ListSequence.fromList(new ArrayList<SModule>()));
-            }
-            ListSequence.fromList(MapSequence.fromMap(collection).get(from)).addSequence(ListSequence.fromList(node.getModules()));
-          }
-        }
-      }
-      for (List<SModule> key : SetSequence.fromSet(MapSequence.fromMap(dependencies).keySet()).union(SetSequence.fromSet(MapSequence.fromMap(usedlanguages).keySet()))) {
-        myRightTree.addDependency(key, MapSequence.fromMap(dependencies).get(key), MapSequence.fromMap(usedlanguages).get(key), myLeftTree.isShowRuntime());
-      }
-
-      // add bootstrap dependencies for single selection if necessary 
-      if (paths.length == 1 && paths[0].getLastPathComponent() instanceof ModuleDependencyNode.ULangDependencyNode) {
-        ModuleDependencyNode.ULangDependencyNode node = (ModuleDependencyNode.ULangDependencyNode) paths[0].getLastPathComponent();
-        if (node.isCyclic()) {
-          List<SModule> from = check_jxc64t_a0a0b0g0d0e(node.getFromNode());
-          if (from != null) {
-            myRightTree.addDependency(node.getModules(), from, null, true);
-          }
+          myRightTree.revealDependencies(node.getCapturedDependencies());
         }
       }
     }
     myRightTree.rebuildNow();
     myRightTree.expandAll();
   }
-
   private void setShowRuntime(boolean b) {
     myLeftTree.setShowRuntime(b);
     resetAll();
   }
-
   private void setShowUsedLanguages(boolean b) {
     myLeftTree.setShowUsedLanguage(b);
     resetAll();
   }
-
-  private void setShowAllPaths(boolean b) {
-    myRightTree.setShowAllPaths(b);
-    myRightTree.rebuildNow();
-    myRightTree.expandAll();
-  }
-
-  public void setHideSourceModules(boolean b) {
-    myLeftTree.setHideSourceModules(b);
-    resetAll();
-  }
-
   public void resetAll() {
     myLeftTree.rebuildNow();
     rebuildDependencies();
   }
-
-  public void showLoops(final ModuleDependencyNode node) {
-    final SModule module = ListSequence.fromList(node.getModules()).first();
-    final MPSTree tree = node.getTree();
-    // check if everything is already selected now 
-    ModuleDependencyNode parent = node.getFromNode();
-    if (parent != null && ListSequence.fromList(parent.getModules()).count() == 1 && ListSequence.fromList(parent.getModules()).first() == module) {
-      return;
-    }
-    // expand node and show dependencies on itself 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        tree.expandPath(new TreePath(node.getPath()));
-        for (MPSTreeNode child : Sequence.fromIterable(node)) {
-          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a01(child, ModuleDependencyNode.class);
-          if (n == null) {
-            continue;
-          }
-          if (ListSequence.fromList(n.getModules()).first() == module) {
-            tree.selectNode(n);
-          }
-        }
-      }
-    });
-  }
-
-  public void showBootstrapLoop(final ModuleDependencyNode.ULangDependencyNode node) {
-    final MPSTree tree = node.getTree();
-    final ModuleDependencyNode parent = node.getFromNode();
-    if (ListSequence.fromList(parent.getModules()).isEmpty()) {
-      return;
-    }
-    // expand node and show dependencies on parent nodes 
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        // should we set "show runtime" option first? 
-        TreePath srcPath = new TreePath(node.getPath());
-        tree.expandPath(srcPath);
-        for (MPSTreeNode child : Sequence.fromIterable(node)) {
-          ModuleDependencyNode n = as_jxc64t_a0a0a3a0a0a0a4a11(child, ModuleDependencyNode.class);
-          if (n == null) {
-            continue;
-          }
-          if (ListSequence.fromList(parent.getModules()).contains(ListSequence.fromList(n.getModules()).first())) {
-            // <node> 
-            tree.setSelectionPaths(new TreePath[]{srcPath, new TreePath(n.getPath())});
-            break;
-          }
-        }
-      }
-    });
-  }
-
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
@@ -218,51 +106,24 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     // not found 
     return null;
   }
-
   private ActionPlace getPlace() {
     return ActionPlace.MODULE_DEPENDENCIES;
   }
-
   public static class MyToggleAction extends ToggleAction {
     private boolean myValue;
     private _FunctionTypes._void_P1_E0<? super Boolean> mySetValue;
-
     public MyToggleAction(String title, Icon icon, boolean value, _FunctionTypes._void_P1_E0<? super Boolean> setValue) {
       super(title, title, icon);
       myValue = value;
       mySetValue = setValue;
     }
-
     @Override
     public void setSelected(AnActionEvent event, boolean b) {
       mySetValue.invoke(myValue = b);
     }
-
     @Override
     public boolean isSelected(AnActionEvent event) {
       return myValue;
     }
-  }
-
-  private static List<SModule> check_jxc64t_a0b0b0c0d0e(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModules();
-    }
-    return null;
-  }
-
-  private static List<SModule> check_jxc64t_a0a0b0g0d0e(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModules();
-    }
-    return null;
-  }
-
-  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a01(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-
-  private static <T> T as_jxc64t_a0a0a3a0a0a0a4a11(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -10,7 +10,6 @@ import javax.swing.tree.TreeNode;
 public class ModelTreeCellRenderer extends ColoredTreeCellRenderer implements TreeCellRenderer {
   public ModelTreeCellRenderer() {
   }
-
   @Override
   public void customizeCellRenderer(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
     if (value instanceof TreeNode) {

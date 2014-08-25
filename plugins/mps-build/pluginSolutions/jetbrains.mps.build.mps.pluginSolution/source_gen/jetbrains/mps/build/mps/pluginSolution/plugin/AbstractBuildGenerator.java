@@ -23,24 +23,18 @@ public abstract class AbstractBuildGenerator {
   private boolean myCreateModel = true;
   private final List<NodeData> myModules = ListSequence.fromList(new LinkedList<NodeData>());
   private DependencyStep.DependencyKind myDependencyKind = DependencyStep.DependencyKind.values()[DependencyStep.DependencyKind.DEFAULT];
-
   public AbstractBuildGenerator() {
   }
-
   public abstract void generate();
-
   public void setProjectName(String projectName) {
     this.myProjectName = projectName;
   }
-
   public String getProjectName() {
     return this.myProjectName;
   }
-
   public void setNewModelName(String modelName) {
     this.myModelName = modelName;
   }
-
   public String getNewModelName() {
     if (this.myModelName == null && this.mySolutionName != null) {
       String modelNamePrefix = this.mySolutionName;
@@ -53,63 +47,49 @@ public abstract class AbstractBuildGenerator {
     }
     return this.myModelName;
   }
-
   public void setModel(SModel modelDescriptor) {
     this.myModelDescriptor = modelDescriptor;
   }
-
   public SModel getModel() {
     return this.myModelDescriptor;
   }
-
   public void setSolution(Solution solution) {
     this.mySolution = solution;
   }
-
   public void setNewSolutionName(String solutionName) {
     this.mySolutionName = solutionName;
   }
-
   public String getNewSolutionName() {
     return this.mySolutionName;
   }
-
   public Solution getSolution() {
     return this.mySolution;
   }
-
   public List<NodeData> getModules() {
     return ListSequence.fromListWithValues(new ArrayList<NodeData>(), this.myModules);
   }
-
   public void setModules(List<NodeData> modules) {
     ListSequence.fromList(this.myModules).clear();
     ListSequence.fromList(this.myModules).addSequence(ListSequence.fromList(modules));
   }
-
   public void setCreateModel(boolean createModel) {
     this.myCreateModel = createModel;
   }
-
   public boolean getCreateModel() {
     return this.myCreateModel;
   }
-
   public void setCreateSolution(boolean createSolution) {
     this.myCreateSolution = createSolution;
     if (createSolution) {
       this.myCreateModel = true;
     }
   }
-
   public boolean getCreateSolution() {
     return this.myCreateSolution;
   }
-
   public boolean isValidModelName(String text) {
     return SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString(text)) == null;
   }
-
   public boolean isValidSolutionName(String text) {
     if (text.equals("")) {
       return false;
@@ -117,15 +97,12 @@ public abstract class AbstractBuildGenerator {
     SModule moduleWithSelectedName = MPSModuleRepository.getInstance().getModuleByFqName(text);
     return moduleWithSelectedName == null;
   }
-
   public boolean isValid() {
     return (this.isValidModelName(this.myModelName) || !(this.myCreateModel)) && (this.isValidSolutionName(this.mySolutionName) || !(this.myCreateSolution));
   }
-
   public DependencyStep.DependencyKind getDependencyKind() {
     return myDependencyKind;
   }
-
   public void setDependencyKind(DependencyStep.DependencyKind dependencyKind) {
     myDependencyKind = dependencyKind;
   }

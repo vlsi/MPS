@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IStatementListContainer_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isClosure_3262277503800835439(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return false;
   }

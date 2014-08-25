@@ -21,13 +21,11 @@ public class ModelsScope extends Scope {
   private final boolean myRootsOnly;
   private final String myTargetConcept;
   private final Set<SModel> myModels;
-
   public ModelsScope(Iterable<SModel> models, boolean rootsOnly, String targetConcept) {
     myModels = SetSequence.fromSetWithValues(new HashSet<SModel>(), models);
     myRootsOnly = rootsOnly;
     myTargetConcept = targetConcept;
   }
-
   @Override
   public boolean contains(SNode node) {
     SAbstractConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
@@ -36,7 +34,6 @@ public class ModelsScope extends Scope {
     }
     return SNodeUtil.isInstanceOf(node, concept) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && SetSequence.fromSet(myModels).contains(node.getModel());
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
@@ -77,7 +74,6 @@ public class ModelsScope extends Scope {
     }
     return result;
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
@@ -114,7 +110,6 @@ public class ModelsScope extends Scope {
     }
     return result;
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     String resolveInfo = SNodeOperations.getResolveInfo(node);
@@ -123,7 +118,6 @@ public class ModelsScope extends Scope {
     }
     return node.getPresentation();
   }
-
   public Iterable<SModel> getModels() {
     return myModels;
   }

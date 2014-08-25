@@ -13,7 +13,6 @@ import jetbrains.mps.util.FileUtil;
 public class FileMerger {
   private FileMerger() {
   }
-
   public static int mergeFiles(AbstractContentMerger contentMerger, File baseFile, File localFile, File latestFile, byte[] conflictStart, byte[] conflictEnd, byte[] separator, boolean overwrite, boolean convertCRLF) {
     contentMerger.setConflictMarks(conflictStart, conflictEnd, separator);
     OutputStream out = null;
@@ -35,7 +34,6 @@ public class FileMerger {
       FileUtil.closeFileSafe(out);
     }
   }
-
   public static byte[] convert(byte[] array) {
     return new String(array, FileUtil.DEFAULT_CHARSET).replace("\r\n", "\n").getBytes(FileUtil.DEFAULT_CHARSET);
   }

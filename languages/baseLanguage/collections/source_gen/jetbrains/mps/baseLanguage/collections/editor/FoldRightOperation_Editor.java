@@ -26,7 +26,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bapds0_a(editorContext, node);
   }
-
   private EditorCell createCollection_bapds0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bapds0_a");
@@ -39,7 +38,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bapds0_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_bapds0_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -48,16 +46,13 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new FoldRightOperation_Editor.ReplaceWith_SequenceOperation_cellMenu_bapds0_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_SequenceOperation_cellMenu_bapds0_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_SequenceOperation_cellMenu_bapds0_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.collections.structure.SequenceOperation";
     }
   }
-
   private EditorCell createConstant_bapds0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bapds0_b0");
@@ -67,7 +62,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bapds0_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("seed");
@@ -87,7 +81,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bapds0_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_bapds0_d0");
@@ -97,7 +90,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_bapds0_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("comb");
@@ -120,7 +112,6 @@ public class FoldRightOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bapds0_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bapds0_f0");

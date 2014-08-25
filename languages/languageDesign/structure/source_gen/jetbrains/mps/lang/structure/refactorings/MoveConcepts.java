@@ -42,19 +42,15 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     this.addTransientParameter("sourceModel");
     this.addTransientParameter("sourceLanguage");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MoveConcepts_Target();
   }
-
   public String getUserFriendlyName() {
     return "Move Concepts";
   }
-
   public Class getOverridenRefactoringClass() {
     return MoveNodes.class;
   }
-
   public boolean init(final RefactoringContext refactoringContext) {
     refactoringContext.getRepository().getModelAccess().runReadAction(new Runnable() {
       public void run() {
@@ -65,7 +61,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     });
     return true;
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     Language targetLanguage = Language.getLanguageFor(SModelRepository.getInstance().getModelDescriptor(((SModelReference) refactoringContext.getParameter("targetModel"))));
 
@@ -119,7 +114,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
       targetLanguage.addExtendedLanguage(ext);
     }
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
 
@@ -139,7 +133,6 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     }
     return result;
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults searchResults = new SearchResults();
     for (SNode selNode : ListSequence.fromList(refactoringContext.getSelectedNodes())) {
@@ -155,11 +148,9 @@ public class MoveConcepts extends BaseLoggableRefactoring {
     }
     return searchResults;
   }
-
   public void updateModel(final SModel model, final RefactoringContext refactoringContext) {
     refactoringContext.updateByDefault(model);
   }
-
   private static SModuleReference check_u6ijv2_a0a0a0a0a7a0(Language checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();

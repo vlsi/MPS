@@ -16,19 +16,15 @@ import java.util.ArrayList;
 public abstract class Feature {
   private final SModelReference myModelReference;
   private int myHashCode;
-
   protected Feature(@NotNull SModelReference modelReference) {
     myModelReference = modelReference;
   }
-
   @NotNull
   public final SModelReference getModelReference() {
     return myModelReference;
   }
-
   @Nullable
   public abstract Feature getParent();
-
   @Override
   public int hashCode() {
     if (myHashCode == 0) {
@@ -39,7 +35,6 @@ public abstract class Feature {
     }
     return myHashCode;
   }
-
   @Override
   public boolean equals(Object object) {
     if (this.getClass() == object.getClass()) {
@@ -52,11 +47,9 @@ public abstract class Feature {
     }
     return false;
   }
-
   @NotNull
   @Override
   public abstract String toString();
-
   public Feature[] getAncestors() {
     List<Feature> features = ListSequence.fromList(new ArrayList<Feature>());
     for (Feature current = getParent(); current != null; current = current.getParent()) {

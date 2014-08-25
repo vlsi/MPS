@@ -26,68 +26,53 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceForEachLoopWithIndexedLoop_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
   }
-
   public String getPresentation() {
     return "ReplaceForEachLoopWithIndexedLoop";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ReplaceForEachLoopWithIndexedLoop_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.structure.ArrayType") || SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "iterable", true)), "jetbrains.mps.baseLanguage.collections.structure.ListType");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199627182107");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceForEachLoopWithIndexedLoop_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Foreach Loop with Indexed Loop";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode iterable = SLinkOperations.getTarget(node, "iterable", true);
       SNode forStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForStatement", null);
@@ -174,12 +159,10 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention implements IntentionFac
       // 
       SNodeOperations.replaceWithAnother(node, forStatement);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceForEachLoopWithIndexedLoop_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_zgbvoa_a0a31a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

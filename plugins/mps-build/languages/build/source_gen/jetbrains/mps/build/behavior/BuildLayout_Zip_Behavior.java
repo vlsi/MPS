@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class BuildLayout_Zip_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
@@ -28,23 +27,18 @@ public class BuildLayout_Zip_Behavior {
       helper.contentLocations().put(thisNode, tempPath);
     }
   }
-
   public static boolean virtual_isFile_1368030936106753986(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getFileSetExtension_6408167411310575216(SNode thisNode) {
     return "zipfileset";
   }
-
   public static boolean virtual_hasPrefixAttribute_6408167411310575232(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_hasFileModeAttribute_6408167411310575237(SNode thisNode) {
     return true;
   }
-
   private static SNode _quotation_createNode_a0cuzf_a0a1a5a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -64,7 +58,6 @@ public class BuildLayout_Zip_Behavior {
     quotedNode_2.addChild("element", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_a0cuzf_a0a2a5a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

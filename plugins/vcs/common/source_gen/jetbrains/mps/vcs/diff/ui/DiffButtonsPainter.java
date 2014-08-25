@@ -19,12 +19,10 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class DiffButtonsPainter extends ButtonsPainter {
   private RootDifferencePane myDiffPane;
-
   private DiffButtonsPainter(RootDifferencePane pane, EditorComponent editorComponent, ChangeGroupLayout changeGroupLayout) {
     super(1, editorComponent, changeGroupLayout);
     myDiffPane = pane;
   }
-
   @Override
   protected Iterable<FoldingAreaButton> createButtonsForChangeGroup(ChangeGroup changeGroup, int y) {
     FoldingAreaButton button = null;
@@ -48,19 +46,16 @@ public class DiffButtonsPainter extends ButtonsPainter {
       return null;
     }
   }
-
   public static DiffButtonsPainter addTo(RootDifferencePane pane, DiffEditor diffEditor, ChangeGroupLayout changeGroupLayout, boolean inspector) {
     EditorComponent editorComponent = diffEditor.getEditorComponent(inspector);
     DiffButtonsPainter painter = new DiffButtonsPainter(pane, editorComponent, changeGroupLayout);
     editorComponent.getLeftEditorHighlighter().addFoldingAreaPainter(painter);
     return painter;
   }
-
   private class MyButton extends FoldingAreaButton {
     private MyButton(ChangeGroup changeGroup, int x, int y, String name, Icon icon) {
       super(changeGroup, x, y, name, icon);
     }
-
     @Override
     public void performAction() {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {

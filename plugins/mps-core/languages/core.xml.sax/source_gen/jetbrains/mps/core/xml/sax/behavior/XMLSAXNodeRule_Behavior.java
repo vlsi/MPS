@@ -14,18 +14,15 @@ import jetbrains.mps.smodel.SReference;
 public class XMLSAXNodeRule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getType_2264311582634140653(SNode thisNode) {
     return ((SLinkOperations.getTarget(thisNode, "type", true) != null) ? SLinkOperations.getTarget(thisNode, "type", true) : _quotation_createNode_odhxgg_a0a0a());
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam")) {
       return SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule", "params"));
     }
     return null;
   }
-
   private static SNode _quotation_createNode_odhxgg_a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

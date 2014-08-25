@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class MoveStaticMethodExecutable implements MoveStaticMemberExecutable {
 
-
   @Override
   public void execute(MPSProject project, final SNode target, final MoveRefactoringRunnable runnable) {
     final SNode whereToMove;
@@ -44,7 +43,6 @@ public class MoveStaticMethodExecutable implements MoveStaticMemberExecutable {
       }
     });
   }
-
 
 
 

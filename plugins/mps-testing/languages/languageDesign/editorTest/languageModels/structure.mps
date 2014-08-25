@@ -258,5 +258,36 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3195708693940803614" resolveInfo="SimplePropertyContainer" />
     </node>
   </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7803854675610223138" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="DelTestChildContainer" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="delete" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7803854675610223859" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="child" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7803854675610223687" resolveInfo="DelTestAbstractChild" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7803854675610223687" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="delete" />
+    <property name="name" nameId="tpck.1169194664001" value="DelTestAbstractChild" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7803854675610223744" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="delete" />
+    <property name="name" nameId="tpck.1169194664001" value="DelTestChild1" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="7803854675610223687" resolveInfo="DelTestAbstractChild" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7803854675610450426" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="delete" />
+    <property name="name" nameId="tpck.1169194664001" value="DelTestRoot" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7803854675610450486" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="container" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="7803854675610223138" resolveInfo="DelTestChildContainer" />
+    </node>
+  </root>
 </model>
 

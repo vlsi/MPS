@@ -13,7 +13,6 @@ import jetbrains.mps.util.NameUtil;
 public class SEnumMemberType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode enumNode = SLinkOperations.getTarget(thisNode, "enum", false);
     if (enumNode == null) {
@@ -21,7 +20,6 @@ public class SEnumMemberType_Behavior {
     }
     return "enummember<" + SPropertyOperations.getString(enumNode, "name") + ">";
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "enummember");
     if (SLinkOperations.getTarget(thisNode, "enum", false) != null) {

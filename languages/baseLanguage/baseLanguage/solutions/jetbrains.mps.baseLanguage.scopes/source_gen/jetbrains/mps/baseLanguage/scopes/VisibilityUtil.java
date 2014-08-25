@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public final class VisibilityUtil {
   private VisibilityUtil() {
   }
-
   public static boolean isVisible(@NotNull SNode context, @NotNull SNode name) {
     // only check visibility of the name, accessibility of qualifier and if the name is member is not checked here 
     if (SNodeOperations.isInstanceOf(name, "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -61,15 +60,12 @@ public final class VisibilityUtil {
     }
     return false;
   }
-
   public static String packageName(@NotNull SNode node) {
     return SModelStereotype.withoutStereotype(SNodeOperations.getModel(node).getReference().getModelName());
   }
-
   public static SNode topClassifier(@NotNull SNode node) {
     return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.Classifier", true)).last();
   }
-
   private static boolean isClassifierAccessible(@NotNull SNode context, @Nullable SNode classifier) {
     //  check "static" accessibility here 
     if ((classifier == null)) {
@@ -95,12 +91,10 @@ public final class VisibilityUtil {
     }
     return false;
   }
-
   public static boolean isMember(SNode classifier, @NotNull SNode member) {
     // hiding is not checked here 
     return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(classifier)).contains(SNodeOperations.getAncestor(member, "jetbrains.mps.baseLanguage.structure.Classifier", false, false));
   }
-
   public static boolean isLocalMember(@NotNull SNode context, @NotNull final SNode member) {
     // hiding and shadowing are not checked here 
     return ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true)).any(new IWhereFilter<SNode>() {
@@ -109,7 +103,6 @@ public final class VisibilityUtil {
       }
     });
   }
-
   private static SNode _quotation_createNode_v8uv56_b0a2a0a0a2a7a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

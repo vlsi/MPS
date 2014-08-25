@@ -6,7 +6,6 @@ package jetbrains.mps.core.xml.behavior;
 public class XmlNoSpaceValue_BehaviorDescriptor extends XmlValuePart_BehaviorDescriptor {
   public XmlNoSpaceValue_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlNoSpaceValue";

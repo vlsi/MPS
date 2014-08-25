@@ -21,7 +21,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ei20sr_a(editorContext, node);
   }
-
   private EditorCell createCollection_ei20sr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ei20sr_a");
@@ -31,7 +30,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ei20sr_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ei20sr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<![CDATA[");
     editorCell.setCellId("Constant_ei20sr_a0");
@@ -42,11 +40,9 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_ei20sr_a1a0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isFirstPositionAllowed_2133624044437631446", new Object[]{}));
   }
-
   private EditorCell createProperty_ei20sr_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("content");
@@ -64,7 +60,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ei20sr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]]>");
     editorCell.setCellId("Constant_ei20sr_c0");
@@ -75,7 +70,6 @@ public class XmlCDATA_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_ei20sr_a1c0(EditorContext editorContext, SNode node) {
     return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isLastPositionAllowed_2133624044437631519", new Object[]{}));
   }

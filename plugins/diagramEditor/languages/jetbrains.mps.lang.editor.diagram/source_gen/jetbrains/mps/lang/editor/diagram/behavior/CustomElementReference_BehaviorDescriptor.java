@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 public class CustomElementReference_BehaviorDescriptor extends PaletteElement_BehaviorDescriptor {
   public CustomElementReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.CustomElementReference";

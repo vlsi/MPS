@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class LetRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> call_getAllReferences_926857988255581402(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode node = thisNode;

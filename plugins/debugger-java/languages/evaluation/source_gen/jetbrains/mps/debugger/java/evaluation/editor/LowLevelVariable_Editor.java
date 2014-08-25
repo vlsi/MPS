@@ -28,7 +28,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_f5bzsg_a(editorContext, node);
   }
-
   private EditorCell createCollection_f5bzsg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_a");
@@ -43,7 +42,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_f5bzsg_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("debuggedType");
@@ -65,27 +63,22 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_f5bzsg_a0a extends InlineCellProvider {
     public _Inline_f5bzsg_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createCollection_f5bzsg_a0a0(editorContext, node);
     }
-
     private EditorCell createCollection_f5bzsg_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0a0");
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a0a(editorContext, node));
       return editorCell;
     }
-
     private EditorCell createRefNode_f5bzsg_a0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
       provider.setRole("highType");
@@ -106,7 +99,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createProperty_f5bzsg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -124,7 +116,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_f5bzsg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_f5bzsg_c0");
@@ -134,11 +125,9 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_f5bzsg_d2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_f5bzsg_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(node, "type", true), "isHigh");
   }
-
   private EditorCell createConstant_f5bzsg_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_f5bzsg_a2a");
@@ -148,7 +137,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_f5bzsg_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("debuggedType");
@@ -170,27 +158,22 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_f5bzsg_a1c0 extends InlineCellProvider {
     public _Inline_f5bzsg_a1c0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createCollection_f5bzsg_a0b2a(editorContext, node);
     }
-
     private EditorCell createCollection_f5bzsg_a0b2a(EditorContext editorContext, SNode node) {
       EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
       editorCell.setCellId("Collection_f5bzsg_a0b2a");
       editorCell.addEditorCell(this.createRefNode_f5bzsg_a0a1c0(editorContext, node));
       return editorCell;
     }
-
     private EditorCell createRefNode_f5bzsg_a0a1c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
       provider.setRole("lowType");
@@ -211,7 +194,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createProperty_f5bzsg_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("lowLevelName");
@@ -229,7 +211,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_f5bzsg_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_f5bzsg_d2a");
@@ -239,7 +220,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_f5bzsg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(out of scope)");
     editorCell.setCellId("Constant_f5bzsg_d0");
@@ -249,7 +229,6 @@ public class LowLevelVariable_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_f5bzsg_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isOutOfScope");
   }

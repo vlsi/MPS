@@ -25,68 +25,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangePropertyWithNonEmpty_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Property";
   }
-
   public String getPresentation() {
     return "ChangePropertyWithNonEmpty";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.ChangePropertyWithNonEmpty_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5137527105084909325");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangePropertyWithNonEmpty_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Property by Non Empty Property";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode nonEmpty = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", node);
       SLinkOperations.setTarget(nonEmpty, "relationDeclaration", SLinkOperations.getTarget(node, "relationDeclaration", false), false);
@@ -104,7 +89,6 @@ public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
       }
       SNodeOperations.replaceWithAnother(node, nonEmpty);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangePropertyWithNonEmpty_Intention.this;
     }

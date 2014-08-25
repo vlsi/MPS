@@ -34,10 +34,8 @@ import jetbrains.mps.ide.datatransfer.SModelDataFlavor;
 
 public class JavaPaster {
   private static Logger LOG = LogManager.getLogger(JavaPaster.class);
-
   public JavaPaster() {
   }
-
   public void pasteJava(SNode anchor, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
@@ -45,7 +43,6 @@ public class JavaPaster {
     }
     pasteJavaAsNode(anchor, anchor.getModel(), javaCode, operationContext, featureKind, project);
   }
-
   public void pasteJavaAsClass(SModel model, IOperationContext operationContext, Project project) {
     String javaCode = getStringFromClipboard();
     if (javaCode == null) {
@@ -53,7 +50,6 @@ public class JavaPaster {
     }
     pasteJavaAsNode(null, model, javaCode, operationContext, FeatureKind.CLASS, project);
   }
-
   public String getStringFromClipboard() {
     Transferable contents = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -79,7 +75,6 @@ public class JavaPaster {
     }
     return null;
   }
-
   public void pasteJavaAsNode(SNode anchor, final SModel model, String javaCode, IOperationContext operationContext, FeatureKind featureKind, Project project) {
     SModule module = model.getModule();
     JavaParser parser = new JavaParser();
@@ -139,7 +134,6 @@ public class JavaPaster {
       JOptionPane.showMessageDialog(null, ex.getMessage(), "ERROR", JOptionPane.ERROR_MESSAGE);
     }
   }
-
   private static boolean pasteAtAnchorInRole(SNode node, SNode anchor, SNode parentConcept, SNode role) {
     SNode parent = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(parentConcept), true, false);
     if ((parent == null)) {
@@ -153,7 +147,6 @@ public class JavaPaster {
     }
     return true;
   }
-
   private static boolean pasteMember(SNode member, SNode anchor, SNode parentConcept) {
     SNode parent = SNodeOperations.getAncestor(anchor, NameUtil.nodeFQName(parentConcept), true, false);
     if ((parent == null)) {
@@ -173,7 +166,6 @@ public class JavaPaster {
     }
     return true;
   }
-
   @Deprecated
   public static List<SNode> getStatementsFromJavaText(String javaCode, SModel model, IOperationContext context, Project project) {
     // Now it's just a stub. The client wants the nodes to be in a model,      
@@ -182,7 +174,6 @@ public class JavaPaster {
     // We have turned off this functionality 
     return new ArrayList<SNode>();
   }
-
   public static boolean areDataAvailableInClipboard() {
     Transferable trf = CopyPasteManagerEx.getInstanceEx().getContents();
     if (trf == null || trf.isDataFlavorSupported(SModelDataFlavor.sNode)) {

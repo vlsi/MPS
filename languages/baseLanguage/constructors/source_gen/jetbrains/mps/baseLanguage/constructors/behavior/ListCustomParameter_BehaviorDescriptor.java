@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 public class ListCustomParameter_BehaviorDescriptor extends CustomConstructorParameter_BehaviorDescriptor {
   public ListCustomParameter_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.constructors.structure.ListCustomParameter";

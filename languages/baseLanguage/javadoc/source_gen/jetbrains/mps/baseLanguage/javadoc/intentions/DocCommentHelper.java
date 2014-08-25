@@ -19,7 +19,6 @@ public class DocCommentHelper {
       model.addLanguage(javadocLangReference);
     }
   }
-
   private static <T> T as_zf4tay_a0a1a0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

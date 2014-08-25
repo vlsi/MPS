@@ -11,7 +11,6 @@ import jetbrains.mps.project.SModuleOperations;
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
   }
-
   public static boolean callShouldBeByReflection(SModel originalModel) {
     // should be by reflection in "compile in IDEA modules" 
     // method calls impossible in modules without kind == PLUGIN_* 
@@ -29,7 +28,6 @@ public class ConceptMethodCallUtils {
     }
     return !(SModuleOperations.isCompileInMps(module));
   }
-
   private static SModule check_bta47p_a0c0b(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

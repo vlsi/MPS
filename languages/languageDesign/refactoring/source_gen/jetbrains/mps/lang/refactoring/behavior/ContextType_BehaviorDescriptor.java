@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class ContextType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public ContextType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.ContextType";

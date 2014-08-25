@@ -16,33 +16,26 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 public class ConstructorDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_isDeprecated_1224609060727", new Object[]{}) || (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.core.structure.IDeprecatable"), "virtual_isDeprecated_1224609060727", new Object[]{}));
   }
-
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return true;
   }
-
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(thisNode, null);
   }
-
   public static String call_getPresentationInContext_983626226385657373(SNode thisNode, SNode context) {
     StringBuilder result = new StringBuilder();
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -66,7 +59,6 @@ public class ConstructorDeclaration_Behavior {
     result.append(")");
     return result.toString();
   }
-
   public static String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     sb.append("(");
@@ -77,12 +69,10 @@ public class ConstructorDeclaration_Behavior {
     sb.append("V");
     return sb.toString();
   }
-
   public static boolean call_containsImplicitSuperConstructorCall_7152041109751551503(SNode thisNode) {
     SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
     return !(SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"));
   }
-
   public static SNode call_getThisConstructorInvocation_6018737561676809124(SNode thisNode) {
     SNode firstStatement = StatementList_Behavior.call_getFirstStatement_5420652334935371934(SLinkOperations.getTarget(thisNode, "body", true));
     if (SNodeOperations.isInstanceOf(firstStatement, "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement")) {
@@ -90,7 +80,6 @@ public class ConstructorDeclaration_Behavior {
     }
     return null;
   }
-
   public static SNode call_getSuperDefaultConstructor_7152041109751601013(SNode thisNode) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
@@ -121,7 +110,6 @@ public class ConstructorDeclaration_Behavior {
       return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(superclass)).first();
     }
   }
-
   public static boolean call_hasImplicitSuperDefaultConstructor_6155185097898257848(SNode thisNode) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
@@ -134,18 +122,9 @@ public class ConstructorDeclaration_Behavior {
     }
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isEmpty();
   }
-
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     if (SNodeOperations.getParent(thisNode) == BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifierType, "virtual_getClassifier_7405920559687237513", new Object[]{})) {
       context.addMember(thisNode, null);
     }
-  }
-
-  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return true;
   }
 }

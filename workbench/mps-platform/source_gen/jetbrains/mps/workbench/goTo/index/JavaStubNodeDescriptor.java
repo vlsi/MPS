@@ -18,24 +18,20 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
   private final String myPName;
   private final String myCls;
   private final SModelReference myModel;
-
   public JavaStubNodeDescriptor(IClassPathItem item, String pName, String cls, SModelReference model) {
     myItem = item;
     myPName = pName;
     myCls = cls;
     myModel = model;
   }
-
   @Override
   public String getPresentation() {
     return JavaStubNodeDescriptor.this.myCls;
   }
-
   @Override
   public SNodeReference getNodeReference() {
     return new SNodePointer(JavaStubNodeDescriptor.this.myModel, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(JavaStubNodeDescriptor.this.myCls)));
   }
-
   @Override
   public SConcept getConcept() {
     String name = "jetbrains.mps.baseLanguage.structure.ClassConcept";
@@ -51,7 +47,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
     }
     return ((SConcept) SConceptRepository.getInstance().getConcept(name));
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -74,7 +69,6 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;

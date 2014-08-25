@@ -13,19 +13,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class ModelManagerDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_v31ybx_a0a0(thisNode);
   }
-
   public static String call_getGeneratedName_4063774604867753792(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static String call_getGeneratedClassFQName_4063774604867753801(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + ModelManagerDeclaration_Behavior.call_getGeneratedName_4063774604867753792(thisNode);
   }
-
   private static SNode _quotation_createNode_v31ybx_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

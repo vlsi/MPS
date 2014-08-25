@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 public class HierarchyTreeNode extends MPSTreeNode {
   private SNode myNode;
   protected AbstractHierarchyTree myHierarchyTree;
-
   public HierarchyTreeNode(@NotNull SNode declaration, IOperationContext operationContext, AbstractHierarchyTree tree) {
     super(operationContext);
     myNode = declaration;
@@ -25,7 +24,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
     setUserObject(declaration);
     setNodeIdentifier(calculateNodeIdentifier());
   }
-
   @Override
   protected void doUpdatePresentation() {
     @DisposableCommand SNode node = myNode;
@@ -39,7 +37,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
     }
     setAutoExpandable(false);
   }
-
   protected String calculateAdditionalText() {
     if (getNode() == null) {
       return null;
@@ -52,16 +49,13 @@ public class HierarchyTreeNode extends MPSTreeNode {
 
     return model.getReference().getModelName();
   }
-
   @Override
   public int getToggleClickCount() {
     return -1;
   }
-
   public SNode getNode() {
     return myNode;
   }
-
   @NotNull
   public String calculateNodeIdentifier() {
     if (getNode() == null) {
@@ -75,7 +69,6 @@ public class HierarchyTreeNode extends MPSTreeNode {
     }
     return (name == null ? "no name" : name);
   }
-
   @Override
   public void doubleClick() {
     if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {

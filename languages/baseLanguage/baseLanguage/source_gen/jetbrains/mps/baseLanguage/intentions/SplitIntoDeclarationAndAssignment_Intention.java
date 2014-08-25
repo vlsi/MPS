@@ -18,68 +18,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SplitIntoDeclarationAndAssignment_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SplitIntoDeclarationAndAssignment_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";
   }
-
   public String getPresentation() {
     return "SplitIntoDeclarationAndAssignment";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.SplitIntoDeclarationAndAssignment_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initializer", true) != null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647309293");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SplitIntoDeclarationAndAssignment_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Split into Declaration and Assignment";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode eStatement = SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SNode assignment = SNodeFactoryOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
@@ -88,7 +73,6 @@ public class SplitIntoDeclarationAndAssignment_Intention implements IntentionFac
       SLinkOperations.setTarget(local, "variableDeclaration", node, false);
       SNodeOperations.insertNextSiblingChild(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), eStatement);
     }
-
     public IntentionDescriptor getDescriptor() {
       return SplitIntoDeclarationAndAssignment_Intention.this;
     }

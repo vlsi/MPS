@@ -13,7 +13,6 @@ import jetbrains.mps.util.NameUtil;
 public class SConceptType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode concept = SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false);
     if (concept == null) {
@@ -22,7 +21,6 @@ public class SConceptType_Behavior {
       return "concept<" + SPropertyOperations.getString(concept, "name") + ">";
     }
   }
-
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "concept");
     if ((SLinkOperations.getTarget(thisNode, "conceptDeclaraton", false) != null)) {

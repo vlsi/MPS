@@ -17,7 +17,6 @@ public class ChildConceptWeave_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pj940b_a(editorContext, node);
   }
-
   private EditorCell createCollection_pj940b_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pj940b_a");
@@ -26,14 +25,12 @@ public class ChildConceptWeave_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_pj940b_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pj940b_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weave");
     editorCell.setCellId("Constant_pj940b_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pj940b_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

@@ -26,12 +26,10 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
   public SuperNodeExpression_Constraints() {
     super("jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -42,7 +40,6 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -51,7 +48,6 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -78,7 +74,6 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a3;
@@ -88,11 +83,9 @@ public class SuperNodeExpression_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ConstraintsUtil.isInsideOfNonStaticBehaviorContext(parentNode);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "2043122710974691050");
   private static SNodePointer breakingNode_mmhzfq_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:6786d6ee-e5cc-4a77-9efd-65a8dca8b187(jetbrains.mps.lang.behavior.constraints)", "5299096511375909194");
 }

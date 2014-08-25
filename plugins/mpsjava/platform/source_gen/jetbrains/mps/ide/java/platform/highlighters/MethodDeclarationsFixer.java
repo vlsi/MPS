@@ -53,7 +53,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private Map<SNodeReference, SNodeReference> myMethodCallsToSetDecls = new HashMap<SNodeReference, SNodeReference>();
   private boolean myCachesCleared = false;
 
-
   @Override
   public boolean hasDramaticalEvent(List<SModelEvent> list) {
     for (SModelEvent event : list) {
@@ -63,7 +62,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     return super.hasDramaticalEvent(list);
   }
-
   @Override
   protected Set<EditorMessage> createMessages(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new ITypechecking.Computation<Set<EditorMessage>>() {
@@ -73,7 +71,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     });
   }
-
   public Set<EditorMessage> doCreateMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
@@ -99,7 +96,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
             nodeRemoved(child, event.getParent(), event.getModel(), reResolvedTargets);
           }
         }
-
         @Override
         public void visitReferenceEvent(SModelReferenceEvent event) {
           SReference reference = event.getReference();
@@ -108,7 +104,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
             methodCallDeclarationChanged(SNodeOperations.cast(sourceNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), reResolvedTargets);
           }
         }
-
         @Override
         public void visitPropertyEvent(SModelPropertyEvent event) {
           SNode node = event.getNode();
@@ -118,7 +113,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
             methodDeclarationSignatureChanged(node, reResolvedTargets);
           }
         }
-
         @Override
         public void visitReplacedEvent(SModelReplacedEvent event) {
           clearCaches();
@@ -155,7 +149,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     });
     return new HashSet<EditorMessage>();
   }
-
   public void clearCaches() {
     myCheckedMethodCalls.clear();
     myMethodDeclsToCheckedMethodCalls.clear();
@@ -163,7 +156,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     myMethodCallsToSetDecls.clear();
     myCachesCleared = true;
   }
-
   public void testAndFixMethodCall(@NotNull SNode methodCallNode, Map<SNode, SNode> reResolvedTargets) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCallNode, "baseMethodDeclaration", false);
     String methodName = getMethodName(methodCallNode);
@@ -195,7 +187,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       nodesByNameAndConcept.add(methodCallPointer);
     }
   }
-
   private String getMethodName(SNode methodCall) {
     SNode baseMethodDeclaration = SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false);
     if (baseMethodDeclaration == null) {
@@ -208,14 +199,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       return SPropertyOperations.getString(baseMethodDeclaration, "name");
     }
   }
-
   private void methodDeclarationNameChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNodeReference> methodCallPointers = myMethodDeclsToCheckedMethodCalls.get(new SNodePointer(method));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
-
   private Iterable<SNode> getMethodCalls(Set<SNodeReference> methodCallPointers) {
     if (methodCallPointers == null) {
       return Sequence.fromIterable(Collections.<SNode>emptyList());
@@ -234,14 +223,12 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     });
   }
-
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
     Set<SNodeReference> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getQualifiedName(), method.getName()));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
   }
-
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     SNodeReference methodCallPointer = new SNodePointer(methodCall);
     if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == ((SNodePointer) myMethodCallsToSetDecls.get(methodCallPointer)).resolve(MPSModuleRepository.getInstance())) {
@@ -249,7 +236,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     }
     testAndFixMethodCall(methodCall, resolveTargets);
   }
-
   private void nodeAdded(SNode child, Map<SNode, SNode> resolveTargets) {
     for (SNode methodCall : SNodeOperations.getDescendants(child, "jetbrains.mps.baseLanguage.structure.IMethodCall", true, new String[]{})) {
       testAndFixMethodCall(methodCall, resolveTargets);
@@ -265,7 +251,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       methodDeclarationSignatureChanged(SNodeOperations.getParent(formalParam), resolveTargets);
     }
   }
-
   private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
     if (myCheckedMethodCalls.contains(new SNodePointer(m.getReference(), formerParent.getNodeId()))) {
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
@@ -279,7 +264,6 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     }
   }
-
   @Override
   public void clear(SNode node, EditorComponent editor) {
     clearCaches();

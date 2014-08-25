@@ -51,13 +51,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
   };
   private final SNode myTopClassifier;
-
   @Deprecated
   private ClassifierAndSuperClassifiersCache(Object key, SNode topClassifier) {
     super(key);
     this.myTopClassifier = topClassifier;
   }
-
   @Override
   public Set<SModel> getDependsOnModels(Object element) {
     Set<SModel> dependsOnModel = new HashSet<SModel>();
@@ -68,22 +66,18 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     return dependsOnModel;
   }
-
   /*package*/ List<SNode> getClassifiers() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getClassifiers();
   }
-
   /*package*/ List<SNode> getMethods() {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getMethods();
   }
-
   /*package*/ List<SNode> getOverriddenMethods(SNode method) {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     return dataSet.getOverriddenMethods(method);
   }
-
   /*package*/ List<SNode> getMethodsByName(String methodName) {
     ClassifierAndSuperClassifiersCache.MethodsDataSet dataSet = (ClassifierAndSuperClassifiersCache.MethodsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.MethodsDataSet.ID, METHODS_CACHE_CREATOR);
     List<SNode> methods = dataSet.getMethodsByName(methodName);
@@ -92,27 +86,22 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
     }
     return methods;
   }
-
   /*package*/ List<SNode> getFields() {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getFields();
   }
-
   /*package*/ SNode getFieldByName(String name) {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getFieldByName(name);
   }
-
   /*package*/ SNode getStaticFieldByName(String name) {
     ClassifierAndSuperClassifiersCache.FieldsDataSet dataSet = (ClassifierAndSuperClassifiersCache.FieldsDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.FieldsDataSet.ID, FIELDS_CACHE_CREATOR);
     return dataSet.getStaticFieldByName(name);
   }
-
   /*package*/ Map<SNode, SNode> getTypeByTypeVariableMap() {
     ClassifierAndSuperClassifiersCache.ClassifiersDataSet dataSet = (ClassifierAndSuperClassifiersCache.ClassifiersDataSet) this.getDataSet(ClassifierAndSuperClassifiersCache.ClassifiersDataSet.ID, CLASSIFIERS_CACHE_CREATOR);
     return dataSet.getTypeByTypeVariableMap();
   }
-
   public static ClassifierAndSuperClassifiersCache getInstance(@NotNull SNode topClassifierNode) {
     Object key = keyProducer.createKey(topClassifierNode);
     if (SNodeOperations.getModel(topClassifierNode) == null) {
@@ -126,32 +115,26 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
     });
   }
-
   private static final class ClassifiersDataSet extends DataSet {
     public static final String ID = "CLASSIFIERS_DATASET";
     private SNode myTopClassifier;
     private List<SNode> myClassifiers;
     private Map<SNode, SNode> myTypeByTypeVariable;
     private Set<SNode> myDependsOnNodes;
-
     public ClassifiersDataSet(SNode topClassifier, AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_OWNER_CACHE);
       this.myTopClassifier = topClassifier;
     }
-
     public List<SNode> getClassifiers() {
       return this.myClassifiers;
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
-
     /*package*/ Map<SNode, SNode> getTypeByTypeVariableMap() {
       return this.myTypeByTypeVariable;
     }
-
     @Override
     protected void init() {
       this.myTypeByTypeVariable = MapSequence.fromMap(new HashMap<SNode, SNode>());
@@ -188,7 +171,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
         }
       }
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -199,7 +181,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
       super.childAdded(event);
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -210,11 +191,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
       super.childRemoved(event);
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
     }
-
     private static List<SNode> getImplementedAndExtended(SNode classifier, Map<SNode, SNode> typeByTypeVar) {
       Set<SNode> set = SetSequence.fromSet(new LinkedHashSet<SNode>());
       ClassifierAndSuperClassifiersCache.ClassifiersDataSet.collectImplementedAndExtended(classifier, set, null, typeByTypeVar);
@@ -237,7 +216,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
       return result;
     }
-
     private static void collectImplementedAndExtended(SNode classifier, Set<SNode> result, List<SNode> typeParms, Map<SNode, SNode> typeByTypeVar) {
       if ((classifier == null)) {
         return;
@@ -279,17 +257,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
     }
   }
-
   private static final class MethodsDataSet extends DataSet {
     public static final String ID = "METHODS_DATASET";
     private Map<String, List<SNode>> myMethodsByName;
     private Map<SNode, List<SNode>> myOverriddenMethods;
     private Set<SNode> myDependsOnNodes;
-
     public MethodsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
-
     public List<SNode> getMethods() {
       List<SNode> result = new ArrayList<SNode>();
       for (List<SNode> list : MapSequence.fromMap(this.myMethodsByName).values()) {
@@ -297,7 +272,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
       return result;
     }
-
     public List<SNode> getOverriddenMethods(SNode method) {
       List<SNode> list = MapSequence.fromMap(this.myOverriddenMethods).get(method);
       if (list != null) {
@@ -305,17 +279,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
       }
       return new ArrayList<SNode>();
     }
-
     @Nullable
     public List<SNode> getMethodsByName(String methodName) {
       return MapSequence.fromMap(myMethodsByName).get((methodName == null ? "" : methodName));
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
-
     @Override
     protected void init() {
       List<SNode> allMethods = new ArrayList<SNode>();
@@ -386,7 +357,6 @@ forEachInAllMethods:
         }
       }
     }
-
     private String createMethodParameterTypesString(SNode method, Map<SNode, SNode> typeByTypeVar) {
       StringBuilder result = new StringBuilder();
       for (SNode parm : SLinkOperations.getTargets(method, "parameter", true)) {
@@ -403,7 +373,6 @@ forEachInAllMethods:
       }
       return result.toString();
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -420,7 +389,6 @@ forEachInAllMethods:
       }
       super.childAdded(event);
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -436,7 +404,6 @@ forEachInAllMethods:
       }
       super.childRemoved(event);
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       if ("name".equals(event.getPropertyName()) && SNodeOperations.isInstanceOf(((SNode) event.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -444,37 +411,30 @@ forEachInAllMethods:
       }
     }
   }
-
   private static class FieldsDataSet extends DataSet {
     public static final String ID = "FIELDS_DATASET";
     private Map<String, SNode> myFieldsByName;
     private Map<String, SNode> myStaticFieldsByName;
     private Set<SNode> myDependsOnNodes;
-
     public FieldsDataSet(AbstractCache ownerCache) {
       super(ID, ownerCache, DataSet.DefaultNodeChangedProcessing.DROP_DATA_SET);
     }
-
     public List<SNode> getFields() {
       List<SNode> result = new ArrayList<SNode>();
       ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myFieldsByName).values()));
       ListSequence.fromList(result).addSequence(Sequence.fromIterable(MapSequence.fromMap(myStaticFieldsByName).values()));
       return result;
     }
-
     public SNode getFieldByName(String name) {
       return MapSequence.fromMap(myFieldsByName).get((name == null ? "" : name));
     }
-
     public SNode getStaticFieldByName(String name) {
       return MapSequence.fromMap(myStaticFieldsByName).get((name == null ? "" : name));
     }
-
     @Override
     public Set<SNode> getDependsOnNodes() {
       return this.myDependsOnNodes;
     }
-
     @Override
     protected void init() {
       this.myFieldsByName = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -511,7 +471,6 @@ forEachInAllMethods:
       SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(classifiers));
       SetSequence.fromSet(myDependsOnNodes).addSequence(ListSequence.fromList(allFields));
     }
-
     @Override
     public void childAdded(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -525,7 +484,6 @@ forEachInAllMethods:
       }
       super.childAdded(event);
     }
-
     @Override
     public void childRemoved(SModelChildEvent event) {
       if (SNodeOperations.isInstanceOf(((SNode) event.getParent()), "jetbrains.mps.baseLanguage.structure.Classifier")) {
@@ -539,7 +497,6 @@ forEachInAllMethods:
       }
       super.childRemoved(event);
     }
-
     @Override
     public void propertyChanged(SModelPropertyEvent event) {
       SNode node = event.getNode();

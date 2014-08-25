@@ -27,7 +27,6 @@ public class Mapper_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -61,7 +60,6 @@ __switch__:
     Iterable<Integer> expected = Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10);
     this.assertIterableEquals(expected, test.toIterable());
   }
-
   public void test_mapperVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     _FunctionTypes._return_P1_E0<? extends Iterable<Integer>, ? super Integer> trans = new _FunctionTypes._return_P1_E0<Iterable<Integer>, Integer>() {
@@ -70,7 +68,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -105,7 +102,6 @@ __switch__:
     this.assertIterableEquals(expected, seq.translate(trans).toIterable());
     this.assertIterableEquals(expected, seq.translate(trans).toIterable());
   }
-
   public void test_mappingOperation() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
@@ -113,7 +109,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -146,7 +141,6 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10), test);
   }
-
   public void test_legacyMapper() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
@@ -154,7 +148,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -187,7 +180,6 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList(1, 2, 2, 4, 3, 6, 4, 8, 5, 10), test);
   }
-
   public void test_stopSkip() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input10()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
@@ -195,7 +187,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -258,7 +249,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -316,7 +306,6 @@ __switch__:
     });
     this.assertIterableEquals(Arrays.asList(2, 4, 6), test2);
   }
-
   public void test_stopBug() throws Exception {
     Iterable<Integer> test = Sequence.fromIterable(this.input5()).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer it) {
@@ -324,7 +313,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -380,7 +368,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -436,7 +423,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -492,7 +478,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -543,7 +528,6 @@ __switch__:
     });
     Assert.assertTrue(Sequence.fromIterable(test4).isEmpty());
   }
-
   public void test_selectMany() throws Exception {
     //  only testing compileability of the generated code 
     Iterable<B> bs = Sequence.fromIterable(Collections.<B>emptyList());
@@ -592,7 +576,6 @@ __switch__:
     };
     Sequence.fromIterable(bs).translate(cl4);
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     this.assertIteratorYields(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 3)).translate(new ITranslator2<Integer, Integer>() {
       public Iterable<Integer> translate(final Integer i) {
@@ -600,7 +583,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -632,7 +614,6 @@ __switch__:
       }
     }).iterator(), 1, 2, 3, 4);
   }
-
   public void test_selectManyAdvancesTooEarly() throws Exception {
     final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
     final List<Integer> plusten = ListSequence.fromList(new ArrayList<Integer>());
@@ -643,7 +624,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {

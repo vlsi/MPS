@@ -17,17 +17,14 @@ public class Languages_PluginInitializer implements ApplicationComponent {
       }
     });
   }
-
   @NonNls
   @NotNull
   public String getComponentName() {
     // module short names could be the same for different modules => use full name 
     return this.getClass().getName();
   }
-
   public void initComponent() {
   }
-
   public void disposeComponent() {
   }
 }

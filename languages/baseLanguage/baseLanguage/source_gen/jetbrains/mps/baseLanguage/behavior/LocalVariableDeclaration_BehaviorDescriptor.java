@@ -11,47 +11,36 @@ import jetbrains.mps.scope.Scope;
 public class LocalVariableDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor, IVariableAssignment_BehaviorDescriptor, IVariableDeclaration_BehaviorDescriptor, ILocalDeclaration_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public LocalVariableDeclaration_BehaviorDescriptor() {
   }
-
   public SNode virtual_createReference_1213877517482(SNode thisNode) {
     return LocalVariableDeclaration_Behavior.virtual_createReference_1213877517482(thisNode);
   }
-
   public String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     return LocalVariableDeclaration_Behavior.virtual_getPrefix_3012473318495495520(thisNode, project);
   }
-
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return LocalVariableDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
   }
-
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return LocalVariableDeclaration_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
   }
-
   public String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     return LocalVariableDeclaration_Behavior.virtual_getSuffix_3012473318495499856(thisNode, project);
   }
-
   public SNode virtual_getValue_1224857430232(SNode thisNode) {
     return LocalVariableDeclaration_Behavior.virtual_getValue_1224857430232(thisNode);
   }
-
   public boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
     return IVariableAssignment_Behavior.virtual_isCanBeUnused_1223985713603(thisNode);
   }
-
   public boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return LocalVariableDeclaration_Behavior.virtual_isInitializable_1213877517488(thisNode);
   }
-
   public boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode) {
     return ILocalDeclaration_Behavior.virtual_isReferencedInClosure_3262277503800823422(thisNode);
   }
-
   public boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
     return ILocalDeclaration_Behavior.virtual_isReferencedInControlFlowInterrupter_1644061362849513751(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration";

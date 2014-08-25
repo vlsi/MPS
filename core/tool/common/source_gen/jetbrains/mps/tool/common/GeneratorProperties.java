@@ -19,34 +19,27 @@ public final class GeneratorProperties {
 
   private Script myScript;
 
-
   public GeneratorProperties(Script script) {
     myScript = script;
   }
-
   public GeneratorProperties setStrictMode(boolean strictMode) {
     myScript.putProperty(STRICT_MODE, Boolean.toString(strictMode));
     return this;
   }
-
   public boolean isStrictMode() {
     return Boolean.parseBoolean(myScript.getProperty(STRICT_MODE));
   }
-
   public GeneratorProperties setParallelMode(boolean parallelMode) {
     myScript.putProperty(PARALLEL_MODE, Boolean.toString(parallelMode));
     return this;
   }
-
   public boolean isParallelMode() {
     return Boolean.parseBoolean(myScript.getProperty(PARALLEL_MODE));
   }
-
   public GeneratorProperties setParallelThreads(int threadsCount) {
     myScript.putProperty(THREAD_COUNT, Integer.toString(threadsCount));
     return this;
   }
-
   public int getParallelThreads() {
     try {
       return Integer.parseInt(myScript.getProperty(THREAD_COUNT));
@@ -54,21 +47,17 @@ public final class GeneratorProperties {
       return 2;
     }
   }
-
   public GeneratorProperties setInplaceTransform(boolean inplaceEnabled) {
     myScript.putProperty(TRANSFORM_IN_PLACE, Boolean.toString(inplaceEnabled));
     return this;
   }
-
   public boolean isInplaceTransform() {
     return Boolean.parseBoolean(myScript.getProperty(TRANSFORM_IN_PLACE));
   }
-
   public GeneratorProperties setHideWarnings(boolean enabled) {
     myScript.putProperty(NO_WARNINGS, Boolean.toString(enabled));
     return this;
   }
-
   public boolean isHideWarnings() {
     return Boolean.parseBoolean(myScript.getProperty(NO_WARNINGS));
   }

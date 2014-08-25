@@ -15,135 +15,135 @@
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901770">
     <file name="ShowMetaLevel_Action.java">
       <node id="5487985028841901770" at="23,0,24,0" concept="9" trace="ICON" />
-      <node id="5487985028841901770" at="25,33,26,48" concept="10" />
-      <node id="5487985028841901770" at="26,48,27,35" concept="2" />
-      <node id="5487985028841901770" at="27,35,28,41" concept="2" />
-      <node id="5487985028841901770" at="32,32,33,16" concept="7" />
-      <node id="5487985028841901770" at="37,9,38,43" concept="0" />
-      <node id="5487985028841901770" at="37,9,38,43" concept="2" />
-      <node id="5487985028841901770" at="40,42,41,88" concept="2" />
-      <node id="5487985028841901770" at="42,7,43,44" concept="2" />
-      <node id="5487985028841901770" at="48,53,49,19" concept="7" />
-      <node id="5487985028841901770" at="51,5,52,57" concept="6" />
-      <node id="5487985028841901770" at="54,101,55,22" concept="2" />
-      <node id="5487985028841901770" at="57,7,58,60" concept="2" />
-      <node id="5487985028841901770" at="60,66,61,19" concept="7" />
-      <node id="5487985028841901770" at="62,5,63,101" concept="2" />
-      <node id="5487985028841901770" at="64,64,65,19" concept="7" />
-      <node id="5487985028841901770" at="66,5,67,16" concept="7" />
-      <node id="5487985028841901779" at="71,9,72,188" concept="6" />
-      <node id="5487985028841901787" at="72,188,73,108" concept="2" />
-      <node id="5487985028841901770" at="75,42,76,87" concept="2" />
-      <node id="5487985028841901770" at="81,0,82,0" concept="9" trace="LOG" />
-      <node id="5487985028841901770" at="39,27,42,7" concept="0" />
-      <node id="5487985028841901770" at="39,27,42,7" concept="4" />
-      <node id="5487985028841901770" at="47,95,50,5" concept="4" />
-      <node id="5487985028841901770" at="53,25,56,9" concept="4" />
-      <node id="5487985028841901770" at="59,5,62,5" concept="4" />
-      <node id="5487985028841901770" at="63,101,66,5" concept="4" />
-      <node id="5487985028841901770" at="74,27,77,7" concept="0" />
-      <node id="5487985028841901770" at="74,27,77,7" concept="4" />
-      <node id="5487985028841901770" at="31,0,35,0" concept="5" trace="isDumbAware#()Z" />
-      <node id="5487985028841901770" at="62,5,66,5" concept="0" />
-      <node id="5487985028841901770" at="25,0,30,0" concept="1" trace="ShowMetaLevel_Action#()V" />
-      <node id="5487985028841901770" at="52,57,57,7" concept="4" />
-      <node id="5487985028841901770" at="36,89,44,5" concept="11" />
-      <node id="5487985028841901770" at="70,96,78,5" concept="11" />
-      <node id="5487985028841901770" at="50,5,59,5" concept="0" />
-      <node id="5487985028841901770" at="36,0,46,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="5487985028841901770" at="70,0,80,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <node id="5487985028841901770" at="50,5,62,5" concept="0" />
-      <node id="5487985028841901770" at="47,0,69,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <scope id="5487985028841901770" at="32,32,33,16" />
-      <scope id="5487985028841901770" at="37,9,38,43" />
-      <scope id="5487985028841901770" at="40,42,41,88" />
-      <scope id="5487985028841901770" at="48,53,49,19" />
-      <scope id="5487985028841901770" at="54,101,55,22" />
-      <scope id="5487985028841901770" at="60,66,61,19" />
-      <scope id="5487985028841901770" at="64,64,65,19" />
-      <scope id="5487985028841901770" at="75,42,76,87" />
-      <scope id="5487985028841901770" at="71,9,73,108">
+      <node id="5487985028841901770" at="24,33,25,48" concept="10" />
+      <node id="5487985028841901770" at="25,48,26,35" concept="2" />
+      <node id="5487985028841901770" at="26,35,27,41" concept="2" />
+      <node id="5487985028841901770" at="30,32,31,16" concept="7" />
+      <node id="5487985028841901770" at="34,9,35,43" concept="0" />
+      <node id="5487985028841901770" at="34,9,35,43" concept="2" />
+      <node id="5487985028841901770" at="37,42,38,88" concept="2" />
+      <node id="5487985028841901770" at="39,7,40,44" concept="2" />
+      <node id="5487985028841901770" at="44,53,45,19" concept="7" />
+      <node id="5487985028841901770" at="47,5,48,57" concept="6" />
+      <node id="5487985028841901770" at="50,101,51,22" concept="2" />
+      <node id="5487985028841901770" at="53,7,54,60" concept="2" />
+      <node id="5487985028841901770" at="56,66,57,19" concept="7" />
+      <node id="5487985028841901770" at="58,5,59,101" concept="2" />
+      <node id="5487985028841901770" at="60,64,61,19" concept="7" />
+      <node id="5487985028841901770" at="62,5,63,16" concept="7" />
+      <node id="5487985028841901779" at="66,9,67,188" concept="6" />
+      <node id="5487985028841901787" at="67,188,68,108" concept="2" />
+      <node id="5487985028841901770" at="70,42,71,87" concept="2" />
+      <node id="5487985028841901770" at="75,0,76,0" concept="9" trace="LOG" />
+      <node id="5487985028841901770" at="36,27,39,7" concept="0" />
+      <node id="5487985028841901770" at="36,27,39,7" concept="4" />
+      <node id="5487985028841901770" at="43,95,46,5" concept="4" />
+      <node id="5487985028841901770" at="49,25,52,9" concept="4" />
+      <node id="5487985028841901770" at="55,5,58,5" concept="4" />
+      <node id="5487985028841901770" at="59,101,62,5" concept="4" />
+      <node id="5487985028841901770" at="69,27,72,7" concept="0" />
+      <node id="5487985028841901770" at="69,27,72,7" concept="4" />
+      <node id="5487985028841901770" at="29,0,33,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="5487985028841901770" at="58,5,62,5" concept="0" />
+      <node id="5487985028841901770" at="24,0,29,0" concept="1" trace="ShowMetaLevel_Action#()V" />
+      <node id="5487985028841901770" at="48,57,53,7" concept="4" />
+      <node id="5487985028841901770" at="33,89,41,5" concept="11" />
+      <node id="5487985028841901770" at="65,96,73,5" concept="11" />
+      <node id="5487985028841901770" at="46,5,55,5" concept="0" />
+      <node id="5487985028841901770" at="33,0,43,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="5487985028841901770" at="65,0,75,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="5487985028841901770" at="46,5,58,5" concept="0" />
+      <node id="5487985028841901770" at="43,0,65,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="5487985028841901770" at="30,32,31,16" />
+      <scope id="5487985028841901770" at="34,9,35,43" />
+      <scope id="5487985028841901770" at="37,42,38,88" />
+      <scope id="5487985028841901770" at="44,53,45,19" />
+      <scope id="5487985028841901770" at="50,101,51,22" />
+      <scope id="5487985028841901770" at="56,66,57,19" />
+      <scope id="5487985028841901770" at="60,64,61,19" />
+      <scope id="5487985028841901770" at="70,42,71,87" />
+      <scope id="5487985028841901770" at="66,9,68,108">
         <var name="metaLevel" id="5487985028841901780" />
       </scope>
-      <scope id="5487985028841901770" at="25,33,28,41" />
-      <scope id="5487985028841901770" at="39,27,42,7" />
-      <scope id="5487985028841901770" at="53,25,56,9" />
-      <scope id="5487985028841901770" at="74,0,77,7">
+      <scope id="5487985028841901770" at="24,33,27,41" />
+      <scope id="5487985028841901770" at="36,27,39,7" />
+      <scope id="5487985028841901770" at="49,25,52,9" />
+      <scope id="5487985028841901770" at="69,0,72,7">
         <var name="t" id="5487985028841901770" />
       </scope>
-      <scope id="5487985028841901770" at="74,27,77,7" />
-      <scope id="5487985028841901770" at="31,0,35,0" />
-      <scope id="5487985028841901770" at="39,0,43,44">
+      <scope id="5487985028841901770" at="69,27,72,7" />
+      <scope id="5487985028841901770" at="29,0,33,0" />
+      <scope id="5487985028841901770" at="36,0,40,44">
         <var name="t" id="5487985028841901770" />
       </scope>
-      <scope id="5487985028841901770" at="39,27,43,44" />
-      <scope id="5487985028841901770" at="62,5,66,5" />
-      <scope id="5487985028841901770" at="25,0,30,0" />
-      <scope id="5487985028841901770" at="51,5,58,60">
+      <scope id="5487985028841901770" at="36,27,40,44" />
+      <scope id="5487985028841901770" at="58,5,62,5" />
+      <scope id="5487985028841901770" at="24,0,29,0" />
+      <scope id="5487985028841901770" at="47,5,54,60">
         <var name="node" id="5487985028841901770" />
       </scope>
-      <scope id="5487985028841901770" at="36,89,44,5" />
-      <scope id="5487985028841901770" at="70,96,78,5" />
-      <scope id="5487985028841901770" at="36,0,46,0">
+      <scope id="5487985028841901770" at="33,89,41,5" />
+      <scope id="5487985028841901770" at="65,96,73,5" />
+      <scope id="5487985028841901770" at="33,0,43,0">
         <var name="_params" id="5487985028841901770" />
         <var name="event" id="5487985028841901770" />
       </scope>
-      <scope id="5487985028841901770" at="70,0,80,0">
+      <scope id="5487985028841901770" at="65,0,75,0">
         <var name="_params" id="5487985028841901770" />
         <var name="event" id="5487985028841901770" />
       </scope>
-      <scope id="5487985028841901770" at="50,5,62,5" />
-      <scope id="5487985028841901770" at="47,95,67,16" />
-      <scope id="5487985028841901770" at="47,0,69,0">
+      <scope id="5487985028841901770" at="46,5,58,5" />
+      <scope id="5487985028841901770" at="43,95,63,16" />
+      <scope id="5487985028841901770" at="43,0,65,0">
         <var name="_params" id="5487985028841901770" />
         <var name="event" id="5487985028841901770" />
       </scope>
-      <unit id="5487985028841901770" at="22,0,83,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.ShowMetaLevel_Action" />
+      <unit id="5487985028841901770" at="22,0,77,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.ShowMetaLevel_Action" />
     </file>
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901793">
     <file name="MetaLevelActions_ActionGroup.java">
       <node id="5487985028841901793" at="10,0,11,0" concept="9" trace="LOG" />
       <node id="5487985028841901793" at="11,0,12,0" concept="9" trace="ID" />
-      <node id="5487985028841901793" at="13,41,14,34" concept="10" />
-      <node id="5487985028841901793" at="14,34,15,30" concept="2" />
-      <node id="5487985028841901793" at="15,30,16,25" concept="2" />
-      <node id="5487985028841901796" at="17,9,18,125" concept="2" />
-      <node id="5487985028841901793" at="19,27,20,39" concept="2" />
-      <node id="5487985028841901793" at="16,25,21,5" concept="11" />
-      <node id="5487985028841901793" at="13,0,23,0" concept="1" trace="MetaLevelActions_ActionGroup#()V" />
-      <scope id="5487985028841901793" at="17,9,18,125" />
-      <scope id="5487985028841901793" at="19,0,20,39">
+      <node id="5487985028841901793" at="12,41,13,34" concept="10" />
+      <node id="5487985028841901793" at="13,34,14,30" concept="2" />
+      <node id="5487985028841901793" at="14,30,15,25" concept="2" />
+      <node id="5487985028841901796" at="16,9,17,125" concept="2" />
+      <node id="5487985028841901793" at="18,27,19,39" concept="2" />
+      <node id="5487985028841901793" at="15,25,20,5" concept="11" />
+      <node id="5487985028841901793" at="12,0,22,0" concept="1" trace="MetaLevelActions_ActionGroup#()V" />
+      <scope id="5487985028841901793" at="16,9,17,125" />
+      <scope id="5487985028841901793" at="18,0,19,39">
         <var name="t" id="5487985028841901793" />
       </scope>
-      <scope id="5487985028841901793" at="19,27,20,39" />
-      <scope id="5487985028841901793" at="13,41,21,5" />
-      <scope id="5487985028841901793" at="13,0,23,0" />
-      <unit id="5487985028841901793" at="9,0,24,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
+      <scope id="5487985028841901793" at="18,27,19,39" />
+      <scope id="5487985028841901793" at="12,41,20,5" />
+      <scope id="5487985028841901793" at="12,0,22,0" />
+      <unit id="5487985028841901793" at="9,0,23,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
     </file>
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/7162597690967660606">
     <file name="PluginSolution_ApplicationPlugin.java">
       <node id="7162597690967660606" at="10,0,11,0" concept="3" trace="myId" />
-      <node id="7162597690967660606" at="15,27,16,16" concept="7" />
-      <node id="7162597690967660606" at="19,30,20,30" concept="8" />
-      <node id="7162597690967660606" at="20,30,21,42" concept="2" />
-      <node id="7162597690967660606" at="21,42,22,14" concept="8" />
-      <node id="7162597690967660606" at="22,14,23,49" concept="2" />
-      <node id="7162597690967660606" at="26,37,27,95" concept="2" />
-      <node id="7162597690967660606" at="12,0,14,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
-      <node id="7162597690967660606" at="15,0,18,0" concept="5" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-      <node id="7162597690967660606" at="26,0,29,0" concept="5" trace="adjustRegularGroups#()V" />
-      <node id="7162597690967660606" at="19,0,25,0" concept="5" trace="createGroups#()V" />
-      <scope id="7162597690967660606" at="12,45,12,45" />
-      <scope id="7162597690967660606" at="15,27,16,16" />
-      <scope id="7162597690967660606" at="26,37,27,95" />
-      <scope id="7162597690967660606" at="12,0,14,0" />
-      <scope id="7162597690967660606" at="15,0,18,0" />
-      <scope id="7162597690967660606" at="26,0,29,0" />
-      <scope id="7162597690967660606" at="19,30,23,49" />
-      <scope id="7162597690967660606" at="19,0,25,0" />
-      <unit id="7162597690967660606" at="9,0,30,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+      <node id="7162597690967660606" at="13,27,14,16" concept="7" />
+      <node id="7162597690967660606" at="16,30,17,30" concept="8" />
+      <node id="7162597690967660606" at="17,30,18,42" concept="2" />
+      <node id="7162597690967660606" at="18,42,19,14" concept="8" />
+      <node id="7162597690967660606" at="19,14,20,49" concept="2" />
+      <node id="7162597690967660606" at="22,37,23,95" concept="2" />
+      <node id="7162597690967660606" at="11,0,13,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
+      <node id="7162597690967660606" at="13,0,16,0" concept="5" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7162597690967660606" at="22,0,25,0" concept="5" trace="adjustRegularGroups#()V" />
+      <node id="7162597690967660606" at="16,0,22,0" concept="5" trace="createGroups#()V" />
+      <scope id="7162597690967660606" at="11,45,11,45" />
+      <scope id="7162597690967660606" at="13,27,14,16" />
+      <scope id="7162597690967660606" at="22,37,23,95" />
+      <scope id="7162597690967660606" at="11,0,13,0" />
+      <scope id="7162597690967660606" at="13,0,16,0" />
+      <scope id="7162597690967660606" at="22,0,25,0" />
+      <scope id="7162597690967660606" at="16,30,20,49" />
+      <scope id="7162597690967660606" at="16,0,22,0" />
+      <unit id="7162597690967660606" at="9,0,26,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
     </file>
   </root>
 </debug-info>

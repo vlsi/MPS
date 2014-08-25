@@ -17,7 +17,6 @@ public class DebugActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_dataFlow = ID + "dataFlow";
   public static final String LABEL_ID_editor = ID + "editor";
   public static final String LABEL_ID_generator = ID + "generator";
-
   public DebugActions_ActionGroup() {
     super("Language Debug", ID);
     this.setIsInternal(false);

@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class ComplexType_BehaviorDescriptor extends MathPrimitiveType_BehaviorDescriptor {
   public ComplexType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.ComplexType";

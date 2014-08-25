@@ -30,7 +30,6 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uvxm5p_a(editorContext, node);
   }
-
   private EditorCell createCollection_uvxm5p_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_uvxm5p_a");
@@ -48,7 +47,6 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_uvxm5p_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -56,14 +54,12 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_uvxm5p_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_uvxm5p_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_uvxm5p_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("labelName");
@@ -81,24 +77,19 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_uvxm5p_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) == null && !(SPropertyOperations.getBoolean(node, "hasNoLabel"));
   }
-
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0c0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (true));
     }
-
     public String getMatchingText() {
       return "null";
     }
   }
-
   private EditorCell createConstant_uvxm5p_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "null");
     editorCell.setCellId("Constant_uvxm5p_d0");
@@ -109,24 +100,19 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new MatchingLabelStyleClassItem_Editor.MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0()}));
     return editorCell;
   }
-
   private static boolean renderingCondition_uvxm5p_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "query", true) == null) && SPropertyOperations.getBoolean(node, "hasNoLabel");
   }
-
   public static class MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0 extends AbstractCellMenuPart_Generic_Item {
     public MatchingLabelStyleClassItem_generic_cellMenu_uvxm5p_a0d0() {
     }
-
     public void handleAction(SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "hasNoLabel", "" + (false));
     }
-
     public String getMatchingText() {
       return "label name";
     }
   }
-
   private EditorCell createRefNode_uvxm5p_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("query");
@@ -149,7 +135,6 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "query", true) != null;
   }

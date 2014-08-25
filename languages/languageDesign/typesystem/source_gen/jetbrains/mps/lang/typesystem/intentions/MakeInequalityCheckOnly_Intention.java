@@ -16,57 +16,44 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeInequalityCheckOnly_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeInequalityCheckOnly_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement";
   }
-
   public String getPresentation() {
     return "MakeInequalityCheckOnly";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.typesystem.intentions.MakeInequalityCheckOnly_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.typesystem";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "6840209722389750234");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeInequalityCheckOnly_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "checkOnly")) {
         return "Make Inequality Not Check Only ";
@@ -74,11 +61,9 @@ public class MakeInequalityCheckOnly_Intention implements IntentionFactory {
         return "Make Inequality Check Only ";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "checkOnly", "" + (!(SPropertyOperations.getBoolean(node, "checkOnly"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeInequalityCheckOnly_Intention.this;
     }

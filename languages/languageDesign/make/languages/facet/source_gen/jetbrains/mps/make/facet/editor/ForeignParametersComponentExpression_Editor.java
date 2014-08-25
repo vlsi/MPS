@@ -22,7 +22,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4od8my_a(editorContext, node);
   }
-
   private EditorCell createCollection_4od8my_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4od8my_a");
@@ -35,7 +34,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_4od8my_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -55,7 +53,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_4od8my_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_4od8my_b0");
@@ -65,7 +62,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_4od8my_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operation");
@@ -85,7 +81,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_4od8my_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4od8my_d0");
@@ -96,11 +91,9 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     editorCell.addEditorCell(this.createRefNode_4od8my_b3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_4od8my_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "resource", true) != null);
   }
-
   private EditorCell createConstant_4od8my_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@");
     editorCell.setCellId("Constant_4od8my_a3a");
@@ -112,7 +105,6 @@ public class ForeignParametersComponentExpression_Editor extends DefaultNodeEdit
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_4od8my_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("resource");

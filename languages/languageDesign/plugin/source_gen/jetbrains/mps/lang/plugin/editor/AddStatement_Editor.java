@@ -20,7 +20,6 @@ public class AddStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pqcdbz_a(editorContext, node);
   }
-
   private EditorCell createCollection_pqcdbz_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_pqcdbz_a");
@@ -30,14 +29,12 @@ public class AddStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_pqcdbz_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pqcdbz_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "add");
     editorCell.setCellId("Constant_pqcdbz_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pqcdbz_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("item");
@@ -57,7 +54,6 @@ public class AddStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_pqcdbz_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_pqcdbz_c0");

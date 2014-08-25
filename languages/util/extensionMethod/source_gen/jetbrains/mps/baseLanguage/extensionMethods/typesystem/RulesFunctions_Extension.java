@@ -14,7 +14,6 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 public class RulesFunctions_Extension {
   public RulesFunctions_Extension() {
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */

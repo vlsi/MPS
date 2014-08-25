@@ -17,7 +17,6 @@ public class Type_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_a1nfgp_a(editorContext, node);
   }
-
   private EditorCell createAlternation_a1nfgp_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = Type_Editor.renderingCondition_a1nfgp_a0(node, editorContext);
@@ -33,17 +32,14 @@ public class Type_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_a1nfgp_a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "abstract");
   }
-
   private EditorCell createError_a1nfgp_a0(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<type>");
     editorCell.setCellId("Error_a1nfgp_a0");
     return editorCell;
   }
-
   private EditorCell createComponent_a1nfgp_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();

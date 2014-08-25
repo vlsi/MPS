@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NotExpressionCanBeSimplified_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode notExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode currentExpression = SLinkOperations.getTarget(notExpression, "expression", true);
     while (SNodeOperations.isInstanceOf(currentExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
@@ -36,18 +35,15 @@ public class check_NotExpressionCanBeSimplified_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

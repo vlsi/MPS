@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class DecisionTable_DataFlow extends DataFlowBuilder {
   public DecisionTable_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "defaultValue", true));
     ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "colHeaders", true)).visitAll(new IVisitor<SNode>() {

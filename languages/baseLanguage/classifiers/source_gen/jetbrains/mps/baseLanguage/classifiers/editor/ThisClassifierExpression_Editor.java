@@ -27,7 +27,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_kpqhey_a(editorContext, node);
   }
-
   private EditorCell createAlternation_kpqhey_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = ThisClassifierExpression_Editor.renderingCondition_kpqhey_a0(node, editorContext);
@@ -43,11 +42,9 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_kpqhey_a0(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "classifier", false) != null;
   }
-
   private EditorCell createCollection_kpqhey_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kpqhey_a0");
@@ -56,7 +53,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kpqhey_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_kpqhey_a0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
@@ -78,20 +74,16 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_kpqhey_a0a0 extends InlineCellProvider {
     public _Inline_kpqhey_a0a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_kpqhey_a0a0a(editorContext, node);
     }
-
     private EditorCell createProperty_kpqhey_a0a0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -114,7 +106,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_kpqhey_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_kpqhey_b0a");
@@ -124,7 +115,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kpqhey_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_kpqhey_c0a");
@@ -135,7 +125,6 @@ public class ThisClassifierExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_kpqhey_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_kpqhey_a0");

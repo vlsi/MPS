@@ -16,66 +16,51 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddParameterBlockDocTag_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddParameterBlockDocTag_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment";
   }
-
   public String getPresentation() {
     return "AddParameterBlockDocTag";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions.AddParameterBlockDocTag_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.javadoc";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "5858074156537083239");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddParameterBlockDocTag_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add @param Tag";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode addedNode = SNodeFactoryOperations.addNewChild(node, "param", "jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag");
       BlockDocTagHelper.setFocus(editorContext, addedNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddParameterBlockDocTag_Intention.this;
     }

@@ -24,12 +24,10 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
   public StateReference_Constraints() {
     super("jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateReference");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -40,7 +38,6 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -49,7 +46,6 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -58,7 +54,6 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SLinkOperations.getTargets(AbstractStateMachineElement_Behavior.call_getStateMachine_7943979732673457916(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition")), "states", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fj6pw8_a0a1a0a0a1a0b0a1a3;
@@ -68,11 +63,9 @@ public class StateReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.multipleProjections.stateMachine.structure.Transition");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3337c730-5e29-47e4-8453-e911897300b4(jetbrains.mps.samples.multipleProjections.stateMachine.constraints)", "6767735723023353509");
   private static SNodePointer breakingNode_fj6pw8_a0a1a0a0a1a0b0a1a3 = new SNodePointer("r:3337c730-5e29-47e4-8453-e911897300b4(jetbrains.mps.samples.multipleProjections.stateMachine.constraints)", "7943979732673497619");
 }

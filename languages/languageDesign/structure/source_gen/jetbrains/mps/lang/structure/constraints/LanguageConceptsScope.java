@@ -27,7 +27,6 @@ public class LanguageConceptsScope extends SimpleScope {
   public LanguageConceptsScope(SModel model, SNode metaConcept) {
     super(getAvailableLanguageConcepts(model, metaConcept));
   }
-
   private static Iterable<SNode> getAvailableLanguageConcepts(SModel model, final SNode metaConcept) {
     Language language = as_gt0k3c_a0a0a1(model.getModule(), Language.class);
     if (language == null) {
@@ -70,17 +69,14 @@ public class LanguageConceptsScope extends SimpleScope {
       }
     });
   }
-
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {
     return BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(target, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   private static <T> T as_gt0k3c_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_gt0k3c_a0a0a1a7a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

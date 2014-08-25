@@ -17,18 +17,14 @@ public class IconResourceBundle_Visibility implements IconResourceBundle {
       put("PROTECTED", IconContainer.ICON_a3);
     }
   };
-
   public IconResourceBundle_Visibility() {
   }
-
   public Iterable<String> getKeys() {
     return icons.keySet();
   }
-
   public Icon getResource(String key) {
     return icons.get(key);
   }
-
   public static IconResourceBundle_Visibility getInstance() {
     return IconResourceBundle_Visibility.INSTANCE;
   }

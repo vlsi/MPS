@@ -14,33 +14,27 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class JavaWatchpointValueWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myCachedValue;
   private final boolean myIsOld;
-
   public JavaWatchpointValueWatchable(JavaValue value, boolean old, ThreadReference threadReference) {
     super(threadReference);
     myCachedValue = value;
     myIsOld = old;
   }
-
   @Override
   public String getName() {
     return (myIsOld ? "current value" : "new value");
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return WatchablesCategory.NONE;
   }
-
   @Override
   public IValue getValue() {
     return myCachedValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return getValue().getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     return null;

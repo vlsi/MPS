@@ -21,12 +21,10 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
   public XmlDoctypeDeclaration_Constraints() {
     super("jetbrains.mps.core.xml.structure.XmlDoctypeDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -37,7 +35,6 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -46,7 +43,6 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "doctypeName";
@@ -55,7 +51,6 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
     });
     return properties;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ListSequence.fromList(SNodeOperations.getPrevSiblings(node, false)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -63,6 +58,5 @@ public class XmlDoctypeDeclaration_Constraints extends BaseConstraintsDescriptor
       }
     }).isEmpty();
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:edc2e1a3-c4ab-4f36-a908-e29e4c77f1bb(jetbrains.mps.core.xml.constraints)", "3374336260036089913");
 }

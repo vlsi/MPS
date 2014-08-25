@@ -10,7 +10,6 @@ import java.util.Iterator;
 public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> implements ICollectionSequence<T>, Collection<T> {
   protected AbstractCollectionSequence() {
   }
-
   @Override
   public T addElement(T t) {
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -23,7 +22,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return null;
   }
-
   @Override
   public T removeElement(T t) {
     if (remove((Object) t)) {
@@ -31,7 +29,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return null;
   }
-
   @Override
   public ICollectionSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
@@ -48,7 +45,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return this;
   }
-
   @Override
   public ICollectionSequence<T> removeSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
@@ -65,7 +61,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return this;
   }
-
   @Override
   public ICollectionSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     for (Iterator<T> it = getCollection().iterator(); it.hasNext();) {
@@ -75,7 +70,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return this;
   }
-
   @Override
   public boolean add(T e) {
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -85,32 +79,26 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return getCollection().add(e);
   }
-
   @Override
   public boolean addAll(Collection<? extends T> c) {
     return getCollection().addAll(c);
   }
-
   @Override
   public void clear() {
     getCollection().clear();
   }
-
   @Override
   public boolean contains(Object o) {
     return getCollection().contains(o);
   }
-
   @Override
   public boolean containsAll(Collection<?> c) {
     return getCollection().containsAll(c);
   }
-
   @Override
   public boolean isEmpty() {
     return getCollection().isEmpty();
   }
-
   @Override
   public boolean remove(Object o) {
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -120,42 +108,34 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return getCollection().remove(o);
   }
-
   @Override
   public boolean removeAll(Collection<?> c) {
     return getCollection().removeAll(c);
   }
-
   @Override
   public boolean retainAll(Collection<?> c) {
     return getCollection().retainAll(c);
   }
-
   @Override
   public int size() {
     return getCollection().size();
   }
-
   @Override
   public Object[] toArray() {
     return getCollection().toArray();
   }
-
   @Override
   public <U> U[] toArray(U[] a) {
     return getCollection().toArray(a);
   }
-
   @Override
   public Iterator<T> iterator() {
     return getCollection().iterator();
   }
-
   @Override
   public int count() {
     return getCollection().size();
   }
-
   @Override
   public boolean containsSequence(ISequence<? extends T> that) {
     if (that instanceof AbstractCollectionSequence<?>) {
@@ -163,7 +143,6 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return super.containsSequence(that);
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public boolean equals(Object o) {
@@ -177,11 +156,9 @@ public abstract class AbstractCollectionSequence<T> extends AbstractSequence<T> 
     }
     return super.equals(o);
   }
-
   @Override
   public int hashCode() {
     return getCollection().hashCode();
   }
-
   protected abstract Collection<T> getCollection();
 }

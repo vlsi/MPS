@@ -21,7 +21,6 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_x6ljyw_a(editorContext, node);
   }
-
   private EditorCell createCollection_x6ljyw_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x6ljyw_a");
@@ -32,7 +31,6 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_x6ljyw_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modelUID");
@@ -50,7 +48,6 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_x6ljyw_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_x6ljyw_b0");
@@ -61,18 +58,15 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_x6ljyw_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext) {
     return neq_x6ljyw_a0a0e(SPropertyOperations.getString(node, "modelUID"), "*");
   }
-
   private EditorCell createConstant_x6ljyw_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_x6ljyw_a1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_x6ljyw_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("nodeID");
@@ -90,7 +84,6 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean neq_x6ljyw_a0a0e(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

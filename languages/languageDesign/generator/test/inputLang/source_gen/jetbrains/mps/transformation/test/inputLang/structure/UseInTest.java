@@ -18,15 +18,12 @@ public enum UseInTest {
   none("none", "none");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<UseInTest> getConstants() {
     List<UseInTest> list = ListSequence.fromList(new LinkedList<UseInTest>());
     ListSequence.fromList(list).addElement(UseInTest.test1);
@@ -40,11 +37,9 @@ public enum UseInTest {
     ListSequence.fromList(list).addElement(UseInTest.none);
     return list;
   }
-
   public static UseInTest getDefault() {
     return UseInTest.none;
   }
-
   public static UseInTest parseValue(String value) {
     if (value == null) {
       return UseInTest.getDefault();
@@ -78,14 +73,11 @@ public enum UseInTest {
     }
     return UseInTest.getDefault();
   }
-
   private String myValue;
-
   UseInTest(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

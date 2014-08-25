@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class Util {
   public Util() {
   }
-
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
@@ -20,7 +19,6 @@ public class Util {
     }
     return false;
   }
-
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
@@ -29,28 +27,24 @@ public class Util {
     }
     return false;
   }
-
   private static SNode _quotation_createNode_sd8x_b0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_sd8x_b0a0c0b_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_sd8x_b0a0c0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_sd8x_b0a0c0c_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

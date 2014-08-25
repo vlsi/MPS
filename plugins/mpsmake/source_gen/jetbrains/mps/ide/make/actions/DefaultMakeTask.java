@@ -22,13 +22,11 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 public class DefaultMakeTask extends Task.Modal {
   private boolean needClean;
   private Set<SModule> modules = SetSequence.fromSet(new LinkedHashSet<SModule>());
-
   public DefaultMakeTask(Project project, String title, Set<SModule> modules, boolean needClean) {
     super(project, title, true);
     this.needClean = needClean;
     SetSequence.fromSet(this.modules).addSequence(SetSequence.fromSet(modules));
   }
-
   @Override
   public void run(@NotNull ProgressIndicator indicator) {
     final boolean[] reloadingNeeded = new boolean[1];

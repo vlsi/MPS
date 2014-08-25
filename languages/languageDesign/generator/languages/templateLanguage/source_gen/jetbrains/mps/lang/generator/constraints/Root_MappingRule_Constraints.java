@@ -19,7 +19,6 @@ public class Root_MappingRule_Constraints extends BaseConstraintsDescriptor {
   public Root_MappingRule_Constraints() {
     super("jetbrains.mps.lang.generator.structure.Root_MappingRule");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -28,7 +27,6 @@ public class Root_MappingRule_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -37,7 +35,6 @@ public class Root_MappingRule_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new MappingRuleTemplateNodeSearchScope(_context.getModel());
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6wzx82_a0a1a0a0a1a0b0a1a1;
@@ -47,6 +44,5 @@ public class Root_MappingRule_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_6wzx82_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)", "1213104837920");
 }

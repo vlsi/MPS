@@ -7,49 +7,49 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)/6877931680625740364">
     <file name="Test.java">
-      <node id="6877931680625740375" at="13,22,14,73" concept="3" />
-      <node id="6877931680625740380" at="14,73,15,30" concept="1" />
-      <node id="6877931680625740383" at="15,30,16,35" concept="1" />
-      <node id="6877931680625740388" at="16,35,17,35" concept="1" />
-      <node id="6877931680625740393" at="17,35,18,35" concept="1" />
-      <node id="6877931680625740398" at="18,35,19,86" concept="1" />
+      <node id="6877931680625740375" at="12,22,13,73" concept="3" />
+      <node id="6877931680625740380" at="13,73,14,30" concept="1" />
+      <node id="6877931680625740383" at="14,30,15,35" concept="1" />
+      <node id="6877931680625740388" at="15,35,16,35" concept="1" />
+      <node id="6877931680625740393" at="16,35,17,35" concept="1" />
+      <node id="6877931680625740398" at="17,35,18,86" concept="1" />
       <node id="6877931680625740367" at="10,0,12,0" concept="0" trace="Test#()V" />
-      <node id="6877931680625740371" at="13,0,21,0" concept="2" trace="test#()V" />
+      <node id="6877931680625740371" at="12,0,20,0" concept="2" trace="test#()V" />
       <scope id="6877931680625740370" at="10,17,10,17" />
       <scope id="6877931680625740367" at="10,0,12,0" />
-      <scope id="6877931680625740374" at="13,22,19,86">
+      <scope id="6877931680625740374" at="12,22,18,86">
         <var name="stateMachineFactory" id="6877931680625740376" />
       </scope>
-      <scope id="6877931680625740371" at="13,0,21,0" />
-      <unit id="6877931680625740364" at="9,0,22,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" />
+      <scope id="6877931680625740371" at="12,0,20,0" />
+      <unit id="6877931680625740364" at="9,0,21,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" />
     </file>
   </root>
   <root nodeRef="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)/6877931680625741277">
     <file name="HStateMachineFactory.java">
-      <node id="6877931680625741288" at="15,41,16,55" concept="3" />
-      <node id="6877931680625741295" at="16,55,17,55" concept="3" />
-      <node id="6877931680625741302" at="17,55,18,49" concept="3" />
-      <node id="6877931680625741309" at="18,49,19,55" concept="3" />
-      <node id="6877931680625741316" at="19,55,20,57" concept="3" />
-      <node id="6877931680625741323" at="20,57,21,35" concept="3" />
-      <node id="6877931680625741329" at="21,35,22,44" concept="3" />
-      <node id="6877931680625741335" at="22,44,23,62" concept="3" />
-      <node id="6877931680625741341" at="23,62,24,60" concept="3" />
-      <node id="6877931680625741347" at="24,60,25,58" concept="3" />
-      <node id="6877931680625741353" at="25,58,26,50" concept="3" />
-      <node id="6877931680625741359" at="26,50,27,48" concept="1" />
-      <node id="6877931680625741365" at="27,48,28,64" concept="1" />
-      <node id="6877931680625741371" at="28,64,29,60" concept="1" />
-      <node id="6877931680625741377" at="29,60,30,68" concept="1" />
-      <node id="6877931680625741383" at="30,68,31,70" concept="1" />
-      <node id="6877931680625741389" at="31,70,32,56" concept="1" />
-      <node id="6877931680625741395" at="32,56,33,39" concept="1" />
-      <node id="6877931680625741400" at="33,39,34,19" concept="4" />
+      <node id="6877931680625741288" at="14,41,15,55" concept="3" />
+      <node id="6877931680625741295" at="15,55,16,55" concept="3" />
+      <node id="6877931680625741302" at="16,55,17,49" concept="3" />
+      <node id="6877931680625741309" at="17,49,18,55" concept="3" />
+      <node id="6877931680625741316" at="18,55,19,57" concept="3" />
+      <node id="6877931680625741323" at="19,57,20,35" concept="3" />
+      <node id="6877931680625741329" at="20,35,21,44" concept="3" />
+      <node id="6877931680625741335" at="21,44,22,62" concept="3" />
+      <node id="6877931680625741341" at="22,62,23,60" concept="3" />
+      <node id="6877931680625741347" at="23,60,24,58" concept="3" />
+      <node id="6877931680625741353" at="24,58,25,50" concept="3" />
+      <node id="6877931680625741359" at="25,50,26,48" concept="1" />
+      <node id="6877931680625741365" at="26,48,27,64" concept="1" />
+      <node id="6877931680625741371" at="27,64,28,60" concept="1" />
+      <node id="6877931680625741377" at="28,60,29,68" concept="1" />
+      <node id="6877931680625741383" at="29,68,30,70" concept="1" />
+      <node id="6877931680625741389" at="30,70,31,56" concept="1" />
+      <node id="6877931680625741395" at="31,56,32,39" concept="1" />
+      <node id="6877931680625741400" at="32,39,33,19" concept="4" />
       <node id="6877931680625741280" at="11,0,13,0" concept="0" trace="HStateMachineFactory#()V" />
-      <node id="6877931680625741284" at="14,0,36,0" concept="2" trace="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
+      <node id="6877931680625741284" at="13,0,35,0" concept="2" trace="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
       <scope id="6877931680625741283" at="11,33,11,33" />
       <scope id="6877931680625741280" at="11,0,13,0" />
-      <scope id="6877931680625741287" at="15,41,34,19">
+      <scope id="6877931680625741287" at="14,41,33,19">
         <var name="activeState" id="6877931680625741330" />
         <var name="doorClosed" id="6877931680625741289" />
         <var name="doorOpened" id="6877931680625741310" />
@@ -62,8 +62,8 @@
         <var name="waitingForDrawState" id="6877931680625741342" />
         <var name="waitingForLightState" id="6877931680625741336" />
       </scope>
-      <scope id="6877931680625741284" at="14,0,36,0" />
-      <unit id="6877931680625741277" at="10,0,37,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />
+      <scope id="6877931680625741284" at="13,0,35,0" />
+      <unit id="6877931680625741277" at="10,0,36,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />
     </file>
   </root>
 </debug-info>

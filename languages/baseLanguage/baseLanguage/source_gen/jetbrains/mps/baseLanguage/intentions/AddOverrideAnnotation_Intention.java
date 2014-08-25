@@ -26,41 +26,32 @@ import jetbrains.mps.smodel.SReference;
 
 public class AddOverrideAnnotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddOverrideAnnotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   public String getPresentation() {
     return "AddOverrideAnnotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.AddOverrideAnnotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     if (classConcept == null) {
@@ -76,30 +67,24 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(classConcept, Sequence.<SNode>singleton(node));
     return SetSequence.fromSet(finder.getOverridingMethods()).isNotEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1645752949779063112");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddOverrideAnnotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add @Override annotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode classConcept = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept");
       OverridingMethodsFinder finder = new OverridingMethodsFinder(classConcept, Sequence.<SNode>singleton(node));
@@ -108,12 +93,10 @@ public class AddOverrideAnnotation_Intention implements IntentionFactory {
       }
 
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddOverrideAnnotation_Intention.this;
     }
   }
-
   private static SNode createAnnotationInstance_4i19oe_a0a0a2a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, false);

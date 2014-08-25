@@ -17,107 +17,107 @@
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458442618">
     <file name="ManagerTableCellEditor.java">
       <node id="3995997045458442619" at="30,0,31,0" concept="4" trace="myCombo" />
-      <node id="3995997045458442629" at="32,35,33,102" concept="13" />
-      <node id="3995997045458442638" at="33,102,34,49" concept="3" />
-      <node id="3995997045458442645" at="34,49,35,0" concept="11" />
-      <node id="3995997045458442668" at="38,123,39,62" concept="8" />
-      <node id="3995997045458442675" at="39,62,40,116" concept="8" />
-      <node id="3995997045458442687" at="40,116,41,93" concept="9" />
-      <node id="3995997045458442700" at="46,54,47,99" concept="8" />
-      <node id="2034046503361597454" at="50,69,51,86" concept="8" />
-      <node id="2034046503361597462" at="51,86,52,0" concept="11" />
-      <node id="2034046503361597463" at="52,0,53,327" concept="8" />
-      <node id="2034046503361597495" at="53,327,54,0" concept="11" />
-      <node id="2034046503361597496" at="54,0,55,60" concept="3" />
-      <node id="3995997045458442764" at="58,7,59,0" concept="11" />
-      <node id="3995997045458442765" at="59,0,60,15" concept="10" />
-      <node id="3995997045458442767" at="60,15,61,51" concept="3" />
-      <node id="3995997045458442772" at="61,51,62,0" concept="11" />
-      <node id="3995997045458442773" at="62,0,63,18" concept="9" />
-      <node id="3995997045458442781" at="66,47,67,54" concept="8" />
-      <node id="2034046503361579225" at="70,95,71,59" concept="8" />
-      <node id="2034046503361579237" at="72,36,73,21" concept="2" />
-      <node id="2034046503361579238" at="74,11,75,37" concept="8" />
-      <node id="2034046503361579242" at="75,37,76,120" concept="3" />
-      <node id="2034046503361579249" at="77,9,78,0" concept="11" />
-      <node id="2034046503361579250" at="78,0,79,26" concept="10" />
-      <node id="2034046503361579256" at="81,79,82,33" concept="10" />
-      <node id="2034046503361579258" at="82,33,83,0" concept="11" />
-      <node id="2034046503361579263" at="85,103,86,31" concept="8" />
-      <node id="2034046503361579267" at="86,31,87,173" concept="3" />
-      <node id="3995997045458442878" at="93,7,94,18" concept="9" />
-      <node id="2034046503361579232" at="71,59,74,11" concept="6" />
-      <node id="2034046503361579261" at="84,86,88,15" concept="6" />
-      <node id="3995997045458442654" at="37,0,43,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-      <node id="2034046503361579259" at="83,0,89,13" concept="5" />
-      <node id="2034046503361597451" at="49,25,56,9" concept="5" />
-      <node id="3995997045458442646" at="35,0,43,7" concept="3" />
-      <node id="2034046503361579217" at="69,25,77,9" concept="5" />
-      <node id="2034046503361597449" at="49,0,58,0" concept="7" trace="run#()V" />
-      <node id="2034046503361579254" at="80,95,90,11" concept="6" />
-      <node id="2034046503361597445" at="47,99,58,7" concept="3" />
-      <node id="2034046503361579252" at="79,26,91,9" concept="5" />
-      <node id="3995997045458442624" at="32,0,45,0" concept="1" trace="ManagerTableCellEditor#()V" />
-      <node id="3995997045458442694" at="46,0,65,0" concept="12" trace="getManagers#()Ljava/util/List;" />
-      <node id="2034046503361579215" at="69,0,93,0" concept="7" trace="run#()V" />
-      <node id="2034046503361579211" at="67,54,93,7" concept="3" />
-      <node id="3995997045458442776" at="66,0,96,0" concept="12" trace="getManagerNodes#()Ljava/util/List;" />
-      <scope id="2034046503361579236" at="72,36,73,21" />
-      <scope id="2034046503361579262" at="85,103,87,173">
+      <node id="3995997045458442629" at="31,35,32,102" concept="13" />
+      <node id="3995997045458442638" at="32,102,33,49" concept="3" />
+      <node id="3995997045458442645" at="33,49,34,0" concept="11" />
+      <node id="3995997045458442668" at="37,123,38,62" concept="8" />
+      <node id="3995997045458442675" at="38,62,39,116" concept="8" />
+      <node id="3995997045458442687" at="39,116,40,93" concept="9" />
+      <node id="3995997045458442700" at="44,54,45,99" concept="8" />
+      <node id="2034046503361597454" at="48,69,49,86" concept="8" />
+      <node id="2034046503361597462" at="49,86,50,0" concept="11" />
+      <node id="2034046503361597463" at="50,0,51,327" concept="8" />
+      <node id="2034046503361597495" at="51,327,52,0" concept="11" />
+      <node id="2034046503361597496" at="52,0,53,60" concept="3" />
+      <node id="3995997045458442764" at="56,7,57,0" concept="11" />
+      <node id="3995997045458442765" at="57,0,58,15" concept="10" />
+      <node id="3995997045458442767" at="58,15,59,51" concept="3" />
+      <node id="3995997045458442772" at="59,51,60,0" concept="11" />
+      <node id="3995997045458442773" at="60,0,61,18" concept="9" />
+      <node id="3995997045458442781" at="63,47,64,54" concept="8" />
+      <node id="2034046503361579225" at="67,95,68,59" concept="8" />
+      <node id="2034046503361579237" at="69,36,70,21" concept="2" />
+      <node id="2034046503361579238" at="71,11,72,37" concept="8" />
+      <node id="2034046503361579242" at="72,37,73,120" concept="3" />
+      <node id="2034046503361579249" at="74,9,75,0" concept="11" />
+      <node id="2034046503361579250" at="75,0,76,26" concept="10" />
+      <node id="2034046503361579256" at="78,79,79,33" concept="10" />
+      <node id="2034046503361579258" at="79,33,80,0" concept="11" />
+      <node id="2034046503361579263" at="82,103,83,31" concept="8" />
+      <node id="2034046503361579267" at="83,31,84,173" concept="3" />
+      <node id="3995997045458442878" at="90,7,91,18" concept="9" />
+      <node id="2034046503361579232" at="68,59,71,11" concept="6" />
+      <node id="2034046503361579261" at="81,86,85,15" concept="6" />
+      <node id="3995997045458442654" at="36,0,42,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="2034046503361579259" at="80,0,86,13" concept="5" />
+      <node id="2034046503361597451" at="47,25,54,9" concept="5" />
+      <node id="3995997045458442646" at="34,0,42,7" concept="3" />
+      <node id="2034046503361579217" at="66,25,74,9" concept="5" />
+      <node id="2034046503361597449" at="47,0,56,0" concept="7" trace="run#()V" />
+      <node id="2034046503361579254" at="77,95,87,11" concept="6" />
+      <node id="2034046503361597445" at="45,99,56,7" concept="3" />
+      <node id="2034046503361579252" at="76,26,88,9" concept="5" />
+      <node id="3995997045458442624" at="31,0,44,0" concept="1" trace="ManagerTableCellEditor#()V" />
+      <node id="3995997045458442694" at="44,0,63,0" concept="12" trace="getManagers#()Ljava/util/List;" />
+      <node id="2034046503361579215" at="66,0,90,0" concept="7" trace="run#()V" />
+      <node id="2034046503361579211" at="64,54,90,7" concept="3" />
+      <node id="3995997045458442776" at="63,0,93,0" concept="12" trace="getManagerNodes#()Ljava/util/List;" />
+      <scope id="2034046503361579236" at="69,36,70,21" />
+      <scope id="2034046503361579262" at="82,103,84,173">
         <var name="m" id="2034046503361579264" />
       </scope>
-      <scope id="3995997045458442667" at="38,123,41,93">
+      <scope id="3995997045458442667" at="37,123,40,93">
         <var name="manager" id="3995997045458442669" />
         <var name="managerName" id="3995997045458442676" />
       </scope>
-      <scope id="2034046503361579260" at="84,86,88,15" />
-      <scope id="2034046503361597453" at="50,69,55,60">
+      <scope id="2034046503361579260" at="81,86,85,15" />
+      <scope id="2034046503361597453" at="48,69,53,60">
         <var name="language" id="2034046503361597455" />
         <var name="manager" id="2034046503361597464" />
       </scope>
-      <scope id="3995997045458442654" at="37,0,43,0">
+      <scope id="3995997045458442654" at="36,0,42,0">
         <var name="focus" id="3995997045458442665" />
         <var name="index" id="3995997045458442661" />
         <var name="list" id="3995997045458442657" />
         <var name="selected" id="3995997045458442663" />
         <var name="value" id="3995997045458442659" />
       </scope>
-      <scope id="2034046503361579224" at="70,95,76,120">
+      <scope id="2034046503361579224" at="67,95,73,120">
         <var name="model" id="2034046503361579239" />
         <var name="stubsAspect" id="2034046503361579226" />
       </scope>
-      <scope id="2034046503361579259" at="83,0,89,13">
+      <scope id="2034046503361579259" at="80,0,86,13">
         <var name="smd" id="2034046503361579279" />
       </scope>
-      <scope id="2034046503361597450" at="49,25,56,9" />
-      <scope id="2034046503361597451" at="49,25,56,9">
+      <scope id="2034046503361597450" at="47,25,54,9" />
+      <scope id="2034046503361597451" at="47,25,54,9">
         <var name="node" id="2034046503361597452" />
       </scope>
-      <scope id="2034046503361579217" at="69,25,77,9">
+      <scope id="2034046503361579217" at="66,25,74,9">
         <var name="l" id="2034046503361579222" />
       </scope>
-      <scope id="2034046503361579255" at="81,79,89,13" />
-      <scope id="2034046503361597449" at="49,0,58,0" />
-      <scope id="2034046503361579253" at="80,95,90,11" />
-      <scope id="3995997045458442628" at="32,35,43,7" />
-      <scope id="2034046503361579252" at="79,26,91,9">
+      <scope id="2034046503361579255" at="78,79,86,13" />
+      <scope id="2034046503361597449" at="47,0,56,0" />
+      <scope id="2034046503361579253" at="77,95,87,11" />
+      <scope id="3995997045458442628" at="31,35,42,7" />
+      <scope id="2034046503361579252" at="76,26,88,9">
         <var name="s" id="2034046503361579294" />
       </scope>
-      <scope id="3995997045458442624" at="32,0,45,0" />
-      <scope id="3995997045458442699" at="46,54,63,18">
+      <scope id="3995997045458442624" at="31,0,44,0" />
+      <scope id="3995997045458442699" at="44,54,61,18">
         <var name="result" id="3995997045458442701" />
       </scope>
-      <scope id="3995997045458442694" at="46,0,65,0" />
-      <scope id="2034046503361579216" at="69,25,91,9" />
-      <scope id="2034046503361579215" at="69,0,93,0" />
-      <scope id="3995997045458442780" at="66,47,94,18">
+      <scope id="3995997045458442694" at="44,0,63,0" />
+      <scope id="2034046503361579216" at="66,25,88,9" />
+      <scope id="2034046503361579215" at="66,0,90,0" />
+      <scope id="3995997045458442780" at="63,47,91,18">
         <var name="result" id="3995997045458442782" />
       </scope>
-      <scope id="3995997045458442776" at="66,0,96,0" />
-      <unit id="3995997045458442652" at="36,28,43,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$1" />
-      <unit id="2034046503361597449" at="48,45,58,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$2" />
-      <unit id="2034046503361579215" at="68,45,93,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$3" />
-      <unit id="3995997045458442618" at="29,0,97,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor" />
+      <scope id="3995997045458442776" at="63,0,93,0" />
+      <unit id="3995997045458442652" at="35,28,42,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$1" />
+      <unit id="2034046503361597449" at="46,45,56,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$2" />
+      <unit id="2034046503361579215" at="65,45,90,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$3" />
+      <unit id="3995997045458442618" at="29,0,94,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor" />
     </file>
   </root>
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458442881">
@@ -126,115 +126,115 @@
       <node id="3995997045458442887" at="22,0,23,0" concept="4" trace="myGenerator" />
       <node id="3995997045458442890" at="23,0,24,0" concept="4" trace="myDepGens" />
       <node id="3995997045458442894" at="24,0,25,0" concept="4" trace="myLeft" />
-      <node id="3995997045458442907" at="26,97,27,28" concept="3" />
-      <node id="3995997045458442911" at="27,28,28,24" concept="3" />
-      <node id="3995997045458442915" at="28,24,29,20" concept="3" />
-      <node id="3995997045458442923" at="33,38,34,21" concept="9" />
-      <node id="3995997045458442936" at="39,20,40,19" concept="9" />
-      <node id="3995997045458442943" at="42,34,43,51" concept="9" />
-      <node id="3995997045458442952" at="44,5,45,16" concept="9" />
-      <node id="3995997045458442961" at="49,50,50,17" concept="9" />
-      <node id="3995997045458442978" at="54,135,55,50" concept="3" />
-      <node id="3995997045458442993" at="58,25,59,100" concept="8" />
-      <node id="3995997045458443002" at="59,100,60,22" concept="3" />
-      <node id="3995997045458443013" at="61,41,62,41" concept="3" />
-      <node id="3995997045458443019" at="62,41,63,54" concept="3" />
-      <node id="3995997045458443026" at="63,54,64,29" concept="3" />
-      <node id="3995997045458443030" at="64,29,65,26" concept="3" />
-      <node id="3995997045458443036" at="66,16,67,54" concept="3" />
-      <node id="3995997045458443043" at="70,7,71,57" concept="9" />
-      <node id="3995997045458443061" at="74,86,75,119" concept="9" />
-      <node id="3995997045458443034" at="66,14,68,9" concept="0" />
-      <node id="3995997045458442931" at="38,48,41,5" concept="6" />
-      <node id="3995997045458442938" at="41,5,44,5" concept="6" />
-      <node id="3995997045458443049" at="74,0,77,0" concept="7" trace="createRenderer#(Ljavax/swing/JTable;Ljava/lang/Object;II)Ljavax/swing/JComponent;" />
-      <node id="3995997045458442919" at="32,0,36,0" concept="7" trace="getCellEditorValue#()Ljava/lang/Object;" />
-      <node id="3995997045458442955" at="48,0,52,0" concept="7" trace="shouldSelectCell#(Ljava/util/EventObject;)Z" />
-      <node id="3995997045458442897" at="26,0,31,0" concept="1" trace="RuleOperandEditor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Z)V" />
-      <node id="3995997045458443006" at="60,22,68,9" concept="6" />
-      <node id="3995997045458442925" at="37,0,47,0" concept="7" trace="isCellEditable#(Ljava/util/EventObject;)Z" />
-      <node id="3995997045458442989" at="57,0,70,0" concept="7" trace="run#()V" />
-      <node id="3995997045458442984" at="55,50,70,7" concept="3" />
-      <node id="3995997045458442964" at="53,0,73,0" concept="7" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
-      <scope id="3995997045458442922" at="33,38,34,21" />
-      <scope id="3995997045458442935" at="39,20,40,19" />
-      <scope id="3995997045458442942" at="42,34,43,51" />
-      <scope id="3995997045458442960" at="49,50,50,17" />
-      <scope id="3995997045458443035" at="66,16,67,54" />
-      <scope id="3995997045458443060" at="74,86,75,119" />
-      <scope id="3995997045458442906" at="26,97,29,20" />
-      <scope id="3995997045458443049" at="74,0,77,0">
+      <node id="3995997045458442907" at="25,97,26,28" concept="3" />
+      <node id="3995997045458442911" at="26,28,27,24" concept="3" />
+      <node id="3995997045458442915" at="27,24,28,20" concept="3" />
+      <node id="3995997045458442923" at="31,38,32,21" concept="9" />
+      <node id="3995997045458442936" at="36,20,37,19" concept="9" />
+      <node id="3995997045458442943" at="39,34,40,51" concept="9" />
+      <node id="3995997045458442952" at="41,5,42,16" concept="9" />
+      <node id="3995997045458442961" at="45,50,46,17" concept="9" />
+      <node id="3995997045458442978" at="49,135,50,50" concept="3" />
+      <node id="3995997045458442993" at="53,25,54,100" concept="8" />
+      <node id="3995997045458443002" at="54,100,55,22" concept="3" />
+      <node id="3995997045458443013" at="56,41,57,41" concept="3" />
+      <node id="3995997045458443019" at="57,41,58,54" concept="3" />
+      <node id="3995997045458443026" at="58,54,59,29" concept="3" />
+      <node id="3995997045458443030" at="59,29,60,26" concept="3" />
+      <node id="3995997045458443036" at="61,16,62,54" concept="3" />
+      <node id="3995997045458443043" at="65,7,66,57" concept="9" />
+      <node id="3995997045458443061" at="68,86,69,119" concept="9" />
+      <node id="3995997045458443034" at="61,14,63,9" concept="0" />
+      <node id="3995997045458442931" at="35,48,38,5" concept="6" />
+      <node id="3995997045458442938" at="38,5,41,5" concept="6" />
+      <node id="3995997045458443049" at="68,0,71,0" concept="7" trace="createRenderer#(Ljavax/swing/JTable;Ljava/lang/Object;II)Ljavax/swing/JComponent;" />
+      <node id="3995997045458442919" at="30,0,34,0" concept="7" trace="getCellEditorValue#()Ljava/lang/Object;" />
+      <node id="3995997045458442955" at="44,0,48,0" concept="7" trace="shouldSelectCell#(Ljava/util/EventObject;)Z" />
+      <node id="3995997045458442897" at="25,0,30,0" concept="1" trace="RuleOperandEditor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Z)V" />
+      <node id="3995997045458443006" at="55,22,63,9" concept="6" />
+      <node id="3995997045458442925" at="34,0,44,0" concept="7" trace="isCellEditable#(Ljava/util/EventObject;)Z" />
+      <node id="3995997045458442989" at="52,0,65,0" concept="7" trace="run#()V" />
+      <node id="3995997045458442984" at="50,50,65,7" concept="3" />
+      <node id="3995997045458442964" at="48,0,68,0" concept="7" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <scope id="3995997045458442922" at="31,38,32,21" />
+      <scope id="3995997045458442935" at="36,20,37,19" />
+      <scope id="3995997045458442942" at="39,34,40,51" />
+      <scope id="3995997045458442960" at="45,50,46,17" />
+      <scope id="3995997045458443035" at="61,16,62,54" />
+      <scope id="3995997045458443060" at="68,86,69,119" />
+      <scope id="3995997045458442906" at="25,97,28,20" />
+      <scope id="3995997045458443049" at="68,0,71,0">
         <var name="column" id="3995997045458443058" />
         <var name="row" id="3995997045458443056" />
         <var name="table" id="3995997045458443052" />
         <var name="value" id="3995997045458443054" />
       </scope>
-      <scope id="3995997045458442919" at="32,0,36,0" />
-      <scope id="3995997045458442955" at="48,0,52,0">
+      <scope id="3995997045458442919" at="30,0,34,0" />
+      <scope id="3995997045458442955" at="44,0,48,0">
         <var name="e" id="3995997045458442958" />
       </scope>
-      <scope id="3995997045458443012" at="61,41,65,26" />
-      <scope id="3995997045458442897" at="26,0,31,0">
+      <scope id="3995997045458443012" at="56,41,60,26" />
+      <scope id="3995997045458442897" at="25,0,30,0">
         <var name="depGens" id="3995997045458442901" />
         <var name="generator" id="3995997045458442899" />
         <var name="isLeft" id="3995997045458442904" />
       </scope>
-      <scope id="3995997045458442930" at="38,48,45,16" />
-      <scope id="3995997045458442925" at="37,0,47,0">
+      <scope id="3995997045458442930" at="35,48,42,16" />
+      <scope id="3995997045458442925" at="34,0,44,0">
         <var name="e" id="3995997045458442928" />
       </scope>
-      <scope id="3995997045458442992" at="58,25,68,9">
+      <scope id="3995997045458442992" at="53,25,63,9">
         <var name="dialog" id="3995997045458442994" />
       </scope>
-      <scope id="3995997045458442989" at="57,0,70,0" />
-      <scope id="3995997045458442977" at="54,135,71,57" />
-      <scope id="3995997045458442964" at="53,0,73,0">
+      <scope id="3995997045458442989" at="52,0,65,0" />
+      <scope id="3995997045458442977" at="49,135,66,57" />
+      <scope id="3995997045458442964" at="48,0,68,0">
         <var name="column" id="3995997045458442975" />
         <var name="isSelected" id="3995997045458442971" />
         <var name="row" id="3995997045458442973" />
         <var name="table" id="3995997045458442967" />
         <var name="value" id="3995997045458442969" />
       </scope>
-      <unit id="3995997045458442988" at="56,35,70,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor$1" />
-      <unit id="3995997045458442881" at="20,0,78,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
+      <unit id="3995997045458442988" at="51,35,65,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor$1" />
+      <unit id="3995997045458442881" at="20,0,72,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
     </file>
   </root>
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458443074">
     <file name="RuleTypeEditor.java">
       <node id="6464687090063975627" at="13,0,14,0" concept="4" trace="myComboBox" />
-      <node id="3995997045458443080" at="15,27,16,27" concept="13" />
-      <node id="6464687090063975762" at="16,27,17,45" concept="3" />
-      <node id="3995997045458443089" at="17,45,18,49" concept="3" />
-      <node id="3995997045458443094" at="18,49,19,52" concept="3" />
-      <node id="3995997045458443099" at="19,52,20,48" concept="3" />
-      <node id="3995997045458443104" at="20,48,21,51" concept="3" />
-      <node id="3995997045458443109" at="21,51,22,51" concept="3" />
-      <node id="3995997045458443114" at="22,51,23,84" concept="3" />
-      <node id="8881345873770272859" at="29,71,30,41" concept="3" />
-      <node id="8881345873770236606" at="30,41,31,23" concept="3" />
-      <node id="8719553478678306782" at="25,0,27,0" concept="7" trace="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
-      <node id="8719553478678306798" at="35,0,37,0" concept="7" trace="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
-      <node id="8719553478678306850" at="28,43,32,9" concept="6" />
-      <node id="8719553478678306790" at="28,0,34,0" concept="7" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
-      <node id="8719553478678184317" at="23,84,37,7" concept="3" />
-      <node id="3995997045458443077" at="15,0,39,0" concept="1" trace="RuleTypeEditor#()V" />
-      <scope id="8719553478678306788" at="25,41,25,41" />
-      <scope id="8719553478678306804" at="35,44,35,44" />
-      <scope id="8719553478678306782" at="25,0,27,0">
+      <node id="3995997045458443080" at="14,27,15,27" concept="13" />
+      <node id="6464687090063975762" at="15,27,16,45" concept="3" />
+      <node id="3995997045458443089" at="16,45,17,49" concept="3" />
+      <node id="3995997045458443094" at="17,49,18,52" concept="3" />
+      <node id="3995997045458443099" at="18,52,19,48" concept="3" />
+      <node id="3995997045458443104" at="19,48,20,51" concept="3" />
+      <node id="3995997045458443109" at="20,51,21,51" concept="3" />
+      <node id="3995997045458443114" at="21,51,22,84" concept="3" />
+      <node id="8881345873770272859" at="27,71,28,41" concept="3" />
+      <node id="8881345873770236606" at="28,41,29,23" concept="3" />
+      <node id="8719553478678306782" at="24,0,26,0" concept="7" trace="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678306798" at="32,0,34,0" concept="7" trace="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678306850" at="26,43,30,9" concept="6" />
+      <node id="8719553478678306790" at="26,0,32,0" concept="7" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678184317" at="22,84,34,7" concept="3" />
+      <node id="3995997045458443077" at="14,0,36,0" concept="1" trace="RuleTypeEditor#()V" />
+      <scope id="8719553478678306788" at="24,41,24,41" />
+      <scope id="8719553478678306804" at="32,44,32,44" />
+      <scope id="8719553478678306782" at="24,0,26,0">
         <var name="p0" id="8719553478678306786" />
       </scope>
-      <scope id="8719553478678306851" at="29,71,31,23" />
-      <scope id="8719553478678306798" at="35,0,37,0">
+      <scope id="8719553478678306851" at="27,71,29,23" />
+      <scope id="8719553478678306798" at="32,0,34,0">
         <var name="p0" id="8719553478678306802" />
       </scope>
-      <scope id="8719553478678306796" at="28,43,32,9" />
-      <scope id="8719553478678306790" at="28,0,34,0">
+      <scope id="8719553478678306796" at="26,43,30,9" />
+      <scope id="8719553478678306790" at="26,0,32,0">
         <var name="p0" id="8719553478678306794" />
       </scope>
-      <scope id="3995997045458443079" at="15,27,37,7" />
-      <scope id="3995997045458443077" at="15,0,39,0" />
-      <unit id="8719553478678306780" at="24,39,37,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor$1" />
-      <unit id="3995997045458443074" at="12,0,40,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
+      <scope id="3995997045458443079" at="14,27,34,7" />
+      <scope id="3995997045458443077" at="14,0,36,0" />
+      <unit id="8719553478678306780" at="23,39,34,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor$1" />
+      <unit id="3995997045458443074" at="12,0,37,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
     </file>
   </root>
 </debug-info>

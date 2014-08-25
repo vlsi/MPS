@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class AnalyzerMergeParameterInput_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public AnalyzerMergeParameterInput_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerMergeParameterInput";

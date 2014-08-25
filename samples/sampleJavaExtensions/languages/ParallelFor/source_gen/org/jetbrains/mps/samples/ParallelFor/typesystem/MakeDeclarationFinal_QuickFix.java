@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class MakeDeclarationFinal_QuickFix extends QuickFix_Runtime {
   public MakeDeclarationFinal_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make declaration final";
   }
-
   public void execute(SNode node) {
     SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "isFinal", "" + (true));
   }

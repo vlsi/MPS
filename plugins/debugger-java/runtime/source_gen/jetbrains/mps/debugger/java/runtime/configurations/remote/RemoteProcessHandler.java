@@ -15,11 +15,9 @@ import java.io.OutputStream;
 
 public class RemoteProcessHandler extends ProcessHandler {
   private final Project myProject;
-
   public RemoteProcessHandler(Project project) {
     myProject = project;
   }
-
   @Override
   public void startNotify() {
     final DebugSessionManagerComponent debugManager = DebugSessionManagerComponent.getInstance(myProject);
@@ -49,7 +47,6 @@ public class RemoteProcessHandler extends ProcessHandler {
       }
     }
   }
-
   @Override
   protected void destroyProcessImpl() {
     AbstractDebugSession debugProcess = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(this);
@@ -57,7 +54,6 @@ public class RemoteProcessHandler extends ProcessHandler {
       debugProcess.stop(true);
     }
   }
-
   @Override
   protected void detachProcessImpl() {
     AbstractDebugSession debugProcess = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(this);
@@ -65,12 +61,10 @@ public class RemoteProcessHandler extends ProcessHandler {
       debugProcess.stop(false);
     }
   }
-
   @Override
   public boolean detachIsDefault() {
     return true;
   }
-
   @Override
   public OutputStream getProcessInput() {
     return null;

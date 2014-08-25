@@ -11,19 +11,15 @@ import jetbrains.mps.smodel.SReference;
 public class StringType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return "string";
   }
-
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
   }
-
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return _quotation_createNode_h5fjpv_a0a2();
   }
-
   private static SNode _quotation_createNode_h5fjpv_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

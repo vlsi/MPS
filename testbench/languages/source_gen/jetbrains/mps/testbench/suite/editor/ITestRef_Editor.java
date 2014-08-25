@@ -20,11 +20,9 @@ public class ITestRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_7xbre_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7xbre_a(editorContext, node);
   }
-
   private EditorCell createConstant_7xbre_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7xbre_a");
@@ -32,7 +30,6 @@ public class ITestRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_7xbre_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_7xbre_a");
@@ -40,7 +37,6 @@ public class ITestRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_7xbre_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_7xbre_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_7xbre_a0");
@@ -51,14 +47,12 @@ public class ITestRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_7xbre_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_7xbre_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "muted:");
     editorCell.setCellId("Constant_7xbre_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_7xbre_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("muted");

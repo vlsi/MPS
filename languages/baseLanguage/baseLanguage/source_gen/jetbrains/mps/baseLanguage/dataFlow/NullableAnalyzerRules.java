@@ -18,7 +18,6 @@ public class NullableAnalyzerRules {
   private Map<String, List<DataFlowConstructor>> myApplicableMap = new HashMap<String, List<DataFlowConstructor>>();
   private List<DataFlowConstructor> myConceptRules = new LinkedList();
   private Map<SNode, Set<DataFlowConstructor>> myConceptRulesCache = new HashMap();
-
   public NullableAnalyzerRules() {
     {
       DataFlowConstructor rule = new RuleAssertNotNull();
@@ -40,7 +39,6 @@ public class NullableAnalyzerRules {
     myConceptRules.add(new ForLoopNotNull());
     myConceptRules.add(new RuleWhileNotNull());
   }
-
   public void apply(SNode nodeToApply, Program program) {
     for (SNode descendant : SNodeOperations.getDescendants(((SNode) nodeToApply), null, false, new String[]{})) {
       String key = descendant.getConcept().getQualifiedName();
@@ -56,7 +54,6 @@ public class NullableAnalyzerRules {
       }
     }
   }
-
   private Set<DataFlowConstructor> getRules(SNode node) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
     Set<DataFlowConstructor> cachedResult = myConceptRulesCache.get(concept);
@@ -72,7 +69,6 @@ public class NullableAnalyzerRules {
     myConceptRulesCache.put(concept, result);
     return result;
   }
-
   public static NullableAnalyzerRules getInstance() {
     if (instance == null) {
       instance = new NullableAnalyzerRules();

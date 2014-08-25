@@ -22,23 +22,22 @@ import org.apache.log4j.LogManager;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public PasteAsJavaClass_Action() {
     super("Paste as Java Class", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
+    if (((SModel) MapSequence.fromMap(_params).get("model")).isReadOnly()) {
+      return false;
+    }
     SModel m = ((SModel) MapSequence.fromMap(_params).get("model"));
     return m != null && SModelOperations.hasLanguage(m, PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)")) && JavaPaster.areDataAvailableInClipboard();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +51,6 @@ public class PasteAsJavaClass_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -74,7 +72,6 @@ public class PasteAsJavaClass_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new JavaPaster().pasteJavaAsClass(((SModel) MapSequence.fromMap(_params).get("model")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
@@ -84,6 +81,5 @@ public class PasteAsJavaClass_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PasteAsJavaClass_Action.class);
 }

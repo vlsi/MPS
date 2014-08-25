@@ -19,72 +19,58 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public NewTemplateInWeaveEach_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence";
   }
-
   public String getPresentation() {
     return "NewTemplateInWeaveEach";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.generator.intentions.NewTemplateInWeaveEach_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.generator";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "template", false) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1216319039419");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewTemplateInWeaveEach_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "New Template";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.generator.structure.Weaving_MappingRule"), "applicableConcept", false);
       String name = CreateFromUsageUtil.getText(editorContext);
@@ -111,8 +97,8 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
       }
       //  make reference 
       SLinkOperations.setTarget(node, "template", t, false);
+      SelectionUtil.selectCell(editorContext, node, "templateName");
     }
-
     public IntentionDescriptor getDescriptor() {
       return NewTemplateInWeaveEach_Intention.this;
     }

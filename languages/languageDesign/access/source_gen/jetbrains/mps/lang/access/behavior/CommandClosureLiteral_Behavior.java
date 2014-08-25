@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class CommandClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isExecuteSynchronous_1230212745736(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync");
   }

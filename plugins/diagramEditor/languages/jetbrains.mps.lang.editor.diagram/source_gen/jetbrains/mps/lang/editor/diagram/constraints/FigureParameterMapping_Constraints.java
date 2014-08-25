@@ -14,12 +14,10 @@ public class FigureParameterMapping_Constraints extends BaseConstraintsDescripto
   public FigureParameterMapping_Constraints() {
     super("jetbrains.mps.lang.editor.diagram.structure.FigureParameterMapping");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class FigureParameterMapping_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.editor.diagram.structure.CellModel_DiagramNode");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:1af2ba06-e725-4940-9c06-d6b80c641b75(jetbrains.mps.lang.editor.diagram.constraints)", "1491555030355943121");
 }

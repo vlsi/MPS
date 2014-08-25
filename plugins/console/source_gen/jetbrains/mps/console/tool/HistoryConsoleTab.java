@@ -19,12 +19,9 @@ import java.util.Map;
 
 public class HistoryConsoleTab extends BaseConsoleTab {
 
-
   public HistoryConsoleTab(ConsoleTool tool, String title, @Nullable String history) {
     super(tool, title, history);
   }
-
-
 
   protected void loadHistory(final String state) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -42,8 +39,6 @@ public class HistoryConsoleTab extends BaseConsoleTab {
     });
   }
 
-
-
   protected void registerActions(DefaultActionGroup group) {
     super.registerActions(group);
     group.add(new HistoryConsoleTab.CloseAction());
@@ -57,17 +52,13 @@ public class HistoryConsoleTab extends BaseConsoleTab {
     });
   }
 
-
-
   private class CloseAction extends BaseAction {
     public CloseAction() {
       super("Close", "Close tab", AllIcons.Actions.Cancel);
     }
-
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       myTool.closeTab(HistoryConsoleTab.this);
     }
   }
-
 
 }

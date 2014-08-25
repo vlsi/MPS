@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SwitchMacro_BehaviorDescriptor extends SourceSubstituteMacro_BehaviorDescriptor {
   public SwitchMacro_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return SwitchMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.SwitchMacro";

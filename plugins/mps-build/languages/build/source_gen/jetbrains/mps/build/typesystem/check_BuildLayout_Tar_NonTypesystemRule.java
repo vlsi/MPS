@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BuildLayout_Tar_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BuildLayout_Tar_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode tarArchive, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String approxName = BuildString_Behavior.call_getText_4380385936562005550(SLinkOperations.getTarget(tarArchive, "containerName", true), null);
     String ext = ".tar";
@@ -40,18 +39,15 @@ public class check_BuildLayout_Tar_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.build.structure.BuildLayout_Tar";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

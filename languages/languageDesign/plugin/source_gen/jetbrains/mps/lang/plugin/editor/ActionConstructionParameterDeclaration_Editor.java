@@ -23,11 +23,9 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_grmouy_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_grmouy_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_grmouy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_grmouy_a");
@@ -37,7 +35,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     editorCell.addEditorCell(this.createConstant_grmouy_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_grmouy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -57,7 +54,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_grmouy_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -75,7 +71,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_grmouy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_grmouy_c0");
@@ -85,7 +80,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_grmouy_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_grmouy_a_0");
@@ -95,7 +89,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_grmouy_a0_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("toStringFunction");
@@ -115,7 +108,6 @@ public class ActionConstructionParameterDeclaration_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_grmouy_a0a(SNode node, EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"));
   }

@@ -50,7 +50,6 @@ public class DebuggerToolPanel {
   private DebuggerToolPanel.StackFramesListModel myStackFramesListModel;
   private VariablesTree myVariablesTree;
   private JList myFramesList;
-
   public DebuggerToolPanel(@NotNull Project project, @NotNull AbstractDebugSession session, @NotNull RunnerLayoutUi ui) {
     myDebugSession = session;
     myUiState = myDebugSession.getUiState();
@@ -77,10 +76,7 @@ public class DebuggerToolPanel {
     }
   }
 
-
-
   public class DebuggerPanel extends JPanel implements DataProvider {
-
 
     @Nullable
     public Object getData(@NonNls String id) {
@@ -89,19 +85,15 @@ public class DebuggerToolPanel {
       }
       return null;
     }
-
     public DebuggerPanel(LayoutManager p0) {
       super(p0);
     }
   }
 
-
-
   private JComponent createVariablesPanel(Project project) {
     myVariablesTree = new VariablesTree(project, myDebugSession.getUiState());
     return new JBScrollPane(myVariablesTree);
   }
-
   private JComponent createThreadsComponent() {
     myThreadsComboBoxModel = new DebuggerToolPanel.ThreadsComboBoxModel();
     ComboBox threadsComboBox = new ComboBox(myThreadsComboBoxModel);
@@ -116,7 +108,6 @@ public class DebuggerToolPanel {
     });
     return threadsComboBox;
   }
-
   private JComponent createStackFrameComponent() {
     myStackFramesListModel = new DebuggerToolPanel.StackFramesListModel();
     myFramesList = new JBList(myStackFramesListModel);
@@ -156,7 +147,6 @@ public class DebuggerToolPanel {
     });
     return new JBScrollPane(myFramesList);
   }
-
   private void updateUi() {
     ApplicationManager.getApplication().invokeLater(new Runnable() {
       @Override
@@ -171,11 +161,9 @@ public class DebuggerToolPanel {
       }
     });
   }
-
   private class MySessionChangeListener extends SessionChangeAdapter {
     private MySessionChangeListener() {
     }
-
     @Override
     public void stateChanged(AbstractDebugSession session) {
       if (myDebugSession != session) {
@@ -183,7 +171,6 @@ public class DebuggerToolPanel {
       }
       updateUi();
     }
-
     @Override
     public void paused(AbstractDebugSession session) {
       if (myDebugSession != session) {
@@ -191,7 +178,6 @@ public class DebuggerToolPanel {
       }
       updateUi();
     }
-
     @Override
     public void resumed(AbstractDebugSession session) {
       if (myDebugSession != session) {
@@ -200,26 +186,21 @@ public class DebuggerToolPanel {
       updateUi();
     }
   }
-
   private class ThreadsComboBoxModel extends AbstractListModel implements ComboBoxModel {
     private ThreadsComboBoxModel() {
     }
-
     @Override
     public void setSelectedItem(Object anItem) {
       myUiState.selectThread((IThread) anItem);
     }
-
     @Override
     public Object getSelectedItem() {
       return myUiState.getThread();
     }
-
     @Override
     public int getSize() {
       return getThreads().size();
     }
-
     @Override
     public Object getElementAt(int index) {
       List<? extends IThread> threads = getThreads();
@@ -228,25 +209,20 @@ public class DebuggerToolPanel {
       }
       return threads.get(index);
     }
-
     public void updateThreads() {
       fireContentsChanged(DebuggerToolPanel.this, -1, getSize());
     }
-
     private List<? extends IThread> getThreads() {
       return myUiState.getThreads();
     }
   }
-
   private class StackFramesListModel extends AbstractListModel {
     private StackFramesListModel() {
     }
-
     @Override
     public int getSize() {
       return myUiState.getStackFramesCount();
     }
-
     @Override
     public Object getElementAt(int index) {
       if (index >= myUiState.getStackFramesCount()) {
@@ -254,11 +230,9 @@ public class DebuggerToolPanel {
       }
       return myUiState.getStackFrame(index);
     }
-
     public void updateFrames() {
       fireContentsChanged(DebuggerToolPanel.this, -1, getSize());
     }
-
     public void selected(int selectedIndex) {
       myUiState.selectFrame(selectedIndex);
     }

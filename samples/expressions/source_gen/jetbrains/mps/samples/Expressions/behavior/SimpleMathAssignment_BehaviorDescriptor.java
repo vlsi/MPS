@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class SimpleMathAssignment_BehaviorDescriptor extends SimpleMathExpression_BehaviorDescriptor {
   public SimpleMathAssignment_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathAssignment";

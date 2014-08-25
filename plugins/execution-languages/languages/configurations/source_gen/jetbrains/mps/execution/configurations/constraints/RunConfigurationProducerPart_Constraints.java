@@ -13,7 +13,6 @@ public class RunConfigurationProducerPart_Constraints extends BaseConstraintsDes
   public RunConfigurationProducerPart_Constraints() {
     super("jetbrains.mps.execution.configurations.structure.RunConfigurationProducerPart");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,7 +21,6 @@ public class RunConfigurationProducerPart_Constraints extends BaseConstraintsDes
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class MyIfStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public MyIfStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement";

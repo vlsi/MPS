@@ -20,12 +20,10 @@ import com.intellij.util.ThreeState;
 public class NodeFileStatusProvider implements FileStatusProvider {
   private Project myProject;
   private NodeFileStatusMapping myMapping;
-
   public NodeFileStatusProvider(@NotNull Project project, @NotNull NodeFileStatusMapping mapping) {
     myProject = project;
     myMapping = mapping;
   }
-
   @Override
   public FileStatus getFileStatus(VirtualFile file) {
     if (!(file instanceof MPSNodeVirtualFile)) {
@@ -57,11 +55,9 @@ public class NodeFileStatusProvider implements FileStatusProvider {
 
     return status.value;
   }
-
   @Override
   public void refreshFileStatusFromDocument(VirtualFile file, Document document) {
   }
-
   @Override
   public ThreeState getNotChangedDirectoryParentingStatus(VirtualFile file) {
     return ThreeState.NO;

@@ -12,19 +12,30 @@ import jetbrains.mps.baseLanguage.behavior.StaticMethodCall_Behavior;
 public class StaticMethodCall_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new StaticMethodCall_Actions.StaticMethodCall_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new StaticMethodCall_Actions.StaticMethodCall_Actions_BACKSPACE(node));
   }
-
   public static class StaticMethodCall_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public StaticMethodCall_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node)) {
+        StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);
+      }
+    }
+  }
+  public static class StaticMethodCall_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public StaticMethodCall_Actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (StaticMethodCall_Behavior.call_canBeConvertedToLocal_3299924278393499101(node)) {
         StaticMethodCall_Behavior.call_convertToLocal_3299924278393509387(node);

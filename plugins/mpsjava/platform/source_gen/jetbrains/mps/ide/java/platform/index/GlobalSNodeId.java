@@ -14,29 +14,24 @@ import org.jetbrains.mps.openapi.model.SReference;
 public class GlobalSNodeId {
   private String myModelReference;
   private String myNodeId;
-
   public GlobalSNodeId(SNode node) {
     this(SNodeOperations.getModel(node).getReference().toString(), node.getNodeId().toString());
   }
-
   public GlobalSNodeId(String modelReference, String nodeId) {
     assert modelReference != null;
     assert nodeId != null;
     myModelReference = modelReference;
     myNodeId = nodeId;
   }
-
   public SNode getNode() {
     SModelReference sModelReference = PersistenceFacade.getInstance().createModelReference(getModelReference());
     SModel sModelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelReference);
     return (sModelDescriptor == null ? null : sModelDescriptor.getNode(SNodeId.fromString(getNodeId())));
   }
-
   @Override
   public int hashCode() {
     return getNodeId().hashCode();
   }
-
   @Override
   public boolean equals(Object other) {
     if (other instanceof GlobalSNodeId) {
@@ -45,15 +40,12 @@ public class GlobalSNodeId {
     }
     return false;
   }
-
   public final String getModelReference() {
     return myModelReference;
   }
-
   public final String getNodeId() {
     return myNodeId;
   }
-
   public static GlobalSNodeId createSNodeId(SReference reference) {
     SModelReference modelReference = null;
     org.jetbrains.mps.openapi.model.SNodeId nodeId = null;

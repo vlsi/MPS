@@ -23,41 +23,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class CreatePropertyAntiquotation_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreatePropertyAntiquotation_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.quotation.structure.Quotation";
   }
-
   public String getPresentation() {
     return "CreatePropertyAntiquotation";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.quotation.intentions.CreatePropertyAntiquotation_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.quotation";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (!(selectedCell instanceof EditorCell_Property)) {
@@ -69,30 +60,24 @@ public class CreatePropertyAntiquotation_Intention implements IntentionFactory {
     }
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227886844257");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreatePropertyAntiquotation_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Property Antiquotation";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (editorContext == null) {
         return;
@@ -123,7 +108,6 @@ public class CreatePropertyAntiquotation_Intention implements IntentionFactory {
         editorContext.selectWRTFocusPolicy(propertyAntiquotation);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreatePropertyAntiquotation_Intention.this;
     }

@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SimplifyNotExpression_QuickFix extends QuickFix_Runtime {
   public SimplifyNotExpression_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Simplify Not Expression";
   }
-
   public void execute(SNode node) {
     SPropertyOperations.set(((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]), "value", "" + (!(SPropertyOperations.getBoolean(((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]), "value"))));
     SNodeOperations.replaceWithAnother(node, ((SNode) SimplifyNotExpression_QuickFix.this.getField("nestedConstant")[0]));

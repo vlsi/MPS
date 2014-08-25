@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 public class DefaultPropertyAttribute_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor {
   public DefaultPropertyAttribute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testDefaultEditor.structure.DefaultPropertyAttribute";

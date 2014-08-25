@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 public class TextCommentLinePart_BehaviorDescriptor extends CommentLinePart_BehaviorDescriptor {
   public TextCommentLinePart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart";

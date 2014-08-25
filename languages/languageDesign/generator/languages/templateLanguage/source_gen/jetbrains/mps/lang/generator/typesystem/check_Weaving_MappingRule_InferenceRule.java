@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public check_Weaving_MappingRule_InferenceRule() {
   }
-
   public void applyRule(final SNode rule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference")) {
       SNode template = TemplateDeclarationReference_Behavior.call_getTemplate_982871510068196871(SNodeOperations.cast(SLinkOperations.getTarget(rule, "ruleConsequence", true), "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference"));
@@ -36,18 +35,15 @@ public class check_Weaving_MappingRule_InferenceRule extends AbstractInferenceRu
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.generator.structure.Weaving_MappingRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

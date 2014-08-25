@@ -23,17 +23,14 @@ public class AddForStatementVar extends KeyMapImpl {
     action = new AddForStatementVar.AddForStatementVar_Action0();
     this.putAction("any", ",", action);
   }
-
   public static class AddForStatementVar_Action0 extends KeyMapActionImpl {
     public AddForStatementVar_Action0() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_LAST_POSITION);
       this.setShownInPopupMenu(false);
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -48,12 +45,10 @@ public class AddForStatementVar extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode variableDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, false);
       if ((variableDeclaration != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ForStatement")) {
@@ -64,13 +59,11 @@ public class AddForStatementVar extends KeyMapImpl {
       }
       return false;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode variableDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, false);
       SNode forStatement = SNodeOperations.cast(SNodeOperations.getParent(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ForStatement");
       ListSequence.fromList(SLinkOperations.getTargets(forStatement, "additionalVar", true)).insertElement(0, SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable", null));
     }
-
     public String getKeyStroke() {
       return " ,";
     }

@@ -37,7 +37,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_h096ql_a(editorContext, node);
   }
-
   private EditorCell createAlternation_h096ql_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = HTMLElement_Editor.renderingCondition_h096ql_a0(node, editorContext);
@@ -53,11 +52,9 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_h096ql_a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty();
   }
-
   private EditorCell createCollection_h096ql_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h096ql_a0");
@@ -66,7 +63,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_h096ql_c0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_h096ql_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_h096ql_a0a");
@@ -78,7 +74,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_h096ql_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -100,16 +95,13 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class HTMLElement_name_cellMenu_h096ql_a0b0a extends AbstractCellMenuPart_PropertyValues {
     public HTMLElement_name_cellMenu_h096ql_a0b0a() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
-
   private EditorCell createConstant_h096ql_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " />");
     editorCell.setCellId("Constant_h096ql_c0a");
@@ -121,7 +113,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_h096ql_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_h096ql_a0_0");
@@ -134,7 +125,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_h096ql_g0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_h096ql_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_h096ql_a0a_0");
@@ -146,7 +136,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_h096ql_b0a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -168,16 +157,13 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class HTMLElement_name_cellMenu_h096ql_a0b0a_0 extends AbstractCellMenuPart_PropertyValues {
     public HTMLElement_name_cellMenu_h096ql_a0b0a_0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromListAndArray(new ArrayList<String>(), "p", "em", "strong", "b", "i", "br", "code");
     }
   }
-
   private EditorCell createConstant_h096ql_c0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_h096ql_c0a_0");
@@ -189,7 +175,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_h096ql_d0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new HTMLElement_Editor.lineListHandler_h096ql_d0a(node, "line", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -201,35 +186,31 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class lineListHandler_h096ql_d0a extends RefNodeListHandler {
     public lineListHandler_h096ql_d0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -237,7 +218,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_h096ql_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "</");
     editorCell.setCellId("Constant_h096ql_e0a");
@@ -249,7 +229,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_h096ql_f0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -271,7 +250,6 @@ public class HTMLElement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_h096ql_g0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_h096ql_g0a");

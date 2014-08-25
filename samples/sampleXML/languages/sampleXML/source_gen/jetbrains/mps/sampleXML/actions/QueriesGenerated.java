@@ -34,11 +34,9 @@ public class QueriesGenerated {
             SPropertyOperations.set(attr, "name", ((pattern == null ? null : pattern.trim())));
             return attr;
           }
-
           public String getMatchingText(String pattern) {
             return pattern;
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -47,7 +45,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ElementPart_1225239967704(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -60,14 +57,12 @@ public class QueriesGenerated {
             SPropertyOperations.set(text, "name", pattern);
             return text;
           }
-
           public String getMatchingText(String pattern) {
             if (!(pattern.startsWith("<"))) {
               return pattern;
             }
             return "";
           }
-
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
           }
@@ -76,7 +71,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Attribute_1225239967737(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.sampleXML.structure.Attribute"), _context.getSourceNode()) {
@@ -87,15 +81,12 @@ public class QueriesGenerated {
         SNodeOperations.insertNextSiblingChild(_context.getSourceNode(), nextAttr);
         return nextAttr;
       }
-
       public String getMatchingText(String pattern) {
         return pattern;
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();

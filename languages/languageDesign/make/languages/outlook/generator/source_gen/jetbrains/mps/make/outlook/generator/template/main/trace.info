@@ -3,17 +3,17 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="12,0,28,0" name="jetbrains.mps.make.outlook.generator.template.main.QueriesGenerated" />
+      <unit at="12,0,25,0" name="jetbrains.mps.make.outlook.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="r:422dd8ac-e62c-401d-a6e9-1ea317c4d069(jetbrains.mps.make.outlook.generator.template.main@generator)/5608160002100107296">
     <file name="QueriesGenerated.java">
-      <node id="5608160002100107308" at="16,112,17,82" concept="0" />
-      <node id="5608160002100170953" at="20,112,21,112" concept="0" />
-      <node id="5608160002100170946" at="24,120,25,73" concept="0" />
-      <scope id="5608160002100107307" at="16,112,17,82" />
-      <scope id="5608160002100170952" at="20,112,21,112" />
-      <scope id="5608160002100170945" at="24,120,25,73" />
+      <node id="5608160002100107308" at="15,112,16,82" concept="0" />
+      <node id="5608160002100170953" at="18,112,19,112" concept="0" />
+      <node id="5608160002100170946" at="21,120,22,73" concept="0" />
+      <scope id="5608160002100107307" at="15,112,16,82" />
+      <scope id="5608160002100170952" at="18,112,19,112" />
+      <scope id="5608160002100170945" at="21,120,22,73" />
     </file>
   </root>
 </debug-info>

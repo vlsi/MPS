@@ -28,7 +28,6 @@ import jetbrains.mps.cache.CachesManager;
   private static final KeyProducer keyProducer = new KeyProducer();
   private Map<String, List<SNode>> myClassifiersByName = MapSequence.fromMap(new HashMap<String, List<SNode>>());
   private Map<SNode, String> myNameByClassifier = MapSequence.fromMap(new HashMap<SNode, String>());
-
   @Deprecated
   protected ClassifiersCache(Object key, SModel model) {
     super(key);
@@ -36,12 +35,10 @@ import jetbrains.mps.cache.CachesManager;
       this.processNode(node, true);
     }
   }
-
   @Override
   public Set<SModel> getDependsOnModels(Object element) {
     return Collections.singleton((SModel) element);
   }
-
   private void processNode(SNode node, boolean put) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
       SNode classifier = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier");
@@ -56,7 +53,6 @@ import jetbrains.mps.cache.CachesManager;
       }
     }
   }
-
   private void putClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
     if (!(MapSequence.fromMap(myClassifiersByName).containsKey(name))) {
@@ -68,7 +64,6 @@ import jetbrains.mps.cache.CachesManager;
       this.putClassifier(innerClassifier);
     }
   }
-
   private void removeClassifier(SNode classifier) {
     String name = this.getRefName(classifier);
     if (MapSequence.fromMap(myClassifiersByName).containsKey(name)) {
@@ -83,7 +78,6 @@ import jetbrains.mps.cache.CachesManager;
       this.removeClassifier(innerClassifier);
     }
   }
-
   private String getRefName(SNode classifier) {
     String name = SPropertyOperations.getString(classifier, "name");
     if (name == null) {
@@ -95,11 +89,9 @@ import jetbrains.mps.cache.CachesManager;
     }
     return name;
   }
-
   public List<SNode> getClassifiers() {
     return new ArrayList<SNode>(MapSequence.fromMap(this.myNameByClassifier).keySet());
   }
-
   public List<SNode> getClassifiersByRefName(String refName) {
     List<SNode> result = MapSequence.fromMap(myClassifiersByName).get(refName);
     if (result != null) {
@@ -107,17 +99,14 @@ import jetbrains.mps.cache.CachesManager;
     }
     return new ArrayList<SNode>();
   }
-
   @Override
   public void rootAdded(SModelRootEvent event) {
     this.processNode(event.getRoot(), true);
   }
-
   @Override
   public void rootRemoved(SModelRootEvent event) {
     this.processNode(event.getRoot(), false);
   }
-
   @Override
   public void childAdded(SModelChildEvent event) {
     SNode node = event.getChild();
@@ -128,7 +117,6 @@ import jetbrains.mps.cache.CachesManager;
     }
     this.processNode(node, true);
   }
-
   @Override
   public void beforeChildRemoved(SModelChildEvent event) {
     SNode node = event.getChild();
@@ -139,7 +127,6 @@ import jetbrains.mps.cache.CachesManager;
     }
     this.processNode(node, false);
   }
-
   @Override
   public void propertyChanged(SModelPropertyEvent event) {
     SNode node = event.getNode();
@@ -162,7 +149,6 @@ import jetbrains.mps.cache.CachesManager;
       this.putClassifier(classifier);
     }
   }
-
   private void collectInnerClasses(SNode classConcept, List<SNode> list) {
     Iterable<SNode> inners = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{});
     ListSequence.fromList(list).addSequence(Sequence.fromIterable(inners));
@@ -170,7 +156,6 @@ import jetbrains.mps.cache.CachesManager;
       this.collectInnerClasses(inner, list);
     }
   }
-
   public static ClassifiersCache getInstance(SModel model) {
     String uid = model.getReference().toString();
     Object key = keyProducer.createKey(uid);

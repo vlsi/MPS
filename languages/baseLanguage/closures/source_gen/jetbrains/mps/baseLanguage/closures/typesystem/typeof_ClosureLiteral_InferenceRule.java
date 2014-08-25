@@ -29,7 +29,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ClosureLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ClosureLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode closure, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> paramTypes = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
@@ -309,43 +308,36 @@ with_allThrows:
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_nx7618_a0a0a0o0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_a0a0b0a0a41a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_a0a0a0q0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_a0b0s0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -368,7 +360,6 @@ with_allThrows:
     quotedNode_3.addChild("argument", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_nx7618_a0b0a0b42a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -380,21 +371,18 @@ with_allThrows:
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_nx7618_a0a0a0db0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_a0a0a92a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_b0a0a0a0eb0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -406,21 +394,18 @@ with_allThrows:
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_nx7618_b0a0a0a0a03a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_c0a0a0a0a03a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_nx7618_d0a0a0a0a03a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

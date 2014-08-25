@@ -9,6 +9,7 @@ import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
@@ -31,7 +32,6 @@ import org.apache.log4j.LogManager;
 public class NodeBySeveralConcepts_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private NodeBySeveralConcepts_Configuration.MyState myState = new NodeBySeveralConcepts_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
       final Wrappers._T<String> errorText = new Wrappers._T<String>(null);
@@ -46,16 +46,14 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
         }
       });
       if (isNotEmptyString(errorText.value)) {
-        throw new RuntimeConfigurationException(errorText.value);
+        throw new RuntimeConfigurationError(errorText.value);
       }
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -63,23 +61,18 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public String getNodeId() {
     return myState.myNodeId;
   }
-
   public String getModelId() {
     return myState.myModelId;
   }
-
   public void setNodeId(String value) {
     myState.myNodeId = value;
   }
-
   public void setModelId(String value) {
     myState.myModelId = value;
   }
-
   @Nullable
   public SNode getNode() {
     SNodeReference reference = getNodePointer();
@@ -88,7 +81,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
     return reference.resolve(MPSModuleRepository.getInstance());
   }
-
   @Nullable
   public SNodePointer getNodePointer() {
     if (this.getModelId() == null || this.getNodeId() == null) {
@@ -96,7 +88,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
     return new SNodePointer(this.getModelId(), this.getNodeId());
   }
-
   public void setNode(@Nullable SNode node) {
     if (node == null) {
       this.setModelId(null);
@@ -106,7 +97,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       this.setNodeId(node.getNodeId().toString());
     }
   }
-
   private boolean isValid(final SNode node) {
     return ListSequence.fromList(myTargets).findFirst(new IWhereFilter<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>>() {
       public boolean accept(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
@@ -123,7 +113,6 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       }
     }) != null;
   }
-
   @Override
   public NodeBySeveralConcepts_Configuration clone() {
     NodeBySeveralConcepts_Configuration clone = null;
@@ -138,14 +127,11 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
     }
     return clone;
   }
-
   public class MyState {
     public String myNodeId;
     public String myModelId;
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       NodeBySeveralConcepts_Configuration.MyState state = new NodeBySeveralConcepts_Configuration.MyState();
@@ -154,31 +140,24 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       return state;
     }
   }
-
   public NodeBySeveralConcepts_Configuration(List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> targets) {
     myTargets = targets;
   }
-
   private final List<Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>>> myTargets;
   private SettingsEditorEx<NodeBySeveralConcepts_Configuration> myEditorEx;
-
   public NodeBySeveralConcepts_Configuration createCloneTemplate() {
     return new NodeBySeveralConcepts_Configuration(myTargets);
   }
-
   public NodeBySeveralConcepts_Configuration_Editor getEditor() {
     return new NodeBySeveralConcepts_Configuration_Editor(myTargets);
   }
-
   public SettingsEditorEx<NodeBySeveralConcepts_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(NodeBySeveralConcepts_Configuration.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class CollectTestsGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(CollectTestsGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.testbench.suite.pluginSolution.plugin.CollectTestsGroup_ActionGroup";
-
   public CollectTestsGroup_ActionGroup() {
     super("CollectTestsGroup", ID);
     this.setIsInternal(false);

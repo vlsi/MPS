@@ -32,18 +32,15 @@ import org.apache.log4j.LogManager;
 
 public class DeleteNode_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public DeleteNode_Action() {
     super("Delete", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     final Wrappers._boolean res = new Wrappers._boolean();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -53,7 +50,6 @@ public class DeleteNode_Action extends BaseAction {
     });
     return res.value;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -67,7 +63,6 @@ public class DeleteNode_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -86,7 +81,6 @@ public class DeleteNode_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<SNode>> affNodes = new Wrappers._T<List<SNode>>();
@@ -120,7 +114,6 @@ public class DeleteNode_Action extends BaseAction {
       }
     }
   }
-
   private Iterable<SNode> getAffectedNodes(final Map<String, Object> _params) {
     Set<Pair<SModel, String>> packs = SetSequence.fromSetWithValues(new HashSet<Pair<SModel, String>>(), ((List<Pair<SModel, String>>) MapSequence.fromMap(_params).get("packs")));
     Iterable<SNode> nodeFromPacks = SetSequence.fromSet(packs).translate(new ITranslator2<Pair<SModel, String>, SNode>() {
@@ -138,9 +131,7 @@ public class DeleteNode_Action extends BaseAction {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(DeleteNode_Action.class);
-
   private static boolean check_v2o7qu_a0a0a0a2a0(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isReadOnly();

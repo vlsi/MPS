@@ -27,7 +27,6 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4dmy40_a(editorContext, node);
   }
-
   private EditorCell createCollection_4dmy40_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4dmy40_a");
@@ -36,7 +35,6 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_4dmy40_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4dmy40_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "import");
     editorCell.setCellId("Constant_4dmy40_a0");
@@ -48,16 +46,13 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new BuildLayout_Import_Editor.ReplaceWith_BuildLayout_Node_cellMenu_4dmy40_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BuildLayout_Node_cellMenu_4dmy40_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BuildLayout_Node_cellMenu_4dmy40_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.build.structure.BuildLayout_Node";
     }
   }
-
   private EditorCell createRefCell_4dmy40_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("target");
@@ -79,20 +74,16 @@ public class BuildLayout_Import_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_4dmy40_a1a extends InlineCellProvider {
     public _Inline_4dmy40_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_4dmy40_a0b0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_4dmy40_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_4dmy40_a0b0");

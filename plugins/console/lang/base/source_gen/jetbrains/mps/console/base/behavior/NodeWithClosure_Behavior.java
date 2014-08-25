@@ -9,11 +9,9 @@ import jetbrains.mps.console.actions.ClosureHoldingNodeUtil;
 public class NodeWithClosure_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_execute_8517397753922085153(SNode thisNode, Project project) {
     ClosureHoldingNodeUtil.getInstance().executeClosure(thisNode);
   }
-
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return ClosureHoldingNodeUtil.getInstance().getClosure(thisNode) != null;
   }

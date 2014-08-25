@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test;
 public class Complex2 extends Complex {
   public Complex2() {
   }
-
   @Override
   public void print() {
     System.out.print(this.getRe());

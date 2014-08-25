@@ -24,28 +24,24 @@ public class RequiredPlugins {
   private final ConcurrentHashSet<SNode> myDependency;
   private final SNode myRoot;
   private final List<SNode> myPlugins = ListSequence.fromList(new ArrayList<SNode>());
-
   public RequiredPlugins(SNode project, TemplateQueryContext genContext) {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", false, new String[]{})));
     myRoot = project;
     myDependency = GenerationUtil.<SNode>getSessionSet(project, genContext, KEY);
   }
-
   public RequiredPlugins(TemplateQueryContext genContext, SNode initialPlugin) {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addElement(initialPlugin);
     myRoot = SNodeOperations.getContainingRoot(initialPlugin);
     myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
   }
-
   public RequiredPlugins(TemplateQueryContext genContext, SNode root, Iterable<SNode> initialPlugins) {
     myContext = genContext;
     ListSequence.fromList(myPlugins).addSequence(Sequence.fromIterable(initialPlugins));
     myRoot = root;
     myDependency = GenerationUtil.<SNode>getSessionSet(SNodeOperations.as(myRoot, "jetbrains.mps.build.structure.BuildProject"), genContext, KEY);
   }
-
   public void collectDependencies() {
     Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode plugin : ListSequence.fromList(myPlugins)) {
@@ -57,7 +53,6 @@ public class RequiredPlugins {
       }
     }).toListSequence());
   }
-
   public Iterable<SNode> returnDependencies() {
     Set<SNode> visited = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode plugin : ListSequence.fromList(myPlugins)) {
@@ -69,7 +64,6 @@ public class RequiredPlugins {
       }
     }).toListSequence();
   }
-
   private void collectDependencies(SNode plugin, Set<SNode> visited) {
     SetSequence.fromSet(visited).addElement(plugin);
     for (SNode dependency : ListSequence.fromList(SLinkOperations.getTargets(plugin, "dependencies", true))) {
@@ -85,11 +79,9 @@ public class RequiredPlugins {
       }
     }
   }
-
   public Iterable<SNode> getDependency() {
     return myDependency;
   }
-
   public Iterable<SNode> getDependencyInsideCurrent() {
     return myPlugins;
   }

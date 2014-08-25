@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SetUniqueNameInFile_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SetUniqueNameInFile_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart";
   }
-
   public String getPresentation() {
     return "SetUniqueNameInFile";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.textGen.intentions.SetUniqueNameInFile_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.textGen";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7651b6e0-753b-4bcf-af83-d3dfc31e29e7(jetbrains.mps.lang.textGen.intentions)", "590757823759470534");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SetUniqueNameInFile_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "uniqNameInFile") ? "Unset" : "Set" + " Unique Name in File");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "uniqNameInFile", "" + (!(SPropertyOperations.getBoolean(node, "uniqNameInFile"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return SetUniqueNameInFile_Intention.this;
     }

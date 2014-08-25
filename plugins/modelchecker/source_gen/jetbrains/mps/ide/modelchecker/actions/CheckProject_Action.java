@@ -20,19 +20,16 @@ import org.apache.log4j.LogManager;
 
 public class CheckProject_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.General.ModelChecker;
-
   public CheckProject_Action() {
     super("Check Project", "Check project for unresolved references and typesystem rules", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
     this.addPlace(null);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -43,7 +40,6 @@ public class CheckProject_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -58,7 +54,6 @@ public class CheckProject_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).checkProject(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
@@ -68,6 +63,5 @@ public class CheckProject_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CheckProject_Action.class);
 }

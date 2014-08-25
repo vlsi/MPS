@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class MpsStartupScript_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String call_getDefaultVmoptions_5842819808956701267(SNode thisNode, boolean is64bit) {
     return trim_p7akvg_a0a0b(Sequence.fromIterable(MpsStartupScript_Behavior.call_getVmOptions_2693344784285058735(thisNode, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -29,7 +28,6 @@ public class MpsStartupScript_Behavior {
       }
     }));
   }
-
   public static Iterable<SNode> call_getCommentedOptions_5842819808956911345(SNode thisNode, boolean is64bit) {
     return Sequence.fromIterable(MpsStartupScript_Behavior.call_getVmOptions_2693344784285058735(thisNode, is64bit)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -37,11 +35,9 @@ public class MpsStartupScript_Behavior {
       }
     });
   }
-
   public static Iterable<SNode> call_getVmOptions_2693344784285058735(SNode thisNode, boolean is64bit) {
     return SNodeOperations.ofConcept(((is64bit ? SLinkOperations.getTargets(thisNode, "vmOptions64", true) : SLinkOperations.getTargets(thisNode, "vmOptions", true))), "jetbrains.mps.build.startup.structure.SimpleVmOptions");
   }
-
   public static Iterable<SNode> call_getDefaultVmOptionsLines_2693344784285072660(SNode thisNode, boolean is64bit) {
     return Sequence.fromIterable(Sequence.fromArray(MpsStartupScript_Behavior.call_getDefaultVmoptions_5842819808956701267(thisNode, is64bit).split("\\s"))).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
@@ -53,28 +49,23 @@ public class MpsStartupScript_Behavior {
       }
     });
   }
-
   public static String call_getPathToVmOptionsFile_5842819808956911442(SNode thisNode, boolean is64bit) {
     return SPropertyOperations.getString(thisNode, "startupFolder") + "/" + MpsStartupScript_Behavior.call_getVmOptionsFileName_2693344784285261045(thisNode, is64bit);
   }
-
   public static String call_getVmOptionsFileName_2693344784285261045(SNode thisNode, boolean is64bit) {
     return SPropertyOperations.getString(thisNode, "name") + ((is64bit ? "64" : "")) + "." + MpsStartupScript_Behavior.call_getVmOptionsExtension_5842819808956911479(thisNode);
   }
-
   public static String call_getVmOptionsExtension_5842819808956911479(SNode thisNode) {
     return "vmoptions";
   }
-
+  public static String trim_p7akvg_a0a0b(String str) {
+    return (str == null ? null : str.trim());
+  }
   private static SNode _quotation_createNode_p7akvg_a0a0a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.startup.structure.TextLine", null, null, false);
     SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
-  }
-
-  public static String trim_p7akvg_a0a0b(String str) {
-    return (str == null ? null : str.trim());
   }
 }

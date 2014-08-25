@@ -19,7 +19,6 @@ public class ThreadSafe_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ly4xkq_a(editorContext, node);
   }
-
   private EditorCell createCollection_ly4xkq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ly4xkq_a");
@@ -28,7 +27,6 @@ public class ThreadSafe_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_ly4xkq_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ly4xkq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@thread safe");
     editorCell.setCellId("Constant_ly4xkq_a0");
@@ -38,7 +36,6 @@ public class ThreadSafe_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_ly4xkq_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);

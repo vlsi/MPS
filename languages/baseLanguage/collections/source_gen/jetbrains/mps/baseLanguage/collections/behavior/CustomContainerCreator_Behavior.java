@@ -11,7 +11,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class CustomContainerCreator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_1237722437229(final SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
     //  workaround an SModel's dumbness 

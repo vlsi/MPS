@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class RefactoringAdditions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(RefactoringAdditions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.plugin.pluginSolution.plugin.RefactoringAdditions_ActionGroup";
-
   public RefactoringAdditions_ActionGroup() {
     super("RefactoringAdditions", ID);
     this.setIsInternal(false);

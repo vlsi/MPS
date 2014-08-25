@@ -35,7 +35,6 @@ import jetbrains.mps.project.validation.ModuleValidatorFactory;
 public class CheckingTestsUtil {
   public CheckingTestsUtil() {
   }
-
   public static List<String> applyChecker(final INodeChecker checker, final Iterable<SModel> models, final CheckingTestStatistic statistic) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -76,7 +75,6 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-
   public static boolean filterIssue(SNode node) {
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     if (container == null) {
@@ -89,22 +87,18 @@ public class CheckingTestsUtil {
     }
     return true;
   }
-
   public static List<String> checkReferences(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
     return checkModels(models);
   }
-
   public static List<String> checkStructure(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, true).includingGenerators().getModels();
     return checkStructure(models);
   }
-
   public static List<String> checkGenerationStatus(SModule module) {
     Collection<SModel> models = new ModelsExtractor(module, false).includingGenerators().getModels();
     return checkModelsGenerationStatus(models);
   }
-
   public static List<String> checkModule(SModule module) {
     List<SModule> modules = new ArrayList<SModule>();
     modules.add(module);
@@ -113,7 +107,6 @@ public class CheckingTestsUtil {
     }
     return checkModules(modules);
   }
-
   public static String formatErrors(List<String> errors) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -123,7 +116,6 @@ public class CheckingTestsUtil {
     }
     return sb.toString();
   }
-
   private static List<String> checkModelsGenerationStatus(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -159,7 +151,6 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-
   private static List<String> checkStructure(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -174,7 +165,6 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-
   private static List<String> checkModels(final Iterable<SModel> models) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -192,7 +182,6 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-
   private static List<String> checkModules(final Iterable<SModule> modules) {
     final List<String> errors = new ArrayList<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -207,7 +196,6 @@ public class CheckingTestsUtil {
     });
     return errors;
   }
-
   private static void checkModelNodes(@NotNull SModel model, @NotNull final List<String> result) {
     for (final SNode node : SNodeUtil.getDescendants(model)) {
       final SConcept concept = node.getConcept();
@@ -235,7 +223,6 @@ public class CheckingTestsUtil {
       }
     }
   }
-
   private static StringBuilder checkModel(final SModel sm) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
@@ -271,7 +258,6 @@ public class CheckingTestsUtil {
     }
     return errorMessages;
   }
-
   private static StringBuilder checkModuleInternal(final SModule module) {
     StringBuilder errorMessages = new StringBuilder();
     List<String> validationResult = ModelAccess.instance().runReadAction(new Computable<List<String>>() {

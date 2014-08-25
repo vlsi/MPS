@@ -37,20 +37,16 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
     action = new _PatternExpression_KeyMap._PatternExpression_KeyMap_Action7();
     this.putAction("any", "^", action);
   }
-
   public static class _PatternExpression_KeyMap_Action0 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action0() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "create wildcard";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -62,38 +58,30 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.Pattern"), "jetbrains.mps.lang.pattern.structure.WildcardPattern");
     }
-
     public String getKeyStroke() {
       return " _";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action1 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action1() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "create as-pattern";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -105,38 +93,30 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.AsPattern");
     }
-
     public String getKeyStroke() {
       return " @";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action2 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action2() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "create variable pattern";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -148,38 +128,30 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       PatternAddingUtil.addVariablePattern(editorContext);
     }
-
     public String getKeyStroke() {
       return " #";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action3 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action3() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "create property var pattern";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -191,40 +163,32 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return (editorContext.getSelectedCell() instanceof EditorCell_Property) && PatternAddingUtil.isPatternApplicable(editorContext);
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
       String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.PropertyAttribute("jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", propertyName), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration");
     }
-
     public String getKeyStroke() {
       return " $";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action4 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action4() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "create list pattern";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -236,16 +200,13 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return PatternAddingUtil.isPatternApplicable(editorContext) && SNodeOperations.getParent(node) != null;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       List<SNode> siblings = SNodeOperations.getAllSiblings(node, false);
       SNodeFactoryOperations.setNewAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.pattern.structure.AsPattern"), "jetbrains.mps.lang.pattern.structure.ListPattern");
@@ -253,25 +214,20 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
         SNodeOperations.deleteNode(sibling);
       }
     }
-
     public String getKeyStroke() {
       return " *";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action5 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action5() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -283,16 +239,13 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
@@ -303,25 +256,20 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       } else
       SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.Antiquotation"), "jetbrains.mps.lang.quotation.structure.Antiquotation");
     }
-
     public String getKeyStroke() {
       return " %";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action6 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action6() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "list antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -333,16 +281,13 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode contextNode = editorContext.getSelectedCell().getSNode();
       if (contextNode == null) {
@@ -359,25 +304,20 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       } else
       SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.quotation.structure.ListAntiquotation"), "jetbrains.mps.lang.quotation.structure.ListAntiquotation");
     }
-
     public String getKeyStroke() {
       return " *";
     }
   }
-
   public static class _PatternExpression_KeyMap_Action7 extends KeyMapActionImpl {
     public _PatternExpression_KeyMap_Action7() {
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "reference antiquotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -389,16 +329,13 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       return true;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
       SNode contextNode = selectedCell.getSNode();
@@ -421,7 +358,6 @@ public class _PatternExpression_KeyMap extends KeyMapImpl {
         SNodeFactoryOperations.setNewAttribute(contextNode, new IAttributeDescriptor.LinkAttribute("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", role), "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation");
       }
     }
-
     public String getKeyStroke() {
       return " ^";
     }

@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.behavior;
 public class VarType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public VarType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VarType";

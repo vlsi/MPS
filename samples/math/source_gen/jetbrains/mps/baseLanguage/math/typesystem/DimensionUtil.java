@@ -206,7 +206,6 @@ public class DimensionUtil {
       }
     }
   }
-
   @InferenceMethod
   public static void reportError(final TypeCheckingContext typeCheckingContext, SNode n) {
     {
@@ -214,7 +213,6 @@ public class DimensionUtil {
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(n, "Invalid matrix dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7676695779583019339", null, errorTarget);
     }
   }
-
   public static int dimr(SNode t) {
     {
       SNode matchedNode_48zlf8_a0c = t;
@@ -244,7 +242,6 @@ public class DimensionUtil {
       }
     }
   }
-
   public static int dimc(SNode t) {
     {
       SNode matchedNode_48zlf8_a0d = t;
@@ -274,7 +271,6 @@ public class DimensionUtil {
       }
     }
   }
-
   private static SNode _quotation_createNode_48zlf8_a0a0i0a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

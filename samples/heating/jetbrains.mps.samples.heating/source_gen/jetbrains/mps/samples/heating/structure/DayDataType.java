@@ -16,15 +16,12 @@ public enum DayDataType {
   Sunday("Sunday", "sunday");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<DayDataType> getConstants() {
     List<DayDataType> list = ListSequence.fromList(new LinkedList<DayDataType>());
     ListSequence.fromList(list).addElement(DayDataType.Monday);
@@ -36,11 +33,9 @@ public enum DayDataType {
     ListSequence.fromList(list).addElement(DayDataType.Sunday);
     return list;
   }
-
   public static DayDataType getDefault() {
     return DayDataType.Monday;
   }
-
   public static DayDataType parseValue(String value) {
     if (value == null) {
       return DayDataType.getDefault();
@@ -68,14 +63,11 @@ public enum DayDataType {
     }
     return DayDataType.getDefault();
   }
-
   private String myValue;
-
   DayDataType(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -20,7 +20,6 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1vqlro_a(editorContext, node);
   }
-
   private EditorCell createCollection_1vqlro_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_1vqlro_a");
@@ -30,7 +29,6 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_1vqlro_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_1vqlro_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1vqlro_a0");
@@ -42,14 +40,12 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_1vqlro_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1vqlro_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "the simplest concept instance");
     editorCell.setCellId("Constant_1vqlro_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_1vqlro_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -67,7 +63,6 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_1vqlro_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_1vqlro_b0");
@@ -77,7 +72,6 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_1vqlro_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_1vqlro_c0");
@@ -89,14 +83,12 @@ public class TheSimplestConcept_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_1vqlro_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_1vqlro_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "text = ");
     editorCell.setCellId("Constant_1vqlro_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_1vqlro_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("text");

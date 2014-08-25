@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IVariableAssignment_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
     return true;
   }

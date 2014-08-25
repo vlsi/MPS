@@ -9,7 +9,6 @@ public class PropertiesFeature extends NodeAggregationFeature {
   public PropertiesFeature(@NotNull SNodeReference nodePointer) {
     super(nodePointer);
   }
-
   @Override
   @NotNull
   public String toString() {

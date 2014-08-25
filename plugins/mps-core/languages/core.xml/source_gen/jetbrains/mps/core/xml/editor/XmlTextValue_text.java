@@ -27,21 +27,17 @@ public class XmlTextValue_text extends KeyMapImpl {
     action = new XmlTextValue_text.XmlTextValue_text_Action1();
     this.putAction("any", "&", action);
   }
-
   public static class XmlTextValue_text_Action0 extends KeyMapActionImpl {
     public XmlTextValue_text_Action0() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_INTERMEDIATE_POSITION);
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "insert &quot;";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -56,12 +52,10 @@ public class XmlTextValue_text extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
@@ -71,7 +65,6 @@ public class XmlTextValue_text extends KeyMapImpl {
       }
       return isNotEmptyString(SPropertyOperations.getString(node, "text"));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
       SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
@@ -89,30 +82,24 @@ public class XmlTextValue_text extends KeyMapImpl {
       ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }
-
     public String getKeyStroke() {
       return " \"";
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }
   }
-
   public static class XmlTextValue_text_Action1 extends KeyMapActionImpl {
     public XmlTextValue_text_Action1() {
       super.setCaretPolicy(KeyMapAction.CARET_AT_INTERMEDIATE_POSITION);
       this.setShownInPopupMenu(false);
     }
-
     public String getDescriptionText() {
       return "insert entity reference";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -127,12 +114,10 @@ public class XmlTextValue_text extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(editorContext.getSelectedCell() instanceof EditorCell_Label)) {
         return false;
@@ -142,7 +127,6 @@ public class XmlTextValue_text extends KeyMapImpl {
       }
       return isNotEmptyString(SPropertyOperations.getString(node, "text"));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       int index = ((EditorCell_Label) editorContext.getSelectedCell()).getCaretPosition();
       SNode attr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
@@ -159,11 +143,9 @@ public class XmlTextValue_text extends KeyMapImpl {
       ListSequence.fromList(SLinkOperations.getTargets(attr, "value", true)).insertElement(currIndex + 1, newRef);
       editorContext.selectWRTFocusPolicy(newRef);
     }
-
     public String getKeyStroke() {
       return " &";
     }
-
     private static boolean isNotEmptyString(String str) {
       return str != null && str.length() > 0;
     }

@@ -15,12 +15,10 @@ public class FacetDeclaration_Constraints extends BaseConstraintsDescriptor {
   public FacetDeclaration_Constraints() {
     super("jetbrains.mps.make.facet.structure.FacetDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -28,13 +26,11 @@ public class FacetDeclaration_Constraints extends BaseConstraintsDescriptor {
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_dgpkt9_a0a0a0a0a2;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return new FacetsScope(_context.getContextNode());
       }
     };
   }
-
   private static SNodePointer breakingNode_dgpkt9_a0a0a0a0a2 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "6311899720715927837");
 }

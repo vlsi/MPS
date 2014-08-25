@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowNodeInExplorer_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowNodeInExplorer_Action() {
     super("Show Node in Explorer", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -41,7 +38,6 @@ public class ShowNodeInExplorer_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -60,7 +56,6 @@ public class ShowNodeInExplorer_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NodeExplorer_Tool tool = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(NodeExplorer_Tool.class);
@@ -72,6 +67,5 @@ public class ShowNodeInExplorer_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowNodeInExplorer_Action.class);
 }

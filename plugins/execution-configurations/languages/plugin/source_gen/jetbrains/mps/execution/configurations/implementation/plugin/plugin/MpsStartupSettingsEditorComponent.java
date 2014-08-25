@@ -17,7 +17,6 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
   private FieldWithPathChooseDialog myConfigurationPath = new FieldWithPathChooseDialog();
   private ProjectChooser myProjectChooser = new ProjectChooser();
 
-
   public MpsStartupSettingsEditorComponent() {
     super(new GridBagLayout());
 
@@ -33,7 +32,6 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
     this.add(myJrePath, LayoutUtil.createFieldConstraints(7));
     this.add(myProjectChooser, LayoutUtil.createPanelConstraints(8));
   }
-
   public void applyTo(MpsStartupSettings_Configuration configuration) {
     configuration.setVmOptions(myVmOptions.getText());
     configuration.setJrePath(myJrePath.getText());
@@ -43,7 +41,6 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
     configuration.setOpenCurrentProject((boolean) value._0());
     configuration.setProjectToOpen(configuration.shinkPath(value._1()));
   }
-
   public void resetFrom(MpsStartupSettings_Configuration configuration) {
     myVmOptions.setText(configuration.getVmOptions());
     myJrePath.setText(configuration.getJrePath());
@@ -51,7 +48,6 @@ public class MpsStartupSettingsEditorComponent extends JPanel {
     myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
     myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.expandPath(configuration.getProjectToOpen()));
   }
-
   public void setEditable(boolean editable) {
     myVmOptions.setEditable(editable);
     myJrePath.setEditable(editable);

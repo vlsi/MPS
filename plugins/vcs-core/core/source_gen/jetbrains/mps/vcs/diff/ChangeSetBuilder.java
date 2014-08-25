@@ -49,17 +49,14 @@ public class ChangeSetBuilder {
   private SModel myNewModel;
   private ChangeSetImpl myChangeSet;
   private List<ModelChange> myNewChanges = ListSequence.fromList(new ArrayList<ModelChange>());
-
   private ChangeSetBuilder(SModel oldModel, SModel newModel) {
     this(new ChangeSetImpl(oldModel, newModel));
   }
-
   private ChangeSetBuilder(ChangeSetImpl changeSet) {
     myOldModel = changeSet.getOldModel();
     myNewModel = changeSet.getNewModel();
     myChangeSet = changeSet;
   }
-
   private void buildForProperties(SNode oldNode, SNode newNode) {
     Set<String> oldProperties = (Set<String>) SNodeOperations.getProperties(oldNode).keySet();
     Set<String> newProperties = (Set<String>) SNodeOperations.getProperties(newNode).keySet();
@@ -67,7 +64,6 @@ public class ChangeSetBuilder {
       buildForProperty(oldNode, newNode, name);
     }
   }
-
   public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(RuntimeFlags.isMergeDriverMode())) {
@@ -83,7 +79,6 @@ public class ChangeSetBuilder {
       ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getNodeId(), name, newNode.getProperty(name)));
     }
   }
-
   private void buildForReferences(SNode oldNode, SNode newNode) {
     List<SReference> oldReferences = (List<SReference>) oldNode.getReferences();
     List<SReference> newReferences = (List<SReference>) newNode.getReferences();
@@ -95,7 +90,6 @@ public class ChangeSetBuilder {
       buildForReference(oldNode, newNode, role);
     }
   }
-
   public void buildForReference(SNode oldNode, SNode newNode, String role) {
     SReference oldReference = oldNode.getReference(role);
     SReference newReference = newNode.getReference(role);
@@ -116,7 +110,6 @@ public class ChangeSetBuilder {
       ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0j(((jetbrains.mps.smodel.SReference) newReference))));
     }
   }
-
   public void buildForNode(@Nullable SNode oldNode, @Nullable SNode newNode) {
     assert oldNode != null || newNode != null;
 
@@ -137,11 +130,9 @@ public class ChangeSetBuilder {
       }
     }
   }
-
   private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
     buildForNodeRole(IterableUtil.asList(oldNode.getChildren(role)), IterableUtil.asList(newNode.getChildren(role)), oldNode.getNodeId(), role);
   }
-
   public void buildForNodeRole(final List<? extends SNode> oldChildren, List<? extends SNode> newChildren, SNodeId parentId, String role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
@@ -175,7 +166,6 @@ public class ChangeSetBuilder {
       }
     });
   }
-
   private <D> void buildAddedAndDeletedDependencies(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModelBase> referencesExtractor, final _FunctionTypes._return_P2_E0<? extends DependencyChange, ? super D, ? super Boolean> changeCreator) {
     Iterable<D> added;
     Iterable<D> deleted;
@@ -195,7 +185,6 @@ public class ChangeSetBuilder {
       }
     }));
   }
-
   private void buildForImports() {
     _FunctionTypes._return_P1_E0<? extends Iterable<SModelReference>, ? super SModelBase> importedModelsExtractor = new _FunctionTypes._return_P1_E0<ISequence<SModelReference>, SModelBase>() {
       public ISequence<SModelReference> invoke(SModelBase model) {
@@ -213,7 +202,6 @@ public class ChangeSetBuilder {
     };
     buildAddedAndDeletedDependencies(importedModelsExtractor, changeCreator);
   }
-
   private void buildForDependencies(final ModuleDependencyChange.DependencyType dependencyType, _FunctionTypes._return_P1_E0<? extends Iterable<SModuleReference>, ? super SModelBase> referencesExtractor) {
     _FunctionTypes._return_P2_E0<? extends ModuleDependencyChange, ? super SModuleReference, ? super Boolean> changeCreator = new _FunctionTypes._return_P2_E0<ModuleDependencyChange, SModuleReference, Boolean>() {
       public ModuleDependencyChange invoke(SModuleReference mr, Boolean deleted) {
@@ -222,7 +210,6 @@ public class ChangeSetBuilder {
     };
     buildAddedAndDeletedDependencies(referencesExtractor, changeCreator);
   }
-
   private void buildForMetadata() {
     buildForImports();
 
@@ -251,7 +238,6 @@ public class ChangeSetBuilder {
       ListSequence.fromList(myNewChanges).addElement(new ModelVersionChange(myChangeSet));
     }
   }
-
   private void build(boolean withOpposite) {
     Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.getRoots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.getRoots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
@@ -268,7 +254,6 @@ public class ChangeSetBuilder {
       myChangeSet.buildOppositeChangeSet();
     }
   }
-
   public void commit() {
     ListSequence.fromList(myNewChanges).visitAll(new IVisitor<ModelChange>() {
       public void visit(ModelChange it) {
@@ -278,32 +263,26 @@ public class ChangeSetBuilder {
     ListSequence.fromList(myNewChanges).clear();
     myChangeSet.fillRootToChange();
   }
-
   public List<ModelChange> getNewChanges() {
     return myNewChanges;
   }
-
   private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(Iterable<D> oldItems, Iterable<D> newItems) {
     Set<D> oldSet = SetSequence.fromSetWithValues(new HashSet<D>(), oldItems);
     Set<D> newSet = SetSequence.fromSetWithValues(new HashSet<D>(), newItems);
     return MultiTuple.<Iterable<D>,Iterable<D>>from(SetSequence.fromSet(newSet).subtract(SetSequence.fromSet(oldSet)), SetSequence.fromSet(oldSet).subtract(SetSequence.fromSet(newSet)));
   }
-
   private <D> Tuples._2<Iterable<D>, Iterable<D>> getAddedAndDeleted(_FunctionTypes._return_P1_E0<? extends Iterable<D>, ? super SModelBase> itemsExtractor) {
     return getAddedAndDeleted(itemsExtractor.invoke(as_nbyrtw_a0a0a0v(myOldModel, SModelBase.class)), itemsExtractor.invoke(as_nbyrtw_a0b0a0v(myNewModel, SModelBase.class)));
   }
-
   public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
     return buildChangeSet(oldModel, newModel, false);
   }
-
   public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
     builder.build(withOpposite);
     builder.commit();
     return builder.myChangeSet;
   }
-
   public static void rebuildChangeSet(ChangeSet changeSet) {
     ChangeSetImpl impl = (ChangeSetImpl) changeSet;
     impl.clear();
@@ -312,101 +291,83 @@ public class ChangeSetBuilder {
     builder.build(true);
     builder.commit();
   }
-
   public static ChangeSetBuilder createBuilder(ChangeSet changeSet) {
     return new ChangeSetBuilder((ChangeSetImpl) changeSet);
   }
-
   private static class DefaultPropertySupport extends PropertySupport {
     private DefaultPropertySupport() {
     }
-
     @Override
     protected boolean canSetValue(String string) {
       return true;
     }
   }
-
   private static SNodeId check_nbyrtw_a0a2a9(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
-
   private static SNodeId check_nbyrtw_a0a3a9(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetNodeId();
     }
     return null;
   }
-
   private static SModelReference check_nbyrtw_a0e0j(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
   private static SModelReference check_nbyrtw_a0g0j(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
+  private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_nbyrtw_a0a0i0j_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_nbyrtw_a0a8a9(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
   private static String check_nbyrtw_a0a8a9(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
-
   private static String check_nbyrtw_a0a8a9_0(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
-
   private static SModelReference check_nbyrtw_a0a0a8a9(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
   private static String check_nbyrtw_f0a0a1a0i0j(jetbrains.mps.smodel.SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getResolveInfo();
     }
     return null;
   }
-
-  private static boolean eq_nbyrtw_a0a0i0j(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_nbyrtw_a0a0i0j_0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_nbyrtw_a0a8a9(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
   private static <T> T as_nbyrtw_a0a0h0q(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_nbyrtw_a0a0h0q_0(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_nbyrtw_a0a0a0v(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_nbyrtw_a0b0a0v(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

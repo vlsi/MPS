@@ -11,18 +11,15 @@ import org.junit.Ignore;
 public class Test4 extends AbstractTest4Class {
   public Test4() {
   }
-
   @Test
   public void method() {
     Assert.assertTrue(false);
   }
-
   @Test
   public void method2() {
     Assert.assertFalse(false);
     throw new RuntimeException("!");
   }
-
   @Test
   @Ignore
   public void method3() {

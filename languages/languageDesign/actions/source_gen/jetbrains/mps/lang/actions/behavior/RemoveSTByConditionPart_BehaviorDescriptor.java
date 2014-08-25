@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class RemoveSTByConditionPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements SideTransformMenuBuilderPart_BehaviorDescriptor {
   public RemoveSTByConditionPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart";

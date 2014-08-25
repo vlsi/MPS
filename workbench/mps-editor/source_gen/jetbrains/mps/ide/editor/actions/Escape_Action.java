@@ -20,18 +20,15 @@ import org.apache.log4j.LogManager;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public Escape_Action() {
     super("Escape", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getNodeSubstituteChooser().isVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).hasNodeInformationDialog()) {
       return false;
@@ -41,7 +38,6 @@ public class Escape_Action extends BaseAction {
     return selectionStackSize > 1 || (selectionStackSize == 1 && selection != null && selection.canExecuteAction(CellActionType.CLEAR_SELECTION)) || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible() || ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().hasMessages(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner());
 
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -55,12 +51,17 @@ public class Escape_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
@@ -70,7 +71,6 @@ public class Escape_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       if (((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).isSearchPanelVisible()) {
@@ -95,9 +95,7 @@ public class Escape_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(Escape_Action.class);
-
   private static void check_h8krww_a0a0g0a(Selection checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.executeAction(CellActionType.CLEAR_SELECTION);

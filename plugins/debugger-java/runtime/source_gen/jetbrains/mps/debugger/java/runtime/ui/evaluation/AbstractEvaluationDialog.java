@@ -18,7 +18,6 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
   protected final EvaluationProvider myProvider;
   protected final EvaluationPanel myEvaluationPanel;
   private final SessionStopDisposer mySessionStopDisposer;
-
   public AbstractEvaluationDialog(IOperationContext context, EvaluationProvider provider, IEvaluationContainer model, String title) {
     super(ProjectHelper.toIdeaProject(context.getProject()));
     setTitle(title);
@@ -50,17 +49,14 @@ public abstract class AbstractEvaluationDialog extends DialogWrapper {
 
     init();
   }
-
   protected JComponent getMainComponent() {
     return myEvaluationPanel;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myEvaluationPanel;
   }
-
   @Override
   protected void dispose() {
     ApplicationManager.getApplication().assertIsDispatchThread();

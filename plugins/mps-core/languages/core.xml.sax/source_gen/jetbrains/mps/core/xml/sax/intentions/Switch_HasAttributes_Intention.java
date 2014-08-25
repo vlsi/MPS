@@ -16,65 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class Switch_HasAttributes_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public Switch_HasAttributes_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRule";
   }
-
   public String getPresentation() {
     return "Switch_HasAttributes";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.core.xml.sax.intentions.Switch_HasAttributes_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.core.xml.sax";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:1f1edf97-bae4-47a7-9d76-afcb8231d0cf(jetbrains.mps.core.xml.sax.intentions)", "2264311582634140803");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new Switch_HasAttributes_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SPropertyOperations.getBoolean(node, "isCompact") ? "Full view" : "Compact view");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isCompact", "" + (!(SPropertyOperations.getBoolean(node, "isCompact"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return Switch_HasAttributes_Intention.this;
     }

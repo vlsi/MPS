@@ -16,7 +16,6 @@ import java.io.IOException;
 /*package*/ class TextMerger extends AbstractContentMerger {
   public TextMerger() {
   }
-
   @Nullable
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {

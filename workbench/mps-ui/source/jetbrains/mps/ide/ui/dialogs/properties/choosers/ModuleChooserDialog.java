@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,9 @@ import java.util.Collection;
 
 class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
 
-  ModuleChooserDialog(Project project, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String entityString, boolean multiSelection) throws HeadlessException {
-    super(project, modules, nonProjectModules, entityString, multiSelection);
+  ModuleChooserDialog(Project project, Collection<? extends SModuleReference> modules, @Nullable Collection<? extends SModuleReference> nonProjectModules, String title, boolean multiSelection) throws HeadlessException {
+    super(project, modules, nonProjectModules, multiSelection);
+    setTitle(title);
   }
 
   @Override
@@ -46,8 +47,8 @@ class ModuleChooserDialog extends BaseReferenceChooserDialog<SModuleReference> {
 
 
   @Override
-  protected BaseMPSChooseModel<SModuleReference> getMPSChooseModel(Project project, String entityString) {
-    return new BaseModuleModel(project, entityString) {
+  protected BaseMPSChooseModel<SModuleReference> getMPSChooseModel() {
+    return new BaseModuleModel(myProject, "module") {
       @Override
       public NavigationItem doGetNavigationItem(final SModuleReference module) {
         return new BaseModuleItem(module) {

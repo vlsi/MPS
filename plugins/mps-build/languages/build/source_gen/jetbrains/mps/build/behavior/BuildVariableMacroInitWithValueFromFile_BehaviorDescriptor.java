@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor extends BuildVariableMacroInitValue_BehaviorDescriptor {
   public BuildVariableMacroInitWithValueFromFile_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildVariableMacroInitWithValueFromFile";

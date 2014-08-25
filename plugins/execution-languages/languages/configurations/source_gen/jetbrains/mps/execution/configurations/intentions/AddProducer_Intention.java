@@ -25,41 +25,32 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class AddProducer_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddProducer_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.execution.configurations.structure.RunConfiguration";
   }
-
   public String getPresentation() {
     return "AddProducer";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.execution.configurations.intentions.AddProducer_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.execution.configurations";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     final SNode nodeFinal = node;
     return ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.execution.configurations.structure.RunConfigurationProducer")).where(new IWhereFilter<SNode>() {
@@ -68,30 +59,24 @@ public class AddProducer_Intention implements IntentionFactory {
       }
     }).isEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)", "2557661505909760572");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddProducer_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create Producer for " + SPropertyOperations.getString(node, "name");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode producer = SNodeFactoryOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationProducer", null);
       SLinkOperations.setTarget(producer, "configuration", createPersistentConfigurationType_wy7zix_a0b0a(node), true);
@@ -99,12 +84,10 @@ public class AddProducer_Intention implements IntentionFactory {
       SModelOperations.addRootNode(SNodeOperations.getModel(node), producer);
       NavigationSupport.getInstance().openNode(editorContext.getOperationContext(), producer, true, false);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddProducer_Intention.this;
     }
   }
-
   private static SNode createPersistentConfigurationType_wy7zix_a0b0a(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, false);

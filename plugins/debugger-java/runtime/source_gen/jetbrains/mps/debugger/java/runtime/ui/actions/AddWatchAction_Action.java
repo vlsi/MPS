@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class AddWatchAction_Action extends BaseAction {
   private static final Icon ICON = AllIcons.General.Add;
-
   public AddWatchAction_Action() {
     super("New Watch...", "New Watch...", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setEnabled(DebugActionsUtil.getEvaluationProvider(event) != null);
@@ -39,14 +36,6 @@ public class AddWatchAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);
@@ -59,6 +48,5 @@ public class AddWatchAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AddWatchAction_Action.class);
 }

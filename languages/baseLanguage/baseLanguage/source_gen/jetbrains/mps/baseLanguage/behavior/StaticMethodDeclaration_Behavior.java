@@ -24,17 +24,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class StaticMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
   }
-
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
   }
-
   public static boolean call_isMainMethod_1213877536670(final SNode thisNode) {
     // if we do not use resolve action, type system would compute all types in the root 
     // while in resolve mode only types required for calculating typeof are computed 
@@ -45,21 +42,17 @@ public class StaticMethodDeclaration_Behavior {
       }
     });
   }
-
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
   }
-
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
   }
-
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
-
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (!((context.isElementVisible(thisNode)))) {
       return;
@@ -68,15 +61,6 @@ public class StaticMethodDeclaration_Behavior {
     context.addMember(thisNode, signature);
     context.hideMembers(signature);
   }
-
-  public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return true;
-  }
-
-  public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return true;
-  }
-
   private static SNode _quotation_createNode_qyxuoz_b0a0a0a0a3a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

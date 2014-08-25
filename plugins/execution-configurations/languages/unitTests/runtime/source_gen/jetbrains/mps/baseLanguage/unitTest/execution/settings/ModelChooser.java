@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
   private final List<SModelReference> myCheckedModels = ListSequence.fromList(new ArrayList<SModelReference>());
-
   public ModelChooser() {
     addActionListener(new ActionListener() {
       @Override
@@ -37,7 +36,6 @@ public class ModelChooser extends TextFieldWithBrowseButton.NoPathCompletion {
       }
     });
   }
-
   private void collectModels() {
     ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {

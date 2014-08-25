@@ -7,11 +7,9 @@ import java.io.File;
 
 public class RelativePathHelper {
   private String myBasePath;
-
   public RelativePathHelper(String basePath) {
     myBasePath = basePath.replace("\\", "/");
   }
-
   public String makeRelative(String fullPath) throws RelativePathHelper.PathException {
     if ((fullPath == null || fullPath.length() == 0)) {
       return "";
@@ -23,7 +21,6 @@ public class RelativePathHelper {
       throw new RelativePathHelper.PathException(ex, ex.getMessage());
     }
   }
-
   public String makeAbsolute(String shortPath) throws RelativePathHelper.PathException {
     if ((shortPath == null || shortPath.length() == 0)) {
       return myBasePath;
@@ -39,11 +36,9 @@ public class RelativePathHelper {
       throw new RelativePathHelper.PathException(ex, ex.getMessage());
     }
   }
-
   public String getBasePath() {
     return myBasePath;
   }
-
   public static class PathException extends Exception {
     public PathException(Throwable cause, String message) {
       super(message, cause);

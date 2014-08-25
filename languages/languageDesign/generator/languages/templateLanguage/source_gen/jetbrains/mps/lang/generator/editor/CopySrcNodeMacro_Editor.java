@@ -24,11 +24,9 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jiideg_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createComponent_jiideg_a(editorContext, node);
   }
-
   private EditorCell createCollection_jiideg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_jiideg_a");
@@ -37,7 +35,6 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_jiideg_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_jiideg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$COPY_SRC$");
     editorCell.setCellId("Constant_jiideg_a0");
@@ -52,24 +49,19 @@ public class CopySrcNodeMacro_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CopySrcNodeMacro_Editor.CopySrcNodeMacro_component_cellMenu_jiideg_a0a0()}));
     return editorCell;
   }
-
   public static class CopySrcNodeMacro_component_cellMenu_jiideg_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
-
     public CopySrcNodeMacro_component_cellMenu_jiideg_a0a0() {
       this.myComponent = new replace_node_macro();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createComponent_jiideg_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     return editorCell;
   }
-
   private EditorCell createComponent_jiideg_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.CopyScrNodeMacro_inspector");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

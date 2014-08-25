@@ -15,7 +15,6 @@ public class ExtensionFieldDeclaration_Constraints extends BaseConstraintsDescri
   public ExtensionFieldDeclaration_Constraints() {
     super("jetbrains.mps.lang.extension.structure.ExtensionFieldDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class ExtensionFieldDeclaration_Constraints extends BaseConstraintsDescri
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";

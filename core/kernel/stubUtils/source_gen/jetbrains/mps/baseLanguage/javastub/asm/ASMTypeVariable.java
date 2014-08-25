@@ -5,15 +5,12 @@ package jetbrains.mps.baseLanguage.javastub.asm;
 
 public class ASMTypeVariable extends ASMType {
   private String myName;
-
   public ASMTypeVariable(String name) {
     myName = name;
   }
-
   public String getName() {
     return myName;
   }
-
   @Override
   public String toString() {
     return myName;

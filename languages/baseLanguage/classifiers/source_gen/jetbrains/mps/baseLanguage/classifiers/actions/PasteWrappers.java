@@ -21,11 +21,9 @@ public class PasteWrappers {
       public String getSourceConceptFqName() {
         return "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration";
       }
-
       public String getTargetConceptFqName() {
         return "jetbrains.mps.baseLanguage.structure.ClassifierMember";
       }
-
       public SNode wrap(PasteWrapperContext _context) {
         SNode imd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
         SPropertyOperations.set(imd, "name", SPropertyOperations.getString(_context.getSourceNode(), "name"));

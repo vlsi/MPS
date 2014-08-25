@@ -16,7 +16,6 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_pp9zo5_a(editorContext, node);
   }
-
   private EditorCell createComponent_pp9zo5_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -28,7 +27,6 @@ public class QueryParameter_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_pp9zo5_a0a(EditorContext editorContext, SNode node) {
     return SNodeOperations.getNextSibling(node) == null && SNodeOperations.getPrevSibling(node) == null;
   }

@@ -18,13 +18,11 @@ public class TreeHighlighterFactory extends AbstractProjectComponent {
   private CurrentDifferenceRegistry myRegistry;
   private FeatureForestMapSupport myFeatureForestMapSupport;
   private Map<MPSTree, TreeHighlighter> myTreeToHighlighter = MapSequence.fromMap(new HashMap<MPSTree, TreeHighlighter>());
-
   public TreeHighlighterFactory(@NotNull Project project, @NotNull CurrentDifferenceRegistry registry, @NotNull FeatureForestMapSupport featureForestMapSupport) {
     super(project);
     myRegistry = registry;
     myFeatureForestMapSupport = featureForestMapSupport;
   }
-
   public void highlightTreeIfNeeded(MPSTree tree) {
     TreeHighlighter highlighter = null;
     if (tree instanceof ProjectTree) {
@@ -41,7 +39,6 @@ public class TreeHighlighterFactory extends AbstractProjectComponent {
       }
     }
   }
-
   public void unhighlightTree(MPSTree tree) {
     synchronized (myTreeToHighlighter) {
       if (MapSequence.fromMap(myTreeToHighlighter).containsKey(tree)) {
@@ -50,7 +47,6 @@ public class TreeHighlighterFactory extends AbstractProjectComponent {
       }
     }
   }
-
   public static TreeHighlighterFactory getInstance(Project project) {
     return project.getComponent(TreeHighlighterFactory.class);
   }

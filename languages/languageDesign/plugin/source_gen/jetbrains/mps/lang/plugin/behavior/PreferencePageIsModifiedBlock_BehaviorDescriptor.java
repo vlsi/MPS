@@ -10,19 +10,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class PreferencePageIsModifiedBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public PreferencePageIsModifiedBlock_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return PreferencePageIsModifiedBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return PreferencePageIsModifiedBlock_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return PreferencePageIsModifiedBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock";

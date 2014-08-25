@@ -21,61 +21,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SafeRemoveConstant_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SafeRemoveConstant_Intention() {
   }
-
   public String getConcept() {
     return "org.jetbrains.mps.samples.Constants.structure.Constant";
   }
-
   public String getPresentation() {
     return "SafeRemoveConstant";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.Constants.intentions.SafeRemoveConstant_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.Constants";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:42e1ac37-7eb5-465e-8f7a-fef5bc98a099(org.jetbrains.mps.samples.Constants.intentions)", "3986994675334573802");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SafeRemoveConstant_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Safely Remove Constant";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       Iterable<SNode> allReferences = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constants", false, false), "org.jetbrains.mps.samples.Constants.structure.ConstantReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
@@ -89,7 +75,6 @@ public class SafeRemoveConstant_Intention implements IntentionFactory {
       });
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return SafeRemoveConstant_Intention.this;
     }

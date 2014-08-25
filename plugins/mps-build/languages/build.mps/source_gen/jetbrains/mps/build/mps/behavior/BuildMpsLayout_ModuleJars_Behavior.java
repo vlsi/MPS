@@ -13,14 +13,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class BuildMpsLayout_ModuleJars_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_unpack_7128123785277710736(SNode thisNode, UnpackHelper helper, Iterable<Object> artifacts) {
     SNode parent = helper.parent(thisNode);
     String parentLocation = helper.contentLocations().get(parent);
     String languageLocation = parentLocation + "/" + SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "module", false), "name") + ".jar";
     helper.locations().put(thisNode, languageLocation);
   }
-
   public static String virtual_location_7117056644539862594(SNode thisNode, DependenciesHelper helper, Object artifactId) {
     if (artifactId instanceof SNode) {
       SNode node = (SNode) artifactId;
@@ -35,7 +33,6 @@ public class BuildMpsLayout_ModuleJars_Behavior {
     }
     return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.build.structure.BuildLayout_Node", "virtual_location_7117056644539862594", new Object[]{helper, artifactId});
   }
-
   public static boolean virtual_exports_6547494638219603457(SNode thisNode, Object object) {
     if (object instanceof SNode) {
       SNode node = (SNode) object;

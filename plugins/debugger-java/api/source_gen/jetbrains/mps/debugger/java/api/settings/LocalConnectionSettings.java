@@ -17,12 +17,10 @@ public class LocalConnectionSettings extends DebugConnectionSettings {
       setPort(freePort);
     }
   }
-
   @Override
   public boolean isServerMode() {
     return true;
   }
-
   @Override
   public boolean isSuspend() {
     return true;

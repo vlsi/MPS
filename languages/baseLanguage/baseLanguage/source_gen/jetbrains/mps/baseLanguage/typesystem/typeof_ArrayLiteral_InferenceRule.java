@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ArrayLiteral_InferenceRule() {
   }
-
   public void applyRule(final SNode arrayLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(arrayLiteral, "item", true)).isNotEmpty()) {
       final SNode elementType_typevar_1188221443596 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -56,22 +55,18 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_8lb61p_a0c0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -83,7 +78,6 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_8lb61p_a0b0f0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

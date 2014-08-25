@@ -11,7 +11,6 @@ import java.awt.Color;
 public class StringPathRenderer extends DefaultListCellRenderer {
   public StringPathRenderer() {
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     String path = (String) value;

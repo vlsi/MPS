@@ -16,7 +16,6 @@ import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 public class PrecedenceUtil {
   public PrecedenceUtil() {
   }
-
   @NotNull
   public static SNode getTargetForRightTransform(@NotNull SNode contextNode) {
     SNode targetNode = contextNode;
@@ -42,7 +41,6 @@ public class PrecedenceUtil {
     }
     return targetNode;
   }
-
   @NotNull
   public static SNode getTargetForLeftTransform(@NotNull SNode contextNode, @NotNull SNode resultNode) {
     int resultingExpressionPriority = getPriority(SNodeOperations.getConceptDeclaration(resultNode)).ordinal();
@@ -63,11 +61,9 @@ public class PrecedenceUtil {
     }
     return targetNode;
   }
-
   public static boolean isSamePriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)) == getPriority(SNodeOperations.getConceptDeclaration(secondExpression));
   }
-
   public static SNode parenthesiseIfNecessary(@NotNull SNode contextNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode parentBinaryOperation = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.baseLanguage.structure.BinaryOperation");
@@ -87,14 +83,10 @@ public class PrecedenceUtil {
     return contextNode;
   }
 
-
-
   public static boolean needsParensAroundCastExpression(SNode castExpression) {
     return !((SLinkOperations.getTarget(castExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(castExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.GenericNewExpression") || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(castExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(castExpression, "expression", true), castExpression));
 
   }
-
-
 
   public static SNode findDesiredInstanceOfExpressionRoot(SNode instanceOfExpression) {
 
@@ -109,12 +101,9 @@ public class PrecedenceUtil {
     return currentParent;
   }
 
-
-
   private static boolean isHigherPriority(SNode firstExpression, SNode secondExpression) {
     return getPriority(SNodeOperations.getConceptDeclaration(firstExpression)).ordinal() < getPriority(SNodeOperations.getConceptDeclaration(secondExpression)).ordinal();
   }
-
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.castConcept(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
@@ -184,7 +173,6 @@ public class PrecedenceUtil {
     }
     return PrecedenceUtil.Precedence.DEFAULT;
   }
-
   public static SNode processLeftTransform(SNode sourceNode, SNode result) {
     SNode nodeToProcess = PrecedenceUtil.getTargetForLeftTransform(sourceNode, result);
     // since BinaryOperations are left-associative we should perform complex LT then 
@@ -204,14 +192,12 @@ public class PrecedenceUtil {
     PrecedenceUtil.parenthesiseIfNecessary(result);
     return result;
   }
-
   public static SNode processRightTransform(SNode sourceNode, SNode result) {
     SNodeOperations.replaceWithAnother(sourceNode, result);
     SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
     ParenthesisUtil.checkOperationWRTPriority(result);
     return result;
   }
-
   private static   enum Precedence {
     PARENTHESES(),
     ARRAY_OPARATIONS_AND_METHOD_CALLS(),

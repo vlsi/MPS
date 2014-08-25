@@ -10,12 +10,10 @@ import jetbrains.mps.debugger.java.api.evaluation.EvaluationRuntimeException;
 public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
   private final IObjectValueProxy myValueProxy;
   private final ThreadReference myThreadReference;
-
   public IterableProxy(IObjectValueProxy valueProxy, ThreadReference threadReference) {
     myValueProxy = valueProxy;
     myThreadReference = threadReference;
   }
-
   @Override
   public Iterator<T> iterator() {
     try {
@@ -25,14 +23,11 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
       throw new EvaluationRuntimeException(e);
     }
   }
-
   private class MyIterator implements Iterator<T> {
     private final IObjectValueProxy myIteratorProxy;
-
     public MyIterator(IObjectValueProxy iteratorProxy) {
       myIteratorProxy = iteratorProxy;
     }
-
     @Override
     public boolean hasNext() {
       try {
@@ -41,7 +36,6 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
         throw new EvaluationRuntimeException(e);
       }
     }
-
     @Override
     public T next() {
       try {
@@ -50,7 +44,6 @@ public class IterableProxy<T extends IValueProxy> implements Iterable<T> {
         throw new EvaluationRuntimeException(e);
       }
     }
-
     @Override
     public void remove() {
       try {

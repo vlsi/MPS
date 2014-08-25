@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class StyleClassReferenceList_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public StyleClassReferenceList_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleClassReferenceList";

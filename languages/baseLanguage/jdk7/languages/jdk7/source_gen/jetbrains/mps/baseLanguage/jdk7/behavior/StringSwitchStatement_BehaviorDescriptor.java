@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.SwitchStatement_BehaviorDescriptor;
 public class StringSwitchStatement_BehaviorDescriptor extends SwitchStatement_BehaviorDescriptor {
   public StringSwitchStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.jdk7.structure.StringSwitchStatement";

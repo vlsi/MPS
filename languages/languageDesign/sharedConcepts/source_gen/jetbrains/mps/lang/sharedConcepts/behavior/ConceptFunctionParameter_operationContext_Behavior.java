@@ -10,15 +10,12 @@ import jetbrains.mps.smodel.SReference;
 public class ConceptFunctionParameter_operationContext_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     return false;
   }
-
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_wjmkqx_a0a1();
   }
-
   private static SNode _quotation_createNode_wjmkqx_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

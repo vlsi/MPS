@@ -10,7 +10,6 @@ import jetbrains.mps.util.FileUtil;
 /*package*/ class SimpleMerger extends AbstractContentMerger {
   /*package*/ SimpleMerger() {
   }
-
   @Nullable
   @Override
   public Tuples._2<Integer, byte[]> mergeContents(FileContent baseContent, FileContent localContent, FileContent latestContent) {
@@ -26,7 +25,6 @@ import jetbrains.mps.util.FileUtil;
     }
     return MultiTuple.<Integer,byte[]>from(CONFLICTS, localContent.getData());
   }
-
   private static String contentAsString(FileContent content) {
     return new String(content.getData(), FileUtil.DEFAULT_CHARSET).replace("\r\n", "\n");
   }

@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildVariableMacroInitWithDate_BehaviorDescriptor extends BuildVariableMacroInitValue_BehaviorDescriptor {
   public BuildVariableMacroInitWithDate_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildVariableMacroInitWithDate";

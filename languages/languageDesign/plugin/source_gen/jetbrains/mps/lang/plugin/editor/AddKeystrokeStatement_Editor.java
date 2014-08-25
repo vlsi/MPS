@@ -20,7 +20,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4pzy21_a(editorContext, node);
   }
-
   private EditorCell createCollection_4pzy21_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4pzy21_a");
@@ -32,7 +31,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_4pzy21_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_4pzy21_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "addKeystroke");
     editorCell.setCellId("Constant_4pzy21_a0");
@@ -42,7 +40,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4pzy21_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_4pzy21_b0");
@@ -52,7 +49,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_4pzy21_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("stroke");
@@ -72,7 +68,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_4pzy21_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_4pzy21_d0");
@@ -82,7 +77,6 @@ public class AddKeystrokeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_4pzy21_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_4pzy21_e0");

@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_Copy_BehaviorDescriptor extends BuildLayout_AbstractCopy_BehaviorDescriptor implements BuildLayout_FileSet_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public BuildLayout_Copy_BehaviorDescriptor() {
   }
-
   public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return BuildLayout_Copy_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_Copy";

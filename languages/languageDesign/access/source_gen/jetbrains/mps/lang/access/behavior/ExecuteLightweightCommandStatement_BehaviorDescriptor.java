@@ -6,7 +6,6 @@ package jetbrains.mps.lang.access.behavior;
 public class ExecuteLightweightCommandStatement_BehaviorDescriptor extends BaseExecuteCommandStatementSync_BehaviorDescriptor {
   public ExecuteLightweightCommandStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement";

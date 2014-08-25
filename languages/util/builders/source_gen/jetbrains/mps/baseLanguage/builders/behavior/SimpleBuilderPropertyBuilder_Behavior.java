@@ -10,19 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class SimpleBuilderPropertyBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return true;
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "type", true), "virtual_getJavaType_1213877337345", new Object[]{});
   }
-
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     return SLinkOperations.getTarget(thisNode, "value", true);
   }
-
   public static SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
 
     SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "set", true));

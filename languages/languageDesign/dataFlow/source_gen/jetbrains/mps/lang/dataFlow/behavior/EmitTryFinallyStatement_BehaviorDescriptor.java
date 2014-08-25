@@ -6,7 +6,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class EmitTryFinallyStatement_BehaviorDescriptor extends EmitStatement_BehaviorDescriptor {
   public EmitTryFinallyStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.structure.EmitTryFinallyStatement";

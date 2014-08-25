@@ -37,7 +37,6 @@ public class Sequence_Test extends Util_Test {
     Assert.assertEquals(true, Sequence.fromIterable(Collections.emptyList()).isEmpty());
     Assert.assertEquals(false, Sequence.fromIterable(Collections.emptyList()).isNotEmpty());
   }
-
   public void test_sequenceFromClosure() throws Exception {
     Iterable<Integer> seq = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
       public Iterable<Integer> invoke() {
@@ -45,7 +44,6 @@ public class Sequence_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -83,7 +81,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -92,7 +89,6 @@ __switch__:
     }.invoke();
     this.assertIterableEquals(this.expect5(), seq);
   }
-
   public void test_sequenceInitializer() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -100,7 +96,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -138,7 +133,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -147,7 +141,6 @@ __switch__:
     });
     this.assertIterableEquals(this.expect5(), seq);
   }
-
   public void test_sequenceInitializer2() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -155,7 +148,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -193,7 +185,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -209,7 +200,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -267,7 +257,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _4_i;
             };
           }
@@ -276,7 +265,6 @@ __switch__:
     });
     this.assertIterableEquals(this.expect5(), seq3);
   }
-
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertEquals(((Integer) 1), Sequence.fromIterable(input).first());
@@ -293,7 +281,6 @@ __switch__:
     Assert.assertEquals(true, Sequence.fromIterable(this.inputEmpty()).isEmpty());
     Assert.assertEquals(false, Sequence.fromIterable(this.inputEmpty()).isNotEmpty());
   }
-
   public void test_lastIndexOf() throws Exception {
     Iterable<Integer> input = this.input5();
     input = Sequence.fromIterable(input).concat(Sequence.fromIterable(input));
@@ -303,7 +290,6 @@ __switch__:
       Assert.assertEquals(5 + i - 1, Sequence.fromIterable(input).lastIndexOf(i));
     }
   }
-
   public void test_toOperations() throws Exception {
     Iterable<Integer> input = this.input5();
     Assert.assertTrue(Arrays.equals(new int[]{1, 2, 3, 4, 5}, ArrayUtils.toIntArray(Sequence.fromIterable(input).toListSequence())));
@@ -323,7 +309,6 @@ __switch__:
     }
     Assert.assertTrue(Arrays.equals(sarr, oarr));
   }
-
   public void test_primitiveParameter() throws Exception {
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -331,7 +316,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -375,13 +359,11 @@ __switch__:
     char[] carr = ArrayUtils.toCharArray(Sequence.fromIterable(empty));
     Assert.assertEquals(0, carr.length);
   }
-
   public void test_singleton() throws Exception {
     Iterable<Integer> ssl = Sequence.<Integer>singleton(42);
     Assert.assertSame(1, Sequence.fromIterable(ssl).count());
     Assert.assertSame(42, Sequence.fromIterable(ssl).first());
   }
-
   public void test__toString() throws Exception {
     final Wrappers._int count = new Wrappers._int(1);
     Iterable<String> test = Sequence.fromClosure(new ISequenceClosure<String>() {
@@ -390,7 +372,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -456,17 +437,14 @@ __switch__:
     Assert.assertEquals("[foo, bar]", String.valueOf(test));
     Assert.assertEquals("[duh, foo, bar]", String.valueOf(test));
   }
-
   public void test_asSequence() throws Exception {
     String[] arr = new String[]{"A", "B", "C"};
     this.assertIterableEquals(this.inputABC(), Sequence.fromArray(arr));
   }
-
   public void test_asSequencePrim() throws Exception {
     int[] iarr = new int[]{1, 2, 3, 4, 5};
     this.assertIterableEquals(this.input5(), ArrayUtils.fromIntegerArray(iarr));
   }
-
   public void test_containsAll() throws Exception {
     Iterable<Integer> seq = ArrayUtils.fromIntegerArray(new int[]{2, 4, 3, 1, 5});
     Assert.assertFalse(Sequence.fromIterable(seq).containsSequence(Sequence.fromIterable(this.input10())));
@@ -479,18 +457,15 @@ __switch__:
     Iterable<Foo> seq3 = Sequence.<Foo>singleton(foo);
     Assert.assertTrue(Sequence.fromIterable(seq3).containsSequence(Sequence.fromIterable(Sequence.<Bar>singleton(bar))));
   }
-
   public void test_join() throws Exception {
     Iterable<String> test = ListSequence.fromListAndArray(new ArrayList<String>(), "vodka", "tequila", "whisky");
     Assert.assertEquals("vodka tequila whisky", IterableUtils.join(Sequence.fromIterable(test), " "));
     Assert.assertEquals("vodka, tequila, whisky", IterableUtils.join(Sequence.fromIterable(test), ", "));
   }
-
   public void test_test_MPS6197() throws Exception {
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{2}), this.abc(0));
     this.assertIterableEquals(ArrayUtils.fromIntegerArray(new int[]{3}), this.abc(1));
   }
-
   public void test_sequenceTypeWithoutElement() throws Exception {
     Iterable<Integer> si = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -498,7 +473,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -544,7 +518,6 @@ __switch__:
     Iterable is = si;
     this.assertIterableEquals(this.input5(), is);
   }
-
   public void test_primitiveValues() throws Exception {
     final Integer fff = 555;
     Integer ttt = 333;
@@ -559,7 +532,6 @@ __switch__:
       }
     }));
   }
-
   public void test_mps18138() throws Exception {
     Iterable<? extends Iterable<Integer>> sosoi = Sequence.fromIterable(Sequence.fromArray(new int[][]{})).select(new ISelector<int[], ISequence<Integer>>() {
       public ISequence<Integer> select(int[] it) {
@@ -567,7 +539,6 @@ __switch__:
       }
     });
   }
-
   public Iterable<Integer> abc(final int j) {
     return Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -575,7 +546,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -612,7 +582,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_i;
             };
           }

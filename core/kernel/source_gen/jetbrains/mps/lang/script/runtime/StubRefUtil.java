@@ -37,13 +37,11 @@ public class StubRefUtil {
 
     return SModelStereotype.getStereotype(tRef.getModelName()).endsWith(SModelStereotype.STUB_SUFFIX);
   }
-
   private static String getTargetStringFromReference(@NotNull SReference reference) {
     String targetPackage = SModelStereotype.withoutStereotype(check_4tnolf_a0a0a1(check_4tnolf_a0a0a0b(reference)));
     String targetName = reference.getTargetNodeId().toString();
     return targetPackage + "/" + targetName;
   }
-
   public static boolean isReferenceToClass(@Nullable SReference reference, @NotNull String classFqName) {
     if (reference == null || !(isReferenceToJavaStub(reference))) {
       return false;
@@ -51,7 +49,6 @@ public class StubRefUtil {
     String expectedString = NameUtil.namespaceFromLongName(classFqName) + "/~" + NameUtil.shortNameFromLongName(classFqName);
     return getTargetStringFromReference(reference).equals(expectedString);
   }
-
   public static boolean isReferenceToMethod(@Nullable SReference reference, @NotNull String methodSignature) {
     if (reference == null || !(isReferenceToJavaStub(reference))) {
       return false;
@@ -60,7 +57,6 @@ public class StubRefUtil {
     String expectedString = methodSignature.substring(0, packageClassDot) + "/~" + methodSignature.substring(packageClassDot + 1);
     return expectedString.equals(getTargetStringFromReference(reference));
   }
-
   public static boolean isReferenceToField(@Nullable SReference reference, @NotNull String field) {
     if (reference == null || !(isReferenceToJavaStub(reference))) {
       return false;
@@ -69,50 +65,39 @@ public class StubRefUtil {
     String expectedString = field.substring(0, packageClassDot) + "/~" + field.substring(packageClassDot + 1);
     return expectedString.equals(getTargetStringFromReference(reference));
   }
-
   public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String methodSignature) {
     String classFqName = NameUtil.namespaceFromLongName(methodSignature.substring(0, methodSignature.indexOf("(")));
     return isReferenceToClass(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), classFqName) && isReferenceToMethod(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), methodSignature);
   }
-
   public static boolean isStaticFieldReference(SNode staticFieldRef, @NotNull String field) {
     String classFqName = NameUtil.namespaceFromLongName(field);
     return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), field);
   }
-
   public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull org.jetbrains.mps.openapi.model.SNodeId targetId) {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
-
   public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull String targetModelID, @NotNull String classId, @NotNull String methodId) {
     SModelReference targetModel = PersistenceFacade.getInstance().createModelReference(targetModelID);
     return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
-
   public static boolean isClassifierType(SNode classifierType, @NotNull String targetModel, @NotNull String classId) {
     return isReferenceTo(SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), PersistenceFacade.getInstance().createModelReference(targetModel), PersistenceFacade.getInstance().createNodeId(classId));
   }
-
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull String methodSignature) {
     return isReferenceToMethod(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), methodSignature);
   }
-
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
     return isReferenceTo(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
-
   public static boolean isEnumClassifierReference(SNode ref, String modelRef, String nodeRef) {
     return isReferenceTo(SNodeOperations.getReference(ref, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "enumClass")), PersistenceFacade.getInstance().createModelReference(modelRef), PersistenceFacade.getInstance().createNodeId(nodeRef));
   }
-
   public static boolean isClassCreator(SNode creator, @NotNull String creatorSignature) {
     return isReferenceToMethod(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorSignature);
   }
-
   public static boolean isClassCreator(SNode creator, @NotNull String creatorModel, @NotNull String creatorId) {
     return isReferenceTo(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), PersistenceFacade.getInstance().createModelReference(creatorModel), PersistenceFacade.getInstance().createNodeId(creatorId));
   }
-
   public static void addRequiredImports(SModel model, SNode newNode) {
     for (SReference ref : ListSequence.fromList(SNodeOperations.getDescendants(newNode, null, true, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode n) {
@@ -131,12 +116,10 @@ public class StubRefUtil {
       }
     }
   }
-
   public static void replaceNode(SNode oldNode, SNode newNode) {
     StubRefUtil.addRequiredImports(SNodeOperations.getModel(oldNode), newNode);
     SNodeOperations.replaceWithAnother(oldNode, newNode);
   }
-
   public static void replaceRefs(SNode oldNode, SNode newNode) {
     for (SReference newRef : Sequence.fromIterable(newNode.getReferences())) {
       oldNode.setReference(newRef.getRole(), null);
@@ -144,34 +127,29 @@ public class StubRefUtil {
     }
     StubRefUtil.addRequiredImports(oldNode.getModel(), newNode);
   }
-
   public static void replaceReference(SNode oldNode, SReference reference) {
     oldNode.setReference(reference.getRole(), null);
     oldNode.setReference(new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()).getRole(), new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) reference).getResolveInfo()));
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }
-
   private static String check_4tnolf_a0a0a1(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();
     }
     return null;
   }
-
   private static SModelReference check_4tnolf_a0a0a0b(SReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getTargetSModelReference();
     }
     return null;
   }
-
   private static SModule check_4tnolf_a0d0a0p(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_4tnolf_a0e0a0p(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

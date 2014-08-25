@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class HelpConceptReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public HelpConceptReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.HelpConceptReference";

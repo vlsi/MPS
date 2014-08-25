@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class Slot_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getCustomizedSlot_935069066463578518(final SNode thisNode) {
     SNode dailyPlan = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.heating.structure.DailyPlan");
     SNode found = null;
@@ -33,7 +32,6 @@ public class Slot_Behavior {
     }
     return found;
   }
-
   public static boolean call_isCustomizing_935069066463662362(SNode thisNode) {
     return (Slot_Behavior.call_getCustomizedSlot_935069066463578518(thisNode) != null);
   }

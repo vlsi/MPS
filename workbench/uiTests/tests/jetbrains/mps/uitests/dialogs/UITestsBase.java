@@ -18,16 +18,12 @@ package jetbrains.mps.uitests.dialogs;
 import com.intellij.ide.GeneralSettings;
 import com.intellij.openapi.application.ex.ApplicationEx;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.MPSMainImpl;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.testbench.IdeaEnvironment;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.JFCTestCase;
 import junit.extensions.jfcunit.JFCTestHelper;
@@ -37,10 +33,8 @@ import junit.extensions.jfcunit.finder.NamedComponentFinder;
 
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
-import javax.swing.SwingUtilities;
 import java.awt.Component;
 import java.awt.Container;
-import java.io.File;
 import java.util.List;
 
 public abstract class UITestsBase extends JFCTestCase {
@@ -52,7 +46,7 @@ public abstract class UITestsBase extends JFCTestCase {
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.platform.prefix", "MPS");
 
-    IdeMain.setTestMode(TestMode.UI_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
 
     MPSMainImpl.start(new String[0]);
 
@@ -97,43 +91,6 @@ public abstract class UITestsBase extends JFCTestCase {
   }
 
   public abstract static class NoProjectUITestsBase extends UITestsBase {
-  }
-
-  public abstract static class ProjectUITestsBase extends UITestsBase {
-    private String myProjectPath;
-    private Project myProject;
-
-    protected ProjectUITestsBase(String projectPath) throws InterruptedException {
-      myProjectPath = projectPath;
-      myProject = initProject();
-    }
-
-    public Project getProject() {
-      return myProject;
-    }
-
-    protected Project initProject() throws InterruptedException {
-      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
-        public Boolean compute() {
-          return false;//IdeMain.isUILoaded();
-        }
-      });
-
-      final jetbrains.mps.project.Project[] project = new jetbrains.mps.project.Project[1];
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          project[0] = IdeaEnvironment.openProjectInIdeaEnvironment(new File(myProjectPath));
-        }
-      });
-
-      TestUtil.conditionalWaitAndFlush(this, new Computable<Boolean>() {
-        public Boolean compute() {
-          return project[0] != null && ProjectHelper.toIdeaProject(project[0]) != null;
-        }
-      });
-
-      return ProjectHelper.toIdeaProject(project[0]);
-    }
   }
 
   protected final String checkTextField(String name) {

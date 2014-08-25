@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ParametersDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
     return ">";
   }
-
   public static String virtual_getLeftBracket_1262430001741497804(SAbstractConcept thisConcept) {
     return "<";
   }

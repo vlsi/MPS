@@ -39,11 +39,9 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nnob7w_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nnob7w_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_nnob7w_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_a");
@@ -55,7 +53,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_nnob7w_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$CALL$");
     editorCell.setCellId("Constant_nnob7w_a0");
@@ -70,33 +67,28 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TemplateCallMacro_Editor.TemplateCallMacro_component_cellMenu_nnob7w_a0a0()}));
     return editorCell;
   }
-
   public static class TemplateCallMacro_component_cellMenu_nnob7w_a0a0 implements SubstituteInfoPartExt {
     private replace_node_macro myComponent;
-
     public TemplateCallMacro_component_cellMenu_nnob7w_a0a0() {
       this.myComponent = new replace_node_macro();
     }
-
     public List<SubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
       return this.myComponent.createSubstituteActions(cellContext, editorContext);
     }
   }
-
   private EditorCell createReadOnlyModelAccessor_nnob7w_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "template", false), "name");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_nnob7w_b0");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_reference(style, editorCell);
@@ -105,16 +97,13 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean renderingCondition_nnob7w_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "template", false) != null) && isNotEmptyString(SPropertyOperations.getString(SLinkOperations.getTarget(node, "template", false), "name"));
   }
-
   private EditorCell createComponent_nnob7w_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.NodeMacro_postfix");
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_a_0");
@@ -127,7 +116,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_nnob7w_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template-call-macro");
     editorCell.setCellId("Constant_nnob7w_a0_0");
@@ -139,7 +127,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_nnob7w_b0");
@@ -149,7 +136,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_c0");
@@ -164,7 +150,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_nnob7w_e2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_a2a");
@@ -176,14 +161,12 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_nnob7w_c0c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "comment");
     editorCell.setCellId("Constant_nnob7w_a0c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_b0c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b0c0");
@@ -193,7 +176,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_nnob7w_c0c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("comment");
@@ -212,7 +194,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_b2a");
@@ -224,14 +205,12 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_nnob7w_c1c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapping label");
     editorCell.setCellId("Constant_nnob7w_a1c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_b1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b1c0");
@@ -241,7 +220,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_nnob7w_c1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("mappingLabel");
@@ -263,20 +241,16 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_nnob7w_a2b2a extends InlineCellProvider {
     public _Inline_nnob7w_a2b2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_nnob7w_a0c1c0(editorContext, node);
     }
-
     private EditorCell createProperty_nnob7w_a0c1c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -299,7 +273,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_nnob7w_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_c2a");
@@ -311,7 +284,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_nnob7w_c2c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "mapped node");
     editorCell.setCellId("Constant_nnob7w_a2c0");
@@ -321,7 +293,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_b2c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b2c0");
@@ -331,7 +302,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_nnob7w_c2c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("sourceNodeQuery");
@@ -351,7 +321,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_nnob7w_d2a");
@@ -361,7 +330,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_e2a");
@@ -373,7 +341,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_nnob7w_c4c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "call template");
     editorCell.setCellId("Constant_nnob7w_a4c0");
@@ -383,7 +350,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_nnob7w_b4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_nnob7w_b4c0");
@@ -393,7 +359,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_nnob7w_c4c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_nnob7w_c4c0");
@@ -401,7 +366,6 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_nnob7w_b2e2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_nnob7w_a2e2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("template");
@@ -426,20 +390,16 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_nnob7w_a0c4c0 extends InlineCellProvider {
     public _Inline_nnob7w_a0c4c0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_nnob7w_a0a2e2a(editorContext, node);
     }
-
     private EditorCell createProperty_nnob7w_a0a2e2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -462,12 +422,10 @@ public class TemplateCallMacro_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createComponent_nnob7w_b2e2a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.ITemplateCall_actualArguments");
     return editorCell;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

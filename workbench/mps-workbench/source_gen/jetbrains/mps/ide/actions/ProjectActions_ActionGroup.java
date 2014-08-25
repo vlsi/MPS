@@ -17,7 +17,6 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_check = ID + "check";
   public static final String LABEL_ID_compileJava = ID + "compileJava";
   public static final String LABEL_ID_runConfig = ID + "runConfig";
-
   public ProjectActions_ActionGroup() {
     super("ProjectActions", ID);
     this.setIsInternal(false);
@@ -44,7 +43,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
         ProjectActions_ActionGroup.this.addAction(action);
       }
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action");
-      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddMissingImportsInProject_Action");
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixModuleImportsInProject_Action");
       ProjectActions_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(ProjectActions_ActionGroup.LABEL_ID_compileJava);

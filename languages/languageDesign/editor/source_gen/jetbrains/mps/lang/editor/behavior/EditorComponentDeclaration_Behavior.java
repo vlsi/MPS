@@ -11,19 +11,15 @@ import java.util.Set;
 public class EditorComponentDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
   }
-
   public static SNode virtual_getConceptDeclaration_7055725856388417603(SNode thisNode) {
     return EditorComponentDeclaration_Behavior.call_getConceptDeclaration_8288068497639818367(thisNode, SetSequence.fromSet(new HashSet<SNode>()));
   }
-
   public static SNode call_getConceptDeclaration_8288068497639818367(SNode thisNode, Set<SNode> visitedEditorComponents) {
     if (SLinkOperations.getTarget(thisNode, "conceptDeclaration", false) != null) {
       return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);

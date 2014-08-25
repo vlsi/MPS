@@ -15,7 +15,6 @@ public class MatrixIndexWildcard_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_do4b1s_a(editorContext, node);
   }
-
   private EditorCell createConstant_do4b1s_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "*");
     editorCell.setCellId("Constant_do4b1s_a");

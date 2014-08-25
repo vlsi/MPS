@@ -13,15 +13,12 @@ public enum ResourcesPolicy {
   produce("produce", "PRODUCE");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<ResourcesPolicy> getConstants() {
     List<ResourcesPolicy> list = ListSequence.fromList(new LinkedList<ResourcesPolicy>());
     ListSequence.fromList(list).addElement(ResourcesPolicy.transform);
@@ -30,11 +27,9 @@ public enum ResourcesPolicy {
     ListSequence.fromList(list).addElement(ResourcesPolicy.produce);
     return list;
   }
-
   public static ResourcesPolicy getDefault() {
     return ResourcesPolicy.transform;
   }
-
   public static ResourcesPolicy parseValue(String value) {
     if (value == null) {
       return ResourcesPolicy.getDefault();
@@ -53,14 +48,11 @@ public enum ResourcesPolicy {
     }
     return ResourcesPolicy.getDefault();
   }
-
   private String myValue;
-
   ResourcesPolicy(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

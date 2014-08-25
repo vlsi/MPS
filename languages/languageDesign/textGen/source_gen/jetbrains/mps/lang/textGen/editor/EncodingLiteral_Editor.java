@@ -22,7 +22,6 @@ public class EncodingLiteral_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_djrnp4_a(editorContext, node);
   }
-
   private EditorCell createCollection_djrnp4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_djrnp4_a");
@@ -30,7 +29,6 @@ public class EncodingLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_djrnp4_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_djrnp4_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("encoding");
@@ -51,11 +49,9 @@ public class EncodingLiteral_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_EncodingLiteral_cellMenu_djrnp4_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.textGen.structure.EncodingLiteral";
     }

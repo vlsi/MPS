@@ -25,7 +25,6 @@ public class NewSolutionDialog extends DialogWrapper {
   private NewSolutionSettings mySolutionSettings;
   private String myVirtualFolder;
 
-
   public NewSolutionDialog(Project project, @Nullable String virtualFolder) {
     super(ProjectHelper.toIdeaProject(project));
     setTitle("New Solution");
@@ -37,8 +36,6 @@ public class NewSolutionDialog extends DialogWrapper {
 
     init();
   }
-
-
 
   @Nullable
   public JComponent createCenterPanel() {
@@ -53,7 +50,6 @@ public class NewSolutionDialog extends DialogWrapper {
     }
     return mySolutionSettings;
   }
-
   @Override
   protected void doOKAction() {
     if (!(check())) {
@@ -69,7 +65,6 @@ public class NewSolutionDialog extends DialogWrapper {
       }
     });
   }
-
   @Nullable
   @Override
   public JComponent getPreferredFocusedComponent() {
@@ -77,17 +72,13 @@ public class NewSolutionDialog extends DialogWrapper {
   }
 
 
-
-
   public Solution getSolution() {
     return myResult;
   }
-
   @Nullable
   public String getError() {
     return myError;
   }
-
   private boolean check() {
     myError = NewModuleUtil.check(MPSExtentions.DOT_SOLUTION, mySolutionSettings.getSolutionName(), mySolutionSettings.getSolutionLocation());
     setErrorText(myError);

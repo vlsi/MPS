@@ -24,7 +24,6 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
   public ClassConcept_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   public String getAlternativeIcon(SNode node) {
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDescendant_7165541881557222913", new Object[]{SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Throwable")})) {
       if (SPropertyOperations.getBoolean(node, "abstractClass")) {
@@ -37,12 +36,10 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
     }
     return null;
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
@@ -50,14 +47,12 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_3muhb7_a0a0a0a0a3;
       }
-
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getVisibleClassesScope(_context.getContextNode());
       }
     };
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -66,18 +61,15 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "isStatic";
         return !(SPropertyOperations.getBoolean(node, "nonStatic"));
       }
-
       @Override
       public boolean hasOwnSetter() {
         return true;
       }
-
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "isStatic";
@@ -86,6 +78,5 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
     });
     return properties;
   }
-
   private static SNodePointer breakingNode_3muhb7_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133172");
 }

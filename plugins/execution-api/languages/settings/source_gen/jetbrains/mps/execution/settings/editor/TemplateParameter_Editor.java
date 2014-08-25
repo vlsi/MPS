@@ -23,7 +23,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cy34jy_a(editorContext, node);
   }
-
   private EditorCell createCollection_cy34jy_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cy34jy_a");
@@ -35,7 +34,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_cy34jy_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -55,7 +53,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_cy34jy_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
@@ -63,7 +60,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_cy34jy_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_cy34jy_c0");
@@ -74,11 +70,9 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_cy34jy_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_cy34jy_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
-
   private EditorCell createConstant_cy34jy_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_cy34jy_a2a");
@@ -88,7 +82,6 @@ public class TemplateParameter_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_cy34jy_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initializer");

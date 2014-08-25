@@ -31,23 +31,18 @@ public class MergeDriverNotification {
   private Project myProject;
   private AbstractInstaller.State myCompositeState;
   private Notification myLastNotification;
-
   private MergeDriverNotification(Project project) {
     myProject = project;
   }
-
   private boolean isNotificationSuppressed() {
     return "true".equals(PropertiesComponent.getInstance().getValue(SUPPRESSED_PROPERTY_NAME));
   }
-
   public void setNotificationsSuppressed(boolean value) {
     PropertiesComponent.getInstance().setValue(SUPPRESSED_PROPERTY_NAME, Boolean.toString(value));
   }
-
   private void calculateCompositeState() {
     myCompositeState = MergeDriverInstaller.getCompositeState(myProject, false);
   }
-
   public void showNotificationIfNeeded() {
     if (isNotificationSuppressed()) {
       return;
@@ -64,7 +59,6 @@ public class MergeDriverNotification {
     }
     showNotifications();
   }
-
   private void showNotifications() {
     final Set<String> vcsNames = SetSequence.fromSetWithValues(new HashSet<String>(), ListSequence.fromList(((List<VcsDirectoryMapping>) ProjectLevelVcsManager.getInstance(myProject).getDirectoryMappings())).select(new ISelector<VcsDirectoryMapping, String>() {
       public String select(VcsDirectoryMapping dm) {
@@ -108,7 +102,6 @@ public class MergeDriverNotification {
       }
     });
   }
-
   public static MergeDriverNotification getInstance(Project project) {
     return new MergeDriverNotification(project);
   }

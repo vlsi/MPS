@@ -55,16 +55,15 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
   private final ProgressLine myProgressLineComponent;
   private final TestToolbarPanel myActionToolComponent;
   private final Project myProject;
-  private final FailedTestOccurenceNavigator myTestNavigator;
+  private final FailedTestOccurrenceNavigator myTestNavigator;
   private final List<_FunctionTypes._void_P0_E0> myListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P0_E0>());
-
   public UnitTestViewComponent(Project project, @NotNull IOperationContext context, ConsoleView console, TestRunState testRunState, _FunctionTypes._void_P0_E0 closeListener) {
     myProject = project;
     myTestState = testRunState;
     StatisticsTableModel statisticsModel = new StatisticsTableModel(myTestState);
 
     myTreeComponent = new TestTree(myTestState, context, this);
-    myTestNavigator = new FailedTestOccurenceNavigator(myTreeComponent);
+    myTestNavigator = new FailedTestOccurrenceNavigator(myTreeComponent);
     myActionToolComponent = new TestToolbarPanel(myTreeComponent, myTestNavigator);
 
     JComponent leftPanel = createTreeComponent(myActionToolComponent, myTreeComponent);
@@ -90,7 +89,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     myTestState.addView(myOutputComponent);
     addCloseListener(closeListener);
   }
-
   public JComponent createActionsToolbar(ConsoleView console) {
     DefaultActionGroup group = new DefaultActionGroup(console.createConsoleActions());
     ActionManager manager = ActionManager.getInstance();
@@ -98,7 +96,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     toolbar.setLayoutPolicy(ActionToolbar.WRAP_LAYOUT_POLICY);
     return toolbar.getComponent();
   }
-
   private JComponent createTreeComponent(JComponent toolbar, JComponent tree) {
     UnitTestViewComponent.MyTreePanel treePanel = new UnitTestViewComponent.MyTreePanel(new BorderLayout());
     JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(tree);
@@ -106,7 +103,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     treePanel.add(toolbar, BorderLayout.NORTH);
     return treePanel;
   }
-
   private JComponent createStatisticsComponent(StatisticsTableModel testStatisticsModel) {
     JTable statisticsTable = new JBTable(testStatisticsModel);
     statisticsTable.setDefaultRenderer(TestStatisticsRow.class, new StatisticsRowRenderer());
@@ -114,28 +110,23 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     tablePanel.add(new JBScrollPane(statisticsTable));
     return tablePanel;
   }
-
   public ProcessListener getProcessListener() {
     return myProgressLineComponent.getProcessListener();
   }
-
   @Override
   public void dispose() {
     myOutputComponent.dispose();
     myTreeComponent.dispose();
     invokeCloseListeners();
   }
-
   public void addCloseListener(_FunctionTypes._void_P0_E0 listener) {
     ListSequence.fromList(myListeners).addElement(listener);
   }
-
   public void invokeCloseListeners() {
     for (_FunctionTypes._void_P0_E0 listener : ListSequence.fromList(myListeners)) {
       listener.invoke();
     }
   }
-
   private JPanel createOutputComponent(ConsoleView console, JComponent progressLine, JComponent testOutput, StatisticsTableModel statisticsModel) {
     JPanel rightPanel = new JPanel(new GridBagLayout());
 
@@ -172,7 +163,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     rightPanel.add(outputStatisticSplitter, c);
     return rightPanel;
   }
-
   public void initSplitterProportion(final Splitter splitter, float defaultProportion, final String id) {
     final PropertiesComponent propertiesComponent = PropertiesComponent.getInstance();
     String value = propertiesComponent.getValue(UnitTestViewComponent.SPLITTER_SIZE_PROPERTY + "." + id);
@@ -195,7 +185,6 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
 
     splitter.setProportion(proportion);
   }
-
   public static Language getLanguage() {
     final Wrappers._T<Language> lang = new Wrappers._T<Language>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -205,12 +194,10 @@ public class UnitTestViewComponent extends JPanel implements Disposable {
     });
     return lang.value;
   }
-
   public class MyTreePanel extends JPanel implements DataProvider {
     public MyTreePanel(LayoutManager manager) {
       super(manager);
     }
-
     @Nullable
     @Override
     public Object getData(@NonNls String dataId) {

@@ -20,99 +20,75 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_7329423411587633024(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator");
   }
-
   public static boolean baseMappingRule_Condition_7329423411587656275(final BaseMappingRuleContext _context) {
     return !(SNodeOperations.isInstanceOf(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.debugger.api.lang.structure.BreakpointCreator"));
   }
-
   public static Object propertyMacro_GetPropertyValue_6013762200472629077(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "debuggerName");
   }
-
   public static Object propertyMacro_GetPropertyValue_7329423411587656269(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "debuggerName");
   }
-
   public static Object propertyMacro_GetPropertyValue_2526721715665281979(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "kindName");
   }
-
   public static Object propertyMacro_GetPropertyValue_933053558709993778(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   public static Object propertyMacro_GetPropertyValue_933053558709995184(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   public static boolean ifMacro_Condition_4030433165042041058(final IfMacroContext _context) {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
   }
-
   public static boolean ifMacro_Condition_7796501636717933060(final IfMacroContext _context) {
-    return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex")) || (SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) == null);
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex")) || ((SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) == null) && (SLinkOperations.getTarget(_context.getNode(), "isApplicableBreakpoint", true) == null));
   }
-
   public static boolean ifMacro_Condition_7796501636717933370(final IfMacroContext _context) {
     return SetSequence.fromSet(StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true), false)).isNotEmpty() || ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.debugger.api.lang.structure.DebuggerReference", false, new String[]{})).isNotEmpty();
   }
-
   public static boolean ifMacro_Condition_1018031474355522788(final IfMacroContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getNode(), "isComplex"));
   }
-
   public static SNode sourceNodeQuery_2526721715665232360(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeExpression", true);
   }
-
   public static SNode sourceNodeQuery_2526721715665281990(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "projectExpression", true);
   }
-
   public static SNode sourceNodeQuery_4030433165041918962(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
-
   public static SNode sourceNodeQuery_4030433165042041095(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
-
   public static SNode sourceNodeQuery_7796501636717933148(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicable", true), "body", true);
+    return ((SLinkOperations.getTarget(_context.getNode(), "isApplicable", true) != null) ? SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicable", true), "body", true) : SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableBreakpoint", true), "body", true));
   }
-
   public static SNode sourceNodeQuery_7796501636717933345(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
-
   public static SNode sourceNodeQuery_7796501636717933408(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "createBreakpoint", true), "body", true);
   }
-
   public static SNode sourceNodeQuery_4675583320452247498(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "debugger", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_933053558709993764(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_933053558709992545(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "breakpointableConcepts", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1270798772176197406(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "breakpointableConcepts", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1018031474355522851(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "conceptsToCreateBreakpoint", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_4675583320452253263(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getSettings", true), "body", true), "statement", true);
   }

@@ -12,15 +12,12 @@ public enum InequalityProperty {
   opposite_to_inequality("opposite to inequality", 2);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<InequalityProperty> getConstants() {
     List<InequalityProperty> list = ListSequence.fromList(new LinkedList<InequalityProperty>());
     ListSequence.fromList(list).addElement(InequalityProperty.as_is);
@@ -28,11 +25,9 @@ public enum InequalityProperty {
     ListSequence.fromList(list).addElement(InequalityProperty.opposite_to_inequality);
     return list;
   }
-
   public static InequalityProperty getDefault() {
     return InequalityProperty.as_is;
   }
-
   public static InequalityProperty parseValue(String value) {
     if (value == null) {
       return InequalityProperty.getDefault();
@@ -48,14 +43,11 @@ public enum InequalityProperty {
     }
     return InequalityProperty.getDefault();
   }
-
   private int myValue;
-
   InequalityProperty(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

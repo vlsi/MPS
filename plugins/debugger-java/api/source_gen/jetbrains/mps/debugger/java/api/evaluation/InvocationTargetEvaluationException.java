@@ -11,15 +11,12 @@ public class InvocationTargetEvaluationException extends EvaluationException {
   public InvocationTargetEvaluationException() {
     super();
   }
-
   public InvocationTargetEvaluationException(String message) {
     super(message);
   }
-
   public InvocationTargetEvaluationException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public InvocationTargetEvaluationException(Throwable cause) {
     super(cause);
   }

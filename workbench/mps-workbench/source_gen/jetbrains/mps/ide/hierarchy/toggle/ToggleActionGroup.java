@@ -7,15 +7,12 @@ import java.util.ArrayList;
 
 public class ToggleActionGroup {
   private List<GroupedToggleAction> myActions = new ArrayList<GroupedToggleAction>();
-
   public ToggleActionGroup() {
   }
-
   public void add(GroupedToggleAction action) {
     action.setGroup(this);
     myActions.add(action);
   }
-
   public void changeSelection(GroupedToggleAction action) {
     for (GroupedToggleAction child : myActions) {
       if (child != action) {

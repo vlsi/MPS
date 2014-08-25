@@ -27,7 +27,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
   public ModificationStatement_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.ModificationStatement");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -53,7 +51,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
             }
             return new ArrayList<SNode>();
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a1a1;
@@ -66,7 +63,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -83,7 +79,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
             ListSequence.fromList(thisGroupChildGroups).addElement(groupDeclaration);
             return ListSequence.fromList(actionGroupDeclarations).subtract(ListSequence.fromList(thisGroupChildGroups)).toListSequence();
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_184bjp_a0a1a0a0a1a0b0a2a1;
@@ -93,7 +88,6 @@ public class ModificationStatement_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860270");
   private static SNodePointer breakingNode_184bjp_a0a1a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1213104860311");
 }

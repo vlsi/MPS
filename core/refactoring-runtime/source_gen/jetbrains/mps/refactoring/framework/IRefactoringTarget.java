@@ -7,7 +7,6 @@ public interface IRefactoringTarget {
   public IRefactoringTarget.TargetType getTarget();
   public boolean allowMultipleTargets();
   public boolean isApplicable(Object entity);
-
   public static   enum TargetType {
     NODE(),
     MODEL(),

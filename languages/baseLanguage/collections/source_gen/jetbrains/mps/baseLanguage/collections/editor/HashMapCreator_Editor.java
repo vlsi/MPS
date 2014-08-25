@@ -12,7 +12,6 @@ public class HashMapCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_pwna47_a(editorContext, node);
   }
-
   private EditorCell createComponent_pwna47_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.collections.editor.HashMapCreator_editorComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

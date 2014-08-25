@@ -25,7 +25,6 @@ public class SModelReferenceDialog extends RefactoringDialog {
   private Project myProject;
   private List<SModelReference> myModels;
   private SModelReference selectedModel;
-
   public SModelReferenceDialog(@NotNull Project project, List<SModelReference> models) {
     super(project, true);
     myProject = project;
@@ -33,7 +32,6 @@ public class SModelReferenceDialog extends RefactoringDialog {
     setTitle(REFACTORING_NAME);
     init();
   }
-
   @Override
   protected void init() {
     setModal(true);
@@ -45,7 +43,6 @@ public class SModelReferenceDialog extends RefactoringDialog {
       public SModelReference[] find(SearchScope scope) {
         throw new UnsupportedOperationException("must not be used");
       }
-
       @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
         return new BaseModelItem(modelReference) {
@@ -54,12 +51,10 @@ public class SModelReferenceDialog extends RefactoringDialog {
           }
         };
       }
-
       @Override
       public SModelReference[] find(boolean checkBoxState) {
         return ListSequence.fromList(myModels).toGenericArray(SModelReference.class);
       }
-
       @Override
       public boolean loadInitialCheckBoxState() {
         return false;
@@ -74,12 +69,10 @@ public class SModelReferenceDialog extends RefactoringDialog {
     }, ModalityState.stateForComponent(getWindow()), false);
     super.init();
   }
-
   @Override
   public JComponent getPreferredFocusedComponent() {
     return myChooser.getPreferredFocusedComponent();
   }
-
   @Override
   protected void doRefactoringAction() {
     Object item = myChooser.getChosenElement();
@@ -88,13 +81,11 @@ public class SModelReferenceDialog extends RefactoringDialog {
     }
     super.doRefactoringAction();
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {
     return myChooser.getPanel();
   }
-
   public static SModelReference getSelectedModel(@NotNull Project project, List<SModelReference> models) {
     final SModelReferenceDialog dialog = new SModelReferenceDialog(project, models);
     dialog.show();

@@ -11,7 +11,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
+      <unit at="10,0,25,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867317">
@@ -21,107 +21,107 @@
       <node id="3675491646420867317" at="15,33,16,55" concept="5" />
       <node id="3675491646420867317" at="17,45,18,20" concept="6" />
       <node id="3675491646420867317" at="20,5,21,17" concept="6" />
-      <node id="3675491646420867317" at="25,24,26,18" concept="6" />
-      <node id="3675491646420867317" at="27,5,28,117" concept="5" />
-      <node id="3675491646420867317" at="29,33,30,55" concept="5" />
-      <node id="3675491646420867317" at="31,45,32,43" concept="6" />
-      <node id="3675491646420867317" at="34,5,35,16" concept="6" />
-      <node id="3675491646420867317" at="38,49,39,75" concept="5" />
-      <node id="3675491646420867317" at="40,27,41,32" concept="6" />
-      <node id="3675491646420867317" at="42,5,43,14" concept="6" />
+      <node id="3675491646420867317" at="24,24,25,18" concept="6" />
+      <node id="3675491646420867317" at="26,5,27,117" concept="5" />
+      <node id="3675491646420867317" at="28,33,29,55" concept="5" />
+      <node id="3675491646420867317" at="30,45,31,43" concept="6" />
+      <node id="3675491646420867317" at="33,5,34,16" concept="6" />
+      <node id="3675491646420867317" at="36,49,37,75" concept="5" />
+      <node id="3675491646420867317" at="38,27,39,32" concept="6" />
+      <node id="3675491646420867317" at="40,5,41,14" concept="6" />
       <node id="3675491646420867317" at="10,44,13,5" concept="3" />
       <node id="3675491646420867317" at="16,55,19,7" concept="3" />
-      <node id="3675491646420867317" at="24,47,27,5" concept="3" />
-      <node id="3675491646420867317" at="30,55,33,7" concept="3" />
-      <node id="3675491646420867317" at="39,75,42,5" concept="3" />
+      <node id="3675491646420867317" at="23,47,26,5" concept="3" />
+      <node id="3675491646420867317" at="29,55,32,7" concept="3" />
+      <node id="3675491646420867317" at="37,75,40,5" concept="3" />
       <node id="3675491646420867317" at="14,117,20,5" concept="8" />
-      <node id="3675491646420867317" at="28,117,34,5" concept="8" />
-      <node id="3675491646420867317" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3675491646420867317" at="27,117,33,5" concept="8" />
+      <node id="3675491646420867317" at="36,0,43,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="3675491646420867317" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="3675491646420867317" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3675491646420867317" at="23,0,36,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="3675491646420867317" at="11,24,12,18" />
       <scope id="3675491646420867317" at="17,45,18,20" />
-      <scope id="3675491646420867317" at="25,24,26,18" />
-      <scope id="3675491646420867317" at="31,45,32,43" />
-      <scope id="3675491646420867317" at="40,27,41,32" />
+      <scope id="3675491646420867317" at="24,24,25,18" />
+      <scope id="3675491646420867317" at="30,45,31,43" />
+      <scope id="3675491646420867317" at="38,27,39,32" />
       <scope id="3675491646420867317" at="15,33,19,7">
         <var name="constant" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="29,33,33,7">
+      <scope id="3675491646420867317" at="28,33,32,7">
         <var name="constant" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="38,49,43,14">
+      <scope id="3675491646420867317" at="36,49,41,14">
         <var name="constant" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="38,0,45,0">
+      <scope id="3675491646420867317" at="36,0,43,0">
         <var name="value" id="3675491646420867317" />
       </scope>
       <scope id="3675491646420867317" at="10,44,21,17">
         <var name="constants" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="24,47,35,16">
+      <scope id="3675491646420867317" at="23,47,34,16">
         <var name="constants" id="3675491646420867317" />
       </scope>
       <scope id="3675491646420867317" at="10,0,23,0">
         <var name="value" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="24,0,37,0">
+      <scope id="3675491646420867317" at="23,0,36,0">
         <var name="value" id="3675491646420867317" />
       </scope>
-      <unit id="3675491646420867317" at="9,0,46,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation_PropertySupport" />
+      <unit id="3675491646420867317" at="9,0,44,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation_PropertySupport" />
     </file>
     <file name="WorkflowPresentation.java">
       <node id="3675491646420867317" at="13,0,14,0" concept="2" trace="myName" />
-      <node id="3675491646420867317" at="15,27,16,23" concept="6" />
-      <node id="3675491646420867317" at="19,36,20,24" concept="6" />
-      <node id="3675491646420867317" at="23,59,24,100" concept="5" />
-      <node id="3675491646420867317" at="24,100,25,76" concept="1" />
-      <node id="3675491646420867317" at="25,76,26,73" concept="1" />
-      <node id="3675491646420867317" at="26,73,27,16" concept="6" />
-      <node id="3675491646420867317" at="30,51,31,43" concept="6" />
-      <node id="3675491646420867317" at="35,24,36,47" concept="6" />
-      <node id="3675491646420867317" at="38,75,39,45" concept="6" />
-      <node id="3675491646420867317" at="41,72,42,42" concept="6" />
-      <node id="3675491646420867317" at="43,5,44,45" concept="6" />
-      <node id="3675491646420867317" at="47,0,48,0" concept="2" trace="myValue" />
-      <node id="3675491646420867317" at="49,51,50,23" concept="1" />
-      <node id="3675491646420867317" at="50,23,51,25" concept="1" />
-      <node id="3675491646420867317" at="54,28,55,24" concept="6" />
-      <node id="3675491646420867317" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
-      <node id="3675491646420867317" at="19,0,22,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="3675491646420867317" at="30,0,33,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
-      <node id="3675491646420867317" at="34,63,37,5" concept="3" />
-      <node id="3675491646420867317" at="37,5,40,5" concept="3" />
-      <node id="3675491646420867317" at="40,5,43,5" concept="3" />
-      <node id="3675491646420867317" at="54,0,57,0" concept="4" trace="getValue#()Ljava/lang/String;" />
-      <node id="3675491646420867317" at="49,0,53,0" concept="0" trace="WorkflowPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="3675491646420867317" at="23,0,29,0" concept="7" trace="getConstants#()Ljava/util/List;" />
-      <node id="3675491646420867317" at="34,0,46,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
-      <scope id="3675491646420867317" at="15,27,16,23" />
-      <scope id="3675491646420867317" at="19,36,20,24" />
-      <scope id="3675491646420867317" at="30,51,31,43" />
-      <scope id="3675491646420867317" at="35,24,36,47" />
-      <scope id="3675491646420867317" at="38,75,39,45" />
-      <scope id="3675491646420867317" at="41,72,42,42" />
-      <scope id="3675491646420867317" at="54,28,55,24" />
-      <scope id="3675491646420867317" at="49,51,51,25" />
-      <scope id="3675491646420867317" at="15,0,18,0" />
-      <scope id="3675491646420867317" at="19,0,22,0" />
-      <scope id="3675491646420867317" at="30,0,33,0" />
-      <scope id="3675491646420867317" at="54,0,57,0" />
-      <scope id="3675491646420867317" at="23,59,27,16">
+      <node id="3675491646420867317" at="14,27,15,23" concept="6" />
+      <node id="3675491646420867317" at="17,36,18,24" concept="6" />
+      <node id="3675491646420867317" at="20,59,21,100" concept="5" />
+      <node id="3675491646420867317" at="21,100,22,76" concept="1" />
+      <node id="3675491646420867317" at="22,76,23,73" concept="1" />
+      <node id="3675491646420867317" at="23,73,24,16" concept="6" />
+      <node id="3675491646420867317" at="26,51,27,43" concept="6" />
+      <node id="3675491646420867317" at="30,24,31,47" concept="6" />
+      <node id="3675491646420867317" at="33,75,34,45" concept="6" />
+      <node id="3675491646420867317" at="36,72,37,42" concept="6" />
+      <node id="3675491646420867317" at="38,5,39,45" concept="6" />
+      <node id="3675491646420867317" at="41,0,42,0" concept="2" trace="myValue" />
+      <node id="3675491646420867317" at="42,51,43,23" concept="1" />
+      <node id="3675491646420867317" at="43,23,44,25" concept="1" />
+      <node id="3675491646420867317" at="46,28,47,24" concept="6" />
+      <node id="3675491646420867317" at="14,0,17,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="17,0,20,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="26,0,29,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
+      <node id="3675491646420867317" at="29,63,32,5" concept="3" />
+      <node id="3675491646420867317" at="32,5,35,5" concept="3" />
+      <node id="3675491646420867317" at="35,5,38,5" concept="3" />
+      <node id="3675491646420867317" at="46,0,49,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="42,0,46,0" concept="0" trace="WorkflowPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3675491646420867317" at="20,0,26,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="3675491646420867317" at="29,0,41,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
+      <scope id="3675491646420867317" at="14,27,15,23" />
+      <scope id="3675491646420867317" at="17,36,18,24" />
+      <scope id="3675491646420867317" at="26,51,27,43" />
+      <scope id="3675491646420867317" at="30,24,31,47" />
+      <scope id="3675491646420867317" at="33,75,34,45" />
+      <scope id="3675491646420867317" at="36,72,37,42" />
+      <scope id="3675491646420867317" at="46,28,47,24" />
+      <scope id="3675491646420867317" at="42,51,44,25" />
+      <scope id="3675491646420867317" at="14,0,17,0" />
+      <scope id="3675491646420867317" at="17,0,20,0" />
+      <scope id="3675491646420867317" at="26,0,29,0" />
+      <scope id="3675491646420867317" at="46,0,49,0" />
+      <scope id="3675491646420867317" at="20,59,24,16">
         <var name="list" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="49,0,53,0">
+      <scope id="3675491646420867317" at="42,0,46,0">
         <var name="name" id="3675491646420867317" />
         <var name="value" id="3675491646420867317" />
       </scope>
-      <scope id="3675491646420867317" at="23,0,29,0" />
-      <scope id="3675491646420867317" at="34,63,44,45" />
-      <scope id="3675491646420867317" at="34,0,46,0">
+      <scope id="3675491646420867317" at="20,0,26,0" />
+      <scope id="3675491646420867317" at="29,63,39,45" />
+      <scope id="3675491646420867317" at="29,0,41,0">
         <var name="value" id="3675491646420867317" />
       </scope>
-      <unit id="3675491646420867317" at="9,0,58,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation" />
+      <unit id="3675491646420867317" at="9,0,50,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation" />
     </file>
   </root>
 </debug-info>

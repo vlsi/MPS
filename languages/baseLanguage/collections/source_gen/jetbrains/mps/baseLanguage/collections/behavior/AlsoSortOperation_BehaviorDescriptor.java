@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class AlsoSortOperation_BehaviorDescriptor extends SortOperation_BehaviorDescriptor {
   public AlsoSortOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation";

@@ -21,7 +21,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_fwuxcr_a(editorContext, node);
   }
-
   private EditorCell createCollection_fwuxcr_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_fwuxcr_a");
@@ -33,7 +32,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_fwuxcr_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_fwuxcr_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "with");
     editorCell.setCellId("Constant_fwuxcr_a0");
@@ -43,7 +41,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fwuxcr_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "indent");
     editorCell.setCellId("Constant_fwuxcr_b0");
@@ -53,7 +50,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_fwuxcr_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_fwuxcr_c0");
@@ -64,7 +60,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_fwuxcr_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("list");
@@ -88,7 +83,6 @@ public class WithIndentOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_fwuxcr_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_fwuxcr_e0");

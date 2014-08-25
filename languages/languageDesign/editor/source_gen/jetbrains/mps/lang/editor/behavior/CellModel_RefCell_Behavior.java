@@ -10,23 +10,18 @@ import jetbrains.mps.editor.runtime.cells.CellIdManager;
 public class CellModel_RefCell_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
   }
-
   public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return CellIdManager.createRefCellId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role"));
   }
-
   public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "(";
   }
-
   public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return ")";
   }
-
   public static boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return true;
   }

@@ -13,55 +13,42 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_5898776707557736279(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707557582396(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558014758(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "x");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558016314(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "y");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558017922(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "radius");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558019582(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "radius");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558026861(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "upperLeftX");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558028409(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "upperLeftY");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558030009(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "size");
   }
-
   public static Object propertyMacro_GetPropertyValue_5898776707558031661(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "size");
   }
-
   public static Object referenceMacro_GetReferent_6037902070683321763(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
   }
-
   public static Object referenceMacro_GetReferent_6037902070683332881(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "color", true), "color", false);
   }
-
   public static Iterable<SNode> sourceNodesQuery_5898776707557819858(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "shapes", true);
   }

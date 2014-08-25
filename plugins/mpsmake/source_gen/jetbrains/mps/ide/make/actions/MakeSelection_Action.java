@@ -23,19 +23,16 @@ import org.apache.log4j.LogManager;
 public class MakeSelection_Action extends BaseAction {
   private static final Icon ICON = null;
   private boolean cleanMake;
-
   public MakeSelection_Action(boolean cleanMake_par) {
     super("Make", "", ICON);
     this.cleanMake = cleanMake_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (IMakeService.INSTANCE.get().isSessionActive()) {
       return false;
@@ -49,7 +46,6 @@ public class MakeSelection_Action extends BaseAction {
     }
     return false;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -63,7 +59,6 @@ public class MakeSelection_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -78,7 +73,6 @@ public class MakeSelection_Action extends BaseAction {
     MapSequence.fromMap(_params).put("cmodule", event.getData(MPSCommonDataKeys.CONTEXT_MODULE));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<SModule>) ((List<SModule>) MapSequence.fromMap(_params).get("modules")));
@@ -90,7 +84,6 @@ public class MakeSelection_Action extends BaseAction {
       }
     }
   }
-
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder();
@@ -100,6 +93,5 @@ public class MakeSelection_Action extends BaseAction {
     res.append("!");
     return res.toString();
   }
-
   protected static Logger LOG = LogManager.getLogger(MakeSelection_Action.class);
 }

@@ -17,7 +17,6 @@ public class Extension_customContainers5633688998557455347_ extends Extension.De
   public Extension_customContainers5633688998557455347_() {
     super("jetbrains.mps.baseLanguage.collections.customContainers");
   }
-
   public _FunctionTypes._return_P0_E0<? extends List<SNode>> get() {
     return new _FunctionTypes._return_P0_E0<List<SNode>>() {
       public List<SNode> invoke() {

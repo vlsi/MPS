@@ -39,10 +39,8 @@ public class PropertiesFile_TextGen extends SNodeTextGen {
       }
     }
   }
-
   public String getExtension(SNode node) {
     return "properties";
   }
-
   protected static Logger LOG = LogManager.getLogger(PropertiesFile_TextGen.class);
 }

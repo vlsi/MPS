@@ -12,199 +12,159 @@ import java.util.NoSuchElementException;
 
 public class NullListSequence<T> extends NullCollectionSequence<T> implements IListSequence<T>, List<T> {
   private static final NullListSequence<Object> INSTANCE = new NullListSequence<Object>();
-
   protected NullListSequence() {
   }
-
   @Override
   public void add(int index, T element) {
   }
-
   @Override
   public boolean addAll(int index, Collection<? extends T> c) {
     return false;
   }
-
   @Override
   public T get(int index) {
     return null;
   }
-
   @Override
   public int indexOf(Object t) {
     return -1;
   }
-
   @Override
   public int lastIndexOf(Object o) {
     return -1;
   }
-
   @Override
   public ListIterator<T> listIterator() {
     return new NullListSequence.EmptyListIterator<T>();
   }
-
   @Override
   public ListIterator<T> listIterator(int index) {
     return new NullListSequence.EmptyListIterator<T>();
   }
-
   @Override
   public T remove(int index) {
     return null;
   }
-
   @Override
   public T set(int index, T element) {
     return null;
   }
-
   @Override
   public int size() {
     return 0;
   }
-
   @Override
   public List<T> subList(int fromIndex, int toIndex) {
     return this;
   }
-
   @Override
   public T removeElementAt(int idx) {
     return null;
   }
-
   @Override
   public T removeLastElement() {
     return null;
   }
-
   @Override
   public T insertElement(int idx, T t) {
     return null;
   }
-
   @Override
   public T getElement(int idx) {
     return null;
   }
-
   @Override
   public T setElement(int idx, T t) {
     return null;
   }
-
   @Override
   public IListSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public IListSequence<T> reversedList() {
     return this;
   }
-
   @Override
   public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
     return this;
   }
-
   @Override
   public IListSequence<T> headListSequence(int upToIdx) {
     return this;
   }
-
   @Override
   public IListSequence<T> tailListSequence(int fromIdx) {
     return this;
   }
-
   @Override
   public IListSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public IListSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IListSequence<T>) super.removeWhere(filter);
   }
-
   @Override
   public IListSequence<T> asSynchronized() {
     return this;
   }
-
   @Override
   public IListSequence<T> asUnmodifiable() {
     return this;
   }
-
   @Override
   public List<T> toList() {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray() {
     return (T[]) NullCollectionSequence.EMPTY_ARRAY;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     return (T[]) NullCollectionSequence.EMPTY_ARRAY;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullListSequence<U> instance() {
     return (NullListSequence<U>) INSTANCE;
   }
-
   protected static class EmptyListIterator<U> implements ListIterator<U> {
     protected EmptyListIterator() {
     }
-
     @Override
     public void add(U e) {
     }
-
     @Override
     public boolean hasNext() {
       return false;
     }
-
     @Override
     public boolean hasPrevious() {
       return false;
     }
-
     @Override
     public U next() {
       throw new NoSuchElementException();
     }
-
     @Override
     public int nextIndex() {
       return -1;
     }
-
     @Override
     public U previous() {
       return null;
     }
-
     @Override
     public int previousIndex() {
       return -1;
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public void set(U e) {
       throw new UnsupportedOperationException();

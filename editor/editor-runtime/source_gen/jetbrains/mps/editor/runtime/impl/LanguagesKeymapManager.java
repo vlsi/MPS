@@ -43,42 +43,35 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   private LanguagesKeymapManager.MyModuleRepositoryListener myListener = new LanguagesKeymapManager.MyModuleRepositoryListener();
   private SRepository myRepository;
   private ClassLoaderManager myClassLoaderManager;
-
   public LanguagesKeymapManager(MPSCoreComponents coreComponents) {
     myRepository = coreComponents.getModuleRepository();
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
-
   public List<KeyMap> getKeyMapsForLanguage(@NotNull Language l) {
     if (!(MapSequence.fromMap(myLanguagesToKeyMaps).containsKey(l))) {
       registerLanguageKeyMaps(l);
     }
     return MapSequence.fromMap(myLanguagesToKeyMaps).get(l);
   }
-
   @Override
   public void initComponent() {
     myClassLoaderManager.addReloadHandler(myReloadHandler);
     myRepository.addRepositoryListener(myListener);
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "Language KeyMap Manager";
   }
-
   @Override
   public void disposeComponent() {
     myRepository.removeRepositoryListener(myListener);
     myClassLoaderManager.removeReloadHandler(myReloadHandler);
   }
-
   private void clearCaches() {
     MapSequence.fromMap(myLanguagesToKeyMaps).clear();
   }
-
   private void registerLanguageKeyMaps(Language language) {
     SModel editorModelDescriptor = LanguageAspect.EDITOR.get(language);
     SModel editorModel = (editorModelDescriptor != null ? editorModelDescriptor : null);
@@ -103,7 +96,6 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     }
     MapSequence.fromMap(myLanguagesToKeyMaps).put(language, keyMaps);
   }
-
   private Class<KeyMap> findKeyMapClassByDeclaration(SNode declaration) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, declaration, "virtual_getFqName_1213877404258", new Object[]{});
     String namespace = NameUtil.namespaceFromLongName(fqName);
@@ -113,21 +105,17 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     if (language == null) {
       return null;
     }
-    return myClassLoaderManager.getClass(language, fqName);
+    return myClassLoaderManager.getOwnClass(language, fqName);
   }
-
   private void unregisterLanguageKeyMaps(Language language) {
     MapSequence.fromMap(myLanguagesToKeyMaps).removeKey(language);
   }
-
   public static LanguagesKeymapManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LanguagesKeymapManager.class);
   }
-
   private class MyModuleRepositoryListener extends SRepositoryAdapter {
     private MyModuleRepositoryListener() {
     }
-
     @Override
     public void beforeModuleRemoved(SModule module) {
       if (module instanceof Language) {

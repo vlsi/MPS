@@ -17,7 +17,6 @@ public class ThreadPool_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_a5430j_a(editorContext, node);
   }
-
   private EditorCell createCollection_a5430j_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_a5430j_a");
@@ -27,14 +26,12 @@ public class ThreadPool_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_a5430j_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_a5430j_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "thread pool with");
     editorCell.setCellId("Constant_a5430j_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_a5430j_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("numberOfThreads");
@@ -52,7 +49,6 @@ public class ThreadPool_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_a5430j_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "threads");
     editorCell.setCellId("Constant_a5430j_c0");

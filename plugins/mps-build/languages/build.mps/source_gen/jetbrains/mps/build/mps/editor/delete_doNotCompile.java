@@ -12,19 +12,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class delete_doNotCompile {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new delete_doNotCompile.delete_doNotCompile_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new delete_doNotCompile.delete_doNotCompile_BACKSPACE(node));
   }
-
   public static class delete_doNotCompile_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delete_doNotCompile_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "doNotCompile", "" + (false));
+    }
+  }
+  public static class delete_doNotCompile_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public delete_doNotCompile_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "doNotCompile", "" + (false));
     }

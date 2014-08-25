@@ -10,16 +10,13 @@ import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
 public class PluginUtil {
   private PluginUtil() {
   }
-
   private static boolean isPluginEnabled(String id) {
     IdeaPluginDescriptor p = PluginManager.getPlugin(PluginId.getId(id));
     return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
-
   public static boolean isSvnPluginEnabled() {
     return isPluginEnabled("Subversion");
   }
-
   public static boolean isGitPluginEnabled() {
     return isPluginEnabled("Git4Idea");
   }

@@ -27,7 +27,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeCreator"), "prototypeNode", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_NF_Concept_NewInstance_3757480014665236934(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance"), "prototype", true)), true);
@@ -35,7 +34,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Concept_NewInstance"), "prototypeNode", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_NF_Model_CreateNewNodeOperation_3757480014665236937(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewNodeOperation"), "prototype", true)), true);
@@ -43,7 +41,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), "prototypeNode", true), true);
     }
   }
-
   public static void nodeFactory_NodeSetup_NF_Model_CreateNewRootNodeOperation_3757480014665236943(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation")) {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", ((SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) != null) ? SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototypeNode", true) : SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation"), "prototype", true)), true);
@@ -51,7 +48,6 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(_context.getNewNode(), "prototype", SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.Model_CreateNewRootNodeOperation"), "prototypeNode", true), true);
     }
   }
-
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ISubstitute_String_1196932700432(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -64,7 +60,6 @@ public class QueriesGenerated {
             SPropertyOperations.set(result, "text", pattern);
             return result;
           }
-
           public String getDescriptionText(String pattern) {
             return "simple text";
           }

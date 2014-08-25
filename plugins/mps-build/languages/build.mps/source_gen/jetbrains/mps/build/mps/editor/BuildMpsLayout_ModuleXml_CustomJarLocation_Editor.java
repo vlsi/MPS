@@ -18,7 +18,6 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_r8678q_a(editorContext, node);
   }
-
   private EditorCell createCollection_r8678q_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_r8678q_a");
@@ -28,7 +27,6 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
     editorCell.addEditorCell(this.createProperty_r8678q_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_r8678q_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("path");
@@ -48,14 +46,12 @@ public class BuildMpsLayout_ModuleXml_CustomJarLocation_Editor extends DefaultNo
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_r8678q_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_r8678q_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_r8678q_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("packagedLocation");

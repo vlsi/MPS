@@ -40,10 +40,8 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
   private static final String LF = "\n";
   private static final String TOOLTIP_INDENT = LF + "    ";
   private boolean myIndexWasNotReady;
-
   public OverrideMethodsChecker() {
   }
-
   @Override
   public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Iterable<SNode> classifiers = ListSequence.fromList(SNodeOperations.getDescendants(rootNode, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -69,7 +67,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     return result;
   }
-
   private void collectOverridingMethods(SNode container, Set<EditorMessage> messages) {
     OverridingMethodsFinder finder = new OverridingMethodsFinder(container);
     for (SNode overridingMethod : SetSequence.fromSet(finder.getOverridingMethods())) {
@@ -98,7 +95,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       SetSequence.fromSet(messages).addElement(new OverridingMethodEditorMessage(overridingMethod, this, tooltip.toString(), overrides));
     }
   }
-
   private void collectOverridenMethods(SNode container, Set<EditorMessage> messages) {
     List<SNode> derivedClassifiers = ClassifierSuccessors.getInstance().getDerivedClassifiers(container, GlobalScope.getInstance());
     if (ListSequence.fromList(derivedClassifiers).isEmpty()) {
@@ -157,7 +153,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
       SetSequence.fromSet(messages).addElement(new OverridenMethodEditorMessage(overridenMethod, this, tooltip.toString(), overriden));
     }
   }
-
   private Map<SNode, Set<SNode>> createOverridenToOverridingMethodsMap(Map<String, Set<SNode>> nameToMethodsMap, Iterable<SNode> derivedClassifiers) {
     Map<SNode, Set<SNode>> result = MapSequence.fromMap(new HashMap<SNode, Set<SNode>>());
     for (SNode derivedClassifier : Sequence.fromIterable(derivedClassifiers)) {
@@ -192,7 +187,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     return result;
   }
-
   @Override
   public boolean hasDramaticalEvent(List<SModelEvent> events) {
     if (this.myIndexWasNotReady) {
@@ -252,7 +246,6 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     return false;
   }
-
   private String getPresentation(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       return getClassifierPresentation(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"));
@@ -262,15 +255,12 @@ public class OverrideMethodsChecker extends EditorCheckerAdapter {
     }
     return BehaviorReflection.invokeVirtual(String.class, node, "virtual_getPresentation_1213877396640", new Object[]{});
   }
-
   private String getClassifierPresentation(SNode classifier) {
     return BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   private String getEnumConstantPresentation(SNode enumConstantDeclaration) {
     return BehaviorReflection.invokeVirtual(String.class, enumConstantDeclaration, "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   private static boolean isParameterType(SNode type) {
     SNode parent = SNodeOperations.getParent(type);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

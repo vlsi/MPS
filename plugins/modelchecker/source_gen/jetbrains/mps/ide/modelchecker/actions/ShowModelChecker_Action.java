@@ -17,22 +17,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowModelChecker_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowModelChecker_Action() {
     super("Model Checker...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).isAvailable();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -46,7 +42,6 @@ public class ShowModelChecker_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -57,7 +52,6 @@ public class ShowModelChecker_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ModelCheckerTool tool = ModelCheckerTool.getInstance(((Project) MapSequence.fromMap(_params).get("project")));
@@ -77,6 +71,5 @@ public class ShowModelChecker_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowModelChecker_Action.class);
 }

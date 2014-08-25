@@ -8,25 +8,20 @@ public class LocalSourcePathArtifact {
   private SNode root;
   private String sourcePath;
   private boolean isFolder;
-
   public LocalSourcePathArtifact(SNode root, String sourcePath, boolean isFolder) {
     this.root = root;
     this.sourcePath = sourcePath;
     this.isFolder = isFolder;
   }
-
   public SNode getRoot() {
     return root;
   }
-
   public String getSourcePath() {
     return sourcePath;
   }
-
   public boolean isFolder() {
     return isFolder;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -49,7 +44,6 @@ public class LocalSourcePathArtifact {
 
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;

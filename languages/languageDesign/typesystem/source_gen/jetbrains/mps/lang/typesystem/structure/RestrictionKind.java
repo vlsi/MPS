@@ -11,26 +11,21 @@ public enum RestrictionKind {
   subtype(":<=:", "subtype");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<RestrictionKind> getConstants() {
     List<RestrictionKind> list = ListSequence.fromList(new LinkedList<RestrictionKind>());
     ListSequence.fromList(list).addElement(RestrictionKind.equals);
     ListSequence.fromList(list).addElement(RestrictionKind.subtype);
     return list;
   }
-
   public static RestrictionKind getDefault() {
     return RestrictionKind.equals;
   }
-
   public static RestrictionKind parseValue(String value) {
     if (value == null) {
       return RestrictionKind.getDefault();
@@ -43,14 +38,11 @@ public enum RestrictionKind {
     }
     return RestrictionKind.getDefault();
   }
-
   private String myValue;
-
   RestrictionKind(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

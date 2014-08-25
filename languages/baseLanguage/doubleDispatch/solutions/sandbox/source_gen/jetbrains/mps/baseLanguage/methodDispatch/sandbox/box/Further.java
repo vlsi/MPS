@@ -6,23 +6,17 @@ package jetbrains.mps.baseLanguage.methodDispatch.sandbox.box;
 public class Further extends Descendant {
   public Further() {
   }
-
   @Override
   public void newDisp(Integer o) {
   }
-
   public void newDisp(Long x, String s) {
   }
-
   public void method(Integer x) {
   }
-
   public void method(Long x, String s) {
   }
-
   public static void newDispStat(Long s) {
   }
-
   public static void newDispStat(Number i) {
     if (i instanceof Long) {
       newDispStat((Long) i);

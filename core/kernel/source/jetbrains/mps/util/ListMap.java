@@ -17,6 +17,9 @@ package jetbrains.mps.util;
 
 import java.util.*;
 
+/**
+ * List of pairs with access through Map interface.
+ */
 public class ListMap<K, V> extends AbstractMap<K, V> {
   private MyEntry<K, V>[] myEntries = MyEntry.EMPTY_ARRAY;
 

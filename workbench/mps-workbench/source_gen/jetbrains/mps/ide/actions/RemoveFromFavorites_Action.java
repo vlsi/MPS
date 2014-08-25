@@ -22,25 +22,21 @@ import org.apache.log4j.LogManager;
 
 public class RemoveFromFavorites_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RemoveFromFavorites_Action() {
     super("Remove from Favorites", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")).isEmpty()) {
       return false;
     }
     return FavoritesUtil.isActiveFavorites(((Project) MapSequence.fromMap(_params).get("project")));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -54,7 +50,6 @@ public class RemoveFromFavorites_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -69,7 +64,6 @@ public class RemoveFromFavorites_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<Object> objects = FavoritesUtil.getObjects(((List<TreeNode>) MapSequence.fromMap(_params).get("treeNodes")));
@@ -87,6 +81,5 @@ public class RemoveFromFavorites_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RemoveFromFavorites_Action.class);
 }

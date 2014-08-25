@@ -24,14 +24,12 @@ public class OverrideImplementMethodAction {
   private SNode mySelectedNode;
   private EditorContext myEditorContext;
   private boolean myIsOverride;
-
   public OverrideImplementMethodAction(Project project, SNode selectedNode, EditorContext editorContext, boolean isOverride) {
     myProject = project;
     mySelectedNode = selectedNode;
     myEditorContext = editorContext;
     this.myIsOverride = isOverride;
   }
-
   public void run() {
     ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
     final SNode contextClass = mah.runReadAction(new Computable<SNode>() {

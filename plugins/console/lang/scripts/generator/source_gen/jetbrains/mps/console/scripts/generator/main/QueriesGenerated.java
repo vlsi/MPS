@@ -13,23 +13,18 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1672541786946118133(final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.console.scripts.structure.RefactorOperation");
   }
-
   public static Object referenceMacro_GetReferent_1734392475491234406(final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
   }
-
   public static Object referenceMacro_GetReferent_2377091791518659475(final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.console.blCommand.structure.BLCommand", false, false), "contextParameter");
   }
-
   public static SNode sourceNodeQuery_2377091791518076320(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
   }
-
   public static SNode sourceNodeQuery_2377091791518083960(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.console.scripts.structure.RefactorOperation"), "closure", true);
   }

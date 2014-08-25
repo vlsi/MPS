@@ -6,13 +6,14 @@ import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public abstract class DocCommentTextGen {
   public static void javadocIndent(final SNodeTextGen textGen) {
     textGen.indentBuffer();
     textGen.append(" * ");
   }
-
   public static void docCommentStart(SNode node, final SNodeTextGen textGen) {
     textGen.indentBuffer();
     textGen.append("/**");
@@ -55,8 +56,11 @@ public abstract class DocCommentTextGen {
         textGen.appendNode(item);
       }
     }
+    if ((SLinkOperations.getTarget(node, "deprecated", true) != null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable") && SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IBLDeprecatable"), "isDeprecated")) {
+      textGen.appendNewLine();
+      textGen.appendNode(SLinkOperations.getTarget(node, "deprecated", true));
+    }
   }
-
   public static void docCommentEnd(SNode node, final SNodeTextGen textGen) {
     textGen.appendNewLine();
     textGen.indentBuffer();

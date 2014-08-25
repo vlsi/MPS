@@ -22,7 +22,6 @@ public class WildCardType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_9alae4_a(editorContext, node);
   }
-
   private EditorCell createCollection_9alae4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9alae4_a");
@@ -30,7 +29,6 @@ public class WildCardType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_9alae4_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_9alae4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "?");
     editorCell.setCellId("Constant_9alae4_a0");
@@ -42,10 +40,9 @@ public class WildCardType_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new WildCardType_Editor.ApplySideTransforms_null_cellMenu_9alae4_a0a0()}));
     return editorCell;
   }
-
   public static class ApplySideTransforms_null_cellMenu_9alae4_a0a0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_9alae4_a0a0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
 }

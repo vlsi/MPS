@@ -15,7 +15,6 @@ public class MPS14656_Test extends TestCase {
       // expected exception 
     }
   }
-
   public void test_invalid() throws Exception {
     try {
       MPS14656_helper.valid();
@@ -24,7 +23,6 @@ public class MPS14656_Test extends TestCase {
       // expected exception 
     }
   }
-
   public MPS14656_Test() {
   }
 }

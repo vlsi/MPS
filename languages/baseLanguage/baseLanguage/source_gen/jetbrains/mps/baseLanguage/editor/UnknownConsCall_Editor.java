@@ -19,7 +19,6 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bnhthl_a(editorContext, node);
   }
-
   private EditorCell createCollection_bnhthl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bnhthl_a");
@@ -28,14 +27,12 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_bnhthl_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_bnhthl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_bnhthl_a0");
     editorCell.addEditorCell(this.createAlternation_bnhthl_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createAlternation_bnhthl_a0a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = UnknownConsCall_Editor.renderingCondition_bnhthl_a0a0(node, editorContext);
@@ -47,11 +44,9 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_bnhthl_a0a0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isSuper");
   }
-
   private EditorCell createConstant_bnhthl_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_bnhthl_a0a0");
@@ -61,7 +56,6 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bnhthl_a0a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_bnhthl_a0a0_0");
@@ -71,7 +65,6 @@ public class UnknownConsCall_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_bnhthl_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;

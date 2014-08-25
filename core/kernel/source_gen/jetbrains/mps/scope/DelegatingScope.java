@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 
 public class DelegatingScope extends Scope {
   protected Scope wrapped;
-
   public DelegatingScope(@NotNull Scope wrapped) {
     if (wrapped == null) {
       // todo: ? 
@@ -16,26 +15,21 @@ public class DelegatingScope extends Scope {
     }
     this.wrapped = wrapped;
   }
-
   public DelegatingScope() {
     // setup wrapped field later, before using the scope! 
   }
-
   @Override
   public SNode resolve(SNode contextNode, String refText) {
     return wrapped.resolve(contextNode, refText);
   }
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     return wrapped.getAvailableElements(prefix);
   }
-
   @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     return wrapped.getReferenceText(contextNode, node);
   }
-
   @Override
   public boolean contains(SNode node) {
     return wrapped.contains(node);

@@ -15,8 +15,6 @@ public class CheckUtils {
   private CheckUtils() {
   }
 
-
-
   public static boolean checkPluginKindForMPSTestCase(SNode testCase) {
     SModule module = check_c4dr2s_a0a0c(SNodeOperations.getModel(testCase));
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, testCase, "virtual_isMpsStartRequired_3310779261129403089", new Object[]{})) {
@@ -25,8 +23,6 @@ public class CheckUtils {
       return true;
     }
   }
-
-
 
   public static boolean fixPluginKindForMPSTestCase(SNode testCase) {
     if (checkPluginKindForMPSTestCase(testCase)) {
@@ -46,14 +42,12 @@ public class CheckUtils {
       return false;
     }
   }
-
   private static SModule check_c4dr2s_a0a0c(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModule check_c4dr2s_a0c0e(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();

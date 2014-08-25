@@ -11,6 +11,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.Set;
@@ -35,7 +36,6 @@ public class InlineMethodRefactoring {
   private SNode myMethodDeclaration;
   private List<SNode> myArguments;
   private SNode myOperand;
-
   public InlineMethodRefactoring(SNode methodCall) {
     MethodCallAdapter methodCallAdapter = new MethodCallAdapter(methodCall);
     this.myMethodDeclaration = methodCallAdapter.getMethodDeclaration();
@@ -51,7 +51,6 @@ public class InlineMethodRefactoring {
     this.myHasManyReturns = ListSequence.fromList(returns).count() > 1;
     this.myReturnType = SLinkOperations.getTarget(this.myMethodDeclaration, "returnType", true);
   }
-
   public void doRefactor() {
     SNode body = SNodeOperations.copyNode(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true));
     Map<SNode, SNode> paramsMap = this.compareParameters();
@@ -77,22 +76,21 @@ public class InlineMethodRefactoring {
       SNodeOperations.replaceWithAnother(this.myMethodCall, ref);
       SNodeOperations.insertNextSiblingChild(callStatement, SNodeOperations.copyNode(callStatement));
     }
-    if (SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)) {
-      this.replaceLocalStaticMethodCalls(body);
+    SNode classAncestor = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if (classAncestor != null && classAncestor != SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)) {
+      this.replaceLocalStaticMethodCalls(body, classAncestor);
     }
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true))) {
       SNodeOperations.insertPrevSiblingChild(callStatement, statement);
     }
     SNodeOperations.deleteNode(callStatement);
   }
-
   public void addLastReturnStatement(SNode body) {
     SNode last = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       SNodeOperations.replaceWithAnother(last, _quotation_createNode_49noxv_a0a0a1a9(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
     }
   }
-
   private void replaceReturnSatements(SNode body, SNode returnVar, SNode callStatement) {
     for (SNode returnStatement : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{}))) {
       SNode returnExpression = SLinkOperations.getTarget(returnStatement, "expression", true);
@@ -108,24 +106,26 @@ public class InlineMethodRefactoring {
       }
     }
   }
-
   private void replaceThisByOperand(SNode body) {
     if (!(SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.IThisExpression") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(this.myOperand, "jetbrains.mps.baseLanguage.structure.StringLiteral"))) {
       SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-      SNode t = this.getClassifierType(SNodeOperations.cast(SNodeOperations.getParent(this.myMethodDeclaration), "jetbrains.mps.baseLanguage.structure.Classifier"));
-      this.myOperand = this.createVariable(statement, "instance", t, this.myOperand);
+      SNode typeForMethodCall = getTypeForMethodCall(myMethodCall);
+      SNode type = (typeForMethodCall != null ? typeForMethodCall : SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(myOperand), "jetbrains.mps.baseLanguage.structure.Type"));
+      this.myOperand = this.createVariable(statement, "instance", type, this.myOperand);
     }
     for (SNode thisExpr : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.IThisExpression", false, new String[]{}))) {
       SNodeOperations.replaceWithAnother(thisExpr, SNodeOperations.copyNode(this.myOperand));
     }
   }
-
-  private SNode getClassifierType(SNode c) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
-    SLinkOperations.setTarget(type, "classifier", c, false);
-    return type;
+  private SNode getTypeForMethodCall(SNode methodCall) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(type, "classifier", (SNodeOperations.cast(SNodeOperations.getParent(methodCall), "jetbrains.mps.baseLanguage.structure.Classifier")), false);
+      return type;
+    } else {
+      return null;
+    }
   }
-
   private SNode createAssignmentExpression(SNode returnVar, SNode returnExpression) {
     SNode expression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
@@ -136,21 +136,18 @@ public class InlineMethodRefactoring {
     SLinkOperations.setTarget(statement, "expression", expression, true);
     return statement;
   }
-
-  private void replaceLocalStaticMethodCalls(SNode body) {
-    SNode c = SNodeOperations.getAncestor(this.myMethodDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+  private void replaceLocalStaticMethodCalls(SNode body, SNode classAncestor) {
     for (SNode localCall : ListSequence.fromList(SNodeOperations.getDescendants(body, "jetbrains.mps.baseLanguage.structure.LocalMethodCall", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
     }).toListSequence()) {
       SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-      SLinkOperations.setTarget(newCall, "classConcept", c, false);
+      SLinkOperations.setTarget(newCall, "classConcept", classAncestor, false);
       SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SNodeOperations.cast(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SNodeOperations.replaceWithAnother(localCall, newCall);
     }
   }
-
   private void replaceParameters(SNode returnExpression, Map<SNode, SNode> parameters) {
     for (SNode ref : ListSequence.fromList(SNodeOperations.getDescendants(returnExpression, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -163,7 +160,6 @@ public class InlineMethodRefactoring {
       }
     }
   }
-
   private Map<SNode, SNode> compareParameters() {
     Set<SNode> usedParameters = this.findUsedParameters();
     SNode statement = SNodeOperations.getAncestor(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -185,7 +181,6 @@ public class InlineMethodRefactoring {
     }
     return map;
   }
-
   private Set<SNode> findUsedParameters() {
     Set<SNode> usedParameters = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode paramReference : ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true), "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -197,7 +192,6 @@ public class InlineMethodRefactoring {
     }
     return usedParameters;
   }
-
   private boolean canSubstituteParameter(SNode e, SNode parameterDeclaration) {
     if (SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.VariableReference") || SNodeOperations.isInstanceOf(e, "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter")) {
       return !(this.variableWriting(parameterDeclaration));
@@ -216,7 +210,6 @@ public class InlineMethodRefactoring {
     }
     return false;
   }
-
   private boolean variableWriting(SNode parameterDeclaration) {
     for (Instruction instruction : ListSequence.fromList(this.myMethodProgram.getInstructions())) {
       if (instruction instanceof WriteInstruction) {
@@ -229,7 +222,6 @@ public class InlineMethodRefactoring {
     }
     return false;
   }
-
   private SNode createVariable(SNode statement, String name, SNode type, SNode argument) {
     SNode declaration = this.createLocalVariableDeclaration(statement, name, type);
     SNode stat = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
@@ -240,14 +232,12 @@ public class InlineMethodRefactoring {
     SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
     return ref;
   }
-
   private SNode createLocalVariableDeclaration(SNode statement, String name, SNode type) {
     SNode declaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
     SPropertyOperations.set(declaration, "name", this.findName(statement, name));
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(type), true);
     return declaration;
   }
-
   private String findName(SNode statement, String name) {
     if (this.isNameGood(statement, name)) {
       return name;
@@ -258,7 +248,6 @@ public class InlineMethodRefactoring {
     }
     return name + i;
   }
-
   private boolean isNameGood(SNode statement, final String name) {
     SNode list = SNodeOperations.cast(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList");
     int start = ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).indexOf(statement);
@@ -289,13 +278,12 @@ public class InlineMethodRefactoring {
     }
     return true;
   }
-
   public String getProblems() {
     StringBuffer buff = new StringBuffer();
     Set<SNode> nodesToCheck = ClassRefactoringUtils.getClassMemberRefernce(SLinkOperations.getTarget(this.myMethodDeclaration, "body", true));
     String end = SNodeOperations.getParent(this.myMethodDeclaration) + "." + this.myMethodDeclaration;
     for (SNode node : SetSequence.fromSet(nodesToCheck)) {
-      SNode classifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      SNode iMemberContainer = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", false, false);
       if (!(VisibilityUtil.isVisible(this.myMethodCall, node))) {
         String start = "";
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
@@ -304,14 +292,13 @@ public class InlineMethodRefactoring {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
           start = "Field ";
         }
-        buff.append(start).append(classifier).append(".").append(node);
+        buff.append(start).append(iMemberContainer).append(".").append(node);
         buff.append(" that is used in inlined method is not accessible from ");
         buff.append("call site(s) in method " + end + "\n");
       }
     }
     return buff.toString();
   }
-
   private static SNode _quotation_createNode_49noxv_a0a0a1a9(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

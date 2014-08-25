@@ -13,7 +13,6 @@ public class LocalVariableDeclaration_Constraints extends BaseConstraintsDescrip
   public LocalVariableDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,7 +21,6 @@ public class LocalVariableDeclaration_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";

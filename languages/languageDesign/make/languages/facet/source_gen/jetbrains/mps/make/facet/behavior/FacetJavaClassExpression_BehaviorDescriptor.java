@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class FacetJavaClassExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public FacetJavaClassExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.facet.structure.FacetJavaClassExpression";

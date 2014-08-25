@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ClassifierDocComment_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isTagSectionEmpty_8465538089690623795(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", "virtual_isTagSectionEmpty_8465538089690623795", new Object[]{}) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).isEmpty();
   }

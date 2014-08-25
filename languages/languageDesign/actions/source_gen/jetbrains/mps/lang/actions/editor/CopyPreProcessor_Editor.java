@@ -24,7 +24,6 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cybmg4_a(editorContext, node);
   }
-
   private EditorCell createCollection_cybmg4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_cybmg4_a");
@@ -33,7 +32,6 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_cybmg4_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_cybmg4_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cybmg4_a0");
@@ -44,14 +42,12 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_cybmg4_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_cybmg4_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy pre processor");
     editorCell.setCellId("Constant_cybmg4_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_cybmg4_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -73,20 +69,16 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_cybmg4_a1a0 extends InlineCellProvider {
     public _Inline_cybmg4_a1a0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_cybmg4_a0b0a(editorContext, node);
     }
-
     private EditorCell createProperty_cybmg4_a0b0a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -106,7 +98,6 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_cybmg4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cybmg4_b0");
@@ -117,12 +108,10 @@ public class CopyPreProcessor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_cybmg4_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_cybmg4_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_cybmg4_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("preProcessFunction");

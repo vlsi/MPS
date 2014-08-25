@@ -31,12 +31,9 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
   private SNode myNewCommand = null;
   private SNode myCursor = null;
 
-
   public ConsoleTab(ConsoleTool tool, String title, @Nullable String history) {
     super(tool, title, history);
   }
-
-
 
   protected void registerActions(DefaultActionGroup group) {
     super.registerActions(group);
@@ -46,8 +43,6 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     group.add(registerKeyShortcut(new ConsoleTab.ClearAction(), KeyEvent.VK_BACK_SPACE));
   }
 
-
-
   private SNode lastCmd() {
     SNode cur = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).last();
     while ((cur != null) && !(SNodeOperations.isInstanceOf(cur, "jetbrains.mps.console.base.structure.CommandHolder"))) {
@@ -55,8 +50,6 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
     return SNodeOperations.cast(cur, "jetbrains.mps.console.base.structure.CommandHolder");
   }
-
-
 
   private SNode getPrevCmd(SNode cmd) {
     SNode item = cmd;
@@ -66,7 +59,6 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
 
     return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
   }
-
   private SNode getNextCmd(SNode cmd) {
     SNode item = cmd;
     do {
@@ -75,8 +67,6 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
 
     return SNodeOperations.cast(item, "jetbrains.mps.console.base.structure.CommandHolder");
   }
-
-
 
   private void setSelection() {
     SwingUtilities.invokeLater(new Runnable() {
@@ -96,13 +86,10 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     myEditor.ensureSelectionVisible();
   }
 
-
-
   private class ExecuteAction extends BaseAction {
     public ExecuteAction() {
       super("Execute", "Execute last command", AllIcons.Actions.Execute);
     }
-
     @Override
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -131,13 +118,10 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-
-
   private class ClearAction extends BaseAction {
     public ClearAction() {
       super("Clear", "Clear console window", AllIcons.Actions.Clean);
     }
-
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(myRoot, "history", true), "item", true)).clear();
       validateImports();
@@ -145,13 +129,10 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-
-
   private class PrevCmdAction extends BaseAction {
     public PrevCmdAction() {
       super("Prev", "Previous command", AllIcons.Actions.PreviousOccurence);
     }
-
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       SNode lastCmd = lastCmd();
       if ((lastCmd == null)) {
@@ -182,13 +163,10 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-
-
   private class NextCmdAction extends BaseAction {
     public NextCmdAction() {
       super("Next", "Next command", AllIcons.Actions.NextOccurence);
     }
-
     protected void doExecute(AnActionEvent event, Map<String, Object> arg) {
       if ((myCursor == null)) {
         return;
@@ -212,8 +190,6 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     }
   }
 
-
-
   protected void loadHistory(final String state) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
@@ -230,14 +206,10 @@ public class ConsoleTab extends BaseConsoleTab implements DataProvider {
     });
   }
 
-
-
   public void insertCommand(SNode command) {
     addNodeImports(command);
     SLinkOperations.setTarget(SLinkOperations.getTarget(myRoot, "commandHolder", true), "command", command, true);
   }
-
-
 
   @Nullable
   public Object getData(@NonNls String id) {

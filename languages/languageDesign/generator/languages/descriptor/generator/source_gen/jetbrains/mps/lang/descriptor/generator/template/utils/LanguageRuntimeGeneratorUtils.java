@@ -38,7 +38,6 @@ public class LanguageRuntimeGeneratorUtils {
       }
     }) != null);
   }
-
   public static boolean hasManualEditorAspectDescriptor(SNode modelReference, TemplateQueryContext genContext) {
     SModel editorModel = getAspectModel(modelReference, LanguageAspect.EDITOR, genContext);
     if (editorModel == null) {
@@ -51,7 +50,6 @@ public class LanguageRuntimeGeneratorUtils {
       }
     });
   }
-
   private static SModel getAspectModel(SNode modelReference, LanguageAspect aspect, TemplateQueryContext genContext) {
     SNode language = SNodeOperations.cast(SNodeOperations.getParent(modelReference), "jetbrains.mps.lang.project.structure.Language");
     if (language == null) {

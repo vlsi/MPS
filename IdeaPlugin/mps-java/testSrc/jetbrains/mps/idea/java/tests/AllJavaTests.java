@@ -16,16 +16,17 @@
 
 package jetbrains.mps.idea.java.tests;
 
-import jetbrains.mps.ide.IdeMain;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import jetbrains.mps.TestMode;
+import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ForeignIdReferenceCacheTest.class})
 public class AllJavaTests {
   @BeforeClass
   public static void setTestMode() {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 }

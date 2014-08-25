@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,17 +19,17 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
@@ -41,6 +41,7 @@ import java.util.List;
 import java.util.Set;
 
 public class ModuleRepositoryFacade implements CoreComponent {
+  private static final Logger LOG = LogManager.getLogger(ModuleRepositoryFacade.class);
   private static ModuleRepositoryFacade INSTANCE;
 
   private final MPSModuleRepository REPO;
@@ -85,7 +86,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
   public <T extends SModule> Collection<T> getAllModules(Class<T> cls) {
     List<T> result = new ArrayList<T>();
-    for (SModule module : REPO.getAllModules()) {
+    for (SModule module : REPO.getModules()) {
       if (cls.isInstance(module)) result.add((T) module);
     }
     return result;
@@ -104,11 +105,16 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return list;
   }
 
+  /**
+   * Find language modules directly <em>extending</em> the one supplied.
+   * @see jetbrains.mps.project.dependency.modules.LanguageDependenciesManager for <em>extended</em> languages
+   * Shall merge the code (perhaps even into third class, i.e. Language), it's stupid to keep two locations.
+   */
   public Collection<Language> getAllExtendingLanguages(Language l) {
+    final SModuleReference lRef = l.getModuleReference();
     List<Language> result = new LinkedList<Language>();
     for (Language lang : getAllModules(Language.class)) {
-
-      if (ModuleUtil.refsToLanguages(lang.getExtendedLanguageRefs()).contains(l)) {
+      if (lang.getExtendedLanguageRefs().contains(lRef)) {
         result.add(lang);
       }
     }
@@ -139,6 +145,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
+//    LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {

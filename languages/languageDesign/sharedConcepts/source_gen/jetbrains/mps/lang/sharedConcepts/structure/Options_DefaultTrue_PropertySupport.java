@@ -20,7 +20,6 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class Options_DefaultTrue_PropertySupport extends PropertySupport {
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     Options_DefaultTrue constant = Options_DefaultTrue.parseValue(value);
     if (constant != null) {

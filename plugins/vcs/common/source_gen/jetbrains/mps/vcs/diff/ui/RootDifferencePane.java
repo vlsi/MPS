@@ -63,7 +63,6 @@ public class RootDifferencePane {
   private DefaultActionGroup myActionGroup;
   private NextPreviousTraverser myTraverser;
 
-
   public RootDifferencePane(Project project, ModelChangeSet changeSet, SNodeId rootId, String rootName, String[] titles, boolean isEditable, DiffStatusBar statusBar) {
     myChangeSet = changeSet;
     myRootId = rootId;
@@ -86,7 +85,6 @@ public class RootDifferencePane {
 
     createActionGroup(isEditable, rootName);
   }
-
   private void createActionGroup(boolean isEditable, String rootName) {
     myActionGroup = new DefaultActionGroup();
     myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
@@ -97,7 +95,6 @@ public class RootDifferencePane {
       public boolean isSelected(AnActionEvent e) {
         return isInspectorShown;
       }
-
       public void setSelected(AnActionEvent e, boolean b) {
         showInspector(b);
       }
@@ -109,7 +106,6 @@ public class RootDifferencePane {
         protected Iterable<ModelChange> getChanges() {
           return myChangeSet.getChangesForRoot(myRootId);
         }
-
         @Override
         protected void after() {
           rehighlight();
@@ -118,26 +114,20 @@ public class RootDifferencePane {
     }
   }
 
-
-
   public ActionGroup getActions() {
     return myActionGroup;
   }
-
   public void registerShortcuts(JComponent component) {
     myTraverser.previousAction().registerCustomShortcutSet(NextPreviousTraverser.PREV_CHANGE_SHORTCUT, component);
     myTraverser.nextAction().registerCustomShortcutSet(NextPreviousTraverser.NEXT_CHANGE_SHORTCUT, component);
   }
-
   public void unregisterShortcuts(JComponent component) {
     myTraverser.previousAction().unregisterCustomShortcutSet(component);
     myTraverser.nextAction().unregisterCustomShortcutSet(component);
   }
-
   public JPanel getPanel() {
     return myPanel;
   }
-
   public void navigateInitial(@Nullable final Bounds firstChange) {
     highlightAllChanges();
     if (firstChange != null) {
@@ -151,12 +141,9 @@ public class RootDifferencePane {
     }
   }
 
-
-
   public SNodeId getRootId() {
     return myRootId;
   }
-
   public void setRootId(SNodeId rootId) {
     myRootId = rootId;
     myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
@@ -164,7 +151,6 @@ public class RootDifferencePane {
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
-
   public void setRootId(SNodeId rootId, ModelChangeSet changeSet) {
     myChangeSet = changeSet;
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
@@ -174,7 +160,6 @@ public class RootDifferencePane {
     });
     setRootId(rootId);
   }
-
   private void showInspector(boolean show) {
     if (isInspectorShown == show) {
       return;
@@ -183,8 +168,6 @@ public class RootDifferencePane {
     PropertiesComponent.getInstance().setValue(PARAM_SHOW_INSPECTOR, show + "");
     myPanel.setSecondComponent((isInspectorShown ? myBottomPanel : null));
   }
-
-
 
   private void linkEditors(boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
@@ -201,7 +184,6 @@ public class RootDifferencePane {
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
   }
-
   private DiffEditor addEditor(int index, SModel model, String title) {
     final DiffEditor result = new DiffEditor(ProjectHelper.toMPSProject(myProject).getRepository(), model.getNode(myRootId), title, index == 0);
 
@@ -212,8 +194,6 @@ public class RootDifferencePane {
     myDiffEditorsGroup.add(result);
     return result;
   }
-
-
 
   private void highlightAllChanges() {
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
@@ -237,11 +217,9 @@ public class RootDifferencePane {
     int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ? "no differences" : NameUtil.formatNumericalString(count, "difference")));
   }
-
   private void higlightChange(DiffEditor diffEditor, SModel model, ModelChange change) {
     diffEditor.highlightChange(model, change, null);
   }
-
   public void rehighlight() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     myNewEditor.unhighlightAllChanges();
@@ -257,14 +235,10 @@ public class RootDifferencePane {
     highlightAllChanges();
   }
 
-
-
   /*package*/ void rollbackChanges(Iterable<ModelChange> changes) {
     ModelChange.rollbackChanges(changes);
     rehighlight();
   }
-
-
 
   public void dispose() {
     myActionGroup.removeAll();
@@ -281,6 +255,5 @@ public class RootDifferencePane {
     ListSequence.fromList(myEditorSeparators).clear();
     myEditorSeparators = null;
   }
-
 
 }

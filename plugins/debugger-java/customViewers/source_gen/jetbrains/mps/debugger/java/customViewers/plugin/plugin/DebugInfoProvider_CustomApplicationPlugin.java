@@ -22,11 +22,9 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
-  private Set<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new HashSet<Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
-
+  private Set<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>> myCreators = SetSequence.fromSet(new HashSet<Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>>>());
   public DebugInfoProvider_CustomApplicationPlugin() {
   }
-
   public void doInit() {
     PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.BreakpointCreatorsManager");
     if (debuggerPlugin == null) {
@@ -39,7 +37,7 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
 
     // next lines needed for to be sure that all classes in dispose() loaded after init() 
     // basically: this code do nothing, but class loading 
-    for (Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
+    for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
     }
 
     {
@@ -76,7 +74,6 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
       manager.addConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", creator);
     }
   }
-
   public void doDispose() {
     PluginId debuggerPlugin = PluginManager.getPluginByClassName("jetbrains.mps.debug.api.BreakpointCreatorsManager");
     if (debuggerPlugin == null) {
@@ -89,11 +86,10 @@ public class DebugInfoProvider_CustomApplicationPlugin extends BaseCustomApplica
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.Statement");
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     manager.removeConceptBreakpointCreator("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    for (Tuples._2<_FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
-      manager.removeBreakpointCreator(creator);
+    for (Tuples._2<_FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super SNode>, _FunctionTypes._return_P2_E0<? extends ILocationBreakpoint, ? super SNode, ? super Project>> creator : SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators)) {
+      manager.removeCreator(creator);
     }
     SetSequence.fromSet(DebugInfoProvider_CustomApplicationPlugin.this.myCreators).clear();
   }
-
   protected static Logger LOG = LogManager.getLogger(DebugInfoProvider_CustomApplicationPlugin.class);
 }

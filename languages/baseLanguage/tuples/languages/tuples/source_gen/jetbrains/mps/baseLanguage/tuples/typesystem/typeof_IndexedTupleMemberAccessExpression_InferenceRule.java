@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IndexedTupleMemberAccessExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode mae, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(mae, "index", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -71,22 +70,18 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_290su0_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

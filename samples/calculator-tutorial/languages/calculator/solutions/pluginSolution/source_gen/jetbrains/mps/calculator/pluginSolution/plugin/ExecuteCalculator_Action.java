@@ -20,22 +20,18 @@ import org.apache.log4j.LogManager;
 
 public class ExecuteCalculator_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ExecuteCalculator_Action() {
     super("Execute Calculator", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ExecuteCalculator_Action.this.getMainMethod(_params) != null;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -49,7 +45,6 @@ public class ExecuteCalculator_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -68,7 +63,6 @@ public class ExecuteCalculator_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       try {
@@ -94,13 +88,11 @@ public class ExecuteCalculator_Action extends BaseAction {
       }
     }
   }
-
   private Class getCalcClass(final Map<String, Object> _params) {
     String className = SPropertyOperations.getString(((SNode) MapSequence.fromMap(_params).get("calcNode")), "name");
     String fqClassName = jetbrains.mps.util.SNodeOperations.getModelLongName(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode")))) + "." + className;
     return ClassLoaderManager.getInstance().getClass(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("calcNode"))).getModule(), fqClassName);
   }
-
   private Method getMainMethod(final Map<String, Object> _params) {
     final Class c = ExecuteCalculator_Action.this.getCalcClass(_params);
     if (c == null) {
@@ -112,6 +104,5 @@ public class ExecuteCalculator_Action extends BaseAction {
       return null;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ExecuteCalculator_Action.class);
 }

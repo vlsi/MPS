@@ -9,11 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class ConstrainedDataTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
     return _quotation_createNode_c3loqw_a0a0();
   }
-
   private static SNode _quotation_createNode_c3loqw_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

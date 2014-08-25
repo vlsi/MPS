@@ -10,11 +10,9 @@ import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
 public class ExtractStatementListInnerExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor {
   public ExtractStatementListInnerExpression_BehaviorDescriptor() {
   }
-
   public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return ILocalVariableElement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListInnerExpression";

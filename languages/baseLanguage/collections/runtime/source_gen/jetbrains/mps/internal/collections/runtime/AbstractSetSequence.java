@@ -11,126 +11,100 @@ import java.util.Iterator;
 public abstract class AbstractSetSequence<T> extends AbstractCollectionSequence<T> implements ISetSequence<T>, Set<T>, Serializable {
   private static final long serialVersionUID = 4281060320946001714L;
   private Set<T> set;
-
   protected AbstractSetSequence(Set<T> set) {
     this.set = set;
   }
-
   protected AbstractSetSequence(AbstractSetSequence<T> other) {
     set = new HashSet<T>(other.set);
   }
-
   protected AbstractSetSequence() {
   }
-
   @Override
   public boolean addAll(Collection<? extends T> c) {
     return set.addAll(c);
   }
-
   @Override
   public void clear() {
     set.clear();
   }
-
   @Override
   public boolean contains(Object o) {
     return set.contains(o);
   }
-
   @Override
   public boolean containsAll(Collection<?> c) {
     return set.containsAll(c);
   }
-
   @Override
   public boolean equals(Object o) {
     return set.equals(o);
   }
-
   @Override
   public int hashCode() {
     return set.hashCode();
   }
-
   @Override
   public boolean isEmpty() {
     return set.isEmpty();
   }
-
   @Override
   public Iterator<T> iterator() {
     return set.iterator();
   }
-
   @Override
   public boolean removeAll(Collection<?> c) {
     return set.removeAll(c);
   }
-
   @Override
   public boolean retainAll(Collection<?> c) {
     return set.retainAll(c);
   }
-
   @Override
   public int size() {
     return set.size();
   }
-
   @Override
   public Object[] toArray() {
     return set.toArray();
   }
-
   @Override
   public <U> U[] toArray(U[] a) {
     return set.toArray(a);
   }
-
   public boolean add(T t) {
     return set.add(t);
   }
-
   public boolean remove(Object object) {
     return set.remove(object);
   }
-
   @Override
   public int count() {
     return set.size();
   }
-
   @Override
   public ISequence<T> disjunction(ISequence<? extends T> that) {
     return super.disjunction(that);
   }
-
   @Override
   public ISequence<T> distinct() {
     return this;
   }
-
   @Override
   public ISequence<T> intersect(ISequence<? extends T> that) {
     return super.intersect(that);
   }
-
   @Override
   public boolean isNotEmpty() {
     return count() > 0;
   }
-
   @Override
   public ISequence<T> subtract(ISequence<? extends T> that) {
     return super.subtract(that);
   }
-
   @Override
   public ISequence<T> union(ISequence<? extends T> that) {
     return super.union(that);
   }
-
   @Override
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
@@ -148,7 +122,6 @@ public abstract class AbstractSetSequence<T> extends AbstractCollectionSequence<
     }
     return this;
   }
-
   @Override
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
     if (Sequence.USE_NULL_SEQUENCE) {
@@ -162,30 +135,24 @@ public abstract class AbstractSetSequence<T> extends AbstractCollectionSequence<
     return this;
   }
 
-
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray() {
     return (T[]) set.toArray();
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     T[] arr = (T[]) ArrayUtils.newArrayInstance(runtimeClass, set.size());
     return set.toArray(arr);
   }
-
   @Override
   public Set<T> toSet() {
     return set;
   }
-
   protected Set<T> getSet() {
     return set;
   }
-
   @Override
   protected Set<T> getCollection() {
     return set;

@@ -25,9 +25,7 @@ import jetbrains.mps.smodel.BaseSpecialModelDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
@@ -38,7 +36,9 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 import java.math.BigInteger;
 import java.util.ArrayList;
@@ -53,98 +53,101 @@ import java.util.concurrent.ConcurrentHashMap;
  * evgeny, 4/21/11
  */
 public class LanguageDescriptorModelProvider implements CoreComponent {
-
-  private Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
   private static final LanguageAspect[] HASHED_LANGUAGE_ASPECTS =
       new LanguageAspect[]{LanguageAspect.BEHAVIOR, LanguageAspect.CONSTRAINTS, LanguageAspect.EDITOR, LanguageAspect.TYPESYSTEM};
 
-  public LanguageDescriptorModelProvider() {
-  }
+  private final Map<SModelReference, LanguageModelDescriptor> myModels = new ConcurrentHashMap<SModelReference, LanguageModelDescriptor>();
+  private final SRepository myRepository;
+  private final SRepositoryListener myListener = new SRepositoryContentAdapter() {
+    @Override
+    public void moduleAdded(SModule module) {
+      super.moduleAdded(module);
+      if (module instanceof Language) {
+        refreshModule((Language) module, false);
+      }
+    }
 
-  @Override
-  public void init() {
-    MPSModuleRepository.getInstance().addRepositoryListener(new SRepositoryContentAdapter() {
-      @Override
-      public void moduleAdded(SModule module) {
-        super.moduleAdded(module);
-        if (module instanceof Language) {
-          refreshModule((Language) module, false);
+    @Override
+    public void moduleChanged(SModule module) {
+      if (module instanceof Language) {
+        refreshModule((Language) module, false);
+      }
+    }
+
+    @Override
+    public void beforeModuleRemoved(SModule module) {
+      super.beforeModuleRemoved(module);
+      if (module instanceof Language) {
+        refreshModule((Language) module, true);
+      }
+    }
+
+    @Override
+    public void repositoryChanged() {
+      refresh();
+    }
+
+    @Override
+    protected void startListening(SModel model) {
+      for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
+        if (aspect.is(model) && model instanceof EditableSModel) {
+          ((EditableSModel) model).addChangeListener(this);
+          model.addModelListener(this);
+          return;
         }
       }
+    }
 
-      @Override
-      public void moduleChanged(SModule module) {
-        if (module instanceof Language) {
-          refreshModule((Language) module, false);
-        }
+    @Override
+    protected void stopListening(SModel model) {
+      if (model instanceof EditableSModel) {
+        ((EditableSModel) model).removeChangeListener(this);
+        model.removeModelListener(this);
       }
+    }
 
-      @Override
-      public void beforeModuleRemoved(SModule module) {
-        super.beforeModuleRemoved(module);
-        if (module instanceof Language) {
-          refreshModule((Language) module, true);
-        }
-      }
-
-      @Override
-      public void repositoryChanged() {
-        refresh();
-      }
-
-      @Override
-      protected void startListening(SModel model) {
-        for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
-          if (aspect.is(model) && model instanceof EditableSModel) {
-            ((EditableSModel) model).addChangeListener(this);
-            model.addModelListener(this);
-            return;
-          }
-        }
-      }
-
-      @Override
-      protected void stopListening(SModel model) {
-        if (model instanceof EditableSModel) {
-          ((EditableSModel) model).removeChangeListener(this);
-          model.removeModelListener(this);
-        }
-      }
-
-      @Override
-      public void nodeAdded(SModel model, SNode node, String role, SNode child) {
-        if (node == null) {
-          final Language language = Language.getLanguageFor(model);
-          if (language != null) {
-            refreshModule(language, false);
-          }
-        }
-      }
-
-      @Override
-      public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
-        if (node == null) {
-          final Language language = Language.getLanguageFor(model);
-          if (language != null) {
-            refreshModule(language, false);
-          }
-        }
-      }
-
-      @Override
-      public void modelSaved(SModel model) {
+    @Override
+    public void nodeAdded(SModel model, SNode node, String role, SNode child) {
+      if (node == null) {
         final Language language = Language.getLanguageFor(model);
         if (language != null) {
           refreshModule(language, false);
         }
       }
-    });
+    }
 
+    @Override
+    public void nodeRemoved(SModel model, SNode node, String role, SNode child) {
+      if (node == null) {
+        final Language language = Language.getLanguageFor(model);
+        if (language != null) {
+          refreshModule(language, false);
+        }
+      }
+    }
+
+    @Override
+    public void modelSaved(SModel model) {
+      final Language language = Language.getLanguageFor(model);
+      if (language != null) {
+        refreshModule(language, false);
+      }
+    }
+  };
+
+  public LanguageDescriptorModelProvider(SRepository repository) {
+    myRepository = repository;
+  }
+
+  @Override
+  public void init() {
+    myRepository.addRepositoryListener(myListener);
     refresh();
   }
 
   @Override
   public void dispose() {
+    myRepository.removeRepositoryListener(myListener);
     clearAll();
   }
 
@@ -172,8 +175,12 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     ModelAccess.assertLegalWrite();
 
     Set<SModelReference> old = new HashSet<SModelReference>(myModels.keySet());
-    for (Language module : (List<Language>) ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-      SModelReference ref = getSModelReference(module);
+    for (SModule module : myRepository.getModules()) {
+      if (!Language.class.isInstance(module)) {
+        continue;
+      }
+      final Language langModule = (Language) module;
+      SModelReference ref = getSModelReference(langModule);
       if (myModels.containsKey(ref)) {
         old.remove(ref);
         LanguageModelDescriptor languageModelDescriptor = myModels.get(ref);
@@ -181,7 +188,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
           languageModelDescriptor.invalidate();
         }
       } else {
-        createModel(module);
+        createModel(langModule);
       }
     }
 
@@ -194,7 +201,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   }
 
   public void clearAll() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         removeAll();

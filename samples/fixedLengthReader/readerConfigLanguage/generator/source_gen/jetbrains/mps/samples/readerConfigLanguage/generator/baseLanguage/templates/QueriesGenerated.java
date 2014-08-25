@@ -13,27 +13,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1197680735636(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197681249881(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "code");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197681829639(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "start");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197681847303(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "end");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197681859608(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_1197681064561(final PropertyMacroContext _context) {
     String suffix = SPropertyOperations.getString(_context.getNode(), "targetClass");
     int index = suffix.lastIndexOf(".");
@@ -42,19 +36,15 @@ public class QueriesGenerated {
     }
     return "Configure" + suffix;
   }
-
   public static Object referenceMacro_GetReferent_1197681322565(final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "targetClass");
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197681023761(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197681816362(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "field", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_1197681041037(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "mapping", true);
   }

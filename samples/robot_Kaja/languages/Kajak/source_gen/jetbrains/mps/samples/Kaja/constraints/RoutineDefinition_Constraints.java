@@ -14,12 +14,10 @@ public class RoutineDefinition_Constraints extends BaseConstraintsDescriptor {
   public RoutineDefinition_Constraints() {
     super("jetbrains.mps.samples.Kaja.structure.RoutineDefinition");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class RoutineDefinition_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.Kaja.structure.CommandList") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(parentNode), "jetbrains.mps.samples.Kaja.structure.Script")) || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.samples.Kaja.structure.Library");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:6c66d6ce-c8f4-4daf-92c4-a518b78006a8(jetbrains.mps.samples.Kaja.constraints)", "3308300503039782408");
 }

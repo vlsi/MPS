@@ -9,29 +9,29 @@
   <root nodeRef="r:686ee360-aa95-429c-8923-576d8ce88ea8(jetbrains.mps.internalCollections.test.runtime)/2391321168245498466">
     <file name="MPS13933.java">
       <node id="2391321168245786074" at="11,0,12,0" concept="2" trace="myList" />
-      <node id="2391321168245786084" at="16,36,17,75" concept="1" />
-      <node id="2391321168245519089" at="26,28,27,76" concept="1" />
-      <node id="2391321168245701237" at="27,76,28,81" concept="1" />
-      <node id="2391321168245498468" at="13,0,15,0" concept="0" trace="MPS13933#()V" />
-      <node id="2391321168245498481" at="20,0,22,0" concept="3" trace="doSmth#()V" />
-      <node id="2391321168245498473" at="16,0,19,0" concept="3" trace="addRow#(Ljava/util/List;)V" />
-      <node id="2391321168245519082" at="25,0,30,0" concept="3" trace="doSmth#()V" />
-      <node id="2391321168245498489" at="23,29,30,6" concept="1" />
-      <node id="2391321168245498485" at="23,0,32,0" concept="5" trace="main#()V" />
-      <scope id="2391321168245498471" at="13,21,13,21" />
-      <scope id="2391321168245498484" at="20,24,20,24" />
-      <scope id="2391321168245498476" at="16,36,17,75" />
-      <scope id="2391321168245498468" at="13,0,15,0" />
-      <scope id="2391321168245498481" at="20,0,22,0" />
-      <scope id="2391321168245519085" at="26,28,28,81" />
-      <scope id="2391321168245498473" at="16,0,19,0">
+      <node id="2391321168245786084" at="14,36,15,75" concept="1" />
+      <node id="2391321168245519089" at="22,28,23,76" concept="1" />
+      <node id="2391321168245701237" at="23,76,24,81" concept="1" />
+      <node id="2391321168245498468" at="12,0,14,0" concept="0" trace="MPS13933#()V" />
+      <node id="2391321168245498481" at="17,0,19,0" concept="3" trace="doSmth#()V" />
+      <node id="2391321168245498473" at="14,0,17,0" concept="3" trace="addRow#(Ljava/util/List;)V" />
+      <node id="2391321168245519082" at="21,0,26,0" concept="3" trace="doSmth#()V" />
+      <node id="2391321168245498489" at="19,29,26,6" concept="1" />
+      <node id="2391321168245498485" at="19,0,28,0" concept="5" trace="main#()V" />
+      <scope id="2391321168245498471" at="12,21,12,21" />
+      <scope id="2391321168245498484" at="17,24,17,24" />
+      <scope id="2391321168245498476" at="14,36,15,75" />
+      <scope id="2391321168245498468" at="12,0,14,0" />
+      <scope id="2391321168245498481" at="17,0,19,0" />
+      <scope id="2391321168245519085" at="22,28,24,81" />
+      <scope id="2391321168245498473" at="14,0,17,0">
         <var name="list" id="2391321168245498477" />
       </scope>
-      <scope id="2391321168245519082" at="25,0,30,0" />
-      <scope id="2391321168245498488" at="23,29,30,6" />
-      <scope id="2391321168245498485" at="23,0,32,0" />
-      <unit id="2391321168245519069" at="24,8,30,5" name="jetbrains.mps.internalCollections.test.runtime.MPS13933$1" />
-      <unit id="2391321168245498466" at="10,0,33,0" name="jetbrains.mps.internalCollections.test.runtime.MPS13933" />
+      <scope id="2391321168245519082" at="21,0,26,0" />
+      <scope id="2391321168245498488" at="19,29,26,6" />
+      <scope id="2391321168245498485" at="19,0,28,0" />
+      <unit id="2391321168245519069" at="20,8,26,5" name="jetbrains.mps.internalCollections.test.runtime.MPS13933$1" />
+      <unit id="2391321168245498466" at="10,0,29,0" name="jetbrains.mps.internalCollections.test.runtime.MPS13933" />
     </file>
   </root>
   <root nodeRef="r:686ee360-aa95-429c-8923-576d8ce88ea8(jetbrains.mps.internalCollections.test.runtime)/2391321168245786035">
@@ -42,30 +42,30 @@
       <node id="2391321168245786417" at="22,28,23,87" concept="1" />
       <node id="2391321168245786429" at="25,6,26,16" concept="1" />
       <node id="2391321168245786153" at="26,16,27,102" concept="1" />
-      <node id="2391321168245786509" at="33,28,34,77" concept="1" />
-      <node id="2391321168245786517" at="36,6,37,16" concept="1" />
-      <node id="2391321168245786521" at="37,16,38,97" concept="1" />
-      <node id="2391321168245786037" at="41,0,43,0" concept="0" trace="Generics_Test#()V" />
+      <node id="2391321168245786509" at="32,28,33,77" concept="1" />
+      <node id="2391321168245786517" at="35,6,36,16" concept="1" />
+      <node id="2391321168245786521" at="36,16,37,97" concept="1" />
+      <node id="2391321168245786037" at="39,0,41,0" concept="0" trace="Generics_Test#()V" />
       <node id="2391321168245786383" at="13,0,17,0" concept="3" trace="doSmth#()V" />
       <node id="2391321168245786413" at="21,0,25,0" concept="3" trace="doSmth#()V" />
-      <node id="2391321168245786505" at="32,0,36,0" concept="3" trace="doSmth#()V" />
+      <node id="2391321168245786505" at="31,0,35,0" concept="3" trace="doSmth#()V" />
       <node id="2391321168245786374" at="11,56,17,6" concept="4" />
       <node id="2391321168245786404" at="19,105,25,6" concept="4" />
-      <node id="2391321168245786496" at="30,52,36,6" concept="4" />
-      <node id="2391321168245786492" at="30,0,40,0" concept="3" trace="test_mps13933_raw#()V" />
+      <node id="2391321168245786496" at="29,52,35,6" concept="4" />
+      <node id="2391321168245786492" at="29,0,39,0" concept="3" trace="test_mps13933_raw#()V" />
       <node id="2391321168245786042" at="11,0,29,0" concept="3" trace="test_mps13933_generic#()V" />
-      <scope id="2391321168245786040" at="41,26,41,26" />
+      <scope id="2391321168245786040" at="39,26,39,26" />
       <scope id="2391321168245786386" at="14,28,15,85" />
       <scope id="2391321168245786416" at="22,28,23,87" />
-      <scope id="2391321168245786508" at="33,28,34,77" />
-      <scope id="2391321168245786037" at="41,0,43,0" />
+      <scope id="2391321168245786508" at="32,28,33,77" />
+      <scope id="2391321168245786037" at="39,0,41,0" />
       <scope id="2391321168245786383" at="13,0,17,0" />
       <scope id="2391321168245786413" at="21,0,25,0" />
-      <scope id="2391321168245786505" at="32,0,36,0" />
-      <scope id="2391321168245786495" at="30,52,38,97">
+      <scope id="2391321168245786505" at="31,0,35,0" />
+      <scope id="2391321168245786495" at="29,52,37,97">
         <var name="o1" id="2391321168245786497" />
       </scope>
-      <scope id="2391321168245786492" at="30,0,40,0" />
+      <scope id="2391321168245786492" at="29,0,39,0" />
       <scope id="2391321168245786045" at="11,56,27,102">
         <var name="o1" id="2391321168245786375" />
         <var name="o2" id="2391321168245786405" />
@@ -73,8 +73,8 @@
       <scope id="2391321168245786042" at="11,0,29,0" />
       <unit id="2391321168245786380" at="12,30,17,5" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test$1" />
       <unit id="2391321168245786410" at="20,31,25,5" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test$2" />
-      <unit id="2391321168245786502" at="31,22,36,5" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test$3" />
-      <unit id="2391321168245786035" at="10,0,44,0" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test" />
+      <unit id="2391321168245786502" at="30,22,35,5" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test$3" />
+      <unit id="2391321168245786035" at="10,0,42,0" name="jetbrains.mps.internalCollections.test.runtime.Generics_Test" />
     </file>
   </root>
 </debug-info>

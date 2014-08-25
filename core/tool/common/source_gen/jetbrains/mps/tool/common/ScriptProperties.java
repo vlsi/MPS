@@ -19,7 +19,6 @@ public class ScriptProperties {
 
   public static final String GENERATE_PERFORMANCE_REPORT = "GENERATE_PERFORMANCE_REPORT";
 
-
   private ScriptProperties() {
   }
 }

@@ -14,12 +14,10 @@ public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
   public BwfJavaClassPath_Constraints() {
     super("jetbrains.mps.build.workflow.structure.BwfJavaClassPath");
   }
-
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
   }
-
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -30,10 +28,8 @@ public class BwfJavaClassPath_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return SConceptOperations.isExactly(childConcept, "jetbrains.mps.core.xml.structure.XmlElement") || SConceptOperations.isExactly(childConcept, "jetbrains.mps.build.workflow.structure.BwfPathReference") || SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.lang.core.structure.NodeAttribute");
   }
-
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)", "7926701909975915318");
 }

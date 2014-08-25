@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_EnumConstantOverrideAnnotation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_EnumConstantOverrideAnnotation_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode enumConstant, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SNodeOperations.getParent(enumConstant) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(enumConstant), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return;
@@ -39,18 +38,15 @@ public class check_EnumConstantOverrideAnnotation_NonTypesystemRule extends Abst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

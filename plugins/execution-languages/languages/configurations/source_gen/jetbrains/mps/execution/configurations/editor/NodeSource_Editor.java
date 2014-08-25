@@ -23,7 +23,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_iqw32v_a(editorContext, node);
   }
-
   private EditorCell createCollection_iqw32v_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_iqw32v_a");
@@ -34,7 +33,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_iqw32v_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_iqw32v_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -42,7 +40,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_iqw32v_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_iqw32v_b0");
@@ -54,7 +51,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_iqw32v_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -76,20 +72,16 @@ public class NodeSource_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_iqw32v_a2a extends InlineCellProvider {
     public _Inline_iqw32v_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_iqw32v_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_iqw32v_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -109,7 +101,6 @@ public class NodeSource_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_iqw32v_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_iqw32v_d0");

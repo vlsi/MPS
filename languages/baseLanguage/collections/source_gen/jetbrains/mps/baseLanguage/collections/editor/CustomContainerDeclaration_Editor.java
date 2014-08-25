@@ -25,7 +25,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ddrapt_a(editorContext, node);
   }
-
   private EditorCell createCollection_ddrapt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_a");
@@ -36,7 +35,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ddrapt_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_ddrapt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_a0");
@@ -54,12 +52,10 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ddrapt_g0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_ddrapt_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
-
   private EditorCell createConstant_ddrapt_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "container");
     editorCell.setCellId("Constant_ddrapt_b0a");
@@ -69,7 +65,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ddrapt_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -90,16 +85,13 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_ddrapt_d0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component");
     return editorCell;
   }
-
   private static boolean renderingCondition_ddrapt_a3a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_ddrapt_e0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "specifies");
     editorCell.setCellId("Constant_ddrapt_e0a");
@@ -109,7 +101,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ddrapt_f0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("containerType");
@@ -129,7 +120,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ddrapt_g0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ddrapt_g0a");
@@ -139,7 +129,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ddrapt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_b0");
@@ -150,12 +139,10 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ddrapt_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_ddrapt_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_ddrapt_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_b1a");
@@ -163,7 +150,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ddrapt_b1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ddrapt_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "runtime type:");
     editorCell.setCellId("Constant_ddrapt_a1b0");
@@ -173,7 +159,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ddrapt_b1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("runtimeType");
@@ -193,7 +178,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_ddrapt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_c0");
@@ -204,12 +188,10 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ddrapt_b2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_ddrapt_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_ddrapt_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_ddrapt_b2a");
@@ -220,7 +202,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_ddrapt_b1c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ddrapt_a1c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "factory:");
     editorCell.setCellId("Constant_ddrapt_a1c0");
@@ -230,7 +211,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_ddrapt_b1c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("factory");
@@ -250,7 +230,6 @@ public class CustomContainerDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ddrapt_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ddrapt_d0");

@@ -21,11 +21,9 @@ import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
 
 public abstract class MigrationScriptsController {
   private final MigrationScriptFinder myFinder;
-
   public MigrationScriptsController(MigrationScriptFinder finder) {
     myFinder = finder;
   }
-
   public Collection<SearchResult<SNode>> computeAliveIncludedResults(final List<SNodeReference> includedResultNodes) {
     ThreadUtils.assertEDT();
     final List<SearchResult<SNode>> aliveIncludedResults = new ArrayList<SearchResult<SNode>>();
@@ -49,7 +47,6 @@ public abstract class MigrationScriptsController {
     });
     return Collections.unmodifiableCollection(aliveIncludedResults);
   }
-
   public void process(final ProgressMonitor pmonitor, final Collection<SearchResult<SNode>> searchResults) {
     pmonitor.start("", searchResults.size());
     for (final SearchResult<SNode> seachResult : searchResults) {
@@ -83,6 +80,5 @@ public abstract class MigrationScriptsController {
       }
     });
   }
-
   public abstract void runCommand(Runnable cmd);
 }

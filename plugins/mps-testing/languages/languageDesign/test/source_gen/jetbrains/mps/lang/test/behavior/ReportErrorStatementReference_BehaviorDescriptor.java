@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReportErrorStatementReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IRuleReference_BehaviorDescriptor {
   public ReportErrorStatementReference_BehaviorDescriptor() {
   }
-
   public String virtual_getName_7691029917083872184(SNode thisNode) {
     return ReportErrorStatementReference_Behavior.virtual_getName_7691029917083872184(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.ReportErrorStatementReference";

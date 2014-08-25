@@ -6,7 +6,6 @@ package jetbrains.mps.lang.core.behavior;
 public class NodeAttribute_BehaviorDescriptor extends Attribute_BehaviorDescriptor {
   public NodeAttribute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.core.structure.NodeAttribute";

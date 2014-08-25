@@ -11,7 +11,6 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   public IntentionsDescriptor() {
     super(new ModuleReference("3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)"), PersistenceFacade.getInstance().createModelReference("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)"));
   }
-
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new ConvertToNodeBuilder_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateAntiquotation_Intention());

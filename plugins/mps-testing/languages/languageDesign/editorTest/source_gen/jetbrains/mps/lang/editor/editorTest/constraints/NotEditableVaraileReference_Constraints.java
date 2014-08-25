@@ -24,7 +24,6 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
   public NotEditableVaraileReference_Constraints() {
     super("jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,7 +32,6 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -50,7 +48,6 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a1;
@@ -60,6 +57,5 @@ public class NotEditableVaraileReference_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   private static SNodePointer breakingNode_5rh4qw_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:94b1feee-20bf-48e9-9677-814a5fdcaf90(jetbrains.mps.lang.editor.editorTest.constraints)", "4965160547087600888");
 }

@@ -10,22 +10,18 @@ public abstract class TestContainerRow implements TestStatisticsRow {
   private final String myText;
   private String myAdditionalText;
   private List<TestStatisticsRow> myRows = ListSequence.fromList(new ArrayList<TestStatisticsRow>());
-
   public TestContainerRow(String text, String additionalText) {
     myText = text;
     myAdditionalText = additionalText;
   }
-
   @Override
   public String getText() {
     return myText;
   }
-
   @Override
   public String getAdditionalText() {
     return myAdditionalText;
   }
-
   @Override
   public long getElapsedTime() {
     long elapsedTime = 0;
@@ -37,7 +33,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return elapsedTime;
   }
-
   @Override
   public long getUsageBefore() {
     long usageBefore = -1;
@@ -50,7 +45,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return usageBefore;
   }
-
   @Override
   public long getUsageAfter() {
     long usageAfter = -1;
@@ -63,7 +57,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return usageAfter;
   }
-
   @Override
   public long getUsageDelta() {
     long usageBefore = getUsageBefore();
@@ -74,7 +67,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return usageDelta;
   }
-
   @Override
   public int getSuccessful() {
     int count = 0;
@@ -83,7 +75,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return count;
   }
-
   @Override
   public int getErrored() {
     int count = 0;
@@ -92,7 +83,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return count;
   }
-
   @Override
   public int getFailed() {
     int count = 0;
@@ -101,7 +91,6 @@ public abstract class TestContainerRow implements TestStatisticsRow {
     }
     return count;
   }
-
   public void addRow(TestStatisticsRow row) {
     ListSequence.fromList(myRows).addElement(row);
   }

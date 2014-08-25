@@ -7,12 +7,10 @@ import java.util.Comparator;
 public class CompoundComparator<T> implements Comparator<T> {
   private final Comparator<T> secondary;
   private final Comparator<T> primary;
-
   public CompoundComparator(Comparator<T> primary, Comparator<T> secondary) {
     this.primary = primary;
     this.secondary = secondary;
   }
-
   @Override
   public int compare(T a, T b) {
     int c = primary.compare(a, b);

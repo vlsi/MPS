@@ -22,7 +22,6 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
   public ExtensionStaticFieldReference_Constraints() {
     super("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionStaticFieldReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
             SNode container = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.extensionMethods.structure.BaseExtensionMethodContainer", false, false);
             return SLinkOperations.getTargets(container, "staticFields", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_xefsui_a0a1a0a0a1a0b0a1a1;
@@ -51,6 +48,5 @@ public class ExtensionStaticFieldReference_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-
   private static SNodePointer breakingNode_xefsui_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:8a519067-4481-4fce-a84b-d7a47e974dd7(jetbrains.mps.baseLanguage.extensionMethods.constraints)", "3097384118511835569");
 }

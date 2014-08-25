@@ -30,7 +30,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_paq7mh_a(editorContext, node);
   }
-
   private EditorCell createCollection_paq7mh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_paq7mh_a");
@@ -44,7 +43,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_paq7mh_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_paq7mh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_paq7mh_a0");
@@ -57,7 +55,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_paq7mh_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("modifiers");
@@ -79,18 +76,15 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0 extends AbstractCellMenuPart_PropertyValues {
     public KeyMapKeystroke_modifiers_cellMenu_paq7mh_a0b0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidModifiers()));
       return result;
     }
   }
-
   private EditorCell createConstant_paq7mh_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_paq7mh_c0");
@@ -103,7 +97,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_paq7mh_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "+");
     editorCell.setCellId("Constant_paq7mh_d0");
@@ -115,7 +108,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_paq7mh_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_paq7mh_e0");
@@ -128,7 +120,6 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_paq7mh_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("keycode");
@@ -149,18 +140,15 @@ public class KeyMapKeystroke_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0 extends AbstractCellMenuPart_PropertyValues {
     public KeyMapKeystroke_keycode_cellMenu_paq7mh_a0f0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> result = ListSequence.fromList(new ArrayList<String>());
       ListSequence.fromList(result).addSequence(ListSequence.fromList(AWTKeymapHandler.getValidKeyCodes()));
       return result;
     }
   }
-
   private EditorCell createConstant_paq7mh_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_paq7mh_g0");

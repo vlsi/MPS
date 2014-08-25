@@ -28,16 +28,13 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
 public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.diagram.testLanguage.editor.TestDiagramLanguage.DiagramTestTextual"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_com5ge_a(editorContext, node);
   }
-
   private EditorCell createCollection_com5ge_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_com5ge_a");
@@ -48,14 +45,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.addEditorCell(this.createConstant_com5ge_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "node with query ports");
     editorCell.setCellId("Constant_com5ge_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_com5ge_b0");
@@ -66,7 +61,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_com5ge_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_com5ge_c0");
@@ -98,14 +92,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.addEditorCell(this.createRefNodeList_com5ge_w2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "x");
     editorCell.setCellId("Constant_com5ge_a2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_b2a");
@@ -115,7 +107,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_com5ge_c2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("x");
@@ -136,14 +127,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_d2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "y");
     editorCell.setCellId("Constant_com5ge_d2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_e2a");
@@ -153,7 +142,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_com5ge_f2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("y");
@@ -174,14 +162,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_g2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "width");
     editorCell.setCellId("Constant_com5ge_g2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_h2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_h2a");
@@ -191,7 +177,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_com5ge_i2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("width");
@@ -212,14 +197,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_j2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "height");
     editorCell.setCellId("Constant_com5ge_j2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_k2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_k2a");
@@ -229,7 +212,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_com5ge_l2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("height");
@@ -250,14 +232,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_m2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "line width");
     editorCell.setCellId("Constant_com5ge_m2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_n2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_n2a");
@@ -267,7 +247,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_com5ge_o2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("lineWidth");
@@ -288,7 +267,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_p2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_com5ge_p2a");
@@ -298,14 +276,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_q2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inputs");
     editorCell.setCellId("Constant_com5ge_q2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_r2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_r2a");
@@ -316,7 +292,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_com5ge_s2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new NodeWithPortQueries_DiagramTestTextual_Editor.inputsListHandler_com5ge_s2a(node, "inputs", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -329,35 +304,31 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class inputsListHandler_com5ge_s2a extends RefNodeListHandler {
     public inputsListHandler_com5ge_s2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -365,7 +336,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
       }
     }
   }
-
   private EditorCell createConstant_com5ge_t2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_com5ge_t2a");
@@ -375,14 +345,12 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_u2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "outputs");
     editorCell.setCellId("Constant_com5ge_u2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_com5ge_v2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_com5ge_v2a");
@@ -393,7 +361,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_com5ge_w2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new NodeWithPortQueries_DiagramTestTextual_Editor.outputsListHandler_com5ge_w2a(node, "outputs", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -406,35 +373,31 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class outputsListHandler_com5ge_w2a extends RefNodeListHandler {
     public outputsListHandler_com5ge_w2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -442,7 +405,6 @@ public class NodeWithPortQueries_DiagramTestTextual_Editor extends DefaultNodeEd
       }
     }
   }
-
   private EditorCell createConstant_com5ge_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_com5ge_d0");

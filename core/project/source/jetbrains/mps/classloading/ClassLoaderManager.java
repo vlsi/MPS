@@ -47,7 +47,7 @@ import java.util.Set;
 //
 // Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
 // to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
-// todo: move to workbench
+// TODO: move to workbench
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
@@ -130,6 +130,16 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @Nullable
   public Class getClass(SModule module, String classFqName) {
+    return getClass(module, classFqName, false);
+  }
+
+  @Nullable
+  public Class getOwnClass(SModule module, String classFqName) {
+    return getClass(module, classFqName, true);
+  }
+
+  @Nullable
+  private Class getClass(SModule module, String classFqName, boolean ownClassOnly) {
     assertCanLoad(module);
 
     // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
@@ -149,15 +159,17 @@ public class ClassLoaderManager implements CoreComponent {
       return null;
     }
     try {
-      try {
-        return classLoader.loadClass(InternUtil.intern(classFqName));
-      } catch (ClassNotFoundException e) {
-        return null;
+      String internClassName = InternUtil.intern(classFqName);
+      if (ownClassOnly && classLoader instanceof ModuleClassLoader) {
+        return ((ModuleClassLoader) classLoader).loadOwnClass(internClassName);
       }
+      return classLoader.loadClass(internClassName);
+    } catch (ClassNotFoundException e) {
+      if (!ownClassOnly) LOG.error(e);
     } catch (Throwable t) {
       LOG.error(t);
-      return null;
     }
+    return null;
   }
 
   /**
@@ -294,6 +306,10 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  public Set<SModule> reloadModules(Iterable<? extends SModule> modules) {
+    return reloadModules(modules, new EmptyProgressMonitor());
+  }
+
   public void stopListening() {
     myRepository.removeRepositoryListener(myRepositoryListener);
   }
@@ -308,6 +324,7 @@ public class ClassLoaderManager implements CoreComponent {
   @Deprecated
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
+    LOG.info("Reloading all modules");
     reloadModules(myRepository.getModules(), monitor);
     loadAllPossibleClasses(new EmptyProgressMonitor());
   }

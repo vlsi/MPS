@@ -20,15 +20,12 @@ import jetbrains.mps.editor.runtime.style.StyleAttributes;
 
 public class MultipleEditorsTestEditorComponentChild_compact implements ConceptEditorComponent {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.lang.editor.multiple.testLanguage.editor.MultipleEditorTestHints.compact"});
-
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_l1cby4_a(editorContext, node);
   }
-
   private EditorCell createCollection_l1cby4_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_l1cby4_a");
@@ -39,7 +36,6 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     editorCell.addEditorCell(this.createConstant_l1cby4_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_l1cby4_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -57,7 +53,6 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_l1cby4_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_l1cby4_b0");
@@ -70,7 +65,6 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_l1cby4_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("compactProperty");
@@ -88,7 +82,6 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_l1cby4_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_l1cby4_d0");
@@ -101,7 +94,6 @@ public class MultipleEditorsTestEditorComponentChild_compact implements ConceptE
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_l1cby4_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_l1cby4_e0");

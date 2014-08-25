@@ -20,11 +20,9 @@ import jetbrains.mps.smodel.SReference;
 public class MapType_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "keyType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + "," + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "valueType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
   }
-
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_icy1a5_a0a1a1(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
@@ -32,11 +30,9 @@ public class MapType_Behavior {
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
-
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_icy1a5_a0a2();
   }
-
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.DequeType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.QueueType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SortedSetType".equals(conceptFqName)) {
       return false;
@@ -45,7 +41,6 @@ public class MapType_Behavior {
     return true;
 
   }
-
   private static SNode _quotation_createNode_icy1a5_a0a1a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -62,7 +57,6 @@ public class MapType_Behavior {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_icy1a5_a0a2a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -79,7 +73,6 @@ public class MapType_Behavior {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_icy1a5_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NPEEqualsExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDescriptor {
   public NPEEqualsExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return NPEEqualsExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NPEEqualsExpression";

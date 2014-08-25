@@ -15,7 +15,6 @@ public class DailyPlan_Constraints extends BaseConstraintsDescriptor {
   public DailyPlan_Constraints() {
     super("jetbrains.mps.samples.heating.structure.DailyPlan");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,7 +23,6 @@ public class DailyPlan_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "displayName";

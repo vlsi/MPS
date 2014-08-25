@@ -14,7 +14,6 @@ public class ThreadPool_Constraints extends BaseConstraintsDescriptor {
   public ThreadPool_Constraints() {
     super("org.jetbrains.mps.samples.ParallelFor.structure.ThreadPool");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class ThreadPool_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "numberOfThreads";

@@ -20,25 +20,21 @@ import org.apache.log4j.LogManager;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public NavigateToGeneratedQuery_Action() {
     super("Generated Query", "Navigate to generated query method", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     // check that node in generator? 
     SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")));
 
     return (SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false) != null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -72,7 +67,6 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNode fun = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
@@ -83,6 +77,5 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NavigateToGeneratedQuery_Action.class);
 }

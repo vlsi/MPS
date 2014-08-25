@@ -17,26 +17,20 @@ public class ModuleXml extends XMLFragment {
   private String myModuleRef = "";
   private String myModuleXmlPath = "";
   private String myInnerText = null;
-
   public ModuleXml() {
   }
-
   public void setRef(String ref) {
     myModuleRef = ref;
   }
-
   public void setDestfile(String dest) {
     myModuleXmlPath = dest;
   }
-
   public String getRef() {
     return myModuleRef;
   }
-
   public String getDestfile() {
     return myModuleXmlPath;
   }
-
   private void writeInnerText(OutputStream os, int indent, String indentWith) throws IOException {
     DOMElementWriter writer = new DOMElementWriter(false);
     Writer wr = new OutputStreamWriter(os);
@@ -47,11 +41,9 @@ public class ModuleXml extends XMLFragment {
     }
     wr.flush();
   }
-
   public void setInnerText(String innerText) {
     myInnerText = innerText;
   }
-
   public String getInnerText(int indent, String indentWith) {
     if (myInnerText != null) {
       return myInnerText;

@@ -32,7 +32,6 @@ import org.apache.log4j.LogManager;
 public class HelpCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(thisNode, "target", true) == null)) {
       Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleTab().getConsoleModel())).where(new IWhereFilter<SNode>() {
@@ -62,15 +61,15 @@ public class HelpCommand_Behavior {
       List<List<String>> resultList = ListSequence.fromListWithValues(new ArrayList<List<String>>(), LinkedListSequence.fromLinkedList(groupedConstructions).select(new ISelector<SNode, IListSequence<String>>() {
         public IListSequence<String> select(SNode it) {
           try {
-            return ListSequence.fromListAndArray(new ArrayList<String>(), (isNotEmptyString(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getHelpPage_7006261637493125297", new Object[]{})) ? "+" : " "), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getKind_7006261637493126084", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+            return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
           } catch (RuntimeException e) {
             if (LOG.isEnabledFor(Level.WARN)) {
               LOG.warn("Concept " + BehaviorReflection.invokeVirtual(String.class, it, "virtual_getFqName_1213877404258", new Object[]{}) + " implements ConsoleHelpProvider but does not implement getHelp() method", e);
             }
             try {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), " ", BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "", "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it)), "virtual_getDisplayString_7006261637493126103", new Object[]{}), "");
             } catch (RuntimeException e1) {
-              return ListSequence.fromListAndArray(new ArrayList<String>(), " ", SPropertyOperations.getString(it, "name"), "", "");
+              return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(it, "name"), "");
             }
           }
         }
@@ -114,48 +113,39 @@ public class HelpCommand_Behavior {
       try {
         SNode chp = (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "target", true), "command", false);
         helpPage = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getHelpPage_7006261637493125297", new Object[]{});
+        String helpHead = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{});
         if ((helpPage != null && helpPage.length() > 0)) {
-          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n\n" + helpPage);
+          console.addText(helpHead + "\n\n" + helpPage);
         } else {
-          console.addText(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getDisplayString_7006261637493126103", new Object[]{}) + " : " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getKind_7006261637493126084", new Object[]{}) + "\n" + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(chp)), "virtual_getShortHelp_473081947982699339", new Object[]{}));
+          console.addText(helpHead);
         }
       } catch (RuntimeException ignored) {
       }
     }
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
-    return "display this help or command help";
+    return "display this help or a help page for a specific command";
   }
-
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
-    return "When called without arguments, prints common help.\nWhen command is specified, prints help about the command.";
+    return "When called without any arguments, lists all available commands with their brief description.\nWhen a command is specified, help specific to that command is printed.";
   }
-
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
-
   private static String check_x46ur7_a0a0c0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(checkedDotOperand)), "virtual_getGroup_6928665434441162387", new Object[]{});
     }
     return null;
   }
-
   private static int check_x46ur7_a0a0b0f0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
   }
-
   private static int check_x46ur7_a0a0b0a0i0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
-  }
-
-  private static boolean isNotEmptyString(String str) {
-    return str != null && str.length() > 0;
   }
 }

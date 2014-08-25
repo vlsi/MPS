@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.behavior;
 public abstract class ColorStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public ColorStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ColorStyleClassItem";

@@ -9,11 +9,9 @@ import jetbrains.mps.openapi.editor.EditorContext;
 
 public class VLineCellProvider extends AbstractCellProvider {
   private SNode myNode;
-
   public VLineCellProvider(SNode node) {
     this.myNode = node;
   }
-
   @Override
   public EditorCell createEditorCell(EditorContext p0) {
     return new EditorCell_VerticalLine(p0, this.myNode);

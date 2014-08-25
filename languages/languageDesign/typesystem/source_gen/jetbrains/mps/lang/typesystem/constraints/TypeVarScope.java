@@ -15,16 +15,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVarScope extends SearchScopeWithNode {
   private SNode myCurrentNode = null;
-
   public TypeVarScope(SNode enclosingNode) {
     super(enclosingNode);
   }
-
   public TypeVarScope(SNode enclosingNode, SNode currentNode) {
     super(enclosingNode);
     myCurrentNode = currentNode;
   }
-
   @NotNull
   @Override
   public List<SNode> getNodes(Condition<SNode> condition) {
@@ -59,7 +56,6 @@ public class TypeVarScope extends SearchScopeWithNode {
     }
     return result;
   }
-
   private void populateLocalVariables(@NotNull SNode statementList, SNode beforeStatement, List<SNode> result) {
     for (SNode statement : SLinkOperations.getTargets(statementList, "statement", true)) {
       if (statement == beforeStatement) {

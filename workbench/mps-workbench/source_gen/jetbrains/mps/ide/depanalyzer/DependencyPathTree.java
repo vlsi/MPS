@@ -5,24 +5,18 @@ package jetbrains.mps.ide.depanalyzer;
 import jetbrains.mps.ide.ui.tree.MPSTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import java.util.List;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import java.util.Set;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.project.Project;
 import javax.swing.tree.TreeSelectionModel;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Map;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import java.util.Queue;
-import jetbrains.mps.internal.collections.runtime.QueueSequence;
+import jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.ide.ui.tree.TextMPSTreeNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.ui.tree.MPSTreeNode;
+import jetbrains.mps.ide.ui.tree.TextTreeNode;
+import java.util.HashMap;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -30,184 +24,112 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.IOperationContext;
+import org.jetbrains.mps.openapi.module.SModule;
 
 public class DependencyPathTree extends MPSTree implements DataProvider {
-  private List<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>> myAllDependencies = ListSequence.fromList(new ArrayList<Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean>>());
-  private Project myProject;
-  private boolean myShowAllPaths;
-
+  private List<DepLink> myAllDependencies = ListSequence.fromList(new ArrayList<DepLink>());
+  private final Project myProject;
   public DependencyPathTree(Project project) {
     myProject = project;
     getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
   }
-
-  public Project getProject() {
-    return myProject;
-  }
-
-  public void setShowAllPaths(boolean value) {
-    myShowAllPaths = value;
-  }
-
-  public boolean isShowAll() {
-    return myShowAllPaths;
-  }
-
   public void resetDependencies() {
     ListSequence.fromList(myAllDependencies).clear();
   }
-
-  public void addDependency(Iterable<SModule> from, Iterable<SModule> to, Iterable<SModule> usedLanguage, boolean showRuntime) {
-    ListSequence.fromList(myAllDependencies).addElement(MultiTuple.<Set<SModule>,Set<SModule>,Set<SModule>,Boolean>from(SetSequence.fromSetWithValues(new HashSet<SModule>(), from), SetSequence.fromSetWithValues(new HashSet<SModule>(), to), SetSequence.fromSetWithValues(new HashSet<SModule>(), usedLanguage), showRuntime));
+  public void revealDependencies(Iterable<DepLink> node) {
+    ListSequence.fromList(myAllDependencies).addSequence(Sequence.fromIterable(node));
   }
+  private void buildTree(DepLink depNode, Map<Dependency, DependencyPathTree.LinkFrom> visited) {
+    List<DepLink> dependencyPath = ListSequence.fromList(new LinkedList<DepLink>());
+    // unwind up to source of depdendency path, effectively reversing it, top (source of dep) -> bottom (target of dep) 
+    while (depNode != null) {
+      ListSequence.fromList(dependencyPath).insertElement(0, depNode);
+      depNode = depNode.parent();
+    }
 
-  private MPSTreeNode buildTree(SModule from, Set<SModule> dependency, Set<SModule> usedlanguage, boolean showRuntime) {
-    Map<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom> visited = MapSequence.fromMap(new HashMap<Tuples._2<SModule, DependencyUtil.Role>, DependencyPathTree.LinkFrom>());
-    Queue<DependencyPathTree.LinkFrom> unprocessed = QueueSequence.fromQueue(new LinkedList<DependencyPathTree.LinkFrom>());
-
-    DependencyPathTree.LinkFrom root = new DependencyPathTree.LinkFrom(new DependencyUtil.Link(from, DependencyUtil.Role.None, null), null);
-    QueueSequence.fromQueue(unprocessed).addLastElement(root);
-
-    while (QueueSequence.fromQueue(unprocessed).isNotEmpty()) {
-      DependencyPathTree.LinkFrom node = QueueSequence.fromQueue(unprocessed).removeFirstElement();
-      if (node.link.role.isUsedLanguage() && SetSequence.fromSet(usedlanguage).contains(node.link.module) || node.link.role.isDependency() && SetSequence.fromSet(dependency).contains(node.link.module)) {
-        // copy path to real tree 
-        node.setDepUsed();
-      } else if (MapSequence.fromMap(visited).containsKey(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role))) {
-        if (!(isShowAll())) {
-          continue;
-        }
-        DependencyPathTree.LinkFrom n = MapSequence.fromMap(visited).get(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role));
-        n.addBackDep(node);
-        // if we came to dependency, copy path to real tree 
-        if (n.isUsed()) {
-          node.setLinkUsed(n);
-        }
+    DependencyPathTree.LinkFrom parent = null;
+    while (ListSequence.fromList(dependencyPath).isNotEmpty()) {
+      DepLink n = ListSequence.fromList(dependencyPath).removeElementAt(0);
+      Dependency key = n.getRoleModuleKey();
+      DependencyPathTree.LinkFrom e = MapSequence.fromMap(visited).get(key);
+      if (e == null || e.parent != parent) {
+        // we didn't yet see that dep link anywhere, or have seen it under another branch 
+        DependencyPathTree.LinkFrom f = new DependencyPathTree.LinkFrom(n, parent, myProject);
+        MapSequence.fromMap(visited).put(key, f);
+        parent = f;
       } else {
-        MapSequence.fromMap(visited).put(MultiTuple.<SModule,DependencyUtil.Role>from(node.link.module, node.link.role), node);
-        DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime);
-        for (DependencyUtil.Link link : ListSequence.fromList(DependencyUtil.dependencies(node.link.role, node.link.module, showRuntime))) {
-          DependencyPathTree.LinkFrom n = new DependencyPathTree.LinkFrom(link, node);
-          QueueSequence.fromQueue(unprocessed).addLastElement(n);
-        }
+        parent = e;
       }
     }
-
-    return root.node;
-  }
-
-  public MPSTreeNode testBuildTree(SModule from, SModule dependency, SModule used, boolean showRuntime) {
-    HashSet<SModule> dependencies = new HashSet<SModule>();
-    if (dependency != null) {
-      dependencies.add(dependency);
+    if (parent != null) {
+      // parent is the bottom (leaf) node, holding the module we initially selected (revealDependencies()) 
+      parent.node.setDepLeaf();
     }
-    HashSet<SModule> usedLanguages = new HashSet<SModule>();
-    if (used != null) {
-      usedLanguages.add(used);
-    }
-    return buildTree(from, dependencies, usedLanguages, showRuntime);
   }
-
   @Override
   protected MPSTreeNode rebuild() {
-    MPSTreeNode result = new TextMPSTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ? "No Dependencies Selected" : "Found Dependencies:"), null);
-    for (Tuples._4<Set<SModule>, Set<SModule>, Set<SModule>, Boolean> dep : ListSequence.fromList(myAllDependencies)) {
-      for (SModule m : SetSequence.fromSet(dep._0())) {
-        MPSTreeNode node = buildTree(m, dep._1(), dep._2(), (boolean) dep._3());
-        if (node != null) {
-          result.add(node);
-        }
+    MPSTreeNode result = new TextTreeNode((ListSequence.fromList(myAllDependencies).isEmpty() ? "No Dependencies Selected" : "Found Dependencies:"));
+    Map<Dependency, DependencyPathTree.LinkFrom> deps = MapSequence.fromMap(new HashMap<Dependency, DependencyPathTree.LinkFrom>());
+    // merge dependency paths by role and module 
+    for (DepLink dep : ListSequence.fromList(myAllDependencies)) {
+      buildTree(dep, deps);
+    }
+    // attach roots of merged paths to top node 
+    for (DependencyPathTree.LinkFrom lf : Sequence.fromIterable(MapSequence.fromMap(deps).values())) {
+      if (lf.parent == null) {
+        result.add(lf.node);
       }
     }
-    setRootVisible(ListSequence.fromList(myAllDependencies).isEmpty());
-    setShowsRootHandles(ListSequence.fromList(myAllDependencies).isNotEmpty());
+    setRootVisible(result.getChildCount() == 0);
+    setShowsRootHandles(result.getChildCount() != 0);
     return result;
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     return ActionUtils.groupFromActions(((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.SafeDeleteModuleDependency_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ShowInDependenciesViewer_Action")), ((BaseAction) ActionManager.getInstance().getAction("jetbrains.mps.ide.actions.ModuleProperties_Action")));
   }
-
   @Nullable
   @Override
   public Object getData(@NonNls String id) {
-    DependencyTreeNode current = as_9bg0dz_a0a0a31(getCurrentNode(), DependencyTreeNode.class);
+    DependencyTreeNode current = as_9bg0dz_a0a0a8(getCurrentNode(), DependencyTreeNode.class);
     if (id.equals(MPSCommonDataKeys.TREE_NODE.getName())) {
       return current;
     }
     if (id.equals(MPSCommonDataKeys.OPERATION_CONTEXT.getName())) {
-      return check_9bg0dz_a0a2a31(current);
+      return check_9bg0dz_a0a2a8(current);
     }
     if (id.equals(MPSCommonDataKeys.MODULE.getName())) {
-      return check_9bg0dz_a0a3a31(current);
+      return check_9bg0dz_a0a3a8(current);
     }
     return null;
   }
-
   public static class LinkFrom {
-    private DependencyUtil.Link link;
-    private DependencyPathTree.LinkFrom from;
-    private List<DependencyPathTree.LinkFrom> backdeps = ListSequence.fromList(new ArrayList<DependencyPathTree.LinkFrom>());
-    private DependencyTreeNode node;
-
-    public LinkFrom(DependencyUtil.Link link, DependencyPathTree.LinkFrom from) {
+    /*package*/ DepLink link;
+    /*package*/ DependencyPathTree.LinkFrom parent;
+    /*package*/ DependencyTreeNode node;
+    public LinkFrom(DepLink link, DependencyPathTree.LinkFrom from, Project project) {
       this.link = link;
-      this.from = from;
-    }
-
-    public boolean isUsed() {
-      return node != null;
-    }
-
-    public void setUsed() {
-      if (isUsed()) {
-        return;
-      }
-      node = new DependencyTreeNode(link, null);
+      this.parent = from;
+      node = new DependencyTreeNode(project, link);
       if (from != null) {
-        from.setUsed();
         from.node.add(node);
       }
-      ListSequence.fromList(backdeps).visitAll(new IVisitor<DependencyPathTree.LinkFrom>() {
-        public void visit(DependencyPathTree.LinkFrom dep) {
-          dep.setLinkUsed(LinkFrom.this);
-        }
-      });
-    }
-
-    public void setLinkUsed(DependencyPathTree.LinkFrom link) {
-      setUsed();
-      node.setLinkLeaf(link.node);
-    }
-
-    public void setDepUsed() {
-      setUsed();
-      node.setDepLeaf();
-    }
-
-    public void addBackDep(DependencyPathTree.LinkFrom dep) {
-      ListSequence.fromList(backdeps).addElement(dep);
     }
   }
-
-  private static IOperationContext check_9bg0dz_a0a2a31(DependencyTreeNode checkedDotOperand) {
+  private static IOperationContext check_9bg0dz_a0a2a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getOperationContext();
     }
     return null;
   }
-
-  private static SModule check_9bg0dz_a0a3a31(DependencyTreeNode checkedDotOperand) {
+  private static SModule check_9bg0dz_a0a3a8(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
-  private static <T> T as_9bg0dz_a0a0a31(Object o, Class<T> type) {
+  private static <T> T as_9bg0dz_a0a0a8(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

@@ -17,18 +17,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_9ehkah_a0a2();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9ehkah_a0a0a0a4();
@@ -37,15 +33,12 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public static class Pattern_9ehkah_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_9ehkah_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_7vgvj3_a0a = nodeToMatch;
@@ -61,28 +54,22 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_9ehkah_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
 }

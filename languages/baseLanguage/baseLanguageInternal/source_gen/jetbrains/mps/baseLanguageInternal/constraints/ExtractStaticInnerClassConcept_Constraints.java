@@ -14,7 +14,6 @@ public class ExtractStaticInnerClassConcept_Constraints extends BaseConstraintsD
   public ExtractStaticInnerClassConcept_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class ExtractStaticInnerClassConcept_Constraints extends BaseConstraintsD
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "resolveInfo";

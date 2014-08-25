@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class ExtractComponentUtil {
   public ExtractComponentUtil() {
   }
-
   public static void extractComponent(final SNode node, EditorContext editorContext) {
     final SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
     final String componentName = Messages.showInputDialog(ProjectHelper.toIdeaProject(editorContext.getOperationContext().getProject()), "Enter a component name:", "", null);

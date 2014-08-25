@@ -36,11 +36,9 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qc0q19_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_qc0q19_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_qc0q19_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_qc0q19_a");
@@ -49,7 +47,6 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAttributedNodeCell_qc0q19_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_qc0q19_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@check scope@");
     editorCell.setCellId("Constant_qc0q19_a0");
@@ -61,14 +58,12 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_qc0q19_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createCollection_qc0q19_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_qc0q19_a_0");
@@ -83,14 +78,12 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_qc0q19_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "checking reference:");
     editorCell.setCellId("Constant_qc0q19_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_qc0q19_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("checkingReference");
@@ -113,27 +106,22 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_qc0q19_a1a extends InlineCellProvider {
     public _Inline_qc0q19_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_qc0q19_a0b0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_qc0q19_a0b0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "checkingReference");
       editorCell.setCellId("ReferencePresentation_qc0q19_a0b0");
       return editorCell;
     }
   }
-
   private EditorCell createCollection_qc0q19_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_qc0q19_c0");
@@ -141,11 +129,9 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_qc0q19_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_qc0q19_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "checkingReference", false) != null;
   }
-
   private EditorCell createConstant_qc0q19_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "expected nodes:");
     editorCell.setCellId("Constant_qc0q19_a2a");
@@ -155,7 +141,6 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_qc0q19_b2a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ScopesTest_Editor.nodesListHandler_qc0q19_b2a(node, "nodes", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -163,35 +148,31 @@ public class ScopesTest_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class nodesListHandler_qc0q19_b2a extends RefNodeListHandler {
     public nodesListHandler_qc0q19_b2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));

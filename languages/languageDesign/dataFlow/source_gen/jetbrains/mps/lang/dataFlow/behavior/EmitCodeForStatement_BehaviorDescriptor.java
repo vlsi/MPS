@@ -6,7 +6,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class EmitCodeForStatement_BehaviorDescriptor extends EmitStatement_BehaviorDescriptor {
   public EmitCodeForStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement";

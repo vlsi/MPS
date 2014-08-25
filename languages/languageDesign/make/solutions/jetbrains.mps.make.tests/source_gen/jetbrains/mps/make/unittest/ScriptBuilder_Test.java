@@ -23,7 +23,6 @@ import org.jmock.Expectations;
 @RunWith(JMock.class)
 public class ScriptBuilder_Test extends MockTestCase {
   private IFacet[] facets;
-
   @Test
   public void test_make() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -43,7 +42,6 @@ public class ScriptBuilder_Test extends MockTestCase {
       }
     }));
   }
-
   @Test
   public void test_gen() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -63,7 +61,6 @@ public class ScriptBuilder_Test extends MockTestCase {
       }
     }));
   }
-
   @Test
   public void test_none() throws Exception {
     ScriptBuilder scb = new ScriptBuilder();
@@ -79,10 +76,8 @@ public class ScriptBuilder_Test extends MockTestCase {
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).count() == 1);
     Assert.assertTrue(Sequence.fromIterable(sc.validationErrors()).first().toString().contains("target not found: none"));
   }
-
   public ScriptBuilder_Test() {
   }
-
   @After
   public void tearDown() throws Exception {
     for (IFacet fn : Sequence.fromIterable(Sequence.fromArray(facets))) {
@@ -90,7 +85,6 @@ public class ScriptBuilder_Test extends MockTestCase {
     }
     context.assertIsSatisfied();
   }
-
   @Before
   public void setUp() throws Exception {
     final IFacet fmake = Mockups.facet(context, "Make_");

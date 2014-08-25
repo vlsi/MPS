@@ -7,19 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LongType_BehaviorDescriptor extends PrimitiveType_BehaviorDescriptor {
   public LongType_BehaviorDescriptor() {
   }
-
   public SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return LongType_Behavior.virtual_getBoxedType_1213877337320(thisNode);
   }
-
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return LongType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
   }
-
   public String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return LongType_Behavior.virtual_jniSignature_8847328628797633411(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LongType";

@@ -11,7 +11,6 @@ public class ModuleDescriptor extends VoidColumnDescriptor {
   public ModuleDescriptor(String name, String header, int width) {
     super(name, header, width);
   }
-
   @Override
   public TableCellRenderer createRenderer() {
     return new ListRendererAdapter(new ModuleRenderer(null, null));

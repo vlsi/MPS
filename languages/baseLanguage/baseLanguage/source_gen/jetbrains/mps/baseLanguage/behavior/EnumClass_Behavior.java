@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SReference;
 public class EnumClass_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_findConstantByName_1213877267258(SNode thisNode, String name) {
     for (SNode constant : SLinkOperations.getTargets(thisNode, "enumConstant", true)) {
       if (name.equalsIgnoreCase(SPropertyOperations.getString(constant, "name"))) {
@@ -25,11 +24,9 @@ public class EnumClass_Behavior {
     }
     return null;
   }
-
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return _quotation_createNode_nbdilp_a0a1();
   }
-
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     List<SNode> extended = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
     SNode enumType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Enum"), "virtual_getThisType_3305065273710880775", new Object[]{});
@@ -39,18 +36,15 @@ public class EnumClass_Behavior {
     }
     return extended;
   }
-
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "enumConstant", true)));
     return members;
   }
-
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     // enums always have static operations: valueOf and values 
     return true;
   }
-
   private static SNode _quotation_createNode_nbdilp_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

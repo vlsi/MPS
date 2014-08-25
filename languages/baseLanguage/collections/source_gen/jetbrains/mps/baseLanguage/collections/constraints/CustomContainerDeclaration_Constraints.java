@@ -14,7 +14,6 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
   public CustomContainerDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
       public boolean hasOwnValidator() {
         return true;
       }
-
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";

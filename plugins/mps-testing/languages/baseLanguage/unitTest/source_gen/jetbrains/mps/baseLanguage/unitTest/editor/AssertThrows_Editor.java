@@ -22,7 +22,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_f24gzg_a(editorContext, node);
   }
-
   private EditorCell createCollection_f24gzg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_f24gzg_a");
@@ -35,7 +34,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_f24gzg_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_f24gzg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "assert");
     editorCell.setCellId("Constant_f24gzg_a0");
@@ -45,7 +43,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_f24gzg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statement");
@@ -65,7 +62,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_f24gzg_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "throws");
     editorCell.setCellId("Constant_f24gzg_c0");
@@ -75,7 +71,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_f24gzg_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("exceptionType");
@@ -95,7 +90,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_f24gzg_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("message");
@@ -115,7 +109,6 @@ public class AssertThrows_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_f24gzg_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_f24gzg_f0");

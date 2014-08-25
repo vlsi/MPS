@@ -22,14 +22,12 @@ public class ASMModelLoader {
   private final SModule myModule;
   private Collection<String> myPaths;
   private final boolean mySkipPrivate;
-
   public ASMModelLoader(SModule module, Collection<String> paths, SModel model, boolean skipPrivate) {
     myModule = module;
     myModel = model;
     mySkipPrivate = skipPrivate;
     myPaths = paths;
   }
-
   public void updateModel() {
     try {
       ClassifierLoader loader = new ClassifierLoader(new SReferenceCreator(myModule, myModel), mySkipPrivate);

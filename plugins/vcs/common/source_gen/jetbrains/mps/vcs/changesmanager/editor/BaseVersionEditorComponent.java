@@ -38,7 +38,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {
   private JScrollPane myScrollPane;
   private SModel myBaseModel;
-
   public BaseVersionEditorComponent(SRepository repository, final ChangeGroup changeGroup) {
     super(repository);
     repository.getModelAccess().runReadAction(new Runnable() {
@@ -94,7 +93,6 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     myScrollPane.setPreferredSize(viewRect.getSize());
     myScrollPane.getViewport().setViewPosition(viewRect.getLocation());
   }
-
   @Override
   protected jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
@@ -103,7 +101,6 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     }
     return getEditorContext().createRootCell(getEditedNode(), events);
   }
-
   @Override
   public void dispose() {
     ModelAccess.instance().requireWrite(new Runnable() {
@@ -113,11 +110,9 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
     });
     super.dispose();
   }
-
   public JScrollPane getScrollPane() {
     return myScrollPane;
   }
-
   private static <T> T as_i3w5ys_a0a0a0a0a0a0b0c(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

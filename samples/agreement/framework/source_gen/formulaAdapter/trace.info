@@ -11,251 +11,251 @@
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363737">
     <file name="ValueDouble.java">
       <node id="6374450524837363741" at="10,0,11,0" concept="2" trace="myValueName" />
-      <node id="6374450524837363750" at="12,40,13,28" concept="1" />
-      <node id="6374450524837363760" at="17,38,18,51" concept="5" />
-      <node id="6374450524837363766" at="18,51,19,87" concept="5" />
-      <node id="6374450524837363783" at="20,36,21,44" concept="6" />
-      <node id="6374450524837363790" at="22,5,23,26" concept="6" />
-      <node id="6374450524837363744" at="12,0,15,0" concept="0" trace="ValueDouble#(Ljava/lang/String;)V" />
-      <node id="6374450524837363778" at="19,87,22,5" concept="3" />
-      <node id="6374450524837363754" at="16,0,25,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
-      <scope id="6374450524837363749" at="12,40,13,28" />
-      <scope id="6374450524837363782" at="20,36,21,44" />
-      <scope id="6374450524837363744" at="12,0,15,0">
+      <node id="6374450524837363750" at="11,40,12,28" concept="1" />
+      <node id="6374450524837363760" at="15,38,16,51" concept="5" />
+      <node id="6374450524837363766" at="16,51,17,87" concept="5" />
+      <node id="6374450524837363783" at="18,36,19,44" concept="6" />
+      <node id="6374450524837363790" at="20,5,21,26" concept="6" />
+      <node id="6374450524837363744" at="11,0,14,0" concept="0" trace="ValueDouble#(Ljava/lang/String;)V" />
+      <node id="6374450524837363778" at="17,87,20,5" concept="3" />
+      <node id="6374450524837363754" at="14,0,23,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <scope id="6374450524837363749" at="11,40,12,28" />
+      <scope id="6374450524837363782" at="18,36,19,44" />
+      <scope id="6374450524837363744" at="11,0,14,0">
         <var name="valueName" id="6374450524837363747" />
       </scope>
-      <scope id="6374450524837363759" at="17,38,23,26">
+      <scope id="6374450524837363759" at="15,38,21,26">
         <var name="event" id="6374450524837363761" />
         <var name="value" id="6374450524837363767" />
       </scope>
-      <scope id="6374450524837363754" at="16,0,25,0">
+      <scope id="6374450524837363754" at="14,0,23,0">
         <var name="parm" id="6374450524837363757" />
       </scope>
-      <unit id="6374450524837363737" at="9,0,26,0" name="formulaAdapter.ValueDouble" />
+      <unit id="6374450524837363737" at="9,0,24,0" name="formulaAdapter.ValueDouble" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363794">
     <file name="ValueQuantity.java">
       <node id="6374450524837363798" at="10,0,11,0" concept="2" trace="myValueName" />
-      <node id="6374450524837363807" at="12,42,13,28" concept="1" />
-      <node id="6374450524837363817" at="17,40,18,51" concept="5" />
-      <node id="6374450524837363823" at="18,51,19,90" concept="6" />
-      <node id="6374450524837363801" at="12,0,15,0" concept="0" trace="ValueQuantity#(Ljava/lang/String;)V" />
-      <node id="6374450524837363811" at="16,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
-      <scope id="6374450524837363806" at="12,42,13,28" />
-      <scope id="6374450524837363816" at="17,40,19,90">
+      <node id="6374450524837363807" at="11,42,12,28" concept="1" />
+      <node id="6374450524837363817" at="15,40,16,51" concept="5" />
+      <node id="6374450524837363823" at="16,51,17,90" concept="6" />
+      <node id="6374450524837363801" at="11,0,14,0" concept="0" trace="ValueQuantity#(Ljava/lang/String;)V" />
+      <node id="6374450524837363811" at="14,0,19,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <scope id="6374450524837363806" at="11,42,12,28" />
+      <scope id="6374450524837363816" at="15,40,17,90">
         <var name="event" id="6374450524837363818" />
       </scope>
-      <scope id="6374450524837363801" at="12,0,15,0">
+      <scope id="6374450524837363801" at="11,0,14,0">
         <var name="valueName" id="6374450524837363804" />
       </scope>
-      <scope id="6374450524837363811" at="16,0,21,0">
+      <scope id="6374450524837363811" at="14,0,19,0">
         <var name="parm" id="6374450524837363814" />
       </scope>
-      <unit id="6374450524837363794" at="9,0,22,0" name="formulaAdapter.ValueQuantity" />
+      <unit id="6374450524837363794" at="9,0,20,0" name="formulaAdapter.ValueQuantity" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363835">
     <file name="PostingRule_Formula.java">
       <node id="6374450524837363838" at="12,0,13,0" concept="2" trace="myFunction" />
-      <node id="6374450524837363853" at="14,100,15,34" concept="7" />
-      <node id="6374450524837363856" at="15,34,16,26" concept="1" />
-      <node id="6374450524837363866" at="20,56,21,35" concept="6" />
-      <node id="6374450524837363842" at="14,0,18,0" concept="0" trace="PostingRule_Formula#(Lpostingrules/AccountType;ZLjetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="6374450524837363860" at="19,0,23,0" concept="4" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
-      <scope id="6374450524837363865" at="20,56,21,35" />
-      <scope id="6374450524837363852" at="14,100,16,26" />
-      <scope id="6374450524837363842" at="14,0,18,0">
+      <node id="6374450524837363853" at="13,100,14,34" concept="7" />
+      <node id="6374450524837363856" at="14,34,15,26" concept="1" />
+      <node id="6374450524837363866" at="18,56,19,35" concept="6" />
+      <node id="6374450524837363842" at="13,0,17,0" concept="0" trace="PostingRule_Formula#(Lpostingrules/AccountType;ZLjetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837363860" at="17,0,21,0" concept="4" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <scope id="6374450524837363865" at="18,56,19,35" />
+      <scope id="6374450524837363852" at="13,100,15,26" />
+      <scope id="6374450524837363842" at="13,0,17,0">
         <var name="accountType" id="6374450524837363845" />
         <var name="function" id="6374450524837363849" />
         <var name="isTaxable" id="6374450524837363847" />
       </scope>
-      <scope id="6374450524837363860" at="19,0,23,0">
+      <scope id="6374450524837363860" at="17,0,21,0">
         <var name="evt" id="6374450524837363863" />
       </scope>
-      <unit id="6374450524837363835" at="11,0,24,0" name="formulaAdapter.PostingRule_Formula" />
+      <unit id="6374450524837363835" at="11,0,22,0" name="formulaAdapter.PostingRule_Formula" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363871">
     <file name="MoneyAdapter.java">
       <node id="6374450524837363875" at="10,0,11,0" concept="2" trace="myAmount" />
       <node id="6374450524837363879" at="11,0,12,0" concept="2" trace="myCurrency" />
-      <node id="6374450524837363891" at="13,67,14,22" concept="1" />
-      <node id="6374450524837363895" at="14,22,15,26" concept="1" />
-      <node id="6374450524837363905" at="19,37,20,43" concept="5" />
-      <node id="6374450524837363912" at="20,43,21,41" concept="6" />
-      <node id="6374450524837363882" at="13,0,17,0" concept="0" trace="MoneyAdapter#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Lmf/Currency;)V" />
-      <node id="6374450524837363899" at="18,0,23,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
-      <scope id="6374450524837363890" at="13,67,15,26" />
-      <scope id="6374450524837363904" at="19,37,21,41">
+      <node id="6374450524837363891" at="12,67,13,22" concept="1" />
+      <node id="6374450524837363895" at="13,22,14,26" concept="1" />
+      <node id="6374450524837363905" at="17,37,18,43" concept="5" />
+      <node id="6374450524837363912" at="18,43,19,41" concept="6" />
+      <node id="6374450524837363882" at="12,0,16,0" concept="0" trace="MoneyAdapter#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Lmf/Currency;)V" />
+      <node id="6374450524837363899" at="16,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837363890" at="12,67,14,26" />
+      <scope id="6374450524837363904" at="17,37,19,41">
         <var name="amount" id="6374450524837363906" />
       </scope>
-      <scope id="6374450524837363882" at="13,0,17,0">
+      <scope id="6374450524837363882" at="12,0,16,0">
         <var name="amount" id="6374450524837363885" />
         <var name="currency" id="6374450524837363888" />
       </scope>
-      <scope id="6374450524837363899" at="18,0,23,0">
+      <scope id="6374450524837363899" at="16,0,21,0">
         <var name="parm" id="6374450524837363902" />
       </scope>
-      <unit id="6374450524837363871" at="9,0,24,0" name="formulaAdapter.MoneyAdapter" />
+      <unit id="6374450524837363871" at="9,0,22,0" name="formulaAdapter.MoneyAdapter" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363917">
     <file name="MoneyAddOperation.java">
       <node id="6374450524837363921" at="9,0,10,0" concept="2" trace="myLeftOperand" />
       <node id="6374450524837363925" at="10,0,11,0" concept="2" trace="myRightOperand" />
-      <node id="6374450524837363939" at="12,87,13,32" concept="1" />
-      <node id="6374450524837363943" at="13,32,14,34" concept="1" />
-      <node id="6374450524837363953" at="18,37,19,73" concept="6" />
-      <node id="6374450524837363929" at="12,0,16,0" concept="0" trace="MoneyAddOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="6374450524837363947" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
-      <scope id="6374450524837363952" at="18,37,19,73" />
-      <scope id="6374450524837363938" at="12,87,14,34" />
-      <scope id="6374450524837363929" at="12,0,16,0">
+      <node id="6374450524837363939" at="11,87,12,32" concept="1" />
+      <node id="6374450524837363943" at="12,32,13,34" concept="1" />
+      <node id="6374450524837363953" at="16,37,17,73" concept="6" />
+      <node id="6374450524837363929" at="11,0,15,0" concept="0" trace="MoneyAddOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837363947" at="15,0,19,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837363952" at="16,37,17,73" />
+      <scope id="6374450524837363938" at="11,87,13,34" />
+      <scope id="6374450524837363929" at="11,0,15,0">
         <var name="leftOperand" id="6374450524837363932" />
         <var name="rightOperand" id="6374450524837363935" />
       </scope>
-      <scope id="6374450524837363947" at="17,0,21,0">
+      <scope id="6374450524837363947" at="15,0,19,0">
         <var name="parm" id="6374450524837363950" />
       </scope>
-      <unit id="6374450524837363917" at="8,0,22,0" name="formulaAdapter.MoneyAddOperation" />
+      <unit id="6374450524837363917" at="8,0,20,0" name="formulaAdapter.MoneyAddOperation" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363964">
     <file name="UsageDouble.java">
-      <node id="6374450524837363978" at="13,38,14,36" concept="5" />
-      <node id="6374450524837363984" at="14,36,15,46" concept="6" />
+      <node id="6374450524837363978" at="12,38,13,36" concept="5" />
+      <node id="6374450524837363984" at="13,36,14,46" concept="6" />
       <node id="6374450524837363968" at="9,0,11,0" concept="0" trace="UsageDouble#()V" />
-      <node id="6374450524837363972" at="12,0,17,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <node id="6374450524837363972" at="11,0,16,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
       <scope id="6374450524837363971" at="9,24,9,24" />
       <scope id="6374450524837363968" at="9,0,11,0" />
-      <scope id="6374450524837363977" at="13,38,15,46">
+      <scope id="6374450524837363977" at="12,38,14,46">
         <var name="usageEvent" id="6374450524837363979" />
       </scope>
-      <scope id="6374450524837363972" at="12,0,17,0">
+      <scope id="6374450524837363972" at="11,0,16,0">
         <var name="parm" id="6374450524837363975" />
       </scope>
-      <unit id="6374450524837363964" at="8,0,18,0" name="formulaAdapter.UsageDouble" />
+      <unit id="6374450524837363964" at="8,0,17,0" name="formulaAdapter.UsageDouble" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363990">
     <file name="MoneyConstant.java">
       <node id="6374450524837363994" at="10,0,11,0" concept="2" trace="myMoney" />
-      <node id="6374450524837364005" at="12,58,13,42" concept="1" />
-      <node id="6374450524837364018" at="17,37,18,19" concept="6" />
-      <node id="6374450524837363997" at="12,0,15,0" concept="0" trace="MoneyConstant#(DLmf/Currency;)V" />
-      <node id="6374450524837364012" at="16,0,20,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
-      <scope id="6374450524837364004" at="12,58,13,42" />
-      <scope id="6374450524837364017" at="17,37,18,19" />
-      <scope id="6374450524837363997" at="12,0,15,0">
+      <node id="6374450524837364005" at="11,58,12,42" concept="1" />
+      <node id="6374450524837364018" at="15,37,16,19" concept="6" />
+      <node id="6374450524837363997" at="11,0,14,0" concept="0" trace="MoneyConstant#(DLmf/Currency;)V" />
+      <node id="6374450524837364012" at="14,0,18,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837364004" at="11,58,12,42" />
+      <scope id="6374450524837364017" at="15,37,16,19" />
+      <scope id="6374450524837363997" at="11,0,14,0">
         <var name="amount" id="6374450524837364000" />
         <var name="currency" id="6374450524837364002" />
       </scope>
-      <scope id="6374450524837364012" at="16,0,20,0">
+      <scope id="6374450524837364012" at="14,0,18,0">
         <var name="parm" id="6374450524837364015" />
       </scope>
-      <unit id="6374450524837363990" at="9,0,21,0" name="formulaAdapter.MoneyConstant" />
+      <unit id="6374450524837363990" at="9,0,19,0" name="formulaAdapter.MoneyConstant" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364020">
     <file name="MoneyMultiplyOperation.java">
       <node id="6374450524837364024" at="9,0,10,0" concept="2" trace="myLeftOperand" />
       <node id="6374450524837364028" at="10,0,11,0" concept="2" trace="myRightOperand" />
-      <node id="6374450524837364042" at="12,93,13,32" concept="1" />
-      <node id="6374450524837364046" at="13,32,14,34" concept="1" />
-      <node id="6374450524837364056" at="18,37,19,78" concept="6" />
-      <node id="6374450524837364032" at="12,0,16,0" concept="0" trace="MoneyMultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="6374450524837364050" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
-      <scope id="6374450524837364055" at="18,37,19,78" />
-      <scope id="6374450524837364041" at="12,93,14,34" />
-      <scope id="6374450524837364032" at="12,0,16,0">
+      <node id="6374450524837364042" at="11,93,12,32" concept="1" />
+      <node id="6374450524837364046" at="12,32,13,34" concept="1" />
+      <node id="6374450524837364056" at="16,37,17,78" concept="6" />
+      <node id="6374450524837364032" at="11,0,15,0" concept="0" trace="MoneyMultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837364050" at="15,0,19,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837364055" at="16,37,17,78" />
+      <scope id="6374450524837364041" at="11,93,13,34" />
+      <scope id="6374450524837364032" at="11,0,15,0">
         <var name="leftOperand" id="6374450524837364035" />
         <var name="rightOperand" id="6374450524837364038" />
       </scope>
-      <scope id="6374450524837364050" at="17,0,21,0">
+      <scope id="6374450524837364050" at="15,0,19,0">
         <var name="parm" id="6374450524837364053" />
       </scope>
-      <unit id="6374450524837364020" at="8,0,22,0" name="formulaAdapter.MoneyMultiplyOperation" />
+      <unit id="6374450524837364020" at="8,0,20,0" name="formulaAdapter.MoneyMultiplyOperation" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364067">
     <file name="UsageQuantity.java">
-      <node id="6374450524837364081" at="14,40,15,36" concept="5" />
-      <node id="6374450524837364087" at="15,36,16,34" concept="6" />
+      <node id="6374450524837364081" at="13,40,14,36" concept="5" />
+      <node id="6374450524837364087" at="14,36,15,34" concept="6" />
       <node id="6374450524837364071" at="10,0,12,0" concept="0" trace="UsageQuantity#()V" />
-      <node id="6374450524837364075" at="13,0,18,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <node id="6374450524837364075" at="12,0,17,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
       <scope id="6374450524837364074" at="10,26,10,26" />
       <scope id="6374450524837364071" at="10,0,12,0" />
-      <scope id="6374450524837364080" at="14,40,16,34">
+      <scope id="6374450524837364080" at="13,40,15,34">
         <var name="usageEvent" id="6374450524837364082" />
       </scope>
-      <scope id="6374450524837364075" at="13,0,18,0">
+      <scope id="6374450524837364075" at="12,0,17,0">
         <var name="parm" id="6374450524837364078" />
       </scope>
-      <unit id="6374450524837364067" at="9,0,19,0" name="formulaAdapter.UsageQuantity" />
+      <unit id="6374450524837364067" at="9,0,18,0" name="formulaAdapter.UsageQuantity" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364091">
     <file name="QuantityConstant.java">
       <node id="6374450524837364095" at="10,0,11,0" concept="2" trace="myQuantity" />
-      <node id="6374450524837364106" at="12,53,13,44" concept="1" />
-      <node id="6374450524837364119" at="16,46,17,26" concept="1" />
-      <node id="6374450524837364129" at="21,40,22,22" concept="6" />
-      <node id="6374450524837364098" at="12,0,15,0" concept="0" trace="QuantityConstant#(DLmf/Unit;)V" />
-      <node id="6374450524837364113" at="16,0,19,0" concept="0" trace="QuantityConstant#(Lmf/Quantity;)V" />
-      <node id="6374450524837364123" at="20,0,24,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
-      <scope id="6374450524837364105" at="12,53,13,44" />
-      <scope id="6374450524837364118" at="16,46,17,26" />
-      <scope id="6374450524837364128" at="21,40,22,22" />
-      <scope id="6374450524837364098" at="12,0,15,0">
+      <node id="6374450524837364106" at="11,53,12,44" concept="1" />
+      <node id="6374450524837364119" at="14,46,15,26" concept="1" />
+      <node id="6374450524837364129" at="18,40,19,22" concept="6" />
+      <node id="6374450524837364098" at="11,0,14,0" concept="0" trace="QuantityConstant#(DLmf/Unit;)V" />
+      <node id="6374450524837364113" at="14,0,17,0" concept="0" trace="QuantityConstant#(Lmf/Quantity;)V" />
+      <node id="6374450524837364123" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <scope id="6374450524837364105" at="11,53,12,44" />
+      <scope id="6374450524837364118" at="14,46,15,26" />
+      <scope id="6374450524837364128" at="18,40,19,22" />
+      <scope id="6374450524837364098" at="11,0,14,0">
         <var name="amount" id="6374450524837364101" />
         <var name="unit" id="6374450524837364103" />
       </scope>
-      <scope id="6374450524837364113" at="16,0,19,0">
+      <scope id="6374450524837364113" at="14,0,17,0">
         <var name="quantity" id="6374450524837364116" />
       </scope>
-      <scope id="6374450524837364123" at="20,0,24,0">
+      <scope id="6374450524837364123" at="17,0,21,0">
         <var name="parm" id="6374450524837364126" />
       </scope>
-      <unit id="6374450524837364091" at="9,0,25,0" name="formulaAdapter.QuantityConstant" />
+      <unit id="6374450524837364091" at="9,0,22,0" name="formulaAdapter.QuantityConstant" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364131">
     <file name="QuantityGreaterThanOperation.java">
       <node id="6374450524837364137" at="9,0,10,0" concept="2" trace="myLeftOperand" />
       <node id="6374450524837364141" at="10,0,11,0" concept="2" trace="myRightOperand" />
-      <node id="6374450524837364155" at="12,90,13,32" concept="1" />
-      <node id="6374450524837364159" at="13,32,14,34" concept="1" />
-      <node id="6374450524837364169" at="18,39,19,83" concept="6" />
-      <node id="6374450524837364145" at="12,0,16,0" concept="0" trace="QuantityGreaterThanOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-      <node id="6374450524837364163" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Boolean;" />
-      <scope id="6374450524837364168" at="18,39,19,83" />
-      <scope id="6374450524837364154" at="12,90,14,34" />
-      <scope id="6374450524837364145" at="12,0,16,0">
+      <node id="6374450524837364155" at="11,90,12,32" concept="1" />
+      <node id="6374450524837364159" at="12,32,13,34" concept="1" />
+      <node id="6374450524837364169" at="16,39,17,83" concept="6" />
+      <node id="6374450524837364145" at="11,0,15,0" concept="0" trace="QuantityGreaterThanOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837364163" at="15,0,19,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Boolean;" />
+      <scope id="6374450524837364168" at="16,39,17,83" />
+      <scope id="6374450524837364154" at="11,90,13,34" />
+      <scope id="6374450524837364145" at="11,0,15,0">
         <var name="leftOperand" id="6374450524837364148" />
         <var name="rightOperand" id="6374450524837364151" />
       </scope>
-      <scope id="6374450524837364163" at="17,0,21,0">
+      <scope id="6374450524837364163" at="15,0,19,0">
         <var name="parm" id="6374450524837364166" />
       </scope>
-      <unit id="6374450524837364131" at="8,0,22,0" name="formulaAdapter.QuantityGreaterThanOperation" />
+      <unit id="6374450524837364131" at="8,0,20,0" name="formulaAdapter.QuantityGreaterThanOperation" />
     </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364180">
     <file name="FeeMoney.java">
-      <node id="6374450524837364194" at="14,37,15,55" concept="5" />
-      <node id="6374450524837364200" at="15,55,16,37" concept="6" />
+      <node id="6374450524837364194" at="13,37,14,55" concept="5" />
+      <node id="6374450524837364200" at="14,55,15,37" concept="6" />
       <node id="6374450524837364184" at="10,0,12,0" concept="0" trace="FeeMoney#()V" />
-      <node id="6374450524837364188" at="13,0,18,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <node id="6374450524837364188" at="12,0,17,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
       <scope id="6374450524837364187" at="10,21,10,21" />
       <scope id="6374450524837364184" at="10,0,12,0" />
-      <scope id="6374450524837364193" at="14,37,16,37">
+      <scope id="6374450524837364193" at="13,37,15,37">
         <var name="monetaryEvent" id="6374450524837364195" />
       </scope>
-      <scope id="6374450524837364188" at="13,0,18,0">
+      <scope id="6374450524837364188" at="12,0,17,0">
         <var name="parm" id="6374450524837364191" />
       </scope>
-      <unit id="6374450524837364180" at="9,0,19,0" name="formulaAdapter.FeeMoney" />
+      <unit id="6374450524837364180" at="9,0,18,0" name="formulaAdapter.FeeMoney" />
     </file>
   </root>
 </debug-info>

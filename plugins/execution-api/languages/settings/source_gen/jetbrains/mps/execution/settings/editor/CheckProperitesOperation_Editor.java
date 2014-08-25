@@ -22,7 +22,6 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ti2jjv_a(editorContext, node);
   }
-
   private EditorCell createCollection_ti2jjv_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ti2jjv_a");
@@ -32,7 +31,6 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ti2jjv_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_ti2jjv_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("checkProperties");
@@ -54,20 +52,16 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_ti2jjv_a0a extends InlineCellProvider {
     public _Inline_ti2jjv_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createComponent_ti2jjv_a0a0(editorContext, node);
     }
-
     private EditorCell createComponent_ti2jjv_a0a0(EditorContext editorContext, SNode node) {
       EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
       Style style = new StyleImpl();
@@ -76,7 +70,6 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_ti2jjv_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_ti2jjv_b0");
@@ -86,7 +79,6 @@ public class CheckProperitesOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ti2jjv_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_ti2jjv_c0");

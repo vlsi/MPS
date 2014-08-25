@@ -20,60 +20,47 @@ public class MethodModel {
   private Map<String, SNode> myTypesMap = MapSequence.fromMap(new HashMap<String, SNode>());
   private List<String> myExceptions = ListSequence.fromList(new ArrayList<String>());
   protected boolean myIsStatic;
-
   public MethodModel() {
   }
-
   public String getName() {
     return this.myName;
   }
-
   public void setName(String name) {
     this.myName = name;
     this.fireChange();
   }
-
   public SNode getReturnType() {
     return this.myType;
   }
-
   public void setReturnType(SNode type) {
     this.myType = type;
     this.fireChange();
   }
-
   public void setStatic(boolean isStatic) {
     this.myIsStatic = isStatic;
     this.fireChange();
   }
-
   public boolean isStatic() {
     return this.myIsStatic;
   }
-
   public void fireChange() {
     for (ChangeListener listener : ListSequence.fromList(this.myListeners)) {
       listener.stateChanged(new ChangeEvent(this));
     }
   }
-
   public void addChangeListener(ChangeListener listener) {
     ListSequence.fromList(this.myListeners).addElement(listener);
   }
-
   public List<String> getThrowItems() {
     return this.myExceptions;
   }
-
   public void setException(int i, String exception) {
     ListSequence.fromList(this.myExceptions).setElement(i, exception);
     this.fireChange();
   }
-
   public List<String> getParametersNames() {
     return null;
   }
-
   public String getMethodText() {
     final StringBuffer text = new StringBuffer();
     if (this.myIsStatic) {

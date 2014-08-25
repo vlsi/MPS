@@ -15,7 +15,6 @@ public class EditableModel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createConstant_x3yznn_a(editorContext, node);
   }
-
   private EditorCell createConstant_x3yznn_a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "editable");
     editorCell.setCellId("Constant_x3yznn_a");

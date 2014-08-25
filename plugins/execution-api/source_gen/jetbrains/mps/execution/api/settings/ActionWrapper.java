@@ -15,7 +15,6 @@ public class ActionWrapper extends AbstractAction {
   private final Action myAction;
   @NotNull
   private final _FunctionTypes._void_P1_E0<? super ActionEvent> myCallback;
-
   public ActionWrapper(@NotNull Action action, @NotNull _FunctionTypes._void_P1_E0<? super ActionEvent> callback) {
     super((String) action.getValue(Action.NAME));
     setEnabled(action.isEnabled());
@@ -28,7 +27,6 @@ public class ActionWrapper extends AbstractAction {
     });
     myCallback = callback;
   }
-
   @Override
   public void actionPerformed(ActionEvent event) {
     myAction.actionPerformed(event);

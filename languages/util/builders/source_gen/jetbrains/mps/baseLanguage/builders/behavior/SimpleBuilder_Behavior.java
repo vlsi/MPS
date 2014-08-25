@@ -16,15 +16,12 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class SimpleBuilder_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "type", true);
   }
-
   public static boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return SPropertyOperations.getBoolean(SLinkOperations.getTarget(thisNode, "declaration", false), "leaf");
   }
-
   public static List<SNode> call_getPossibleChildren_8969040284892300232(SNode thisNode, SModel model) {
     List<SNode> builders = new ArrayList<SNode>();
     for (SNode child : SimpleBuilderDeclaration_Behavior.call_getChildren_3816167865390856298(SLinkOperations.getTarget(thisNode, "declaration", false), model)) {
@@ -36,7 +33,6 @@ public class SimpleBuilder_Behavior {
     }
     return builders;
   }
-
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
     SNode result = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "declaration", false), "creator", true));
 
@@ -53,7 +49,6 @@ public class SimpleBuilder_Behavior {
 
     return result;
   }
-
   public static SNode virtual_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
 
     if (SNodeOperations.isInstanceOf(childBuilder, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder")) {

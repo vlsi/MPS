@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.model.SNode;
  */
 public class ResolveResult {
   private SNode result;
-
   public ResolveResult(SNode result) {
     this.result = result;
   }
-
   public SNode getResult() {
     return result;
   }

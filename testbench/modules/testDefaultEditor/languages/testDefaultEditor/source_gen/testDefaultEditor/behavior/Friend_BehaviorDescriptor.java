@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Friend_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Friend_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "testDefaultEditor.structure.Friend";

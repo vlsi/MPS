@@ -20,19 +20,15 @@ public class MigrateNodePropertiesContainer_MigrationScript extends BaseMigratio
       public String getName() {
         return "Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer";
       }
-
       public String getAdditionalInfo() {
         return "Migrate Test-Related NodePropertiesContainer to NodeOperationsContainer";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.test.structure.NodePropertiesContainer";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode parent = SNodeOperations.getParent(node);
         SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.NodeOperationsContainer", null);
@@ -40,7 +36,6 @@ public class MigrateNodePropertiesContainer_MigrationScript extends BaseMigratio
         AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"), newAnnotation);
         AttributeOperations.setAttribute(parent, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodePropertiesContainer"), null);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

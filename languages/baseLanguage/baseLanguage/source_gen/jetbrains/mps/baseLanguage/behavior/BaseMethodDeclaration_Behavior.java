@@ -24,6 +24,9 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -32,7 +35,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class BaseMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     if (SPropertyOperations.getBoolean(thisNode, "isFinal")) {
@@ -40,15 +42,12 @@ public class BaseMethodDeclaration_Behavior {
     }
     return markIcons;
   }
-
   public static boolean virtual_isDataFlowChecked_1227714048980(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return false;
   }
-
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     SNode expectedRetType = SLinkOperations.getTarget(thisNode, "returnType", true);
     if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
@@ -57,25 +56,20 @@ public class BaseMethodDeclaration_Behavior {
     }
     return expectedRetType;
   }
-
   public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
     return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
   }
-
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "body", true);
   }
-
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "returnType", true));
     return result;
   }
-
   public static boolean virtual_isReturnsVoid_1234359555698(SNode thisNode) {
     return false;
   }
-
   public static String call_getParametersPresentation_1213877350304(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append("(");
@@ -99,7 +93,6 @@ public class BaseMethodDeclaration_Behavior {
     result.append(")");
     return result.toString();
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     String name = SPropertyOperations.getString(thisNode, "name");
@@ -117,7 +110,6 @@ public class BaseMethodDeclaration_Behavior {
     }
     return result.toString();
   }
-
   public static Method call_getMethod_1213877350393(SNode thisNode, SModule module) {
     SModule m = check_tq0gdw_a0a0k(SNodeOperations.getModel(thisNode));
     if (m != null) {
@@ -133,7 +125,6 @@ public class BaseMethodDeclaration_Behavior {
     }
     return ReflectionUtil.getMethod(module, SNodeOperations.getParent(thisNode), SPropertyOperations.getString(thisNode, "name"), BaseMethodDeclaration_Behavior.call_getParameterTypes_1213877350411(thisNode, module));
   }
-
   public static Class[] call_getParameterTypes_1213877350411(SNode thisNode, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, Class>() {
       public Class select(SNode it) {
@@ -141,7 +132,6 @@ public class BaseMethodDeclaration_Behavior {
       }
     }).toGenericArray(Class.class);
   }
-
   public static SNode call_getBaseMethod_5014346297260519893(SNode thisNode) {
     SNode result = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((result == null)) {
@@ -154,15 +144,12 @@ public class BaseMethodDeclaration_Behavior {
     }
     return result;
   }
-
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     return null;
   }
-
   public static SNode call_getMethodToImplement_69709522611978987(SNode thisNode, SNode enclosingClassifier) {
     return ResolveUtil.processMethodToImplement(enclosingClassifier, thisNode);
   }
-
   public static boolean call_hasSameParameters_855369272314187138(SNode thisNode, SNode checked) {
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
       String searchedParamType = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true), "virtual_getErasureSignature_1213877337313", new Object[]{});
@@ -173,7 +160,6 @@ public class BaseMethodDeclaration_Behavior {
     }
     return true;
   }
-
   public static boolean call_hasSameSignature_1213877350435(SNode thisNode, SNode checked) {
     if (neq_tq0gdw_a0a0r(SPropertyOperations.getString(thisNode, "name"), SPropertyOperations.getString(checked, "name"))) {
       return false;
@@ -188,7 +174,6 @@ public class BaseMethodDeclaration_Behavior {
       return BaseMethodDeclaration_Behavior.call_hasSameParameters_855369272314187138(thisNode, checked);
     }
   }
-
   public static String call_getErasureSignature_2830572026628006618(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     List<SNode> parameters = SLinkOperations.getTargets(thisNode, "parameter", true);
@@ -201,15 +186,12 @@ public class BaseMethodDeclaration_Behavior {
     }
     return sb.toString();
   }
-
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return false;
   }
-
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "returnType", true);
   }
-
   public static String virtual_jniSignature_8847328628797656446(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     sb.append("(");
@@ -220,11 +202,9 @@ public class BaseMethodDeclaration_Behavior {
     sb.append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "returnType", true), "virtual_jniSignature_8847328628797633411", new Object[]{}));
     return sb.toString();
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "throwsItem", true);
   }
-
   public static boolean call_hasAnnotation_5499146221535822693(SNode thisNode, SNode annotation) {
     for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
@@ -233,16 +213,13 @@ public class BaseMethodDeclaration_Behavior {
     }
     return false;
   }
-
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "#" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_jniSignature_8847328628797656446", new Object[]{});
   }
-
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.LocalToMethodKind")) {
       return new EmptyScope();
@@ -257,7 +234,6 @@ public class BaseMethodDeclaration_Behavior {
 
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
   }
-
   public static List<SNode> virtual_getTypeApplicationParameters_8277080359323839095(SNode thisNode, int actualArgs) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, SNode>() {
@@ -282,7 +258,6 @@ public class BaseMethodDeclaration_Behavior {
 
     return result;
   }
-
   public static List<SNode> call_getInferrableTypeVars_6848250892784543828(final SNode thisNode) {
     List<SNode> returnTypeVars = ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -308,14 +283,25 @@ public class BaseMethodDeclaration_Behavior {
     }).toListSequence();
     return ListSequence.fromList(returnTypeVars).subtract(ListSequence.fromList(boundTypeVars)).toListSequence();
   }
-
+  public static void virtual_markDeprecated_7983358747957651026(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_markDeprecated_7983358747957651026", new Object[]{});
+    if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")) == null)) {
+      SNodeFactoryOperations.setNewAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
+    }
+    SNodeFactoryOperations.setNewChild(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "deprecated", "jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag");
+    AnnotationUtil.attachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
+  }
+  public static void virtual_unmarkDeprecated_7983358747957674666(SNode thisNode) {
+    BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IBLDeprecatable", "virtual_unmarkDeprecated_7983358747957674666", new Object[]{});
+    AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), null);
+    AnnotationUtil.detachAnnotation(thisNode, SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"));
+  }
   private static SModule check_tq0gdw_a0a0k(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SNode _quotation_createNode_tq0gdw_a0a1a0d0d0ab(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -335,7 +321,6 @@ public class BaseMethodDeclaration_Behavior {
     }
     return quotedNode_3;
   }
-
   private static boolean neq_tq0gdw_a0a0r(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

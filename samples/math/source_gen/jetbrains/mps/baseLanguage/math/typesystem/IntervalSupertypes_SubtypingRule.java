@@ -16,26 +16,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class IntervalSupertypes_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public IntervalSupertypes_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode intervalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_7ws3t7_a0a1(SLinkOperations.getTarget(intervalType, "elementType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.IntervalType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_7ws3t7_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -20,11 +20,9 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_ylb7pt_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ylb7pt_a(editorContext, node);
   }
-
   private EditorCell createComponent_ylb7pt_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +31,6 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_ylb7pt_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ylb7pt_a");
@@ -43,7 +40,6 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_ylb7pt_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ylb7pt_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get node 'containingRole' operation");
     editorCell.setCellId("Constant_ylb7pt_a0");
@@ -54,14 +50,12 @@ public class Node_GetContainingRoleOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ylb7pt_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_ylb7pt_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ylb7pt_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns aggregation link role defined in concept of parent node and representing containment reference for this node");
     editorCell.setCellId("Constant_ylb7pt_c0");

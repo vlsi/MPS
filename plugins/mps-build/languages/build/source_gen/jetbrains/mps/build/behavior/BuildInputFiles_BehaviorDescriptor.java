@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildInputFiles_BehaviorDescriptor extends BuildInputFileSet_BehaviorDescriptor implements BuildLayout_FileSet_BehaviorDescriptor {
   public BuildInputFiles_BehaviorDescriptor() {
   }
-
   public boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return BuildInputFiles_Behavior.virtual_isImplicit_1330375798085107777(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildInputFiles";

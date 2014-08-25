@@ -17,7 +17,6 @@ import java.io.FileInputStream;
 /*package*/ class FileLoader extends Loader {
   private final File myRootDir;
   private final String myRootDirAbsolutePath;
-
   @SuppressWarnings(value = {"HardCodedStringLiteral"})
   /*package*/ FileLoader(URL url) throws IOException {
     super(url);
@@ -29,11 +28,9 @@ import java.io.FileInputStream;
       myRootDirAbsolutePath = myRootDir.getAbsolutePath();
     }
   }
-
   @Override
   /*package*/ void dispose() {
   }
-
   private void buildPackageCache(final File dir, ClasspathCache cache) {
     //  True -> class file 
     cache.addResourceEntry(getRelativeResourcePath(dir), this);
@@ -54,7 +51,6 @@ import java.io.FileInputStream;
       }
     }
   }
-
   private String getRelativeResourcePath(final File file) {
     String relativePath = file.getAbsolutePath().substring(myRootDirAbsolutePath.length());
     relativePath = relativePath.replace(File.separatorChar, '/');
@@ -63,7 +59,6 @@ import java.io.FileInputStream;
     }
     return relativePath;
   }
-
   @Nullable
   @Override
   /*package*/ Resource getResource(final String name, boolean flag) {
@@ -81,7 +76,6 @@ import java.io.FileInputStream;
     }
     return null;
   }
-
   @Override
   /*package*/ void buildCache(final ClasspathCache cache) throws IOException {
     File index = new File(myRootDir, "classpath.index");
@@ -104,49 +98,40 @@ import java.io.FileInputStream;
       buildPackageCache(myRootDir, cache);
     }
   }
-
   @NonNls
   @Override
   public String toString() {
     return "FileLoader [" + myRootDir + "]";
   }
-
   private class MyResource extends Resource {
     private final String myName;
     private final URL myUrl;
     private final File myFile;
-
     public MyResource(String name, URL url, File file) {
       myName = name;
       myUrl = url;
       myFile = file;
     }
-
     @Override
     public String getName() {
       return myName;
     }
-
     @Override
     public URL getURL() {
       return myUrl;
     }
-
     @Override
     public URL getCodeSourceURL() {
       return getBaseURL();
     }
-
     @Override
     public InputStream getInputStream() throws IOException {
       return new BufferedInputStream(new FileInputStream(myFile));
     }
-
     @Override
     public int getContentLength() throws IOException {
       return -1;
     }
-
     @Override
     public String toString() {
       return myFile.getAbsolutePath();

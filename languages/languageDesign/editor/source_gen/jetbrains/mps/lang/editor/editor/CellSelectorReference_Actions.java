@@ -17,19 +17,16 @@ public class CellSelectorReference_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CellSelectorReference_Actions.CellSelectorReference_Actions_DELETE(node));
     editorCell.setAction(CellActionType.INSERT, new CellSelectorReference_Actions.CellSelectorReference_Actions_INSERT(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellSelectorReference_Actions.CellSelectorReference_Actions_BACKSPACE(node));
   }
-
   public static class CellSelectorReference_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CellSelectorReference_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "cellSelector", true))))) {
         SLinkOperations.setTarget(node, "cellSelector", null, true);
@@ -39,21 +36,34 @@ public class CellSelectorReference_Actions {
       }
     }
   }
-
   public static class CellSelectorReference_Actions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CellSelectorReference_Actions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SLinkOperations.getTarget(node, "selectionStart", true) == null) {
         SLinkOperations.setTarget(node, "selectionStart", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      }
+    }
+  }
+  public static class CellSelectorReference_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public CellSelectorReference_Actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SConceptOperations.isExactly(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractCellSelector"), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "cellSelector", true))))) {
+        SLinkOperations.setTarget(node, "cellSelector", null, true);
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, node, "closingBracket", 0);
+      } else {
+        SLinkOperations.setTarget(node, "cellSelector", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.AbstractCellSelector", null), true);
       }
     }
   }

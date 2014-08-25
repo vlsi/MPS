@@ -18,7 +18,6 @@ public class ModelRenderer extends ProjectLevelRenderer {
   public ModelRenderer(SModule moduleScope, Project projectScope) {
     super(moduleScope, projectScope);
   }
-
   @Override
   public String getItemLabel(Object value) {
     final SModelReference modelReference = (SModelReference) value;
@@ -29,7 +28,6 @@ public class ModelRenderer extends ProjectLevelRenderer {
     }
     return modelReference.getModelName();
   }
-
   @Override
   public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
     Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);

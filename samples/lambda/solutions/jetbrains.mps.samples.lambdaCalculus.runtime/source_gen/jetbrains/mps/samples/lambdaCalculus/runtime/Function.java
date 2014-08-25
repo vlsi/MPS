@@ -8,10 +8,8 @@ import java.util.ArrayList;
 public abstract class Function {
   protected List myArgs = new ArrayList();
   protected String myType;
-
   public Function() {
   }
-
   public Object apply(Object... argValue) {
     for (Object arg : argValue) {
       this.myArgs.add(arg);
@@ -22,7 +20,6 @@ public abstract class Function {
       return this;
     }
   }
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -45,10 +42,7 @@ public abstract class Function {
     sb.append(this.myType);
     return sb.toString();
   }
-
   public abstract Object eval();
-
   public abstract Function copy();
-
   public abstract int getParamsCount();
 }

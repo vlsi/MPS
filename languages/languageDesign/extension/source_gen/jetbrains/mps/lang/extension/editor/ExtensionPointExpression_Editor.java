@@ -29,11 +29,9 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hr8njl_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hr8njl_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_hr8njl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hr8njl_a");
@@ -44,7 +42,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_hr8njl_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_hr8njl_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -52,7 +49,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_hr8njl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_b0");
@@ -64,7 +60,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_hr8njl_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("extensionPoint");
@@ -89,20 +84,16 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_hr8njl_a2a extends InlineCellProvider {
     public _Inline_hr8njl_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_hr8njl_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_hr8njl_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -125,7 +116,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_hr8njl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_hr8njl_d0");
@@ -136,7 +126,6 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_hr8njl_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hr8njl_a_0");
@@ -145,14 +134,12 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_hr8njl_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_hr8njl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "id:");
     editorCell.setCellId("Constant_hr8njl_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_hr8njl_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("extensionPoint");
@@ -174,34 +161,29 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_hr8njl_a1a extends InlineCellProvider {
     public _Inline_hr8njl_a1a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReadOnlyModelAccessor_hr8njl_a0b0(editorContext, node);
     }
-
     private EditorCell createReadOnlyModelAccessor_hr8njl_a0b0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
           return ExtensionPointDeclaration_Behavior.call_getId_63012922130945363(node);
         }
-
         public void setText(String s) {
         }
-
         public boolean isValidText(String s) {
           return EqualUtil.equals(s, getText());
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hr8njl_a0b0");
       return editorCell;
     }

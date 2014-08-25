@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class NoBreakInsideParallelFor_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public NoBreakInsideParallelFor_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode parallelFor, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SNodeOperations.getDescendants(parallelFor, "jetbrains.mps.baseLanguage.structure.BreakStatement", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -35,18 +34,15 @@ public class NoBreakInsideParallelFor_NonTypesystemRule extends AbstractNonTypes
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

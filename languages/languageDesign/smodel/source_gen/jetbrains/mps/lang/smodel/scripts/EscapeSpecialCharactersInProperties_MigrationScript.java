@@ -19,15 +19,12 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
       public String getName() {
         return "Escape special characters in property values";
       }
-
       public String getAdditionalInfo() {
         return "Escape special characters in property values";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
           if (property.value() != null && !(property.value().equals(NameUtil.escapeInvisibleCharacters(property.value())))) {
@@ -36,7 +33,6 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         for (IMapping<String, String> property : MapSequence.fromMap(SNodeOperations.getProperties(node))) {
           if (property.value() == null) {
@@ -48,7 +44,6 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
           }
         }
       }
-
       public boolean isShowAsIntention() {
         return true;
       }

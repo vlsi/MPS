@@ -172,8 +172,8 @@ public class EditorCellLabelSelection extends EditorCellSelection {
   }
 
   @Override
-  protected boolean suppressDelete() {
-    if (!super.suppressDelete()) {
+  protected boolean suppressDelete(CellActionType type) {
+    if (!super.suppressDelete(type)) {
       return false;
     }
     EditorCell_Label label = getEditorCellLabel();
@@ -223,7 +223,7 @@ public class EditorCellLabelSelection extends EditorCellSelection {
         }
       })) return false;
 
-      return getEditorComponent().getActionHandler().executeAction(target, CellActionType.DELETE);
+      return getEditorComponent().getActionHandler().executeAction(target, type);
     }
 
     if (type == CellActionType.BACKSPACE && APICellAdapter.isFirstPositionInBigCell(selectedCell) && !APICellAdapter.isLastPositionInBigCell(selectedCell)) {
@@ -242,13 +242,20 @@ public class EditorCellLabelSelection extends EditorCellSelection {
 
       if (target == null) return false;
       /*
+        Was commented out (again) to let some of our unit-tests be green.
+        in particular - pressing BackSpace at this situation:
+          <code>
+            int a = 1;
+            --|a;
+          <code>
+        where "|" is a position of cursor;
       if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
-          return target.getSNode().isAncestorOf(selectedCell.getSNode());
+          return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
         }
       })) return false;
-      */
-      return getEditorComponent().getActionHandler().executeAction(target, CellActionType.DELETE);
+        */
+      return getEditorComponent().getActionHandler().executeAction(target, type);
     }
     return false;
   }

@@ -18,11 +18,9 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_nb4xc9_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_nb4xc9_a(editorContext, node);
   }
-
   private EditorCell createError_nb4xc9_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<choose cell model>");
     editorCell.setCellId("Error_nb4xc9_a");
@@ -32,7 +30,6 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_nb4xc9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_nb4xc9_a");
@@ -43,7 +40,6 @@ public class EditorCellModel_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_nb4xc9_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_nb4xc9_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "< abstract cell >");
     editorCell.setCellId("Constant_nb4xc9_a0");

@@ -24,8 +24,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.ide.actions.MPSActions;
 import jetbrains.mps.ide.actions.ModuleActions_ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
@@ -98,7 +97,7 @@ public class GroupAdjuster {
 
 
   public static void refreshCustomizations() {
-    if (!IdeMain.getTestMode().equals(TestMode.NO_TEST)) return;
+    if (!MPSCore.getInstance().isTestMode()) return;
     SwingUtilities.invokeLater(new Runnable() {
       @Override
       public void run() {

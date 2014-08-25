@@ -19,61 +19,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToBeanBuilder_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertToBeanBuilder_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public String getPresentation() {
     return "ConvertToBeanBuilder";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.builders.intentions.ConvertToBeanBuilder_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.builders";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)", "5219429592916136228");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToBeanBuilder_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert To Bean Builder";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode creator = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", null);
       SNode builder = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", null);
@@ -86,7 +72,6 @@ public class ConvertToBeanBuilder_Intention implements IntentionFactory {
 
       editorContext.select(SLinkOperations.getTarget(creator, "body", true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertToBeanBuilder_Intention.this;
     }

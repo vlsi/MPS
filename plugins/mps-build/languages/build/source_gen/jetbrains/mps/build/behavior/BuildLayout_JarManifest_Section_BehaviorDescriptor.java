@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildLayout_JarManifest_Section_BehaviorDescriptor extends BuildLayout_JarManifest_Part_BehaviorDescriptor {
   public BuildLayout_JarManifest_Section_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_JarManifest_Section";

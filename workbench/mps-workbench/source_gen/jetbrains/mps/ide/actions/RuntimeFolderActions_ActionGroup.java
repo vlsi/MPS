@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class RuntimeFolderActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(RuntimeFolderActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup";
-
   public RuntimeFolderActions_ActionGroup() {
     super("RuntimeFolderActions", ID);
     this.setIsInternal(false);

@@ -11,11 +11,9 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 
 public class SimpleDuplicatesFinder {
   private SNode myNodeToMatch;
-
   public SimpleDuplicatesFinder(SNode node) {
     this.myNodeToMatch = node;
   }
-
   public List<SNode> findDuplicates(SNode root) {
     List<SNode> found = new ArrayList<SNode>();
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(root, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{}))) {

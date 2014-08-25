@@ -11,23 +11,18 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 
 public abstract class AbstractCommandPart implements CommandPart {
   private final List<String> myCommand = ListSequence.fromList(new ArrayList<String>());
-
   public AbstractCommandPart(List<String> list) {
     addCommands(list);
   }
-
   public AbstractCommandPart(String... list) {
     addCommands(list);
   }
-
   public AbstractCommandPart() {
   }
-
   @Override
   public List<String> getCommandList() {
     return myCommand;
   }
-
   protected final void addCommands(Iterable<String> list) {
     ListSequence.fromList(myCommand).addSequence(Sequence.fromIterable(list).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
@@ -35,11 +30,9 @@ public abstract class AbstractCommandPart implements CommandPart {
       }
     }));
   }
-
   protected final void addCommands(String... list) {
     addCommands(Sequence.fromArray(list));
   }
-
   @Override
   public int getLength() {
     return IterableUtils.join(ListSequence.fromList(myCommand), " ").length();

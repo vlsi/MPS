@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MPSPluginDependency_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getPluginId_5864553086652219131(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "plugin", false), "id");
   }

@@ -22,15 +22,12 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "dynamic refs";
       }
-
       public String getAdditionalInfo() {
         return "dynamic refs";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(((Iterable<SReference>) node.getReferences())).any(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -38,7 +35,6 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
           }
         });
       }
-
       public void doUpdateInstanceNode(SNode node) {
         Map<String, SNode> roleToTarget = MapSequence.fromMap(new HashMap<String, SNode>());
         for (SReference ref : Sequence.fromIterable(node.getReferences())) {
@@ -51,7 +47,6 @@ public class FixDynamicReferences_MigrationScript extends BaseMigrationScript {
           node.setReferenceTarget(m.getKey(), m.getValue());
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

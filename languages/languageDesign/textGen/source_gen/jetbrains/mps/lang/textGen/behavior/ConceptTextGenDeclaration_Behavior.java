@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ConceptTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> roots = SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
@@ -22,15 +21,12 @@ public class ConceptTextGenDeclaration_Behavior {
     }
     return result;
   }
-
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return "this";
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
   }

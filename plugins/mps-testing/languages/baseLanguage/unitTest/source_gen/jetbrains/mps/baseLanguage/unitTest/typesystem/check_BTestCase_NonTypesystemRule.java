@@ -12,21 +12,17 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_BTestCase_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_BTestCase_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode test, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

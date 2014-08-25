@@ -134,6 +134,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
       noRefCell.setDefaultText(myNoTargetText);
 
       noRefCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
+      noRefCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
 
       if (myIsAggregation) {
         noRefCell.setAction(CellActionType.INSERT, new CellAction_Insert(getSNode(), myGenuineRole));
@@ -151,6 +152,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
     setRoleForCellWithNoTarget(errorCell);
     return errorCell;
   }

@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -63,6 +62,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestAbstractChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1Child", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild1SubConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildToWrap2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestChildWrapper", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestContainer", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestDefaultChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAddConceptChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherAbstractChild", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChild2", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformAnotherChildCommonSuperConcept", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformChild1", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestAncestor", "jetbrains.mps.lang.actions.testLanguage.structure.ActionTestSidetransformTestContainer"};
 }

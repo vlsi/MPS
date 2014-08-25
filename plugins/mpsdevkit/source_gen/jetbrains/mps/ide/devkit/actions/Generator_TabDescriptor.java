@@ -45,48 +45,37 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Generator_TabDescriptor extends RelationDescriptor {
   private static final Icon ICON = MPSIcons.Nodes.Reduction;
-
   public Generator_TabDescriptor() {
   }
-
   public String getTitle() {
     return "Generator";
   }
-
   public Character getShortcutChar() {
     return 'G';
   }
-
   public int compareTo(RelationDescriptor descriptor) {
     return new Generator_Order().compare(this, descriptor);
   }
-
   public void startListening() {
   }
-
   public SNode getBaseNode(SNode node) {
     return ConceptEditorOpenHelper.getBaseNode(node);
   }
-
   public boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
   }
-
   @Nullable
   public Icon getIcon() {
     return ICON;
   }
-
   public List<SNode> getNodes(SNode node) {
     Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findGeneratorFragments_6409339300305625383", new Object[]{})));
     return SetSequence.fromSet(nodes).toListSequence();
   }
-
   public boolean isSingle() {
     return false;
   }
-
   public List<SNode> getConcepts(final SNode node) {
     List<SNode> result = ConceptEditorHelper.getAvailableConceptAspects(SNodeOperations.getModel(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch")), node);
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence"));
@@ -119,11 +108,9 @@ public class Generator_TabDescriptor extends RelationDescriptor {
     }
     return result;
   }
-
   public boolean commandOnCreate() {
     return false;
   }
-
   public SNode createNode(final SNode node, final SNode concept) {
     Project ideaProject = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     JFrame frame = WindowManager.getInstance().getFrame(ideaProject);

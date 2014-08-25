@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode variableReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode directAncestor = SNodeOperations.getAncestor(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", false, false);
     if (directAncestor != null && !(SNodeOperations.hasRole(variableReference, "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "threadPool"))) {
@@ -40,18 +39,15 @@ public class NoAssignmentsToNonFinalVariablesOutsideTheScope_NonTypesystemRule e
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -18,61 +18,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeDotExpressionChecked_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeDotExpressionChecked_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.DotExpression";
   }
-
   public String getPresentation() {
     return "MakeDotExpressionChecked";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage.checkedDots";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:e7b16359-4f7b-4995-8330-19c6bbadce25(jetbrains.mps.baseLanguage.checkedDots.intentions)", "1038097819968653124");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeDotExpressionChecked_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression") ? "Make Dot Expression Not Checked" : "Make Dot Expression Checked");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.checkedDots.structure.CheckedDotExpression")) {
         SNode dotExpression = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
@@ -86,7 +72,6 @@ public class MakeDotExpressionChecked_Intention implements IntentionFactory {
         SNodeOperations.replaceWithAnother(node, checkedDot);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeDotExpressionChecked_Intention.this;
     }

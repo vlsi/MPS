@@ -7,15 +7,12 @@ public class DebuggerNotPresentException extends Exception {
   public DebuggerNotPresentException() {
     super();
   }
-
   public DebuggerNotPresentException(String message) {
     super(message);
   }
-
   public DebuggerNotPresentException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public DebuggerNotPresentException(Throwable cause) {
     super(cause);
   }

@@ -16,18 +16,15 @@ import org.apache.log4j.LogManager;
 
 public class MigrationScript_MigrateConceptFunctions_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MigrationScript_MigrateConceptFunctions_Action() {
     super("Migrate Concept Functions", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -38,7 +35,6 @@ public class MigrationScript_MigrateConceptFunctions_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -54,7 +50,6 @@ public class MigrationScript_MigrateConceptFunctions_Action extends BaseAction {
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
     } catch (Throwable t) {
@@ -63,6 +58,5 @@ public class MigrationScript_MigrateConceptFunctions_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrateConceptFunctions_Action.class);
 }

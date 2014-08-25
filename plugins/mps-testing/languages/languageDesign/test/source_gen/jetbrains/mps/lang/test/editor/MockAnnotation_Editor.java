@@ -16,7 +16,6 @@ public class MockAnnotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_judj49_a(editorContext, node);
   }
-
   private EditorCell createCollection_judj49_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_judj49_a");
@@ -26,21 +25,18 @@ public class MockAnnotation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_judj49_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_judj49_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<mock");
     editorCell.setCellId("Constant_judj49_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAttributedNodeCell_judj49_b0(EditorContext editorContext, SNode node) {
     IOperationContext opContext = editorContext.getOperationContext();
     EditorManager manager = EditorManager.getInstanceFromContext(opContext);
     EditorCell editorCell = manager.getCurrentAttributedCellWithRole(AttributeKind.Node.class);
     return editorCell;
   }
-
   private EditorCell createConstant_judj49_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_judj49_c0");

@@ -9,11 +9,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class TranslatorAdapter<T, S> extends ITranslator<T, S> {
   /*package*/ _FunctionTypes._return_P1_E0<? extends Iterable<S>, ? super T> translator2;
-
   public TranslatorAdapter(_FunctionTypes._return_P1_E0<? extends Iterable<S>, ? super T> translator2) {
     this.translator2 = translator2;
   }
-
   @Override
   public ISequence<S> translate(T t) {
     return Sequence.fromIterable(translator2.invoke(t));

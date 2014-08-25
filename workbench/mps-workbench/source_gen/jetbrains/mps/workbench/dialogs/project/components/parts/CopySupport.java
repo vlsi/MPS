@@ -20,7 +20,6 @@ import java.awt.datatransfer.StringSelection;
 public class CopySupport {
   public CopySupport() {
   }
-
   public static void addCopyPopup(final JComponent component) {
     final PopupMenu popup = new PopupMenu();
     MenuItem menuItem = new MenuItem("Copy name to clipboard");
@@ -43,11 +42,9 @@ public class CopySupport {
       }
     });
   }
-
   public static class ModelReferenceTransferHandler extends TransferHandler {
     public ModelReferenceTransferHandler() {
     }
-
     @Override
     public void exportToClipboard(JComponent comp, Clipboard clip, int action) throws IllegalStateException {
       int clipboardAction = getSourceActions(comp) & action;

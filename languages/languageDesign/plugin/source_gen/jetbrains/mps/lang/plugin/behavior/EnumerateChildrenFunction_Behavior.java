@@ -11,15 +11,12 @@ import jetbrains.mps.smodel.SReference;
 public class EnumerateChildrenFunction_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_dqcr57_a0a1();
   }
-
   private static SNode _quotation_createNode_dqcr57_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

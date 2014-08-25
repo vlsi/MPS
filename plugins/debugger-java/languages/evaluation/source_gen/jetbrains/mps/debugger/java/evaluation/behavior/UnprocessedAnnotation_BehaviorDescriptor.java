@@ -6,7 +6,6 @@ package jetbrains.mps.debugger.java.evaluation.behavior;
 public class UnprocessedAnnotation_BehaviorDescriptor extends GenerationHelperAnnotation_BehaviorDescriptor {
   public UnprocessedAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.UnprocessedAnnotation";

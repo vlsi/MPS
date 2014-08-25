@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class IntersectionSymbolClassPart_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "left", true), "virtual_getRepresentation_8173814113624650482", new Object[]{}) + "&&" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "right", true), "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }

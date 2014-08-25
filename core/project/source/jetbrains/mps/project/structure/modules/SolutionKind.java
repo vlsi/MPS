@@ -16,7 +16,11 @@
 package jetbrains.mps.project.structure.modules;
 
 /**
- *  Temporary way to mark solution as a plugin.
+ *  It was a temporary way to mark solution as a plugin (at that time: 10/25/11)
+ *  One can specify a solution kind in the properties dialog of MPS.
+ *  The SolutionKind establishes the place of the solution in the
+ *  MPS modules' hierarchy (Core - Editor - Workbench)
+ *  TODO: review the usages again
  */
 public enum SolutionKind {
   NONE ("None"),
@@ -29,7 +33,6 @@ public enum SolutionKind {
   SolutionKind(String presentation) {
     myPresentation = presentation;
   }
-
 
   @Override
   public String toString() {

@@ -17,7 +17,6 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_652cby_a(editorContext, node);
   }
-
   private EditorCell createCollection_652cby_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_652cby_a");
@@ -27,14 +26,12 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_652cby_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_652cby_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_652cby_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_652cby_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -54,7 +51,6 @@ public class ParenthisizedExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_652cby_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_652cby_c0");

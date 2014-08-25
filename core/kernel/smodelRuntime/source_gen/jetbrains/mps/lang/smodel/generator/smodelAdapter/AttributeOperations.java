@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 public class AttributeOperations {
   private AttributeOperations() {
   }
-
   public static Iterable<SNode> getAttributes(SNode node, final IAttributeDescriptor descriptor) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -22,7 +21,6 @@ public class AttributeOperations {
       }
     });
   }
-
   public static SNode getAttribute(SNode node, IAttributeDescriptor descriptor) {
     Iterable<SNode> list = getAttributes(node, descriptor);
     if (Sequence.fromIterable(list).isEmpty()) {
@@ -31,19 +29,16 @@ public class AttributeOperations {
     // todo: error if more than 1 attribute found 
     return Sequence.fromIterable(list).first();
   }
-
   public static SNode addAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).addElement(value);
     descriptor.update(value);
     return value;
   }
-
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
     SNodeOperations.insertChild(node, "smodelAttribute", value, anchor);
     descriptor.update(value);
     return value;
   }
-
   public static void deleteAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     List<SNode> list = new ArrayList<SNode>();
     ListSequence.fromList(list).addSequence(Sequence.fromIterable(getAttributes(node, descriptor)));
@@ -53,7 +48,6 @@ public class AttributeOperations {
       }
     }
   }
-
   public static SNode setAttribute(SNode node, IAttributeDescriptor descriptor, SNode value) {
     Iterable<SNode> oldlist = getAttributes(node, descriptor);
     if (Sequence.fromIterable(oldlist).isEmpty()) {
@@ -69,35 +63,27 @@ public class AttributeOperations {
     }
     return value;
   }
-
   public static List<SNode> getAttributeList(SNode node, IAttributeDescriptor descriptor) {
     return ((node == null) ? null : new AttributeOperations.AttributeList(node, descriptor));
   }
-
   public static SNode createAndSetAttrbiute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
     return setAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), newConceptFqname));
   }
-
   public static SNode createAndAddAttribute(SNode node, IAttributeDescriptor descriptor, String newConceptFqname) {
     return addAttribute(node, descriptor, (SNode) SModelOperations.createNewNode(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(node), newConceptFqname));
   }
-
   public static SNode getLinkDeclaration(SNode attribute) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findLinkDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getLinkRole(attribute)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
-
   public static String getLinkRole(SNode attribute) {
     return SPropertyOperations.getString(attribute, "linkRole");
   }
-
   public static SNode getPropertyDeclaration(SNode attribute) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.as(SModelSearchUtil.findPropertyDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getConceptDeclaration(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(attribute)), getPropertyName(attribute)), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
-
   public static String getPropertyName(SNode attribute) {
     return SPropertyOperations.getString(attribute, "propertyName");
   }
-
   public static boolean isAttribute(SNode node) {
     if (node == null) {
       return false;
@@ -108,15 +94,12 @@ public class AttributeOperations {
     }
     return role.equals("smodelAttribute");
   }
-
   public static List<SNode> getAllAttributes(SNode node) {
     return SLinkOperations.getTargets(node, "smodelAttribute", true);
   }
-
   public static Iterable<SNode> getNodeAttributes(SNode node) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.NodeAttribute");
   }
-
   public static Iterable<SNode> getPropertyAttributes(SNode node, final String propertyName) {
     return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -124,7 +107,6 @@ public class AttributeOperations {
       }
     });
   }
-
   public static Iterable<SNode> getLinkAttributes(SNode node, final String linkRole) {
     return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -132,43 +114,34 @@ public class AttributeOperations {
       }
     });
   }
-
   public static boolean hasPropertyAttributes(SNode node) {
     return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.PropertyAttribute")).isNotEmpty();
   }
-
   public static boolean hasLinkAttributes(SNode node) {
     return Sequence.fromIterable(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.ofConcept(SLinkOperations.getTargets(node, "smodelAttribute", true), "jetbrains.mps.lang.core.structure.LinkAttribute")).isNotEmpty();
   }
-
   public static class AttributeList extends AbstractSNodeList {
     private IAttributeDescriptor myAttributeDescriptor;
-
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
       super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
-
     @Override
     protected void insertAfter(SNode node, SNode anchorNode) {
       AttributeOperations.insertAttribute(myReferenceContainer, anchorNode, myAttributeDescriptor, (SNode) node);
     }
-
     @Override
     protected void doAddReference(SNode node) {
       AttributeOperations.addAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
-
     @Override
     protected void doRemoveReference(SNode node) {
       AttributeOperations.deleteAttribute(myReferenceContainer, myAttributeDescriptor, (SNode) node);
     }
   }
-
   private static boolean eq_b2vkxw_a0a0a0a0a0a0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_b2vkxw_a0a0a0a0a0a0s(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

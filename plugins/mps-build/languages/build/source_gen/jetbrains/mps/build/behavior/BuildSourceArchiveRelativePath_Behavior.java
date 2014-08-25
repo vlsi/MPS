@@ -25,21 +25,17 @@ import jetbrains.mps.smodel.SReference;
 public class BuildSourceArchiveRelativePath_Behavior {
   public static void init(SNode thisNode) {
   }
-
   @Nullable
   public static String virtual_getBasePath_4959435991187140515(SNode thisNode, Context context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLocalPath_5481553824944787364", new Object[]{context}) + "!";
   }
-
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
     artifacts.needsFetch(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildLayout", false, false));
     // and still, ???? 
   }
-
   public static String virtual_getRelativePath_5481553824944787371(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}) + "!/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
   }
-
   public static String virtual_getAntPath_8563603456895173701(SNode thisNode, Context context) {
     String unpackPath = BuildSourceArchiveRelativePath_Behavior.call_getUnpackPath_8563603456895534343(thisNode, context);
     if ((unpackPath == null || unpackPath.length() == 0)) {
@@ -47,7 +43,6 @@ public class BuildSourceArchiveRelativePath_Behavior {
     }
     return unpackPath + "/" + BuildCompositePath_Behavior.call_getPath_8618885170173674800(SLinkOperations.getTarget(thisNode, "compositePart", true));
   }
-
   public static String call_getUnpackPath_8563603456895534343(SNode thisNode, Context context) {
     TemplateQueryContext generationContext = context.getGenerationContext();
     if (generationContext == null) {
@@ -64,12 +59,10 @@ public class BuildSourceArchiveRelativePath_Behavior {
     }
     return unpackPath;
   }
-
   public static String call_calculateUnpackPath_715289236985547394(SNode thisNode, Context context) {
     SNode nlayout = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.build.structure.BuildNamedLayout", true, false);
     return context.getTempPath(thisNode, BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getLastSegment_1368030936106771141", new Object[]{context.getMacros(thisNode)}).replace(".", "_"), ((nlayout != null) ? SPropertyOperations.getString(nlayout, "name") : "default"));
   }
-
   public static SNode call_getUnpackTask_8990969321156029654(SNode thisNode, Context context) {
     String archivePath = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getRelativePath_5481553824944787371", new Object[]{});
     SNode unpackTask = _quotation_createNode_ll2z5f_a0b0g(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "archivePath", true), "virtual_getAntPath_8563603456895173701", new Object[]{context}), BuildSourceArchiveRelativePath_Behavior.call_getUnpackPath_8563603456895534343(thisNode, context));
@@ -87,13 +80,10 @@ public class BuildSourceArchiveRelativePath_Behavior {
     }
     return unpackTask;
   }
-
   public static SNode virtual_getTargetTask_6854204111265837872(SNode thisNode) {
     return SLinkOperations.getTarget(_quotation_createNode_ll2z5f_a0a0h(), "target", false);
   }
-
   protected static Logger LOG = LogManager.getLogger(BuildSourceArchiveRelativePath_Behavior.class);
-
   private static SNode _quotation_createNode_ll2z5f_a0b0g(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -118,7 +108,6 @@ public class BuildSourceArchiveRelativePath_Behavior {
     quotedNode_3.addChild("attributes", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_ll2z5f_a0a0a1a1c0g() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -130,7 +119,6 @@ public class BuildSourceArchiveRelativePath_Behavior {
     quotedNode_1.addChild("value", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ll2z5f_a0a0a0b0b2a6() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -142,7 +130,6 @@ public class BuildSourceArchiveRelativePath_Behavior {
     quotedNode_1.addChild("value", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ll2z5f_a0a0h() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

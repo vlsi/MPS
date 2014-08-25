@@ -68,6 +68,5 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SwitchStatement_TextGen.class);
 }

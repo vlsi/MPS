@@ -14,7 +14,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class CustomMapCreator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_createType_1576845966386891475(SNode thisNode) {
     SNode res = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "containerDeclaration", false), "containerType", true));
     //  workaround an SModel's dumbness 
@@ -37,7 +36,6 @@ public class CustomMapCreator_Behavior {
     });
     return res;
   }
-
   public static boolean virtual_hasInitSize_1262430001741497996(SAbstractConcept thisConcept) {
     return false;
   }

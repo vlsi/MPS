@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class MPS7448 {
   public MPS7448() {
   }
-
   public void test() {
     MPS7448.xyzAbc(new _FunctionTypes._return_P1_E0<Integer, MPS7448.Aaa>() {
       public Integer invoke(MPS7448.Aaa aa) {
@@ -19,10 +18,8 @@ public class MPS7448 {
       }
     });
   }
-
   public static void xyzAbc(_FunctionTypes._return_P1_E0<? extends Integer, ? super MPS7448.Aaa> code) {
   }
-
   public static class Aaa {
     public Aaa() {
     }

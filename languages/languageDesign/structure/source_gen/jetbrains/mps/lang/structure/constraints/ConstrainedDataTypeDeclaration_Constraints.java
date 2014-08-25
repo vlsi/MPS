@@ -15,12 +15,10 @@ public class ConstrainedDataTypeDeclaration_Constraints extends BaseConstraintsD
   public ConstrainedDataTypeDeclaration_Constraints() {
     super("jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -31,10 +29,8 @@ public class ConstrainedDataTypeDeclaration_Constraints extends BaseConstraintsD
 
     return result;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.STRUCTURE.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)", "1227087700408");
 }

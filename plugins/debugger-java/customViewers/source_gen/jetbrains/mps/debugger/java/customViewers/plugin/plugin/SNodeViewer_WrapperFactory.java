@@ -23,11 +23,9 @@ import jetbrains.mps.debugger.java.api.evaluation.proxies.MirrorUtil;
 public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
   public SNodeViewer_WrapperFactory() {
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new SNodeViewer_WrapperFactory.SNodeViewerWrapper(value, threadReference);
   }
-
   @Override
   public boolean canWrapValue(@NotNull final IValueProxy proxy) {
     return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<Boolean>() {
@@ -43,20 +41,16 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       }
     }, false);
   }
-
   @Override
   public String getWrappedType() {
     return "Lorg/jetbrains/mps/openapi/model/SNode;";
   }
-
   public static class SNodeViewerWrapper extends ValueWrapper {
     private final String myPresentation;
-
     public SNodeViewerWrapper(IValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
       myPresentation = getValuePresentationImpl();
     }
-
     protected List<CustomJavaWatchable> getSubvaluesImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<List<CustomJavaWatchable>>() {
         public List<CustomJavaWatchable> invoke() throws EvaluationException {
@@ -64,7 +58,6 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         }
       }, Collections.<CustomJavaWatchable>emptyList());
     }
-
     protected List<CustomJavaWatchable> getSubvaluesImpl(IObjectValueProxy value) throws EvaluationException {
       List<CustomJavaWatchable> result = new ArrayList<CustomJavaWatchable>();
 
@@ -100,7 +93,6 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
 
       return result;
     }
-
     private String getValuePresentationImpl() {
       return EvaluationUtils.consumeEvaluationException(new EvaluationUtils.EvaluationInvocatable<String>() {
         public String invoke() throws EvaluationException {
@@ -108,11 +100,9 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
         }
       }, super.getValuePresentation());
     }
-
     public String getValuePresentation() {
       return myPresentation;
     }
-
     protected String getValuePresentation(IObjectValueProxy value) throws EvaluationException {
       IObjectValueProxy node = (IObjectValueProxy) value;
 
@@ -128,8 +118,6 @@ public class SNodeViewer_WrapperFactory extends ValueWrapperFactory {
       return "node<" + (String) (((IObjectValueProxy) node.getFieldValue("myConceptFqName"))).getJavaValue() + ">" + (String) (containingRole).getJavaValue();
     }
   }
-
-
 
   @Override
   public String getName() {

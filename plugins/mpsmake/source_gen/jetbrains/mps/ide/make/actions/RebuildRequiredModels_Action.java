@@ -14,12 +14,13 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
@@ -27,18 +28,15 @@ import org.apache.log4j.LogManager;
 
 public class RebuildRequiredModels_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RebuildRequiredModels_Action() {
     super("Rebuild Required Models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -49,7 +47,6 @@ public class RebuildRequiredModels_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -64,19 +61,18 @@ public class RebuildRequiredModels_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<SModel>> models = new Wrappers._T<List<SModel>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          Iterable<SModel> allModels = Sequence.fromIterable(((Iterable<SModel>) SModelRepository.getInstance().getModelDescriptors())).select(new ISelector<SModel, SModel>() {
-            public SModel select(SModel it) {
-              return (SModel) it;
-            }
-          });
+          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
           final ModelGenerationStatusManager mgsm = ModelGenerationStatusManager.getInstance();
-          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(allModels).where(new IWhereFilter<SModel>() {
+          models.value = ListSequence.fromListWithValues(new ArrayList<SModel>(), Sequence.fromIterable(projectModules).translate(new ITranslator2<SModule, SModel>() {
+            public Iterable<SModel> translate(SModule it) {
+              return (Iterable<SModel>) it.getModels();
+            }
+          }).where(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return mgsm.generationRequired(it);
             }
@@ -90,6 +86,5 @@ public class RebuildRequiredModels_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RebuildRequiredModels_Action.class);
 }

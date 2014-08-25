@@ -19,33 +19,27 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
   private final ObjectReference myThisObject;
   private final JavaStackFrame myStackFrame;
   private final JavaValue myValue;
-
   public JavaThisObject(ObjectReference objectReference, JavaStackFrame stackFrame, ThreadReference threadReference) {
     super(threadReference);
     myThisObject = objectReference;
     myStackFrame = stackFrame;
     myValue = CustomViewersManager.getInstance().fromJdi(myThisObject, myThreadReference);
   }
-
   public ObjectReference getThisObject() {
     return myThisObject;
   }
-
   @Override
   public String getName() {
     return "this";
   }
-
   @Override
   public IValue getValue() {
     return myValue;
   }
-
   @Override
   public Icon getPresentationIcon() {
     return myValue.getPresentationIcon();
   }
-
   @Override
   public SNode getNode() {
     JavaLocation location = myStackFrame.getLocation();
@@ -54,7 +48,6 @@ public class JavaThisObject extends JavaWatchable implements IWatchable {
     }
     return TraceInfoUtil.getUnitNode(location.getUnitName(), location.getFileName(), location.getLineNumber());
   }
-
   @Override
   public WatchablesCategory getCategory() {
     return JavaWatchablesCategory.THIS_OBJECT;

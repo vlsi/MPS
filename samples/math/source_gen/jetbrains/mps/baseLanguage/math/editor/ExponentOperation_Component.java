@@ -45,11 +45,9 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_spngij_a(editorContext, node);
   }
-
   private EditorCell createCollection_spngij_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createSuperscript(editorContext, node);
     editorCell.setCellId("Collection_spngij_a");
@@ -58,7 +56,6 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createEmpty_spngij_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_spngij_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expr");
@@ -78,21 +75,19 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_spngij_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_spngij_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
     Style style = new StyleImpl();
@@ -101,11 +96,9 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
     deleteUpperIndex.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   public static class ExponentialOperation_generic_cellMenu_spngij_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public ExponentialOperation_generic_cellMenu_spngij_a0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
       for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node)))) {
@@ -115,39 +108,32 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       }
       return result;
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNodeOperations.replaceWithAnother(node, SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(parameterObject), SLinkOperations.getTarget(node, "expr", true)));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SNode) parameterObject);
     }
-
     public String getMatchingText_internal(SNode parameterObject) {
       return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterObject)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
     }
-
     public String getDescriptionText(Object parameterObject) {
       return this.getDescriptionText_internal((SNode) parameterObject);
     }
-
     public String getDescriptionText_internal(SNode parameterObject) {
       return SPropertyOperations.getString(parameterObject, "shortDescription");
     }
   }
-
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_spngij_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);

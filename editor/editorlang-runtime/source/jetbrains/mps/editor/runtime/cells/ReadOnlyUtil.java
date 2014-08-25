@@ -16,9 +16,13 @@
 package jetbrains.mps.editor.runtime.cells;
 
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
+
+import java.util.ArrayList;
 
 public class ReadOnlyUtil {
 
@@ -43,7 +47,7 @@ public class ReadOnlyUtil {
       return true;
     }
     for (jetbrains.mps.openapi.editor.cells.EditorCell cell : cells) {
-      if (isCellOrSelectionReadOnlyInEditor(editorComponent, cell)) {
+      if (cell == null || isCellReadOnly(cell)) {
         return true;
       }
     }
@@ -53,5 +57,13 @@ public class ReadOnlyUtil {
   public static boolean isSelectionReadOnlyInEditor(jetbrains.mps.openapi.editor.EditorComponent editorComponent) {
     Selection selection = editorComponent.getSelectionManager().getSelection();
     return selection == null || isCellsReadOnlyInEditor(editorComponent, selection.getSelectedCells());
+  }
+
+  public static boolean canDeleteNodes(jetbrains.mps.openapi.editor.EditorComponent editorComponent, Iterable<SNode> nodes) {
+    ArrayList<EditorCell> cells = new ArrayList<EditorCell>();
+    for (SNode node : nodes) {
+      cells.add(editorComponent.findNodeCell(node));
+    }
+    return isCellsReadOnlyInEditor(editorComponent, cells);
   }
 }

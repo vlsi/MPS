@@ -8,24 +8,19 @@ public class Complex {
   private static Complex I = new Complex(0, 1);
   private double myReal;
   private double myImaginary;
-
   public Complex(double real, double imaginary) {
     this.myReal = real;
     this.myImaginary = imaginary;
   }
-
   public double getReal() {
     return this.myReal;
   }
-
   public double getImaginary() {
     return this.myImaginary;
   }
-
   public double getAbs() {
     return Math.sqrt(this.myReal * this.myReal + this.myReal * this.myImaginary);
   }
-
   public double getArg() {
     double r = this.getAbs();
     if (r > EPSILON) {
@@ -39,7 +34,6 @@ public class Complex {
       return 0.0;
     }
   }
-
   @Override
   public String toString() {
     if (this.myImaginary == 0) {
@@ -50,38 +44,30 @@ public class Complex {
     }
     return this.myReal + ((this.myImaginary >= 0 ? " + " : " - ")) + Math.abs(this.myImaginary) + "i";
   }
-
   public Complex getConjugative() {
     return new Complex(this.myReal, -1 * this.myImaginary);
   }
-
   public Complex degree(int n) {
     return getComplexPolar(Math.pow(this.getAbs(), n), this.getArg() * n);
   }
-
   public static Complex sum(Complex c1, Complex c2) {
     return new Complex(c1.myReal + c2.myReal, c1.myImaginary + c2.myImaginary);
   }
-
   public static Complex divide(Complex c1, Complex c2) {
     double r = c2.getAbs();
     double a1 = c1.myReal * c2.myReal + c1.myImaginary * c2.myImaginary;
     double a2 = c1.myReal * c2.myImaginary - c1.myImaginary * c2.myReal;
     return new Complex(a1 / r, a2 / r);
   }
-
   public static Complex sub(Complex c1, Complex c2) {
     return new Complex(c1.myReal - c2.myReal, c1.myImaginary - c2.myImaginary);
   }
-
   public static Complex product(Complex c1, Complex c2) {
     return new Complex(c1.myReal * c2.myReal - c1.myImaginary * c2.myImaginary, c1.myReal * c2.myImaginary + c1.myImaginary * c2.myReal);
   }
-
   public static Complex getComplexPolar(double abs, double arg) {
     return new Complex(abs * Math.cos(arg), abs * Math.sin(arg));
   }
-
   public static Complex getI() {
     return I;
   }

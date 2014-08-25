@@ -21,18 +21,15 @@ public class _Component_Visibility implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_4j2lax_a(editorContext, node);
   }
-
   private EditorCell createCollection_4j2lax_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_4j2lax_a");
     editorCell.addEditorCell(this.createRefNode_4j2lax_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_4j2lax_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("visibility");
@@ -43,7 +40,7 @@ public class _Component_Visibility implements ConceptEditorComponent {
       editorCell.setRole("visibility");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

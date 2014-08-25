@@ -26,7 +26,6 @@ public class ModelReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_i85no5_a(editorContext, node);
   }
-
   private EditorCell createCollection_i85no5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_i85no5_a");
@@ -35,14 +34,12 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_i85no5_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_i85no5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "model");
     editorCell.setCellId("Constant_i85no5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_i85no5_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fqName");
@@ -61,32 +58,25 @@ public class ModelReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class ModelReference_generic_cellMenu_i85no5_a0b0 extends AbstractCellMenuPart_Generic_Group {
     public ModelReference_generic_cellMenu_i85no5_a0b0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return SModelRepository.getInstance().getModelDescriptors();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SModel) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SModel parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "name", SNodeOperations.getModelLongName(parameterObject));
       SPropertyOperations.set(node, "stereotype", SModelStereotype.getStereotype(parameterObject));
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
-
     public String getMatchingText(Object parameterObject) {
       return this.getMatchingText_internal((SModel) parameterObject);
     }
-
     public String getMatchingText_internal(SModel parameterObject) {
       return SNodeOperations.getModelLongName(parameterObject) + "@" + SModelStereotype.getStereotype(parameterObject);
     }

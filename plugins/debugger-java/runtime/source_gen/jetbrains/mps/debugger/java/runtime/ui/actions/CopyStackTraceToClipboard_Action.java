@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class CopyStackTraceToClipboard_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CopyStackTraceToClipboard_Action() {
     super("Copy Stacktrace to Clipboard", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       event.getPresentation().setVisible(MPSCommonDataKeys.EXCEPTION.getData(event.getDataContext()) != null);
@@ -39,14 +36,6 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       Throwable trowable = MPSCommonDataKeys.EXCEPTION.getData(event.getDataContext());
@@ -64,6 +53,5 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CopyStackTraceToClipboard_Action.class);
 }

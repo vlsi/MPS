@@ -11,7 +11,6 @@ public class Extension_NodeRenamer7972144475523791621_ extends Extension.Default
   public Extension_NodeRenamer7972144475523791621_() {
     super("jetbrains.mps.lang.structure.NodeRenamer");
   }
-
   public _FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String> get() {
     return new _FunctionTypes._return_P4_E0<Boolean, EditorContext, SNode, String, String>() {
       public Boolean invoke(EditorContext context, SNode node, String oldName, String newName) {

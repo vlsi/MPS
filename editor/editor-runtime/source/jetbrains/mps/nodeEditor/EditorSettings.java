@@ -23,10 +23,11 @@ import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.editor.colors.EditorColors;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.nodeEditor.EditorSettings.MyState;
+import jetbrains.mps.nodeEditor.cells.FontRegistry;
 import jetbrains.mps.nodeEditor.cells.TextLine;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.awt.Color;
 import java.awt.Font;
@@ -34,12 +35,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @State(
-  name = "MpsEditorSettings",
-  storages = {
-    @Storage(
-      id = "other",
-      file = "$APP_CONFIG$/mpsEditor.xml"
-    )}
+    name = "MpsEditorSettings",
+    storages = {
+        @Storage(
+            id = "other",
+            file = "$APP_CONFIG$/mpsEditor.xml"
+        )}
 )
 public class EditorSettings implements PersistentStateComponent<MyState> {
   private static final Logger LOG = LogManager.getLogger(EditorSettings.class);
@@ -270,7 +271,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   void updateCachedValue() {
-    myDefaultEditorFont = new Font(myState.myFontFamily, 0, getFontSize());
+    myDefaultEditorFont = FontRegistry.getInstance().getFont(myState.myFontFamily, 0, getFontSize());
     mySpaceWidth = -1;
   }
 

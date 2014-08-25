@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,13 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.DumbService.DumbModeListener;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.util.Disposer;
 import com.intellij.util.ArrayUtil;
+import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
@@ -78,23 +83,43 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
       e.consume();
     }
   };
-  private final ProjectPaneTreeHighlighter myHighlighter = new ProjectPaneTreeHighlighter();
+  private final ProjectPaneTreeHighlighter myHighlighter;
+  private final TreeStructureUpdate myStructureUpdate;
 
   public ProjectPaneTree(ProjectPane projectPane, Project project) {
-    super(project);
+    super(ProjectHelper.toMPSProject(project));
     myProjectPane = projectPane;
 
-    myHighlighter.init(this);
+    myHighlighter = new ProjectPaneTreeHighlighter(this, ProjectHelper.toMPSProject(project));
+    myHighlighter.init();
+    myStructureUpdate = new TreeStructureUpdate(this);
+    myStructureUpdate.init();
     //enter can't be listened using keyboard actions because in this case tree's UI receives it first and just expands a node
     addKeyListener(myKeyListener);
 
     //drag support is alive while the tree is alive
     DragSource.getDefaultDragSource().createDefaultDragGestureRecognizer(this, DnDConstants.ACTION_MOVE, new MyDragGestureListener());
     new DropTarget(this, new ProjectPaneDnDListener(this, new MyTransferable(null).getTransferDataFlavors()[0]));
+
+    MessageBusConnection connection = project.getMessageBus().connect();
+    Disposer.register(this, connection);
+    connection.subscribe(DumbService.DUMB_MODE, new  DumbModeListener() {
+      @Override
+      public void enteredDumbMode() {
+        // there used to be update both on enter and exit of the dumb mode, however, I don't see a reason to
+        // do it twice. Moreover, there's guard condition in TreeUpdateVisitor that waits for dumb mode to complete.
+      }
+      @Override
+      public void exitDumbMode() {
+        myHighlighter.dumbUpdate();
+      }
+    });
+
   }
 
   @Override
   public void dispose() {
+    myStructureUpdate.dispose();
     myHighlighter.dispose();
     removeKeyListener(myKeyListener);
     super.dispose();

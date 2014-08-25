@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SReference;
 public class QueriesUtil {
   public QueriesUtil() {
   }
-
   public static SNode createClassType_forClosure_enclosingClass(SNode inputClosure, ITemplateGenerator generator) {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
@@ -35,7 +34,6 @@ public class QueriesUtil {
     }
     return outputClassType;
   }
-
   public static List<SNode> getTypeVars_from_Closure_enclosingClass(SNode inputClosure) {
     SNode enclosingClass = SNodeOperations.getAncestor(inputClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass == null) {
@@ -44,7 +42,6 @@ public class QueriesUtil {
     }
     return SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true);
   }
-
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure) {
     // 
     // must be invoked in $COPY-SRC$ because use ref on class in 'input model' 
@@ -71,11 +68,9 @@ public class QueriesUtil {
     // --- none of above 
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
-
   private static SNode getJavaLangObject() {
     return SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_w9106s_a0a0a4(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   private static SNode _quotation_createNode_w9106s_a0a0h0d() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -89,7 +84,6 @@ public class QueriesUtil {
     quotedNode_1.addChild("fieldType", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_w9106s_a0a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

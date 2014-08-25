@@ -7,7 +7,6 @@ import java.util.Iterator;
 public abstract class ISequenceIterableAdapter<U> extends Sequence<U> implements Iterable<U> {
   public ISequenceIterableAdapter() {
   }
-
   @Override
   public abstract Iterator<U> iterator();
 }

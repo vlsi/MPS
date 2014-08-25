@@ -19,41 +19,32 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SuppressErrors_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SuppressErrors_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.core.structure.ICanSuppressErrors";
   }
-
   public String getPresentation() {
     return "SuppressErrors";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.core.intentions.SuppressErrors_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.core";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) != null) {
       return true;
@@ -64,30 +55,24 @@ public class SuppressErrors_Intention implements IntentionFactory {
     }
     return false;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "4222318806802430725");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SuppressErrors_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null ? "Supress errors for node '" + node + "'" : "Don't supress errors");
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation")) == null) {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation", null));
@@ -95,7 +80,6 @@ public class SuppressErrors_Intention implements IntentionFactory {
         AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.core.structure.SuppressErrorsAnnotation"), null);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return SuppressErrors_Intention.this;
     }

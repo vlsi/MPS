@@ -9,7 +9,6 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
   public FindUsagesDescriptor() {
     super(PersistenceFacade.getInstance().createModuleReference("af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)"), PersistenceFacade.getInstance().createModelReference("r:b2afece2-23e8-4a6f-a918-9d117d839057(jetbrains.mps.lang.behavior.findUsages)"));
   }
-
   public void init() {
     add(new OverridingMethods_Finder(), "1227530810320");
   }

@@ -15,14 +15,12 @@ import com.intellij.execution.process.ProcessOutputTypes;
 public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
-
   public UnitTestProcessHandler(TestEventsDispatcher dispartcher, Process process, String params) {
     super(process, params, Charset.defaultCharset());
     myDispatcher = dispartcher;
 
     addProcessListener(new ProcessAdapter() {
       private final StringBuffer buffer = new StringBuffer();
-
       private String getLine(String text) {
         text = text.replaceAll("\r\n", "\n");
         buffer.append(text);
@@ -36,7 +34,6 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
           return null;
         }
       }
-
       private boolean isTerminatedEvent() {
         for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
           if (element.getClassName().equals(ProcessTerminatedListener.class.getName())) {
@@ -45,7 +42,6 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         }
         return false;
       }
-
       @Override
       public void onTextAvailable(ProcessEvent event, Key k) {
         if (isTerminatedEvent()) {
@@ -63,7 +59,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
           myLastEvent = testEvent;
           myDispatcher.onTestEvent(testEvent);
         } else {
-          if (myLastEvent != null && (TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.ERROR_TEST_PREFIX.equals(myLastEvent.getToken()))) {
+          if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
             k = ProcessOutputTypes.STDERR;
           }
           myDispatcher.onSimpleTextAvailable(text, k);

@@ -12,13 +12,11 @@ public class FileDeltaCollector implements StreamHandler {
   private final IFile myOutputDir;
   private final FileProcessor myProcessor;
 
-
   public FileDeltaCollector(IFile outputDir, FilesDelta deltaCollector, FileProcessor fileProcessor) {
     myDelta = deltaCollector;
     myOutputDir = outputDir;
     myProcessor = fileProcessor;
   }
-
   @Override
   public void saveStream(String name, String content) {
     IFile file = getFile(name);
@@ -28,7 +26,6 @@ public class FileDeltaCollector implements StreamHandler {
       myDelta.kept(file);
     }
   }
-
   @Override
   public void saveStream(String name, Element element) {
     IFile file = getFile(name);
@@ -38,7 +35,6 @@ public class FileDeltaCollector implements StreamHandler {
       myDelta.kept(file);
     }
   }
-
   @Override
   public void saveStream(String name, byte[] content) {
     IFile file = getFile(name);
@@ -48,14 +44,12 @@ public class FileDeltaCollector implements StreamHandler {
       myDelta.kept(file);
     }
   }
-
   @Override
   public boolean touch(String name) {
     IFile file = getFile(name);
     myDelta.kept(file);
     return file.exists();
   }
-
   private IFile getFile(String name) {
     return myOutputDir.getDescendant(name);
   }

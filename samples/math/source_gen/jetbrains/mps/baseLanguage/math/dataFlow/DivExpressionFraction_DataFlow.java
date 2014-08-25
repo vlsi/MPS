@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DivExpressionFraction_DataFlow extends DataFlowBuilder {
   public DivExpressionFraction_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "numerator", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "denominator", true));

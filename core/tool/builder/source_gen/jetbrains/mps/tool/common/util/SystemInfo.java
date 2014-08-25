@@ -61,26 +61,20 @@ public class SystemInfo {
    * * @since 6.0
    */
   public static boolean X11PasteEnabledSystem = isUnix && !(isMac);
-
   public SystemInfo() {
   }
-
   private static boolean isTiger() {
     return isMac && !(OS_VERSION.startsWith("10.0")) && !(OS_VERSION.startsWith("10.1")) && !(OS_VERSION.startsWith("10.2")) && !(OS_VERSION.startsWith("10.3"));
   }
-
   private static boolean isIntelMac() {
     return isMac && "i386".equals(OS_ARCH);
   }
-
   private static boolean isLeopard() {
     return isMac && SystemInfo.isTiger() && !(OS_VERSION.startsWith("10.4"));
   }
-
   private static boolean isSnowLeopard() {
     return isMac && SystemInfo.isLeopard() && !(OS_VERSION.startsWith("10.5"));
   }
-
   public static boolean isJavaVersionAtLeast(String v) {
     return StringUtil.compareVersionNumbers(JAVA_RUNTIME_VERSION, v) >= 0;
   }

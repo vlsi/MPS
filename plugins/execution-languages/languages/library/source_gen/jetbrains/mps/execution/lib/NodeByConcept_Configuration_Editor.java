@@ -13,10 +13,8 @@ import com.intellij.openapi.util.Factory;
 
 public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByConcept_Configuration> {
   private NodeByConceptChooser myChooser;
-
   public void disposeEditor() {
   }
-
   @NotNull
   public NodeByConceptChooser createEditor() {
     myChooser = new NodeByConceptChooser();
@@ -24,7 +22,6 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
     myChooser.setAcceptor(myIsValid);
     return myChooser;
   }
-
   public void applyEditorTo(final NodeByConcept_Configuration configuration) throws ConfigurationException {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -32,7 +29,6 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
       }
     });
   }
-
   public void resetEditorFrom(final NodeByConcept_Configuration configuration) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -40,10 +36,8 @@ public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByC
       }
     });
   }
-
   private String myConcept;
   private _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-
   public NodeByConcept_Configuration_Editor(final String concept, final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
     super(new Factory<NodeByConcept_Configuration>() {
       public NodeByConcept_Configuration create() {

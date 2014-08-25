@@ -19,20 +19,16 @@ public class ChangeColors {
   public static final Color DELETE = StyleRegistry.getInstance().getStyle("DIFF_DELETED").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
   public static final Color CHANGE = StyleRegistry.getInstance().getStyle("DIFF_MODIFIED").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
   private static final Color CONFLICTED = StyleRegistry.getInstance().getStyle("DIFF_CONFLICT").get(StyleAttributes.TEXT_BACKGROUND_COLOR);
-
   private ChangeColors() {
   }
-
   @NotNull
   public static Color get(@NotNull ChangeType changeType) {
     return MapSequence.fromMap(ourColors).get(changeType);
   }
-
   @NotNull
   public static Color getForTree(@NotNull ChangeType changeType) {
     return MapSequence.fromMap(ourTreeColors).get(changeType);
   }
-
   static {
     MapSequence.fromMap(ourColors).put(ChangeType.ADD, ADD);
     MapSequence.fromMap(ourTreeColors).put(ChangeType.ADD, FileStatus.ADDED.getColor());

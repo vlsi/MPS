@@ -29,7 +29,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uze3jf_a(editorContext, node);
   }
-
   private EditorCell createCollection_uze3jf_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uze3jf_a");
@@ -43,12 +42,10 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_uze3jf_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_uze3jf_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.ReplaceableAlias_Comp");
     return editorCell;
   }
-
   private EditorCell createConstant_uze3jf_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_uze3jf_b0");
@@ -58,7 +55,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_uze3jf_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("concept");
@@ -83,20 +79,16 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_uze3jf_a2a extends InlineCellProvider {
     public _Inline_uze3jf_a2a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_uze3jf_a0c0(editorContext, node);
     }
-
     private EditorCell createProperty_uze3jf_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -120,7 +112,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createCollection_uze3jf_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uze3jf_d0");
@@ -131,18 +122,15 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_uze3jf_b3a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_uze3jf_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
-
   private EditorCell createConstant_uze3jf_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ",");
     editorCell.setCellId("Constant_uze3jf_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_uze3jf_b3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototypeNode");
@@ -162,7 +150,6 @@ public class Model_CreateNewRootNodeOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_uze3jf_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_uze3jf_e0");

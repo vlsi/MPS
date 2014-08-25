@@ -21,11 +21,9 @@ import jetbrains.mps.smodel.SReference;
 public class FindSourceBlock_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_1go9bg_a0a0();
   }
-
   public static boolean call_isSet_1213877521577(SNode thisNode) {
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(thisNode);
     SNode lastStatement = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).last();
@@ -44,13 +42,11 @@ public class FindSourceBlock_Behavior {
     }
     return false;
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)", "1193733802812"));
     return result;
   }
-
   private static SNode _quotation_createNode_1go9bg_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -67,7 +63,6 @@ public class FindSourceBlock_Behavior {
     quotedNode_1.addChild("argument", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_1go9bg_b0a0b0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

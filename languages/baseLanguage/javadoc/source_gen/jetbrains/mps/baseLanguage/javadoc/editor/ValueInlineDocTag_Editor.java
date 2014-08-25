@@ -23,7 +23,6 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_jy8kcg_a(editorContext, node);
   }
-
   private EditorCell createCollection_jy8kcg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_jy8kcg_a");
@@ -34,7 +33,6 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createComponent_jy8kcg_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -44,16 +42,13 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ValueInlineDocTag_Editor.ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_BaseInlineDocTag_cellMenu_jy8kcg_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag";
     }
   }
-
   private EditorCell createRefNode_jy8kcg_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("variableReference");
@@ -73,7 +68,6 @@ public class ValueInlineDocTag_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_jy8kcg_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "variableReference", true) != null);
   }

@@ -9,19 +9,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class AbstractDiagramCreation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getConceptForCreation_2154068179222282129(SNode thisNode) {
     return ((SLinkOperations.getTarget(thisNode, "concept", false) != null) ? SLinkOperations.getTarget(thisNode, "concept", false) : SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(AbstractDiagramCreation_Behavior.call_getQueryDotExpression_2154068179222323285(thisNode), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false), "target", false));
   }
-
   public static SNode call_getContainmentLinkDeclaration_2154068179222419430(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(AbstractDiagramCreation_Behavior.call_getQueryDotExpression_2154068179222323285(thisNode), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkListAccess"), "link", false);
   }
-
   public static SNode call_getContainerExpression_2154068179222420454(SNode thisNode) {
     return SLinkOperations.getTarget(AbstractDiagramCreation_Behavior.call_getQueryDotExpression_2154068179222323285(thisNode), "operand", true);
   }
-
   public static SNode call_getQueryDotExpression_2154068179222323285(SNode thisNode) {
     return SNodeOperations.as(SLinkOperations.getTarget(thisNode, "query", true), "jetbrains.mps.baseLanguage.structure.DotExpression");
   }

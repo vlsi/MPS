@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class BuildSource_JavaDependencyJar_BehaviorDescriptor extends BuildSource_JavaDependency_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public BuildSource_JavaDependencyJar_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaDependencyJar";

@@ -4,7 +4,7 @@ package jetbrains.mps.core.properties.textGen;
 
 import jetbrains.mps.textGen.SNodeTextGen;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.core.properties.constraints.PropEscapeUtil;
+import jetbrains.mps.core.properties.util.PropEscapeUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PropertiesDeclaration_TextGen extends SNodeTextGen {

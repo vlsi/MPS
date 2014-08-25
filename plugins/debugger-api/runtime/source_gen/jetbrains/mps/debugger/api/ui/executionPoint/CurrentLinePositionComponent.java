@@ -22,48 +22,39 @@ import jetbrains.mps.debug.api.SessionChangeAdapter;
 public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx<AbstractDebugSession> implements ProjectComponent {
   private final SessionChangeListener myChangeListener = new CurrentLinePositionComponent.MySessionChangeListener();
   private final DebugSessionManagerComponent.DebugSessionListener myCurrentDebugSessionListener = new CurrentLinePositionComponent.MyCurrentDebugSessionListener();
-
   public CurrentLinePositionComponent(Project project, FileEditorManager fileEditorManager) {
     super(project, fileEditorManager);
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @NotNull
   @Override
   public String getComponentName() {
     return "Current Line Position Project Component";
   }
-
   @Override
   public void initComponent() {
     super.init();
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.addDebugSessionListener(myCurrentDebugSessionListener);
   }
-
   @Override
   public void disposeComponent() {
     DebugSessionManagerComponent component = myProject.getComponent(DebugSessionManagerComponent.class);
     component.removeDebugSessionListener(myCurrentDebugSessionListener);
     super.dispose();
   }
-
   @Override
   protected AbstractDebugSession getCurrentSession() {
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessionByCurrentTab();
   }
-
   protected Collection<? extends AbstractDebugSession> getAllSessions() {
     return myProject.getComponent(DebugSessionManagerComponent.class).getDebugSessions();
   }
-
   @Override
   public SNode getNode(AbstractDebugSession session) {
     IStackFrame stackFrame = session.getUiState().getStackFrame();
@@ -74,42 +65,34 @@ public class CurrentLinePositionComponent extends CurrentLinePositionComponentEx
     }
     return null;
   }
-
   private class MyCurrentDebugSessionListener implements DebugSessionManagerComponent.DebugSessionListener {
     private MyCurrentDebugSessionListener() {
     }
-
     @Override
     public void registered(AbstractDebugSession session) {
       session.addChangeListener(myChangeListener);
     }
-
     @Override
     public void currentSessionChanged(AbstractDebugSession newDebugSession) {
       CurrentLinePositionComponent.this.currentSessionChanged(newDebugSession);
     }
-
     @Override
     public void detached(AbstractDebugSession newDebugSession) {
       detachPainter(newDebugSession);
       newDebugSession.removeChangeListener(myChangeListener);
     }
   }
-
   private class MySessionChangeListener extends SessionChangeAdapter {
     private MySessionChangeListener() {
     }
-
     @Override
     public void stateChanged(AbstractDebugSession session) {
       reAttachPainter(session, true);
     }
-
     @Override
     public void paused(AbstractDebugSession debugSession) {
       reAttachPainter(debugSession, true);
     }
-
     @Override
     public void resumed(AbstractDebugSession debugSession) {
       detachPainter(debugSession);

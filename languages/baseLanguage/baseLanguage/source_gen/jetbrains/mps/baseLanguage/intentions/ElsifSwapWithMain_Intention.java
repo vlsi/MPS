@@ -17,61 +17,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ElsifSwapWithMain_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ElsifSwapWithMain_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ElsifClause";
   }
-
   public String getPresentation() {
     return "ElsifSwapWithMain";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ElsifSwapWithMain_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1206066794083");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ElsifSwapWithMain_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Swap Elsif Clause with Main Clause";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ifStatement = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
       SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
@@ -81,7 +67,6 @@ public class ElsifSwapWithMain_Intention implements IntentionFactory {
       SLinkOperations.setTarget(node, "condition", condition, true);
       SLinkOperations.setTarget(node, "statementList", statementList, true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ElsifSwapWithMain_Intention.this;
     }

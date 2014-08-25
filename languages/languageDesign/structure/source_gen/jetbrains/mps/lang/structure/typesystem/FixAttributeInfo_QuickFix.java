@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class FixAttributeInfo_QuickFix extends QuickFix_Runtime {
   public FixAttributeInfo_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return ((((AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")) == null)) ? "Add" : "Remove")) + " Attribute Info";
   }
-
   public void execute(SNode node) {
     SNode conceptDeclaration = SNodeOperations.cast(node, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     if (AttributeDesignTimeOperations.isAttributeDeclaration(conceptDeclaration) && (AttributeOperations.getAttribute(conceptDeclaration, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.structure.structure.AttributeInfo")) == null)) {

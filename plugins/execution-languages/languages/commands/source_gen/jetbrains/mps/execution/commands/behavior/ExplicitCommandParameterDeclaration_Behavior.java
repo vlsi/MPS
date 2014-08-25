@@ -8,15 +8,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ExplicitCommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isRequired_856705193941282030(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "isRequired");
   }
-
   public static boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(thisNode));
   }
-
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(thisNode));
   }

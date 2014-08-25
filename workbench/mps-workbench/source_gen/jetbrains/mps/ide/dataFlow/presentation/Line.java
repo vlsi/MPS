@@ -10,39 +10,31 @@ public class Line implements Comparable<Line> {
   /*package*/ int mySecond;
   /*package*/ int myLevel;
   private LineDirection myDirection;
-
   public Line(int first, int second, int level, LineDirection direction) {
     this.myFirst = first;
     this.mySecond = second;
     this.myLevel = level;
     this.myDirection = direction;
   }
-
   public int getFirst() {
     return this.myFirst;
   }
-
   public int getSecond() {
     return this.mySecond;
   }
-
   public int getLevel() {
     return this.myLevel;
   }
-
   public LineDirection getDirection() {
     return this.myDirection;
   }
-
   public void paint(Graphics g, Color backGround) {
     this.myDirection.paint(g, this.myFirst, this.mySecond, this.myLevel, backGround);
   }
-
   @Override
   public int compareTo(Line o) {
     return this.myDirection.ordinal() - o.myDirection.ordinal();
   }
-
   public void shiftLeft(int indent) {
     this.myDirection.shiftLeft(this, indent);
   }

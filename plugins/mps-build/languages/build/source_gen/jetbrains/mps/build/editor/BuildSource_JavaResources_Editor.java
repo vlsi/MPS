@@ -19,7 +19,6 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3riti7_a(editorContext, node);
   }
-
   private EditorCell createCollection_3riti7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3riti7_a");
@@ -28,7 +27,6 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_3riti7_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3riti7_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "resources");
     editorCell.setCellId("Constant_3riti7_a0");
@@ -38,7 +36,6 @@ public class BuildSource_JavaResources_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_3riti7_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("fileset");

@@ -23,39 +23,26 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
   private static final Logger[] IGNORED_LOGGERS = new Logger[]{Logger.getInstance("#com.intellij.openapi.application.impl.LaterInvocator"), Logger.getInstance("#com.intellij.application.impl.ApplicationImpl")};
   private static final Pattern[] IGNORED_OUTPUT_PATTERNS = new Pattern[]{Pattern.compile("(\\d)* ms execution limit failed for:[^,]*,(\\d*)(\\s)*")};
   private Level oldLevel;
-  private CachingPrintStream cacheOut;
   private CachingPrintStream cacheErr;
   private CachingAppender app;
   private Map<Description, Object> testsToIgnore = new HashMap<Description, Object>();
   private ThreadWatcher threadWatcher;
-
   public WatchingRunNotifier(RunNotifier delegate) {
     super(delegate);
   }
-
   public void dispose() {
   }
-
   private void initCaches() {
-    System.out.flush();
     System.err.flush();
-    System.setOut(this.cacheOut = new CachingPrintStream(System.out, "output"));
     System.setErr(this.cacheErr = new CachingPrintStream(System.err, "error", IGNORED_OUTPUT_PATTERNS));
-    cacheOut.clear();
-    cacheOut.startCaching();
     cacheErr.clear();
     cacheErr.startCaching();
   }
-
   private void disposeCaches() {
-    cacheOut.flush();
-    cacheOut.stopCaching();
-    System.setOut(cacheOut.getOut());
     cacheErr.flush();
     cacheErr.stopCaching();
     System.setErr(cacheErr.getOut());
   }
-
   @Override
   public void fireTestStarted(Description description) throws StoppedByUserException {
     super.fireTestStarted(description);
@@ -65,7 +52,6 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
       super.fireTestFailure(new Failure(description, e));
     }
   }
-
   @Override
   public void fireTestFinished(Description description) {
     try {
@@ -75,30 +61,26 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     }
     super.fireTestFinished(description);
   }
-
   @Override
   public void fireTestFailure(Failure failure) {
     testsToIgnore.put(failure.getDescription(), Boolean.TRUE);
     super.fireTestFailure(failure);
   }
-
   @Override
   public void fireTestAssumptionFailed(Failure failure) {
     testsToIgnore.put(failure.getDescription(), Boolean.TRUE);
     super.fireTestAssumptionFailed(failure);
   }
-
   @Override
   public void fireTestIgnored(Description description) {
     testsToIgnore.put(description, Boolean.TRUE);
     super.fireTestIgnored(description);
   }
-
   private void beforeTest(Description desc) {
     this.oldLevel = org.apache.log4j.Logger.getRootLogger().getLevel();
     org.apache.log4j.Logger.getRootLogger().setLevel(WATCH_LEVEL);
     initCaches();
-    this.app = new CachingAppender();
+    this.app = new CachingAppender(WATCH_LEVEL);
     org.apache.log4j.Logger.getRootLogger().addAppender(app);
     ExpectLogEvent ignoreEvent = desc.getAnnotation(ExpectLogEvent.class);
     if (ignoreEvent != null) {
@@ -111,7 +93,6 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     }
     this.threadWatcher = new ThreadWatcher(true);
   }
-
   private void afterTest(Description desc) {
     threadWatcher.waitUntilSettled(15000);
     disposeCaches();
@@ -119,10 +100,9 @@ public class WatchingRunNotifier extends DelegatingRunNotifier {
     org.apache.log4j.Logger.getRootLogger().removeAppender(app);
     org.apache.log4j.Logger.getRootLogger().setLevel(oldLevel);
     Failure fail = null;
-    if (!(testsToIgnore.containsKey(desc)) && (cacheOut.isNotEmpty() || cacheErr.isNotEmpty() || app.isNotEmpty() || threadWatcher.isNotEmpty())) {
-      fail = new Failure(desc, new UncleanTestExecutionException(cacheOut, cacheErr, app, threadWatcher));
+    if (!(testsToIgnore.containsKey(desc)) && (cacheErr.isNotEmpty() || app.isNotEmpty() || threadWatcher.isNotEmpty())) {
+      fail = new Failure(desc, new UncleanTestExecutionException(cacheErr, app, threadWatcher));
     }
-    cacheOut.clear();
     cacheErr.clear();
     if (fail != null) {
       super.fireTestFailure(fail);

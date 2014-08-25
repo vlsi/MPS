@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IMethodCall_InferenceRule() {
   }
-
   public void applyRule(final SNode mcall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode mdecl = SLinkOperations.getTarget(mcall, "baseMethodDeclaration", false);
     if (mdecl == null) {
@@ -147,22 +146,18 @@ public class typeof_IMethodCall_InferenceRule extends AbstractInferenceRule_Runt
 
     TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, mcall, subs);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_2u2uyg_a0b0a0f0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

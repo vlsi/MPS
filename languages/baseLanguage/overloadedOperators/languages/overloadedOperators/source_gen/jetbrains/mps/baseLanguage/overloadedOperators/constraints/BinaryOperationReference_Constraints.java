@@ -34,7 +34,6 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
   public BinaryOperationReference_Constraints() {
     super("jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -43,7 +42,6 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -65,7 +63,6 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
             }
             return result;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4xi24e_a0a1a0a0a1a0b0a1a1;
@@ -75,6 +72,5 @@ public class BinaryOperationReference_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-
   private static SNodePointer breakingNode_4xi24e_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957288976");
 }

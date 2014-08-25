@@ -16,7 +16,6 @@ public class MPS15234_Test extends TestCase {
     Sample[] array = ListSequence.fromList(lot).toGenericArray(Sample.class);
     Assert.assertEquals(new Sample(42, 100000L), array[0]);
   }
-
   public MPS15234_Test() {
   }
 }

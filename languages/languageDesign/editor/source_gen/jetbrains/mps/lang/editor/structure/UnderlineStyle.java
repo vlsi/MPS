@@ -12,15 +12,12 @@ public enum UnderlineStyle {
   underlined("underlined", 2);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<UnderlineStyle> getConstants() {
     List<UnderlineStyle> list = ListSequence.fromList(new LinkedList<UnderlineStyle>());
     ListSequence.fromList(list).addElement(UnderlineStyle.as_is);
@@ -28,11 +25,9 @@ public enum UnderlineStyle {
     ListSequence.fromList(list).addElement(UnderlineStyle.underlined);
     return list;
   }
-
   public static UnderlineStyle getDefault() {
     return UnderlineStyle.as_is;
   }
-
   public static UnderlineStyle parseValue(String value) {
     if (value == null) {
       return UnderlineStyle.getDefault();
@@ -48,14 +43,11 @@ public enum UnderlineStyle {
     }
     return UnderlineStyle.getDefault();
   }
-
   private int myValue;
-
   UnderlineStyle(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

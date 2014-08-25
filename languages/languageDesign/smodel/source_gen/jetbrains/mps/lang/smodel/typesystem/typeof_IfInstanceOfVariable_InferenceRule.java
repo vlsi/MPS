@@ -13,25 +13,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_IfInstanceOfVariable_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IfInstanceOfVariable_InferenceRule() {
   }
-
   public void applyRule(final SNode variable, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode iiostmt = SNodeOperations.as(SNodeOperations.getParent(variable), "jetbrains.mps.lang.smodel.structure.IfInstanceOfStatement");
     if ((iiostmt != null)) {
       typeCheckingContext.typeOf(iiostmt, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8658296822738406899", true);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.smodel.structure.IfInstanceOfVariable";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

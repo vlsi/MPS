@@ -20,7 +20,6 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_66ieid_a(editorContext, node);
   }
-
   private EditorCell createCollection_66ieid_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_66ieid_a");
@@ -30,7 +29,6 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_66ieid_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_66ieid_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -38,7 +36,6 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createRefNode_66ieid_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -58,7 +55,6 @@ public class YieldStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_66ieid_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_66ieid_c0");

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class CreateEquationStatement_BehaviorDescriptor extends AbstractEquationStatement_BehaviorDescriptor {
   public CreateEquationStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.CreateEquationStatement";

@@ -12,10 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerationUtil {
   public static String SCRIPTS_TARGET_PROPERTY = GenerationUtil.class.getPackage().getName() + ".scripts.dir";
-
   public GenerationUtil() {
   }
-
   public static <K, V> ConcurrentMap<K, V> getSessionMap(SNode project, TemplateQueryContext genContext, String prefix) {
     String key = getKey(prefix, genContext, project);
     ConcurrentMap<K, V> map = (ConcurrentMap<K, V>) genContext.getSessionObject(key);
@@ -25,7 +23,6 @@ public class GenerationUtil {
     }
     return map;
   }
-
   public static <K, V> ConcurrentMap<K, V> getTransientMap(SNode project, TemplateQueryContext genContext, String prefix) {
     String key = getKey(prefix, genContext, project);
     ConcurrentMap<K, V> map = (ConcurrentMap<K, V>) genContext.getTransientObject(key);
@@ -35,7 +32,6 @@ public class GenerationUtil {
     }
     return map;
   }
-
   public static <K> ConcurrentHashSet<K> getSessionSet(SNode project, TemplateQueryContext genContext, String prefix) {
     String key = getKey(prefix, genContext, project);
     ConcurrentHashSet<K> set = (ConcurrentHashSet<K>) genContext.getSessionObject(key);
@@ -45,7 +41,6 @@ public class GenerationUtil {
     }
     return set;
   }
-
   private static String getKey(String prefix, TemplateQueryContext genContext, SNode project) {
     return prefix + "/" + SNodeOperations.getModelLongName(genContext.getOriginalInputModel()) + "/" + SPropertyOperations.getString(project, "name");
   }

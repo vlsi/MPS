@@ -12,6 +12,7 @@ import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
@@ -24,22 +25,22 @@ import org.apache.log4j.LogManager;
 
 public class ShowNodeMessages_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowNodeMessages_Action() {
     super("Show Node Messages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return !(ListSequence.fromList(((List<SimpleEditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).isEmpty());
+    return ListSequence.fromList(((List<SimpleEditorMessage>) ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node"))))).where(new IWhereFilter<SimpleEditorMessage>() {
+      public boolean accept(SimpleEditorMessage it) {
+        return isNotEmptyString(it.getMessage());
+      }
+    }).isNotEmpty();
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +54,6 @@ public class ShowNodeMessages_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +66,13 @@ public class ShowNodeMessages_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("node") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
@@ -76,12 +82,15 @@ public class ShowNodeMessages_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       List<SimpleEditorMessage> messages = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager().getMessagesFor(((SNode) MapSequence.fromMap(_params).get("node")));
       StringBuilder sb = new StringBuilder();
-      for (SimpleEditorMessage message : messages) {
+      for (SimpleEditorMessage message : ListSequence.fromList(messages).where(new IWhereFilter<SimpleEditorMessage>() {
+        public boolean accept(SimpleEditorMessage it) {
+          return isNotEmptyString(it.getMessage());
+        }
+      })) {
         sb.append(message.getMessage());
         sb.append("; owner is ");
         sb.append(message.getOwner());
@@ -94,6 +103,8 @@ public class ShowNodeMessages_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowNodeMessages_Action.class);
+  private static boolean isNotEmptyString(String str) {
+    return str != null && str.length() > 0;
+  }
 }

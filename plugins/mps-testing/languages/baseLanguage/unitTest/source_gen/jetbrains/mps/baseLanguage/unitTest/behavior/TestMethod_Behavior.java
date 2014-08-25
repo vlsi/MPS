@@ -16,24 +16,20 @@ import jetbrains.mps.smodel.SReference;
 public class TestMethod_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getTestCase_1216134500045(SNode thisNode) {
     SNode method = thisNode;
     return SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", false, false);
   }
-
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
     SNode method = thisNode;
     return SPropertyOperations.getString(method, "name");
   }
-
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsItem", true)));
     ListSequence.fromList(result).addElement(_quotation_createNode_6y0hvj_a0a2a2());
     return result;
   }
-
   private static SNode _quotation_createNode_6y0hvj_a0a2a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

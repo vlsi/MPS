@@ -17,25 +17,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PropertyInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.PropertyInstances_Finder");
-
   public PropertyInstances_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Property Instances";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.PropertyDeclaration";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -53,7 +48,6 @@ public class PropertyInstances_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Property Instances";

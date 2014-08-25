@@ -16,9 +16,9 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransactionalPropertyAccessor extends PropertyAccessor implements TransactionalModelAccessor {
   private String myOldValue;
@@ -46,6 +46,17 @@ public class TransactionalPropertyAccessor extends PropertyAccessor implements T
     myHasValueToCommit = true;
     myUncommitedValue = newText;
     myOldValue = super.doGetValue();
+  }
+
+  @Override
+  public boolean hasValueToCommit() {
+    return myHasValueToCommit;
+  }
+
+  @Override
+  public void resetUncommittedValue() {
+    myHasValueToCommit = false;
+    myUncommitedValue = null;
   }
 
   @Override

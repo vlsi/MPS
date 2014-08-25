@@ -11,14 +11,12 @@ import jetbrains.mps.nodeEditor.MPSColors;
 public class BuildLayout_JarManifest_Attribute_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isValidPart_9184644532456897464(SNode thisNode, String propertyValue, String role) {
     if (role.equals("name")) {
       return propertyValue.matches("[A-Za-z0-9][A-Za-z0-9-_]*");
     }
     return !(propertyValue.contains("$"));
   }
-
   @Nullable
   public static Color virtual_getColorForTextPart_6083230236994422116(SNode thisNode, @NonNls String role) {
     if (role.equals("name")) {

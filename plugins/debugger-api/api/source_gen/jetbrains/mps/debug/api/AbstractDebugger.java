@@ -18,30 +18,25 @@ public abstract class AbstractDebugger<B extends IBreakpoint, K extends IBreakpo
   private final BreakpointProvidersManager myBreakpointsProviderManager;
   private final Debuggers myDebuggers;
   private IBreakpointsProvider<B, K> myBreakpointsProvider;
-
   public AbstractDebugger(@NonNls String name, @NotNull Debuggers debuggers, @NotNull BreakpointProvidersManager breakpointsProviderManager) {
     myName = name;
     myDebuggers = debuggers;
     myBreakpointsProviderManager = breakpointsProviderManager;
   }
-
   public void init() {
     myBreakpointsProvider = getBreakpointsProvider();
     myDebuggers.registerDebugger(this);
     myBreakpointsProviderManager.registerProvider(myBreakpointsProvider);
   }
-
   public void dispose() {
     myBreakpointsProviderManager.unregisterProvider(myBreakpointsProvider);
     myDebuggers.unRegisterDebugger(this);
   }
-
   @NotNull
   @Override
   public String getName() {
     return myName;
   }
-
   @Override
   public ILocationBreakpoint createBreakpoint(SNode node, String kindName, Project project) {
     K kind = null;

@@ -21,18 +21,15 @@ import org.apache.log4j.LogManager;
 
 public class ResolveStubReferencesToMPS_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ResolveStubReferencesToMPS_Action() {
     super("Resolve Stub References to MPS Code", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -43,7 +40,6 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -58,7 +54,6 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new StubResolver().resolveInModels(((List<SModel>) MapSequence.fromMap(_params).get("models")), ((IOperationContext) MapSequence.fromMap(_params).get("context")));
@@ -69,6 +64,5 @@ public class ResolveStubReferencesToMPS_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ResolveStubReferencesToMPS_Action.class);
 }

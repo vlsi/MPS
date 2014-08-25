@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class ErrorReportUtil {
   public ErrorReportUtil() {
   }
-
   public static boolean shouldReportError(SNode node) {
     final Wrappers._T<SNode> _node = new Wrappers._T<SNode>(node);
     SModel model = _node.value.getModel();

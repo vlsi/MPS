@@ -38,12 +38,10 @@ public class ConvertAnonymousRefactoring {
   private Map<SNode, SNode> myInnerTypeVariables;
   private Map<SNode, SNode> myInnerConstructorParameters;
   private List<SNode> mySuperConstructorParameters;
-
   public ConvertAnonymousRefactoring(SNode anonymousClass, String name) {
     this.myClassToRefactor = anonymousClass;
     this.myNameForInnerClass = name;
   }
-
   public void doRefactor() {
     collectInformation();
     SNode creator = SNodeOperations.as(SNodeOperations.getParent(myClassToRefactor), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
@@ -51,21 +49,18 @@ public class ConvertAnonymousRefactoring {
       SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), makeInnerClass(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first()));
     }
   }
-
   private void collectInformation() {
     this.collectFields();
     this.createParameterDeclarationsForFields();
     this.collectTypeVariables();
     this.collectSuperConstructorParameters();
   }
-
   private void createParameterDeclarationsForFields() {
     this.myInnerConstructorParameters = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
     for (SNode varDeclaration : SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet())) {
       MapSequence.fromMap(this.myInnerConstructorParameters).put(MapSequence.fromMap(this.myInnerFields).get(varDeclaration), _quotation_createNode_qy1soj_a0a0b0k(SLinkOperations.getTarget(varDeclaration, "type", true), SPropertyOperations.getString(varDeclaration, "name")));
     }
   }
-
   private void collectFields() {
     this.myInnerFields = MapSequence.fromMap(new LinkedHashMap<SNode, SNode>(16, (float) 0.75, false));
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(this.myClassToRefactor))) {
@@ -75,7 +70,6 @@ public class ConvertAnonymousRefactoring {
       }
     }
   }
-
   private void collectTypeVariables() {
     Set<SNode> usedTypeVariables = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode node : Sequence.fromIterable(MapSequence.fromMap(myInnerFields).values()).concat(Sequence.fromIterable(Sequence.<SNode>singleton(myClassToRefactor)))) {
@@ -101,14 +95,12 @@ public class ConvertAnonymousRefactoring {
       }
     }
   }
-
   private void collectSuperConstructorParameters() {
     this.mySuperConstructorParameters = new ArrayList<SNode>();
     for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true))) {
       ListSequence.fromList(this.mySuperConstructorParameters).addElement(SNodeOperations.copyNode(param));
     }
   }
-
   private SNode makeInnerClass() {
     SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "member", true)).addElement(innerClass);
@@ -122,7 +114,6 @@ public class ConvertAnonymousRefactoring {
     this.addTypeVariablesToInnerClass(innerClass);
     return innerClass;
   }
-
   private void makeInnerConstructor(SNode innerClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isEmpty()) {
       SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -135,7 +126,6 @@ public class ConvertAnonymousRefactoring {
     this.addParametersToConstructor(innerConstructor);
     this.makeConstructorBody(innerConstructor);
   }
-
   private void makeConstructorBody(SNode constructorDeclaration) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(this.myClassToRefactor, "baseMethodDeclaration", false), "parameter", true)).isNotEmpty()) {
       List<SNode> parameterReferences = ListSequence.fromList(this.mySuperConstructorParameters).select(new ISelector<SNode, SNode>() {
@@ -151,12 +141,10 @@ public class ConvertAnonymousRefactoring {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true)).addElement(_quotation_createNode_qy1soj_a0a0a1a61(SNodeOperations.getParent(constructorDeclaration), fieldDeclaration, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), MapSequence.fromMap(this.myInnerConstructorParameters).get(fieldDeclaration), "virtual_createReference_1213877517482", new Object[]{})));
     }
   }
-
   private void addParametersToConstructor(SNode constructorDeclaration) {
     ListSequence.fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(ListSequence.fromList(this.mySuperConstructorParameters));
     ListSequence.fromList(SLinkOperations.getTargets(constructorDeclaration, "parameter", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerConstructorParameters).values()));
   }
-
   private void copyChildren(SNode from, SNode to) {
     List<SNode> ld = SModelSearchUtil.getLinkDeclarations(SNodeOperations.getConceptDeclaration(to));
     for (String role : ListSequence.fromList(ld).select(new ISelector<SNode, String>() {
@@ -172,11 +160,9 @@ public class ConvertAnonymousRefactoring {
       }
     }
   }
-
   private void chooseNonStaticForInnerClass(SNode innerClass) {
     SPropertyOperations.set(innerClass, "nonStatic", "" + (!(isStatic())));
   }
-
   private void addFieldsToInnerClass(SNode innerClass) {
     for (SNode field : Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values())) {
       MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, field);
@@ -185,7 +171,6 @@ public class ConvertAnonymousRefactoring {
       SNodeOperations.replaceWithAnother(varReference, _quotation_createNode_qy1soj_a0a0a1a02(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }
   }
-
   private void addTypeVariablesToInnerClass(SNode innerClass) {
     ListSequence.fromList(SLinkOperations.getTargets(innerClass, "typeVariableDeclaration", true)).addSequence(MapSequence.fromMap(myInnerTypeVariables).select(new ISelector<IMapping<SNode, SNode>, SNode>() {
       public SNode select(IMapping<SNode, SNode> it) {
@@ -198,7 +183,6 @@ public class ConvertAnonymousRefactoring {
       }
     }
   }
-
   private void addSuperToInnerClass(SNode innerClass) {
     SNode superInnerClass = _quotation_createNode_qy1soj_a0a0w(SLinkOperations.getTarget(this.myClassToRefactor, "classifier", false));
     ListSequence.fromList(SLinkOperations.getTargets(superInnerClass, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(this.myClassToRefactor, "typeParameter", true)));
@@ -208,7 +192,6 @@ public class ConvertAnonymousRefactoring {
       SLinkOperations.setTarget(innerClass, "superclass", superInnerClass, true);
     }
   }
-
   private SNode makeInnerConstructorInvocation(SNode constructor) {
     SNode constructorInvocation = _quotation_createNode_qy1soj_a0a0x(constructor, SLinkOperations.getTargets(this.myClassToRefactor, "actualArgument", true));
     ListSequence.fromList(SLinkOperations.getTargets(constructorInvocation, "actualArgument", true)).addSequence(SetSequence.fromSet(MapSequence.fromMap(this.myInnerFields).keySet()).select(new ISelector<SNode, SNode>() {
@@ -225,7 +208,6 @@ public class ConvertAnonymousRefactoring {
     }
     return constructorInvocation;
   }
-
   private Iterable<SNode> getExternalReferences(final SNode node) {
     Iterable<SNode> result = ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -247,11 +229,9 @@ public class ConvertAnonymousRefactoring {
     }));
     return result;
   }
-
   private boolean isStatic() {
     return check_qy1soj_a0a52(SNodeOperations.getAncestor(myClassToRefactor, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false, false));
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0b0k(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -264,7 +244,6 @@ public class ConvertAnonymousRefactoring {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0b0b0l(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -281,7 +260,6 @@ public class ConvertAnonymousRefactoring {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0b0a0q(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -295,7 +273,6 @@ public class ConvertAnonymousRefactoring {
     }
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0a1a61(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -321,7 +298,6 @@ public class ConvertAnonymousRefactoring {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0a1a02(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -336,7 +312,6 @@ public class ConvertAnonymousRefactoring {
     quotedNode_3.addChild("operation", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0w(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -344,7 +319,6 @@ public class ConvertAnonymousRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0x(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -361,7 +335,6 @@ public class ConvertAnonymousRefactoring {
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_qy1soj_a0a0a2a32(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -369,7 +342,6 @@ public class ConvertAnonymousRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static boolean check_qy1soj_a0a52(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(Boolean.TYPE, checkedDotOperand, "virtual_isStatic_8986964027630462944", new Object[]{});

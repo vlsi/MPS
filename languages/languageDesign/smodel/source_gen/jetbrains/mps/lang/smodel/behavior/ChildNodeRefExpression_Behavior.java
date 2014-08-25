@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ChildNodeRefExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getTargetNode_3575813534625153815(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "targetNode", false);
   }

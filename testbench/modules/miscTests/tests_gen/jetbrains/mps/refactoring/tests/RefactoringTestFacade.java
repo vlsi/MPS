@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.ModelAccess;
 /*package*/ class RefactoringTestFacade extends RefactoringFacade {
   /*package*/ RefactoringTestFacade() {
   }
-
   public void doExecuteInTest(final RefactoringContext refactoringContext) {
     try {
       if (!(refactoringContext.getRefactoring().init(refactoringContext))) {
@@ -26,7 +25,6 @@ import jetbrains.mps.smodel.ModelAccess;
       myLog.error(null, t);
     }
   }
-
   @Override
   public void execute(RefactoringContext context) {
     throw new UnsupportedOperationException();

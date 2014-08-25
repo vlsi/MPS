@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class HeadMapOperation_BehaviorDescriptor extends SortedMapOperation_BehaviorDescriptor {
   public HeadMapOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation";

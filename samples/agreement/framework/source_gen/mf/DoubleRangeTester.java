@@ -9,7 +9,6 @@ public class DoubleRangeTester extends TestCase {
   public DoubleRangeTester(String arg) {
     super(arg);
   }
-
   public void testBasic() {
     DoubleRange range = new DoubleRange(-5.5, 6.6);
     Assert.assertTrue(range.includes(5));
@@ -18,7 +17,6 @@ public class DoubleRangeTester extends TestCase {
     Assert.assertTrue(!(range.includes(6.601)));
     Assert.assertTrue(!(range.includes(-5.501)));
   }
-
   public void testExclusives() {
     DoubleRange exRange = new DoubleRange(-5.5, false, 6.6, true);
     Assert.assertTrue(exRange.includes(5));
@@ -28,13 +26,11 @@ public class DoubleRangeTester extends TestCase {
     Assert.assertTrue(!(exRange.includes(6.601)));
     Assert.assertTrue(!(exRange.includes(-5.501)));
   }
-
   public void testEmpty() {
     Assert.assertTrue(!(new DoubleRange(5, 6).isEmpty()));
     Assert.assertTrue(!(new DoubleRange(6, 6).isEmpty()));
     Assert.assertTrue(new DoubleRange(7, 6).isEmpty());
   }
-
   public void testUpTo() {
     DoubleRange range = DoubleRange.upTo(5.5);
     Assert.assertTrue(range.includes(5.5));
@@ -42,7 +38,6 @@ public class DoubleRangeTester extends TestCase {
     Assert.assertTrue(range.includes(Double.NEGATIVE_INFINITY));
     Assert.assertTrue(!(range.includes(5.5001)));
   }
-
   public void testAndMore() {
     DoubleRange range = DoubleRange.andMore(5.5);
     Assert.assertTrue(range.includes(5.5));
@@ -51,7 +46,6 @@ public class DoubleRangeTester extends TestCase {
     Assert.assertTrue(range.includes(Double.POSITIVE_INFINITY));
     Assert.assertTrue(range.includes(5.5001));
   }
-
   public void testOverlaps() {
     DoubleRange r5_10 = new DoubleRange(5, 10);
     DoubleRange r1_10 = new DoubleRange(1, 10);
@@ -72,7 +66,6 @@ public class DoubleRangeTester extends TestCase {
     Assert.assertTrue(!(r1_10.overlaps(x10_12)));
     Assert.assertTrue(!(x10_12.overlaps(r1_10)));
   }
-
   public void testIncludesRange() {
     DoubleRange r5_10 = new DoubleRange(5, 10);
     DoubleRange r1_10 = new DoubleRange(1, 10);

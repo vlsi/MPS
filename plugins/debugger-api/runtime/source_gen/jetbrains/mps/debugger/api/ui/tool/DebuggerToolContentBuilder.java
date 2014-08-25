@@ -46,7 +46,6 @@ public class DebuggerToolContentBuilder implements Disposable {
   private final ExecutionResult myExecutionResult;
   private final Executor myExecutor;
   private final ExecutionEnvironment myEnvironment;
-
   public DebuggerToolContentBuilder(Project project, ProgramRunner runner, Executor executor, ExecutionResult executionResult, ExecutionEnvironment env) {
     myProject = project;
     myRunner = runner;
@@ -54,14 +53,12 @@ public class DebuggerToolContentBuilder implements Disposable {
     myExecutionResult = executionResult;
     myEnvironment = env;
   }
-
   @Override
   public void dispose() {
     for (Disposable disposable : myDisposeables) {
       disposable.dispose();
     }
   }
-
   private RunContentDescriptor createDescriptor() {
     RunProfile profile = myEnvironment.getRunProfile();
     ExecutionConsole console = myExecutionResult.getExecutionConsole();
@@ -76,11 +73,9 @@ public class DebuggerToolContentBuilder implements Disposable {
     ui.getOptions().setTopToolbar(((BaseGroup) ActionManager.getInstance().getAction("jetbrains.mps.debugger.api.ui.actions.DebugStepsMenu_ActionGroup")), ActionPlaces.UNKNOWN);
     return contentDescriptor;
   }
-
   private DebuggerToolContentBuilder.MyRunContentDescriptor createDescriptorInternal(RunnerLayoutUi ui, RunProfile profile) {
     return new DebuggerToolContentBuilder.MyRunContentDescriptor(profile, myExecutionResult, myReuseProhibited, ui.getComponent(), this);
   }
-
   private void buildUi(RunnerLayoutUi ui, ExecutionConsole console) {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
     AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
@@ -96,7 +91,6 @@ public class DebuggerToolContentBuilder implements Disposable {
     consoleContent.setCloseable(false);
     ui.addContent(consoleContent, 1, PlaceInGrid.center, false);
   }
-
   private ActionGroup createActionToolbar(RunnerLayoutUi ui, RunContentDescriptor contentDescriptor) {
     DefaultActionGroup actionGroup = new DefaultActionGroup();
     //  TODO use context to get data to the action 
@@ -112,7 +106,6 @@ public class DebuggerToolContentBuilder implements Disposable {
     actionGroup.add(new CloseAction(myExecutor, contentDescriptor, myProject));
     return actionGroup;
   }
-
   /**
    * * @param reuseContent see {@link RunContentDescriptor#myContent}
    */
@@ -123,28 +116,23 @@ public class DebuggerToolContentBuilder implements Disposable {
     }
     return descriptor;
   }
-
   private static class MyRunContentDescriptor extends RunContentDescriptor {
     private final boolean myReuseProhibited;
     private final Disposable myAdditionalDisposable;
-
     public MyRunContentDescriptor(final RunProfile profile, final ExecutionResult executionResult, final boolean reuseProhibited, final JComponent component, @NotNull Disposable additionalDisposable) {
       super(executionResult.getExecutionConsole(), executionResult.getProcessHandler(), component, profile.getName(), profile.getIcon());
       myReuseProhibited = reuseProhibited;
       myAdditionalDisposable = additionalDisposable;
     }
-
     @Override
     public boolean isContentReuseProhibited() {
       return myReuseProhibited;
     }
-
     @Override
     public void dispose() {
       Disposer.dispose(myAdditionalDisposable);
       super.dispose();
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DebuggerToolContentBuilder.class);
 }

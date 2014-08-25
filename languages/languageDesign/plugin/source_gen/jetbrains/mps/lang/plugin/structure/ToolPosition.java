@@ -13,15 +13,12 @@ public enum ToolPosition {
   right("right", "RIGHT");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<ToolPosition> getConstants() {
     List<ToolPosition> list = ListSequence.fromList(new LinkedList<ToolPosition>());
     ListSequence.fromList(list).addElement(ToolPosition.bottom);
@@ -30,11 +27,9 @@ public enum ToolPosition {
     ListSequence.fromList(list).addElement(ToolPosition.right);
     return list;
   }
-
   public static ToolPosition getDefault() {
     return ToolPosition.bottom;
   }
-
   public static ToolPosition parseValue(String value) {
     if (value == null) {
       return ToolPosition.getDefault();
@@ -53,14 +48,11 @@ public enum ToolPosition {
     }
     return ToolPosition.getDefault();
   }
-
   private String myValue;
-
   ToolPosition(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

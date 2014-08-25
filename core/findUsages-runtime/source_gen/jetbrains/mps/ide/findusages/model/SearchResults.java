@@ -14,25 +14,20 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SearchResults<T> implements UsagesList {
   private final Set<T> mySearchedNodes;
   private List<SearchResult<T>> mySearchResults;
-
   public SearchResults() {
     mySearchedNodes = new HashSet<T>();
     mySearchResults = new ArrayList<SearchResult<T>>();
   }
-
   public SearchResults(Set<T> searchedNodes, List<SearchResult<T>> searchResults) {
     mySearchedNodes = searchedNodes;
     mySearchResults = searchResults;
   }
-
   public Set<T> getSearchedNodes() {
     return mySearchedNodes;
   }
-
   public List<SearchResult<T>> getSearchResults() {
     return mySearchResults;
   }
-
   public Set<T> getResultObjects() {
     Set<T> resultObjects = new HashSet<T>();
     for (SearchResult<T> searchResult : mySearchResults) {
@@ -40,12 +35,10 @@ public class SearchResults<T> implements UsagesList {
     }
     return resultObjects;
   }
-
   public void addAll(SearchResults<T> sr) {
     mySearchedNodes.addAll(sr.mySearchedNodes);
     mySearchResults.addAll(sr.mySearchResults);
   }
-
   @Override
   public Set<SModel> getAffectedModels() {
     LinkedHashSet<SModel> result = new LinkedHashSet<SModel>();
@@ -63,7 +56,6 @@ public class SearchResults<T> implements UsagesList {
     }
     return result;
   }
-
   public void remove(T node) {
     for (SearchResult result : new ArrayList<SearchResult>(mySearchResults)) {
       if (result.getObject() == node) {
@@ -71,11 +63,9 @@ public class SearchResults<T> implements UsagesList {
       }
     }
   }
-
   public void remove(SearchResult<T> searchResult) {
     mySearchResults.remove(searchResult);
   }
-
   public List<SearchResult<T>> getAliveResults() {
     List<SearchResult<T>> alive = new ArrayList<SearchResult<T>>();
     for (SearchResult result : mySearchResults) {
@@ -85,7 +75,6 @@ public class SearchResults<T> implements UsagesList {
     }
     return alive;
   }
-
   public Set<T> getAliveNodes() {
     Set<T> alive = new HashSet<T>();
     for (T node : mySearchedNodes) {
@@ -95,7 +84,6 @@ public class SearchResults<T> implements UsagesList {
     }
     return alive;
   }
-
   public void removeDuplicates() {
     mySearchResults = new ArrayList(new LinkedHashSet(mySearchResults));
   }

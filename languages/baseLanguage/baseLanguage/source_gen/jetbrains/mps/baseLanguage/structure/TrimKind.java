@@ -12,15 +12,12 @@ public enum TrimKind {
   trailing("trailing", "trailing");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<TrimKind> getConstants() {
     List<TrimKind> list = ListSequence.fromList(new LinkedList<TrimKind>());
     ListSequence.fromList(list).addElement(TrimKind.both);
@@ -28,11 +25,9 @@ public enum TrimKind {
     ListSequence.fromList(list).addElement(TrimKind.trailing);
     return list;
   }
-
   public static TrimKind getDefault() {
     return TrimKind.both;
   }
-
   public static TrimKind parseValue(String value) {
     if (value == null) {
       return TrimKind.getDefault();
@@ -48,14 +43,11 @@ public enum TrimKind {
     }
     return TrimKind.getDefault();
   }
-
   private String myValue;
-
   TrimKind(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

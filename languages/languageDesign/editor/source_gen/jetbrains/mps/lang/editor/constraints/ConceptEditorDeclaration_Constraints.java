@@ -24,12 +24,10 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
   public ConceptEditorDeclaration_Constraints() {
     super("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration");
   }
-
   @Override
   public boolean hasOwnCanBeRootMethod() {
     return true;
   }
-
   @Override
   public boolean canBeRoot(IOperationContext context, SModel model, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeARoot(model, context);
@@ -40,7 +38,6 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -49,7 +46,6 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -64,10 +60,8 @@ public class ConceptEditorDeclaration_Constraints extends BaseConstraintsDescrip
     });
     return properties;
   }
-
   public static boolean static_canBeARoot(SModel model, final IOperationContext operationContext) {
     return LanguageAspect.EDITOR.is(model) || SModelStereotype.isGeneratorModel(model);
   }
-
   private static SNodePointer canBeRootBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)", "1227090187426");
 }

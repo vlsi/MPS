@@ -15,11 +15,6 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.highlighting;
 
-import com.intellij.openapi.project.DumbService;
-import com.intellij.openapi.project.DumbService.DumbModeListener;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Disposer;
-import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.highlighting.listeners.ModuleNodeListeners;
@@ -34,6 +29,7 @@ import jetbrains.mps.ide.ui.tree.MPSTreeNodeListener;
 import jetbrains.mps.ide.ui.tree.TreeElement;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.concurrent.ArrayBlockingQueue;
@@ -46,27 +42,26 @@ public class ProjectPaneTreeHighlighter {
   private final GenStatusUpdater myGenStatusVisitor = new GenStatusUpdater();
   private final ErrorChecker myErrorVisitor = new ErrorChecker();
   private final ModifiedMarker myModifiedMarker = new ModifiedMarker();
-  private final TreeNodeUpdater myUpdater = new TreeNodeUpdater();
+  private final TreeNodeUpdater myUpdater;
   private final ThreadPoolExecutor myExecutor = new ThreadPoolExecutor(0, 3, 5, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(100), new RescheduleExecutionHandler());
 
   private final MyMPSTreeNodeListener myNodeListener = new MyMPSTreeNodeListener();
-  private ProjectPaneTree myTree;
+  private final ProjectPaneTree myTree;
   // containers that control listeners of module and model respectively
   private ModuleNodeListeners myModuleListeners;
   private SModelNodeListeners myModelListeners;
 
-  public void init(ProjectPaneTree tree) {
+  public ProjectPaneTreeHighlighter(ProjectPaneTree tree, Project mpsProject) {
     myTree = tree;
+    myUpdater = new TreeNodeUpdater(mpsProject);
+  }
 
+  public void init() {
     myGenStatusVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
     myErrorVisitor.setUpdater(myUpdater).setExecutor(myExecutor);
     myModifiedMarker.setUpdater(myUpdater).setExecutor(myExecutor);
 
     myTree.addTreeNodeListener(myNodeListener);
-
-    MessageBusConnection connection = myTree.getProject().getMessageBus().connect();
-    Disposer.register(myTree, connection);
-    connection.subscribe(DumbService.DUMB_MODE, new MyDumbModeListener());
   }
 
   public void dispose() {
@@ -117,33 +112,21 @@ public class ProjectPaneTreeHighlighter {
     getModelListeners().detach(modelNode);
   }
 
+  /**
+   * Highlighter knows which visitor(s) shall run in dumb mode, while outer code controls dumb mode awareness
+   */
+  public void dumbUpdate() {
+    if (!ProjectPane.isShowGenStatus()) return;
+    dispatchForHierarchy(myTree.getRootNode());
+  }
 
-  private class MyDumbModeListener implements DumbModeListener {
-    @Override
-    public void enteredDumbMode() {
-      if (!ProjectPane.isShowGenStatus()) return;
-      dispatchForHierarchy(myTree.getRootNode());
+  private void dispatchForHierarchy(MPSTreeNode treeNode) {
+    if (treeNode instanceof TreeElement) {
+      ((TreeElement) treeNode).accept(myGenStatusVisitor);
     }
-
-    @Override
-    public void exitDumbMode() {
-      if (!ProjectPane.isShowGenStatus()) return;
-
-      Project p = myTree.getProject();
-      if (p.isDisposed()) return;
-
-      dispatchForHierarchy(myTree.getRootNode());
+    for (MPSTreeNode node : treeNode) {
+      dispatchForHierarchy(node);
     }
-
-    public void dispatchForHierarchy(MPSTreeNode treeNode) {
-      if (treeNode instanceof TreeElement) {
-        ((TreeElement) treeNode).accept(myGenStatusVisitor);
-      }
-      for (MPSTreeNode node : treeNode) {
-        dispatchForHierarchy(node);
-      }
-    }
-
   }
 
   private class MyMPSTreeNodeListener implements MPSTreeNodeListener {

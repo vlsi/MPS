@@ -11,27 +11,21 @@ import jetbrains.mps.console.blCommand.behavior.ConsoleOperation_Behavior;
 public class OfAspectOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor implements ConsoleOperation_BehaviorDescriptor {
   public OfAspectOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
-
   public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
   }
-
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
-
   public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
     return ConsoleOperation_Behavior.virtual_getKind_7006261637493126084(thisConcept);
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
-    return OfAspectOperation_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+    return ConsoleHelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.OfAspectOperation";

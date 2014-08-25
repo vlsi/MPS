@@ -9,7 +9,6 @@ import org.junit.runner.notification.Failure;
 public class RunTests {
   public RunTests() {
   }
-
   public static void main(String[] args) {
     Result result = JUnitCore.runClasses(ScriptBuilder_Test.class);
     if (result.getFailureCount() > 0) {

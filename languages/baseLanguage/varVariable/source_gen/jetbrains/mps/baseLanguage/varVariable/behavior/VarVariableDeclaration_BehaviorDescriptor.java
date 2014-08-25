@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 public class VarVariableDeclaration_BehaviorDescriptor extends LocalVariableDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public VarVariableDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.varVariable.structure.VarVariableDeclaration";

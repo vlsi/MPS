@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StyleAttributeDeclaration_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode declaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(declaration, "valueType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       if (!((SLinkOperations.getTarget(declaration, "defaultValue", true) != null))) {
@@ -44,22 +43,18 @@ public class check_StyleAttributeDeclaration_NonTypesystemRule extends AbstractN
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(declaration, "Attribute with name " + SPropertyOperations.getString(declaration, "name") + " is declared several times in this language", "r:00000000-0000-4000-0000-011c8959029a(jetbrains.mps.lang.editor.typesystem)", "3160281275655011020", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean neq_6ch539_a0a0a0a0a0a0b0b(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

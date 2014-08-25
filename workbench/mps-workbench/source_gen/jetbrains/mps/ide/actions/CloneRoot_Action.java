@@ -23,19 +23,16 @@ import org.apache.log4j.LogManager;
 
 public class CloneRoot_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CloneRoot_Action() {
     super("Clone Root", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
     this.addPlace(null);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -46,7 +43,6 @@ public class CloneRoot_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +75,6 @@ public class CloneRoot_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("nodes")))) {
@@ -95,6 +90,5 @@ public class CloneRoot_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CloneRoot_Action.class);
 }

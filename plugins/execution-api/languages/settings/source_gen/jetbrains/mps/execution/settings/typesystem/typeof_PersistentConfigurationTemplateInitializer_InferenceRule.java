@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PersistentConfigurationTemplateInitializer_InferenceRule() {
   }
-
   public void applyRule(final SNode configurationTemplateInitializer, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       SNode _nodeToCheck_1029348928467 = configurationTemplateInitializer;
@@ -45,22 +44,18 @@ public class typeof_PersistentConfigurationTemplateInitializer_InferenceRule ext
     }
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfigurationTemplateInitializer";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_xmb8fa_a0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

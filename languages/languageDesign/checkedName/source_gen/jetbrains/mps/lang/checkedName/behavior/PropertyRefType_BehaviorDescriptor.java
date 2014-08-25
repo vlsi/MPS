@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 public class PropertyRefType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public PropertyRefType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.checkedName.structure.PropertyRefType";

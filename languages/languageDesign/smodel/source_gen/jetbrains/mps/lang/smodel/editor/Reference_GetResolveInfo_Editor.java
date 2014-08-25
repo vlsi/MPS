@@ -20,11 +20,9 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_77164a_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_77164a_a(editorContext, node);
   }
-
   private EditorCell createComponent_77164a_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.AliasComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +31,6 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_77164a_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_77164a_a");
@@ -43,7 +40,6 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_77164a_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_77164a_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'resolveInfo' operation");
     editorCell.setCellId("Constant_77164a_a0");
@@ -55,7 +51,6 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_77164a_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_77164a_b0");
@@ -65,7 +60,6 @@ public class Reference_GetResolveInfo_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_77164a_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns resolve info for this reference");
     editorCell.setCellId("Constant_77164a_c0");

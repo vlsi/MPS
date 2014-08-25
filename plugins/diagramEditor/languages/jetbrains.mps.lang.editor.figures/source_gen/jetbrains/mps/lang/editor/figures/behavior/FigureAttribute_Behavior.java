@@ -12,11 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class FigureAttribute_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getFigureClass_5422656561931904592(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
-
   public static Iterable<SNode> call_getPrameterAttributes_5422656561931892777(SNode thisNode) {
     return ListSequence.fromList(ClassConcept_Behavior.call_getAllSuperClassifiers_4892662966716545618(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(thisNode))).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -24,7 +22,6 @@ public class FigureAttribute_Behavior {
       }
     });
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(FigureAttribute_Behavior.call_getFigureClass_5422656561931904592(thisNode), "name");
   }

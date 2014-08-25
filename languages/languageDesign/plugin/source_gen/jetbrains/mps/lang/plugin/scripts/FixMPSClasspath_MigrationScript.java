@@ -19,15 +19,12 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "MPS.Core -> MPS.Core / MPS.OpenAPI / Annotations; fix MPS.Platform/Worbench refs";
       }
-
       public String getAdditionalInfo() {
         return "MPS.Core -> MPS.Core / MPS.OpenAPI / Annotations; fix MPS.Platform/Worbench refs";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.core.structure.BaseConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
@@ -43,11 +40,9 @@ public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
           }
         }).isNotEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         MpsClasspathRefUtil.updateReferencesToMpsClasspath(node);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

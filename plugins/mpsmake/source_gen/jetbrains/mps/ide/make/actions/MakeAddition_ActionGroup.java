@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class MakeAddition_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(MakeAddition_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.make.actions.MakeAddition_ActionGroup";
-
   public MakeAddition_ActionGroup() {
     super("Make", ID);
     this.setIsInternal(false);

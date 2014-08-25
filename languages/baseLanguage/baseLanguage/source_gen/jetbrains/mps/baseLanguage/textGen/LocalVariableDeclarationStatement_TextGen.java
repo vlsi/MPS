@@ -35,6 +35,5 @@ public class LocalVariableDeclarationStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(LocalVariableDeclarationStatement_TextGen.class);
 }

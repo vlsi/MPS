@@ -23,7 +23,6 @@ public class CustomOperator_Constraints extends BaseConstraintsDescriptor {
   public CustomOperator_Constraints() {
     super("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperator");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class CustomOperator_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class CustomOperator_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return CustomOperatorUsage_Behavior.call_getVisibleCustomOperators_1141736782992984505(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.overloadedOperators.structure.CustomOperatorUsage"))), _context.getModel());
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_jioqvq_a0a1a0a0a1a0b0a1a1;
@@ -51,6 +48,5 @@ public class CustomOperator_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_jioqvq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:9b7a7baa-7b52-4b41-8293-5aa14d41220f(jetbrains.mps.baseLanguage.overloadedOperators.constraints)", "2838654975957402203");
 }

@@ -20,7 +20,6 @@ public class CrossView extends GroupView {
   private final LineView myFirstLine = new NonFocusableLineView();
   private final LineView mySecondLine = new NonFocusableLineView();
 
-
   public CrossView() {
     children().add(myFirstLine);
     children().add(mySecondLine);
@@ -45,7 +44,6 @@ public class CrossView extends GroupView {
       }
     }.attachRoot();
   }
-
   private void updateCross(Vector position, int length) {
     if (position == null) {
       setVisible(false);
@@ -58,7 +56,6 @@ public class CrossView extends GroupView {
     mySecondLine.start().set(new Vector(position.x + length, position.y - length));
     mySecondLine.end().set(new Vector(position.x - length, position.y + length));
   }
-
   private void setVisible(boolean isVisible) {
     visible().set(isVisible);
     myFirstLine.visible().set(isVisible);

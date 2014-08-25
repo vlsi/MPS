@@ -9,69 +9,55 @@ import java.util.NoSuchElementException;
 
 public class NullSequence<T> extends Sequence<T> implements Iterable<T> {
   private static final NullSequence<Object> INSTANCE = new NullSequence<Object>();
-
   protected NullSequence() {
   }
-
   @Override
   public T first() {
     return null;
   }
-
   @Override
   public T last() {
     return null;
   }
-
   @Override
   public ISequence<T> cut(int length) {
     return this;
   }
-
   @Override
   public ISequence<T> skip(int length) {
     return this;
   }
-
   @Override
   public ISequence<T> tail(int length) {
     return this;
   }
-
   @Override
   public ISequence<T> take(int length) {
     return this;
   }
-
   @Override
   public ISequence<T> page(int skip, int skipplustake) {
     return this;
   }
-
   @Override
   public Iterator<T> iterator() {
     return new NullSequence.EmptyIterator<T>();
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullSequence<U> instance() {
     return (NullSequence<U>) INSTANCE;
   }
-
   protected static class EmptyIterator<U> implements Iterator<U> {
     protected EmptyIterator() {
     }
-
     @Override
     public boolean hasNext() {
       return false;
     }
-
     @Override
     public U next() {
       throw new NoSuchElementException();
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();

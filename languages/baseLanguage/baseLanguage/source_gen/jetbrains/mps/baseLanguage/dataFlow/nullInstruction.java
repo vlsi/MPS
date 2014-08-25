@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class nullInstruction extends GeneratedInstruction {
   private SNode myexpression;
   private String myPresentation;
-
   public nullInstruction(SNode expression) {
     StringBuilder sb = new StringBuilder();
     sb.append("null");
@@ -18,12 +17,10 @@ public class nullInstruction extends GeneratedInstruction {
     sb.append(" " + expression);
     myPresentation = sb.toString();
   }
-
   @Override
   public String commandPresentation() {
     return myPresentation;
   }
-
   public SNode getexpression() {
     return myexpression;
   }

@@ -29,21 +29,17 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
   public boolean canWrapValue(@NotNull IValueProxy value) {
     return value instanceof IObjectValueProxy;
   }
-
   public ValueWrapper createValueWrapper(IValueProxy value, ThreadReference threadReference) {
     return new ObjectWrapperFactory.JavaObjectValue((IObjectValueProxy) value, threadReference);
   }
-
   @Override
   public String getName() {
     return "Object";
   }
-
   public static class JavaObjectValue extends ValueWrapper<IObjectValueProxy> {
     public JavaObjectValue(IObjectValueProxy value, ThreadReference threadReference) {
       super(value, threadReference);
     }
-
     @Override
     public List<IWatchable> getSubvaluesImpl() {
       List<IWatchable> watchables = new ArrayList<IWatchable>();
@@ -66,13 +62,11 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
       return watchables;
     }
   }
-
   public static class JavaField extends JavaWatchable implements IWatchable {
     private final Field myField;
     private final ObjectReference myParent;
     private final JavaValue myCachedValue;
     private final String myName;
-
     public JavaField(Field field, ObjectReference parent, ThreadReference threadReference) {
       super(threadReference);
       myField = field;
@@ -80,16 +74,13 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
       myCachedValue = CustomViewersManager.getInstance().fromJdi(myParent.getValue(myField), threadReference);
       myName = calculateName();
     }
-
     public Field getField() {
       return myField;
     }
-
     @Override
     public String getName() {
       return myName;
     }
-
     private String calculateName() {
       String name = myField.name();
       if (myField.isStatic() && !(myField.declaringType().name().equals(myParent.referenceType().name()))) {
@@ -97,22 +88,18 @@ public class ObjectWrapperFactory extends ValueWrapperFactory {
       }
       return name;
     }
-
     @Override
     public IValue getValue() {
       return myCachedValue;
     }
-
     @Override
     public Icon getPresentationIcon() {
       return getValue().getPresentationIcon();
     }
-
     @Override
     public SNode getNode() {
       return null;
     }
-
     @Override
     public WatchablesCategory getCategory() {
       return WatchablesCategory.NONE;

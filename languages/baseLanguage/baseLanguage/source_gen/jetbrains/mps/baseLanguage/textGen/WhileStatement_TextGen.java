@@ -51,6 +51,5 @@ public class WhileStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(WhileStatement_TextGen.class);
 }

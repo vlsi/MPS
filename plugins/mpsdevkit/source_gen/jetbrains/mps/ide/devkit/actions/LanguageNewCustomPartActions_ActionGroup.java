@@ -11,7 +11,6 @@ import com.intellij.openapi.extensions.PluginId;
 public class LanguageNewCustomPartActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(LanguageNewCustomPartActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.devkit.actions.LanguageNewCustomPartActions_ActionGroup";
-
   public LanguageNewCustomPartActions_ActionGroup() {
     super("LanguageNewCustomPartActions", ID);
     this.setIsInternal(false);

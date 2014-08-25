@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.KeyboardHandler;
+import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -78,10 +79,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
@@ -173,28 +171,25 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     return myMenuEmpty;
   }
 
-  public void setVisible(boolean b) {
-    if (myChooserActivated != b) {
-      if (b) {
+  public void setVisible(boolean visible) {
+    if (myChooserActivated != visible) {
+      boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
+      if (visible) {
+        getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
-        if (!RuntimeFlags.isTestMode()) {
-          getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize);
-          myNodeSubstituteInfo.invalidateActions();
-          rebuildMenuEntries();
+        myNodeSubstituteInfo.invalidateActions();
+        rebuildMenuEntries();
+        if (canShowPopup) {
           getPopupWindow().setVisible(true);
           getPopupWindow().relayout();
-          getPopupWindow().setSelectionIndex(0);
-          getPopupWindow().scrollToSelection();
         } else {
-          getPatternEditor().activate(null, myPatternEditorLocation, myPatternEditorSize);
-          myNodeSubstituteInfo.invalidateActions();
-          rebuildMenuEntries();
           getPopupWindow().initListModel();
-          getPopupWindow().setSelectionIndex(0);
         }
+        getPopupWindow().setSelectionIndex(0);
+        getPopupWindow().scrollToSelection();
         myPopupActivated = true;
       } else {
-        if (!RuntimeFlags.isTestMode()) {
+        if (canShowPopup) {
           getPopupWindow().setVisible(false);
           getPatternEditor().done();
           getPopupWindow().setRelativeCell(null);
@@ -205,11 +200,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         myContextCell = null;
       }
     }
-    myChooserActivated = b;
+    myChooserActivated = visible;
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() :  myEditorComponent.getTypecheckingContextOwner();
+    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() : myEditorComponent.getTypecheckingContextOwner();
     return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
         new Computation<List<SubstituteAction>>() {
           @Override
@@ -242,68 +237,26 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     final String pattern = getPatternEditor().getPattern();
 
     List<SubstituteAction> matchingActions = getMatchingActions(pattern, false);
-    if (matchingActions.isEmpty()) {
-      matchingActions = getMatchingActions(IntelligentInputUtil.trimLeft(pattern), false);
+    boolean needToTrim;
+    String trimPattern = IntelligentInputUtil.trimLeft(pattern);
+    if (pattern.equals(trimPattern)) {
+      needToTrim = false;
+    } else {
+      needToTrim = true;
+      if (!matchingActions.isEmpty()) {
+        for (SubstituteAction action : matchingActions) {
+          if (action.canSubstitute(pattern)) {
+            needToTrim = false;
+            break;
+          }
+        }
+      }
     }
-
+    if (needToTrim) {
+      matchingActions = getMatchingActions(trimPattern, false);
+    }
     try {
-      Collections.sort(matchingActions, new Comparator<SubstituteAction>() {
-        private Map<SubstituteAction, Integer> mySortPriorities = new HashMap<SubstituteAction, Integer>();
-        private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
-
-        private int getSortPriority(SubstituteAction a) {
-          Integer result = mySortPriorities.get(a);
-          if (result == null) {
-            if (a.getParameterObject() instanceof SNode) {
-              result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
-            } else {
-              result = 0;
-            }
-            mySortPriorities.put(a, result);
-          }
-          return result;
-        }
-
-        private String getVisibleMatchingText(SubstituteAction a) {
-          String result = myVisibleMatchingTexts.get(a);
-          if (result == null) {
-            result = a.getVisibleMatchingText(pattern);
-            myVisibleMatchingTexts.put(a, result);
-          }
-          return result;
-        }
-
-        @Override
-        public int compare(SubstituteAction i1, SubstituteAction i2) {
-          boolean strictly1 = i1.canSubstituteStrictly(pattern);
-          boolean strictly2 = i2.canSubstituteStrictly(pattern);
-          if (strictly1 != strictly2) {
-            return strictly1 ? -1 : 1;
-          }
-
-          int p1 = getSortPriority(i1);
-          int p2 = getSortPriority(i2);
-          if (p1 != p2) {
-            return p1 - p2;
-          }
-
-          String s1 = getVisibleMatchingText(i1);
-          String s2 = getVisibleMatchingText(i2);
-
-          boolean null_s1 = (s1 == null || s1.length() == 0);
-          boolean null_s2 = (s2 == null || s2.length() == 0);
-          if (null_s1 && null_s2) return 0;
-          if (null_s1) return 1;
-          if (null_s2) return -1;
-          int comparisonResult = s1.compareTo(s2);
-
-          if (comparisonResult == 0) {
-            return 0;
-          }
-
-          return comparisonResult;
-        }
-      });
+      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(needToTrim ? trimPattern : pattern));
 
       if (myIsSmart /*&& false*/) {
         sortSmartActions(matchingActions);
@@ -396,7 +349,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (!RuntimeFlags.isTestMode()) {
+        if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();
@@ -413,18 +366,20 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private boolean doSubstitute() {
-    String pattern = getPatternEditor().getPattern();
+    final String pattern = getPatternEditor().getPattern();
 
-    List<SubstituteAction> matchingActions = new ArrayList<SubstituteAction>();
-    for (SubstituteAction item : mySubstituteActions) {
-      if (item.canSubstitute(pattern)) {
-        matchingActions.add(item);
+    if (mySubstituteActions.size() == 1) {
+      final SubstituteAction action = mySubstituteActions.get(0);
+      Boolean canSubstitute = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        @Override
+        public Boolean compute() {
+          return action.canSubstitute(pattern);
+        }
+      });
+      if (canSubstitute) {
+        setVisible(false);
+        action.substitute(myEditorComponent.getEditorContext(), pattern);
       }
-    }
-
-    if (matchingActions.size() == 1) {
-      setVisible(false);
-      matchingActions.get(0).substitute(myEditorComponent.getEditorContext(), pattern);
     }
     return true;
   }
@@ -433,37 +388,31 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - getPageSize());
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + getPageSize());
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
       getPopupWindow().setSelectionIndex(0);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
       getPopupWindow().setSelectionIndex(mySubstituteActions.size() - 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
 
@@ -497,16 +446,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
   }
 
-  private void updatePatternEditor() {
-    if (!myMenuEmpty) {
-      int oldPosition = myPatternEditor.getCaretPosition();
-      String oldPattern = myPatternEditor.getPattern();
-      String newText = getPopupWindow().getSelectedText(oldPattern);
-      myPatternEditor.setText(newText);
-      myPatternEditor.setCaretPosition(Math.min(newText.length(), oldPosition));
-    }
-  }
-
   private void repaintPopupMenu() {
     if (myPopupActivated) {
       getPopupWindow().scrollToSelection();
@@ -515,7 +454,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void relayoutPopupMenu() {
-    if (myPopupActivated) {
+   if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }
@@ -607,12 +546,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         @Override
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              updatePatternEditor();
-            }
-          });
         }
 
         @Override
@@ -774,6 +707,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private JLabel myRight = new JLabel("", JLabel.RIGHT);
     private static final int HORIZONTAL_GAP = 10;
     private boolean myLightweightMode = false;
+    private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
+    private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
+    private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
+    private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
 
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
@@ -840,7 +777,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       try {
-        myLeft.setText(action.getVisibleMatchingText(pattern));
+        if (!isSelected) {
+          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_HIGHLIGHT_COLOR));
+        } else {
+          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_SELECTION_HIGHLIGHT_COLOR));
+        }
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
         LOG.error(null, t);
@@ -869,6 +810,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myLeft.setPreferredSize(null);
       Dimension oldPreferredSize = myLeft.getPreferredSize();
       myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
+    }
+    private String colorToHtml(Color color) {
+      String rgb = Integer.toHexString(color.getRGB());
+      return rgb.substring(2, rgb.length());
     }
 
     public void setLightweightMode(boolean isLightweightMode) {

@@ -5,12 +5,12 @@
   <root nodeRef="r:511c0af5-be4d-432a-9b92-22734315f3a1(jetbrains.mps.textGenTest.test2.package2)/1440921264474787839">
     <file name="Class3.java">
       <node id="1440921264474787841" at="7,0,9,0" concept="0" trace="Class3#()V" />
-      <node id="1440921264474787849" at="10,0,12,0" concept="1" trace="method#()V" />
+      <node id="1440921264474787849" at="9,0,11,0" concept="1" trace="method#()V" />
       <scope id="1440921264474787844" at="7,19,7,19" />
-      <scope id="1440921264474787852" at="10,31,10,31" />
+      <scope id="1440921264474787852" at="9,31,9,31" />
       <scope id="1440921264474787841" at="7,0,9,0" />
-      <scope id="1440921264474787849" at="10,0,12,0" />
-      <unit id="1440921264474787839" at="6,0,13,0" name="jetbrains.mps.textGenTest.test2.package2.Class3" />
+      <scope id="1440921264474787849" at="9,0,11,0" />
+      <unit id="1440921264474787839" at="6,0,12,0" name="jetbrains.mps.textGenTest.test2.package2.Class3" />
     </file>
   </root>
 </debug-info>

@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BaseAssignmentExpression_DataFlow extends DataFlowBuilder {
   public BaseAssignmentExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getNode(), "virtual_isReadAsignment_1215696236033", new Object[]{})) {

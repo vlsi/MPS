@@ -6,7 +6,6 @@ package jetbrains.mps.lang.access.behavior;
 public class ExecuteWriteActionStatement_BehaviorDescriptor extends BaseExecuteCommandStatementSync_BehaviorDescriptor {
   public ExecuteWriteActionStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement";

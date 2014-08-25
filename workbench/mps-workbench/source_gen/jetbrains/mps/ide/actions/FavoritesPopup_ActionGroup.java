@@ -13,7 +13,6 @@ public class FavoritesPopup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FavoritesPopup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup";
   public static final String LABEL_ID_addToFavorites = ID + "addToFavorites";
-
   public FavoritesPopup_ActionGroup() {
     super("Add to Favorites", ID);
     this.setIsInternal(false);

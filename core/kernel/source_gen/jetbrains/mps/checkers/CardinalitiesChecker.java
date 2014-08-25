@@ -15,7 +15,6 @@ import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 public class CardinalitiesChecker extends AbstractConstraintsChecker {
   public CardinalitiesChecker() {
   }
-
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
     SNode concept = SNodeOperations.getConceptDeclaration(node);
@@ -47,7 +46,6 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
       }
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

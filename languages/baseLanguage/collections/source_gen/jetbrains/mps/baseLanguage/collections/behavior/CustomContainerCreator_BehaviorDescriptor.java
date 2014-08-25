@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CustomContainerCreator_BehaviorDescriptor extends AbstractContainerCreator_BehaviorDescriptor {
   public CustomContainerCreator_BehaviorDescriptor() {
   }
-
   public SNode virtual_createType_1237722437229(SNode thisNode) {
     return CustomContainerCreator_Behavior.virtual_createType_1237722437229(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator";

@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class FixInstanceOfExpressionPrecedences_QuickFix extends QuickFix_Runtime {
   public FixInstanceOfExpressionPrecedences_QuickFix() {
   }
-
   public void execute(SNode node) {
     SNode instanceOfExpression = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceOfExpression");
     SNodeOperations.replaceWithAnother(instanceOfExpression, SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true));

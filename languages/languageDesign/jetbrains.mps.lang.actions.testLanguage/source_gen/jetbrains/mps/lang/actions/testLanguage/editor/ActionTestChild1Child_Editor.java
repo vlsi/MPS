@@ -20,7 +20,6 @@ public class ActionTestChild1Child_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_bubcfq_a(editorContext, node);
   }
-
   private EditorCell createCollection_bubcfq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_bubcfq_a");
@@ -31,14 +30,12 @@ public class ActionTestChild1Child_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_bubcfq_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_bubcfq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "action test child1 child");
     editorCell.setCellId("Constant_bubcfq_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_bubcfq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -56,7 +53,6 @@ public class ActionTestChild1Child_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_bubcfq_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_bubcfq_c0");
@@ -68,7 +64,6 @@ public class ActionTestChild1Child_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_bubcfq_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_bubcfq_d0");

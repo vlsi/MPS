@@ -7,18 +7,14 @@ import jetbrains.mps.testbench.PerformanceMessenger;
 public class CheckingTestStatistic {
   private long myErrors = 0;
   private long myWarnings = 0;
-
   public CheckingTestStatistic() {
   }
-
   public void reportError() {
     myErrors++;
   }
-
   public void reportWarning() {
     myWarnings++;
   }
-
   public void printStatistic() {
     PerformanceMessenger.getInstance().report("auditErrors", getNumErrors());
     PerformanceMessenger.getInstance().report("auditWarnings", getNumWarnings());
@@ -26,11 +22,9 @@ public class CheckingTestStatistic {
     System.out.println(getNumErrors() + " errors total");
     System.out.println(getNumWarnings() + " warnings total");
   }
-
   public long getNumErrors() {
     return myErrors;
   }
-
   public long getNumWarnings() {
     return myWarnings;
   }

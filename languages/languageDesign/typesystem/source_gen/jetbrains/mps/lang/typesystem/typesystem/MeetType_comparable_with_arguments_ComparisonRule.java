@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MeetType_comparable_with_arguments_ComparisonRule extends ComparisonRule_Runtime {
   public MeetType_comparable_with_arguments_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     for (SNode arg : SLinkOperations.getTargets(node2, "argument", true)) {
       if (MatchingUtil.matchNodes(arg, node1)) {
@@ -22,29 +21,24 @@ public class MeetType_comparable_with_arguments_ComparisonRule extends Compariso
     }
     return false;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.lang.typesystem.structure.MeetType";
   }

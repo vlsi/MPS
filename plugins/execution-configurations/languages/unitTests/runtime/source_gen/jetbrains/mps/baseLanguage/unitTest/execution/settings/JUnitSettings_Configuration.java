@@ -6,20 +6,23 @@ import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import com.intellij.execution.configurations.RuntimeConfigurationError;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.lang.test.util.RunStateEnum;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import jetbrains.mps.execution.lib.ClonableList;
-import java.util.List;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.RunCachesManager;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
+import java.util.List;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import com.intellij.openapi.progress.ProgressManager;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -32,28 +35,32 @@ import org.apache.log4j.LogManager;
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (this.getRunType() == null) {
-      throw new RuntimeConfigurationException("Type of test not selected.");
+      throw new RuntimeConfigurationError("Type of test not selected.");
     }
     if (this.getRunType() != null) {
       // We do not validate, only check if there is something to test, since validating everything be very slow 
       // see MPS-8781 JUnit run configuration check method performance. 
-      if (eq_jtq3ac_a0c0b0a0b(this.getRunType(), JUnitRunTypes2.PROJECT)) {
+      if (eq_jtq3ac_a0c0b0a0b(this.getRunType(), JUnitRunTypes.PROJECT)) {
         return;
       }
       if (!(hasTests(ProjectHelper.toMPSProject(myProject)))) {
-        throw new RuntimeConfigurationException("Could not find tests to run.");
+        throw new RuntimeConfigurationError("Could not find tests to run.");
       }
     }
-  }
 
+    if (this.getLightExec() && JUnitLightExecutor.getRunState().get() != RunStateEnum.IDLE) {
+      throw new RuntimeConfigurationError("There is already another instance running tests in-process. Only one instance is allowed to run in-process.");
+    }
+    if (!(this.getLightExec()) && this.getReuseCaches() && !(canSaveCachesPath())) {
+      throw new RuntimeConfigurationError("The chosen caches directory is already locked by another run. Please choose another one.");
+    }
+  }
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -61,99 +68,94 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public String getModel() {
     return myState.myModel;
   }
-
   public String getModule() {
     return myState.myModule;
   }
-
+  public boolean getLightExec() {
+    return myState.myLightExec;
+  }
+  public boolean getReuseCaches() {
+    return myState.myReuseCaches;
+  }
+  public boolean getDebug() {
+    return myState.myDebug;
+  }
+  public String getCachesPath() {
+    return myState.myCachesPath;
+  }
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
   }
-
   public ClonableList<String> getTestMethods() {
     return myState.myTestMethods;
   }
-
-  public JUnitRunTypes2 getRunType() {
+  public JUnitRunTypes getRunType() {
     return myState.myRunType;
   }
-
   public void setModel(String value) {
     myState.myModel = value;
   }
-
   public void setModule(String value) {
     myState.myModule = value;
   }
-
+  public void setLightExec(boolean value) {
+    myState.myLightExec = value;
+  }
+  public void setReuseCaches(boolean value) {
+    myState.myReuseCaches = value;
+  }
+  public void setDebug(boolean value) {
+    myState.myDebug = value;
+  }
+  public void setCachesPath(String value) {
+    myState.myCachesPath = value;
+  }
   public void setTestCases(ClonableList<String> value) {
     myState.myTestCases = value;
   }
-
   public void setTestMethods(ClonableList<String> value) {
     myState.myTestMethods = value;
   }
-
-  public void setRunType(JUnitRunTypes2 value) {
+  public void setRunType(JUnitRunTypes value) {
     myState.myRunType = value;
   }
-
-  public List<ITestNodeWrapper> getTests(final Project project) {
-    final List<ITestNodeWrapper>[] all = (List<ITestNodeWrapper>[]) new List[1];
-    final JUnitSettings_Configuration settings = this;
-    if (this.getRunType() != null) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          all[0] = Sequence.fromIterable(JUnitSettings_Configuration.this.getRunType().collect(settings, project)).toListSequence();
-        }
-      });
-    }
-    return all[0];
+  public String getDefaultPath() {
+    return new DefaultCachesPathChooser().chooseDir();
   }
-
+  public boolean canSaveCachesPath() {
+    return this.getReuseCaches() && !(RunCachesManager.isLocked(this.getCachesPath()));
+  }
+  public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
+    return this.getLightExec() && !(this.getDebug());
+  }
+  public List<ITestNodeWrapper> getTests(final Project project) {
+    if (this.getRunType() == null) {
+      return null;
+    }
+    Iterable<ITestNodeWrapper> testNodes = this.getRunType().collect(this, project);
+    return Sequence.fromIterable(testNodes).toListSequence();
+  }
   public boolean hasTests(final Project project) {
     final boolean[] hasTests = {true};
     final JUnitSettings_Configuration settings = this;
     if (this.getRunType() != null) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          hasTests[0] = Sequence.fromIterable(JUnitSettings_Configuration.this.getRunType().collect(settings, project)).isNotEmpty();
+          hasTests[0] = JUnitSettings_Configuration.this.getRunType().hasTests(settings, project);
         }
       });
     }
     return hasTests[0];
   }
-
   public List<ITestNodeWrapper> getTestsUnderProgress(final Project project) {
-    final List<ITestNodeWrapper> stuffToTest = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
-    final JUnitRunTypes2 runTypes2 = this.getRunType();
-    final JUnitSettings_Configuration settings = this;
-    Runnable collect = new Runnable() {
-      @Override
-      public void run() {
-        if (runTypes2 != null) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              ListSequence.fromList(stuffToTest).addSequence(Sequence.fromIterable(runTypes2.collect(settings, project)));
-            }
-          });
-        }
-      }
-    };
-    if (eq_jtq3ac_a0a4a61_0(this.getRunType(), JUnitRunTypes2.PROJECT) || eq_jtq3ac_a0a4a61(this.getRunType(), JUnitRunTypes2.MODULE)) {
-      // collecting for module/project is slow, so execute under progress 
-      // todo: get rid of casts to MPSProject 
-      ProgressManager.getInstance().runProcessWithProgressSynchronously(collect, "Collecting Tests To Run", false, ProjectHelper.toIdeaProject(project));
-    } else {
-      collect.run();
+    if (this.getRunType() == null) {
+      return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     }
-    return stuffToTest;
+    return Sequence.fromIterable(this.getRunType().collect(this, project, true)).toListSequence();
   }
-
   public List<SNodeReference> getTestsToMake(final Project project) {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
@@ -168,7 +170,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       }
     }).toListSequence();
   }
-
   @Override
   public JUnitSettings_Configuration clone() {
     JUnitSettings_Configuration clone = null;
@@ -183,22 +184,27 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return clone;
   }
-
   public class MyState {
     public String myModel;
     public String myModule;
+    public boolean myLightExec = true;
+    public boolean myReuseCaches = true;
+    public boolean myDebug = false;
+    public String myCachesPath = getDefaultPath();
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
-    public JUnitRunTypes2 myRunType = JUnitRunTypes2.PROJECT;
-
+    public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
       state.myModel = myModel;
       state.myModule = myModule;
+      state.myLightExec = myLightExec;
+      state.myReuseCaches = myReuseCaches;
+      state.myDebug = myDebug;
+      state.myCachesPath = myCachesPath;
       if (myTestCases != null) {
         state.myTestCases = myTestCases.clone();
       }
@@ -209,40 +215,25 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       return state;
     }
   }
-
   public JUnitSettings_Configuration(com.intellij.openapi.project.Project project) {
     myProject = project;
   }
-
   private final com.intellij.openapi.project.Project myProject;
   private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
-
   public JUnitSettings_Configuration createCloneTemplate() {
     return new JUnitSettings_Configuration(myProject);
   }
-
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
   }
-
   public SettingsEditorEx<JUnitSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
-
   private static boolean eq_jtq3ac_a0c0b0a0b(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_jtq3ac_a0a4a61(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
-  }
-
-  private static boolean eq_jtq3ac_a0a4a61_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }

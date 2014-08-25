@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class AbstractStateMachineElement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getStateMachine_7943979732673457916(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.samples.multipleProjections.stateMachine.structure.StateMachine");
   }

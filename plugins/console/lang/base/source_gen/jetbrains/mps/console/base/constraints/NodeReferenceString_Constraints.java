@@ -18,7 +18,6 @@ public class NodeReferenceString_Constraints extends BaseConstraintsDescriptor {
   public NodeReferenceString_Constraints() {
     super("jetbrains.mps.console.base.structure.NodeReferenceString");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class NodeReferenceString_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getReferenceNode(), "referencePresentation");

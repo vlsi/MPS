@@ -46,19 +46,15 @@ import jetbrains.mps.messages.IMessage;
 
 public class BaseGeneratorWorker extends MpsWorker {
   private final BaseGeneratorWorker.MyMessageHandler myMessageHandler = new BaseGeneratorWorker.MyMessageHandler();
-
   public BaseGeneratorWorker(Script whatToDo) {
     super(whatToDo);
   }
-
   public BaseGeneratorWorker(Script whatToDo, MpsWorker.AntLogger logger) {
     super(whatToDo, logger);
   }
-
   protected BaseGeneratorWorker.MyMessageHandler getMyMessageHandler() {
     return myMessageHandler;
   }
-
   @Override
   protected void executeTask(final Project project, MpsWorker.ObjectsToProcess go) {
     setGenerationProperties();
@@ -66,7 +62,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       generate(project, go);
     }
   }
-
   protected void setGenerationProperties() {
     GeneratorProperties gp = new GeneratorProperties(myWhatToDo);
     IModifiableGenerationSettings settings = GenerationSettingsProvider.getInstance().getGenerationSettings();
@@ -87,12 +82,10 @@ public class BaseGeneratorWorker extends MpsWorker {
     settings.setShowBadChildWarning(warnings);
     info(String.format("Generating: strict mode is %s, parallel generation is %s (%d threads), in-place is %s, warnings are %s", onoff[(strictMode ? 0 : 1)], onoff[(parallelMode ? 0 : 1)], (parallelMode ? threadCount : 1), onoff[(inplace ? 0 : 1)], onoff[(warnings ? 0 : 1)]));
   }
-
   @Override
   protected void showStatistic() {
     failBuild("generation");
   }
-
   protected void generate(Project project, MpsWorker.ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (Project p : go.getProjects()) {
@@ -125,7 +118,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     }
     ModelAccess.instance().flushEventQueue();
   }
-
   @Override
   public void work() {
     setupEnvironment();
@@ -170,7 +162,6 @@ public class BaseGeneratorWorker extends MpsWorker {
     dispose();
     showStatistic();
   }
-
   protected void makeProject() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -183,7 +174,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     });
   }
-
   private Iterable<SModule> withGenerators(Iterable<SModule> modules) {
     return Sequence.fromIterable(modules).concat(Sequence.fromIterable(modules).where(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -195,7 +185,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     }));
   }
-
   private Iterable<SModel> getModelsToGenerate(SModule mod) {
     return Sequence.fromIterable(((Iterable<SModel>) mod.getModels())).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
@@ -207,7 +196,6 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     });
   }
-
   protected Iterable<MResource> collectResources(IOperationContext context, final MpsWorker.ObjectsToProcess go) {
     final Wrappers._T<Iterable<SModel>> models = new Wrappers._T<Iterable<SModel>>(null);
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -236,19 +224,15 @@ public class BaseGeneratorWorker extends MpsWorker {
       }
     });
   }
-
   public static void main(String[] args) {
     MpsWorker mpsWorker = new BaseGeneratorWorker(Script.fromDumpInFile(new File(args[0])), new MpsWorker.SystemOutLogger());
     mpsWorker.workFromMain();
   }
-
   private class MyMessageHandler implements IMessageHandler {
     private final List<String> myGenerationErrors = new ArrayList<String>();
     private final List<String> myGenerationWarnings = new ArrayList<String>();
-
     /*package*/ MyMessageHandler() {
     }
-
     @Override
     public void handle(IMessage msg) {
       switch (msg.getKind()) {
@@ -270,20 +254,16 @@ public class BaseGeneratorWorker extends MpsWorker {
         default:
       }
     }
-
     public List<String> getGenerationErrors() {
       return myGenerationErrors;
     }
-
     public List<String> getGenerationWarnings() {
       return myGenerationWarnings;
     }
-
     public void clean() {
       myGenerationErrors.clear();
       myGenerationWarnings.clear();
     }
-
     @Override
     public void clear() {
     }

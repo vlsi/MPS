@@ -11,7 +11,6 @@ public abstract class FoldingAreaButton {
   private int myY;
   private String myToolTipText;
   private Icon myIcon;
-
   public FoldingAreaButton(ChangeGroup changeGroup, int x, int y, String toolTipText, Icon icon) {
     myChangeGroup = changeGroup;
     myX = x;
@@ -19,25 +18,19 @@ public abstract class FoldingAreaButton {
     myToolTipText = toolTipText;
     myIcon = icon;
   }
-
   protected ChangeGroup getChangeGroup() {
     return myChangeGroup;
   }
-
   public int getX() {
     return myX;
   }
-
   public int getY() {
     return myY;
   }
-
   public abstract void performAction();
-
   public String getToolTipText() {
     return myToolTipText;
   }
-
   public void paint(Graphics g) {
     myIcon.paintIcon(null, g, getX(), getY());
   }

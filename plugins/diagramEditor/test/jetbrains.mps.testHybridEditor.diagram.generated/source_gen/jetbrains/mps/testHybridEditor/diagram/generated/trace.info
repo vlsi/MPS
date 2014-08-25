@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="15,0,60,0" name="jetbrains.mps.testHybridEditor.diagram.generated.Language" />
+      <unit at="13,0,37,0" name="jetbrains.mps.testHybridEditor.diagram.generated.Language" />
     </file>
   </root>
 </debug-info>

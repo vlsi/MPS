@@ -26,18 +26,15 @@ import org.apache.log4j.LogManager;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToUsageInMappingConfig_Action() {
     super("Go to Mapping Config", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (!(SModelStereotype.isGeneratorModel(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node")))))) {
       return false;
@@ -53,7 +50,6 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     }
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -67,7 +63,6 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -91,7 +86,6 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((SModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
@@ -102,6 +96,5 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToUsageInMappingConfig_Action.class);
 }

@@ -2456,6 +2456,7 @@
     <property name="virtualPackage" nameId="tpck.1193676396447" value="CellLayout" />
     <property name="conceptAlias" nameId="tpce.5092175715804935370" value="indent_old" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1106270491082" resolveInfo="CellLayout" />
+    <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="7945085613660522985" nodeInfo="ig" />
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1219226236603" nodeInfo="ig">
     <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -3283,6 +3284,10 @@
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8233876857994286197" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="side" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpdg.1215604970641" resolveInfo="Side" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="870577895075788418" nodeInfo="ig">
+      <property name="name" nameId="tpck.1169194664001" value="tag" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="1140813780565" resolveInfo="RightTransformAnchorTag" />
     </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3525058663444303551" nodeInfo="ig">

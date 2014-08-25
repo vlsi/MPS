@@ -10,19 +10,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ConstraintFunction_CanBeAChild_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ConstraintFunction_CanBeAChild_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return ConstraintFunction_CanBeAChild_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return ConstraintFunction_CanBeAChild_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return ConstraintFunction_CanBeAChild_Behavior.virtual_usesParameterObjectFor_1213877374432(thisNode, parameter);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild";

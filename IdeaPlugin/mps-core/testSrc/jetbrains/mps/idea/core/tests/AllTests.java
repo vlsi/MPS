@@ -16,16 +16,17 @@
 
 package jetbrains.mps.idea.core.tests;
 
-import jetbrains.mps.ide.IdeMain;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import jetbrains.mps.TestMode;
+import jetbrains.mps.RuntimeFlags;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({ProjectViewTests.class, FacetTests.class, EditorTests.class})
 public class AllTests {
   @BeforeClass
   public static void setTestMode() {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 }

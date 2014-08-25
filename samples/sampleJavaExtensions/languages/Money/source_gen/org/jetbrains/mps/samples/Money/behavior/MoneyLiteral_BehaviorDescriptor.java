@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MoneyLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MoneyLiteral_BehaviorDescriptor() {
   }
-
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return MoneyLiteral_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.Money.structure.MoneyLiteral";

@@ -6,7 +6,6 @@ package jetbrains.mps.build.mps.behavior;
 public class BuildMps_Language_BehaviorDescriptor extends BuildMps_Module_BehaviorDescriptor {
   public BuildMps_Language_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMps_Language";

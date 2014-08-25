@@ -21,7 +21,6 @@ public class GeneratedFilesExcludePolicy extends BaseDirectoryIndexExcludePolicy
   protected GeneratedFilesExcludePolicy(@NotNull Project project) {
     super(project);
   }
-
   @NotNull
   @Override
   protected Set<VirtualFile> getAllExcludeRoots() {

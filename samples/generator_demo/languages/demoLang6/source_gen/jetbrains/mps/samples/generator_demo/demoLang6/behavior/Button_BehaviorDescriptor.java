@@ -7,7 +7,6 @@ import jetbrains.mps.sampleXML.behavior.ElementPart_BehaviorDescriptor;
 public class Button_BehaviorDescriptor extends ElementPart_BehaviorDescriptor {
   public Button_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.generator_demo.demoLang6.structure.Button";

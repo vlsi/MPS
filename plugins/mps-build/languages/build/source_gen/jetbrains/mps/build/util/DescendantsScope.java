@@ -20,15 +20,12 @@ public abstract class DescendantsScope extends Scope {
   private SNode node;
   private SNode link;
   private SNode concept;
-
   public DescendantsScope(SNode node, SNode link, SNode concept) {
     this.node = node;
     this.link = link;
     this.concept = concept;
   }
-
   public abstract String getName(SNode child);
-
   @Override
   public Iterable<SNode> getAvailableElements(@Nullable final String prefix) {
     Iterable<SNode> seq = ListSequence.fromList(SNodeOperations.getChildren(node, link)).translate(new ITranslator2<SNode, SNode>() {
@@ -46,7 +43,6 @@ public abstract class DescendantsScope extends Scope {
       }
     });
   }
-
   @Nullable
   @Override
   public SNode resolve(SNode contextNode, @NotNull String refText) {
@@ -63,7 +59,6 @@ public abstract class DescendantsScope extends Scope {
     }
     return result;
   }
-
   @Nullable
   @Override
   public String getReferenceText(SNode contextNode, @NotNull SNode node) {
@@ -84,7 +79,6 @@ public abstract class DescendantsScope extends Scope {
     }
     return result;
   }
-
   public static DescendantsScope forNamedElements(SNode node, SNode link, SNode concept) {
     return new DescendantsScope(node, link, concept) {
       @Override

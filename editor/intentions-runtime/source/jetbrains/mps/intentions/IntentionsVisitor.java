@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.intentions;
 
+import jetbrains.mps.util.annotation.ToRemove;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,17 +25,20 @@ import java.util.Set;
  * Date: 11/1/12
  */
 interface IntentionsVisitor {
+  /**
+   * @deprecated no longer invoked as there are no Intention instances out there.
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   boolean visit(Intention intention);
 
   boolean visit(IntentionFactory intentionFactory);
 
   class CollectAvailableIntentionsVisitor implements IntentionsVisitor {
-    private Set<Intention> myAvailableIntentions = new HashSet<Intention>();
     private Set<IntentionFactory> myAvailableIntentionFactories = new HashSet<IntentionFactory>();
 
     @Override
     public boolean visit(Intention intention) {
-      myAvailableIntentions.add(intention);
       return true;
     }
 
@@ -41,10 +46,6 @@ interface IntentionsVisitor {
     public boolean visit(IntentionFactory intentionFactory) {
       myAvailableIntentionFactories.add(intentionFactory);
       return true;
-    }
-
-    public Set<Intention> getAvailableIntentions() {
-      return myAvailableIntentions;
     }
 
     public Set<IntentionFactory> getAvailableIntentionFactories() {

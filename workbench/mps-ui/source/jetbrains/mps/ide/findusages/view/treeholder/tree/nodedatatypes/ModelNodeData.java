@@ -72,7 +72,7 @@ public class ModelNodeData extends BaseNodeData {
 
   @Override
   public Object getIdObject() {
-    return isResultNode() ? (getModelReference().toString() + "/" + getPlainText()) : getModel();
+    return getModelReference().toString() + "/" + getPlainText();
   }
 
   public SModel getModel() {

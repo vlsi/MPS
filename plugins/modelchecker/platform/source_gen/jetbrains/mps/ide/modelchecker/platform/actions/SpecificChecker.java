@@ -21,9 +21,7 @@ import org.apache.log4j.LogManager;
 public abstract class SpecificChecker {
   public SpecificChecker() {
   }
-
   public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressMonitor progressContext, SRepository repository);
-
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String severity, String issueType, IModelCheckerFix fix) {
     if (filterIssue(node)) {
       if (SNodeOperations.getContainingRoot(node) == null) {
@@ -34,7 +32,6 @@ public abstract class SpecificChecker {
       ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResultForNode(node, message, fix, severity, issueType));
     }
   }
-
   public static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
       case ERROR:
@@ -47,7 +44,6 @@ public abstract class SpecificChecker {
         return ModelChecker.SEVERITY_ERROR;
     }
   }
-
   public static boolean filterIssue(SNode node) {
     SNode container = AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer"));
     if (container == null) {
@@ -60,6 +56,5 @@ public abstract class SpecificChecker {
     }
     return true;
   }
-
   protected static Logger LOG = LogManager.getLogger(SpecificChecker.class);
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ImaginaryUnit_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ImaginaryUnit_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.ImaginaryUnit";

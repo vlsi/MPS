@@ -45,7 +45,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_tny8cn_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_tny8cn_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new NodeWithPortQueries_Editor.BlockCellImpl_tny8cn_a(editorContext, node);
     editorCell.setCellId("DiagramNode_tny8cn_a");
@@ -53,7 +52,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_tny8cn_a extends BlockCell {
     private final PropertyMapperCell<Integer> myPropertyCell_tny8cn_a0a;
     private final PropertyMapperCell<Integer> myPropertyCell_tny8cn_a1a;
@@ -62,14 +60,12 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
     private final PropertyMapperCell<Integer> myPropertyCell_tny8cn_a4a;
     private final ObservableList<String> myInputPorts = new ObservableArrayList<String>();
     private final ObservableList<String> myOutputPorts = new ObservableArrayList<String>();
-
     private BlockCellImpl_tny8cn_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_tny8cn_a0a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -80,7 +76,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -91,7 +86,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "width", "" + (value));
         }
@@ -102,7 +96,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "height", "" + (value));
         }
@@ -113,7 +106,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "lineWidth");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "lineWidth", "" + (value));
         }
@@ -122,7 +114,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
       myPropertyCell_tny8cn_a4a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_tny8cn_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "lineWidth"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_tny8cn_a0a.synchronize();
@@ -141,7 +132,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         }
       }), myOutputPorts.listIterator(), new HashSet<String>(myOutputPorts));
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -167,7 +157,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
                 }
               };
             }
-
             private RectView createPortView(String id) {
               RectView view = new RectView();
               view.prop(JetpadUtils.SOURCE).set(getSNode());
@@ -197,7 +186,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
                 }
               };
             }
-
             private RectView createPortView(String id) {
               RectView view = new RectView();
               view.prop(JetpadUtils.SOURCE).set(getSNode());
@@ -275,7 +263,6 @@ public class NodeWithPortQueries_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

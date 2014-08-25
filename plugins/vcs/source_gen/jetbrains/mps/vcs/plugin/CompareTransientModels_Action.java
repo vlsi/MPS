@@ -28,22 +28,18 @@ import org.apache.log4j.LogManager;
 
 public class CompareTransientModels_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Actions.Diff;
-
   public CompareTransientModels_Action() {
     super("Compare Models", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((List<SModel>) MapSequence.fromMap(_params).get("models")).size() == 2 && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0) instanceof TransientModelsModule.TransientSModelDescriptor && ((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1) instanceof TransientModelsModule.TransientSModelDescriptor && eq_5whyyr_a0a0a3(SNodeOperations.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(0)), SNodeOperations.getModelLongName(((List<SModel>) MapSequence.fromMap(_params).get("models")).get(1)));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -57,7 +53,6 @@ public class CompareTransientModels_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -72,7 +67,6 @@ public class CompareTransientModels_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final SModel[] model = SortUtil.sortModels(((List<SModel>) MapSequence.fromMap(_params).get("models"))).toArray(new SModel[((List<SModel>) MapSequence.fromMap(_params).get("models")).size()]);
@@ -92,9 +86,7 @@ public class CompareTransientModels_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CompareTransientModels_Action.class);
-
   private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

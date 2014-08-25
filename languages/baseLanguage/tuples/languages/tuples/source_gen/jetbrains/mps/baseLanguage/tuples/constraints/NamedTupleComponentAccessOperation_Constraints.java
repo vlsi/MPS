@@ -31,12 +31,10 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
   public NamedTupleComponentAccessOperation_Constraints() {
     super("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -47,7 +45,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
 
     return result;
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -56,7 +53,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
@@ -65,7 +61,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -74,7 +69,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -88,7 +82,6 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_snq09y_a0a1a0a0a1a0b0a1a4;
@@ -98,11 +91,9 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
   private static SNodePointer breakingNode_snq09y_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
 }

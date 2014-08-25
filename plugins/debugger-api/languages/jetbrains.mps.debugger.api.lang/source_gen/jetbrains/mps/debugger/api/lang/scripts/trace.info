@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root nodeRef="r:2ba4781c-9b5c-4ca4-9a8b-b3b397109c9e(jetbrains.mps.debugger.api.lang.scripts)/1713726972417136549">
+    <file name="MigrateBreakpointCreator_MigrationScript.java">
+      <node id="1713726972417136549" at="13,87,14,41" concept="5" />
+      <node id="1713726972417137847" at="16,31,17,46" concept="4" />
+      <node id="1713726972417137847" at="19,41,20,46" concept="4" />
+      <node id="1713726972417137847" at="22,59,23,82" concept="4" />
+      <node id="1713726972417139809" at="25,59,26,132" concept="4" />
+      <node id="1713726972417152614" at="28,52,29,152" concept="2" />
+      <node id="1713726972417159443" at="29,152,30,209" concept="2" />
+      <node id="1713726972417173363" at="30,209,31,68" concept="2" />
+      <node id="1713726972417137847" at="33,42,34,20" concept="4" />
+      <node id="1713726972417137847" at="16,0,19,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="1713726972417137847" at="19,0,22,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="1713726972417137847" at="22,0,25,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="1713726972417137847" at="25,0,28,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1713726972417137847" at="33,0,36,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="1713726972417137847" at="28,0,33,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1713726972417136549" at="14,41,36,7" concept="0" />
+      <node id="1713726972417137847" at="14,41,36,7" concept="2" />
+      <node id="1713726972417136549" at="13,0,38,0" concept="1" trace="MigrateBreakpointCreator_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="1713726972417137847" at="16,31,17,46" />
+      <scope id="1713726972417137847" at="19,41,20,46" />
+      <scope id="1713726972417137847" at="22,59,23,82" />
+      <scope id="1713726972417139096" at="25,59,26,132" />
+      <scope id="1713726972417137847" at="33,42,34,20" />
+      <scope id="1713726972417137847" at="16,0,19,0" />
+      <scope id="1713726972417137847" at="19,0,22,0" />
+      <scope id="1713726972417137847" at="22,0,25,0" />
+      <scope id="1713726972417137847" at="25,0,28,0">
+        <var name="node" id="1713726972417137847" />
+      </scope>
+      <scope id="1713726972417137849" at="28,52,31,68" />
+      <scope id="1713726972417137847" at="33,0,36,0" />
+      <scope id="1713726972417137847" at="28,0,33,0">
+        <var name="node" id="1713726972417137847" />
+      </scope>
+      <scope id="1713726972417137847" at="14,41,36,7" />
+      <scope id="1713726972417136549" at="13,87,36,7" />
+      <scope id="1713726972417136549" at="13,0,38,0">
+        <var name="operationContext" id="1713726972417136549" />
+      </scope>
+      <unit id="1713726972417137847" at="15,28,36,5" name="jetbrains.mps.debugger.api.lang.scripts.MigrateBreakpointCreator_MigrationScript$1" />
+      <unit id="1713726972417136549" at="12,0,39,0" name="jetbrains.mps.debugger.api.lang.scripts.MigrateBreakpointCreator_MigrationScript" />
+    </file>
+  </root>
+</debug-info>
+

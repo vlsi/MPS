@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class wrapMisplacedTernaryOperatorInParens_QuickFix extends QuickFix_Runtime {
   public wrapMisplacedTernaryOperatorInParens_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Wrap Misplaced Ternary Operator with Parens";
   }
-
   public void execute(SNode node) {
     SNode parens = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
     SLinkOperations.setTarget(parens, "expression", node, true);

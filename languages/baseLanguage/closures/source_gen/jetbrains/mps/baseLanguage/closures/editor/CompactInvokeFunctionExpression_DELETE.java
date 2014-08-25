@@ -13,19 +13,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class CompactInvokeFunctionExpression_DELETE {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CompactInvokeFunctionExpression_DELETE.CompactInvokeFunctionExpression_DELETE_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new CompactInvokeFunctionExpression_DELETE.CompactInvokeFunctionExpression_DELETE_BACKSPACE(node));
   }
-
   public static class CompactInvokeFunctionExpression_DELETE_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CompactInvokeFunctionExpression_DELETE_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "function", true));
+    }
+  }
+  public static class CompactInvokeFunctionExpression_DELETE_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public CompactInvokeFunctionExpression_DELETE_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "function", true));
     }

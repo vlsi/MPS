@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildSource_JavaContentRoot_BehaviorDescriptor extends BuildSource_JavaSources_BehaviorDescriptor {
   public BuildSource_JavaContentRoot_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildSource_JavaContentRoot";

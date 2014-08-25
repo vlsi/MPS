@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -58,6 +59,16 @@ public class GlobalModuleDependenciesManager {
   }
 
   /**
+   * Return only modules with 'reexport' mark in the dependents subtree
+   */
+  public Collection<SModule> getOnlyReexportModules() {
+    Set<SModule> result = new HashSet<SModule>();
+    for (SModule module : myModules) {
+      collect(module, result, Deptype.VISIBLE);
+    }
+    return result;
+  }
+  /**
    * Return all modules of a given dependency type in scope of given
    * <p/>
    * RUNTIMES:
@@ -71,7 +82,7 @@ public class GlobalModuleDependenciesManager {
    * If we don't respect reexport flag, we should collect all accessible nodes from the given set in a
    * dependencies graph. The "neighbours scheme" works in this case, too.
    *
-   * @param depType determines the type of dependecies we want to get
+   * @param depType determines the type of dependencies we want to get
    * @return all modules in scope of given
    */
   public Collection<SModule> getModules(Deptype depType) {
@@ -114,9 +125,9 @@ public class GlobalModuleDependenciesManager {
     Set<SModule> result = new HashSet<SModule>();
     for (SDependency dependency : module.getDeclaredDependencies()) {
       SModule m = dependency.getTarget();
-      if (m == null) continue;
-
-      if (includeNonReexport || dependency.isReexport()) {
+      // if module A extends module B, and module C depends from A, module B shall always be part of C dependencies along with A.
+      boolean isExport = dependency.isReexport() || dependency.getScope() == SDependencyScope.EXTENDS;
+      if (includeNonReexport || isExport) {
         result.add(m);
       }
     }
@@ -138,20 +149,20 @@ public class GlobalModuleDependenciesManager {
   }
 
   public enum Deptype {
-    /*
-    *  All modules visible from given modules
-    *  This includes modules from dependencies, transitive, respecting reexports
-    *  Including initial modules
-    */
-    VISIBLE(false, true),
+    /**
+     *  All modules visible from given modules
+     *  This includes modules from dependencies, transitive, respecting reexports
+     *  Including initial modules
+     */
+    VISIBLE(false, false),
 
-    /*
-    *  All modules required for compilation of given modules
-    *  This includes visible modules and used language runtimes, respecting reexports
-    *  Including languages with runtime stub paths
-    *  Including initial modules
-    */
-    COMPILE(true, true),
+    /**
+     *  All modules required for compilation of given modules
+     *  This includes visible modules and used language runtimes, respecting reexports
+     *  Including languages with runtime stub paths
+     *  Including initial modules
+     */
+    COMPILE(true, false),
 
     /**
      * All modules required for execution of given modules
@@ -160,15 +171,15 @@ public class GlobalModuleDependenciesManager {
      * Including languages with runtime stub paths
      * Including initial modules
      */
-    EXECUTE(true, false);
+    EXECUTE(true, true);
 
 
     public boolean runtimes;
     public boolean reexportAll;
 
-    Deptype(boolean runtimes, boolean respectReexport) {
+    Deptype(boolean runtimes, boolean reexportAll) {
       this.runtimes = runtimes;
-      this.reexportAll = !respectReexport;
+      this.reexportAll = reexportAll;
     }
   }
 }

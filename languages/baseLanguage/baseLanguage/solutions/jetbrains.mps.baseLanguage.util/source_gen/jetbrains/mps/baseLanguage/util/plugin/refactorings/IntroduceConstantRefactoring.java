@@ -15,7 +15,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   public IntroduceConstantRefactoring() {
   }
-
   @Override
   public SNode doRefactoring() {
     SNode newDeclaration = _quotation_createNode_2jj2z2_a0a0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(getExpressionType()), SNodeOperations.copyNode(getExpression()), getName());
@@ -29,7 +28,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
     return newDeclaration;
   }
-
   @Override
   protected SNode findContainer(SNode node) {
     SNode container = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -38,7 +36,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
     return container;
   }
-
   @Override
   public void replaceNode(SNode node, SNode declaration) {
     if (Scope.getScope(Scope.parent(node), node, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration")).contains(declaration)) {
@@ -47,11 +44,9 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
       SNodeOperations.replaceWithAnother(node, _quotation_createNode_2jj2z2_a0a0a0a0d(this.myContainer, declaration));
     }
   }
-
   public static boolean isApplicable(SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
-
   private static SNode _quotation_createNode_2jj2z2_a0a0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
@@ -75,7 +70,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     }
     return quotedNode_5;
   }
-
   private static SNode _quotation_createNode_2jj2z2_a0a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -83,7 +77,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_2jj2z2_a0a0a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -91,7 +84,6 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_2jj2z2_a0a0a0a0d(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

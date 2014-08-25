@@ -2,10 +2,10 @@
 <debug-info>
   <root>
     <file name="GeneratedForeach_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,24,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,22,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
 </debug-info>

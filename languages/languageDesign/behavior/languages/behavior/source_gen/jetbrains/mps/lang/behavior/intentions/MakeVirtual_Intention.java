@@ -16,64 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeVirtual_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeVirtual_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
-
   public String getPresentation() {
     return "MakeVirtual";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.behavior.intentions.MakeVirtual_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.behavior";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)", "1225201879322");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeVirtual_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isVirtual")) {
         return "Make Non-Virtual";
@@ -81,14 +67,12 @@ public class MakeVirtual_Intention implements IntentionFactory {
         return "Make Virtual";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isVirtual", "" + (!(SPropertyOperations.getBoolean(node, "isVirtual"))));
       if (!(SPropertyOperations.getBoolean(node, "isVirtual"))) {
         SPropertyOperations.set(node, "isAbstract", "" + (false));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeVirtual_Intention.this;
     }

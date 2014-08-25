@@ -19,17 +19,14 @@ import org.jetbrains.annotations.NotNull;
 public class ExceptionBreakpoint extends JavaBreakpoint {
   private static final Logger LOG = LogManager.getLogger(ExceptionBreakpoint.class);
   private final String myExceptionName;
-
   public ExceptionBreakpoint(String exceptionName, Project project) {
     super(project);
     myExceptionName = exceptionName;
   }
-
   @Override
   protected String getClassNameToPrepare() {
     return myExceptionName;
   }
-
   @Override
   protected void createRequestForPreparedClass(EventsProcessor debugProcess, ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
@@ -48,28 +45,23 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       LOG.error(null, ex);
     }
   }
-
   @Override
   public boolean isRequestHitByEvent(EventContext context, LocatableEvent event) {
     return true;
   }
-
   @NotNull
   @Override
   public JavaBreakpointKind getKind() {
     return JavaBreakpointKind.EXCEPTION_BREAKPOINT;
   }
-
   @Override
   public boolean isValid() {
     return true;
   }
-
   @Override
   public String getPresentation() {
     return myExceptionName;
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -81,21 +73,18 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
 
     return eq_bv30lc_a0d0j(myExceptionName, ((ExceptionBreakpoint) o).myExceptionName);
   }
-
   @Override
   public int hashCode() {
     int result = 0;
     result = 31 * result + ((myExceptionName != null ? String.valueOf(myExceptionName).hashCode() : 0));
     return result;
   }
-
   public static class ExceptionBreakpointInfo {
     public String myExceptionName;
     public long myCreationTime;
     public int mySuspendPolicy;
     public boolean myIsLogMessage;
     public boolean myIsEnabled;
-
     public ExceptionBreakpointInfo(ExceptionBreakpoint breakpoint) {
       myExceptionName = breakpoint.myExceptionName;
       myCreationTime = breakpoint.myCreationTime;
@@ -103,10 +92,8 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       mySuspendPolicy = breakpoint.getSuspendPolicy();
       myIsLogMessage = breakpoint.isLogMessage();
     }
-
     public ExceptionBreakpointInfo() {
     }
-
     public void initBreakpoint(ExceptionBreakpoint breakpoint) {
       breakpoint.setEnabled(myIsEnabled);
       breakpoint.setCreationTime(myCreationTime);
@@ -114,7 +101,6 @@ public class ExceptionBreakpoint extends JavaBreakpoint {
       breakpoint.setLogMessage(myIsLogMessage);
     }
   }
-
   private static boolean eq_bv30lc_a0d0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

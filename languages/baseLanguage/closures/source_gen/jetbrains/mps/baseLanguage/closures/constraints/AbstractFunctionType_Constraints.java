@@ -15,12 +15,10 @@ public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor 
   public AbstractFunctionType_Constraints() {
     super("jetbrains.mps.baseLanguage.closures.structure.AbstractFunctionType");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -31,10 +29,8 @@ public class AbstractFunctionType_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return LanguageAspect.TYPESYSTEM.is(SNodeOperations.getModel(parentNode));
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "5612111951671408001");
 }

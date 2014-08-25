@@ -19,7 +19,6 @@ public class Looking_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ua53r8_a(editorContext, node);
   }
-
   private EditorCell createCollection_ua53r8_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ua53r8_a");
@@ -28,7 +27,6 @@ public class Looking_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ua53r8_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_ua53r8_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -37,7 +35,6 @@ public class Looking_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_ua53r8_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("direction");

@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 public class DiffModelUtil {
   private static Map<SModel, TempModuleOptions> myRegisteredModels = MapSequence.fromMap(new HashMap<SModel, TempModuleOptions>());
-
   public static void renameModelAndRegister(SModel model, String version) {
     if (version != null) {
       renameModel(model, version);
@@ -34,9 +33,9 @@ public class DiffModelUtil {
     MapSequence.fromMap(myRegisteredModels).put(model, mo);
     SModuleBase module = (SModuleBase) mo.createModule();
     module.registerModel((SModelBase) model);
-    MissingDependenciesFixer.fixDependencies(model, true);
-  }
+    new MissingDependenciesFixer(model).fixAllDependencies();
 
+  }
   public static void unregisterModel(SModel model) {
     TempModuleOptions mo = MapSequence.fromMap(myRegisteredModels).removeKey(model);
     SModuleBase modelModule = (SModuleBase) model.getModule();
@@ -46,19 +45,15 @@ public class DiffModelUtil {
     mo.disposeModule();
   }
 
-
-
   public static void renameModel(SModel model, String version) {
     SModelReference modelRef = model.getReference();
     as_5x16vn_a0a1a4(model, SModelBase.class).changeModelReference(genDiffSModelRef(modelRef, version));
   }
-
   public static void restoreModelName(SModel model) {
     SModelReference modelRef = model.getReference();
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
     as_5x16vn_a0a2a5(model, SModelBase.class).changeModelReference(getOriginalSModelRef(modelRef));
   }
-
   public static void fixModelReferences(SModel model, final SModelReference modelRef) {
     // modelRef - generated references, will be replaced with original one through the model 
     assert modelRef.getModelId() instanceof SModelId.ForeignSModelId;
@@ -76,14 +71,11 @@ public class DiffModelUtil {
     }
   }
 
-
-
   private static SModelReference genDiffSModelRef(SModelReference ref, String version) {
     SModelId newId = SModelId.foreign("diff_" + version + "#" + ref.getModelId().toString());
     String newName = ref.getModelName() + "@" + version;
     return PersistenceFacade.getInstance().createModelReference(ref.getModuleReference(), newId, newName);
   }
-
   private static SModelReference getOriginalSModelRef(SModelReference ref) {
     String id = as_5x16vn_a0a0a0j(ref.getModelId(), SModelId.ForeignSModelId.class).getId();
     String name = ref.getModelName();
@@ -91,19 +83,15 @@ public class DiffModelUtil {
     String oldName = name.substring(0, name.lastIndexOf("@"));
     return PersistenceFacade.getInstance().createModelReference(ref.getModuleReference(), oldId, oldName);
   }
-
   private static <T> T as_5x16vn_a0a1a4(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_5x16vn_a0a2a5(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_5x16vn_a0a0a0a0a0a0a3a6(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static <T> T as_5x16vn_a0a0a0j(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

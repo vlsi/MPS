@@ -8,35 +8,65 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 
 public class DeleteParenthesisLeft_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteParenthesisLeft_Actions.DeleteParenthesisLeft_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteParenthesisLeft_Actions.DeleteParenthesisLeft_Actions_BACKSPACE(node));
   }
-
   public static class DeleteParenthesisLeft_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteParenthesisLeft_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
-      AttributeOperations.setAttribute(EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(SLinkOperations.getTarget(node, "expression", true), true), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteRightParen", null));
+      boolean hasLeftUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null);
+
       SNode replacing = SLinkOperations.getTarget(node, "expression", true);
+      SNode rightMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      ParenthesisUtil.checkExpressionPriorities(replacing);
+
+      ParenthesisUtil.createUnmatchedRightParenthesis(rightMost);
+      if (hasLeftUnmatchedParen) {
+        ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      }
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
+    }
+  }
+  public static class DeleteParenthesisLeft_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DeleteParenthesisLeft_Actions_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      boolean hasLeftUnmatchedParen = (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null);
+
+      SNode replacing = SLinkOperations.getTarget(node, "expression", true);
+      SNode rightMost = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
+      SNodeOperations.replaceWithAnother(node, replacing);
+
+      SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+      ParenthesisUtil.checkExpressionPriorities(replacing);
+
+      ParenthesisUtil.createUnmatchedRightParenthesis(rightMost);
+      if (hasLeftUnmatchedParen) {
+        ParenthesisUtil.createUnmatchedLeftParenthesis(leftMostNode);
+      }
       SelectionUtil.selectLabelCellAnSetCaret(editorContext, leftMostNode, SelectionManager.FIRST_EDITABLE_CELL, 0);
     }
   }

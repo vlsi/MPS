@@ -33,18 +33,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class GeneratePluginSolution_Action extends BaseAction {
   private static final Icon ICON = AllIcons.Nodes.Plugin;
-
   public GeneratePluginSolution_Action() {
     super("Plugin Solution", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -55,7 +52,6 @@ public class GeneratePluginSolution_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +67,6 @@ public class GeneratePluginSolution_Action extends BaseAction {
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NewSolutionDialog dialog = new NewSolutionDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
@@ -114,9 +109,7 @@ public class GeneratePluginSolution_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(GeneratePluginSolution_Action.class);
-
   private static SNode _quotation_createNode_ljjiw0_a0a41a0f0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

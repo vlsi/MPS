@@ -10,19 +10,15 @@ import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class IsInstanceCondition implements Condition<SNode> {
   private String myConceptFqName;
-
   public IsInstanceCondition(SNode concept) {
     this(NameUtil.nodeFQName(concept));
   }
-
   public IsInstanceCondition(String fqName) {
     myConceptFqName = fqName;
   }
-
   public String getConceptFqName() {
     return myConceptFqName;
   }
-
   @Override
   public boolean met(SNode node) {
     return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getInstanceConcept(myConceptFqName));

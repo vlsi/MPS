@@ -20,30 +20,24 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class ConstructorUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ConstructorUsages_Finder");
-
   public ConstructorUsages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Constructor Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null;
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -101,7 +95,6 @@ public class ConstructorUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Constructor Usages";

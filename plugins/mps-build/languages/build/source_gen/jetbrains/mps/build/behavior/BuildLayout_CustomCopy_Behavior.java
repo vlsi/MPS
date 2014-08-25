@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BuildLayout_CustomCopy_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isImplicit_1330375798085107777(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "handlers", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

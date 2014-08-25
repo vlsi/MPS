@@ -18,19 +18,42 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class delComponent {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new delComponent.delComponent_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new delComponent.delComponent_BACKSPACE(node));
   }
-
   public static class delComponent_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public delComponent_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, final SNode node) {
+      List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
+        public Iterable<SNode> translate(SNode it) {
+          return ListSequence.fromList(SLinkOperations.getTargets(it, "dep", true)).where(new IWhereFilter<SNode>() {
+            public boolean accept(SNode it) {
+              return SLinkOperations.getTarget(it, "to", false) == node;
+            }
+          });
+        }
+      }).toListSequence();
+      ListSequence.fromList(list).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SNodeOperations.deleteNode(it);
+        }
+      });
+      SNodeOperations.deleteNode(node);
+    }
+  }
+  public static class delComponent_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public delComponent_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, final SNode node) {
       List<SNode> list = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.samples.componentDependencies.structure.ComponentSet", false, false), "component", true)).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {

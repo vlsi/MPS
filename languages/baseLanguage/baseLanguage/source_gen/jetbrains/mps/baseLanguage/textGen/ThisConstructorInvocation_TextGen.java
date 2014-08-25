@@ -46,6 +46,5 @@ public class ThisConstructorInvocation_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ThisConstructorInvocation_TextGen.class);
 }

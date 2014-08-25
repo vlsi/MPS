@@ -14,19 +14,31 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ReplaceRegexpOperation_removeM {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ReplaceRegexpOperation_removeM.ReplaceRegexpOperation_removeM_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new ReplaceRegexpOperation_removeM.ReplaceRegexpOperation_removeM_BACKSPACE(node));
   }
-
   public static class ReplaceRegexpOperation_removeM_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ReplaceRegexpOperation_removeM_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      EditorCell current = editorContext.getSelectedCell();
+      EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
+      SPropertyOperations.set(node, "multiLine", "" + (false));
+      editorContext.getEditorComponent().changeSelection(toSelect);
+    }
+  }
+  public static class ReplaceRegexpOperation_removeM_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public ReplaceRegexpOperation_removeM_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);

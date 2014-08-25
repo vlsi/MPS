@@ -22,68 +22,53 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CreateTypesystemIntention_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public CreateTypesystemIntention_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.typesystem.structure.MessageStatement";
   }
-
   public String getPresentation() {
     return "CreateTypesystemIntention";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.typesystem.intentions.CreateTypesystemIntention_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.typesystem";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).isEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "3302086321380606109");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateTypesystemIntention_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Create New QuickFix";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode quickFixNode = _quotation_createNode_wv8vj7_a0a0a();
 
@@ -92,12 +77,10 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
       SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
       ListSequence.fromList(SLinkOperations.getTargets(node, "helginsIntention", true)).addElement(quickFixCall);
     }
-
     public IntentionDescriptor getDescriptor() {
       return CreateTypesystemIntention_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_wv8vj7_a0a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -116,7 +99,6 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     quotedNode_1.addChild("smodelAttribute", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_wv8vj7_a0c0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

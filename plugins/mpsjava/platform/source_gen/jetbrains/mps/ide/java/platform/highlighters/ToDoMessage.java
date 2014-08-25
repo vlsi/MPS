@@ -14,7 +14,6 @@ public class ToDoMessage extends DefaultEditorMessage {
   public ToDoMessage(SNode node, String message, EditorMessageOwner owner) {
     super(node, Color.BLUE, message, owner);
   }
-
   @Override
   public void paint(Graphics graphics, EditorComponent component, EditorCell cell) {
   }

@@ -23,7 +23,6 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
   public MathSymbolIndexReference_Constraints() {
     super("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,7 +42,6 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
             MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, _context.getEnclosingNode(), msi);
             return msi;
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a1;
@@ -54,6 +51,5 @@ public class MathSymbolIndexReference_Constraints extends BaseConstraintsDescrip
     });
     return references;
   }
-
   private static SNodePointer breakingNode_cdbkmw_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:d37b3f1e-89c7-4936-a6de-207bf5ae7643(jetbrains.mps.baseLanguage.math.constraints)", "1237825752099");
 }

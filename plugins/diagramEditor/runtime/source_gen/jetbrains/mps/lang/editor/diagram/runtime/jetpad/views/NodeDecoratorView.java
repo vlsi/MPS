@@ -8,7 +8,6 @@ public class NodeDecoratorView extends RectDecoratorView {
   public final GroupView inputPortDecotatorView = new GroupView();
   public final GroupView outputPortDecotatorView = new GroupView();
 
-
   public NodeDecoratorView() {
     children().add(inputPortDecotatorView);
     children().add(outputPortDecotatorView);

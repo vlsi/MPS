@@ -26,14 +26,11 @@ import java.util.HashMap;
 
 public class ScriptsActionGroupHelper {
   private static final Set<String> ourSelectedScripts = new HashSet<String>();
-
   public ScriptsActionGroupHelper() {
   }
-
   public static Set<String> getSelectedScripts() {
     return ourSelectedScripts;
   }
-
   public static void sortScripts(List<SNode> scripts) {
     Collections.sort(scripts, new Comparator<SNode>() {
       @Override
@@ -62,7 +59,6 @@ public class ScriptsActionGroupHelper {
       }
     });
   }
-
   public static List<SNode> getMigrationScripts(List<Language> languages) {
     List<SNode> migrationScripts = new ArrayList<SNode>();
     for (Language language : languages) {
@@ -70,7 +66,6 @@ public class ScriptsActionGroupHelper {
     }
     return migrationScripts;
   }
-
   public static void populateByCategoryGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     _FunctionTypes._return_P1_E0<? extends String, ? super SNode> getCategoryClosure = new _FunctionTypes._return_P1_E0<String, SNode>() {
       public String invoke(SNode script) {
@@ -118,14 +113,12 @@ public class ScriptsActionGroupHelper {
       }
     }
   }
-
   private static BaseGroup createGroup(String name, BaseGroup parentGroup) {
     BaseGroup group = new BaseGroup(name);
     group.setPopup(true);
     parentGroup.add(group);
     return group;
   }
-
   private static void addActions(BaseGroup group, List<SNode> scripts, boolean applyToSelection) {
     Collections.sort(scripts, new Comparator<SNode>() {
       @Override
@@ -144,7 +137,6 @@ public class ScriptsActionGroupHelper {
       }
     }
   }
-
   private static Map<String, List<SNode>> groupBy(List<SNode> scripts, _FunctionTypes._return_P1_E0<? extends String, ? super SNode> groupKeyProducer) {
     Map<String, List<SNode>> result = MapSequence.fromMap(new HashMap<String, List<SNode>>());
     {
@@ -163,7 +155,6 @@ public class ScriptsActionGroupHelper {
     }
     return result;
   }
-
   public static void populateByBuildGroup(List<SNode> migrationScripts, BaseGroup ownerGroup, boolean applyToSelection) {
     Map<String, List<SNode>> byBuild = new HashMap<String, List<SNode>>();
     for (SNode migrationScript : migrationScripts) {
@@ -186,7 +177,6 @@ public class ScriptsActionGroupHelper {
       ownerGroup.add(categoryGroup);
     }
   }
-
   public static void populateByLanguageGroup(Language language, BaseGroup ownerGroup, boolean applyToSelection) {
     List<SNode> migrationScripts = MigrationScriptUtil.getMigrationScripts(language);
     if (ListSequence.fromList(migrationScripts).isEmpty()) {
@@ -202,7 +192,6 @@ public class ScriptsActionGroupHelper {
     languageScriptsGroup.setPopup(true);
     ownerGroup.add(languageScriptsGroup);
   }
-
   public static String makeScriptActionName(String category, String title, String build) {
     StringBuilder sb = new StringBuilder();
     if (category != null) {

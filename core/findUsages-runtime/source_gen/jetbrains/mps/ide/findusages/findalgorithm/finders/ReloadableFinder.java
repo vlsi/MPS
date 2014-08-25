@@ -15,16 +15,13 @@ public class ReloadableFinder implements IInterfacedFinder {
   private static final Logger LOG = LogManager.getLogger(ReloadableFinder.class);
   private ModuleClassReference<GeneratedFinder> myModuleClassRef;
   private WeakReference<GeneratedFinder> myFinder = new WeakReference<GeneratedFinder>(null);
-
   public ReloadableFinder(SModuleReference moduleRef, String finderClass) {
     myModuleClassRef = new ModuleClassReference(moduleRef, finderClass);
   }
-
   public ReloadableFinder(SModuleReference moduleReference, GeneratedFinder finder) {
     this(moduleReference, finder.getClass().getName());
     myFinder = new WeakReference<GeneratedFinder>(finder);
   }
-
   public GeneratedFinder getFinder() {
     if (myFinder.get() == null) {
       Class<GeneratedFinder> finderClass = myModuleClassRef.loadClass();
@@ -39,7 +36,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return myFinder.get();
   }
-
   @Override
   public String getConcept() {
     GeneratedFinder finder = getFinder();
@@ -48,7 +44,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.getConcept();
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     GeneratedFinder finder = getFinder();
@@ -57,7 +52,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.isApplicable(node);
   }
-
   @Override
   public boolean isVisible(SNode node) {
     GeneratedFinder finder = getFinder();
@@ -66,7 +60,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.isVisible(node);
   }
-
   @Override
   public boolean isUsedByDefault(SNode node) {
     GeneratedFinder finder = getFinder();
@@ -75,7 +68,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.isUsedByDefault(node);
   }
-
   @Override
   public String getDescription() {
     GeneratedFinder finder = getFinder();
@@ -84,7 +76,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.getDescription();
   }
-
   @Override
   public String getLongDescription() {
     GeneratedFinder finder = getFinder();
@@ -93,7 +84,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.getLongDescription();
   }
-
   @Override
   public boolean canNavigate() {
     GeneratedFinder finder = getFinder();
@@ -102,7 +92,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.canNavigate();
   }
-
   @Override
   public SNode getNodeToNavigate() {
     GeneratedFinder finder = getFinder();
@@ -111,7 +100,6 @@ public class ReloadableFinder implements IInterfacedFinder {
     }
     return finder.getNodeToNavigate();
   }
-
   @Override
   public SearchResults<SNode> find(SearchQuery query, ProgressMonitor monitor) {
     GeneratedFinder finder = getFinder();

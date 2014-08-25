@@ -19,70 +19,55 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertElsifToNewIfStatement_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertElsifToNewIfStatement_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ElsifClause";
   }
-
   public String getPresentation() {
     return "ConvertElsifToNewIfStatement";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ConvertElsifToNewIfStatement_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode statement = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.IfStatement", false, false);
     SNode statementParent = SNodeOperations.getParent(statement);
     return (statementParent != null) && SNodeOperations.isInstanceOf(statementParent, "jetbrains.mps.baseLanguage.structure.StatementList") && SNodeOperations.getIndexInParent(node) == SNodeOperations.getIndexInParent(ListSequence.fromList(SLinkOperations.getTargets(statement, "elsifClauses", true)).last()) && (SLinkOperations.getTarget(statement, "ifFalseStatement", true) == null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "8145509665020019463");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertElsifToNewIfStatement_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert Else-If Clause to New If Statement";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ifStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
       SLinkOperations.setTarget(ifStatement, "condition", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "condition", true)), true);
@@ -91,7 +76,6 @@ public class ConvertElsifToNewIfStatement_Intention implements IntentionFactory 
       SNodeOperations.insertNextSiblingChild(statement, ifStatement);
       SNodeOperations.deleteNode(node);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertElsifToNewIfStatement_Intention.this;
     }

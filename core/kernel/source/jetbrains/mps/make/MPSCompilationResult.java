@@ -27,7 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * Evgeny Gryaznov, Aug 20, 2010
+ * @author Evgeny Gryaznov, Aug 20, 2010
  */
 public class MPSCompilationResult implements Serializable {
   private static final long serialVersionUID = -4445402451448540384L;

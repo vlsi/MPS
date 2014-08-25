@@ -17,12 +17,10 @@ import com.intellij.openapi.util.io.FileUtil;
 public class ModuleVcsPathPresenter extends VcsPathPresenter {
   private final Project myProject;
   private final ProjectLevelVcsManager myManager;
-
   public ModuleVcsPathPresenter(final Project project, final ProjectLevelVcsManager manager) {
     myProject = project;
     myManager = manager;
   }
-
   @Override
   public String getPresentableRelativePathFor(final VirtualFile file) {
     if (file == null) {
@@ -46,7 +44,6 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
       }
     });
   }
-
   @Override
   public String getPresentableRelativePath(final ContentRevision fromRevision, final ContentRevision toRevision) {
     return FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());

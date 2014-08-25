@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuildLayout_War_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getExpectedExtension_6967233722066020217(SNode thisNode) {
     return ".war";
   }

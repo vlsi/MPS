@@ -12,7 +12,6 @@ public class AbstractAntiquotation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createError_h17nsi_a(editorContext, node);
   }
-
   private EditorCell createError_h17nsi_a(EditorContext editorContext, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "abstract antiquotation");
     editorCell.setCellId("Error_h17nsi_a");

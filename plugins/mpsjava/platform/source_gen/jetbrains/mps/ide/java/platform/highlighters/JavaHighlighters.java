@@ -16,19 +16,15 @@ import org.jetbrains.annotations.NotNull;
 public class JavaHighlighters implements ProjectComponent {
   private Project myProject;
   private Deque<BaseEditorChecker> myCheckers = DequeSequence.fromDeque(new LinkedList<BaseEditorChecker>());
-
   public JavaHighlighters(Project project, MPSCoreComponents coreComponents) {
     myProject = project;
   }
-
   @Override
   public void projectOpened() {
   }
-
   @Override
   public void projectClosed() {
   }
-
   @Override
   public void initComponent() {
     Highlighter highlighter = getHighlighter();
@@ -36,7 +32,6 @@ public class JavaHighlighters implements ProjectComponent {
     highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new ToDoHighlighter()));
     highlighter.addChecker(DequeSequence.fromDeque(myCheckers).pushElement(new MethodDeclarationsFixer()));
   }
-
   @Override
   public void disposeComponent() {
     Highlighter highlighter = getHighlighter();
@@ -48,14 +43,12 @@ public class JavaHighlighters implements ProjectComponent {
 
     myProject = null;
   }
-
   @NonNls
   @NotNull
   @Override
   public String getComponentName() {
     return "JavaHighlighters";
   }
-
   private Highlighter getHighlighter() {
     return myProject.getComponent(Highlighter.class);
   }

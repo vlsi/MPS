@@ -10,26 +10,10 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 
 public class UnitTestProcessListener extends ProcessAdapter {
-  private final StringBuffer myBuffer = new StringBuffer();
   private final TestEventsDispatcher myDispatcher;
   private TestEvent myLastEvent;
-
   public UnitTestProcessListener(TestEventsDispatcher dispatcher) {
     myDispatcher = dispatcher;
-  }
-
-  private String getLine(String text) {
-    text = text.replaceAll("\r\n", "\n");
-    myBuffer.append(text);
-
-    int index = myBuffer.lastIndexOf("\n");
-    if (index > 0) {
-      String lineToAppend = myBuffer.substring(0, index);
-      myBuffer.replace(0, index, "");
-      return lineToAppend;
-    } else {
-      return null;
-    }
   }
 
   private boolean isTerminatedEvent() {
@@ -46,9 +30,7 @@ public class UnitTestProcessListener extends ProcessAdapter {
     if (this.isTerminatedEvent()) {
       this.myDispatcher.onProcessTerminated(event.getText());
     }
-    boolean error = ProcessOutputTypes.STDERR.equals(k);
-    boolean system = ProcessOutputTypes.SYSTEM.equals(k);
-    String text = (error || system ? event.getText() : this.getLine(event.getText()));
+    String text = event.getText();
     if (text == null) {
       return;
     }
@@ -58,7 +40,7 @@ public class UnitTestProcessListener extends ProcessAdapter {
       myLastEvent = testEvent;
       this.myDispatcher.onTestEvent(testEvent);
     } else {
-      if (myLastEvent != null && (TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.ERROR_TEST_PREFIX.equals(myLastEvent.getToken()))) {
+      if (myLastEvent != null && (TestEvent.ASSUMPTION_FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()) || TestEvent.FAILURE_TEST_PREFIX.equals(myLastEvent.getToken()))) {
         k = ProcessOutputTypes.STDERR;
       }
       this.myDispatcher.onSimpleTextAvailable(text, k);

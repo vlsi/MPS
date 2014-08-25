@@ -15,24 +15,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ClosureLiteralDataFlow_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClosureLiteralDataFlow_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode closureLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, closureLiteral, "virtual_isExecuteSynchronous_1230212745736", new Object[]{}))) {
       DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(closureLiteral, "body", true));
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

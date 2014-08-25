@@ -14,19 +14,28 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class DeleteIncompleteRightParen {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteIncompleteRightParen.DeleteIncompleteRightParen_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteIncompleteRightParen.DeleteIncompleteRightParen_BACKSPACE(node));
   }
-
   public static class DeleteIncompleteRightParen_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteIncompleteRightParen_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      AttributeOperations.setAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Expression"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), null);
+    }
+  }
+  public static class DeleteIncompleteRightParen_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+    public DeleteIncompleteRightParen_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
     public void execute_internal(EditorContext editorContext, SNode node) {
       AttributeOperations.setAttribute(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Expression"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), null);
     }

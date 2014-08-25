@@ -23,7 +23,6 @@ public class Where_Select_Test1_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -61,7 +60,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -90,7 +88,6 @@ __switch__:
     }
     Assert.assertEquals(5, count.value);
   }
-
   public void test__2() throws Exception {
     // 'where' and 'select' tolerate 'null' operand  
     List<Integer> nums = null;
@@ -106,7 +103,6 @@ __switch__:
     });
     Assert.assertEquals(0, Sequence.fromIterable(strings).count());
   }
-
   public void test__3() throws Exception {
     if (Sequence.IGNORE_NULL_VALUES) {
       // 'select' skips all 'null'-s 
@@ -132,7 +128,6 @@ __switch__:
       }));
     }
   }
-
   public Where_Select_Test1_Test() {
   }
 }

@@ -28,15 +28,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(_context.getSourceNode(), "customizes", ref, true);
         return ref;
       }
-
       public String getMatchingText(String pattern) {
         return "customizes";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -47,7 +44,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_DailyPlan_935069066462603596(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return (SLinkOperations.getTarget(_context.getSourceNode(), "customizes", true) == null);
   }

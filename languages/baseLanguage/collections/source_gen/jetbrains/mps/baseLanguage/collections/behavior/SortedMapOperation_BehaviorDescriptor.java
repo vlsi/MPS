@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public abstract class SortedMapOperation_BehaviorDescriptor extends MapOperation_BehaviorDescriptor {
   public SortedMapOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation";

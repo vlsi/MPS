@@ -25,7 +25,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_156sr0_a(editorContext, node);
   }
-
   private EditorCell createCollection_156sr0_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_156sr0_a");
@@ -35,7 +34,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_156sr0_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_a0");
@@ -45,7 +43,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_156sr0_d0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "subtyping");
     editorCell.setCellId("Constant_156sr0_a0a");
@@ -55,7 +52,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "rule");
     editorCell.setCellId("Constant_156sr0_b0a");
@@ -65,7 +61,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_156sr0_c0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -86,7 +81,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_156sr0_d0a");
@@ -97,7 +91,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b0");
@@ -108,12 +101,10 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_156sr0_b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_156sr0_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b1a");
@@ -128,7 +119,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_156sr0_f1b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_a1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_a1b0");
@@ -140,21 +130,18 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_156sr0_c0b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_a0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weak");
     editorCell.setCellId("Constant_156sr0_a0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_b0b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_156sr0_b0b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_156sr0_c0b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isWeak");
@@ -172,7 +159,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_b1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_b1b0");
@@ -184,7 +170,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_156sr0_c1b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_a1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable");
     editorCell.setCellId("Constant_156sr0_a1b1a");
@@ -194,14 +179,12 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_b1b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_156sr0_b1b1a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_156sr0_c1b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicableNode");
@@ -221,7 +204,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_c1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_156sr0_c1b0");
@@ -231,7 +213,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_d1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_d1b0");
@@ -242,7 +223,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_156sr0_b3b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_a3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "supertypes");
     editorCell.setCellId("Constant_156sr0_a3b1a");
@@ -253,7 +233,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_b3b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_156sr0_b3b1a");
@@ -264,7 +243,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_156sr0_e1b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_156sr0_e1b0");
@@ -275,12 +253,10 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_156sr0_b4b1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createIndentCell_156sr0_a4b1a(EditorContext editorContext, SNode node) {
     EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
     return editorCell;
   }
-
   private EditorCell createRefNode_156sr0_b4b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -300,7 +276,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_f1b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_156sr0_f1b0");
@@ -311,7 +286,6 @@ public class SubtypingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_156sr0_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_156sr0_c0");

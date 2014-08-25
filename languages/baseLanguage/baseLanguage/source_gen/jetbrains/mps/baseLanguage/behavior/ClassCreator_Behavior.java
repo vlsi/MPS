@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ClassCreator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
@@ -29,7 +28,6 @@ public class ClassCreator_Behavior {
     }
     return classifierType;
   }
-
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if ((classConcept != null)) {
@@ -56,7 +54,6 @@ public class ClassCreator_Behavior {
 
     return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
   }
-
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
   }

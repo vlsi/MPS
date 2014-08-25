@@ -24,50 +24,39 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 public class AlterStatementListContainer_Intention implements IntentionFactory {
   public AlterStatementListContainer_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IContainsStatementList";
   }
-
   public String getPresentation() {
     return "AlterStatementListContainer";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.AlterStatementListContainer_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "8176191621190087466");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);
@@ -78,7 +67,6 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
     return list;
   }
-
   private List<SNode> parameter(final SNode node, final EditorContext editorContext) {
     List<SNode> list = ListSequence.fromListAndArray(new ArrayList<SNode>(), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement"), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachStatement"));
     ListSequence.fromList(list).removeElement(SNodeOperations.getConceptDeclaration(node));
@@ -88,14 +76,11 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
     }
     return list;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     private SNode myParameter;
-
     public IntentionImplementation(SNode parameter) {
       myParameter = parameter;
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       String targetName;
       if (SConceptOperations.isExactly(myParameter, "jetbrains.mps.baseLanguage.collections.structure.ForEachStatement")) {
@@ -109,14 +94,12 @@ public class AlterStatementListContainer_Intention implements IntentionFactory {
       targetName = "Change to " + targetName;
       return targetName;
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode newInitializedInstance = SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.castConcept(myParameter, "jetbrains.mps.baseLanguage.structure.IContainsStatementList")), null);
       AlterStatementListContainerFactoryUtils.buildContainerIfPossible(node, newInitializedInstance);
       SNodeOperations.replaceWithAnother(node, newInitializedInstance);
       editorContext.selectWRTFocusPolicy(newInitializedInstance);
     }
-
     public IntentionDescriptor getDescriptor() {
       return AlterStatementListContainer_Intention.this;
     }

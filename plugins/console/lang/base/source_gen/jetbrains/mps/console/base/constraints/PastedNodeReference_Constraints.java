@@ -18,7 +18,6 @@ public class PastedNodeReference_Constraints extends BaseConstraintsDescriptor {
   public PastedNodeReference_Constraints() {
     super("jetbrains.mps.console.base.structure.PastedNodeReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,7 +30,6 @@ public class PastedNodeReference_Constraints extends BaseConstraintsDescriptor {
           public boolean hasPresentation() {
             return true;
           }
-
           @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return BehaviorReflection.invokeVirtual(String.class, _context.getReferenceNode(), "virtual_getTextWhenBroken_328850564593858078", new Object[]{});

@@ -12,15 +12,12 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_5608160002100107306(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_outlook";
   }
-
   public static Object propertyMacro_GetPropertyValue_5608160002100170951(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "facet", false), "name");
   }
-
   public static Iterable<SNode> sourceNodesQuery_5608160002100170944(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "facet", true);
   }

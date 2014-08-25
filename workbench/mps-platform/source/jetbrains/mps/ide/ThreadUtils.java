@@ -56,7 +56,6 @@ public class ThreadUtils {
 
   /**
    * use ModelAccess.instance().isInEDT()
-   * @return
    */
   @Deprecated
   public static boolean isEventDispatchThread() {

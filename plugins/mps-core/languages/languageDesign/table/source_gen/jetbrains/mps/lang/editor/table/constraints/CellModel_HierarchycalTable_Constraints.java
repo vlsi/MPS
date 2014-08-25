@@ -26,7 +26,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
   public CellModel_HierarchycalTable_Constraints() {
     super("jetbrains.mps.lang.editor.table.structure.CellModel_HierarchycalTable");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -48,7 +46,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
               }
             }).toListSequence();
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1;
@@ -61,7 +58,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -74,7 +70,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1;
@@ -87,7 +82,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -103,7 +97,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1;
@@ -113,7 +106,6 @@ public class CellModel_HierarchycalTable_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941639");
   private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544941680");
   private static SNodePointer breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1 = new SNodePointer("r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)", "6216065619544946224");

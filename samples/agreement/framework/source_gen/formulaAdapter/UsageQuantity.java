@@ -9,7 +9,6 @@ import postingrules.Usage;
 public class UsageQuantity implements Function<Quantity> {
   public UsageQuantity() {
   }
-
   @Override
   public Quantity compute(Object parm) {
     Usage usageEvent = (Usage) parm;

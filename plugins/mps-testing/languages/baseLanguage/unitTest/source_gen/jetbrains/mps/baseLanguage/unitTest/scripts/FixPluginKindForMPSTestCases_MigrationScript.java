@@ -15,25 +15,20 @@ public class FixPluginKindForMPSTestCases_MigrationScript extends BaseMigrationS
       public String getName() {
         return "fix";
       }
-
       public String getAdditionalInfo() {
         return "fix";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return !(CheckUtils.checkPluginKindForMPSTestCase(node));
       }
-
       public void doUpdateInstanceNode(SNode node) {
         if (!(CheckUtils.fixPluginKindForMPSTestCase(node))) {
           // todo: ? 
         }
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

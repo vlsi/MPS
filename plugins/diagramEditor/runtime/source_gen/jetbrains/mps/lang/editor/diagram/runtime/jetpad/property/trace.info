@@ -17,98 +17,98 @@
       <node id="1585775323800152143" at="16,0,17,0" concept="2" trace="myDependecies" />
       <node id="1585775323800152148" at="17,0,18,0" concept="2" trace="myRegistrations" />
       <node id="1585775323800152152" at="18,0,19,0" concept="2" trace="myOldValue" />
-      <node id="1585775323800152160" at="21,104,22,34" concept="1" />
-      <node id="1585775323800152164" at="22,34,23,69" concept="1" />
-      <node id="1585775323800152177" at="23,69,24,36" concept="1" />
-      <node id="1585775323800152183" at="24,36,25,77" concept="1" />
-      <node id="1585775323800152192" at="25,77,26,0" concept="9" />
-      <node id="1585775323800152204" at="29,23,30,32" concept="8" />
-      <node id="1585775323800152219" at="34,29,35,86" concept="1" />
-      <node id="1585775323800152233" at="37,31,38,23" concept="1" />
-      <node id="1585775323800152238" at="39,5,40,53" concept="7" />
-      <node id="1585775323800152254" at="42,28,43,21" concept="1" />
-      <node id="1585775323800152260" at="44,35,45,30" concept="1" />
-      <node id="1585775323800152283" at="53,57,54,26" concept="1" />
-      <node id="1585775323800152287" at="56,6,57,61" concept="1" />
-      <node id="1585775323800152297" at="57,61,58,23" concept="1" />
-      <node id="1585775323800152303" at="59,52,60,64" concept="1" />
-      <node id="1585775323800152330" at="65,46,66,19" concept="1" />
-      <node id="1585775323800152337" at="67,5,68,27" concept="1" />
-      <node id="1585775323800152345" at="71,34,72,28" concept="7" />
-      <node id="1585775323800152349" at="72,28,73,33" concept="7" />
-      <node id="1585775323800152353" at="73,33,74,26" concept="1" />
-      <node id="1585775323800152359" at="75,29,76,100" concept="7" />
-      <node id="1585775323800152385" at="78,85,79,33" concept="1" />
-      <node id="1585775323800152200" at="29,0,32,0" concept="6" trace="get#()null" />
-      <node id="1585775323800152217" at="33,93,36,5" concept="5" />
-      <node id="1585775323800152231" at="36,5,39,5" concept="5" />
-      <node id="1585775323800152258" at="43,21,46,9" concept="5" />
-      <node id="1585775323800152276" at="53,0,56,0" concept="6" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
-      <node id="1585775323800152301" at="58,23,61,5" concept="3" />
-      <node id="1585775323800152328" at="64,36,67,5" concept="4" />
-      <node id="1585775323800152376" at="78,0,81,0" concept="6" trace="call#(Ljetbrains/jetpad/model/event/EventHandler;)V" />
-      <node id="1585775323800152267" at="51,33,56,6" concept="7" />
-      <node id="1585775323800152368" at="76,100,81,9" concept="1" />
-      <node id="1585775323800152250" at="42,0,48,0" concept="6" trace="remove#()V" />
-      <node id="1585775323800152326" at="64,0,70,0" concept="6" trace="doRemoveListeners#()V" />
-      <node id="1585775323800152156" at="21,0,28,0" concept="0" trace="DependentProperty#(Ljetbrains/jetpad/model/property/ReadableProperty;null)V" />
-      <node id="1585775323800152245" at="40,53,48,6" concept="8" />
-      <node id="1585775323800152357" at="74,26,82,5" concept="5" />
-      <node id="1585775323800152265" at="51,0,63,0" concept="6" trace="doAddListeners#()V" />
-      <node id="1585775323800152343" at="71,0,84,0" concept="6" trace="somethingChange#()V" />
-      <node id="1585775323800152208" at="33,0,50,0" concept="6" trace="addHandler#(Ljetbrains/jetpad/model/event/EventHandler;)Ljetbrains/jetpad/base/Registration;" />
-      <scope id="1585775323800152203" at="29,23,30,32" />
-      <scope id="1585775323800152218" at="34,29,35,86" />
-      <scope id="1585775323800152232" at="37,31,38,23" />
-      <scope id="1585775323800152259" at="44,35,45,30" />
-      <scope id="1585775323800152282" at="53,57,54,26" />
-      <scope id="1585775323800152302" at="59,52,60,64" />
-      <scope id="1585775323800152329" at="65,46,66,19" />
-      <scope id="1585775323800152384" at="78,85,79,33" />
-      <scope id="1585775323800152200" at="29,0,32,0" />
-      <scope id="1585775323800152276" at="53,0,56,0">
+      <node id="1585775323800152160" at="20,104,21,34" concept="1" />
+      <node id="1585775323800152164" at="21,34,22,69" concept="1" />
+      <node id="1585775323800152177" at="22,69,23,36" concept="1" />
+      <node id="1585775323800152183" at="23,36,24,77" concept="1" />
+      <node id="1585775323800152192" at="24,77,25,0" concept="9" />
+      <node id="1585775323800152204" at="27,23,28,32" concept="8" />
+      <node id="1585775323800152219" at="31,29,32,86" concept="1" />
+      <node id="1585775323800152233" at="34,31,35,23" concept="1" />
+      <node id="1585775323800152238" at="36,5,37,53" concept="7" />
+      <node id="1585775323800152254" at="39,28,40,21" concept="1" />
+      <node id="1585775323800152260" at="41,35,42,30" concept="1" />
+      <node id="1585775323800152283" at="49,57,50,26" concept="1" />
+      <node id="1585775323800152287" at="52,6,53,61" concept="1" />
+      <node id="1585775323800152297" at="53,61,54,23" concept="1" />
+      <node id="1585775323800152303" at="55,52,56,64" concept="1" />
+      <node id="1585775323800152330" at="60,46,61,19" concept="1" />
+      <node id="1585775323800152337" at="62,5,63,27" concept="1" />
+      <node id="1585775323800152345" at="65,34,66,28" concept="7" />
+      <node id="1585775323800152349" at="66,28,67,33" concept="7" />
+      <node id="1585775323800152353" at="67,33,68,26" concept="1" />
+      <node id="1585775323800152359" at="69,29,70,100" concept="7" />
+      <node id="1585775323800152385" at="72,85,73,33" concept="1" />
+      <node id="1585775323800152200" at="27,0,30,0" concept="6" trace="get#()null" />
+      <node id="1585775323800152217" at="30,93,33,5" concept="5" />
+      <node id="1585775323800152231" at="33,5,36,5" concept="5" />
+      <node id="1585775323800152258" at="40,21,43,9" concept="5" />
+      <node id="1585775323800152276" at="49,0,52,0" concept="6" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+      <node id="1585775323800152301" at="54,23,57,5" concept="3" />
+      <node id="1585775323800152328" at="59,36,62,5" concept="4" />
+      <node id="1585775323800152376" at="72,0,75,0" concept="6" trace="call#(Ljetbrains/jetpad/model/event/EventHandler;)V" />
+      <node id="1585775323800152267" at="47,33,52,6" concept="7" />
+      <node id="1585775323800152368" at="70,100,75,9" concept="1" />
+      <node id="1585775323800152250" at="39,0,45,0" concept="6" trace="remove#()V" />
+      <node id="1585775323800152326" at="59,0,65,0" concept="6" trace="doRemoveListeners#()V" />
+      <node id="1585775323800152156" at="20,0,27,0" concept="0" trace="DependentProperty#(Ljetbrains/jetpad/model/property/ReadableProperty;null)V" />
+      <node id="1585775323800152245" at="37,53,45,6" concept="8" />
+      <node id="1585775323800152357" at="68,26,76,5" concept="5" />
+      <node id="1585775323800152265" at="47,0,59,0" concept="6" trace="doAddListeners#()V" />
+      <node id="1585775323800152343" at="65,0,78,0" concept="6" trace="somethingChange#()V" />
+      <node id="1585775323800152208" at="30,0,47,0" concept="6" trace="addHandler#(Ljetbrains/jetpad/model/event/EventHandler;)Ljetbrains/jetpad/base/Registration;" />
+      <scope id="1585775323800152203" at="27,23,28,32" />
+      <scope id="1585775323800152218" at="31,29,32,86" />
+      <scope id="1585775323800152232" at="34,31,35,23" />
+      <scope id="1585775323800152259" at="41,35,42,30" />
+      <scope id="1585775323800152282" at="49,57,50,26" />
+      <scope id="1585775323800152302" at="55,52,56,64" />
+      <scope id="1585775323800152329" at="60,46,61,19" />
+      <scope id="1585775323800152384" at="72,85,73,33" />
+      <scope id="1585775323800152200" at="27,0,30,0" />
+      <scope id="1585775323800152276" at="49,0,52,0">
         <var name="event" id="1585775323800152279" />
       </scope>
-      <scope id="1585775323800152301" at="58,23,61,5">
+      <scope id="1585775323800152301" at="54,23,57,5">
         <var name="i" id="1585775323800152314" />
       </scope>
-      <scope id="1585775323800152328" at="64,36,67,5">
+      <scope id="1585775323800152328" at="59,36,62,5">
         <var name="reg" id="1585775323800152334" />
       </scope>
-      <scope id="1585775323800152376" at="78,0,81,0">
+      <scope id="1585775323800152376" at="72,0,75,0">
         <var name="handler" id="1585775323800152379" />
       </scope>
-      <scope id="1585775323800152253" at="42,28,46,9" />
-      <scope id="1585775323800152327" at="64,36,68,27" />
-      <scope id="1585775323800152159" at="21,104,26,0" />
-      <scope id="1585775323800152250" at="42,0,48,0" />
-      <scope id="1585775323800152326" at="64,0,70,0" />
-      <scope id="1585775323800152358" at="75,29,81,9">
+      <scope id="1585775323800152253" at="39,28,43,9" />
+      <scope id="1585775323800152327" at="59,36,63,27" />
+      <scope id="1585775323800152159" at="20,104,25,0" />
+      <scope id="1585775323800152250" at="39,0,45,0" />
+      <scope id="1585775323800152326" at="59,0,65,0" />
+      <scope id="1585775323800152358" at="69,29,75,9">
         <var name="event" id="1585775323800152360" />
       </scope>
-      <scope id="1585775323800152156" at="21,0,28,0">
+      <scope id="1585775323800152156" at="20,0,27,0">
         <var name="dependencies" id="1585775323800152196" />
         <var name="mainProperty" id="1585775323800152193" />
       </scope>
-      <scope id="1585775323800152266" at="51,33,61,5">
+      <scope id="1585775323800152266" at="47,33,57,5">
         <var name="handler" id="1585775323800152268" />
       </scope>
-      <scope id="1585775323800152344" at="71,34,82,5">
+      <scope id="1585775323800152344" at="65,34,76,5">
         <var name="newValue" id="1585775323800152346" />
         <var name="oldValue" id="1585775323800152350" />
       </scope>
-      <scope id="1585775323800152265" at="51,0,63,0" />
-      <scope id="1585775323800152343" at="71,0,84,0" />
-      <scope id="1585775323800152216" at="33,93,48,6">
+      <scope id="1585775323800152265" at="47,0,59,0" />
+      <scope id="1585775323800152343" at="65,0,78,0" />
+      <scope id="1585775323800152216" at="30,93,45,6">
         <var name="reg" id="1585775323800152239" />
       </scope>
-      <scope id="1585775323800152208" at="33,0,50,0">
+      <scope id="1585775323800152208" at="30,0,47,0">
         <var name="handler" id="1585775323800152211" />
       </scope>
-      <unit id="1585775323800152274" at="52,55,56,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$2" />
-      <unit id="1585775323800152374" at="77,26,81,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$3" />
-      <unit id="1585775323800152248" at="41,15,48,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$1" />
-      <unit id="1585775323800152131" at="13,0,85,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty" />
+      <unit id="1585775323800152274" at="48,55,52,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$2" />
+      <unit id="1585775323800152374" at="71,26,75,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$3" />
+      <unit id="1585775323800152248" at="38,15,45,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$1" />
+      <unit id="1585775323800152131" at="13,0,79,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty" />
     </file>
   </root>
 </debug-info>

@@ -16,11 +16,9 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 public class FlyingActionsFinder {
   private ActionManager myActionManager = ActionManager.getInstance();
   private Set<String> myFlyingActions = new HashSet<String>();
-
   private FlyingActionsFinder() {
     findFlyingActions();
   }
-
   /**
    * Get Set of actionGroups ids which belongs to MPS Core
    * Such actionGroups belongs to main menu, so we could ignore them in check
@@ -32,17 +30,19 @@ public class FlyingActionsFinder {
     IdeaPluginDescriptor descriptor = PluginManager.getPlugin(pluginId);
     Set<String> ideaCoreActions = new HashSet<String>();
 
+    if (descriptor == null) {
+      return ideaCoreActions;
+    }
     for (Element element : descriptor.getActionsDescriptionElements()) {
       ideaCoreActions.add(element.getAttributeValue("id"));
     }
     return ideaCoreActions;
   }
-
   private void findFlyingActions() {
     myFlyingActions = new HashSet<String>(Arrays.asList(myActionManager.getActionIds("")));
     Set<String> childrenOrSortCutActionsSet = new HashSet<String>();
 
-    AnAction anAction = null;
+    AnAction anAction;
     for (String id : myFlyingActions) {
       anAction = myActionManager.getAction(id);
       if (anAction.getShortcutSet().getShortcuts().length > 0) {
@@ -59,7 +59,6 @@ public class FlyingActionsFinder {
     myFlyingActions.removeAll(getIdeaCoreActions());
     myFlyingActions.removeAll(getMPSRootActionIds());
   }
-
   /**
    * Creates list of actions/actionGroups with no parent, no shortcuts and not presented in MPS Core actions
    * 
@@ -68,7 +67,6 @@ public class FlyingActionsFinder {
   private Set<String> getFlyingActions() {
     return myFlyingActions;
   }
-
   /**
    * Hardcoded action/actionGroups ids that can have no parent, have no shortcuts
    * and do not belong to main menu
@@ -85,7 +83,6 @@ public class FlyingActionsFinder {
 
     return set;
   }
-
   public static Set<String> getAllFlyingActions() {
     FlyingActionsFinder finder = new FlyingActionsFinder();
     return finder.getFlyingActions();

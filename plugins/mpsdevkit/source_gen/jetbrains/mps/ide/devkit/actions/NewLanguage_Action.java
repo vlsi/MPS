@@ -23,18 +23,15 @@ import org.apache.log4j.LogManager;
 
 public class NewLanguage_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.Language;
-
   public NewLanguage_Action() {
     super("Language", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -45,7 +42,6 @@ public class NewLanguage_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,7 +57,6 @@ public class NewLanguage_Action extends BaseAction {
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NewLanguageDialog dialog = new NewLanguageDialog(((MPSProject) MapSequence.fromMap(_params).get("project")), ((String) MapSequence.fromMap(_params).get("namespace")));
@@ -80,6 +75,5 @@ public class NewLanguage_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewLanguage_Action.class);
 }

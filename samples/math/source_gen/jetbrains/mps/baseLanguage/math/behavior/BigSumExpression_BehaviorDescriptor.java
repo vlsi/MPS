@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class BigSumExpression_BehaviorDescriptor extends ArithmSymbol_BehaviorDescriptor {
   public BigSumExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getOpName_1262430001741497894(SConcept thisConcept) {
     return BigSumExpression_Behavior.virtual_getOpName_1262430001741497894(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.BigSumExpression";

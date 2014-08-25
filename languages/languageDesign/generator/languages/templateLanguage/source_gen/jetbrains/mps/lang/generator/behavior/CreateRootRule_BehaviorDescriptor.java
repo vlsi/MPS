@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CreateRootRule_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CreateRootRule_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return CreateRootRule_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.CreateRootRule";

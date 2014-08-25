@@ -18,13 +18,11 @@ public class BuildScript_Configuration_Editor extends SettingsEditorEx<BuildScri
   private NodeByConceptChooser myChooser;
   private NodeByConcept_Configuration_Editor myNode;
   private AntSettings_Configuration_Editor mySettings;
-
   public void disposeEditor() {
     myChooser.dispose();
     Disposer.dispose(myNode);
     Disposer.dispose(mySettings);
   }
-
   @NotNull
   public JPanel createEditor() {
     JPanel panel = new JPanel(new GridBagLayout());
@@ -38,17 +36,14 @@ public class BuildScript_Configuration_Editor extends SettingsEditorEx<BuildScri
 
     return panel;
   }
-
   public void applyEditorTo(final BuildScript_Configuration configuration) throws ConfigurationException {
     myNode.applyEditorTo(configuration.getNode());
     mySettings.applyEditorTo(configuration.getSettings());
   }
-
   public void resetEditorFrom(final BuildScript_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     mySettings.resetEditorFrom(configuration.getSettings());
   }
-
   public BuildScript_Configuration_Editor(NodeByConcept_Configuration_Editor node, AntSettings_Configuration_Editor settings) {
     myNode = node;
     mySettings = settings;

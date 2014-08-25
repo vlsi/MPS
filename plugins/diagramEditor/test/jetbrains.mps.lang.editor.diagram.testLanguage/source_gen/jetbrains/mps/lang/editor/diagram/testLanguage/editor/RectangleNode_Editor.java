@@ -25,7 +25,6 @@ public class RectangleNode_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_t2nwzx_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_t2nwzx_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new RectangleNode_Editor.BlockCellImpl_t2nwzx_a(editorContext, node);
     editorCell.setCellId("DiagramNode_t2nwzx_a");
@@ -33,17 +32,14 @@ public class RectangleNode_Editor extends DefaultNodeEditor {
     DefaultDiagramElementActionMap_0.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_t2nwzx_a extends BlockCell {
     private BlockCellImpl_t2nwzx_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -97,7 +93,6 @@ public class RectangleNode_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

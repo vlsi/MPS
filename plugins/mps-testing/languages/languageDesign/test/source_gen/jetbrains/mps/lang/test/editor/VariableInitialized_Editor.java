@@ -22,11 +22,9 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vx851m_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vx851m_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_vx851m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_vx851m_a");
@@ -38,7 +36,6 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_vx851m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "init");
     editorCell.setCellId("Constant_vx851m_a0");
@@ -50,7 +47,6 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_vx851m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("var");
@@ -70,7 +66,6 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createNonEmptyProperty_vx851m_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -92,7 +87,6 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_vx851m_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vx851m_a_0");
@@ -101,14 +95,12 @@ public class VariableInitialized_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_vx851m_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_vx851m_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "name:");
     editorCell.setCellId("Constant_vx851m_a0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_vx851m_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

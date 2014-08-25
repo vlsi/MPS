@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Kaja.behavior;
 public class Repeat_BehaviorDescriptor extends AbstractCommand_BehaviorDescriptor {
   public Repeat_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Kaja.structure.Repeat";

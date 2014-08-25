@@ -11,21 +11,15 @@ import java.util.ArrayList;
 
 public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.ide");
-
   public Ide_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
-    addAction(new AddMissingImportsInProject_Action());
-    addAction(new AddMissingImports_Action());
     addAction(new AddModuleToProject_Action());
     addAction(new AddToNewFavoritesList_Action());
-    addAction(new AnalyzeClasspath_Action());
     addAction(new AnalyzeModuleDependencies_Action());
     addAction(new AnalyzeStacktrace_Action());
     addAction(new CalcClassifiersInRootsStatistic_Action());
@@ -53,12 +47,13 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new FindRootableConceptsWithoutIcons_Action());
     addAction(new FindSpecificNodeUsages_Action());
     addAction(new FindUnusedAndDeprecatedConcepts_Action());
+    addAction(new FixModuleImportsInProject_Action());
+    addAction(new FixModuleImports_Action());
     addAction(new ForcedSaveAll_Action());
     addAction(new GoByCurrentReferenceToIDEA_Action());
     addAction(new GoToModel_Action());
     addAction(new GoToModule_Action());
     addAction(new GoToNode_Action());
-    addAction(new GoToRootNode_Action());
     addAction(new GoToRule_Action());
     addAction(new HighlightInstances_Action());
     addAction(new HighlightUsages_Action());
@@ -105,8 +100,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addAction(new ShowImplementations_Action());
     addAction(new ShowInDependenciesViewer_Action());
     addAction(new ShowInLogicalView_Action());
-    addAction(new ShowModuleBootstrapDependency_Action());
-    addAction(new ShowModuleDependencyLoop_Action());
     addAction(new ShowNodeInInspector_Action());
     addAction(new ShowNodeInfo_Action());
     addAction(new ShowParameters_Action());
@@ -173,7 +166,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new TransientModulesActions_ActionGroup());
     addGroup(new View_ActionGroup());
   }
-
   public void adjustInterfaceGroups() {
     insertInterfaceGroupIntoAnother("VcsGroup", AbstractFileActions_ActionGroup.ID, AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     insertInterfaceGroupIntoAnother("VcsGroup", CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_ideavcs);
@@ -195,9 +187,10 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertInterfaceGroupIntoAnother("RunContextGroup", NodeActions_ActionGroup.ID, null);
     insertInterfaceGroupIntoAnother("RunContextGroup", ProjectActions_ActionGroup.ID, ProjectActions_ActionGroup.LABEL_ID_runConfig);
     insertInterfaceGroupIntoAnother("RunContextGroup", "jetbrains.mps.ide.editor.actions.EditorPopup_ActionGroup", null);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.AnalyzeJavaActions_ActionGroup", AnalyzeModule_ActionGroup.ID, AnalyzeModule_ActionGroup.LABEL_ID_analyze);
+    insertInterfaceGroupIntoAnother("jetbrains.mps.ide.java.workbench.actions.AnalyzeJavaActions_ActionGroup", DevkitActions_ActionGroup.ID, DevkitActions_ActionGroup.LABEL_ID_analyze);
     insertInterfaceGroupIntoAnother("jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup", NodeActions_ActionGroup.ID, NodeActions_ActionGroup.LABEL_ID_refactoring);
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(FavoritesPopup_ActionGroup.ID, FavoritesPopupWrapper_ActionGroup.ID, null);
     insertGroupIntoAnother(AnalyzeModule_ActionGroup.ID, CommonModuleActions_ActionGroup.ID, CommonModuleActions_ActionGroup.LABEL_ID_analyze);
@@ -267,7 +260,6 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     insertGroupIntoAnother(View_ActionGroup.ID, "ViewMenu", null);
     insertGroupIntoAnother(EditorActionsAddition_ActionGroup.ID, "jetbrains.mps.ide.editor.actions.EditorActions_ActionGroup", null);
   }
-
   public List<BaseKeymapChanges> initKeymaps() {
     List<BaseKeymapChanges> res = ListSequence.fromList(new ArrayList<BaseKeymapChanges>());
     ListSequence.fromList(res).addElement(new Default_KeymapChanges());

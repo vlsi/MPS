@@ -40,7 +40,6 @@ public class ModelProperties {
   private SModel myModelDescriptor;
   private boolean myDoNotGenerate;
   private boolean myGenerateIntoModelFolder;
-
   public ModelProperties(SModel modelDescriptor) {
     myModelDescriptor = modelDescriptor;
     SModel model = myModelDescriptor;
@@ -51,7 +50,6 @@ public class ModelProperties {
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
-
   @Deprecated
   public ModelProperties(SModel modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
@@ -63,43 +61,33 @@ public class ModelProperties {
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isDoNotGenerate();
     myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModel && ((GeneratableSModel) myModelDescriptor).isGenerateIntoModelFolder();
   }
-
   public SModel getModelDescriptor() {
     return myModelDescriptor;
   }
-
   public List<SModelReference> getImportedModels() {
     return myImportedModels;
   }
-
   public List<SModuleReference> getUsedLanguages() {
     return myUsedLanguages;
   }
-
   public List<SModuleReference> getUsedDevKits() {
     return myUsedDevKits;
   }
-
   public List<SModuleReference> getLanguagesEngagedOnGeneration() {
     return myLanguagesEngagedOnGeneration;
   }
-
   public boolean isDoNotGenerate() {
     return myDoNotGenerate;
   }
-
   public void setDoNotGenerate(boolean doNotGenerate) {
     myDoNotGenerate = doNotGenerate;
   }
-
   public boolean isGenerateIntoModelFolder() {
     return myGenerateIntoModelFolder;
   }
-
   public void setGenerateIntoModelFolder(boolean generateIntoModelFolder) {
     myGenerateIntoModelFolder = generateIntoModelFolder;
   }
-
   public void saveChanges() {
     if (!(myModelDescriptor instanceof EditableSModel)) {
       return;
@@ -133,13 +121,13 @@ public class ModelProperties {
     if (myModelDescriptor.getSource() instanceof NullDataSource) {
       ((EditableSModel) myModelDescriptor).save();
     }
-    MissingDependenciesFixer.fixDependencies(myModelDescriptor);
+
+    new MissingDependenciesFixer(myModelDescriptor).fixModuleDependencies();
     // change of model properties might affect generation status. This explicit call is needed  
     // unless model dispatch proper change events (which it does not at the moment), and project pane  
     // got no other means to find out it needs to update generation status 
     ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(myModelDescriptor));
   }
-
   private void addNewDevKits() {
     Set<SModuleReference> devKitsInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
     Set<SModuleReference> devKitsInProperties = new HashSet<SModuleReference>(getUsedDevKits());
@@ -151,7 +139,6 @@ public class ModelProperties {
       ((SModelInternal) model).addDevKit(dk);
     }
   }
-
   private void removeUnusedDevKits() {
     Set<SModuleReference> propsDevKits = new HashSet<SModuleReference>(getUsedDevKits());
     List<SModuleReference> imported = new ArrayList<SModuleReference>(((SModelInternal) myModelDescriptor).importedDevkits());
@@ -161,11 +148,9 @@ public class ModelProperties {
       }
     }
   }
-
   protected String getErrorString() {
     return null;
   }
-
   private void addNewLanguages() {
     Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
     Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getUsedLanguages());
@@ -181,7 +166,6 @@ public class ModelProperties {
       ((SModelInternal) myModelDescriptor).addLanguage(language.getModuleReference());
     }
   }
-
   private void removeUnusedLanguages() {
     Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).importedLanguages());
     Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getUsedLanguages());
@@ -190,7 +174,6 @@ public class ModelProperties {
       ((SModelInternal) myModelDescriptor).deleteLanguage(namespace);
     }
   }
-
   private void addNewEngagedOnGenerationLanguages() {
     Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
     Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
@@ -199,7 +182,6 @@ public class ModelProperties {
       ((SModelInternal) myModelDescriptor).addEngagedOnGenerationLanguage(namespace);
     }
   }
-
   private void removeUnusedEngagedOnGenerationLanguages() {
     Set<SModuleReference> languagesInModel = new HashSet<SModuleReference>(((SModelInternal) myModelDescriptor).engagedOnGenerationLanguages());
     Set<SModuleReference> languagesInProps = new HashSet<SModuleReference>(getLanguagesEngagedOnGeneration());
@@ -208,7 +190,6 @@ public class ModelProperties {
       ((SModelInternal) myModelDescriptor).removeEngagedOnGenerationLanguage(ref);
     }
   }
-
   private void addNewModels() {
     Set<SModelReference> modelsInProps = new HashSet<SModelReference>(getImportedModels());
     SModel smodel = myModelDescriptor;
@@ -217,7 +198,6 @@ public class ModelProperties {
       ((SModelInternal) smodel).addModelImport(modelReference, false);
     }
   }
-
   private void removeUnusedModels() {
     SModel smodel = myModelDescriptor;
     Set<SModelReference> modelsInModel = new HashSet<SModelReference>(SModelOperations.getImportedModelUIDs(smodel));
@@ -226,7 +206,6 @@ public class ModelProperties {
       ((SModelInternal) smodel).deleteModelImport(modelReference);
     }
   }
-
   public Condition<SModuleReference> getUsedLanguageRemoveCondition() {
     final Wrappers._T<Set<SModuleReference>> usedLanguages = new Wrappers._T<Set<SModuleReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -237,7 +216,6 @@ public class ModelProperties {
     });
     return new ModelProperties.LanguagesCondition(usedLanguages.value);
   }
-
   public Condition<SModelReference> getImportedModelsRemoveCondition() {
     final Wrappers._T<Set<SModelReference>> models = new Wrappers._T<Set<SModelReference>>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -250,28 +228,21 @@ public class ModelProperties {
   }
 
 
-
-
   public class ModelsCondition implements Condition<SModelReference> {
     private final Set<SModelReference> myModels;
-
     public ModelsCondition(Set<SModelReference> models) {
       myModels = models;
     }
-
     @Override
     public boolean met(final SModelReference object) {
       return !(myModels.contains(object));
     }
   }
-
   private class LanguagesCondition implements Condition<SModuleReference> {
     private final Set<SModuleReference> myUsedLanguages;
-
     public LanguagesCondition(Set<SModuleReference> usedLanguages) {
       myUsedLanguages = usedLanguages;
     }
-
     @Override
     public boolean met(final SModuleReference object) {
       SModule module = MPSModuleRepository.getInstance().getModuleByFqName(object.getModuleName());

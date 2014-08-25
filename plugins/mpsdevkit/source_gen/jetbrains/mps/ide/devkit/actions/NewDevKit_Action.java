@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class NewDevKit_Action extends BaseAction {
   private static final Icon ICON = MPSIcons.Nodes.DevKit;
-
   public NewDevKit_Action() {
     super("DevKit", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class NewDevKit_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -67,7 +63,6 @@ public class NewDevKit_Action extends BaseAction {
     MapSequence.fromMap(_params).put("namespace", event.getData(MPSDataKeys.NAMESPACE));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       NewDevKitDialog dialog = new NewDevKitDialog(((MPSProject) MapSequence.fromMap(_params).get("project")).getProject());
@@ -90,6 +85,5 @@ public class NewDevKit_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(NewDevKit_Action.class);
 }

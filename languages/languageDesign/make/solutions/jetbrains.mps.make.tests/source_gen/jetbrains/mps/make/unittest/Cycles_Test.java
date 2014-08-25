@@ -32,7 +32,6 @@ public class Cycles_Test extends TestCase {
     Assert.assertSame(1, ListSequence.fromList(cycles).count());
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B"), ListSequence.fromList(cycles).getElement(0));
   }
-
   public void test_self() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
@@ -45,7 +44,6 @@ public class Cycles_Test extends TestCase {
     Assert.assertSame(2, ListSequence.fromList(cycles2).count());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList(), ListSequence.fromListAndArray(new ArrayList<String>(), "A"), ListSequence.fromListAndArray(new ArrayList<String>(), "B"))).disjunction(ListSequence.fromList(cycles2)).isEmpty());
   }
-
   public void test_oneCycle() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
@@ -58,7 +56,6 @@ public class Cycles_Test extends TestCase {
     Assert.assertSame(3, ListSequence.fromList(ListSequence.fromList(cycles).getElement(0)).count());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "B", "C", "D")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(0))).isEmpty());
   }
-
   public void test_linear() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
@@ -82,7 +79,6 @@ public class Cycles_Test extends TestCase {
     cycles = cd.findCycles();
     Assert.assertSame(0, ListSequence.fromList(cycles).count());
   }
-
   public void test_fourCycles() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
@@ -101,7 +97,6 @@ public class Cycles_Test extends TestCase {
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "D", "C")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(1))).isEmpty());
     Assert.assertTrue(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<String>(), "G", "I", "F", "H")).disjunction(ListSequence.fromList(ListSequence.fromList(cycles).getElement(2))).isEmpty());
   }
-
   public void test_topoSort() throws Exception {
     Graph<String> graph = new Graph<String>();
     GraphAnalyzer<String> cd = graph.getCycleDetector();
@@ -124,7 +119,6 @@ public class Cycles_Test extends TestCase {
     }, false);
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"), cd.topologicalSort());
   }
-
   public void test_precursors() throws Exception {
     Graph<String> graph = new Graph<String>();
     graph.addEdges("A", "B");
@@ -142,7 +136,6 @@ public class Cycles_Test extends TestCase {
     }, false);
     Utils.assertSameSequence(ListSequence.fromListAndArray(new ArrayList<String>(), "A", "B", "C", "D", "E"), cd.precursors("E"));
   }
-
   public Cycles_Test() {
   }
 }

@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="AgreementRegistryBuilder.java">
-      <unit at="29,0,65,0" name="postingrules.agreement.AgreementRegistryBuilder" />
+      <unit at="29,0,62,0" name="postingrules.agreement.AgreementRegistryBuilder" />
     </file>
   </root>
 </debug-info>

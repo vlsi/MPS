@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SReference;
 public class ResolveUtil {
   public ResolveUtil() {
   }
-
   public static List<SNode> parameterTypes(SNode method, SNode instanceType, SNode classifier) {
     List<SNode> result = ListSequence.fromList(new LinkedList<SNode>());
     boolean containsVars = false;
@@ -59,7 +58,6 @@ public class ResolveUtil {
     }
     return result;
   }
-
   public static SNode getConcreteClassifierType(SNode typeWithVars, SNode classifierSubtype) {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
@@ -74,7 +72,6 @@ public class ResolveUtil {
     }
     return result;
   }
-
   public static SNode getConcreteSuperClassifierType(List<SNode> frontier, SNode classifier) {
     SNode concreteMethodClassifierType = null;
     while (!(ListSequence.fromList(frontier).isEmpty())) {
@@ -103,7 +100,6 @@ public class ResolveUtil {
     }
     return concreteMethodClassifierType;
   }
-
   public static SNode processMethodToImplement(SNode enclosingClassifier, SNode method) {
     SNode declaringClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode result = SNodeOperations.copyNode(method);
@@ -156,7 +152,6 @@ public class ResolveUtil {
     }
     return result;
   }
-
   public static boolean goodArguments(Iterable<SNode> parameterTypes, List<SNode> arguments) {
     if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
       if (Sequence.fromIterable(parameterTypes).count() - 1 > ListSequence.fromList(arguments).count()) {
@@ -216,7 +211,6 @@ public class ResolveUtil {
       return false;
     }
   }
-
   private static SNode _quotation_createNode_txu8l3_a0a0a0b0c0a0k0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

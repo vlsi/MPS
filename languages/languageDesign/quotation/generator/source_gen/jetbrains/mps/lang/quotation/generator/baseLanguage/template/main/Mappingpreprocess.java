@@ -36,70 +36,54 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 public class Mappingpreprocess implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
   private final TemplateModel myModel;
-
   public Mappingpreprocess(TemplateModel model) {
     this.myModel = model;
     rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingpreprocess.ReductionRule0());
   }
-
   public String getName() {
     return "preprocess";
   }
-
   public TemplateModel getModel() {
     return this.myModel;
   }
-
   public SNodeReference getMappingNode() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8274572146452539018");
   }
-
   public boolean isApplicable(ITemplateGenerator generator) {
     return QueriesGenerated.mappingConfiguration_Condition_6450631649356501163(new TemplateQueryContext(null, null, null, generator));
   }
-
   public Collection<TemplateReductionRule> getReductionRules() {
     return rules;
   }
-
   public Collection<TemplateCreateRootRule> getCreateRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateRootMappingRule> getRootRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateWeavingRule> getWeavingRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateDropRootRule> getDropRules() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPostScripts() {
     return Collections.emptySet();
   }
-
   public Collection<TemplateMappingScript> getPreScripts() {
     return Collections.emptySet();
   }
-
   public boolean isTopPriority() {
     return true;
   }
-
   public final class ReductionRule0 extends ReductionRuleBase implements TemplateRuleWithCondition {
     public ReductionRule0() {
       super(new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "8274572146452628027"), "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", false);
     }
-
     @Override
     public boolean isApplicable(final TemplateExecutionEnvironment env, final TemplateContext context) throws GenerationException {
       return QueriesGenerated.baseMappingRule_Condition_8274572146452630995(new ReductionRuleQueryContext(context, getRuleNode()));
     }
-
     @Override
     protected Collection<SNode> doApply(@NotNull final TemplateContext context) throws GenerationException {
       final TemplateExecutionEnvironment environment = context.getEnvironment();
@@ -114,11 +98,9 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
               public Object resolve(SNode outputNode, TemplateContext context) {
                 return QueriesGenerated.referenceMacro_GetReferent_7838325468140239892(new ReferenceMacroContext(context, tnode2, referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51, "concept"));
               }
-
               public String getDefaultResolveInfo() {
                 return "Attribute";
               }
-
               public SNodeReference getTemplateNode() {
                 return referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51;
               }
@@ -157,7 +139,6 @@ public class Mappingpreprocess implements TemplateMappingConfiguration {
       return TemplateUtil.singletonList(tnode1);
     }
   }
-
   private static SNodePointer referenceMacro_pbbzd9_c0a0a0a0a0a0b0b0b0c0c51 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468140239891");
   private static SNodePointer copySrcMacro_pbbzd9_b0a0c0d0b0c0b0b0c0c51 = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "7838325468139287102");
 }

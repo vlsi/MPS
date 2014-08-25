@@ -23,20 +23,16 @@ public class CommandDeclaration_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setTarget(thisNode, "debuggerParameter", SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.DebuggerSettingsCommandParameterDeclaration", null), true);
   }
-
   public static boolean call_isDebuggable_856705193941282102(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "debuggerConfiguration", true) != null);
   }
-
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return "Command";
   }
-
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
     return _quotation_createNode_5aznw1_a0a2(thisNode, thisNode);
   }
-
   public static List<SNode> call_getDistinctFieldParameters_6129022259108623165(SNode thisNode) {
     // we get all parameters generated into fields and select a list with uniquie names 
     final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
@@ -59,7 +55,6 @@ public class CommandDeclaration_Behavior {
       }
     }).toListSequence();
   }
-
   public static List<SNode> call_getDistinctByNameAndTypeFieldParameters_3754131050835964183(SNode thisNode) {
     final Iterable<SNode> parameterDeclarations = CommandDeclaration_Behavior.call_getFieldParameters_3754131050835964275(thisNode);
     Iterable<String> fieldNames = Sequence.fromIterable(parameterDeclarations).select(new ISelector<SNode, String>() {
@@ -81,7 +76,6 @@ public class CommandDeclaration_Behavior {
       }
     }).toListSequence();
   }
-
   public static Iterable<SNode> call_getFieldParameters_3754131050835964275(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "executePart", true)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -93,19 +87,15 @@ public class CommandDeclaration_Behavior {
       }
     });
   }
-
   public static String call_getCreateProcessMethodName_856705193941282090(SAbstractConcept thisConcept) {
     return "createProcess";
   }
-
   public static String call_getGetDebuggerMethodName_856705193941282096(SAbstractConcept thisConcept) {
     return "getDebugger";
   }
-
   public static String call_getGetDebuggerConfidurationMethodName_6226796386650472924(SAbstractConcept thisConcept) {
     return "getDebuggerConfiguration";
   }
-
   private static SNode _quotation_createNode_5aznw1_a0a2(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -114,11 +104,9 @@ public class CommandDeclaration_Behavior {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "command", (SNode) parameter_1);
     return quotedNode_3;
   }
-
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0d0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_5aznw1_a0a0a0a0a0a0a0a0a0a0c0f(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

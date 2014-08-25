@@ -20,7 +20,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xs2qhg_a(editorContext, node);
   }
-
   private EditorCell createCollection_xs2qhg_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xs2qhg_a");
@@ -32,7 +31,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xs2qhg_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xs2qhg_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "addDependency");
     editorCell.setCellId("Constant_xs2qhg_a0");
@@ -42,7 +40,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_xs2qhg_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_xs2qhg_b0");
@@ -52,7 +49,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_xs2qhg_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("dependency");
@@ -72,7 +68,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xs2qhg_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_xs2qhg_d0");
@@ -82,7 +77,6 @@ public class AddDependencyStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_xs2qhg_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_xs2qhg_e0");

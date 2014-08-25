@@ -10,24 +10,19 @@ public class CResource extends MultiTuple._1<IClassesData> implements ICResouce 
   public CResource() {
     super();
   }
-
   public CResource(IClassesData classes) {
     super(classes);
   }
-
   public IClassesData classes(IClassesData value) {
     return super._0(value);
   }
-
   public IClassesData classes() {
     return super._0();
   }
-
   @SuppressWarnings(value = "unchecked")
   public CResource assignFrom(Tuples._1<IClassesData> from) {
     return (CResource) super.assign(from);
   }
-
   public String describe() {
     return null;
   }

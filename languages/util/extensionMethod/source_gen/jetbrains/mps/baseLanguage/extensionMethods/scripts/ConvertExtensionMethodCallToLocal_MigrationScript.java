@@ -22,15 +22,12 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
       public String getName() {
         return "ConvertLocalInstanceMethodCall";
       }
-
       public String getAdditionalInfo() {
         return "ConvertLocalInstanceMethodCall";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression"))) {
           return false;
@@ -54,13 +51,11 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
         }
         return true;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.extensionMethods.structure.LocalExtendedMethodCall");
         SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)));
       }
-
       public boolean isShowAsIntention() {
         return true;
       }

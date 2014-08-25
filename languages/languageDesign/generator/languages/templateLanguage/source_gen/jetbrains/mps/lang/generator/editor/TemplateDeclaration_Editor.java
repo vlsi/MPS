@@ -41,7 +41,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_pyph5i_a(editorContext, node);
   }
-
   private EditorCell createCollection_pyph5i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pyph5i_a");
@@ -52,7 +51,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_pyph5i_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_pyph5i_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_pyph5i_a0");
@@ -67,7 +65,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_pyph5i_e0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_pyph5i_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pyph5i_a0a");
@@ -78,7 +75,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_pyph5i_b0a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pyph5i_a0a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "template");
     editorCell.setCellId("Constant_pyph5i_a0a0");
@@ -89,7 +85,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_pyph5i_b0a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -110,11 +105,9 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class TemplateDeclaration_name_cellMenu_pyph5i_a0b0a0 extends AbstractCellMenuPart_PropertyValues {
     public TemplateDeclaration_name_cellMenu_pyph5i_a0b0a0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       List<String> values = ListSequence.fromList(new ArrayList<String>());
       if ((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
@@ -124,7 +117,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       return values;
     }
   }
-
   private EditorCell createCollection_pyph5i_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_pyph5i_b0a");
@@ -135,7 +127,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefCell_pyph5i_b1a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_pyph5i_a1a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "input");
     editorCell.setCellId("Constant_pyph5i_a1a0");
@@ -145,7 +136,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefCell_pyph5i_b1a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("applicableConcept");
@@ -167,20 +157,16 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_pyph5i_a1b0a extends InlineCellProvider {
     public _Inline_pyph5i_a1b0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_pyph5i_a0b1a0(editorContext, node);
     }
-
     private EditorCell createProperty_pyph5i_a0b1a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -203,14 +189,12 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_pyph5i_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pyph5i_c0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_pyph5i_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "parameters");
     editorCell.setCellId("Constant_pyph5i_d0a");
@@ -220,7 +204,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_pyph5i_e0a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new TemplateDeclaration_Editor.parameterListHandler_pyph5i_e0a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
@@ -231,35 +214,31 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class parameterListHandler_pyph5i_e0a extends RefNodeListHandler {
     public parameterListHandler_pyph5i_e0a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -267,7 +246,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_pyph5i_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_pyph5i_b0");
@@ -277,7 +255,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_pyph5i_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "content node:");
     editorCell.setCellId("Constant_pyph5i_c0");
@@ -288,7 +265,6 @@ public class TemplateDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_pyph5i_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contentNode");

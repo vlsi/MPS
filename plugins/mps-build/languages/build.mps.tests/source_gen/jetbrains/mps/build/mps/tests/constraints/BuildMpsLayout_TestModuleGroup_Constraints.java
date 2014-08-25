@@ -29,12 +29,10 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
   public BuildMpsLayout_TestModuleGroup_Constraints() {
     super("jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModuleGroup");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -45,7 +43,6 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -54,7 +51,6 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -63,7 +59,6 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new FilteringScope(Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Group"))) {
@@ -82,11 +77,9 @@ public class BuildMpsLayout_TestModuleGroup_Constraints extends BaseConstraintsD
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.mps.tests.structure.BuildMpsLayout_TestModules");
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "8574011380873424208");
   private static SNodePointer breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)", "4005526075816137908");
 }

@@ -20,7 +20,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_319n5h_a(editorContext, node);
   }
-
   private EditorCell createCollection_319n5h_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_319n5h_a");
@@ -30,7 +29,6 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_319n5h_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_319n5h_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_319n5h_a0");
@@ -38,10 +36,10 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     BaseLanguageStyle_StyleSheet.apply_LeftBrace(style, editorCell);
     style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     editorCell.getStyle().putAll(style);
+    Delete_BlockStatement.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_319n5h_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statements");
@@ -65,13 +63,13 @@ public class BlockStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_319n5h_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_319n5h_c0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBrace(style, editorCell);
     editorCell.getStyle().putAll(style);
+    Delete_BlockStatement.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }

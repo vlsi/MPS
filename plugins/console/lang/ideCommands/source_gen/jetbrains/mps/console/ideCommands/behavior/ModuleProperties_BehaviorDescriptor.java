@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ModuleProperties_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ModuleProperties_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SNode thisNode) {
     return ModuleProperties_Behavior.virtual_legalAsStatement_1262430001741498032(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ModuleProperties";

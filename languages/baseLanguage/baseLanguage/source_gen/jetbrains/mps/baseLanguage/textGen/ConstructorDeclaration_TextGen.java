@@ -100,6 +100,5 @@ public class ConstructorDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ConstructorDeclaration_TextGen.class);
 }

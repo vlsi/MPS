@@ -22,7 +22,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_aauy4y_a(editorContext, node);
   }
-
   private EditorCell createCollection_aauy4y_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aauy4y_a");
@@ -33,7 +32,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_aauy4y_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator options");
     editorCell.setCellId("Constant_aauy4y_a0");
@@ -43,7 +41,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -65,7 +62,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_aauy4y_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aauy4y_c0");
@@ -86,7 +82,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_aauy4y_i2a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "strict mode");
     editorCell.setCellId("Constant_aauy4y_a2a");
@@ -96,7 +91,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_b2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("strict");
@@ -117,7 +111,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_c2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "multiple threads");
     editorCell.setCellId("Constant_aauy4y_c2a");
@@ -127,7 +120,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_d2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("parallel");
@@ -148,7 +140,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_aauy4y_e2a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_aauy4y_e2a");
@@ -159,11 +150,9 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_aauy4y_b4c0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_aauy4y_a4c0(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "parallel");
   }
-
   private EditorCell createConstant_aauy4y_a4c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "number of threads");
     editorCell.setCellId("Constant_aauy4y_a4c0");
@@ -173,7 +162,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_b4c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("parallelThreads");
@@ -194,7 +182,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_f2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inplace transform");
     editorCell.setCellId("Constant_aauy4y_f2a");
@@ -204,7 +191,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_g2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("inplace");
@@ -225,7 +211,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_h2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "hide warnings");
     editorCell.setCellId("Constant_aauy4y_h2a");
@@ -235,7 +220,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_aauy4y_i2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("hideWarnings");
@@ -256,7 +240,6 @@ public class BuildMps_GeneratorOptions_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_aauy4y_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_aauy4y_d0");

@@ -14,36 +14,28 @@ import org.jetbrains.annotations.NonNls;
 public class BeforeTask_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStructureDeprecatable_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
   public BeforeTask_BehaviorDescriptor() {
   }
-
   public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public String virtual_getFullName_946964771156905503(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
-
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
-
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
   }
-
   @NonNls
   public String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return BeforeTask_Behavior.virtual_getSuffix_946964771156905483(thisNode);
   }
-
   public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return IStructureDeprecatable_Behavior.virtual_isDeprecated_1224609060727(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.BeforeTask";

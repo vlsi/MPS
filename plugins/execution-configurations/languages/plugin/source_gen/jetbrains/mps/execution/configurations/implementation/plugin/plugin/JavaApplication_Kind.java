@@ -17,39 +17,31 @@ import com.intellij.openapi.extensions.Extensions;
 public class JavaApplication_Kind implements ConfigurationType {
   private static final Icon ICON = AllIcons.RunConfigurations.Application;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
-
   public JavaApplication_Kind() {
   }
-
   public ConfigurationFactory[] getConfigurationFactories() {
     List<ConfigurationFactory> result = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
     ListSequence.fromList(result).addElement(new Java_Configuration_Factory(this));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(myForeignFactories));
     return ListSequence.fromList(result).toGenericArray(ConfigurationFactory.class);
   }
-
   @NonNls
   @NotNull
   public String getId() {
     return "Java Application";
   }
-
   public Icon getIcon() {
     return ICON;
   }
-
   public String getConfigurationTypeDescription() {
     return null;
   }
-
   public String getDisplayName() {
     return "Java Application";
   }
-
   public void addForeignFactory(ConfigurationFactory factory) {
     ListSequence.fromList(myForeignFactories).addElement(factory);
   }
-
   public static JavaApplication_Kind getInstance() {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JavaApplication_Kind.class);
   }

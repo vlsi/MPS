@@ -4,20 +4,23 @@ package jetbrains.mps.make.sandbox.sample;
 
 import jetbrains.mps.smodel.structure.DescriptorProvider;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.make.facet.IFacetManifest;
 
-public class FacetAspectDescriptor extends DescriptorProvider<FacetDescriptor> {
-  private static FacetManifest MANIFEST;
-
+public class FacetAspectDescriptor extends DescriptorProvider<FacetDescriptor> implements MakeAspectDescriptor {
+  private final IFacetManifest myManifest;
   public FacetAspectDescriptor() {
-    MANIFEST = new FacetManifest();
+    myManifest = new FacetManifest();
   }
-
   public FacetDescriptor getDescriptor(String conceptFqName) {
     return new FacetDescriptor() {
       public IFacetManifest getManifest() {
-        return FacetAspectDescriptor.MANIFEST;
+        return myManifest;
       }
     };
+  }
+  @Override
+  public IFacetManifest getManifest() {
+    return myManifest;
   }
 }

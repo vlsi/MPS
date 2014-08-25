@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode instanceMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> myThrown = SLinkOperations.getTargets(instanceMethodDeclaration, "throwsItem", true);
     if (ListSequence.fromList(myThrown).isEmpty()) {
@@ -73,34 +72,27 @@ public class check_InstanceMethodDeclarationThrownExceptionsSignature_NonTypesys
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_l20hbd_a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_l20hbd_a0a0a0a0a0a0a1a0a0a0a0a4a0a0a0a8a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_l20hbd_a0a0a0a0a0a0a0e0a0a0a0i0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_l20hbd_a0a0a0e0a0a0a0i0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

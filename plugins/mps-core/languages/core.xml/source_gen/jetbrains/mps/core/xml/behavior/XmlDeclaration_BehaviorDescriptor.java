@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class XmlDeclaration_BehaviorDescriptor extends XmlBasePrologElement_BehaviorDescriptor implements XmlPrologElement_BehaviorDescriptor {
   public XmlDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_isFirst_1262430001741498376(SConcept thisConcept) {
     return XmlDeclaration_Behavior.virtual_isFirst_1262430001741498376(thisConcept);
   }
-
   public boolean virtual_isSingle_1262430001741497810(SConcept thisConcept) {
     return XmlDeclaration_Behavior.virtual_isSingle_1262430001741497810(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.structure.XmlDeclaration";

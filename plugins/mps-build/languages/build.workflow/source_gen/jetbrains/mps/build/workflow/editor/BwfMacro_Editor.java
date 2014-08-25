@@ -21,11 +21,9 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kawrig_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_kawrig_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_kawrig_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a");
@@ -46,7 +44,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_kawrig_h0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export");
     editorCell.setCellId("Constant_kawrig_a0");
@@ -56,11 +53,9 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_kawrig_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "exportToProperiesFile");
   }
-
   private EditorCell createConstant_kawrig_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location");
     editorCell.setCellId("Constant_kawrig_b0");
@@ -70,11 +65,9 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_kawrig_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isLocation");
   }
-
   private EditorCell createConstant_kawrig_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized");
     editorCell.setCellId("Constant_kawrig_c0");
@@ -84,11 +77,9 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_kawrig_a2a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "uninitialized");
   }
-
   private EditorCell createConstant_kawrig_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "macro");
     editorCell.setCellId("Constant_kawrig_d0");
@@ -98,7 +89,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kawrig_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -116,14 +106,12 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_kawrig_f0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kawrig_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("defaultValue");
@@ -145,14 +133,12 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_h0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_kawrig_h0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_kawrig_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_kawrig_a_0");
@@ -165,7 +151,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_kawrig_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_a0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "export:");
     editorCell.setCellId("Constant_kawrig_a0_0");
@@ -175,7 +160,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kawrig_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("exportToProperiesFile");
@@ -196,7 +180,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_c0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "location:");
     editorCell.setCellId("Constant_kawrig_c0_0");
@@ -206,7 +189,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kawrig_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isLocation");
@@ -227,7 +209,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_kawrig_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uninitialized:");
     editorCell.setCellId("Constant_kawrig_e0");
@@ -237,7 +218,6 @@ public class BwfMacro_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_kawrig_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uninitialized");

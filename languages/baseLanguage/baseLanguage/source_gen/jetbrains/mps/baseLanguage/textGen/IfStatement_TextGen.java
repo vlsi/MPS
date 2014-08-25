@@ -51,6 +51,5 @@ public class IfStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(IfStatement_TextGen.class);
 }

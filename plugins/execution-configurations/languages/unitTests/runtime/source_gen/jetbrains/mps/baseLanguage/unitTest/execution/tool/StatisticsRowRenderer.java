@@ -30,7 +30,6 @@ public class StatisticsRowRenderer implements TableCellRenderer {
   private final JLabel myAloneSuccess;
   private final JLabel myAloneError;
   private final JLabel myAloneFailure;
-
   public StatisticsRowRenderer() {
 
     myTextPanel = new JPanel(new BorderLayout());
@@ -76,7 +75,6 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     myAloneError.setForeground(Color.RED);
     myAloneError.setFont(boldFont);
   }
-
   @Override
   public Component getTableCellRendererComponent(JTable table, @Nullable Object value, boolean isSelected, boolean hasFocus, int row, int column) {
     if (value == null) {
@@ -180,7 +178,6 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     }
     return result;
   }
-
   private JLabel setTime(long time) {
     String text = "";
     if (time >= 0) {
@@ -189,7 +186,6 @@ public class StatisticsRowRenderer implements TableCellRenderer {
     mySimpleField.setText(text);
     return mySimpleField;
   }
-
   private JLabel setMemoryUsage(long usage) {
     String s = String.format("%d Kb", usage / 1024);
     mySimpleField.setText(s);

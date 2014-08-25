@@ -29,7 +29,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5sxwue_a(editorContext, node);
   }
-
   private EditorCell createCollection_5sxwue_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5sxwue_a");
@@ -42,7 +41,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5sxwue_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefCell_5sxwue_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("enumClass");
@@ -64,20 +62,16 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_5sxwue_a0a extends InlineCellProvider {
     public _Inline_5sxwue_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_5sxwue_a0a0(editorContext, node);
     }
-
     private EditorCell createProperty_5sxwue_a0a0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -97,7 +91,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_5sxwue_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_5sxwue_b0");
@@ -107,7 +100,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5sxwue_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "valueOf");
     editorCell.setCellId("Constant_5sxwue_c0");
@@ -118,28 +110,22 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EnumValueOfExpression_Editor.EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0()}));
     return editorCell;
   }
-
   public static class EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0 extends AbstractCellMenuPart_ReplaceNode_Group {
     public EnumValueOfExpression_customReplace_cellMenu_5sxwue_a0c0() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_parameterObjects(SLinkOperations.getTarget(node, "enumClass", false), node);
     }
-
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return createReplacementNode_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       return QueriesUtil.replaceNodeMenu_createNewNode(SLinkOperations.getTarget(node, "enumClass", false), parameterObject, node);
     }
-
     public boolean isReferentPresentation() {
       return true;
     }
   }
-
   private EditorCell createConstant_5sxwue_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_5sxwue_d0");
@@ -149,7 +135,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5sxwue_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("value");
@@ -169,7 +154,6 @@ public class EnumValueOfExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5sxwue_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5sxwue_f0");

@@ -26,11 +26,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gkr2rl_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gkr2rl_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_gkr2rl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_a");
@@ -44,7 +42,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gkr2rl_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_gkr2rl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_a0");
@@ -54,12 +51,10 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_gkr2rl_a0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_gkr2rl_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.BaseMappingRule_premise");
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "-->");
     editorCell.setCellId("Constant_gkr2rl_b0");
@@ -69,7 +64,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gkr2rl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_c0");
@@ -80,11 +74,9 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_gkr2rl_b2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_gkr2rl_a2a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "labelDeclaration", false) != null;
   }
-
   private EditorCell createRefCell_gkr2rl_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("labelDeclaration");
@@ -106,20 +98,16 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_gkr2rl_a0c0 extends InlineCellProvider {
     public _Inline_gkr2rl_a0c0() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createProperty_gkr2rl_a0a2a(editorContext, node);
     }
-
     private EditorCell createProperty_gkr2rl_a0a2a(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
@@ -142,14 +130,12 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_gkr2rl_b2a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_gkr2rl_b2a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gkr2rl_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_d0");
@@ -163,7 +149,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_gkr2rl_b3a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_gkr2rl_a3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("ruleConsequence");
@@ -183,7 +168,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_gkr2rl_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_b3a");
@@ -195,7 +179,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_gkr2rl_c1d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_a1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "context");
     editorCell.setCellId("Constant_gkr2rl_a1d0");
@@ -205,7 +188,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_b1d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_gkr2rl_b1d0");
@@ -216,7 +198,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_gkr2rl_c1d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("contextNodeQuery");
@@ -236,7 +217,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gkr2rl_e0");
@@ -247,7 +227,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_gkr2rl_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_gkr2rl_a_0");
@@ -260,7 +239,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_gkr2rl_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "weaving rule");
     editorCell.setCellId("Constant_gkr2rl_a0");
@@ -272,7 +250,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_gkr2rl_b0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_gkr2rl_b0_0");
@@ -282,7 +259,6 @@ public class Weaving_MappingRule_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createComponent_gkr2rl_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.generator.editor.MappingRuleCommonFields");
     return editorCell;

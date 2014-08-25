@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_DivOperationFraction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_DivOperationFraction_InferenceRule() {
   }
-
   public void applyRule(final SNode fraction, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode rightExpressionType_typevar_1418611629041884929 = typeCheckingContext.createNewRuntimeTypesVariable();
     final SNode leftExpressionType_typevar_1418611629041884930 = typeCheckingContext.createNewRuntimeTypesVariable();
@@ -67,22 +66,18 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
       }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1418611629041884893", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -97,7 +92,6 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     quotedNode_1.addChild("leftExpression", quotedNode_3);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_ladpqm_a0a0a0a0d0a0a0a0e0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

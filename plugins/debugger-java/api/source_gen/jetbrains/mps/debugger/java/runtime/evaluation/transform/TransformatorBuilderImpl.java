@@ -9,31 +9,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class TransformatorBuilderImpl extends TransformatorBuilder {
   public TransformatorBuilderImpl() {
   }
-
   @Override
   public void init() {
     synchronized (LOCK) {
       INSTANCE = this;
     }
   }
-
   @Override
   public void dispose() {
     synchronized (LOCK) {
       INSTANCE = null;
     }
   }
-
   @Override
   public TransformatorBuilder.Transformator build(@NotNull SNode node, boolean insideTransformation) {
     return new TransformatorImpl(node, insideTransformation);
   }
-
   @Override
   public String getJniSignatureFromType(SNode type) {
     return TransformationUtil.getJniSignatureFromType(type);
   }
-
   @Override
   public SNode getProxyTypeFromType(SNode type) {
     return TransformationUtil.getValueProxyTypeFromType(type);

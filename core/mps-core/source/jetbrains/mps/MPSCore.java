@@ -50,7 +50,6 @@ import jetbrains.mps.smodel.SNodeAccessUtilImpl;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
-import jetbrains.mps.smodel.language.InterpretedLanguageAspectsRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
@@ -116,7 +115,7 @@ public final class MPSCore extends ComponentPlugin {
     init(new StructureAspectInterpreted());
     init(new SModelUtil_new(classLoaderManager, globalSModelEventsManager));
     init(new CachesManager(classLoaderManager, modelRepository));
-    init(new LanguageDescriptorModelProvider());
+    init(new LanguageDescriptorModelProvider(moduleRepository));
     init(new ProjectStructureModule(moduleRepository, modelRepository));
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
@@ -128,7 +127,6 @@ public final class MPSCore extends ComponentPlugin {
     init(new ValidationSettings());
 
     init(new BootstrapMakeFacets());
-    init(new InterpretedLanguageAspectsRegistry());
   }
 
   /**
@@ -168,12 +166,12 @@ public final class MPSCore extends ComponentPlugin {
   }
 
   /**
-   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(boolean)} instead
+   * @deprecated use [kernel] {@link RuntimeFlags#setTestMode(jetbrains.mps.TestMode)} instead
    */
   @Deprecated
   @ToRemove(version = 3.2)
-  public void setTestMode() {
-    RuntimeFlags.setTestMode(true);
+  public void setTestMode(boolean flag) {
+    RuntimeFlags.setTestMode(TestMode.USUAL);
   }
 
   /**

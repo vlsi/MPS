@@ -22,20 +22,16 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
     action = new EditorCellModel_KeyMap.EditorCellModel_KeyMap_Action1();
     this.putAction("ctrl+alt+shift", "VK_F", action);
   }
-
   public static class EditorCellModel_KeyMap_Action0 extends KeyMapActionImpl {
     public EditorCellModel_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "toggle cell focus policy [attracts focus]/[no attraction]";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -50,12 +46,10 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       }
       return true;
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(SPropertyOperations.hasValue(node, "attractsFocus", "1", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "1");
@@ -63,25 +57,20 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
         SPropertyOperations.set(node, "attractsFocus", "0");
       }
     }
-
     public String getKeyStroke() {
       return "ctrl shift F";
     }
   }
-
   public static class EditorCellModel_KeyMap_Action1 extends KeyMapActionImpl {
     public EditorCellModel_KeyMap_Action1() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "toggle cell focus policy [first editable]/[no attraction]";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -96,12 +85,10 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
       }
       return true;
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (!(SPropertyOperations.hasValue(node, "attractsFocus", "2", "0"))) {
         SPropertyOperations.set(node, "attractsFocus", "2");
@@ -109,7 +96,6 @@ public class EditorCellModel_KeyMap extends KeyMapImpl {
         SPropertyOperations.set(node, "attractsFocus", "0");
       }
     }
-
     public String getKeyStroke() {
       return "ctrl alt shift F";
     }

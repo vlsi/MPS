@@ -24,26 +24,19 @@ import org.apache.log4j.LogManager;
 public class SAbstractConceptAdapter implements SAbstractConcept {
   protected String myConceptName;
 
-
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
   }
-
-
 
   @Override
   public String getQualifiedName() {
     return myConceptName;
   }
 
-
-
   @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(myConceptName);
   }
-
-
 
   @Override
   public SAbstractLink getLink(String role) {
@@ -60,8 +53,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     return null;
   }
-
-
 
   @Override
   public Iterable<SAbstractLink> getLinks() {
@@ -83,8 +74,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }));
   }
 
-
-
   @Override
   public SProperty getProperty(String name) {
     ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
@@ -95,8 +84,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     return (d.hasProperty(name) ? new SPropertyAdapter(myConceptName, name) : null);
   }
-
-
 
   @Override
   public Iterable<SProperty> getProperties() {
@@ -112,8 +99,6 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       }
     });
   }
-
-
 
   @Override
   public boolean isSubConceptOf(SAbstractConcept concept) {
@@ -132,20 +117,15 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return d.isAssignableTo(concept.getQualifiedName());
   }
 
-
-
   @Override
   public SLanguage getLanguage() {
     return new SLanguageAdapter(NameUtil.namespaceFromConceptFQName(myConceptName));
   }
 
-
-
   @Override
   public int hashCode() {
     return myConceptName.hashCode();
   }
-
   @Override
   public boolean equals(Object o) {
     if (o == null || o.getClass() != getClass()) {
@@ -153,9 +133,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     return myConceptName.equals(((SAbstractConceptAdapter) o).myConceptName);
   }
-
   private static final Set<String> reportedLanguages = new HashSet<String>();
-
 
   protected void illegalConceptDescriptorWarning() {
     String languageName = NameUtil.namespaceFromConceptFQName(myConceptName);
@@ -168,6 +146,5 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       LOG.warn("No concept found for name " + myConceptName + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
 }

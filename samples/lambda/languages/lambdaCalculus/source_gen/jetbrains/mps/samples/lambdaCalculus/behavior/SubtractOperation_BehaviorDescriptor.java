@@ -6,7 +6,6 @@ package jetbrains.mps.samples.lambdaCalculus.behavior;
 public class SubtractOperation_BehaviorDescriptor extends BinaryNumericOperation_BehaviorDescriptor {
   public SubtractOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.lambdaCalculus.structure.SubtractOperation";

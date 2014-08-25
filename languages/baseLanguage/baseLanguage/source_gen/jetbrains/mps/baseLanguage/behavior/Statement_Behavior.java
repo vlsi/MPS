@@ -21,24 +21,20 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class Statement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return false;
   }
-
   public static Set<SNode> call_uncaughtThrowables_5412515780383108857(SNode thisNode, boolean ignoreMayBeThrowables) {
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     BehaviorReflection.invokeVirtual(Void.class, thisNode, "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{result, ignoreMayBeThrowables});
     return result;
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (ignoreMayBeThrowables) {
       return;
     }
     Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383112967(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement"))), throwables, thisNode);
   }
-
   public static void call_collectUncaughtMethodThrowables_5412515780383112967(SAbstractConcept thisConcept, final Set<SNode> throwables, SNode arg) {
     ListSequence.fromList(SNodeOperations.getDescendants(arg, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {

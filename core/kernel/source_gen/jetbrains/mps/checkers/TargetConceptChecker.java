@@ -13,11 +13,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 
 public class TargetConceptChecker extends AbstractConstraintsChecker {
   public TargetConceptChecker() {
   }
-
   @Override
   public void checkNode(SNode node, LanguageErrorsComponent component, SRepository repository) {
     for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
@@ -29,7 +29,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       if (link != null && SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
         component.addDependency(link);
         if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))))) {
-          component.addError(node, "incompatible target concept in role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", null);
+          component.addError(child, "incompatible target concept in role \"" + SNodeOperations.getContainingLinkRole(child) + "\": subconcept of \"" + SLinkOperations.getTarget(link, "target", false) + "\" expected, \"" + SNodeOperations.getConceptDeclaration(child) + "\" found", null);
         }
       }
     }
@@ -45,7 +45,7 @@ public class TargetConceptChecker extends AbstractConstraintsChecker {
       }
       component.addDependency(link);
       if (!(SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(link, "target", false), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))))) {
-        component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\"", null);
+        component.addError(node, "incompatible target concept in role \"" + SLinkOperations.getRole(reference) + "\": subconcept of \"" + SLinkOperations.getTarget(link, "target", false) + "\" expected, \"" + SNodeOperations.getConceptDeclaration(target) + "\" found", null, new ReferenceMessageTarget(SPropertyOperations.getString(link, "role")));
       }
     }
   }

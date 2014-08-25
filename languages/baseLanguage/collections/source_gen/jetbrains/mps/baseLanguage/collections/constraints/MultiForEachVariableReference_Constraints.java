@@ -23,7 +23,6 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
   public MultiForEachVariableReference_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_n71ttm_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class MultiForEachVariableReference_Constraints extends BaseConstraintsDe
     });
     return references;
   }
-
   private static SNodePointer breakingNode_n71ttm_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "2499957847193033945");
 }

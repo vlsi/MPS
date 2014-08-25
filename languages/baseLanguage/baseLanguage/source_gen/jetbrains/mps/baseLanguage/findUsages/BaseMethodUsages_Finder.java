@@ -17,30 +17,24 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class BaseMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
-
   public BaseMethodUsages_Finder() {
   }
-
   @Override
   public boolean isUsedByDefault(SNode node) {
     return true;
   }
-
   @Override
   public String getDescription() {
     return "Base Method Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "Usages of all base methods";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
@@ -51,7 +45,6 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
     }
     return true;
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -66,7 +59,6 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     List<SNode> baseMethods = FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.BaseMethod_Finder", node, GlobalScope.getInstance(), new EmptyProgressMonitor());
@@ -75,7 +67,6 @@ public class BaseMethodUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(method);
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Base method usages";

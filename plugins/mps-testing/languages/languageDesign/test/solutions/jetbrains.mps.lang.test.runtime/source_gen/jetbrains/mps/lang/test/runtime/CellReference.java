@@ -25,17 +25,14 @@ public class CellReference {
   private SNode myNode;
   private SNode myAnnotation;
   private Map<SNode, SNode> myMap;
-
   public CellReference(SNode node, SNode annotation, Map<SNode, SNode> map) {
     this.myNode = node;
     this.myAnnotation = SNodeOperations.cast(annotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation");
     this.myMap = map;
   }
-
   public SNode getNode() {
     return this.myNode;
   }
-
   @Override
   public String toString() {
     final Wrappers._T<String> result = new Wrappers._T<String>();
@@ -46,12 +43,10 @@ public class CellReference {
     });
     return result.value;
   }
-
   public void setupSelection(Editor editor) {
     NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
     BehaviorReflection.invokeNonVirtual(Void.class, this.myAnnotation, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", "call_setupSelection_6268941039745707957", new Object[]{editorComponent, this.myNode, this.myMap});
   }
-
   public void assertEditor(Editor editor, Map<SNode, SNode> map) {
     EditorComponent component = (EditorComponent) editor.getCurrentEditorComponent();
     if (SPropertyOperations.getBoolean(this.myAnnotation, "isInInspector")) {

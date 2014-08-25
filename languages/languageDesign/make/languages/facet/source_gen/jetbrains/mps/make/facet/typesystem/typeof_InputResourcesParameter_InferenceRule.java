@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_InputResourcesParameter_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InputResourcesParameter_InferenceRule() {
   }
-
   public void applyRule(final SNode inres, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode tdecl = SNodeOperations.getAncestor(inres, "jetbrains.mps.make.facet.structure.TargetDeclaration", false, false);
     if ((tdecl != null)) {
@@ -59,22 +58,18 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.make.script.structure.InputResourcesParameter";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_3tga6z_a0a0c0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -82,7 +77,6 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_3tga6z_a0b0c0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -97,7 +91,6 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_3tga6z_a0a0a2a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -111,7 +104,6 @@ public class typeof_InputResourcesParameter_InferenceRule extends AbstractInfere
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_3tga6z_a0a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

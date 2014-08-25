@@ -7,7 +7,6 @@ import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 public class BuildMpsLayout_ModuleXml_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor {
   public BuildMpsLayout_ModuleXml_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml";

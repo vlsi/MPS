@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule extends ComparisonRule_Runtime {
   public ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if ((ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).isNotEmpty() ^ ListSequence.fromList(SLinkOperations.getTargets(node2, "parameter", true)).isNotEmpty()) || ListSequence.fromList(SLinkOperations.getTargets(node1, "parameter", true)).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -32,29 +31,24 @@ public class ClassifierType_comparableTo_raw_ClassifierType_ComparisonRule exten
     }
     return false;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }

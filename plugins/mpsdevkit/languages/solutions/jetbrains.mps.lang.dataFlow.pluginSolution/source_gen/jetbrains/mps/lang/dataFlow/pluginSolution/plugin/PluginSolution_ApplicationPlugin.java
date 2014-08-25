@@ -8,14 +8,11 @@ import jetbrains.mps.ide.actions.DebugActions_ActionGroup;
 
 public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.lang.dataFlow.pluginSolution");
-
   public PluginSolution_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public void createGroups() {
     // actions w/o parameters 
     addAction(new PrintDFAResult_Action());
@@ -26,7 +23,6 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
     addGroup(new DFAActions_ActionGroup());
     addGroup(new DataFlowInternal_ActionGroup());
   }
-
   public void adjustRegularGroups() {
     insertGroupIntoAnother(DFAActions_ActionGroup.ID, DebugActions_ActionGroup.ID, DebugActions_ActionGroup.LABEL_ID_dataFlow);
   }

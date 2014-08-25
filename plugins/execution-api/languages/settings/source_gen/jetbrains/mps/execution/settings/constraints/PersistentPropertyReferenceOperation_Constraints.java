@@ -26,7 +26,6 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
   public PersistentPropertyReferenceOperation_Constraints() {
     super("jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -35,7 +34,6 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -49,7 +47,6 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
             }
             return SLinkOperations.getTargets(SLinkOperations.getTarget(propertyHolderType, "persistentConfiguration", false), "persistentProperty", true);
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1;
@@ -59,6 +56,5 @@ public class PersistentPropertyReferenceOperation_Constraints extends BaseConstr
     });
     return references;
   }
-
   private static SNodePointer breakingNode_yui4e7_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:26cd452e-c5c2-4d47-ad13-dda4362e8616(jetbrains.mps.execution.settings.constraints)", "946964771156067090");
 }

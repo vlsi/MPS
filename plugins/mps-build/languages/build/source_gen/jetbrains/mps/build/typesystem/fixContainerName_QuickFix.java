@@ -15,11 +15,9 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class fixContainerName_QuickFix extends QuickFix_Runtime {
   public fixContainerName_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Change extension to " + ((String) fixContainerName_QuickFix.this.getField("newExtension")[0]);
   }
-
   public void execute(SNode node) {
     SNode containerName = SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildString");
     SNode last = ListSequence.fromList(SLinkOperations.getTargets(containerName, "parts", true)).last();
@@ -31,7 +29,6 @@ public class fixContainerName_QuickFix extends QuickFix_Runtime {
       ListSequence.fromList(SLinkOperations.getTargets(containerName, "parts", true)).addElement(_quotation_createNode_8v9hl7_a0a0a0c0a(((String) fixContainerName_QuickFix.this.getField("newExtension")[0])));
     }
   }
-
   private static SNode _quotation_createNode_8v9hl7_a0a0a0c0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

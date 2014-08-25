@@ -6,9 +6,9 @@ import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.DynamicSuite;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.RuntimeFlags;
+import jetbrains.mps.TestMode;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -42,27 +42,24 @@ public class DefaultTestSuite {
   private static String PROPERTY_MODEL_NAME = "mps.junit.projectSuite.modelLongName";
   private static String PROPERTY_TESTCLASS_NAME = "mps.junit.projectSuite.testClassName";
 
-
   @DynamicSuite.Factory
   public static Class<?>[] suiteClasses(org.junit.runners.model.TestClass testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass.getJavaClass());
     MpsTestsSupport.initEnv(true);
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    RuntimeFlags.setTestMode(TestMode.USUAL);
     initPathMacros();
-    // todo: check opened mps projects here 
-    // <node> 
-    Project project = TestMain.PROJECT_CONTAINER.getProject(projectPath);
+    Project project = null;
+    assert false;
 
     // TODO: 
     // 
     // 2. Libraries? 
     // 3. Cache location ? 
-    // 4. creste separate suite generating (making) all modules in this project by using ProjectTestHelper? 
+    // 4. create separate suite generating (making) all modules in this project by using ProjectTestHelper? 
     ModelAccess.instance().flushEventQueue();
 
     return getUnitTestClasses(testClass, project);
   }
-
   private static void initPathMacros() {
     for (Map.Entry<Object, Object> property : SetSequence.fromSet(System.getProperties().entrySet())) {
       if (!(property.getKey() instanceof String) || !(property.getValue() instanceof String)) {
@@ -73,6 +70,7 @@ public class DefaultTestSuite {
       if ((propertyKey == null || propertyKey.length() == 0) || !(propertyKey.startsWith(PROPERTY_PREFIX_PATH_MACRO))) {
         continue;
       }
+
       String canonicalPath = PathUtil.getCanonicalPath(propertyValue);
       File file = new File(canonicalPath);
       if (file.exists() && file.isDirectory()) {
@@ -80,7 +78,6 @@ public class DefaultTestSuite {
       }
     }
   }
-
   private static String getProjectPath(Class<?> testClass) throws InitializationError {
     DefaultTestSuite.MPSProject mpsProject = testClass.getAnnotation(DefaultTestSuite.MPSProject.class);
     if (mpsProject != null) {
@@ -92,7 +89,6 @@ public class DefaultTestSuite {
     }
     return mpsProjectSystemProperty;
   }
-
   protected static Class[] getUnitTestClasses(org.junit.runners.model.TestClass klass, Project project) throws InitializationError {
     List<Class> result = ListSequence.fromList(new ArrayList<Class>());
     for (Tuples._2<String, SModule> testClassDescriptor : ListSequence.fromList(getTestClassDescriptors(klass, project))) {
@@ -109,7 +105,6 @@ public class DefaultTestSuite {
     }
     return ListSequence.fromList(result).toGenericArray(Class.class);
   }
-
   protected static List<Tuples._2<String, SModule>> getTestClassDescriptorsFromModels(final Iterable<SModel> modelDescriptors) {
     final List<Tuples._2<String, SModule>> testClassDescriptors = ListSequence.fromList(new ArrayList<Tuples._2<String, SModule>>());
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -124,7 +119,6 @@ public class DefaultTestSuite {
     });
     return testClassDescriptors;
   }
-
   protected static List<Tuples._2<String, SModule>> getTestClassDescriptors(org.junit.runners.model.TestClass klass, Project project) throws InitializationError {
     final Iterable<SModel> modelDescriptors = getModelDescriptors(klass, project);
     String testClassName = getTestClassName(klass);
@@ -137,7 +131,6 @@ public class DefaultTestSuite {
 
     return getTestClassDescriptorsFromModels(modelDescriptors);
   }
-
   private static Iterable<SModel> getModelDescriptors(org.junit.runners.model.TestClass klass, Project project) throws InitializationError {
     String moduleUUID = getModuleUUID(klass);
     if (moduleUUID != null) {
@@ -161,7 +154,6 @@ public class DefaultTestSuite {
 
     return project.getProjectModels();
   }
-
   private static String getModuleUUID(org.junit.runners.model.TestClass klass) {
     DefaultTestSuite.ModuleUUID moduleAnnotation = klass.getJavaClass().getAnnotation(DefaultTestSuite.ModuleUUID.class);
     if (moduleAnnotation != null) {
@@ -169,7 +161,6 @@ public class DefaultTestSuite {
     }
     return System.getProperty(PROPERTY_MODULE_UUID);
   }
-
   private static String getModelLongName(org.junit.runners.model.TestClass klass) {
     DefaultTestSuite.ModelLongName modelAnnotation = klass.getJavaClass().getAnnotation(DefaultTestSuite.ModelLongName.class);
     if (modelAnnotation != null) {
@@ -177,7 +168,6 @@ public class DefaultTestSuite {
     }
     return System.getProperty(PROPERTY_MODEL_NAME);
   }
-
   private static String getTestClassName(org.junit.runners.model.TestClass klass) {
     DefaultTestSuite.TestClass testClassAnnotation = klass.getJavaClass().getAnnotation(DefaultTestSuite.TestClass.class);
     if (testClassAnnotation != null) {
@@ -185,7 +175,6 @@ public class DefaultTestSuite {
     }
     return System.getProperty(PROPERTY_TESTCLASS_NAME);
   }
-
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
   public @interface ModuleUUID {
@@ -196,7 +185,6 @@ public class DefaultTestSuite {
      */
     String value();
   }
-
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
   public @interface ModelLongName {
@@ -207,7 +195,6 @@ public class DefaultTestSuite {
      */
     String value();
   }
-
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})
   public @interface TestClass {
@@ -218,8 +205,6 @@ public class DefaultTestSuite {
      */
     String value();
   }
-
-
 
   @Retention(RetentionPolicy.RUNTIME)
   @Target(value = {ElementType.TYPE})

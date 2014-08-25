@@ -23,7 +23,6 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_gkkov5_a(editorContext, node);
   }
-
   private EditorCell createCollection_gkkov5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_gkkov5_a");
@@ -33,7 +32,6 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_gkkov5_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_gkkov5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "table-component");
     editorCell.setCellId("Constant_gkkov5_a0");
@@ -44,23 +42,19 @@ public class TableComponentStyleClassItem_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new TableComponentStyleClassItem_Editor.ReplaceWith_StyleClassItem_cellMenu_gkkov5_a0a0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_StyleClassItem_cellMenu_gkkov5_a0a0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_StyleClassItem_cellMenu_gkkov5_a0a0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.lang.editor.structure.StyleClassItem";
     }
   }
-
   private EditorCell createConstant_gkkov5_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_gkkov5_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_gkkov5_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tableComponent");

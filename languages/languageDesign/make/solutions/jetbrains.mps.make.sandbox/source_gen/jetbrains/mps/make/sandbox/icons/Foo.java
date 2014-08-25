@@ -6,7 +6,6 @@ package jetbrains.mps.make.sandbox.icons;
 public class Foo {
   public Foo() {
   }
-
   public void bar() {
   }
 }

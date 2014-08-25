@@ -5,18 +5,18 @@
   <root nodeRef="r:567e1961-8569-4966-8d8a-ba7c02fdcb28(jetbrains.mps.lang.editor.diagram.generator.template.util)/8082246476500401936">
     <file name="FigureUtils.java">
       <node id="8082246476500752005" at="13,58,14,612" concept="0" />
-      <node id="8082246476500660468" at="19,60,20,612" concept="0" />
+      <node id="8082246476500660468" at="17,60,18,612" concept="0" />
       <node id="8082246476500752003" at="13,0,16,0" concept="1" trace="isMovable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8082246476500575376" at="19,0,22,0" concept="1" trace="isResizable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8082246476500575376" at="17,0,20,0" concept="1" trace="isResizable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="8082246476500752004" at="13,58,14,612" />
-      <scope id="8082246476500575365" at="19,60,20,612" />
+      <scope id="8082246476500575365" at="17,60,18,612" />
       <scope id="8082246476500752003" at="13,0,16,0">
         <var name="figureReference" id="8082246476500752024" />
       </scope>
-      <scope id="8082246476500575376" at="19,0,22,0">
+      <scope id="8082246476500575376" at="17,0,20,0">
         <var name="figureReference" id="8082246476500575391" />
       </scope>
-      <unit id="8082246476500401936" at="12,0,23,0" name="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
+      <unit id="8082246476500401936" at="12,0,21,0" name="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
     </file>
   </root>
 </debug-info>

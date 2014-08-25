@@ -15,10 +15,8 @@ public class FileSystemListenersContainer {
   private Object LOCK = new Object();
   private FileSystemListenersContainer.Node root = new FileSystemListenersContainer.Node(null, null);
   private ConcurrentMap<FileSystemListener, String> myListeners = new ConcurrentHashMap<FileSystemListener, String>();
-
   public FileSystemListenersContainer() {
   }
-
   public void addListener(FileSystemListener listener) {
     if (myListeners.containsKey(listener)) {
       return;
@@ -41,7 +39,6 @@ public class FileSystemListenersContainer {
       curr.listeners.add(listener);
     }
   }
-
   public void removeListener(FileSystemListener listener) {
     String path = myListeners.get(listener);
     if (path == null) {
@@ -65,7 +62,6 @@ public class FileSystemListenersContainer {
     }
     myListeners.remove(listener);
   }
-
   public Iterable<FileSystemListener> listeners(String path) {
     String normalized = path.replace('\\', '/');
     FileSystemListenersContainer.Node curr = root;
@@ -83,22 +79,18 @@ public class FileSystemListenersContainer {
     }
     return result;
   }
-
   public boolean contains(FileSystemListener listener) {
     return myListeners.containsKey(listener);
   }
-
   private class Node {
     private final Set<FileSystemListener> listeners = new ConcurrentHashSet<FileSystemListener>();
     private final String pathPart;
     private final Map<String, FileSystemListenersContainer.Node> children = new ConcurrentHashMap<String, FileSystemListenersContainer.Node>();
     private final FileSystemListenersContainer.Node parent;
-
     private Node(String pathPart, FileSystemListenersContainer.Node parent) {
       this.parent = parent;
       this.pathPart = pathPart;
     }
-
     private FileSystemListenersContainer.Node child(String part, boolean create) {
       FileSystemListenersContainer.Node child = children.get(part);
       if (child == null && create) {
@@ -107,7 +99,6 @@ public class FileSystemListenersContainer {
       }
       return child;
     }
-
     private void deleteIfEmpty() {
       if (parent == null || !(listeners.isEmpty()) || !(children.isEmpty())) {
         return;
@@ -116,7 +107,6 @@ public class FileSystemListenersContainer {
       parent.children.remove(pathPart);
       parent.deleteIfEmpty();
     }
-
     private void storeListeners(List<FileSystemListener> result) {
       result.addAll(listeners);
     }

@@ -8,12 +8,10 @@ import jetbrains.mps.samples.formulaLanguage.api.Function;
 public class QuantityGreaterThanOperation<T extends Quantity> implements Function<Boolean> {
   private Function<T> myLeftOperand;
   private Function<T> myRightOperand;
-
   public QuantityGreaterThanOperation(Function<T> leftOperand, Function<T> rightOperand) {
     myLeftOperand = leftOperand;
     myRightOperand = rightOperand;
   }
-
   @Override
   public Boolean compute(Object parm) {
     return myLeftOperand.compute(parm).isGreaterThan(myRightOperand.compute(parm));

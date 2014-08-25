@@ -14,7 +14,6 @@ public class AuditConstraints extends BaseCheckModulesTest {
   public AuditConstraints(SModule module) {
     super(module);
   }
-
   @Test
   public void checkConstraints() {
     Collection<SModel> models = new ModelsExtractor(myModule, true).getModels();

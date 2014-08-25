@@ -11,27 +11,24 @@ import jetbrains.mps.console.tool.ConsoleStream;
 public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ConsoleHelpProvider_BehaviorDescriptor {
   public Command_BehaviorDescriptor() {
   }
-
   public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
-
   public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
   }
-
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
-
   public String virtual_getKind_7006261637493126084(SConcept thisConcept) {
     return Command_Behavior.virtual_getKind_7006261637493126084(thisConcept);
   }
-
+  public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
+    return ConsoleHelpProvider_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.Command";
   }
-
   public abstract void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback);
 }

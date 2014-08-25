@@ -12,15 +12,12 @@ public enum NodePresentationOptions {
   custom_("custom", "custom");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<NodePresentationOptions> getConstants() {
     List<NodePresentationOptions> list = ListSequence.fromList(new LinkedList<NodePresentationOptions>());
     ListSequence.fromList(list).addElement(NodePresentationOptions.default_);
@@ -28,11 +25,9 @@ public enum NodePresentationOptions {
     ListSequence.fromList(list).addElement(NodePresentationOptions.custom_);
     return list;
   }
-
   public static NodePresentationOptions getDefault() {
     return NodePresentationOptions.default_;
   }
-
   public static NodePresentationOptions parseValue(String value) {
     if (value == null) {
       return NodePresentationOptions.getDefault();
@@ -48,14 +43,11 @@ public enum NodePresentationOptions {
     }
     return NodePresentationOptions.getDefault();
   }
-
   private String myValue;
-
   NodePresentationOptions(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

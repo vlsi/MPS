@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class BuildInputResourceSet_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildInputResourceSet_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildInputResourceSet";

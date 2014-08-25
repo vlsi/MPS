@@ -23,22 +23,18 @@ import org.apache.log4j.LogManager;
 
 public class RenamePackage_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public RenamePackage_Action() {
     super("Rename", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((TreeNode) MapSequence.fromMap(_params).get("ppNode")) instanceof PackageNode;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class RenamePackage_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +66,6 @@ public class RenamePackage_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final PackageNode treeNode = (PackageNode) ((TreeNode) MapSequence.fromMap(_params).get("ppNode"));
@@ -98,6 +92,5 @@ public class RenamePackage_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(RenamePackage_Action.class);
 }

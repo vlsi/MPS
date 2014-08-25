@@ -21,7 +21,6 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_k18eec_a(editorContext, node);
   }
-
   private EditorCell createCollection_k18eec_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_k18eec_a");
@@ -30,7 +29,6 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_k18eec_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_k18eec_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "~");
     editorCell.setCellId("Constant_k18eec_a0");
@@ -42,7 +40,6 @@ public class SmartClosureParameterDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_k18eec_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");

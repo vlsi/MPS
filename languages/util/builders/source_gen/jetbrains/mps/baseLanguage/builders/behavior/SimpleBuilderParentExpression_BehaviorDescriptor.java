@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 public class SimpleBuilderParentExpression_BehaviorDescriptor extends SimpleBuilderExpression_BehaviorDescriptor {
   public SimpleBuilderParentExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression";

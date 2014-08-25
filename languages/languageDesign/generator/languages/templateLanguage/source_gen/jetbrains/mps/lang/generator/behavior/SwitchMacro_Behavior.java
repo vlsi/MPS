@@ -12,7 +12,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class SwitchMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_i6m7ss_a0a = new SwitchMacro_Behavior.Pattern_i6m7ss_a0a0a0a1();
@@ -24,13 +23,10 @@ public class SwitchMacro_Behavior {
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
-
   public static class Pattern_i6m7ss_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_i6m7ss_a0a0a0a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_i6m7ss_a0a0a0 = nodeToMatch;
@@ -41,24 +37,20 @@ public class SwitchMacro_Behavior {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

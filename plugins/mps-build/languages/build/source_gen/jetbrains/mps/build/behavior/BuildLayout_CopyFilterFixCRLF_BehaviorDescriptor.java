@@ -6,7 +6,6 @@ package jetbrains.mps.build.behavior;
 public class BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor extends BuildLayout_CopyFilter_BehaviorDescriptor {
   public BuildLayout_CopyFilterFixCRLF_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.build.structure.BuildLayout_CopyFilterFixCRLF";

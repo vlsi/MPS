@@ -12,6 +12,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.CommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -40,22 +41,18 @@ import org.apache.log4j.LogManager;
 
 public class GoToOverridenMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToOverridenMethod_Action() {
     super("Go to Overriden Method", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return (GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params) != null) && (GoToOverridenMethod_Action.this.getClassifier(_params) != null);
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -69,7 +66,6 @@ public class GoToOverridenMethod_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -87,7 +83,13 @@ public class GoToOverridenMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
+    {
+      EditorComponent editorComponent = event.getData(MPSEditorDataKeys.EDITOR_COMPONENT);
+      if (editorComponent != null && editorComponent.isInvalid()) {
+        editorComponent = null;
+      }
+      MapSequence.fromMap(_params).put("editorComponent", editorComponent);
+    }
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
     }
@@ -105,7 +107,6 @@ public class GoToOverridenMethod_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoOverriden");
@@ -133,15 +134,12 @@ public class GoToOverridenMethod_Action extends BaseAction {
       }
     }
   }
-
   private SNode getInstanceMethodDeclaration(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("selectedNode")), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
   }
-
   private SNode getClassifier(final Map<String, Object> _params) {
     return SNodeOperations.getAncestor(GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
   }
-
   private Set<Tuples._2<SNodeReference, SNode>> getOverridenMethod(final Map<String, Object> _params) {
     SNode method = GoToOverridenMethod_Action.this.getInstanceMethodDeclaration(_params);
     SNode classifier = GoToOverridenMethod_Action.this.getClassifier(_params);
@@ -154,6 +152,5 @@ public class GoToOverridenMethod_Action extends BaseAction {
     }
     return result;
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToOverridenMethod_Action.class);
 }

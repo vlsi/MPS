@@ -44,16 +44,13 @@ import jetbrains.jetpad.model.property.ReadableProperty;
 
 public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.testHybridEditor.editor.HybridHints.diagram"});
-
   @Override
   public Collection<String> getContextHints() {
     return myContextHints;
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createDiagramNode_79747v_a(editorContext, node);
   }
-
   private EditorCell createDiagramNode_79747v_a(final EditorContext editorContext, final SNode node) {
     BlockCell editorCell = new BlockInstance_diagram_Editor.BlockCellImpl_79747v_a(editorContext, node);
     editorCell.setCellId("DiagramNode_79747v_a");
@@ -61,7 +58,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
     BlockActionMap.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
-
   private class BlockCellImpl_79747v_a extends BlockCell {
     private final PropertyMapperCell<String> myPropertyCell_79747v_a0a;
     private final ReadableModelProperty<String> myProperty_79747v_a1a;
@@ -71,14 +67,12 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
     private final PropertyMapperCell<Integer> myPropertyCell_79747v_a5a;
     private final ObservableList<SNode> myInputPorts = new ObservableArrayList<SNode>();
     private final ObservableList<SNode> myOutputPorts = new ObservableArrayList<SNode>();
-
     private BlockCellImpl_79747v_a(EditorContext editorContext, final SNode node) {
       super(editorContext, node);
       myPropertyCell_79747v_a0a = new PropertyMapperCell<String>(editorContext, node) {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
         }
-
         protected void setModelPropertyValueImpl(String value) {
           SPropertyOperations.set(node, "name", value);
         }
@@ -95,7 +89,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "x", "" + (value));
         }
@@ -106,7 +99,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "y", "" + (value));
         }
@@ -117,7 +109,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "width", "" + (value));
         }
@@ -128,7 +119,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "height");
         }
-
         protected void setModelPropertyValueImpl(Integer value) {
           SPropertyOperations.set(node, "height", "" + (value));
         }
@@ -137,7 +127,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
       myPropertyCell_79747v_a5a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_79747v_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "height"));
       synchronize();
     }
-
     public void synchronize() {
       super.synchronizeViewWithModel();
       myPropertyCell_79747v_a0a.synchronize();
@@ -148,7 +137,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
       syncPortObjects(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "inMetaPorts", true), myInputPorts.listIterator(), new HashSet<SNode>(myInputPorts));
       syncPortObjects(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "metaBlock", false), "outMetaPorts", true), myOutputPorts.listIterator(), new HashSet<SNode>(myOutputPorts));
     }
-
     public Mapper<SNode, DiagramNodeView> createMapper() {
       return new Mapper<SNode, DiagramNodeView>(getSNode(), createDiagramNodeView()) {
         @Override
@@ -174,7 +162,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
                 }
               };
             }
-
             private RectView createPortView(SNode id) {
               RectView view = new RectView();
               view.prop(JetpadUtils.SOURCE).set(getSNode());
@@ -204,7 +191,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
                 }
               };
             }
-
             private RectView createPortView(SNode id) {
               RectView view = new RectView();
               view.prop(JetpadUtils.SOURCE).set(getSNode());
@@ -283,7 +269,6 @@ public class BlockInstance_diagram_Editor extends DefaultNodeEditor {
         }
       };
     }
-
     public Mapper<SNode, NodeDecoratorView> createDecorationMapper() {
       return new Mapper<SNode, NodeDecoratorView>(getSNode(), new NodeDecoratorView()) {
         @Override

@@ -14,12 +14,10 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   public ExtractMethodWithExitPoints(ExtractMethodRefactoringParameters parameters) {
     super(parameters);
   }
-
   @Override
   public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanType", null);
   }
-
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -36,7 +34,6 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
       }
     });
   }
-
   @Override
   protected void modifyPartToExtract() {
     SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);

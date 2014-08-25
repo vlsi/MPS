@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class EditableModel_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ActionParameterCondition_BehaviorDescriptor {
   public EditableModel_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.EditableModel";

@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class PatternAddingUtil {
   public PatternAddingUtil() {
   }
-
   public static boolean isPatternApplicable(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     if (contextCell == null) {
@@ -24,7 +23,6 @@ public class PatternAddingUtil {
     }
     return SNodeOperations.getAncestor(node, "jetbrains.mps.lang.pattern.structure.PatternExpression", true, false) != null;
   }
-
   public static void addVariablePattern(EditorContext context) {
     EditorCell contextCell = context.getSelectedCell();
     SNode node = contextCell.getSNode();

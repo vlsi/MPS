@@ -17,7 +17,6 @@ import javax.swing.border.EmptyBorder;
 public class RuleTypeRenderer extends DefaultTableCellRenderer {
   public RuleTypeRenderer() {
   }
-
   @Override
   public Component getTableCellRendererComponent(final JTable table, Object value, boolean isSelected, boolean hasFocus, final int row, final int column) {
     String caption = (value instanceof RuleType ? ((RuleType) value).getPresentation() : "null");
@@ -32,7 +31,6 @@ public class RuleTypeRenderer extends DefaultTableCellRenderer {
     }
     return RuleTypeRenderer.createCenterAlignmentInCell(comp);
   }
-
   public static JComponent createCenterAlignmentInCell(JComponent comp) {
     JPanel compPanel = new JPanel(new GridBagLayout());
     GridBagConstraints constraints = new GridBagConstraints(1, 1, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0);

@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class FindNotMigratableLinksGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(FindNotMigratableLinksGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinksGroup_ActionGroup";
-
   public FindNotMigratableLinksGroup_ActionGroup() {
     super("FindNotMigratableLinksGroup", ID);
     this.setIsInternal(false);

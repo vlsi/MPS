@@ -26,20 +26,16 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
     action = new RootTemplateAnnotation_KeyMap.RootTemplateAnnotation_KeyMap_Action0();
     this.putAction("ctrl+shift", "VK_H", action);
   }
-
   public static class RootTemplateAnnotation_KeyMap_Action0 extends KeyMapActionImpl {
     public RootTemplateAnnotation_KeyMap_Action0() {
       this.setShownInPopupMenu(true);
     }
-
     public String getDescriptionText() {
       return "add root template annotation";
     }
-
     public boolean isMenuAlwaysShown() {
       return false;
     }
-
     public boolean canExecute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if ((contextCell == null)) {
@@ -51,12 +47,10 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
       }
       return this.canExecute_internal(editorContext, contextNode, this.getSelectedNodes(editorContext));
     }
-
     public void execute(final EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
-
     private boolean canExecute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       if (ListSequence.fromList(selectedNodes).count() != 1) {
         return false;
@@ -68,15 +62,12 @@ public class RootTemplateAnnotation_KeyMap extends KeyMapImpl {
       }
       return AttributeOperations.getAttribute(applyToNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) == null;
     }
-
     private void execute_internal(final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNodeFactoryOperations.setNewAttribute(SNodeOperations.getContainingRoot(node), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation");
     }
-
     public String getKeyStroke() {
       return "ctrl shift H";
     }
-
     private static SModule check_366854_a0a2a0a(SModel checkedDotOperand) {
       if (null != checkedDotOperand) {
         return checkedDotOperand.getModule();

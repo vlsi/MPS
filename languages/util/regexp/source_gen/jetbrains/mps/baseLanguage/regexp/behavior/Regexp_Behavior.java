@@ -14,34 +14,27 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class Regexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getTopLevelRegexp_1223362823237(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp")) {
       return Regexp_Behavior.call_getTopLevelRegexp_1223362823237(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.regexp.structure.Regexp"));
     }
     return thisNode;
   }
-
   public static String virtual_toString_1213877429451(SNode thisNode) {
     return Regexp_Behavior.call_escape_1353467374624660231(thisNode, BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getString_1222432436326", new Object[]{new ArrayList<SNode>()}));
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
-
   public static String call_par_1222433790846(SNode thisNode, String s) {
     return "(?:" + s + ")";
   }
-
   public static boolean call_checkStringForUnicode_1222857160881(SNode thisNode, String s) {
     return s.startsWith("\\u");
   }
-
   public static String call_quote_1222857178958(SNode thisNode, char ch) {
     return Pattern.quote("" + ch);
   }
-
   public static String call_escape_1353467374624660231(SNode thisNode, String s) {
     if (s == null || s.indexOf('\\') == -1) {
       return s;
@@ -56,11 +49,9 @@ public class Regexp_Behavior {
     }
     return sb.toString();
   }
-
   public static boolean virtual_needParentheses_1353467374623880338(SNode thisNode) {
     return false;
   }
-
   public static boolean virtual_isValid_4759120547781297301(SNode thisNode) {
     for (SNode n : ListSequence.fromList(SNodeOperations.getChildren(thisNode))) {
       if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp") && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.regexp.structure.Regexp"), "virtual_isValid_4759120547781297301", new Object[]{}))) {

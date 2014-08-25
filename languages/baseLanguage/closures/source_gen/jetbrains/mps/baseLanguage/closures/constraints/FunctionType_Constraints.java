@@ -25,7 +25,6 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
   public FunctionType_Constraints() {
     super("jetbrains.mps.baseLanguage.closures.structure.FunctionType");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -47,7 +45,6 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_yerj9w_a0a1a0a0a1a0b0a1a1;
@@ -57,6 +54,5 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNodePointer breakingNode_yerj9w_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "100821637069106758");
 }

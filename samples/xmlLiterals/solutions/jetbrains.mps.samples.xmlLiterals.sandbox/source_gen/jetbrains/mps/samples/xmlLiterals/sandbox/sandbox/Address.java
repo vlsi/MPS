@@ -8,15 +8,12 @@ import org.jdom.Text;
 
 public class Address {
   private String addressString;
-
   public Address(String addressString) {
     this.addressString = addressString;
   }
-
   public String getAddressString() {
     return this.addressString;
   }
-
   public Element toXml() {
     return new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {

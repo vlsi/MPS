@@ -6,23 +6,23 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959042a(jetbrains.mps.complex.sandbox)/1196260114546">
     <file name="Main.java">
-      <node id="1196427466061" at="11,42,12,100" concept="2" />
-      <node id="1196430125278" at="12,100,13,100" concept="2" />
-      <node id="1206619906738" at="13,100,14,87" concept="1" />
-      <node id="1206620105311" at="14,87,15,59" concept="1" />
-      <node id="1206620194975" at="15,59,16,72" concept="1" />
+      <node id="1196427466061" at="10,42,11,100" concept="2" />
+      <node id="1196430125278" at="11,100,12,100" concept="2" />
+      <node id="1206619906738" at="12,100,13,87" concept="1" />
+      <node id="1206620105311" at="13,87,14,59" concept="1" />
+      <node id="1206620194975" at="14,59,15,72" concept="1" />
       <node id="4001564491981455037" at="8,0,10,0" concept="0" trace="Main#()V" />
-      <node id="1196260129312" at="11,0,18,0" concept="3" trace="main#([Ljava/lang/String;)V" />
+      <node id="1196260129312" at="10,0,17,0" concept="3" trace="main#([Ljava/lang/String;)V" />
       <scope id="4001564491981455040" at="8,17,8,17" />
       <scope id="4001564491981455037" at="8,0,10,0" />
-      <scope id="1196260129315" at="11,42,16,72">
+      <scope id="1196260129315" at="10,42,15,72">
         <var name="c1" id="1196427466062" />
         <var name="c2" id="1196430125279" />
       </scope>
-      <scope id="1196260129312" at="11,0,18,0">
+      <scope id="1196260129312" at="10,0,17,0">
         <var name="args" id="1206621447234" />
       </scope>
-      <unit id="1196260114546" at="7,0,19,0" name="jetbrains.mps.complex.sandbox.Main" />
+      <unit id="1196260114546" at="7,0,18,0" name="jetbrains.mps.complex.sandbox.Main" />
     </file>
   </root>
 </debug-info>

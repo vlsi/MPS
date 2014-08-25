@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnusedPackageClassifier_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(classifier, "visibility", true) == null)) {
       if (!(ListSequence.fromList(SModelOperations.getNodes(SNodeOperations.getModel(classifier), null)).where(new IWhereFilter<SNode>() {
@@ -67,26 +66,21 @@ public class check_UnusedPackageClassifier_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_oirmva_a0a0a0a0a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_oirmva_a0a0a0a0a0a0a0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

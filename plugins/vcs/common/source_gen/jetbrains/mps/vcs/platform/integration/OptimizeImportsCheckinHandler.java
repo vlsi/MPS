@@ -33,16 +33,13 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
   private static final Logger LOG = LogManager.getLogger(ThreadUtils.class);
   private Project myProject;
   private CheckinProjectPanel myPanel;
-
   public OptimizeImportsCheckinHandler(Project project, CheckinProjectPanel panel) {
     this.myProject = project;
     this.myPanel = panel;
   }
-
   protected VcsConfiguration getSettings() {
     return VcsConfiguration.getInstance(myProject);
   }
-
   @Override
   public RefreshableOnComponent getBeforeCheckinConfigurationPanel() {
     final JCheckBox optimizeImportsCheckBox = new JCheckBox("Optimize model imports");
@@ -53,23 +50,19 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
         panel.add(optimizeImportsCheckBox);
         return panel;
       }
-
       @Override
       public void restoreState() {
         optimizeImportsCheckBox.setSelected(getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT);
       }
-
       @Override
       public void saveState() {
         getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT = optimizeImportsCheckBox.isSelected();
       }
-
       @Override
       public void refresh() {
       }
     };
   }
-
   @Override
   public CheckinHandler.ReturnResult beforeCheckin() {
     if (getSettings().OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT) {
@@ -102,11 +95,9 @@ public class OptimizeImportsCheckinHandler extends CheckinHandler {
     }
     return CheckinHandler.ReturnResult.COMMIT;
   }
-
   public static class OptimizeImportsCheckinHandlerFactory extends CheckinHandlerFactory {
     public OptimizeImportsCheckinHandlerFactory() {
     }
-
     @NotNull
     @Override
     public CheckinHandler createHandler(CheckinProjectPanel panel, CommitContext context) {

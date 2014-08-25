@@ -14,12 +14,10 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
   /*package*/ ExtractMethodWithReturn(ExtractMethodRefactoringParameters params) {
     super(params);
   }
-
   @Override
   public SNode getMethodType() {
     return this.myAnalyzer.getExtractMethodReafactoringProcessor().getContainerReturnType();
   }
-
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {

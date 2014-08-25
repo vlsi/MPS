@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class AnyOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public AnyOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AnyOperation";

@@ -15,23 +15,18 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_1218738676457(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "weaveManyToSingularChild", "none");
   }
-
   public static boolean baseMappingRule_Condition_1218738876108(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "useInTest", "weaveManyToSingularChild", "none");
   }
-
   public static Object propertyMacro_GetPropertyValue_1218740165112(final PropertyMacroContext _context) {
     return "weaved form input: '" + SPropertyOperations.getString(_context.getNode(), "name") + "'";
   }
-
   public static SNode weaving_MappingRule_ContextNodeQuery_1218738863685(final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SNodeOperations.getContainingRoot(_context.getNode()), "jetbrains.mps.transformation.test.inputLang.structure.InputRoot"), "generated_root");
   }
-
   public static TemplateModel getDescriptor(TemplateModule module) {
     return new TemplateModelImpl(module);
   }

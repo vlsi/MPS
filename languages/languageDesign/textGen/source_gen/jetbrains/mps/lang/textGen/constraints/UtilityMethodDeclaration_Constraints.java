@@ -20,12 +20,10 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
   public UtilityMethodDeclaration_Constraints() {
     super("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
   }
-
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseReferenceScopeProvider() {
@@ -44,13 +42,11 @@ public class UtilityMethodDeclaration_Constraints extends BaseConstraintsDescrip
         }
         return methods;
       }
-
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_o7w1nm_a0a1a0a0a2;
       }
     };
   }
-
   private static SNodePointer breakingNode_o7w1nm_a0a1a0a0a2 = new SNodePointer("r:472e3702-e789-4c3f-b300-132c65ad44f1(jetbrains.mps.lang.textGen.constraints)", "1237206482577");
 }

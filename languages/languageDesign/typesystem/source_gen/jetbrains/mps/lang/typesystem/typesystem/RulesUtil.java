@@ -12,10 +12,8 @@ import jetbrains.mps.smodel.SReference;
 
 public class RulesUtil {
   public static final Object MAY_BE_VARIABLE = new Object();
-
   public RulesUtil() {
   }
-
   public static boolean withinInferenceItem(SNode node) {
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false) != null)) {
       return true;
@@ -31,7 +29,6 @@ public class RulesUtil {
     }
     return false;
   }
-
   public static boolean withinTypeManagingItem(SNode node) {
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", false, false) != null)) {
       return true;
@@ -44,7 +41,6 @@ public class RulesUtil {
     }
     return false;
   }
-
   public static boolean withinCheckingItem(SNode node) {
     if ((SNodeOperations.getAncestor(node, "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", true, false) != null)) {
       return true;
@@ -60,7 +56,6 @@ public class RulesUtil {
     }
     return false;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0a3a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -68,7 +63,6 @@ public class RulesUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1196177069451")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0a0d0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -76,7 +70,6 @@ public class RulesUtil {
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), facade.createNodeId("1196177069451")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_yxkngc_a0a0a0d0e_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -22,11 +22,9 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ul3e2u_a(editorContext, node);
   }
-
   private EditorCell createCollection_ul3e2u_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ul3e2u_a");
@@ -39,14 +37,12 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     editorCell.addEditorCell(this.createConstant_ul3e2u_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ul3e2u_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "child subconcept");
     editorCell.setCellId("Constant_ul3e2u_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ul3e2u_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -64,7 +60,6 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ul3e2u_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_ul3e2u_c0");
@@ -75,7 +70,6 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ul3e2u_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "default property");
     editorCell.setCellId("Constant_ul3e2u_d0");
@@ -85,7 +79,6 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ul3e2u_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ul3e2u_e0");
@@ -95,7 +88,6 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ul3e2u_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("subconceptProperty");
@@ -116,7 +108,6 @@ public class MultipleEditorsTestEditorComponentChildSubconcept_EditorComponent i
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_ul3e2u_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_ul3e2u_g0");

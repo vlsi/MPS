@@ -17,18 +17,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
-
   public supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_qc0dd6_a0a2();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       GeneratedMatchingPattern pattern = new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.Pattern_qc0dd6_a0a0a0a4();
@@ -37,15 +33,12 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
       return new IsApplicableStatus(b, pattern);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public static class Pattern_qc0dd6_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_qc0dd6_a0a0a0a4() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_semtjk_a0a = nodeToMatch;
@@ -61,28 +54,22 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
     }
-
     public Object getFieldValue(String fieldName) {
       return null;
     }
-
     public void performActions(Object o) {
     }
   }
-
   private static SNode _quotation_createNode_qc0dd6_a0a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0b0a0a0a0a0a0e = new SNodePointer("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)", "~SNode");
 }

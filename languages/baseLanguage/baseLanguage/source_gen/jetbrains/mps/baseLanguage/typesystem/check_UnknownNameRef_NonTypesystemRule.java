@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnknownNameRef_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode unkName, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(unkName), "jetbrains.mps.baseLanguage.structure.UnknownNameRef"))) {
       // it's subconcept, leave the work to them 
@@ -45,18 +44,15 @@ public class check_UnknownNameRef_NonTypesystemRule extends AbstractNonTypesyste
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(unkName, "Unresolved qualified name", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6396739326936464050", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UnknownNameRef";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

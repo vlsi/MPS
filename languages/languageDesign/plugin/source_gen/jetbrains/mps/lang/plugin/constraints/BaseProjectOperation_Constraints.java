@@ -19,12 +19,10 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
   public BaseProjectOperation_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.BaseProjectOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -35,7 +33,6 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     boolean can = false;
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -43,7 +40,6 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
     }
     return can;
   }
-
   private static SNode _quotation_createNode_u117dn_b0a0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -51,6 +47,5 @@ public class BaseProjectOperation_Constraints extends BaseConstraintsDescriptor 
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)"), facade.createNodeId("~Project")));
     return quotedNode_1;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "3339131993542058156");
 }

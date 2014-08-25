@@ -33,11 +33,9 @@ public abstract class StringTextGen {
     }
     textGen.append(StringTextGen.replaceNonAsciiSymbolsWithUnicodeSymbols(result, textGen));
   }
-
   protected static boolean isBadDoubleQuote(String s, int i, final SNodeTextGen textGen) {
     return s.charAt(i) == '"' && (i == 0 || s.charAt(i - 1) != '\\');
   }
-
   protected static String replaceNonAsciiSymbolsWithUnicodeSymbols(String s, final SNodeTextGen textGen) {
     StringBuilder result = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
@@ -49,7 +47,6 @@ public abstract class StringTextGen {
     }
     return result.toString();
   }
-
   protected static String paddedHex(char c, final SNodeTextGen textGen) {
     String value = Integer.toString(c, 16);
     while (value.length() < 4) {

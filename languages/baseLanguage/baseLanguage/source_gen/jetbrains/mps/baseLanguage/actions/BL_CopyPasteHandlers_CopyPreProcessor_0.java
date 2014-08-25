@@ -13,7 +13,6 @@ public class BL_CopyPasteHandlers_CopyPreProcessor_0 implements CopyPreProcessor
   public SNode getApplicableConcept() {
     return SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference");
   }
-
   public void preProcesNode(SNode copy, SNode original) {
     SNode qualifiedReference = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(copy, "variableDeclaration", false), "virtual_getQualifiedReference_4598334504606213641", new Object[]{});
     if ((qualifiedReference != null)) {

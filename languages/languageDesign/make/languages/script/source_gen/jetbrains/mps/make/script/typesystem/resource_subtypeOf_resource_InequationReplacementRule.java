@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SReference;
 public class resource_subtypeOf_resource_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public resource_subtypeOf_resource_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     SNode leftCT = SLinkOperations.getTarget(subtype, "classifierType", true);
     if (leftCT == null) {
@@ -29,41 +28,33 @@ public class resource_subtypeOf_resource_InequationReplacementRule extends Abstr
     }
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(leftCT, rightCT, false);
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.make.script.structure.ResourceType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.make.script.structure.ResourceType";
   }
-
   private static SNode _quotation_createNode_em7qpx_a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -71,7 +62,6 @@ public class resource_subtypeOf_resource_InequationReplacementRule extends Abstr
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:4ea5a78b-cb8a-4831-b227-f7860a22491d(jetbrains.mps.make.resources)"), facade.createNodeId("6168415856807657256")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_em7qpx_a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class SortDirection_BehaviorDescriptor extends BooleanConstant_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public SortDirection_BehaviorDescriptor() {
   }
-
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return SortDirection_Behavior.virtual_constant_1262430001741498050(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SortDirection";

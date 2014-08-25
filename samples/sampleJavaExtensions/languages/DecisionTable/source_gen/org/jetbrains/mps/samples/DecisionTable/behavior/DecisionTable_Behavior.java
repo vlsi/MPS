@@ -23,7 +23,6 @@ public class DecisionTable_Behavior {
     SLinkOperations.addNewChild(thisNode, "resultValues", "jetbrains.mps.baseLanguage.structure.Expression");
     SLinkOperations.addNewChild(thisNode, "resultValues", "jetbrains.mps.baseLanguage.structure.Expression");
   }
-
   public static Set<SNode> call_referencedLVDs_3863300516938155424(SNode thisNode) {
     Set<SNode> res = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(res).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
@@ -37,7 +36,6 @@ public class DecisionTable_Behavior {
     }));
     return res;
   }
-
   public static Set<SNode> call_referencedParams_3863300516938159619(SNode thisNode) {
     Set<SNode> params = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(params).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {

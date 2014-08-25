@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class AutoDeletableStyleClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public AutoDeletableStyleClassItem_BehaviorDescriptor() {
   }
-
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return AutoDeletableStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem";

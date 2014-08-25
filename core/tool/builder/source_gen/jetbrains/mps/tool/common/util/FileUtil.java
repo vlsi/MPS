@@ -10,18 +10,15 @@ import org.jetbrains.annotations.Nullable;
 public class FileUtil {
   public FileUtil() {
   }
-
   @NotNull
   public static String unquote(String urlString) {
     urlString = urlString.replace('/', File.separatorChar);
     return URLUtil.unescapePercentSequences(urlString);
   }
-
   @NotNull
   public static String toSystemDependentName(@NonNls @NotNull String aFileName) {
     return aFileName.replace('/', File.separatorChar).replace('\\', File.separatorChar);
   }
-
   @Nullable
   public static File findFirstThatExist(String... paths) {
     for (String path : paths) {

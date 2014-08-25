@@ -11,15 +11,12 @@ import java.util.Arrays;
 public class ExtensionDescriptor extends DefaultExtensionDescriptor {
   private ExtensionPoint[] extensionPoints = new ExtensionPoint[]{new ExtensionPoint("jetbrains.mps.baseLanguage.collections.customContainers", _FunctionTypes._return_P0_E0.class)};
   private Extension[] extensions = new Extension[]{new Extension_customContainers5633688998557455304_()};
-
   public ExtensionDescriptor() {
   }
-
   @Override
   public Iterable<? extends ExtensionPoint> getExtensionPoints() {
     return Arrays.asList(extensionPoints);
   }
-
   @Override
   public Iterable<? extends Extension> getExtensions() {
     return Arrays.asList(extensions);

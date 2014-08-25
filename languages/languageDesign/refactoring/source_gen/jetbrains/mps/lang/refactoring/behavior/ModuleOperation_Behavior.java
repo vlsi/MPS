@@ -10,11 +10,9 @@ import jetbrains.mps.smodel.SReference;
 public class ModuleOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_createType_7012097027058652452(SNode thisNode) {
     return _quotation_createNode_t7bv23_a0a0();
   }
-
   private static SNode _quotation_createNode_t7bv23_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

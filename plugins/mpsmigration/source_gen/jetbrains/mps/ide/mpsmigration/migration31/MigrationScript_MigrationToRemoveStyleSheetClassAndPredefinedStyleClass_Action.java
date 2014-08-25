@@ -25,18 +25,15 @@ import org.apache.log4j.LogManager;
 
 public class MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleClass_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleClass_Action() {
     super("Replace StyleSheetClass with StyleClass", "Use new mechanism for style inheritance", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -47,7 +44,6 @@ public class MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleC
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -63,7 +59,6 @@ public class MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleC
     MapSequence.fromMap(_params).put("frame", event.getData(MPSCommonDataKeys.FRAME));
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodeReference script = new SNodePointer("r:00000000-0000-4000-0000-011c8959029d(jetbrains.mps.lang.editor.scripts)", "2491174914187960095");
@@ -80,6 +75,5 @@ public class MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleC
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrationScript_MigrationToRemoveStyleSheetClassAndPredefinedStyleClass_Action.class);
 }

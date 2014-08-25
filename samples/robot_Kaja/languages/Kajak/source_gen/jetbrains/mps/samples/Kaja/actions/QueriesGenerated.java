@@ -29,15 +29,12 @@ public class QueriesGenerated {
         SNodeFactoryOperations.addNewChild(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", "jetbrains.mps.samples.Kaja.structure.EmptyLine");
         return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).first();
       }
-
       public String getMatchingText(String pattern) {
         return "else";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -48,11 +45,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_3308300503040148314(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).isEmpty();
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_IfStatement_859008965969370131(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.While"), _context.getSourceNode()) {
@@ -62,15 +57,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(whileNode, "body", SLinkOperations.getTarget(_context.getSourceNode(), "trueBranch", true), true);
         return SLinkOperations.getTarget(whileNode, "condition", true);
       }
-
       public String getMatchingText(String pattern) {
         return "while";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -81,11 +73,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IfStatement_859008965969370132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getSourceNode(), "falseBranch", true), "commands", true)).isEmpty();
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_7446293342517269099(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.Not"), _context.getSourceNode()) {
@@ -93,15 +83,12 @@ public class QueriesGenerated {
         SNode notNode = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not");
         return SLinkOperations.setTarget(notNode, "original", _context.getSourceNode(), true);
       }
-
       public String getMatchingText(String pattern) {
         return "not";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -112,11 +99,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LogicalExpression_7446293342517448132(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SNodeOperations.isInstanceOf(_context.getSourceNode(), "jetbrains.mps.samples.Kaja.structure.Not"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_LogicalExpression_7446293342517448131(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     {
@@ -146,15 +131,12 @@ public class QueriesGenerated {
               SNode node = SNodeOperations.replaceWithAnother(_context.getSourceNode(), expression);
               return node;
             }
-
             public String getMatchingText(String pattern) {
               return (item);
             }
-
             public String getVisibleMatchingText(String pattern) {
               return getMatchingText(pattern);
             }
-
             @Override
             protected boolean isEnabled() {
               SNode sourceNode = getSourceNode();
@@ -168,7 +150,6 @@ public class QueriesGenerated {
     }
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_While_859008965969369894(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.Kaja.structure.IfStatement"), _context.getSourceNode()) {
@@ -178,15 +159,12 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(ifNode, "trueBranch", SLinkOperations.getTarget(_context.getSourceNode(), "body", true), true);
         return SLinkOperations.getTarget(ifNode, "condition", true);
       }
-
       public String getMatchingText(String pattern) {
         return "if";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -197,7 +175,6 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Direction_5125227785235936465(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {

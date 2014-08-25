@@ -9,7 +9,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8i4kafnhzm6u2y3283i1oew7gy4ynjm" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="cnx949enbtq83q3c9nmfsmlg7t37kd4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-26mou90v3tt4jvdjtueq5cqzso9mmld" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-d9sj5u69bbuzlyeiualc01wjsfee2yi" dependsOnNodes="true">
@@ -23,15 +23,12 @@
     <file name="SimpleSearchScope.java" />
   </source>
   <source id="4642948870877886557" name="ModelAndImportedModelsScope" hash="tp204mq1vdjhhf8qg7z1l2if58x0cv">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ModelAndImportedModelsScope.java" />
   </source>
   <source id="4642948870877886748" name="UndefinedSearchScope" hash="2oe56rdbo4tofk3h5sq6v8g7hdel7td">
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="UndefinedSearchScope.java" />
   </source>
   <source id="4642948870877886822" name="ModelNodesSearchScope" hash="eqxdbjtn42fz6nfph3yro7ygtnnyomg">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ModelNodesSearchScope.java" />
   </source>
   <source id="4642948870877886852" name="SubnodesSearchScope" hash="-8hf9bytssmqsvqm12ccphdy4bx4szr6">

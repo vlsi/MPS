@@ -23,7 +23,6 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
   public BuildVarRefStringPart_Constraints() {
     super("jetbrains.mps.build.structure.BuildVarRefStringPart");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_99t0ze_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class BuildVarRefStringPart_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_99t0ze_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "4903714810883713096");
 }

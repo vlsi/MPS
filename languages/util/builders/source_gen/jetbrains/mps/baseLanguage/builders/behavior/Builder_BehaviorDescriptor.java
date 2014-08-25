@@ -9,31 +9,24 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class Builder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Builder_BehaviorDescriptor() {
   }
-
   public SNode virtual_getAttachStatementChild_4797501453850305563(SNode thisNode, SNode parentBuilder, SNode parentRef, SNode childRef) {
     return Builder_Behavior.virtual_getAttachStatementChild_4797501453850305563(thisNode, parentBuilder, parentRef, childRef);
   }
-
   public SNode virtual_getAttachStatement_7288041816792215495(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
     return Builder_Behavior.virtual_getAttachStatement_7288041816792215495(thisNode, childBuilder, parentRef, childRef);
   }
-
   public SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
     return Builder_Behavior.virtual_getResultType_7057666463730718251(thisNode);
   }
-
   public boolean virtual_isLeaf_7057666463730595159(SNode thisNode) {
     return Builder_Behavior.virtual_isLeaf_7057666463730595159(thisNode);
   }
-
   public boolean virtual_leaf_1262430001741498370(SConcept thisConcept) {
     return Builder_Behavior.virtual_leaf_1262430001741498370(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.builders.structure.Builder";
   }
-
   public abstract SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef);
 }

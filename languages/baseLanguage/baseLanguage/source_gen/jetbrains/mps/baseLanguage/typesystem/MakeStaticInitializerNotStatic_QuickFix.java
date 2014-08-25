@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
   public MakeStaticInitializerNotStatic_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "name") + " class initializer' not static";
   }
-
   public void execute(SNode node) {
     int index = ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 

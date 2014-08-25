@@ -7,10 +7,10 @@
       <node id="1225980328125" at="7,0,8,0" concept="1" trace="ONLY_CLOSURE_LITERAL_AS_FUNCTION_TYPE" />
       <node id="1235405933531" at="8,0,9,0" concept="1" trace="MAX_CLOSURE_PARAMETERS" />
       <node id="1235405969792" at="9,0,10,0" concept="1" trace="MAX_CLOSURE_EXCEPTIONS" />
-      <node id="1225980323342" at="11,0,13,0" concept="0" trace="Constants#()V" />
-      <scope id="1225980323345" at="11,22,11,22" />
-      <scope id="1225980323342" at="11,0,13,0" />
-      <unit id="1225980323340" at="6,0,14,0" name="jetbrains.mps.baseLanguage.closures.util.Constants" />
+      <node id="1225980323342" at="10,0,12,0" concept="0" trace="Constants#()V" />
+      <scope id="1225980323345" at="10,22,10,22" />
+      <scope id="1225980323342" at="10,0,12,0" />
+      <unit id="1225980323340" at="6,0,13,0" name="jetbrains.mps.baseLanguage.closures.util.Constants" />
     </file>
   </root>
 </debug-info>

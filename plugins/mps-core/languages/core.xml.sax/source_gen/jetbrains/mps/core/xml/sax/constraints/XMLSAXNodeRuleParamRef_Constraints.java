@@ -25,12 +25,10 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
   public XMLSAXNodeRuleParamRef_Constraints() {
     super("jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParamRef");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -41,7 +39,6 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
 
     return result;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -50,7 +47,6 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -59,7 +55,6 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_58jyk7_a0a0a0a0a1a0b0a1a3;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -72,11 +67,9 @@ public class XMLSAXNodeRuleParamRef_Constraints extends BaseConstraintsDescripto
     });
     return references;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.core.xml.sax.structure.XMLSAXParser", true, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456856030");
   private static SNodePointer breakingNode_58jyk7_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:a2a452cd-a0b4-4774-9b7e-00f9c8226bfa(jetbrains.mps.core.xml.sax.constraints)", "4720003541456853031");
 }

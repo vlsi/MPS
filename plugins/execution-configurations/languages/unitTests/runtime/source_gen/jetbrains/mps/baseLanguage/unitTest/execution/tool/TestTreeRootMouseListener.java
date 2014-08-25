@@ -9,13 +9,11 @@ public class TestTreeRootMouseListener extends MouseAdapter {
   private final StatisticsTableModel myStatisticsModel;
   private final TestOutputComponent myOutputComponent;
   private final TestTree myTreeComponent;
-
   public TestTreeRootMouseListener(TestTree tree, StatisticsTableModel statistics, TestOutputComponent outputComponent) {
     myStatisticsModel = statistics;
     myOutputComponent = outputComponent;
     myTreeComponent = tree;
   }
-
   @Override
   public void mouseClicked(MouseEvent event) {
     if (myTreeComponent.getPathForLocation(event.getX(), event.getY()) != null) {

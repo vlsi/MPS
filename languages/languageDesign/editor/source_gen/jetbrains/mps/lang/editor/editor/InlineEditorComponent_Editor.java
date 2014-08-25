@@ -20,7 +20,6 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_h2teu2_a(editorContext, node);
   }
-
   private EditorCell createCollection_h2teu2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_h2teu2_a");
@@ -32,7 +31,6 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_h2teu2_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_h2teu2_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_h2teu2_a0");
@@ -43,7 +41,6 @@ public class InlineEditorComponent_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_h2teu2_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("cellModel");

@@ -13,10 +13,8 @@ import java.util.Collections;
 
 public class ExcludeNested extends DataType {
   private List<FileSet> excluded = new ArrayList<FileSet>();
-
   public ExcludeNested() {
   }
-
   public List<File> getExcludedFromDiffFiles() {
     List<File> result = new ArrayList<File>();
     for (FileSet inner : excluded) {
@@ -31,11 +29,9 @@ public class ExcludeNested extends DataType {
     }
     return Collections.unmodifiableList(result);
   }
-
   public void addFile(FileSet inner) {
     excluded.add(inner);
   }
-
   public void addFiles(FileSet inner) {
     excluded.add(inner);
   }

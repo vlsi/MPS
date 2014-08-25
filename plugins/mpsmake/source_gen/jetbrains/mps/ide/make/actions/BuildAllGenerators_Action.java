@@ -14,28 +14,29 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
 public class BuildAllGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public BuildAllGenerators_Action() {
     super("Rebuild All Generators", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -46,7 +47,6 @@ public class BuildAllGenerators_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -61,13 +61,21 @@ public class BuildAllGenerators_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Wrappers._T<List<SModule>> m = new Wrappers._T<List<SModule>>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<Generator>) ModuleRepositoryFacade.getInstance().getAllModules(Generator.class));
+          Iterable<SModule> projectModules = ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules();
+          m.value = ListSequence.fromListWithValues(new ArrayList<SModule>(), Sequence.fromIterable(projectModules).where(new IWhereFilter<SModule>() {
+            public boolean accept(SModule it) {
+              return it instanceof Language;
+            }
+          }).translate(new ITranslator2<SModule, Generator>() {
+            public Iterable<Generator> translate(SModule it) {
+              return ((Language) it).getGenerators();
+            }
+          }));
         }
       });
 
@@ -78,6 +86,5 @@ public class BuildAllGenerators_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(BuildAllGenerators_Action.class);
 }

@@ -44,9 +44,7 @@ public class BreakStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(BreakStatement_TextGen.class);
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

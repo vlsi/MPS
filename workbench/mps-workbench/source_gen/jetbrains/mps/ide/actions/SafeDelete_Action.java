@@ -19,18 +19,15 @@ import org.apache.log4j.LogManager;
 
 public class SafeDelete_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public SafeDelete_Action() {
     super("Safe Delete", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -41,7 +38,6 @@ public class SafeDelete_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -66,7 +62,6 @@ public class SafeDelete_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((MPSProject) MapSequence.fromMap(_params).get("project"))).deleteNodes(true, true, false);
@@ -76,6 +71,5 @@ public class SafeDelete_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(SafeDelete_Action.class);
 }

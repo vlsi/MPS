@@ -29,7 +29,6 @@ public abstract class AbstractBlock implements IBlock {
   private String myCaption;
   private Set<IBlockListener> myBlockListeners = new HashSet<IBlockListener>();
   private Set<IBlock> mySucc;
-
   public AbstractBlock(int x, int y, int width, int height, SNodeReference sourceNode, String caption, String ruleNodeReference) {
     this.myX = x;
     this.myY = y;
@@ -48,60 +47,47 @@ public abstract class AbstractBlock implements IBlock {
       }
     }
   }
-
   @Override
   public SNodeReference getSourceNode() {
     return this.mySourceNode;
   }
 
-
-
   public SNodeReference getRuleNodeReference() {
     return this.myRuleNodeReference;
   }
-
-
 
   @Override
   public int getX() {
     return this.myX;
   }
-
   @Override
   public int getY() {
     return this.myY;
   }
-
   @Override
   public int getWidth() {
     return this.myWidth;
   }
-
   @Override
   public int getHeight() {
     return this.myHeight;
   }
-
   @Override
   public void addBlockListener(IBlockListener listener) {
     this.myBlockListeners.add(listener);
   }
-
   @Override
   public void removeBlockListener(IBlockListener listener) {
     this.myBlockListeners.remove(listener);
   }
-
   @Override
   public void setSucc(Set<IBlock> succ) {
     this.mySucc = succ;
   }
-
   @Override
   public Set<IBlock> succ() {
     return this.mySucc;
   }
-
   @Override
   public boolean processMousePressed(MouseEvent mEvent) {
     int x = mEvent.getX();
@@ -115,7 +101,6 @@ public abstract class AbstractBlock implements IBlock {
       return false;
     }
   }
-
   @Override
   public void relayout(Component c) {
     Font font = c.getFont();
@@ -125,48 +110,38 @@ public abstract class AbstractBlock implements IBlock {
     this.myWidth = this.myStringWidth + 2 * AbstractBlock.this.getPaddingX(metrics);
     this.myHeight = this.myCharHeight + 2 * AbstractBlock.this.getPaddingY(metrics);
   }
-
   private int getPaddingX(FontMetrics metrics) {
     return metrics.getHeight() / 2;
   }
-
   private int getPaddingY(FontMetrics metrics) {
     return metrics.getHeight() / 3;
   }
-
   @Override
   public void setWidth(int width) {
     this.myWidth = width;
     this.myPaddingX = (this.myWidth - this.myStringWidth) / 2;
   }
-
   @Override
   public void setHeight(int height) {
     this.myHeight = height;
     this.myPaddingY = (this.myHeight - this.myCharHeight) / 2;
   }
-
   @Override
   public void setX(int x) {
     this.myX = x;
   }
-
   @Override
   public void setY(int y) {
     this.myY = y;
   }
-
   protected void paintCaption(Graphics g) {
     g.drawString(this.myCaption, this.myX + this.myPaddingX, this.myY + this.myPaddingY + this.myCharHeight);
   }
-
   protected abstract void paintBlock(Graphics g);
-
   @Override
   public void paint(Graphics g) {
     AbstractBlock.this.paintBlock(g);
     AbstractBlock.this.paintCaption(g);
   }
-
   protected static Logger LOG = LogManager.getLogger(AbstractBlock.class);
 }

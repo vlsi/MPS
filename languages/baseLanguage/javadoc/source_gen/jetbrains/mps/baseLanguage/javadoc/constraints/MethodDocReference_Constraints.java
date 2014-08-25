@@ -27,7 +27,6 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
   public MethodDocReference_Constraints() {
     super("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -36,7 +35,6 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -49,7 +47,6 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8et2et_a0a1a0a0a1a0b0a1a1;
@@ -59,13 +56,11 @@ public class MethodDocReference_Constraints extends BaseConstraintsDescriptor {
     });
     return references;
   }
-
   private static SNode _quotation_createNode_8et2et_a0a0a0a0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, false);
     return quotedNode_1;
   }
-
   private static SNodePointer breakingNode_8et2et_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:28bcf003-0004-46b6-9fe7-2093e7fb1368(jetbrains.mps.baseLanguage.javadoc.constraints)", "2546654756694393894");
 }

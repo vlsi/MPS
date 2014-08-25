@@ -11,18 +11,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class LiteralReplacement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text"));
   }
-
   public static boolean call_isValid_3796137614137567952(SNode thisNode) {
     if (isEmptyString(SPropertyOperations.getString(thisNode, "text"))) {
       return false;
     }
     return LiteralReplacement_Behavior.call_toRegexp_3796137614137565586(thisNode, SPropertyOperations.getString(thisNode, "text")) != null;
   }
-
   public static String call_toRegexp_3796137614137565586(SNode thisNode, String s) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < s.length(); i++) {
@@ -82,7 +79,6 @@ public class LiteralReplacement_Behavior {
     }
     return sb.toString();
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

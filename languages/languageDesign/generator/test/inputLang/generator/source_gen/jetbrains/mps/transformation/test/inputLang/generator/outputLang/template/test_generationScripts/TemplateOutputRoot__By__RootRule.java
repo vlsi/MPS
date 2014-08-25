@@ -19,11 +19,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateOutputRoot__By__RootRule implements TemplateDeclaration {
   public TemplateOutputRoot__By__RootRule() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_l7bj61_a0a1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
@@ -34,6 +32,5 @@ public class TemplateOutputRoot__By__RootRule implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_l7bj61_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195166061402");
 }

@@ -20,61 +20,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class InvertIfCondition_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public InvertIfCondition_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public String getPresentation() {
     return "InvertIfCondition";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.InvertIfCondition_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1195647359405");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new InvertIfCondition_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Invert If Condition";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "elsifClauses", true)).isNotEmpty()) {
         SNode newIfFalsefStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
@@ -151,7 +137,6 @@ public class InvertIfCondition_Intention implements IntentionFactory {
       SLinkOperations.setTarget(node, "ifTrue", newIfTrue, true);
       SLinkOperations.setTarget(node, "ifFalseStatement", newIfFalse, true);
     }
-
     public IntentionDescriptor getDescriptor() {
       return InvertIfCondition_Intention.this;
     }

@@ -31,76 +31,50 @@ public abstract class EvaluationUtils {
   protected static EvaluationUtils INSTANCE;
   protected static final Object LOCK = new Object();
   public static final String JAVA_LANG_OBJECT = "Ljava/lang/Object;";
-
   public EvaluationUtils() {
   }
-
   public abstract void init();
-
   public abstract void dispose();
-
   public abstract Value getArrayElementAt(ArrayReference array, int index);
-
   @NotNull
   public abstract Field findField(ClassType referenceType, String fieldName) throws InvalidEvaluatedExpressionException;
-
   public abstract List<Field> findFields(ClassType referenceType);
-
   @NotNull
   public abstract Method findConstructor(ClassType referenceType, String jniSignature) throws InvalidEvaluatedExpressionException;
-
   @NotNull
   public abstract Method findMethod(ClassType referenceType, String methodsName, String jniSignature) throws InvalidEvaluatedExpressionException;
-
   @NotNull
   public abstract ReferenceType findClassType(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
-
   @Nullable
   public abstract ReferenceType findClassTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
-
   @Nullable
   public abstract Type findTypeSilently(String className, VirtualMachine virtualMachine) throws InvalidEvaluatedExpressionException;
-
   public abstract boolean instanceOf(final Type what, final String jniSignature, final VirtualMachine machine) throws EvaluationException;
-
   @NotNull
   public abstract IValueProxy getVariableValue(String varName, StackFrame stackFrame) throws EvaluationException;
-
   @NotNull
   public abstract <T extends IValueProxy> Iterable<T> toIterableProxy(IObjectValueProxy valueProxy, ThreadReference threadReference);
-
   @NotNull
   public abstract <T extends IValueProxy> Iterable<T> toIterableProxyFromArray(IArrayValueProxy valueProxy);
-
   @NotNull
   public abstract IValueProxy invokeStaticMethod(String className, String name, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
-
   @NotNull
   public abstract IValueProxy getStaticField(String className, String fieldName, VirtualMachine machine) throws InvalidEvaluatedExpressionException;
-
   @NotNull
   public abstract IObjectValueProxy invokeConstructorProxy(String className, String jniSignature, ThreadReference threadReference, Object... args) throws EvaluationException;
-
   public abstract IArrayValueProxy createArrayProxy(String className, VirtualMachine machine, int size) throws EvaluationException;
-
   public abstract IArrayValueProxy createArrayProxyFromValues(String className, VirtualMachine machine, Object... args) throws EvaluationException;
-
   @NotNull
   public abstract IValueProxy getClass(String className, VirtualMachine machine) throws InvalidEvaluatedExpressionException;
-
   @NotNull
   public abstract IObjectValueProxy boxValue(PrimitiveValueProxy primitiveValueProxy, ThreadReference threadReference) throws EvaluationException;
-
   public abstract PrimitiveValueProxy unboxValue(IObjectValueProxy valueProxy, ThreadReference threadReference) throws EvaluationException;
-
   public abstract String getStringPresentation(@NotNull Value value, ThreadReference reference);
-
   public static EvaluationUtils getInstance() {
     synchronized (LOCK) {
       return INSTANCE;
     }
   }
-
   /**
    * Do something and convert jdi exceptions to evaluation exception
    * 
@@ -137,7 +111,6 @@ public abstract class EvaluationUtils {
       throw new EvaluationException(t);
     }
   }
-
   /**
    * When we need to call something from ui which throws evaluation exception.
    * For example when we update the tree.
@@ -173,7 +146,6 @@ public abstract class EvaluationUtils {
     }
     return failure;
   }
-
   public   /**
    * Something that can throw one of jdi exceptions or EvaluationException
    * 
@@ -182,7 +154,6 @@ public abstract class EvaluationUtils {
 static interface Invocatable<T> {
     public T invoke() throws InvocationException, InvalidTypeException, ClassNotLoadedException, IncompatibleThreadStateException, EvaluationException;
   }
-
   public   /**
    * Something that can throw EvaluationException
    * 
@@ -191,7 +162,6 @@ static interface Invocatable<T> {
 static interface EvaluationInvocatable<T> {
     public T invoke() throws EvaluationException;
   }
-
   /**
    * Some action which also has information about thread reference where it happenes.
    * 
@@ -199,15 +169,12 @@ static interface EvaluationInvocatable<T> {
    */
   public static abstract class ThreadInvocatable<T> implements EvaluationUtils.Invocatable<T> {
     private final ThreadReference myThreadReference;
-
     public ThreadInvocatable(ThreadReference threadReference) {
       myThreadReference = threadReference;
     }
-
     public ThreadReference getCurrentThreadReference() {
       return myThreadReference;
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(EvaluationUtils.class);
 }

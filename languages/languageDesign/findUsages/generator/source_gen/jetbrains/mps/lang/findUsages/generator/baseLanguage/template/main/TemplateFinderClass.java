@@ -26,11 +26,9 @@ import jetbrains.mps.smodel.SNodePointer;
 public class TemplateFinderClass implements TemplateDeclaration {
   public TemplateFinderClass() {
   }
-
   public SNodeReference getTemplateNode() {
     return template_i5yf3w_a0a1;
   }
-
   protected Collection<SNode> applyNode0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final List<SNode> tlist1 = new ArrayList<SNode>();
     TemplateContext context1 = context.subContext("map_FinderConstructor");
@@ -78,7 +76,6 @@ public class TemplateFinderClass implements TemplateDeclaration {
     }
     return tlist1;
   }
-
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
@@ -1377,7 +1374,6 @@ public class TemplateFinderClass implements TemplateDeclaration {
     }
     return TemplateUtil.singletonList(tnode1);
   }
-
   private static SNodePointer template_i5yf3w_a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1197207280624");
   private static SNodePointer propertyMacro_i5yf3w_c0a0c0b0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "1197207280706");
   private static SNodePointer propertyMacro_i5yf3w_c0a0c0b0b0d0b0c0b0e0b0d = new SNodePointer("r:00000000-0000-4000-0000-011c8959035c(jetbrains.mps.lang.findUsages.generator.baseLanguage.template.main@generator)", "817124385502523104");

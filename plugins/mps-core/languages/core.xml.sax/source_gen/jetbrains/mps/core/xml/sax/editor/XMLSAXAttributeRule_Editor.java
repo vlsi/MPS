@@ -26,11 +26,9 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_z5ltoj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_z5ltoj_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_z5ltoj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z5ltoj_a");
@@ -45,25 +43,21 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_z5ltoj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required");
     editorCell.setCellId("Constant_z5ltoj_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_z5ltoj_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isRequired");
   }
-
   private EditorCell createConstant_z5ltoj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "attr");
     editorCell.setCellId("Constant_z5ltoj_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_z5ltoj_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -86,7 +80,6 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_z5ltoj_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("handler");
@@ -109,11 +102,9 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_z5ltoj_a3a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "handler", true) != null);
   }
-
   private EditorCell createCollection_z5ltoj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_z5ltoj_a_0");
@@ -121,7 +112,6 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_z5ltoj_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_z5ltoj_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_z5ltoj_a0");
@@ -132,14 +122,12 @@ public class XMLSAXAttributeRule_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_z5ltoj_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_z5ltoj_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "required");
     editorCell.setCellId("Constant_z5ltoj_a0a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_z5ltoj_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isRequired");

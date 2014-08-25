@@ -14,12 +14,10 @@ public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDesc
   public BuildSource_JavaClassFolder_Constraints() {
     super("jetbrains.mps.build.structure.BuildSource_JavaClassFolder");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,10 +28,8 @@ public class BuildSource_JavaClassFolder_Constraints extends BaseConstraintsDesc
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.build.structure.BuildSource_JavaLibrary", true, false) != null);
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "1258644073389103468");
 }

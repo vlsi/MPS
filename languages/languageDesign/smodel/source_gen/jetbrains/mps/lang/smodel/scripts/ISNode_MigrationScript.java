@@ -22,15 +22,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SNode classified with static fields from org.jetbrains.mps.openapi.model.SNode";
       }
-
       public String getAdditionalInfo() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SNode classified with static fields from org.jetbrains.mps.openapi.model.SNode";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -44,7 +41,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         SNodeId targetNodeId = reference.getTargetNodeId();
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -54,7 +50,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -63,15 +58,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SNode to org.jetbrains.mps.openapi.model.SNode";
       }
-
       public String getAdditionalInfo() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SNode to org.jetbrains.mps.openapi.model.SNode";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.IMethodCall";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -178,7 +170,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -188,7 +179,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -197,15 +187,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SNodePointer classified with static fields from org.jetbrains.mps.openapi.model.SNodeReference";
       }
-
       public String getAdditionalInfo() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SNodePointer classified with static fields from org.jetbrains.mps.openapi.model.SNodeReference";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -219,7 +206,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         SNodeId targetNodeId = reference.getTargetNodeId();
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -229,7 +215,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -238,15 +223,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SNodePointer to org.jetbrains.mps.openapi.model.SNodeReference";
       }
-
       public String getAdditionalInfo() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SNodePointer to org.jetbrains.mps.openapi.model.SNodeReference";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.IMethodCall";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -266,7 +248,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -276,7 +257,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -285,15 +265,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SReference classified with static fields from org.jetbrains.mps.openapi.model.SReference";
       }
-
       public String getAdditionalInfo() {
         return "Replacing static field references referencing static fields declared in jetbrains.mps.smodel.SReference classified with static fields from org.jetbrains.mps.openapi.model.SReference";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.StaticFieldReference";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -307,7 +284,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         SNodeId targetNodeId = reference.getTargetNodeId();
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -317,7 +293,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -326,15 +301,12 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
       public String getName() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SReference to org.jetbrains.mps.openapi.model.SReference";
       }
-
       public String getAdditionalInfo() {
         return "Pull up and remove all methods from jetbrains.mps.smodel.SReference to org.jetbrains.mps.openapi.model.SReference";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.IMethodCall";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         if (reference == null || jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference) != null) {
@@ -369,7 +341,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         }
         return false;
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), oldReference.getTargetNodeId(), ((jetbrains.mps.smodel.SReference) oldReference).getResolveInfo());
@@ -379,7 +350,6 @@ public class ISNode_MigrationScript extends BaseMigrationScript {
         ((SModelInternal) node.getModel()).addModelImport(PersistenceFacade.getInstance().createModelReference("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), false);
         ((AbstractModule) node.getModel().getModule()).addDependency(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

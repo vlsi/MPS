@@ -17,19 +17,15 @@ public class MigrateParameterizedIntentionDeclaration_MigrationScript extends Ba
       public String getName() {
         return "Update";
       }
-
       public String getAdditionalInfo() {
         return "Update";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true) != null) || (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true) != null);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true) != null)) {
           SNode descriptionBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", null);
@@ -43,7 +39,6 @@ public class MigrateParameterizedIntentionDeclaration_MigrationScript extends Ba
         }
 
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

@@ -21,7 +21,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_8ma8bu_a(editorContext, node);
   }
-
   private EditorCell createCollection_8ma8bu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_8ma8bu_a");
@@ -34,7 +33,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_8ma8bu_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_8ma8bu_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createdType");
@@ -54,7 +52,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_8ma8bu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_8ma8bu_b0");
@@ -64,7 +61,6 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_8ma8bu_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototypeNode");
@@ -84,11 +80,9 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_8ma8bu_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "prototypeNode", true) != null);
   }
-
   private EditorCell createConstant_8ma8bu_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_8ma8bu_d0");

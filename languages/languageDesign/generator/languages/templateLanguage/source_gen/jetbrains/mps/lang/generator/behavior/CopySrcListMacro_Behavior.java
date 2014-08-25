@@ -17,7 +17,6 @@ import jetbrains.mps.util.IterableUtil;
 public class CopySrcListMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true));
     {
@@ -30,7 +29,6 @@ public class CopySrcListMacro_Behavior {
     }
     return null;
   }
-
   public static boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     if (SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true) == child) {
       return false;
@@ -41,13 +39,10 @@ public class CopySrcListMacro_Behavior {
     return true;
 
   }
-
   public static class Pattern_26ny8p_a0a0a1a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_26ny8p_a0a0a1a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_26ny8p_a0a1a0 = nodeToMatch;
@@ -73,24 +68,20 @@ public class CopySrcListMacro_Behavior {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

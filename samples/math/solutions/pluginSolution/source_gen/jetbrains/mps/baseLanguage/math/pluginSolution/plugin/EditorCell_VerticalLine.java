@@ -12,11 +12,9 @@ import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 public class EditorCell_VerticalLine extends EditorCell_Basic {
   private boolean isCaretShown;
-
   public EditorCell_VerticalLine(EditorContext context, SNode node) {
     super(context, node);
   }
-
   @Override
   public void paintContent(Graphics g, ParentSettings parentSettings) {
     if (this.isSelected()) {
@@ -30,12 +28,10 @@ public class EditorCell_VerticalLine extends EditorCell_Basic {
       g.fillRect(x, y + height, width, 1);
     }
   }
-
   @Override
   public void switchCaretVisible() {
     this.isCaretShown = !(this.isCaretShown);
   }
-
   @Override
   public void relayoutImpl() {
     this.myWidth = 1;

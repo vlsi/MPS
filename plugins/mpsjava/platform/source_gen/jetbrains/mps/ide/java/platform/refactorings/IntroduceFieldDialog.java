@@ -23,7 +23,6 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
   private AbstractIntroduceFieldRefactoring myRefactoring;
   private final boolean isStatic;
 
-
   public IntroduceFieldDialog(Project project, AbstractIntroduceFieldRefactoring refactoring, EditorContext editorContext, boolean isStatic) {
     super(project, "Introduce Field", editorContext);
     this.myRefactoring = refactoring;
@@ -31,21 +30,16 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     init();
   }
 
-
-
   @Override
   public IntroduceVariableRefactoring getRefactoring() {
     return this.myRefactoring;
   }
-
-
 
   @Nullable
   @Override
   protected String getHelpId() {
     return "refactoring.introduceField";
   }
-
   private JComponent createInitDestinationPanel() {
     JPanel result = new JPanel(new GridBagLayout());
     result.setBorder(new TitledBorder("Initialize in"));
@@ -63,7 +57,6 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     method.setSelected(true);
     return result;
   }
-
   private JRadioButton createButton(int y, final FieldInitializationPlace place, JPanel result, ButtonGroup group) {
     final JRadioButton button = new JRadioButton(place.getName());
     GridBagConstraints c = new GridBagConstraints();
@@ -82,7 +75,6 @@ public class IntroduceFieldDialog extends IntroduceVariableDialog {
     });
     return button;
   }
-
   @Nullable
   @Override
   protected JComponent createCenterPanel() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,19 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelDependencyScanner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
-import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -103,12 +103,12 @@ public class OptimizeImportsHelper {
 
   private Result optimizeModelsImports_internal(List<SModel> modelsToOptimize) {
     Result result = new Result();
-    for (SModel modelDescriptor : modelsToOptimize) {
-      if (SModelStereotype.isStubModelStereotype(SModelStereotype.getStereotype(modelDescriptor))) {
+    for (SModel model : modelsToOptimize) {
+      if (SModelStereotype.isStubModel(model)) {
         // todo: looks like WTF
-        result.add(collectModelDependencies(modelDescriptor));
+        result.add(collectModelDependencies(model));
       } else {
-        result.add(optimizeModelImports_internal(modelDescriptor));
+        result.add(optimizeModelImports_internal(model));
       }
     }
     return result;
@@ -122,7 +122,7 @@ public class OptimizeImportsHelper {
       if (result.myUsedModels.contains(model)) continue;
 
       //this is a temp code to fix http://youtrack.jetbrains.com/issue/MPS-19621
-      //we should re-save models and make them resolve through modules, not just by ID
+      //we should re-save models and make them findModules through modules, not just by ID
       //this code is supposed to be deleted after 3.1 release
       if (result.myUsedModels.contains(model.resolve(MPSModuleRepository.getInstance()).getReference())) continue;
       //end of tmp code
@@ -151,25 +151,20 @@ public class OptimizeImportsHelper {
     return result;
   }
 
-  private Result collectModelDependencies(SModel modelDescriptor) {
+  private Result collectModelDependencies(SModel model) {
     Result result = new Result();
 
-    for (SModuleReference ref : ((jetbrains.mps.smodel.SModelInternal) modelDescriptor).engagedOnGenerationLanguages()) {
-      result.myUsedLanguages.add(ModuleRepositoryFacade.getInstance().getModule(ref, Language.class));
-    }
-    for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
-      result.myUsedLanguages.add(jetbrains.mps.util.SNodeOperations.getLanguage(node));
-      for (SReference ref : node.getReferences()) {
-        SModelReference mr = ref.getTargetSModelReference();
-        if (!modelDescriptor.getReference().equals(mr)) {
-          result.addUsedModel(mr);
-        }
-      }
-    }
+    result.myUsedLanguages.addAll(((jetbrains.mps.smodel.SModelInternal) model).engagedOnGenerationLanguages());
+    ModelDependencyScanner modelScanner = new ModelDependencyScanner().crossModelReferences(true).usedLanguages(true);
+    result.myUsedLanguages.addAll(findModules(modelScanner.getUsedLanguages()));
+    result.myUsedModels.addAll(modelScanner.getCrossModelReferences());
+
     // add auto imports as dependencies
-    result.myUsedLanguages.addAll(ModelsAutoImportsManager.getAutoImportedLanguages(modelDescriptor.getModule(), modelDescriptor));
-    for (org.jetbrains.mps.openapi.model.SModel model : ModelsAutoImportsManager.getAutoImportedModels(modelDescriptor.getModule(), modelDescriptor)) {
-      result.addUsedModel(model.getReference());
+    for (Language l : ModelsAutoImportsManager.getAutoImportedLanguages(model.getModule(), model)) {
+      result.myUsedLanguages.add(l.getModuleReference());
+    }
+    for (SModel m : ModelsAutoImportsManager.getAutoImportedModels(model.getModule(), model)) {
+      result.addUsedModel(m.getReference());
     }
 
     return result;
@@ -203,7 +198,7 @@ public class OptimizeImportsHelper {
     if (dep.isReexport()) return null;
     if (dep.getModuleRef().equals(current)) return dep;
 
-    SModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
+    SModule module = ModuleRepositoryFacade.getInstance().getModule(dep.getModuleRef());
     if (module == null) return null;
 
     boolean used = false;
@@ -236,10 +231,10 @@ public class OptimizeImportsHelper {
   }
 
   private SModuleReference getUnusedLanguageRef(Result result, SModuleReference languageRef) {
+    if (result.myUsedLanguages.contains(languageRef)) return null;
+
     Language language = ((Language) languageRef.resolve(MPSModuleRepository.getInstance()));
     if (language == null) return null;
-    if (result.myUsedLanguages.contains(language)) return null;
-
     for (SModel md : language.getAccessoryModels()) {
       if (result.myUsedModels.contains(md.getReference())) return null;
     }
@@ -291,9 +286,20 @@ public class OptimizeImportsHelper {
     return report.toString();
   }
 
+  private Set<SModuleReference> findModules(Collection<SLanguage> languages) {
+    HashSet<SModuleReference> rv = new HashSet<SModuleReference>();
+    for(SLanguage l : languages) {
+      final Language language = ModuleRepositoryFacade.getInstance().getModule(l.getQualifiedName(), Language.class);
+      if (language != null) {
+        rv.add(language.getModuleReference());
+      }
+    }
+    return rv;
+  }
+
   private static class Result {
     public String myReport = "";
-    public Set<Language> myUsedLanguages = new HashSet<Language>();
+    public Set<SModuleReference> myUsedLanguages = new HashSet<SModuleReference>();
     public Set<SModelReference> myUsedModels = new HashSet<SModelReference>();
 
     public void add(Result addition) {

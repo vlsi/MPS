@@ -12,7 +12,6 @@ import jetbrains.mps.baseLanguage.behavior.ReturnStatement_Behavior;
 public class ReturnStatement_DataFlow extends DataFlowBuilder {
   public ReturnStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     if (ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode()) != null) {

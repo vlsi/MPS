@@ -13,18 +13,14 @@ public class SideTransformWrapperActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new SideTransformWrapperActionMap.SideTransformWrapperActionMap_RIGHT_TRANSFORM(node));
   }
-
   public static class SideTransformWrapperActionMap_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public SideTransformWrapperActionMap_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "rightOpen", "" + (true));
     }

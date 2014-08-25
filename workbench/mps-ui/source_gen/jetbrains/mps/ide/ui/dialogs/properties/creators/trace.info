@@ -11,302 +11,34 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/1012869868274853609">
-    <file name="LanguageOrDevKitChooser.java">
-      <node id="7736241988472367481" at="24,43,25,95" concept="7" />
-      <node id="7736241988472210297" at="27,25,28,98" concept="7" />
-      <node id="7736241988472313518" at="28,98,29,166" concept="2" />
-      <node id="7736241988472325152" at="29,166,30,164" concept="2" />
-      <node id="7736241988472367490" at="32,45,33,69" concept="8" />
-      <node id="7736241988472367500" at="36,56,37,45" concept="8" />
-      <node id="1012869868274870033" at="41,7,42,0" concept="10" />
-      <node id="1012869868274861281" at="42,0,43,106" concept="8" />
-      <node id="7736241988472367488" at="32,0,35,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="7736241988472367498" at="36,0,39,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="7736241988472378787" at="30,164,39,28" concept="2" />
-      <node id="7736241988472206690" at="27,0,41,0" concept="6" trace="run#()V" />
-      <node id="7736241988472206688" at="25,95,41,7" concept="2" />
-      <node id="1012869868274859373" at="23,0,45,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="7736241988472367489" at="32,45,33,69" />
-      <scope id="7736241988472367499" at="36,56,37,45" />
-      <scope id="7736241988472367488" at="32,0,35,0">
-        <var name="it" id="7736241988472367488" />
-      </scope>
-      <scope id="7736241988472367498" at="36,0,39,0">
-        <var name="lang" id="7736241988472367498" />
-      </scope>
-      <scope id="7736241988472206692" at="27,25,39,28">
-        <var name="modules" id="7736241988472210298" />
-      </scope>
-      <scope id="7736241988472206690" at="27,0,41,0" />
-      <scope id="1012869868274859379" at="24,43,43,106">
-        <var name="refs" id="7736241988472367482" />
-      </scope>
-      <scope id="1012869868274859373" at="23,0,45,0" />
-      <unit id="7736241988472367488" at="31,74,35,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser$2" />
-      <unit id="7736241988472367498" at="35,22,39,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser$2" />
-      <unit id="7736241988472206690" at="26,45,41,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser$1" />
-      <unit id="1012869868274853609" at="22,0,46,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageOrDevKitChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/343121271899319920">
-    <file name="SolutionOrLangChooser.java">
-      <node id="7736241988472480067" at="24,43,25,95" concept="7" />
-      <node id="7736241988472480074" at="27,25,28,98" concept="7" />
-      <node id="7736241988472480081" at="28,98,29,166" concept="2" />
-      <node id="7736241988472480089" at="29,166,30,166" concept="2" />
-      <node id="7736241988472480106" at="32,45,33,69" concept="8" />
-      <node id="7736241988472480116" at="36,56,37,45" concept="8" />
-      <node id="343121271899346741" at="41,7,42,0" concept="10" />
-      <node id="343121271899346742" at="42,0,43,118" concept="8" />
-      <node id="7736241988472480104" at="32,0,35,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="7736241988472480114" at="36,0,39,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="7736241988472480097" at="30,166,39,28" concept="2" />
-      <node id="7736241988472480072" at="27,0,41,0" concept="6" trace="run#()V" />
-      <node id="7736241988472480071" at="25,95,41,7" concept="2" />
-      <node id="343121271899345255" at="23,0,45,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="7736241988472480105" at="32,45,33,69" />
-      <scope id="7736241988472480115" at="36,56,37,45" />
-      <scope id="7736241988472480104" at="32,0,35,0">
-        <var name="it" id="7736241988472480104" />
-      </scope>
-      <scope id="7736241988472480114" at="36,0,39,0">
-        <var name="lang" id="7736241988472480114" />
-      </scope>
-      <scope id="7736241988472480073" at="27,25,39,28">
-        <var name="modules" id="7736241988472480075" />
-      </scope>
-      <scope id="7736241988472480072" at="27,0,41,0" />
-      <scope id="343121271899345261" at="24,43,43,118">
-        <var name="refs" id="7736241988472480068" />
-      </scope>
-      <scope id="343121271899345255" at="23,0,45,0" />
-      <unit id="7736241988472480104" at="31,74,35,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser$2" />
-      <unit id="7736241988472480114" at="35,22,39,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser$2" />
-      <unit id="7736241988472480072" at="26,45,41,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser$1" />
-      <unit id="343121271899319920" at="22,0,46,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionOrLangChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364219">
-    <file name="DependencyChooser.java">
-      <node id="3995997045458364232" at="23,37,24,112" concept="7" />
-      <node id="2034046503361580304" at="26,25,27,75" concept="7" />
-      <node id="2034046503361580320" at="29,54,30,43" concept="8" />
-      <node id="3995997045458364261" at="34,7,35,172" concept="7" />
-      <node id="3995997045458364277" at="36,29,37,18" concept="8" />
-      <node id="3995997045458364279" at="38,5,39,58" concept="7" />
-      <node id="3995997045458364291" at="40,43,41,47" concept="7" />
-      <node id="3995997045458364296" at="41,47,42,33" concept="2" />
-      <node id="3995997045458364301" at="42,33,43,29" concept="2" />
-      <node id="3995997045458364306" at="44,5,45,18" concept="8" />
-      <node id="3995997045458364224" at="19,0,21,0" concept="1" trace="DependencyChooser#()V" />
-      <node id="2034046503361580318" at="29,0,32,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="3995997045458364272" at="35,172,38,5" concept="5" />
-      <node id="2034046503361580312" at="27,75,32,11" concept="2" />
-      <node id="3995997045458364286" at="39,58,44,5" concept="4" />
-      <node id="2034046503361580302" at="26,0,34,0" concept="6" trace="run#()V" />
-      <node id="2034046503361580298" at="24,112,34,7" concept="2" />
-      <node id="3995997045458364227" at="22,0,47,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364226" at="19,30,19,30" />
-      <scope id="2034046503361580319" at="29,54,30,43" />
-      <scope id="3995997045458364276" at="36,29,37,18" />
-      <scope id="3995997045458364224" at="19,0,21,0" />
-      <scope id="2034046503361580318" at="29,0,32,0">
-        <var name="it" id="2034046503361580318" />
-      </scope>
-      <scope id="3995997045458364290" at="40,43,43,29">
-        <var name="dependency" id="3995997045458364292" />
-      </scope>
-      <scope id="3995997045458364286" at="39,58,44,5">
-        <var name="m" id="3995997045458364288" />
-      </scope>
-      <scope id="2034046503361580303" at="26,25,32,11">
-        <var name="modules" id="2034046503361580305" />
-      </scope>
-      <scope id="2034046503361580302" at="26,0,34,0" />
-      <scope id="3995997045458364231" at="23,37,45,18">
-        <var name="allModuleRefs" id="3995997045458364233" />
-        <var name="moduleRefs" id="3995997045458364262" />
-        <var name="result" id="3995997045458364280" />
-      </scope>
-      <scope id="3995997045458364227" at="22,0,47,0" />
-      <unit id="2034046503361580318" at="28,72,32,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser$2" />
-      <unit id="2034046503361580302" at="25,45,34,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser$1" />
-      <unit id="3995997045458364219" at="18,0,48,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364308">
-    <file name="DevKitChooser.java">
-      <node id="7736241988472554496" at="21,43,22,98" concept="7" />
-      <node id="7736241988472556600" at="24,42,25,65" concept="8" />
-      <node id="7736241988472556610" at="28,53,29,41" concept="8" />
-      <node id="7736241988472554109" at="31,24,32,0" concept="10" />
-      <node id="3995997045458364352" at="32,0,33,88" concept="8" />
-      <node id="3995997045458364313" at="17,0,19,0" concept="1" trace="DevKitChooser#()V" />
-      <node id="7736241988472556598" at="24,0,27,0" concept="6" trace="accept#(Ljetbrains/mps/smodel/Language;)Z" />
-      <node id="7736241988472556608" at="28,0,31,0" concept="6" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="7736241988472556591" at="22,98,31,24" concept="7" />
-      <node id="3995997045458364316" at="20,0,35,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364315" at="17,26,17,26" />
-      <scope id="7736241988472556599" at="24,42,25,65" />
-      <scope id="7736241988472556609" at="28,53,29,41" />
-      <scope id="3995997045458364313" at="17,0,19,0" />
-      <scope id="7736241988472556598" at="24,0,27,0">
-        <var name="it" id="7736241988472556598" />
-      </scope>
-      <scope id="7736241988472556608" at="28,0,31,0">
-        <var name="lang" id="7736241988472556608" />
-      </scope>
-      <scope id="3995997045458364320" at="21,43,33,88">
-        <var name="langs" id="7736241988472554497" />
-        <var name="refs" id="7736241988472556592" />
-      </scope>
-      <scope id="3995997045458364316" at="20,0,35,0" />
-      <unit id="7736241988472556598" at="23,73,27,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser$1" />
-      <unit id="7736241988472556608" at="27,18,31,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser$2" />
-      <unit id="3995997045458364308" at="16,0,36,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364358">
-    <file name="GeneratorChooser.java">
-      <node id="3995997045458364371" at="21,43,22,98" concept="7" />
-      <node id="2034046503361579403" at="24,25,25,109" concept="7" />
-      <node id="2034046503361579419" at="27,56,28,43" concept="8" />
-      <node id="3995997045458364402" at="32,7,33,100" concept="8" />
-      <node id="3995997045458364363" at="17,0,19,0" concept="1" trace="GeneratorChooser#()V" />
-      <node id="2034046503361579417" at="27,0,30,0" concept="6" trace="select#(Ljetbrains/mps/smodel/Generator;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="2034046503361579411" at="25,109,30,28" concept="2" />
-      <node id="2034046503361579401" at="24,0,32,0" concept="6" trace="run#()V" />
-      <node id="2034046503361579397" at="22,98,32,7" concept="2" />
-      <node id="3995997045458364366" at="20,0,35,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364365" at="17,29,17,29" />
-      <scope id="2034046503361579418" at="27,56,28,43" />
-      <scope id="3995997045458364363" at="17,0,19,0" />
-      <scope id="2034046503361579417" at="27,0,30,0">
-        <var name="it" id="2034046503361579417" />
-      </scope>
-      <scope id="2034046503361579402" at="24,25,30,28">
-        <var name="generators" id="2034046503361579404" />
-      </scope>
-      <scope id="2034046503361579401" at="24,0,32,0" />
-      <scope id="3995997045458364370" at="21,43,33,100">
-        <var name="genRefs" id="3995997045458364372" />
-      </scope>
-      <scope id="3995997045458364366" at="20,0,35,0" />
-      <unit id="2034046503361579417" at="26,69,30,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.GeneratorChooser$2" />
-      <unit id="2034046503361579401" at="23,45,32,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.GeneratorChooser$1" />
-      <unit id="3995997045458364358" at="16,0,36,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.GeneratorChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364408">
-    <file name="LanguageChooser.java">
-      <node id="3995997045458364421" at="23,43,24,99" concept="7" />
-      <node id="2034046503361626529" at="26,25,27,102" concept="7" />
-      <node id="7736241988471962399" at="29,46,30,69" concept="8" />
-      <node id="2034046503361626545" at="33,57,34,45" concept="8" />
-      <node id="3995997045458364452" at="38,7,39,100" concept="8" />
-      <node id="3995997045458364413" at="19,0,21,0" concept="1" trace="LanguageChooser#()V" />
-      <node id="7736241988471960209" at="29,0,32,0" concept="6" trace="accept#(Ljetbrains/mps/smodel/Language;)Z" />
-      <node id="2034046503361626543" at="33,0,36,0" concept="6" trace="select#(Ljetbrains/mps/smodel/Language;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="2034046503361626537" at="27,102,36,28" concept="2" />
-      <node id="7736241988472546659" at="26,0,38,0" concept="6" trace="run#()V" />
-      <node id="7736241988472546657" at="24,99,38,7" concept="2" />
-      <node id="3995997045458364416" at="22,0,41,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364415" at="19,28,19,28" />
-      <scope id="7736241988471960210" at="29,46,30,69" />
-      <scope id="2034046503361626544" at="33,57,34,45" />
-      <scope id="3995997045458364413" at="19,0,21,0" />
-      <scope id="7736241988471960209" at="29,0,32,0">
-        <var name="it" id="7736241988471960209" />
-      </scope>
-      <scope id="2034046503361626543" at="33,0,36,0">
-        <var name="lang" id="2034046503361626543" />
-      </scope>
-      <scope id="7736241988472546661" at="26,25,36,28">
-        <var name="langs" id="2034046503361626530" />
-      </scope>
-      <scope id="7736241988472546659" at="26,0,38,0" />
-      <scope id="3995997045458364420" at="23,43,39,100">
-        <var name="langRefs" id="3995997045458364422" />
-      </scope>
-      <scope id="3995997045458364416" at="22,0,41,0" />
-      <unit id="7736241988471960209" at="28,64,32,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser$2" />
-      <unit id="2034046503361626543" at="32,22,36,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser$2" />
-      <unit id="7736241988472546659" at="25,45,38,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser$1" />
-      <unit id="3995997045458364408" at="18,0,42,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364458">
-    <file name="MappingRuleCreator.java">
-      <node id="3995997045458364469" at="13,40,14,37" concept="8" />
-      <node id="3995997045458364462" at="9,0,11,0" concept="1" trace="MappingRuleCreator#()V" />
-      <node id="3995997045458364465" at="12,0,16,0" concept="6" trace="compute#()Ljetbrains/mps/project/structure/modules/mappingpriorities/MappingPriorityRule;" />
-      <scope id="3995997045458364464" at="9,31,9,31" />
-      <scope id="3995997045458364468" at="13,40,14,37" />
-      <scope id="3995997045458364462" at="9,0,11,0" />
-      <scope id="3995997045458364465" at="12,0,16,0" />
-      <unit id="3995997045458364458" at="8,0,17,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.MappingRuleCreator" />
-    </file>
-  </root>
   <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364472">
     <file name="ModelChooser.java">
-      <node id="3995997045458364502" at="23,46,24,77" concept="7" />
-      <node id="3995997045458364517" at="26,52,27,37" concept="8" />
-      <node id="3995997045458364524" at="31,7,32,79" concept="8" />
+      <node id="3995997045458364502" at="22,46,23,77" concept="7" />
+      <node id="3995997045458364517" at="25,52,26,37" concept="8" />
+      <node id="3995997045458364524" at="30,7,31,79" concept="8" />
       <node id="3995997045458364477" at="16,0,18,0" concept="1" trace="ModelChooser#()V" />
-      <node id="3995997045458364515" at="26,0,29,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
-      <node id="3995997045458364510" at="24,77,29,28" concept="8" />
-      <node id="3995997045458364497" at="22,0,31,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <node id="3995997045458364485" at="20,42,31,7" concept="7" />
-      <node id="3995997045458364480" at="19,0,34,0" concept="6" trace="compute#()Ljava/util/List;" />
+      <node id="3995997045458364515" at="25,0,28,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModelReference;" />
+      <node id="3995997045458364510" at="23,77,28,28" concept="8" />
+      <node id="3995997045458364497" at="21,0,30,0" concept="6" trace="compute#()Ljava/util/List;" />
+      <node id="3995997045458364485" at="19,42,30,7" concept="7" />
+      <node id="3995997045458364480" at="18,0,33,0" concept="6" trace="compute#()Ljava/util/List;" />
       <scope id="3995997045458364479" at="16,25,16,25" />
-      <scope id="3995997045458364516" at="26,52,27,37" />
+      <scope id="3995997045458364516" at="25,52,26,37" />
       <scope id="3995997045458364477" at="16,0,18,0" />
-      <scope id="3995997045458364515" at="26,0,29,0">
+      <scope id="3995997045458364515" at="25,0,28,0">
         <var name="it" id="3995997045458364515" />
       </scope>
-      <scope id="3995997045458364501" at="23,46,29,28">
+      <scope id="3995997045458364501" at="22,46,28,28">
         <var name="descriptors" id="3995997045458364503" />
       </scope>
-      <scope id="3995997045458364497" at="22,0,31,0" />
-      <scope id="3995997045458364484" at="20,42,32,79">
+      <scope id="3995997045458364497" at="21,0,30,0" />
+      <scope id="3995997045458364484" at="19,42,31,79">
         <var name="models" id="3995997045458364486" />
       </scope>
-      <scope id="3995997045458364480" at="19,0,34,0" />
-      <unit id="3995997045458364515" at="25,61,29,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$2" />
-      <unit id="3995997045458364494" at="21,76,31,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1" />
-      <unit id="3995997045458364472" at="15,0,35,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364529">
-    <file name="SolutionChooser.java">
-      <node id="3995997045458364542" at="22,43,23,98" concept="7" />
-      <node id="2034046503361585473" at="25,25,26,75" concept="7" />
-      <node id="2034046503361585492" at="28,55,29,43" concept="8" />
-      <node id="3995997045458364573" at="33,7,34,99" concept="8" />
-      <node id="3995997045458364534" at="18,0,20,0" concept="1" trace="SolutionChooser#()V" />
-      <node id="2034046503361585490" at="28,0,31,0" concept="6" trace="select#(Ljetbrains/mps/project/Solution;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="2034046503361585481" at="26,75,31,28" concept="2" />
-      <node id="2034046503361585471" at="25,0,33,0" concept="6" trace="run#()V" />
-      <node id="2034046503361585467" at="23,98,33,7" concept="2" />
-      <node id="3995997045458364537" at="21,0,36,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364536" at="18,28,18,28" />
-      <scope id="2034046503361585491" at="28,55,29,43" />
-      <scope id="3995997045458364534" at="18,0,20,0" />
-      <scope id="2034046503361585490" at="28,0,31,0">
-        <var name="it" id="2034046503361585490" />
-      </scope>
-      <scope id="2034046503361585472" at="25,25,31,28">
-        <var name="modules" id="2034046503361585474" />
-      </scope>
-      <scope id="2034046503361585471" at="25,0,33,0" />
-      <scope id="3995997045458364541" at="22,43,34,99">
-        <var name="solRefs" id="3995997045458364543" />
-      </scope>
-      <scope id="3995997045458364537" at="21,0,36,0" />
-      <unit id="2034046503361585490" at="27,89,31,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser$2" />
-      <unit id="2034046503361585471" at="24,45,33,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser$1" />
-      <unit id="3995997045458364529" at="17,0,37,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.SolutionChooser" />
+      <scope id="3995997045458364480" at="18,0,33,0" />
+      <unit id="3995997045458364515" at="24,61,28,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$2" />
+      <unit id="3995997045458364494" at="20,76,30,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser$1" />
+      <unit id="3995997045458364472" at="15,0,34,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser" />
     </file>
   </root>
   <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/3995997045458364579">
@@ -314,134 +46,98 @@
       <node id="2593021502336849818" at="22,0,23,0" concept="3" trace="myComponent" />
       <node id="3995997045458364587" at="23,0,24,0" concept="3" trace="myRoots" />
       <node id="3995997045458364591" at="24,0,25,0" concept="3" trace="myJavaOnly" />
-      <node id="2593021502336850089" at="26,98,27,28" concept="2" />
-      <node id="3995997045458364608" at="27,28,28,20" concept="2" />
-      <node id="3995997045458364612" at="28,20,29,26" concept="2" />
-      <node id="3995997045458364621" at="33,33,34,52" concept="7" />
-      <node id="3995997045458364626" at="34,52,35,64" concept="2" />
-      <node id="3995997045458364631" at="35,64,36,63" concept="7" />
-      <node id="3995997045458364641" at="36,63,37,50" concept="7" />
-      <node id="3995997045458364653" at="38,30,39,63" concept="2" />
-      <node id="3995997045458364665" at="41,50,42,20" concept="8" />
-      <node id="3995997045458364667" at="43,5,44,0" concept="10" />
-      <node id="3995997045458364668" at="44,0,45,0" concept="10" />
-      <node id="3995997045458364671" at="46,21,47,282" concept="7" />
-      <node id="1261653604047736500" at="50,56,51,65" concept="8" />
-      <node id="3995997045458364715" at="55,12,56,145" concept="7" />
-      <node id="3995997045458364737" at="57,60,58,22" concept="8" />
-      <node id="3995997045458364742" at="59,7,60,0" concept="10" />
-      <node id="1261653604047743388" at="62,41,63,19" concept="9" />
-      <node id="1261653604047742324" at="63,19,64,20" concept="8" />
-      <node id="3995997045458364761" at="66,26,67,416" concept="7" />
-      <node id="1261653604047855244" at="70,56,71,80" concept="7" />
-      <node id="1261653604047754231" at="71,80,72,96" concept="7" />
-      <node id="1261653604047795495" at="73,54,74,55" concept="2" />
-      <node id="1261653604047801433" at="75,13,76,42" concept="7" />
-      <node id="1261653604047803224" at="76,42,77,25" concept="2" />
-      <node id="1261653604047816377" at="77,25,78,52" concept="8" />
-      <node id="3995997045458364833" at="82,5,83,0" concept="10" />
-      <node id="3995997045458364834" at="83,0,84,18" concept="8" />
-      <node id="3995997045458364648" at="37,50,40,5" concept="4" />
-      <node id="3995997045458364660" at="40,5,43,5" concept="5" />
-      <node id="3995997045458364689" at="50,0,53,0" concept="6" trace="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
-      <node id="3995997045458364735" at="56,145,59,7" concept="5" />
-      <node id="1261653604047794549" at="72,96,75,13" concept="5" />
-      <node id="3995997045458364751" at="62,0,66,0" concept="6" trace="select#(Ljava/lang/String;)Ljava/lang/String;" />
-      <node id="3995997045458364594" at="26,0,31,0" concept="1" trace="StubRootChooser#(Ljava/awt/Component;Ljava/util/List;Z)V" />
-      <node id="3995997045458364683" at="48,32,53,12" concept="2" />
-      <node id="3995997045458364743" at="60,0,66,26" concept="7" />
-      <node id="3995997045458364681" at="47,282,54,7" concept="5" />
-      <node id="3995997045458364811" at="70,0,80,0" concept="6" trace="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
-      <node id="3995997045458364804" at="68,21,80,12" concept="2" />
-      <node id="3995997045458364781" at="67,416,81,7" concept="5" />
-      <node id="3995997045458364713" at="55,10,82,5" concept="0" />
-      <node id="3995997045458364669" at="45,0,82,5" concept="5" />
-      <node id="3995997045458364616" at="32,0,86,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="3995997045458364652" at="38,30,39,63" />
-      <scope id="3995997045458364664" at="41,50,42,20" />
-      <scope id="3995997045458364690" at="50,56,51,65" />
-      <scope id="3995997045458364736" at="57,60,58,22" />
-      <scope id="1261653604047794551" at="73,54,74,55" />
-      <scope id="3995997045458364752" at="62,41,64,20" />
-      <scope id="3995997045458364603" at="26,98,29,26" />
-      <scope id="3995997045458364648" at="37,50,40,5">
+      <node id="2593021502336850089" at="25,98,26,28" concept="2" />
+      <node id="3995997045458364608" at="26,28,27,20" concept="2" />
+      <node id="3995997045458364612" at="27,20,28,26" concept="2" />
+      <node id="3995997045458364621" at="31,33,32,52" concept="7" />
+      <node id="3995997045458364626" at="32,52,33,64" concept="2" />
+      <node id="3995997045458364631" at="33,64,34,63" concept="7" />
+      <node id="3995997045458364641" at="34,63,35,50" concept="7" />
+      <node id="3995997045458364653" at="36,30,37,63" concept="2" />
+      <node id="3995997045458364665" at="39,50,40,20" concept="8" />
+      <node id="3995997045458364667" at="41,5,42,0" concept="10" />
+      <node id="3995997045458364668" at="42,0,43,0" concept="10" />
+      <node id="3995997045458364671" at="44,21,45,282" concept="7" />
+      <node id="1261653604047736500" at="48,56,49,65" concept="8" />
+      <node id="3995997045458364715" at="53,12,54,145" concept="7" />
+      <node id="3995997045458364737" at="55,60,56,22" concept="8" />
+      <node id="3995997045458364742" at="57,7,58,0" concept="10" />
+      <node id="1261653604047743388" at="60,41,61,19" concept="9" />
+      <node id="1261653604047742324" at="61,19,62,20" concept="8" />
+      <node id="3995997045458364761" at="64,26,65,416" concept="7" />
+      <node id="1261653604047855244" at="68,56,69,80" concept="7" />
+      <node id="1261653604047754231" at="69,80,70,96" concept="7" />
+      <node id="1261653604047795495" at="71,54,72,55" concept="2" />
+      <node id="1261653604047801433" at="73,13,74,42" concept="7" />
+      <node id="1261653604047803224" at="74,42,75,25" concept="2" />
+      <node id="1261653604047816377" at="75,25,76,52" concept="8" />
+      <node id="3995997045458364833" at="80,5,81,0" concept="10" />
+      <node id="3995997045458364834" at="81,0,82,18" concept="8" />
+      <node id="3995997045458364648" at="35,50,38,5" concept="4" />
+      <node id="3995997045458364660" at="38,5,41,5" concept="5" />
+      <node id="3995997045458364689" at="48,0,51,0" concept="6" trace="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
+      <node id="3995997045458364735" at="54,145,57,7" concept="5" />
+      <node id="1261653604047794549" at="70,96,73,13" concept="5" />
+      <node id="3995997045458364751" at="60,0,64,0" concept="6" trace="select#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3995997045458364594" at="25,0,30,0" concept="1" trace="StubRootChooser#(Ljava/awt/Component;Ljava/util/List;Z)V" />
+      <node id="3995997045458364683" at="46,32,51,12" concept="2" />
+      <node id="3995997045458364743" at="58,0,64,26" concept="7" />
+      <node id="3995997045458364681" at="45,282,52,7" concept="5" />
+      <node id="3995997045458364811" at="68,0,78,0" concept="6" trace="select#(Ljava/lang/String;)Ljetbrains/mps/project/structure/model/ModelRootDescriptor;" />
+      <node id="3995997045458364804" at="66,21,78,12" concept="2" />
+      <node id="3995997045458364781" at="65,416,79,7" concept="5" />
+      <node id="3995997045458364713" at="53,10,80,5" concept="0" />
+      <node id="3995997045458364669" at="43,0,80,5" concept="5" />
+      <node id="3995997045458364616" at="30,0,84,0" concept="6" trace="compute#()Ljava/util/List;" />
+      <scope id="3995997045458364652" at="36,30,37,63" />
+      <scope id="3995997045458364664" at="39,50,40,20" />
+      <scope id="3995997045458364690" at="48,56,49,65" />
+      <scope id="3995997045458364736" at="55,60,56,22" />
+      <scope id="1261653604047794551" at="71,54,72,55" />
+      <scope id="3995997045458364752" at="60,41,62,20" />
+      <scope id="3995997045458364603" at="25,98,28,26" />
+      <scope id="3995997045458364648" at="35,50,38,5">
         <var name="file" id="3995997045458364650" />
       </scope>
-      <scope id="3995997045458364689" at="50,0,53,0">
+      <scope id="3995997045458364689" at="48,0,51,0">
         <var name="it" id="3995997045458364689" />
       </scope>
-      <scope id="3995997045458364751" at="62,0,66,0">
+      <scope id="3995997045458364751" at="60,0,64,0">
         <var name="it" id="3995997045458364751" />
       </scope>
-      <scope id="3995997045458364594" at="26,0,31,0">
+      <scope id="3995997045458364594" at="25,0,30,0">
         <var name="component" id="2593021502336841036" />
         <var name="javaOnly" id="3995997045458364601" />
         <var name="roots" id="3995997045458364598" />
       </scope>
-      <scope id="3995997045458364682" at="48,32,53,12" />
-      <scope id="3995997045458364670" at="46,21,54,7">
+      <scope id="3995997045458364682" at="46,32,51,12" />
+      <scope id="3995997045458364670" at="44,21,52,7">
         <var name="res" id="3995997045458364672" />
       </scope>
-      <scope id="3995997045458364812" at="70,56,78,52">
+      <scope id="3995997045458364812" at="68,56,76,52">
         <var name="m" id="1261653604047801434" />
         <var name="root" id="1261653604047754232" />
         <var name="type" id="1261653604047855245" />
       </scope>
-      <scope id="3995997045458364811" at="70,0,80,0">
+      <scope id="3995997045458364811" at="68,0,78,0">
         <var name="it" id="3995997045458364811" />
       </scope>
-      <scope id="3995997045458364782" at="68,21,80,12" />
-      <scope id="3995997045458364714" at="55,12,81,7">
+      <scope id="3995997045458364782" at="66,21,78,12" />
+      <scope id="3995997045458364714" at="53,12,79,7">
         <var name="modelRootNames" id="3995997045458364744" />
         <var name="modelRootTypes" id="3995997045458364716" />
         <var name="res" id="3995997045458364762" />
       </scope>
-      <scope id="3995997045458364620" at="33,33,84,18">
+      <scope id="3995997045458364620" at="31,33,82,18">
         <var name="chooser" id="3995997045458364622" />
         <var name="files" id="3995997045458364632" />
         <var name="result" id="3995997045458364642" />
       </scope>
-      <scope id="3995997045458364616" at="32,0,86,0" />
-      <unit id="3995997045458364689" at="49,92,53,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$3" />
-      <unit id="3995997045458364751" at="61,85,66,7" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$1" />
-      <unit id="3995997045458364811" at="69,92,80,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$2" />
-      <unit id="3995997045458364579" at="21,0,87,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser" />
-    </file>
-  </root>
-  <root nodeRef="r:0692ce9e-df3a-43ff-bc23-a672da3544b9(jetbrains.mps.ide.ui.dialogs.properties.creators)/4975765301568271854">
-    <file name="LDSChooser.java">
-      <node id="7736241988472458385" at="21,43,22,95" concept="7" />
-      <node id="7736241988472458392" at="24,25,25,104" concept="7" />
-      <node id="7736241988472458424" at="27,45,28,69" concept="8" />
-      <node id="7736241988472458434" at="31,56,32,45" concept="8" />
-      <node id="7736241988472457403" at="36,7,37,0" concept="10" />
-      <node id="4975765301568279902" at="37,0,38,103" concept="8" />
-      <node id="7736241988472458422" at="27,0,30,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/module/SModule;)Z" />
-      <node id="7736241988472458432" at="31,0,34,0" concept="6" trace="select#(Lorg/jetbrains/mps/openapi/module/SModule;)Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="7736241988472458415" at="25,104,34,28" concept="2" />
-      <node id="7736241988472458390" at="24,0,36,0" concept="6" trace="run#()V" />
-      <node id="7736241988472458389" at="22,95,36,7" concept="2" />
-      <node id="4975765301568275838" at="20,0,40,0" concept="6" trace="compute#()Ljava/util/List;" />
-      <scope id="7736241988472458423" at="27,45,28,69" />
-      <scope id="7736241988472458433" at="31,56,32,45" />
-      <scope id="7736241988472458422" at="27,0,30,0">
-        <var name="it" id="7736241988472458422" />
-      </scope>
-      <scope id="7736241988472458432" at="31,0,34,0">
-        <var name="lang" id="7736241988472458432" />
-      </scope>
-      <scope id="7736241988472458391" at="24,25,34,28">
-        <var name="modules" id="7736241988472458393" />
-      </scope>
-      <scope id="7736241988472458390" at="24,0,36,0" />
-      <scope id="4975765301568275844" at="21,43,38,103">
-        <var name="refs" id="7736241988472458386" />
-      </scope>
-      <scope id="4975765301568275838" at="20,0,40,0" />
-      <unit id="7736241988472458422" at="26,74,30,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser$2" />
-      <unit id="7736241988472458432" at="30,22,34,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser$2" />
-      <unit id="7736241988472458390" at="23,45,36,5" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser$1" />
-      <unit id="4975765301568271854" at="19,0,41,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.LDSChooser" />
+      <scope id="3995997045458364616" at="30,0,84,0" />
+      <unit id="3995997045458364689" at="47,92,51,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$3" />
+      <unit id="3995997045458364751" at="59,85,64,7" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$1" />
+      <unit id="3995997045458364811" at="67,92,78,9" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$2" />
+      <unit id="3995997045458364579" at="21,0,85,0" name="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser" />
     </file>
   </root>
 </debug-info>

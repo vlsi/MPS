@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode conceptEditorHintDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode hintDeclarartion : ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(conceptEditorHintDeclaration), "jetbrains.mps.lang.editor.structure.ConceptEditorContextHints")).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -42,22 +41,18 @@ public class check_ConceptEditorHintDeclarationUniqueness_NonTypesystemRule exte
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorHintDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_xcu13c_a0b0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

@@ -14,18 +14,14 @@ public class rt_SubTask_AfterOrBefore {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.RIGHT_TRANSFORM, new rt_SubTask_AfterOrBefore.rt_SubTask_AfterOrBefore_RIGHT_TRANSFORM(node));
   }
-
   public static class rt_SubTask_AfterOrBefore_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public rt_SubTask_AfterOrBefore_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "before", true)).isEmpty()) {
         SLinkOperations.addNewChild(node, "before", "jetbrains.mps.build.workflow.structure.BwfSubTaskDependency");

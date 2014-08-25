@@ -20,27 +20,20 @@ import org.jetbrains.mps.util.Condition;
 
 public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E> {
   private static final int LEFT_MARGIN = 4;
-
   public DebuggerCellPainter() {
   }
-
   @Nullable
   protected abstract Color getCellBackgroundColor();
-
   @Nullable
   protected abstract Color getStripeBackgroundColor();
-
   @Nullable
   protected abstract Color getFrameColor();
-
   @Nullable
   protected abstract SNode getSNode();
-
   @Override
   public boolean paintsAbove() {
     return true;
   }
-
   @Override
   public void paint(Graphics graphics, EditorComponent editorComponent) {
     EditorCell nodeCell = getNodeCell(editorComponent);
@@ -56,18 +49,15 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     graphics.setColor(frameColor);
     graphics.drawRect(nodeCell.getX(), nodeCell.getY(), nodeCell.getWidth() - 1, nodeCell.getHeight() - 1);
   }
-
   @Override
   public boolean paintsBackground() {
     return true;
   }
-
   @Override
   public void paintBackground(Graphics graphics, EditorComponent component) {
     paintStripeBackground(graphics, component);
     paintCellBackground(graphics, component);
   }
-
   private void paintCellBackground(Graphics graphics, EditorComponent editorComponent) {
     if (isInCellMode(editorComponent)) {
       Color cellBackgroundColor = getCellBackgroundColor();
@@ -84,7 +74,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       graphics.fillRect(cellCoverage.x, cellCoverage.y, cellCoverage.width, cellCoverage.height);
     }
   }
-
   private void paintStripeBackground(Graphics graphics, EditorComponent editorComponent) {
     if (isInCellMode(editorComponent)) {
       return;
@@ -103,7 +92,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
 
     graphics.fillRect(stripeCoverage.x, stripeCoverage.y, stripeCoverage.width, stripeCoverage.height);
   }
-
   @Nullable
   private EditorCell getNodeCell(final EditorComponent editorComponent) {
     final jetbrains.mps.nodeEditor.cells.EditorCell[] cell = new jetbrains.mps.nodeEditor.cells.EditorCell[1];
@@ -117,7 +105,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     });
     return cell[0];
   }
-
   @Nullable
   private EditorCell_Label getStripeCell(EditorComponent editorComponent) {
     EditorCell nodeCell = getNodeCell(editorComponent);
@@ -129,7 +116,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     }
     return CellFinderUtil.findChildByClass(nodeCell, EditorCell_Label.class, true);
   }
-
   @Nullable
   protected Rectangle calculateCoverageArea(EditorComponent editorComponent) {
     if (isInCellMode(editorComponent)) {
@@ -137,7 +123,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     }
     return getStripeCoverage(editorComponent);
   }
-
   @Nullable
   private Rectangle getCellCoverage(EditorComponent editorComponent) {
     EditorCell nodeCell = getNodeCell(editorComponent);
@@ -146,7 +131,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     }
     return GeometryUtil.getBounds(nodeCell);
   }
-
   @Nullable
   private Rectangle getStripeCoverage(EditorComponent editorComponent) {
     EditorCell_Label stripeCell = getStripeCell(editorComponent);
@@ -155,7 +139,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     }
     return new Rectangle(LEFT_MARGIN, stripeCell.getY(), editorComponent.getWidth() - LEFT_MARGIN, stripeCell.getHeight() - stripeCell.getTopInset() - stripeCell.getBottomInset());
   }
-
   private boolean isInCellMode(EditorComponent editorComponent) {
     EditorCell nodeCell = getNodeCell(editorComponent);
     if (nodeCell == null) {
@@ -178,7 +161,6 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       }
     }) != null;
   }
-
   private static boolean eq_mgy25g_a0b0a0a1a0f0r(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

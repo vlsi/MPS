@@ -24,61 +24,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeTransactionalProperty_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangeTransactionalProperty_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty";
   }
-
   public String getPresentation() {
     return "ChangeTransactionalProperty";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.editor.intentions.ChangeTransactionalProperty_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.editor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "1235490923121");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeTransactionalProperty_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Transactional Property by Concept Property";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode transactional = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
       SLinkOperations.setTarget(transactional, "relationDeclaration", SLinkOperations.getTarget(node, "property", false), false);
@@ -97,7 +83,6 @@ public class ChangeTransactionalProperty_Intention implements IntentionFactory {
       }
       SNodeOperations.replaceWithAnother(node, transactional);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangeTransactionalProperty_Intention.this;
     }

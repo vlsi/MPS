@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CellKeyMap_IsApplicableFunction_BehaviorDescriptor extends CellKeyMap_AbstractFunction_BehaviorDescriptor {
   public CellKeyMap_IsApplicableFunction_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CellKeyMap_IsApplicableFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction";

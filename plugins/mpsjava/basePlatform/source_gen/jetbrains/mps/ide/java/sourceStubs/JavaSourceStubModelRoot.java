@@ -24,26 +24,21 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class JavaSourceStubModelRoot extends FileBasedModelRoot {
   private static final Logger LOG = Logger.getLogger(JavaSourceStubModelRoot.class);
 
-
   public JavaSourceStubModelRoot() {
     super(new String[]{SOURCE_ROOTS});
   }
-
   @Override
   public String getType() {
     return "java_source_stubs";
   }
-
   @Override
   public SModel getModel(SModelId id) {
     // TODO 
     return null;
   }
-
   protected MPSJavaSrcDataSource newDataSource(IFile dir) {
     return new MPSJavaSrcDataSource(dir, this);
   }
-
   @Override
   public void load(Memento memento) {
     super.load(memento);
@@ -59,7 +54,6 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
     List<String> files = filesForKind.get(SOURCE_ROOTS);
     files.add(memento.get("path"));
   }
-
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
@@ -69,7 +63,6 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
     }
     return result;
   }
-
   private Set<SModel> getModels(IFile dir) {
 
     Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
@@ -104,12 +97,10 @@ public class JavaSourceStubModelRoot extends FileBasedModelRoot {
 
     return models;
   }
-
   @Override
   public boolean canCreateModel(String string) {
     return false;
   }
-
   @Override
   public SModel createModel(String string) {
     return null;

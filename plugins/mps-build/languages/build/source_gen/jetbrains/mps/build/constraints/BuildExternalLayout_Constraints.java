@@ -14,12 +14,10 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
   public BuildExternalLayout_Constraints() {
     super("jetbrains.mps.build.structure.BuildExternalLayout");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
   }
-
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,12 +28,10 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   @Override
   public boolean hasOwnCanBeAncestorMethod() {
     return true;
   }
-
   @Override
   public boolean canBeAncestor(SNode node, @Nullable SNode childNode, SNode childConcept, IOperationContext context, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAnAncestor(node, childNode, childConcept, context);
@@ -46,11 +42,9 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
 
     return result;
   }
-
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return false;
   }
-
   public static boolean static_canBeAnAncestor(SNode node, SNode childNode, SNode childConcept, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildLayout_Node")) {
       return SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.build.structure.BuildLayout_PureNode");
@@ -60,7 +54,6 @@ public class BuildExternalLayout_Constraints extends BaseConstraintsDescriptor {
     }
     return true;
   }
-
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6592112598314795917");
   private static SNodePointer canBeAncesctorBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "7181125477683218681");
 }

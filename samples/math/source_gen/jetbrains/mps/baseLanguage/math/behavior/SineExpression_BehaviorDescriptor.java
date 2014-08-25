@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class SineExpression_BehaviorDescriptor extends MathFuncExpression_BehaviorDescriptor {
   public SineExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.SineExpression";

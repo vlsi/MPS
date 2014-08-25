@@ -39,11 +39,9 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n78otj_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_n78otj_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_n78otj_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n78otj_a");
@@ -54,7 +52,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createProperty_n78otj_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("head");
@@ -76,7 +73,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static Color _StyleParameter_QueryFunction_n78otj_a0a0(EditorContext editorContext, SNode node) {
     IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
     if (f == null) {
@@ -87,16 +83,13 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     }
     return Color.RED;
   }
-
   public static class BuildCompositePath_head_cellMenu_n78otj_a0a0 extends AbstractCellMenuPart_PropertyValues {
     public BuildCompositePath_head_cellMenu_n78otj_a0a0() {
     }
-
     public List<String> getPropertyValues(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return BuildCompositePath_Behavior.call_getHeadSuggestions_4959435991187212109(node, BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getAncestor(node, "jetbrains.mps.build.structure.BuildRelativePath", false, false), "virtual_getBasePath_4959435991187140515", new Object[]{Context.defaultContext()}));
     }
   }
-
   private EditorCell createCollection_n78otj_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n78otj_b0");
@@ -107,11 +100,9 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_n78otj_b1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_n78otj_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "tail", true) != null);
   }
-
   private EditorCell createConstant_n78otj_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_n78otj_a1a");
@@ -125,7 +116,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_n78otj_b1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("tail");
@@ -151,7 +141,6 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_n78otj_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_n78otj_a_0");
@@ -159,22 +148,20 @@ public class BuildCompositePath_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_n78otj_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_n78otj_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         IFile f = BuildCompositePath_Behavior.call_getFile_841084130032784919(node, Context.defaultContext());
         return (f != null ? f.getPath() : "unknown");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_n78otj_a0");
     return editorCell;
   }

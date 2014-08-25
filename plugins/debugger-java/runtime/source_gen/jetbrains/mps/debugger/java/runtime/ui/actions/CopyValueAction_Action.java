@@ -25,18 +25,15 @@ import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public CopyValueAction_Action() {
     super("Copy Value", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -50,14 +47,6 @@ public class CopyValueAction_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());
@@ -90,16 +79,13 @@ public class CopyValueAction_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CopyValueAction_Action.class);
-
   private static AbstractUiState check_d54g7t_a0d0a(AbstractDebugSession checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUiState();
     }
     return null;
   }
-
   private static ThreadReference check_d54g7t_a0h0a(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();

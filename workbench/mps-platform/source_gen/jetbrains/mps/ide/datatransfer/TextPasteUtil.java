@@ -9,7 +9,6 @@ import java.awt.datatransfer.DataFlavor;
 public class TextPasteUtil {
   public TextPasteUtil() {
   }
-
   public static boolean hasStringInClipboard() {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -20,7 +19,6 @@ public class TextPasteUtil {
     }
     return content != null;
   }
-
   public static String getStringFromClipboard() {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
@@ -34,7 +32,6 @@ public class TextPasteUtil {
     }
     return TextPasteUtil.getStringFromTransferable(content);
   }
-
   public static String getStringFromTransferable(Transferable content) {
     String result;
     try {

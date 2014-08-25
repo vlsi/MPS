@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_SuperClassifierExpresson_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SuperClassifierExpresson_InferenceRule() {
   }
-
   public void applyRule(final SNode expresson, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classifier = SuperClassifierExpresson_Behavior.call_getClassifier_1217434044387(expresson);
     if (classifier != null) {
@@ -34,18 +33,15 @@ public class typeof_SuperClassifierExpresson_InferenceRule extends AbstractInfer
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

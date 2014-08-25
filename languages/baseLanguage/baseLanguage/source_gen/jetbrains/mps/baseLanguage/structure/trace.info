@@ -78,60 +78,60 @@
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1225271514374">
     <file name="TrimKind.java">
       <node id="1225271514374" at="14,0,15,0" concept="3" trace="myName" />
-      <node id="1225271514374" at="16,27,17,23" concept="7" />
-      <node id="1225271514374" at="20,36,21,24" concept="7" />
-      <node id="1225271514374" at="24,47,25,76" concept="6" />
-      <node id="1225271514374" at="25,76,26,58" concept="2" />
-      <node id="1225271514374" at="26,58,27,61" concept="2" />
-      <node id="1225271514374" at="27,61,28,62" concept="2" />
-      <node id="1225271514374" at="28,62,29,16" concept="7" />
-      <node id="1225271514374" at="32,39,33,25" concept="7" />
-      <node id="1225271514374" at="37,24,38,35" concept="7" />
-      <node id="1225271514374" at="40,57,41,27" concept="7" />
-      <node id="1225271514374" at="43,60,44,30" concept="7" />
-      <node id="1225271514374" at="46,61,47,31" concept="7" />
-      <node id="1225271514374" at="48,5,49,33" concept="7" />
-      <node id="1225271514374" at="52,0,53,0" concept="3" trace="myValue" />
-      <node id="1225271514374" at="54,39,55,23" concept="2" />
-      <node id="1225271514374" at="55,23,56,25" concept="2" />
-      <node id="1225271514374" at="59,28,60,24" concept="7" />
-      <node id="1225271514374" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
-      <node id="1225271514374" at="20,0,23,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
-      <node id="1225271514374" at="32,0,35,0" concept="8" trace="getDefault#()Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
-      <node id="1225271514374" at="36,51,39,5" concept="4" />
-      <node id="1225271514374" at="39,5,42,5" concept="4" />
-      <node id="1225271514374" at="42,5,45,5" concept="4" />
-      <node id="1225271514374" at="45,5,48,5" concept="4" />
-      <node id="1225271514374" at="59,0,62,0" concept="5" trace="getValue#()Ljava/lang/String;" />
-      <node id="1225271514374" at="54,0,58,0" concept="1" trace="TrimKind#(Ljava/lang/String;Ljava/lang/String;)V" />
-      <node id="1225271514374" at="24,0,31,0" concept="8" trace="getConstants#()Ljava/util/List;" />
-      <node id="1225271514374" at="36,0,51,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
-      <scope id="1225271514374" at="16,27,17,23" />
-      <scope id="1225271514374" at="20,36,21,24" />
-      <scope id="1225271514374" at="32,39,33,25" />
-      <scope id="1225271514374" at="37,24,38,35" />
-      <scope id="1225271514374" at="40,57,41,27" />
-      <scope id="1225271514374" at="43,60,44,30" />
-      <scope id="1225271514374" at="46,61,47,31" />
-      <scope id="1225271514374" at="59,28,60,24" />
-      <scope id="1225271514374" at="54,39,56,25" />
-      <scope id="1225271514374" at="16,0,19,0" />
-      <scope id="1225271514374" at="20,0,23,0" />
-      <scope id="1225271514374" at="32,0,35,0" />
-      <scope id="1225271514374" at="59,0,62,0" />
-      <scope id="1225271514374" at="54,0,58,0">
+      <node id="1225271514374" at="15,27,16,23" concept="7" />
+      <node id="1225271514374" at="18,36,19,24" concept="7" />
+      <node id="1225271514374" at="21,47,22,76" concept="6" />
+      <node id="1225271514374" at="22,76,23,58" concept="2" />
+      <node id="1225271514374" at="23,58,24,61" concept="2" />
+      <node id="1225271514374" at="24,61,25,62" concept="2" />
+      <node id="1225271514374" at="25,62,26,16" concept="7" />
+      <node id="1225271514374" at="28,39,29,25" concept="7" />
+      <node id="1225271514374" at="32,24,33,35" concept="7" />
+      <node id="1225271514374" at="35,57,36,27" concept="7" />
+      <node id="1225271514374" at="38,60,39,30" concept="7" />
+      <node id="1225271514374" at="41,61,42,31" concept="7" />
+      <node id="1225271514374" at="43,5,44,33" concept="7" />
+      <node id="1225271514374" at="46,0,47,0" concept="3" trace="myValue" />
+      <node id="1225271514374" at="47,39,48,23" concept="2" />
+      <node id="1225271514374" at="48,23,49,25" concept="2" />
+      <node id="1225271514374" at="51,28,52,24" concept="7" />
+      <node id="1225271514374" at="15,0,18,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1225271514374" at="18,0,21,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1225271514374" at="28,0,31,0" concept="8" trace="getDefault#()Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
+      <node id="1225271514374" at="31,51,34,5" concept="4" />
+      <node id="1225271514374" at="34,5,37,5" concept="4" />
+      <node id="1225271514374" at="37,5,40,5" concept="4" />
+      <node id="1225271514374" at="40,5,43,5" concept="4" />
+      <node id="1225271514374" at="51,0,54,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1225271514374" at="47,0,51,0" concept="1" trace="TrimKind#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1225271514374" at="21,0,28,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1225271514374" at="31,0,46,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
+      <scope id="1225271514374" at="15,27,16,23" />
+      <scope id="1225271514374" at="18,36,19,24" />
+      <scope id="1225271514374" at="28,39,29,25" />
+      <scope id="1225271514374" at="32,24,33,35" />
+      <scope id="1225271514374" at="35,57,36,27" />
+      <scope id="1225271514374" at="38,60,39,30" />
+      <scope id="1225271514374" at="41,61,42,31" />
+      <scope id="1225271514374" at="51,28,52,24" />
+      <scope id="1225271514374" at="47,39,49,25" />
+      <scope id="1225271514374" at="15,0,18,0" />
+      <scope id="1225271514374" at="18,0,21,0" />
+      <scope id="1225271514374" at="28,0,31,0" />
+      <scope id="1225271514374" at="51,0,54,0" />
+      <scope id="1225271514374" at="47,0,51,0">
         <var name="name" id="1225271514374" />
         <var name="value" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="24,47,29,16">
+      <scope id="1225271514374" at="21,47,26,16">
         <var name="list" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="24,0,31,0" />
-      <scope id="1225271514374" at="36,51,49,33" />
-      <scope id="1225271514374" at="36,0,51,0">
+      <scope id="1225271514374" at="21,0,28,0" />
+      <scope id="1225271514374" at="31,51,44,33" />
+      <scope id="1225271514374" at="31,0,46,0">
         <var name="value" id="1225271514374" />
       </scope>
-      <unit id="1225271514374" at="9,0,63,0" name="jetbrains.mps.baseLanguage.structure.TrimKind" />
+      <unit id="1225271514374" at="9,0,55,0" name="jetbrains.mps.baseLanguage.structure.TrimKind" />
     </file>
     <file name="TrimKind_PropertySupport.java">
       <node id="1225271514374" at="11,24,12,18" concept="7" />
@@ -139,54 +139,54 @@
       <node id="1225271514374" at="15,33,16,43" concept="6" />
       <node id="1225271514374" at="17,45,18,20" concept="7" />
       <node id="1225271514374" at="20,5,21,17" concept="7" />
-      <node id="1225271514374" at="25,24,26,18" concept="7" />
-      <node id="1225271514374" at="27,5,28,93" concept="6" />
-      <node id="1225271514374" at="29,33,30,43" concept="6" />
-      <node id="1225271514374" at="31,45,32,43" concept="7" />
-      <node id="1225271514374" at="34,5,35,16" concept="7" />
-      <node id="1225271514374" at="38,49,39,51" concept="6" />
-      <node id="1225271514374" at="40,27,41,32" concept="7" />
-      <node id="1225271514374" at="42,5,43,14" concept="7" />
+      <node id="1225271514374" at="24,24,25,18" concept="7" />
+      <node id="1225271514374" at="26,5,27,93" concept="6" />
+      <node id="1225271514374" at="28,33,29,43" concept="6" />
+      <node id="1225271514374" at="30,45,31,43" concept="7" />
+      <node id="1225271514374" at="33,5,34,16" concept="7" />
+      <node id="1225271514374" at="36,49,37,51" concept="6" />
+      <node id="1225271514374" at="38,27,39,32" concept="7" />
+      <node id="1225271514374" at="40,5,41,14" concept="7" />
       <node id="1225271514374" at="10,44,13,5" concept="4" />
       <node id="1225271514374" at="16,43,19,7" concept="4" />
-      <node id="1225271514374" at="24,47,27,5" concept="4" />
-      <node id="1225271514374" at="30,43,33,7" concept="4" />
-      <node id="1225271514374" at="39,51,42,5" concept="4" />
+      <node id="1225271514374" at="23,47,26,5" concept="4" />
+      <node id="1225271514374" at="29,43,32,7" concept="4" />
+      <node id="1225271514374" at="37,51,40,5" concept="4" />
       <node id="1225271514374" at="14,93,20,5" concept="9" />
-      <node id="1225271514374" at="28,93,34,5" concept="9" />
-      <node id="1225271514374" at="38,0,45,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1225271514374" at="27,93,33,5" concept="9" />
+      <node id="1225271514374" at="36,0,43,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <node id="1225271514374" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
-      <node id="1225271514374" at="24,0,37,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1225271514374" at="23,0,36,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
       <scope id="1225271514374" at="11,24,12,18" />
       <scope id="1225271514374" at="17,45,18,20" />
-      <scope id="1225271514374" at="25,24,26,18" />
-      <scope id="1225271514374" at="31,45,32,43" />
-      <scope id="1225271514374" at="40,27,41,32" />
+      <scope id="1225271514374" at="24,24,25,18" />
+      <scope id="1225271514374" at="30,45,31,43" />
+      <scope id="1225271514374" at="38,27,39,32" />
       <scope id="1225271514374" at="15,33,19,7">
         <var name="constant" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="29,33,33,7">
+      <scope id="1225271514374" at="28,33,32,7">
         <var name="constant" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="38,49,43,14">
+      <scope id="1225271514374" at="36,49,41,14">
         <var name="constant" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="38,0,45,0">
+      <scope id="1225271514374" at="36,0,43,0">
         <var name="value" id="1225271514374" />
       </scope>
       <scope id="1225271514374" at="10,44,21,17">
         <var name="constants" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="24,47,35,16">
+      <scope id="1225271514374" at="23,47,34,16">
         <var name="constants" id="1225271514374" />
       </scope>
       <scope id="1225271514374" at="10,0,23,0">
         <var name="value" id="1225271514374" />
       </scope>
-      <scope id="1225271514374" at="24,0,37,0">
+      <scope id="1225271514374" at="23,0,36,0">
         <var name="value" id="1225271514374" />
       </scope>
-      <unit id="1225271514374" at="9,0,46,0" name="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
+      <unit id="1225271514374" at="9,0,44,0" name="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/4269842503726207818">

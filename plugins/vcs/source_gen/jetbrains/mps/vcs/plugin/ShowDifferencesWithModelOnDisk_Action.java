@@ -24,22 +24,18 @@ import org.apache.log4j.LogManager;
 
 public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowDifferencesWithModelOnDisk_Action() {
     super("Show Differences with Model on Disk", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return ((SModel) MapSequence.fromMap(_params).get("model")).getSource() instanceof FileDataSource && ((SModel) MapSequence.fromMap(_params).get("model")) instanceof EditableSModel;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -53,7 +49,6 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -71,7 +66,6 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       DataSource datasource = ((SModel) MapSequence.fromMap(_params).get("model")).getSource();
@@ -88,6 +82,5 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowDifferencesWithModelOnDisk_Action.class);
 }

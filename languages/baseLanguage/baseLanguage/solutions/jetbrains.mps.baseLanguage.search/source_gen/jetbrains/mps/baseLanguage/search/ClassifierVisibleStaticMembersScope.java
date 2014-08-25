@@ -19,14 +19,12 @@ public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMember
       throw new IllegalArgumentException("only static members are applicable");
     }
   }
-
   private static SNode toClassifierType(SNode classifier) {
     if (classifier == null) {
       return null;
     }
     return _quotation_createNode_ctg1ot_a1a1(classifier);
   }
-
   private static SNode _quotation_createNode_ctg1ot_a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

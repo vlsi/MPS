@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_XMLSAXChildRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_XMLSAXChildRule_InferenceRule() {
   }
-
   public void applyRule(final SNode childRule, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(childRule, "rule", false) == null) {
       return;
@@ -56,18 +55,15 @@ public class typeof_XMLSAXChildRule_InferenceRule extends AbstractInferenceRule_
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXChildRule";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

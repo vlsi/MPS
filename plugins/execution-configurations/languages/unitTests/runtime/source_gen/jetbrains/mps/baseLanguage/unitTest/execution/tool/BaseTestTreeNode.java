@@ -10,11 +10,9 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 public abstract class BaseTestTreeNode extends MPSTreeNode {
   private TestState myState = TestState.NOT_RAN;
-
   public BaseTestTreeNode(@NotNull IOperationContext context) {
     super(context);
   }
-
   @Override
   protected void doUpdatePresentation() {
     Icon icon = myState.getIcon();
@@ -22,7 +20,6 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
       setIcon(icon);
     }
   }
-
   public void setState(TestState state) {
     myState = state;
     SRepository repository = getOperationContext().getProject().getRepository();
@@ -32,7 +29,6 @@ public abstract class BaseTestTreeNode extends MPSTreeNode {
       }
     });
   }
-
   public TestState getState() {
     return myState;
   }

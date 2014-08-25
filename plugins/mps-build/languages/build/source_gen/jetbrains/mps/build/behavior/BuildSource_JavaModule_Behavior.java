@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BuildSource_JavaModule_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_getTestSources_1065091787192492727(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "sources", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

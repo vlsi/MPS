@@ -156,12 +156,10 @@ public class SelectionManagerImpl implements SelectionManager {
     List<Selection> newSelectionStack = new ArrayList<Selection>();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
-      if (selection == null) {
-        // unable to instantiate selection - cleaning selection stack
-        newSelectionStack.clear();
-        break;
+      if (selection != null) {
+        // restoring only those selection stack elements available in the current editor, skipping those are not available now
+        newSelectionStack.add(selection);
       }
-      newSelectionStack.add(selection);
     }
     if (isSameSelectionStack(newSelectionStack)) {
       return;
@@ -331,7 +329,13 @@ public class SelectionManagerImpl implements SelectionManager {
 
   private EditorCell findChildCell(EditorCell nodeCell, String cellId) {
     boolean useForwardIterator = !SelectionManager.LAST_CELL.equals(cellId) && !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
+    boolean ignoreChildNodes =
+        !SelectionManager.FIRST_CELL.equals(cellId) && !SelectionManager.FIRST_EDITABLE_CELL.equals(cellId) && !SelectionManager.LAST_CELL.equals(cellId) &&
+            !SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
     for (EditorCell cell : new DfsTraverserIterable(nodeCell, useForwardIterator, true)) {
+      if (ignoreChildNodes && cell.getSNode() != nodeCell.getSNode()) {
+        continue;
+      }
       if (isSpecifiedById(cell, cellId)) {
         return cell;
       }
@@ -339,14 +343,23 @@ public class SelectionManagerImpl implements SelectionManager {
     return null;
   }
 
-  private boolean isSpecifiedById(EditorCell cell, String cellId) {
-    if (cellId.equals(cell.getCellId())) {
+  private boolean isSpecifiedById(EditorCell cell, String requestedCellId) {
+    String thisCellId = cell.getCellId();
+    // supporting this hidden notation for selecting property cells.
+    // Now property cellIDs are prefixed with editor component name.
+    if (requestedCellId.startsWith("*")) {
+      if (thisCellId != null && thisCellId.contains(requestedCellId.substring(1))) {
+        return true;
+      }
+    }
+
+    if (requestedCellId.equals(thisCellId)) {
       return true;
     }
 
     // processing cell selector constants
-    boolean selectable = SelectionManager.FIRST_CELL.equals(cellId) || SelectionManager.LAST_CELL.equals(cellId);
-    boolean editable = SelectionManager.FIRST_EDITABLE_CELL.equals(cellId) || SelectionManager.LAST_EDITABLE_CELL.equals(cellId);
+    boolean selectable = SelectionManager.FIRST_CELL.equals(requestedCellId) || SelectionManager.LAST_CELL.equals(requestedCellId);
+    boolean editable = SelectionManager.FIRST_EDITABLE_CELL.equals(requestedCellId) || SelectionManager.LAST_EDITABLE_CELL.equals(requestedCellId);
     boolean isCellSelector = selectable || editable;
 
     return isCellSelector && !(cell instanceof EditorCell_Collection) && cell.isSelectable() &&

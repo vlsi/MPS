@@ -16,64 +16,50 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeStatic_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeStatic_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration";
   }
-
   public String getPresentation() {
     return "MakeStatic";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.lang.behavior.intentions.MakeStatic_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.lang.behavior";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:dbb111e4-8af4-4e6d-b49d-e07620d0c285(jetbrains.mps.lang.behavior.intentions)", "4748945189160275754");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeStatic_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isStatic")) {
         return "Make Non-Static";
@@ -81,11 +67,9 @@ public class MakeStatic_Intention implements IntentionFactory {
         return "Make Static";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "isStatic", "" + (!(SPropertyOperations.getBoolean(node, "isStatic"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeStatic_Intention.this;
     }

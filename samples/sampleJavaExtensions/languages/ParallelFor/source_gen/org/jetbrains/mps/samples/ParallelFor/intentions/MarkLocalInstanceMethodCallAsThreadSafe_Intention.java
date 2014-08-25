@@ -20,34 +20,26 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MarkLocalInstanceMethodCallAsThreadSafe_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MarkLocalInstanceMethodCallAsThreadSafe_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
-
   public String getPresentation() {
     return "MarkLocalInstanceMethodCallAsThreadSafe";
   }
-
   public String getPersistentStateKey() {
     return "org.jetbrains.mps.samples.ParallelFor.intentions.MarkLocalInstanceMethodCallAsThreadSafe_Intention";
   }
-
   public String getLanguageFqName() {
     return "org.jetbrains.mps.samples.ParallelFor";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
@@ -57,45 +49,36 @@ public class MarkLocalInstanceMethodCallAsThreadSafe_Intention implements Intent
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
     return AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe")) == null;
   }
-
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.getParent(childNode) == node;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "3540747636396581099");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MarkLocalInstanceMethodCallAsThreadSafe_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Mark as Thread Safe";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe"), SNodeFactoryOperations.createNewNode("org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe", null));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MarkLocalInstanceMethodCallAsThreadSafe_Intention.this;
     }

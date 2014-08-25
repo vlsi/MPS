@@ -38,7 +38,6 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 public class GoToRulesHelper {
   public GoToRulesHelper() {
   }
-
   public static void go(Frame frame, EditorCell cell, IOperationContext context, SNode concept) {
     List<SNode> rules = getRules(concept, false);
     if (rules.size() == 1) {
@@ -57,7 +56,6 @@ public class GoToRulesHelper {
     }
     m.show(frame, x, y);
   }
-
   public static List<SNode> getRules(final SNode concept, final boolean exactConcept) {
     Language language = getDeclaringLanguage(concept);
     if (language == null) {
@@ -100,7 +98,6 @@ public class GoToRulesHelper {
 
     return rules;
   }
-
   private static Language getDeclaringLanguage(SNode concept) {
     String languageFqName = NameUtil.namespaceFromConceptFQName(NameUtil.nodeFQName(concept));
     if (languageFqName == null) {
@@ -108,7 +105,6 @@ public class GoToRulesHelper {
     }
     return ModuleRepositoryFacade.getInstance().getModule(languageFqName, Language.class);
   }
-
   private static boolean isApplicable(SNode rule, SNode concept, boolean exactConcept) {
     if ((rule == null) || (concept == null)) {
       return false;
@@ -122,7 +118,6 @@ public class GoToRulesHelper {
     }
     return SModelUtil.isAssignableConcept(concept, applicableConcept);
   }
-
   private static SNode getApplicableConcept(SNode applicableNode) {
     if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
       return SLinkOperations.getTarget(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
@@ -133,7 +128,6 @@ public class GoToRulesHelper {
       return null;
     }
   }
-
   private static class MyMenu extends JPopupMenu {
     public MyMenu(List<SNode> list, final IOperationContext operationContext) {
       setBackground(Color.WHITE);
@@ -154,7 +148,6 @@ public class GoToRulesHelper {
           {
             putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
           }
-
           @Override
           public void actionPerformed(ActionEvent e) {
             ModelAccess.instance().runWriteInEDT(new Runnable() {

@@ -13,36 +13,30 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class interface_node_types_are_comparable_ComparisonRule extends ComparisonRule_Runtime {
   public interface_node_types_are_comparable_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node1, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node2, "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration")) {
       return true;
     }
     return false;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }

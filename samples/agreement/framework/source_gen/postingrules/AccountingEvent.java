@@ -20,28 +20,23 @@ public class AccountingEvent {
   protected boolean myProcessed = false;
   private AccountingEvent myReplacementEvent;
   private AccountingEvent myAdjustedEvent;
-
   public AccountingEvent(EventType type, MfDate whenOccurred, MfDate whenNoticed, Subject subject) {
     this.myType = type;
     this.myWhenOccurred = whenOccurred;
     this.myWhenNoticed = whenNoticed;
     this.mySubject = subject;
   }
-
   public AccountingEvent(EventType type, MfDate whenOccurred, MfDate whenNoticed, Subject subject, AccountingEvent adjustedEvent) {
     this(type, whenOccurred, whenNoticed, subject);
     this.myAdjustedEvent = adjustedEvent;
     adjustedEvent.setReplacementEvent(this);
   }
-
   /*package*/ void addResultingEntry(Entry arg) {
     myResultingEntries.add(arg);
   }
-
   /*package*/ void friendAddSecondaryEvent(AccountingEvent arg) {
     mySecondaryEvents.add(arg);
   }
-
   public Set<Entry> getAllResultingEntries() {
     Set<Entry> result = new HashSet<Entry>();
     result.addAll(myResultingEntries);
@@ -51,47 +46,36 @@ public class AccountingEvent {
     }
     return result;
   }
-
   /*package*/ EventType getEventType() {
     return myType;
   }
-
   /*package*/ AccountingEvent getReplacementEvent() {
     return myReplacementEvent;
   }
-
   public Collection<Entry> getResultingEntries() {
     return Collections.unmodifiableCollection(myResultingEntries);
   }
-
   /*package*/ List getSecondaryEvents() {
     return Collections.unmodifiableList(mySecondaryEvents);
   }
-
   public Subject getSubject() {
     return mySubject;
   }
-
   public MfDate getWhenNoticed() {
     return myWhenNoticed;
   }
-
   public MfDate getWhenOccurred() {
     return myWhenOccurred;
   }
-
   public boolean hasBeenAdjusted() {
     return (myReplacementEvent != null);
   }
-
   public boolean isProcessed() {
     return myProcessed;
   }
-
   public void markProcessed() {
     myProcessed = true;
   }
-
   public void process() {
     assert !(myProcessed);
     if (myAdjustedEvent != null) {
@@ -100,7 +84,6 @@ public class AccountingEvent {
     mySubject.process(this);
     markProcessed();
   }
-
   public void reverse() {
     assert isProcessed();
     Entry[] entries = (Entry[]) getResultingEntries().toArray(new Entry[0]);
@@ -109,22 +92,18 @@ public class AccountingEvent {
     }
     reverseSecondaryEvents();
   }
-
   private void reverseSecondaryEvents() {
     for (Object o : getSecondaryEvents()) {
       AccountingEvent each = (AccountingEvent) o;
       each.reverse();
     }
   }
-
   /*package*/ void setIsProcessed(boolean newIsProcessed) {
     myProcessed = newIsProcessed;
   }
-
   public void setReplacementEvent(AccountingEvent newReplacementEvent) {
     myReplacementEvent = newReplacementEvent;
   }
-
   public ServiceAgreement getAgreement() {
     return ((Customer) getSubject()).getServiceAgreement();
   }

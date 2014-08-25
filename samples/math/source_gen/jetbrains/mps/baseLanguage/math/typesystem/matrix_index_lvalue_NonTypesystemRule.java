@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class matrix_index_lvalue_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public matrix_index_lvalue_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode me, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(me), "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
       if (!(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(me, "expression", true)))), "virtual_lvalue_1262430001741497939", new Object[]{}))) {
@@ -31,18 +30,15 @@ public class matrix_index_lvalue_NonTypesystemRule extends AbstractNonTypesystem
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

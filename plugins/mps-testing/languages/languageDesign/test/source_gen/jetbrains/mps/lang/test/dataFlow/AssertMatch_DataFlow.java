@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AssertMatch_DataFlow extends DataFlowBuilder {
   public AssertMatch_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode before : SLinkOperations.getTargets(_context.getNode(), "before", true)) {
       _context.getBuilder().build((SNode) before);

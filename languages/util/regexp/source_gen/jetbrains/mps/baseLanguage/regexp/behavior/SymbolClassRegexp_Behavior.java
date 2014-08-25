@@ -12,15 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SymbolClassRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getRepresentation_8173814113624650482", new Object[]{});
   }
-
   public static String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + SymbolClassRegexp_Behavior.call_partsToString_1222857748873(thisNode, SLinkOperations.getTargets(thisNode, "part", true)) + "]";
   }
-
   public static String call_partsToString_1222857748873(SNode thisNode, List<SNode> parts) {
     StringBuilder result = new StringBuilder();
     for (SNode part : parts) {

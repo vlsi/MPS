@@ -23,7 +23,7 @@ package jetbrains.mps;
  * @author Artem Tikhomirov
  */
 public final class RuntimeFlags {
-  private static boolean ourTestMode = false;
+  private static TestMode ourTestMode = TestMode.NONE;
   private static boolean ourMergeDriverMode = false;
   private static Boolean ourPlayRefactoringMode = null;
   private static Boolean ourCastException = null;
@@ -32,11 +32,15 @@ public final class RuntimeFlags {
   private RuntimeFlags() {
   }
 
-  public static boolean isTestMode() {
+  public static TestMode getTestMode() {
     return ourTestMode;
   }
 
-  public static void setTestMode(boolean testMode) {
+  public static boolean isTestMode() {
+    return ourTestMode == TestMode.USUAL;
+  }
+
+  public static void setTestMode(TestMode testMode) {
     ourTestMode = testMode;
   }
 

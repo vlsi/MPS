@@ -12,15 +12,12 @@ import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 public class PatternExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMetaLevelChanger_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor, InterfacePart_BehaviorDescriptor {
   public PatternExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return PatternExpression_Behavior.virtual_getMetaLevelChange_201537367881074474(thisNode);
   }
-
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.PatternExpression";

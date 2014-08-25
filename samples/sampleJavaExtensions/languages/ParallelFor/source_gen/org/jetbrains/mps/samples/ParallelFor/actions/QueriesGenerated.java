@@ -28,7 +28,6 @@ public class QueriesGenerated {
     SPropertyOperations.set(_context.getNewNode(), "isFinal", "" + (true));
     SPropertyOperations.set(_context.getNewNode(), "name", "a");
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ParallelFor_7704855178158936471(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), _context.getSourceNode()) {
@@ -42,15 +41,12 @@ public class QueriesGenerated {
         }
         return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true);
       }
-
       public String getMatchingText(String pattern) {
         return "using";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -61,11 +57,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178158936539(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true) == null;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ParallelFor_7704855178158993521(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), _context.getSourceNode()) {
@@ -79,15 +73,12 @@ public class QueriesGenerated {
         }
         return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true);
       }
-
       public String getMatchingText(String pattern) {
         return "using";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -98,11 +89,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178158993522(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SLinkOperations.getTarget(_context.getSourceNode(), "threadPool", true) == null;
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ParallelFor_7704855178159055088(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), _context.getSourceNode()) {
@@ -110,15 +99,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(_context.getSourceNode(), "nowait", "" + (true));
         return null;
       }
-
       public String getMatchingText(String pattern) {
         return "no wait";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -129,11 +115,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178159055089(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "nowait"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_ParallelFor_7704855178159108180(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor"), _context.getSourceNode()) {
@@ -141,15 +125,12 @@ public class QueriesGenerated {
         SPropertyOperations.set(_context.getSourceNode(), "nowait", "" + (true));
         return null;
       }
-
       public String getMatchingText(String pattern) {
         return "no wait";
       }
-
       public String getVisibleMatchingText(String pattern) {
         return getMatchingText(pattern);
       }
-
       @Override
       protected boolean isEnabled() {
         SNode sourceNode = getSourceNode();
@@ -160,11 +141,9 @@ public class QueriesGenerated {
     });
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ParallelFor_7704855178159108181(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return !(SPropertyOperations.getBoolean(_context.getSourceNode(), "nowait"));
   }
-
   public static List<SubstituteAction> sideTransform_ActionsFactory_Expression_7704855178159597519(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
     ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createSideTransformHintSubstituteActions(new Computable<SNode>() {
@@ -174,7 +153,6 @@ public class QueriesGenerated {
     }.compute(), _context.getSide(), _context.getTransformationTag(), operationContext)));
     return result;
   }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7704855178159597571(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor") && SNodeOperations.hasRole(_context.getSourceNode(), "org.jetbrains.mps.samples.ParallelFor.structure.ParallelFor", "threadPool");
   }

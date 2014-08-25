@@ -5,16 +5,13 @@ package jetbrains.mps.debugger.java.api.state.proxy;
 
 public abstract class ProxyForJava {
   private final Object myObject;
-
   public ProxyForJava(Object o) {
     myObject = o;
   }
-
   @Override
   public int hashCode() {
     return myObject.hashCode();
   }
-
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof ProxyForJava) {

@@ -22,11 +22,9 @@ public class NodeExplorer_Tool extends GeneratedTool {
   private static final Icon ICON = IdeIcons.DEFAULT_ICON;
   private NodeExplorerComponent myNodeExplorer;
   private JPanel myPanel;
-
   public NodeExplorer_Tool(Project project) {
     super(project, "Node Explorer", -1, ICON, ToolWindowAnchor.BOTTOM, false);
   }
-
   public void init(Project project) {
     super.init(project);
     NodeExplorer_Tool.this.myNodeExplorer = new NodeExplorerComponent();
@@ -43,7 +41,6 @@ public class NodeExplorer_Tool extends GeneratedTool {
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();
     NodeExplorer_Tool.this.myPanel.add(toolbar, BorderLayout.WEST);
   }
-
   public void dispose() {
     Container container = NodeExplorer_Tool.this.myPanel.getParent();
     if (container != null) {
@@ -54,11 +51,9 @@ public class NodeExplorer_Tool extends GeneratedTool {
     NodeExplorer_Tool.this.myNodeExplorer = null;
     super.dispose();
   }
-
   public NodeExplorerComponent getNodeExplorer() {
     return NodeExplorer_Tool.this.myNodeExplorer;
   }
-
   public JComponent getComponent() {
     return NodeExplorer_Tool.this.myPanel;
   }

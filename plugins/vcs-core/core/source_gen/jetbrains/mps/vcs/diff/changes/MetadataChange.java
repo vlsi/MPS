@@ -11,13 +11,11 @@ public abstract class MetadataChange extends ModelChange {
   protected MetadataChange(@NotNull ChangeSet changeSet) {
     super(changeSet);
   }
-
   @Nullable
   @Override
   public final SNodeId getRootId() {
     return null;
   }
-
   @Override
   public String getDescription() {
     return toString();

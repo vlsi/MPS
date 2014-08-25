@@ -39,7 +39,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode editorDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Language containingLanguage = as_e0tm27_a0a0a1(SNodeOperations.getModel(editorDeclaration).getModule(), Language.class);
     if (containingLanguage == null || SLinkOperations.getTarget(editorDeclaration, "conceptDeclaration", false) == null) {
@@ -112,22 +111,18 @@ public class check_ConceptEditorDeclaration_concextHintUniqueness_NonTypesystemR
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static <T> T as_e0tm27_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }

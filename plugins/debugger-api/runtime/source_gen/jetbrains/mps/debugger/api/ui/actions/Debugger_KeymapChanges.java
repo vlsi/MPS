@@ -20,11 +20,9 @@ public class Debugger_KeymapChanges extends BaseKeymapChanges {
     // simple parameterized 
     // complex 
   }
-
   public String getScheme() {
     return "$default";
   }
-
   public static Shortcut getShortcut(String stroke) {
     return new KeyboardShortcut(KeyStroke.getKeyStroke(stroke), null);
   }

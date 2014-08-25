@@ -277,12 +277,6 @@ public class SModel implements SModelData {
     if (myDisposed) return;
 
     myDisposed = true;
-    SModelBase modelBase = getModelDescriptor();
-    if (modelBase != null) {
-      // Quick hack unless FNFM implements model listener to get notified about models disposed,
-      // or there's better alternative how to keep FNFM up-to-date.
-      FastNodeFinderManager.dispose(modelBase);
-    }
     myDisposedStacktrace = new Throwable().getStackTrace();
     myIdToNodeMap = null;
     myRoots.clear();
@@ -961,6 +955,8 @@ public class SModel implements SModelData {
 
   public boolean updateModuleReferences() {
     assertLegalChange();
+
+
 
     boolean changed = false;
 

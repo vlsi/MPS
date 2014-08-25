@@ -15,14 +15,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ThisClassifierExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_getClassifier_1213877512819(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "classifier", false) != null) {
       return SLinkOperations.getTarget(thisNode, "classifier", false);
     }
     return IClassifier_Behavior.call_getContextClassifier_1213877527940(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.IClassifier"))), thisNode);
   }
-
   public static List<SNode> call_getPossibleClassifiers_1219068414643(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", false))) {

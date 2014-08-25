@@ -20,7 +20,6 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_njrz2i_a(editorContext, node);
   }
-
   private EditorCell createCollection_njrz2i_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_njrz2i_a");
@@ -33,7 +32,6 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_njrz2i_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_njrz2i_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "generator");
     editorCell.setCellId("Constant_njrz2i_a0");
@@ -43,7 +41,6 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_njrz2i_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_njrz2i_b0");
@@ -54,7 +51,6 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_njrz2i_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("generator");
@@ -77,7 +73,6 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_njrz2i_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/");
     editorCell.setCellId("Constant_njrz2i_d0");
@@ -87,14 +82,12 @@ public class MappingConfigExternalRef_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_njrz2i_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "->");
     editorCell.setCellId("Constant_njrz2i_e0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_njrz2i_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("innerRef");

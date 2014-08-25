@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConceptRightTransformPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements SideTransformMenuBuilderPart_BehaviorDescriptor {
   public ConceptRightTransformPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptRightTransformPart";

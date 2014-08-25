@@ -20,7 +20,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_85l3fq_a(editorContext, node);
   }
-
   private EditorCell createCollection_85l3fq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_85l3fq_a");
@@ -29,7 +28,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_85l3fq_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createCollection_85l3fq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_85l3fq_a0");
@@ -37,7 +35,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_85l3fq_b0a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_85l3fq_a0a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     Style style = new StyleImpl();
@@ -45,7 +42,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createProperty_85l3fq_b0a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -63,7 +59,6 @@ public class RunConfigurationKind_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createRefNode_85l3fq_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("icon");

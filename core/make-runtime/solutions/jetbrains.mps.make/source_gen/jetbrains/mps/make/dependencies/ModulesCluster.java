@@ -32,21 +32,17 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class ModulesCluster {
   private Map<SModuleReference, SModule> modulesView = MapSequence.fromMap(new HashMap<SModuleReference, SModule>());
   private Map<SModuleReference, ModulesCluster.ModuleDeps> allDeps = MapSequence.fromMap(new HashMap<SModuleReference, ModulesCluster.ModuleDeps>());
-
   public ModulesCluster(Iterable<SModule> mods) {
     addAll(mods);
   }
-
   public void add(SModule mod) {
     this.primAdd(mod);
   }
-
   public void addAll(Iterable<SModule> mods) {
     for (SModule mod : mods) {
       primAdd(mod);
     }
   }
-
   public void collectRequired(Iterable<SModule> pool) {
     Set<SModuleReference> allRequired = SetSequence.fromSetWithValues(new HashSet<SModuleReference>(), Sequence.fromIterable(MapSequence.fromMap(allDeps).values()).translate(new ITranslator2<ModulesCluster.ModuleDeps, SModuleReference>() {
       public Iterable<SModuleReference> translate(ModulesCluster.ModuleDeps dep) {
@@ -68,14 +64,11 @@ public class ModulesCluster {
       }
     } while (atSize < MapSequence.fromMap(allDeps).count());
   }
-
   public void collectAllRequired() {
   }
-
   public boolean hasCycles() {
     return ListSequence.fromList(new ModulesCluster.ModulesGraph().findCycles()).isNotEmpty();
   }
-
   public Iterable<? extends Iterable<SModule>> buildOrder() {
     List<List<SModuleReference>> order = new ModulesCluster.ModulesGraph().totalOrder();
     Iterable<? extends Iterable<SModuleReference>> compacted = Sequence.fromIterable(this.compact(order)).toListSequence();
@@ -89,7 +82,6 @@ public class ModulesCluster {
       }
     }).toListSequence();
   }
-
   private Iterable<? extends Iterable<SModuleReference>> compact(List<List<SModuleReference>> order) {
     final Wrappers._T<Iterable<SModuleReference>> prev = new Wrappers._T<Iterable<SModuleReference>>(null);
     return ListSequence.fromList(order).concat(Sequence.fromIterable(Sequence.<List<SModuleReference>>singleton(null))).translate(new ITranslator2<List<SModuleReference>, Iterable<SModuleReference>>() {
@@ -98,7 +90,6 @@ public class ModulesCluster {
           public Iterator<Iterable<SModuleReference>> iterator() {
             return new YieldingIterator<Iterable<SModuleReference>>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -180,11 +171,9 @@ __switch__:
       }
     });
   }
-
   private boolean isDirty(SModule mod) {
     return false;
   }
-
   private void primAdd(SModule mod) {
     SModuleReference mr = mod.getModuleReference();
     if (!(MapSequence.fromMap(modulesView).containsKey(mr))) {
@@ -192,7 +181,6 @@ __switch__:
       updateDeps(mod);
     }
   }
-
   public void updateDeps(SModule mod) {
     SModuleReference mr = mod.getModuleReference();
     ModulesCluster.ModuleDeps deps = MapSequence.fromMap(allDeps).get(mr);
@@ -212,7 +200,6 @@ __switch__:
       }
     }
   }
-
   private Iterable<SModuleReference> required(SModule mod) {
     GlobalModuleDependenciesManager depman = new GlobalModuleDependenciesManager(mod);
     Set<SModule> reqmods = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(((Iterable<Language>) depman.getUsedLanguages())).translate(new ITranslator2<Language, Generator>() {
@@ -235,21 +222,17 @@ __switch__:
     }
     return Sequence.fromIterable(reqs).distinct().toListSequence();
   }
-
   public static class ModuleDeps {
     private List<SModuleReference> dependent = ListSequence.fromList(new LinkedList<SModuleReference>());
     private List<SModuleReference> required = ListSequence.fromList(new LinkedList<SModuleReference>());
-
     public ModuleDeps(SModuleReference mod) {
       ListSequence.fromList(dependent).addElement(mod);
       ListSequence.fromList(required).addElement(mod);
     }
   }
-
   public class ModulesGraph extends GraphAnalyzer<SModuleReference> {
     public ModulesGraph() {
     }
-
     @Override
     public Iterable<SModuleReference> forwardEdges(SModuleReference v) {
       return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).dependent).where(new IWhereFilter<SModuleReference>() {
@@ -258,7 +241,6 @@ __switch__:
         }
       });
     }
-
     @Override
     public Iterable<SModuleReference> backwardEdges(SModuleReference v) {
       return ListSequence.fromList(MapSequence.fromMap(allDeps).get(v).required).where(new IWhereFilter<SModuleReference>() {
@@ -267,7 +249,6 @@ __switch__:
         }
       });
     }
-
     @Override
     public Iterable<SModuleReference> vertices() {
       return MapSequence.fromMap(allDeps).keySet();

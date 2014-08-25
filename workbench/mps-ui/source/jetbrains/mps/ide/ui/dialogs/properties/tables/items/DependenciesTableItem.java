@@ -15,23 +15,20 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.tables.items;
 
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
 
-public class DependenciesTableItem<T> {
-  protected T myItem;
-  protected SDependencyScope myRole;
-  protected Boolean myReExport = null;
+/**
+ * @see jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel
+ */
+public class DependenciesTableItem {
+  protected final Dependency myItem;
   protected ModuleType myModuleType = ModuleType.UNSPECIFIED;
 
-  public DependenciesTableItem(T value, SDependencyScope role) {
-    myItem = value;
-    myRole = role;
-  }
-
-  public DependenciesTableItem(T value, SDependencyScope role, boolean reExport) {
-    myItem = value;
-    myRole = role;
-    myReExport = reExport;
+  public DependenciesTableItem(@NotNull Dependency dependency) {
+    myItem = dependency;
   }
 
   public DependenciesTableItem setModuleType(ModuleType type) {
@@ -43,7 +40,7 @@ public class DependenciesTableItem<T> {
     return myModuleType;
   }
 
-  public T getItem() {
+  public Dependency getItem() {
     return myItem;
   }
 
@@ -51,32 +48,22 @@ public class DependenciesTableItem<T> {
   public boolean equals(Object obj) {
     if(!(obj instanceof DependenciesTableItem)) return false;
     DependenciesTableItem item = (DependenciesTableItem)obj;
-    return myItem.equals(item.getItem())
-        && (myModuleType.equals(ModuleType.GENERATOR) && item.getModuleType().equals(ModuleType.GENERATOR) ? myRole.equals(item.getRole()) : true);
+    return myItem.equals(item.myItem)&& EqualUtil.equals(myModuleType, item.myModuleType);
   }
 
   public boolean isReExportable() {
-    return myRole == SDependencyScope.DEFAULT;
-  }
-
-  public boolean isReExport() {
-    return myReExport;
+    return myModuleType != ModuleType.GENERATOR && myItem.getScope() == SDependencyScope.DEFAULT;
   }
 
   public void setReExport(boolean reExport) {
-    myReExport = reExport;
-  }
-
-  public SDependencyScope getRole() {
-    return myRole;
+    myItem.setReexport(reExport);
   }
 
   public void setRole(SDependencyScope role) {
-    myRole = role;
-    if(myRole != SDependencyScope.DEFAULT)
-      myReExport = null;
-    else if(myReExport == null)
-      myReExport = false;
+    myItem.setScope(role);
+    if(role != SDependencyScope.DEFAULT) {
+      myItem.setReexport(false);
+    }
   }
 
   public enum ModuleType {

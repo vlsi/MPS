@@ -19,25 +19,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExactConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
-
   public ExactConceptInstances_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Exact Concept Instances";
   }
-
   @Override
   public String getLongDescription() {
     return "only instances of the specified concept, not including instances of it's subconcepts";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.ConceptDeclaration";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -50,7 +45,6 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Concept Instances";

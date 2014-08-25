@@ -18,10 +18,14 @@ package jetbrains.mps.smodel.structure;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.facet.IFacet.Name;
 import jetbrains.mps.make.facet.IFacetManifest;
+import jetbrains.mps.util.annotation.ToRemove;
 
 /**
+ * @deprecated Once LanguageRuntime#getFacetProvider is gone, there's no use for this class
  * fyodor, 6/14/11
  */
+@Deprecated
+@ToRemove(version = 3.2)
 public class InterpretedFacetProvider extends DescriptorProvider<FacetDescriptor> {
 
   private static final InterpretedFacetDescriptor INTERPRETED_FACET_DESCRIPTOR = new InterpretedFacetDescriptor();

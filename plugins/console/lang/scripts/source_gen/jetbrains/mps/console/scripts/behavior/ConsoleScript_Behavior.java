@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ConsoleScript_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> virtual_getCommands_1734392475491235554(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "command", true);
   }

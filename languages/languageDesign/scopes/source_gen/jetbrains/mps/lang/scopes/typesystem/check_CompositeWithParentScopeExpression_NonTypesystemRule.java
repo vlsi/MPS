@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CompositeWithParentScopeExpression_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode expr, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // todo: do right stuff! =( 
     if (!(SPropertyOperations.getString(SNodeOperations.getAncestor(expr, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false), "name").equals("getScope"))) {
@@ -37,22 +36,18 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.lang.scopes.structure.CompositeWithParentScopeExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_f3933j_b0a0a3a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -62,7 +57,6 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_f3933j_b0a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -70,7 +64,6 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), facade.createNodeId("3734116213129862372")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_f3933j_b0a0a0d0b_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

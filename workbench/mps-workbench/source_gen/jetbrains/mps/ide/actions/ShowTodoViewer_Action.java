@@ -17,18 +17,15 @@ import org.apache.log4j.LogManager;
 
 public class ShowTodoViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public ShowTodoViewer_Action() {
     super("Todo...", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       this.enable(event.getPresentation());
@@ -39,7 +36,6 @@ public class ShowTodoViewer_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -50,7 +46,6 @@ public class ShowTodoViewer_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(TodoViewer_Tool.class).openToolLater(true);
@@ -60,6 +55,5 @@ public class ShowTodoViewer_Action extends BaseAction {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ShowTodoViewer_Action.class);
 }

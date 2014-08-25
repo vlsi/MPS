@@ -6,16 +6,13 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 public class ToStringWrap<C> {
   private C myObj;
   private String myText;
-
   public ToStringWrap(C obj) {
     this.myObj = obj;
     this.myText = obj.toString();
   }
-
   public C getObject() {
     return this.myObj;
   }
-
   @Override
   public String toString() {
     return this.myText;

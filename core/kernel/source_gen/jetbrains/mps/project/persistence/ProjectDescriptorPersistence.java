@@ -25,7 +25,6 @@ import org.apache.log4j.LogManager;
 public class ProjectDescriptorPersistence {
   private ProjectDescriptorPersistence() {
   }
-
   public static Element saveProjectDescriptorToElement(ProjectDescriptor descriptor, IFile file) {
     final MacroHelper macroHelper = MacrosFactory.forProjectFile(file);
     Element project = new Element("project");
@@ -42,7 +41,6 @@ public class ProjectDescriptorPersistence {
     project.addContent(projectModules);
     return project;
   }
-
   public static void saveProjectDescriptor(ProjectDescriptor descriptor, IFile file) {
     Element projectElement = saveProjectDescriptorToElement(descriptor, file);
 
@@ -56,7 +54,6 @@ public class ProjectDescriptorPersistence {
       }
     }
   }
-
   public static void loadProjectDescriptorFromElement(ProjectDescriptor descriptor, IFile file, Element root) {
     MacroHelper macros = MacrosFactory.forProjectFile(file);
     ProjectDescriptor result_jnk9az_a1a3 = descriptor;
@@ -82,7 +79,6 @@ public class ProjectDescriptorPersistence {
       result_jnk9az_a1a3.addModule(modulePath);
     }
   }
-
   public static void loadProjectDescriptor(ProjectDescriptor descriptor, final IFile file) {
     if (file == null) {
       descriptor.setName("Dummy project");
@@ -108,6 +104,5 @@ public class ProjectDescriptorPersistence {
       throw new RuntimeException(e);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ProjectDescriptorPersistence.class);
 }

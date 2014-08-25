@@ -11,14 +11,11 @@ import java.util.ArrayList;
 
 public class Plugin_ApplicationPlugin extends BaseApplicationPlugin {
   private PluginId myId = PluginId.getId("jetbrains.mps.debugger.java.customViewers.plugin");
-
   public Plugin_ApplicationPlugin() {
   }
-
   public PluginId getId() {
     return myId;
   }
-
   public List<BaseCustomApplicationPlugin> initCustomParts() {
     List<BaseCustomApplicationPlugin> res = ListSequence.fromList(new ArrayList<BaseCustomApplicationPlugin>());
     {

@@ -19,7 +19,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
   public QuickFixForClassCreator_QuickFix() {
   }
-
   public void execute(SNode node) {
     if (SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), "actualArgument", true)).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassCreator"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
@@ -34,21 +33,18 @@ public class QuickFixForClassCreator_QuickFix extends QuickFix_Runtime {
       }
     }
   }
-
   private static SModule check_8brg4q_a0b0a0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
-
   private static SModel check_8brg4q_a0a1a0a0(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }
     return null;
   }
-
   private static SNode _quotation_createNode_8brg4q_a0a0b0d0a0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

@@ -10,10 +10,8 @@ import java.util.ArrayList;
 public class ClasspathCache {
   private final Map<String, List<Loader>> myClassPackagesCache = new HashMap<String, List<Loader>>();
   private final Map<String, List<Loader>> myResourcePackagesCache = new HashMap<String, List<Loader>>();
-
   public ClasspathCache() {
   }
-
   public void addResourceEntry(String resourcePath, Loader loader) {
     final List<Loader> loaders = getLoaders(resourcePath);
     if (!(loaders.contains(loader))) {
@@ -21,7 +19,6 @@ public class ClasspathCache {
       loaders.add(loader);
     }
   }
-
   public List<Loader> getLoaders(String resourcePath) {
     boolean isClassFile = resourcePath.endsWith(UrlClassLoader.CLASS_EXTENSION);
     final int idx = resourcePath.lastIndexOf('/');

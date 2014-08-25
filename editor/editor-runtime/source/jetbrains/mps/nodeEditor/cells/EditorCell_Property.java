@@ -103,8 +103,11 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     myCommitInProgress = true;
     try {
       if (myModelAccessor instanceof TransactionalModelAccessor) {
-        ((TransactionalModelAccessor) myModelAccessor).commit();
-        synchronizeViewWithModel();
+        TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
+        if (transactionalModelAccessor.hasValueToCommit()) {
+          transactionalModelAccessor.commit();
+          synchronizeViewWithModel();
+        }
         getEditor().relayout();
       }
     } finally {
@@ -122,6 +125,8 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
     if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
+    } else if (myModelAccessor instanceof TransactionalModelAccessor) {
+      ((TransactionalModelAccessor) myModelAccessor).resetUncommittedValue();
     }
     setErrorState(!isValidText(text));
   }

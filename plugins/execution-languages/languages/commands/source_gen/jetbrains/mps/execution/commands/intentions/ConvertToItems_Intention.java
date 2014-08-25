@@ -18,34 +18,26 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertToItems_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertToItems_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.execution.commands.structure.ListCommandPart";
   }
-
   public String getPresentation() {
     return "ConvertToItems";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.execution.commands.intentions.ConvertToItems_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.execution.commands";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
@@ -55,7 +47,6 @@ public class ConvertToItems_Intention implements IntentionFactory {
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode list = SLinkOperations.getTarget(node, "list", true);
     if ((list == null) || !(SNodeOperations.isInstanceOf(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"))) {
@@ -64,45 +55,36 @@ public class ConvertToItems_Intention implements IntentionFactory {
     SNode creator = SLinkOperations.getTarget(SNodeOperations.cast(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true);
     return SNodeOperations.isInstanceOf(creator, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(creator, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)).isNotEmpty();
   }
-
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return eq_icoqxr_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "list");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:611f7e3f-ffc4-4896-a805-c9fe694989ca(jetbrains.mps.execution.commands.intentions)", "2168104298250372811");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToItems_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert Explicit List Creation to Items";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode list = SLinkOperations.getTarget(node, "list", true);
       SNodeOperations.detachNode(list);
       ListSequence.fromList(SLinkOperations.getTargets(node, "items", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(list, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertToItems_Intention.this;
     }
   }
-
   private static boolean eq_icoqxr_a0a0k(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

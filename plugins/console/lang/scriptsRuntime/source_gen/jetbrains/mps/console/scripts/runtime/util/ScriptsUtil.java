@@ -26,7 +26,6 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ScriptsUtil {
 
-
   public static void executeScript(final ConsoleContext context, SNode script) {
     final Iterable<SNode> commands = BehaviorReflection.invokeVirtual((Class<Iterable<SNode>>) ((Class) Object.class), script, "virtual_getCommands_1734392475491235554", new Object[]{});
     SwingUtilities.invokeLater(new Runnable() {
@@ -35,8 +34,6 @@ public class ScriptsUtil {
       }
     });
   }
-
-
 
   public static void executeCommands(final ConsoleContext context, final List<SNode> commands, final int startWith) {
     if (startWith == ListSequence.fromList(commands).count()) {
@@ -52,8 +49,6 @@ public class ScriptsUtil {
       }
     });
   }
-
-
 
   public static void refactor(final ConsoleContext context, final Iterable<SNode> nodes, final _FunctionTypes._void_P1_E0<? super SNode> toExecuteWithEachNode) {
     Project project = ProjectHelper.toIdeaProject(context.getProject());
@@ -87,8 +82,6 @@ public class ScriptsUtil {
     }, sr, false, "refactor");
   }
 
-
-
   private static SearchResults<SNode> nodesToRefactoringResult(Iterable<SNode> nodes) {
     final SearchResults<SNode> result = new SearchResults<SNode>();
     Sequence.fromIterable(nodes).visitAll(new IVisitor<SNode>() {
@@ -98,8 +91,6 @@ public class ScriptsUtil {
     });
     return result;
   }
-
-
 
 
   private static <T> T as_bb8vid_a0a0a0a1a0a0a0a0a0a0b0a2a5(Object o, Class<T> type) {

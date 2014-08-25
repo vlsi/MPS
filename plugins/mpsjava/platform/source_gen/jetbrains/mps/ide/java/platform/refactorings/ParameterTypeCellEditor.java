@@ -15,16 +15,13 @@ import java.awt.event.ActionEvent;
 /*package*/ class ParameterTypeCellEditor extends AbstractTableCellEditor {
   private String mySelected;
   private ExtractMethodRefactoringParameters myModel;
-
   /*package*/ ParameterTypeCellEditor(ExtractMethodRefactoringParameters params) {
     this.myModel = params;
   }
-
   @Override
   public Object getCellEditorValue() {
     return this.mySelected;
   }
-
   @Override
   public Component getTableCellEditorComponent(JTable table, Object value, boolean isSelected, int row, int column) {
     MethodParameter p = ListSequence.fromList(this.myModel.getParameters()).getElement(row);

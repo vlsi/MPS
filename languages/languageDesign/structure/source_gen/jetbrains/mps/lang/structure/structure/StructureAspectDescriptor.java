@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
   public StructureAspectDescriptor() {
   }
-
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
@@ -44,7 +43,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 14:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.InterfaceConceptReference").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart").references("intfc").create();
       case 15:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable").properties("role", "metaClass", "sourceCardinality", "unordered", "doNotGenerate").references("specializedLink", "target").final_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.LinkDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.InterfacePart", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("role", "metaClass", "sourceCardinality", "unordered", "doNotGenerate").references("specializedLink", "target").final_().create();
       case 16:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration").super_("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").parents("jetbrains.mps.lang.structure.structure.DataTypeDeclaration").final_().create();
       case 17:
@@ -55,6 +54,5 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-
   private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "jetbrains.mps.lang.structure.structure.AggregationLinkDeclarationScopeKind", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.IConceptAspect", "jetbrains.mps.lang.structure.structure.IStructureDeprecatable", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration", "jetbrains.mps.lang.structure.structure.ReferenceLinkDeclartionScopeKind"};
 }

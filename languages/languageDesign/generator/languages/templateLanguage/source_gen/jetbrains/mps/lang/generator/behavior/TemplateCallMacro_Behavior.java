@@ -13,7 +13,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class TemplateCallMacro_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
       GeneratedMatchingPattern pattern_4ckpni_a0a = new TemplateCallMacro_Behavior.Pattern_4ckpni_a0a0a0a1();
@@ -25,17 +24,13 @@ public class TemplateCallMacro_Behavior {
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", "virtual_getInputNodeTypeInsideOfMacro_1213877290799", new Object[]{});
   }
-
   public static SNode call_getTemplate_982871510068205176(SNode thisNode) {
     return SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "template", false), "jetbrains.mps.lang.generator.structure.TemplateDeclaration");
   }
-
   public static class Pattern_4ckpni_a0a0a0a1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_concept;
-
     public Pattern_4ckpni_a0a0a0a1() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_4ckpni_a0a0a0 = nodeToMatch;
@@ -46,24 +41,20 @@ public class TemplateCallMacro_Behavior {
       }
       return true;
     }
-
     public boolean hasAntiquotations() {
       return false;
     }
-
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_concept = (SNode) pattern.getFieldValue("patternVar_concept");
       }
     }
-
     public Object getFieldValue(String fieldName) {
       if ("patternVar_concept".equals(fieldName)) {
         return patternVar_concept;
       }
       return null;
     }
-
     public void performActions(Object o) {
     }
   }

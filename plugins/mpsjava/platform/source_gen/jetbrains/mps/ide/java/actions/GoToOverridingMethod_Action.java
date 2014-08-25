@@ -23,22 +23,18 @@ import org.apache.log4j.LogManager;
 
 public class GoToOverridingMethod_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public GoToOverridingMethod_Action() {
     super("Go to Overriding Methods", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     return GoToHelper.hasApplicableFinder(((SNode) MapSequence.fromMap(_params).get("methodNode")), GoToOverridingMethod_Action.this.getFinderName(_params));
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -52,7 +48,6 @@ public class GoToOverridingMethod_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -79,7 +74,6 @@ public class GoToOverridingMethod_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
@@ -90,10 +84,8 @@ public class GoToOverridingMethod_Action extends BaseAction {
       }
     }
   }
-
   private String getFinderName(final Map<String, Object> _params) {
     return "jetbrains.mps.baseLanguage.findUsages.DerivedMethods_Finder";
   }
-
   protected static Logger LOG = LogManager.getLogger(GoToOverridingMethod_Action.class);
 }

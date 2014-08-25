@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class BLExpression_BehaviorDescriptor extends GeneratedCommand_BehaviorDescriptor implements IWrapper_BehaviorDescriptor {
   public BLExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
     return BLExpression_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return BLExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.BLExpression";

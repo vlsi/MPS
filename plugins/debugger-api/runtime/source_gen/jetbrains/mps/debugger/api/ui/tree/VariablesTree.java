@@ -53,7 +53,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
   private AbstractUiState myUiState;
   private final Project myProject;
   private final IOperationContext myContext;
-
   public VariablesTree(Project project, AbstractUiState state) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     myUiState = state;
@@ -72,7 +71,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
     setRootVisible(false);
     setShowsRootHandles(true);
   }
-
   @Override
   protected ActionGroup createPopupActionGroup(MPSTreeNode node) {
     if (node instanceof AbstractWatchableNode) {
@@ -80,12 +78,10 @@ public class VariablesTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   public void setUiState(@NotNull AbstractUiState uiState) {
     ApplicationManager.getApplication().assertIsDispatchThread();
     myUiState = uiState;
   }
-
   @Override
   protected MPSTreeNode rebuild() {
     List<IWatchable> watchables = myUiState.getWatchables();
@@ -165,7 +161,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
     }
     return rootTreeNode;
   }
-
   private MPSTreeNode createEmptyTree() {
     TextTreeNode rootNode = new TextTreeNode("");
     TextTreeNode messageNode = new TextTreeNode("No local variables available") {
@@ -178,7 +173,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
     rootNode.add(messageNode);
     return rootNode;
   }
-
   @Nullable
   private AbstractWatchableNode findSelectedNode() {
     TreePath selectionPath = getSelectionPath();
@@ -191,7 +185,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   @Override
   @Nullable
   public Object getData(@NonNls String dataId) {
@@ -212,11 +205,9 @@ public class VariablesTree extends MPSTree implements DataProvider {
     }
     return null;
   }
-
   public Project getProject() {
     return myProject;
   }
-
   private void stringToPath(String pathString, final _FunctionTypes._void_P1_E0<? super TreePath> callback) {
     String[] components = pathString.split(MPSTree.TREE_PATH_SEPARATOR);
     final List<Object> path = new ArrayList<Object>();
@@ -235,7 +226,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
       });
     }
   }
-
   private void stringToPath(MPSTreeNode current, final String[] path, final int index, final List<Object> result, final _FunctionTypes._void_P0_E0 callback) {
     if (index >= path.length) {
       callback.invoke();
@@ -270,7 +260,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
       }
     }
   }
-
   protected void expandPaths(List<String> paths) {
     for (String path : paths) {
       stringToPath(path, new _FunctionTypes._void_P1_E0<TreePath>() {
@@ -282,7 +271,6 @@ public class VariablesTree extends MPSTree implements DataProvider {
       });
     }
   }
-
   protected void selectPaths(final List<String> paths) {
     final List<TreePath> treePaths = new ArrayList<TreePath>();
     for (int i = 0; i < paths.size(); i++) {

@@ -20,7 +20,6 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
     }
     return false;
   }
-
   public String toInternalValue(String value) {
     if (value == null) {
       return null;
@@ -34,7 +33,6 @@ public class EnumerationMemberIdentifierPolicy_PropertySupport extends PropertyS
     }
     return null;
   }
-
   public String fromInternalValue(String value) {
     EnumerationMemberIdentifierPolicy constant = EnumerationMemberIdentifierPolicy.parseValue(value);
     if (constant != null) {

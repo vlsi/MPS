@@ -13,11 +13,9 @@ import java.awt.Color;
 
 public class HLineCellProvider extends AbstractCellProvider {
   private SNode myNode;
-
   public HLineCellProvider(SNode node) {
     this.myNode = node;
   }
-
   @Override
   public EditorCell createEditorCell(EditorContext p0) {
     EditorCell_Basic result = new EditorCell_Basic(p0, this.myNode) {
@@ -34,12 +32,10 @@ public class HLineCellProvider extends AbstractCellProvider {
         this.setX(x);
         g.fillRect(x, this.getY() + 1, width, 1);
       }
-
       @Override
       public int getAscent() {
         return this.getPrevLeaf().getHeight() / 4;
       }
-
       @Override
       public void relayoutImpl() {
         this.myWidth = 20;

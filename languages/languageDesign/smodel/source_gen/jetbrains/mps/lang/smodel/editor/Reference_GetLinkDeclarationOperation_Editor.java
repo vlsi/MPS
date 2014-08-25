@@ -20,11 +20,9 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_archsh_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_archsh_a(editorContext, node);
   }
-
   private EditorCell createComponent_archsh_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.smodel.editor.AliasComponent");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +31,6 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     }
     return editorCell;
   }
-
   private EditorCell createCollection_archsh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_archsh_a");
@@ -43,7 +40,6 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createConstant_archsh_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_archsh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Get reference 'linkDeclaration' operation");
     editorCell.setCellId("Constant_archsh_a0");
@@ -55,7 +51,6 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_archsh_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_archsh_b0");
@@ -65,7 +60,6 @@ public class Reference_GetLinkDeclarationOperation_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_archsh_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Returns LinkDeclararion representing containment link for this node inside parent node");
     editorCell.setCellId("Constant_archsh_c0");

@@ -67,42 +67,32 @@ import org.apache.log4j.LogManager;
 public class TextGen_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
   private IFacet.Name name = new IFacet.Name("jetbrains.mps.lang.core.TextGen");
-
   public TextGen_Facet() {
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGen());
     ListSequence.fromList(targets).addElement(new TextGen_Facet.Target_textGenToMemory());
   }
-
   public Iterable<ITarget> targets() {
     return targets;
   }
-
   public Iterable<IFacet.Name> optional() {
     return null;
   }
-
   public Iterable<IFacet.Name> required() {
     return Sequence.fromArray(new IFacet.Name[]{new IFacet.Name("jetbrains.mps.lang.core.Generate"), new IFacet.Name("jetbrains.mps.make.facets.Make")});
   }
-
   public Iterable<IFacet.Name> extended() {
     return null;
   }
-
   public IFacet.Name getName() {
     return this.name;
   }
-
   public IPropertiesPersistence propertiesPersistence() {
     return new TextGen_Facet.TargetProperties();
   }
-
   public static class Target_textGen implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
-
     public Target_textGen() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -294,57 +284,44 @@ public class TextGen_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.make.facets.Make.reconcile"), new ITarget.Name("jetbrains.mps.make.facets.Make.make")});
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(GResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return cls.cast(new Parameters());
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
@@ -352,53 +329,41 @@ public class TextGen_Facet extends IFacet.Stub {
       }
       return t;
     }
-
     public int workEstimate() {
       return 400;
     }
-
     public static TextGen_Facet.Target_textGen.Parameters vars(IPropertiesPool ppool) {
       return ppool.properties(name, TextGen_Facet.Target_textGen.Parameters.class);
     }
-
     public static class Parameters extends MultiTuple._2<Boolean, Boolean> {
       public Parameters() {
         super();
       }
-
       public Parameters(Boolean failIfNoTextgen, Boolean generateDebugInfo) {
         super(failIfNoTextgen, generateDebugInfo);
       }
-
       public Boolean failIfNoTextgen(Boolean value) {
         return super._0(value);
       }
-
       public Boolean generateDebugInfo(Boolean value) {
         return super._1(value);
       }
-
       public Boolean failIfNoTextgen() {
         return super._0();
       }
-
       public Boolean generateDebugInfo() {
         return super._1();
       }
-
       @SuppressWarnings(value = "unchecked")
       public TextGen_Facet.Target_textGen.Parameters assignFrom(Tuples._2<Boolean, Boolean> from) {
         return (TextGen_Facet.Target_textGen.Parameters) super.assign(from);
       }
     }
   }
-
   public static class Target_textGenToMemory implements ITargetEx2 {
     private static final ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGenToMemory");
-
     public Target_textGenToMemory() {
     }
-
     public IJob createJob() {
       return new IJob.Stub() {
         @Override
@@ -459,71 +424,55 @@ public class TextGen_Facet extends IFacet.Stub {
         }
       };
     }
-
     public IConfig createConfig() {
       return null;
     }
-
     public Iterable<ITarget.Name> notAfter() {
       return null;
     }
-
     public Iterable<ITarget.Name> after() {
       return Sequence.fromArray(new ITarget.Name[]{new ITarget.Name("jetbrains.mps.lang.core.Generate.generate")});
     }
-
     public Iterable<ITarget.Name> notBefore() {
       return null;
     }
-
     public Iterable<ITarget.Name> before() {
       return null;
     }
-
     public ITarget.Name getName() {
       return name;
     }
-
     public boolean isOptional() {
       return false;
     }
-
     public boolean requiresInput() {
       return true;
     }
-
     public boolean producesOutput() {
       return true;
     }
-
     public Iterable<Class<? extends IResource>> expectedInput() {
       List<Class<? extends IResource>> rv = ListSequence.fromList(new ArrayList<Class<? extends IResource>>());
       ListSequence.fromList(rv).addElement(GResource.class);
       return rv;
     }
-
     public Iterable<Class<? extends IResource>> expectedOutput() {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls) {
       return null;
     }
-
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       return t;
     }
-
     public int workEstimate() {
       return 400;
     }
   }
-
   public static class TargetProperties implements IPropertiesPersistence {
     public TargetProperties() {
     }
-
     public void storeValues(Map<String, String> store, IPropertiesPool properties) {
       {
         ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.core.TextGen.textGen");
@@ -534,7 +483,6 @@ public class TextGen_Facet extends IFacet.Stub {
         }
       }
     }
-
     public void loadValues(Map<String, String> store, IPropertiesPool properties) {
       try {
         {
@@ -551,6 +499,5 @@ public class TextGen_Facet extends IFacet.Stub {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TextGen_Facet.class);
 }

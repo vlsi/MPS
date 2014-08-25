@@ -17,7 +17,6 @@ public class LightWeightDecisionTable_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createTable_qbxdb8_a(editorContext, node);
   }
-
   private EditorCell createTable_qbxdb8_a(EditorContext editorContext, SNode node) {
     TableModelFactory creator = new TableModelFactory() {
       public TableModel createTableModel(final SNode node, final EditorContext editorContext) {

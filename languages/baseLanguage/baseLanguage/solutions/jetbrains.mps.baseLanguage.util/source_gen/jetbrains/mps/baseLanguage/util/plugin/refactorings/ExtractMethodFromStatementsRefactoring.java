@@ -14,12 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefactoring {
   protected List<SNode> myStatements = new ArrayList<SNode>();
-
   public ExtractMethodFromStatementsRefactoring(ExtractMethodRefactoringParameters params) {
     super(params);
     ListSequence.fromList(this.myStatements).addSequence(ListSequence.fromList(((List<SNode>) params.getNodesToRefactor())));
   }
-
   @Override
   protected SNode createMethodBody() {
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
@@ -27,7 +25,6 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList((List<SNode>) CopyUtil.copy(this.myStatements)));
     return body;
   }
-
   @Override
   public void replaceMatch(final MethodMatch match, final SNode methodDeclaration) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -43,10 +40,8 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
       }
     });
   }
-
   protected void modifyPartToExtract() {
   }
-
   @Override
   public SNode getMethodType() {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);

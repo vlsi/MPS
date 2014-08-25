@@ -9,7 +9,6 @@ public class FindUsagesDescriptor extends BaseFindUsagesDescriptor {
   public FindUsagesDescriptor() {
     super(PersistenceFacade.getInstance().createModuleReference("f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)"), PersistenceFacade.getInstance().createModelReference("r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)"));
   }
-
   public void init() {
     add(new AllMethodUsages_Finder(), "1200317943493");
     add(new BaseMethod_Finder(), "1204898641595");

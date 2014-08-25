@@ -11,37 +11,29 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 
 public abstract class BaseRefactoring implements IRefactoring {
   private Set<String> myTransientParameters = new HashSet<String>();
-
   public BaseRefactoring() {
   }
-
   protected void addTransientParameter(String parameter) {
     myTransientParameters.add(parameter);
   }
-
   public Set<String> getTransientParameters() {
     return myTransientParameters;
   }
-
   @Override
   public Class getOverridenRefactoringClass() {
     return null;
   }
-
   @Override
   public boolean init(RefactoringContext refactoringContext) {
     return true;
   }
-
   @Override
   public List<SModel> getModelsToGenerate(RefactoringContext refactoringContext) {
     return new ArrayList<SModel>();
   }
-
   @Override
   public void doWhenDone(RefactoringContext refactoringContext) {
   }
-
   @Override
   public SearchResults getAffectedNodes(RefactoringContext refactoringContext) {
     return new SearchResults();

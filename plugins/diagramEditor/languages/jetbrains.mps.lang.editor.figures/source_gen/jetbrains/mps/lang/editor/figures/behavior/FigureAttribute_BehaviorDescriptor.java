@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class FigureAttribute_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public FigureAttribute_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return FigureAttribute_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureAttribute";

@@ -7,7 +7,6 @@ import jetbrains.mps.samples.formulaLanguage.behavior.Expression_BehaviorDescrip
 public class EventVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public EventVariableReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference";

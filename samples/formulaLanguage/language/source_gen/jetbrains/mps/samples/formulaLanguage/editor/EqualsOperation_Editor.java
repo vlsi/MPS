@@ -24,7 +24,6 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_mhwek2_a(editorContext, node);
   }
-
   private EditorCell createCollection_mhwek2_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_mhwek2_a");
@@ -34,7 +33,6 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_mhwek2_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_mhwek2_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("leftOperand");
@@ -55,7 +53,6 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_mhwek2_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "==");
     editorCell.setCellId("Constant_mhwek2_b0");
@@ -67,16 +64,13 @@ public class EqualsOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new EqualsOperation_Editor.ReplaceWith_Operation_cellMenu_mhwek2_a0b0()}));
     return editorCell;
   }
-
   public static class ReplaceWith_Operation_cellMenu_mhwek2_a0b0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
     public ReplaceWith_Operation_cellMenu_mhwek2_a0b0() {
     }
-
     public String getReplacementConceptName() {
       return "jetbrains.mps.samples.formulaLanguage.structure.Operation";
     }
   }
-
   private EditorCell createRefNode_mhwek2_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rightOperand");

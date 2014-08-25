@@ -20,11 +20,9 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ijcvyu_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_ijcvyu_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_ijcvyu_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ijcvyu_a");
@@ -32,7 +30,6 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ijcvyu_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_ijcvyu_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("qualifiedName");
@@ -50,7 +47,6 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createCollection_ijcvyu_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_ijcvyu_a_0");
@@ -59,14 +55,12 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_ijcvyu_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ijcvyu_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "Module reference:");
     editorCell.setCellId("Constant_ijcvyu_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_ijcvyu_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_ijcvyu_b0");
@@ -78,7 +72,6 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_ijcvyu_c1a(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_ijcvyu_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "uuid");
     editorCell.setCellId("Constant_ijcvyu_a1a");
@@ -88,7 +81,6 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_ijcvyu_b1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ijcvyu_b1a");
@@ -98,7 +90,6 @@ public class ModuleReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_ijcvyu_c1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("uuid");

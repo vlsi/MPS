@@ -22,7 +22,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AbstractContainerCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(!(ListSequence.fromList(SLinkOperations.getTargets(creator, "initValue", true)).isNotEmpty() && (SLinkOperations.getTarget(creator, "copyFrom", true) != null)))) {
       MessageTarget errorTarget = new NodeMessageTarget();
@@ -73,22 +72,18 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1237723292398", true), (SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), creator, "virtual_createType_1237722437229", new Object[]{}), _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_eiap6w_a0b0c0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -111,7 +106,6 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
     quotedNode_3.addChild("argument", quotedNode_5);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_eiap6w_a0a0d0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

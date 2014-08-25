@@ -13,15 +13,12 @@ public enum Cardinality {
   _1__n("1..n", "1..n");
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return this.myValue;
   }
-
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = ListSequence.fromList(new LinkedList<Cardinality>());
     ListSequence.fromList(list).addElement(Cardinality._0__1);
@@ -30,11 +27,9 @@ public enum Cardinality {
     ListSequence.fromList(list).addElement(Cardinality._1__n);
     return list;
   }
-
   public static Cardinality getDefault() {
     return Cardinality._0__1;
   }
-
   public static Cardinality parseValue(String value) {
     if (value == null) {
       return Cardinality.getDefault();
@@ -53,14 +48,11 @@ public enum Cardinality {
     }
     return Cardinality.getDefault();
   }
-
   private String myValue;
-
   Cardinality(String name, String value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public String getValue() {
     return this.myValue;
   }

@@ -16,26 +16,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class supertypesOf_StackType_ClassiType_Deque_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_StackType_ClassiType_Deque_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_sv1i1f_a0a1(SLinkOperations.getTarget(stackType, "elementType", true));
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.collections.structure.StackType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   private static SNode _quotation_createNode_sv1i1f_a0a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
