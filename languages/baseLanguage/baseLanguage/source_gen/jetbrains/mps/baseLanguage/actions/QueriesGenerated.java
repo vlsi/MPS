@@ -3988,7 +3988,11 @@ __switch__:
     ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), _context.getSourceNode()) {
       public SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
         SNode parens = ParenthesisUtil.createUnmatchedRightParenthesis(_context.getSourceNode());
-        SelectionUtil.selectLabelCellAnSetCaret(editorContext, parens, SelectionManager.LAST_CELL, -1);
+        if (eq_x583g4_a0b0a0a0a0a0b0jg(parens, _context.getSourceNode())) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, AttributeOperations.getAttribute(parens, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")), SelectionManager.LAST_CELL, -1);
+        } else {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, parens, SelectionManager.LAST_CELL, -1);
+        }
         return null;
       }
       public String getMatchingText(String pattern) {
@@ -6223,6 +6227,9 @@ __switch__:
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
+  }
+  private static boolean eq_x583g4_a0b0a0a0a0a0b0jg(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
   }
   private static SNode _quotation_createNode_lyc2g5_a0a0a0b0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
