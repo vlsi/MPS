@@ -15,30 +15,28 @@
  */
 package jetbrains.mps.ide.migration;
 
-import com.intellij.openapi.ui.DialogWrapper;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.migration.component.util.MigrationScript;
-import jetbrains.mps.project.AbstractModule;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
-import javax.swing.JComponent;
-import java.awt.Dialog;
+final public class ScriptApplied {
+  private MigrationScript myScript;
+  private SModule myModule;
 
-public class ResolveConflictDialog extends DialogWrapper {
-  public ResolveConflictDialog(Iterable<ScriptApplied> conflicts, boolean project) {
-    super(project);
-
-
+  public ScriptApplied(MigrationScript script, SModule module) {
+    myScript = script;
+    myModule = module;
   }
 
-  @Nullable
+  public MigrationScript getScript() {
+    return myScript;
+  }
+
+  public SModule getModule() {
+    return myModule;
+  }
+
   @Override
-  protected JComponent createCenterPanel() {
-    return null;
-  }
-
-  public ScriptApplied getResult() {
-    return null;
-
+  public String toString() {
+    return myScript.getCaption() + ": " + myModule.getModuleName();
   }
 }
