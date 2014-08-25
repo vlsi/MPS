@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class ReAddParensToUnaryMinus_Test extends BaseTransformationTest {
-  public ReAddParensToUnaryMinus_Test() {
+public class LeftParenPosition2_Test extends BaseTransformationTest {
+  public LeftParenPosition2_Test() {
   }
   @Test
-  public void test_ReAddParensToUnaryMinus() throws Throwable {
+  public void test_LeftParenPosition2() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.ReAddParensToUnaryMinus_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.LeftParenPosition2_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,9 +22,7 @@ public class ReAddParensToUnaryMinus_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7247988578514909318", "7247988578514912559");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
+      initEditor("3912044994183004220", "3912044994183004237");
       this.typeString("(");
     }
   }

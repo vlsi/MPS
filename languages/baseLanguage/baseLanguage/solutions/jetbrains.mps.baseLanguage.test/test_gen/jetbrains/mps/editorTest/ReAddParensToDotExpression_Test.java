@@ -33,8 +33,8 @@ public class ReAddParensToDotExpression_Test extends BaseTransformationTest {
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
-      this.typeString(")");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.typeString(")");
     }
   }
 }
