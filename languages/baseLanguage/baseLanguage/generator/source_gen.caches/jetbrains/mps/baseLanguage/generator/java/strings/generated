@@ -62,10 +62,18 @@
   <source id="1225277059687" name="reduce_NPEEqualsExpression" hash="-af7ffrl1255l17kln5pf0tt60uvmli">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1225277059706" name="reduce_NPENotEqualsExpression" hash="2lz71sbpe61ug0ynqbyg6pncpb1p96v" />
-  <source id="1225277059742" name="reduce_StringType" hash="26iwcaav6qybc46x57dpbw88orwl1ju" />
-  <source id="1225277059745" name="reduce_SubstringExpression" hash="aygxlnph2hd96g9g0ol8z8nx972qfky" />
-  <source id="1225277059783" name="reduce_TrimOperation_Both" hash="-2j8m4gnznw4osvgljr36mka2ea9sktk" />
+  <source id="1225277059706" name="reduce_NPENotEqualsExpression" hash="2lz71sbpe61ug0ynqbyg6pncpb1p96v">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1225277059742" name="reduce_StringType" hash="26iwcaav6qybc46x57dpbw88orwl1ju">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1225277059745" name="reduce_SubstringExpression" hash="aygxlnph2hd96g9g0ol8z8nx972qfky">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1225277059783" name="reduce_TrimOperation_Both" hash="-2j8m4gnznw4osvgljr36mka2ea9sktk">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1225277059818" name="string" hash="-cuiisis5zn1cysu1igenieobrrxvarm" />
   <source id="1461424660015429883" name="reduce_EscapeOperation" hash="238xfr9bax5ae88eqjkegwx1969ovs5" />
   <source id="2696770507970033436" name="reduce_TrimOperation_Trainling" hash="-73rf7ctph7ds20m8z6n63tafm0cpks0" />

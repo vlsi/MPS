@@ -20086,7 +20086,7 @@
       <node id="3706019411756458977" at="39,59,40,0" concept="14" />
       <node id="528847182444044932" at="40,0,41,65" concept="5" />
       <node id="7862343484860904343" at="42,34,43,69" concept="5" />
-      <node id="528847182422146340" at="44,7,45,116" concept="5" />
+      <node id="528847182422146340" at="44,7,45,107" concept="5" />
       <node id="1166027091157" at="49,0,50,0" concept="6" trace="myNode" />
       <node id="1166027091157" at="50,64,51,25" concept="5" />
       <node id="1166027091157" at="53,54,54,56" concept="5" />
@@ -20101,7 +20101,7 @@
       <node id="3706019411756458977" at="64,59,65,0" concept="14" />
       <node id="528847182444044932" at="65,0,66,65" concept="5" />
       <node id="7862343484860904343" at="67,34,68,69" concept="5" />
-      <node id="528847182422146340" at="69,7,70,116" concept="5" />
+      <node id="528847182422146340" at="69,7,70,107" concept="5" />
       <node id="1166027091157" at="25,0,28,0" concept="3" trace="DeleteParenthesisLeft_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="1166027091157" at="28,0,31,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="7862343484860904006" at="41,65,44,7" concept="9" />
@@ -20135,13 +20135,13 @@
         <var name="editorCell" id="1166027091157" />
         <var name="node" id="1166027091157" />
       </scope>
-      <scope id="1166027896277" at="31,75,45,116">
+      <scope id="1166027896277" at="31,75,45,107">
         <var name="hasLeftUnmatchedParen" id="7862343484860903038" />
         <var name="leftMostNode" id="528847182422147886" />
         <var name="replacing" id="528847182430036335" />
         <var name="rightMost" id="3706019411756439011" />
       </scope>
-      <scope id="1166027896277" at="56,75,70,116">
+      <scope id="1166027896277" at="56,75,70,107">
         <var name="hasLeftUnmatchedParen" id="7862343484860903038" />
         <var name="leftMostNode" id="528847182422147886" />
         <var name="replacing" id="528847182430036335" />
@@ -34412,7 +34412,7 @@
       <node id="3706019411756475416" at="39,59,40,0" concept="14" />
       <node id="3706019411756475618" at="40,0,41,63" concept="5" />
       <node id="7862343484859135960" at="42,35,43,71" concept="5" />
-      <node id="528847182422150708" at="44,7,45,117" concept="5" />
+      <node id="528847182422150708" at="44,7,45,108" concept="5" />
       <node id="2329139814016135472" at="49,0,50,0" concept="6" trace="myNode" />
       <node id="2329139814016135472" at="50,64,51,25" concept="5" />
       <node id="2329139814016135472" at="53,54,54,56" concept="5" />
@@ -34427,7 +34427,7 @@
       <node id="3706019411756475416" at="64,59,65,0" concept="14" />
       <node id="3706019411756475618" at="65,0,66,63" concept="5" />
       <node id="7862343484859135960" at="67,35,68,71" concept="5" />
-      <node id="528847182422150708" at="69,7,70,117" concept="5" />
+      <node id="528847182422150708" at="69,7,70,108" concept="5" />
       <node id="2329139814016135472" at="25,0,28,0" concept="3" trace="DeleteParenthesisRight_Action_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <node id="2329139814016135472" at="28,0,31,0" concept="10" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
       <node id="7862343484859135446" at="41,63,44,7" concept="9" />
@@ -34461,13 +34461,13 @@
         <var name="editorCell" id="2329139814016135472" />
         <var name="node" id="2329139814016135472" />
       </scope>
-      <scope id="2329139814016135475" at="31,75,45,117">
+      <scope id="2329139814016135475" at="31,75,45,108">
         <var name="hasRightUnmatchedParen" id="7862343484859132037" />
         <var name="leftMost" id="3706019411756478469" />
         <var name="replacing" id="528847182428449281" />
         <var name="rightMostNode" id="528847182422150701" />
       </scope>
-      <scope id="2329139814016135475" at="56,75,70,117">
+      <scope id="2329139814016135475" at="56,75,70,108">
         <var name="hasRightUnmatchedParen" id="7862343484859132037" />
         <var name="leftMost" id="3706019411756478469" />
         <var name="replacing" id="528847182428449281" />

@@ -42,7 +42,7 @@ public class DeleteParenthesisRight_Action {
       if (hasRightUnmatchedParen) {
         ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
       }
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }
   }
   public static class DeleteParenthesisRight_Action_BACKSPACE extends AbstractCellAction {
@@ -67,7 +67,7 @@ public class DeleteParenthesisRight_Action {
       if (hasRightUnmatchedParen) {
         ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
       }
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }
   }
 }
