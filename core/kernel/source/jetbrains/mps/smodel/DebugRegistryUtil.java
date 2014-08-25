@@ -36,67 +36,19 @@ import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 import javax.swing.SwingUtilities;
 import java.util.Map;
 
+//remove after 3.2
 public class DebugRegistryUtil implements CoreComponent {
-
-  public static boolean initialized = false;
+  private static volatile boolean initializationStarted = false;
   private SRepositoryAdapter myListener;
 
-  public static String getINamedConceptName(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_INamedConcept_name);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
-    }
-    throw new IllegalStateException();
+  public static void fillDebugInfo(SModel model) {
+    if (initializationStarted) return;
+    if (model == null) return;
+    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME && jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.ID) return;
+    initializationStarted = true;
+    fillDebugRegistry();
   }
 
-  private static boolean isInstanceOfConceptDeclaration(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return jetbrains.mps.smodel.SNodeUtil.conceptId_ConceptDeclaration.equals(node.getConceptId()) || jetbrains.mps.smodel.SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(node.getConceptId());
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return jetbrains.mps.smodel.SNodeUtil.concept_ConceptDeclaration.equals(node.getConcept().getQualifiedName()) || jetbrains.mps.smodel.SNodeUtil.concept_InterfaceConceptDeclaration.equals(node.getConcept().getQualifiedName());
-    }
-    throw new IllegalStateException();
-  }
-
-  private static Iterable<jetbrains.mps.smodel.SNode> getConceptLinkDeclarations(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_linkDeclaration);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static String getLinkMetaClass(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_metaClass);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_metaClass);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static String getLinkRole(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_role);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
-    }
-    throw new IllegalStateException();
-  }
-
-  private static Iterable<jetbrains.mps.smodel.SNode> getPropertyDeclarations(jetbrains.mps.smodel.SNode node) {
-    if (node.workingMode() == IdMigrationMode.ID) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_propertyDeclaration);
-    } else if (node.workingMode() == IdMigrationMode.NAME) {
-      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
-    }
-    throw new IllegalStateException();
-  }
-
-
-  //remove after 3.2
   public static void fillDebugRegistry() {
     for (SModule module : MPSModuleRepository.getInstance().getModules()) {
       if (module instanceof Language) {
@@ -110,16 +62,20 @@ public class DebugRegistryUtil implements CoreComponent {
     SLanguageId lid = IdHelper.getLanguageId(language.getModuleReference().getModuleId());
     dr.addLanguageName(lid, language.getModuleName());
 
-    org.jetbrains.mps.openapi.model.SModel structureModel  = LanguageAspect.STRUCTURE.get((Language) language);
+    org.jetbrains.mps.openapi.model.SModel structureModel = LanguageAspect.STRUCTURE.get((Language) language);
 
     for (SNode root : structureModel.getRootNodes()) {
-      if (!(root instanceof jetbrains.mps.smodel.SNode)) { continue; }
+      if (!(root instanceof jetbrains.mps.smodel.SNode)) {
+        continue;
+      }
       jetbrains.mps.smodel.SNode concept = (jetbrains.mps.smodel.SNode) root;
       if (isInstanceOfConceptDeclaration(concept)) {
         dr.addConceptName(IdHelper.getConceptId(concept), getINamedConceptName(concept));
         for (SNode linkDeclaration : getConceptLinkDeclarations(concept)) {
-          dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ? IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))), getLinkRole(
-              (jetbrains.mps.smodel.SNode) linkDeclaration));
+          dr.addLinkName(("aggregation".equals(getLinkMetaClass((jetbrains.mps.smodel.SNode) linkDeclaration)) ?
+              IdHelper.getNodeRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration)) : IdHelper.getRefRoleId(((jetbrains.mps.smodel.SNode) linkDeclaration))),
+              getLinkRole(
+                  (jetbrains.mps.smodel.SNode) linkDeclaration));
         }
         for (SNode propertyDeclaration : getPropertyDeclarations(concept)) {
           dr.addPropertyName(IdHelper.getPropId(((jetbrains.mps.smodel.SNode) propertyDeclaration)), getINamedConceptName(
@@ -129,16 +85,8 @@ public class DebugRegistryUtil implements CoreComponent {
     }
   }
 
-  //remove after 3.2
-  public static void fillDebugInfo(SModel model) {
-    if (initialized) return;
-    if (model == null) return;
-    if (jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.NAME && jetbrains.mps.smodel.SNode.workingMode(model) != IdMigrationMode.ID) return;
-    initialized = true;
-    fillDebugRegistry();
-  }
-
-  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds, Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
+  public static void getDebugInfoById(Iterable<SNode> rootNodes, Map<SConceptId, String> conceptIds, Map<SPropertyId, String> propIds,
+      Map<SReferenceLinkId, String> refIds, Map<SContainmentLinkId, String> roleIds) {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
     for (SNode root : rootNodes) {
       for (SNode n : SNodeUtil.getDescendants(root)) {
@@ -214,7 +162,7 @@ public class DebugRegistryUtil implements CoreComponent {
     myListener = new SRepositoryAdapter() {
       @Override
       public void moduleAdded(final SModule module) {
-        if (initialized && module instanceof Language) {
+        if (initializationStarted && module instanceof Language) {
           SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -236,4 +184,61 @@ public class DebugRegistryUtil implements CoreComponent {
   public void dispose() {
     MPSModuleRepository.getInstance().removeRepositoryListener(myListener);
   }
+
+  public static String getINamedConceptName(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_INamedConcept_name);
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
+    }
+    throw new IllegalStateException();
+  }
+
+  private static boolean isInstanceOfConceptDeclaration(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return jetbrains.mps.smodel.SNodeUtil.conceptId_ConceptDeclaration.equals(node.getConceptId()) ||
+          jetbrains.mps.smodel.SNodeUtil.conceptId_InterfaceConceptDeclaration.equals(node.getConceptId());
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return jetbrains.mps.smodel.SNodeUtil.concept_ConceptDeclaration.equals(node.getConcept().getQualifiedName()) ||
+          jetbrains.mps.smodel.SNodeUtil.concept_InterfaceConceptDeclaration.equals(node.getConcept().getQualifiedName());
+    }
+    throw new IllegalStateException();
+  }
+
+  private static Iterable<jetbrains.mps.smodel.SNode> getConceptLinkDeclarations(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_linkDeclaration);
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_linkDeclaration);
+    }
+    throw new IllegalStateException();
+  }
+
+  private static String getLinkMetaClass(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_metaClass);
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_metaClass);
+    }
+    throw new IllegalStateException();
+  }
+
+  private static String getLinkRole(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.propertyId_LinkDeclaration_role);
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return node.getProperty(jetbrains.mps.smodel.SNodeUtil.property_LinkDeclaration_role);
+    }
+    throw new IllegalStateException();
+  }
+
+  private static Iterable<jetbrains.mps.smodel.SNode> getPropertyDeclarations(jetbrains.mps.smodel.SNode node) {
+    if (node.workingMode() == IdMigrationMode.ID) {
+      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.linkId_AbstractConceptDeclaration_propertyDeclaration);
+    } else if (node.workingMode() == IdMigrationMode.NAME) {
+      return node.getChildren(jetbrains.mps.smodel.SNodeUtil.link_AbstractConceptDeclaration_propertyDeclaration);
+    }
+    throw new IllegalStateException();
+  }
 }
+
