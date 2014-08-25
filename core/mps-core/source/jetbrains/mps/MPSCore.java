@@ -36,6 +36,7 @@ import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ConceptDescendantsCache;
+import jetbrains.mps.smodel.DebugRegistryUtil;
 import jetbrains.mps.smodel.DefaultModelAccess;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
@@ -97,6 +98,7 @@ public final class MPSCore extends ComponentPlugin {
     GlobalSModelEventsManager globalSModelEventsManager = init(new GlobalSModelEventsManager(modelRepository));
     ClassLoaderManager classLoaderManager = init(new ClassLoaderManager(moduleRepository));
 
+    init(new DebugRegistryUtil());
     init(new SModelFileTracker(SRepositoryRegistry.getInstance()));
     init(new ModuleRepositoryFacade(moduleRepository));
     init(new ModuleFileTracker(moduleRepository));
