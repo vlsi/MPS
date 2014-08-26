@@ -198,12 +198,13 @@ public class ClassLoaderManager implements CoreComponent {
    */
   @NotNull
   public Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+    ModelAccess.assertLegalWrite();
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       assert !(module.getRepository() == null) : "Cannot get class from disposed module";
       if (!canLoad(module)) throw new IllegalArgumentException("Contract is broken: canLoad method returned false");
       if (getClassLoader(module) != null) {
-        LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
+        LOG.error("Classes of the " + module + " are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
       }
 //      if (ModuleClassLoaderSupport.canCreate(module)) {
       modulesToLoad.add(module);
