@@ -80,8 +80,8 @@ public class Insert_Action extends BaseAction {
 
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          if (editorCell instanceof EditorCell_Property) {
-            ((EditorCell_Property) editorCell).commit();
+          if (editorCell instanceof EditorCell_Property && ((EditorCell_Property) editorCell).commit()) {
+            return;
           }
           EditorActionUtils.callInsertAction(editorCell);
         }
