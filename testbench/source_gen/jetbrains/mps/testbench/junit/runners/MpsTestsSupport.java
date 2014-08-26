@@ -105,18 +105,20 @@ public class MpsTestsSupport {
     return result;
   }
 
-  public static void reloadAllAfterMake() throws InterruptedException, InvocationTargetException {
+  public static void reloadAllAfterMake(final MPSCompilationResult mpsCompilationResult) throws InterruptedException, InvocationTargetException {
     // TODO: refactor 
     if (LOG.isInfoEnabled()) {
       LOG.info("Reloading classes");
     }
 
     // why we need it? because some classes loaded before maker - LanguageRuntime and TypeSystem classes 
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
+    if (mpsCompilationResult.isReloadingNeeded()) {
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules());
+        }
+      });
+    }
 
     // Danya: added re-load of all changed (or new) models after make. 
     // The problem was: I had a stub model whose source was the classes_gen dir 

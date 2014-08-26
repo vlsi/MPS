@@ -21,14 +21,13 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
 import jetbrains.mps.library.ProjectLibraryManager;
+import jetbrains.mps.make.MPSCompilationResult;
 import jetbrains.mps.make.ModuleMaker;
-import jetbrains.mps.messages.IMessage;
-import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
@@ -51,7 +50,7 @@ public class StartupModuleMaker extends AbstractProjectComponent {
 
   @Override
   public void projectOpened() {
-    if (MPSCore.getInstance().isTestMode())
+    if (RuntimeFlags.isTestMode())
       return;
     compileProjectModulesWithProgress(true);
   }
@@ -73,34 +72,33 @@ public class StartupModuleMaker extends AbstractProjectComponent {
     monitor.start("Making modules", 10);
     try {
       //todo eliminate read access as it can potentially lead to a deadlock
-      ModelAccess.instance().runReadAction(new Runnable() {
+      MPSCompilationResult mpsCompilationResult = ModelAccess.instance().runReadAction(new Computable<MPSCompilationResult>() {
         @Override
-        public void run() {
+        public MPSCompilationResult compute() {
           monitor.advance(1);
 
           MessagesViewTool mvt = myProject.getComponent(MessagesViewTool.class);
           final ModuleMaker maker = new ModuleMaker(mvt.newHandler(), MessageKind.ERROR);
-
-          myReloadManager.computeNoReload(new Computable<Object>() {
+          return myReloadManager.computeNoReload(new Computable<MPSCompilationResult>() {
             @Override
-            public Object compute() {
-              maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
-              return null;
+            public MPSCompilationResult compute() {
+              return maker.make(IterableUtil.asCollection(MPSModuleRepository.getInstance().getModules()), monitor.subTask(9));
             }
           });
         }
       });
-      reloadClasses(indicator, early);
+      reloadClasses(mpsCompilationResult, indicator, early);
     } finally {
       monitor.done();
     }
   }
 
-  private void reloadClasses(final ProgressIndicator indicator, boolean asPreStartup) {
+  private void reloadClasses(final MPSCompilationResult mpsCompilationResult, final ProgressIndicator indicator, boolean asPreStartup) {
     final Runnable reloadTask = new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().reloadAll(indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor());
+        ProgressMonitor monitor = indicator != null ? new ProgressMonitorAdapter(indicator) : new EmptyProgressMonitor();
+        ClassLoaderManager.getInstance().reloadModules(mpsCompilationResult.getChangedModules(), monitor);
       }
     };
     if (asPreStartup) {

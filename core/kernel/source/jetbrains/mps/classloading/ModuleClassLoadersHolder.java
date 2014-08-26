@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by Alex Pyshkin on 6/4/14.
+ * @author Alex Pyshkin on 6/4/14.
  */
 public class ModuleClassLoadersHolder {
   private static final Logger LOG = LogManager.getLogger(ModuleClassLoadersHolder.class);

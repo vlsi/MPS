@@ -183,12 +183,12 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       mySources.clear();
       myJavaSources.clear();
     }
-    myContextModules.clear();
 
-    progress.step("reloading MPS classes...");
+    progress.step("Reloading MPS classes...");
     if (myReloadClasses && !innerListener.hasErrors()) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+      ClassLoaderManager.getInstance().reloadModules(myContextModules);
     }
+    myContextModules.clear();
 
     return !innerListener.hasErrors();
   }
