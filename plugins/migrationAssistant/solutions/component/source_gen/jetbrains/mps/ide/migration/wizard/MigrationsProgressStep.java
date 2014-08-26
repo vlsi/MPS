@@ -83,8 +83,9 @@ public class MigrationsProgressStep extends MigrationStep {
       } else
       if (result instanceof MigrationManager.MigrationState.Finished) {
         break;
+      } else {
+        assert false;
       }
-      assert false;
     } while (mySuccess[0]);
     PersistenceRegistry.getInstance().enableFastFindUsages();
     myFinished = true;
