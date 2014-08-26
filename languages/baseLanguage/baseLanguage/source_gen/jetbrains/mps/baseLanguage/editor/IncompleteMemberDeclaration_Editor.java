@@ -217,7 +217,7 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
 
   public static class ApplySideTransforms_null_cellMenu_imlbz9_a0i0 extends AbstractCellMenuPart_ApplySideTransforms {
     public ApplySideTransforms_null_cellMenu_imlbz9_a0i0() {
-      super(CellSide.RIGHT);
+      super(CellSide.RIGHT, "");
     }
   }
 

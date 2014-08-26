@@ -47,9 +47,4 @@ public class CellAction_FoldAll extends AbstractCellAction {
       }
     }
   }
-
-  @Override
-  public boolean executeInCommand() {
-    return true;
-  }
 }

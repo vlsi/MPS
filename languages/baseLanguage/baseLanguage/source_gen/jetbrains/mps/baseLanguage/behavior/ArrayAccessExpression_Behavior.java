@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayAccessExpression_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +12,9 @@ public class ArrayAccessExpression_Behavior {
 
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
+  }
+
+  public static SNode virtual_getSyntacticallyLeftSideExpression_1742226163722653708(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "array", true);
   }
 }

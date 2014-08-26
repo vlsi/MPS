@@ -28,14 +28,13 @@ import org.jetbrains.mps.util.Condition;
  * Date: 05.10.2010
  */
 public class CallAction_ToggleCellFolding extends AbstractCellAction {
-  @Override
-  public boolean canExecute(EditorContext context) {
-    return findCell(((EditorComponent) context.getEditorComponent()).getSelectedCell()) != null;
+  public CallAction_ToggleCellFolding() {
+    super(false);
   }
 
   @Override
-  public boolean executeInCommand() {
-    return false;
+  public boolean canExecute(EditorContext context) {
+    return findCell(((EditorComponent) context.getEditorComponent()).getSelectedCell()) != null;
   }
 
   @Override

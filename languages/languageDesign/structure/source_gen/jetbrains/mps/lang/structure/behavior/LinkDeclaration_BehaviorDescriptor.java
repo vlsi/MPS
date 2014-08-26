@@ -4,9 +4,10 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.InterfacePart_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class LinkDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor {
+public class LinkDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements InterfacePart_BehaviorDescriptor, IStructureDeprecatable_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public LinkDeclaration_BehaviorDescriptor() {
   }
 

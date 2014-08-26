@@ -38,9 +38,8 @@ import java.util.List;
 
 public class NodeEditorActions {
   public abstract static class NavigationAction extends AbstractCellAction {
-    @Override
-    public boolean executeInCommand() {
-      return false;
+    public NavigationAction() {
+      super(false);
     }
   }
 

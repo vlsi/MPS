@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
@@ -111,6 +112,7 @@ public class NewTemplateInWeaveEach_Intention implements IntentionFactory {
       }
       //  make reference 
       SLinkOperations.setTarget(node, "template", t, false);
+      SelectionUtil.selectCell(editorContext, node, "templateName");
     }
 
     public IntentionDescriptor getDescriptor() {

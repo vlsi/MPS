@@ -516,7 +516,7 @@
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="146" startPosition="34" endLine="147" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="147" startPosition="204" endLine="148" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2161719505005270890" fileName="DailyPlan_Editor.java" startLine="151" startPosition="97" endLine="152" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="156" startPosition="60" endLine="157" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="156" startPosition="60" endLine="157" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="161" startPosition="88" endLine="162" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="162" startPosition="90" endLine="163" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="163" startPosition="47" endLine="164" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -617,7 +617,7 @@
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="117" startPosition="39" endLine="118" endPosition="39" />
     <scopeInfo nodeId="935069066462796986" fileName="DailyPlan_Editor.java" startLine="134" startPosition="97" endLine="135" endPosition="73" />
     <scopeInfo nodeId="2161719505005270214" fileName="DailyPlan_Editor.java" startLine="151" startPosition="97" endLine="152" endPosition="73" />
-    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="156" startPosition="60" endLine="157" endPosition="27" />
+    <scopeInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="156" startPosition="60" endLine="157" endPosition="31" />
     <scopeInfo nodeId="2161719505005264310" fileName="DailyPlan_Editor.java" startLine="173" startPosition="97" endLine="174" endPosition="73" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="183" startPosition="40" endLine="184" endPosition="85" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="197" startPosition="98" endLine="198" endPosition="50" />

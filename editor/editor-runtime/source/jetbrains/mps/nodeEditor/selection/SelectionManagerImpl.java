@@ -156,12 +156,10 @@ public class SelectionManagerImpl implements SelectionManager {
     List<Selection> newSelectionStack = new ArrayList<Selection>();
     for (SelectionInfo nextSelectionInfo : selectionStack) {
       Selection selection = nextSelectionInfo.createSelection(myEditorComponent);
-      if (selection == null) {
-        // unable to instantiate selection - cleaning selection stack
-        newSelectionStack.clear();
-        break;
+      if (selection != null) {
+        // restoring only those selection stack elements available in the current editor, skipping those are not available now
+        newSelectionStack.add(selection);
       }
-      newSelectionStack.add(selection);
     }
     if (isSameSelectionStack(newSelectionStack)) {
       return;

@@ -24,6 +24,7 @@ import jetbrains.mps.generator.IGenerationSettings;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.generator.NullGenerationTracer;
+import jetbrains.mps.generator.TransientModelsProvider;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.java.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.DefaultIncrementalStrategy;
@@ -189,7 +190,7 @@ public class GeneratorUIFacade {
           options.tracing(settings.getPerformanceTracingLevel(), tracer);
         }
 
-        final TransientModelsComponent tmc = ideaProject.getComponent(TransientModelsComponent.class);
+        final TransientModelsProvider tmc = ideaProject.getComponent(TransientModelsProvider.class);
         result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options.create(), tmc);
       }
     }, "Generation", true, invocationContext.getProject());

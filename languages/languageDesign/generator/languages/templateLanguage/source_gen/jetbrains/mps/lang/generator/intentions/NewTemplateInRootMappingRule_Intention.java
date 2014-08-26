@@ -21,6 +21,7 @@ import jetbrains.mps.util.Setter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class NewTemplateInRootMappingRule_Intention implements IntentionFactory {
@@ -119,6 +120,7 @@ public class NewTemplateInRootMappingRule_Intention implements IntentionFactory 
           MacroIntentionsUtil.copyVirtualPackage(root, node);
           SLinkOperations.setTarget(AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), "applicableConcept", SLinkOperations.getTarget(rule, "applicableConcept", false), false);
           SLinkOperations.setTarget(rule, "template", SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
+          SelectionUtil.selectCell(editorContext, rule, "templateName");
         }
       });
     }
