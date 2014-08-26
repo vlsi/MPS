@@ -34,7 +34,7 @@ public class check_LinkDeclaration_NonTypesystemRule extends AbstractNonTypesyst
       return;
     }
     SNode declaringConcept = SNodeOperations.getAncestor(linkToCheck, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
-    List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, false);
+    List<SNode> supers = SConceptOperations.getDirectSuperConcepts(declaringConcept, true);
     Iterable<SNode> linksInSupers = ListSequence.fromList(supers).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode concept) {
         return new Iterable<SNode>() {
@@ -87,7 +87,7 @@ __switch__:
       }
     });
     for (SNode link : Sequence.fromIterable(linksInSupers)) {
-      if (SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
+      if (linkToCheck != link && SPropertyOperations.getString(linkToCheck, "role").equals(SPropertyOperations.getString(link, "role")) && SLinkOperations.getTarget(linkToCheck, "specializedLink", false) != link) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(linkToCheck, "link '" + SPropertyOperations.getString(link, "role") + "' is already declared in " + SPropertyOperations.getString(SNodeOperations.getAncestor(link, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false), "name"), "r:00000000-0000-4000-0000-011c8959028f(jetbrains.mps.lang.structure.typesystem)", "1212181840083", null, errorTarget);
