@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MigrationsPatternVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MigrationsPatternVariableReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.migration.simple.structure.MigrationsPatternVariableReference";

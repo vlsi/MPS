@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class AbstractMigrationScript_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AbstractMigrationScript_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.migration.structure.AbstractMigrationScript";

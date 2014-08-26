@@ -15,7 +15,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class MigrationScriptReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode call_resolve_4950161090496924151(final SNode thisNode) {
     SModule module = ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(SLinkOperations.getTarget(thisNode, "module", true));
     return ListSequence.fromList(SModelOperations.getRoots(MigrationsUtil.getMigrationModel(module), "jetbrains.mps.migration.structure.AbstractMigrationScript")).where(new IWhereFilter<SNode>() {

@@ -23,7 +23,6 @@ public class MigrationsPatternVariableReference_Constraints extends BaseConstrai
   public MigrationsPatternVariableReference_Constraints() {
     super("jetbrains.mps.migration.simple.structure.MigrationsPatternVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class MigrationsPatternVariableReference_Constraints extends BaseConstrai
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class MigrationsPatternVariableReference_Constraints extends BaseConstrai
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_82vbjx_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class MigrationsPatternVariableReference_Constraints extends BaseConstrai
     });
     return references;
   }
-
   private static SNodePointer breakingNode_82vbjx_a0a0a0a0a1a0b0a1a1 = new SNodePointer("aa5d6920-9a3b-4e3c-95b2-a5203db0c94a/r:3fb4578a-7b85-4d0c-9111-65b124bea7de(jetbrains.mps.migration.simple/jetbrains.mps.migration.simple.constraints)", "1309355481571031637");
 }

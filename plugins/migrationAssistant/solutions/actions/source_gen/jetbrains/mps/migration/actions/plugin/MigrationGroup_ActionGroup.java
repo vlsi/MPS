@@ -9,7 +9,6 @@ import org.apache.log4j.LogManager;
 public class MigrationGroup_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = LogManager.getLogger(MigrationGroup_ActionGroup.class);
   public static final String ID = "jetbrains.mps.migration.actions.plugin.MigrationGroup_ActionGroup";
-
   public MigrationGroup_ActionGroup() {
     super("MigrationGroup", ID);
     this.setIsInternal(false);

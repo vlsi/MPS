@@ -23,7 +23,6 @@ public class RequiredDataReference_Constraints extends BaseConstraintsDescriptor
   public RequiredDataReference_Constraints() {
     super("jetbrains.mps.migration.structure.RequiredDataReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -32,7 +31,6 @@ public class RequiredDataReference_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -41,7 +39,6 @@ public class RequiredDataReference_Constraints extends BaseConstraintsDescriptor
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_1ndp3g_a0a0a0a0a1a0b0a1a1;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -54,6 +51,5 @@ public class RequiredDataReference_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_1ndp3g_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.migration.constraints)", "4950161090497031354");
 }

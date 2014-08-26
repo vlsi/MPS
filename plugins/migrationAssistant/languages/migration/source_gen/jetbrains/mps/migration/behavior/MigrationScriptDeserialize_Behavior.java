@@ -13,11 +13,9 @@ import java.util.ArrayList;
 public class MigrationScriptDeserialize_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.migration.structure.MigrationScript"), "dataType", true);
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.migration.structure)", "586712031919995751"));
   }

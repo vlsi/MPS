@@ -10,7 +10,6 @@ import java.util.HashMap;
 
 public class MigrationDescriptorImpl implements MigrationDescriptor {
   private Map<Integer, MigrationScript> myScripts = MapSequence.<Integer, MigrationScript>fromMapAndKeysArray(new HashMap<Integer, MigrationScript>()).withValues();
-
   public MigrationScript getScript(int fromVersion) {
     return MapSequence.fromMap(myScripts).get(fromVersion);
   }

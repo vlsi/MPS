@@ -18,7 +18,7 @@
     <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.startup(MPS.IDEA/com.intellij.openapi.startup@java_stub)" name="com.intellij.openapi.startup@java_stub" />
     <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.impl(MPS.IDEA/com.intellij.ide.impl@java_stub)" name="com.intellij.ide.impl@java_stub" />
     <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" name="com.intellij.openapi.application@java_stub" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6050519299856556786" name="JavaImports" />
+    <model ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" name="jetbrains.mps.project@java_stub" />
     <concept id="f2801650-65d5-424e-bb1b-463a8781b786/8465538089690331500" name="CommentLine" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="FieldReferenceOperation" />
@@ -44,7 +44,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123152" name="EqualsExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="DotExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031" name="BinaryOperation" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/8473865358220097975" name="UnknownNameRef" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="VoidType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="InstanceMethodCallOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846" name="StaticFieldReference" />
@@ -62,11 +61,10 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797" name="DefaultClassCreator" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="PublicVisibility" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068431474542" name="VariableDeclaration" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/6528213125912070246" name="Tokens" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="IVisible" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1080223426719" name="OrExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427" name="AnnotationInstance" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123165" name="InstanceMethodDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070534934090" name="CastExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978" name="AnonymousClassCreator" />
@@ -86,7 +84,6 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200" name="FieldDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144230876926" name="AbstractForStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1079359253375" name="ParenthesizedExpression" />
-    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/28358707492436943" name="JavaImport" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198" name="ClassConcept" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800" name="StringLiteral" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800" name="Classifier" />
@@ -103,25 +100,23 @@
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468200/1240249534625" name="isVolatile" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137/1068580123138" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6329021646629104957/6329021646629104958" name="text" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/6528213125912070246/1843920760191311250" name="tokens" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/28358707492436943/28358707492436944" name="onDemand" />
-    <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/28358707492436943/5574384225470059890" name="static" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1221565133444" name="isFinal" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/4276006055363816570" name="isSynchronized" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/521412098689998745" name="nonStatic" />
     <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001" name="name" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" name="classifier" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214555875" name="key" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1083260308426" name="enumConstantDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" name="fieldDeclaration" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1144432896254" name="enumClass" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424/1144432896254" name="enumClass" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1116615150612/1116615189566" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475/1170346070688" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068498886296/1068581517664" name="variableDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
-    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539/1144226360166" name="iterable" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1068580123133" name="returnType" />
@@ -169,7 +164,6 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081256982272/1081256993305" name="classType" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1109201940907" name="parameter" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188208481402/1188208488637" name="annotation" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/6050519299856556786/28358707492429991" name="entries" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
   </debugInfo>
@@ -192,6 +186,7 @@
     <import index="xf8t" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.startup(MPS.IDEA/com.intellij.openapi.startup@java_stub)" />
     <import index="gq52" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.ide.impl(MPS.IDEA/com.intellij.ide.impl@java_stub)" />
     <import index="yla8" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.application(MPS.IDEA/com.intellij.openapi.application@java_stub)" />
+    <import index="tz4y" ref="86441d7a-e194-42da-81a5-2161ec62a379/f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.project(MPS.Workbench/jetbrains.mps.project@java_stub)" />
     <import index="m373" ref="r:4095af4f-a097-4799-aaa9-03df087ddfa6(jetbrains.mps.baseLanguage.javadoc.structure)" implicit="true" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
@@ -280,8 +275,8 @@
             <node concept="vg0i.1068581242863" id="6781485246382121960" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="vg0i.1068431474542.1176718929932" value="false" />
               <property role="asn4.1169194658468.1169194664001" value="version" />
-              <node concept="vg0i.1107535904670" id="6781485246382121962" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-                <reference role="vg0i.1107535904670.1107535924139" target="^" resolveInfo="Version" />
+              <node concept="vg0i.1107535904670" id="2353686962595962966" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+                <reference role="vg0i.1107535904670.1107535924139" target="tz4y.~Version" resolveInfo="Version" />
               </node>
               <node concept="vg0i.1197027756228" id="6781485246382121963" role="vg0i.1068431474542.1068431790190" info="nn">
                 <node concept="vg0i.1197027756228" id="6781485246382251630" role="vg0i.1197027756228.1197027771414" info="nn">
@@ -290,11 +285,13 @@
                   </node>
                   <node concept="vg0i.1202948039474" id="6781485246382251631" role="vg0i.1197027756228.1197027833540" info="nn">
                     <reference role="vg0i.1204053956946.1068499141037" target="iiw6.~ComponentManager%dgetComponent(java%dlang%dClass)%cjava%dlang%dObject" resolveInfo="getComponent" />
-                    <node concept="vg0i.1116615150612" id="6781485246382251632" role="vg0i.1204053956946.1068499141038" info="nn" />
+                    <node concept="vg0i.1116615150612" id="2353686962595961194" role="vg0i.1204053956946.1068499141038" info="nn">
+                      <reference role="vg0i.1116615150612.1116615189566" target="tz4y.~MPSProjectVersion" resolveInfo="MPSProjectVersion" />
+                    </node>
                   </node>
                 </node>
                 <node concept="vg0i.1202948039474" id="6781485246382121967" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="vg0i.1204053956946.1068499141037" target="^" resolveInfo="getVersion" />
+                  <reference role="vg0i.1204053956946.1068499141037" target="tz4y.~MPSProjectVersion%dgetVersion()%cjetbrains%dmps%dproject%dVersion" resolveInfo="getVersion" />
                 </node>
               </node>
             </node>
@@ -317,9 +314,10 @@
                         <reference role="vg0i.1068498886296.1068581517664" target="6781485246382121960" resolveInfo="version" />
                       </node>
                       <node concept="vg0i.1202948039474" id="6781485246382264460" role="vg0i.1197027756228.1197027833540" info="nn">
-                        <reference role="vg0i.1204053956946.1068499141037" target="^" resolveInfo="isMajorUpdate" />
-                        <node concept="vg0i.8473865358220097975" id="6781485246382264461" role="vg0i.1204053956946.1068499141038" info="nn">
-                          <property role="vg0i.6528213125912070246.1843920760191311250" value="MPSProjectVersion.CURRENT" />
+                        <reference role="vg0i.1204053956946.1068499141037" target="tz4y.~Version%disMajorUpdate(jetbrains%dmps%dproject%dVersion)%cboolean" resolveInfo="isMajorUpdate" />
+                        <node concept="vg0i.1070533707846" id="2353686962595953461" role="vg0i.1204053956946.1068499141038" info="nn">
+                          <reference role="vg0i.1070533707846.1144433057691" target="tz4y.~MPSProjectVersion" resolveInfo="MPSProjectVersion" />
+                          <reference role="vg0i.1068498886296.1068581517664" target="tz4y.~MPSProjectVersion%dCURRENT" resolveInfo="CURRENT" />
                         </node>
                       </node>
                     </node>
@@ -1016,138 +1014,6 @@
             <property role="vg0i.1068580123137.1068580123138" value="true" />
           </node>
           <node concept="vg0i.1146644602865" id="6781485246382121935" role="vg0i.1178549954367.1178549979242" info="nn" />
-        </node>
-      </node>
-      <node concept="vg0i.6050519299856556786" id="6781485246382122208" role="asn4.1133920641626.5169995583184591170" info="ng">
-        <node concept="vg0i.28358707492436943" id="6781485246382122209" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="true" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="jetbrains.mps.ide.migration.storage" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122210" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.ide.impl.ProjectUtil" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122211" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.application.ApplicationManager" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122212" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.AbstractProjectComponent" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122213" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.PersistentStateComponent" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122214" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.State" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122215" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.Storage" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122216" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.StoragePathMacros" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122217" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.StorageScheme" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122218" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.impl.stores.IProjectStore" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122219" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.components.impl.stores.StateStorageManager" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122220" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.project.Project" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122221" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.project.ex.ProjectEx" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122222" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.startup.StartupManager" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122223" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.ui.DialogWrapper" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122224" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.ui.Messages" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122225" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.vfs.LocalFileSystem" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122226" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.vfs.VfsUtil" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122227" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="com.intellij.openapi.vfs.VirtualFile" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122228" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="jetbrains.mps.ide.migration.storage.StorageAssistant.MyState" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122229" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="jetbrains.mps.project.MPSProjectVersion" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122230" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="jetbrains.mps.project.Version" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122231" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="java.io.File" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122232" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="java.io.IOException" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122233" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="java.util.ArrayList" />
-        </node>
-        <node concept="vg0i.28358707492436943" id="6781485246382122234" role="vg0i.6050519299856556786.28358707492429991" info="ng">
-          <property role="vg0i.28358707492436943.28358707492436944" value="false" />
-          <property role="vg0i.28358707492436943.5574384225470059890" value="false" />
-          <property role="vg0i.6528213125912070246.1843920760191311250" value="java.util.Collection" />
         </node>
       </node>
     </node>

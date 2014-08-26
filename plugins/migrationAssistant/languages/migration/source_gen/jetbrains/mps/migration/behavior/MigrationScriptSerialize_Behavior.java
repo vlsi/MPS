@@ -14,15 +14,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class MigrationScriptSerialize_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.migration.structure)", "586712031919984868"));
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_8wdbw5_a0a1();
   }
-
   private static SNode _quotation_createNode_8wdbw5_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

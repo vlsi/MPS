@@ -13,19 +13,15 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_1309355481571303327(final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), "declaration", false));
   }
-
   public static Object propertyMacro_GetPropertyValue_1309355481571156301(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "fromVersion");
   }
-
   public static SNode sourceNodeQuery_1309355481571256615(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "pattern", true);
   }
-
   public static SNode sourceNodeQuery_1309355481571289591(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "result", true);
   }

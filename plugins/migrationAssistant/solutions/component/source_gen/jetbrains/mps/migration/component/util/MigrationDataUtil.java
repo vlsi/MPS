@@ -43,7 +43,6 @@ public class MigrationDataUtil {
       }
     }
   }
-
   public static Iterable<Tuples._2<MigrationScriptReference, String>> loadData(AbstractModule module) {
     IFile file = getDataFile(module);
     if (!(file.exists())) {
@@ -69,13 +68,11 @@ public class MigrationDataUtil {
     }
     return result;
   }
-
   public static void addData(SModule module, MigrationScriptReference script, String data) {
     List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
     ListSequence.fromList(loadedData).addElement(MultiTuple.<MigrationScriptReference,String>from(script, data));
     saveData((AbstractModule) module, loadedData);
   }
-
   public static String readData(SModule module, final MigrationScriptReference script) {
     List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
     if (loadedData == null) {
@@ -88,11 +85,9 @@ public class MigrationDataUtil {
     }).first();
     return (result == null ? null : result._1());
   }
-
   public static IFile getDataFile(AbstractModule module) {
     return FileSystem.getInstance().getFileByPath(FileUtil.getNameWithoutExtension(module.getDescriptorFile().getPath()) + ".migration");
   }
-
   private static boolean eq_hzite5_a0a0a0a0a0a0c0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

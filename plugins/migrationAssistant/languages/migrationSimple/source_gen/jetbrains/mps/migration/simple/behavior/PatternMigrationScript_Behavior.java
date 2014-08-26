@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PatternMigrationScript_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) {
       return new NamedElementsScope(PatternExpression_Behavior.call_getUniqueVariables_4855904478357073018(SLinkOperations.getTarget(thisNode, "pattern", true)));

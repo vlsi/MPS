@@ -10,25 +10,20 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class MigrationScriptReference {
   private final SModuleReference moduleReference;
   private final int fromVersion;
-
   public MigrationScriptReference(SModuleReference module, int fromVersion) {
     this.moduleReference = module;
     this.fromVersion = fromVersion;
   }
-
   public SModuleReference getModuleReference() {
     return moduleReference;
   }
-
   public int getFromVersion() {
     return fromVersion;
   }
-
   @Nullable
   public MigrationScript resolve(MigrationComponent migrationComponent, SRepository repository) {
     return check_dhbyxl_a0a5(migrationComponent.getMigrationDescriptor(moduleReference.resolve(repository)), fromVersion);
   }
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -46,7 +41,6 @@ public class MigrationScriptReference {
     }
     return true;
   }
-
   @Override
   public int hashCode() {
     int result = 0;
@@ -54,16 +48,13 @@ public class MigrationScriptReference {
     result = 31 * result + fromVersion;
     return result;
   }
-
   public String serialize() {
     return moduleReference.toString() + "/" + fromVersion;
   }
-
   public static MigrationScriptReference deserialize(String s) {
     int sepInd = s.indexOf('/');
     return new MigrationScriptReference(PersistenceFacade.getInstance().createModuleReference(s.substring(0, sepInd)), Integer.parseInt(s.substring(sepInd + 1)));
   }
-
   private static MigrationScript check_dhbyxl_a0a5(MigrationDescriptor checkedDotOperand, int fromVersion) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(fromVersion);

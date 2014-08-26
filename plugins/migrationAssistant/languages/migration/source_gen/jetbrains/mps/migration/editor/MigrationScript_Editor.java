@@ -35,7 +35,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_th2ud5_a(editorContext, node);
   }
-
   private EditorCell createCollection_th2ud5_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_th2ud5_a");
@@ -47,14 +46,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_th2ud5_e0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "migration script");
     editorCell.setCellId("Constant_th2ud5_a0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_th2ud5_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("name");
@@ -72,7 +69,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_th2ud5_c0");
@@ -83,7 +79,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_th2ud5_d0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_th2ud5_d0");
@@ -118,14 +113,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_a3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "from version");
     editorCell.setCellId("Constant_th2ud5_a3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_b3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_b3a");
@@ -135,7 +128,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_th2ud5_c3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("fromVersion");
@@ -156,14 +148,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_d3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "to version");
     editorCell.setCellId("Constant_th2ud5_d3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_e3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_e3a");
@@ -173,16 +163,13 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_th2ud5_f3a(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return String.valueOf(AbstractMigrationScript_Behavior.call_getToVersion_3932724607434563104(node));
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }
@@ -196,14 +183,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_g3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description:");
     editorCell.setCellId("Constant_th2ud5_g3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_th2ud5_h3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("description");
@@ -225,21 +210,18 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_i3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "provides data");
     editorCell.setCellId("Constant_th2ud5_i3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_j3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_j3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_th2ud5_k3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("dataType");
@@ -262,7 +244,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_l3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_l3a");
@@ -272,14 +253,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_m3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "body");
     editorCell.setCellId("Constant_th2ud5_m3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_n3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_n3a");
@@ -290,7 +269,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_th2ud5_o3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("body");
@@ -314,7 +292,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_p3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_p3a");
@@ -324,14 +301,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_q3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "applicable");
     editorCell.setCellId("Constant_th2ud5_q3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_r3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_r3a");
@@ -342,7 +317,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_th2ud5_s3a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("applicable");
@@ -366,7 +340,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_t3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_t3a");
@@ -376,14 +349,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_u3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "requires data");
     editorCell.setCellId("Constant_th2ud5_u3a");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_v3a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_v3a");
@@ -393,7 +364,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_th2ud5_w3a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new MigrationScript_Editor.requiresDataListHandler_th2ud5_w3a(node, "requiresData", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -404,30 +374,25 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class requiresDataListHandler_th2ud5_w3a extends RefNodeListHandler {
     public requiresDataListHandler_th2ud5_w3a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -441,7 +406,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createCollection_th2ud5_x3a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_th2ud5_x3a");
@@ -458,11 +422,9 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_th2ud5_h32d0(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_th2ud5_a32d0(SNode node, EditorContext editorContext) {
     return MigrationScript_Behavior.call_hasData_586712031920013598(node);
   }
-
   private EditorCell createConstant_th2ud5_a32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_a32d0");
@@ -472,14 +434,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_b32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "serialize");
     editorCell.setCellId("Constant_th2ud5_b32d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_c32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_c32d0");
@@ -490,7 +450,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_th2ud5_d32d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("serialize");
@@ -514,7 +473,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_e32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_th2ud5_e32d0");
@@ -524,14 +482,12 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_f32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "deserialize");
     editorCell.setCellId("Constant_th2ud5_f32d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_g32d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_th2ud5_g32d0");
@@ -542,7 +498,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_th2ud5_h32d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("deserialize");
@@ -566,7 +521,6 @@ public class MigrationScript_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_th2ud5_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_th2ud5_e0");

@@ -3,23 +3,23 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root>
     <file name="QueriesGenerated.java">
-      <unit at="13,0,33,0" name="jetbrains.mps.migration.simple.generator.template.main.QueriesGenerated" />
+      <unit at="13,0,29,0" name="jetbrains.mps.migration.simple.generator.template.main.QueriesGenerated" />
     </file>
   </root>
   <root nodeRef="fb3cdf34-0d90-4b2f-aef6-64ed697a4d5f/r:def497bc-3515-4652-be3a-fe9bb375c87d(jetbrains.mps.migration.simple#1309355481570199265/jetbrains.mps.migration.simple.generator.template.main@generator)/1309355481571154599">
     <file name="QueriesGenerated.java">
-      <node id="1309355481571158719" at="21,112,22,77" concept="0" />
-      <node id="1309355481571256617" at="25,108,26,74" concept="0" />
-      <node id="1309355481571290409" at="29,108,30,73" concept="0" />
-      <scope id="1309355481571156302" at="21,112,22,77" />
-      <scope id="1309355481571256616" at="25,108,26,74" />
-      <scope id="1309355481571289592" at="29,108,30,73" />
+      <node id="1309355481571158719" at="19,112,20,77" concept="0" />
+      <node id="1309355481571256617" at="22,108,23,74" concept="0" />
+      <node id="1309355481571290409" at="25,108,26,73" concept="0" />
+      <scope id="1309355481571156302" at="19,112,20,77" />
+      <scope id="1309355481571256616" at="22,108,23,74" />
+      <scope id="1309355481571289592" at="25,108,26,73" />
     </file>
   </root>
   <root nodeRef="fb3cdf34-0d90-4b2f-aef6-64ed697a4d5f/r:def497bc-3515-4652-be3a-fe9bb375c87d(jetbrains.mps.migration.simple#1309355481570199265/jetbrains.mps.migration.simple.generator.template.main@generator)/1309355481571296708">
     <file name="QueriesGenerated.java">
-      <node id="1309355481571315253" at="17,112,18,109" concept="0" />
-      <scope id="1309355481571303328" at="17,112,18,109" />
+      <node id="1309355481571315253" at="16,112,17,109" concept="0" />
+      <scope id="1309355481571303328" at="16,112,17,109" />
     </file>
   </root>
 </debug-info>

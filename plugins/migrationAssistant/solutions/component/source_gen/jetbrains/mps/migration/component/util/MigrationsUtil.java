@@ -29,11 +29,9 @@ public class MigrationsUtil {
 
   public static final String MIGRATIONS_MODEL_NAME = "migrations";
 
-
   public static String getMigrationModelName(SModule module) {
     return module.getModuleName() + "." + MIGRATIONS_MODEL_NAME;
   }
-
   public static SModel getMigrationModel(final SModule module) {
     Iterable<SModel> models = module.getModels();
     return Sequence.fromIterable(models).findFirst(new IWhereFilter<SModel>() {
@@ -42,15 +40,12 @@ public class MigrationsUtil {
       }
     });
   }
-
   public static String getDescriptorFQName(SModule module) {
     return SModelOperations.getModelName(getMigrationModel(module)) + "." + getDescriptorClassName(module);
   }
-
   public static String getDescriptorClassName(SModule module) {
     return "MigrationDescriptorImpl";
   }
-
   public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
     return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> item) {
@@ -65,7 +60,6 @@ public class MigrationsUtil {
       }
     });
   }
-
   public static Iterable<Tuples._3<SModule, Integer, Integer>> checkDependenciesVersions(AbstractModule module) {
     module.validateLanguageVersions();
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
@@ -76,7 +70,6 @@ public class MigrationsUtil {
     }
     return result;
   }
-
   public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
     return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
@@ -84,7 +77,6 @@ public class MigrationsUtil {
       }
     }));
   }
-
   public static Set<SModule> getModuleDependencies(final SModule module) {
     Iterable<SDependency> declaredDependencies = module.getDeclaredDependencies();
     Set<SModule> dependencies = SetSequence.fromSetWithValues(new HashSet<SModule>(), Sequence.fromIterable(declaredDependencies).translate(new ITranslator2<SDependency, SModule>() {
@@ -95,7 +87,6 @@ public class MigrationsUtil {
     SetSequence.fromSet(dependencies).addElement(module);
     return dependencies;
   }
-
   public static boolean isAppliedForAllMyDeps(final MigrationScriptReference script, SModule module) {
     return SetSequence.fromSet(getModuleDependencies(module)).all(new IWhereFilter<SModule>() {
       public boolean accept(SModule it) {
@@ -103,17 +94,13 @@ public class MigrationsUtil {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
-
   private static boolean eq_7hm1hv_a0a0a0a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static <T> T as_7hm1hv_a0c0a0a0a0c0i(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-
   private static boolean eq_7hm1hv_a0a0a0a0a0a0a0j(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

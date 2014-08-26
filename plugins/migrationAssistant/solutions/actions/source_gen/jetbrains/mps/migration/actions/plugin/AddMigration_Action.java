@@ -37,18 +37,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class AddMigration_Action extends BaseAction {
   private static final Icon ICON = null;
-
   public AddMigration_Action() {
     super("Migration Script", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
-
   @Override
   public boolean isDumbAware() {
     return true;
   }
-
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     if (((SModule) MapSequence.fromMap(_params).get("module")) == null && ((SModel) MapSequence.fromMap(_params).get("migrationModel")) == null) {
       return false;
@@ -63,7 +60,6 @@ public class AddMigration_Action extends BaseAction {
 
     return true;
   }
-
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
       {
@@ -77,7 +73,6 @@ public class AddMigration_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
-
   protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
     if (!(super.collectActionData(event, _params))) {
       return false;
@@ -93,7 +88,6 @@ public class AddMigration_Action extends BaseAction {
     }
     return true;
   }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SModel migrationModel = ((SModel) MapSequence.fromMap(_params).get("migrationModel"));
@@ -137,7 +131,6 @@ public class AddMigration_Action extends BaseAction {
       }
     }
   }
-
   private SModel createMigrationModel(final Map<String, Object> _params) {
     final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
     ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository().getModelAccess().runReadAction(new Runnable() {
@@ -148,9 +141,7 @@ public class AddMigration_Action extends BaseAction {
     dialog.value.show();
     return dialog.value.getResult();
   }
-
   protected static Logger LOG = LogManager.getLogger(AddMigration_Action.class);
-
   private static SNode _quotation_createNode_sorkti_a0k0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -160,7 +151,6 @@ public class AddMigration_Action extends BaseAction {
     quotedNode_1.addChild("body", quotedNode_2);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_sorkti_a0l0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

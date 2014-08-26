@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MigrationScriptBody_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public MigrationScriptBody_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     return MigrationScriptBody_Behavior.virtual_getParameters_1213877374450(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.migration.structure.MigrationScriptBody";
