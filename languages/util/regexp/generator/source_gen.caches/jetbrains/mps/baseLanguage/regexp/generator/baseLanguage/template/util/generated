@@ -1,3 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cz8zp7aixjt742otb99hisb0vwikqvx" />
+<dependencies version="2" modelHash="-cz8zp7aixjt742otb99hisb0vwikqvx">
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-6r79zerd5g4mkqvktwfk7i2ydwbhtup" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-94avxiq112syoiaxh4kqmj8jcsk382u" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="7048923897762709721" name="Flags" hash="-4llv4z5ytdb15w9uvsl93spq2ci1f6k">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Flags.java" />
+  </source>
+</dependencies>
 
