@@ -18,10 +18,6 @@ package jetbrains.mps.generator.test;
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.TestMode;
-import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
-import jetbrains.mps.tool.environment.Environment;
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.generator.GenerationCacheContainer.FileBasedGenerationCacheContainer;
@@ -44,12 +40,16 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.testbench.PerformanceMessenger;
+import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
+import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.tool.environment.Environment;
 import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.jdom.Document;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.junit.Assert;
@@ -96,7 +96,7 @@ public class GenerationTestBase {
     GenerationOptions options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
+    IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(p);
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
         generationHandler,
@@ -110,7 +110,7 @@ public class GenerationTestBase {
     options = GenerationOptions.getDefaults()
         .generateInParallel(false, 1)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    generationHandler = new IncrementalTestGenerationHandler();
+    generationHandler = new IncrementalTestGenerationHandler(p);
     long start = System.nanoTime();
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
@@ -124,7 +124,7 @@ public class GenerationTestBase {
     options = GenerationOptions.getDefaults()
         .generateInParallel(true, threads)
         .rebuildAll(true).strictMode(true).reporting(false, true, false, 2).incremental(new DefaultNonIncrementalStrategy()).create();
-    generationHandler = new IncrementalTestGenerationHandler();
+    generationHandler = new IncrementalTestGenerationHandler(p);
     start = System.nanoTime();
     GenerationFacade.generateModels(p,
         Collections.singletonList(descr), ModuleContext.create(descr, p),
@@ -185,7 +185,7 @@ public class GenerationTestBase {
 
       GenerationOptions options = GenerationOptions.getDefaults()
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-      IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler();
+      IncrementalTestGenerationHandler generationHandler = new IncrementalTestGenerationHandler(p);
       GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p),
           generationHandler,
@@ -230,7 +230,7 @@ public class GenerationTestBase {
 
         options = GenerationOptions.getDefaults()
             .rebuildAll(false).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-        generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+        generationHandler = new IncrementalTestGenerationHandler(p, incrementalGenerationResults);
         generationHandler.checkIncremental(options);
         long start = System.nanoTime();
         GenerationFacade.generateModels(p,
@@ -249,7 +249,7 @@ public class GenerationTestBase {
       incrementalStrategy.setDependencies(null);
       options = GenerationOptions.getDefaults()
           .rebuildAll(true).strictMode(true).reporting(true, true, false, 2).incremental(incrementalStrategy).create();
-      generationHandler = new IncrementalTestGenerationHandler(incrementalGenerationResults);
+      generationHandler = new IncrementalTestGenerationHandler(p, incrementalGenerationResults);
       long start = System.nanoTime();
       GenerationFacade.generateModels(p,
           Collections.singletonList(descr), ModuleContext.create(descr, p),

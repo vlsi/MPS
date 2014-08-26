@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,12 +16,15 @@
 package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.util.FileUtil;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +41,6 @@ public class IntermediateModelsCache {
   private boolean isOk = true;
 
   private List<Integer> mySteps;
-  long timeSpent = 0;
 
   public IntermediateModelsCache(ModelCacheContainer cacheContainer, String signature) {
     myCacheContainer = cacheContainer;
@@ -100,7 +102,6 @@ public class IntermediateModelsCache {
   }
 
   public void store(int majorStep, int minor, TransientModelWithMetainfo model) {
-    long start = System.nanoTime();
     try {
       while (majorStep >= mySteps.size()) {
         mySteps.add(0);
@@ -117,15 +118,11 @@ public class IntermediateModelsCache {
       }
     } catch (IOException e) {
       isOk = false;
-    } finally {
-      timeSpent += System.nanoTime() - start;
     }
   }
 
   public TransientModelWithMetainfo load(int majorStep, int minorStep, SModelReference modelReference) {
-    long start = System.nanoTime();
     try {
-
       InputStream stream = myCacheContainer.openStream(getStorageName(majorStep, minorStep));
       ModelInputStream is = new ModelInputStream(stream);
       try {
@@ -135,14 +132,11 @@ public class IntermediateModelsCache {
       }
     } catch (IOException e) {
       isOk = false;
-    } finally {
-      timeSpent += System.nanoTime() - start;
     }
     return null;
   }
 
   public void store() {
-    long start = System.nanoTime();
     try {
       ModelOutputStream os = new ModelOutputStream(myCacheContainer.createStream(STEPS));
       try {
@@ -168,16 +162,10 @@ public class IntermediateModelsCache {
       }
     } catch (IOException e) {
       myCacheContainer.revert();
-    } finally {
-      timeSpent += System.nanoTime() - start;
     }
   }
 
   public void remove() {
     myCacheContainer.revert();
-  }
-
-  public String getTimeSpent() {
-    return timeSpent/1000000 + " ms";
   }
 }

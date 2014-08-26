@@ -75,7 +75,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myOutputModel;
   }
 
-  GeneratorMappings getMappings() {
+  public GeneratorMappings getMappings() {
     return myMappings;
   }
 

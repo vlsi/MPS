@@ -22,17 +22,20 @@ import jetbrains.mps.generator.generationTypes.GenerationHandlerBase;
 import jetbrains.mps.generator.generationTypes.StreamHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler;
 import jetbrains.mps.generator.impl.IncrementalGenerationHandler.IncrementalReporter;
+import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
-import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.performance.IPerformanceTracer.NullPerformanceTracer;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -57,6 +60,7 @@ import java.util.Map;
 public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private final Map<String, String> generatedContent = new HashMap<String, String>();
+  private final Project myProject;
   private Map<String, String> existingContent;
   private IFile myFilesDir;
   private int timesCalled = 0;
@@ -65,10 +69,12 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
 
   private GenerationOptions myGenOptions;
 
-  public IncrementalTestGenerationHandler() {
+  public IncrementalTestGenerationHandler(Project project) {
+    myProject = project;
   }
 
-  public IncrementalTestGenerationHandler(Map<String, String> existingContent) {
+  public IncrementalTestGenerationHandler(Project project, Map<String, String> existingContent) {
+    myProject = project;
     this.existingContent = existingContent;
   }
 
@@ -129,7 +135,8 @@ public class IncrementalTestGenerationHandler extends GenerationHandlerBase {
       GenerationDependencies dep = status.getDependencies();
       if (dep.getFromCacheCount() + dep.getSkippedCount() == 0) {
         final StringBuilder sb = new StringBuilder("Not optimized:\n");
-        new IncrementalGenerationHandler(inputModel, invocationContext, myGenOptions, new GenerationPlan(inputModel).getSignature(), null, new IncrementalReporter() {
+        IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenOptions.getIncrementalStrategy(), new GenerationPlan(inputModel), new NullPerformanceTracer());
+        new IncrementalGenerationHandler(inputModel, myProject, myGenOptions, cacheHelper, new IncrementalReporter() {
           @Override
           public void report(String message) {
             sb.append(message);
