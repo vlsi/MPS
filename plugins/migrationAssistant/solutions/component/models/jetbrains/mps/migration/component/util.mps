@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)">
   <persistence version="8" />
-  <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(null)" />
-  <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(null)" />
+  <language namespace="774bf8a0-62e5-41e1-af63-f4812e60e48b(jetbrains.mps.baseLanguage.checkedDots)" />
+  <language namespace="63650c59-16c8-498a-99c8-005c7ee9515d(jetbrains.mps.lang.access)" />
   <devkit namespace="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
@@ -18,11 +18,11 @@
   <import index="b2mh" modelUID="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.project(MPS.IDEA/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="kqhl" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.modules(MPS.Core/jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
   <import index="43z9" modelUID="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)" version="-1" />
-  <import index="7xm0" modelUID="a5b1c28d-abeb-49a6-a58c-559039616d64/f:java_stub#a5b1c28d-abeb-49a6-a58c-559039616d64#jetbrains.mps.ide.migration(jetbrains.mps.migration.component/jetbrains.mps.ide.migration@java_stub)" version="-1" />
   <import index="fxg7" modelUID="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" />
   <import index="qx6n" modelUID="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.persistence(MPS.OpenAPI/org.jetbrains.mps.openapi.persistence@java_stub)" version="-1" />
   <import index="msyo" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="59et" modelUID="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
+  <import index="bim2" modelUID="r:a9597bdf-0806-4a79-8ace-88240c6b9878(jetbrains.mps.ide.migration)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -32,7 +32,6 @@
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
   <import index="tpib" modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" implicit="yes" />
   <import index="qff7" modelUID="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" version="0" implicit="yes" />
-  <import index="tsnp" modelUID="a5b1c28d-abeb-49a6-a58c-559039616d64/f:java_stub#a5b1c28d-abeb-49a6-a58c-559039616d64#jetbrains.mps.migration.component.util(jetbrains.mps.migration.component/jetbrains.mps.migration.component.util@java_stub)" version="-1" implicit="yes" />
   <root type="tpee.Interface" typeId="tpee.1107796713796" id="6547769411406853739" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationDescriptor" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6547769411406853743" nodeInfo="igu">
@@ -973,7 +972,7 @@
       <property name="name" nameId="tpck.1169194664001" value="lastState" />
       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7875655284626466779" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~MigrationManager$MigrationState" resolveInfo="MigrationManager.MigrationState" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382121688" resolveInfo="MigrationManager.MigrationState" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7875655284626439152" nodeInfo="nn" />
     </node>
@@ -1412,8 +1411,8 @@
       <property name="name" nameId="tpck.1169194664001" value="fetchScripts" />
       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
       <node role="returnType" roleId="tpee.1068580123133" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="5712848521225673422" nodeInfo="in">
-        <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509833946005" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+        <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2353686962595130577" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5712848521225673428" nodeInfo="sn">
@@ -1475,7 +1474,7 @@
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7907688626602486783" nodeInfo="nn">
                               <node role="expression" roleId="tpee.1068580123156" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1467667202783816416" nodeInfo="nn">
                                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7339334509833988416" nodeInfo="nn">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%d&lt;init&gt;(jetbrains%dmps%dmigration%dcomponent%dutil%dMigrationScript,org%djetbrains%dmps%dopenapi%dmodule%dSModule)" resolveInfo="ScriptApplied" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122839" resolveInfo="ScriptApplied" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7339334509833988431" nodeInfo="nn">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7907688626602455418" resolveInfo="script" />
                                   </node>
@@ -1527,17 +1526,17 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1467667202783501574" resolveInfo="p" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7339334509834475425" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetScript()%cjetbrains%dmps%dmigration%dcomponent%dutil%dMigrationScript" resolveInfo="getScript" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122855" resolveInfo="getScript" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5712848521225646365" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tsnp.~MigrationScript%dapplicableToModule(org%djetbrains%dmps%dopenapi%dmodule%dSModule)%cboolean" resolveInfo="applicableToModule" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4436301628118913583" resolveInfo="applicableToModule" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7339334509834475477" nodeInfo="nn">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7339334509834475478" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1467667202783501574" resolveInfo="p" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7339334509834475479" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122861" resolveInfo="getModule" />
                   </node>
                 </node>
               </node>
@@ -1558,11 +1557,11 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1467667202783501574" resolveInfo="p" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283001718997396579" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetScript()%cjetbrains%dmps%dmigration%dcomponent%dutil%dMigrationScript" resolveInfo="getScript" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122855" resolveInfo="getScript" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283001718997396580" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tsnp.~MigrationScript%drequiresData()%cjava%dlang%dIterable" resolveInfo="requiresData" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5712848521222452919" resolveInfo="requiresData" />
               </node>
             </node>
           </node>
@@ -1590,7 +1589,7 @@
                             <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1467667202783501574" resolveInfo="p" />
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7339334509834475476" nodeInfo="nn">
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122861" resolveInfo="getModule" />
                           </node>
                         </node>
                       </node>
@@ -1626,8 +1625,8 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1467667202782542204" nodeInfo="nn" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="1467667202783501574" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="p" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509834371390" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2353686962595112701" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
         </node>
       </node>
     </node>
@@ -1727,8 +1726,8 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="6283001718997451986" nodeInfo="in" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="7907688626603480644" nodeInfo="ir">
         <property name="name" nameId="tpck.1169194664001" value="sa" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509834077806" nodeInfo="in">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2353686962595129731" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
         </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7907688626603480646" nodeInfo="sn">
@@ -1743,7 +1742,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7907688626603480644" resolveInfo="sa" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7339334509834756157" nodeInfo="nn">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetScript()%cjetbrains%dmps%dmigration%dcomponent%dutil%dMigrationScript" resolveInfo="getScript" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122855" resolveInfo="getScript" />
               </node>
             </node>
           </node>
@@ -1761,7 +1760,7 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7907688626603480644" resolveInfo="sa" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7339334509834614663" nodeInfo="nn">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetModule()%corg%djetbrains%dmps%dopenapi%dmodule%dSModule" resolveInfo="getModule" />
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122861" resolveInfo="getModule" />
                   </node>
                 </node>
                 <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509834614660" nodeInfo="in">
@@ -1948,7 +1947,7 @@
       <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1467667202781691995" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1467667202781691997" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~MigrationManager$MigrationState" resolveInfo="MigrationManager.MigrationState" />
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382121688" resolveInfo="MigrationManager.MigrationState" />
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1467667202781691998" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="qff7.ExecuteWriteActionStatement" typeId="qff7.8974276187400348183" id="4809633442592789808" nodeInfo="nn">
@@ -1960,7 +1959,7 @@
                   <property name="isFinal" nameId="tpee.1176718929932" value="true" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1467667202783142587" nodeInfo="in">
                     <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509834075091" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
                     </node>
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6116238312762664273" nodeInfo="nn">
@@ -1976,7 +1975,7 @@
                   <property name="name" nameId="tpck.1169194664001" value="availableScripts" />
                   <node role="type" roleId="tpee.5680397130376446158" type="tp2q.SequenceType" typeId="tp2q.1151689724996" id="1467667202783400293" nodeInfo="in">
                     <node role="elementType" roleId="tp2q.1151689745422" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7339334509834075960" nodeInfo="in">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
                     </node>
                   </node>
                   <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1467667202783421308" nodeInfo="nn">
@@ -2015,7 +2014,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="6116238312762562121" nodeInfo="nn" />
                   </node>
                   <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6116238312762569197" nodeInfo="in">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
                   </node>
                 </node>
               </node>
@@ -2030,8 +2029,8 @@
                         <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6116238312762536603" nodeInfo="nn">
                           <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6116238312762536606" nodeInfo="ig">
                             <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="7xm0.~MigrationManager$MigrationState$Step" resolveInfo="MigrationManager.MigrationState.Step" />
                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                            <link role="classifier" roleId="tpee.1170346070688" targetNodeId="bim2.6781485246382121691" resolveInfo="MigrationManager.MigrationState.Step" />
                             <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6116238312762536607" nodeInfo="nn" />
                             <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6116238312762536608" nodeInfo="igu">
                               <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -2050,7 +2049,7 @@
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6116238312762548226" resolveInfo="scriptToExecute" />
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6116238312762580566" nodeInfo="nn">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7xm0.~ScriptApplied%dgetScript()%cjetbrains%dmps%dmigration%dcomponent%dutil%dMigrationScript" resolveInfo="getScript" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="bim2.6781485246382122855" resolveInfo="getScript" />
                                       </node>
                                     </node>
                                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6116238312762582353" nodeInfo="nn">
@@ -2134,7 +2133,7 @@
                                     <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6116238312762645828" nodeInfo="ig">
                                       <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
                                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
-                                      <link role="classifier" roleId="tpee.1170346070688" targetNodeId="7xm0.~MigrationManager$MigrationState$Error" resolveInfo="MigrationManager.MigrationState.Error" />
+                                      <link role="classifier" roleId="tpee.1170346070688" targetNodeId="bim2.6781485246382121722" resolveInfo="MigrationManager.MigrationState.Error" />
                                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6116238312762645829" nodeInfo="nn" />
                                       <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6116238312762648133" nodeInfo="igu">
                                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -2185,8 +2184,8 @@
                                     <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6116238312762631446" nodeInfo="nn">
                                       <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6116238312762631449" nodeInfo="ig">
                                         <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="7xm0.~MigrationManager$MigrationState$Finished" resolveInfo="MigrationManager.MigrationState.Finished" />
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                                        <link role="classifier" roleId="tpee.1170346070688" targetNodeId="bim2.6781485246382121718" resolveInfo="MigrationManager.MigrationState.Finished" />
                                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6116238312762631450" nodeInfo="nn" />
                                       </node>
                                     </node>
@@ -2211,8 +2210,8 @@
                                 <node role="creator" roleId="tpee.1145553007750" type="tpee.AnonymousClassCreator" typeId="tpee.1182160077978" id="6116238312762657546" nodeInfo="nn">
                                   <node role="cls" roleId="tpee.1182160096073" type="tpee.AnonymousClass" typeId="tpee.1170345865475" id="6116238312762657549" nodeInfo="ig">
                                     <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
-                                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="7xm0.~MigrationManager$MigrationState$Conflict" resolveInfo="MigrationManager.MigrationState.Conflict" />
                                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%d&lt;init&gt;()" resolveInfo="Object" />
+                                    <link role="classifier" roleId="tpee.1170346070688" targetNodeId="bim2.6781485246382121703" resolveInfo="MigrationManager.MigrationState.Conflict" />
                                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6116238312762657550" nodeInfo="nn" />
                                     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6116238312762657551" nodeInfo="igu">
                                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
@@ -2223,7 +2222,7 @@
                                       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6116238312762657554" nodeInfo="in">
                                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Iterable" resolveInfo="Iterable" />
                                         <node role="parameter" roleId="tpee.1109201940907" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6116238312762657555" nodeInfo="in">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
                                         </node>
                                       </node>
                                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6116238312762657556" nodeInfo="sn">
@@ -2244,7 +2243,7 @@
                                       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6116238312762657562" nodeInfo="ir">
                                         <property name="name" nameId="tpck.1169194664001" value="scriptApplied" />
                                         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6116238312762657563" nodeInfo="in">
-                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~ScriptApplied" resolveInfo="ScriptApplied" />
+                                          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382122828" resolveInfo="ScriptApplied" />
                                         </node>
                                       </node>
                                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6116238312762657564" nodeInfo="sn">
@@ -2470,7 +2469,7 @@
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iiw6.~AbstractProjectComponent" resolveInfo="AbstractProjectComponent" />
     </node>
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1675818127160069086" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7xm0.~MigrationManager" resolveInfo="MigrationManager" />
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="bim2.6781485246382121685" resolveInfo="MigrationManager" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5712848521222453135" nodeInfo="ig">
