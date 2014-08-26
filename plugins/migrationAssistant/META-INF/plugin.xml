@@ -37,6 +37,7 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir="/languages"/>
+    <mps.LanguageLibrary dir="/solutions"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
   </extensions>
 </idea-plugin>
