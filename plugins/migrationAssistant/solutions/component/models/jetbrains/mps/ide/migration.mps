@@ -47,6 +47,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581517677" name="VoidType" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1202948039474" name="InstanceMethodCallOperation" />
     <concept id="63650c59-16c8-498a-99c8-005c7ee9515d/8974276187400348183" name="ExecuteWriteActionStatement" />
+    <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846" name="StaticFieldReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123137" name="BooleanConstant" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="StatementList" />
@@ -107,6 +108,7 @@
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188214545140/1188214555875" name="key" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937/1144433194310" name="classConcept" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/2820489544401957797/2820489544401957798" name="classifier" />
+    <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070533707846/1144433057691" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546/1197029500499" name="fieldDeclaration" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188208074048" name="annotation" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475/1170346070688" name="classifier" />
@@ -114,6 +116,7 @@
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107535904670/1107535924139" name="classifier" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1170345865475/1201186121363" name="typeParameter" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188220165133/1188220173759" name="item" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1165602531693" name="superclass" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367580" name="leftExpression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107796713796/1107797138135" name="extendedInterface" />
@@ -348,7 +351,18 @@
         </node>
         <node concept="vg0i.1188214545140" id="6781485246382122253" role="vg0i.1188207840427.1188214630783" info="ng">
           <reference role="vg0i.1188214545140.1188214555875" target="iiw6.~State%dstorages()" resolveInfo="storages" />
-          <node concept="vg0i.1188220165133" id="6781485246382122254" role="vg0i.1188214545140.1188214607812" info="nn" />
+          <node concept="vg0i.1188220165133" id="6781485246382122254" role="vg0i.1188214545140.1188214607812" info="nn">
+            <node concept="vg0i.1188207840427" id="6718097286752837794" role="vg0i.1188220165133.1188220173759" info="nn">
+              <reference role="vg0i.1188207840427.1188208074048" target="iiw6.~Storage" resolveInfo="Storage" />
+              <node concept="vg0i.1188214545140" id="6718097286752838201" role="vg0i.1188207840427.1188214630783" info="ng">
+                <reference role="vg0i.1188214545140.1188214555875" target="iiw6.~Storage%dfile()" resolveInfo="file" />
+                <node concept="vg0i.1070533707846" id="6718097286752838313" role="vg0i.1188214545140.1188214607812" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="iiw6.~StoragePathMacros%dWORKSPACE_FILE" resolveInfo="WORKSPACE_FILE" />
+                  <reference role="vg0i.1070533707846.1144433057691" target="iiw6.~StoragePathMacros" resolveInfo="StoragePathMacros" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="vg0i.1107535904670" id="6781485246382122255" role="vg0i.1068390468198.1165602531693" info="in">

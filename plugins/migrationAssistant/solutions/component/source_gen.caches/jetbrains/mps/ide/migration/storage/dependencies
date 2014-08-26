@@ -4,6 +4,8 @@
     <classNode dependClassName="com.intellij.ide.impl.ProjectUtil" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
     <classNode dependClassName="com.intellij.openapi.components.State" />
+    <classNode dependClassName="com.intellij.openapi.components.Storage" />
+    <classNode dependClassName="com.intellij.openapi.components.StoragePathMacros" />
     <classNode dependClassName="com.intellij.openapi.components.StorageScheme" />
     <classNode dependClassName="com.intellij.openapi.components.impl.stores.IProjectStore" />
     <classNode dependClassName="com.intellij.openapi.components.impl.stores.StateStorageManager" />

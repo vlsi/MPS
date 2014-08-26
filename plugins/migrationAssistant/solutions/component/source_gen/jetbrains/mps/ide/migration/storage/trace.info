@@ -15,119 +15,119 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="a5b1c28d-abeb-49a6-a58c-559039616d64/r:da2e5ecb-e41d-4110-ab8e-21e076fdb131(jetbrains.mps.migration.component/jetbrains.mps.ide.migration.storage)/6781485246382121925">
     <file name="StorageAssistant.java">
-      <node id="6781485246382121944" at="33,0,34,0" concept="4" trace="myState" />
-      <node id="6781485246382251058" at="34,44,35,19" concept="11" />
-      <node id="6781485246382121961" at="38,31,39,83" concept="8" />
-      <node id="6781485246382122013" at="46,42,47,26" concept="9" />
-      <node id="6781485246382122024" at="50,67,51,52" concept="3" />
-      <node id="6781485246382122033" at="54,42,55,26" concept="9" />
-      <node id="6781485246382122040" at="58,56,59,26" concept="9" />
-      <node id="6781485246382122047" at="62,49,63,43" concept="9" />
-      <node id="6781485246382122238" at="69,33,70,89" concept="10" />
-      <node id="6781485246382122075" at="70,89,71,67" concept="8" />
-      <node id="6781485246382122081" at="71,67,72,39" concept="0" />
-      <node id="6781485246382122083" at="72,39,73,91" concept="8" />
-      <node id="6781485246382122092" at="73,91,74,114" concept="8" />
-      <node id="6781485246382122100" at="74,114,75,101" concept="8" />
-      <node id="6781485246382122113" at="76,25,77,84" concept="3" />
-      <node id="6781485246382122119" at="77,84,78,99" concept="8" />
-      <node id="6781485246382122123" at="78,99,79,122" concept="8" />
-      <node id="6781485246382122132" at="80,56,81,59" concept="3" />
-      <node id="6781485246382122139" at="82,19,83,69" concept="3" />
-      <node id="6781485246382122142" at="83,69,84,35" concept="3" />
-      <node id="6781485246382122144" at="84,35,85,57" concept="3" />
-      <node id="6781485246382122147" at="85,57,86,74" concept="3" />
-      <node id="6781485246382122154" at="87,24,88,146" concept="3" />
-      <node id="6781485246382122173" at="98,9,99,51" concept="3" />
-      <node id="6781485246382122176" at="99,51,100,18" concept="9" />
-      <node id="6781485246382122183" at="101,29,102,19" concept="9" />
-      <node id="6781485246382122192" at="106,46,107,19" concept="9" />
-      <node id="6781485246382122201" at="110,57,111,20" concept="3" />
-      <node id="6781485246382121931" at="114,0,115,0" concept="4" trace="offerStorageMigration" />
-      <node id="6781485246382122152" at="87,22,89,17" concept="1" />
-      <node id="6781485246382121949" at="34,0,37,0" concept="2" trace="StorageAssistant#(Lcom/intellij/openapi/project/Project;)V" />
-      <node id="6781485246382122129" at="79,122,82,19" concept="5" />
-      <node id="6781485246382122010" at="45,0,49,0" concept="7" trace="isToBeShown#()Z" />
-      <node id="6781485246382122017" at="49,0,53,0" concept="7" trace="setToBeShown#(ZI)V" />
-      <node id="6781485246382122030" at="53,0,57,0" concept="7" trace="canBeHidden#()Z" />
-      <node id="6781485246382122037" at="57,0,61,0" concept="7" trace="shouldSaveOptionsOnCancel#()Z" />
-      <node id="6781485246382122044" at="61,0,65,0" concept="7" trace="getDoNotShowMessage#()Ljava/lang/String;" />
-      <node id="6781485246382122189" at="105,0,109,0" concept="7" trace="getState#()Ljetbrains/mps/ide/migration/storage/StorageAssistant/MyState;" />
-      <node id="6781485246382122196" at="109,0,113,0" concept="7" trace="loadState#(Ljetbrains/mps/ide/migration/storage/StorageAssistant/MyState;)V" />
-      <node id="6781485246382122185" at="97,43,103,5" concept="12" />
-      <node id="6781485246382122167" at="97,0,105,0" concept="7" trace="createDir#(Ljava/io/File;)Z" />
-      <node id="6781485246382122109" at="75,101,89,17" concept="6" />
-      <node id="6781485246382122004" at="43,27,65,12" concept="8" />
-      <node id="6781485246382122071" at="68,0,91,0" concept="7" trace="run#()V" />
-      <node id="6781485246382122063" at="66,281,91,15" concept="3" />
-      <node id="6781485246382122051" at="65,12,92,11" concept="6" />
-      <node id="6781485246382122000" at="42,0,94,0" concept="7" trace="run#()V" />
-      <node id="6781485246382121991" at="40,224,94,9" concept="3" />
-      <node id="6781485246382121968" at="39,83,95,5" concept="6" />
-      <node id="6781485246382121957" at="37,0,97,0" concept="7" trace="projectOpened#()V" />
-      <scope id="6781485246382121953" at="34,44,35,19" />
-      <scope id="6781485246382122012" at="46,42,47,26" />
-      <scope id="6781485246382122023" at="50,67,51,52" />
-      <scope id="6781485246382122032" at="54,42,55,26" />
-      <scope id="6781485246382122039" at="58,56,59,26" />
-      <scope id="6781485246382122046" at="62,49,63,43" />
-      <scope id="6781485246382122131" at="80,56,81,59" />
-      <scope id="6781485246382122153" at="87,24,88,146" />
-      <scope id="6781485246382122186" at="101,0,102,19">
+      <node id="6781485246382121944" at="36,0,37,0" concept="4" trace="myState" />
+      <node id="6781485246382251058" at="37,44,38,19" concept="11" />
+      <node id="6781485246382121961" at="41,31,42,83" concept="8" />
+      <node id="6781485246382122013" at="49,42,50,26" concept="9" />
+      <node id="6781485246382122024" at="53,67,54,52" concept="3" />
+      <node id="6781485246382122033" at="57,42,58,26" concept="9" />
+      <node id="6781485246382122040" at="61,56,62,26" concept="9" />
+      <node id="6781485246382122047" at="65,49,66,43" concept="9" />
+      <node id="6781485246382122238" at="72,33,73,89" concept="10" />
+      <node id="6781485246382122075" at="73,89,74,67" concept="8" />
+      <node id="6781485246382122081" at="74,67,75,39" concept="0" />
+      <node id="6781485246382122083" at="75,39,76,91" concept="8" />
+      <node id="6781485246382122092" at="76,91,77,114" concept="8" />
+      <node id="6781485246382122100" at="77,114,78,101" concept="8" />
+      <node id="6781485246382122113" at="79,25,80,84" concept="3" />
+      <node id="6781485246382122119" at="80,84,81,99" concept="8" />
+      <node id="6781485246382122123" at="81,99,82,122" concept="8" />
+      <node id="6781485246382122132" at="83,56,84,59" concept="3" />
+      <node id="6781485246382122139" at="85,19,86,69" concept="3" />
+      <node id="6781485246382122142" at="86,69,87,35" concept="3" />
+      <node id="6781485246382122144" at="87,35,88,57" concept="3" />
+      <node id="6781485246382122147" at="88,57,89,74" concept="3" />
+      <node id="6781485246382122154" at="90,24,91,146" concept="3" />
+      <node id="6781485246382122173" at="101,9,102,51" concept="3" />
+      <node id="6781485246382122176" at="102,51,103,18" concept="9" />
+      <node id="6781485246382122183" at="104,29,105,19" concept="9" />
+      <node id="6781485246382122192" at="109,46,110,19" concept="9" />
+      <node id="6781485246382122201" at="113,57,114,20" concept="3" />
+      <node id="6781485246382121931" at="117,0,118,0" concept="4" trace="offerStorageMigration" />
+      <node id="6781485246382122152" at="90,22,92,17" concept="1" />
+      <node id="6781485246382121949" at="37,0,40,0" concept="2" trace="StorageAssistant#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="6781485246382122129" at="82,122,85,19" concept="5" />
+      <node id="6781485246382122010" at="48,0,52,0" concept="7" trace="isToBeShown#()Z" />
+      <node id="6781485246382122017" at="52,0,56,0" concept="7" trace="setToBeShown#(ZI)V" />
+      <node id="6781485246382122030" at="56,0,60,0" concept="7" trace="canBeHidden#()Z" />
+      <node id="6781485246382122037" at="60,0,64,0" concept="7" trace="shouldSaveOptionsOnCancel#()Z" />
+      <node id="6781485246382122044" at="64,0,68,0" concept="7" trace="getDoNotShowMessage#()Ljava/lang/String;" />
+      <node id="6781485246382122189" at="108,0,112,0" concept="7" trace="getState#()Ljetbrains/mps/ide/migration/storage/StorageAssistant/MyState;" />
+      <node id="6781485246382122196" at="112,0,116,0" concept="7" trace="loadState#(Ljetbrains/mps/ide/migration/storage/StorageAssistant/MyState;)V" />
+      <node id="6781485246382122185" at="100,43,106,5" concept="12" />
+      <node id="6781485246382122167" at="100,0,108,0" concept="7" trace="createDir#(Ljava/io/File;)Z" />
+      <node id="6781485246382122109" at="78,101,92,17" concept="6" />
+      <node id="6781485246382122004" at="46,27,68,12" concept="8" />
+      <node id="6781485246382122071" at="71,0,94,0" concept="7" trace="run#()V" />
+      <node id="6781485246382122063" at="69,281,94,15" concept="3" />
+      <node id="6781485246382122051" at="68,12,95,11" concept="6" />
+      <node id="6781485246382122000" at="45,0,97,0" concept="7" trace="run#()V" />
+      <node id="6781485246382121991" at="43,224,97,9" concept="3" />
+      <node id="6781485246382121968" at="42,83,98,5" concept="6" />
+      <node id="6781485246382121957" at="40,0,100,0" concept="7" trace="projectOpened#()V" />
+      <scope id="6781485246382121953" at="37,44,38,19" />
+      <scope id="6781485246382122012" at="49,42,50,26" />
+      <scope id="6781485246382122023" at="53,67,54,52" />
+      <scope id="6781485246382122032" at="57,42,58,26" />
+      <scope id="6781485246382122039" at="61,56,62,26" />
+      <scope id="6781485246382122046" at="65,49,66,43" />
+      <scope id="6781485246382122131" at="83,56,84,59" />
+      <scope id="6781485246382122153" at="90,24,91,146" />
+      <scope id="6781485246382122186" at="104,0,105,19">
         <var name="e" id="6781485246382122178" />
       </scope>
-      <scope id="6781485246382122182" at="101,29,102,19" />
-      <scope id="6781485246382122191" at="106,46,107,19" />
-      <scope id="6781485246382122200" at="110,57,111,20" />
-      <scope id="6781485246382122172" at="98,9,100,18" />
-      <scope id="6781485246382121949" at="34,0,37,0">
+      <scope id="6781485246382122182" at="104,29,105,19" />
+      <scope id="6781485246382122191" at="109,46,110,19" />
+      <scope id="6781485246382122200" at="113,57,114,20" />
+      <scope id="6781485246382122172" at="101,9,103,18" />
+      <scope id="6781485246382121949" at="37,0,40,0">
         <var name="project" id="6781485246382121951" />
       </scope>
-      <scope id="6781485246382122129" at="79,122,82,19">
+      <scope id="6781485246382122129" at="82,122,85,19">
         <var name="file" id="6781485246382122135" />
       </scope>
-      <scope id="6781485246382122010" at="45,0,49,0" />
-      <scope id="6781485246382122017" at="49,0,53,0">
+      <scope id="6781485246382122010" at="48,0,52,0" />
+      <scope id="6781485246382122017" at="52,0,56,0">
         <var name="exitCode" id="6781485246382122021" />
         <var name="value" id="6781485246382122019" />
       </scope>
-      <scope id="6781485246382122030" at="53,0,57,0" />
-      <scope id="6781485246382122037" at="57,0,61,0" />
-      <scope id="6781485246382122044" at="61,0,65,0" />
-      <scope id="6781485246382122189" at="105,0,109,0" />
-      <scope id="6781485246382122196" at="109,0,113,0">
+      <scope id="6781485246382122030" at="56,0,60,0" />
+      <scope id="6781485246382122037" at="60,0,64,0" />
+      <scope id="6781485246382122044" at="64,0,68,0" />
+      <scope id="6781485246382122189" at="108,0,112,0" />
+      <scope id="6781485246382122196" at="112,0,116,0">
         <var name="state" id="6781485246382122198" />
       </scope>
-      <scope id="6781485246382122170" at="97,43,103,5" />
-      <scope id="6781485246382122167" at="97,0,105,0">
+      <scope id="6781485246382122170" at="100,43,106,5" />
+      <scope id="6781485246382122167" at="100,0,108,0">
         <var name="ideaDir" id="6781485246382122168" />
       </scope>
-      <scope id="6781485246382122112" at="76,25,86,74">
+      <scope id="6781485246382122112" at="79,25,89,74">
         <var name="storageFileNames" id="6781485246382122122" />
         <var name="storageManager" id="6781485246382122118" />
       </scope>
-      <scope id="6781485246382122073" at="69,33,89,17">
+      <scope id="6781485246382122073" at="72,33,92,17">
         <var name="baseDir" id="6781485246382122074" />
         <var name="ideaDir" id="6781485246382122091" />
         <var name="ok" id="6781485246382122099" />
         <var name="projectStore" id="6781485246382122082" />
       </scope>
-      <scope id="6781485246382122071" at="68,0,91,0" />
-      <scope id="6781485246382122062" at="66,281,91,15" />
-      <scope id="6781485246382122002" at="43,27,92,11">
+      <scope id="6781485246382122071" at="71,0,94,0" />
+      <scope id="6781485246382122062" at="69,281,94,15" />
+      <scope id="6781485246382122002" at="46,27,95,11">
         <var name="option" id="6781485246382122003" />
       </scope>
-      <scope id="6781485246382122000" at="42,0,94,0" />
-      <scope id="6781485246382121990" at="40,224,94,9" />
-      <scope id="6781485246382121959" at="38,31,95,5">
+      <scope id="6781485246382122000" at="45,0,97,0" />
+      <scope id="6781485246382121990" at="43,224,97,9" />
+      <scope id="6781485246382121959" at="41,31,98,5">
         <var name="version" id="6781485246382121960" />
       </scope>
-      <scope id="6781485246382121957" at="37,0,97,0" />
-      <unit id="6781485246382121928" at="113,0,116,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant$MyState" />
-      <unit id="6781485246382122008" at="44,52,65,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
-      <unit id="6781485246382122069" at="67,64,91,13" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
-      <unit id="6781485246382121998" at="41,76,94,7" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1" />
-      <unit id="6781485246382121925" at="28,0,117,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
+      <scope id="6781485246382121957" at="40,0,100,0" />
+      <unit id="6781485246382121928" at="116,0,119,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant$MyState" />
+      <unit id="6781485246382122008" at="47,52,68,11" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
+      <unit id="6781485246382122069" at="70,64,94,13" name="jetbrains.mps.ide.migration.storage.StorageAssistant$2" />
+      <unit id="6781485246382121998" at="44,76,97,7" name="jetbrains.mps.ide.migration.storage.StorageAssistant$1" />
+      <unit id="6781485246382121925" at="30,0,120,0" name="jetbrains.mps.ide.migration.storage.StorageAssistant" />
     </file>
   </root>
 </debug-info>

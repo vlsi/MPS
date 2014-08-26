@@ -140,8 +140,8 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123155/1068580123156" name="expression" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886295" name="lValue" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188207840427/1188214630783" name="value" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978/1182160096073" name="cls" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1164879751025/1164879758292" name="body" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1182160077978/1182160096073" name="cls" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367/1178549979242" name="visibility" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/4972933694980447171/5680397130376446158" name="type" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886297" name="rValue" />
@@ -149,6 +149,7 @@
     <childRole id="f2801650-65d5-424e-bb1b-463a8781b786/5349172909345501395/8465538089690331502" name="body" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878/1068581517676" name="expression" />
+    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1188220165133/1188220173759" name="item" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068390468198/1165602531693" name="superclass" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107461130800/5375687026011219971" name="member" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1160998861373/1160998896846" name="condition" />
@@ -208,7 +209,18 @@
         </node>
         <node concept="vg0i.1188214545140" id="6781485246382121939" role="vg0i.1188207840427.1188214630783" info="ng">
           <reference role="vg0i.1188214545140.1188214555875" target="iiw6.~State%dstorages()" resolveInfo="storages" />
-          <node concept="vg0i.1188220165133" id="6781485246382121940" role="vg0i.1188214545140.1188214607812" info="nn" />
+          <node concept="vg0i.1188220165133" id="6781485246382121940" role="vg0i.1188214545140.1188214607812" info="nn">
+            <node concept="vg0i.1188207840427" id="6718097286752837794" role="vg0i.1188220165133.1188220173759" info="nn">
+              <reference role="vg0i.1188207840427.1188208074048" target="iiw6.~Storage" resolveInfo="Storage" />
+              <node concept="vg0i.1188214545140" id="6718097286752838201" role="vg0i.1188207840427.1188214630783" info="ng">
+                <reference role="vg0i.1188214545140.1188214555875" target="iiw6.~Storage%dfile()" resolveInfo="file" />
+                <node concept="vg0i.1070533707846" id="6718097286752838313" role="vg0i.1188214545140.1188214607812" info="nn">
+                  <reference role="vg0i.1070533707846.1144433057691" target="iiw6.~StoragePathMacros" resolveInfo="StoragePathMacros" />
+                  <reference role="vg0i.1068498886296.1068581517664" target="iiw6.~StoragePathMacros%dWORKSPACE_FILE" resolveInfo="WORKSPACE_FILE" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node concept="vg0i.1107535904670" id="6781485246382121941" role="vg0i.1068390468198.1165602531693" info="in">
