@@ -111,8 +111,6 @@ public class MigrateSourcesToMPS_Action extends BaseAction {
       });
 
       moduleDescr.getSourcePaths().clear();
-
-      // <node> 
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "MigrateSourcesToMPS", t);

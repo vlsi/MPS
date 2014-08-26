@@ -173,7 +173,6 @@ public class MpsTestsSupport {
                 }
                 ModuleRepositoryFacade.createModule(handle, mpsModuleOwner);
               }
-              ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
             }
           });
         }

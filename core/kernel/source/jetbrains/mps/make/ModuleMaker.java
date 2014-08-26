@@ -146,7 +146,6 @@ public class ModuleMaker {
 
       int errorCount = 0;
       int warnCount = 0;
-      boolean compiled = false;
       List<IMessage> messages = new ArrayList<IMessage>();
       Set<SModule> changedModules = new HashSet<SModule>();
 
@@ -169,7 +168,6 @@ public class ModuleMaker {
           myTracer.pop();
           errorCount += result.getErrors();
           warnCount += result.getWarnings();
-          compiled = compiled || result.isCompiledAnything();
           changedModules.addAll(result.getChangedModules());
           messages.addAll(result.getMessages());
           for (IMessage msg : result.getMessages()) {

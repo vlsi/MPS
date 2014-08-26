@@ -16,9 +16,6 @@ import java.util.List;
 import java.util.LinkedHashSet;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collections;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
@@ -85,12 +82,6 @@ public class GeneratorWorker extends BaseGeneratorWorker {
       if (go.hasAnythingToGenerate()) {
         generate(project, go);
         doneSomething = true;
-
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-          }
-        });
       }
     }
 

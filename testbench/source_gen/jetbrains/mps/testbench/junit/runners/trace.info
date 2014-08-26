@@ -572,9 +572,8 @@
       <node id="4417301346391299413" at="170,66,171,49" concept="13" />
       <node id="4417301346391299378" at="171,49,172,27" concept="4" />
       <node id="4417301346391299379" at="173,17,174,76" concept="5" />
-      <node id="4417301346391299388" at="175,15,176,85" concept="5" />
-      <node id="4417301346391299405" at="181,27,182,36" concept="19" />
-      <node id="3894165323890858623" at="186,0,187,0" concept="15" trace="LOG" />
+      <node id="4417301346391299405" at="180,27,181,36" concept="19" />
+      <node id="3894165323890858623" at="185,0,186,0" concept="15" trace="LOG" />
       <node id="4681254579908049159" at="152,10,154,5" concept="2" />
       <node id="4417301346391488045" at="56,52,59,5" concept="8" />
       <node id="3122761010869321653" at="68,81,71,5" concept="2" />
@@ -603,17 +602,17 @@
       <node id="4590871013634150402" at="99,0,107,0" concept="16" trace="makeAllWithoutEnvironment#()Ljetbrains/mps/make/MPSCompilationResult;" />
       <node id="4681254579908049072" at="129,0,138,0" concept="10" trace="run#()V" />
       <node id="4681254579908049112" at="142,0,151,0" concept="10" trace="run#()V" />
+      <node id="4417301346391299356" at="167,0,177,0" concept="10" trace="run#()V" />
       <node id="8181622299284041520" at="87,0,98,0" concept="16" trace="makeAllInCreatedEnvironment#()Ljetbrains/mps/make/MPSCompilationResult;" />
       <node id="4681254579908049064" at="127,61,138,7" concept="5" />
       <node id="4681254579908049106" at="140,60,151,9" concept="5" />
-      <node id="4417301346391299356" at="167,0,178,0" concept="10" trace="run#()V" />
-      <node id="4417301346391299347" at="165,27,178,13" concept="5" />
+      <node id="4417301346391299347" at="165,27,177,13" concept="5" />
       <node id="4681254579908049099" at="139,0,154,5" concept="9" />
-      <node id="4417301346391299344" at="164,0,180,0" concept="10" trace="run#()V" />
-      <node id="4417301346391299337" at="162,9,180,9" concept="5" />
+      <node id="4417301346391299344" at="164,0,179,0" concept="10" trace="run#()V" />
+      <node id="4417301346391299337" at="162,9,179,9" concept="5" />
       <node id="3894165323891175837" at="63,0,82,0" concept="16" trace="initEnv#(ZLjetbrains/mps/tool/environment/EnvironmentConfig;)Ljetbrains/mps/tool/environment/Environment;" />
-      <node id="4417301346391299406" at="161,88,183,5" concept="20" />
-      <node id="4417301346391299330" at="161,0,185,0" concept="16" trace="loadModules#(Ljava/util/Collection;)V" />
+      <node id="4417301346391299406" at="161,88,182,5" concept="20" />
+      <node id="4417301346391299330" at="161,0,184,0" concept="16" trace="loadModules#(Ljava/util/Collection;)V" />
       <node id="4681254579908047858" at="108,0,156,0" concept="16" trace="reloadAllAfterMake#(Ljetbrains/mps/make/MPSCompilationResult;)V" />
       <scope id="4417301346391487146" at="44,10,45,24" />
       <scope id="4417301346391488047" at="57,31,58,92" />
@@ -629,10 +628,10 @@
       <scope id="4681254579908049127" at="146,31,147,59" />
       <scope id="4681254579908049160" at="152,12,153,99" />
       <scope id="4417301346391311608" at="157,54,158,204" />
-      <scope id="4417301346391299407" at="181,0,182,36">
+      <scope id="4417301346391299407" at="180,0,181,36">
         <var name="e" id="4417301346391299398" />
       </scope>
-      <scope id="4417301346391299402" at="181,27,182,36" />
+      <scope id="4417301346391299402" at="180,27,181,36" />
       <scope id="4417301346391299377" at="170,66,172,27" />
       <scope id="3122761010869357797" at="48,43,51,27" />
       <scope id="4417301346391488045" at="56,52,59,5">
@@ -670,27 +669,27 @@
       </scope>
       <scope id="3122761010869456425" at="54,0,62,0" />
       <scope id="4590871013634150402" at="99,0,107,0" />
+      <scope id="4417301346391299357" at="167,31,175,15">
+        <var name="mpsModuleOwner" id="4417301346391299358" />
+      </scope>
       <scope id="8181622299284041523" at="87,68,96,7" />
       <scope id="4681254579908049072" at="129,0,138,0" />
       <scope id="4681254579908049112" at="142,0,151,0" />
-      <scope id="4417301346391299357" at="167,31,176,85">
-        <var name="mpsModuleOwner" id="4417301346391299358" />
-      </scope>
+      <scope id="4417301346391299356" at="167,0,177,0" />
       <scope id="8181622299284041520" at="87,0,98,0" />
       <scope id="4681254579908049103" at="140,60,151,9" />
-      <scope id="4417301346391299356" at="167,0,178,0" />
       <scope id="3894165323891175840" at="68,81,80,22">
         <var name="currentEnv" id="3122761010869547120" />
       </scope>
-      <scope id="4417301346391299346" at="165,27,178,13" />
-      <scope id="4417301346391299344" at="164,0,180,0" />
-      <scope id="4417301346391299336" at="162,9,180,9" />
+      <scope id="4417301346391299346" at="165,27,177,13" />
+      <scope id="4417301346391299344" at="164,0,179,0" />
+      <scope id="4417301346391299336" at="162,9,179,9" />
       <scope id="3894165323891175837" at="63,0,82,0">
         <var name="config" id="2770012171662960205" />
         <var name="withIdea" id="3894165323891175870" />
       </scope>
-      <scope id="4417301346391299334" at="161,88,183,5" />
-      <scope id="4417301346391299330" at="161,0,185,0">
+      <scope id="4417301346391299334" at="161,88,182,5" />
+      <scope id="4417301346391299330" at="161,0,184,0">
         <var name="handles" id="4417301346391299331" />
       </scope>
       <scope id="4681254579908047861" at="108,145,154,5" />
@@ -702,9 +701,9 @@
       <unit id="4681254579908049122" at="144,65,149,11" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$5" />
       <unit id="4681254579908049070" at="128,46,138,5" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$3" />
       <unit id="4681254579908049110" at="141,39,151,7" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$4" />
-      <unit id="4417301346391299354" at="166,52,178,11" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$6" />
-      <unit id="4417301346391299342" at="163,39,180,7" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$5" />
-      <unit id="3894165323890858623" at="41,0,188,0" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
+      <unit id="4417301346391299354" at="166,52,177,11" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$6" />
+      <unit id="4417301346391299342" at="163,39,179,7" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport$5" />
+      <unit id="3894165323890858623" at="41,0,187,0" name="jetbrains.mps.testbench.junit.runners.MpsTestsSupport" />
     </file>
   </root>
   <root nodeRef="r:eea68efb-2953-43f4-848f-9829ac5c7101(jetbrains.mps.testbench.junit.runners)/4681254579907455600">

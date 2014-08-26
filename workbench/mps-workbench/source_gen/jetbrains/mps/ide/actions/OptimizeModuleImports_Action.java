@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.project.Project;
 import org.apache.log4j.Logger;
@@ -83,7 +82,7 @@ public class OptimizeModuleImports_Action extends BaseAction {
           SModelRepository.getInstance().saveAll();
           MPSModuleRepository.getInstance().saveAll();
 
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
+          ClassLoaderManager.getInstance().reloadModules(((List<SModule>) MapSequence.fromMap(_params).get("modules")));
         }
       });
       Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("ideaProject")), report.value, "Optimize Imports", Messages.getInformationIcon());
