@@ -75,6 +75,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1174697681347(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "constraint");
   }
+  public static Object propertyMacro_GetPropertyValue_6265780721713966779(final PropertyMacroContext _context) {
+    return NameUtil.nodeFQName(_context.getNode());
+  }
   public static Object propertyMacro_GetPropertyValue_4053113206042947387(final PropertyMacroContext _context) {
     return NameUtil.escapeString(SPropertyOperations.getString(_context.getNode(), "helpURL"));
   }
@@ -185,6 +188,13 @@ public class QueriesGenerated {
   }
   public static Iterable<SNode> sourceNodesQuery_1174700303502(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "member", true);
+  }
+  public static Iterable<SNode> sourceNodesQuery_8417388364218884636(final SourceSubstituteMacroNodesContext _context) {
+    return ListSequence.fromList(SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+      }
+    }, true);
   }
   public static Iterable<SNode> sourceNodesQuery_2395585628938337823(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).where(new IWhereFilter<SNode>() {
