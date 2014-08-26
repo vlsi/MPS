@@ -13740,27 +13740,27 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/2517404124519899276">
     <file name="PutReexportForExtendedClassifier_QuickFix.java">
-      <node id="2517404124519902228" at="15,44,16,142" concept="13" />
-      <node id="2517404124520184214" at="18,35,19,108" concept="0" />
-      <node id="2517404124520181533" at="19,108,20,28" concept="12" />
-      <node id="2517404124520147163" at="20,28,21,227" concept="6" />
-      <node id="1481134619757540846" at="21,227,22,163" concept="6" />
-      <node id="2517404124519899276" at="13,0,15,0" concept="3" trace="PutReexportForExtendedClassifier_QuickFix#()V" />
-      <node id="2517404124519899276" at="15,0,18,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-      <node id="2517404124519899276" at="18,0,24,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <scope id="2517404124519899276" at="13,54,13,54" />
-      <scope id="2517404124519901402" at="15,44,16,142" />
-      <scope id="2517404124519899276" at="13,0,15,0" />
-      <scope id="2517404124519899276" at="15,0,18,0">
+      <node id="2517404124519902228" at="14,44,15,142" concept="13" />
+      <node id="2517404124520184214" at="17,35,18,108" concept="0" />
+      <node id="2517404124520181533" at="18,108,19,28" concept="12" />
+      <node id="2517404124520147163" at="19,28,20,227" concept="6" />
+      <node id="1481134619757540846" at="20,227,21,139" concept="6" />
+      <node id="2517404124519899276" at="12,0,14,0" concept="3" trace="PutReexportForExtendedClassifier_QuickFix#()V" />
+      <node id="2517404124519899276" at="14,0,17,0" concept="11" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2517404124519899276" at="17,0,23,0" concept="11" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2517404124519899276" at="12,54,12,54" />
+      <scope id="2517404124519901402" at="14,44,15,142" />
+      <scope id="2517404124519899276" at="12,0,14,0" />
+      <scope id="2517404124519899276" at="14,0,17,0">
         <var name="node" id="2517404124519899276" />
       </scope>
-      <scope id="2517404124519899278" at="18,35,22,163">
+      <scope id="2517404124519899278" at="17,35,21,139">
         <var name="reexport" id="2517404124520181534" />
       </scope>
-      <scope id="2517404124519899276" at="18,0,24,0">
+      <scope id="2517404124519899276" at="17,0,23,0">
         <var name="node" id="2517404124519899276" />
       </scope>
-      <unit id="2517404124519899276" at="12,0,25,0" name="jetbrains.mps.baseLanguage.typesystem.PutReexportForExtendedClassifier_QuickFix" />
+      <unit id="2517404124519899276" at="11,0,24,0" name="jetbrains.mps.baseLanguage.typesystem.PutReexportForExtendedClassifier_QuickFix" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)/2622108313324583169">

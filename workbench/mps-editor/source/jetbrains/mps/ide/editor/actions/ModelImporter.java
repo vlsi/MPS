@@ -86,7 +86,7 @@ public class ModelImporter {
     } else {
       importOnlyModel(modelToImport);
     }
-    ClassLoaderManager.getInstance().reloadModules(Collections.singleton(myModule));
+    ClassLoaderManager.getInstance().reloadModule(myModule);
   }
 
   private void importOnlyModel(final SModelReference modelToImport) {

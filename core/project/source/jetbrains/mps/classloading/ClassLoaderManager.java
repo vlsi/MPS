@@ -36,6 +36,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -311,11 +312,15 @@ public class ClassLoaderManager implements CoreComponent {
     return reloadModules(modules, new EmptyProgressMonitor());
   }
 
-  public void stopListening() {
+  public Set<SModule> reloadModule(SModule module) {
+    return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
+  }
+
+  private void stopListening() {
     myRepository.removeRepositoryListener(myRepositoryListener);
   }
 
-  public void startListening() {
+  private void startListening() {
     myRepository.addRepositoryListener(myRepositoryListener);
   }
 

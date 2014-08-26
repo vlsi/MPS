@@ -11,7 +11,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import java.util.Collections;
 
 public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
   public ImportUsedLanguage_QuickFix() {
@@ -27,6 +26,6 @@ public class ImportUsedLanguage_QuickFix extends QuickFix_Runtime {
     ((SModelInternal) SNodeOperations.getModel(node)).addLanguage(languageModule.getModuleReference());
     ((AbstractModule) SNodeOperations.getModel(node).getModule()).addUsedLanguage(languageModule.getModuleReference());
 
-    ClassLoaderManager.getInstance().reloadModules(Collections.singleton(languageModule));
+    ClassLoaderManager.getInstance().reloadModule(languageModule);
   }
 }
