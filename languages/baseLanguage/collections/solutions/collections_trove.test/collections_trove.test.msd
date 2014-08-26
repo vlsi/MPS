@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" compileInMPS="true">
+<solution name="collections_trove.test" uuid="fb186431-2788-490b-9e84-c2b84ef0ca77" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="jetbrains" />

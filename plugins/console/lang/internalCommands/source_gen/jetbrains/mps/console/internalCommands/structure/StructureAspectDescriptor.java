@@ -17,7 +17,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.InternalMode").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.console.blCommand.structure.ConsoleExpression").alias("#internalMode", "").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reloadModules", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand").alias("#reloadClasses", "").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.console.internalCommands.structure.ShowRepositoryCommand").super_("jetbrains.mps.console.base.structure.InterpretedCommand").parents("jetbrains.mps.console.base.structure.InterpretedCommand", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").abstract_().alias("#show repository", "").create();
       default:
