@@ -17466,24 +17466,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="290469496750297124" nodeInfo="nn">
-            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750297125" nodeInfo="nr">
-              <property name="name" nameId="tpck.1169194664001" value="f" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="290469496750297126" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750297127" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.2f" />
-              </node>
-            </node>
-          </node>
-          <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="290469496750298427" nodeInfo="nn">
-            <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750298428" nodeInfo="nr">
-              <property name="name" nameId="tpck.1169194664001" value="g" />
-              <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="290469496750298429" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750298430" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.2F" />
-              </node>
-            </node>
-          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="290469496750306546" nodeInfo="nn">
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750306547" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="h" />
@@ -17498,7 +17480,7 @@
               <property name="name" nameId="tpck.1169194664001" value="i" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="290469496750307850" nodeInfo="in" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750307851" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E4F" />
+                <property name="value" nameId="tpee.1113006610751" value="-1.23E4d" />
               </node>
             </node>
           </node>
@@ -17507,7 +17489,7 @@
               <property name="name" nameId="tpck.1169194664001" value="j" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="290469496750309160" nodeInfo="in" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750309161" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E-4F" />
+                <property name="value" nameId="tpee.1113006610751" value="-1.23E-4D" />
               </node>
             </node>
           </node>
@@ -17516,7 +17498,7 @@
               <property name="name" nameId="tpck.1169194664001" value="k" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.DoubleType" typeId="tpee.1070534513062" id="290469496750310476" nodeInfo="in" />
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750310477" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E+4F" />
+                <property name="value" nameId="tpee.1113006610751" value="-1.23E+4d" />
               </node>
             </node>
           </node>
@@ -17547,12 +17529,6 @@
                   </node>
                   <node role="initValue" roleId="tpee.1154542803372" type="tpee.VariableReference" typeId="tpee.1068498886296" id="290469496750303258" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="290469496750295840" resolveInfo="e" />
-                  </node>
-                  <node role="initValue" roleId="tpee.1154542803372" type="tpee.VariableReference" typeId="tpee.1068498886296" id="290469496750303273" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="290469496750297125" resolveInfo="f" />
-                  </node>
-                  <node role="initValue" roleId="tpee.1154542803372" type="tpee.VariableReference" typeId="tpee.1068498886296" id="290469496750304884" nodeInfo="nn">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="290469496750298428" resolveInfo="g" />
                   </node>
                   <node role="initValue" roleId="tpee.1154542803372" type="tpee.VariableReference" typeId="tpee.1068498886296" id="290469496750317080" nodeInfo="nn">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="290469496750306547" resolveInfo="h" />
@@ -17614,8 +17590,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333050" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="b" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750339879" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333052" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="1.2" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470439323" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="1.2f" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="290469496750368663" nodeInfo="ng">
                 <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="290469496750368664" nodeInfo="ng" />
@@ -17626,8 +17602,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333054" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="c" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750342522" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333056" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="1.2f" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470417284" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="1.2f" />
               </node>
             </node>
           </node>
@@ -17635,8 +17611,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333058" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="d" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750345215" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333060" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.2f" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470419163" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.2f" />
               </node>
             </node>
           </node>
@@ -17644,8 +17620,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333062" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="e" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750347964" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333064" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.2F" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470421207" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.2F" />
               </node>
             </node>
           </node>
@@ -17677,8 +17653,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333074" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="h" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750355738" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333076" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E4f" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470423351" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.23E4f" />
               </node>
             </node>
           </node>
@@ -17686,8 +17662,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333078" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="i" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750358717" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333080" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E4F" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470427368" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.23E4F" />
               </node>
             </node>
           </node>
@@ -17695,8 +17671,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333082" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="j" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750361316" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333084" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E-4F" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470431287" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.23E-4F" />
               </node>
             </node>
           </node>
@@ -17704,8 +17680,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333086" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="k" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750363965" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="290469496750333088" nodeInfo="nn">
-                <property name="value" nameId="tpee.1113006610751" value="-1.23E+4F" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470435305" nodeInfo="nn">
+                <property name="value" nameId="tpee.5279705229678483899" value="-1.23E+4F" />
               </node>
             </node>
           </node>
