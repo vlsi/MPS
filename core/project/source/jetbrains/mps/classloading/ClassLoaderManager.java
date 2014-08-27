@@ -331,7 +331,8 @@ public class ClassLoaderManager implements CoreComponent {
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.info("Reloading all modules");
-    Set<SModule> sModules = reloadModules(myRepository.getModules(), monitor);
+    Set<SModule> sModules = reloadModules(myRepository.getModules(), monitor.subTask(10));
+    loadAllPossibleClasses(monitor.subTask(1));
     LOG.info("Reloaded " + sModules.size() + " modules");
   }
 
