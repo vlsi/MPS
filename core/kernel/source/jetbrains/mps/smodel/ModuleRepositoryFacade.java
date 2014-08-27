@@ -181,7 +181,6 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
-    T registered = MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
-    return registered;
+    return MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
   }
 }
