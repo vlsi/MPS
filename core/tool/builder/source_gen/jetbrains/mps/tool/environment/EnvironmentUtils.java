@@ -83,10 +83,10 @@ public class EnvironmentUtils {
       }
       libraryPaths.add(new LibraryContributor.LibDescriptor(PathManager.getLanguagesPath(), null));
     }
-    libraryPaths.addAll(PathManager.getExtensionsPaths());
     for (String libName : libs.keySet()) {
       libraryPaths.add(new LibraryContributor.LibDescriptor(libs.get(libName).getAbsolutePath(), null));
     }
+    libraryPaths.addAll(PathManager.getExtensionsPaths());
     return new SetLibraryContributor(libraryPaths);
   }
   private static boolean isEmptyString(String str) {

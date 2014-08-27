@@ -115,6 +115,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
       }
     }
 
+    if (BootstrapLanguages.coreLanguage() == null)
+      throw new IllegalStateException("Repository is not in a valid state: core language is not present");
     dependencies.add(new SDependencyImpl(BootstrapLanguages.coreLanguage(), SDependencyScope.DEFAULT, true));
 
     return dependencies;
