@@ -25,9 +25,9 @@ import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.runtime.BaseStructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.StaticScope;
-import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.base.BaseConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import jetbrains.mps.util.NameUtil;
@@ -44,11 +44,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class StructureAspectInterpreted implements StructureAspectDescriptor, CoreComponent {
-  private Map<String, ConceptDescriptor> descriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
+public class StructureAspectInterpreted implements BaseStructureAspectDescriptor, CoreComponent {
+  private Map<String, ConceptDescriptor> myDescriptors = new ConcurrentHashMap<String, ConceptDescriptor>();
 
   //StructureAspectInterpreted is a singleton, so we can omit remove() here though the field is not static
-  private ThreadLocal<Set<String>> inLoad = new ThreadLocal<Set<String>>() {
+  private ThreadLocal<Set<String>> myInLoad = new ThreadLocal<Set<String>>() {
     @Override
     protected Set<String> initialValue() {
       return new HashSet<String>();
@@ -71,20 +71,25 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
   }
 
   @Override
+  public Set<ConceptDescriptor> getDescriptors() {
+    return new HashSet<ConceptDescriptor>(myDescriptors.values());
+  }
+
+  @Override
   public ConceptDescriptor getDescriptor(String fqName) {
-    ConceptDescriptor descriptor = descriptors.get(fqName);
+    ConceptDescriptor descriptor = myDescriptors.get(fqName);
 
     if (descriptor == null) {
-      if (inLoad.get().contains(fqName)) {
+      if (myInLoad.get().contains(fqName)) {
         return null;
       }
-      inLoad.get().add(fqName);
+      myInLoad.get().add(fqName);
       descriptor = new InterpretedConceptDescriptor(fqName);
       if (!((InterpretedConceptDescriptor) descriptor).isLegal) {
         descriptor = new IllegalConceptDescriptor(fqName);
       }
-      inLoad.get().remove(fqName);
-      descriptors.put(fqName, descriptor);
+      myInLoad.get().remove(fqName);
+      myDescriptors.put(fqName, descriptor);
     }
 
     return descriptor;
@@ -118,7 +123,7 @@ public class StructureAspectInterpreted implements StructureAspectDescriptor, Co
   }
 
   private void invalidateDescriptors() {
-    descriptors.clear();
+    myDescriptors.clear();
   }
 
   private class InterpretedConceptDescriptor extends BaseConceptDescriptor {

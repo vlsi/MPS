@@ -331,8 +331,8 @@ public class ClassLoaderManager implements CoreComponent {
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.info("Reloading all modules");
-    reloadModules(myRepository.getModules(), monitor);
-    loadAllPossibleClasses(new EmptyProgressMonitor());
+    Set<SModule> sModules = reloadModules(myRepository.getModules(), monitor);
+    LOG.info("Reloaded " + sModules.size() + " modules");
   }
 
   @Deprecated

@@ -65,6 +65,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleFacet;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -638,10 +639,13 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
     return myScope;
   }
 
-  public void attach() {
+  @Override
+  public void attach(@NotNull SRepository repository) {
+    super.attach(repository);
     if (myDescriptorFile != null) {
       FileSystem.getInstance().addListener(this);
     }
+    this.reloadAfterDescriptorChange();
   }
 
   @Override

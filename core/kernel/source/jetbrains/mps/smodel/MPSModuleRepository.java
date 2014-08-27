@@ -119,12 +119,10 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       myFqNameToModulesMap.put(moduleFqName, module);
     }
 
-    ((SModuleBase) module).attach(this);
-
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
-    ((AbstractModule) module).attach();
+    ((AbstractModule) module).attach(this);
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
     fireModuleAdded(module);

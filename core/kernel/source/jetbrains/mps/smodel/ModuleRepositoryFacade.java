@@ -182,10 +182,6 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
   private static <T extends AbstractModule> T registerModule(T module, MPSModuleOwner moduleOwner) {
     T registered = MPSModuleRepository.getInstance().registerModule(module, moduleOwner);
-    if (registered == module) {
-      // we can't do it in AbstractModule#attach because we need module without models in SRepositoryListener#moduleAdded event
-      registered.reloadAfterDescriptorChange();
-    }
     return registered;
   }
 }

@@ -142,16 +142,17 @@ public class ConceptDescendantsCache implements CoreComponent {
     if (structureDescriptor instanceof BaseStructureAspectDescriptor)
       return ((BaseStructureAspectDescriptor) structureDescriptor).getDescriptors();
     else
-      return doGetConceptsUsingStructureLanguage(languageRuntime, language, structureModel, structureDescriptor);
+      return doGetConceptsUsingStructureLanguage(language, structureModel, structureDescriptor);
   }
 
-  private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(LanguageRuntime languageRuntime, Language language,
+  private Set<ConceptDescriptor> doGetConceptsUsingStructureLanguage(Language language,
       org.jetbrains.mps.openapi.model.SModel structureModel,
       StructureAspectDescriptor structureDescriptor) {
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);
     if (abstractConceptDeclaration == null) {
-      LOG.error("Structure language is not loaded yet, cannot get all concepts from language " + languageRuntime, new Throwable());
+      LOG.error("The structure language is not loaded yet, cannot get all concepts from the language " +
+          "'" + language.getModuleName() + "'", new Throwable());
       return result;
     }
     for (SNode root : structureModel.getRootNodes()) {
