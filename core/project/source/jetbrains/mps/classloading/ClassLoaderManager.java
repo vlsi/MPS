@@ -40,15 +40,17 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
-// Current workflow: before any actions with module leading to the classes invalidation one should do two things:
-// 1) unload modules and remember successfully unloaded modules (@see unloadModules)
-// 2) change module(s)
-// 3) load all unloaded modules back (@see loadModules)
-// Main point: modules && modules repository knows nothing about class loading
-//
-// Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
-// to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
-// TODO: move to workbench
+/**
+ * Current workflow: before any actions with module leading to the classes invalidation one should do two things:
+ * 1) unload modules and remember successfully unloaded modules ({@link #unloadModules})
+ * 2) change module(s)
+ * 3) load all unloaded modules back ({@link #loadModules})
+ * Main point: modules && modules repository knows nothing about class loading
+
+ * Probably it's better to encapsulate the loading/unloading mechanism in this class, so that users of class only need
+ * to fire some reload (or another) event. (or call some reloadModules method only on the "dirty" modules)
+ * TODO: move to workbench
+ */
 public class ClassLoaderManager implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(ClassLoaderManager.class));
 
