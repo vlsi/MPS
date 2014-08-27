@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class FloatConstant_Test extends BaseTransformationTest {
-  public FloatConstant_Test() {
+public class FloatConstant1_Test extends BaseTransformationTest {
+  public FloatConstant1_Test() {
   }
   @Test
-  public void test_FloatConstant() throws Throwable {
+  public void test_FloatConstant1() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)");
-    this.runTest("jetbrains.mps.baseLanguage.test.FloatConstant_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.baseLanguage.test.FloatConstant1_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {

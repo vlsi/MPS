@@ -6291,8 +6291,8 @@ __switch__:
   private static Pattern REGEXP_x583g4_a0a0a0a2a0a0a0a2a0a1a33 = Pattern.compile("-?\\d+", 0);
   private static Pattern REGEXP_x583g4_a0a0a0a0c0a0a0a0c0a0b0hb = Pattern.compile("-?\\d*", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a2a33 = Pattern.compile("-?\\d+(?:l|L)", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a33 = Pattern.compile("(?:-?)\\d+\\.\\d*", 0);
-  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("(?:-?)\\d+.\\d*(?:f|F)", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a4a33 = Pattern.compile("-?[0-9]+\\.[0-9]*(?:[eE][\\-\\+]?[0-9]+)?[dD]?", 0);
+  private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a5a33 = Pattern.compile("-?[0-9]+\\.[0-9]*(?:[eE][\\-\\+]?[0-9]+)?[fF]", 0);
   private static Pattern REGEXP_x583g4_a0a0b0a0a0a0a0c0a0g0hb = Pattern.compile("\"([^\\\\\"]*)\"?", 0);
   private static Pattern REGEXP_x583g4_a0a0a2a0a0a0a2a0a6a33 = Pattern.compile("\"[^\\\\\"]*\"?", 0);
   private static <T> T as_x583g4_a0a1a0a0a0a0a1a262(Object o, Class<T> type) {
