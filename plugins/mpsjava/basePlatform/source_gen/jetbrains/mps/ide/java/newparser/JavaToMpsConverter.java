@@ -54,7 +54,6 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaToMpsConverter {
   private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
@@ -1081,8 +1079,7 @@ public class JavaToMpsConverter {
     try {
 
       if (myCreateInplace) {
-        Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
-        ModelRoot modelRoot = where._0();
+        ModelRoot modelRoot = getRootContainingDir(pkgDir);
         if (modelRoot == null) {
           LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
           return null;
@@ -1133,7 +1130,7 @@ public class JavaToMpsConverter {
     return null;
   }
 
-  private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
+  private ModelRoot getRootContainingDir(IFile dir) {
     // returns modelRoot and sourceRoot within 
     for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
       // or maybe more general: file based model root? 
@@ -1142,7 +1139,7 @@ public class JavaToMpsConverter {
       }
       for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
-          return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
+          return modelRoot;
         }
       }
     }
