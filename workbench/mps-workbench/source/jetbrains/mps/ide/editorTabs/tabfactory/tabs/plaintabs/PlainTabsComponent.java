@@ -210,10 +210,12 @@ public class PlainTabsComponent extends BaseTabsComponent {
             myRealTabs.add(pet);
             SNode node = pet.getNode().resolve(MPSModuleRepository.getInstance());
             myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+            myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
           }
         } else if (myShowGrayed) {
           myRealTabs.add(new PlainEditorTab(tab));
           myJbTabs.addTab(tab.getTitle(), fill);
+          myJbTabs.getTabs().getTabAt(myJbTabs.getTabs().getTabCount() - 1).setPreferredFocusableComponent(myEditor);
           myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
         }
       }

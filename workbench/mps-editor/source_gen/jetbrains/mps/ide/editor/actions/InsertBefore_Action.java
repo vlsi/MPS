@@ -69,8 +69,8 @@ public class InsertBefore_Action extends BaseAction {
     try {
       ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property) {
-            ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit();
+          if (((EditorCell) MapSequence.fromMap(_params).get("editorCell")) instanceof EditorCell_Property && ((EditorCell_Property) ((EditorCell) MapSequence.fromMap(_params).get("editorCell"))).commit()) {
+            return;
           }
           EditorActionUtils.callInsertBeforeAction(EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent"))));
         }
