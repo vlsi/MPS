@@ -31,8 +31,7 @@ import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.BasicFactory;
 import jetbrains.mps.generator.impl.GeneratorLoggerAdapter.RecordingFactory;
 import jetbrains.mps.generator.impl.IGenerationTaskPool.ITaskPoolProvider;
 import jetbrains.mps.generator.impl.TemplateGenerator.StepArguments;
-import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
-import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
+import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.Conflict;
@@ -75,7 +74,6 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -95,7 +93,7 @@ class GenerationSession {
   private final GenerationSessionLogger myLogger;
   private DependenciesBuilder myDependenciesBuilder;
 
-  private IntermediateModelsCache myNewCache;
+  private IntermediateCacheHelper myIntermediateCache;
   // != null unless session is abandoned/disposed
   private GenerationSessionContext mySessionContext;
   private final IPerformanceTracer ttrace;
@@ -143,16 +141,10 @@ class GenerationSession {
 
     monitor.start("", 1 + myGenerationPlan.getStepCount());
     try {
-      // generation parameters
-      final Map<String, Object> generationParameters;
-      if (parametersProvider != null) {
-        generationParameters = parametersProvider.getParameters(myOriginalInputModel);
-      } else {
-        generationParameters = null;
-      }
-
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, new ProjectOperationContext(myProject),
-          myGenerationOptions, myGenerationPlan.getSignature(), generationParameters, null);
+      // distinct helper instance to hold data from existing cache (myIntermediateCache keeps data of actual generation)
+      IntermediateCacheHelper cacheHelper = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myProject,
+          myGenerationOptions, cacheHelper, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
       if (incrementalHandler.canOptimize()) {
@@ -192,7 +184,8 @@ class GenerationSession {
 
       boolean success = false;
 
-      myNewCache = incrementalHandler.createNewCache();
+      myIntermediateCache = new IntermediateCacheHelper(myGenerationOptions.getIncrementalStrategy(), myGenerationPlan, ttrace);
+      myIntermediateCache.createNew(myOriginalInputModel);
       ttrace.pop();
       try {
         // prepare input model: make a clone so that rest of generator always works with transient model.
@@ -206,7 +199,7 @@ class GenerationSession {
         // Although this can be fixed in DFNF (not to sort, share impl for both FNF), it's still better to avoid possible differences.
         // Last, but not least, there's planned switch to GeneratorSNode/GeneratorSModel to facilitate model reconstruction from delta
         // and we'll need to switch to 'transient' (generator) model here anyway
-        mySessionContext = new GenerationSessionContext(mySessionContext, myGenerationPlan, generationParameters);
+        mySessionContext = new GenerationSessionContext(mySessionContext, myGenerationPlan);
         SModel currInputModel = createTransientModel("0");
         new CloneUtil(myOriginalInputModel, currInputModel).traceOriginalInput().cloneModelWithImports();
         // inform DependencyBuilder about new input model (now it keeps map based on instances, once it's nodeid (or it's gone), there'd be no need for):
@@ -274,13 +267,10 @@ class GenerationSession {
         myLogger.error("model \"" + myOriginalInputModel.getReference().getModelName() + "\" generation failed (see exception)");
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } finally {
-        if (myNewCache != null) {
-          if (success) {
-            myNewCache.store();
-          } else {
-            myNewCache.remove();
-          }
-          myLogger.info("time spent saving cache: " + myNewCache.getTimeSpent());
+        if (success) {
+          myIntermediateCache.commit();
+        } else {
+          myIntermediateCache.discard();
         }
       }
     } finally {
@@ -465,12 +455,8 @@ class GenerationSession {
     boolean hasChanges = tg.apply(progress, isPrimary);
     ttrace.pop();
     SModel outputModel = tg.getOutputModel();
-    if (myNewCache != null && (isPrimary || hasChanges)) {
-      ttrace.push("saving cache", false);
-      TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(outputModel, myDependenciesBuilder);
-      tg.getMappings().export(modelWithMetaInfo, myDependenciesBuilder);
-      myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
-      ttrace.pop();
+    if (isPrimary || hasChanges) {
+      myIntermediateCache.store(myMajorStep, myMinorStep, tg, myDependenciesBuilder);
     }
     return new Pair<Boolean, SModel>(hasChanges, outputModel);
   }
@@ -518,10 +504,7 @@ class GenerationSession {
       myDependenciesBuilder.scriptApplied(currentInputModel);
     }
     if (needToCloneInputModel) {
-      if (myNewCache != null) {
-        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentInputModel, myDependenciesBuilder);
-        myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
-      }
+      myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
       recycleWasteModel(toRecycle, false);
     }
     myLogger.info("pre-processing finished");
@@ -566,10 +549,7 @@ class GenerationSession {
     }
     myDependenciesBuilder.scriptApplied(currentModel);
     if (needToCloneModel) {
-      if (myNewCache != null) {
-        TransientModelWithMetainfo modelWithMetaInfo = TransientModelWithMetainfo.create(currentModel, myDependenciesBuilder);
-        myNewCache.store(myMajorStep, myMinorStep, modelWithMetaInfo);
-      }
+      myIntermediateCache.store(myMajorStep, myMinorStep, templateGenerator, myDependenciesBuilder);
       recycleWasteModel(toRecycle, false);
     }
     myLogger.info("post-processing finished");

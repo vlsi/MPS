@@ -93,6 +93,11 @@ public class NonIncrementalDependenciesBuilder implements DependenciesBuilder {
   }
 
   @Override
+  public TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings) {
+    return null;
+  }
+
+  @Override
   public boolean isStepRequired() {
     return false;
   }

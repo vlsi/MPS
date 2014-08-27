@@ -21,7 +21,7 @@ import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.impl.GenerationFailureException;
 import jetbrains.mps.generator.impl.GeneratorMappings;
 import jetbrains.mps.generator.impl.cache.BrokenCacheException;
-import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
+import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.cache.MappingsMemento;
 import jetbrains.mps.generator.impl.cache.TransientModelWithMetainfo;
 import jetbrains.mps.smodel.IOperationContext;
@@ -57,7 +57,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private final Map<SNode, RootDependenciesBuilder> myRootBuilders = new HashMap<SNode, RootDependenciesBuilder>();
   private final String myModelHash;
   private final String myParametersHash;
-  private final IntermediateModelsCache myCache;
+  private final IntermediateCacheHelper myCache;
   private RootDependenciesBuilder myConditionalsBuilder;
   private RootDependenciesBuilder[] myAllBuilders;
 
@@ -78,7 +78,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   private Map<String, SNode> myRequiredSet;
 
   public IncrementalDependenciesBuilder(SModel originalInputModel, @Nullable Map<String, String> generationHashes,
-                      String parametersHash, IntermediateModelsCache cache) {
+                      String parametersHash, IntermediateCacheHelper cache) {
     this.originalInputModel = currentInputModel = originalInputModel;
     myParametersHash = parametersHash;
     myCache = cache;
@@ -261,9 +261,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   /* working with cache */
 
   private void loadCachedModel() throws BrokenCacheException {
-    // TODO if(myMinorStep >= stepCount) copy from current input model
-    int stepsCount = myCache.getMinorCount(myMajorStep);
-    TransientModelWithMetainfo model = myCache.load(myMajorStep, myMinorStep >= stepsCount ? stepsCount - 1 : myMinorStep, currentOutputModel.getReference());
+    TransientModelWithMetainfo model = myCache.retrieve(myMajorStep, myMinorStep, currentOutputModel.getReference());
     if (model == null) {
       throw new BrokenCacheException(currentOutputModel);
     }
@@ -272,7 +270,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public boolean isStepRequired() {
-    return myCache != null && myMinorStep < myCache.getMinorCount(myMajorStep);
+    return myCache.isStepCovered(myMajorStep, myMinorStep);
   }
 
   @Override
@@ -312,7 +310,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   @Override
   public void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException {
-    if (myCache == null || myUnchangedSet.isEmpty() || currentOutputModel == null /* do not update after script */) {
+    if (!myCache.hasCache() || myUnchangedSet.isEmpty() || currentOutputModel == null /* do not update after script */) {
       return;
     }
 
@@ -331,5 +329,12 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
         }
       }
     }
+  }
+
+  @Override
+  public TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings) throws GenerationFailureException {
+    TransientModelWithMetainfo rv = TransientModelWithMetainfo.create(model, this);
+    mappings.export(rv, this);
+    return rv;
   }
 }
