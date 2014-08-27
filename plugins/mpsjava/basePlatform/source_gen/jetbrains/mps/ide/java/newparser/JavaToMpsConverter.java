@@ -1015,7 +1015,7 @@ public class JavaToMpsConverter {
       SNode source = ref.getSourceNode();
       SModelReference targetModel = target.getModel().getReference();
 
-      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId());
+      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId(), ((DynamicReference) ref).getResolveInfo());
 
       List<SReference> nodeRefs = MapSequence.fromMap(result).get(source.getReference());
       if (nodeRefs == null) {
