@@ -239,7 +239,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     for (SModuleReference ref : existingModules) {
       super.removeModule(ref);
     }
-    ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   private void error(String text) {
@@ -267,7 +266,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   public void update() {
     ModuleRepositoryFacade.getInstance().unregisterModules(this);
-
     readModules();
     ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
   }
