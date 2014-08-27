@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="10,0,23,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
+      <unit at="16,0,61,0" name="jetbrains.mps.make.outlook.structure.StructureAspectDescriptor" />
     </file>
   </root>
 </debug-info>
