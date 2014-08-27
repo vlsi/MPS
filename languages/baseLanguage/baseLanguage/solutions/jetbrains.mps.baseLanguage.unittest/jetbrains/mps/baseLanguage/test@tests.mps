@@ -17590,8 +17590,8 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="290469496750333050" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="b" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.FloatType" typeId="tpee.1070534436861" id="290469496750339879" nodeInfo="in" />
-              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointFloatConstant" typeId="tpee.5279705229678483897" id="8551480281470439323" nodeInfo="nn">
-                <property name="value" nameId="tpee.5279705229678483899" value="1.2f" />
+              <node role="initializer" roleId="tpee.1068431790190" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="8551480281470981822" nodeInfo="nn">
+                <property name="value" nameId="tpee.1113006610751" value="1.2" />
               </node>
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.NodeOperationsContainer" typeId="tp5g.1215603922101" id="290469496750368663" nodeInfo="ng">
                 <node role="nodeOperations" roleId="tp5g.1215604436604" type="tp5g.NodeErrorCheckOperation" typeId="tp5g.1215507671101" id="290469496750368664" nodeInfo="ng" />
