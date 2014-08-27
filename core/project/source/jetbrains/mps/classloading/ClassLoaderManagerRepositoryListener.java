@@ -61,7 +61,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
       LOG.debug("the module was not loaded so no need to reload dependencies");
       return;
     }
-//    reloadDeps(module);
+    reloadDeps(module);
 
     LOG.debug("after adding " + module);
   }
@@ -75,8 +75,8 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
 
   private void reloadDeps(SModule module) {
     Set<SModule> backDependencies = collectBackDependencies(module);
-    myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
-    myClassLoaderManager.loadModules(backDependencies, new EmptyProgressMonitor());
+    Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
+    myClassLoaderManager.loadModules(unloadedModules, new EmptyProgressMonitor());
   }
 
   private Set<SModule> collectBackDependencies(SModule module) {
