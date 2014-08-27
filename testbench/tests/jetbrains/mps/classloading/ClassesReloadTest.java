@@ -15,67 +15,41 @@
  */
 package jetbrains.mps.classloading;
 
-import jetbrains.mps.RuntimeFlags;
-import jetbrains.mps.TestMode;
 import jetbrains.mps.WorkbenchMpsTest;
-import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.tool.environment.ActiveEnvironment;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.tool.builder.util.PathManager;
+import org.junit.Assert;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.junit.Test;
 
 import java.io.File;
+import java.util.List;
 
-// todo: fix/use this tests?
 public class ClassesReloadTest extends WorkbenchMpsTest {
-  //  @Test
-  public static boolean testProjectReloadForLeaks(File projectFile) {
-    RuntimeFlags.setTestMode(TestMode.USUAL);
-    return testProjectReloadForLeaks(projectFile, 1000);
-  }
+  private static final String PROJECT_PATH = PathManager.getHomePath();
 
-  //  @Test
-  public static boolean testProjectReloadForLeaks(final File projectFile, int leakThreshold) {
-    return testActionForLeaks(new Runnable() {
+  @Test
+  public void ClassesAreLoaded() {
+    Project project = openProject(new File(PROJECT_PATH));
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
       public void run() {
-        Project project = ActiveEnvironment.getInstance().openProject(projectFile);
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        project.dispose();
+        List<SModule> wrongReloadableModules = new LinkedList<SModule>();
+        ClassLoaderManager classLoaderManager = ClassLoaderManager.getInstance();
+        for (SModule module : MPSModuleRepository.getInstance().getModules()) {
+          if (classLoaderManager.canLoad(module))
+            if (classLoaderManager.getClassLoader(module) == null)
+              wrongReloadableModules.add(module);
+        }
+        Assert.assertTrue("No class loader for modules:", wrongReloadableModules.isEmpty());
+        for (SModule module : wrongReloadableModules)
+          System.err.println(module.getModuleName());
       }
-    }, leakThreshold);
+    });
+    disposeProject(project);
   }
 
-  public static boolean testActionForLeaks(Runnable action, int leakThreshold) {
-    action.run();
-    gc();
-    allowToCreateASnapshot();
-    long memory = usedMemory();
-    action.run();
-    gc();
-    allowToCreateASnapshot();
-    long delta = usedMemory() - memory;
-    System.out.println("delta = " + delta);
-    if (delta > leakThreshold * 1000) {
-      System.out.println(delta + " bytes leaked");
-      return false;
-    }
-    return true;
-  }
-
-  private static void allowToCreateASnapshot() {
-    // try {
-    // System.out.println("take a snapshot!!!!");
-    // Thread.sleep(30000);
-    // } catch (Throwable t) {
-    // t.printStackTrace();
-    // }
-  }
-
-  private static void gc() {
-    for (int i = 0; i < 5; i++) {
-      System.gc();
-    }
-  }
-
-  private static long usedMemory() {
-    return Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-  }
 }
