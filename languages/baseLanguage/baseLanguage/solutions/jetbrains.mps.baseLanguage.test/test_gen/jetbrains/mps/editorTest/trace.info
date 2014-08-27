@@ -8315,6 +8315,182 @@
       <unit id="8547191361978792978" at="10,0,30,0" name="jetbrains.mps.editorTest.DeleteClosingCurlyBrace_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281481326446">
+    <file name="MissingTypeFocus1_Test.java">
+      <node id="8551480281481326446" at="15,57,16,107" concept="2" />
+      <node id="8551480281481326446" at="16,107,17,98" concept="2" />
+      <node id="8551480281481326446" at="24,51,25,63" concept="2" />
+      <node id="8551480281481326455" at="25,63,26,40" concept="2" />
+      <node id="8551480281481326446" at="12,0,14,0" concept="1" trace="MissingTypeFocus1_Test#()V" />
+      <node id="8551480281481326446" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281481326446" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus1#()V" />
+      <node id="8551480281481326446" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281481326446" at="12,35,12,35" />
+      <scope id="8551480281481326446" at="21,23,21,23" />
+      <scope id="8551480281481326446" at="12,0,14,0" />
+      <scope id="8551480281481326446" at="15,57,17,98" />
+      <scope id="8551480281481326446" at="21,0,23,0" />
+      <scope id="8551480281481326446" at="24,51,26,40" />
+      <scope id="8551480281481326446" at="14,0,19,0" />
+      <scope id="8551480281481326446" at="23,0,28,0" />
+      <unit id="8551480281481326446" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus1_Test$TestBody" />
+      <unit id="8551480281481326446" at="10,0,30,0" name="jetbrains.mps.editorTest.MissingTypeFocus1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281481354035">
+    <file name="MissingTypeFocus2_Test.java">
+      <node id="8551480281481354035" at="15,57,16,107" concept="2" />
+      <node id="8551480281481354035" at="16,107,17,98" concept="2" />
+      <node id="8551480281481354035" at="24,51,25,63" concept="2" />
+      <node id="8551480281481354046" at="25,63,26,44" concept="2" />
+      <node id="8551480281481354035" at="12,0,14,0" concept="1" trace="MissingTypeFocus2_Test#()V" />
+      <node id="8551480281481354035" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281481354035" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus2#()V" />
+      <node id="8551480281481354035" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281481354035" at="12,35,12,35" />
+      <scope id="8551480281481354035" at="21,23,21,23" />
+      <scope id="8551480281481354035" at="12,0,14,0" />
+      <scope id="8551480281481354035" at="15,57,17,98" />
+      <scope id="8551480281481354035" at="21,0,23,0" />
+      <scope id="8551480281481354035" at="24,51,26,44" />
+      <scope id="8551480281481354035" at="14,0,19,0" />
+      <scope id="8551480281481354035" at="23,0,28,0" />
+      <unit id="8551480281481354035" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus2_Test$TestBody" />
+      <unit id="8551480281481354035" at="10,0,30,0" name="jetbrains.mps.editorTest.MissingTypeFocus2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281481356375">
+    <file name="MissingTypeFocus3_Test.java">
+      <node id="8551480281481356375" at="15,57,16,107" concept="2" />
+      <node id="8551480281481356375" at="16,107,17,98" concept="2" />
+      <node id="8551480281481356375" at="24,51,25,63" concept="2" />
+      <node id="8551480281481356386" at="25,63,26,36" concept="2" />
+      <node id="8551480281481356375" at="12,0,14,0" concept="1" trace="MissingTypeFocus3_Test#()V" />
+      <node id="8551480281481356375" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281481356375" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus3#()V" />
+      <node id="8551480281481356375" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281481356375" at="12,35,12,35" />
+      <scope id="8551480281481356375" at="21,23,21,23" />
+      <scope id="8551480281481356375" at="12,0,14,0" />
+      <scope id="8551480281481356375" at="15,57,17,98" />
+      <scope id="8551480281481356375" at="21,0,23,0" />
+      <scope id="8551480281481356375" at="24,51,26,36" />
+      <scope id="8551480281481356375" at="14,0,19,0" />
+      <scope id="8551480281481356375" at="23,0,28,0" />
+      <unit id="8551480281481356375" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus3_Test$TestBody" />
+      <unit id="8551480281481356375" at="10,0,30,0" name="jetbrains.mps.editorTest.MissingTypeFocus3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281481357223">
+    <file name="MissingTypeFocus4_Test.java">
+      <node id="8551480281481357223" at="15,57,16,107" concept="2" />
+      <node id="8551480281481357223" at="16,107,17,98" concept="2" />
+      <node id="8551480281481357223" at="24,51,25,63" concept="2" />
+      <node id="8551480281481357233" at="25,63,26,43" concept="2" />
+      <node id="8551480281481357223" at="12,0,14,0" concept="1" trace="MissingTypeFocus4_Test#()V" />
+      <node id="8551480281481357223" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281481357223" at="14,0,19,0" concept="5" trace="test_MissingTypeFocus4#()V" />
+      <node id="8551480281481357223" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281481357223" at="12,35,12,35" />
+      <scope id="8551480281481357223" at="21,23,21,23" />
+      <scope id="8551480281481357223" at="12,0,14,0" />
+      <scope id="8551480281481357223" at="15,57,17,98" />
+      <scope id="8551480281481357223" at="21,0,23,0" />
+      <scope id="8551480281481357223" at="24,51,26,43" />
+      <scope id="8551480281481357223" at="14,0,19,0" />
+      <scope id="8551480281481357223" at="23,0,28,0" />
+      <unit id="8551480281481357223" at="19,0,29,0" name="jetbrains.mps.editorTest.MissingTypeFocus4_Test$TestBody" />
+      <unit id="8551480281481357223" at="10,0,30,0" name="jetbrains.mps.editorTest.MissingTypeFocus4_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281493451611">
+    <file name="CorrectTypeFocus1_Test.java">
+      <node id="8551480281493451611" at="15,57,16,107" concept="2" />
+      <node id="8551480281493451611" at="16,107,17,98" concept="2" />
+      <node id="8551480281493451611" at="24,51,25,63" concept="2" />
+      <node id="8551480281493451622" at="25,63,26,44" concept="2" />
+      <node id="8551480281493451611" at="12,0,14,0" concept="1" trace="CorrectTypeFocus1_Test#()V" />
+      <node id="8551480281493451611" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281493451611" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus1#()V" />
+      <node id="8551480281493451611" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281493451611" at="12,35,12,35" />
+      <scope id="8551480281493451611" at="21,23,21,23" />
+      <scope id="8551480281493451611" at="12,0,14,0" />
+      <scope id="8551480281493451611" at="15,57,17,98" />
+      <scope id="8551480281493451611" at="21,0,23,0" />
+      <scope id="8551480281493451611" at="24,51,26,44" />
+      <scope id="8551480281493451611" at="14,0,19,0" />
+      <scope id="8551480281493451611" at="23,0,28,0" />
+      <unit id="8551480281493451611" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus1_Test$TestBody" />
+      <unit id="8551480281493451611" at="10,0,30,0" name="jetbrains.mps.editorTest.CorrectTypeFocus1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281493452202">
+    <file name="CorrectTypeFocus2_Test.java">
+      <node id="8551480281493452202" at="15,57,16,107" concept="2" />
+      <node id="8551480281493452202" at="16,107,17,98" concept="2" />
+      <node id="8551480281493452202" at="24,51,25,63" concept="2" />
+      <node id="8551480281493452214" at="25,63,26,42" concept="2" />
+      <node id="8551480281493452202" at="12,0,14,0" concept="1" trace="CorrectTypeFocus2_Test#()V" />
+      <node id="8551480281493452202" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281493452202" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus2#()V" />
+      <node id="8551480281493452202" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281493452202" at="12,35,12,35" />
+      <scope id="8551480281493452202" at="21,23,21,23" />
+      <scope id="8551480281493452202" at="12,0,14,0" />
+      <scope id="8551480281493452202" at="15,57,17,98" />
+      <scope id="8551480281493452202" at="21,0,23,0" />
+      <scope id="8551480281493452202" at="24,51,26,42" />
+      <scope id="8551480281493452202" at="14,0,19,0" />
+      <scope id="8551480281493452202" at="23,0,28,0" />
+      <unit id="8551480281493452202" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus2_Test$TestBody" />
+      <unit id="8551480281493452202" at="10,0,30,0" name="jetbrains.mps.editorTest.CorrectTypeFocus2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281493456248">
+    <file name="CorrectTypeFocus3_Test.java">
+      <node id="8551480281493456248" at="15,57,16,107" concept="2" />
+      <node id="8551480281493456248" at="16,107,17,98" concept="2" />
+      <node id="8551480281493456248" at="24,51,25,63" concept="2" />
+      <node id="8551480281493456260" at="25,63,26,34" concept="2" />
+      <node id="8551480281493456248" at="12,0,14,0" concept="1" trace="CorrectTypeFocus3_Test#()V" />
+      <node id="8551480281493456248" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281493456248" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus3#()V" />
+      <node id="8551480281493456248" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281493456248" at="12,35,12,35" />
+      <scope id="8551480281493456248" at="21,23,21,23" />
+      <scope id="8551480281493456248" at="12,0,14,0" />
+      <scope id="8551480281493456248" at="15,57,17,98" />
+      <scope id="8551480281493456248" at="21,0,23,0" />
+      <scope id="8551480281493456248" at="24,51,26,34" />
+      <scope id="8551480281493456248" at="14,0,19,0" />
+      <scope id="8551480281493456248" at="23,0,28,0" />
+      <unit id="8551480281493456248" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus3_Test$TestBody" />
+      <unit id="8551480281493456248" at="10,0,30,0" name="jetbrains.mps.editorTest.CorrectTypeFocus3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8551480281493456587">
+    <file name="CorrectTypeFocus4_Test.java">
+      <node id="8551480281493456587" at="15,57,16,107" concept="2" />
+      <node id="8551480281493456587" at="16,107,17,98" concept="2" />
+      <node id="8551480281493456587" at="24,51,25,63" concept="2" />
+      <node id="8551480281493456598" at="25,63,26,41" concept="2" />
+      <node id="8551480281493456587" at="12,0,14,0" concept="1" trace="CorrectTypeFocus4_Test#()V" />
+      <node id="8551480281493456587" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8551480281493456587" at="14,0,19,0" concept="5" trace="test_CorrectTypeFocus4#()V" />
+      <node id="8551480281493456587" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8551480281493456587" at="12,35,12,35" />
+      <scope id="8551480281493456587" at="21,23,21,23" />
+      <scope id="8551480281493456587" at="12,0,14,0" />
+      <scope id="8551480281493456587" at="15,57,17,98" />
+      <scope id="8551480281493456587" at="21,0,23,0" />
+      <scope id="8551480281493456587" at="24,51,26,41" />
+      <scope id="8551480281493456587" at="14,0,19,0" />
+      <scope id="8551480281493456587" at="23,0,28,0" />
+      <unit id="8551480281493456587" at="19,0,29,0" name="jetbrains.mps.editorTest.CorrectTypeFocus4_Test$TestBody" />
+      <unit id="8551480281493456587" at="10,0,30,0" name="jetbrains.mps.editorTest.CorrectTypeFocus4_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8630667313531347630">
     <file name="EditorCellSomeProblem_Test.java">
       <node id="8630667313531347630" at="15,61,16,107" concept="2" />
