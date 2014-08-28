@@ -839,6 +839,7 @@
   <root type="53vh.MigrationScript" typeId="53vh.4436301628118948495" id="1309355481571154599" nodeInfo="ng">
     <property name="fromVersion" nameId="53vh.4436301628118948497" value="0" />
     <property name="name" nameId="tpck.1169194664001" value="Migration" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <node role="dataType" roleId="53vh.586712031919708271" type="tpee.VoidType" typeId="tpee.1068581517677" id="1309355481571167168" nodeInfo="in" />
     <node role="body" roleId="53vh.4436301628118948496" type="53vh.MigrationScriptBody" typeId="53vh.3735414794051308106" id="1309355481571154603" nodeInfo="ng">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1309355481571154605" nodeInfo="sn">
@@ -995,6 +996,7 @@
   </root>
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="1309355481570199266" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="ext" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="1309355481571539974" nodeInfo="ng">
       <link role="template" roleId="tpf8.1167514355421" targetNodeId="1309355481571154599" resolveInfo="Migration" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="53vh.5512160570054200384" resolveInfo="PatternMigrationScript" />
@@ -1003,6 +1005,7 @@
   <root type="tpf8.MappingConfiguration" typeId="tpf8.1095416546421" id="8866965183499244460" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="pattern" />
     <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1309355481571296710" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="53vh.5512160570054200382" resolveInfo="MigrationsPatternVariableReference" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1309355481571296711" nodeInfo="nn">
@@ -1012,6 +1015,7 @@
   </root>
   <root type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1309355481571296708" nodeInfo="ng">
     <property name="name" nameId="tpck.1169194664001" value="reduce_MigrationsPatternVariableReference" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="53vh.5512160570054200382" resolveInfo="MigrationsPatternVariableReference" />
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="1309355481571296726" nodeInfo="ig">
       <property name="name" nameId="tpck.1169194664001" value="migrate" />

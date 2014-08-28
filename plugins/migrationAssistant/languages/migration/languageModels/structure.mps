@@ -141,6 +141,7 @@
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5512160570054200382" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationsPatternVariableReference" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5512160570054200383" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -152,6 +153,7 @@
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5512160570054200384" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="PatternMigrationScript" />
     <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1309355481571392446" resolveInfo="AbstractMigrationScript" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5512160570054200385" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

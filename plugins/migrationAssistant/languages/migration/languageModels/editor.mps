@@ -336,6 +336,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5512160570054200418" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="53vh.5512160570054200382" resolveInfo="MigrationsPatternVariableReference" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_RefCell" typeId="tpc2.1088013125922" id="5512160570054200419" nodeInfo="ng">
       <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="53vh.5512160570054200383" />
@@ -354,6 +355,7 @@
     </node>
   </root>
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="5512160570054200424" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="ext" />
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="53vh.5512160570054200384" resolveInfo="PatternMigrationScript" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="5512160570054200425" nodeInfo="nn">
       <node role="cellLayout" roleId="tpc2.1106270802874" type="tpc2.CellLayout_Indent" typeId="tpc2.1237303669825" id="5512160570054200426" nodeInfo="nn" />
