@@ -27,7 +27,7 @@ import org.apache.log4j.LogManager;
 
 public class MigrationsUtil {
 
-  public static final String MIGRATIONS_MODEL_NAME = "migrations";
+  public static final String MIGRATIONS_MODEL_NAME = "migration";
 
   public static String getMigrationModelName(SModule module) {
     return module.getModuleName() + "." + MIGRATIONS_MODEL_NAME;
