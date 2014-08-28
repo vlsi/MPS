@@ -162,8 +162,8 @@ public class FullASTConverter extends ASTConverter {
 
   @Override
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
-    addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
-    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatementsOf(x, SLinkOperations.getTarget(result, "body", true))));
+    // <node> 
+    convertStatementsInto(x, SLinkOperations.getTarget(result, "body", true));
   }
 
 
@@ -226,7 +226,7 @@ public class FullASTConverter extends ASTConverter {
     return result;
   }
 
-  public List<SNode> convertStatementsOf(AbstractMethodDeclaration x, SNode bodyInto) throws JavaParseException {
+  public void convertStatementsInto(AbstractMethodDeclaration x, SNode bodyInto) throws JavaParseException {
     addBlock(bodyInto, x.declarationSourceStart, x.declarationSourceEnd);
 
     List<SNode> stmts = convertStatements(x.statements);
@@ -241,7 +241,8 @@ public class FullASTConverter extends ASTConverter {
       }
     }
 
-    return stmts;
+    ListSequence.fromList(SLinkOperations.getTargets(bodyInto, "statement", true)).addSequence(ListSequence.fromList(stmts));
+    // <node> 
   }
 
   public SNode convertExpressionWrap(Expression expression) throws JavaParseException {

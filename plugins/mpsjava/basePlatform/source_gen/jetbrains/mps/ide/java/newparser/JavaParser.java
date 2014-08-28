@@ -18,17 +18,17 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -93,6 +93,7 @@ public class JavaParser {
           }
           resultNodes = roots;
         }
+        attachComments(source, converter, util.recordedParsingInformation);
 
         // there may be no types and still no compilation errors 
         // e.g. package-info.java only includes 'package pkg'; 
@@ -113,6 +114,7 @@ public class JavaParser {
         if (astNodes != null && astNodes.length > 0) {
           resultNodes = converter.convertClassContents(astNodes, context);
         }
+        attachComments(source, converter, util.recordedParsingInformation);
 
         break;
 
@@ -124,12 +126,19 @@ public class JavaParser {
         }
 
         Statement[] stmts = absMethod.statements;
-        // <node> 
 
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
           SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-          resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
+          ((FullASTConverter) converter).convertStatementsInto(absMethod, stmtList);
+          attachComments(source, converter, util.recordedParsingInformation);
+          resultNodes = ListSequence.fromList(new ArrayList<SNode>());
+          // stmtList may have new statements (comments) by now, after attachComments 
+          for (SNode stmt : ListSequence.fromList(SLinkOperations.getTargets(stmtList, "statement", true))) {
+            SNodeOperations.deleteNode(stmt);
+            ListSequence.fromList(resultNodes).addElement(stmt);
+          }
+
         }
 
         break;
@@ -137,9 +146,6 @@ public class JavaParser {
       default:
         throw new IllegalArgumentException("Parsing other than class and statements is not supported yet ");
     }
-
-    // now insert comments 
-    attachComments(source, converter, util.recordedParsingInformation);
 
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
