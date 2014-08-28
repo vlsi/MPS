@@ -362,154 +362,159 @@
       <node id="5073169472575947719" at="28,0,29,0" concept="5" trace="SMODEL_NAMESPACE" />
       <node id="5073169472575947659" at="29,0,30,0" concept="5" trace="STRUCTURE_NAMESPACE" />
       <node id="5073169472575947715" at="30,0,31,0" concept="5" trace="STUBS_NAMESPACE" />
-      <node id="5073169472575947707" at="31,0,32,0" concept="5" trace="TEST_NAMESPACE" />
-      <node id="5073169472575947711" at="32,0,33,0" concept="5" trace="TEXT_GEN_NAMESPACE" />
-      <node id="5073169472575947679" at="33,0,34,0" concept="5" trace="TYPESYSTEM_NAMESPACE" />
-      <node id="5073169472575947628" at="34,0,35,0" concept="5" trace="BASE_LANGUAGE_NAMESPACE" />
-      <node id="5073169472575947640" at="35,0,36,0" concept="5" trace="COLLECTIONS_NAMESPACE" />
-      <node id="5073169472575947651" at="36,0,37,0" concept="5" trace="CLOSURES_NAMESPACE" />
-      <node id="5073169472575947655" at="37,0,38,0" concept="5" trace="TUPLES_NAMESPACE" />
-      <node id="7607819906769898451" at="38,0,39,0" concept="5" trace="UNITTEST_NAMESPACE" />
-      <node id="6583857619485986676" at="39,0,40,0" concept="5" trace="DEVKIT_GENERAL_NAMESPACE" />
-      <node id="6583857619485986680" at="40,0,41,0" concept="5" trace="DEVKIT_BOOTSTRAP_NAMESPACE" />
-      <node id="6583857619485986684" at="41,0,42,0" concept="5" trace="DEVKIT_LANGUAGE_DESIGN_NAMESPACE" />
-      <node id="6694894568522585581" at="42,0,43,0" concept="5" trace="JDK_NAMESPACE" />
-      <node id="2140928436687214082" at="43,0,44,0" concept="5" trace="concept_baseLanguage_Annotation" />
-      <node id="2140928436687214089" at="44,0,45,0" concept="5" trace="concept_baseLanguage_ClassConcept" />
-      <node id="2140928436687214093" at="45,0,46,0" concept="5" trace="concept_baseLanguage_EnumClass" />
-      <node id="2140928436687214097" at="46,0,47,0" concept="5" trace="concept_baseLanguage_Interface" />
-      <node id="4116271674853115988" at="47,0,48,0" concept="5" trace="concept_generator_MappingConfiguration" />
-      <node id="7265317596961650074" at="49,0,50,0" concept="5" trace="descriptorLanguage" />
-      <node id="7265317596961657095" at="50,0,51,0" concept="5" trace="projectLanguage" />
-      <node id="7265317596961659389" at="51,0,52,0" concept="5" trace="coreLanguage" />
-      <node id="7265317596961660073" at="52,0,53,0" concept="5" trace="structureLanguage" />
-      <node id="7265317596961660428" at="53,0,54,0" concept="5" trace="editorLanguage" />
-      <node id="7265317596961660815" at="54,0,55,0" concept="5" trace="actionsLanguage" />
-      <node id="7265317596961661178" at="55,0,56,0" concept="5" trace="constraintsLanguage" />
-      <node id="7265317596961661733" at="56,0,57,0" concept="5" trace="behaviorLanguage" />
-      <node id="7265317596961662104" at="57,0,58,0" concept="5" trace="typesystemLanguage" />
-      <node id="7265317596961664842" at="58,0,59,0" concept="5" trace="baseLanguage" />
-      <node id="7265317596961665451" at="59,0,60,0" concept="5" trace="jdkModule" />
-      <node id="6955116391926974405" at="63,41,64,197" concept="4" />
-      <node id="6955116391926999211" at="66,43,67,196" concept="4" />
-      <node id="6955116391927015033" at="69,48,70,209" concept="4" />
-      <node id="6955116391927016428" at="72,46,73,199" concept="4" />
-      <node id="6747202917396754705" at="75,53,76,217" concept="4" />
-      <node id="6955116391927019081" at="78,56,79,220" concept="4" />
-      <node id="6955116391927021236" at="81,41,82,194" concept="4" />
-      <node id="6747202917396756208" at="84,40,85,200" concept="4" />
-      <node id="6747202917395539956" at="87,58,88,30" concept="4" />
-      <node id="6747202917396750969" at="90,55,91,27" concept="4" />
-      <node id="6747202917396764527" at="93,52,94,24" concept="4" />
-      <node id="4173418906129874620" at="96,57,97,29" concept="4" />
-      <node id="4173418906129874867" at="99,54,100,26" concept="4" />
-      <node id="4173418906129875110" at="102,55,103,27" concept="4" />
-      <node id="4173418906129875359" at="105,59,106,31" concept="4" />
-      <node id="4173418906129875614" at="108,56,109,28" concept="4" />
-      <node id="4173418906129875875" at="111,58,112,30" concept="4" />
-      <node id="9198229506099365909" at="114,52,115,24" concept="4" />
-      <node id="4173418906129876142" at="117,59,118,137" concept="4" />
-      <node id="4173418906129876415" at="120,54,121,132" concept="4" />
-      <node id="4173418906129876694" at="123,58,124,136" concept="4" />
-      <node id="4173418906129876979" at="126,58,127,136" concept="4" />
-      <node id="4173418906129887660" at="129,54,130,132" concept="4" />
-      <node id="4173418906129887957" at="132,56,133,134" concept="4" />
-      <node id="4173418906129888260" at="135,52,136,130" concept="4" />
-      <node id="4173418906129968039" at="138,55,139,133" concept="4" />
-      <node id="4173418906129888569" at="141,53,142,131" concept="4" />
-      <node id="4173418906129968441" at="144,56,145,142" concept="4" />
-      <node id="9198229506099365566" at="147,43,148,21" concept="4" />
-      <node id="5073169472575923462" at="61,0,63,0" concept="0" trace="BootstrapLanguages#()V" />
-      <node id="5073169472575923466" at="63,0,66,0" concept="6" trace="baseLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="5073169472575923472" at="66,0,69,0" concept="6" trace="smodelLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="5073169472575923478" at="69,0,72,0" concept="6" trace="collectionsLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="5073169472575923484" at="72,0,75,0" concept="6" trace="generatorLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="6747202917396754701" at="75,0,78,0" concept="6" trace="generatorContextLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="263434549788685386" at="78,0,81,0" concept="6" trace="generatorParametersLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="5375364354070859437" at="81,0,84,0" concept="6" trace="coreLanguage#()Ljetbrains/mps/smodel/Language;" />
-      <node id="6747202917396756204" at="84,0,87,0" concept="6" trace="generalDevKit#()Ljetbrains/mps/project/DevKit;" />
-      <node id="6747202917395539741" at="87,0,90,0" concept="6" trace="descriptorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="6747202917396750967" at="90,0,93,0" concept="6" trace="projectLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="6747202917396764525" at="93,0,96,0" concept="6" trace="coreLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129874618" at="96,0,99,0" concept="6" trace="structureLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129874865" at="99,0,102,0" concept="6" trace="editorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129875108" at="102,0,105,0" concept="6" trace="actionsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129875357" at="105,0,108,0" concept="6" trace="constraintsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129875612" at="108,0,111,0" concept="6" trace="behaviorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129875873" at="111,0,114,0" concept="6" trace="typesystemLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="9198229506099365907" at="114,0,117,0" concept="6" trace="baseLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129876140" at="117,0,120,0" concept="6" trace="refactoringLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129876413" at="120,0,123,0" concept="6" trace="scriptLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129876692" at="123,0,126,0" concept="6" trace="intentionsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129876977" at="126,0,129,0" concept="6" trace="findUsagesLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129887658" at="129,0,132,0" concept="6" trace="pluginLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129887955" at="132,0,135,0" concept="6" trace="dataFlowLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129888258" at="135,0,138,0" concept="6" trace="testLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129968037" at="138,0,141,0" concept="6" trace="textGenLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129888567" at="141,0,144,0" concept="6" trace="stubsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="4173418906129968439" at="144,0,147,0" concept="6" trace="unitTestLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <node id="9198229506099365564" at="147,0,150,0" concept="6" trace="jdkRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
-      <scope id="5073169472575923465" at="61,32,61,32" />
-      <scope id="5073169472575923469" at="63,41,64,197" />
-      <scope id="5073169472575923475" at="66,43,67,196" />
-      <scope id="5073169472575923481" at="69,48,70,209" />
-      <scope id="5073169472575923487" at="72,46,73,199" />
-      <scope id="6747202917396754704" at="75,53,76,217" />
-      <scope id="263434549788685389" at="78,56,79,220" />
-      <scope id="5375364354070859440" at="81,41,82,194" />
-      <scope id="6747202917396756207" at="84,40,85,200" />
-      <scope id="6747202917395539744" at="87,58,88,30" />
-      <scope id="6747202917396750968" at="90,55,91,27" />
-      <scope id="6747202917396764526" at="93,52,94,24" />
-      <scope id="4173418906129874619" at="96,57,97,29" />
-      <scope id="4173418906129874866" at="99,54,100,26" />
-      <scope id="4173418906129875109" at="102,55,103,27" />
-      <scope id="4173418906129875358" at="105,59,106,31" />
-      <scope id="4173418906129875613" at="108,56,109,28" />
-      <scope id="4173418906129875874" at="111,58,112,30" />
-      <scope id="9198229506099365908" at="114,52,115,24" />
-      <scope id="4173418906129876141" at="117,59,118,137" />
-      <scope id="4173418906129876414" at="120,54,121,132" />
-      <scope id="4173418906129876693" at="123,58,124,136" />
-      <scope id="4173418906129876978" at="126,58,127,136" />
-      <scope id="4173418906129887659" at="129,54,130,132" />
-      <scope id="4173418906129887956" at="132,56,133,134" />
-      <scope id="4173418906129888259" at="135,52,136,130" />
-      <scope id="4173418906129968038" at="138,55,139,133" />
-      <scope id="4173418906129888568" at="141,53,142,131" />
-      <scope id="4173418906129968440" at="144,56,145,142" />
-      <scope id="9198229506099365565" at="147,43,148,21" />
-      <scope id="5073169472575923462" at="61,0,63,0" />
-      <scope id="5073169472575923466" at="63,0,66,0" />
-      <scope id="5073169472575923472" at="66,0,69,0" />
-      <scope id="5073169472575923478" at="69,0,72,0" />
-      <scope id="5073169472575923484" at="72,0,75,0" />
-      <scope id="6747202917396754701" at="75,0,78,0" />
-      <scope id="263434549788685386" at="78,0,81,0" />
-      <scope id="5375364354070859437" at="81,0,84,0" />
-      <scope id="6747202917396756204" at="84,0,87,0" />
-      <scope id="6747202917395539741" at="87,0,90,0" />
-      <scope id="6747202917396750967" at="90,0,93,0" />
-      <scope id="6747202917396764525" at="93,0,96,0" />
-      <scope id="4173418906129874618" at="96,0,99,0" />
-      <scope id="4173418906129874865" at="99,0,102,0" />
-      <scope id="4173418906129875108" at="102,0,105,0" />
-      <scope id="4173418906129875357" at="105,0,108,0" />
-      <scope id="4173418906129875612" at="108,0,111,0" />
-      <scope id="4173418906129875873" at="111,0,114,0" />
-      <scope id="9198229506099365907" at="114,0,117,0" />
-      <scope id="4173418906129876140" at="117,0,120,0" />
-      <scope id="4173418906129876413" at="120,0,123,0" />
-      <scope id="4173418906129876692" at="123,0,126,0" />
-      <scope id="4173418906129876977" at="126,0,129,0" />
-      <scope id="4173418906129887658" at="129,0,132,0" />
-      <scope id="4173418906129887955" at="132,0,135,0" />
-      <scope id="4173418906129888258" at="135,0,138,0" />
-      <scope id="4173418906129968037" at="138,0,141,0" />
-      <scope id="4173418906129888567" at="141,0,144,0" />
-      <scope id="4173418906129968439" at="144,0,147,0" />
-      <scope id="9198229506099365564" at="147,0,150,0" />
-      <unit id="5073169472575923460" at="9,0,152,0" name="jetbrains.mps.smodel.BootstrapLanguages" />
+      <node id="5512160570053006652" at="31,0,32,0" concept="5" trace="MIGRATION_NAMESPACE" />
+      <node id="5073169472575947707" at="32,0,33,0" concept="5" trace="TEST_NAMESPACE" />
+      <node id="5073169472575947711" at="33,0,34,0" concept="5" trace="TEXT_GEN_NAMESPACE" />
+      <node id="5073169472575947679" at="34,0,35,0" concept="5" trace="TYPESYSTEM_NAMESPACE" />
+      <node id="5073169472575947628" at="35,0,36,0" concept="5" trace="BASE_LANGUAGE_NAMESPACE" />
+      <node id="5073169472575947640" at="36,0,37,0" concept="5" trace="COLLECTIONS_NAMESPACE" />
+      <node id="5073169472575947651" at="37,0,38,0" concept="5" trace="CLOSURES_NAMESPACE" />
+      <node id="5073169472575947655" at="38,0,39,0" concept="5" trace="TUPLES_NAMESPACE" />
+      <node id="7607819906769898451" at="39,0,40,0" concept="5" trace="UNITTEST_NAMESPACE" />
+      <node id="6583857619485986676" at="40,0,41,0" concept="5" trace="DEVKIT_GENERAL_NAMESPACE" />
+      <node id="6583857619485986680" at="41,0,42,0" concept="5" trace="DEVKIT_BOOTSTRAP_NAMESPACE" />
+      <node id="6583857619485986684" at="42,0,43,0" concept="5" trace="DEVKIT_LANGUAGE_DESIGN_NAMESPACE" />
+      <node id="6694894568522585581" at="43,0,44,0" concept="5" trace="JDK_NAMESPACE" />
+      <node id="2140928436687214082" at="44,0,45,0" concept="5" trace="concept_baseLanguage_Annotation" />
+      <node id="2140928436687214089" at="45,0,46,0" concept="5" trace="concept_baseLanguage_ClassConcept" />
+      <node id="2140928436687214093" at="46,0,47,0" concept="5" trace="concept_baseLanguage_EnumClass" />
+      <node id="2140928436687214097" at="47,0,48,0" concept="5" trace="concept_baseLanguage_Interface" />
+      <node id="4116271674853115988" at="48,0,49,0" concept="5" trace="concept_generator_MappingConfiguration" />
+      <node id="7265317596961650074" at="50,0,51,0" concept="5" trace="descriptorLanguage" />
+      <node id="7265317596961657095" at="51,0,52,0" concept="5" trace="projectLanguage" />
+      <node id="7265317596961659389" at="52,0,53,0" concept="5" trace="coreLanguage" />
+      <node id="7265317596961660073" at="53,0,54,0" concept="5" trace="structureLanguage" />
+      <node id="7265317596961660428" at="54,0,55,0" concept="5" trace="editorLanguage" />
+      <node id="7265317596961660815" at="55,0,56,0" concept="5" trace="actionsLanguage" />
+      <node id="7265317596961661178" at="56,0,57,0" concept="5" trace="constraintsLanguage" />
+      <node id="7265317596961661733" at="57,0,58,0" concept="5" trace="behaviorLanguage" />
+      <node id="7265317596961662104" at="58,0,59,0" concept="5" trace="typesystemLanguage" />
+      <node id="7265317596961664842" at="59,0,60,0" concept="5" trace="baseLanguage" />
+      <node id="7265317596961665451" at="60,0,61,0" concept="5" trace="jdkModule" />
+      <node id="6955116391926974405" at="64,41,65,197" concept="4" />
+      <node id="6955116391926999211" at="67,43,68,196" concept="4" />
+      <node id="6955116391927015033" at="70,48,71,209" concept="4" />
+      <node id="6955116391927016428" at="73,46,74,199" concept="4" />
+      <node id="6747202917396754705" at="76,53,77,217" concept="4" />
+      <node id="6955116391927019081" at="79,56,80,220" concept="4" />
+      <node id="6955116391927021236" at="82,41,83,194" concept="4" />
+      <node id="6747202917396756208" at="85,40,86,200" concept="4" />
+      <node id="6747202917395539956" at="88,58,89,30" concept="4" />
+      <node id="6747202917396750969" at="91,55,92,27" concept="4" />
+      <node id="6747202917396764527" at="94,52,95,24" concept="4" />
+      <node id="4173418906129874620" at="97,57,98,29" concept="4" />
+      <node id="4173418906129874867" at="100,54,101,26" concept="4" />
+      <node id="4173418906129875110" at="103,55,104,27" concept="4" />
+      <node id="4173418906129875359" at="106,59,107,31" concept="4" />
+      <node id="4173418906129875614" at="109,56,110,28" concept="4" />
+      <node id="4173418906129875875" at="112,58,113,30" concept="4" />
+      <node id="9198229506099365909" at="115,52,116,24" concept="4" />
+      <node id="4173418906129876142" at="118,59,119,137" concept="4" />
+      <node id="4173418906129876415" at="121,54,122,132" concept="4" />
+      <node id="4173418906129876694" at="124,58,125,136" concept="4" />
+      <node id="4173418906129876979" at="127,58,128,136" concept="4" />
+      <node id="4173418906129887660" at="130,54,131,132" concept="4" />
+      <node id="4173418906129887957" at="133,56,134,134" concept="4" />
+      <node id="4173418906129888260" at="136,52,137,130" concept="4" />
+      <node id="4173418906129968039" at="139,55,140,133" concept="4" />
+      <node id="4173418906129888569" at="142,53,143,131" concept="4" />
+      <node id="5512160570053008241" at="145,57,146,130" concept="4" />
+      <node id="4173418906129968441" at="148,56,149,142" concept="4" />
+      <node id="9198229506099365566" at="151,43,152,21" concept="4" />
+      <node id="5073169472575923462" at="62,0,64,0" concept="0" trace="BootstrapLanguages#()V" />
+      <node id="5073169472575923466" at="64,0,67,0" concept="6" trace="baseLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="5073169472575923472" at="67,0,70,0" concept="6" trace="smodelLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="5073169472575923478" at="70,0,73,0" concept="6" trace="collectionsLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="5073169472575923484" at="73,0,76,0" concept="6" trace="generatorLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="6747202917396754701" at="76,0,79,0" concept="6" trace="generatorContextLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="263434549788685386" at="79,0,82,0" concept="6" trace="generatorParametersLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="5375364354070859437" at="82,0,85,0" concept="6" trace="coreLanguage#()Ljetbrains/mps/smodel/Language;" />
+      <node id="6747202917396756204" at="85,0,88,0" concept="6" trace="generalDevKit#()Ljetbrains/mps/project/DevKit;" />
+      <node id="6747202917395539741" at="88,0,91,0" concept="6" trace="descriptorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="6747202917396750967" at="91,0,94,0" concept="6" trace="projectLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="6747202917396764525" at="94,0,97,0" concept="6" trace="coreLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129874618" at="97,0,100,0" concept="6" trace="structureLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129874865" at="100,0,103,0" concept="6" trace="editorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129875108" at="103,0,106,0" concept="6" trace="actionsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129875357" at="106,0,109,0" concept="6" trace="constraintsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129875612" at="109,0,112,0" concept="6" trace="behaviorLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129875873" at="112,0,115,0" concept="6" trace="typesystemLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="9198229506099365907" at="115,0,118,0" concept="6" trace="baseLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129876140" at="118,0,121,0" concept="6" trace="refactoringLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129876413" at="121,0,124,0" concept="6" trace="scriptLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129876692" at="124,0,127,0" concept="6" trace="intentionsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129876977" at="127,0,130,0" concept="6" trace="findUsagesLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129887658" at="130,0,133,0" concept="6" trace="pluginLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129887955" at="133,0,136,0" concept="6" trace="dataFlowLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129888258" at="136,0,139,0" concept="6" trace="testLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129968037" at="139,0,142,0" concept="6" trace="textGenLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129888567" at="142,0,145,0" concept="6" trace="stubsLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="5512160570053008239" at="145,0,148,0" concept="6" trace="migrationLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="4173418906129968439" at="148,0,151,0" concept="6" trace="unitTestLanguageRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <node id="9198229506099365564" at="151,0,154,0" concept="6" trace="jdkRef#()Lorg/jetbrains/mps/openapi/module/SModuleReference;" />
+      <scope id="5073169472575923465" at="62,32,62,32" />
+      <scope id="5073169472575923469" at="64,41,65,197" />
+      <scope id="5073169472575923475" at="67,43,68,196" />
+      <scope id="5073169472575923481" at="70,48,71,209" />
+      <scope id="5073169472575923487" at="73,46,74,199" />
+      <scope id="6747202917396754704" at="76,53,77,217" />
+      <scope id="263434549788685389" at="79,56,80,220" />
+      <scope id="5375364354070859440" at="82,41,83,194" />
+      <scope id="6747202917396756207" at="85,40,86,200" />
+      <scope id="6747202917395539744" at="88,58,89,30" />
+      <scope id="6747202917396750968" at="91,55,92,27" />
+      <scope id="6747202917396764526" at="94,52,95,24" />
+      <scope id="4173418906129874619" at="97,57,98,29" />
+      <scope id="4173418906129874866" at="100,54,101,26" />
+      <scope id="4173418906129875109" at="103,55,104,27" />
+      <scope id="4173418906129875358" at="106,59,107,31" />
+      <scope id="4173418906129875613" at="109,56,110,28" />
+      <scope id="4173418906129875874" at="112,58,113,30" />
+      <scope id="9198229506099365908" at="115,52,116,24" />
+      <scope id="4173418906129876141" at="118,59,119,137" />
+      <scope id="4173418906129876414" at="121,54,122,132" />
+      <scope id="4173418906129876693" at="124,58,125,136" />
+      <scope id="4173418906129876978" at="127,58,128,136" />
+      <scope id="4173418906129887659" at="130,54,131,132" />
+      <scope id="4173418906129887956" at="133,56,134,134" />
+      <scope id="4173418906129888259" at="136,52,137,130" />
+      <scope id="4173418906129968038" at="139,55,140,133" />
+      <scope id="4173418906129888568" at="142,53,143,131" />
+      <scope id="5512160570053008240" at="145,57,146,130" />
+      <scope id="4173418906129968440" at="148,56,149,142" />
+      <scope id="9198229506099365565" at="151,43,152,21" />
+      <scope id="5073169472575923462" at="62,0,64,0" />
+      <scope id="5073169472575923466" at="64,0,67,0" />
+      <scope id="5073169472575923472" at="67,0,70,0" />
+      <scope id="5073169472575923478" at="70,0,73,0" />
+      <scope id="5073169472575923484" at="73,0,76,0" />
+      <scope id="6747202917396754701" at="76,0,79,0" />
+      <scope id="263434549788685386" at="79,0,82,0" />
+      <scope id="5375364354070859437" at="82,0,85,0" />
+      <scope id="6747202917396756204" at="85,0,88,0" />
+      <scope id="6747202917395539741" at="88,0,91,0" />
+      <scope id="6747202917396750967" at="91,0,94,0" />
+      <scope id="6747202917396764525" at="94,0,97,0" />
+      <scope id="4173418906129874618" at="97,0,100,0" />
+      <scope id="4173418906129874865" at="100,0,103,0" />
+      <scope id="4173418906129875108" at="103,0,106,0" />
+      <scope id="4173418906129875357" at="106,0,109,0" />
+      <scope id="4173418906129875612" at="109,0,112,0" />
+      <scope id="4173418906129875873" at="112,0,115,0" />
+      <scope id="9198229506099365907" at="115,0,118,0" />
+      <scope id="4173418906129876140" at="118,0,121,0" />
+      <scope id="4173418906129876413" at="121,0,124,0" />
+      <scope id="4173418906129876692" at="124,0,127,0" />
+      <scope id="4173418906129876977" at="127,0,130,0" />
+      <scope id="4173418906129887658" at="130,0,133,0" />
+      <scope id="4173418906129887955" at="133,0,136,0" />
+      <scope id="4173418906129888258" at="136,0,139,0" />
+      <scope id="4173418906129968037" at="139,0,142,0" />
+      <scope id="4173418906129888567" at="142,0,145,0" />
+      <scope id="5512160570053008239" at="145,0,148,0" />
+      <scope id="4173418906129968439" at="148,0,151,0" />
+      <scope id="9198229506099365564" at="151,0,154,0" />
+      <unit id="5073169472575923460" at="9,0,156,0" name="jetbrains.mps.smodel.BootstrapLanguages" />
     </file>
   </root>
 </debug-info>

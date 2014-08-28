@@ -216,6 +216,15 @@
         <property name="moduleId" nameId="tp25.6955116391921791525" value="ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5512160570053006652" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="MIGRATION_NAMESPACE" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5512160570053006653" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5512160570053006654" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.CheckedModuleQualifiedName" typeId="tp25.6955116391921790598" id="5512160570053006655" nodeInfo="nn">
+        <property name="moduleId" nameId="tp25.6955116391921791525" value="90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.migration)" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5073169472575947707" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="TEST_NAMESPACE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -937,6 +946,22 @@
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4173418906129888571" nodeInfo="nn" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4173418906129888572" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModuleReference" resolveInfo="SModuleReference" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="5512160570053008239" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="migrationLanguageRef" />
+      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
+      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5512160570053008240" nodeInfo="sn">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5512160570053008241" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tp25.CheckedModuleReference" typeId="tp25.4357968816427488499" id="5512160570053008242" nodeInfo="nn">
+            <property name="moduleId" nameId="tp25.4357968816427488500" value="90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.migration)" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5512160570053008243" nodeInfo="nn" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5512160570053008244" nodeInfo="in">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88zw.~SModuleReference" resolveInfo="SModuleReference" />
       </node>
     </node>
