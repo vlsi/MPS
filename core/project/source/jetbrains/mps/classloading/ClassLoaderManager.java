@@ -117,11 +117,11 @@ public class ClassLoaderManager implements CoreComponent {
    * returns "true" whenever the module's classes can be managed within the MPS class loading system
    * TODO: should be just MPS_FACET
    */
-  public boolean canLoad(SModule module) {
+  public boolean canLoad(@NotNull SModule module) {
     return SModuleOperations.isReloadable(module) && ModuleClassLoaderSupport.canCreate(module);
   }
 
-  private void assertCanLoad(SModule module) {
+  private void assertCanLoad(@NotNull SModule module) {
     if (!canLoad(module)) {
       throw new IllegalArgumentException("Classes of the module " + module.getModuleName() + " are unavailable within the MPS class loading system");
     }
@@ -132,17 +132,17 @@ public class ClassLoaderManager implements CoreComponent {
    * So if {@link #canLoad} method returned true, you'll get your class
    */
   @Nullable
-  public Class getClass(SModule module, String classFqName) {
+  public Class getClass(@NotNull SModule module, String classFqName) {
     return getClass(module, classFqName, false);
   }
 
   @Nullable
-  public Class getOwnClass(SModule module, String classFqName) {
+  public Class getOwnClass(@NotNull SModule module, String classFqName) {
     return getClass(module, classFqName, true);
   }
 
   @Nullable
-  private Class getClass(SModule module, String classFqName, boolean ownClassOnly) {
+  private Class getClass(@NotNull SModule module, String classFqName, boolean ownClassOnly) {
     assertCanLoad(module);
 
     // todo: hack for stubs. stub classes should not be managed by ClassLoaderManager
