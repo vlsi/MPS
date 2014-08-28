@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,27,0" name="jetbrains.mps.lang.migration.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/4950161090497031351">
+    <file name="RequiredDataReference_Constraints.java">
+      <node id="4950161090497031351" at="23,46,24,74" concept="7" />
+      <node id="4950161090497031351" at="27,83,28,75" concept="4" />
+      <node id="4950161090497031351" at="31,44,32,20" concept="5" />
+      <node id="4950161090497031351" at="39,63,40,58" concept="5" />
+      <node id="4950161090497031351" at="44,13,45,231" concept="4" />
+      <node id="4950161090497031351" at="45,231,46,64" concept="5" />
+      <node id="4950161090497031351" at="51,7,52,22" concept="5" />
+      <node id="4950161090497031351" at="54,0,55,0" concept="6" trace="breakingNode_1ndp3g_a0a0a0a0a1a0b0a1a1" />
+      <node id="4950161090497031351" at="23,0,26,0" concept="1" trace="RequiredDataReference_Constraints#()V" />
+      <node id="4950161090497031351" at="30,0,34,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="4950161090497031351" at="38,0,42,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4950161090497031351" at="43,122,47,13" concept="0" />
+      <node id="4950161090497031351" at="42,0,49,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="4950161090497031351" at="36,56,49,10" concept="5" />
+      <node id="4950161090497031351" at="34,0,51,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="4950161090497031351" at="28,75,51,7" concept="2" />
+      <node id="4950161090497031351" at="26,0,54,0" concept="3" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="4950161090497031351" at="23,46,24,74" />
+      <scope id="4950161090497031351" at="31,44,32,20" />
+      <scope id="4950161090497031351" at="39,63,40,58" />
+      <scope id="4950161090497031351" at="44,13,46,64">
+        <var name="scope" id="4950161090497031351" />
+      </scope>
+      <scope id="4950161090497031351" at="23,0,26,0" />
+      <scope id="4950161090497031351" at="30,0,34,0" />
+      <scope id="4950161090497031351" at="38,0,42,0" />
+      <scope id="4950161090497031351" at="43,122,47,13" />
+      <scope id="4950161090497031351" at="42,0,49,0">
+        <var name="_context" id="4950161090497031351" />
+        <var name="operationContext" id="4950161090497031351" />
+      </scope>
+      <scope id="4950161090497031351" at="36,56,49,10" />
+      <scope id="4950161090497031351" at="34,0,51,0" />
+      <scope id="4950161090497031351" at="27,83,52,22">
+        <var name="references" id="4950161090497031351" />
+      </scope>
+      <scope id="4950161090497031351" at="26,0,54,0" />
+      <unit id="4950161090497031351" at="37,19,49,9" name="jetbrains.mps.lang.migration.constraints.RequiredDataReference_Constraints$2" />
+      <unit id="4950161090497031351" at="29,31,51,5" name="jetbrains.mps.lang.migration.constraints.RequiredDataReference_Constraints$1" />
+      <unit id="4950161090497031351" at="22,0,56,0" name="jetbrains.mps.lang.migration.constraints.RequiredDataReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/5512160570054200388">
+    <file name="MigrationsPatternVariableReference_Constraints.java">
+      <node id="5512160570054200388" at="23,59,24,87" concept="7" />
+      <node id="5512160570054200388" at="27,83,28,75" concept="4" />
+      <node id="5512160570054200388" at="31,44,32,20" concept="5" />
+      <node id="5512160570054200388" at="39,63,40,58" concept="5" />
+      <node id="5512160570054200388" at="44,13,45,239" concept="4" />
+      <node id="5512160570054200388" at="45,239,46,64" concept="5" />
+      <node id="5512160570054200388" at="51,7,52,22" concept="5" />
+      <node id="5512160570054200388" at="54,0,55,0" concept="6" trace="breakingNode_82vbjx_a0a0a0a0a1a0b0a1a1" />
+      <node id="5512160570054200388" at="23,0,26,0" concept="1" trace="MigrationsPatternVariableReference_Constraints#()V" />
+      <node id="5512160570054200388" at="30,0,34,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="5512160570054200388" at="38,0,42,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5512160570054200388" at="43,122,47,13" concept="0" />
+      <node id="5512160570054200388" at="42,0,49,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="5512160570054200388" at="36,56,49,10" concept="5" />
+      <node id="5512160570054200388" at="34,0,51,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="5512160570054200388" at="28,75,51,7" concept="2" />
+      <node id="5512160570054200388" at="26,0,54,0" concept="3" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="5512160570054200388" at="23,59,24,87" />
+      <scope id="5512160570054200388" at="31,44,32,20" />
+      <scope id="5512160570054200388" at="39,63,40,58" />
+      <scope id="5512160570054200388" at="44,13,46,64">
+        <var name="scope" id="5512160570054200388" />
+      </scope>
+      <scope id="5512160570054200388" at="23,0,26,0" />
+      <scope id="5512160570054200388" at="30,0,34,0" />
+      <scope id="5512160570054200388" at="38,0,42,0" />
+      <scope id="5512160570054200388" at="43,122,47,13" />
+      <scope id="5512160570054200388" at="42,0,49,0">
+        <var name="_context" id="5512160570054200388" />
+        <var name="operationContext" id="5512160570054200388" />
+      </scope>
+      <scope id="5512160570054200388" at="36,56,49,10" />
+      <scope id="5512160570054200388" at="34,0,51,0" />
+      <scope id="5512160570054200388" at="27,83,52,22">
+        <var name="references" id="5512160570054200388" />
+      </scope>
+      <scope id="5512160570054200388" at="26,0,54,0" />
+      <unit id="5512160570054200388" at="37,19,49,9" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints$2" />
+      <unit id="5512160570054200388" at="29,38,51,5" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints$1" />
+      <unit id="5512160570054200388" at="22,0,56,0" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/8866965183499033798">
+    <file name="MigrationScript_Constraints.java">
+      <node id="8866965183499033798" at="8,40,9,68" concept="7" />
+      <node id="8866965183499033798" at="8,0,11,0" concept="1" trace="MigrationScript_Constraints#()V" />
+      <scope id="8866965183499033798" at="8,40,9,68" />
+      <scope id="8866965183499033798" at="8,0,11,0" />
+      <unit id="8866965183499033798" at="7,0,12,0" name="jetbrains.mps.lang.migration.constraints.MigrationScript_Constraints" />
+    </file>
+  </root>
+</debug-info>
+
