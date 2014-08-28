@@ -10,8 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SModelInternal;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.smodel.SModelRepository;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -28,6 +33,15 @@ public class QueriesGenerated {
     SLanguageAdapter lang = new SLanguageAdapter(IdHelper.getLanguageId((Language) module));
     SLinkOperations.setTarget(_context.getNewNode(), "body", _quotation_createNode_vu9l9u_a0e0a0(), true);
     SLinkOperations.setTarget(_context.getNewNode(), "applicable", _quotation_createNode_vu9l9u_a0f0a0(lang.getId().serialize(), lang.getQualifiedName()), true);
+
+    ((SModelInternal) (SModel) _context.getModel()).addLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class));
+    ((AbstractModule) module).addUsedLanguage(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)"), Language.class).getModuleReference());
+
+    ((SModelInternal) (SModel) _context.getModel()).addModelImport(SModelRepository.getInstance().getModelDescriptor("org.jetbrains.mps.openapi.language@java_stub").getReference(), true);
+    ((AbstractModule) module).addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)")).getModuleReference(), false);
+
+    ((SModelInternal) (SModel) _context.getModel()).addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
+    ((AbstractModule) module).addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
   }
   private static SNode _quotation_createNode_vu9l9u_a0e0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
