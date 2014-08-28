@@ -5,13 +5,12 @@ package jetbrains.mps.lang.test.scripts;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
-import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.test.runtime.TestsErrorsChecker;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodeOperationsContainer_Behavior;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.extapi.model.SModelBase;
@@ -23,9 +22,9 @@ public class SpecifyUtil {
 
 
 
-  public static List<IErrorReporter> getErrorReporters(SNode node) {
-    TestsErrorsChecker checker = new TestsErrorsChecker(node);
-    return checker.getErrorReporters();
+  public static Iterable<IErrorReporter> getErrorReporters(SNode node) {
+    TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
+    return checker.getErrors(node);
   }
 
 
@@ -34,7 +33,7 @@ public class SpecifyUtil {
     SNode operationsContainer = SpecifyUtil.getOperationsContainer(node);
     assert (operationsContainer != null);
     NodeOperationsContainer_Behavior.call_detachAllErrorOperations_5587533744543326483(operationsContainer);
-    List<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
+    Iterable<IErrorReporter> reporters = SpecifyUtil.getErrorReporters(node);
     for (IErrorReporter reporter : reporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(reporter);
       NodeOperationsContainer_Behavior.call_createNodeAndAttachReference_428590876657265140(operationsContainer, ruleNode, reporter);

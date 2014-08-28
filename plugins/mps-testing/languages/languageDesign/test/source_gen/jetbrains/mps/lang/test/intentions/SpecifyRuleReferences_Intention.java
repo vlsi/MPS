@@ -8,7 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.test.scripts.SpecifyUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -53,7 +53,7 @@ public class SpecifyRuleReferences_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SpecifyUtil.getErrorReporters(node)).isNotEmpty();
+    return Sequence.fromIterable(SpecifyUtil.getErrorReporters(node)).isNotEmpty();
   }
 
   public SNodeReference getIntentionNodeReference() {
