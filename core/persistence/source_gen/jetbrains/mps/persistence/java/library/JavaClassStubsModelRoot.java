@@ -25,8 +25,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
+import org.jetbrains.annotations.Nullable;
 
 public class JavaClassStubsModelRoot extends FileBasedModelRoot {
   public JavaClassStubsModelRoot() {
@@ -144,23 +144,24 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       if (Sequence.fromIterable(rootClasses).isNotEmpty() && neq_jzcn2m_a0a5a1a9(pack, "")) {
         final SModelReference modelReference = StubHelper.uidForPackageInStubs(pack, languageId, module.getModuleReference());
         JavaClassStubModelDescriptor smd;
-        if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          SModel descriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
-          assert descriptor instanceof JavaClassStubModelDescriptor;
-          smd = (JavaClassStubModelDescriptor) descriptor;
-          ListSequence.fromList(result).addElement(descriptor);
+        // FIXME: hack, see comment below 
+        SModel modelDescriptor = getModelAlreadyRegistered(module, modelReference);
+        if (modelDescriptor != null) {
+          assert modelDescriptor instanceof JavaClassStubModelDescriptor;
+          smd = (JavaClassStubModelDescriptor) modelDescriptor;
+          ListSequence.fromList(result).addElement(modelDescriptor);
         } else if (ListSequence.fromList(result).any(new IWhereFilter<SModel>() {
           public boolean accept(SModel it) {
             return it.getReference().equals(modelReference);
           }
         })) {
-          SModel descriptor = ListSequence.fromList(result).findFirst(new IWhereFilter<SModel>() {
+          modelDescriptor = ListSequence.fromList(result).findFirst(new IWhereFilter<SModel>() {
             public boolean accept(SModel it) {
               return it.getReference().equals(modelReference);
             }
           });
-          assert descriptor instanceof JavaClassStubModelDescriptor;
-          smd = (JavaClassStubModelDescriptor) descriptor;
+          assert modelDescriptor instanceof JavaClassStubModelDescriptor;
+          smd = (JavaClassStubModelDescriptor) modelDescriptor;
         } else {
           smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource(), this);
           smd.setModelRoot(this);
@@ -170,6 +171,20 @@ public class JavaClassStubsModelRoot extends FileBasedModelRoot {
       }
       getModelDescriptors(result, subdir, pack, languageId, module);
     }
+  }
+
+  /**
+   * DIRTY_HACK
+   * AlexP:
+   * Here we check whether some another classes root is already registered
+   * Because of the model's name clash we cannot simply return new model with new root.
+   * FIXME:
+   * Probably the solution is to get rid of multiple *java_classes* stub roots and
+   * Allow user to have only one stub root of this kind
+   */
+  @Nullable
+  private SModel getModelAlreadyRegistered(SModule module, SModelReference modelReference) {
+    return module.getModel(modelReference.getModelId());
   }
   private static boolean eq_jzcn2m_a0a0a0a3a1a9(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
