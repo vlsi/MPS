@@ -234,7 +234,6 @@ class EditorSettingsPreferencesPage {
   private EditorComponent createBlinkingDemo() {
     EditorComponent blinking = new EditorComponent(MPSModuleRepository.getInstance()) {
       {
-        setEditorContext(null, MPSModuleRepository.getInstance());
         CaretBlinker.getInstance().unregisterEditor(this);
         ModelAccess.instance().runReadInEDT(new Runnable() {
           @Override

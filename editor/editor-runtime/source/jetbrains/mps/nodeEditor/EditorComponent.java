@@ -352,6 +352,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Nullable
   protected SNodeReference myNodePointer;
+  @NotNull
   private EditorContext myEditorContext;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
@@ -1306,6 +1307,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myContainer;
   }
 
+  @NotNull
   @Override
   public EditorContext getEditorContext() {
     return myEditorContext;
@@ -1401,8 +1403,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myEventsCollector.dispose();
     myLeftHighlighter.dispose();
     myMessagesGutter.dispose();
-
-    myEditorContext = null;
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -2868,8 +2868,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return toSelect;
   }
 
+  /**
+   * Looks like the only reasons to make this method public is FakeEditorComponent class implementation.
+   * TODO: Check it and reduce visibility of this method.
+   */
   public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
-    setEditorContext(createEditorContext(model, repository));
+    myEditorContext = createEditorContext(model, repository);
   }
 
   /**
@@ -2879,17 +2883,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
    * @param model
    * @param repository
    */
+  @NotNull
   protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
     return new EditorContext(this, model, repository);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 use setEditorContext(EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository)
-   */
-  @Deprecated
-  protected void setEditorContext(EditorContext editorContext) {
-    assert editorContext == null || myRepository == editorContext.getRepository();
-    myEditorContext = editorContext;
   }
 
   private void runSwapCellsActions(Runnable action) {
