@@ -4,7 +4,9 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.errors.MessageStatus;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -21,10 +23,16 @@ public class TestsErrorsChecker {
   private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> modelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
 
   public TestsErrorsChecker(SNode root) {
+    assert root == SNodeOperations.getContainingRoot(root);
     this.myRoot = root;
   }
 
-  public Iterable<IErrorReporter> getErrors(SNode node) {
+  public Iterable<IErrorReporter> getAllErrors() {
+    ModelAccess.assertLegalRead();
+    return getModelErrors();
+  }
+
+  public Iterable<IErrorReporter> getErrors(@NotNull SNode node) {
     ModelAccess.assertLegalRead();
     Iterable<IErrorReporter> result = getModelErrors();
     return filterReportersByNode(result, node);
@@ -50,9 +58,10 @@ public class TestsErrorsChecker {
     return checker.getErrors(myRoot, null);
   }
 
-  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, final SNode node) {
+  private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, @NotNull final SNode node) {
     return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
       public boolean accept(IErrorReporter it) {
+        assert it.getSNode() != null;
         return it.getSNode().equals(node);
       }
     });
