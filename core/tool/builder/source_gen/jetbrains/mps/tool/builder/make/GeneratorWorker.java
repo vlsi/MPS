@@ -19,7 +19,6 @@ import java.util.Collections;
 import jetbrains.mps.tool.environment.MpsEnvironment;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import org.jetbrains.mps.openapi.module.FacetsFacade;
@@ -105,7 +104,7 @@ public class GeneratorWorker extends BaseGeneratorWorker {
     protected Iterable<LibraryContributor> createLibContributors(EnvironmentConfig config) {
       registerFactory();
       // todo: !next line was removed  <node> 
-      Set<LibraryContributor.LibDescriptor> libraryPaths = new HashSet<LibraryContributor.LibDescriptor>();
+      Set<LibraryContributor.LibDescriptor> libraryPaths = new LinkedHashSet<LibraryContributor.LibDescriptor>();
       for (String libName : MapSequence.fromMap(config.libs()).keySet()) {
         libraryPaths.add(new LibraryContributor.LibDescriptor(MapSequence.fromMap(config.libs()).get(libName).getAbsolutePath(), myClassLoader));
 

@@ -9,6 +9,7 @@ import java.util.Map;
 import java.io.File;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Collections;
 import jetbrains.mps.tool.builder.util.PathManager;
 
@@ -17,7 +18,7 @@ public class EnvironmentConfig {
 
   private final Set<String> plugins = SetSequence.fromSet(new HashSet<String>());
   private final Map<String, File> macros = MapSequence.fromMap(new HashMap<String, File>());
-  private final Map<String, File> libs = MapSequence.fromMap(new HashMap<String, File>());
+  private final Map<String, File> libs = MapSequence.fromMap(new LinkedHashMap<String, File>(16, (float) 0.75, false));
 
   private EnvironmentConfig() {
   }
