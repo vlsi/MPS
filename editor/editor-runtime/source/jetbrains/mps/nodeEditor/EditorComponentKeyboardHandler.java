@@ -90,7 +90,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         if (res) return true;
       }
 
-      if (actionType != null) {
+      if (actionType != null && !selectedCell.isErrorState()) {
         if (editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
           return true;
         }
