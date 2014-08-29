@@ -6,9 +6,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.smodel.behavior.ModuleReferenceExpression_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -17,7 +19,8 @@ public class MigrationScriptReference_Behavior {
   }
   public static SNode call_resolve_4950161090496924151(final SNode thisNode) {
     SModule module = ModuleReferenceExpression_Behavior.call_getModule_4040588429969043137(SLinkOperations.getTarget(thisNode, "module", true));
-    return ListSequence.fromList(SModelOperations.getRoots(MigrationsUtil.getMigrationModel(module), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript")).where(new IWhereFilter<SNode>() {
+    SModel migrations = LanguageAspect.MIGRATION.get(((Language) module));
+    return ListSequence.fromList(SModelOperations.getRoots(migrations, "jetbrains.mps.lang.migration.structure.AbstractMigrationScript")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return AbstractMigrationScript_Behavior.call_getFromVersion_3932724607434564575(it) == SPropertyOperations.getInteger(thisNode, "version");
       }

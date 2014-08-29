@@ -28,6 +28,7 @@ public class QueriesGenerated {
       int currentVersion = ((Language) module).getLanguageVersion();
       SPropertyOperations.set(_context.getNewNode(), "fromVersion", "" + (currentVersion));
       ((Language) module).getModuleDescriptor().setVersion(currentVersion + 1);
+      ((Language) module).setChanged();
     }
 
     SLanguageAdapter lang = new SLanguageAdapter(IdHelper.getLanguageId((Language) module));
