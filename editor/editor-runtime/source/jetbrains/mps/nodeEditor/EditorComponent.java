@@ -1022,11 +1022,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return false;
   }
 
-  @Deprecated
-  public void editNode(final SNode node, final IOperationContext operationContext) {
-    editNode(node);
-  }
-
   public void editNode(final SNode node) {
     if (isDisposed()) return;
     clearModelDisposedTrace();

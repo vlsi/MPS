@@ -174,7 +174,7 @@ public class ChangesManagerTest {
   public void dispose() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
-        myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null, null);
+        myIdeaProject.getComponent(InspectorTool.class).getInspector().editNode(null);
       }
     });
     Assert.assertFalse(myRegistry.getCommandQueue().hadExceptions());
