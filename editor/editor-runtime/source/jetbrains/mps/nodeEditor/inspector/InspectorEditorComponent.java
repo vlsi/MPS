@@ -82,7 +82,8 @@ public class InspectorEditorComponent extends EditorComponent {
   }
 
   @Override
-  protected SNode getNodeForTypechecking(SNode editedNode) {
+  public SNode getNodeForTypechecking() {
+    SNode editedNode = getEditedNode();
     if (editedNode == null) return null;
     // assuming the parameter is always a descendant of the current containing root, but may have been detached from the model
     return editedNode.getModel() != null ? editedNode.getContainingRoot() : myContainingRoot;

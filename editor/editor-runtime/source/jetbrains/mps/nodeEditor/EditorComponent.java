@@ -332,7 +332,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private NodeSubstituteChooser myNodeSubstituteChooser;
   private NodeInformationDialog myNodeInformationDialog;
-  private HashMap<Object, Object> myUserDataMap = new HashMap<Object, Object>();
 
   private MyEventsCollector myEventsCollector = new MyEventsCollector();
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
@@ -1901,7 +1900,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
 
     clearCaches();
-    clearUserData();
     rebuildEditorContent(null);
 
     relayout();
@@ -2200,22 +2198,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     repaint();
   }
 
-  /**
-   * @deprecated seems not used anymore. Remove this method after MPS 3.0
-   */
-  @UseCarefully
-  @Deprecated
-  public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
-    if (getSelectedCell() != newSelectedCell) {
-      mySelectionManager.pushSelection(mySelectionManager.createSelection(newSelectedCell));
-    }
-
-    if (newSelectedCell != null) {
-      showCellInViewPort(newSelectedCell);
-    }
-    repaint();
-  }
-
   // TODO: think about replacing this method with one of ensureVisible()/scrollToCell()
   private void showCellInViewPort(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     if (getVisibleRect().isEmpty()) {
@@ -2471,36 +2453,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myMouseEventHandler != null;
   }
 
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public Object getUserData(Object key) {
-    return myUserDataMap.get(key);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public void putUserData(Object key, Object data) {
-    myUserDataMap.put(key, data);
-  }
-
-  /**
-   * @deprecated since MPS 3.1 remove this method in MPS 3.2
-   */
-  @Deprecated
-  public void clearUserData() {
-    myUserDataMap.clear();
-  }
-
-  @Deprecated
-  public TypeCheckingContext getTypeCheckingContext() {
-    TypeCheckingContext context = TypeContextManager.getInstance().lookupTypecheckingContext(getNodeForTypechecking(myNode), this);
-    return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), this);
-  }
-
   public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
@@ -2509,7 +2461,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     getModelAccess().runReadAction(new Runnable() {
       @Override
       public void run() {
-        TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(myNode), EditorComponent.this);
+        TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), EditorComponent.this);
       }
     });
   }
@@ -2530,8 +2482,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myNode != node;
   }
 
-  protected SNode getNodeForTypechecking(SNode editedNode) {
-    return editedNode;
+  public SNode getNodeForTypechecking() {
+    return getEditedNode();
   }
 
   public void sendKeyEvent(KeyEvent keyEvent) {
@@ -2554,13 +2506,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             if (sNode == null) {
               return;
             }
-            TypeCheckingContext typeCheckingContext = getTypeCheckingContext();
-            typeCheckingContext.clear();
+            releaseTypeCheckingContext();
+            acquireTypeCheckingContext();
             Highlighter highlighter = getOperationContext().getComponent(Highlighter.class);
             if (highlighter != null) {
               highlighter.resetCheckedState(EditorComponent.this);
-            } else {
-              typeCheckingContext.checkRoot();
             }
             rebuildEditorContent();
           }

@@ -77,7 +77,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     return Color.WHITE;
   }
 
-  public void showTraceForNode(IncrementalTypecheckingContext incrementalTypecheckingContext, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
+  public void showTraceForNode(final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
 //    if (rebuild) {
 //      incrementalTypecheckingContext.checkRootInTraceMode(true);
 //    }
@@ -259,7 +259,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
     public void run() {
-        showTraceForNode((IncrementalTypecheckingContext) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
+        showTraceForNode(myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
       }
     });
     this.validate();

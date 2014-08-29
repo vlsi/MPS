@@ -166,12 +166,12 @@ public class LanguageEditorChecker extends BaseEditorChecker {
   protected Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
       @Override
-      public Set<EditorMessage> compute(TypeCheckingContext p0) {
-        return doCreateMessages(node, list, wasCheckedOnce, editorContext);
+      public Set<EditorMessage> compute(TypeCheckingContext typeCheckingContext) {
+        return doCreateMessages(node, list, wasCheckedOnce, editorContext, typeCheckingContext);
       }
     });
   }
-  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
+  private Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext, TypeCheckingContext typeCheckingContext) {
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SModel model = editorContext.getModel();
     myScopeChecker.setEditorComponent(editorComponent);
@@ -233,15 +233,14 @@ public class LanguageEditorChecker extends BaseEditorChecker {
       myMessagesChanged = errorsComponent.checkInspector();
     } else {
       boolean changed = false;
-      TypeCheckingContext typecheckingContext = mainEditorComponent.getTypeCheckingContext();
       try {
-        if (typecheckingContext != null) {
-          typecheckingContext.setIsNonTypesystemComputation();
+        if (typeCheckingContext != null) {
+          typeCheckingContext.setIsNonTypesystemComputation();
         }
         changed = errorsComponent.check(SNodeOperations.getContainingRoot(((SNode) node)), myRules, editorContext.getRepository());
       } finally {
-        if (typecheckingContext != null) {
-          typecheckingContext.resetIsNonTypesystemComputation();
+        if (typeCheckingContext != null) {
+          typeCheckingContext.resetIsNonTypesystemComputation();
         }
       }
       myMessagesChanged = changed;
