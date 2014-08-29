@@ -83,7 +83,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         boolean res = editorContext.executeCommand(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            return APICellAdapter.validate(selectedCell, strictMatching, false);
+            return APICellAdapter.validate(selectedCell, true, false);
           }
         });
 
