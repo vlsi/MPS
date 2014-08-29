@@ -11,14 +11,21 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.Level;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
+import javax.swing.SwingUtilities;
+import com.intellij.openapi.ui.InputValidator;
+import com.intellij.openapi.ui.Messages;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -37,12 +44,19 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     if (!(((SModule) MapSequence.fromMap(_params).get("module")) instanceof Language)) {
       return false;
     }
+
     Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
     SModel mig = LanguageAspect.MIGRATION.get(lang);
     if (mig == null) {
       return false;
     }
-    int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript")).sort(new ISelector<SNode, Integer>() {
+
+    List<SNode> migrations = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript");
+    if (ListSequence.fromList(migrations).isEmpty() && lang.getLanguageVersion() != 0) {
+      return true;
+    }
+
+    int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(migrations).sort(new ISelector<SNode, Integer>() {
       public Integer select(SNode it) {
         return SPropertyOperations.getInteger(it, "fromVersion");
       }
@@ -70,7 +84,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("module") == null) {
       return false;
     }
-    MapSequence.fromMap(_params).put("project", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
     if (MapSequence.fromMap(_params).get("project") == null) {
       return false;
     }
@@ -78,15 +92,47 @@ public class CorrectLanguageVersion_Action extends BaseAction {
   }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
+      final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
       SModel mig = LanguageAspect.MIGRATION.get(lang);
-      int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript")).sort(new ISelector<SNode, Integer>() {
-        public Integer select(SNode it) {
-          return SPropertyOperations.getInteger(it, "fromVersion");
-        }
-      }, false).first(), "fromVersion");
-      lang.getModuleDescriptor().setVersion(maxFrom + 1);
-      lang.setChanged();
+      List<SNode> scripts = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript");
+      if (ListSequence.fromList(scripts).isNotEmpty()) {
+        int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
+          public Integer select(SNode it) {
+            return SPropertyOperations.getInteger(it, "fromVersion");
+          }
+        }, false).first(), "fromVersion");
+        lang.getModuleDescriptor().setVersion(maxFrom + 1);
+        lang.setChanged();
+      } else {
+        final int v = lang.getLanguageVersion();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            InputValidator validator = new InputValidator() {
+              public boolean checkInput(String s) {
+                try {
+                  return Integer.parseInt(s) >= 0;
+                } catch (NumberFormatException e) {
+                  return false;
+                }
+              }
+              public boolean canClose(String s) {
+                return checkInput(s);
+              }
+            };
+            final String result = Messages.showInputDialog(((Project) MapSequence.fromMap(_params).get("project")), "No scripts found\n" + "Current language version is " + v + "\n" + "Please enter new version", "Set Language Version", null, "0", validator);
+            if (result == null) {
+              return;
+            }
+
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                lang.getModuleDescriptor().setVersion(Integer.parseInt(result));
+                lang.setChanged();
+              }
+            });
+          }
+        });
+      }
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "CorrectLanguageVersion", t);
