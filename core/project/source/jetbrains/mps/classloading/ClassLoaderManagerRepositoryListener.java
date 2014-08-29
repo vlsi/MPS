@@ -55,13 +55,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
       LOG.debug("cannot load module within mps " + module);
       return;
     }
-    final Set<SModule> loadedModules = myClassLoaderManager.loadModules(Arrays.asList(module), new EmptyProgressMonitor());
-    boolean noModuleHasBeenLoaded = (loadedModules.size() == 0);
-    if (noModuleHasBeenLoaded) {
-      LOG.debug("the module was not loaded so no need to reload dependencies");
-      return;
-    }
-    reloadDeps(module);
+    reloadWithDeps(module);
 
     LOG.debug("after adding " + module);
   }
@@ -73,7 +67,7 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
     myClassLoaderManager.loadModules(modulesToReload, new EmptyProgressMonitor());
   }
 
-  private void reloadDeps(SModule module) {
+  private void reloadWithDeps(SModule module) {
     Set<SModule> backDependencies = collectBackDependencies(module);
     Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
     myClassLoaderManager.loadModules(unloadedModules, new EmptyProgressMonitor());
