@@ -14,7 +14,7 @@ public class MigrationGroup_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      MigrationGroup_ActionGroup.this.addAction("jetbrains.mps.migration.actions.plugin.AddMigration_Action");
+      MigrationGroup_ActionGroup.this.addAction("jetbrains.mps.migration.actions.plugin.CorrectLanguageVersion_Action");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
