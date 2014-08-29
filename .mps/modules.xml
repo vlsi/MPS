@@ -129,6 +129,8 @@
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/languages/script/jetbrains.mps.make.script.mpl" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/solutions/jetbrains.mps.make.sandbox/jetbrains.mps.make.sandbox.msd" folder="core.make" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/make/solutions/jetbrains.mps.make.tests/jetbrains.mps.make.tests.msd" folder="core.make" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/jetbrains.mps.migration.mpl" folder="" />
+      <modulePath path="$PROJECT_DIR$/languages/languageDesign/migration/solutions/actions/jetbrains.mps.migration.actions.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/pattern/solutions/test/jetbrains.mps.lang.pattern.test.msd" folder="core.languages.pattern" />
       <modulePath path="$PROJECT_DIR$/languages/languageDesign/plugin-standalone/jetbrains.mps.lang.plugin.standalone.mpl" folder="core.aspects.plugin" />
@@ -229,8 +231,6 @@
       <modulePath path="$PROJECT_DIR$/plugins/execution-languages/languages/tests/jetbrains.mps.execution.impl.tests.msd" folder="workbench.execution" />
       <modulePath path="$PROJECT_DIR$/plugins/ideaIntegration/jetbrains.mps.ideaIntegration.msd" folder="platform" />
       <modulePath path="$PROJECT_DIR$/plugins/jetpad/solutions/jetbrains.jetpad/jetbrains.jetpad.msd" folder="core.aspects.editor.diagram" />
-      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/languages/migration/jetbrains.mps.migration.mpl" folder="platform.migration" />
-      <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/actions/jetbrains.mps.migration.actions.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/migrationAssistant/solutions/component/jetbrains.mps.migration.component.msd" folder="platform.migration" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/platform/jetbrains.mps.ide.modelchecker.platform.msd" folder="platform.modelchecker" />
       <modulePath path="$PROJECT_DIR$/plugins/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="platform.modelchecker" />
