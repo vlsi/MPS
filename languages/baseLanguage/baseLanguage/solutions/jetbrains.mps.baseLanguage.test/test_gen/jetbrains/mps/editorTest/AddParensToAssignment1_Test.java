@@ -27,7 +27,7 @@ public class AddParensToAssignment1_Test extends BaseTransformationTest4 {
 
     @Override
     public void testMethodImpl() throws Exception {
-      final Editor editor = TestBody.this.initEditor("6141629764080152361", "6141629764080152383");
+      final Editor editor = TestBody.this.initEditor("6141629764080045049", "6141629764080045079");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, ")");
     }

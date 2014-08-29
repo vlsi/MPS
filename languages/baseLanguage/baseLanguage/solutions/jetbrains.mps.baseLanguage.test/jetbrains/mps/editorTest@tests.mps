@@ -22394,7 +22394,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="6141629764080152360" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
-    <property name="name" nameId="tpck.1169194664001" value="AddParensToAssignment1" />
+    <property name="name" nameId="tpck.1169194664001" value="AddParensToAssignment2" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="6141629764080152361" nodeInfo="nn">
       <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="6141629764080152362" nodeInfo="sn">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6141629764080152363" nodeInfo="nn">
