@@ -43,12 +43,12 @@ import org.junit.runners.Suite;
     jetbrains.mps.vcs.diff.merge.MergeCoreTest.class,
     jetbrains.mps.vfs.VfsTest.class,
     jetbrains.mps.ide.test.blame.command.AffectedVersionTest.class,
+    jetbrains.mps.PersistenceTest.class,
     jetbrains.mps.workbench.ProjectCreationTest.class,
     jetbrains.mps.workbench.dialogs.project.components.parts.lists.SortedListTest.class,
     jetbrains.mps.smodel.language.ExtensionRegistryTest.class,
     jetbrains.mps.editor.runtime.style.StyleTests.class,
-    jetbrains.mps.smodel.TreeIteratorTest.class,
-    jetbrains.mps.PersistenceTest.class
+    jetbrains.mps.smodel.TreeIteratorTest.class
 })
 public class GlobalTestSuite {
 }
