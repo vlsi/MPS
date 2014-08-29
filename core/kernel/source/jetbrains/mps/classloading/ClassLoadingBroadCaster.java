@@ -24,7 +24,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * Created by Alex Pyshkin on 6/5/14.
+ * @author Alex Pyshkin on 6/5/14.
  */
 public class ClassLoadingBroadCaster {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingBroadCaster.class);

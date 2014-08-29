@@ -22,16 +22,19 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.tools.BaseProjectTool;
-import jetbrains.mps.reloading.ReloadAdapter;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.Icon;
 import javax.swing.SwingUtilities;
+import java.util.Set;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool {
 
   private ContentManagerAdapter myContentListener;
-  private ReloadAdapter myReloadHandler;
+  private MPSClassesListener myClassesListener;
   private ContentManager myContentManager;
 
   public TabbedUsagesTool(Project project, String id, int number, Icon icon, ToolWindowAnchor anchor, boolean canCloseContent) {
@@ -60,9 +63,9 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
     myContentManager.addContentManagerListener(myContentListener);
 
     if (forceCloseOnReload()) {
-      myReloadHandler = new ReloadAdapter() {
+      myClassesListener = new MPSClassesListenerAdapter() {
         @Override
-        public void unload() {
+        public void beforeClassesUnloaded(Set<SModule> modules) {
           SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -72,7 +75,7 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
           });
         }
       };
-      ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
+      ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
     }
   }
 
@@ -81,8 +84,8 @@ public abstract class TabbedUsagesTool extends BaseProjectTool {
     //this is done automatically on content manager dispose, otherwise a dependency UVT->CM must be added
     //getContentManager().removeContentManagerListener(myContentListener);
 
-    if (myReloadHandler != null) {
-      ClassLoaderManager.getInstance().removeReloadHandler(myReloadHandler);
+    if (myClassesListener != null) {
+      ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     }
   }
 

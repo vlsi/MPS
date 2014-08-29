@@ -28,16 +28,16 @@ import com.intellij.openapi.vcs.FileStatusListener;
 import com.intellij.openapi.vcs.FileStatusManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.containers.MultiMap;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.extapi.module.SRepositoryRegistry;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.openapi.editor.EditorComponent;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
@@ -50,19 +50,21 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 
 public class MPSEditorWarningsManager implements ProjectComponent {
   public static final Logger LOG = LogManager.getLogger(MPSEditorWarningsManager.class);
 
   private FileEditorManager myFileEditorManager;
   private ClassLoaderManager myClassLoaderManager;
-  private ReloadListener myReloadListener = new MyReloadListener();
+  private MPSClassesListener myClassesListener = new EditorWarningsListenerAdapter();
   private MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
 
   private SRepositoryContentAdapter myListener = new SRepositoryContentAdapter() {
@@ -137,7 +139,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
 
   @Override
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadListener);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     FileStatusManager.getInstance(myProject).addFileStatusListener(myFileStatusListener);
     ProjectHelper.getModelAccess(myProject).runReadAction(new Runnable() {
       @Override
@@ -156,7 +158,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       }
     });
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
@@ -214,7 +216,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateAllWarnings(@Nullable VirtualFile vf) {
-    if (MPSCore.getInstance().isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) return;
 
     for (FileEditor editor : myFileEditorManager.getAllEditors()) {
       if (editor instanceof MPSFileNodeEditor) {
@@ -273,9 +275,9 @@ public class MPSEditorWarningsManager implements ProjectComponent {
     }
   }
 
-  private class MyReloadListener extends ReloadAdapter {
+  private class EditorWarningsListenerAdapter extends MPSClassesListenerAdapter {
     @Override
-    public void onAfterReload() {
+    public void afterClassesLoaded(Set<SModule> modules) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         @Override
         public void run() {

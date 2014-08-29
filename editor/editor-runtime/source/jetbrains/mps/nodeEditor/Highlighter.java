@@ -29,6 +29,8 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.make.IMakeService;
@@ -38,8 +40,6 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -62,6 +62,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
@@ -108,9 +109,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
 
   private List<EditorComponent> myAdditionalEditorComponents = new ArrayList<EditorComponent>();
 
-  private ReloadListener myReloadListener = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       addPendingAction(new Runnable() {
         @Override
         public void run() {
@@ -172,7 +173,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       LOG.error("trying to initialize a Highlighter being already initialized", new Throwable());
       return;
     }
-    myClassLoaderManager.addReloadHandler(myReloadListener);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
     SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
@@ -211,7 +212,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     ApplicationManager.getApplication().removeApplicationListener(myApplicationListener);
     SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
-    myClassLoaderManager.removeReloadHandler(myReloadListener);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;
   }

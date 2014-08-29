@@ -5,7 +5,10 @@ package jetbrains.mps.editor.runtime.impl;
 import com.intellij.openapi.components.ApplicationComponent;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Map;
 import jetbrains.mps.smodel.Language;
 import java.util.List;
@@ -29,13 +32,12 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
-import org.jetbrains.mps.openapi.module.SModule;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = LogManager.getLogger(LanguagesKeymapManager.class);
-  private ReloadAdapter myReloadHandler = new ReloadAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       clearCaches();
     }
   };
@@ -55,7 +57,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   }
   @Override
   public void initComponent() {
-    myClassLoaderManager.addReloadHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
     myRepository.addRepositoryListener(myListener);
   }
   @NonNls
@@ -67,7 +69,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
   @Override
   public void disposeComponent() {
     myRepository.removeRepositoryListener(myListener);
-    myClassLoaderManager.removeReloadHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
   }
   private void clearCaches() {
     MapSequence.fromMap(myLanguagesToKeyMaps).clear();

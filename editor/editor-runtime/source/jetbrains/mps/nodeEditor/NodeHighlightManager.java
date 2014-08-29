@@ -16,6 +16,8 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.util.containers.SortedList;
+import jetbrains.mps.classloading.MPSClassesListener;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
@@ -23,11 +25,11 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.openapi.editor.message.SimpleEditorMessage;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.SwingUtilities;
 import java.awt.Color;
@@ -57,9 +59,9 @@ public class NodeHighlightManager implements EditorMessageOwner {
    */
   private Map<EditorCell, List<SimpleEditorMessage>> myMessagesCache = Collections.emptyMap();
   private volatile boolean myRebuildMessagesCache = false;
-  public ReloadAdapter myHandler = new ReloadAdapter() {
+  public MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
-    public void unload() {
+    public void beforeClassesUnloaded(Set<SModule> modules) {
       clear();
     }
   };
@@ -89,7 +91,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
       }
     });
 
-    ClassLoaderManager.getInstance().addReloadHandler(myHandler);
+    ClassLoaderManager.getInstance().addClassesHandler(myClassesListener);
   }
 
   /**
@@ -380,7 +382,7 @@ public class NodeHighlightManager implements EditorMessageOwner {
 
   public void dispose() {
     assert ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread() : "dispose() should be called from EDT only";
-    ClassLoaderManager.getInstance().removeReloadHandler(myHandler);
+    ClassLoaderManager.getInstance().removeClassesHandler(myClassesListener);
     myEditor.removeRebuildListener(myRebuildListener);
   }
 

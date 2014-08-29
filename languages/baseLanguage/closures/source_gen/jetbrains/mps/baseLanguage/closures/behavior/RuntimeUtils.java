@@ -11,7 +11,9 @@ import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
+import java.util.Set;
+import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -36,13 +38,13 @@ public class RuntimeUtils {
         for (SNode cls : SModelOperations.getNodes(getRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
           MapSequence.fromMap(RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
-        ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+        ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void unload() {
+          public void beforeClassesUnloaded(Set<SModule> modules) {
             synchronized (RuntimeUtils.class) {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
-            ClassLoaderManager.getInstance().removeReloadHandler(this);
+            ClassLoaderManager.getInstance().removeClassesHandler(this);
           }
         });
       }
@@ -68,13 +70,13 @@ public class RuntimeUtils {
         })) {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
-        ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+        ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
           @Override
-          public void unload() {
+          public void beforeClassesUnloaded(Set<SModule> modules) {
             synchronized (RuntimeUtils.class) {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }
-            ClassLoaderManager.getInstance().removeReloadHandler(this);
+            ClassLoaderManager.getInstance().removeClassesHandler(this);
           }
         });
       }

@@ -17,18 +17,20 @@ package jetbrains.mps.uitests.dialogs;
 
 import com.intellij.ide.DataManager;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.classloading.MPSClassesListenerAdapter;
 import jetbrains.mps.ide.newModuleDialogs.NewLanguageDialog;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.project.newproject.PathField;
 import junit.extensions.jfcunit.eventdata.StringEventData;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Set;
 
 public class NewLanguageUITest extends NewDialogsUITestsBase {
   public void testLanguageCreation() throws InvocationTargetException, InterruptedException {
@@ -54,11 +56,11 @@ public class NewLanguageUITest extends NewDialogsUITestsBase {
     pressButton(dialog, "OK");
 
     final boolean[] loaded = new boolean[1];
-    ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
+    ClassLoaderManager.getInstance().addClassesHandler(new MPSClassesListenerAdapter() {
       @Override
-      public void onAfterReload() {
+      public void afterClassesLoaded(Set<SModule> modules) {
         loaded[0] = true;
-        ClassLoaderManager.getInstance().removeReloadHandler(this);
+        ClassLoaderManager.getInstance().removeClassesHandler(this);
       }
     });
 

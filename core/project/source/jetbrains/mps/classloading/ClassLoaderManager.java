@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.SModelRootClassesListener;
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.reloading.ReloadListener;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.InternUtil;
@@ -112,7 +111,8 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  /** main api
+  /**
+   * main api
    * should get true before calling {@link #getClass} method
    * returns "true" whenever the module's classes can be managed within the MPS class loading system
    * TODO: should be just MPS_FACET
@@ -342,15 +342,5 @@ public class ClassLoaderManager implements CoreComponent {
   @ToRemove(version = 3.2)
   public void unloadAll(@NotNull ProgressMonitor monitor) {
     unloadModules(myRepository.getModules(), monitor);
-  }
-
-  @Deprecated
-  public void addReloadHandler(ReloadListener handler) {
-    addClassesHandler(handler);
-  }
-
-  @Deprecated
-  public void removeReloadHandler(ReloadListener handler) {
-    removeClassesHandler(handler);
   }
 }

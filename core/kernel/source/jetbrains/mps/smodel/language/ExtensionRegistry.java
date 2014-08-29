@@ -47,7 +47,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   private ClassLoaderManager myClm;
   @Nullable
   private MPSModuleRepository myRepo;
-  private final MPSClassesListener myHandler = new MPSClassesListenerAdapter() {
+  private final MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       unloadExtensionDescriptors(unloadedModules);
@@ -77,7 +77,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
       myRepo.addRepositoryListener(myListener);
     }
     if (myClm != null) {
-      myClm.addClassesHandler(myHandler);
+      myClm.addClassesHandler(myClassesListener);
     }
     INSTANCE = this;
   }
@@ -86,7 +86,7 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
   public void dispose() {
     INSTANCE = null;
     if (myClm != null) {
-      myClm.removeClassesHandler(myHandler);
+      myClm.removeClassesHandler(myClassesListener);
     }
     if (myRepo != null) {
       myRepo.removeRepositoryListener(myListener);

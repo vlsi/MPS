@@ -83,7 +83,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return "IntentionsDescriptor";
   }
 
-  private MPSClassesListener myReloadHandler = new MPSClassesListenerAdapter() {
+  private MPSClassesListener myClassesListener = new MPSClassesListenerAdapter() {
     @Override
     public void beforeClassesUnloaded(Set<SModule> unloadedModules) {
       clear();
@@ -419,7 +419,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @Override
   public void initComponent() {
-    myClassLoaderManager.addClassesHandler(myReloadHandler);
+    myClassLoaderManager.addClassesHandler(myClassesListener);
   }
 
   @Override
@@ -431,7 +431,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   @Override
   public void disposeComponent() {
-    myClassLoaderManager.removeClassesHandler(myReloadHandler);
+    myClassLoaderManager.removeClassesHandler(myClassesListener);
   }
 
   @Override
