@@ -4,7 +4,9 @@ package jetbrains.mps.lang.test.runtime;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -25,16 +27,20 @@ public class CheckErrorMessagesAction implements Runnable {
   @Override
   public void run() {
     TestsErrorsChecker checker = new TestsErrorsChecker(SNodeOperations.getContainingRoot(node));
-    for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      if (!(hasErrorOrWarningCheckOperationTag(child))) {
-        final Iterable<IErrorReporter> reporters = checker.getErrors(child);
-        for (IErrorReporter reporter : reporters) {
-          final String messageString = getErrorString(reporter, child);
-          checkWarnings(reporter, messageString);
-          checkErrors(reporter, messageString);
-        }
-
+    List<SNode> descendants = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{});
+    final Iterable<IErrorReporter> reporters = checker.getAllErrors();
+    for (IErrorReporter reporter : reporters) {
+      SNode child = reporter.getSNode();
+      assert child != null;
+      if (!(ListSequence.fromList(descendants).contains(child))) {
+        continue;
       }
+      if (hasErrorOrWarningCheckOperationTag(child)) {
+        continue;
+      }
+      final String messageString = getErrorString(reporter, child);
+      checkWarnings(reporter, messageString);
+      checkErrors(reporter, messageString);
     }
   }
 
