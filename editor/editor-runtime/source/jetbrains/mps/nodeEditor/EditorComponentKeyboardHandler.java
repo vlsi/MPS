@@ -91,7 +91,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
       }
 
       if (actionType != null
-          && !(selectedCell.isErrorState() && jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType) && strictMatching)) {
+          && !(selectedCell.isErrorState() && jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType))) {
         if (editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
           return true;
         }
