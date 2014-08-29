@@ -21,6 +21,7 @@
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
   <import index="hypd" modelUID="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="53vh" modelUID="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" version="0" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -1202,6 +1203,15 @@
         <link role="conceptDeclaration" roleId="tp25.2644386474300074837" targetNodeId="tpck.6999738288738427190" resolveInfo="ImplementationWithStubPart" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3980659913727216372" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="concept_AbstractMigrationScript" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3980659913727216373" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3980659913727216374" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.ConceptFqNameRefExpression" typeId="tp25.8339862546319741524" id="3980659913727216375" nodeInfo="nn">
+        <link role="conceptDeclaration" roleId="tp25.8339862546319741525" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+      </node>
+    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="7897202388613788596" nodeInfo="ngu" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="5253134957341832993" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="link_ConceptDeclaration_extends" />
@@ -1466,6 +1476,16 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tp25.PropertyIdRefExpression" typeId="tp25.2644386474302386080" id="2644386474304208593" nodeInfo="nn">
         <link role="conceptDeclaration" roleId="tp25.2644386474302386081" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
         <link role="propertyDeclaration" roleId="tp25.2644386474302386082" targetNodeId="tpck.1156234966388" resolveInfo="shortDescription" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3980659913727220021" nodeInfo="igu">
+      <property name="name" nameId="tpck.1169194664001" value="property_AbstractMigrationScript_fromVersion" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3980659913727220022" nodeInfo="nn" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3980659913727220023" nodeInfo="in" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tp25.PropertyNameRefExpression" typeId="tp25.5253134957341870583" id="3980659913727220024" nodeInfo="nn">
+        <link role="conceptDeclaration" roleId="tp25.5253134957341870584" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+        <link role="propertyDeclaration" roleId="tp25.5253134957341870585" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="6435559796485940120" nodeInfo="igu">

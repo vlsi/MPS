@@ -37,6 +37,7 @@ public class SNodeUtil {
   public static final SConceptId conceptId_ImplementationPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1319728274783077719");
   public static final String concept_ImplementationWithStubPart = "jetbrains.mps.lang.core.structure.ImplementationWithStubPart";
   public static final SConceptId conceptId_ImplementationWithStubPart = SConceptId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/6999738288738427190");
+  public static final String concept_AbstractMigrationScript = "jetbrains.mps.lang.migration.structure.AbstractMigrationScript";
 
   public static final String link_ConceptDeclaration_extends = "extends";
   public static final SReferenceLinkId linkId_ConceptDeclaration_extends = SReferenceLinkId.deserialize("c72da2b9-7cce-4447-8389-f407dc1158b7/1071489090640/1071489389519");
@@ -63,6 +64,7 @@ public class SNodeUtil {
   public static final SPropertyId propertyId_BaseConcept_alias = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156235010670");
   public static final String property_BaseConcept_shortDescription = "shortDescription";
   public static final SPropertyId propertyId_BaseConcept_shortDescription = SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1156234966388");
+  public static final String property_AbstractMigrationScript_fromVersion = "fromVersion";
   public static final String link_BaseConcept_smodelAttribute = "smodelAttribute";
   public static final SContainmentLinkId linkId_BaseConcept_smodelAttribute = SContainmentLinkId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170");
   public SNodeUtil() {
