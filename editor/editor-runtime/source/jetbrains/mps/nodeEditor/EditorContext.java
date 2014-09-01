@@ -143,22 +143,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return ProjectHelper.toMainFrame(project);
   }
 
-  /**
-   * @deprecated Since MPS 3.1 not used anymore. Use createRootCell()/createInspectedCell() instead
-   */
-  @Deprecated
-  public void resetModelEvents() {
-    myModelModifications = null;
-  }
-
-  /**
-   * @deprecated Since MPS 3.1 not used anymore. Use createRootCell()/createInspectedCell() instead
-   */
-  @Deprecated
-  public void setModelEvents(List<SModelEvent> modelEvents) {
-    myModelModifications = new SModelModificationsCollector(modelEvents).getModifications();
-  }
-
   private EditorCell createNodeCell(List<Pair<SNode, SNodeReference>> modifications) {
     return getOperationContext().getComponent(EditorManager.class).createEditorCell(this, modifications, myCurrentRefNodeContext);
   }
