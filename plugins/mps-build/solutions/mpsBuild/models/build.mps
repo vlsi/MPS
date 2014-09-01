@@ -26474,6 +26474,7 @@
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="2405506926871158563" nodeInfo="ng">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildDependency" typeId="3ior.5617550519002745379" id="2580966228161212886" nodeInfo="ng" />
   </root>
 </model>
 

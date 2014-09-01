@@ -7,13 +7,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
-import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.editor.runtime.style.Padding;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.editor.runtime.style.Padding;
+import jetbrains.mps.editor.runtime.style.Measure;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
@@ -25,30 +24,19 @@ public class XmlContent_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91idit_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createCustom_91idit_a0(editorContext, node));
+    editorCell.addEditorCell(this.createError_91idit_a0(editorContext, node));
     if (renderingCondition_91idit_a1a(node, editorContext)) {
       editorCell.addEditorCell(this.createConstant_91idit_b0(editorContext, node));
     }
     return editorCell;
   }
-  private EditorCell createCustom_91idit_a0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
-      public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
-          @Override
-          public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Error result = new EditorCell_Error(context, node, "<no content>");
-            result.getStyle().set(StyleAttributes.PADDING_LEFT, new Padding(0.0));
-            result.getStyle().set(StyleAttributes.PADDING_RIGHT, new Padding(0.0));
-            return result;
-          }
-        };
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_91idit_a0");
+  private EditorCell createError_91idit_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Error editorCell = new EditorCell_Error(editorContext, node, "<no content>");
+    editorCell.setCellId("Error_91idit_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE, XmlContent_Editor._StyleParameter_QueryFunction_91idit_a0a0((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode())));
+    style.set(StyleAttributes.PADDING_LEFT, new Padding(0, Measure.SPACES));
+    style.set(StyleAttributes.PADDING_RIGHT, new Padding(0, Measure.SPACES));
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
