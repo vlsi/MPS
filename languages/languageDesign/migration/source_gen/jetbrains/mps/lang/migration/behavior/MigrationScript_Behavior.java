@@ -10,6 +10,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class MigrationScript_Behavior {
   public static void init(SNode thisNode) {
@@ -28,5 +29,8 @@ public class MigrationScript_Behavior {
       return new NamedElementsScope(SLinkOperations.getTargets(thisNode, "requiresData", true));
     }
     return null;
+  }
+  public static String call_getGeneratedClassName_8648538385393994830(SAbstractConcept thisConcept) {
+    return "MigrationDescriptorImpl";
   }
 }

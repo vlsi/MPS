@@ -15,7 +15,9 @@ import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.lang.migration.generator.util.MigartionsCheckUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Level;
-import jetbrains.mps.migration.component.util.MigrationsUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -64,7 +66,7 @@ public class QueriesGenerated {
         }
       }
     });
-    return MigrationsUtil.getDescriptorClassName(module);
+    return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript"))));
   }
   public static Object propertyMacro_GetPropertyValue_2009787284780713394(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "version");

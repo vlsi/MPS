@@ -4,6 +4,10 @@ package jetbrains.mps.migration.component.util;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -26,10 +30,7 @@ import org.apache.log4j.LogManager;
 
 public class MigrationsUtil {
   public static String getDescriptorFQName(SModule module) {
-    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + getDescriptorClassName(module);
-  }
-  public static String getDescriptorClassName(SModule module) {
-    return "MigrationDescriptorImpl";
+    return module.getModuleName() + "." + LanguageAspect.MIGRATION.getName() + "." + BehaviorReflection.invokeNonVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript"))), "call_getGeneratedClassName_8648538385393994830", new Object[]{});
   }
   public static Iterable<Tuples._3<SModule, Integer, Integer>> getDependenciesToMigrate(final AbstractModule module) {
     return Sequence.fromIterable(checkDependenciesVersions(module)).where(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
@@ -50,7 +51,7 @@ public class MigrationsUtil {
     List<Tuples._3<SModule, Integer, Integer>> result = ListSequence.fromList(new ArrayList<Tuples._3<SModule, Integer, Integer>>());
     for (SLanguage lang : SetSequence.fromSet(module.getUsedLanguages())) {
       if (module.getModuleDescriptor().getLanguageVersions().get(lang.getId()) != lang.getLanguageVersion()) {
-        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0d(lang.getSourceModule(), Language.class).getLanguageVersion()));
+        ListSequence.fromList(result).addElement(MultiTuple.<SModule,Integer,Integer>from(lang.getSourceModule(), module.getModuleDescriptor().getLanguageVersions().get(lang.getId()), as_7hm1hv_a0c0a0a0a0c0c(lang.getSourceModule(), Language.class).getLanguageVersion()));
       }
     }
     return result;
@@ -58,7 +59,7 @@ public class MigrationsUtil {
   public static boolean isApplied(final MigrationScriptReference script, AbstractModule module) {
     return !(Sequence.fromIterable(MigrationsUtil.checkDependenciesVersions(module)).any(new IWhereFilter<Tuples._3<SModule, Integer, Integer>>() {
       public boolean accept(Tuples._3<SModule, Integer, Integer> it) {
-        return eq_7hm1hv_a0a0a0a0a0a0a0e(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
+        return eq_7hm1hv_a0a0a0a0a0a0a0d(it._0().getModuleReference(), script.getModuleReference()) && (int) it._1() <= script.getFromVersion();
       }
     }));
   }
@@ -80,10 +81,10 @@ public class MigrationsUtil {
     });
   }
   protected static Logger LOG = LogManager.getLogger(MigrationsUtil.class);
-  private static <T> T as_7hm1hv_a0c0a0a0a0c0d(Object o, Class<T> type) {
+  private static <T> T as_7hm1hv_a0c0a0a0a0c0c(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
-  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0e(Object a, Object b) {
+  private static boolean eq_7hm1hv_a0a0a0a0a0a0a0d(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
