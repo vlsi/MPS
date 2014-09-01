@@ -36,7 +36,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-public class EventsCollector {
+public class ModelsEventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myListener = createCommandEventsCollector();
   private Set<SModel> myModelDescriptors = new LinkedHashSet<SModel>();
@@ -45,7 +45,7 @@ public class EventsCollector {
 
   private boolean myIsInCommand;
 
-  public EventsCollector() {
+  public ModelsEventsCollector() {
     ModelAccess.instance().addCommandListener(myModelAccessListener);
     myIsInCommand = ModelAccess.instance().isInsideCommand();
   }

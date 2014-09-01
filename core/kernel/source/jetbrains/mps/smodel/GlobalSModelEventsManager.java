@@ -160,7 +160,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
     );
   }
 
-  private class MyEventsCollector extends EventsCollector {
+  private class MyEventsCollector extends ModelsEventsCollector {
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
       if (events.isEmpty()) return;

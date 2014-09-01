@@ -20,6 +20,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -84,7 +85,7 @@ public class ModuleFileTracker implements CoreComponent {
 
   private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       removeModuleFile(file);
@@ -92,7 +93,7 @@ public class ModuleFileTracker implements CoreComponent {
     }
 
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       IFile file = ((AbstractModule) module).getDescriptorFile();
       if (file == null) return;
       addCanonicalFile(file, module);

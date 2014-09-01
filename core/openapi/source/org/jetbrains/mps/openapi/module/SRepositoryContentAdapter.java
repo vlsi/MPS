@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModel.Problem;
 import org.jetbrains.mps.openapi.model.SModelAccessListener;
@@ -98,35 +99,17 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   // SRepositoryListener methods
   @Override
-  public void modulesAdded(Set<SModule> modules) {
-    for (SModule module : modules)
-      moduleAdded(module);
-  }
-
-  @Override
-  public void beforeModulesRemoved(Set<SModule> modules) {
-    for (SModule module : modules)
-      beforeModuleRemoved(module);
-  }
-
-  @Override
-  public void modulesRemoved(Set<SModuleReference> moduleRefs) {
-    for (SModuleReference module : moduleRefs)
-      moduleRemoved(module);
-  }
-
-  @Override
-  public void moduleAdded(SModule module) {
+  public void moduleAdded(@NotNull SModule module) {
     startListening(module);
   }
 
   @Override
-  public void beforeModuleRemoved(SModule module) {
+  public void beforeModuleRemoved(@NotNull SModule module) {
     stopListening(module);
   }
 
   @Override
-  public void moduleRemoved(SModuleReference module) {
+  public void moduleRemoved(@NotNull SModuleReference module) {
     repositoryChanged();
   }
 
@@ -139,14 +122,6 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void commandFinished(SRepository repository) {
     assert commandStack.contains(repository);
     commandStack.remove(repository);
-  }
-
-  @Override
-  public void updateStarted(SRepository repository) {
-  }
-
-  @Override
-  public void updateFinished(SRepository repository) {
   }
 
   @Override

@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * A convenient empty implementation of the SRepositoryListener interface.
@@ -23,33 +23,15 @@ import java.util.Set;
 public class SRepositoryAdapter implements SRepositoryListener {
 
   @Override
-  public void modulesAdded(Set<SModule> modules) {
-    for (SModule module : modules)
-      moduleAdded(module);
+  public void moduleAdded(@NotNull SModule module) {
   }
 
   @Override
-  public void beforeModulesRemoved(Set<SModule> modules) {
-    for (SModule module : modules)
-      beforeModuleRemoved(module);
+  public void beforeModuleRemoved(@NotNull SModule module) {
   }
 
   @Override
-  public void modulesRemoved(Set<SModuleReference> moduleRefs) {
-    for (SModuleReference module : moduleRefs)
-      moduleRemoved(module);
-  }
-
-  @Override
-  public void moduleAdded(SModule module) {
-  }
-
-  @Override
-  public void beforeModuleRemoved(SModule module) {
-  }
-
-  @Override
-  public void moduleRemoved(SModuleReference module) {
+  public void moduleRemoved(@NotNull SModuleReference module) {
   }
 
   @Override
@@ -58,14 +40,6 @@ public class SRepositoryAdapter implements SRepositoryListener {
 
   @Override
   public void commandFinished(SRepository repository) {
-  }
-
-  @Override
-  public void updateStarted(SRepository repository) {
-  }
-
-  @Override
-  public void updateFinished(SRepository repository) {
   }
 
   @Override

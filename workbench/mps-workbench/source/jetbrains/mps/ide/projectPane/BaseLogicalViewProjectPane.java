@@ -72,6 +72,7 @@ import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -503,12 +504,12 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
   private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       myNeedRebuild = true;
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       myNeedRebuild = true;
     }
   }

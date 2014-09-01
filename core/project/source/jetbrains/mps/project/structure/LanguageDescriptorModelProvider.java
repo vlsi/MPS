@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -60,7 +61,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
   private final SRepository myRepository;
   private final SRepositoryListener myListener = new SRepositoryContentAdapter() {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       super.moduleAdded(module);
       if (module instanceof Language) {
         refreshModule((Language) module, false);
@@ -75,7 +76,7 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       super.beforeModuleRemoved(module);
       if (module instanceof Language) {
         refreshModule((Language) module, true);

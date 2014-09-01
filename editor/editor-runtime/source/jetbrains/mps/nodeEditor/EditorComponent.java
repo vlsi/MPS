@@ -114,7 +114,7 @@ import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
-import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -206,7 +206,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -3431,7 +3430,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MyEventsCollector extends EventsCollector {
+  private class MyEventsCollector extends ModelsEventsCollector {
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
       handleEvents(events);

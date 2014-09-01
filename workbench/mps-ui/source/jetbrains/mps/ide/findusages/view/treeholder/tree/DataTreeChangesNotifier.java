@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -137,7 +138,7 @@ public class DataTreeChangesNotifier {
 
   private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
-    public void moduleRemoved(SModuleReference module) {
+    public void moduleRemoved(@NotNull SModuleReference module) {
       if (!myModules.contains(module)) return;
       myChanged = true;
     }

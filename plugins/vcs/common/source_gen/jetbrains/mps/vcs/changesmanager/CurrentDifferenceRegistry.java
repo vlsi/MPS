@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
+
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -28,7 +30,7 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.EventsCollector;
+
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -183,7 +185,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       }
     }
   }
-  private static class MyEventsCollector extends EventsCollector {
+  private static class MyEventsCollector extends ModelsEventsCollector {
     private final MultiMap<SModelReference, SModelCommandListener> myListeners = new MultiMap<SModelReference, SModelCommandListener>();
     public void addListener(SModel model, SModelCommandListener listener) {
       if (!(myListeners.containsKey(model.getReference()))) {

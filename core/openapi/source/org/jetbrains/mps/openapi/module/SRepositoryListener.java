@@ -15,34 +15,24 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import java.util.Set;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * Receives notifications whenever a repository gets updated.
  */
 public interface SRepositoryListener {
 
-  void modulesAdded(Set<SModule> modules);
+  void moduleAdded(@NotNull SModule module);
 
-  void beforeModulesRemoved(Set<SModule> modules);
+  void beforeModuleRemoved(@NotNull SModule module);
 
-  void modulesRemoved(Set<SModuleReference> moduleRefs);
-
-  void moduleAdded(SModule module);
-
-  void beforeModuleRemoved(SModule module);
-
-  void moduleRemoved(SModuleReference module);
+  void moduleRemoved(@NotNull SModuleReference module);
 
   void commandStarted(SRepository repository);
 
   void commandFinished(SRepository repository);
 
-  void updateStarted(SRepository repository);
+  void batchCommandStarted(SRepository repository);
 
-  void updateFinished(SRepository repository);
-
-  void repositoryCommandStarted(SRepository repository);
-
-  void repositoryCommandFinished(SRepository repository);
+  void batchCommandFinished(SRepository repository);
 }
