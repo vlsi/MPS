@@ -239,15 +239,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     myNodeEditorComponent.flushEvents();
   }
 
-  /**
-   * @deprecated since MPS 3.1 use createMemento()
-   */
-  @Override
-  @Deprecated
-  public Object createMemento(boolean full) {
-    return createMemento();
-  }
-
   @Override
   public Object createMemento() {
     return new Memento(this, false);
@@ -266,14 +257,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     SelectionManager selectionManager = getNodeEditorComponent().getSelectionManager();
     selectionManager.setSelection(selectionManager.createRangeSelection(first, last));
   }
-
-  @Override
-  public void select(final SNode node, String cellId) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node, cellId);
-  }
-
 
   @Override
   public void selectWRTFocusPolicy(final SNode node) {
@@ -320,36 +303,6 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         });
       }
     });
-  }
-
-  @Override
-  public void selectAndSetCaret(final SNode node, final int position) {
-    flushEvents();
-
-    getNodeEditorComponent().selectNode(node);
-    EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
-    setCaretPosition(selectedCell, position);
-  }
-
-  private int setCaretPosition(EditorCell editorCell, int position) {
-    int newPosition = position;
-    if (editorCell instanceof EditorCell_Label) {
-      EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
-      newPosition = position - editorCell_label.getText().length();
-      if (newPosition < 0) {
-        getNodeEditorComponent().changeSelection(editorCell);
-        editorCell_label.setCaretPosition(position);
-      }
-    } else if (editorCell instanceof EditorCell_Collection) {
-      EditorCell_Collection editorCell_iterable = (EditorCell_Collection) editorCell;
-      for (EditorCell subEditorCell : editorCell_iterable) {
-        newPosition = setCaretPosition(subEditorCell, newPosition);
-        if (newPosition < 0) {
-          break;
-        }
-      }
-    }
-    return newPosition;
   }
 
   @Override
