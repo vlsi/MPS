@@ -9,6 +9,7 @@ import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -20,7 +21,7 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class ConceptFunc_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
+public class ConceptFunc_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodLike_BehaviorDescriptor, IStatementListContainer_BehaviorDescriptor, ImplementationContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunc_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {

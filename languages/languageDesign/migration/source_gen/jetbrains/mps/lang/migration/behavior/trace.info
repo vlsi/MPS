@@ -16,7 +16,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataReference_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunc_BehaviorDescriptor.java">
-      <unit at="23,0,91,0" name="jetbrains.mps.lang.migration.behavior.ConceptFunc_BehaviorDescriptor" />
+      <unit at="24,0,92,0" name="jetbrains.mps.lang.migration.behavior.ConceptFunc_BehaviorDescriptor" />
     </file>
     <file name="MigrationsPatternVariableReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.MigrationsPatternVariableReference_BehaviorDescriptor" />
