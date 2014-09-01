@@ -87,43 +87,6 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
     }
   }
 
-  public static void checkLanguageVersionMatchesMigrations(Language lang, List<String> errors) {
-    SModel migModel = LanguageAspect.MIGRATION.get(lang);
-    if (migModel == null) return;
-    if (!migModel.isLoaded()) return;
-
-    boolean hasIncompleteScript = false;
-    List<Integer> scripts = new ArrayList<Integer>();
-    for (SNode root : migModel.getRootNodes()) {
-      if (!SNodeOperations.isInstanceOf(root, SNodeUtil.concept_AbstractMigrationScript)) continue;
-      if (root.getProperty(SNodeUtil.property_AbstractMigrationScript_fromVersion) == null) {
-        hasIncompleteScript = true;
-        continue;
-      }
-
-      scripts.add(SPropertyOperations.getInteger(root, SNodeUtil.property_AbstractMigrationScript_fromVersion));
-    }
-    if (scripts.isEmpty()) return;
-
-    //check that script versions form exactly an interval [x..currentVersion] for some x
-    Integer[] scriptVersions = scripts.toArray(new Integer[scripts.size()]);
-    Arrays.sort(scriptVersions);
-
-    int currentVersion = lang.getLanguageVersion();
-    for (int index = 1; index < scriptVersions.length; index++) {
-      if (scriptVersions[index - 1].equals(scriptVersions[index])) {
-        errors.add("Some scripts have the same 'from' version: " + scriptVersions[index - 1]);
-      } else if (scriptVersions[index - 1] + 1 != scriptVersions[index]) {
-        int noscriptVersion = scriptVersions[index - 1] + 1;
-        errors.add("No script found for version " + noscriptVersion);
-      }
-    }
-
-    if (scriptVersions[scriptVersions.length - 1] != currentVersion - 1 && !hasIncompleteScript) {
-      errors.add("Can't find a migration script corresponding to current language version (" + currentVersion + ")");
-    }
-  }
-
   @Override
   public List<String> getErrors() {
     List<String> errors = new ArrayList<String>(super.getErrors());
@@ -133,7 +96,6 @@ public class LanguageValidator extends BaseModuleValidator<Language> {
       }
     }
     checkBehaviorAspectPresence(myModule, errors);
-    checkLanguageVersionMatchesMigrations(myModule, errors);
     for (SModuleReference mr : myModule.getRuntimeModulesReferences()) {
       SModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(mr);
       if (runtimeModule == null) continue;
