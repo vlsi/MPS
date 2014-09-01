@@ -37,15 +37,6 @@ public interface Editor {
   void dispose();
 
   //---state
-
-  /**
-   * should be removed after MPS 3.1
-   *
-   * @deprecated since MPS 3.1 use saveState() instead
-   */
-  @Deprecated
-  EditorState saveState(boolean full);
-
   EditorState saveState();
 
   void loadState(@NotNull EditorState state);

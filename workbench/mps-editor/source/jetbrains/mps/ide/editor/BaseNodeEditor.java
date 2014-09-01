@@ -195,19 +195,6 @@ public abstract class BaseNodeEditor implements Editor {
 
   @Override
   public EditorState saveState() {
-    return saveState(true);
-  }
-
-
-  /**
-   * Implementation should be moved to saveState()
-   *
-   * @deprecated since MPS 3.1
-   */
-  @Deprecated
-  @Override
-  @Nullable
-  public EditorState saveState(boolean full) {
     BaseEditorState result = new BaseEditorState();
     EditorContext editorContext = getEditorContext();
     if (editorContext != null) {
