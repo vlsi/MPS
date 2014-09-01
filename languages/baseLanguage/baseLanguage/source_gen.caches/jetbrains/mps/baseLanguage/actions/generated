@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cvqp9ts26eh87llf1i1hm2murhi7q0e">
+<dependencies version="2" modelHash="2g02tafvma9j0aespf1ti67bl7r5uzo">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.selection(MPS.Editor/jetbrains.mps.editor.runtime.selection@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -32,8 +32,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" hash="-1qnryyf7z2f6ki4b8ov36l4tzyqr9ya" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-6yjiczkqjwscghxi9lwknmryu3quk5c" />
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-e5eutuvhjs7oc2cocn3yqddssc8i4ed" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="-4f4ctc4yrsvoneg8rc4c1425qqhgydq" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="5j90kls65fpqwmu7cy49pwbqvskbmi" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c3(jetbrains.mps.baseLanguage.editor)" hash="1tqowrgf2g9kzhoaq9qgpdcdse1x4e3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="8lvdukoi0bmv9vp15gr992xtcdvhfvv" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="c1hnhdpddphjo2fhgyvonweo0t1r37x" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
@@ -215,7 +215,7 @@
   <source id="1138168268784" name="binaryOperations" hash="-426lvzjlwraue719l8uh9p3eoc5rfjj">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1158793282643" name="BL_node_factories" hash="-b300iywhow8daoc09nrvo6ms2exy589">
+  <source id="1158793282643" name="BL_node_factories" hash="bs718klnzja44sca40wryd4b84cz8iv">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1158872173903" name="ExpectedType_FactoryUtil" hash="egfkkanz3mm3sj8k0armddohe8akca1">
@@ -342,6 +342,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="PrecedenceUtil.java" />
   </source>
@@ -375,7 +376,6 @@
     <dep model="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
@@ -388,13 +388,14 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ModuleDependencyUtils.java" />
   </source>
   <source id="8259790178088785383" name="AddSquareBracketsToarrayCreatorWithInitializer" hash="-9142su7ixbnnkwehufrqfuf1tyy4gyw" />
   <source id="1587149463196837916" name="¡ClassifierClassExpressionToArray" hash="ct2gt81wpvsdtxwgw95xufzkjzijye2" />
   <source id="5695707814672712007" name="LocalVariable2ArrayClassExpression" hash="e3dxiiyekmjakxkd8lsa0cpi77l2tx7" />
   <source id="1778214689153983413" name="ParensAroundEmptyExpression" hash="-2riffy5urxkbu0edmlxp8ibuo43ukp7" />
-  <source id="7272388447691425616" name="MethodModifiersRightTransforms" hash="66zrswrjoxmotzrgso8wo09wh5jsh51" />
+  <source id="7272388447691425616" name="MethodModifiersRightTransforms" hash="-21accq955gkgsskcp30p0s256w0zuv2" />
   <source id="2509912883454671058" name="AddStaticFieldModifiersOnTypes" hash="5opoglm1gu6uffd0q0nnejg7inweek1" />
   <source id="3207672282897614588" name="FieldConversions" hash="59tzzishiy2caomc2c7bsnjjfb98iv6" />
   <source id="7272388447767921848" name="FieldModifiersRightTransforms" hash="2rdwcv6i7oueduljveivb66s01p78v7" />

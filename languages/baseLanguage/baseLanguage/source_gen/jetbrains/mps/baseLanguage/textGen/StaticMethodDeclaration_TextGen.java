@@ -36,6 +36,9 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isSynchronized")) {
       this.append("synchronized ");
     }
+    if (SPropertyOperations.getBoolean(node, "isNative")) {
+      this.append("native ");
+    }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");
@@ -68,18 +71,23 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
         }
       }
     }
-    this.append(" {");
-    this.increaseDepth();
-    if ((SLinkOperations.getTarget(node, "body", true) != null)) {
-      appendNode(SLinkOperations.getTarget(node, "body", true));
-    } else {
+    if (SPropertyOperations.getBoolean(node, "isNative")) {
+      this.append(";");
       this.appendNewLine();
-      this.appendWithIndent("throw new RuntimeException(\"NOT IMPLEMENTED\");");
+    } else {
+      this.append(" {");
+      this.increaseDepth();
+      if ((SLinkOperations.getTarget(node, "body", true) != null)) {
+        appendNode(SLinkOperations.getTarget(node, "body", true));
+      } else {
+        this.appendNewLine();
+        this.appendWithIndent("throw new RuntimeException(\"NOT IMPLEMENTED\");");
+      }
+      this.decreaseDepth();
+      this.appendNewLine();
+      this.appendWithIndent("}");
+      this.appendNewLine();
     }
-    this.decreaseDepth();
-    this.appendNewLine();
-    this.appendWithIndent("}");
-    this.appendNewLine();
     if (getBuffer().hasPositionsSupport()) {
       {
         String traceableProperty = "";
