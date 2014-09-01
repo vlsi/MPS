@@ -387,7 +387,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="ModuleDependencyUtils.java" />
   </source>
   <source id="8259790178088785383" name="AddSquareBracketsToarrayCreatorWithInitializer" hash="-9142su7ixbnnkwehufrqfuf1tyy4gyw" />
@@ -415,6 +414,7 @@
     <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" />
     <dep model="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" />
     <dep model="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />

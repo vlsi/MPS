@@ -22,7 +22,7 @@ public class AddNativeFlagToAllMethods_MigrationScript extends BaseMigrationScri
         return "jetbrains.mps.baseLanguage.structure.MethodDeclaration";
       }
       public boolean isApplicableInstanceNode(SNode node) {
-        return true;
+        return node.getProperty("isNative") == null;
       }
       public void doUpdateInstanceNode(SNode node) {
         SPropertyOperations.set(node, "isNative", "" + (false));
