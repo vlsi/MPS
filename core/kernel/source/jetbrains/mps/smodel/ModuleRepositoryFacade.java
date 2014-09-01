@@ -155,7 +155,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
   }
 
   public static SModule createModule(ModuleHandle handle, MPSModuleOwner owner) {
-//    LOG.debug("Creating a module " + handle);
+    LOG.debug("Creating a module " + handle);
     if (handle.getDescriptor() instanceof LanguageDescriptor) {
       return newLanguageInstance(handle, owner);
     } else if (handle.getDescriptor() instanceof SolutionDescriptor) {

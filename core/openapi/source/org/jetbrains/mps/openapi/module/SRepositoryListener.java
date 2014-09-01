@@ -15,10 +15,18 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import java.util.Set;
+
 /**
  * Receives notifications whenever a repository gets updated.
  */
 public interface SRepositoryListener {
+
+  void modulesAdded(Set<SModule> modules);
+
+  void beforeModulesRemoved(Set<SModule> modules);
+
+  void modulesRemoved(Set<SModuleReference> moduleRefs);
 
   void moduleAdded(SModule module);
 

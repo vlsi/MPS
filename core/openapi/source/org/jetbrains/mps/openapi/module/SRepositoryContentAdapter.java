@@ -38,8 +38,81 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   protected SRepositoryContentAdapter() {
   }
 
+  // Own methods
+  public void subscribeTo(SRepository repository) {
+    repository.getModelAccess().checkReadAccess();
+    repository.addRepositoryListener(this);
+  }
+
+  public void startListening(SRepository repository) {
+    for (SModule module : repository.getModules()) {
+      startListening(module);
+    }
+    if (repository.getModelAccess().isCommandAction()) {
+      // TODO forbid attaching listeners in commands
+      synchronized (commandStack) {
+        commandStack.add(repository);
+      }
+    }
+  }
+
+  public void unsubscribeFrom(SRepository repository) {
+    repository.getModelAccess().checkReadAccess();
+    repository.removeRepositoryListener(this);
+  }
+
+  public void stopListening(SRepository repository) {
+    for (SModule module : repository.getModules()) {
+      stopListening(module);
+    }
+    synchronized (commandStack) {
+      commandStack.remove(repository);
+    }
+  }
+
+  protected void startListening(SModule module) {
+    if (!isIncluded(module)) return;
+    module.addModuleListener(this);
+    for (SModel model : module.getModels()) {
+      startListening(model);
+    }
+  }
+
+  protected void stopListening(SModule module) {
+    // it's not very nice to stop listening models of any module, even the one we didn't include this module in startListening(SModule), but who cares
+    for (SModel model : module.getModels()) {
+      stopListening(model);
+    }
+    module.removeModuleListener(this);
+  }
+
+  protected void startListening(SModel model) {
+  }
+
+  protected void stopListening(SModel model) {
+  }
+
   protected boolean isIncluded(SModule module) {
     return true;
+  }
+
+  // SRepositoryListener methods
+  @Override
+  public void modulesAdded(Set<SModule> modules) {
+    for (SModule module : modules)
+      moduleAdded(module);
+  }
+
+  @Override
+  public void beforeModulesRemoved(Set<SModule> modules) {
+    for (SModule module : modules)
+      beforeModuleRemoved(module);
+  }
+
+  @Override
+  public void modulesRemoved(Set<SModuleReference> moduleRefs) {
+    for (SModuleReference module : moduleRefs)
+      moduleRemoved(module);
   }
 
   @Override
@@ -84,59 +157,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void repositoryCommandFinished(SRepository repository) {
   }
 
-  protected void startListening(SModule module) {
-    if (!isIncluded(module)) return;
-    module.addModuleListener(this);
-    for (SModel model : module.getModels()) {
-      startListening(model);
-    }
-  }
-
-  protected void stopListening(SModule module) {
-    // it's not very nice to stop listening models of any module, even the one we didn't include this module in startListening(SModule), but who cares
-    for (SModel model : module.getModels()) {
-      stopListening(model);
-    }
-    module.removeModuleListener(this);
-  }
-
-  protected void startListening(SModel model) {
-  }
-
-  protected void stopListening(SModel model) {
-  }
-
-  public void subscribeTo(SRepository repository) {
-    repository.getModelAccess().checkReadAccess();
-    repository.addRepositoryListener(this);
-  }
-
-  public void startListening(SRepository repository) {
-    for (SModule module : repository.getModules()) {
-      startListening(module);
-    }
-    if (repository.getModelAccess().isCommandAction()) {
-      // TODO forbid attaching listeners in commands
-      synchronized (commandStack) {
-        commandStack.add(repository);
-      }
-    }
-  }
-
-  public void unsubscribeFrom(SRepository repository) {
-    repository.getModelAccess().checkReadAccess();
-    repository.removeRepositoryListener(this);
-  }
-
-  public void stopListening(SRepository repository) {
-    for (SModule module : repository.getModules()) {
-      stopListening(module);
-    }
-    synchronized (commandStack) {
-      commandStack.remove(repository);
-    }
-  }
-
+  // SModuleListener methods
   @Override
   public void moduleChanged(SModule module) {
     repositoryChanged();
@@ -153,6 +174,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     stopListening(model);
   }
 
+  // SModelChangeListener listeners
   @Override
   public void nodeAdded(SModel model, SNode node, String role, SNode child) {
   }
@@ -169,6 +191,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
   }
 
+  // SModelListener methods
   @Override
   public void modelLoaded(SModel model, boolean partially) {
   }
@@ -193,6 +216,7 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void problemsDetected(SModel model, Iterable<Problem> problems) {
   }
 
+  // SModelAccessListener methods
   @Override
   public void nodeRead(SNode node) {
   }

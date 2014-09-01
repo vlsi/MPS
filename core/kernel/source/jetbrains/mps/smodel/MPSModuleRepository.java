@@ -47,7 +47,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
   private static MPSModuleRepository ourInstance;
 
-  private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
+  private final GlobalModelAccess myGlobalModelAccess;
 
   private final ModelAccessListener myCommandListener = new ModelAccessListener() {
     @Override
@@ -228,18 +228,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   @Override
   public RepositoryAccess getRepositoryAccess() {
-    return new RepositoryAccess() {
-      @Override
-      public void applyChanges(Runnable r) {
-        //todo implement
-      }
-
-      @Override
-      public boolean isUpdating() {
-        //todo implement
-        return false;
-      }
-    };
+    return new GlobalRepositoryAccess();
   }
 
   @Deprecated
@@ -311,70 +300,4 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     return ModuleRepositoryFacade.getInstance().getModule(ref);
   }
 
-  private class GlobalModelAccess implements org.jetbrains.mps.openapi.module.ModelAccess {
-    @Override
-    public boolean canRead() {
-      return jetbrains.mps.smodel.ModelAccess.instance().canRead();
-    }
-
-    @Override
-    public void checkReadAccess() {
-      jetbrains.mps.smodel.ModelAccess.instance().checkReadAccess();
-    }
-
-    @Override
-    public boolean canWrite() {
-      return jetbrains.mps.smodel.ModelAccess.instance().canWrite();
-    }
-
-    @Override
-    public void checkWriteAccess() {
-      jetbrains.mps.smodel.ModelAccess.instance().checkWriteAccess();
-    }
-
-    @Override
-    public void runReadAction(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runReadAction(r);
-    }
-
-    @Override
-    public void runReadInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(r);
-    }
-
-    @Override
-    public void runWriteAction(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
-    }
-
-    @Override
-    public void runWriteInEDT(Runnable r) {
-      jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(r);
-    }
-
-    @Override
-    public void executeCommand(Runnable r) {
-      // FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
-      // e.g. there are actions that run without a project (like New Project action), and they could benefit from
-      // same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
-      // project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
-      // it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void executeCommandInEDT(Runnable r) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void executeUndoTransparentCommand(Runnable r) {
-      throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean isCommandAction() {
-      return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
-    }
-  }
 }
