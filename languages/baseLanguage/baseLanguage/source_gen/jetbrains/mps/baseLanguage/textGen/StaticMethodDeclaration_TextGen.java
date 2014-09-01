@@ -71,7 +71,7 @@ public class StaticMethodDeclaration_TextGen extends SNodeTextGen {
         }
       }
     }
-    if (SPropertyOperations.getBoolean(node, "isNative")) {
+    if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
       this.append(";");
       this.appendNewLine();
     } else {

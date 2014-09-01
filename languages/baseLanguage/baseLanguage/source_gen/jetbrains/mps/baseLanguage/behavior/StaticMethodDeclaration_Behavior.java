@@ -61,6 +61,9 @@ public class StaticMethodDeclaration_Behavior {
     context.addMember(thisNode, signature);
     context.hideMembers(signature);
   }
+  public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
+    return SPropertyOperations.getBoolean(thisNode, "isNative");
+  }
   private static SNode _quotation_createNode_qyxuoz_b0a0a0a0a3a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

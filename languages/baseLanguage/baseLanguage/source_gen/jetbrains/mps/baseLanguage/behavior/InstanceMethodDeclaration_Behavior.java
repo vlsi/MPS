@@ -31,7 +31,7 @@ public class InstanceMethodDeclaration_Behavior {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
   }
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
-    return SPropertyOperations.getBoolean(thisNode, "isAbstract");
+    return SPropertyOperations.getBoolean(thisNode, "isAbstract") || SPropertyOperations.getBoolean(thisNode, "isNative");
   }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});

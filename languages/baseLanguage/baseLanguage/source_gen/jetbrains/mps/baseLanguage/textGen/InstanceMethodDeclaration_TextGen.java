@@ -74,7 +74,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(node, "isAbstract") || SPropertyOperations.getBoolean(node, "isNative")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
       this.append(";");
       this.appendNewLine();
     } else {

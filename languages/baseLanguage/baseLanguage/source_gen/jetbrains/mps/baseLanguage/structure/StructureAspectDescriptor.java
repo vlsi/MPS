@@ -302,7 +302,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 143:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").alias("(", "").create();
       case 144:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile", "transient").children(new String[]{"type"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile", "transient", "native").children(new String[]{"type"}, new boolean[]{false}).create();
       case 145:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteRightParen").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").alias(")", "").create();
       case 146:

@@ -27,6 +27,9 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends MethodDeclaratio
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return StaticMethodDeclaration_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
   }
+  public boolean virtual_isAbstract_1232982539764(SNode thisNode) {
+    return StaticMethodDeclaration_Behavior.virtual_isAbstract_1232982539764(thisNode);
+  }
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
   }

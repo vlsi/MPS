@@ -34,6 +34,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
@@ -444,14 +445,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a01a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isAbstract") || SPropertyOperations.getBoolean(node, "isNative");
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{});
   }
   private EditorCell createComponent_359zr8_l0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a11a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract") || SPropertyOperations.getBoolean(node, "isNative"));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{}));
   }
   private EditorCell createCollection_359zr8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
