@@ -8,6 +8,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.migration.behavior.AbstractMigrationScript_Behavior;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.migration.generator.util.MigartionsCheckUtil;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import org.apache.log4j.Level;
 import jetbrains.mps.migration.component.util.MigrationsUtil;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -17,9 +24,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 @Generated
 public class QueriesGenerated {
@@ -46,7 +54,17 @@ public class QueriesGenerated {
     return SModelOperations.getModelName(_context.getInputModel()) + "." + MigrationScript_Behavior.call_getClassName_6547769411406912356(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_6547769411407089660(final PropertyMacroContext _context) {
-    return MigrationsUtil.getDescriptorClassName(_context.getOriginalInputModel().getModule());
+    List<String> errors = ListSequence.fromList(new ArrayList<String>());
+    SModule module = _context.getOriginalInputModel().getModule();
+    MigartionsCheckUtil.checkLanguageVersionMatchesMigrations(module, errors);
+    ListSequence.fromList(errors).visitAll(new IVisitor<String>() {
+      public void visit(String it) {
+        if (LOG.isEnabledFor(Level.ERROR)) {
+          LOG.error(it);
+        }
+      }
+    });
+    return MigrationsUtil.getDescriptorClassName(module);
   }
   public static Object propertyMacro_GetPropertyValue_2009787284780713394(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "version");
@@ -119,4 +137,5 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_5712848521226160537(final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.migration.structure.MigrationScript");
   }
+  protected static Logger LOG = LogManager.getLogger(QueriesGenerated.class);
 }
