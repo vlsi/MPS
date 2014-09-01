@@ -401,7 +401,7 @@ public class IntentionsSupport {
     final Set<Pair<IntentionExecutable, SNode>> result = new LinkedHashSet<Pair<IntentionExecutable, SNode>>();
     final SNode node = myEditor.getSelectedNode();
     final EditorContext editorContext = myEditor.getEditorContext();
-    if (node != null && editorContext != null) {
+    if (node != null) {
       final QueryDescriptor query = new QueryDescriptor();
       query.setEnabledOnly(true);
       final Collection<Pair<IntentionExecutable, SNode>> availableIntentions =

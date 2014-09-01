@@ -111,7 +111,7 @@ class Memento {
     boolean editorRebuildRequired = editor.setEnabledHints(myEnabledHints);
     editorRebuildRequired = editor.setUseCustomHints(myUseCustomHints) || editorRebuildRequired;
 
-    if (myEditedNodeReference != null && editor.getEditorContext() != null) {
+    if (myEditedNodeReference != null) {
       SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
       if (newEditedNode != null) {
         editor.editNode(newEditedNode);

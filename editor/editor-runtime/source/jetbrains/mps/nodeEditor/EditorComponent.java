@@ -1203,11 +1203,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   @Override
   public IOperationContext getOperationContext() {
-    EditorContext editorContext = getEditorContext();
-    if (editorContext != null) return editorContext.getOperationContext();
-
-    jetbrains.mps.project.Project p = ProjectHelper.getProject(myRepository);
-    return p == null ? null : new ProjectOperationContext(p);
+    return getEditorContext().getOperationContext();
   }
 
   private EditorCell_WithComponent findCellForComponent(Component component, jetbrains.mps.openapi.editor.cells.EditorCell root) {
@@ -1495,7 +1491,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     but can be called outside of read action.
    */
   private boolean isInvalidLightweight() {
-    return getEditorContext() == null || getEditedNode() == null;
+    return isDisposed() || getEditedNode() == null;
   }
 
   private void addOurListeners(@NotNull SModel sm) {
@@ -1729,16 +1725,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void relayout() {
-    if (getEditorContext() != null) {
-      getEditorContext().pushTracerTask("Relayouting", true);
-    }
+    getEditorContext().pushTracerTask("Relayouting", true);
     doRelayout();
     revalidate();
     repaint();
     getVerticalScrollBar().repaint();
-    if (getEditorContext() != null) {
-      getEditorContext().popTracerTask();
-    }
+    getEditorContext().popTracerTask();
   }
 
   public void revalidateAndRepaint() {
@@ -1908,7 +1900,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void rebuildEditorContent(final List<SModelEvent> events) {
     LOG.assertLog(ModelAccess.instance().isInEDT() || SwingUtilities.isEventDispatchThread(), "You should do this in EDT");
     //i.e. we are disposed. it's too late to rebuild
-    if (getEditorContext() == null) {
+    if (isDisposed()) {
       return;
     }
     getEditorContext().pushTracerTask("Rebuilding Editor Content", true);
@@ -2520,7 +2512,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void processKeyPressed(final KeyEvent keyEvent) {
-    if (keyEvent.isConsumed()) return;
+    if (keyEvent.isConsumed() || isDisposed()) return;
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && noKeysDown(keyEvent)) {
@@ -2536,13 +2528,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       return;
     }
 
-    // all other processing should be performed inside command
-    EditorContext editorContext = getEditorContext();
-    if (editorContext == null) {
-      return; //i.e. editor is disposed
-    }
-
-    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(editorContext, keyEvent)) {
+    if (isKeyboardHandlerProcessingEnabled(keyEvent) && peekKeyboardHandler().processKeyPressed(getEditorContext(), keyEvent)) {
       keyEvent.consume();
     }
     revalidateAndRepaint();
@@ -2892,7 +2878,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     try {
       myCellSwapInProgress = true;
       EditorContext ec = getEditorContext();
-      assert ec != null;
 
       jetbrains.mps.openapi.editor.cells.EditorCell sc = getSelectedCell();
       if (sc != null) {
@@ -3368,7 +3353,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
 
     private SModelReference getCurrentModelReference() {
-      return getEditorContext() != null && getEditorContext().getModel() != null ? getEditorContext().getModel().getReference() : null;
+      return isDisposed() && getEditorContext().getModel() != null ? getEditorContext().getModel().getReference() : null;
     }
   }
 

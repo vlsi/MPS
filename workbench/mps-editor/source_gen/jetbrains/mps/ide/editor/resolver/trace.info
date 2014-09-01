@@ -42,34 +42,33 @@
       <node id="5447047924422203920" at="30,9,31,121" concept="6" />
       <node id="216787248379473153" at="32,15,33,27" concept="1" />
       <node id="1802459475176582256" at="37,68,38,24" concept="7" />
-      <node id="8120663389537738165" at="38,24,39,67" concept="1" />
-      <node id="1802459475176582292" at="39,67,40,21" concept="1" />
-      <node id="1802459475176582296" at="44,67,45,72" concept="6" />
+      <node id="1802459475176582292" at="38,24,39,21" concept="1" />
+      <node id="1802459475176582296" at="43,67,44,72" concept="6" />
       <node id="1802459475176571475" at="20,0,22,0" concept="0" trace="EditorResolver#()V" />
       <node id="4953860923773790207" at="25,92,28,5" concept="3" />
-      <node id="1806760877632907064" at="48,0,51,0" concept="4" trace="attachListeners#()V" />
-      <node id="1806760877632926682" at="52,0,55,0" concept="4" trace="detachListeners#()V" />
-      <node id="1802459475176573218" at="43,0,47,0" concept="4" trace="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+      <node id="1806760877632907064" at="47,0,50,0" concept="4" trace="attachListeners#()V" />
+      <node id="1806760877632926682" at="51,0,54,0" concept="4" trace="detachListeners#()V" />
+      <node id="1802459475176572298" at="37,0,41,0" concept="0" trace="FakeEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <node id="1802459475176573218" at="42,0,46,0" concept="4" trace="createRootCell#(Ljava/util/List;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
       <node id="3391050862413798839" at="29,156,34,5" concept="8" />
-      <node id="1802459475176572298" at="37,0,42,0" concept="0" trace="FakeEditorComponent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
       <node id="1802459475176571480" at="22,0,36,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SRepository;)Z" />
       <scope id="1802459475176571478" at="20,27,20,27" />
-      <scope id="1806760877632907068" at="49,38,49,38" />
-      <scope id="1806760877632926686" at="53,38,53,38" />
+      <scope id="1806760877632907068" at="48,38,48,38" />
+      <scope id="1806760877632926686" at="52,38,52,38" />
       <scope id="4953860923773790208" at="26,30,27,19" />
       <scope id="3391050862413798840" at="30,9,31,121" />
       <scope id="3391050862413798842" at="32,15,33,27" />
-      <scope id="1802459475176573224" at="44,67,45,72" />
+      <scope id="1802459475176573224" at="43,67,44,72" />
       <scope id="1802459475176571475" at="20,0,22,0" />
-      <scope id="1802459475176572301" at="37,68,40,21" />
-      <scope id="1806760877632907064" at="48,0,51,0" />
-      <scope id="1806760877632926682" at="52,0,55,0" />
-      <scope id="1802459475176573218" at="43,0,47,0">
-        <var name="events" id="1802459475176573221" />
-      </scope>
-      <scope id="1802459475176572298" at="37,0,42,0">
+      <scope id="1802459475176572301" at="37,68,39,21" />
+      <scope id="1806760877632907064" at="47,0,50,0" />
+      <scope id="1806760877632926682" at="51,0,54,0" />
+      <scope id="1802459475176572298" at="37,0,41,0">
         <var name="node" id="1802459475176582257" />
         <var name="repository" id="817507406026968566" />
+      </scope>
+      <scope id="1802459475176573218" at="42,0,46,0">
+        <var name="events" id="1802459475176573221" />
       </scope>
       <scope id="1802459475176571503" at="24,117,34,5">
         <var name="fakeEditor" id="1802459475176582995" />
@@ -80,8 +79,8 @@
         <var name="repository" id="1802459475176571487" />
         <var name="sourceNode" id="1802459475176571484" />
       </scope>
-      <unit id="1802459475176572296" at="36,0,56,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
-      <unit id="1802459475176571473" at="19,0,57,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
+      <unit id="1802459475176572296" at="36,0,55,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver$FakeEditorComponent" />
+      <unit id="1802459475176571473" at="19,0,56,0" name="jetbrains.mps.ide.editor.resolver.EditorResolver" />
     </file>
   </root>
 </debug-info>

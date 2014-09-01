@@ -140,7 +140,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
             continue;
           }
           for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-            if (editorComponent.getEditorContext() != null && editorComponent.getEditorContext().getModel() != null &&
+            if (editorComponent.getEditorContext().getModel() != null &&
                 editorComponent.getEditorContext().getModel().getReference().equals(sModel.getReference())) {
               myCheckedOnceEditors.remove(editorComponent);
             }

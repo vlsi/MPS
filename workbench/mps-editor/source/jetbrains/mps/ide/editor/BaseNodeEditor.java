@@ -217,10 +217,7 @@ public abstract class BaseNodeEditor implements Editor {
         NodeEditorComponent nodeEditorComponent = (NodeEditorComponent) editorComponent;
         EditorComponent inspector = nodeEditorComponent.getInspector();
         if (inspector != null) {
-          EditorContext inspectorContext = inspector.getEditorContext();
-          if (inspectorContext != null) {
-            result.myInspectorMemento = inspectorContext.createMemento();
-          }
+          result.myInspectorMemento = inspector.getEditorContext().createMemento();
         }
       }
     }
