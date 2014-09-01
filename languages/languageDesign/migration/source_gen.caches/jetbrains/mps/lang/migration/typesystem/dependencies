@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.lang.migration.typesystem.CheckScriptVersions_NonTypesystemRule" file="CheckScriptVersions_NonTypesystemRule.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
-    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime" />
-    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
-  </dependency>
   <dependency className="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" file="TypesystemDescriptor.java">
-    <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.CheckScriptVersions_NonTypesystemRule" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.typeof_ConceptFuncParameterReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.typeof_RequiredDataReference_InferenceRule" />
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
-    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime" />
     <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.typesystem.typeof_ConceptFuncParameterReference_InferenceRule" file="typeof_ConceptFuncParameterReference_InferenceRule.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.EquationInfo" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime" />
+    <classNode extendsClassName="jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.typesystem.typeof_RequiredDataReference_InferenceRule" file="typeof_RequiredDataReference_InferenceRule.java">
     <classNode dependClassName="java.lang.Object" />

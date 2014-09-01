@@ -10,6 +10,8 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="53vh" modelUID="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" version="0" implicit="yes" />
+  <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3735414794051308106" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="MigrationScriptBody" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1137021947720" resolveInfo="ConceptFunction" />
@@ -169,6 +171,119 @@
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5512160570054200387" nodeInfo="ig">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7794917369458188685" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="MigrationScriptNew" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="rootable" nameId="tpce.1096454100552" value="true" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="7794917369458200122" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="7794917369458191426" resolveInfo="ConceptFuncContainter" />
+    </node>
+  </root>
+  <root type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="7794917369458191426" nodeInfo="ig">
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFuncContainter" />
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+  </root>
+  <root type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="7794917369458199633" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFuncInfo" />
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="7794917369458199639" nodeInfo="ng">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="parameters" />
+      <node role="type" roleId="cx9y.1239462974287" type="tp2q.CollectionType" typeId="tp2q.7125221305512719026" id="1886653790506937282" nodeInfo="in">
+        <node role="elementType" roleId="tp2q.5686963296372573084" type="cx9y.NamedTupleType" typeId="cx9y.1239531918181" id="1886653790506937284" nodeInfo="in">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7794917369458200035" resolveInfo="ParameterInfo" />
+        </node>
+      </node>
+    </node>
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="8214201644238814452" nodeInfo="ng">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="throwsItems" />
+      <node role="type" roleId="cx9y.1239462974287" type="tp2q.CollectionType" typeId="tp2q.7125221305512719026" id="1886653790506937276" nodeInfo="in">
+        <node role="elementType" roleId="tp2q.5686963296372573084" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1886653790506937278" nodeInfo="in">
+          <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+        </node>
+      </node>
+    </node>
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="7794917369458200089" nodeInfo="ng">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="returnType" />
+      <node role="type" roleId="cx9y.1239462974287" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7794917369458200099" nodeInfo="in">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7794917369458199634" nodeInfo="nn" />
+  </root>
+  <root type="cx9y.NamedTupleDeclaration" typeId="cx9y.1239360506533" id="7794917369458200035" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="name" nameId="tpck.1169194664001" value="ParameterInfo" />
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="7794917369458200050" nodeInfo="ng">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <node role="type" roleId="cx9y.1239462974287" type="tpee.StringType" typeId="tpee.1225271177708" id="7794917369458200057" nodeInfo="in" />
+    </node>
+    <node role="component" roleId="cx9y.1239529553065" type="cx9y.NamedTupleComponentDeclaration" typeId="cx9y.1239462176079" id="7794917369458200066" nodeInfo="ng">
+      <property name="final" nameId="cx9y.1240400839614" value="false" />
+      <property name="name" nameId="tpck.1169194664001" value="type" />
+      <node role="type" roleId="cx9y.1239462974287" type="tp25.SNodeType" typeId="tp25.1138055754698" id="7794917369458200075" nodeInfo="in">
+        <link role="concept" roleId="tp25.1138405853777" targetNodeId="tpee.1068431790189" resolveInfo="Type" />
+      </node>
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7794917369458200036" nodeInfo="nn" />
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7794917369458260359" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFunc" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8214201644239513651" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="parameter" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8214201644239359091" resolveInfo="ConceptFuncParameterDeclaration" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8214201644239914183" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="body" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8214201644237320412" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8214201644237320398" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1239354708927" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1239354281271" resolveInfo="IMethodLike" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2853288968476527693" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1199653749349" resolveInfo="IStatementListContainer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1319728274783272323" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1319728274783151479" resolveInfo="ImplementationContainer" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="3986960521977731597" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3734116213129792499" resolveInfo="ScopeProvider" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8214201644238366826" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFuncParameterReference" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2634878718730163907" nodeInfo="ig">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="declaration" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="8214201644239359091" resolveInfo="ConceptFuncParameterDeclaration" />
+    </node>
+  </root>
+  <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="8214201644239359091" nodeInfo="ig">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="confunc" />
+    <property name="name" nameId="tpck.1169194664001" value="ConceptFuncParameterDeclaration" />
+    <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="8214201644239360974" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </root>
 </model>

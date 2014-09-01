@@ -11,33 +11,41 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 4:
-        return new MigrationScriptBody_BehaviorDescriptor();
-      case 2:
-        return new MigrationScript_BehaviorDescriptor();
-      case 3:
-        return new MigrationScriptApplicable_BehaviorDescriptor();
       case 7:
-        return new MigrationScriptSerialize_BehaviorDescriptor();
-      case 0:
-        return new ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor();
+        return new MigrationScriptBody_BehaviorDescriptor();
       case 5:
-        return new MigrationScriptDeserialize_BehaviorDescriptor();
-      case 1:
-        return new ConceptFunctionParameter_MigrationScriptPersistedData_BehaviorDescriptor();
-      case 10:
-        return new RequiredDataItem_BehaviorDescriptor();
-      case 11:
-        return new RequiredDataReference_BehaviorDescriptor();
+        return new MigrationScript_BehaviorDescriptor();
       case 6:
-        return new MigrationScriptReference_BehaviorDescriptor();
+        return new MigrationScriptApplicable_BehaviorDescriptor();
+      case 11:
+        return new MigrationScriptSerialize_BehaviorDescriptor();
+      case 3:
+        return new ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor();
       case 8:
+        return new MigrationScriptDeserialize_BehaviorDescriptor();
+      case 4:
+        return new ConceptFunctionParameter_MigrationScriptPersistedData_BehaviorDescriptor();
+      case 14:
+        return new RequiredDataItem_BehaviorDescriptor();
+      case 15:
+        return new RequiredDataReference_BehaviorDescriptor();
+      case 10:
+        return new MigrationScriptReference_BehaviorDescriptor();
+      case 12:
         return new MigrationsPatternVariableReference_BehaviorDescriptor();
-      case 9:
+      case 13:
         return new PatternMigrationScript_BehaviorDescriptor();
+      case 9:
+        return new MigrationScriptNew_BehaviorDescriptor();
+      case 0:
+        return new ConceptFunc_BehaviorDescriptor();
+      case 2:
+        return new ConceptFuncParameterReference_BehaviorDescriptor();
+      case 1:
+        return new ConceptFuncParameterDeclaration_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.lang.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationScriptApplicable", "jetbrains.mps.lang.migration.structure.MigrationScriptBody", "jetbrains.mps.lang.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.lang.migration.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.structure.MigrationScriptSerialize", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.PatternMigrationScript", "jetbrains.mps.lang.migration.structure.RequiredDataItem", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConceptFunc", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.migration.structure.ConceptFunctionParameter_MigrationScriptData", "jetbrains.mps.lang.migration.structure.ConceptFunctionParameter_MigrationScriptPersistedData", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationScriptApplicable", "jetbrains.mps.lang.migration.structure.MigrationScriptBody", "jetbrains.mps.lang.migration.structure.MigrationScriptDeserialize", "jetbrains.mps.lang.migration.structure.MigrationScriptNew", "jetbrains.mps.lang.migration.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.structure.MigrationScriptSerialize", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.PatternMigrationScript", "jetbrains.mps.lang.migration.structure.RequiredDataItem", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
 }

@@ -16,7 +16,22 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SModelRepository;
+import java.util.List;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.Map;
+import jetbrains.mps.lang.migration.structure.ConceptFuncInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.lang.migration.behavior.ConceptFunc_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
@@ -43,6 +58,37 @@ public class QueriesGenerated {
 
     ((SModelInternal) (SModel) _context.getModel()).addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
     ((AbstractModule) module).addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
+  }
+  public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ConceptFunc_8214201644236110947(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.ConceptFunc");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Iterable<String> queryResult = new Computable<Iterable<String>>() {
+          public Iterable<String> compute() {
+            return MapSequence.fromMap(BehaviorReflection.invokeVirtual((Class<Map<String, ConceptFuncInfo>>) ((Class) Object.class), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.lang.migration.structure.ConceptFuncContainter"), "virtual_getConceptFuncs_7794917369458191914", new Object[]{})).keySet();
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final String item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.migration.structure.ConceptFunc", null);
+                SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+                SPropertyOperations.set(result, "name", (item));
+                ConceptFunc_Behavior.call_fillParametersFromInfo_8214201644239063140(result, MapSequence.fromMap(BehaviorReflection.invokeVirtual((Class<Map<String, ConceptFuncInfo>>) ((Class) Object.class), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.lang.migration.structure.ConceptFuncContainter"), "virtual_getConceptFuncs_7794917369458191914", new Object[]{})).get((item)).parameters());
+                return result;
+              }
+              public String getDescriptionText(String pattern) {
+                return "concept function";
+              }
+            });
+          }
+        }
+      }
+    }
+    return result;
   }
   private static SNode _quotation_createNode_vu9l9u_a0e0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

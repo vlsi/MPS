@@ -13,11 +13,15 @@
   <dependency className="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterDeclaration_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterReference_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFunc_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFunctionParameter_MigrationScriptData_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFunctionParameter_MigrationScriptPersistedData_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptApplicable_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptBody_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptDeserialize_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptNew_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptReference_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptSerialize_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScript_BehaviorDescriptor" />
@@ -28,6 +32,91 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFuncContainter_Behavior" file="ConceptFuncContainter_Behavior.java">
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFuncContainter_BehaviorDescriptor" file="ConceptFuncContainter_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptFuncInfo" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterDeclaration_Behavior" file="ConceptFuncParameterDeclaration_Behavior.java">
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFunc_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ParameterInfo" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterDeclaration_BehaviorDescriptor" file="ConceptFuncParameterDeclaration_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFuncParameterReference_BehaviorDescriptor" file="ConceptFuncParameterReference_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFunc_Behavior" file="ConceptFunc_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptFuncInfo" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ParameterInfo" />
+    <classNode dependClassName="jetbrains.mps.lang.scopes.runtime.NamedElementsScope" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFunc_BehaviorDescriptor" file="ConceptFunc_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_Behavior" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ImplementationContainer_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFunc_Behavior" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.behavior.ConceptFunctionParameter_MigrationScriptData_Behavior" file="ConceptFunctionParameter_MigrationScriptData_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -110,6 +199,32 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptDeserialize_Behavior" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.MigrationScriptNew_Behavior" file="MigrationScriptNew_Behavior.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptFuncInfo" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ParameterInfo" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.migration.behavior.MigrationScriptNew_BehaviorDescriptor" file="MigrationScriptNew_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.ConceptFuncContainter_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.behavior.MigrationScriptNew_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.structure.ConceptFuncInfo" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.migration.behavior.MigrationScriptReference_Behavior" file="MigrationScriptReference_Behavior.java">

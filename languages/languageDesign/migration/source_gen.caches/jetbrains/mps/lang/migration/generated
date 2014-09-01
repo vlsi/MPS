@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="2htyaf1hl4q3giuxqgpqixxqht11p6y">
+<dependencies version="2" modelHash="6wsswzkiiqbjxue05zviguhs1cjpbom">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" hash="4bys70eeqwznmlhkbb3g0af0t59rn94" />
-  <dep model="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)" hash="-37ok001vzkjxeuqr1o14d89l2lrx0zo" />
-  <dep model="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" hash="273nn2xdufvqob88w8d6f0tzrom8fp1" />
-  <dep model="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)" hash="dynhev7ns924v2jrhmzn0wrjtzhsbm2" />
-  <dep model="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)" hash="q8k6zqj8gxal1mhoyamwjt6jg0of44" />
+  <dep model="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" hash="320u4rmn1traqwe0fg5pqlbffjgqqg6" />
+  <dep model="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)" hash="66j4wz03gk4etrleo7x6kbolvdbx3v3" />
+  <dep model="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" hash="1ygws2pe3vf7h0id0qcqpuypo60mybu" />
+  <dep model="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)" hash="-404w9n2ywsaqq83fixw9fw11cano2sn" />
+  <dep model="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)" hash="10i8055sdbxcnjk5igyl05r45rpg9sb" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">

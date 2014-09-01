@@ -15,16 +15,22 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptFunc_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new MigrationScriptReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptFuncParameterDeclaration_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new MigrationsPatternVariableReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ConceptFuncParameterReference_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new PatternMigrationScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new RequiredDataItem_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigrationScriptReference_Editor());
       case 5:
+        return Collections.<ConceptEditor>singletonList(new MigrationsPatternVariableReference_Editor());
+      case 6:
+        return Collections.<ConceptEditor>singletonList(new PatternMigrationScript_Editor());
+      case 7:
+        return Collections.<ConceptEditor>singletonList(new RequiredDataItem_Editor());
+      case 8:
         return Collections.<ConceptEditor>singletonList(new RequiredDataReference_Editor());
       default:
     }
@@ -35,5 +41,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.PatternMigrationScript", "jetbrains.mps.lang.migration.structure.RequiredDataItem", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConceptFunc", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationScriptReference", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.PatternMigrationScript", "jetbrains.mps.lang.migration.structure.RequiredDataItem", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
 }
