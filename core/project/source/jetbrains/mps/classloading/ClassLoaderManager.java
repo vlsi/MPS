@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.annotation.ToRemove;
+import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -184,24 +185,28 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
+  private Set<String> myReportedModules = new ConcurrentHashSet<String>(10);
   // main internal method. use getClass instead
   // TODO must declare checked exceptions instead of silently throwing IAE
   @Nullable
   public synchronized ClassLoader getClassLoader(@NotNull SModule module) {
     CustomClassLoadingFacet customClassLoadingFacet = module.getFacet(CustomClassLoadingFacet.class);
+    String moduleName = module.getModuleName();
     if (customClassLoadingFacet != null) {
       if (customClassLoadingFacet.isValid()) {
         return customClassLoadingFacet.getClassLoader();
       } else {
-        LOG.warning("Facet " + module.getModuleName() + " is not valid");
+        LOG.warning("Facet " + moduleName + " is not valid");
         return null;
       }
     }
 
     JavaModuleFacet moduleFacet = module.getFacet(JavaModuleFacet.class);
     if (moduleFacet != null && !moduleFacet.isCompileInMps()) {
-      // core module
-      LOG.warning("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
+      if (!myReportedModules.contains(moduleName)) {
+        myReportedModules.add(moduleName);
+        LOG.warning("Module " + moduleName + " is not compiled in mps and doesn't have non-reloadable facet");
+      }
       return ClassLoaderManager.class.getClassLoader();
     }
 
