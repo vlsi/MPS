@@ -18,6 +18,7 @@ package jetbrains.mps.extapi.module;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 /**
@@ -49,6 +50,11 @@ public abstract class SRepositoryBase implements SRepository {
   @Override
   public final void removeRepositoryListener(SRepositoryListener listener) {
     myEventsDispatcher.removeRepositoryListener(this, listener);
+  }
+
+  @Override
+  public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+
   }
 
   protected final void fireModuleAdded(SModule module) {

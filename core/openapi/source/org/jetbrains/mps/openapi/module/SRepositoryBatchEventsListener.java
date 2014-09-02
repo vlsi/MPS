@@ -20,7 +20,7 @@ import java.util.Set;
 /**
  * Created by Alex Pyshkin on 9/1/14.
  */
-public interface SRepositoryBatchListener extends SRepositoryListener {
+public interface SRepositoryBatchEventsListener {
   public void modulesAdded(Set<SModule> modules);
 
   public void beforeModulesRemoved(Set<SModule> modules);

@@ -18,9 +18,11 @@ package jetbrains.mps.extapi.module;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -34,22 +36,31 @@ public class SRepositoryEventsDispatcher {
   private static final Logger LOG = LogManager.getLogger(SRepositoryBase.class);
 
   private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+  private final List<SRepositoryBatchEventsListener> myBatchEventsListeners =
+      new CopyOnWriteArrayList<SRepositoryBatchEventsListener>();
 
   public final void addRepositoryListener(SRepository repository, SRepositoryListener listener) {
+    myListeners.add(listener);
+  }
+
+  public final void removeRepositoryListener(SRepository repository, SRepositoryListener listener) {
+    myListeners.remove(listener);
+  }
+
+  public final void addRepositoryBatchEventsListener(SRepository repository, SRepositoryListener listener) {
     myListeners.add(listener);
     if (listener instanceof SRepositoryContentAdapter) {
       ((SRepositoryContentAdapter) listener).startListening(repository);
     }
   }
 
-  public final void removeRepositoryListener(SRepository repository, SRepositoryListener listener) {
+  public final void removeRepositoryBatchEventsListener(SRepository repository, SRepositoryListener listener) {
     if (listener instanceof SRepositoryContentAdapter) {
       ((SRepositoryContentAdapter) listener).stopListening(repository);
     }
     myListeners.remove(listener);
   }
-
-  public final void fireModuleAdded(SModule module) {
+  public final void fireModuleAdded(@NotNull SModule module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
@@ -60,7 +71,7 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
-  public final void fireBeforeModuleRemoved(SModule module) {
+  public final void fireBeforeModuleRemoved(@NotNull SModule module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
@@ -71,7 +82,7 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
-  public final void fireModuleRemoved(SModuleReference module) {
+  public final void fireModuleRemoved(@NotNull SModuleReference module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
@@ -82,7 +93,7 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
-  public final void fireCommandStarted(SRepository repository) {
+  public final void fireCommandStarted(@NotNull SRepository repository) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
@@ -93,7 +104,7 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
-  public final void fireCommandFinished(SRepository repository) {
+  public final void fireCommandFinished(@NotNull SRepository repository) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {

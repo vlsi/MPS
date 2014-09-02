@@ -56,4 +56,8 @@ public interface SRepository {
   void addRepositoryListener(SRepositoryListener listener);
 
   void removeRepositoryListener(SRepositoryListener listener);
+
+  void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener);
+
+  void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener);
 }
