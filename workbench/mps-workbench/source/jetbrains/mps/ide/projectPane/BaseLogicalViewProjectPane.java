@@ -57,11 +57,11 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.smodel.CommandAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -89,7 +89,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
-  private MyModelAccessListener myModelAccessListener = new MyModelAccessListener();
+  private MyCommandListener myModelAccessListener = new MyCommandListener();
   private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
   private boolean myNeedRebuild = false;
@@ -514,7 +514,7 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     }
   }
 
-  private class MyModelAccessListener extends ModelAccessAdapter {
+  private class MyCommandListener extends CommandAdapter {
     @Override
     public void commandStarted() {
       myNeedRebuild = false;

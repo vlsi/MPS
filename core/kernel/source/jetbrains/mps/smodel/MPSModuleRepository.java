@@ -48,7 +48,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
   private final GlobalModelAccess myGlobalModelAccess;
 
-  private final ModelAccessListener myCommandListener = new ModelAccessListener() {
+  private final CommandListener myCommandListener = new CommandListener() {
     @Override
     public void commandStarted() {
       fireCommandStarted();

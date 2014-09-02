@@ -16,14 +16,12 @@
 
 package jetbrains.mps.smodel;
 
-public class ModelAccessAdapter implements ModelAccessListener {
+public class CommandAdapter implements CommandListener {
   @Override
   public void commandStarted() {
-
   }
 
   @Override
   public void commandFinished() {
-
   }
 }

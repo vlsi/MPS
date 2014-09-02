@@ -18,11 +18,11 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.smodel.CommandAdapter;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
-import jetbrains.mps.smodel.ModelAccessListener;
+import jetbrains.mps.smodel.CommandListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
@@ -43,7 +43,7 @@ import java.util.Set;
 public class DataTreeChangesNotifier {
   private IChangeListener myTree;
   private boolean myChanged = false;
-  private ModelAccessListener myCommandListener = new MyCommandListener();
+  private CommandListener myCommandListener = new MyCommandListener();
 
   private MyModelCommandListener myModelListener = new MyModelCommandListener();
   private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
@@ -127,7 +127,7 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyCommandListener extends ModelAccessAdapter {
+  private class MyCommandListener extends CommandAdapter {
     @Override
     public void commandFinished() {
       if (!myChanged) return;

@@ -16,8 +16,12 @@
 
 package jetbrains.mps.smodel;
 
-public interface ModelAccessListener {
+/**
+ * It can be used for listening to commandStarted and commandFinished events of
+ * {@link org.jetbrains.mps.openapi.module.ModelAccess#executeCommand(Runnable)} and
+ * {@link org.jetbrains.mps.openapi.module.ModelAccess#executeCommandInEDT(Runnable)}
+ */
+public interface CommandListener {
   void commandStarted();
-
   void commandFinished();
 }

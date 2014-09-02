@@ -304,11 +304,11 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void addCommandListener(ModelAccessListener l) {
+  public void addCommandListener(CommandListener l) {
   }
 
   @Override
-  public void removeCommandListener(ModelAccessListener l) {
+  public void removeCommandListener(CommandListener l) {
   }
 
   @Override

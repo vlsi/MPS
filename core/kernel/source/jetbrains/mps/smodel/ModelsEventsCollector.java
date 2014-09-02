@@ -43,13 +43,13 @@ public abstract class ModelsEventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myModelListener = new SModelDelegateListener();
   private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
-  private ModelAccessListener myModelAccessListener = new MyModelAccessAdapter();
+  private CommandListener myCommandListener = new MyCommandAdapter();
   private volatile boolean myDisposed;
 
   private boolean myIsInCommand;
 
   public ModelsEventsCollector() {
-    ModelAccess.instance().addCommandListener(myModelAccessListener);
+    ModelAccess.instance().addCommandListener(myCommandListener);
     myIsInCommand = ModelAccess.instance().isInsideCommand();
   }
 
@@ -89,7 +89,7 @@ public abstract class ModelsEventsCollector {
     for (SModel sm : new LinkedHashSet<SModel>(myModelsToListen)) {
       stopListeningToModel(sm);
     }
-    ModelAccess.instance().removeCommandListener(myModelAccessListener);
+    ModelAccess.instance().removeCommandListener(myCommandListener);
     myDisposed = true;
   }
 
@@ -99,7 +99,7 @@ public abstract class ModelsEventsCollector {
     }
   }
 
-  private class MyModelAccessAdapter extends ModelAccessAdapter {
+  private class MyCommandAdapter implements CommandListener {
     @Override
     public void commandStarted() {
       if (myDisposed) {

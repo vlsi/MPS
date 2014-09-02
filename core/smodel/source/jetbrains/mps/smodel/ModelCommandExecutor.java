@@ -97,9 +97,9 @@ public interface ModelCommandExecutor {
 
   void runIndexing(Runnable r);
 
-  void addCommandListener(ModelAccessListener l);
+  void addCommandListener(CommandListener l);
 
-  void removeCommandListener(ModelAccessListener l);
+  void removeCommandListener(CommandListener l);
 
   /**
    * Returns true iff the locking and the operation were successful.
