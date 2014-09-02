@@ -1424,7 +1424,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1187030294150(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
   }
-  public static SNode sourceNodeQuery_9069541211335211129(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_5302599516800604527(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true), "body", true);
   }
   public static SNode sourceNodeQuery_1184071848755(final SourceSubstituteMacroNodeContext _context) {
