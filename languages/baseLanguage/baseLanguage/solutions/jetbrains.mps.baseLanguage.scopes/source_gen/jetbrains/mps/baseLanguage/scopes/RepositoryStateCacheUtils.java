@@ -25,7 +25,9 @@ public class RepositoryStateCacheUtils {
         return creator.invoke();
       }
     });
-    cache.putIfAbsent(key, v);
+    if (v != null) {
+      cache.putIfAbsent(key, v);
+    }
     return v;
   }
 
