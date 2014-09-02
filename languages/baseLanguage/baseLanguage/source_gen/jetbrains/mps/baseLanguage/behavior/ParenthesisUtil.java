@@ -387,17 +387,11 @@ public class ParenthesisUtil {
     }
 
     List<SNode> descendants = SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{});
-    List<SNode> previousDescendants = null;
-    // repeat until descendants keep changing 
-    while (neq_a65dpo_a0h0hb(previousDescendants, descendants)) {
-      ListSequence.fromList(descendants).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          checkOperationWRTPriority(it);
-        }
-      });
-      previousDescendants = descendants;
-      descendants = SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{});
-    }
+    ListSequence.fromList(descendants).visitAll(new IVisitor<SNode>() {
+      public void visit(SNode it) {
+        checkOperationWRTPriority(it);
+      }
+    });
   }
 
   public static void checkOperationWRTPriority(SNode binOp) {
@@ -425,6 +419,9 @@ public class ParenthesisUtil {
         SLinkOperations.setTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", node, true);
       }
       checkOperationWRTPriority(node);
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+        checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+      }
     }
   }
   private static void checkOperationParentWRTPriority(SNode node) {
@@ -513,8 +510,5 @@ public class ParenthesisUtil {
   }
   private static boolean eq_a65dpo_a0a3a2a62(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-  private static boolean neq_a65dpo_a0h0hb(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
   }
 }
