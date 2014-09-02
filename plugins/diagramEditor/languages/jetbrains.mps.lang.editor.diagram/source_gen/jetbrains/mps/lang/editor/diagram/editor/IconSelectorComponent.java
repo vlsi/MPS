@@ -68,11 +68,11 @@ public class IconSelectorComponent implements ConceptEditorComponent {
   }
   private EditorCell createImage_6g738i_a0a(final EditorContext editorContext, final SNode node) {
     EditorCell_Image editorCell;
-    editorCell = EditorCell_Image.createImageCell(editorContext, node, new _FunctionTypes._return_P0_E0<String>() {
+    editorCell = EditorCell_Image.createImageCell(editorContext, node, ((_FunctionTypes._return_P0_E0<? extends String>) new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
         return SPropertyOperations.getString(node, "iconPath");
       }
-    }.invoke());
+    }).invoke());
     editorCell.setCellId("Image_6g738i_a0a");
     editorCell.setDescent(0);
     return editorCell;

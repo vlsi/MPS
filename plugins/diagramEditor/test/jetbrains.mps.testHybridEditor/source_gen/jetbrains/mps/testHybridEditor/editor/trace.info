@@ -190,7 +190,7 @@
       <node id="4394877045817337544" at="273,62,274,0" concept="7" />
       <node id="1161165534970" at="276,98,277,32" concept="5" />
       <node id="1214580244841" at="279,30,280,63" concept="6" />
-      <node id="1161165534970" at="282,16,283,45" concept="2" />
+      <node id="1161165534970" at="282,17,283,45" concept="2" />
       <node id="1161165534970" at="283,45,284,29" concept="2" />
       <node id="1161165534970" at="284,29,285,22" concept="6" />
       <node id="1161165544408" at="287,89,288,95" concept="5" />
@@ -269,7 +269,7 @@
       <node id="4394877045817292529" at="141,0,146,0" concept="4" trace="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4394877045817292529" at="210,0,215,0" concept="4" trace="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4394877045817292529" at="256,33,261,5" concept="3" />
-      <node id="1161165534970" at="277,32,282,16" concept="2" />
+      <node id="1161165534970" at="277,32,282,17" concept="2" />
       <node id="4394877045817292529" at="331,0,336,0" concept="4" trace="createJComponent_liyxwi_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4394877045817292684" at="57,0,63,0" concept="4" trace="createConstant_liyxwi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4394877045817292685" at="72,59,78,22" concept="3" />
@@ -616,7 +616,7 @@
         <var name="editorContext" id="1160492829177" />
         <var name="node" id="1160492829177" />
       </scope>
-      <unit id="1161165534970" at="278,75,282,5" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$1" />
+      <unit id="1161165534970" at="278,125,282,5" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$1" />
       <unit id="4394877045817292529" at="133,0,165,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$inMetaPortsListHandler_liyxwi_c3a" />
       <unit id="4394877045817292529" at="202,0,234,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$outMetaPortsListHandler_liyxwi_g3a" />
       <unit id="4394877045817292529" at="39,0,363,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor" />
