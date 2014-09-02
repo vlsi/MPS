@@ -15,26 +15,20 @@
  */
 package jetbrains.mps.extapi.module;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
-import java.util.List;
-import java.util.concurrent.CopyOnWriteArrayList;
-
 /**
- * evgeny, 5/15/13
+ * A repository which
+ * registers in SRepositoryRegistry
+ * and fires events about itself
+ * @author evgeny, 5/15/13
  */
 public abstract class SRepositoryBase implements SRepository {
 
-  private static final Logger LOG = Logger.wrap(LogManager.getLogger(SRepositoryBase.class));
-
-  private List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
+  private final SRepositoryEventsDispatcher myEventsDispatcher = new SRepositoryEventsDispatcher();
 
   protected SRepositoryBase() {
   }
@@ -43,78 +37,37 @@ public abstract class SRepositoryBase implements SRepository {
     SRepositoryRegistry.getInstance().addRepository(this);
   }
 
-  @Override
-  public final void addRepositoryListener(SRepositoryListener listener) {
-    myListeners.add(listener);
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).startListening(this);
-    }
-  }
-
-  @Override
-  public final void removeRepositoryListener(SRepositoryListener listener) {
-    if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).stopListening(this);
-    }
-    myListeners.remove(listener);
-  }
-
   public void dispose() {
     SRepositoryRegistry.getInstance().removeRepository(this);
   }
 
+  @Override
+  public final void addRepositoryListener(SRepositoryListener listener) {
+    myEventsDispatcher.addRepositoryListener(this, listener);
+  }
+
+  @Override
+  public final void removeRepositoryListener(SRepositoryListener listener) {
+    myEventsDispatcher.removeRepositoryListener(this, listener);
+  }
+
   protected final void fireModuleAdded(SModule module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.moduleAdded(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+    myEventsDispatcher.fireModuleAdded(module);
   }
 
   protected final void fireBeforeModuleRemoved(SModule module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.beforeModuleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+    myEventsDispatcher.fireBeforeModuleRemoved(module);
   }
 
   protected final void fireModuleRemoved(SModuleReference module) {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.moduleRemoved(module);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+    myEventsDispatcher.fireModuleRemoved(module);
   }
 
   protected final void fireCommandStarted() {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.commandStarted(this);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+    myEventsDispatcher.fireCommandStarted(this);
   }
 
   protected final void fireCommandFinished() {
-    ModelAccess.assertLegalWrite();
-    for (SRepositoryListener listener : myListeners) {
-      try {
-        listener.commandFinished(this);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
+    myEventsDispatcher.fireCommandFinished(this);
   }
 }
