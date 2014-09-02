@@ -24,7 +24,6 @@ public class AddParensToCast5_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("3313213291230693524", "3313213291230693538");
       this.typeString(")");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }
