@@ -190,7 +190,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
     public void addListener(SModel model, SModelCommandListener listener) {
       if (!(myListeners.containsKey(model.getReference()))) {
         //  first time we see the model, tell EventCollector we are interested 
-        add(model);
+        startListeningToModel(model);
       }
       myListeners.putValue(model.getReference(), listener);
     }
@@ -198,7 +198,7 @@ public class CurrentDifferenceRegistry extends AbstractProjectComponent {
       myListeners.remove(model.getReference(), listener);
       if (!(myListeners.containsKey(model.getReference()))) {
         // no more listeners, no reason to listen any more 
-        remove(model);
+        stopListeningToModel(model);
       }
     }
     @Override

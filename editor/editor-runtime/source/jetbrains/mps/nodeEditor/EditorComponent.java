@@ -1504,12 +1504,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void addOurListeners(@NotNull SModel sm) {
-    myEventsCollector.add(sm);
+    myEventsCollector.startListeningToModel(sm);
     mySModelsWithListener.add(sm);
   }
 
   private void removeOurListeners(@NotNull SModel sm) {
-    myEventsCollector.remove(sm);
+    myEventsCollector.stopListeningToModel(sm);
     mySModelsWithListener.remove(sm);
   }
 

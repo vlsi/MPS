@@ -89,6 +89,7 @@ public class GlobalSModelEventsManager implements CoreComponent {
 
   @Override
   public void dispose() {
+    myEventsCollector.dispose();
     ourInstance = null;
   }
 
@@ -96,14 +97,14 @@ public class GlobalSModelEventsManager implements CoreComponent {
     for (SModelListener listener : myRelayListeners) {
       ((SModelInternal) sm).addModelListener(listener);
     }
-    myEventsCollector.add(sm);
+    myEventsCollector.startListeningToModel(sm);
   }
 
   private void removeListeners(SModel sm) {
     for (SModelListener listener : myRelayListeners) {
       ((SModelInternal) sm).removeModelListener(listener);
     }
-    myEventsCollector.remove(sm);
+    myEventsCollector.stopListeningToModel(sm);
   }
 
   public void addGlobalModelListener(SModelListener l) {

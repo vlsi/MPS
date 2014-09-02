@@ -46,7 +46,7 @@ public class SModelEventsDispatcher {
     if (listeners == null) {
       listeners = new HashSet();
       myDescriptorsToListenersMap.put(modelDescriptor, listeners);
-      getModelsEventsCollector().add(modelDescriptor);
+      getModelsEventsCollector().startListeningToModel(modelDescriptor);
     }
     listeners.add(l);
   }
@@ -58,7 +58,7 @@ public class SModelEventsDispatcher {
     listeners.remove(l);
     if (listeners.isEmpty()) {
       myDescriptorsToListenersMap.remove(modelDescriptor);
-      getModelsEventsCollector().remove(modelDescriptor);
+      getModelsEventsCollector().stopListeningToModel(modelDescriptor);
       if (myDescriptorsToListenersMap.isEmpty()) {
         disposeEventsCollector();
       }
