@@ -121,16 +121,6 @@ public class ModuleRepositoryFacade implements CoreComponent {
     return result;
   }
 
-  public void unregisterModules(MPSModuleOwner owner, Condition<SModule> condition) {
-    Collection<SModule> modulesToRemove = new ArrayList<SModule>();
-    for (SModule module : REPO.getModules(owner)) {
-      if (condition.met(module)) {
-        modulesToRemove.add(module);
-      }
-    }
-    REPO.unregisterModules(modulesToRemove, owner);
-  }
-
   public void unregisterModules(MPSModuleOwner owner) {
     REPO.unregisterModules(new HashSet<SModule>(REPO.getModules(owner)), owner);
   }

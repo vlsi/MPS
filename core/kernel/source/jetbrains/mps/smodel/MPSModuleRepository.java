@@ -60,7 +60,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       fireCommandFinished();
     }
   };
-  private final DebugRegistryImpl myDebugRegistry = new DebugRegistryImpl(this);
+
+  private final DebugRegistry myDebugRegistry = new DebugRegistryImpl();
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
