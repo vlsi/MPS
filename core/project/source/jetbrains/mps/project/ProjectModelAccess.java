@@ -13,79 +13,87 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.project;
+
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
-* Created by Alex Pyshkin on 9/1/14.
+* Created by Alex Pyshkin on 9/2/14.
 */
-public class GlobalModelAccess implements org.jetbrains.mps.openapi.module.ModelAccess {
+public class ProjectModelAccess implements ModelAccess {
+  private final Project myProject;
+
+  public ProjectModelAccess(Project project) {
+    myProject = project;
+  }
+
   @Override
   public boolean canRead() {
-    return ModelAccess.instance().canRead();
+    return jetbrains.mps.smodel.ModelAccess.instance().canRead();
   }
 
   @Override
   public void checkReadAccess() {
-    ModelAccess.instance().checkReadAccess();
+    jetbrains.mps.smodel.ModelAccess.instance().checkReadAccess();
   }
 
   @Override
   public boolean canWrite() {
-    return ModelAccess.instance().canWrite();
+    return jetbrains.mps.smodel.ModelAccess.instance().canWrite();
   }
 
   @Override
   public void checkWriteAccess() {
-    ModelAccess.instance().checkWriteAccess();
+    jetbrains.mps.smodel.ModelAccess.instance().checkWriteAccess();
   }
 
   @Override
   public void runReadAction(Runnable r) {
-    ModelAccess.instance().runReadAction(r);
+    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(r);
   }
 
   @Override
   public void runReadInEDT(Runnable r) {
-    ModelAccess.instance().runReadInEDT(r);
+    jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(r);
   }
 
   @Override
   public void runWriteAction(Runnable r) {
-    ModelAccess.instance().runWriteAction(r);
+    jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
   }
 
   @Override
   public void runBatchWrite(Runnable r) {
-    throw new UnsupportedOperationException();
+    runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+
+      }
+    });
   }
 
   @Override
   public void runWriteInEDT(Runnable r) {
-    ModelAccess.instance().runWriteInEDT(r);
+    jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(r);
   }
 
   @Override
   public void executeCommand(Runnable r) {
-    // FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
-    // e.g. there are actions that run without a project (like New Project action), and they could benefit from
-    // same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
-    // project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
-    // it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
-    throw new UnsupportedOperationException();
+    jetbrains.mps.smodel.ModelAccess.instance().executeCommand(r, myProject);
   }
 
   @Override
   public void executeCommandInEDT(Runnable r) {
-    throw new UnsupportedOperationException();
+    jetbrains.mps.smodel.ModelAccess.instance().runCommandInEDT(r, myProject);
   }
 
   @Override
   public void executeUndoTransparentCommand(Runnable r) {
-    throw new UnsupportedOperationException();
+    jetbrains.mps.smodel.ModelAccess.instance().runUndoTransparentCommand(r, myProject);
   }
 
   @Override
   public boolean isCommandAction() {
-    return ModelAccess.instance().isInsideCommand();
+    return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
   }
 }

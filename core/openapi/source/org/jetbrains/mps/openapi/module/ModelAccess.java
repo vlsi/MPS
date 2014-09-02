@@ -63,6 +63,18 @@ public interface ModelAccess {
   void runWriteInEDT(Runnable r);
 
   /**
+   * Modifications to models can be performed from within a managed action, which holds the appropriate write lock
+   * The method obtains such a lock and executes the provided action similar to {@link #runWriteAction(Runnable)}.
+   * In this case the batch repository notifications are sent at the end of the action {@param r}.
+   *
+   * @see org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener
+   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchEventsListener
+   *
+   * @param r The command that the repository should invoke on its own behalf
+   */
+  void runBatchWrite(Runnable r);
+
+  /**
    * Write action executed with respect to platform undo mechanism.
    * This method shall be invoked from EDT thread only.
    * Unlike {@link #executeCommandInEDT(Runnable)}, this method executes synchronously

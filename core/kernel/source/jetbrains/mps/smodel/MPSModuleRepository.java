@@ -29,7 +29,6 @@ import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
-import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -225,11 +224,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   public Iterable<SModule> getModules() {
     ModelAccess.assertLegalRead();
     return Collections.unmodifiableSet(myModules);
-  }
-
-  @Override
-  public RepositoryAccess getRepositoryAccess() {
-    return new GlobalRepositoryAccess();
   }
 
   @Deprecated

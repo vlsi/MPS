@@ -41,25 +41,26 @@ public class SRepositoryEventsDispatcher {
 
   public final void addRepositoryListener(SRepository repository, SRepositoryListener listener) {
     myListeners.add(listener);
-  }
-
-  public final void removeRepositoryListener(SRepository repository, SRepositoryListener listener) {
-    myListeners.remove(listener);
-  }
-
-  public final void addRepositoryBatchEventsListener(SRepository repository, SRepositoryListener listener) {
-    myListeners.add(listener);
     if (listener instanceof SRepositoryContentAdapter) {
       ((SRepositoryContentAdapter) listener).startListening(repository);
     }
   }
 
-  public final void removeRepositoryBatchEventsListener(SRepository repository, SRepositoryListener listener) {
+  public final void removeRepositoryListener(SRepository repository, SRepositoryListener listener) {
     if (listener instanceof SRepositoryContentAdapter) {
       ((SRepositoryContentAdapter) listener).stopListening(repository);
     }
     myListeners.remove(listener);
   }
+
+  public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+    myBatchEventsListeners.add(listener);
+  }
+
+  public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+    myBatchEventsListeners.remove(listener);
+  }
+
   public final void fireModuleAdded(@NotNull SModule module) {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {

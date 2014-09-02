@@ -17,7 +17,7 @@ package jetbrains.mps.util.annotation;
 
 /**
  * Stuff annotated with this annotation would be removed
- * in next release (including milestones) after specified version.
+ * in the next release (including milestones) after specified version.
  */
 public @interface ToRemove {
   double version();

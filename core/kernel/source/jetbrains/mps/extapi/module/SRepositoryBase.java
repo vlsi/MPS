@@ -54,7 +54,12 @@ public abstract class SRepositoryBase implements SRepository {
 
   @Override
   public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+    myEventsDispatcher.addRepositoryBatchEventsListener(listener);
+  }
 
+  @Override
+  public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+    myEventsDispatcher.removeRepositoryBatchEventsListener(listener);
   }
 
   protected final void fireModuleAdded(SModule module) {
