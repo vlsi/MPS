@@ -4,12 +4,15 @@ package jetbrains.mps.migration.component.util;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import jetbrains.mps.ide.migration.MigrationManager;
+import jetbrains.mps.lang.migration.runtime.base.DataCollector;
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.lang.migration.runtime.base.MigrationDescriptor;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScript;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -18,6 +21,7 @@ import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.migration.ScriptApplied;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SLanguageId;
@@ -27,7 +31,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class MigrationComponent extends AbstractProjectComponent implements MigrationManager {
+public class MigrationComponent extends AbstractProjectComponent implements MigrationManager, DataCollector {
   private Map<SModule, MigrationDescriptor> loadedDescriptors = MapSequence.fromMap(new HashMap<SModule, MigrationDescriptor>());
   private Project mpsProject;
   private MigrationManager.MigrationState lastState;
@@ -138,7 +142,10 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
     SLanguageId languageId = IdHelper.getLanguageId(script.getReference().getModuleReference().getModuleId());
     assert module.getModuleDescriptor().getLanguageVersions().get(languageId) == script.getReference().getFromVersion();
     try {
-      script.execute(module, this);
+      String data = script.execute(module, this);
+      if (data != null) {
+        MigrationDataUtil.addData(module, script.getReference(), data);
+      }
     } catch (Throwable e) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("Could not execute script", e);
@@ -211,7 +218,7 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   }
 
   public <T> Map<SModule, T> collectData(SModule myModule, final MigrationScriptReference scriptReference) {
-    final MigrationScript script = scriptReference.resolve(this, mpsProject.getRepository());
+    final MigrationScript script = check_gd1mrb_a0a0v(getMigrationDescriptor(scriptReference.getModuleReference().resolve(mpsProject.getRepository())), scriptReference, this);
     final Map<SModule, T> requiredData = MapSequence.fromMap(new HashMap<SModule, T>());
     SetSequence.fromSet(MigrationsUtil.getModuleDependencies(myModule)).visitAll(new IVisitor<SModule>() {
       public void visit(SModule it) {
@@ -227,6 +234,12 @@ public class MigrationComponent extends AbstractProjectComponent implements Migr
   private static MigrationScript check_gd1mrb_a0e0a0a0a0l(MigrationDescriptor checkedDotOperand, int current) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScript(current);
+    }
+    return null;
+  }
+  private static MigrationScript check_gd1mrb_a0a0v(MigrationDescriptor checkedDotOperand, MigrationScriptReference scriptReference, MigrationComponent checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScript(scriptReference.getFromVersion());
     }
     return null;
   }

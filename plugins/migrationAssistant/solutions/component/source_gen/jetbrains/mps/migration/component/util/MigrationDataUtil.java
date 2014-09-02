@@ -4,6 +4,7 @@ package jetbrains.mps.migration.component.util;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import jetbrains.mps.vfs.IFile;
 import java.io.OutputStreamWriter;
 import jetbrains.mps.internal.collections.runtime.Sequence;

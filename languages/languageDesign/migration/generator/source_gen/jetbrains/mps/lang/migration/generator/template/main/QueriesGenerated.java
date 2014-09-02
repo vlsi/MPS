@@ -83,7 +83,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_6129096654910849921(final IfMacroContext _context) {
     return MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode());
   }
-  public static boolean ifMacro_Condition_6129096654910859248(final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_3309033097910349316(final IfMacroContext _context) {
     return MigrationScript_Behavior.call_hasData_586712031920013598(_context.getNode());
   }
   public static boolean ifMacro_Condition_7130565133156987436(final IfMacroContext _context) {

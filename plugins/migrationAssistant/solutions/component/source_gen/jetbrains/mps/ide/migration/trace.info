@@ -149,9 +149,9 @@
       <node id="6781485246382122857" at="15,38,16,20" concept="7" />
       <node id="6781485246382122863" at="18,30,19,20" concept="7" />
       <node id="6781485246382122870" at="22,28,23,67" concept="7" />
-      <node id="6781485246382122855" at="15,0,18,0" concept="5" trace="getScript#()Ljetbrains/mps/migration/component/util/MigrationScript;" />
+      <node id="6781485246382122855" at="15,0,18,0" concept="5" trace="getScript#()Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;" />
       <node id="6781485246382122861" at="18,0,21,0" concept="5" trace="getModule#()Lorg/jetbrains/mps/openapi/module/SModule;" />
-      <node id="6781485246382122839" at="11,0,15,0" concept="1" trace="ScriptApplied#(Ljetbrains/mps/migration/component/util/MigrationScript;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="6781485246382122839" at="11,0,15,0" concept="1" trace="ScriptApplied#(Ljetbrains/mps/lang/migration/runtime/base/MigrationScript;Lorg/jetbrains/mps/openapi/module/SModule;)V" />
       <node id="6781485246382122867" at="21,0,25,0" concept="5" trace="toString#()Ljava/lang/String;" />
       <scope id="6781485246382122856" at="15,38,16,20" />
       <scope id="6781485246382122862" at="18,30,19,20" />

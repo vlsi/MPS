@@ -25,6 +25,8 @@
     <model ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" name="org.jetbrains.annotations@java_stub" />
     <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util(MPS.IDEA/com.intellij.util@java_stub)" name="com.intellij.util@java_stub" />
     <model ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
+    <model ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" name="com.intellij.openapi.util@java_stub" />
+    <model ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" name="jetbrains.mps.lang.migration.runtime.base" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095" name="BlockStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197029447546" name="FieldReferenceOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1107796713796" name="Interface" />
@@ -188,9 +190,10 @@
     <import index="as9o" ref="3f233e7f-b8a6-46d2-a57f-795d56775243/f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" />
     <import index="owhg" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.util(MPS.IDEA/com.intellij.util@java_stub)" />
     <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" />
+    <import index="6f4m" ref="528ff3b9-5fc4-40dd-931f-c6ce3650640e/r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime/jetbrains.mps.lang.migration.runtime.base)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="8d8y" ref="498d89d2-c2e9-11e2-ad49-6cf049e62fe5/f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.util(MPS.IDEA/com.intellij.openapi.util@java_stub)" implicit="true" />
     <import index="qff7" ref="r:2ba2e307-a81d-4a21-9e0b-de3624e2fb83(jetbrains.mps.lang.access.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
   </imports>
@@ -207,7 +210,7 @@
         <property role="asn4.1169194658468.1169194664001" value="myScript" />
         <property role="vg0i.1068431474542.1176718929932" value="false" />
         <node concept="vg0i.1107535904670" id="6781485246382122833" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="auc7.4436301628118590621" resolveInfo="MigrationScript" />
+          <reference role="vg0i.1107535904670.1107535924139" target="6f4m.3309033097909944447" resolveInfo="MigrationScript" />
         </node>
         <node concept="vg0i.1146644623116" id="6781485246382122834" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
@@ -229,7 +232,7 @@
           <property role="asn4.1169194658468.1169194664001" value="script" />
           <property role="vg0i.1068431474542.1176718929932" value="false" />
           <node concept="vg0i.1107535904670" id="6781485246382122842" role="vg0i.4972933694980447171.5680397130376446158" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="auc7.4436301628118590621" resolveInfo="MigrationScript" />
+            <reference role="vg0i.1107535904670.1107535924139" target="6f4m.3309033097909944447" resolveInfo="MigrationScript" />
           </node>
         </node>
         <node concept="vg0i.1068498886292" id="6781485246382122843" role="vg0i.1068580123132.1068580123134" info="ir">
@@ -276,7 +279,7 @@
         </node>
         <node concept="vg0i.1146644602865" id="6781485246382122859" role="vg0i.1178549954367.1178549979242" info="nn" />
         <node concept="vg0i.1107535904670" id="6781485246382122860" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="vg0i.1107535904670.1107535924139" target="auc7.4436301628118590621" resolveInfo="MigrationScript" />
+          <reference role="vg0i.1107535904670.1107535924139" target="6f4m.3309033097909944447" resolveInfo="MigrationScript" />
         </node>
       </node>
       <node concept="vg0i.1068580123165" id="6781485246382122861" role="vg0i.1107461130800.5375687026011219971" info="igu">
@@ -311,7 +314,7 @@
                     <reference role="vg0i.1068498886296.1068581517664" target="6781485246382122831" resolveInfo="myScript" />
                   </node>
                   <node concept="vg0i.1202948039474" id="6781485246382123320" role="vg0i.1197027756228.1197027833540" info="nn">
-                    <reference role="vg0i.1204053956946.1068499141037" target="auc7.7339334509834371096" resolveInfo="getCaption" />
+                    <reference role="vg0i.1204053956946.1068499141037" target="6f4m.3309033097909944448" resolveInfo="getCaption" />
                   </node>
                 </node>
                 <node concept="vg0i.1070475926800" id="6781485246382122874" role="vg0i.1081773326031.1081773367579" info="nn">

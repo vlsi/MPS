@@ -44,6 +44,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/make-runtime/make-runtime.iml" filepath="$PROJECT_DIR$/core/make-runtime/make-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/migration/migration.iml" filepath="$PROJECT_DIR$/core/migration/migration.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" filepath="$PROJECT_DIR$/plugins/migrationAssistant/migrationAssistant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/migrations-runtime/migrations-runtime.iml" filepath="$PROJECT_DIR$/migrations-runtime/migrations-runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/testbench/modules/miscTests/miscTests.iml" filepath="$PROJECT_DIR$/testbench/modules/miscTests/miscTests.iml" />
       <module fileurl="file://$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" filepath="$PROJECT_DIR$/plugins/modelchecker/modelchecker.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/mps.iml" filepath="$PROJECT_DIR$/mps.iml" />

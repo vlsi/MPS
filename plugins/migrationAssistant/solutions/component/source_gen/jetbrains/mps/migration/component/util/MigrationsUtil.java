@@ -20,6 +20,7 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.SDependency;
 import java.util.HashSet;
