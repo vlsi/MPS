@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -22,7 +22,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Classifier_Behavior.call_isStatic_521412098689998668(it);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
@@ -42,7 +42,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Classifier_Behavior.call_isStatic_521412098689998668(it);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
@@ -65,7 +65,7 @@ public class ContextUtil {
       } else {
         return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return Classifier_Behavior.call_isStatic_521412098689998668(it);
+            return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_7405920559687241224", new Object[]{});
           }
         }).first();
       }
