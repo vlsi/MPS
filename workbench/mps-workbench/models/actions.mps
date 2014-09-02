@@ -33259,8 +33259,8 @@
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8394433674396727873" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="StyledTextPrinterImpl" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="Menu.EditorPopup.Actions" />
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6720970695622239108" nodeInfo="in">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7a0s.3349147954042389094" resolveInfo="StyledTextPrinter" />
+    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="961563956158953639" nodeInfo="in">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i5c6.6822392181927252916" resolveInfo="StyledTextPrinter" />
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8394433674396727874" nodeInfo="nn" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8394433674396727879" nodeInfo="igu">
@@ -33294,8 +33294,8 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8394433674396747675" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="setBold" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5239382628031123315" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7a0s.3349147954042389094" resolveInfo="StyledTextPrinter" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2347409729418044133" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i5c6.6822392181927252916" resolveInfo="StyledTextPrinter" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8394433674396747677" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8394433674396747678" nodeInfo="sn">
@@ -33328,8 +33328,8 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8394433674396747697" nodeInfo="igu">
       <property name="name" nameId="tpck.1169194664001" value="append" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5239382628031140381" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7a0s.3349147954042389094" resolveInfo="StyledTextPrinter" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2347409729418045450" nodeInfo="in">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="i5c6.6822392181927252916" resolveInfo="StyledTextPrinter" />
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8394433674396747699" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8394433674396747700" nodeInfo="sn">

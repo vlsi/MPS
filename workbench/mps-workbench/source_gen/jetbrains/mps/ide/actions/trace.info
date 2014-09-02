@@ -15561,9 +15561,9 @@
       <node id="8394433674396748164" at="31,39,32,27" concept="13" />
       <node id="8394433674396727875" at="15,0,17,0" concept="4" trace="StyledTextPrinterImpl#()V" />
       <node id="8394433674396748159" at="31,0,34,0" concept="11" trace="getDocument#()Ljavax/swing/text/StyledDocument;" />
-      <node id="8394433674396747675" at="17,0,22,0" concept="11" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/StyledTextPrinter;" />
+      <node id="8394433674396747675" at="17,0,22,0" concept="11" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
       <node id="8394433674396747729" at="23,48,28,5" concept="20" />
-      <node id="8394433674396747697" at="22,0,31,0" concept="11" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/StyledTextPrinter;" />
+      <node id="8394433674396747697" at="22,0,31,0" concept="11" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
       <scope id="8394433674396727878" at="15,34,15,34" />
       <scope id="8394433674396747730" at="24,9,25,91" />
       <scope id="8394433674396747732" at="26,0,27,45">
