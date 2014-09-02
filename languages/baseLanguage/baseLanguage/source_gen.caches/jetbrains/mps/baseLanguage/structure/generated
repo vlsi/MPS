@@ -434,6 +434,7 @@
   <source id="1197029447546" name="FieldReferenceOperation" hash="-dy50ds10dena6gibbyhfa9iqxqzn4dd" />
   <source id="1199653749349" name="IStatementListContainer" hash="4zlbfji2jvatn9r3rffmwsgfhz51a17" />
   <source id="1200397549879" name="_CharConstant_String" hash="-4zp5cmjj3gklz3mk5y512yh5vzz2pvs">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_CharConstant_String_PropertySupport.java" />
   </source>
   <source id="1201183863028" name="TypeDerivable" hash="2e64nx11b7nytlxgvnix9c81424fqsw" />
@@ -491,6 +492,7 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />

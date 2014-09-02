@@ -7,7 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -18,7 +18,7 @@ public class check_NonStaticClassInInterface_NonTypesystemRule extends AbstractN
   public check_NonStaticClassInInterface_NonTypesystemRule() {
   }
   public void applyRule(final SNode innerClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (!(Classifier_Behavior.call_isStatic_521412098689998668(innerClass)) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(innerClass), "jetbrains.mps.baseLanguage.structure.Interface")) {
+    if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, innerClass, "virtual_isStatic_7405920559687241224", new Object[]{})) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(innerClass), "jetbrains.mps.baseLanguage.structure.Interface")) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(innerClass, "Interfaces can't have non-static inner classes", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3511256318310404938", null, errorTarget);

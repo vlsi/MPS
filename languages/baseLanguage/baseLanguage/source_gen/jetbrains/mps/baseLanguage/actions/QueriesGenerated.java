@@ -831,11 +831,11 @@ public class QueriesGenerated {
             //  'qualified this' - only in inner classes 
             List<SNode> result = new ArrayList<SNode>();
             SNode classifier = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-            if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+            if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, classifier, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
               for (SNode parentClassifier : SNodeOperations.getAncestors(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false)) {
                 if (!(SNodeOperations.isInstanceOf(parentClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"))) {
                   ListSequence.fromList(result).addElement(parentClassifier);
-                  if (Classifier_Behavior.call_isStatic_521412098689998668(parentClassifier)) {
+                  if (BehaviorReflection.invokeVirtual(Boolean.TYPE, parentClassifier, "virtual_isStatic_7405920559687241224", new Object[]{})) {
                     break;
                   }
                 }
