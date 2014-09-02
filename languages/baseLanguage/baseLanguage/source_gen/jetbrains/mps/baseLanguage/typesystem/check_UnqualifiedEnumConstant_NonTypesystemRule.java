@@ -12,12 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.baseLanguage.behavior.JavaImports_Behavior;
-import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
-import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -25,6 +21,11 @@ import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.BaseQuickFixProvider;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.baseLanguage.behavior.JavaImports_Behavior;
+import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ResolveUnknownUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
@@ -37,9 +38,7 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       return;
     }
 
-
-
-    // FIXME: duplicate code with MultipleFilesParser 
+    // FIXME: duplicate code with JavaToMpsConverter 
 
     SReference ref = SNodeOperations.getReference(varRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration"));
     if (!(ref instanceof DynamicReference)) {
@@ -47,6 +46,34 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
     }
     if (ref.getTargetNode() != null) {
       return;
+    }
+
+    // now we can try to search 
+    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getAncestors(varRef, "jetbrains.mps.baseLanguage.structure.EnumClass", false))) {
+      SNode enumConst = Sequence.fromIterable(Members.visibleEnumConstants(enclosingEnum)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
+        }
+      });
+      if ((enumConst == null)) {
+        continue;
+      }
+
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+      SLinkOperations.setTarget(result, "enumClass", enclosingEnum, false);
+      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+      {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(varRef, "Unqualified enum constant reference", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "502936544108889529", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.replaceNode_QuickFix", true);
+          intentionProvider.putArgument("newNode", result);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
+        }
+      }
     }
 
     SNode root = SNodeOperations.getContainingRoot(varRef);
@@ -58,8 +85,6 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
       return;
     }
 
-    // now we can try to search 
-    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
     for (SNode singleNameImport : Sequence.fromIterable(JavaImports_Behavior.call_staticSingleName_5230012391903395274(javaImports))) {
       if (!(enumConstName.equals(Tokens_Behavior.call_lastToken_1296023605440030462(singleNameImport)))) {
         continue;

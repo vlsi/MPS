@@ -650,6 +650,18 @@ public class JavaToMpsConverter {
       return null;
     }
 
+    // now we can try to search 
+    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
+
+    String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getAncestors(varRef, "jetbrains.mps.baseLanguage.structure.EnumClass", false))) {
+      SNode enumConstRef = makeEnumConstRef(enclosingEnum, enumConstName);
+      if (enumConstRef != null) {
+        return enumConstRef;
+      }
+    }
+
     SNode root = SNodeOperations.getContainingRoot(varRef);
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return null;
@@ -659,10 +671,6 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    // now we can try to search 
-    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
-
-    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
     for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
       if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
         continue;
@@ -679,24 +687,10 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         return null;
       }
-
-      // Q: maybe not findFirst, but rather fail if there are more than one... 
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-
-      if ((enumConst == null)) {
+      SNode result = makeEnumConstRef(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
         return null;
       }
-
-      // success 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
     }
 
     for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
@@ -707,24 +701,30 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         continue;
       }
-
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-      if ((enumConst == null)) {
-        continue;
+      SNode result = makeEnumConstRef(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
+        return null;
       }
+    }
+    return null;
+  }
 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
+  private SNode makeEnumConstRef(SNode enumClass, final String constName) {
+    // Q: maybe not findFirst, but rather fail if there are more than one... 
+    SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return constName.equals(SPropertyOperations.getString(it, "name"));
+      }
+    });
+    if ((enumConst == null)) {
+      return null;
     }
 
-    return null;
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+    SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+    SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+    return result;
   }
 
 

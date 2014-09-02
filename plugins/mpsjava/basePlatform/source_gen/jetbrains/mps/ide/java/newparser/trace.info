@@ -296,51 +296,46 @@
     <nodeInfo nodeId="3151797052701005657" fileName="JavaToMpsConverter.java" startLine="647" startPosition="5" endLine="648" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="5230012391903304898" fileName="JavaToMpsConverter.java" startLine="649" startPosition="38" endLine="650" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5230012391903480907" fileName="JavaToMpsConverter.java" startLine="651" startPosition="5" endLine="652" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903486867" fileName="JavaToMpsConverter.java" startLine="652" startPosition="0" endLine="653" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391903523222" fileName="JavaToMpsConverter.java" startLine="654" startPosition="99" endLine="655" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903533582" fileName="JavaToMpsConverter.java" startLine="656" startPosition="5" endLine="657" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391903559015" fileName="JavaToMpsConverter.java" startLine="658" startPosition="32" endLine="659" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7699938177175968916" fileName="JavaToMpsConverter.java" startLine="660" startPosition="5" endLine="661" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903561640" fileName="JavaToMpsConverter.java" startLine="661" startPosition="0" endLine="662" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391926594413" fileName="JavaToMpsConverter.java" startLine="662" startPosition="32" endLine="663" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391926524357" fileName="JavaToMpsConverter.java" startLine="663" startPosition="114" endLine="664" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7699938177175850384" fileName="JavaToMpsConverter.java" startLine="664" startPosition="0" endLine="665" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391903604060" fileName="JavaToMpsConverter.java" startLine="667" startPosition="206" endLine="668" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5230012391903626650" fileName="JavaToMpsConverter.java" startLine="669" startPosition="7" endLine="670" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903625904" fileName="JavaToMpsConverter.java" startLine="670" startPosition="0" endLine="671" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391903629269" fileName="JavaToMpsConverter.java" startLine="671" startPosition="214" endLine="672" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391903685650" fileName="JavaToMpsConverter.java" startLine="673" startPosition="41" endLine="674" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391903686348" fileName="JavaToMpsConverter.java" startLine="674" startPosition="51" endLine="675" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391903686812" fileName="JavaToMpsConverter.java" startLine="675" startPosition="70" endLine="676" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391903684962" fileName="JavaToMpsConverter.java" startLine="676" startPosition="104" endLine="677" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903716376" fileName="JavaToMpsConverter.java" startLine="679" startPosition="114" endLine="680" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903717001" fileName="JavaToMpsConverter.java" startLine="681" startPosition="7" endLine="682" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903877856" fileName="JavaToMpsConverter.java" startLine="682" startPosition="0" endLine="683" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391903896995" fileName="JavaToMpsConverter.java" startLine="685" startPosition="41" endLine="686" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903724801" fileName="JavaToMpsConverter.java" startLine="688" startPosition="9" endLine="689" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903953348" fileName="JavaToMpsConverter.java" startLine="690" startPosition="32" endLine="691" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903908720" fileName="JavaToMpsConverter.java" startLine="692" startPosition="7" endLine="693" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391903964353" fileName="JavaToMpsConverter.java" startLine="693" startPosition="0" endLine="694" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5230012391903983580" fileName="JavaToMpsConverter.java" startLine="694" startPosition="17" endLine="695" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391904010806" fileName="JavaToMpsConverter.java" startLine="695" startPosition="122" endLine="696" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230012391904046377" fileName="JavaToMpsConverter.java" startLine="696" startPosition="152" endLine="697" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230012391904072245" fileName="JavaToMpsConverter.java" startLine="697" startPosition="85" endLine="698" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391904226303" fileName="JavaToMpsConverter.java" startLine="698" startPosition="0" endLine="699" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391903471978" fileName="JavaToMpsConverter.java" startLine="700" startPosition="5" endLine="701" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391904281450" fileName="JavaToMpsConverter.java" startLine="702" startPosition="266" endLine="703" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5230012391904317777" fileName="JavaToMpsConverter.java" startLine="704" startPosition="27" endLine="705" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5230012391904335999" fileName="JavaToMpsConverter.java" startLine="707" startPosition="100" endLine="708" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7699938177176247572" fileName="JavaToMpsConverter.java" startLine="709" startPosition="7" endLine="710" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391904398729" fileName="JavaToMpsConverter.java" startLine="712" startPosition="41" endLine="713" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391904489445" fileName="JavaToMpsConverter.java" startLine="716" startPosition="32" endLine="717" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5230012391904442087" fileName="JavaToMpsConverter.java" startLine="718" startPosition="7" endLine="719" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7699938177176762418" fileName="JavaToMpsConverter.java" startLine="719" startPosition="0" endLine="720" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7699938177176906469" fileName="JavaToMpsConverter.java" startLine="720" startPosition="122" endLine="721" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7699938177176982977" fileName="JavaToMpsConverter.java" startLine="721" startPosition="138" endLine="722" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7699938177177051948" fileName="JavaToMpsConverter.java" startLine="722" startPosition="85" endLine="723" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391922930681" fileName="JavaToMpsConverter.java" startLine="723" startPosition="0" endLine="724" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5230012391921702589" fileName="JavaToMpsConverter.java" startLine="725" startPosition="5" endLine="726" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5230012391923070611" fileName="JavaToMpsConverter.java" startLine="726" startPosition="0" endLine="727" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903561640" fileName="JavaToMpsConverter.java" startLine="652" startPosition="0" endLine="653" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5230012391926594413" fileName="JavaToMpsConverter.java" startLine="653" startPosition="32" endLine="654" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391926524357" fileName="JavaToMpsConverter.java" startLine="654" startPosition="114" endLine="655" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7699938177175850384" fileName="JavaToMpsConverter.java" startLine="655" startPosition="0" endLine="656" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4812116028889425140" fileName="JavaToMpsConverter.java" startLine="656" startPosition="69" endLine="657" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4812116028889603465" fileName="JavaToMpsConverter.java" startLine="658" startPosition="150" endLine="659" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4812116028889759834" fileName="JavaToMpsConverter.java" startLine="660" startPosition="33" endLine="661" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="414395969629956200" fileName="JavaToMpsConverter.java" startLine="663" startPosition="5" endLine="664" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5230012391903486867" fileName="JavaToMpsConverter.java" startLine="664" startPosition="0" endLine="665" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391903523222" fileName="JavaToMpsConverter.java" startLine="666" startPosition="99" endLine="667" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903533582" fileName="JavaToMpsConverter.java" startLine="668" startPosition="5" endLine="669" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391903559015" fileName="JavaToMpsConverter.java" startLine="670" startPosition="32" endLine="671" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="414395969629956597" fileName="JavaToMpsConverter.java" startLine="672" startPosition="5" endLine="673" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5230012391903604060" fileName="JavaToMpsConverter.java" startLine="675" startPosition="206" endLine="676" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5230012391903626650" fileName="JavaToMpsConverter.java" startLine="677" startPosition="7" endLine="678" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5230012391903625904" fileName="JavaToMpsConverter.java" startLine="678" startPosition="0" endLine="679" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391903629269" fileName="JavaToMpsConverter.java" startLine="679" startPosition="214" endLine="680" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391903685650" fileName="JavaToMpsConverter.java" startLine="681" startPosition="41" endLine="682" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5230012391903686348" fileName="JavaToMpsConverter.java" startLine="682" startPosition="51" endLine="683" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5230012391903686812" fileName="JavaToMpsConverter.java" startLine="683" startPosition="70" endLine="684" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5230012391903684962" fileName="JavaToMpsConverter.java" startLine="684" startPosition="104" endLine="685" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903716376" fileName="JavaToMpsConverter.java" startLine="687" startPosition="114" endLine="688" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903887394" fileName="JavaToMpsConverter.java" startLine="689" startPosition="7" endLine="690" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="502936544108410388" fileName="JavaToMpsConverter.java" startLine="691" startPosition="27" endLine="692" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903471978" fileName="JavaToMpsConverter.java" startLine="694" startPosition="5" endLine="695" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5230012391904281450" fileName="JavaToMpsConverter.java" startLine="696" startPosition="266" endLine="697" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5230012391904317777" fileName="JavaToMpsConverter.java" startLine="698" startPosition="27" endLine="699" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="5230012391904335999" fileName="JavaToMpsConverter.java" startLine="701" startPosition="100" endLine="702" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7699938177176762418" fileName="JavaToMpsConverter.java" startLine="703" startPosition="7" endLine="704" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="502936544108078230" fileName="JavaToMpsConverter.java" startLine="705" startPosition="27" endLine="706" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391923070611" fileName="JavaToMpsConverter.java" startLine="708" startPosition="5" endLine="709" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5230012391903877856" fileName="JavaToMpsConverter.java" startLine="712" startPosition="75" endLine="713" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="4812116028889659382" fileName="JavaToMpsConverter.java" startLine="715" startPosition="39" endLine="716" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4812116028889662369" fileName="JavaToMpsConverter.java" startLine="719" startPosition="30" endLine="720" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4812116028889659401" fileName="JavaToMpsConverter.java" startLine="721" startPosition="5" endLine="722" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4812116028889659402" fileName="JavaToMpsConverter.java" startLine="722" startPosition="0" endLine="723" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4812116028889659408" fileName="JavaToMpsConverter.java" startLine="723" startPosition="120" endLine="724" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4812116028889659415" fileName="JavaToMpsConverter.java" startLine="724" startPosition="141" endLine="725" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4812116028889659421" fileName="JavaToMpsConverter.java" startLine="725" startPosition="83" endLine="726" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4812116028889659422" fileName="JavaToMpsConverter.java" startLine="726" startPosition="0" endLine="727" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5230012391936793712" fileName="JavaToMpsConverter.java" startLine="732" startPosition="95" endLine="733" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="5230012391936793714" fileName="JavaToMpsConverter.java" startLine="733" startPosition="75" endLine="734" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3151797052701024837" fileName="JavaToMpsConverter.java" startLine="734" startPosition="0" endLine="735" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -586,16 +581,17 @@
     <nodeInfo nodeId="3151797052701005633" fileName="JavaToMpsConverter.java" startLine="640" startPosition="0" endLine="643" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3151797052701005650" fileName="JavaToMpsConverter.java" startLine="644" startPosition="176" endLine="647" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230012391903297784" fileName="JavaToMpsConverter.java" startLine="648" startPosition="0" endLine="651" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391903515589" fileName="JavaToMpsConverter.java" startLine="653" startPosition="59" endLine="656" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391903527005" fileName="JavaToMpsConverter.java" startLine="657" startPosition="228" endLine="660" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391903580241" fileName="JavaToMpsConverter.java" startLine="666" startPosition="270" endLine="669" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391903694436" fileName="JavaToMpsConverter.java" startLine="678" startPosition="7" endLine="681" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391903896993" fileName="JavaToMpsConverter.java" startLine="685" startPosition="0" endLine="688" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5230012391903919129" fileName="JavaToMpsConverter.java" startLine="689" startPosition="0" endLine="692" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391904288926" fileName="JavaToMpsConverter.java" startLine="703" startPosition="275" endLine="706" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7699938177178183666" fileName="JavaToMpsConverter.java" startLine="706" startPosition="7" endLine="709" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5230012391904397707" fileName="JavaToMpsConverter.java" startLine="712" startPosition="0" endLine="715" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5230012391904455077" fileName="JavaToMpsConverter.java" startLine="715" startPosition="9" endLine="718" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4812116028889756128" fileName="JavaToMpsConverter.java" startLine="659" startPosition="74" endLine="662" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230012391903515589" fileName="JavaToMpsConverter.java" startLine="665" startPosition="59" endLine="668" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230012391903527005" fileName="JavaToMpsConverter.java" startLine="669" startPosition="228" endLine="672" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230012391903580241" fileName="JavaToMpsConverter.java" startLine="674" startPosition="270" endLine="677" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230012391903694436" fileName="JavaToMpsConverter.java" startLine="686" startPosition="7" endLine="689" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="502936544108410386" fileName="JavaToMpsConverter.java" startLine="690" startPosition="145" endLine="693" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5230012391904288926" fileName="JavaToMpsConverter.java" startLine="697" startPosition="275" endLine="700" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7699938177178183666" fileName="JavaToMpsConverter.java" startLine="700" startPosition="7" endLine="703" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="502936544108037422" fileName="JavaToMpsConverter.java" startLine="704" startPosition="131" endLine="707" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4812116028889659380" fileName="JavaToMpsConverter.java" startLine="715" startPosition="0" endLine="718" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="4812116028889659395" fileName="JavaToMpsConverter.java" startLine="718" startPosition="7" endLine="721" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230012391936793715" fileName="JavaToMpsConverter.java" startLine="735" startPosition="78" endLine="738" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230012391936793727" fileName="JavaToMpsConverter.java" startLine="739" startPosition="257" endLine="742" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3151797052701005678" fileName="JavaToMpsConverter.java" startLine="746" startPosition="176" endLine="749" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -660,14 +656,14 @@
     <nodeInfo nodeId="1933699688959886251" fileName="JavaToMpsConverter.java" startLine="396" startPosition="11" endLine="401" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1508813892200793420" fileName="JavaToMpsConverter.java" startLine="439" startPosition="0" endLine="444" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3356719807428394186" fileName="JavaToMpsConverter.java" startLine="616" startPosition="73" endLine="621" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5230012391903887394" fileName="JavaToMpsConverter.java" startLine="683" startPosition="79" endLine="688" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7699938177176808332" fileName="JavaToMpsConverter.java" startLine="710" startPosition="0" endLine="715" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4812116028889659375" fileName="JavaToMpsConverter.java" startLine="713" startPosition="77" endLine="718" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3151797052701005717" fileName="JavaToMpsConverter.java" startLine="760" startPosition="0" endLine="765" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2717473728236781844" fileName="JavaToMpsConverter.java" startLine="908" startPosition="228" endLine="913" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2717473728237567229" fileName="JavaToMpsConverter.java" startLine="915" startPosition="102" endLine="920" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5285105605105633834" fileName="JavaToMpsConverter.java" startLine="991" startPosition="63" endLine="996" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7238794918750918758" fileName="JavaToMpsConverter.java" startLine="1139" startPosition="7" endLine="1144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5230012391903650953" fileName="JavaToMpsConverter.java" startLine="672" startPosition="256" endLine="678" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4812116028889537213" fileName="JavaToMpsConverter.java" startLine="657" startPosition="0" endLine="663" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5230012391903650953" fileName="JavaToMpsConverter.java" startLine="680" startPosition="256" endLine="686" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2717473728239355529" fileName="JavaToMpsConverter.java" startLine="922" startPosition="0" endLine="928" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2717473728244306583" fileName="JavaToMpsConverter.java" startLine="964" startPosition="0" endLine="970" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3356342729954670038" fileName="JavaToMpsConverter.java" startLine="131" startPosition="57" endLine="138" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -708,6 +704,7 @@
     <nodeInfo nodeId="7625314877002420344" fileName="JavaToMpsConverter.java" startLine="395" startPosition="10" endLine="408" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4988876389094735824" fileName="JavaToMpsConverter.java" startLine="541" startPosition="0" endLine="554" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3356719807428367602" fileName="JavaToMpsConverter.java" startLine="614" startPosition="25" endLine="627" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5230012391904259230" fileName="JavaToMpsConverter.java" startLine="695" startPosition="0" endLine="708" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5285105605116694526" fileName="JavaToMpsConverter.java" startLine="254" startPosition="59" endLine="269" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3356719807426330088" fileName="JavaToMpsConverter.java" startLine="596" startPosition="0" endLine="611" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3356719807428366847" fileName="JavaToMpsConverter.java" startLine="614" startPosition="0" endLine="629" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
@@ -722,6 +719,7 @@
     <nodeInfo nodeId="7625314877001833378" fileName="JavaToMpsConverter.java" startLine="391" startPosition="65" endLine="408" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3356719807426238302" fileName="JavaToMpsConverter.java" startLine="594" startPosition="0" endLine="611" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3356719807428353285" fileName="JavaToMpsConverter.java" startLine="612" startPosition="0" endLine="629" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4812116028888985179" fileName="JavaToMpsConverter.java" startLine="712" startPosition="0" endLine="729" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="makeEnumConstRef#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="2717473728240383149" fileName="JavaToMpsConverter.java" startLine="938" startPosition="0" endLine="955" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4120717315210648428" fileName="JavaToMpsConverter.java" startLine="1031" startPosition="0" endLine="1048" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="updateReference#(Ljava/util/Map;)V" />
     <nodeInfo nodeId="5285105605117546853" fileName="JavaToMpsConverter.java" startLine="274" startPosition="0" endLine="292" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -733,12 +731,12 @@
     <nodeInfo nodeId="3068863004119340243" fileName="JavaToMpsConverter.java" startLine="563" startPosition="0" endLine="583" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6323600598938694119" fileName="JavaToMpsConverter.java" startLine="1080" startPosition="0" endLine="1100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5285105605108144779" fileName="JavaToMpsConverter.java" startLine="252" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/internal/collections/runtime/ISequence;" />
+    <nodeInfo nodeId="5230012391903565574" fileName="JavaToMpsConverter.java" startLine="673" startPosition="0" endLine="694" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3356719807426756578" fileName="JavaToMpsConverter.java" startLine="864" startPosition="0" endLine="885" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
     <nodeInfo nodeId="3356342729942792310" fileName="JavaToMpsConverter.java" startLine="157" startPosition="0" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="5285105605108144775" fileName="JavaToMpsConverter.java" startLine="250" startPosition="0" endLine="273" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3068863004119426271" fileName="JavaToMpsConverter.java" startLine="466" startPosition="0" endLine="489" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8824315269748243878" fileName="JavaToMpsConverter.java" startLine="492" startPosition="0" endLine="515" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5230012391904259230" fileName="JavaToMpsConverter.java" startLine="701" startPosition="0" endLine="725" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2717473728237823476" fileName="JavaToMpsConverter.java" startLine="935" startPosition="0" endLine="959" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldAndMethodTypeRefs#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="4120717315230794179" fileName="JavaToMpsConverter.java" startLine="1001" startPosition="101" endLine="1026" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4120717315230237094" fileName="JavaToMpsConverter.java" startLine="1001" startPosition="0" endLine="1028" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveRefs#(Ljava/lang/Iterable;Ljava/util/Map;)V" />
@@ -747,7 +745,6 @@
     <nodeInfo nodeId="4988876389076266862" fileName="JavaToMpsConverter.java" startLine="809" startPosition="0" endLine="839" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformLocalNameRef#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="7238794918750160279" fileName="JavaToMpsConverter.java" startLine="1078" startPosition="22" endLine="1109" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="1508813892202091229" fileName="JavaToMpsConverter.java" startLine="415" startPosition="0" endLine="449" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolveUpdatePass#(Ljava/lang/String;Ljava/lang/Iterable;Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-    <nodeInfo nodeId="5230012391903565574" fileName="JavaToMpsConverter.java" startLine="665" startPosition="75" endLine="700" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8751504818642105478" fileName="JavaToMpsConverter.java" startLine="154" startPosition="0" endLine="191" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5230012391936793710" fileName="JavaToMpsConverter.java" startLine="732" startPosition="0" endLine="772" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformUnqualifedEnumUnderSwitch#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeChecker;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3356342729942924411" fileName="JavaToMpsConverter.java" startLine="1077" startPosition="0" endLine="1119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createModel#(Ljava/lang/String;Ljetbrains/mps/vfs/IFile;)Lorg/jetbrains/mps/openapi/model/SModel;" />
@@ -756,8 +753,8 @@
     <nodeInfo nodeId="3356342729941379789" fileName="JavaToMpsConverter.java" startLine="340" startPosition="0" endLine="388" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="parseFile#(Ljetbrains/mps/vfs/IFile;)V" />
     <nodeInfo nodeId="8751504818642315040" fileName="JavaToMpsConverter.java" startLine="149" startPosition="0" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3356719807426620504" fileName="JavaToMpsConverter.java" startLine="843" startPosition="0" endLine="901" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImportsToRemove#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3151797052700811409" fileName="JavaToMpsConverter.java" startLine="638" startPosition="0" endLine="711" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformUnqualifedEnum#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3356342729940981125" fileName="JavaToMpsConverter.java" startLine="119" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convertToMps#(Ljava/util/List;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)V" />
-    <nodeInfo nodeId="3151797052700811409" fileName="JavaToMpsConverter.java" startLine="638" startPosition="0" endLine="729" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformUnqualifedEnum#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="3068863004119417031" fileName="JavaToMpsConverter.java" startLine="464" startPosition="25" endLine="557" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3068863004119326369" fileName="JavaToMpsConverter.java" startLine="464" startPosition="0" endLine="560" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="3068863004119311246" fileName="JavaToMpsConverter.java" startLine="462" startPosition="0" endLine="560" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -826,16 +823,17 @@
     <scopeInfo nodeId="3151797052701005634" fileName="JavaToMpsConverter.java" startLine="641" startPosition="147" endLine="642" endPosition="18" />
     <scopeInfo nodeId="3151797052701005651" fileName="JavaToMpsConverter.java" startLine="645" startPosition="45" endLine="646" endPosition="18" />
     <scopeInfo nodeId="5230012391903297787" fileName="JavaToMpsConverter.java" startLine="649" startPosition="38" endLine="650" endPosition="18" />
-    <scopeInfo nodeId="5230012391903515592" fileName="JavaToMpsConverter.java" startLine="654" startPosition="99" endLine="655" endPosition="18" />
-    <scopeInfo nodeId="5230012391903527008" fileName="JavaToMpsConverter.java" startLine="658" startPosition="32" endLine="659" endPosition="18" />
-    <scopeInfo nodeId="5230012391903580242" fileName="JavaToMpsConverter.java" startLine="667" startPosition="206" endLine="668" endPosition="17" />
-    <scopeInfo nodeId="5230012391903694439" fileName="JavaToMpsConverter.java" startLine="679" startPosition="114" endLine="680" endPosition="20" />
-    <scopeInfo nodeId="5230012391903896994" fileName="JavaToMpsConverter.java" startLine="685" startPosition="41" endLine="686" endPosition="81" />
-    <scopeInfo nodeId="5230012391903919132" fileName="JavaToMpsConverter.java" startLine="690" startPosition="32" endLine="691" endPosition="20" />
-    <scopeInfo nodeId="5230012391904288929" fileName="JavaToMpsConverter.java" startLine="704" startPosition="27" endLine="705" endPosition="17" />
-    <scopeInfo nodeId="7699938177178183669" fileName="JavaToMpsConverter.java" startLine="707" startPosition="100" endLine="708" endPosition="17" />
-    <scopeInfo nodeId="5230012391904397708" fileName="JavaToMpsConverter.java" startLine="712" startPosition="41" endLine="713" endPosition="81" />
-    <scopeInfo nodeId="5230012391904455080" fileName="JavaToMpsConverter.java" startLine="716" startPosition="32" endLine="717" endPosition="17" />
+    <scopeInfo nodeId="4812116028889756131" fileName="JavaToMpsConverter.java" startLine="660" startPosition="33" endLine="661" endPosition="28" />
+    <scopeInfo nodeId="5230012391903515592" fileName="JavaToMpsConverter.java" startLine="666" startPosition="99" endLine="667" endPosition="18" />
+    <scopeInfo nodeId="5230012391903527008" fileName="JavaToMpsConverter.java" startLine="670" startPosition="32" endLine="671" endPosition="18" />
+    <scopeInfo nodeId="5230012391903580242" fileName="JavaToMpsConverter.java" startLine="675" startPosition="206" endLine="676" endPosition="17" />
+    <scopeInfo nodeId="5230012391903694439" fileName="JavaToMpsConverter.java" startLine="687" startPosition="114" endLine="688" endPosition="20" />
+    <scopeInfo nodeId="502936544108410387" fileName="JavaToMpsConverter.java" startLine="691" startPosition="27" endLine="692" endPosition="20" />
+    <scopeInfo nodeId="5230012391904288929" fileName="JavaToMpsConverter.java" startLine="698" startPosition="27" endLine="699" endPosition="17" />
+    <scopeInfo nodeId="7699938177178183669" fileName="JavaToMpsConverter.java" startLine="701" startPosition="100" endLine="702" endPosition="17" />
+    <scopeInfo nodeId="502936544108037425" fileName="JavaToMpsConverter.java" startLine="705" startPosition="27" endLine="706" endPosition="20" />
+    <scopeInfo nodeId="4812116028889659381" fileName="JavaToMpsConverter.java" startLine="715" startPosition="39" endLine="716" endPosition="75" />
+    <scopeInfo nodeId="4812116028889659396" fileName="JavaToMpsConverter.java" startLine="719" startPosition="30" endLine="720" endPosition="18" />
     <scopeInfo nodeId="5230012391936793716" fileName="JavaToMpsConverter.java" startLine="736" startPosition="109" endLine="737" endPosition="18" />
     <scopeInfo nodeId="5230012391936793728" fileName="JavaToMpsConverter.java" startLine="740" startPosition="45" endLine="741" endPosition="18" />
     <scopeInfo nodeId="3151797052701005679" fileName="JavaToMpsConverter.java" startLine="747" startPosition="30" endLine="748" endPosition="18" />
@@ -962,11 +960,8 @@
     <scopeInfo nodeId="3356719807428400900" fileName="JavaToMpsConverter.java" startLine="618" startPosition="0" endLine="621" endPosition="0">
       <varInfo nodeId="3356719807428400900" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="5230012391903896993" fileName="JavaToMpsConverter.java" startLine="685" startPosition="0" endLine="688" endPosition="0">
-      <varInfo nodeId="5230012391903896993" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5230012391904397707" fileName="JavaToMpsConverter.java" startLine="712" startPosition="0" endLine="715" endPosition="0">
-      <varInfo nodeId="5230012391904397707" varName="it" />
+    <scopeInfo nodeId="4812116028889659380" fileName="JavaToMpsConverter.java" startLine="715" startPosition="0" endLine="718" endPosition="0">
+      <varInfo nodeId="4812116028889659380" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="3151797052701005726" fileName="JavaToMpsConverter.java" startLine="762" startPosition="0" endLine="765" endPosition="0">
       <varInfo nodeId="3151797052701005726" varName="it" />
@@ -1011,7 +1006,10 @@
     <scopeInfo nodeId="3813618677924056412" fileName="JavaToMpsConverter.java" startLine="184" startPosition="54" endLine="188" endPosition="11">
       <varInfo nodeId="3813618677924056414" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="5230012391903650956" fileName="JavaToMpsConverter.java" startLine="673" startPosition="41" endLine="677" endPosition="20" />
+    <scopeInfo nodeId="4812116028889537219" fileName="JavaToMpsConverter.java" startLine="658" startPosition="150" endLine="662" endPosition="7">
+      <varInfo nodeId="4812116028889603468" varName="enumConstRef" />
+    </scopeInfo>
+    <scopeInfo nodeId="5230012391903650956" fileName="JavaToMpsConverter.java" startLine="681" startPosition="41" endLine="685" endPosition="20" />
     <scopeInfo nodeId="2235632002330720130" fileName="JavaToMpsConverter.java" startLine="852" startPosition="0" endLine="856" endPosition="0">
       <varInfo nodeId="2235632002330720130" varName="it" />
     </scopeInfo>
@@ -1041,6 +1039,9 @@
     </scopeInfo>
     <scopeInfo nodeId="3356342729941415796" fileName="JavaToMpsConverter.java" startLine="345" startPosition="22" endLine="351" endPosition="13" />
     <scopeInfo nodeId="1933699688959886250" fileName="JavaToMpsConverter.java" startLine="396" startPosition="11" endLine="402" endPosition="0" />
+    <scopeInfo nodeId="4812116028889537213" fileName="JavaToMpsConverter.java" startLine="657" startPosition="0" endLine="663" endPosition="5">
+      <varInfo nodeId="4812116028889537215" varName="enclosingEnum" />
+    </scopeInfo>
     <scopeInfo nodeId="2717473728239355529" fileName="JavaToMpsConverter.java" startLine="922" startPosition="0" endLine="928" endPosition="5">
       <varInfo nodeId="2717473728239355531" varName="inner" />
     </scopeInfo>
@@ -1121,6 +1122,10 @@
       <varInfo nodeId="3356719807428411462" varName="importAnnotation" />
       <varInfo nodeId="3356719807428381521" varName="imps" />
     </scopeInfo>
+    <scopeInfo nodeId="5230012391904259236" fileName="JavaToMpsConverter.java" startLine="696" startPosition="266" endLine="707" endPosition="7">
+      <varInfo nodeId="5230012391904281453" varName="claz" />
+      <varInfo nodeId="7699938177176762421" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="5285105605099960950" fileName="JavaToMpsConverter.java" startLine="977" startPosition="0" endLine="988" endPosition="0">
       <varInfo nodeId="5285105605100024710" varName="node" />
     </scopeInfo>
@@ -1156,6 +1161,9 @@
     <scopeInfo nodeId="3356719807428367602" fileName="JavaToMpsConverter.java" startLine="614" startPosition="25" endLine="627" endPosition="9">
       <varInfo nodeId="3356719807428367603" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="5230012391904259230" fileName="JavaToMpsConverter.java" startLine="695" startPosition="0" endLine="708" endPosition="5">
+      <varInfo nodeId="5230012391904259232" varName="onDemandImport" />
+    </scopeInfo>
     <scopeInfo nodeId="8189249634190784252" fileName="JavaToMpsConverter.java" startLine="1032" startPosition="94" endLine="1045" endPosition="9">
       <varInfo nodeId="8189249634190945699" varName="node" />
     </scopeInfo>
@@ -1170,6 +1178,10 @@
     <scopeInfo nodeId="5285105605116694525" fileName="JavaToMpsConverter.java" startLine="254" startPosition="59" endLine="269" endPosition="13" />
     <scopeInfo nodeId="3356719807426330088" fileName="JavaToMpsConverter.java" startLine="596" startPosition="0" endLine="611" endPosition="0" />
     <scopeInfo nodeId="3356719807428366847" fileName="JavaToMpsConverter.java" startLine="614" startPosition="0" endLine="629" endPosition="0" />
+    <scopeInfo nodeId="4812116028888985182" fileName="JavaToMpsConverter.java" startLine="712" startPosition="75" endLine="727" endPosition="18">
+      <varInfo nodeId="4812116028889659376" varName="enumConst" />
+      <varInfo nodeId="4812116028889659403" varName="result" />
+    </scopeInfo>
     <scopeInfo nodeId="2717473728240383155" fileName="JavaToMpsConverter.java" startLine="939" startPosition="57" endLine="954" endPosition="7" />
     <scopeInfo nodeId="4120717315210648431" fileName="JavaToMpsConverter.java" startLine="1031" startPosition="78" endLine="1046" endPosition="5" />
     <scopeInfo nodeId="8189249634190784249" fileName="JavaToMpsConverter.java" startLine="1031" startPosition="78" endLine="1046" endPosition="5">
@@ -1190,6 +1202,10 @@
       <varInfo nodeId="5285105605116694524" varName="it" />
     </scopeInfo>
     <scopeInfo nodeId="1933699688959695923" fileName="JavaToMpsConverter.java" startLine="391" startPosition="65" endLine="408" endPosition="5" />
+    <scopeInfo nodeId="4812116028888985179" fileName="JavaToMpsConverter.java" startLine="712" startPosition="0" endLine="729" endPosition="0">
+      <varInfo nodeId="4812116028889609299" varName="constName" />
+      <varInfo nodeId="4812116028889385503" varName="enumClass" />
+    </scopeInfo>
     <scopeInfo nodeId="2717473728240383149" fileName="JavaToMpsConverter.java" startLine="938" startPosition="0" endLine="955" endPosition="5">
       <varInfo nodeId="2717473728240383151" varName="member" />
     </scopeInfo>
@@ -1201,6 +1217,11 @@
     <scopeInfo nodeId="1933699688959695920" fileName="JavaToMpsConverter.java" startLine="391" startPosition="0" endLine="410" endPosition="0">
       <varInfo nodeId="1933699688959954991" varName="name" />
       <varInfo nodeId="1933699688959762204" varName="runnable" />
+    </scopeInfo>
+    <scopeInfo nodeId="5230012391903565580" fileName="JavaToMpsConverter.java" startLine="674" startPosition="270" endLine="693" endPosition="7">
+      <varInfo nodeId="5230012391903629272" varName="enumClassCandidate" />
+      <varInfo nodeId="5230012391903625907" varName="enumClassCandidateName" />
+      <varInfo nodeId="5230012391903887397" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3356719807426756582" fileName="JavaToMpsConverter.java" startLine="865" startPosition="57" endLine="884" endPosition="7">
       <varInfo nodeId="3356719807426756584" varName="node" />
@@ -1225,13 +1246,11 @@
       <varInfo nodeId="8824315269748243925" varName="operandRefs" />
       <varInfo nodeId="8824315269748243947" varName="operandType" />
     </scopeInfo>
+    <scopeInfo nodeId="5230012391903565574" fileName="JavaToMpsConverter.java" startLine="673" startPosition="0" endLine="694" endPosition="5">
+      <varInfo nodeId="5230012391903565576" varName="singleNameImport" />
+    </scopeInfo>
     <scopeInfo nodeId="3356342729942792310" fileName="JavaToMpsConverter.java" startLine="157" startPosition="0" endLine="179" endPosition="11">
       <varInfo nodeId="3356342729942792312" varName="pakage" />
-    </scopeInfo>
-    <scopeInfo nodeId="5230012391904259236" fileName="JavaToMpsConverter.java" startLine="702" startPosition="266" endLine="724" endPosition="20">
-      <varInfo nodeId="5230012391904281453" varName="claz" />
-      <varInfo nodeId="7699938177176808335" varName="enumConst" />
-      <varInfo nodeId="7699938177176762421" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="2717473728237823479" fileName="JavaToMpsConverter.java" startLine="935" startPosition="70" endLine="957" endPosition="16">
       <varInfo nodeId="1766301892969249115" varName="members" />
@@ -1249,9 +1268,6 @@
       <varInfo nodeId="4120717315230693525" varName="staticRef" />
       <varInfo nodeId="4120717315230693431" varName="target" />
       <varInfo nodeId="4120717315230693516" varName="targetModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="5230012391904259230" fileName="JavaToMpsConverter.java" startLine="701" startPosition="0" endLine="725" endPosition="5">
-      <varInfo nodeId="5230012391904259232" varName="onDemandImport" />
     </scopeInfo>
     <scopeInfo nodeId="2717473728237823476" fileName="JavaToMpsConverter.java" startLine="935" startPosition="0" endLine="959" endPosition="0">
       <varInfo nodeId="2717473728237884435" varName="node" />
@@ -1294,20 +1310,11 @@
     <scopeInfo nodeId="1508813892199655007" fileName="JavaToMpsConverter.java" startLine="415" startPosition="201" endLine="447" endPosition="20">
       <varInfo nodeId="1508813892200793351" varName="resolveMap" />
     </scopeInfo>
-    <scopeInfo nodeId="5230012391903565580" fileName="JavaToMpsConverter.java" startLine="666" startPosition="270" endLine="699" endPosition="20">
-      <varInfo nodeId="5230012391903629272" varName="enumClassCandidate" />
-      <varInfo nodeId="5230012391903625907" varName="enumClassCandidateName" />
-      <varInfo nodeId="5230012391903887397" varName="enumConst" />
-      <varInfo nodeId="5230012391903983583" varName="result" />
-    </scopeInfo>
     <scopeInfo nodeId="1508813892202091229" fileName="JavaToMpsConverter.java" startLine="415" startPosition="0" endLine="449" endPosition="0">
       <varInfo nodeId="1508813892200045430" varName="extractor" />
       <varInfo nodeId="1508813892199782114" varName="name" />
       <varInfo nodeId="1508813892204051695" varName="nodes" />
       <varInfo nodeId="1508813892199975970" varName="progress" />
-    </scopeInfo>
-    <scopeInfo nodeId="5230012391903565574" fileName="JavaToMpsConverter.java" startLine="665" startPosition="75" endLine="700" endPosition="5">
-      <varInfo nodeId="5230012391903565576" varName="singleNameImport" />
     </scopeInfo>
     <scopeInfo nodeId="5230012391936793711" fileName="JavaToMpsConverter.java" startLine="732" startPosition="95" endLine="770" endPosition="24">
       <varInfo nodeId="3151797052701024840" varName="caseExp" />
@@ -1365,6 +1372,16 @@
     <scopeInfo nodeId="3356719807426620504" fileName="JavaToMpsConverter.java" startLine="843" startPosition="0" endLine="901" endPosition="0">
       <varInfo nodeId="3356719807426674243" varName="root" />
     </scopeInfo>
+    <scopeInfo nodeId="3151797052700811412" fileName="JavaToMpsConverter.java" startLine="638" startPosition="55" endLine="709" endPosition="16">
+      <varInfo nodeId="7699938177175850387" varName="enumConstName" />
+      <varInfo nodeId="5230012391926594416" varName="gateway" />
+      <varInfo nodeId="5230012391903533585" varName="javaImports" />
+      <varInfo nodeId="3151797052701005642" varName="ref" />
+      <varInfo nodeId="5230012391903486870" varName="root" />
+    </scopeInfo>
+    <scopeInfo nodeId="3151797052700811409" fileName="JavaToMpsConverter.java" startLine="638" startPosition="0" endLine="711" endPosition="0">
+      <varInfo nodeId="3151797052700894589" varName="varRef" />
+    </scopeInfo>
     <scopeInfo nodeId="3356342729940981118" fileName="JavaToMpsConverter.java" startLine="119" startPosition="118" endLine="205" endPosition="20">
       <varInfo nodeId="3356342729944138925" varName="parseProgress" />
       <varInfo nodeId="3356342729944492157" varName="resolveProgress" />
@@ -1374,18 +1391,8 @@
       <varInfo nodeId="3356342729940981427" varName="files" />
       <varInfo nodeId="3356342729940981585" varName="progress" />
     </scopeInfo>
-    <scopeInfo nodeId="3151797052700811412" fileName="JavaToMpsConverter.java" startLine="638" startPosition="55" endLine="727" endPosition="16">
-      <varInfo nodeId="7699938177175850387" varName="enumConstName" />
-      <varInfo nodeId="5230012391926594416" varName="gateway" />
-      <varInfo nodeId="5230012391903533585" varName="javaImports" />
-      <varInfo nodeId="3151797052701005642" varName="ref" />
-      <varInfo nodeId="5230012391903486870" varName="root" />
-    </scopeInfo>
     <scopeInfo nodeId="3068863004119417037" fileName="JavaToMpsConverter.java" startLine="465" startPosition="57" endLine="556" endPosition="30">
       <varInfo nodeId="5230012391937652992" varName="typeChecker" />
-    </scopeInfo>
-    <scopeInfo nodeId="3151797052700811409" fileName="JavaToMpsConverter.java" startLine="638" startPosition="0" endLine="729" endPosition="0">
-      <varInfo nodeId="3151797052700894589" varName="varRef" />
     </scopeInfo>
     <scopeInfo nodeId="3068863004119417031" fileName="JavaToMpsConverter.java" startLine="464" startPosition="25" endLine="557" endPosition="9">
       <varInfo nodeId="3068863004119417033" varName="node" />
@@ -1427,18 +1434,17 @@
     <unitInfo nodeId="2364881513287728124" fileName="JavaToMpsConverter.java" startLine="477" startPosition="59" endLine="481" endPosition="13" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$16" />
     <unitInfo nodeId="8824315269748243937" fileName="JavaToMpsConverter.java" startLine="503" startPosition="59" endLine="507" endPosition="13" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$16" />
     <unitInfo nodeId="3356719807428400900" fileName="JavaToMpsConverter.java" startLine="617" startPosition="51" endLine="621" endPosition="11" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$19" />
-    <unitInfo nodeId="5230012391903896993" fileName="JavaToMpsConverter.java" startLine="684" startPosition="202" endLine="688" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$19" />
-    <unitInfo nodeId="5230012391904397707" fileName="JavaToMpsConverter.java" startLine="711" startPosition="188" endLine="715" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$20" />
-    <unitInfo nodeId="3151797052701005726" fileName="JavaToMpsConverter.java" startLine="761" startPosition="186" endLine="765" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$21" />
-    <unitInfo nodeId="2235632002330851508" fileName="JavaToMpsConverter.java" startLine="847" startPosition="213" endLine="851" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$22" />
-    <unitInfo nodeId="2717473728236907776" fileName="JavaToMpsConverter.java" startLine="909" startPosition="180" endLine="913" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$24" />
-    <unitInfo nodeId="2717473728237567236" fileName="JavaToMpsConverter.java" startLine="916" startPosition="174" endLine="920" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$25" />
-    <unitInfo nodeId="6463111788127795550" fileName="JavaToMpsConverter.java" startLine="978" startPosition="162" endLine="982" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$26" />
-    <unitInfo nodeId="5285105605100910775" fileName="JavaToMpsConverter.java" startLine="982" startPosition="18" endLine="986" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$27" />
-    <unitInfo nodeId="5285105605105979091" fileName="JavaToMpsConverter.java" startLine="992" startPosition="162" endLine="996" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$28" />
-    <unitInfo nodeId="2235632002330720130" fileName="JavaToMpsConverter.java" startLine="851" startPosition="20" endLine="856" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$23" />
+    <unitInfo nodeId="4812116028889659380" fileName="JavaToMpsConverter.java" startLine="714" startPosition="191" endLine="718" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$19" />
+    <unitInfo nodeId="3151797052701005726" fileName="JavaToMpsConverter.java" startLine="761" startPosition="186" endLine="765" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$20" />
+    <unitInfo nodeId="2235632002330851508" fileName="JavaToMpsConverter.java" startLine="847" startPosition="213" endLine="851" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$21" />
+    <unitInfo nodeId="2717473728236907776" fileName="JavaToMpsConverter.java" startLine="909" startPosition="180" endLine="913" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$23" />
+    <unitInfo nodeId="2717473728237567236" fileName="JavaToMpsConverter.java" startLine="916" startPosition="174" endLine="920" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$24" />
+    <unitInfo nodeId="6463111788127795550" fileName="JavaToMpsConverter.java" startLine="978" startPosition="162" endLine="982" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$25" />
+    <unitInfo nodeId="5285105605100910775" fileName="JavaToMpsConverter.java" startLine="982" startPosition="18" endLine="986" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$26" />
+    <unitInfo nodeId="5285105605105979091" fileName="JavaToMpsConverter.java" startLine="992" startPosition="162" endLine="996" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$27" />
+    <unitInfo nodeId="2235632002330720130" fileName="JavaToMpsConverter.java" startLine="851" startPosition="20" endLine="856" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$22" />
     <unitInfo nodeId="5285105605106504482" fileName="JavaToMpsConverter.java" startLine="241" startPosition="49" endLine="249" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$7" />
-    <unitInfo nodeId="8189249634192478403" fileName="JavaToMpsConverter.java" startLine="1037" startPosition="83" endLine="1045" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$29" />
+    <unitInfo nodeId="8189249634192478403" fileName="JavaToMpsConverter.java" startLine="1037" startPosition="83" endLine="1045" endPosition="7" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$28" />
     <unitInfo nodeId="3356342729953800072" fileName="JavaToMpsConverter.java" startLine="129" startPosition="36" endLine="141" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$1" />
     <unitInfo nodeId="3356719807426330088" fileName="JavaToMpsConverter.java" startLine="595" startPosition="52" endLine="611" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$17" />
     <unitInfo nodeId="3356719807428366847" fileName="JavaToMpsConverter.java" startLine="613" startPosition="44" endLine="629" endPosition="5" unitName="jetbrains.mps.ide.java.newparser.JavaToMpsConverter$18" />
