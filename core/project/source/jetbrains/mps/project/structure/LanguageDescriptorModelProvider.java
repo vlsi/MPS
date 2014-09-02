@@ -90,11 +90,14 @@ public class LanguageDescriptorModelProvider implements CoreComponent {
 
     @Override
     protected void startListening(SModel model) {
-      for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
-        if (aspect.is(model) && model instanceof EditableSModel) {
-          ((EditableSModel) model).addChangeListener(this);
-          model.addModelListener(this);
-          return;
+      if (model instanceof EditableSModel) {
+        EditableSModel editableSModel = (EditableSModel) model;
+        for (LanguageAspect aspect : HASHED_LANGUAGE_ASPECTS) {
+          if (aspect.is(model)) {
+            editableSModel.addChangeListener(this);
+            editableSModel.addModelListener(this);
+            return;
+          }
         }
       }
     }
