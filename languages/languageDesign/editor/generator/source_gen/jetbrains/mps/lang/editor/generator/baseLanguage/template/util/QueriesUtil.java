@@ -147,7 +147,7 @@ __switch__:
     }) != null) {
       return true;
     }
-    for (SNode styleClass = SLinkOperations.getTarget(cellModel, "parentStyleClass", false); styleClass != null; styleClass = SLinkOperations.getTarget(SLinkOperations.getTarget(styleClass, "extendedClass", true), "styleSheetClass", false)) {
+    for (SNode styleClass = SNodeOperations.as(SLinkOperations.getTarget(cellModel, "parentStyleClass", false), "jetbrains.mps.lang.editor.structure.StyleSheetClass"); styleClass != null; styleClass = SLinkOperations.getTarget(SLinkOperations.getTarget(styleClass, "extendedClass", true), "styleSheetClass", false)) {
       if (ListSequence.fromList(SLinkOperations.getTargets(styleClass, "styleItem", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(styleClassConcept));

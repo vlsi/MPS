@@ -193,7 +193,7 @@
       <unit at="8,0,16,0" name="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_prevNode_BehaviorDescriptor" />
     </file>
     <file name="Synchronizeable_BehaviorDescriptor.java">
-      <unit at="7,0,11,0" name="jetbrains.mps.lang.editor.behavior.Synchronizeable_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.behavior.Synchronizeable_BehaviorDescriptor" />
     </file>
     <file name="QueryFunction_MethodPresentation_BehaviorDescriptor.java">
       <unit at="10,0,24,0" name="jetbrains.mps.lang.editor.behavior.QueryFunction_MethodPresentation_BehaviorDescriptor" />
@@ -394,7 +394,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.editor.behavior.CellMenuComponentFeature_Property_BehaviorDescriptor" />
     </file>
     <file name="IQueryFunction_Color_BehaviorDescriptor.java">
-      <unit at="7,0,11,0" name="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.behavior.IQueryFunction_Color_BehaviorDescriptor" />
     </file>
     <file name="ConceptFunctionParameter_StyledText_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.editor.behavior.ConceptFunctionParameter_StyledText_BehaviorDescriptor" />
@@ -532,7 +532,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.editor.behavior.ModelAccessor_BehaviorDescriptor" />
     </file>
     <file name="IStyleContainer_BehaviorDescriptor.java">
-      <unit at="7,0,10,0" name="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" />
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.editor.behavior.IStyleContainer_BehaviorDescriptor" />
     </file>
     <file name="CellModel_Component_BehaviorDescriptor.java">
       <unit at="7,0,27,0" name="jetbrains.mps.lang.editor.behavior.CellModel_Component_BehaviorDescriptor" />
@@ -601,7 +601,7 @@
       <unit at="9,0,23,0" name="jetbrains.mps.lang.editor.behavior.QueryFunction_StyleParameter_BehaviorDescriptor" />
     </file>
     <file name="BooleanStyleSheetItem_BehaviorDescriptor.java">
-      <unit at="8,0,20,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.editor.behavior.BooleanStyleSheetItem_BehaviorDescriptor" />
     </file>
     <file name="CellMenuPart_ReplaceChild_currentChild_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.editor.behavior.CellMenuPart_ReplaceChild_currentChild_BehaviorDescriptor" />
