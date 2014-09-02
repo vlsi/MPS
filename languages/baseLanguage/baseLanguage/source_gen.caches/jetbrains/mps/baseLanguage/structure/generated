@@ -303,7 +303,6 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
@@ -377,6 +376,7 @@
   <source id="1109279851642" name="GenericDeclaration" hash="-acei81qy9lz4p5sdos10qjrl4wl63my" />
   <source id="1109283449304" name="TypeVariableReference" hash="dta21wyhhzajkymh408aqlj121v6fva" />
   <source id="1113006251687" name="_FPNumber_String" hash="-ebsrkefd7041cgxbka3rzjgqw50n4z8">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_FPNumber_String_PropertySupport.java" />
   </source>
   <source id="1116615150612" name="ClassifierClassExpression" hash="aabb26s397wephah2yftkpb7izqmwvn" />
@@ -492,7 +492,8 @@
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TrimKind.java" />
     <file name="TrimKind_PropertySupport.java" />
@@ -513,6 +514,7 @@
   <source id="1241450588333" name="BLBottomType" hash="7rfw2ldlxdy7lnrrkf3upih1h8eun69" />
   <source id="1241540912639" name="ConstructorInvocationStatement" hash="-816zxb2159jf8s6i0kxtx4utfwn0b1g" />
   <source id="4269842503726207818" name="_LongType_String" hash="b4d3v7hxcqgt51bfg6mb9eh3vygjlz2">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="_LongType_String_PropertySupport.java" />
   </source>
   <source id="5279705229678483898" name="_FloatNumberValue" hash="-a1ksnvl13q0u7agszrsfkmki7zuu1hm">
