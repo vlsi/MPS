@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 /**
  * A repository which
- * registers in SRepositoryRegistry
+ * registers in the SRepositoryRegistry
  * and fires events about itself
  * @author evgeny, 5/15/13
  */

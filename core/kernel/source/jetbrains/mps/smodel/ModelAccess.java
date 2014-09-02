@@ -27,6 +27,11 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+/**
+ * The actual implementation of {@link org.jetbrains.mps.openapi.module.ModelAccess} interface methods
+ * Probably it is better to merge it with {@link jetbrains.mps.project.ProjectModelAccess}
+ * which currently simply delegates all methods to this class
+ */
 public abstract class ModelAccess implements ModelCommandProjectExecutor {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 

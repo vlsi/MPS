@@ -41,6 +41,7 @@ public class SRepositoryEventsDispatcher {
 
   public final void addRepositoryListener(SRepository repository, SRepositoryListener listener) {
     myListeners.add(listener);
+    //FIXME: that does not look good, must do it at SRepositoryContentAdapter
     if (listener instanceof SRepositoryContentAdapter) {
       ((SRepositoryContentAdapter) listener).startListening(repository);
     }
