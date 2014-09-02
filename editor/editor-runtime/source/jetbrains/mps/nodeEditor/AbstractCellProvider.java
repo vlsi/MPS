@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -43,21 +44,5 @@ public abstract class AbstractCellProvider {
     return new BasicCellContext(getSNode());
   }
 
-  /**
-   * Since MPS 3.0
-   * should be transformed to abstract method in future
-   */
-  public EditorCell createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext) {
-    // calling deprecated method for the compatibility with generated code
-    return createEditorCell((EditorContext) editorContext);
-  }
-
-  /**
-   * @deprecated starting from MPS 3.0 another method should be used:
-   *             <code>createEditorCell(jetbrains.mps.openapi.editor.EditorContext editorContext)</code>
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createEditorCell(EditorContext editorContext) {
-    throw new RuntimeException("Method not implemented");
-  }
+  public abstract EditorCell createEditorCell(EditorContext editorContext);
 }
