@@ -23,6 +23,7 @@ languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/cl
 languages/baseLanguage/collections/runtime/classes
 languages/baseLanguage/closures/runtime/classes
 languages/baseLanguage/tuples/runtime/classes
+languages/languageDesign/migration/solutions/runtime/classes/
 :editor
 editor/editor-api/classes
 editor/editorlang-runtime/classes
