@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -22,7 +23,7 @@ public class check_InnerClassesCantHaveStaticFields_NonTypesystemRule extends Ab
   public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(staticFieldDeclaration)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode classConcept = (SNode) SNodeOperations.getParent(staticFieldDeclaration);
-      if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
+      if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, classConcept, "virtual_isStatic_7405920559687241224", new Object[]{}))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(staticFieldDeclaration, "Inner classes cannot have static fields", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "498633765599992972", null, errorTarget);
