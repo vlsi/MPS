@@ -88,14 +88,6 @@ public class EditorManager {
     return context.getComponent(EditorManager.class);
   }
 
-  /**
-   * @deprecated starting form MPS 3.1 use EditorContext.createRootCell(SNode node, java.util.List<SModelEvent> events)
-   */
-  @Deprecated
-  public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
-    return createRootCell(context, node, new SModelModificationsCollector(events).getModifications(), false);
-  }
-
   EditorCell createRootEditorCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications) {
     return createRootCell(context, node, modifications, false);
   }
@@ -144,22 +136,6 @@ public class EditorManager {
         fillContextToCellMap(childCell, map);
       }
     }
-  }
-
-  /**
-   * Should be removed after MPS 3.1
-   *
-   * @param context
-   * @param roleAttribute
-   * @param attributeKind
-   * @param cellWithRole
-   * @return
-   * @deprecated since MPS 3.1 use createNodeRoleAttributeCell()
-   */
-  @Deprecated
-  public jetbrains.mps.nodeEditor.cells.EditorCell createRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind,
-      EditorCell cellWithRole) {
-    return (jetbrains.mps.nodeEditor.cells.EditorCell) createNodeRoleAttributeCell(context, roleAttribute, attributeKind, cellWithRole);
   }
 
   public EditorCell createNodeRoleAttributeCell(EditorContext context, SNode roleAttribute, Class attributeKind, EditorCell cellWithRole) {
@@ -237,20 +213,6 @@ public class EditorManager {
       LOG.assertLog(cellWithRolePopped == cellWithRole, "Assertion failed.");
     }
     return result;
-  }
-
-  /**
-   * Should be removed after MPS 3.1
-   *
-   * @param context
-   * @param attribute
-   * @param nodeCell
-   * @return
-   * @deprecated since MPS 3.1 use createNodeRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell)
-   */
-  @Deprecated
-  public EditorCell createNodeAttributeCell(EditorContext context, SNode attribute, EditorCell nodeCell) {
-    return createRoleAttributeCell(context, attribute, AttributeKind.Node.class, nodeCell);
   }
 
   public EditorCell getCurrentAttributedCellWithRole(Class attributeKind) {

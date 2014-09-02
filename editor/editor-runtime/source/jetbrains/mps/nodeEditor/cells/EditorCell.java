@@ -16,8 +16,6 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import jetbrains.mps.openapi.editor.TextBuilder;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
@@ -49,12 +47,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   boolean processKeyPressed(KeyEvent e, boolean allowErrors);
 
   boolean processKeyTyped(KeyEvent e, boolean allowErrors);
-
-  /**
-   * @deprecated since MPS 3.0 use getContext() instead
-   */
-  @Deprecated
-  EditorContext getEditorContext();
 
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
 
@@ -122,12 +114,6 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cell
   EditorCell getContainingBigCell();
 
   boolean isAncestorOf(EditorCell cell);
-
-  /**
-   * @deprecated remove after MPS 3.0
-   */
-  @Deprecated
-  void setFocusPolicy(FocusPolicy fp);
 
   <T extends SimpleEditorMessage> List<T> getMessages(Class<T> clazz);
 

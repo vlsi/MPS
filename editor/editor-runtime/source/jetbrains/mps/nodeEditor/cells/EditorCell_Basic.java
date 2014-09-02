@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cells;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
-import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.errors.MessageStatus;
@@ -385,15 +384,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       myUserObjects = new ListMap();
     }
     myUserObjects.put(key, value);
-  }
-
-  /**
-   * @deprecated since MPS 3.0 use getContext() instead
-   */
-  @Override
-  @Deprecated
-  public jetbrains.mps.nodeEditor.EditorContext getEditorContext() {
-    return (jetbrains.mps.nodeEditor.EditorContext) getContext();
   }
 
   @Override
@@ -1021,11 +1011,6 @@ public abstract class EditorCell_Basic implements EditorCell {
       return this;
     }
     return getParent().getContainingBigCell();
-  }
-
-  @Override
-  public void setFocusPolicy(jetbrains.mps.nodeEditor.FocusPolicy fp) {
-    getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.valueOf(fp.name()));
   }
 
   @Override
