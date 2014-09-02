@@ -9,16 +9,13 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.migration.structure.ParameterInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.migration.structure.ParameterInfo;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
-import java.util.ArrayList;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.scopes.runtime.NamedElementsScope;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,30 +23,20 @@ public class ConceptFunc_Behavior {
   public static void init(SNode thisNode) {
     ConceptFuncInfo info = ConceptFunc_Behavior.call_getInfo_8214201644237650676(thisNode);
     if (info != null) {
-      ConceptFunc_Behavior.call_fillParametersFromInfo_8214201644239063140(thisNode, info.parameters());
+      ConceptFunc_Behavior.call_fillFromInfo_8214201644239063140(thisNode, info);
     }
   }
   public static ConceptFuncInfo call_getInfo_8214201644237650676(SNode thisNode) {
     return MapSequence.fromMap(BehaviorReflection.invokeVirtual((Class<Map<String, ConceptFuncInfo>>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.migration.structure.ConceptFuncContainter"), "virtual_getConceptFuncs_7794917369458191914", new Object[]{})).get(SPropertyOperations.getString(thisNode, "name"));
   }
-  public static void call_fillParametersFromInfo_8214201644239063140(SNode thisNode, Iterable<ParameterInfo> parametersInfo) {
-    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).addSequence(Sequence.fromIterable(parametersInfo).select(new ISelector<ParameterInfo, SNode>() {
+  public static void call_fillFromInfo_8214201644239063140(SNode thisNode, ConceptFuncInfo info) {
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).addSequence(CollectionSequence.fromCollection(info.parameters()).select(new ISelector<ParameterInfo, SNode>() {
       public SNode select(ParameterInfo it) {
-        return createConceptFuncParameterDeclaration_o3845u_a0a0a0a0a0b(it.name());
+        return createParameterDeclaration_o3845u_a0a0a0a0a0b(it.name(), SNodeOperations.cast(HUtil.copyIfNecessary(it.type()), "jetbrains.mps.baseLanguage.structure.Type"));
       }
     }));
-  }
-  public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
-    return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
-  }
-  public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
-    return ConceptFunc_Behavior.call_getInfo_8214201644237650676(thisNode).returnType();
-  }
-  public static SNode virtual_getBody_1239354440022(SNode thisNode) {
-    return SLinkOperations.getTarget(thisNode, "body", true);
-  }
-  public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), ConceptFunc_Behavior.call_getInfo_8214201644237650676(thisNode).throwsItems());
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsItem", true)).addSequence(CollectionSequence.fromCollection(info.throwsItems()));
+    SLinkOperations.setTarget(thisNode, "returnType", info.returnType(), true);
   }
   public static String call_getHeader_2866018809101869378(SNode thisNode) {
     StringBuilder result = new StringBuilder();
@@ -79,16 +66,11 @@ public class ConceptFunc_Behavior {
     }
     return result.toString();
   }
-  public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
-    if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration")) {
-      return new NamedElementsScope(SLinkOperations.getTargets(thisNode, "parameter", true));
-    }
-    return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  }
-  private static SNode createConceptFuncParameterDeclaration_o3845u_a0a0a0a0a0b(Object p0) {
+  private static SNode createParameterDeclaration_o3845u_a0a0a0a0a0b(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration", null, false);
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
     n1.setProperty("name", String.valueOf(p0));
+    n1.addChild("type", (SNode) p1);
     return n1;
   }
 }

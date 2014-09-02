@@ -77,7 +77,7 @@ public class QueriesGenerated {
                 SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.migration.structure.ConceptFunc", null);
                 SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
                 SPropertyOperations.set(result, "name", (item));
-                ConceptFunc_Behavior.call_fillParametersFromInfo_8214201644239063140(result, MapSequence.fromMap(BehaviorReflection.invokeVirtual((Class<Map<String, ConceptFuncInfo>>) ((Class) Object.class), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.lang.migration.structure.ConceptFuncContainter"), "virtual_getConceptFuncs_7794917369458191914", new Object[]{})).get((item)).parameters());
+                ConceptFunc_Behavior.call_fillFromInfo_8214201644239063140(result, MapSequence.fromMap(BehaviorReflection.invokeVirtual((Class<Map<String, ConceptFuncInfo>>) ((Class) Object.class), SNodeOperations.as(_context.getParentNode(), "jetbrains.mps.lang.migration.structure.ConceptFuncContainter"), "virtual_getConceptFuncs_7794917369458191914", new Object[]{})).get((item)));
                 return result;
               }
               public String getDescriptionText(String pattern) {

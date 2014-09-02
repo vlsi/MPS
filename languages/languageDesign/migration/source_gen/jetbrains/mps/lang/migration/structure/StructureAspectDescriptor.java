@@ -15,7 +15,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 0:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.AbstractMigrationScript").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("fromVersion").abstract_().create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ConceptFunc").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.baseLanguage.structure.IMethodLike", "jetbrains.mps.baseLanguage.structure.IStatementListContainer", "jetbrains.mps.lang.core.structure.ImplementationContainer", "jetbrains.mps.lang.core.structure.ScopeProvider", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"parameter", "body"}, new boolean[]{true, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ConceptFunc").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ConceptFuncContainter").interface_().create();
       case 3:
