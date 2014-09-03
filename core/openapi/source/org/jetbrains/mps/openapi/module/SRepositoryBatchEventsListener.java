@@ -15,15 +15,22 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import java.util.Set;
+import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
+
+import java.util.List;
 
 /**
+ * Implement this class to create a listener which is able to
+ * process a batch (group) of repository events (such as moduleAdded, moduleRemoved, etc.).
+ * Use it if you're going to perform a major change to the repository
+ * (e.g., adding a bunch of modules, removing a whole lot of modules)
+ *
+ * You have to run {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWrite(Runnable)} if this is your case.
+ *
+ * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWrite(Runnable)
+ *
  * Created by Alex Pyshkin on 9/1/14.
  */
 public interface SRepositoryBatchEventsListener {
-  public void modulesAdded(Set<SModule> modules);
-
-  public void beforeModulesRemoved(Set<SModule> modules);
-
-  public void modulesRemoved(Set<SModuleReference> moduleRefs);
+  void batchEventsHappened(List<SRepositoryEvent> events);
 }
