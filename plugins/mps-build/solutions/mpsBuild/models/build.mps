@@ -13403,6 +13403,19 @@
                       </node>
                     </node>
                   </node>
+                  <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8307162719981134050" nodeInfo="ng">
+                    <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8307162719981134052" nodeInfo="ng">
+                      <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981134063" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981134067" nodeInfo="nn">
+                          <property name="head" nameId="3ior.8618885170173601779" value="resources" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981152455" nodeInfo="nn">
+                            <property name="head" nameId="3ior.8618885170173601779" value="idea_appLauncher" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="3730845620956883023" nodeInfo="ng">
                   <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyGlobMapper" typeId="3ior.3970102152660702410" id="3730845620956883024" nodeInfo="ng">
@@ -13640,6 +13653,19 @@
                       <property name="head" nameId="3ior.8618885170173601779" value="resources" />
                       <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193400" nodeInfo="nn">
                         <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8307162719981124450" nodeInfo="ng">
+                <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="8307162719981124452" nodeInfo="ng">
+                  <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981124463" nodeInfo="nn">
+                    <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981124467" nodeInfo="nn">
+                      <property name="head" nameId="3ior.8618885170173601779" value="resources" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="8307162719981152457" nodeInfo="nn">
+                        <property name="head" nameId="3ior.8618885170173601779" value="idea_appLauncher" />
                       </node>
                     </node>
                   </node>
