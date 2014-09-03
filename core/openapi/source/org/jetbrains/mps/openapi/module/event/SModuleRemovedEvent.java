@@ -17,19 +17,26 @@ package org.jetbrains.mps.openapi.module.event;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Created by Alex Pyshkin on 9/2/14.
  */
-public class SModuleRemovedEvent extends SRepositoryModuleEvent {
+public class SModuleRemovedEvent extends SRepositoryEvent {
+  private SModuleReference myModuleReference;
 
-  protected SModuleRemovedEvent(@NotNull SModule module, SRepository repository) {
-    super(module, repository);
+  public SModuleRemovedEvent(@NotNull SModuleReference module, SRepository repository) {
+    super(repository);
+    myModuleReference = module;
   }
 
   @Override
   public void accept(SModuleEventVisitor visitor) {
     visitor.visit(this);
+  }
+
+  public SModuleReference getModuleReference() {
+    return myModuleReference;
   }
 }

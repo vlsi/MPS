@@ -15,6 +15,7 @@
  */
 package org.jetbrains.mps.openapi.module.event;
 
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
@@ -27,7 +28,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public abstract class SRepositoryEvent {
   private SRepository myRepository;
 
-  public SRepositoryEvent(SRepository repository) {
+  public SRepositoryEvent(@NotNull SRepository repository) {
     myRepository = repository;
   }
 

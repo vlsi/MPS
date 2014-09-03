@@ -24,8 +24,8 @@ import org.jetbrains.mps.openapi.module.SRepository;
  */
 public class SModuleRemovingEvent extends SRepositoryModuleEvent {
 
-  protected SModuleRemovingEvent(@NotNull SModule module, SRepository repository) {
-    super(module, repository);
+  public SModuleRemovingEvent(@NotNull SModule module) {
+    super(module);
   }
 
   @Override

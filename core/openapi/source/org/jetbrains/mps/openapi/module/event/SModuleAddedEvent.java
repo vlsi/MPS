@@ -17,15 +17,14 @@ package org.jetbrains.mps.openapi.module.event;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Created by Alex Pyshkin on 9/2/14.
  */
 public class SModuleAddedEvent extends SRepositoryModuleEvent {
 
-  protected SModuleAddedEvent(@NotNull SModule module, SRepository repository) {
-    super(module, repository);
+  public SModuleAddedEvent(@NotNull SModule module) {
+    super(module);
   }
 
   @Override
