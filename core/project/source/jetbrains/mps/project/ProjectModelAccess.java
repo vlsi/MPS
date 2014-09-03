@@ -15,66 +15,20 @@
  */
 package jetbrains.mps.project;
 
-import org.jetbrains.mps.openapi.module.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessBase;
+import org.jetbrains.mps.openapi.module.BatchCommandListener;
 
 /**
-* Created by Alex Pyshkin on 9/2/14.
-*/
-public class ProjectModelAccess implements ModelAccess {
+ * This class represents a ModelAccess for cases when there is an available project in scope.
+ * Currently it delegates all command execution to the class {@link jetbrains.mps.smodel.ModelAccess}
+ *
+ * Created by Alex Pyshkin on 9/2/14.
+ */
+public class ProjectModelAccess extends ModelAccessBase {
   private final Project myProject;
 
   public ProjectModelAccess(Project project) {
     myProject = project;
-  }
-
-  @Override
-  public boolean canRead() {
-    return jetbrains.mps.smodel.ModelAccess.instance().canRead();
-  }
-
-  @Override
-  public void checkReadAccess() {
-    jetbrains.mps.smodel.ModelAccess.instance().checkReadAccess();
-  }
-
-  @Override
-  public boolean canWrite() {
-    return jetbrains.mps.smodel.ModelAccess.instance().canWrite();
-  }
-
-  @Override
-  public void checkWriteAccess() {
-    jetbrains.mps.smodel.ModelAccess.instance().checkWriteAccess();
-  }
-
-  @Override
-  public void runReadAction(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runReadAction(r);
-  }
-
-  @Override
-  public void runReadInEDT(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runReadInEDT(r);
-  }
-
-  @Override
-  public void runWriteAction(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runWriteAction(r);
-  }
-
-  @Override
-  public void runBatchWrite(Runnable r) {
-    runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-
-      }
-    });
-  }
-
-  @Override
-  public void runWriteInEDT(Runnable r) {
-    jetbrains.mps.smodel.ModelAccess.instance().runWriteInEDT(r);
   }
 
   @Override
@@ -95,5 +49,13 @@ public class ProjectModelAccess implements ModelAccess {
   @Override
   public boolean isCommandAction() {
     return jetbrains.mps.smodel.ModelAccess.instance().isInsideCommand();
+  }
+
+  @Override
+  public void addBatchCommandListener(BatchCommandListener listener) {
+  }
+
+  @Override
+  public void removeBatchCommandListener(BatchCommandListener listener) {
   }
 }

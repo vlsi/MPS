@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
@@ -29,8 +30,12 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * The actual implementation of {@link org.jetbrains.mps.openapi.module.ModelAccess} interface methods
- * Probably it is better to merge it with {@link jetbrains.mps.project.ProjectModelAccess}
- * which currently simply delegates all methods to this class
+ * Probably it is better to merge it with
+ * {@link jetbrains.mps.project.ProjectModelAccess} and
+ * {@link jetbrains.mps.smodel.ModelAccessBase}
+ * which currently simply delegate all methods to this class
+ *
+ * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
 public abstract class ModelAccess implements ModelCommandProjectExecutor {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
@@ -57,6 +62,14 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
 
   }
 
+  /**
+   * It is better to use {@link org.jetbrains.mps.openapi.module.SRepository#getModelAccess()} method to get
+   * the repository access.
+   * @deprecated
+   * @since 3.1
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   public static ModelAccess instance() {
     return ourInstance;
   }
