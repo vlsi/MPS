@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
@@ -166,7 +165,7 @@ public class ParenthesisUtil {
         return parens;
       }
     } finally {
-      checkExpressionPriorities(topExp);
+      checkWholeExpressionPriorities(topExp);
     }
   }
 
@@ -366,55 +365,42 @@ public class ParenthesisUtil {
     return path;
   }
 
-  public static SNode findParentBinaryExpression(SNode node) {
-    SNode current = node;
-    SNode found = null;
-    // find the top-most expression 
-    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
-      current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
-      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-        return SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
-      }
-    }
-    return null;
-  }
-
-  public static void checkExpressionPriorities(SNode expr) {
+  public static void checkWholeExpressionPriorities(SNode expr) {
     SNode current = expr;
     // find the top-most expression 
     while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
       current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
     }
 
-    List<SNode> descendants = SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{});
-    ListSequence.fromList(descendants).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode it) {
-        checkOperationWRTPriority(it);
-      }
-    });
+    List<SNode> candidates = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(candidates).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(current, "jetbrains.mps.baseLanguage.structure.BinaryOperation", true, new String[]{})));
+    checkCandidateExpressionsPriorities(candidates);
   }
 
   public static void checkOperationWRTPriority(SNode binOp) {
-    if (checkOperationChildWRTPriority(binOp, false) && checkOperationChildWRTPriority(binOp, true)) {
-      checkOperationParentWRTPriority(binOp);
+    List<SNode> candidates = ListSequence.fromListAndArray(new ArrayList<SNode>(), binOp);
+    checkCandidateExpressionsPriorities(candidates);
+  }
+
+  private static void checkCandidateExpressionsPriorities(List<SNode> candidates) {
+    while (ListSequence.fromList(candidates).isNotEmpty()) {
+      SNode candidate = ListSequence.fromList(candidates).first();
+      if (checkOperationChildWRTPriority(candidate, false, candidates) && checkOperationChildWRTPriority(candidate, true, candidates) && checkOperationParentWRTPriority(candidate, candidates)) {
+        ListSequence.fromList(candidates).removeElementAt(0);
+      }
     }
   }
 
-  private static boolean checkOperationChildWRTPriority(SNode node, boolean isRight) {
+  private static boolean checkOperationChildWRTPriority(SNode node, boolean isRight, List<SNode> candidates) {
     SNode sideExpr = (isRight ? SLinkOperations.getTarget(node, "rightExpression", true) : SLinkOperations.getTarget(node, "leftExpression", true));
     if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode sideChild = SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation");
       if (isBadPriority(sideChild, node, isRight)) {
         ParenthesisUtil.rotateTree(sideChild, node, isRight);
-        checkOperationWRTPriority(node);
-        checkOperationWRTPriority(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
-        // todo unify 
-        // todo avoid recursion duplication 
+        ListSequence.fromList(candidates).addElement(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
         return false;
       }
-    }
-
-    if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
+    } else if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
       SNodeOperations.replaceWithAnother(node, sideExpr);
       if (isRight) {
         SLinkOperations.setTarget(node, "rightExpression", SLinkOperations.getTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "condition", true), true);
@@ -423,15 +409,15 @@ public class ParenthesisUtil {
         SLinkOperations.setTarget(node, "leftExpression", SLinkOperations.getTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", true), true);
         SLinkOperations.setTarget(SNodeOperations.cast(sideExpr, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression"), "ifFalse", node, true);
       }
-      checkOperationWRTPriority(node);
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-        checkOperationWRTPriority(SNodeOperations.cast(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
+        ListSequence.fromList(candidates).addElement(SNodeOperations.cast(SNodeOperations.getParent(sideExpr), "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
       return false;
     }
     return true;
   }
-  private static boolean checkOperationParentWRTPriority(SNode node) {
+
+  private static boolean checkOperationParentWRTPriority(SNode node, List<SNode> candidates) {
     if (SNodeOperations.getParent(node) == null) {
       return true;
     }
@@ -445,9 +431,10 @@ public class ParenthesisUtil {
       }
       if (ParenthesisUtil.isBadPriority(node, parent, isRight)) {
         ParenthesisUtil.rotateTree(node, parent, isRight);
-        checkOperationWRTPriority(node);
+        ListSequence.fromList(candidates).addElement(parent);
         return false;
       }
+      return true;
     } else {
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation")) {
         SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation");
@@ -467,9 +454,8 @@ public class ParenthesisUtil {
       } else {
         return true;
       }
-      checkOperationWRTPriority(node);
+      return false;
     }
-    return false;
   }
 
   public static SNode getBinOp(SNode expr, boolean toRight) {
