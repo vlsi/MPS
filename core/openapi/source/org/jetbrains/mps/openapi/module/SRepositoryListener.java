@@ -21,18 +21,18 @@ import org.jetbrains.annotations.NotNull;
  * Receives notifications whenever a repository gets updated.
  */
 public interface SRepositoryListener {
-
   void moduleAdded(@NotNull SModule module);
 
   void beforeModuleRemoved(@NotNull SModule module);
 
   void moduleRemoved(@NotNull SModuleReference module);
 
+  /**
+   * use {@link CommandListener} instead
+   */
+  @Deprecated
   void commandStarted(SRepository repository);
 
+  @Deprecated
   void commandFinished(SRepository repository);
-
-  void batchCommandStarted(SRepository repository);
-
-  void batchCommandFinished(SRepository repository);
 }
