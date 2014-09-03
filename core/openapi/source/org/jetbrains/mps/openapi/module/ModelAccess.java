@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * Gives convenient access to access control methods on a repository
+ * Grants access to objects in the repository (e.g., models)
  */
 public interface ModelAccess {
   /**
