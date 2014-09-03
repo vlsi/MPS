@@ -124,14 +124,6 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     commandStack.remove(repository);
   }
 
-  @Override
-  public void batchCommandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void batchCommandFinished(SRepository repository) {
-  }
-
   // SModuleListener methods
   @Override
   public void moduleChanged(SModule module) {

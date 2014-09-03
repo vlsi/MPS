@@ -22,20 +22,21 @@ import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 /**
- * A repository which
- * registers in the SRepositoryRegistry
- * and fires events about itself
+ * A repository which registers in the SRepositoryRegistry and fires events about itself
  * @author evgeny, 5/15/13
  */
 public abstract class SRepositoryBase implements SRepository {
 
-  private final SRepositoryEventsDispatcher myEventsDispatcher = new SRepositoryEventsDispatcher();
+  private SRepositoryEventsDispatcher myEventsDispatcher;
+  private SRepositoryBatchEventsDispatcher myBatchEventsDispatcher;
 
   protected SRepositoryBase() {
   }
 
   protected void init() {
     SRepositoryRegistry.getInstance().addRepository(this);
+    myEventsDispatcher = new SRepositoryEventsDispatcher(this);
+    myBatchEventsDispatcher = new SRepositoryBatchEventsDispatcher(this);
   }
 
   public void dispose() {
@@ -44,22 +45,22 @@ public abstract class SRepositoryBase implements SRepository {
 
   @Override
   public final void addRepositoryListener(SRepositoryListener listener) {
-    myEventsDispatcher.addRepositoryListener(this, listener);
+    myEventsDispatcher.addRepositoryListener(listener);
   }
 
   @Override
   public final void removeRepositoryListener(SRepositoryListener listener) {
-    myEventsDispatcher.removeRepositoryListener(this, listener);
+    myEventsDispatcher.removeRepositoryListener(listener);
   }
 
   @Override
   public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
-    myEventsDispatcher.addRepositoryBatchEventsListener(listener);
+    myBatchEventsDispatcher.addRepositoryBatchEventsListener(listener);
   }
 
   @Override
   public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
-    myEventsDispatcher.removeRepositoryBatchEventsListener(listener);
+    myBatchEventsDispatcher.removeRepositoryBatchEventsListener(listener);
   }
 
   protected final void fireModuleAdded(SModule module) {
@@ -75,10 +76,10 @@ public abstract class SRepositoryBase implements SRepository {
   }
 
   protected final void fireCommandStarted() {
-    myEventsDispatcher.fireCommandStarted(this);
+    myEventsDispatcher.fireCommandStarted();
   }
 
   protected final void fireCommandFinished() {
-    myEventsDispatcher.fireCommandFinished(this);
+    myEventsDispatcher.fireCommandFinished();
   }
 }

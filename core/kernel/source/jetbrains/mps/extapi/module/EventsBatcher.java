@@ -72,7 +72,7 @@ public class EventsBatcher {
     }
 
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       addEventToList(new SModuleAddedEvent(module));
     }
 

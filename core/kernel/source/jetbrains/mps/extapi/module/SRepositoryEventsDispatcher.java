@@ -22,7 +22,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
@@ -30,36 +29,33 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * This class dispatches repository events to SRepositoryListener clients
  * Created by Alex Pyshkin on 9/2/14.
  */
 public class SRepositoryEventsDispatcher {
-  private static final Logger LOG = LogManager.getLogger(SRepositoryBase.class);
+  private static final Logger LOG = LogManager.getLogger(SRepositoryEventsDispatcher.class);
 
   private final List<SRepositoryListener> myListeners = new CopyOnWriteArrayList<SRepositoryListener>();
-  private final List<SRepositoryBatchEventsListener> myBatchEventsListeners =
-      new CopyOnWriteArrayList<SRepositoryBatchEventsListener>();
 
-  public final void addRepositoryListener(SRepository repository, SRepositoryListener listener) {
+  private final SRepository myRepository;
+
+  public SRepositoryEventsDispatcher(@NotNull SRepository repository) {
+    myRepository = repository;
+  }
+
+  public final void addRepositoryListener(SRepositoryListener listener) {
     myListeners.add(listener);
     //FIXME: that does not look good, must do it at SRepositoryContentAdapter
     if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).startListening(repository);
+      ((SRepositoryContentAdapter) listener).startListening(myRepository);
     }
   }
 
-  public final void removeRepositoryListener(SRepository repository, SRepositoryListener listener) {
+  public final void removeRepositoryListener(SRepositoryListener listener) {
     if (listener instanceof SRepositoryContentAdapter) {
-      ((SRepositoryContentAdapter) listener).stopListening(repository);
+      ((SRepositoryContentAdapter) listener).stopListening(myRepository);
     }
     myListeners.remove(listener);
-  }
-
-  public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
-    myBatchEventsListeners.add(listener);
-  }
-
-  public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
-    myBatchEventsListeners.remove(listener);
   }
 
   public final void fireModuleAdded(@NotNull SModule module) {
@@ -95,22 +91,22 @@ public class SRepositoryEventsDispatcher {
     }
   }
 
-  public final void fireCommandStarted(@NotNull SRepository repository) {
+  public final void fireCommandStarted() {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
-        listener.commandStarted(repository);
+        listener.commandStarted(myRepository);
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  public final void fireCommandFinished(@NotNull SRepository repository) {
+  public final void fireCommandFinished() {
     ModelAccess.assertLegalWrite();
     for (SRepositoryListener listener : myListeners) {
       try {
-        listener.commandFinished(repository);
+        listener.commandFinished(myRepository);
       } catch (Throwable t) {
         LOG.error(t);
       }

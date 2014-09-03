@@ -42,11 +42,4 @@ public class SRepositoryAdapter implements SRepositoryListener {
   public void commandFinished(SRepository repository) {
   }
 
-  @Override
-  public void batchCommandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void batchCommandFinished(SRepository repository) {
-  }
 }
