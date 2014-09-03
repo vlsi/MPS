@@ -37,9 +37,11 @@ public abstract class SRepositoryBase implements SRepository {
     SRepositoryRegistry.getInstance().addRepository(this);
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
     myBatchEventsDispatcher = new SRepositoryBatchEventsDispatcher(this);
+    myBatchEventsDispatcher.init();
   }
 
   public void dispose() {
+    myBatchEventsDispatcher.dispose();
     SRepositoryRegistry.getInstance().removeRepository(this);
   }
 

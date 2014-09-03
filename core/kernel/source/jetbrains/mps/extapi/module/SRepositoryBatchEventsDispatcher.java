@@ -43,9 +43,19 @@ public class SRepositoryBatchEventsDispatcher implements BatchCommandListener {
   private final List<SRepositoryBatchEventsListener> myListeners =
       new CopyOnWriteArrayList<SRepositoryBatchEventsListener>();
 
+  private final SRepository myRepository;
+
   public SRepositoryBatchEventsDispatcher(@NotNull SRepository repository) {
+    myRepository = repository;
     myEventsBatcher = new EventsBatcher(repository);
-    repository.getModelAccess().addBatchCommandListener(this);
+  }
+
+  public void init() {
+    myRepository.getModelAccess().addBatchCommandListener(this);
+  }
+
+  public void dispose() {
+    myRepository.getModelAccess().removeBatchCommandListener(this);
   }
 
   @Override
