@@ -25,7 +25,9 @@ public class RepositoryStateCacheUtils {
         return creator.invoke();
       }
     });
-    cache.putIfAbsent(key, v);
+    if (v != null) {
+      cache.putIfAbsent(key, v);
+    }
     return v;
   }
   public static <K, V> V getFromCache(Class clazz, K key, final _FunctionTypes._return_P0_E0<? extends V> creator) {
