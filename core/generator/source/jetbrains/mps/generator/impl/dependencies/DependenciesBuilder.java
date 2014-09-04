@@ -52,6 +52,8 @@ public interface DependenciesBuilder {
 
   void updateUnchanged(TransientModelWithMetainfo model) throws GenerationFailureException;
 
+  TransientModelWithMetainfo create(SModel model, GeneratorMappings mappings) throws GenerationFailureException;
+
   boolean isStepRequired();
 
 }

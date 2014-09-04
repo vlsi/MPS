@@ -90,29 +90,34 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   /**
    * should be executed inside write action
+   * @return true if new value was committed to model / false if nothing was changed
    */
-  public void commit() {
+  public boolean commit() {
     assert getModelAccess().canWrite();
     // a solution for MPS-13531
     // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
     // currently not available - not possible to redispatch all waiting commands from AWT Thread.
     if (jetbrains.mps.util.SNodeOperations.isDisposed(getSNode())) {
-      return;
+      return false;
     }
-    if (myCommitInProgress) return;
+    if (myCommitInProgress) return false;
     myCommitInProgress = true;
     try {
+      boolean result = false;
       if (myModelAccessor instanceof TransactionalModelAccessor) {
         TransactionalModelAccessor transactionalModelAccessor = (TransactionalModelAccessor) myModelAccessor;
         if (transactionalModelAccessor.hasValueToCommit()) {
           transactionalModelAccessor.commit();
           synchronizeViewWithModel();
+          result = true;
         }
         getEditor().relayout();
+        return result;
       }
     } finally {
       myCommitInProgress = false;
     }
+    return false;
   }
 
   @Override

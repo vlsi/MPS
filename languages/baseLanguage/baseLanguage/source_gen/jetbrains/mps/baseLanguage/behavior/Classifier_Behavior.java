@@ -52,7 +52,7 @@ public class Classifier_Behavior {
   }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
-    if ((SNodeOperations.getParent(thisNode) != null) && Classifier_Behavior.call_isStatic_521412098689998668(thisNode)) {
+    if ((SNodeOperations.getParent(thisNode) != null) && BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{})) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     }
     return markIcons;
@@ -513,7 +513,7 @@ public class Classifier_Behavior {
         ListSequence.fromList(result).addElement(classifier);
       } else {
         ListSequence.fromList(result).addElement(current);
-        if (Classifier_Behavior.call_isStatic_521412098689998668(current)) {
+        if (BehaviorReflection.invokeVirtual(Boolean.TYPE, current, "virtual_isStatic_7405920559687241224", new Object[]{})) {
           // according to Java rules static inner classifiers can be only on the second level so we can 
           // safely break here 
           break;
@@ -539,7 +539,7 @@ public class Classifier_Behavior {
           return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
         }
       }));
-      if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
+      if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, classifier, "virtual_isStatic_7405920559687241224", new Object[]{})) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
         classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       } else {
         break;

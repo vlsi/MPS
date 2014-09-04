@@ -92,6 +92,14 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   @Override
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
+    if (myIsCardinality1) {
+      if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
+        errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
+        errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
+        return errorCell;
+      }
+    }
+
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;

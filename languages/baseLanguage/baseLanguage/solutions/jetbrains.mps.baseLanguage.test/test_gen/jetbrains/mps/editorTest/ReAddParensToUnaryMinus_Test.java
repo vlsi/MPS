@@ -24,8 +24,8 @@ public class ReAddParensToUnaryMinus_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("7247988578514909318", "7247988578514912559");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveRight_Action");
       this.typeString("(");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
     }
   }
 }

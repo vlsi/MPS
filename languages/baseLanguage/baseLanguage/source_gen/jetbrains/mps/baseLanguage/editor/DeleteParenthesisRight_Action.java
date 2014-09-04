@@ -36,13 +36,13 @@ public class DeleteParenthesisRight_Action {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
-      ParenthesisUtil.checkExpressionPriorities(replacing);
+      ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
       if (hasRightUnmatchedParen) {
         ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
       }
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }
   }
   public static class DeleteParenthesisRight_Action_BACKSPACE extends AbstractCellAction {
@@ -61,13 +61,13 @@ public class DeleteParenthesisRight_Action {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
-      ParenthesisUtil.checkExpressionPriorities(replacing);
+      ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
       if (hasRightUnmatchedParen) {
         ParenthesisUtil.createUnmatchedRightParenthesis(rightMostNode);
       }
-      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_EDITABLE_CELL, -1);
+      SelectionUtil.selectLabelCellAnSetCaret(editorContext, rightMostNode, SelectionManager.LAST_CELL, -1);
     }
   }
 }

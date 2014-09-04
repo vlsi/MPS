@@ -24,8 +24,9 @@ public class ReAddParensToUnaryOperation_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       initEditor("7247988578516371529", "7247988578516371542");
       this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
-      this.typeString(")");
       this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.MoveLeft_Action");
+      this.typeString(")");
     }
   }
 }

@@ -102,8 +102,8 @@
   <root nodeRef="r:9eaefcec-a5af-4365-b04c-b6940eebe416(jetbrains.mps.build.startup.generator.template.main@generator)/8979762117546970698">
     <file name="QueriesGenerated.java">
       <node id="8979762117546981955" at="20,112,21,27" concept="4" />
-      <node id="8979762117546981959" at="21,27,22,36" concept="4" />
-      <node id="8979762117546981963" at="22,36,23,106" concept="4" />
+      <node id="8979762117546981959" at="21,27,22,45" concept="4" />
+      <node id="8979762117546981963" at="22,45,23,106" concept="4" />
       <node id="8979762117546981972" at="24,74,25,100" concept="0" />
       <node id="8979762117546981990" at="26,5,27,133" concept="0" />
       <node id="8979762117546982004" at="27,133,28,22" concept="5" />

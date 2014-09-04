@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SReference;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.scopes.Members;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -47,7 +46,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
 
         // Collecting possible classConcepts (this. targets) 
         List<SNode> possibleClassConcepts = new ArrayList<SNode>();
-        for (SNode clazz = containingClass; clazz != null; clazz = (Classifier_Behavior.call_isStatic_521412098689998668(clazz) ? null : SNodeOperations.getAncestor(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))) {
+        for (SNode clazz = containingClass; clazz != null; clazz = (BehaviorReflection.invokeVirtual(Boolean.TYPE, clazz, "virtual_isStatic_7405920559687241224", new Object[]{}) ? null : SNodeOperations.getAncestor(clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))) {
           ListSequence.fromList(possibleClassConcepts).addElement(clazz);
         }
 

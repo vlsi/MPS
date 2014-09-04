@@ -83,14 +83,15 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
         boolean res = editorContext.executeCommand(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
-            return APICellAdapter.validate(selectedCell, strictMatching, false);
+            return APICellAdapter.validate(selectedCell, true, false);
           }
         });
 
         if (res) return true;
       }
 
-      if (actionType != null) {
+      if (actionType != null
+          && !(selectedCell.isErrorState() && jetbrains.mps.openapi.editor.cells.CellActionType.RIGHT_TRANSFORM.equals(actionType))) {
         if (editorContext.getEditorComponent().getActionHandler().executeAction(selectedCell, actionType)) {
           return true;
         }

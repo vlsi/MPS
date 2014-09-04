@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,15 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
-import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.extapi.model.GeneratableSModel;
-import jetbrains.mps.generator.GenerationCacheContainer;
-import jetbrains.mps.generator.GenerationCacheContainer.ModelCacheContainer;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationParametersProvider;
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestUtil;
-import jetbrains.mps.generator.impl.cache.IntermediateModelsCache;
+import jetbrains.mps.generator.impl.cache.IntermediateCacheHelper;
 import jetbrains.mps.generator.impl.dependencies.DependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
@@ -31,13 +28,12 @@ import jetbrains.mps.generator.impl.dependencies.IncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.dependencies.NonIncrementalDependenciesBuilder;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.generator.impl.plan.ConnectedComponentPartitioner.Component;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.util.DifflibFacade;
 import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -57,15 +53,11 @@ import java.util.Set;
  * Evgeny Gryaznov, Jun 3, 2010
  */
 public class IncrementalGenerationHandler {
-
-  private static final Logger LOG = LogManager.getLogger(IncrementalGenerationHandler.class);
-
   private static final String CONDITIONALS_ID = "";
 
-  private SModel myModel;
+  private final SModel myModel;
+  private final Project myProject;
   private GenerationOptions myGenerationOptions;
-  private IOperationContext myOperationContext;
-  private final String myPlanSignature;
   private final String myParametersHash;
   private final IncrementalReporter myTracer;
   private Set<SNode> myUnchangedRoots;
@@ -75,30 +67,32 @@ public class IncrementalGenerationHandler {
   private int myRootsCount;
   private Map<String, String> myGenerationHashes;
   private GenerationDependencies mySavedDependencies;
-  private IntermediateModelsCache myCache;
+  private final IntermediateCacheHelper myCacheHelper;
 
-  public IncrementalGenerationHandler(org.jetbrains.mps.openapi.model.SModel model, IOperationContext operationContext, GenerationOptions options,
-      String planSignature, Map<String, Object> genParameters, IncrementalReporter tracer) {
+  public IncrementalGenerationHandler(SModel model, Project project, GenerationOptions options,
+      @NotNull IntermediateCacheHelper cacheHelper, IncrementalReporter tracer) {
     myModel = model;
+    myProject = project;
     myGenerationOptions = options;
-    myOperationContext = operationContext;
-    myPlanSignature = planSignature;
-    myParametersHash = getParametersHash(genParameters);
+    final GenerationParametersProvider parametersProvider = options.getParametersProvider();
+    if (parametersProvider == null) {
+      myParametersHash = null;
+    } else {
+      myParametersHash = getParametersHash(parametersProvider.getParameters(model));
+    }
     myTracer = tracer;
     myUnchangedRoots = Collections.emptySet();
     myRequiredRoots = Collections.emptySet();
     myConditionalsUnchanged = false;
     myConditionalsRequired = false;
+    myCacheHelper = cacheHelper;
     init();
   }
 
   private void init() {
     IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
-    if (incrementalStrategy == null) {
-      return;
-    }
 
-    myGenerationHashes = incrementalStrategy.getModelHashes(myModel, myOperationContext);
+    myGenerationHashes = incrementalStrategy.getModelHashes(myModel, new ProjectOperationContext(myProject));
 
     if (myGenerationOptions.isRebuildAll() || !incrementalStrategy.isIncrementalEnabled()) {
       return;
@@ -117,8 +111,8 @@ public class IncrementalGenerationHandler {
       return;
     }
 
-    loadCaches(dependencies);
-    if (myCache == null && incrementalStrategy.getContainer() != null) {
+    myCacheHelper.loadExisting(myModel, myTracer);
+    if (!myCacheHelper.hasCache() && incrementalStrategy.getContainer() != null) {
       // if we are creating a new cache without the previous one => rebuild all
       return;
     }
@@ -127,57 +121,6 @@ public class IncrementalGenerationHandler {
     analyzeDependencies(dependencies);
     if (canOptimize()) {
       mySavedDependencies = dependencies;
-    }
-  }
-
-  public IntermediateModelsCache createNewCache() {
-    IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
-    if (incrementalStrategy == null || myGenerationHashes == null) {
-      return null;
-    }
-
-    GenerationCacheContainer incrementalCacheContainer = incrementalStrategy.getContainer();
-    if (incrementalCacheContainer == null) {
-      return null;
-    }
-
-    String currentHash = myGenerationHashes.get(GeneratableSModel.FILE);
-    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, currentHash, true);
-    if (cacheContainer == null) {
-      LOG.error("cannot create cache for " + currentHash + ", " + myModel.getReference().toString());
-      return null;
-    }
-
-    return new IntermediateModelsCache(cacheContainer, myPlanSignature);
-  }
-
-  private void loadCaches(GenerationDependencies dependencies) {
-    GenerationCacheContainer incrementalCacheContainer = myGenerationOptions.getIncrementalStrategy().getContainer();
-    if (incrementalCacheContainer == null) {
-      if (myTracer != null) myTracer.report("No container for incremental caches.");
-      return;
-    }
-
-    String oldHash = dependencies.getModelHash();
-    ModelCacheContainer cacheContainer = incrementalCacheContainer.getCache(myModel, oldHash, false);
-    if (cacheContainer == null) {
-      if (myTracer != null)
-        myTracer.report("No cache for " + myModel.getReference().toString() + " (" + oldHash + ")");
-      return;
-    }
-
-    IntermediateModelsCache c = IntermediateModelsCache.load(cacheContainer);
-    if (c != null && myPlanSignature.equals(c.getSignature())) {
-      myCache = c;
-    } else if (myTracer != null) {
-      if (c == null) {
-        myTracer.report("Caches are corrupted for " + oldHash);
-      } else {
-        myTracer.report("Plan differs:");
-        for (String s : DifflibFacade.getSimpleDiff(c.getSignature(), myPlanSignature)) {
-          myTracer.report(s);
-        }
-      }
     }
   }
 
@@ -249,12 +192,12 @@ public class IncrementalGenerationHandler {
       String oldHash = entry.getValue();
       if (oldHash == null) {
         // TODO hash for packaged models
-        if ((sm instanceof EditableSModel) && !((EditableSModel) sm).isReadOnly()) {
+        if ((sm instanceof EditableSModel) && !sm.isReadOnly()) {
           changedModels.add(modelReference);
         }
         continue;
       }
-      Map<String, String> map = myGenerationOptions.getIncrementalStrategy().getModelHashes(sm, myOperationContext);
+      Map<String, String> map = myGenerationOptions.getIncrementalStrategy().getModelHashes(sm, new ProjectOperationContext(myProject));
       String newHash = map != null ? map.get(GeneratableSModel.FILE) : null;
       if (newHash == null || !oldHash.equals(newHash)) {
         changedModels.add(modelReference);
@@ -322,7 +265,7 @@ public class IncrementalGenerationHandler {
     }
 
     // Phase 1: build closure using strongly connected components (only if we have cache)
-    if (myCache != null) {
+    if (myCacheHelper.hasCache()) {
       closureUsingSavedDependencies(savedDep);
 
       if (myUnchangedRoots.isEmpty() && !myConditionalsUnchanged) {
@@ -422,8 +365,7 @@ public class IncrementalGenerationHandler {
    */
   private boolean closureUsingStrongComponents(Component[] components, Map<String, Set<String>> dep) {
     boolean result = false;
-    for (int i = 0; i < components.length; i++) {
-      Component component = components[i];
+    for (Component component : components) {
       boolean hasUnchanged = false;
       boolean hasChanged = false;
       for (SNode n : component.getRoots()) {
@@ -542,7 +484,7 @@ public class IncrementalGenerationHandler {
     return myModel;
   }
 
-  private String getParametersHash(Map<String, Object> parameters) {
+  private static String getParametersHash(Map<String, Object> parameters) {
     if (parameters == null || parameters.isEmpty()) {
       return null;
     }
@@ -557,12 +499,7 @@ public class IncrementalGenerationHandler {
     for (String k : keys) {
       sb.append(k);
       sb.append(':');
-      Object value = parameters.get(k);
-      if (value == null) {
-        sb.append("null");
-      } else {
-        sb.append(val);
-      }
+      sb.append(String.valueOf(parameters.get(k)));
       sb.append(";\n");
     }
     return ModelDigestUtil.hashText(sb.toString());
@@ -570,11 +507,11 @@ public class IncrementalGenerationHandler {
 
   public DependenciesBuilder createDependenciesBuilder() {
     IncrementalGenerationStrategy incrementalStrategy = myGenerationOptions.getIncrementalStrategy();
-    if (incrementalStrategy == null || !incrementalStrategy.isIncrementalEnabled()) {
+    if (!incrementalStrategy.isIncrementalEnabled()) {
       return new NonIncrementalDependenciesBuilder(myGenerationHashes, myParametersHash);
     }
 
-    IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel, myGenerationHashes, myParametersHash, myCache);
+    IncrementalDependenciesBuilder result = new IncrementalDependenciesBuilder(myModel, myGenerationHashes, myParametersHash, myCacheHelper);
     result.propagateDependencies(myUnchangedRoots, myRequiredRoots, myConditionalsUnchanged, myConditionalsRequired, mySavedDependencies);
     return result;
   }

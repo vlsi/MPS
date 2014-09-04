@@ -51,6 +51,7 @@ public abstract class BaseNodeEditor implements Editor {
 
   private EditorComponent myEditorComponent;
   private JComponent myComponent = new EditorPanel();
+  private JComponent myEditorPanel = new JPanel();
   private IOperationContext myContext;
   private JComponent myReplace = null;
   private SNodeReference myCurrentlyEditedNode = null;
@@ -58,6 +59,9 @@ public abstract class BaseNodeEditor implements Editor {
 
   public BaseNodeEditor(IOperationContext context) {
     myContext = context;
+    myEditorPanel.setLayout(new BorderLayout());
+    myEditorPanel.setBorder(new EmptyBorder(JBInsets.NONE));
+    myComponent.add(myEditorPanel, BorderLayout.CENTER);
     showEditor();
   }
 
@@ -65,6 +69,10 @@ public abstract class BaseNodeEditor implements Editor {
 
   public JComponent getComponent() {
     return myComponent;
+  }
+
+  protected JComponent getEditorPanel() {
+    return myEditorPanel;
   }
 
   @Override
@@ -109,7 +117,7 @@ public abstract class BaseNodeEditor implements Editor {
         myEditorComponent.editNode(node);
         SNode toSelect = nodeToSelect == null ? null : nodeToSelect.resolve(MPSModuleRepository.getInstance());
         if (toSelect != null) {
-          myEditorComponent.selectNode(toSelect); // XXX findNodeCell(, true)? to reveal even folded?
+          myEditorComponent.getEditorContext().selectWRTFocusPolicy(toSelect, false); // XXX findNodeCell(, true)? to reveal even folded?
         }
       }
     });
@@ -157,29 +165,29 @@ public abstract class BaseNodeEditor implements Editor {
 
   protected void showEditor() {
     if (myReplace != null) {
-      myComponent.remove(myReplace);
+      myEditorPanel.remove(myReplace);
       myReplace = null;
     }
     myEditorComponent = new NodeEditorComponent(myContext.getProject().getRepository());
-    myComponent.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
+    myEditorPanel.add(myEditorComponent.getExternalComponent(), BorderLayout.CENTER);
     myComponent.validate();
   }
 
   protected void showComponent(JComponent replace) {
     if (myEditorComponent != null) {
-      myComponent.remove(myEditorComponent.getExternalComponent());
+      myEditorPanel.remove(myEditorComponent.getExternalComponent());
       myEditorComponent.dispose();
       myEditorComponent = null;
       myCurrentlyEditedNode = null;
     }
 
     if (myReplace != null) {
-      myComponent.remove(myReplace);
+      myEditorPanel.remove(myReplace);
       myReplace = null;
     }
 
     myReplace = replace;
-    myComponent.add(myReplace, BorderLayout.CENTER);
+    myEditorPanel.add(myReplace, BorderLayout.CENTER);
     myComponent.validate();
   }
 
@@ -235,7 +243,6 @@ public abstract class BaseNodeEditor implements Editor {
           return;
         }
         editorContext.setMemento(s.myMemento);
-        editorContext.getEditorComponent().rebuildEditorContent();
       }
     });
     if (s.myInspectorMemento == null || !(getCurrentEditorComponent() instanceof NodeEditorComponent)) {
@@ -251,7 +258,6 @@ public abstract class BaseNodeEditor implements Editor {
       @Override
       public void performTask() {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
-        inspectorEditorContext.getEditorComponent().rebuildEditorContent();
       }
     });
   }

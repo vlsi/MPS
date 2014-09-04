@@ -43,7 +43,7 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static boolean canBeField(SNode member) {
-    return !(SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized"));
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "native"));
   }
 
   /*package*/ static boolean canBeMethod(SNode member) {
@@ -59,11 +59,11 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static boolean canBeEnum(SNode member) {
-    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "static") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
   }
 
   /*package*/ static boolean canBeInterface(SNode member) {
-    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "static") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "final") || SPropertyOperations.getBoolean(member, "volatile") || SPropertyOperations.getBoolean(member, "transient") || SLinkOperations.getTarget(member, "type", true) != null);
   }
 
   /*package*/ static String buildFieldName(final String pattern) {

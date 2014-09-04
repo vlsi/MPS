@@ -57,9 +57,12 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_imlbz9_g0(editorContext, node));
     }
     if (renderingCondition_imlbz9_a7a(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNode_imlbz9_h0(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_imlbz9_h0(editorContext, node));
     }
-    editorCell.addEditorCell(this.createConstant_imlbz9_i0(editorContext, node));
+    if (renderingCondition_imlbz9_a8a(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNode_imlbz9_i0(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createConstant_imlbz9_j0(editorContext, node));
     return editorCell;
   }
   private EditorCell createRefNode_imlbz9_a0(EditorContext editorContext, SNode node) {
@@ -159,7 +162,19 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
   private static boolean renderingCondition_imlbz9_a6a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "volatile");
   }
-  private EditorCell createRefNode_imlbz9_h0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imlbz9_h0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "native");
+    editorCell.setCellId("Constant_imlbz9_h0");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    editorCell.getStyle().putAll(style);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private static boolean renderingCondition_imlbz9_a7a(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "native");
+  }
+  private EditorCell createRefNode_imlbz9_i0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
@@ -178,12 +193,12 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-  private static boolean renderingCondition_imlbz9_a7a(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_imlbz9_a8a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "type", true) != null);
   }
-  private EditorCell createConstant_imlbz9_i0(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_imlbz9_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_imlbz9_i0");
+    editorCell.setCellId("Constant_imlbz9_j0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, true);
     style.set(StyleAttributes.NULL_TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
@@ -193,16 +208,16 @@ public class IncompleteMemberDeclaration_Editor extends DefaultNodeEditor {
       editorCell.getStyle().set(StyleAttributes.FOCUS_POLICY, FocusPolicy.ATTRACTS_FOCUS);
     }
     editorCell.setDefaultText("<no name>");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncompleteMemberDeclaration_Editor.ApplySideTransforms_null_cellMenu_imlbz9_a0i0(), new IncompleteMemberDeclaration_Editor.ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new IncompleteMemberDeclaration_Editor.ApplySideTransforms_null_cellMenu_imlbz9_a0j0(), new IncompleteMemberDeclaration_Editor.ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0()}));
     return editorCell;
   }
-  public static class ApplySideTransforms_null_cellMenu_imlbz9_a0i0 extends AbstractCellMenuPart_ApplySideTransforms {
-    public ApplySideTransforms_null_cellMenu_imlbz9_a0i0() {
+  public static class ApplySideTransforms_null_cellMenu_imlbz9_a0j0 extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_imlbz9_a0j0() {
       super(CellSide.RIGHT, "");
     }
   }
-  public static class ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
-    public ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0i0() {
+  public static class ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0 extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+    public ReplaceWith_ClassifierMember_cellMenu_imlbz9_b0j0() {
     }
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.structure.ClassifierMember";

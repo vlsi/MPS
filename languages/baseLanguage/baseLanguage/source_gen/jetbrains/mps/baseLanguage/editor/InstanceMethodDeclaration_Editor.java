@@ -34,6 +34,7 @@ import jetbrains.mps.editor.runtime.style.FocusPolicy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
@@ -100,7 +101,10 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createConstant_359zr8_d2a(editorContext, node));
     }
     if (renderingCondition_359zr8_a4c0(node, editorContext)) {
-      editorCell.addEditorCell(this.createRefNodeList_359zr8_e2a(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_359zr8_e2a(editorContext, node));
+    }
+    if (renderingCondition_359zr8_a5c0(node, editorContext)) {
+      editorCell.addEditorCell(this.createRefNodeList_359zr8_f2a(editorContext, node));
     }
     return editorCell;
   }
@@ -172,15 +176,35 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       super(CellSide.RIGHT, "");
     }
   }
-  private EditorCell createRefNodeList_359zr8_e2a(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.modifiersListHandler_359zr8_e2a(node, "modifiers", editorContext);
+  private EditorCell createConstant_359zr8_e2a(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "native");
+    editorCell.setCellId("Constant_359zr8_e2a");
+    Style style = new StyleImpl();
+    BaseLanguageStyle_StyleSheet.apply_KeyWord(style, editorCell);
+    style.set(StyleAttributes.EDITABLE, true);
+    editorCell.getStyle().putAll(style);
+    DeleteNativeInMethod.setCellActions(editorCell, node, editorContext);
+    editorCell.setDefaultText("");
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new InstanceMethodDeclaration_Editor.ApplySideTransforms_null_cellMenu_359zr8_a0e2a()}));
+    return editorCell;
+  }
+  private static boolean renderingCondition_359zr8_a4c0(SNode node, EditorContext editorContext) {
+    return SPropertyOperations.getBoolean(node, "isNative");
+  }
+  public static class ApplySideTransforms_null_cellMenu_359zr8_a0e2a extends AbstractCellMenuPart_ApplySideTransforms {
+    public ApplySideTransforms_null_cellMenu_359zr8_a0e2a() {
+      super(CellSide.RIGHT, "");
+    }
+  }
+  private EditorCell createRefNodeList_359zr8_f2a(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new InstanceMethodDeclaration_Editor.modifiersListHandler_359zr8_f2a(node, "modifiers", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_modifiers");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class modifiersListHandler_359zr8_e2a extends RefNodeListHandler {
-    public modifiersListHandler_359zr8_e2a(SNode ownerNode, String childRole, EditorContext context) {
+  private static class modifiersListHandler_359zr8_f2a extends RefNodeListHandler {
+    public modifiersListHandler_359zr8_f2a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -211,7 +235,7 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
       }
     }
   }
-  private static boolean renderingCondition_359zr8_a4c0(SNode node, EditorContext editorContext) {
+  private static boolean renderingCondition_359zr8_a5c0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "modifiers", true)).isNotEmpty();
   }
   private EditorCell createComponent_359zr8_d0(EditorContext editorContext, SNode node) {
@@ -421,14 +445,14 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a01a(SNode node, EditorContext editorContext) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{});
   }
   private EditorCell createComponent_359zr8_l0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.BaseMethodDeclaration_BodyComponent");
     return editorCell;
   }
   private static boolean renderingCondition_359zr8_a11a(SNode node, EditorContext editorContext) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+    return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{}));
   }
   private EditorCell createCollection_359zr8_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);

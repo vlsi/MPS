@@ -45,7 +45,7 @@ public class ChangeStaticInInner_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return Classifier_Behavior.call_isInner_521412098689998677(node) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return Classifier_Behavior.call_isInner_521412098689998677(node) && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "521412098689817330");
@@ -63,7 +63,7 @@ public class ChangeStaticInInner_Intention implements IntentionFactory {
     public IntentionImplementation() {
     }
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Make " + ((Classifier_Behavior.call_isStatic_521412098689998668(node) ? "Non" : "")) + " Static";
+      return "Make " + ((!(SPropertyOperations.getBoolean(node, "nonStatic")) ? "Non" : "")) + " Static";
     }
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "nonStatic", "" + (!(SPropertyOperations.getBoolean(node, "nonStatic"))));
