@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="10,0,41,0" name="jetbrains.mps.lang.classLike.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
+  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)/3751132065236767061">
+    <file name="ParameterInfo.java">
+      <node id="3751132065236767061" at="10,26,11,12" concept="3" />
+      <node id="3751132065236767061" at="13,49,14,22" concept="3" />
+      <node id="3751132065236767061" at="16,36,17,27" concept="2" />
+      <node id="3751132065236767061" at="19,34,20,27" concept="2" />
+      <node id="3751132065236767061" at="22,24,23,22" concept="2" />
+      <node id="3751132065236767061" at="25,23,26,22" concept="2" />
+      <node id="3751132065236767061" at="29,66,30,46" concept="2" />
+      <node id="3751132065236767061" at="10,0,13,0" concept="0" trace="ParameterInfo#()V" />
+      <node id="3751132065236767061" at="13,0,16,0" concept="0" trace="ParameterInfo#(Ljava/lang/String;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3751132065236767061" at="16,0,19,0" concept="1" trace="name#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3751132065236767061" at="19,0,22,0" concept="1" trace="type#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3751132065236767061" at="22,0,25,0" concept="1" trace="name#()Ljava/lang/String;" />
+      <node id="3751132065236767061" at="25,0,28,0" concept="1" trace="type#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3751132065236767061" at="28,0,32,0" concept="1" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Ljetbrains/mps/lang/classLike/structure/ParameterInfo;" />
+      <scope id="3751132065236767061" at="10,26,11,12" />
+      <scope id="3751132065236767061" at="13,49,14,22" />
+      <scope id="3751132065236767061" at="16,36,17,27" />
+      <scope id="3751132065236767061" at="19,34,20,27" />
+      <scope id="3751132065236767061" at="22,24,23,22" />
+      <scope id="3751132065236767061" at="25,23,26,22" />
+      <scope id="3751132065236767061" at="29,66,30,46" />
+      <scope id="3751132065236767061" at="10,0,13,0" />
+      <scope id="3751132065236767061" at="13,0,16,0">
+        <var name="name" id="3751132065236767061" />
+        <var name="type" id="3751132065236767061" />
+      </scope>
+      <scope id="3751132065236767061" at="16,0,19,0">
+        <var name="value" id="3751132065236767061" />
+      </scope>
+      <scope id="3751132065236767061" at="19,0,22,0">
+        <var name="value" id="3751132065236767061" />
+      </scope>
+      <scope id="3751132065236767061" at="22,0,25,0" />
+      <scope id="3751132065236767061" at="25,0,28,0" />
+      <scope id="3751132065236767061" at="28,0,32,0">
+        <var name="from" id="3751132065236767061" />
+      </scope>
+      <unit id="3751132065236767061" at="9,0,33,0" name="jetbrains.mps.lang.classLike.structure.ParameterInfo" />
+    </file>
+  </root>
+  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)/3751132065236767085">
+    <file name="ConceptFuncInfo.java">
+      <node id="3751132065236767085" at="11,28,12,12" concept="3" />
+      <node id="3751132065236767085" at="14,113,15,47" concept="3" />
+      <node id="3751132065236767085" at="17,80,18,27" concept="2" />
+      <node id="3751132065236767085" at="20,65,21,27" concept="2" />
+      <node id="3751132065236767085" at="23,40,24,27" concept="2" />
+      <node id="3751132065236767085" at="26,49,27,22" concept="2" />
+      <node id="3751132065236767085" at="29,42,30,22" concept="2" />
+      <node id="3751132065236767085" at="32,29,33,22" concept="2" />
+      <node id="3751132065236767085" at="36,106,37,48" concept="2" />
+      <node id="3751132065236767085" at="11,0,14,0" concept="0" trace="ConceptFuncInfo#()V" />
+      <node id="3751132065236767085" at="14,0,17,0" concept="0" trace="ConceptFuncInfo#(Ljava/util/Collection;Ljava/util/Collection;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3751132065236767085" at="17,0,20,0" concept="1" trace="parameters#(Ljava/util/Collection;)Ljava/util/Collection;" />
+      <node id="3751132065236767085" at="20,0,23,0" concept="1" trace="throwsItems#(Ljava/util/Collection;)Ljava/util/Collection;" />
+      <node id="3751132065236767085" at="23,0,26,0" concept="1" trace="returnType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3751132065236767085" at="26,0,29,0" concept="1" trace="parameters#()Ljava/util/Collection;" />
+      <node id="3751132065236767085" at="29,0,32,0" concept="1" trace="throwsItems#()Ljava/util/Collection;" />
+      <node id="3751132065236767085" at="32,0,35,0" concept="1" trace="returnType#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3751132065236767085" at="35,0,39,0" concept="1" trace="assignFrom#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_3;)Ljetbrains/mps/lang/classLike/structure/ConceptFuncInfo;" />
+      <scope id="3751132065236767085" at="11,28,12,12" />
+      <scope id="3751132065236767085" at="14,113,15,47" />
+      <scope id="3751132065236767085" at="17,80,18,27" />
+      <scope id="3751132065236767085" at="20,65,21,27" />
+      <scope id="3751132065236767085" at="23,40,24,27" />
+      <scope id="3751132065236767085" at="26,49,27,22" />
+      <scope id="3751132065236767085" at="29,42,30,22" />
+      <scope id="3751132065236767085" at="32,29,33,22" />
+      <scope id="3751132065236767085" at="36,106,37,48" />
+      <scope id="3751132065236767085" at="11,0,14,0" />
+      <scope id="3751132065236767085" at="14,0,17,0">
+        <var name="parameters" id="3751132065236767085" />
+        <var name="returnType" id="3751132065236767085" />
+        <var name="throwsItems" id="3751132065236767085" />
+      </scope>
+      <scope id="3751132065236767085" at="17,0,20,0">
+        <var name="value" id="3751132065236767085" />
+      </scope>
+      <scope id="3751132065236767085" at="20,0,23,0">
+        <var name="value" id="3751132065236767085" />
+      </scope>
+      <scope id="3751132065236767085" at="23,0,26,0">
+        <var name="value" id="3751132065236767085" />
+      </scope>
+      <scope id="3751132065236767085" at="26,0,29,0" />
+      <scope id="3751132065236767085" at="29,0,32,0" />
+      <scope id="3751132065236767085" at="32,0,35,0" />
+      <scope id="3751132065236767085" at="35,0,39,0">
+        <var name="from" id="3751132065236767085" />
+      </scope>
+      <unit id="3751132065236767085" at="10,0,40,0" name="jetbrains.mps.lang.classLike.structure.ConceptFuncInfo" />
+    </file>
+  </root>
+</debug-info>
+
