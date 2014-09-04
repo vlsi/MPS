@@ -24,9 +24,6 @@ import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * This class serves as a convenient implementation of all repository listeners at once.
  * In addition it tracks all objects (modules, models and nodes) as they come and leave the repository.
@@ -108,6 +105,22 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   @Override
   public void commandFinished(SRepository repository) {
+  }
+
+  @Override
+  public void updateStarted(SRepository repository) {
+  }
+
+  @Override
+  public void updateFinished(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandStarted(SRepository repository) {
+  }
+
+  @Override
+  public void repositoryCommandFinished(SRepository repository) {
   }
 
   // SModuleListener methods

@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.module.SRepositoryBase;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.ModelAccess;
+import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 
@@ -55,6 +56,11 @@ public class ProjectRepository extends SRepositoryBase {
   @Override
   public ModelAccess getModelAccess() {
     return myProjectModelAccess;
+  }
+
+  @Override
+  public RepositoryAccess getRepositoryAccess() {
+    return null;
   }
 
   @Override

@@ -35,4 +35,16 @@ public interface SRepositoryListener {
 
   @Deprecated
   void commandFinished(SRepository repository);
+
+  @Deprecated
+  void updateStarted(SRepository repository);
+
+  @Deprecated
+  void updateFinished(SRepository repository);
+
+  @Deprecated
+  void repositoryCommandStarted(SRepository repository);
+
+  @Deprecated
+  void repositoryCommandFinished(SRepository repository);
 }
