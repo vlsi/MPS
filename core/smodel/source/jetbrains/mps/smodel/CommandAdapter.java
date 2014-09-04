@@ -16,6 +16,8 @@
 
 package jetbrains.mps.smodel;
 
+import org.jetbrains.mps.openapi.module.CommandListener;
+
 public class CommandAdapter implements CommandListener {
   @Override
   public void commandStarted() {

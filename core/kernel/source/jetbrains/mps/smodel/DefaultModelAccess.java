@@ -19,6 +19,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010

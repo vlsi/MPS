@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.CommandListener;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import java.util.concurrent.ConcurrentMap;
