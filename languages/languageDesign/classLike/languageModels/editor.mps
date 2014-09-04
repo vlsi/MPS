@@ -24,7 +24,6 @@
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140133623887" name="Node_DeleteOperation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/795210086017940429" name="ReadOnlyStyleClassItem" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="CellModel_Component" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1171407110247" name="Node_GetAncestorOperation" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="CellLayout_Indent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414949600" name="AutoDeletableStyleClassItem" />
@@ -90,7 +89,6 @@
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562/1138056516764" name="link" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355/1140103550593" name="relationDeclaration" />
     <refRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1177026924588/1177026940964" name="conceptDeclaration" />
-    <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254/1078939183255" name="editorComponent" />
     <refRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141037" name="baseMethodDeclaration" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265/1139959269582" name="actionMap" />
     <refRole id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535219966/1139535219968" name="applicableConcept" />
@@ -435,34 +433,6 @@
           </node>
         </node>
         <node concept="9wj7.1237303669825" id="3751132065236797426" role="9wj7.1073389446423.1106270802874" info="nn" />
-      </node>
-    </node>
-    <node concept="9wj7.1071666914219" id="3751132065236797427" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="confunc" />
-      <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767070" resolveInfo="MigrationScriptNew" />
-      <node concept="9wj7.1073389446423" id="3751132065236797428" role="9wj7.1080736578640.1080736633877" info="nn">
-        <node concept="9wj7.1073389577006" id="3751132065236797429" role="9wj7.1073389446423.1073389446424" info="nn">
-          <property role="9wj7.1073389577006.1073389577007" value="migration script" />
-        </node>
-        <node concept="9wj7.1073389658414" id="3751132065236797430" role="9wj7.1073389446423.1073389446424" info="ng">
-          <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
-        </node>
-        <node concept="9wj7.1073389577006" id="3751132065236797431" role="9wj7.1073389446423.1073389446424" info="nn">
-          <property role="9wj7.1073389577006.1073389577007" value="{" />
-          <node concept="9wj7.1237308012275" id="3751132065236797432" role="9wj7.1219418625346.1219418656006" info="nn">
-            <property role="9wj7.1186414536763.1186414551515" value="true" />
-          </node>
-        </node>
-        <node concept="9wj7.1078939183254" id="3751132065236797433" role="9wj7.1073389446423.1073389446424" info="ng">
-          <reference role="9wj7.1078939183254.1078939183255" target="tpen.4595369208731223071" resolveInfo="ClassifierMembers_Component" />
-          <node concept="9wj7.1237308012275" id="3751132065236797434" role="9wj7.1219418625346.1219418656006" info="nn">
-            <property role="9wj7.1186414536763.1186414551515" value="true" />
-          </node>
-        </node>
-        <node concept="9wj7.1073389577006" id="3751132065236797435" role="9wj7.1073389446423.1073389446424" info="nn">
-          <property role="9wj7.1073389577006.1073389577007" value="}" />
-        </node>
-        <node concept="9wj7.1237303669825" id="3751132065236797436" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
   </contents>

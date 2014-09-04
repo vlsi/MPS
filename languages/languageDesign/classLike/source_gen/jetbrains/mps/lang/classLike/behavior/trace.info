@@ -26,7 +26,7 @@
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DepTypeInstance_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,38,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,36,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ObligatoryMethodDescriptor_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.ObligatoryMethodDescriptor_BehaviorDescriptor" />
@@ -36,9 +36,6 @@
     </file>
     <file name="ConceptFuncParameterDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.ConceptFuncParameterDeclaration_BehaviorDescriptor" />
-    </file>
-    <file name="MigrationScriptNew_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.MigrationScriptNew_BehaviorDescriptor" />
     </file>
     <file name="ParameterDescriptor_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.ParameterDescriptor_BehaviorDescriptor" />
@@ -178,63 +175,6 @@
         <var name="thisNode" id="3751132065236798249" />
       </scope>
       <unit id="3751132065236798249" at="12,0,33,0" name="jetbrains.mps.lang.classLike.behavior.DepType_Behavior" />
-    </file>
-  </root>
-  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)/3751132065236798341">
-    <file name="MigrationScriptNew_Behavior.java">
-      <node id="3751132065236798347" at="20,106,21,433" concept="6" />
-      <node id="3751132065236798364" at="23,70,24,63" concept="5" />
-      <node id="3751132065236798364" at="24,63,25,30" concept="5" />
-      <node id="3751132065236798364" at="25,30,26,138" concept="1" />
-      <node id="3751132065236798364" at="26,138,27,331" concept="1" />
-      <node id="3751132065236798364" at="27,331,28,24" concept="6" />
-      <node id="3751132065236798373" at="30,68,31,63" concept="5" />
-      <node id="3751132065236798373" at="31,63,32,30" concept="5" />
-      <node id="3751132065236798373" at="32,30,33,138" concept="1" />
-      <node id="3751132065236798373" at="33,138,34,286" concept="1" />
-      <node id="3751132065236798373" at="34,286,35,24" concept="6" />
-      <node id="3751132065236798367" at="37,66,38,63" concept="5" />
-      <node id="3751132065236798367" at="38,63,39,30" concept="5" />
-      <node id="3751132065236798367" at="39,30,40,132" concept="0" />
-      <node id="3751132065236798367" at="39,30,40,132" concept="0" />
-      <node id="3751132065236798367" at="39,30,40,132" concept="1" />
-      <node id="3751132065236798367" at="40,132,41,24" concept="6" />
-      <node id="3751132065236798341" at="18,0,20,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="3751132065236798364" at="25,30,27,331" concept="0" />
-      <node id="3751132065236798364" at="25,30,27,331" concept="0" />
-      <node id="3751132065236798373" at="32,30,34,286" concept="0" />
-      <node id="3751132065236798373" at="32,30,34,286" concept="0" />
-      <node id="3751132065236798341" at="20,0,23,0" concept="7" trace="virtual_getConceptFuncs_3751132065236798156#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
-      <node id="3751132065236798367" at="37,0,43,0" concept="7" trace="_quotation_createNode_l9mnw5_a1a0a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3751132065236798364" at="23,0,30,0" concept="7" trace="_quotation_createNode_l9mnw5_a1a0a0a0a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="3751132065236798373" at="30,0,37,0" concept="7" trace="_quotation_createNode_l9mnw5_a0a2a0a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="3751132065236798343" at="18,43,18,43" />
-      <scope id="3751132065236798346" at="20,106,21,433" />
-      <scope id="3751132065236798367" at="39,30,40,132" />
-      <scope id="3751132065236798341" at="18,0,20,0">
-        <var name="thisNode" id="3751132065236798341" />
-      </scope>
-      <scope id="3751132065236798364" at="25,30,27,331" />
-      <scope id="3751132065236798373" at="32,30,34,286" />
-      <scope id="3751132065236798341" at="20,0,23,0">
-        <var name="thisNode" id="3751132065236798341" />
-      </scope>
-      <scope id="3751132065236798367" at="37,66,41,24">
-        <var name="facade" id="3751132065236798367" />
-        <var name="quotedNode_1" id="3751132065236798367" />
-      </scope>
-      <scope id="3751132065236798364" at="23,70,28,24">
-        <var name="facade" id="3751132065236798364" />
-        <var name="quotedNode_1" id="3751132065236798364" />
-      </scope>
-      <scope id="3751132065236798373" at="30,68,35,24">
-        <var name="facade" id="3751132065236798373" />
-        <var name="quotedNode_1" id="3751132065236798373" />
-      </scope>
-      <scope id="3751132065236798367" at="37,0,43,0" />
-      <scope id="3751132065236798364" at="23,0,30,0" />
-      <scope id="3751132065236798373" at="30,0,37,0" />
-      <unit id="3751132065236798341" at="17,0,44,0" name="jetbrains.mps.lang.classLike.behavior.MigrationScriptNew_Behavior" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)/3751132065236798378">

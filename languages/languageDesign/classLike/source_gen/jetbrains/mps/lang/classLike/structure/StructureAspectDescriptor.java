@@ -25,16 +25,14 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DepTypeInstance").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("decl").create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MigrationScriptNew").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept", "jetbrains.mps.lang.classLike.structure.ConceptFuncContainter").create();
-      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"param", "retType"}, new boolean[]{true, false}).create();
-      case 8:
+      case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").references("conceptDecl").children(new String[]{"method"}, new boolean[]{true}).create();
-      case 9:
+      case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ParameterDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncContainter", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.MigrationScriptNew", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncContainter", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
 }

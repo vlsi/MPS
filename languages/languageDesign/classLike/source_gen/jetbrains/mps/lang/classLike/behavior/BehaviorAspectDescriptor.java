@@ -17,13 +17,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunc_BehaviorDescriptor();
       case 3:
         return new DepType_BehaviorDescriptor();
-      case 5:
-        return new MigrationScriptNew_BehaviorDescriptor();
-      case 7:
-        return new ObligatoryMethodsDescriptor_BehaviorDescriptor();
-      case 8:
-        return new ParameterDescriptor_BehaviorDescriptor();
       case 6:
+        return new ObligatoryMethodsDescriptor_BehaviorDescriptor();
+      case 7:
+        return new ParameterDescriptor_BehaviorDescriptor();
+      case 5:
         return new ObligatoryMethodDescriptor_BehaviorDescriptor();
       case 4:
         return new DepTypeInstance_BehaviorDescriptor();
@@ -33,5 +31,5 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.MigrationScriptNew", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
 }
