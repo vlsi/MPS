@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2011 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,26 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.annotations.NotNull;
+package jetbrains.mps.smodel;
 
-/**
- * Receives notifications whenever a repository gets updated.
- */
-public interface SRepositoryListener {
-  void moduleAdded(@NotNull SModule module);
+import org.jetbrains.mps.openapi.module.CommandListener;
 
-  void beforeModuleRemoved(@NotNull SModule module);
+public class CommandAdapter implements CommandListener {
+  @Override
+  public void commandStarted() {
+  }
 
-  void moduleRemoved(@NotNull SModuleReference module);
-
-  /**
-   * use {@link CommandListener} instead
-   */
-  @Deprecated
-  void commandStarted(SRepository repository);
-
-  @Deprecated
-  void commandFinished(SRepository repository);
+  @Override
+  public void commandFinished() {
+  }
 }

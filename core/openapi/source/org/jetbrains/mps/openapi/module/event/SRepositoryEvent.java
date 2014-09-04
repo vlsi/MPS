@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,33 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.module.event;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
- * A convenient empty implementation of the SRepositoryListener interface.
+ * Events in {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
+ * Using Visitor pattern to process a list of events in the
+ * {@link }
+ *
+ * Created by Alex Pyshkin on 9/2/14.
  */
-public class SRepositoryAdapter implements SRepositoryListener {
+public abstract class SRepositoryEvent {
+  private SRepository myRepository;
 
-  @Override
-  public void moduleAdded(@NotNull SModule module) {
+  public SRepositoryEvent(@NotNull SRepository repository) {
+    myRepository = repository;
   }
 
-  @Override
-  public void beforeModuleRemoved(@NotNull SModule module) {
-  }
+  public abstract void accept(SModuleEventVisitor visitor);
 
-  @Override
-  public void moduleRemoved(@NotNull SModuleReference module) {
+  public SRepository getRepository() {
+    return myRepository;
   }
-
-  @Override
-  public void commandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void commandFinished(SRepository repository) {
-  }
-
 }

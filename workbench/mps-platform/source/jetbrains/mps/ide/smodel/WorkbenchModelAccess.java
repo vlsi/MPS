@@ -32,7 +32,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IllegalModelAccessError;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessListener;
+import org.jetbrains.mps.openapi.module.CommandListener;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.smodel.UndoRunnable;
@@ -609,7 +609,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   //--------command events listening
 
-  private List<ModelAccessListener> myListeners = new ArrayList<ModelAccessListener>();
+  private List<CommandListener> myListeners = new ArrayList<CommandListener>();
   private final Object myListenersLock = new Object();
 
   private int myCommandLevel = 0;
@@ -634,14 +634,14 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void addCommandListener(ModelAccessListener l) {
+  public void addCommandListener(CommandListener l) {
     synchronized (myListenersLock) {
       myListeners.add(l);
     }
   }
 
   @Override
-  public void removeCommandListener(ModelAccessListener l) {
+  public void removeCommandListener(CommandListener l) {
     synchronized (myListenersLock) {
       myListeners.remove(l);
     }
@@ -650,12 +650,12 @@ public class WorkbenchModelAccess extends ModelAccess {
   @Override
   protected void onCommandStarted() {
     super.onCommandStarted();
-    ArrayList<ModelAccessListener> listeners;
+    ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
+      listeners = new ArrayList<CommandListener>(myListeners);
     }
 
-    for (ModelAccessListener l : listeners) {
+    for (CommandListener l : listeners) {
       try {
         l.commandStarted();
       } catch (Throwable t) {
@@ -666,11 +666,11 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   protected void onCommandFinished() {
-    ArrayList<ModelAccessListener> listeners;
+    ArrayList<CommandListener> listeners;
     synchronized (myListenersLock) {
-      listeners = new ArrayList<ModelAccessListener>(myListeners);
+      listeners = new ArrayList<CommandListener>(myListeners);
     }
-    for (ModelAccessListener l : listeners) {
+    for (CommandListener l : listeners) {
       try {
         l.commandFinished();
       } catch (Throwable t) {

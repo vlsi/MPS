@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,33 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package org.jetbrains.mps.openapi.module.event;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * A convenient empty implementation of the SRepositoryListener interface.
+ * Created by Alex Pyshkin on 9/2/14.
+ * Parent of repository module events
+ * (adding and removing the module from a repository)
  */
-public class SRepositoryAdapter implements SRepositoryListener {
+public abstract class SRepositoryModuleEvent extends SRepositoryEvent {
+  private final SModule myModule;
 
-  @Override
-  public void moduleAdded(@NotNull SModule module) {
+  protected SRepositoryModuleEvent(@NotNull SModule module) {
+    super(module.getRepository());
+    myModule = module;
   }
 
-  @Override
-  public void beforeModuleRemoved(@NotNull SModule module) {
+  public SModule getModule() {
+    return myModule;
   }
-
-  @Override
-  public void moduleRemoved(@NotNull SModuleReference module) {
-  }
-
-  @Override
-  public void commandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void commandFinished(SRepository repository) {
-  }
-
 }

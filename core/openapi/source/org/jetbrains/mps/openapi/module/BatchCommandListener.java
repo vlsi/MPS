@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,31 +15,10 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import org.jetbrains.annotations.NotNull;
-
 /**
- * A convenient empty implementation of the SRepositoryListener interface.
+ * Created by Alex Pyshkin on 9/2/14.
  */
-public class SRepositoryAdapter implements SRepositoryListener {
-
-  @Override
-  public void moduleAdded(@NotNull SModule module) {
-  }
-
-  @Override
-  public void beforeModuleRemoved(@NotNull SModule module) {
-  }
-
-  @Override
-  public void moduleRemoved(@NotNull SModuleReference module) {
-  }
-
-  @Override
-  public void commandStarted(SRepository repository) {
-  }
-
-  @Override
-  public void commandFinished(SRepository repository) {
-  }
-
+public interface BatchCommandListener {
+  public void batchCommandStarted();
+  public void batchCommandFinished();
 }

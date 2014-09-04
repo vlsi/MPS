@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package org.jetbrains.mps.openapi.module.event;
 
-package jetbrains.mps.smodel;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SRepository;
 
-public class ModelAccessAdapter implements ModelAccessListener {
-  @Override
-  public void commandStarted() {
+/**
+ * Created by Alex Pyshkin on 9/2/14.
+ */
+public class SModuleRemovingEvent extends SRepositoryModuleEvent {
 
+  public SModuleRemovingEvent(@NotNull SModule module) {
+    super(module);
   }
 
   @Override
-  public void commandFinished() {
-
+  public void accept(SModuleEventVisitor visitor) {
+    visitor.visit(this);
   }
 }

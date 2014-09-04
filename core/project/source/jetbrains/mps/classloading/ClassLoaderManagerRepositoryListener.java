@@ -21,6 +21,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 
@@ -42,14 +43,14 @@ class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
   }
 
   @Override
-  public void beforeModuleRemoved(SModule module) {
+  public void beforeModuleRemoved(@NotNull SModule module) {
     LOG.debug("removing " + module);
     final Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(Arrays.asList(module), new EmptyProgressMonitor());
 //    loadDeps(module, unloadedModules);
   }
 
   @Override
-  public void moduleAdded(SModule module) {
+  public void moduleAdded(@NotNull SModule module) {
     LOG.debug("adding " + module);
     if (!myClassLoaderManager.canLoad(module)) {
       LOG.debug("cannot load module within mps " + module);

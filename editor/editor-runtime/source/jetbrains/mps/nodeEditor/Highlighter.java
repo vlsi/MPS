@@ -17,7 +17,6 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.application.ApplicationAdapter;
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
 import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.components.ProjectComponent;
@@ -40,11 +39,11 @@ import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import jetbrains.mps.openapi.editor.message.EditorMessageOwner;
 import jetbrains.mps.project.MPSProject;
+import org.jetbrains.mps.openapi.module.CommandListener;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelRepositoryListener;
@@ -88,7 +87,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   public static final int DEFAULT_DELAY_MULTIPLIER = 1;
   private final MyCancellable myCancellable = new MyCancellable();
   private final ApplicationAdapter myApplicationListener = new MyApplicationAdapter(myCancellable);
-  private final CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
+  private final com.intellij.openapi.command.CommandAdapter myCommandListener = new MyCommandAdapter(myCancellable);
 
   private volatile boolean myStopThread = false;
   private FileEditorManager myFileEditorManager;
@@ -668,7 +667,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  private static class MyCommandAdapter extends CommandAdapter {
+  private static class MyCommandAdapter extends com.intellij.openapi.command.CommandAdapter {
     private final MyCancellable myCancellable;
 
     MyCommandAdapter(MyCancellable cancellable) {
@@ -766,7 +765,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   /**
    * Thread safe.
    */
-  private static class CommandWatcher extends ModelAccessAdapter {
+  private static class CommandWatcher implements CommandListener {
     private AtomicLong myLastCommandStarted = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myLastCommandFinished = new AtomicLong(System.currentTimeMillis());
     private AtomicLong myGracePeriod = new AtomicLong(DEFAULT_GRACE_PERIOD);

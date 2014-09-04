@@ -47,8 +47,6 @@ public interface SRepository {
 
   ModelAccess getModelAccess();
 
-  RepositoryAccess getRepositoryAccess();
-
   DebugRegistry getDebugRegistry();
 
   void saveAll();
@@ -56,4 +54,8 @@ public interface SRepository {
   void addRepositoryListener(SRepositoryListener listener);
 
   void removeRepositoryListener(SRepositoryListener listener);
+
+  void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener);
+
+  void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener);
 }

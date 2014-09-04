@@ -18,17 +18,18 @@ package jetbrains.mps.ide.findusages.view.treeholder.tree;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModelNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.ModuleNodeData;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.NodeNodeData;
+import jetbrains.mps.smodel.CommandAdapter;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelAccessAdapter;
-import jetbrains.mps.smodel.ModelAccessListener;
+import org.jetbrains.mps.openapi.module.CommandListener;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -42,7 +43,7 @@ import java.util.Set;
 public class DataTreeChangesNotifier {
   private IChangeListener myTree;
   private boolean myChanged = false;
-  private ModelAccessListener myCommandListener = new MyCommandListener();
+  private CommandListener myCommandListener = new MyCommandListener();
 
   private MyModelCommandListener myModelListener = new MyModelCommandListener();
   private MyModelRepositoryListener myModelRepositoryListener = new MyModelRepositoryListener();
@@ -126,7 +127,7 @@ public class DataTreeChangesNotifier {
     }
   }
 
-  private class MyCommandListener extends ModelAccessAdapter {
+  private class MyCommandListener extends CommandAdapter {
     @Override
     public void commandFinished() {
       if (!myChanged) return;
@@ -137,7 +138,7 @@ public class DataTreeChangesNotifier {
 
   private class MyModuleRepositoryListener extends SRepositoryAdapter {
     @Override
-    public void moduleRemoved(SModuleReference module) {
+    public void moduleRemoved(@NotNull SModuleReference module) {
       if (!myModules.contains(module)) return;
       myChanged = true;
     }

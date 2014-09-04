@@ -19,6 +19,7 @@ import jetbrains.mps.InternalFlag;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
@@ -304,11 +305,11 @@ public class DefaultModelAccess extends ModelAccess {
   }
 
   @Override
-  public void addCommandListener(ModelAccessListener l) {
+  public void addCommandListener(CommandListener l) {
   }
 
   @Override
-  public void removeCommandListener(ModelAccessListener l) {
+  public void removeCommandListener(CommandListener l) {
   }
 
   @Override

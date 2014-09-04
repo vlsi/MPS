@@ -196,7 +196,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelReference" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="com.intellij.openapi.vcs.FileStatusListener" />
-    <classNode extendsClassName="jetbrains.mps.smodel.EventsCollector" />
+    <classNode extendsClassName="jetbrains.mps.smodel.ModelsEventsCollector" />
     <classNode extendsClassName="jetbrains.mps.smodel.SModelRepositoryAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.EventConsumingMapping" file="EventConsumingMapping.java">

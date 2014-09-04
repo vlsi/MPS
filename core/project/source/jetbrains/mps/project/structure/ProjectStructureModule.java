@@ -77,13 +77,13 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
   };
   private final SRepositoryListener myListener = new SRepositoryAdapter() {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       refreshModule(module, false);
       module.addModuleListener(myModuleListener);
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       module.removeModuleListener(myModuleListener);
       refreshModule(module, true);
     }

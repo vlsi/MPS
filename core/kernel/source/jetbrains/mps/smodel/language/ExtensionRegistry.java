@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
@@ -192,12 +193,12 @@ public class ExtensionRegistry extends BaseExtensionRegistry implements CoreComp
 
   private class MyModuleRepositoryAdapter extends SRepositoryAdapter {
     @Override
-    public void moduleAdded(SModule module) {
+    public void moduleAdded(@NotNull SModule module) {
       // awaiting next classes reload?
     }
 
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       String namespace = myModuleToNamespace.get(module);
       if (namespace == null) return;
 

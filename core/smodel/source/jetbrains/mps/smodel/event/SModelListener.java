@@ -24,8 +24,8 @@ import org.jetbrains.mps.openapi.model.SModel;
  * Created Sep 16, 2003
  * <p/>
  * WARNING: Do not use this kind of listener in UI. In case of changes to a model
- * that affect many nodes it might lead to performance problems. Use SModelCommandListener
- * instead in these cases.
+ * that affect many nodes it might lead to performance problems.
+ * In these cases use {@link SModelCommandListener} which listens to batch notifications
  */
 public interface SModelListener {
   void languageAdded(SModelLanguageEvent event);

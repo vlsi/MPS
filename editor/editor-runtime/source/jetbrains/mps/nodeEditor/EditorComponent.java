@@ -114,7 +114,7 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.openapi.editor.style.StyleRegistry;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.smodel.EventsCollector;
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -1505,12 +1505,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private void addOurListeners(@NotNull SModel sm) {
-    myEventsCollector.add(sm);
+    myEventsCollector.startListeningToModel(sm);
     mySModelsWithListener.add(sm);
   }
 
   private void removeOurListeners(@NotNull SModel sm) {
-    myEventsCollector.remove(sm);
+    myEventsCollector.stopListeningToModel(sm);
     mySModelsWithListener.remove(sm);
   }
 
@@ -3431,7 +3431,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MyEventsCollector extends EventsCollector {
+  private class MyEventsCollector extends ModelsEventsCollector {
     @Override
     protected void eventsHappened(List<SModelEvent> events) {
       handleEvents(events);
