@@ -31,7 +31,7 @@ import javax.swing.JComponent;
 
 public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
 
-  private final NewSolutionSettings myNewSolutionSettings = new NewSolutionSettings();
+  private NewSolutionSettings myNewSolutionSettings = new NewSolutionSettings();
 
   @Nullable
   @Override
@@ -56,6 +56,7 @@ public class DefaultSolutionProjectTemplate implements SolutionProjectTemplate {
   @Nullable
   @Override
   public JComponent getSettings() {
+    myNewSolutionSettings.setSolutionName("NewSolution");
     return myNewSolutionSettings;
   }
 
