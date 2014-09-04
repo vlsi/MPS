@@ -45,18 +45,27 @@ public class GlobalModelAccess extends ModelAccessBase {
 
   @Override
   public boolean isCommandAction() {
-    throwCommandIsNotSupported();
-    return false;
+    /** AP:
+     * FIXME:
+     * must return false, because this implementation of ModelAccess does not support commands.
+     * The problem is that user can run commands through the class {@link jetbrains.mps.smodel.ModelAccess}, so
+     * we have to delegate here.
+     *
+     * Only when the {@link jetbrains.mps.smodel.ModelAccess} is gone we can change it to
+     * {@code return false;}.
+     */
+    return ModelAccess.instance().isInsideCommand();
   }
 
   private void throwCommandIsNotSupported() throws UnsupportedOperationException{
-    // AT:
-    // FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
-    // e.g. there are actions that run without a project (like New Project action), and they could benefit from
-    // same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
-    // project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
-    // it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
+    /** AT:
+     * FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
+     * e.g. there are actions that run without a project (like New Project action), and they could benefit from
+     * same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
+     * project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
+     * it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
+     */
     throw new UnsupportedOperationException("GlobalModelAccess does not support actions which require a command to run." +
-    " One needs a project to run such actions (@see ProjectModelAccess).");
+        " One needs a project to run such actions (@see ProjectModelAccess).");
   }
 }
