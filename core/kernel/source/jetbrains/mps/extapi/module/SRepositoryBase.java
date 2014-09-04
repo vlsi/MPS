@@ -47,7 +47,6 @@ public abstract class SRepositoryBase implements SRepository {
 
   @Override
   public final void addRepositoryListener(SRepositoryListener listener) {
-    assert !(getModelAccess().isCommandAction());
     myEventsDispatcher.addRepositoryListener(listener);
   }
 
