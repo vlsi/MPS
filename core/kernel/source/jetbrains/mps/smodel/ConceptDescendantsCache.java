@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -60,7 +61,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       }
     }
 
-    private void loadConcept(ConceptDescriptor concept) {
+    private void loadConcept(@NotNull ConceptDescriptor concept) {
       for (String parent : concept.getParentsNames()) {
         Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.add(concept.getConceptFqName());
@@ -68,7 +69,7 @@ public class ConceptDescendantsCache implements CoreComponent {
       }
     }
 
-    private void unloadConcept(ConceptDescriptor concept) {
+    private void unloadConcept(@NotNull ConceptDescriptor concept) {
       for (String parent : concept.getParentsNames()) {
         Set<String> descendants = new LinkedHashSet<String>(getDirectDescendants(parent));
         descendants.remove(concept.getConceptFqName());
