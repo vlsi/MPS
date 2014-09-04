@@ -316,7 +316,7 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981899" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981900" nodeInfo="nn">
-                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/classpathitem:" />
+                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/Contents/classpathitem:" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8979762117546981952" nodeInfo="nn">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8979762117546981953" nodeInfo="nn">
@@ -335,7 +335,7 @@
                           <property name="name" nameId="tpck.1169194664001" value="prefix" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8979762117546981961" nodeInfo="in" />
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8979762117546981962" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1070475926801" value="$APP_PACKAGE/" />
+                            <property name="value" nameId="tpee.1070475926801" value="$APP_PACKAGE/Contents/" />
                           </node>
                         </node>
                       </node>
@@ -561,7 +561,7 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546982074" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546982075" nodeInfo="nn">
-                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE" />
+                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/Contents" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8979762117546982097" nodeInfo="nn">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8979762117546982098" nodeInfo="nn">
