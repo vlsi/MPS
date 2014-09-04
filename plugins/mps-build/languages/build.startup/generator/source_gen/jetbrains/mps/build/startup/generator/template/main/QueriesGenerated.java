@@ -20,7 +20,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_8979762117546981953(final PropertyMacroContext _context) {
     String pathString = "";
-    String prefix = "$APP_PACKAGE/";
+    String prefix = "$APP_PACKAGE/Contents/";
     List<SNode> classPathItemList = SLinkOperations.getTargets(_context.getNode(), "bootClasspath", true);
     for (SNode cpItem : ListSequence.fromList(classPathItemList).cut(1)) {
       pathString += prefix + SPropertyOperations.getString(cpItem, "path").replace("\\", "/") + ":";
