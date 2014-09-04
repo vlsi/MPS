@@ -7,14 +7,15 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.editor.EditorParenthesisUtil;
+import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
@@ -23,11 +24,11 @@ public class ParenthesisUtil {
   }
 
   public static SNode createUnmatchedLeftParenthesis(@NotNull SNode leftExpression) {
-    return createUnmatchedParenthesis(leftExpression, false);
+    return createUnmatchedParenthesisAndCheckParentParens(leftExpression, false);
   }
 
   public static SNode createUnmatchedRightParenthesis(@NotNull SNode rightExpression) {
-    return createUnmatchedParenthesis(rightExpression, true);
+    return createUnmatchedParenthesisAndCheckParentParens(rightExpression, true);
   }
 
   /**
@@ -36,42 +37,105 @@ public class ParenthesisUtil {
    * The current node is added at the front of the list,
    * so that it is always the most distant node among the returned candidates
    */
-  private static List<SNode> descendInto(SNode expr, boolean completingByRightParen) {
+  private static List<SNode> descendInto(SNode expr, final boolean completingByRightParen) {
+    List<SNode> path = ListSequence.fromListAndArray(new ArrayList<SNode>(), null, expr);
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> candidates = ListSequence.fromListAndArray(new ArrayList<SNode>(), expr);
 
-    while (ListSequence.fromList(candidates).isNotEmpty()) {
-      SNode current = ListSequence.fromList(candidates).removeElementAt(0);
-
-      if (completingByRightParen && (AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) {
-        ListSequence.fromList(result).addElement(current);
-      }
-      if (!(completingByRightParen) && (AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null)) {
-        ListSequence.fromList(result).addElement(current);
-      }
+    SNode current = expr;
+    while (ListSequence.fromList(path).isNotEmpty()) {
       if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
-        SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
-        SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
-        if (completingByRightParen) {
+        if (eq_a65dpo_a0a0a0e0g(ListSequence.fromList(path).last(), current)) {
+          SNode left = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
           if (left != null) {
-            ListSequence.fromList(candidates).addElement(left);
+            ListSequence.fromList(path).addElement(left);
+            current = left;
+          } else {
+            current = ListSequence.fromList(path).removeLastElement();
           }
+        } else {
+          ListSequence.fromList(result).addElement(current);
+          SNode right = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
           if (right != null) {
-            ListSequence.fromList(candidates).addElement(right);
+            ListSequence.fromList(path).addElement(right);
+            current = right;
+          } else {
+            current = ListSequence.fromList(path).removeLastElement();
           }
         }
-        if (!(completingByRightParen)) {
-          if (right != null) {
-            ListSequence.fromList(candidates).addElement(right);
-          }
-          if (left != null) {
-            ListSequence.fromList(candidates).addElement(left);
-          }
+      } else {
+        ListSequence.fromList(result).addElement(current);
+        if (eq_a65dpo_a0b0a0a4a6(ListSequence.fromList(path).last(), current)) {
+          ListSequence.fromList(path).removeLastElement();
         }
+        current = ListSequence.fromList(path).removeLastElement();
       }
     }
+    if (!(completingByRightParen)) {
+      result = ListSequence.fromList(result).reversedList();
+    }
+
+    result = ListSequence.fromList(result).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return completingByRightParen && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) || !(completingByRightParen) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null);
+      }
+    }).toListSequence();
 
     return result;
+  }
+
+  private static SNode findWrappingParens(SNode original) {
+    SNode current = original;
+    while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      current = SNodeOperations.cast(SNodeOperations.getParent(current), "jetbrains.mps.baseLanguage.structure.Expression");
+      if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
+        return current;
+      }
+    }
+    return null;
+  }
+
+  /**
+   * First search existing unmatched parens, whether they can be paired with the new one.
+   * If found, pair them, if not, create an unmatched paren annotation.
+   */
+  private static SNode createUnmatchedParenthesisAndCheckParentParens(@NotNull final SNode myExpression, final boolean completingByRightParen) {
+
+    SNode expressionToProcess = myExpression;
+    SNode expressionToSetFocusOn = null;
+
+    SNode current = findWrappingParens(expressionToProcess);
+    while (current != null) {
+      boolean propagateNewParensInsteadOfExpr = false;
+      SNode replacing = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true);
+      SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
+      SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
+
+      if ((completingByRightParen && eq_a65dpo_a0a0a5a5a01_0(expressionToProcess, rightMostNode)) || (!(completingByRightParen) && eq_a65dpo_a0a0a5a5a01(expressionToProcess, leftMostNode))) {
+        propagateNewParensInsteadOfExpr = true;
+      }
+
+      SNodeOperations.replaceWithAnother(current, replacing);
+      SNode localExpToSetFocusOn;
+      if (completingByRightParen) {
+        SNodeFactoryOperations.setNewAttribute(leftMostNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, true);
+        expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : rightMostNode);
+      } else {
+        SNodeFactoryOperations.setNewAttribute(rightMostNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, false);
+        expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : leftMostNode);
+      }
+
+      // Remember the first parenthing result for the editor to set focus to 
+      if (expressionToSetFocusOn == null) {
+        expressionToSetFocusOn = localExpToSetFocusOn;
+      }
+
+      current = findWrappingParens(expressionToProcess);
+    }
+
+    SNode created = createUnmatchedParenthesis(expressionToProcess, completingByRightParen);
+    return (expressionToSetFocusOn != null ? expressionToSetFocusOn : created);
   }
 
   /**
@@ -100,7 +164,7 @@ public class ParenthesisUtil {
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      if (eq_a65dpo_a0b0m0i(candidateExpression, myExpression)) {
+      if (eq_a65dpo_a0b0m0m(candidateExpression, myExpression)) {
         // they are both the same node 
         ParenthesisUtil.clearIncompleteParens(candidateExpression, completingByRightParen);
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
@@ -267,15 +331,15 @@ public class ParenthesisUtil {
    */
   private static SNode buildAccumulator(SNode firstCommonAncestor, SNode turn, boolean left) {
     SNode accumulator;
-    if (turn != null && neq_a65dpo_a0a1a81(turn, firstCommonAncestor)) {
+    if (turn != null && neq_a65dpo_a0a1a22(turn, firstCommonAncestor)) {
       // Accumulate nodes on the path up from the left/right paren 
       accumulator = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), turn, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}));
       SNodeOperations.detachNode(accumulator);
       SNode current = SNodeOperations.cast(SNodeOperations.getParent(turn), "jetbrains.mps.baseLanguage.structure.IBinaryLike");
       SNode previous = turn;
-      while (neq_a65dpo_a0f0b0s(current, firstCommonAncestor)) {
+      while (neq_a65dpo_a0f0b0w(current, firstCommonAncestor)) {
         SNode sideExpression = (left ? BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), current, "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{}));
-        if (sideExpression != null && eq_a65dpo_a0a1a5a1a81(sideExpression, previous)) {
+        if (sideExpression != null && eq_a65dpo_a0a1a5a1a22(sideExpression, previous)) {
           SNodeOperations.replaceWithAnother(current, previous);
           if (left) {
             BehaviorReflection.invokeVirtual(Void.class, current, "virtual_setSyntacticallyLeftSideExpression_1742226163722653680", new Object[]{accumulator});
@@ -333,13 +397,13 @@ public class ParenthesisUtil {
   private static SNode findTurn(SNode leaf, SNode stopNode, boolean leftTurn) {
     SNode currentNode = SNodeOperations.getParent(leaf);
     SNode previous = leaf;
-    while (neq_a65dpo_a0a2a62(previous, stopNode) && SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
+    while (neq_a65dpo_a0a2a03(previous, stopNode) && SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike")) {
       SNode leftSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyLeftSideExpression_1742226163722653708", new Object[]{});
       SNode rightSideExpression = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), "virtual_getSyntacticallyRightSideExpression_1742226163722653714", new Object[]{});
-      if (leftTurn && eq_a65dpo_a0a2a2a62(rightSideExpression, previous)) {
+      if (leftTurn && eq_a65dpo_a0a2a2a03(rightSideExpression, previous)) {
         return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
       }
-      if (!(leftTurn) && eq_a65dpo_a0a3a2a62(leftSideExpression, previous)) {
+      if (!(leftTurn) && eq_a65dpo_a0a3a2a03(leftSideExpression, previous)) {
         return SNodeOperations.cast(currentNode, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
       }
 
@@ -485,25 +549,37 @@ public class ParenthesisUtil {
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
   }
-  private static boolean eq_a65dpo_a0b0m0i(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a0e0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_a65dpo_a0a1a81(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean eq_a65dpo_a0a1a5a1a81(Object a, Object b) {
+  private static boolean eq_a65dpo_a0b0a0a4a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean neq_a65dpo_a0f0b0s(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean neq_a65dpo_a0a2a62(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
-  }
-  private static boolean eq_a65dpo_a0a2a2a62(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a5a5a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a3a2a62(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a5a5a01_0(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_a65dpo_a0b0m0m(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean neq_a65dpo_a0a1a22(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean eq_a65dpo_a0a1a5a1a22(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean neq_a65dpo_a0f0b0w(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean neq_a65dpo_a0a2a03(Object a, Object b) {
+    return !((a != null ? a.equals(b) : a == b));
+  }
+  private static boolean eq_a65dpo_a0a2a2a03(Object a, Object b) {
+    return (a != null ? a.equals(b) : a == b);
+  }
+  private static boolean eq_a65dpo_a0a3a2a03(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
