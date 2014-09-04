@@ -34,8 +34,6 @@ import java.util.Set;
 public class SRepositoryContentAdapter extends SModuleAdapter implements SModelChangeListener, SModelAccessListener,
     SModelListener, SModuleListener, SRepositoryListener {
 
-  private final Set<SRepository> commandStack = new HashSet<SRepository>();
-
   protected SRepositoryContentAdapter() {
   }
 
@@ -49,12 +47,6 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
     for (SModule module : repository.getModules()) {
       startListening(module);
     }
-    if (repository.getModelAccess().isCommandAction()) {
-      // TODO forbid attaching listeners in commands
-      synchronized (commandStack) {
-        commandStack.add(repository);
-      }
-    }
   }
 
   public void unsubscribeFrom(SRepository repository) {
@@ -65,9 +57,6 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
   public void stopListening(SRepository repository) {
     for (SModule module : repository.getModules()) {
       stopListening(module);
-    }
-    synchronized (commandStack) {
-      commandStack.remove(repository);
     }
   }
 
@@ -115,13 +104,10 @@ public class SRepositoryContentAdapter extends SModuleAdapter implements SModelC
 
   @Override
   public void commandStarted(SRepository repository) {
-    commandStack.add(repository);
   }
 
   @Override
   public void commandFinished(SRepository repository) {
-    assert commandStack.contains(repository);
-    commandStack.remove(repository);
   }
 
   // SModuleListener methods
