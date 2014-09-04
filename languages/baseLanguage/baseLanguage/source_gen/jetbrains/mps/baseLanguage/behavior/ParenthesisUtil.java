@@ -105,12 +105,14 @@ public class ParenthesisUtil {
 
     SNode current = findWrappingParens(expressionToProcess);
     while (current != null) {
+      boolean leftParenOnParens = AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null;
+      boolean rightParenOnParens = AttributeOperations.getAttribute(current, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null;
       boolean propagateNewParensInsteadOfExpr = false;
       SNode replacing = SLinkOperations.getTarget(SNodeOperations.cast(current, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression"), "expression", true);
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
       SNode leftMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, false);
 
-      if ((completingByRightParen && eq_a65dpo_a0a0a5a5a01_0(expressionToProcess, rightMostNode)) || (!(completingByRightParen) && eq_a65dpo_a0a0a5a5a01(expressionToProcess, leftMostNode))) {
+      if ((completingByRightParen && eq_a65dpo_a0a0a7a5a01_0(expressionToProcess, rightMostNode)) || (!(completingByRightParen) && eq_a65dpo_a0a0a7a5a01(expressionToProcess, leftMostNode))) {
         propagateNewParensInsteadOfExpr = true;
       }
 
@@ -120,10 +122,16 @@ public class ParenthesisUtil {
         SNodeFactoryOperations.setNewAttribute(leftMostNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
         localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, true);
         expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : rightMostNode);
+        if (leftParenOnParens) {
+          SNodeFactoryOperations.setNewAttribute(localExpToSetFocusOn, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen");
+        }
       } else {
         SNodeFactoryOperations.setNewAttribute(rightMostNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
         localExpToSetFocusOn = ParenthesisUtil.createUnmatchedParenthesis(expressionToProcess, false);
         expressionToProcess = (propagateNewParensInsteadOfExpr ? localExpToSetFocusOn : leftMostNode);
+        if (rightParenOnParens) {
+          SNodeFactoryOperations.setNewAttribute(localExpToSetFocusOn, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), "jetbrains.mps.baseLanguage.structure.IncompleteRightParen");
+        }
       }
 
       // Remember the first parenthing result for the editor to set focus to 
@@ -555,10 +563,10 @@ public class ParenthesisUtil {
   private static boolean eq_a65dpo_a0b0a0a4a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a5a5a01(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a7a5a01(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0a0a5a5a01_0(Object a, Object b) {
+  private static boolean eq_a65dpo_a0a0a7a5a01_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_a65dpo_a0b0m0m(Object a, Object b) {
