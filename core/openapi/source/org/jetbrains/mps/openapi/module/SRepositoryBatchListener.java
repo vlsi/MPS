@@ -25,12 +25,12 @@ import java.util.List;
  * Use it if you're going to perform a major change to the repository
  * (e.g., adding a bunch of modules, removing a whole lot of modules)
  *
- * You have to run {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWrite(Runnable)} if this is your case.
+ * You have to run {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)} if this is your case.
  *
- * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWrite(Runnable)
+ * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)
  *
  * Created by Alex Pyshkin on 9/1/14.
  */
-public interface SRepositoryBatchEventsListener {
+public interface SRepositoryBatchListener {
   void batchEventsHappened(List<SRepositoryEvent> events);
 }

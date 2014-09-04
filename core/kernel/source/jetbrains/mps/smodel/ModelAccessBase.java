@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.BatchCommandListener;
+import org.jetbrains.mps.openapi.module.BatchWriteAction;
 import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
@@ -27,7 +27,7 @@ import org.jetbrains.mps.openapi.module.CommandListener;
  */
 public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.module.ModelAccess {
 
-  private BatchCommandExecutor myBatchCommandExecutor = new BatchCommandExecutor();
+  private BatchWriteActionExecutor myBatchWriteActionExecutor = new BatchWriteActionExecutor();
 
   @Override
   public boolean canRead() {
@@ -65,8 +65,8 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   }
 
   @Override
-  public void runBatchWrite(final Runnable r) {
-    myBatchCommandExecutor.run(this, r);
+  public void runBatchWriteAction(final Runnable r) {
+    myBatchWriteActionExecutor.run(this, r);
   }
 
   @Override
@@ -83,12 +83,12 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   }
 
   @Override
-  public void addBatchCommandListener(BatchCommandListener listener) {
-    myBatchCommandExecutor.addBatchCommandListener(listener);
+  public void addBatchWriteActionListener(BatchWriteAction listener) {
+    myBatchWriteActionExecutor.addBatchCommandListener(listener);
   }
 
   @Override
-  public void removeBatchCommandListener(BatchCommandListener listener) {
-    myBatchCommandExecutor.removeBatchCommandListener(listener);
+  public void removeBatchWriteActionListener(BatchWriteAction listener) {
+    myBatchWriteActionExecutor.removeBatchCommandListener(listener);
   }
 }

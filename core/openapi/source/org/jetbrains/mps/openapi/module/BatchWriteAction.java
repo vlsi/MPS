@@ -18,7 +18,7 @@ package org.jetbrains.mps.openapi.module;
 /**
  * Created by Alex Pyshkin on 9/2/14.
  */
-public interface BatchCommandListener {
-  public void batchCommandStarted();
-  public void batchCommandFinished();
+public interface BatchWriteAction {
+  public void batchStarted();
+  public void batchFinished();
 }

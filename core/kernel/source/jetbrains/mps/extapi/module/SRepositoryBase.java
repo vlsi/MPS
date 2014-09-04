@@ -18,7 +18,7 @@ package jetbrains.mps.extapi.module;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 /**
@@ -28,14 +28,14 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 public abstract class SRepositoryBase implements SRepository {
 
   private SRepositoryEventsDispatcher myEventsDispatcher;
-  private SRepositoryBatchEventsDispatcher myBatchEventsDispatcher;
+  private SRepositoryGroupEventsDispatcher myBatchEventsDispatcher;
 
   protected SRepositoryBase() {
   }
 
   protected void init() {
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
-    myBatchEventsDispatcher = new SRepositoryBatchEventsDispatcher(this);
+    myBatchEventsDispatcher = new SRepositoryGroupEventsDispatcher(this);
     myBatchEventsDispatcher.init();
     SRepositoryRegistry.getInstance().addRepository(this);
   }
@@ -56,12 +56,12 @@ public abstract class SRepositoryBase implements SRepository {
   }
 
   @Override
-  public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+  public final void addRepositoryBatchListener(SRepositoryBatchListener listener) {
     myBatchEventsDispatcher.addRepositoryBatchEventsListener(listener);
   }
 
   @Override
-  public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+  public final void removeRepositoryBatchListener(SRepositoryBatchListener listener) {
     myBatchEventsDispatcher.removeRepositoryBatchEventsListener(listener);
   }
 

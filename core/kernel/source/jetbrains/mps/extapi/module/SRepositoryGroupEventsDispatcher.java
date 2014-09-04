@@ -16,12 +16,12 @@
 package jetbrains.mps.extapi.module;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.BatchCommandListener;
+import org.jetbrains.mps.openapi.module.BatchWriteAction;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.List;
@@ -35,51 +35,51 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * and dispatching batch (group) events to listeners.
  * Created by Alex Pyshkin on 9/2/14.
  */
-public class SRepositoryBatchEventsDispatcher implements BatchCommandListener {
-  private static final Logger LOG = LogManager.getLogger(SRepositoryBatchEventsDispatcher.class);
+public class SRepositoryGroupEventsDispatcher implements BatchWriteAction {
+  private static final Logger LOG = LogManager.getLogger(SRepositoryGroupEventsDispatcher.class);
 
-  private final EventsBatcher myEventsBatcher;
+  private final GroupEventsProcessor myGroupEventsProcessor;
 
-  private final List<SRepositoryBatchEventsListener> myListeners =
-      new CopyOnWriteArrayList<SRepositoryBatchEventsListener>();
+  private final List<SRepositoryBatchListener> myListeners =
+      new CopyOnWriteArrayList<SRepositoryBatchListener>();
 
   private final SRepository myRepository;
 
-  public SRepositoryBatchEventsDispatcher(@NotNull SRepository repository) {
+  public SRepositoryGroupEventsDispatcher(@NotNull SRepository repository) {
     myRepository = repository;
-    myEventsBatcher = new EventsBatcher(repository);
+    myGroupEventsProcessor = new GroupEventsProcessor(repository);
   }
 
   public void init() {
-    myRepository.getModelAccess().addBatchCommandListener(this);
+    myRepository.getModelAccess().addBatchWriteActionListener(this);
   }
 
   public void dispose() {
-    myRepository.getModelAccess().removeBatchCommandListener(this);
+    myRepository.getModelAccess().removeBatchWriteActionListener(this);
   }
 
   @Override
-  public void batchCommandStarted() {
-    myEventsBatcher.startBatching();
+  public void batchStarted() {
+    myGroupEventsProcessor.startBatching();
   }
 
   @Override
-  public void batchCommandFinished() {
-    List<SRepositoryEvent> batchedEvents = myEventsBatcher.finishBatching();
+  public void batchFinished() {
+    List<SRepositoryEvent> batchedEvents = myGroupEventsProcessor.finishBatching();
     fireModuleEvents(batchedEvents);
   }
 
-  public final void addRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+  public final void addRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
     myListeners.add(listener);
   }
 
-  public final void removeRepositoryBatchEventsListener(SRepositoryBatchEventsListener listener) {
+  public final void removeRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
     myListeners.remove(listener);
   }
 
   private void fireModuleEvents(List<SRepositoryEvent> events) {
     ModelAccess.assertLegalWrite();
-    for (SRepositoryBatchEventsListener listener : myListeners) {
+    for (SRepositoryBatchListener listener : myListeners) {
       try {
         listener.batchEventsHappened(events);
       } catch (Throwable t) {

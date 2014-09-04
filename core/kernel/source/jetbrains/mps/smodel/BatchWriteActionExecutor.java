@@ -27,10 +27,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
 /**
 * Created by Alex Pyshkin on 9/2/14.
 */
-public class BatchCommandExecutor {
-  private static final Logger LOG = LogManager.getLogger(BatchCommandExecutor.class);
+public class BatchWriteActionExecutor {
+  private static final Logger LOG = LogManager.getLogger(BatchWriteActionExecutor.class);
 
-  private final List<BatchCommandListener> myListeners = new CopyOnWriteArrayList<BatchCommandListener>();
+  private final List<BatchWriteAction> myListeners = new CopyOnWriteArrayList<BatchWriteAction>();
 
   private volatile boolean myInBatchCommand = false;
 
@@ -58,9 +58,9 @@ public class BatchCommandExecutor {
   }
 
   private void onCommandStarted() {
-    for (BatchCommandListener listener : myListeners) {
+    for (BatchWriteAction listener : myListeners) {
       try {
-        listener.batchCommandStarted();
+        listener.batchStarted();
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -68,21 +68,21 @@ public class BatchCommandExecutor {
   }
 
   private void onCommandFinished() {
-    for (BatchCommandListener listener : myListeners) {
+    for (BatchWriteAction listener : myListeners) {
       try {
-        listener.batchCommandFinished();
+        listener.batchFinished();
       } catch (Throwable t) {
         LOG.error(t);
       }
     }
   }
 
-  public void addBatchCommandListener(BatchCommandListener listener) {
+  public void addBatchCommandListener(BatchWriteAction listener) {
     assert !myListeners.contains(listener);
     myListeners.add(listener);
   }
 
-  public void removeBatchCommandListener(BatchCommandListener listener) {
+  public void removeBatchCommandListener(BatchWriteAction listener) {
     assert myListeners.contains(listener);
     myListeners.remove(listener);
   }

@@ -35,7 +35,7 @@ import java.util.List;
  * It listens to usual SRepositoryListener events and groups them into SRepositoryEvents
  * not thread-safe
  */
-public class EventsBatcher {
+public class GroupEventsProcessor {
   private boolean myBatchStarted = false;
 
   private final List<SRepositoryEvent> myEvents = new LinkedList<SRepositoryEvent>();
@@ -44,7 +44,7 @@ public class EventsBatcher {
 
   private final SRepository myRepository;
 
-  public EventsBatcher(SRepository repository) {
+  public GroupEventsProcessor(SRepository repository) {
     myRepository = repository;
   }
 

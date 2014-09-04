@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.ModelAccessBase;
-import org.jetbrains.mps.openapi.module.BatchCommandListener;
+import org.jetbrains.mps.openapi.module.BatchWriteAction;
 
 /**
  * This class represents a ModelAccess for cases when there is an available project in scope.
@@ -52,10 +52,10 @@ public class ProjectModelAccess extends ModelAccessBase {
   }
 
   @Override
-  public void addBatchCommandListener(BatchCommandListener listener) {
+  public void addBatchWriteActionListener(BatchWriteAction listener) {
   }
 
   @Override
-  public void removeBatchCommandListener(BatchCommandListener listener) {
+  public void removeBatchWriteActionListener(BatchWriteAction listener) {
   }
 }

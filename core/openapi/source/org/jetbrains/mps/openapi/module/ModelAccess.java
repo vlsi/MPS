@@ -70,14 +70,14 @@ public interface ModelAccess {
   /**
    * Modifications to models can be performed from within a managed action, which holds the appropriate write lock
    * The method obtains such a lock and executes the provided action similar to {@link #runWriteAction(Runnable)}.
-   * However in this case the batch repository notifications are sent at the end of the action {@param r}.
+   * However in this case batch (group) repository notifications are sent at the end of the action {@param r}.
    *
-   * @see org.jetbrains.mps.openapi.module.SRepositoryBatchEventsListener
-   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchEventsListener
+   * @see SRepositoryBatchListener
+   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchListener
    *
    * @param r The command that the repository should invoke on its own behalf
    */
-  void runBatchWrite(Runnable r);
+  void runBatchWriteAction(Runnable r);
 
   /**
    * Write action executed with respect to platform undo mechanism.
@@ -103,7 +103,7 @@ public interface ModelAccess {
 
   public void removeCommandListener(CommandListener listener);
 
-  public void addBatchCommandListener(BatchCommandListener listener);
+  public void addBatchWriteActionListener(BatchWriteAction listener);
 
-  public void removeBatchCommandListener(BatchCommandListener listener);
+  public void removeBatchWriteActionListener(BatchWriteAction listener);
 }
