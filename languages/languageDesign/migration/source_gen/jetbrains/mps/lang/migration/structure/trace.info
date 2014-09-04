@@ -6,7 +6,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="StructureAspectDescriptor.java">
-      <unit at="10,0,57,0" name="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
+      <unit at="10,0,67,0" name="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)/7794917369458199633">

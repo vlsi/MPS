@@ -13,7 +13,7 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 2:
         return new MigrationScript_Constraints();
-      case 4:
+      case 5:
         return new RequiredDataReference_Constraints();
       case 3:
         return new MigrationsPatternVariableReference_Constraints();
@@ -21,10 +21,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new ConceptFunc_Constraints();
       case 1:
         return new ConceptFuncParameterDeclaration_Constraints();
+      case 4:
+        return new ObligatoryMethodsDescriptor_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConceptFunc", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.ConceptFunc", "jetbrains.mps.lang.migration.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.MigrationsPatternVariableReference", "jetbrains.mps.lang.migration.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.migration.structure.RequiredDataReference"};
 }

@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="TypesystemDescriptor.java">
-      <unit at="8,0,20,0" name="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" />
+      <unit at="8,0,24,0" name="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" />
     </file>
   </root>
   <root nodeRef="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)/1886653790506221369">
@@ -127,6 +127,86 @@
         <var name="parameter_1" id="4950161090497031690" />
       </scope>
       <unit id="4950161090497031379" at="17,0,55,0" name="jetbrains.mps.lang.migration.typesystem.typeof_RequiredDataReference_InferenceRule" />
+    </file>
+  </root>
+  <root nodeRef="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)/5608001011717191706">
+    <file name="typeof_DepType_InferenceRule.java">
+      <node id="5608001011717191845" at="23,5,24,170" concept="5" />
+      <node id="5608001011717191845" at="24,170,25,205" concept="5" />
+      <node id="5608001011717191845" at="25,205,26,451" concept="2" />
+      <node id="5043122984354357111" at="28,5,29,176" concept="5" />
+      <node id="5043122984354357111" at="29,176,30,205" concept="5" />
+      <node id="5043122984354357111" at="30,205,31,282" concept="2" />
+      <node id="5608001011717191706" at="34,46,35,60" concept="6" />
+      <node id="5608001011717191706" at="38,5,39,130" concept="5" />
+      <node id="5608001011717191706" at="39,130,40,45" concept="6" />
+      <node id="5608001011717191706" at="43,30,44,17" concept="6" />
+      <node id="5608001011717704229" at="46,79,47,63" concept="5" />
+      <node id="5608001011717704229" at="47,63,48,30" concept="5" />
+      <node id="5608001011717704229" at="48,30,49,132" concept="2" />
+      <node id="5608001011717704229" at="49,132,50,85" concept="2" />
+      <node id="5608001011717704229" at="50,85,51,24" concept="6" />
+      <node id="5043122984354357113" at="53,61,54,63" concept="5" />
+      <node id="5043122984354357113" at="54,63,55,30" concept="5" />
+      <node id="5043122984354357113" at="55,30,56,132" concept="2" />
+      <node id="5043122984354357113" at="56,132,57,240" concept="2" />
+      <node id="5043122984354357113" at="57,240,58,24" concept="6" />
+      <node id="5608001011717191706" at="20,0,22,0" concept="1" trace="typeof_DepType_InferenceRule#()V" />
+      <node id="5608001011717704229" at="48,30,50,85" concept="0" />
+      <node id="5608001011717704229" at="48,30,50,85" concept="0" />
+      <node id="5043122984354357113" at="55,30,57,240" concept="0" />
+      <node id="5043122984354357113" at="55,30,57,240" concept="0" />
+      <node id="5608001011717191706" at="34,0,37,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="5608001011717191706" at="43,0,46,0" concept="4" trace="overrides#()Z" />
+      <node id="5608001011717191706" at="37,68,41,5" concept="0" />
+      <node id="5608001011717191845" at="22,120,27,5" concept="0" />
+      <node id="5043122984354357111" at="27,5,32,5" concept="0" />
+      <node id="5608001011717191706" at="37,0,43,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5608001011717704229" at="46,0,53,0" concept="7" trace="_quotation_createNode_nexsxk_a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5043122984354357113" at="53,0,60,0" concept="7" trace="_quotation_createNode_nexsxk_a0b0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5608001011717191706" at="22,0,34,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="5608001011717191706" at="20,41,20,41" />
+      <scope id="5608001011717191706" at="34,46,35,60" />
+      <scope id="5608001011717191706" at="43,30,44,17" />
+      <scope id="5608001011717191706" at="20,0,22,0" />
+      <scope id="5608001011717191706" at="38,5,40,45">
+        <var name="b" id="5608001011717191706" />
+      </scope>
+      <scope id="5608001011717704229" at="48,30,50,85" />
+      <scope id="5043122984354357113" at="55,30,57,240" />
+      <scope id="5608001011717191845" at="23,5,26,451">
+        <var name="_info_12389875345" id="5608001011717191845" />
+        <var name="_nodeToCheck_1029348928467" id="5608001011717191845" />
+      </scope>
+      <scope id="5043122984354357111" at="28,5,31,282">
+        <var name="_info_12389875345" id="5043122984354357111" />
+        <var name="_nodeToCheck_1029348928467" id="5043122984354357111" />
+      </scope>
+      <scope id="5608001011717191706" at="34,0,37,0" />
+      <scope id="5608001011717191706" at="43,0,46,0" />
+      <scope id="5608001011717191706" at="37,68,41,5" />
+      <scope id="5608001011717704229" at="46,79,51,24">
+        <var name="facade" id="5608001011717704229" />
+        <var name="quotedNode_2" id="5608001011717704229" />
+      </scope>
+      <scope id="5043122984354357113" at="53,61,58,24">
+        <var name="facade" id="5043122984354357113" />
+        <var name="quotedNode_1" id="5043122984354357113" />
+      </scope>
+      <scope id="5608001011717191706" at="37,0,43,0">
+        <var name="argument" id="5608001011717191706" />
+      </scope>
+      <scope id="5608001011717704229" at="46,0,53,0">
+        <var name="parameter_1" id="5608001011717704229" />
+      </scope>
+      <scope id="5043122984354357113" at="53,0,60,0" />
+      <scope id="5608001011717191707" at="22,120,32,5" />
+      <scope id="5608001011717191706" at="22,0,34,0">
+        <var name="depType" id="5608001011717191706" />
+        <var name="status" id="5608001011717191706" />
+        <var name="typeCheckingContext" id="5608001011717191706" />
+      </scope>
+      <unit id="5608001011717191706" at="19,0,61,0" name="jetbrains.mps.lang.migration.typesystem.typeof_DepType_InferenceRule" />
     </file>
   </root>
 </debug-info>

@@ -13,7 +13,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,31,0" name="jetbrains.mps.lang.migration.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,33,0" name="jetbrains.mps.lang.migration.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/2634878718730391712">
@@ -171,6 +171,39 @@
       <unit id="5512160570054200388" at="37,19,49,9" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints$2" />
       <unit id="5512160570054200388" at="29,38,51,5" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints$1" />
       <unit id="5512160570054200388" at="22,0,56,0" name="jetbrains.mps.lang.migration.constraints.MigrationsPatternVariableReference_Constraints" />
+    </file>
+  </root>
+  <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/5608001011715082582">
+    <file name="ObligatoryMethodsDescriptor_Constraints.java">
+      <node id="5608001011715082582" at="15,52,16,80" concept="10" />
+      <node id="5608001011715082582" at="19,82,20,74" concept="5" />
+      <node id="5608001011715082582" at="23,37,24,20" concept="6" />
+      <node id="5608001011715082582" at="27,42,28,37" concept="5" />
+      <node id="5608001011715082582" at="28,37,29,108" concept="0" />
+      <node id="5608001011715083289" at="28,37,29,108" concept="6" />
+      <node id="5608001011715082582" at="31,7,32,22" concept="6" />
+      <node id="5608001011715082582" at="15,0,18,0" concept="1" trace="ObligatoryMethodsDescriptor_Constraints#()V" />
+      <node id="5608001011715082582" at="22,0,26,0" concept="4" trace="hasOwnGetter#()Z" />
+      <node id="5608001011715082582" at="26,0,31,0" concept="4" trace="getValue#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="5608001011715082582" at="20,74,31,7" concept="2" />
+      <node id="5608001011715082582" at="18,0,34,0" concept="4" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="5608001011715082582" at="15,52,16,80" />
+      <scope id="5608001011715082582" at="23,37,24,20" />
+      <scope id="5608001011715082611" at="28,37,29,108" />
+      <scope id="5608001011715082582" at="27,42,29,108">
+        <var name="propertyName" id="5608001011715082582" />
+      </scope>
+      <scope id="5608001011715082582" at="15,0,18,0" />
+      <scope id="5608001011715082582" at="22,0,26,0" />
+      <scope id="5608001011715082582" at="26,0,31,0">
+        <var name="node" id="5608001011715082582" />
+      </scope>
+      <scope id="5608001011715082582" at="19,82,32,22">
+        <var name="properties" id="5608001011715082582" />
+      </scope>
+      <scope id="5608001011715082582" at="18,0,34,0" />
+      <unit id="5608001011715082582" at="21,31,31,5" name="jetbrains.mps.lang.migration.constraints.ObligatoryMethodsDescriptor_Constraints$1" />
+      <unit id="5608001011715082582" at="14,0,35,0" name="jetbrains.mps.lang.migration.constraints.ObligatoryMethodsDescriptor_Constraints" />
     </file>
   </root>
   <root nodeRef="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)/7794917369458336191">

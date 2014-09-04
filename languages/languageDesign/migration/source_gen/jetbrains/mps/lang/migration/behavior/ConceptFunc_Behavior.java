@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.migration.structure.ParameterInfo;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -32,7 +33,13 @@ public class ConceptFunc_Behavior {
   public static void call_fillFromInfo_8214201644239063140(SNode thisNode, ConceptFuncInfo info) {
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).addSequence(CollectionSequence.fromCollection(info.parameters()).select(new ISelector<ParameterInfo, SNode>() {
       public SNode select(ParameterInfo it) {
-        return createParameterDeclaration_o3845u_a0a0a0a0a0b(it.name(), SNodeOperations.cast(HUtil.copyIfNecessary(it.type()), "jetbrains.mps.baseLanguage.structure.Type"));
+        if (SNodeOperations.isInstanceOf(it.type(), "jetbrains.mps.lang.migration.structure.DepType")) {
+          SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.migration.structure.DepTypeInstance", null);
+          SLinkOperations.setTarget(node, "decl", SNodeOperations.cast(it.type(), "jetbrains.mps.lang.migration.structure.DepType"), false);
+          return createParameterDeclaration_o3845u_a2a0a0a0a0a0b(it.name(), SNodeOperations.cast(HUtil.copyIfNecessary(node), "jetbrains.mps.baseLanguage.structure.Type"));
+        } else {
+          return createParameterDeclaration_o3845u_a0a0a0a0a0a0a1(it.name(), SNodeOperations.cast(HUtil.copyIfNecessary(it.type()), "jetbrains.mps.baseLanguage.structure.Type"));
+        }
       }
     }));
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsItem", true)).addSequence(CollectionSequence.fromCollection(info.throwsItems()));
@@ -66,7 +73,14 @@ public class ConceptFunc_Behavior {
     }
     return result.toString();
   }
-  private static SNode createParameterDeclaration_o3845u_a0a0a0a0a0b(Object p0, Object p1) {
+  private static SNode createParameterDeclaration_o3845u_a2a0a0a0a0a0b(Object p0, Object p1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
+    n1.setProperty("name", String.valueOf(p0));
+    n1.addChild("type", (SNode) p1);
+    return n1;
+  }
+  private static SNode createParameterDeclaration_o3845u_a0a0a0a0a0a0a1(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
     n1.setProperty("name", String.valueOf(p0));
