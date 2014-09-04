@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
-
-import jetbrains.mps.smodel.ModelsEventsCollector;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -30,7 +28,7 @@ import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
-
+import jetbrains.mps.smodel.ModelsEventsCollector;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
