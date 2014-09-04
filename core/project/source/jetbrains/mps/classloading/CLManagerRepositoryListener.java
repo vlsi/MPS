@@ -33,12 +33,12 @@ import java.util.Set;
 /**
  * @author Alex Pyshkin  3/7/14.
  */
-class ClassLoaderManagerRepositoryListener extends SRepositoryAdapter {
-  private static final Logger LOG = LogManager.getLogger(ClassLoaderManagerRepositoryListener.class);
+class CLManagerRepositoryListener extends SRepositoryAdapter {
+  private static final Logger LOG = LogManager.getLogger(CLManagerRepositoryListener.class);
 
   private final ClassLoaderManager myClassLoaderManager;
 
-  public ClassLoaderManagerRepositoryListener(ClassLoaderManager classLoaderManager) {
+  public CLManagerRepositoryListener(ClassLoaderManager classLoaderManager) {
     myClassLoaderManager = classLoaderManager;
   }
 

@@ -70,7 +70,7 @@ public class ClassLoaderManager implements CoreComponent {
   private final ClassLoadingBroadCaster myBroadCaster;
 
   // listening for module adding/removing
-  private final SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
+  private final SRepositoryListener myRepositoryListener = new CLManagerRepositoryListener(this);
 
   public ClassLoaderManager(@NotNull SRepository repository) {
     myRepository = repository;
