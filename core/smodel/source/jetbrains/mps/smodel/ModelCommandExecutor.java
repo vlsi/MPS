@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.CommandListener;
@@ -98,8 +99,18 @@ public interface ModelCommandExecutor {
 
   void runIndexing(Runnable r);
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#addCommandListener} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void addCommandListener(CommandListener l);
 
+  /**
+   * @deprecated Use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeCommandListener} instead.
+   */
+  @Deprecated
+  @ToRemove(version = 3.3)
   void removeCommandListener(CommandListener l);
 
   /**

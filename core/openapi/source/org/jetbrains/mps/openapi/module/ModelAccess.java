@@ -99,6 +99,10 @@ public interface ModelAccess {
    */
   boolean isCommandAction();
 
+  public void addCommandListener(CommandListener listener);
+
+  public void removeCommandListener(CommandListener listener);
+
   public void addBatchCommandListener(BatchCommandListener listener);
 
   public void removeBatchCommandListener(BatchCommandListener listener);

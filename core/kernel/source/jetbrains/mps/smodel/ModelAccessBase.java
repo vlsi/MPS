@@ -16,8 +16,13 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.module.BatchCommandListener;
+import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
+ * ModelAccess basic implementation: all non-command methods are implemented here.
+ * Currently it delegates everything to the {@link jetbrains.mps.smodel.ModelAccess},
+ * it is planned to rewrite this class when multiple repositories are supported.
+ *
  * Created by Alex Pyshkin on 9/3/14.
  */
 public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.module.ModelAccess {
@@ -67,6 +72,14 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   @Override
   public void runWriteInEDT(Runnable r) {
     ModelAccess.instance().runWriteInEDT(r);
+  }
+
+  public void addCommandListener(CommandListener listener) {
+    ModelAccess.instance().addCommandListener(listener);
+  }
+
+  public void removeCommandListener(CommandListener listener) {
+    ModelAccess.instance().removeCommandListener(listener);
   }
 
   @Override
