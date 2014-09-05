@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class GenericTypesUtil {
   private GenericTypesUtil() {
   }
-
   public static SNode getTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       return GenericTypesUtil.getTypeByTypeVariable(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), typeByTypeVar);
@@ -23,7 +22,6 @@ public class GenericTypesUtil {
     }
     return type;
   }
-
   public static SNode methodParamTypeWoutTypeVars(SNode type, Set<SNode> typeParams) {
     SNode typeCopy = SNodeOperations.copyNode(type);
     for (SNode typeVariableRef : ListSequence.fromList(SNodeOperations.getDescendants(typeCopy, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{}))) {
@@ -40,7 +38,6 @@ public class GenericTypesUtil {
     }
     return typeCopy;
   }
-
   private static SNode getTypeByTypeVariable(SNode typeVariableRef, Map<SNode, SNode> typeByTypeVar) {
     SNode result = typeVariableRef;
     SNode typeVar = SLinkOperations.getTarget(typeVariableRef, "typeVariableDeclaration", false);
@@ -62,7 +59,6 @@ public class GenericTypesUtil {
     }
     return result;
   }
-
   private static SNode createClassifierTypeWithResolvedTypeVars(SNode type, Map<SNode, SNode> typeByTypeVar) {
     if (typeByTypeVar.isEmpty()) {
       return type;

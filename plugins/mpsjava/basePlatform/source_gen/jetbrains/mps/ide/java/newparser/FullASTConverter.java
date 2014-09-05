@@ -96,15 +96,12 @@ public class FullASTConverter extends ASTConverter {
   private List<FullASTConverter.CodeBlock> myBlocks = ListSequence.fromList(new ArrayList<FullASTConverter.CodeBlock>());
   private Map<SNode, Integer> myPositions = MapSequence.fromMap(new HashMap<SNode, Integer>());
 
-
   public FullASTConverter(CompilationUnitDeclaration cud) {
     super(false);
   }
-
   private FullASTConverter(FullASTConverter base) {
     super(base);
   }
-
   public SNode convertStatementWrap(Statement x) throws JavaParseException {
     SNode stmt = convertStatement(x);
     if ((stmt != null)) {
@@ -112,7 +109,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return stmt;
   }
-
   public SNode convertStatement(Statement x) throws JavaParseException {
     if (x instanceof AssertStatement) {
       return convertStatement((AssertStatement) x);
@@ -159,14 +155,11 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   @Override
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
     // <node> 
     convertStatementsInto(x, SLinkOperations.getTarget(result, "body", true));
   }
-
-
 
   @Override
   public SNode convertInitializer(Initializer x) throws JavaParseException {
@@ -191,8 +184,6 @@ public class FullASTConverter extends ASTConverter {
     return result;
   }
 
-
-
   @Override
   protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
     SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
@@ -211,8 +202,6 @@ public class FullASTConverter extends ASTConverter {
     return enm;
   }
 
-
-
   public List<SNode> convertStatements(Statement[] ss) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
     if (ss != null) {
@@ -225,7 +214,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   public void convertStatementsInto(AbstractMethodDeclaration x, SNode bodyInto) throws JavaParseException {
     addBlock(bodyInto, x.declarationSourceStart, x.declarationSourceEnd);
 
@@ -244,7 +232,6 @@ public class FullASTConverter extends ASTConverter {
     ListSequence.fromList(SLinkOperations.getTargets(bodyInto, "statement", true)).addSequence(ListSequence.fromList(stmts));
     // <node> 
   }
-
   public SNode convertExpressionWrap(Expression expression) throws JavaParseException {
     SNode result = convertExpression(expression);
     if (expression != null) {
@@ -257,7 +244,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   @Override
   public SNode convertExpression(Expression x) throws JavaParseException {
     if (x instanceof AllocationExpression) {
@@ -302,7 +288,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   /*package*/ List<SNode> convertExpressionStatements(Statement[] statements) throws JavaParseException {
     List<SNode> expressionStatements = new ArrayList<SNode>();
     if (statements != null) {
@@ -315,13 +300,11 @@ public class FullASTConverter extends ASTConverter {
     }
     return expressionStatements;
   }
-
   /*package*/ SNode convertStatement(Expression x) throws JavaParseException {
     SNode stmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(stmt, "expression", convertExpressionWrap(x), true);
     return stmt;
   }
-
   /*package*/ SNode convertStatement(AssertStatement x) throws JavaParseException {
     SNode expr = convertExpressionWrap(x.assertExpression);
     SNode arg = convertExpressionWrap(x.exceptionArgument);
@@ -330,7 +313,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "message", arg, true);
     return result;
   }
-
   /*package*/ SNode convertStatement(Block x) throws JavaParseException {
     if (x == null) {
       return null;
@@ -342,7 +324,6 @@ public class FullASTConverter extends ASTConverter {
     ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
     return blockStatement;
   }
-
   /*package*/ SNode convertStatement(BreakStatement x) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BreakStatement", null);
     if (x.label != null) {
@@ -350,7 +331,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   /*package*/ SNode convertStatement(SwitchStatement x) throws JavaParseException {
     SNode expression = convertExpressionWrap(x.expression);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SwitchStatement", null);
@@ -391,7 +371,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   /*package*/ SNode convertCaseStatement(CaseStatement x) throws JavaParseException {
     SNode expression = convertExpressionWrap(x.constantExpression);
     SNode switchCase = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SwitchCase", null);
@@ -400,7 +379,6 @@ public class FullASTConverter extends ASTConverter {
     addBlock(SLinkOperations.getTarget(switchCase, "body", true), x.sourceStart(), x.sourceEnd());
     return switchCase;
   }
-
   /*package*/ SNode convertStatement(ContinueStatement x) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ContinueStatement", null);
     if (x.label != null) {
@@ -411,7 +389,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   /*package*/ SNode convertStatement(DoStatement x) throws JavaParseException {
     SNode loopTest = convertExpressionWrap(x.condition);
     SNode loopBody = convertStatementWrap(x.action);
@@ -421,11 +398,9 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(doWhileStatement, "body", body, true);
     return doWhileStatement;
   }
-
   /*package*/ SNode convertStatement(EmptyStatement x) {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
   }
-
   /*package*/ SNode convertStatement(LocalDeclaration x) throws JavaParseException {
     SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
@@ -438,13 +413,11 @@ public class FullASTConverter extends ASTConverter {
 
     return result;
   }
-
   /*package*/ SNode convertStatement(ReturnStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(result, "expression", convertExpressionWrap(x.expression), true);
     return result;
   }
-
   /*package*/ SNode convertStatement(ExplicitConstructorCall x) throws JavaParseException {
     if (x.isImplicitSuper()) {
       return null;
@@ -459,7 +432,6 @@ public class FullASTConverter extends ASTConverter {
 
     return unkCall;
   }
-
   /*package*/ SNode convertStatement(ForeachStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
     SNode action = convertStatementWrap(x.action);
@@ -475,7 +447,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "body", body, true);
     return result;
   }
-
   /*package*/ SNode convertStatement(ForStatement x) throws JavaParseException {
     SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForStatement", null);
     List<SNode> init = convertStatements(x.initializations);
@@ -523,7 +494,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(forStatement, "body", body, true);
     return result;
   }
-
   /*package*/ SNode convertStatement(IfStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(result, "condition", convertExpressionWrap(x.condition), true);
@@ -537,7 +507,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "ifTrue", ifTrue, true);
     return result;
   }
-
   /*package*/ SNode convertStatement(LabeledStatement x) throws JavaParseException {
     SNode statement = convertStatementWrap(x.statement);
     if ((statement == null)) {
@@ -565,7 +534,6 @@ public class FullASTConverter extends ASTConverter {
 
     return statement;
   }
-
   /*package*/ SNode convertStatement(SynchronizedStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SynchronizedStatement", null);
     SNode block = convertStatement(x.block);
@@ -574,14 +542,12 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "block", getStatementListFromStatement(block, x.block), true);
     return result;
   }
-
   /*package*/ SNode convertStatement(ThrowStatement x) throws JavaParseException {
     SNode toThrow = convertExpressionWrap(x.exception);
     SNode throwStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
     SLinkOperations.setTarget(throwStatement, "throwable", toThrow, true);
     return throwStatement;
   }
-
   /*package*/ SNode convertStatement(TryStatement x) throws JavaParseException {
     SNode tryBlock = convertStatement(x.tryBlock);
     List<SNode> catchArgs = new ArrayList<SNode>();
@@ -629,7 +595,6 @@ public class FullASTConverter extends ASTConverter {
       return tryCatchStatement;
     }
   }
-
   /*package*/ SNode convertStatement(WhileStatement x) throws JavaParseException {
     SNode loopTest = convertExpressionWrap(x.condition);
     SNode loopBody = convertStatementWrap(x.action);
@@ -638,28 +603,23 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody, x.action), true);
     return result;
   }
-
   /*package*/ SNode convertStatement(TypeDeclaration x) {
     LOG.error("Local type declarations are not supported");
     return null;
   }
-
   /*package*/ SNode convertBinaryOperation(Expression left, Expression right, SNode binaryOperation) throws JavaParseException {
     SLinkOperations.setTarget(binaryOperation, "leftExpression", convertExpressionWrap(left), true);
     SLinkOperations.setTarget(binaryOperation, "rightExpression", convertExpressionWrap(right), true);
     return binaryOperation;
   }
-
   /*package*/ SNode convertExpression(AND_AND_Expression x) throws JavaParseException {
     SNode andExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AndExpression", null);
     return convertBinaryOperation(x.left, x.right, andExpression);
   }
-
   /*package*/ SNode convertExpression(OR_OR_Expression x) throws JavaParseException {
     SNode orExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.OrExpression", null);
     return convertBinaryOperation(x.left, x.right, orExpression);
   }
-
   /*package*/ SNode convertExpression(ArrayAllocationExpression x) throws JavaParseException {
     SNode compType = convertTypeReference(x.type);
     if (x.initializer != null) {
@@ -709,7 +669,6 @@ public class FullASTConverter extends ASTConverter {
       return genericNewExpression;
     }
   }
-
   /*package*/ SNode convertExpression(ArrayInitializer x) throws JavaParseException {
     List<SNode> initializers = new ArrayList<SNode>();
     if (x.expressions != null) {
@@ -723,14 +682,12 @@ public class FullASTConverter extends ASTConverter {
     }
     return arrayLiteral;
   }
-
   /*package*/ SNode convertExpression(ArrayReference x) throws JavaParseException {
     SNode accessExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", null);
     SLinkOperations.setTarget(accessExpression, "array", convertExpressionWrap(x.receiver), true);
     SLinkOperations.setTarget(accessExpression, "index", convertExpressionWrap(x.position), true);
     return accessExpression;
   }
-
   /*package*/ SNode convertExpression(Assignment x) throws JavaParseException {
     if (x instanceof CompoundAssignment) {
       return convertExpression((CompoundAssignment) x);
@@ -742,7 +699,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   /*package*/ SNode convertExpression(BinaryExpression x) throws JavaParseException {
     if (x instanceof AND_AND_Expression) {
       return convertExpression((AND_AND_Expression) x);
@@ -806,7 +762,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   /*package*/ SNode convertExpression(CompoundAssignment x) throws JavaParseException {
     if (x instanceof PostfixExpression) {
       return convertExpression((PostfixExpression) x);
@@ -857,7 +812,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   /*package*/ SNode convertExpression(ConditionalExpression x) throws JavaParseException {
     SNode ifTest = convertExpressionWrap(x.condition);
     SNode thenExpr = convertExpressionWrap(x.valueIfTrue);
@@ -868,7 +822,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(tOp, "ifFalse", elseExpr, true);
     return tOp;
   }
-
   /*package*/ SNode convertExpression(EqualExpression x) throws JavaParseException {
     SNode op;
     switch ((x.bits & ASTNode.OperatorMASK) >> ASTNode.OperatorSHIFT) {
@@ -883,7 +836,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return convertBinaryOperation(x.left, x.right, op);
   }
-
   /*package*/ SNode convertExpression(InstanceOfExpression x) throws JavaParseException {
     SNode expr = convertExpressionWrap(x.expression);
     SNode testType = convertTypeReference(x.type);
@@ -892,7 +844,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(instanceOfExpression, "classType", testType, true);
     return instanceOfExpression;
   }
-
   /*package*/ SNode convertExpression(PostfixExpression x) throws JavaParseException {
     SNode op;
     switch (x.operator) {
@@ -908,7 +859,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(op, "expression", convertExpressionWrap(x.lhs), true);
     return op;
   }
-
   /*package*/ SNode convertExpression(PrefixExpression x) throws JavaParseException {
     SNode op;
     switch (x.operator) {
@@ -924,7 +874,6 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(op, "expression", convertExpressionWrap(x.lhs), true);
     return op;
   }
-
   /*package*/ SNode convertExpression(CastExpression x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CastExpression", null);
     SLinkOperations.setTarget(result, "expression", convertExpressionWrap(x.expression), true);
@@ -943,16 +892,13 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "type", convertTypeReference(x.type), true);
     return result;
   }
-
   /*package*/ SNode convertExpression(NullLiteral x) {
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
-
   /*package*/ SNode convertExpression(SuperReference x) throws JavaParseException {
     // <node> 
     return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null);
   }
-
   /*package*/ SNode convertExpression(ThisReference x) throws JavaParseException {
     if (x instanceof QualifiedThisReference) {
       return convertExpression((QualifiedThisReference) x);
@@ -963,7 +909,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   /*package*/ SNode convertExpression(QualifiedThisReference x) throws JavaParseException {
     SNode thisRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     SNode type = convertTypeReference(x.qualification);
@@ -974,14 +919,12 @@ public class FullASTConverter extends ASTConverter {
     thisRef.setReference(sref.getRole(), sref);
     return thisRef;
   }
-
   /*package*/ SNode convertExpression(SingleNameReference x) {
     SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SReference sref = new DynamicReference("variableDeclaration", varRef, null, new String(x.token));
     varRef.setReference(sref.getRole(), sref);
     return varRef;
   }
-
   /*package*/ SNode convertExpression(QualifiedNameReference x) {
     String[] tokens = new String[x.tokens.length];
     if (tokens.length == 0) {
@@ -1000,7 +943,6 @@ public class FullASTConverter extends ASTConverter {
     SPropertyOperations.set(unkName, "tokens", sb.toString());
     return unkName;
   }
-
   /*package*/ SNode convertExpression(MessageSend x) throws JavaParseException {
     // it's a method call 
     //  results in either LocalStaticMethodCall, LocalInstanceMethodCall, StaticMethodCall 
@@ -1097,7 +1039,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   public void addCallArgs(SNode call, Expression[] args) throws JavaParseException {
     if (args == null) {
       return;
@@ -1106,7 +1047,6 @@ public class FullASTConverter extends ASTConverter {
       ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(convertExpressionWrap(arg));
     }
   }
-
   /*package*/ SNode convertExpression(FieldReference x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
     SLinkOperations.setTarget(result, "operand", convertExpressionWrap(x.receiver), true);
@@ -1116,7 +1056,6 @@ public class FullASTConverter extends ASTConverter {
     fieldRef.setReference(sref.getRole(), sref);
     return result;
   }
-
   /*package*/ SNode convertExpression(AllocationExpression x) throws JavaParseException {
     if (x instanceof QualifiedAllocationExpression) {
       return convertExpression((QualifiedAllocationExpression) x);
@@ -1131,7 +1070,6 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   private SNode findConstructor(SNode claz, Expression[] args) {
     SNode result;
     Iterable<SNode> conss = BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), claz, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{});
@@ -1150,7 +1088,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   /*package*/ SNode convertExpression(QualifiedAllocationExpression x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
     SNode create = null;
@@ -1172,7 +1109,6 @@ public class FullASTConverter extends ASTConverter {
 
     return result;
   }
-
   public int addReference(TypeReference typeRef, SNode source, String role) {
     if (typeRef instanceof QualifiedTypeReference) {
       return addReference((QualifiedTypeReference) typeRef, source, role);
@@ -1184,13 +1120,11 @@ public class FullASTConverter extends ASTConverter {
     }
 
   }
-
   public int addReference(SingleTypeReference typeRef, SNode source, String role) {
     org.jetbrains.mps.openapi.model.SReference ref = new DynamicReference(role, source, null, new String(typeRef.token));
     source.setReference(role, ref);
     return 1;
   }
-
   public int addReference(QualifiedTypeReference typeRef, SNode source, String role) {
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < typeRef.tokens.length; i++) {
@@ -1205,8 +1139,6 @@ public class FullASTConverter extends ASTConverter {
     source.setReference(role, ref);
     return 2;
   }
-
-
 
   /*package*/ SNode convertExpression(ClassLiteralAccess x) throws JavaParseException {
     SNode argType = convertTypeReference(x.type);
@@ -1229,7 +1161,6 @@ public class FullASTConverter extends ASTConverter {
       throw new JavaParseException("Type in class literal access is expected to be classifier or array type");
     }
   }
-
   /*package*/ SNode convertExpression(UnaryExpression x) throws JavaParseException {
     int operator = ((x.bits & ASTNode.OperatorMASK) >> ASTNode.OperatorSHIFT);
     switch (operator) {
@@ -1252,8 +1183,6 @@ public class FullASTConverter extends ASTConverter {
     }
   }
 
-
-
   private SReference adjustClassReference(SNode clsType, SNode source, String role) {
     org.jetbrains.mps.openapi.model.SReference sref = clsType.getReference("classifier");
     if (sref instanceof DynamicReference) {
@@ -1264,7 +1193,6 @@ public class FullASTConverter extends ASTConverter {
       throw new RuntimeException("Unknown type of reference: " + sref.getClass().getName());
     }
   }
-
   private SNode getStatementListFromStatement(SNode possibleBlock, Statement x) {
     SNode result;
     if (SNodeOperations.isInstanceOf(possibleBlock, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
@@ -1280,7 +1208,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return result;
   }
-
   public TypeReference nameRefToTypeRef(Expression x) {
     TypeReference myTypeRef = null;
     if (x instanceof SingleNameReference) {
@@ -1290,7 +1217,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return myTypeRef;
   }
-
   private String typeName(TypeReference typeRef) {
     char[][] tokens = typeRef.getTypeName();
     if (tokens == null || tokens.length == 0) {
@@ -1306,7 +1232,6 @@ public class FullASTConverter extends ASTConverter {
     }
     return sb.toString();
   }
-
   public TypeReference[] typeArguments(TypeReference typeRef) {
     if (typeRef instanceof ParameterizedSingleTypeReference) {
       return ((ParameterizedSingleTypeReference) typeRef).typeArguments;
@@ -1319,19 +1244,15 @@ public class FullASTConverter extends ASTConverter {
       return new TypeReference[0];
     }
   }
-
   public Map<SNode, Integer> getPositions() {
     return myPositions;
   }
-
   public Iterable<FullASTConverter.CodeBlock> getCodeBlocks() {
     return myBlocks;
   }
-
   private void addBlock(SNode node, int start, int end) {
     ListSequence.fromList(myBlocks).addElement(new FullASTConverter.CodeBlock(node, myCud, Math.abs(start), Math.abs(end)));
   }
-
   private FullASTConverter.CodeBlock getBlock(final SNode node) {
     return ListSequence.fromList(myBlocks).findFirst(new IWhereFilter<FullASTConverter.CodeBlock>() {
       public boolean accept(FullASTConverter.CodeBlock it) {
@@ -1339,7 +1260,6 @@ public class FullASTConverter extends ASTConverter {
       }
     });
   }
-
   private SNode findBlock(final int sourcePos) {
     long min = Long.MAX_VALUE;
     SNode stmt = null;
@@ -1360,67 +1280,51 @@ public class FullASTConverter extends ASTConverter {
 
     return stmt;
   }
-
   public class CodeBlock {
     private CompilationUnitDeclaration cud;
-
     public CodeBlock(SNode n, CompilationUnitDeclaration d, int s, int e) {
       setStatementList(n);
       cud = d;
       setStartPos(s);
       setEndPos(e);
     }
-
     private SNode myStatementList;
-
     public SNode getStatementList() {
       return this.myStatementList;
     }
-
     private void setStatementList(SNode value) {
       this.myStatementList = value;
     }
-
     private int myStartPos;
-
     public int getStartPos() {
       return this.myStartPos;
     }
-
     private void setStartPos(int value) {
       this.myStartPos = value;
     }
-
     private int myEndPos;
-
     public int getEndPos() {
       return this.myEndPos;
     }
-
     private void setEndPos(int value) {
       this.myEndPos = value;
     }
   }
-
   @Override
   protected FullASTConverter withNewState(ASTConverter.State state) {
     return new FullASTConverter.FullASTConverterWithState(this, state);
   }
-
   private class FullASTConverterWithState extends FullASTConverter {
     private ASTConverter.State myState;
-
     private FullASTConverterWithState(FullASTConverter base, ASTConverter.State state) {
       super(base);
       myState = state;
     }
-
     @Override
     public ASTConverter.State getState() {
       return myState;
     }
   }
-
   private static SNode _quotation_createNode_f46ocm_a0b0d0ib(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
