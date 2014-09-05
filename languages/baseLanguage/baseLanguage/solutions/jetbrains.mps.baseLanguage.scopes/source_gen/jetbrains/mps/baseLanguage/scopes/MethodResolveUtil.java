@@ -19,8 +19,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeMap;
 import java.util.Set;
 import jetbrains.mps.typesystem.inference.SubtypingManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.newTypesystem.SubtypingUtil;
 import org.jetbrains.annotations.NotNull;
@@ -32,9 +31,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 public class MethodResolveUtil {
   public MethodResolveUtil() {
   }
+
   public static List<SNode> selectByParmCount(List<SNode> methods, List<SNode> actualArgs) {
     return selectByParmCountReportNoGoodMethodNode(methods, actualArgs).o1;
   }
+
   public static Pair<List<SNode>, Boolean> selectByParmCountReportNoGoodMethodNode(List<SNode> methods, List<SNode> actualArgs) {
     int minParmCountDiff = Integer.MAX_VALUE;
     int[] parmCountDiffs = new int[ListSequence.fromList(methods).count()];
@@ -73,6 +74,7 @@ public class MethodResolveUtil {
     }
     return new Pair<List<SNode>, Boolean>(result, good);
   }
+
   public static Pair<List<SNode>, Boolean> selectByVisibilityReportNoGoodMethodNode(List<SNode> methods, SNode methodCall) {
     List<SNode> goodMethods = new ArrayList<SNode>();
     List<SNode> badMethods = new ArrayList<SNode>();
@@ -116,9 +118,11 @@ public class MethodResolveUtil {
       return new Pair<List<SNode>, Boolean>(goodMethods, true);
     }
   }
+
   public static SNode chooseByParameterType(List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     return MethodResolveUtil.chooseByParameterTypeReportNoGoodMethodNode(null, candidates, actualArgs, typeByTypeVar).o1;
   }
+
   public static Pair<SNode, Boolean> chooseByParameterTypeReportNoGoodMethodNode(SNode current, List<SNode> candidates, List<SNode> actualArgs, Map<SNode, SNode> typeByTypeVar) {
     Map<SNode, SNode> nodesAndTypes = new HashMap<SNode, SNode>();
     int i = 1;
@@ -159,7 +163,8 @@ public class MethodResolveUtil {
     }
     return new Pair<SNode, Boolean>(ListSequence.fromList(candidates).first(), good);
   }
-  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, final Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
+
+  private static List<SNode> selectByParameterTypeNode(@Nullable SNode typeOfArg, int indexOfArg, List<SNode> candidates, Map<SNode, SNode> typeByTypeVar, boolean mostSpecific, boolean isWeak) {
     List<SNode> result = new ArrayList<SNode>();
     StructuralNodeMap<Set<SNode>> typesOfParamToMethods = new StructuralNodeMap<Set<SNode>>();
     SubtypingManager subtypingManager = TypeChecker.getInstance().getSubtypingManager();
@@ -176,20 +181,13 @@ public class MethodResolveUtil {
           continue;
         }
       }
-      List<SNode> methodTypeVariableDecls = SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true);
-      for (SNode tvd : ListSequence.fromList(methodTypeVariableDecls)) {
-        typeByTypeVar.put(tvd, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null));
-      }
+      Set<SNode> methodTypeVariableDecls = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(candidate, "typeVariableDeclaration", true));
       SNode typeOfParam = (varArg ? SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.VariableArityType"), "componentType", true) : SLinkOperations.getTarget(ListSequence.fromList(params).getElement(indexOfArg), "type", true));
       if ((typeOfParam == null)) {
         continue;
       }
       typeOfParam = GenericTypesUtil.getTypeWithResolvedTypeVars(typeOfParam, typeByTypeVar);
-      ListSequence.fromList(methodTypeVariableDecls).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode tvd) {
-          typeByTypeVar.remove(tvd);
-        }
-      });
+      typeOfParam = GenericTypesUtil.methodParamTypeWoutTypeVars(typeOfParam, methodTypeVariableDecls);
       if (subtypingManager.isSubtype(typeOfArg, typeOfParam, isWeak)) {
         Set<SNode> methods = typesOfParamToMethods.get(typeOfParam);
         if (methods == null) {
@@ -212,6 +210,7 @@ public class MethodResolveUtil {
     }
     return result;
   }
+
   public static Map<SNode, SNode> getTypesByTypeVars(@NotNull SNode classifier, Iterable<SNode> typeParameters) {
     Map<SNode, SNode> typeByTypeVar = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (IMapping<SNode, SNode> elem : MapSequence.fromMap(ClassifierScopeUtils.resolveClassifierTypeVars(classifier))) {

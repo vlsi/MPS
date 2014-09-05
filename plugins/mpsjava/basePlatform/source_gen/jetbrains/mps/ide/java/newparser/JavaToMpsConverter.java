@@ -54,7 +54,6 @@ import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
@@ -66,7 +65,6 @@ import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 
 public class JavaToMpsConverter {
   private static final Logger LOG = LogManager.getLogger(JavaToMpsConverter.class);
@@ -91,9 +89,12 @@ public class JavaToMpsConverter {
   private boolean wasDefaultPkg = false;
   private int myRootCount = 0;
 
+
   public JavaToMpsConverter(SModule module, SRepository repository) {
     this(module, repository, false, false);
   }
+
+
 
   public JavaToMpsConverter(SModule module, SRepository repository, boolean perRoot, boolean inPlace) {
     // currently perRoot==false and inPlace==true doesn't make it in-place 
@@ -105,11 +106,15 @@ public class JavaToMpsConverter {
     myModelAccess = repository.getModelAccess();
   }
 
+
+
   public JavaToMpsConverter(SModel model, SRepository repository) {
     myModel = model;
     myRepository = repository;
     myModelAccess = repository.getModelAccess();
   }
+
+
 
   public void convertToMps(final List<IFile> files, ProgressMonitor progress) throws JavaParseException, IOException {
 
@@ -199,6 +204,8 @@ public class JavaToMpsConverter {
     tryResolveRefs(myAttachedRoots, FeatureKind.CLASS, resolveProgress);
     progress.done();
   }
+
+
 
   public void tryResolveRefs(Iterable<SNode> nodes, FeatureKind level, ProgressMonitor progress) {
     progress.start("Resolving...", 10);
@@ -316,13 +323,19 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
+
+
   public List<IFile> getSuccessfulFiles() {
     return mySuccessfulFiles;
   }
 
+
+
   public List<SModel> getModels() {
     return myModels;
   }
+
+
 
   private void parseFile(IFile file) throws JavaParseException, IOException {
     String contents = IFileUtils.getTextContents(file);
@@ -373,6 +386,8 @@ public class JavaToMpsConverter {
 
   }
 
+
+
   private void runCommand(String name, final Runnable runnable) {
     if (SwingUtilities.isEventDispatchThread()) {
       myModelAccess.executeCommand(runnable);
@@ -393,7 +408,9 @@ public class JavaToMpsConverter {
     }
   }
 
+
   private Set<SReference> myVisitedRefs = SetSequence.fromSet(new HashSet<SReference>());
+
 
   private void resolveUpdatePass(String name, final Iterable<SNode> nodes, final _FunctionTypes._return_P1_E0<? extends Iterable<SReference>, ? super SNode> extractor, final ProgressMonitor progress) {
     final Map<SNodeReference, List<SReference>> resolveMap = MapSequence.fromMap(new HashMap<SNodeReference, List<SReference>>());
@@ -429,6 +446,8 @@ public class JavaToMpsConverter {
     progress.advance(1);
     progress.done();
   }
+
+
 
   private void codeTransformPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
     progress.start("Code transforms", Sequence.fromIterable(nodes).count() * 5 + 1);
@@ -567,6 +586,8 @@ public class JavaToMpsConverter {
     progress.done();
   }
 
+
+
   private void removeJavaImportsPass(final Iterable<SNode> nodes, final ProgressMonitor progress) {
     progress.start("Removing java imports", Sequence.fromIterable(nodes).count() + 1);
     final Map<SNode, Iterable<SNode>> toRemove = MapSequence.fromMap(new HashMap<SNode, Iterable<SNode>>());
@@ -612,6 +633,8 @@ public class JavaToMpsConverter {
 
   }
 
+
+
   private SNode transformUnqualifedEnum(SNode varRef) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
@@ -627,6 +650,18 @@ public class JavaToMpsConverter {
       return null;
     }
 
+    // now we can try to search 
+    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
+
+    String enumConstName = ((DynamicReference) ref).getResolveInfo();
+
+    for (SNode enclosingEnum : ListSequence.fromList(SNodeOperations.getAncestors(varRef, "jetbrains.mps.baseLanguage.structure.EnumClass", false))) {
+      SNode enumConstRef = makeEnumConstRef(enclosingEnum, enumConstName);
+      if (enumConstRef != null) {
+        return enumConstRef;
+      }
+    }
+
     SNode root = SNodeOperations.getContainingRoot(varRef);
     if (!(SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
       return null;
@@ -636,10 +671,6 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    // now we can try to search 
-    SNode gateway = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IYetUnresolved", null);
-
-    final String enumConstName = ((DynamicReference) ref).getResolveInfo();
     for (SNode singleNameImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticSingleName_5230012391903395274", new Object[]{}))) {
       if (!(enumConstName.equals(BehaviorReflection.invokeNonVirtual(String.class, singleNameImport, "jetbrains.mps.baseLanguage.structure.Tokens", "call_lastToken_1296023605440030462", new Object[]{})))) {
         continue;
@@ -656,24 +687,10 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         return null;
       }
-
-      // Q: maybe not findFirst, but rather fail if there are more than one... 
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-
-      if ((enumConst == null)) {
+      SNode result = makeEnumConstRef(SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
         return null;
       }
-
-      // success 
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClassCandidate, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
     }
 
     for (SNode onDemandImport : Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), javaImports, "jetbrains.mps.baseLanguage.structure.JavaImports", "call_staticOnDemand_5230012391903366883", new Object[]{}))) {
@@ -684,25 +701,33 @@ public class JavaToMpsConverter {
       if (!(SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         continue;
       }
-
-      SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return enumConstName.equals(SPropertyOperations.getString(it, "name"));
-        }
-      });
-      if ((enumConst == null)) {
-        continue;
+      SNode result = makeEnumConstRef(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), enumConstName);
+      if (result != null) {
+        return null;
       }
-
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
-      SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
-
-      return result;
     }
-
     return null;
   }
+
+  private SNode makeEnumConstRef(SNode enumClass, final String constName) {
+    // Q: maybe not findFirst, but rather fail if there are more than one... 
+    SNode enumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return constName.equals(SPropertyOperations.getString(it, "name"));
+      }
+    });
+    if ((enumConst == null)) {
+      return null;
+    }
+
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+    SLinkOperations.setTarget(result, "enumClass", SNodeOperations.cast(enumClass, "jetbrains.mps.baseLanguage.structure.EnumClass"), false);
+    SLinkOperations.setTarget(result, "enumConstantDeclaration", enumConst, false);
+
+    return result;
+  }
+
+
 
   private SNode transformUnqualifedEnumUnderSwitch(SNode switchCase, TypeChecker typeChecker) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
@@ -746,6 +771,8 @@ public class JavaToMpsConverter {
   }
 
 
+
+
   private SNode transformLocalCall(SNode localCall) {
     // FIXME share or re-use code with the corresponding NonTypesystemRule 
 
@@ -777,6 +804,8 @@ public class JavaToMpsConverter {
     return smc;
   }
 
+
+
   private SNode transformLocalNameRef(SNode varRef) {
     // it's either EnumConstReference or StaticFieldReference 
 
@@ -807,6 +836,8 @@ public class JavaToMpsConverter {
 
     return sfr;
   }
+
+
 
 
   private Iterable<SNode> getImportsToRemove(SNode root) {
@@ -868,6 +899,8 @@ public class JavaToMpsConverter {
     return unneeded;
   }
 
+
+
   private Iterable<SReference> getTopLevelRefs(SNode node) {
     final List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
@@ -897,6 +930,8 @@ public class JavaToMpsConverter {
     return refs;
   }
 
+
+
   private Iterable<SReference> getFieldAndMethodTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
     Iterable<SNode> members = (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier") ? SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true) : Sequence.<SNode>singleton(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")));
@@ -922,6 +957,8 @@ public class JavaToMpsConverter {
     return refs;
   }
 
+
+
   private Iterable<SReference> getVarTypeRefs(SNode node) {
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
 
@@ -935,6 +972,8 @@ public class JavaToMpsConverter {
     return refs;
   }
 
+
+
   private Iterable<SReference> getVariableRefs(SNode node) {
     return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -947,6 +986,8 @@ public class JavaToMpsConverter {
     });
   }
 
+
+
   private Iterable<SReference> getDotExpLeftParts(SNode node) {
     return ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.DotExpression", false, new String[]{})).translate(new ITranslator2<SNode, SReference>() {
       public Iterable<SReference> translate(SNode it) {
@@ -954,6 +995,8 @@ public class JavaToMpsConverter {
       }
     });
   }
+
+
 
   private void resolveRefs(Iterable<SReference> refs, Map<SNodeReference, List<SReference>> result) {
     for (SReference ref : refs) {
@@ -972,7 +1015,7 @@ public class JavaToMpsConverter {
       SNode source = ref.getSourceNode();
       SModelReference targetModel = target.getModel().getReference();
 
-      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId());
+      SReference staticRef = StaticReference.create(ref.getRole(), source, targetModel, target.getNodeId(), ((DynamicReference) ref).getResolveInfo());
 
       List<SReference> nodeRefs = MapSequence.fromMap(result).get(source.getReference());
       if (nodeRefs == null) {
@@ -982,6 +1025,8 @@ public class JavaToMpsConverter {
       ListSequence.fromList(nodeRefs).addElement((SReference) staticRef);
     }
   }
+
+
 
   private void updateReference(Map<SNodeReference, List<SReference>> refMap) {
     for (SNodeReference nodeRef : SetSequence.fromSet(MapSequence.fromMap(refMap).keySet())) {
@@ -1001,6 +1046,8 @@ public class JavaToMpsConverter {
     }
   }
 
+
+
   public static Iterable<SReference> deepReferences(SNode node) {
 
     List<SReference> refs = ListSequence.fromList(new ArrayList<SReference>());
@@ -1014,6 +1061,8 @@ public class JavaToMpsConverter {
     // generator for yield broken? 
   }
 
+
+
   private SModel getModel(String pkgFqName, IFile pkgDir) {
     for (SModel model : Sequence.fromIterable(myModule.getModels())) {
       // not handling stereotype on purpose: if there's my.pkg@java_stub, it shouldn't prevent us 
@@ -1024,13 +1073,13 @@ public class JavaToMpsConverter {
     }
     return createModel(pkgFqName, pkgDir);
   }
+
   private SModel createModel(String pkgFqName, IFile pkgDir) {
     SModel modelDescr;
     try {
 
       if (myCreateInplace) {
-        Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
-        ModelRoot modelRoot = where._0();
+        ModelRoot modelRoot = getRootContainingDir(pkgDir);
         if (modelRoot == null) {
           LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
           return null;
@@ -1040,6 +1089,7 @@ public class JavaToMpsConverter {
         MapSequence.fromMap(options).put(ModelFactory.OPTION_MODELNAME, pkgFqName);
         modelDescr = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID).create(ds, options);
         ((SModelBase) modelDescr).setModelRoot(modelRoot);
+        ((SModelBase) modelDescr).setModule(myModule);
 
       } else {
         ModelRoot modelRoot = getFirstRootToCreateModel(pkgFqName);
@@ -1067,6 +1117,7 @@ public class JavaToMpsConverter {
 
     return modelDescr;
   }
+
   @Nullable
   private ModelRoot getFirstRootToCreateModel(String packageName) {
     for (ModelRoot root : Sequence.fromIterable(myModule.getModelRoots())) {
@@ -1079,7 +1130,8 @@ public class JavaToMpsConverter {
     }
     return null;
   }
-  private Tuples._2<ModelRoot, String> getRootContainingDir(IFile dir) {
+
+  private ModelRoot getRootContainingDir(IFile dir) {
     // returns modelRoot and sourceRoot within 
     for (ModelRoot modelRoot : Sequence.fromIterable(myModule.getModelRoots())) {
       // or maybe more general: file based model root? 
@@ -1088,11 +1140,12 @@ public class JavaToMpsConverter {
       }
       for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
         if (FileUtil.isSubPath(sourceRoot, dir.getPath())) {
-          return MultiTuple.<ModelRoot,String>from(modelRoot, sourceRoot);
+          return modelRoot;
         }
       }
     }
     return null;
   }
+
 
 }

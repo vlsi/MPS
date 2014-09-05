@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="mps.jetbrains.mps.refactoring.runtime_auto" type="mps.solution.library">
+    <MPS_MODULE_XML>
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-core.jar!/modules/jetbrains.mps.refactoring.runtime/jetbrains.mps.refactoring.runtime.msd" />
+    </MPS_MODULE_XML>
+    <CLASSES>
+      <root url="jar://$PLUGINS_PATH$/mps-core/lib/mps-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
