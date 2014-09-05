@@ -20,14 +20,20 @@
     <file name="DependentTypeInstance_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_BehaviorDescriptor" />
     </file>
+    <file name="RequiredModifier_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.RequiredModifier_BehaviorDescriptor" />
+    </file>
     <file name="MethodDescriptor_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptor_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,34,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,36,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ClassLikeMethod_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeMethod_BehaviorDescriptor" />
+    </file>
+    <file name="MethodDescriptorModifier_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptorModifier_BehaviorDescriptor" />
     </file>
     <file name="DependentTypeDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_BehaviorDescriptor" />

@@ -7,6 +7,7 @@
     <model ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" name="jetbrains.mps.baseLanguage.closures.structure" />
     <model ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" name="jetbrains.mps.baseLanguage.structure" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125787135" name="AbstractConceptDeclaration" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169125989551" name="InterfaceConceptDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="AttributeInfo_AttributedConcept" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="INamedConcept" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044" name="AttributeInfo_IsMultiple" />
@@ -96,6 +97,12 @@
       <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
       <property role="asn4.1169194658468.1169194664001" value="MethodDescriptor" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288298" id="3402736933911577960" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="modifier" />
+        <property role="4jta.1071489288298.1071599893252" value="0..n" />
+        <reference role="4jta.1071489288298.1071599976176" target="3402736933911578110" resolveInfo="MethodDescriptorModifier" />
+      </node>
       <node concept="4jta.1071489288298" id="3751132065236767080" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
         <property role="4jta.1071489288298.1071599776563" value="param" />
@@ -141,6 +148,19 @@
         <node concept="4jta.6054523464627964745" id="3571587574961717959" role="4jta.2992811758677295509.7588428831947959310" info="ng">
           <reference role="4jta.6054523464627964745.6054523464627965081" target="tpee.1068390468198" resolveInfo="ClassConcept" />
         </node>
+      </node>
+    </node>
+    <node concept="4jta.1169125989551" id="3402736933911578110" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1169194658468.1169194664001" value="MethodDescriptorModifier" />
+    </node>
+    <node concept="4jta.1071489090640" id="3402736933911578134" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1169194658468.1169194664001" value="RequiredModifier" />
+      <property role="4jta.1169125787135.5092175715804935370" value="required" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="3402736933911578135" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="3402736933911578110" resolveInfo="MethodDescriptorModifier" />
       </node>
     </node>
   </contents>

@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7d0qzddiqiz911hxpvm7oodfpyrjyc1">
+<dependencies version="2" modelHash="-erpptu7rm7jksee33ag43650i035aur">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="7d0qzddiqiz911hxpvm7oodfpyrjyc1" dependsOnNodes="true">
+  <common hash="-erpptu7rm7jksee33ag43650i035aur" dependsOnNodes="true">
+    <dep root="3402736933911578110" />
+    <dep root="3402736933911578134" />
     <dep root="3571587574961713354" />
     <dep root="3751132065236767060" />
     <dep root="3751132065236767068" />
@@ -29,5 +31,7 @@
   <source id="3751132065236767079" name="MethodDescriptor" />
   <source id="3751132065236767083" name="DependentTypeInstance" />
   <source id="3571587574961713354" name="ClassLikeAnnotation" />
+  <source id="3402736933911578110" name="MethodDescriptorModifier" />
+  <source id="3402736933911578134" name="RequiredModifier" />
 </dependencies>
 

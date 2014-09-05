@@ -125,6 +125,7 @@ public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
     AbstractCellListHandler handler = new ClassLikeDescriptor_Editor.methodListHandler_qnkj9j_b1a0(node, "method", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
     editorCell.setCellId("refNodeList_method");
+    editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
