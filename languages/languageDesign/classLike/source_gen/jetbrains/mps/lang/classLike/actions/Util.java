@@ -5,8 +5,8 @@ package jetbrains.mps.lang.classLike.actions;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -21,6 +21,7 @@ public class Util {
   public static SNode createConceptFunctionForDescriptor(SNode dsc) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", null);
     SPropertyOperations.set(result, "name", SPropertyOperations.getString(dsc, "name"));
+    SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
     fillFromDescriptor(result, dsc);
     return result;
   }

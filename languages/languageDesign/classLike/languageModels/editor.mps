@@ -37,7 +37,6 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1149850725784" name="CellModel_AttributedNodeCell" />
     <concept id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1176544042499" name="Node_TypeOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228" name="DotExpression" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404574412" name="BackgroundColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535439104" name="CellActionMap_ExecuteFunction" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1106270571710" name="CellLayout_Vertical" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1198489924438" name="CellModel_Block" />
@@ -184,9 +183,6 @@
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767068" resolveInfo="DependentTypeDeclaration" />
       <node concept="9wj7.1073389882823" id="3751132065236797328" role="9wj7.1071666914219.1078153129734" info="ng">
         <reference role="9wj7.1139848536355.1140103550593" target="oubp.3751132065236767069" />
-        <node concept="9wj7.1186404574412" id="3571587574961828435" role="9wj7.1219418625346.1219418656006" info="nn">
-          <property role="9wj7.1186403694788.1186403713874" value="yellow" />
-        </node>
       </node>
       <node concept="9wj7.1073389577006" id="3402736933911474075" role="9wj7.1080736578640.1080736633877" info="nn">
         <property role="9wj7.1073389577006.1073389577007" value="depType" />
