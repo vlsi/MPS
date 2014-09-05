@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.BatchWriteAction;
+import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
@@ -83,12 +83,12 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   }
 
   @Override
-  public void addBatchWriteActionListener(BatchWriteAction listener) {
+  public void addBatchWriteActionListener(BatchWriteActionListener listener) {
     myBatchWriteActionExecutor.addBatchCommandListener(listener);
   }
 
   @Override
-  public void removeBatchWriteActionListener(BatchWriteAction listener) {
+  public void removeBatchWriteActionListener(BatchWriteActionListener listener) {
     myBatchWriteActionExecutor.removeBatchCommandListener(listener);
   }
 }

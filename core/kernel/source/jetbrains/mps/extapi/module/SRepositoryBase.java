@@ -28,14 +28,14 @@ import org.jetbrains.mps.openapi.module.SRepositoryListener;
 public abstract class SRepositoryBase implements SRepository {
 
   private SRepositoryEventsDispatcher myEventsDispatcher;
-  private SRepositoryGroupEventsDispatcher myBatchEventsDispatcher;
+  private SRepositoryBatchEventsDispatcher myBatchEventsDispatcher;
 
   protected SRepositoryBase() {
   }
 
   protected void init() {
     myEventsDispatcher = new SRepositoryEventsDispatcher(this);
-    myBatchEventsDispatcher = new SRepositoryGroupEventsDispatcher(this);
+    myBatchEventsDispatcher = new SRepositoryBatchEventsDispatcher(this);
     myBatchEventsDispatcher.init();
     SRepositoryRegistry.getInstance().addRepository(this);
   }

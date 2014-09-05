@@ -30,7 +30,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 public class BatchWriteActionExecutor {
   private static final Logger LOG = LogManager.getLogger(BatchWriteActionExecutor.class);
 
-  private final List<BatchWriteAction> myListeners = new CopyOnWriteArrayList<BatchWriteAction>();
+  private final List<BatchWriteActionListener> myListeners = new CopyOnWriteArrayList<BatchWriteActionListener>();
 
   private volatile boolean myInBatchCommand = false;
 
@@ -58,7 +58,7 @@ public class BatchWriteActionExecutor {
   }
 
   private void onCommandStarted() {
-    for (BatchWriteAction listener : myListeners) {
+    for (BatchWriteActionListener listener : myListeners) {
       try {
         listener.batchStarted();
       } catch (Throwable t) {
@@ -68,7 +68,7 @@ public class BatchWriteActionExecutor {
   }
 
   private void onCommandFinished() {
-    for (BatchWriteAction listener : myListeners) {
+    for (BatchWriteActionListener listener : myListeners) {
       try {
         listener.batchFinished();
       } catch (Throwable t) {
@@ -77,12 +77,12 @@ public class BatchWriteActionExecutor {
     }
   }
 
-  public void addBatchCommandListener(BatchWriteAction listener) {
+  public void addBatchCommandListener(BatchWriteActionListener listener) {
     assert !myListeners.contains(listener);
     myListeners.add(listener);
   }
 
-  public void removeBatchCommandListener(BatchWriteAction listener) {
+  public void removeBatchCommandListener(BatchWriteActionListener listener) {
     assert myListeners.contains(listener);
     myListeners.remove(listener);
   }

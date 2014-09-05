@@ -16,7 +16,7 @@
 package jetbrains.mps.extapi.module;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.BatchWriteAction;
+import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -35,19 +35,19 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * and dispatching batch (group) events to listeners.
  * Created by Alex Pyshkin on 9/2/14.
  */
-public class SRepositoryGroupEventsDispatcher implements BatchWriteAction {
-  private static final Logger LOG = LogManager.getLogger(SRepositoryGroupEventsDispatcher.class);
+public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListener {
+  private static final Logger LOG = LogManager.getLogger(SRepositoryBatchEventsDispatcher.class);
 
-  private final GroupEventsProcessor myGroupEventsProcessor;
+  private final BatchEventsProcessor myBatchEventsProcessor;
 
   private final List<SRepositoryBatchListener> myListeners =
       new CopyOnWriteArrayList<SRepositoryBatchListener>();
 
   private final SRepository myRepository;
 
-  public SRepositoryGroupEventsDispatcher(@NotNull SRepository repository) {
+  public SRepositoryBatchEventsDispatcher(@NotNull SRepository repository) {
     myRepository = repository;
-    myGroupEventsProcessor = new GroupEventsProcessor(repository);
+    myBatchEventsProcessor = new BatchEventsProcessor(repository);
   }
 
   public void init() {
@@ -60,12 +60,12 @@ public class SRepositoryGroupEventsDispatcher implements BatchWriteAction {
 
   @Override
   public void batchStarted() {
-    myGroupEventsProcessor.startBatching();
+    myBatchEventsProcessor.startBatching();
   }
 
   @Override
   public void batchFinished() {
-    List<SRepositoryEvent> batchedEvents = myGroupEventsProcessor.finishBatching();
+    List<SRepositoryEvent> batchedEvents = myBatchEventsProcessor.finishBatching();
     fireModuleEvents(batchedEvents);
   }
 

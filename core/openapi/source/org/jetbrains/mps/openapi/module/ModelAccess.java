@@ -103,7 +103,7 @@ public interface ModelAccess {
 
   public void removeCommandListener(CommandListener listener);
 
-  public void addBatchWriteActionListener(BatchWriteAction listener);
+  public void addBatchWriteActionListener(BatchWriteActionListener listener);
 
-  public void removeBatchWriteActionListener(BatchWriteAction listener);
+  public void removeBatchWriteActionListener(BatchWriteActionListener listener);
 }
