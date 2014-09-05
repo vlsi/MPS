@@ -6393,7 +6393,7 @@
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170692126565">
-    <file name="WildcardsInClassDefinition_Test.java">
+    <file name="WildCardsInClassDefinition_Test.java">
       <node id="8187342170692126565" at="16,90,17,121" concept="2" />
       <node id="8187342170692126565" at="17,121,18,158" concept="2" />
       <node id="8187342170692126565" at="21,77,22,121" concept="2" />
@@ -6466,8 +6466,8 @@
       <scope id="8187342170692126565" at="30,0,35,0" />
       <scope id="8187342170692126565" at="35,0,40,0" />
       <scope id="8187342170692126565" at="40,0,45,0" />
-      <unit id="8187342170692126565" at="45,0,72,0" name="jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody" />
-      <unit id="8187342170692126565" at="13,0,73,0" name="jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test" />
+      <unit id="8187342170692126565" at="45,0,72,0" name="jetbrains.mps.baseLanguage.test.WildCardsInClassDefinition_Test$TestBody" />
+      <unit id="8187342170692126565" at="13,0,73,0" name="jetbrains.mps.baseLanguage.test.WildCardsInClassDefinition_Test" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)/8187342170694467176">
