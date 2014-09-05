@@ -11,6 +11,7 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import com.intellij.openapi.actionSystem.CommonDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,6 +24,12 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.lang.classLike.actions.Util;
+import jetbrains.mps.ide.projectPane.NewRootNodeAction;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.IOperationContext;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -53,6 +60,18 @@ public class NewClassLike_Action extends BaseAction {
     if (!(super.collectActionData(event, _params))) {
       return false;
     }
+    MapSequence.fromMap(_params).put("project", event.getData(CommonDataKeys.PROJECT));
+    if (MapSequence.fromMap(_params).get("project") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("mpsProject", event.getData(MPSCommonDataKeys.MPS_PROJECT));
+    if (MapSequence.fromMap(_params).get("mpsProject") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("context", event.getData(MPSCommonDataKeys.OPERATION_CONTEXT));
+    if (MapSequence.fromMap(_params).get("context") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
     if (MapSequence.fromMap(_params).get("model") == null) {
       return false;
@@ -74,6 +93,12 @@ public class NewClassLike_Action extends BaseAction {
           ListSequence.fromList(SLinkOperations.getTargets(newClass, "member", true)).addElement(method);
         }
       });
+      if (!(NewRootNodeAction.trySelectInCurrentPane(((Project) MapSequence.fromMap(_params).get("project")), newClass))) {
+        ProjectOperationContext context = new ProjectOperationContext(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
+        NavigationSupport.getInstance().selectInTree(context, newClass, false);
+      }
+      NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), newClass, true, false);
+
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "NewClassLike", t);
