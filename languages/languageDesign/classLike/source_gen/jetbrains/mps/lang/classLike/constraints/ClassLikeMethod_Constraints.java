@@ -8,11 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.smodel.SNodePointer;
 
-public class ConceptFunc_Constraints extends BaseConstraintsDescriptor {
-  public ConceptFunc_Constraints() {
-    super("jetbrains.mps.lang.classLike.structure.ConceptFunc");
+public class ClassLikeMethod_Constraints extends BaseConstraintsDescriptor {
+  public ClassLikeMethod_Constraints() {
+    super("jetbrains.mps.lang.classLike.structure.ClassLikeMethod");
   }
   @Override
   public boolean hasOwnCanBeChildMethod() {
@@ -29,7 +32,7 @@ public class ConceptFunc_Constraints extends BaseConstraintsDescriptor {
     return result;
   }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.classLike.structure.ConceptFuncContainter");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", false) != null;
   }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:686da497-9d31-49eb-a30e-63814e3d3c62(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.constraints)", "3751132065236921452");
 }

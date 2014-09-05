@@ -4,11 +4,11 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 
-public class ConceptFunc_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
-  public ConceptFunc_BehaviorDescriptor() {
+public class ClassLikeMethod_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
+  public ClassLikeMethod_BehaviorDescriptor() {
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.classLike.structure.ConceptFunc";
+    return "jetbrains.mps.lang.classLike.structure.ClassLikeMethod";
   }
 }

@@ -12,22 +12,23 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.openapi.editor.style.StyleRegistry;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 
-public class DepType_Editor extends DefaultNodeEditor {
+public class DependentTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createCollection_qgm3j5_a(editorContext, node);
+    return this.createCollection_gsbozp_a(editorContext, node);
   }
-  private EditorCell createCollection_qgm3j5_a(EditorContext editorContext, SNode node) {
+  private EditorCell createCollection_gsbozp_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
-    editorCell.setCellId("Collection_qgm3j5_a");
+    editorCell.setCellId("Collection_gsbozp_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createRefNode_qgm3j5_a0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_gsbozp_a0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createRefNode_qgm3j5_a0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_gsbozp_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getter");
     provider.setNoTargetText("<no getter>");
@@ -37,7 +38,7 @@ public class DepType_Editor extends DefaultNodeEditor {
       editorCell.setRole("getter");
     }
     Style style = new StyleImpl();
-    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    style.set(StyleAttributes.BACKGROUND_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.yellow));
     editorCell.getStyle().putAll(style);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

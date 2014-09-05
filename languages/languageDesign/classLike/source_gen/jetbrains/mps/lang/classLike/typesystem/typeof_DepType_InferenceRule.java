@@ -10,10 +10,8 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 
 public class typeof_DepType_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -23,7 +21,7 @@ public class typeof_DepType_InferenceRule extends AbstractInferenceRule_Runtime 
     {
       SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(depType, "getter", true), "parameter", true)).first();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "3751132065236799724", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "3751132065236799737", true), (SNode) _quotation_createNode_nexsxk_a0a0b(SLinkOperations.getTarget(SNodeOperations.getAncestor(depType, "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", false, false), "conceptDecl", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:e04b7053-8c89-4f87-b296-94779c625d9d(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.typesystem)", "3751132065236799737", true), (SNode) _quotation_createNode_nexsxk_a0a0b(), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(depType, "getter", true), "parameter", true)).getElement(1);
@@ -32,7 +30,7 @@ public class typeof_DepType_InferenceRule extends AbstractInferenceRule_Runtime 
     }
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.classLike.structure.DepType";
+    return "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration";
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
@@ -43,12 +41,12 @@ public class typeof_DepType_InferenceRule extends AbstractInferenceRule_Runtime 
   public boolean overrides() {
     return false;
   }
-  private static SNode _quotation_createNode_nexsxk_a0a0b(Object parameter_1) {
+  private static SNode _quotation_createNode_nexsxk_a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
-    return quotedNode_2;
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), facade.createNodeId("1068390468198")));
+    return quotedNode_1;
   }
   private static SNode _quotation_createNode_nexsxk_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();

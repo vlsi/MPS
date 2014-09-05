@@ -7,14 +7,14 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
-public class ObligatoryMethodDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
-  public ObligatoryMethodDescriptor_BehaviorDescriptor() {
+public class MethodDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
+  public MethodDescriptor_BehaviorDescriptor() {
   }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor";
+    return "jetbrains.mps.lang.classLike.structure.MethodDescriptor";
   }
 }

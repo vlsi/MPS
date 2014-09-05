@@ -7,21 +7,20 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.classLike.behavior.DepType_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 
-public class DepTypeInstance_Editor extends DefaultNodeEditor {
+public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-    return this.createModelAccess_tyup4n_a(editorContext, node);
+    return this.createModelAccess_1x58an_a(editorContext, node);
   }
-  private EditorCell createModelAccess_tyup4n_a(final EditorContext editorContext, final SNode node) {
+  private EditorCell createModelAccess_1x58an_a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return DepType_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(node, "decl", false), SNodeOperations.getAncestor(node, "jetbrains.mps.lang.classLike.structure.ConceptFuncContainter", false, false), node);
+        return BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(node), "virtual_getPresentation_1213877396640", new Object[]{});
       }
       public void setText(String text) {
       }
@@ -32,7 +31,7 @@ public class DepTypeInstance_Editor extends DefaultNodeEditor {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
-    editorCell.setCellId("ModelAccess_tyup4n_a");
+    editorCell.setCellId("ModelAccess_1x58an_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");
     return editorCell;

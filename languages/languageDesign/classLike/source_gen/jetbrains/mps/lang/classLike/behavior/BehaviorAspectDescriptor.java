@@ -12,24 +12,22 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 2:
-        return new ConceptFuncParameterReference_BehaviorDescriptor();
-      case 0:
-        return new ConceptFunc_BehaviorDescriptor();
+        return new ClassLikeMethod_BehaviorDescriptor();
       case 3:
-        return new DepType_BehaviorDescriptor();
+        return new DependentTypeDeclaration_BehaviorDescriptor();
+      case 1:
+        return new ClassLikeDescriptor_BehaviorDescriptor();
       case 6:
-        return new ObligatoryMethodsDescriptor_BehaviorDescriptor();
-      case 7:
         return new ParameterDescriptor_BehaviorDescriptor();
       case 5:
-        return new ObligatoryMethodDescriptor_BehaviorDescriptor();
+        return new MethodDescriptor_BehaviorDescriptor();
       case 4:
-        return new DepTypeInstance_BehaviorDescriptor();
-      case 1:
-        return new ConceptFuncParameterDeclaration_BehaviorDescriptor();
+        return new DependentTypeInstance_BehaviorDescriptor();
+      case 0:
+        return new ClassLikeAnnotation_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
 }

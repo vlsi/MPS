@@ -44,8 +44,11 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">90746344-04fd-4286-97d5-b46ae6a81709(jetbrains.mps.lang.migration)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </dependencies>
+  <usedLanguages>
+    <usedLanguage>c7d5b9dd-a05f-4be2-bc73-f2e16994cc67(jetbrains.mps.lang.classLike)</usedLanguage>
+  </usedLanguages>
   <usedDevKits>
     <usedDevKit>fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)</usedDevKit>
     <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
@@ -53,17 +56,18 @@
   <languageVersions>
     <language id="c72da2b9-7cce-4447-8389-f407dc1158b7" version="0" />
     <language id="760a0a8c-eabb-4521-8bfd-65db761a9ba3" version="0" />
-    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" />
-    <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" version="0" />
     <language id="af65afd8-f0dd-4942-87d9-63a55f2a9db1" version="0" />
-    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
+    <language id="d7a92d38-f7db-40d0-8431-763b0c3c9f20" version="0" />
+    <language id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" />
     <language id="3ecd7c84-cde3-45de-886c-135ecc69b742" version="0" />
-    <language id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" />
+    <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
     <language id="a247e09e-2435-45ba-b8d2-07e93feba96a" version="0" />
+    <language id="b401a680-8325-4110-8fd3-84331ff25bef" version="0" />
     <language id="b83431fe-5c8f-40bc-8a36-65e25f4dd253" version="0" />
     <language id="df345b11-b8c7-4213-ac66-48d2a9b75d88" version="0" />
     <language id="18bc6592-03a6-4e29-a83a-7ff23bde13ba" version="0" />
     <language id="ef703a71-a5a3-42af-b53c-ddced816ad5c" version="0" />
+    <language id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" version="0" />
     <language id="443f4c36-fcf5-4eb6-9500-8d06ed259e3e" version="0" />
     <language id="fe9d76d7-5809-45c9-ae28-a40915b4d6ff" version="0" />
     <language id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" />

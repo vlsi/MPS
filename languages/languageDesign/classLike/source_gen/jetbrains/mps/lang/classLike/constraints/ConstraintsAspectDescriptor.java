@@ -11,16 +11,12 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
   }
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 2:
-        return new ObligatoryMethodsDescriptor_Constraints();
-      case 1:
-        return new ConceptFuncParameterDeclaration_Constraints();
       case 0:
-        return new ConceptFunc_Constraints();
+        return new ClassLikeMethod_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeMethod"};
 }

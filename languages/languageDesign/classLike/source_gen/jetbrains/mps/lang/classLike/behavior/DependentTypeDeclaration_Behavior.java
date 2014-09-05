@@ -8,25 +8,26 @@ import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
-public class DepType_Behavior {
+public class DependentTypeDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-  public static String call_getType_3751132065236798250(SNode thisNode, SNode container, SNode node) {
+  public static SNode call_getType_3751132065236798250(SNode thisNode, SNode node) {
     try {
       String className = SNodeOperations.getModel(thisNode).getModelName() + ".Queries";
       SModule classModule = thisNode.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
-        if (m.getName().equals(SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name"))) {
+        if (m.getName().equals(SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", false, false), "name") + "" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name"))) {
           m.setAccessible(true);
-          return ((SNode) m.invoke(null, container, node)).getPresentation();
+          return ((SNode) m.invoke(null, node));
         }
       }
-      return "no method";
+      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
     } catch (Exception e) {
       e.printStackTrace();
-      return "exception";
+      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
     }
   }
 }

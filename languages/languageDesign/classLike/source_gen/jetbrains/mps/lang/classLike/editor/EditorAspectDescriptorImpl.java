@@ -15,20 +15,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   public Collection<ConceptEditor> getEditors(ConceptDescriptor descriptor) {
     switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0b, descriptor.getConceptFqName())) {
       case 0:
-        return Collections.<ConceptEditor>singletonList(new ConceptFunc_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassLikeAnnotation_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new ConceptFuncParameterDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassLikeDescriptor_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ConceptFuncParameterReference_Editor());
+        return Collections.<ConceptEditor>singletonList(new ClassLikeMethod_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new DepType_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentTypeDeclaration_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new DepTypeInstance_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentTypeInstance_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new ObligatoryMethodDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDescriptor_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ObligatoryMethodsDescriptor_Editor());
-      case 7:
         return Collections.<ConceptEditor>singletonList(new ParameterDescriptor_Editor());
       default:
     }
@@ -39,5 +37,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ConceptFunc", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterDeclaration", "jetbrains.mps.lang.classLike.structure.ConceptFuncParameterReference", "jetbrains.mps.lang.classLike.structure.DepType", "jetbrains.mps.lang.classLike.structure.DepTypeInstance", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodDescriptor", "jetbrains.mps.lang.classLike.structure.ObligatoryMethodsDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor"};
 }
