@@ -12,7 +12,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root>
     <file name="ConstraintsAspectDescriptor.java">
-      <unit at="9,0,27,0" name="jetbrains.mps.lang.classLike.constraints.ConstraintsAspectDescriptor" />
+      <unit at="9,0,25,0" name="jetbrains.mps.lang.classLike.constraints.ConstraintsAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:686da497-9d31-49eb-a30e-63814e3d3c62(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.constraints)/3402736933911578333">
@@ -56,52 +56,6 @@
         <var name="parentNode" id="3402736933911578333" />
       </scope>
       <unit id="3402736933911578333" at="15,0,38,0" name="jetbrains.mps.lang.classLike.constraints.RequiredModifier_Constraints" />
-    </file>
-  </root>
-  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:686da497-9d31-49eb-a30e-63814e3d3c62(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.constraints)/3402736933911741491">
-    <file name="MethodDescriptor_Constraints.java">
-      <node id="3402736933911741491" at="17,41,18,69" concept="9" />
-      <node id="3402736933911741491" at="21,44,22,16" concept="5" />
-      <node id="3402736933911741491" at="25,188,26,96" concept="4" />
-      <node id="3402736933911741491" at="26,96,27,0" concept="6" />
-      <node id="3402736933911741491" at="28,51,29,68" concept="1" />
-      <node id="3402736933911741491" at="30,5,31,0" concept="6" />
-      <node id="3402736933911741491" at="31,0,32,18" concept="5" />
-      <node id="3402736933911746505" at="35,112,36,183" concept="5" />
-      <node id="3402736933911764751" at="37,5,38,16" concept="5" />
-      <node id="3402736933911741491" at="40,0,41,0" concept="7" trace="canBeParentBreakingPoint" />
-      <node id="3402736933911741491" at="17,0,20,0" concept="0" trace="MethodDescriptor_Constraints#()V" />
-      <node id="3402736933911741491" at="27,0,30,5" concept="2" />
-      <node id="3402736933911742158" at="34,148,37,5" concept="2" />
-      <node id="3402736933911741491" at="20,0,24,0" concept="3" trace="hasOwnCanBeParentMethod#()Z" />
-      <node id="3402736933911741491" at="34,0,40,0" concept="8" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-      <node id="3402736933911741491" at="24,0,34,0" concept="3" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-      <scope id="3402736933911741491" at="17,41,18,69" />
-      <scope id="3402736933911741491" at="21,44,22,16" />
-      <scope id="3402736933911741491" at="28,51,29,68" />
-      <scope id="3402736933911742159" at="35,112,36,183" />
-      <scope id="3402736933911741491" at="17,0,20,0" />
-      <scope id="3402736933911741491" at="20,0,24,0" />
-      <scope id="3402736933911741493" at="34,148,38,16" />
-      <scope id="3402736933911741491" at="34,0,40,0">
-        <var name="childConcept" id="3402736933911741491" />
-        <var name="childNode" id="3402736933911741491" />
-        <var name="link" id="3402736933911741491" />
-        <var name="node" id="3402736933911741491" />
-        <var name="operationContext" id="3402736933911741491" />
-      </scope>
-      <scope id="3402736933911741491" at="25,188,32,18">
-        <var name="result" id="3402736933911741491" />
-      </scope>
-      <scope id="3402736933911741491" at="24,0,34,0">
-        <var name="checkingNodeContext" id="3402736933911741491" />
-        <var name="childConcept" id="3402736933911741491" />
-        <var name="childNode" id="3402736933911741491" />
-        <var name="link" id="3402736933911741491" />
-        <var name="node" id="3402736933911741491" />
-        <var name="operationContext" id="3402736933911741491" />
-      </scope>
-      <unit id="3402736933911741491" at="16,0,42,0" name="jetbrains.mps.lang.classLike.constraints.MethodDescriptor_Constraints" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:686da497-9d31-49eb-a30e-63814e3d3c62(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.constraints)/3751132065236921451">

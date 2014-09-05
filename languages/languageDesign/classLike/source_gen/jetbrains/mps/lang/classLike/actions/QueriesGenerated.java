@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.classLike.behavior.ClassLikeMethod_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
@@ -40,14 +39,11 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", null);
-                SPropertyOperations.set(result, "name", (item));
-                ClassLikeMethod_Behavior.call_fillFromInfo_3751132065236798394(result, Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).findFirst(new IWhereFilter<SNode>() {
+                return Util.createConceptFunctionForDescriptor(Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).findFirst(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
-                    return eq_x583g4_a0a0a0a0a1a2a0a0a0a0a0a1a2a0a1a0(SPropertyOperations.getString(it, "name"), (item));
+                    return eq_x583g4_a0a0a0a0a0a0a0a0a0a0a0a1a2a0a1a0(SPropertyOperations.getString(it, "name"), (item));
                   }
                 }));
-                return result;
               }
               public String getDescriptionText(String pattern) {
                 return "concept function";
@@ -59,7 +55,7 @@ public class QueriesGenerated {
     }
     return result;
   }
-  private static boolean eq_x583g4_a0a0a0a0a1a2a0a0a0a0a0a1a2a0a1a0(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0a0a0a0a0a1a2a0a1a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
