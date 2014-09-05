@@ -8,7 +8,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.log4j.Level;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -27,7 +36,7 @@ public class NewClassLike_Action extends BaseAction {
   }
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      this.enable(event.getPresentation());
+      event.getPresentation().setText(SPropertyOperations.getString(NewClassLike_Action.this.descr, "name") + " class");
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action doUpdate method failed. Action:" + "NewClassLike", t);
@@ -35,8 +44,21 @@ public class NewClassLike_Action extends BaseAction {
       this.disable(event.getPresentation());
     }
   }
+  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
+    if (!(super.collectActionData(event, _params))) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("model", event.getData(MPSCommonDataKeys.MODEL));
+    if (MapSequence.fromMap(_params).get("model") == null) {
+      return false;
+    }
+    return true;
+  }
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
+      SNode newClass = SModelOperations.createNewRootNode(((SModel) ((SModel) MapSequence.fromMap(_params).get("model"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+      AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", null));
+      SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", NewClassLike_Action.this.descr, false);
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
         LOG.error("User's action execute method failed. Action:" + "NewClassLike", t);
