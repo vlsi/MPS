@@ -2544,6 +2544,72 @@
       <unit id="3313213291230693523" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToCast5_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3336561591620611315">
+    <file name="CrossParensRemoval1_Test.java">
+      <node id="3336561591620611315" at="15,59,16,107" concept="2" />
+      <node id="3336561591620611315" at="16,107,17,100" concept="2" />
+      <node id="3336561591620611315" at="24,51,25,63" concept="2" />
+      <node id="3336561591620744797" at="25,63,26,77" concept="2" />
+      <node id="3336561591620611315" at="12,0,14,0" concept="1" trace="CrossParensRemoval1_Test#()V" />
+      <node id="3336561591620611315" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3336561591620611315" at="14,0,19,0" concept="5" trace="test_CrossParensRemoval1#()V" />
+      <node id="3336561591620611315" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3336561591620611315" at="12,37,12,37" />
+      <scope id="3336561591620611315" at="21,23,21,23" />
+      <scope id="3336561591620611315" at="12,0,14,0" />
+      <scope id="3336561591620611315" at="15,59,17,100" />
+      <scope id="3336561591620611315" at="21,0,23,0" />
+      <scope id="3336561591620611315" at="24,51,26,77" />
+      <scope id="3336561591620611315" at="14,0,19,0" />
+      <scope id="3336561591620611315" at="23,0,28,0" />
+      <unit id="3336561591620611315" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensRemoval1_Test$TestBody" />
+      <unit id="3336561591620611315" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3336561591620744806">
+    <file name="CrossParensRemoval2_Test.java">
+      <node id="3336561591620744806" at="15,59,16,107" concept="2" />
+      <node id="3336561591620744806" at="16,107,17,100" concept="2" />
+      <node id="3336561591620744806" at="24,51,25,63" concept="2" />
+      <node id="3336561591620744847" at="25,63,26,77" concept="2" />
+      <node id="3336561591620744806" at="12,0,14,0" concept="1" trace="CrossParensRemoval2_Test#()V" />
+      <node id="3336561591620744806" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3336561591620744806" at="14,0,19,0" concept="5" trace="test_CrossParensRemoval2#()V" />
+      <node id="3336561591620744806" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3336561591620744806" at="12,37,12,37" />
+      <scope id="3336561591620744806" at="21,23,21,23" />
+      <scope id="3336561591620744806" at="12,0,14,0" />
+      <scope id="3336561591620744806" at="15,59,17,100" />
+      <scope id="3336561591620744806" at="21,0,23,0" />
+      <scope id="3336561591620744806" at="24,51,26,77" />
+      <scope id="3336561591620744806" at="14,0,19,0" />
+      <scope id="3336561591620744806" at="23,0,28,0" />
+      <unit id="3336561591620744806" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensRemoval2_Test$TestBody" />
+      <unit id="3336561591620744806" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3336561591620755372">
+    <file name="CrossParensRemoval3_Test.java">
+      <node id="3336561591620755372" at="15,59,16,107" concept="2" />
+      <node id="3336561591620755372" at="16,107,17,100" concept="2" />
+      <node id="3336561591620755372" at="24,51,25,63" concept="2" />
+      <node id="3336561591620755412" at="25,63,26,77" concept="2" />
+      <node id="3336561591620755372" at="12,0,14,0" concept="1" trace="CrossParensRemoval3_Test#()V" />
+      <node id="3336561591620755372" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="3336561591620755372" at="14,0,19,0" concept="5" trace="test_CrossParensRemoval3#()V" />
+      <node id="3336561591620755372" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3336561591620755372" at="12,37,12,37" />
+      <scope id="3336561591620755372" at="21,23,21,23" />
+      <scope id="3336561591620755372" at="12,0,14,0" />
+      <scope id="3336561591620755372" at="15,59,17,100" />
+      <scope id="3336561591620755372" at="21,0,23,0" />
+      <scope id="3336561591620755372" at="24,51,26,77" />
+      <scope id="3336561591620755372" at="14,0,19,0" />
+      <scope id="3336561591620755372" at="23,0,28,0" />
+      <unit id="3336561591620755372" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensRemoval3_Test$TestBody" />
+      <unit id="3336561591620755372" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval3_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/341917192548518608">
     <file name="AddLRParens_Test.java">
       <node id="341917192548518608" at="15,51,16,107" concept="2" />
@@ -7959,25 +8025,25 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586875820116">
-    <file name="CrossParens2_Test.java">
-      <node id="7437995586875820116" at="15,52,16,107" concept="2" />
-      <node id="7437995586875820116" at="16,107,17,93" concept="2" />
+    <file name="CrossParensRemoval5_Test.java">
+      <node id="7437995586875820116" at="15,59,16,107" concept="2" />
+      <node id="7437995586875820116" at="16,107,17,100" concept="2" />
       <node id="7437995586875820116" at="24,51,25,63" concept="2" />
       <node id="7437995586875831991" at="25,63,26,77" concept="2" />
-      <node id="7437995586875820116" at="12,0,14,0" concept="1" trace="CrossParens2_Test#()V" />
+      <node id="7437995586875820116" at="12,0,14,0" concept="1" trace="CrossParensRemoval5_Test#()V" />
       <node id="7437995586875820116" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="7437995586875820116" at="14,0,19,0" concept="5" trace="test_CrossParens2#()V" />
+      <node id="7437995586875820116" at="14,0,19,0" concept="5" trace="test_CrossParensRemoval5#()V" />
       <node id="7437995586875820116" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="7437995586875820116" at="12,30,12,30" />
+      <scope id="7437995586875820116" at="12,37,12,37" />
       <scope id="7437995586875820116" at="21,23,21,23" />
       <scope id="7437995586875820116" at="12,0,14,0" />
-      <scope id="7437995586875820116" at="15,52,17,93" />
+      <scope id="7437995586875820116" at="15,59,17,100" />
       <scope id="7437995586875820116" at="21,0,23,0" />
       <scope id="7437995586875820116" at="24,51,26,77" />
       <scope id="7437995586875820116" at="14,0,19,0" />
       <scope id="7437995586875820116" at="23,0,28,0" />
-      <unit id="7437995586875820116" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParens2_Test$TestBody" />
-      <unit id="7437995586875820116" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParens2_Test" />
+      <unit id="7437995586875820116" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensRemoval5_Test$TestBody" />
+      <unit id="7437995586875820116" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval5_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586875832685">
@@ -8091,25 +8157,25 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586875934190">
-    <file name="CrossParens8_Test.java">
-      <node id="7437995586875934190" at="15,52,16,107" concept="2" />
-      <node id="7437995586875934190" at="16,107,17,93" concept="2" />
+    <file name="CrossParensRemoval4_Test.java">
+      <node id="7437995586875934190" at="15,59,16,107" concept="2" />
+      <node id="7437995586875934190" at="16,107,17,100" concept="2" />
       <node id="7437995586875934190" at="24,51,25,63" concept="2" />
       <node id="7437995586875949161" at="25,63,26,77" concept="2" />
-      <node id="7437995586875934190" at="12,0,14,0" concept="1" trace="CrossParens8_Test#()V" />
+      <node id="7437995586875934190" at="12,0,14,0" concept="1" trace="CrossParensRemoval4_Test#()V" />
       <node id="7437995586875934190" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="7437995586875934190" at="14,0,19,0" concept="5" trace="test_CrossParens8#()V" />
+      <node id="7437995586875934190" at="14,0,19,0" concept="5" trace="test_CrossParensRemoval4#()V" />
       <node id="7437995586875934190" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="7437995586875934190" at="12,30,12,30" />
+      <scope id="7437995586875934190" at="12,37,12,37" />
       <scope id="7437995586875934190" at="21,23,21,23" />
       <scope id="7437995586875934190" at="12,0,14,0" />
-      <scope id="7437995586875934190" at="15,52,17,93" />
+      <scope id="7437995586875934190" at="15,59,17,100" />
       <scope id="7437995586875934190" at="21,0,23,0" />
       <scope id="7437995586875934190" at="24,51,26,77" />
       <scope id="7437995586875934190" at="14,0,19,0" />
       <scope id="7437995586875934190" at="23,0,28,0" />
-      <unit id="7437995586875934190" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParens8_Test$TestBody" />
-      <unit id="7437995586875934190" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParens8_Test" />
+      <unit id="7437995586875934190" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensRemoval4_Test$TestBody" />
+      <unit id="7437995586875934190" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensRemoval4_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586875957879">
@@ -8135,47 +8201,47 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586875976702">
-    <file name="CrossParensCornerCase1_Test.java">
-      <node id="7437995586875976702" at="15,62,16,107" concept="2" />
-      <node id="7437995586875976702" at="16,107,17,103" concept="2" />
+    <file name="CrossParens2_Test.java">
+      <node id="7437995586875976702" at="15,52,16,107" concept="2" />
+      <node id="7437995586875976702" at="16,107,17,93" concept="2" />
       <node id="7437995586875976702" at="24,51,25,63" concept="2" />
       <node id="7437995586875976742" at="25,63,26,27" concept="2" />
-      <node id="7437995586875976702" at="12,0,14,0" concept="1" trace="CrossParensCornerCase1_Test#()V" />
+      <node id="7437995586875976702" at="12,0,14,0" concept="1" trace="CrossParens2_Test#()V" />
       <node id="7437995586875976702" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="7437995586875976702" at="14,0,19,0" concept="5" trace="test_CrossParensCornerCase1#()V" />
+      <node id="7437995586875976702" at="14,0,19,0" concept="5" trace="test_CrossParens2#()V" />
       <node id="7437995586875976702" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="7437995586875976702" at="12,40,12,40" />
+      <scope id="7437995586875976702" at="12,30,12,30" />
       <scope id="7437995586875976702" at="21,23,21,23" />
       <scope id="7437995586875976702" at="12,0,14,0" />
-      <scope id="7437995586875976702" at="15,62,17,103" />
+      <scope id="7437995586875976702" at="15,52,17,93" />
       <scope id="7437995586875976702" at="21,0,23,0" />
       <scope id="7437995586875976702" at="24,51,26,27" />
       <scope id="7437995586875976702" at="14,0,19,0" />
       <scope id="7437995586875976702" at="23,0,28,0" />
-      <unit id="7437995586875976702" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensCornerCase1_Test$TestBody" />
-      <unit id="7437995586875976702" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensCornerCase1_Test" />
+      <unit id="7437995586875976702" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParens2_Test$TestBody" />
+      <unit id="7437995586875976702" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParens2_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7437995586876001533">
-    <file name="CrossParensCornerCase2_Test.java">
-      <node id="7437995586876001533" at="15,62,16,107" concept="2" />
-      <node id="7437995586876001533" at="16,107,17,103" concept="2" />
+    <file name="CrossParens8_Test.java">
+      <node id="7437995586876001533" at="15,52,16,107" concept="2" />
+      <node id="7437995586876001533" at="16,107,17,93" concept="2" />
       <node id="7437995586876001533" at="24,51,25,63" concept="2" />
       <node id="7437995586876001574" at="25,63,26,27" concept="2" />
-      <node id="7437995586876001533" at="12,0,14,0" concept="1" trace="CrossParensCornerCase2_Test#()V" />
+      <node id="7437995586876001533" at="12,0,14,0" concept="1" trace="CrossParens8_Test#()V" />
       <node id="7437995586876001533" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="7437995586876001533" at="14,0,19,0" concept="5" trace="test_CrossParensCornerCase2#()V" />
+      <node id="7437995586876001533" at="14,0,19,0" concept="5" trace="test_CrossParens8#()V" />
       <node id="7437995586876001533" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="7437995586876001533" at="12,40,12,40" />
+      <scope id="7437995586876001533" at="12,30,12,30" />
       <scope id="7437995586876001533" at="21,23,21,23" />
       <scope id="7437995586876001533" at="12,0,14,0" />
-      <scope id="7437995586876001533" at="15,62,17,103" />
+      <scope id="7437995586876001533" at="15,52,17,93" />
       <scope id="7437995586876001533" at="21,0,23,0" />
       <scope id="7437995586876001533" at="24,51,26,27" />
       <scope id="7437995586876001533" at="14,0,19,0" />
       <scope id="7437995586876001533" at="23,0,28,0" />
-      <unit id="7437995586876001533" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParensCornerCase2_Test$TestBody" />
-      <unit id="7437995586876001533" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParensCornerCase2_Test" />
+      <unit id="7437995586876001533" at="19,0,29,0" name="jetbrains.mps.editorTest.CrossParens8_Test$TestBody" />
+      <unit id="7437995586876001533" at="10,0,30,0" name="jetbrains.mps.editorTest.CrossParens8_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7462077311455328941">

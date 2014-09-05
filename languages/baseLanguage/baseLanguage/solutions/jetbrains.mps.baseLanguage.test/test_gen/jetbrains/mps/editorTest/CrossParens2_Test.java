@@ -22,8 +22,8 @@ public class CrossParens2_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7437995586875820117", "7437995586875820136");
-      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
+      initEditor("7437995586875976703", "7437995586875976722");
+      this.typeString(")");
     }
   }
 }

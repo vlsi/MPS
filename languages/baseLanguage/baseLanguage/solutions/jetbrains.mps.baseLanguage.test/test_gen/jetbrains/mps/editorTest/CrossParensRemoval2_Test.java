@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class CrossParensCornerCase2_Test extends BaseTransformationTest {
-  public CrossParensCornerCase2_Test() {
+public class CrossParensRemoval2_Test extends BaseTransformationTest {
+  public CrossParensRemoval2_Test() {
   }
   @Test
-  public void test_CrossParensCornerCase2() throws Throwable {
+  public void test_CrossParensRemoval2() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.CrossParensCornerCase2_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.CrossParensRemoval2_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class CrossParensCornerCase2_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("7437995586876001534", "7437995586876001553");
-      this.typeString(")");
+      initEditor("3336561591620744807", "3336561591620744827");
+      this.invokeAction("jetbrains.mps.ide.editor.actions.Backspace_Action");
     }
   }
 }

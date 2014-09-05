@@ -28991,7 +28991,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7437995586875820116" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
-    <property name="name" nameId="tpck.1169194664001" value="CrossParens2" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParensRemoval5" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7437995586875820117" nodeInfo="nn">
       <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="7437995586875820118" nodeInfo="nn">
         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="7437995586875820119" nodeInfo="nn">
@@ -29653,7 +29653,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7437995586875934190" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
-    <property name="name" nameId="tpck.1169194664001" value="CrossParens8" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParensRemoval4" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7437995586875934191" nodeInfo="nn">
       <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="7437995586875934192" nodeInfo="nn">
         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="7437995586875934193" nodeInfo="nn">
@@ -29877,7 +29877,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7437995586875976702" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
-    <property name="name" nameId="tpck.1169194664001" value="CrossParensCornerCase1" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParens2" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7437995586875976703" nodeInfo="nn">
       <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="7437995586875976704" nodeInfo="nn">
         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="7437995586875976705" nodeInfo="nn">
@@ -29989,7 +29989,7 @@
   </root>
   <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="7437995586876001533" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
-    <property name="name" nameId="tpck.1169194664001" value="CrossParensCornerCase2" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParens8" />
     <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7437995586876001534" nodeInfo="nn">
       <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="7437995586876001535" nodeInfo="nn">
         <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="7437995586876001536" nodeInfo="nn">
@@ -30098,6 +30098,342 @@
     <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="7437995586876001573" nodeInfo="sn">
       <node role="statement" roleId="tpee.1068581517665" type="tp5g.TypeKeyStatement" typeId="tp5g.1227182079811" id="7437995586876001574" nodeInfo="nn">
         <property name="keys" nameId="tp5g.1227184461946" value=")" />
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3336561591620611315" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParensRemoval1" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620611316" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620611317" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620611318" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611319" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611320" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611321" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611322" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611323" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611324" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620611325" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620611326" nodeInfo="nn">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611327" nodeInfo="nn">
+                <property name="value" nameId="tpee.1068580320021" value="7" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620611328" nodeInfo="nn">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611329" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620611330" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611331" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611332" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="4" />
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620637745" nodeInfo="ng">
+                        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+                        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+                        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+                        <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+                      </node>
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611333" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="5" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.IncompleteLeftParen" typeId="tpee.7251340091268481742" id="3336561591620611335" nodeInfo="ng" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620611336" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620611337" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620611338" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611339" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611340" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611341" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611342" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611343" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611344" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620638989" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620611346" nodeInfo="nn">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611347" nodeInfo="nn">
+                <property name="value" nameId="tpee.1068580320021" value="7" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620638986" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620611352" nodeInfo="nn">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620611349" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611350" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="3" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611353" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="4" />
+                      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620640743" nodeInfo="ng">
+                        <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+                        <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                        <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+                        <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+                        <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620611354" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="5" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3336561591620611356" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="3336561591620744797" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="3336561591620744803" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8896169282214002721" resolveInfo="Backspace" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3336561591620744806" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParensRemoval2" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620744807" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620744808" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620744809" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744810" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744811" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744812" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744813" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744814" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744815" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620747476" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620744817" nodeInfo="nn">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744818" nodeInfo="nn">
+                <property name="value" nameId="tpee.1068580320021" value="7" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620747473" nodeInfo="nn">
+                <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744822" nodeInfo="nn">
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620744819" nodeInfo="nn">
+                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744820" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="3" />
+                    </node>
+                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744823" nodeInfo="nn">
+                      <property name="value" nameId="tpee.1068580320021" value="4" />
+                    </node>
+                  </node>
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744825" nodeInfo="nn">
+                    <property name="value" nameId="tpee.1068580320021" value="5" />
+                  </node>
+                </node>
+                <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620751157" nodeInfo="ng">
+                  <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                  <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                  <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+                  <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+                  <property name="cellId" nameId="tp5g.1229194968595" value="Constant_hf4h8_c0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620744827" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620744828" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620744829" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744830" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744831" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744832" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744833" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744834" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744835" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620752398" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620744840" nodeInfo="nn">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620744841" nodeInfo="nn">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744842" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744843" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="4" />
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620744837" nodeInfo="nn">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744838" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="7" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620744845" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620754136" nodeInfo="ng">
+                    <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+                    <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                    <property name="selectionStart" nameId="tp5g.6268941039745498163" value="1" />
+                    <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="1" />
+                    <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.IncompleteLeftParen" typeId="tpee.7251340091268481742" id="3336561591620752406" nodeInfo="ng" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3336561591620744846" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="3336561591620744847" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="3336561591620744848" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8896169282214002721" resolveInfo="Backspace" />
+        </node>
+      </node>
+    </node>
+  </root>
+  <root type="tp5g.EditorTestCase" typeId="tp5g.1229187653856" id="3336561591620755372" nodeInfo="ng">
+    <property name="virtualPackage" nameId="tpck.1193676396447" value="parenthesisUtil" />
+    <property name="name" nameId="tpck.1169194664001" value="CrossParensRemoval3" />
+    <node role="nodeToEdit" roleId="tp5g.1229187676388" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620755373" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620755374" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620755375" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755376" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755377" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755378" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755379" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755380" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755381" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620758034" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755386" nodeInfo="nn">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620755387" nodeInfo="nn">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755388" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620760450" nodeInfo="ng">
+                    <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+                    <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                    <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+                    <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+                    <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+                  </node>
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755389" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="4" />
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620755383" nodeInfo="nn">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755384" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="7" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755390" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                </node>
+              </node>
+            </node>
+            <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpee.IncompleteLeftParen" typeId="tpee.7251340091268481742" id="3336561591620758042" nodeInfo="ng" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" roleId="tp5g.1229187707859" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3336561591620755392" nodeInfo="nn">
+      <node role="expression" roleId="tpee.1068580123156" type="tpee.MinusExpression" typeId="tpee.1068581242869" id="3336561591620755393" nodeInfo="nn">
+        <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620755394" nodeInfo="nn">
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755395" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="9" />
+          </node>
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755396" nodeInfo="nn">
+            <property name="value" nameId="tpee.1068580320021" value="8" />
+          </node>
+        </node>
+        <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755397" nodeInfo="nn">
+          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755398" nodeInfo="nn">
+            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755399" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="1" />
+            </node>
+            <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755400" nodeInfo="nn">
+              <property name="value" nameId="tpee.1068580320021" value="2" />
+            </node>
+          </node>
+          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="3336561591620762921" nodeInfo="nn">
+            <node role="expression" roleId="tpee.1079359253376" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3336561591620755402" nodeInfo="nn">
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DivExpression" typeId="tpee.1095950406618" id="3336561591620755403" nodeInfo="nn">
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755404" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                  <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="3336561591620764657" nodeInfo="ng">
+                    <property name="caretPosition" nameId="tp5g.1229194968596" value="0" />
+                    <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+                    <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+                    <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+                    <property name="cellId" nameId="tp5g.1229194968595" value="property_value" />
+                  </node>
+                </node>
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755405" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="4" />
+                </node>
+              </node>
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.MulExpression" typeId="tpee.1092119917967" id="3336561591620755406" nodeInfo="nn">
+                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755407" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="7" />
+                </node>
+                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3336561591620755408" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="5" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" roleId="tp5g.1229187755283" type="tpee.StatementList" typeId="tpee.1068580123136" id="3336561591620755411" nodeInfo="sn">
+      <node role="statement" roleId="tpee.1068581517665" type="tp5g.InvokeActionStatement" typeId="tp5g.7011073693661765739" id="3336561591620755412" nodeInfo="nn">
+        <node role="actionReference" roleId="tp5g.1101347953350127927" type="tp5g.MPSActionReference" typeId="tp5g.4239542196496927193" id="3336561591620755413" nodeInfo="ng">
+          <link role="action" roleId="tp5g.4239542196496929559" targetNodeId="ekwn.8896169282214002721" resolveInfo="Backspace" />
+        </node>
       </node>
     </node>
   </root>
