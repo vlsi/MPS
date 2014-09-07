@@ -83,6 +83,11 @@
         <property role="4jta.1071489288298.1071599776563" value="preferredConcept" />
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
       </node>
+      <node concept="4jta.1071489288298" id="1825613483881472526" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
+        <property role="4jta.1071489288298.1071599776563" value="initializer" />
+        <reference role="4jta.1071489288298.1071599976176" target="tp2c.1199569711397" resolveInfo="ClosureLiteral" />
+      </node>
       <node concept="4jta.1071489288298" id="8264762413010642120" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
         <property role="4jta.1071489288298.1071599776563" value="member" />
