@@ -122,7 +122,7 @@
                 <node concept="vg0i.1197027756228" id="3402736933911588475" role="vg0i.1197027756228.1197027771414" info="nn">
                   <node concept="vg0i.1197027756228" id="3402736933911583192" role="vg0i.1197027756228.1197027771414" info="nn">
                     <node concept="4ia1.1140137987495" id="3402736933911581582" role="vg0i.1197027756228.1197027771414" info="nn">
-                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.3751132065236767079" resolveInfo="MethodDescriptor" />
+                      <reference role="4ia1.1140137987495.1140138128738" target="oubp.8264762413010642119" resolveInfo="ClassLikeMember" />
                       <node concept="qzws.1202989658459" id="3402736933911579018" role="4ia1.1140137987495.1140138123956" info="nn" />
                     </node>
                     <node concept="4ia1.1138056282393" id="3402736933911584532" role="vg0i.1197027756228.1197027833540" info="nn">
