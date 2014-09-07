@@ -535,6 +535,22 @@
               </node>
             </node>
           </node>
+          <node concept="vg0i.1068580123155" id="3384419124890816989" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="3384419124890839436" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1197027756228" id="3384419124890835026" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="1sqg.1205752633985" id="3384419124890835027" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="1sqg.1213999117680" id="3384419124890835028" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="1sqg.1205756064662.1205756909548" target="3402736933910479345" resolveInfo="descr" />
+                </node>
+              </node>
+              <node concept="4ia1.1179409122411" id="3384419124890842451" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="9nqt.3384419124890469048" resolveInfo="initializeInstance" />
+                <node concept="vg0i.1068498886296" id="3384419124890842640" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="3402736933910993998" resolveInfo="newClass" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="3402736933911962352" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1197027756228" id="3402736933912010083" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1197027756228" id="3402736933911964919" role="vg0i.1197027756228.1197027771414" info="nn">
