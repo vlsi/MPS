@@ -23,4 +23,17 @@ public class Util {
 
     return SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.MethodDescriptor");
   }
+
+  public static Iterable<SNode> getPropertyDescriptors(SNode node) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+
+    SNode descr = SLinkOperations.getTarget(AttributeOperations.getAttribute(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", false);
+    if (descr == null) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+
+    return SNodeOperations.ofConcept(SLinkOperations.getTargets(descr, "member", true), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor");
+  }
 }

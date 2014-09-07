@@ -12,13 +12,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.classLike.behavior.PropertyDescriptor_Behavior;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassLikeMethod_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -27,27 +25,54 @@ public class QueriesGenerated {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.classLike.structure.ClassLikeMethod");
       SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
-        Iterable<String> queryResult = new Computable<Iterable<String>>() {
-          public Iterable<String> compute() {
-            return Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).select(new ISelector<SNode, String>() {
-              public String select(SNode it) {
-                return SPropertyOperations.getString(it, "name");
-              }
-            });
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
+            return Util.getMethodDescriptors(_context.getParentNode());
           }
         }.compute();
         if (queryResult != null) {
-          for (final String item : queryResult) {
+          for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return MethodDescriptor_Behavior.call_create_3384419124890991826(Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).findFirst(new IWhereFilter<SNode>() {
-                  public boolean accept(SNode it) {
-                    return eq_x583g4_a0a0a0a0a0a0a0a0a0a0a0a1a2a0a1a0(SPropertyOperations.getString(it, "name"), (item));
-                  }
-                }));
+                return MethodDescriptor_Behavior.call_create_3384419124890991826((item));
+              }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name");
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
               }
               public String getDescriptionText(String pattern) {
-                return "concept function";
+                return "method";
+              }
+            });
+          }
+        }
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.classLike.structure.ClassLikeProperty");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+          public Iterable<SNode> compute() {
+            return Util.getPropertyDescriptors(_context.getParentNode());
+          }
+        }.compute();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                return PropertyDescriptor_Behavior.call_create_510971631002971342((item));
+              }
+              public String getMatchingText(String pattern) {
+                return SPropertyOperations.getString((item), "name");
+              }
+              public String getVisibleMatchingText(String pattern) {
+                return getMatchingText(pattern);
+              }
+              public String getDescriptionText(String pattern) {
+                return "method";
               }
             });
           }
@@ -55,8 +80,5 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0a0a0a0a0a1a2a0a1a0(Object a, Object b) {
-    return (a != null ? a.equals(b) : a == b);
   }
 }
