@@ -489,6 +489,22 @@
               </node>
             </node>
           </node>
+          <node concept="vg0i.1068580123155" id="3384419124890909909" role="vg0i.1068580123136.1068581517665" info="nn">
+            <node concept="vg0i.1197027756228" id="3384419124890914111" role="vg0i.1068580123155.1068580123156" info="nn">
+              <node concept="vg0i.1197027756228" id="3384419124890909903" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="1sqg.1205752633985" id="3384419124890909906" role="vg0i.1197027756228.1197027771414" info="nn" />
+                <node concept="79nr.1217252428768" id="3384419124890909908" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="1sqg.1205756064662.1205756909548" target="3402736933910987359" resolveInfo="model" />
+                </node>
+              </node>
+              <node concept="vg0i.1202948039474" id="3384419124890916625" role="vg0i.1197027756228.1197027833540" info="nn">
+                <reference role="vg0i.1204053956946.1068499141037" target="ec5l.~SModel%daddRootNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="addRootNode" />
+                <node concept="vg0i.1068498886296" id="3384419124890916753" role="vg0i.1204053956946.1068499141038" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="3402736933910993998" resolveInfo="newClass" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node concept="vg0i.1068580123155" id="3402736933911010699" role="vg0i.1068580123136.1068581517665" info="nn">
             <node concept="vg0i.1068498886294" id="3402736933911020105" role="vg0i.1068580123155.1068580123156" info="nn">
               <node concept="vg0i.1197027756228" id="3402736933911011197" role="vg0i.1215693861676.1068498886295" info="nn">
