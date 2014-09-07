@@ -136,7 +136,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="3751132065236767083" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
+      <property role="asn4.1133920641626.1193676396447" value="instances" />
       <property role="asn4.1169194658468.1169194664001" value="DependentTypeInstance" />
       <reference role="4jta.1071489090640.1071489389519" target="tpee.1068431790189" resolveInfo="Type" />
       <node concept="4jta.1071489288298" id="3751132065236767084" role="4jta.1169125787135.1071489727083" info="ig">

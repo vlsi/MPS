@@ -15,11 +15,11 @@ public class DependentTypeDeclaration_Behavior {
   }
   public static SNode call_getType_3751132065236798250(SNode thisNode, SNode node) {
     try {
-      String className = SNodeOperations.getModel(thisNode).getModelName() + ".Queries";
+      String className = SNodeOperations.getModel(thisNode).getModelName() + "." + ClassLikeDescriptor_Behavior.call_getGeneratedClassName_3384419124890285894(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", false, false));
       SModule classModule = thisNode.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
-        if (m.getName().equals(SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", false, false), "name") + "" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name"))) {
+        if (m.getName().equals(SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name"))) {
           m.setAccessible(true);
           return ((SNode) m.invoke(null, node));
         }

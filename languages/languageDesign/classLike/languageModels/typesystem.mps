@@ -5,8 +5,8 @@
     <lang id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" name="jetbrains.mps.lang.typesystem" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
-    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" />
+    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" name="jetbrains.mps.lang.classLike.structure" />
     <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)" name="jetbrains.mps.lang.classLike.behavior" />
@@ -88,8 +88,8 @@
     <use id="7a5dda62-9140-4668-ab76-d5ed1746f2b2" version="-1" index="swut" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" implicit="true" index="le35" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
@@ -146,7 +146,7 @@
     </node>
     <node concept="swut.1174643105530" id="2260648088428849750" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="typeof_DependentTypeInstance" />
-      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
+      <property role="asn4.1133920641626.1193676396447" value="instances" />
       <node concept="vg0i.1068580123136" id="2260648088428850102" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="2260648088428850246" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="2260648088428850249" role="swut.1174660718586.1174660783413" info="ng">

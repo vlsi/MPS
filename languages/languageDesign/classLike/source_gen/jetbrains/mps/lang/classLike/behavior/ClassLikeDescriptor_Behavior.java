@@ -5,11 +5,37 @@ package jetbrains.mps.lang.classLike.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import java.lang.reflect.Method;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassLikeDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPreferredConcept_1825613483881161085(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "preferredConcept", false) == null ? SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") : ((SNode) SLinkOperations.getTarget(thisNode, "preferredConcept", false)));
+  }
+  public static void call_initializeInstance_3384419124890469048(SNode thisNode, SNode classLike) {
+    if (SLinkOperations.getTarget(thisNode, "initializer", true) == null) {
+      return;
+    }
+    try {
+      String className = SNodeOperations.getModel(thisNode).getModelName() + "." + ClassLikeDescriptor_Behavior.call_getGeneratedClassName_3384419124890285894(thisNode);
+      SModule classModule = thisNode.getModel().getModule();
+      Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
+      for (Method m : methods) {
+        if (m.getName().equals("init")) {
+          m.setAccessible(true);
+          m.invoke(null, classLike);
+        }
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+  public static String call_getGeneratedClassName_3384419124890285894(SNode thisNode) {
+    return SPropertyOperations.getString(thisNode, "name") + "_Queries";
   }
 }

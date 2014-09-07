@@ -145,7 +145,7 @@
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="3751132065236797304" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
+      <property role="asn4.1133920641626.1193676396447" value="instances" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
       <node concept="9wj7.1074767920765" id="3751132065236797305" role="9wj7.1080736578640.1080736633877" info="ng">
         <node concept="9wj7.1176717996748" id="3751132065236797306" role="9wj7.1074767920765.1176718152741" info="ng">
