@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class QueriesGenerated {
@@ -39,7 +40,7 @@ public class QueriesGenerated {
           for (final String item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return Util.createConceptFunctionForDescriptor(Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).findFirst(new IWhereFilter<SNode>() {
+                return MethodDescriptor_Behavior.call_create_3384419124890991826(Sequence.fromIterable(Util.getMethodDescriptors(_context.getParentNode())).findFirst(new IWhereFilter<SNode>() {
                   public boolean accept(SNode it) {
                     return eq_x583g4_a0a0a0a0a0a0a0a0a0a0a0a1a2a0a1a0(SPropertyOperations.getString(it, "name"), (item));
                   }
