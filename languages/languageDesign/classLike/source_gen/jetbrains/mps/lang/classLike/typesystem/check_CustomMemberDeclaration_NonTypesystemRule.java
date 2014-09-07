@@ -7,8 +7,8 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -18,6 +18,9 @@ public class check_CustomMemberDeclaration_NonTypesystemRule extends AbstractNon
   public check_CustomMemberDeclaration_NonTypesystemRule() {
   }
   public void applyRule(final SNode customMemberDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if ((SLinkOperations.getTarget(customMemberDeclaration, "cncpt", false) == null)) {
+      return;
+    }
     if (!(SConceptOperations.isSubConceptOf(SLinkOperations.getTarget(customMemberDeclaration, "cncpt", false), "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
