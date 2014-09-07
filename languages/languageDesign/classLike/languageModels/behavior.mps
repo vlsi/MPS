@@ -7,8 +7,8 @@
     <lang id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" />
     <lang id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" />
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
@@ -201,8 +201,8 @@
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" version="0" index="5whl" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" index="le35" />
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="0" index="abtv" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
@@ -860,7 +860,7 @@
           </node>
         </node>
         <node concept="4ia1.1138055754698" id="8260330507835152441" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="4ia1.1138055754698.1138405853777" target="tpee.1178285077437" resolveInfo="ClassifierMember" />
+          <reference role="4ia1.1138055754698.1138405853777" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
         </node>
         <node concept="vg0i.1146644602865" id="8260330507835152442" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
@@ -1310,7 +1310,7 @@
           </node>
         </node>
         <node concept="4ia1.1138055754698" id="8260330507835182272" role="vg0i.1068580123132.1068580123133" info="in">
-          <reference role="4ia1.1138055754698.1138405853777" target="tpee.1178285077437" resolveInfo="ClassifierMember" />
+          <reference role="4ia1.1138055754698.1138405853777" target="oubp.6478870542308708689" resolveInfo="ClassLikeProperty" />
         </node>
         <node concept="vg0i.1146644602865" id="8260330507835182273" role="vg0i.1178549954367.1178549979242" info="nn" />
       </node>
