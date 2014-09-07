@@ -224,7 +224,7 @@
     </node>
     <node concept="4jta.1071489090640" id="8264762413010673052" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="member.customMemberDeclaration" />
-      <property role="asn4.1169194658468.1169194664001" value="CustomMemberDeclaration" />
+      <property role="asn4.1169194658468.1169194664001" value="CustomMemberDescriptor" />
       <property role="4jta.1169125787135.5092175715804935370" value="custom member" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
       <node concept="4jta.1071489288298" id="8264762413010673055" role="4jta.1169125787135.1071489727083" info="ig">

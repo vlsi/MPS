@@ -29,7 +29,7 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 6:
         return Collections.<ConceptEditor>singletonList(new ClassLikeStringProperty_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new CustomMemberDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomMemberDescriptor_Editor());
       case 8:
         return Collections.<ConceptEditor>singletonList(new DependentTypeDeclaration_Editor());
       case 9:
@@ -53,5 +53,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

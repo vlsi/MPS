@@ -10,7 +10,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class CustomMemberDeclaration_Behavior {
+public class CustomMemberDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {

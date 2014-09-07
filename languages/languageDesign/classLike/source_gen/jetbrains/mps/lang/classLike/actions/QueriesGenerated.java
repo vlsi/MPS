@@ -17,6 +17,10 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.classLike.behavior.PropertyDescriptor_Behavior;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassLikeMethod_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -76,6 +80,22 @@ public class QueriesGenerated {
               }
             });
           }
+        }
+      }
+    }
+    {
+      Iterable<SNode> queryResult = new Computable<Iterable<SNode>>() {
+        public Iterable<SNode> compute() {
+          return Sequence.fromIterable(Util.getCustomDescriptors(_context.getParentNode())).select(new ISelector<SNode, SNode>() {
+            public SNode select(SNode it) {
+              return ((SNode) SLinkOperations.getTarget(it, "cncpt", false));
+            }
+          });
+        }
+      }.compute();
+      if (queryResult != null) {
+        for (SNode item : queryResult) {
+          ListSequence.fromList(result).addSequence(ListSequence.fromList(ChildSubstituteActionsHelper.createDefaultSubstituteActions(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext)));
         }
       }
     }

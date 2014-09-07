@@ -29,7 +29,7 @@ public class check_CustomMemberDeclaration_NonTypesystemRule extends AbstractNon
     }
   }
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration";
+    return "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor";
   }
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {

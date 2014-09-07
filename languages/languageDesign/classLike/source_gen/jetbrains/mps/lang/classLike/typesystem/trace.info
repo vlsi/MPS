@@ -129,7 +129,7 @@
       <node id="510971631003380524" at="21,87,22,13" concept="6" />
       <node id="330439066007850555" at="25,7,26,60" concept="5" />
       <node id="330439066007850555" at="26,60,27,400" concept="5" />
-      <node id="330439066007798015" at="31,46,32,76" concept="6" />
+      <node id="330439066007798015" at="31,46,32,75" concept="6" />
       <node id="330439066007798015" at="35,5,36,130" concept="5" />
       <node id="330439066007798015" at="36,130,37,45" concept="6" />
       <node id="330439066007798015" at="40,30,41,17" concept="6" />
@@ -144,7 +144,7 @@
       <node id="330439066007798015" at="20,0,31,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
       <scope id="330439066007798015" at="18,60,18,60" />
       <scope id="510971631003377175" at="21,87,22,13" />
-      <scope id="330439066007798015" at="31,46,32,76" />
+      <scope id="330439066007798015" at="31,46,32,75" />
       <scope id="330439066007798015" at="40,30,41,17" />
       <scope id="330439066007798015" at="18,0,20,0" />
       <scope id="330439066007850555" at="25,7,27,400">

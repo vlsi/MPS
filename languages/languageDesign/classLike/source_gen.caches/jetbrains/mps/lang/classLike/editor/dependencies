@@ -145,7 +145,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.cells.AbstractCellAction" />
   </dependency>
-  <dependency className="jetbrains.mps.lang.classLike.editor.CustomMemberDeclaration_Editor" file="CustomMemberDeclaration_Editor.java">
+  <dependency className="jetbrains.mps.lang.classLike.editor.CustomMemberDescriptor_Editor" file="CustomMemberDescriptor_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
@@ -218,7 +218,7 @@
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.ClassLikeMemberPlaceholder_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.ClassLikeMethod_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.ClassLikeStringProperty_Editor" />
-    <classNode dependClassName="jetbrains.mps.lang.classLike.editor.CustomMemberDeclaration_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.classLike.editor.CustomMemberDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.DependentTypeDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.MethodDescriptor_Editor" />
