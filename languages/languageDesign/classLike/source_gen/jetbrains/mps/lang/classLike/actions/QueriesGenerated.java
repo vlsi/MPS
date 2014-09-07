@@ -14,9 +14,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.classLike.behavior.PropertyDescriptor_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -38,7 +37,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return MethodDescriptor_Behavior.call_create_3384419124890991826((item));
+                return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{});
               }
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");
@@ -67,7 +66,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return PropertyDescriptor_Behavior.call_create_510971631002971342((item));
+                return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{});
               }
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");

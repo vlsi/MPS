@@ -10,6 +10,9 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class PropertyDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ClassLikeMember_BehaviorDescriptor {
   public PropertyDescriptor_BehaviorDescriptor() {
   }
+  public SNode virtual_create_8260330507834998478(SNode thisNode) {
+    return PropertyDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
+  }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }

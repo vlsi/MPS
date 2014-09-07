@@ -5,6 +5,7 @@ package jetbrains.mps.lang.classLike.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -20,12 +21,12 @@ public class MethodDescriptor_Behavior {
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(thisNode)) {
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(MethodDescriptor_Behavior.call_create_3384419124890991826(thisNode));
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_create_8260330507834998478", new Object[]{}));
     } else if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).isNotEmpty()) {
       PlaceholderModifier_Behavior.call_init_6478870542308777138(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).first(), cls);
     }
   }
-  public static SNode call_create_3384419124890991826(SNode thisNode) {
+  public static SNode virtual_create_8260330507834998478(SNode thisNode) {
     SNode method = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeMethod", null);
     SPropertyOperations.set(method, "name", SPropertyOperations.getString(thisNode, "name"));
     SLinkOperations.setTarget(method, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);

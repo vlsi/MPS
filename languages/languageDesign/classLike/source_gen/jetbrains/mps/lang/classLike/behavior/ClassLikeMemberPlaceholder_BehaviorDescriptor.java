@@ -4,12 +4,13 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
+import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class ClassLikeMemberPlaceholder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMemberIntance_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor {
+public class ClassLikeMemberPlaceholder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMemberIntance_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public ClassLikeMemberPlaceholder_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {

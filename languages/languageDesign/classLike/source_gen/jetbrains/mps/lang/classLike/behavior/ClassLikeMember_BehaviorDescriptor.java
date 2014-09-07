@@ -6,4 +6,5 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public interface ClassLikeMember_BehaviorDescriptor {
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls);
+  public SNode virtual_create_8260330507834998478(SNode thisNode);
 }

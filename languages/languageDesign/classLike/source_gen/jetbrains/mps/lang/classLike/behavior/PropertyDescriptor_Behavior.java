@@ -5,12 +5,12 @@ package jetbrains.mps.lang.classLike.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -19,12 +19,12 @@ public class PropertyDescriptor_Behavior {
   }
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(thisNode)) {
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(PropertyDescriptor_Behavior.call_create_510971631002971342(thisNode));
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_create_8260330507834998478", new Object[]{}));
     } else if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).isNotEmpty()) {
       PlaceholderModifier_Behavior.call_init_6478870542308777138(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).first(), cls);
     }
   }
-  public static SNode call_create_510971631002971342(SNode thisNode) {
+  public static SNode virtual_create_8260330507834998478(SNode thisNode) {
     SNode res;
     if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(thisNode, "type", false))) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", null);

@@ -8,6 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CustomMemberDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMember_BehaviorDescriptor {
   public CustomMemberDescriptor_BehaviorDescriptor() {
   }
+  public SNode virtual_create_8260330507834998478(SNode thisNode) {
+    return CustomMemberDescriptor_Behavior.virtual_create_8260330507834998478(thisNode);
+  }
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     CustomMemberDescriptor_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }
