@@ -122,15 +122,15 @@ public class ClassLikeDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createRefNodeList_qnkj9j_b1a0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new ClassLikeDescriptor_Editor.methodListHandler_qnkj9j_b1a0(node, "method", editorContext);
+    AbstractCellListHandler handler = new ClassLikeDescriptor_Editor.memberListHandler_qnkj9j_b1a0(node, "member", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Vertical(), false);
-    editorCell.setCellId("refNodeList_method");
+    editorCell.setCellId("refNodeList_member");
     editorCell.setGridLayout(true);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class methodListHandler_qnkj9j_b1a0 extends RefNodeListHandler {
-    public methodListHandler_qnkj9j_b1a0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class memberListHandler_qnkj9j_b1a0 extends RefNodeListHandler {
+    public memberListHandler_qnkj9j_b1a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

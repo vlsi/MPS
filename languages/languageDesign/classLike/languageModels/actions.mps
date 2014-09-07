@@ -36,6 +36,7 @@
     <concept id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd/1112058030570" name="NodeSubstituteActionsBuilder" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1145552977093" name="GenericNewExpression" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136" name="StatementList" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280" name="OfConceptOperation" />
     <concept id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1203518072036" name="SmartClosureParameterDeclaration" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132" name="BaseMethodDeclaration" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="SPropertyAccess" />
@@ -144,6 +145,7 @@
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1215693861676/1068498886297" name="rValue" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027771414" name="operand" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123136/1068581517665" name="statement" />
+    <childRole id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/4693937538533521280/4693937538533538124" name="requestedConcept" />
     <childRole id="3a13115c-633c-4c5c-bbcc-75c4219e9555/5455284157993911097/5455284157993911094" name="expression" />
     <childRole id="83888646-71ce-4f1c-9c53-c54016f6ad4f/1204796164442/1204796294226" name="closure" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1197027756228/1197027833540" name="operation" />
@@ -176,7 +178,7 @@
   </imports>
   <contents>
     <node concept="abtv.1112056943463" id="3751132065236797749" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodInstances" />
+      <property role="asn4.1133920641626.1193676396447" value="methodInstance" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeMethodsCreation" />
       <node concept="abtv.1112058030570" id="3751132065236797750" role="abtv.1112056943463.1112058057696" info="ng">
         <reference role="abtv.1112058030570.1112058088712" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
@@ -271,7 +273,7 @@
       </node>
     </node>
     <node concept="vg0i.1068390468198" id="2260648088428400642" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="methodInstances" />
+      <property role="asn4.1133920641626.1193676396447" value="methodInstance" />
       <property role="asn4.1169194658468.1169194664001" value="Util" />
       <node concept="vg0i.1081236700938" id="3402736933912033058" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="asn4.1169194658468.1169194664001" value="createConceptFunctionForDescriptor" />
@@ -637,12 +639,19 @@
           </node>
           <node concept="vg0i.1068580123157" id="2260648088428470226" role="vg0i.1068580123136.1068581517665" info="nn" />
           <node concept="vg0i.1068581242878" id="2260648088428472364" role="vg0i.1068580123136.1068581517665" info="nn">
-            <node concept="vg0i.1197027756228" id="2260648088428472365" role="vg0i.1068581242878.1068581517676" info="nn">
-              <node concept="vg0i.1068498886296" id="2260648088428472366" role="vg0i.1197027756228.1197027771414" info="nn">
-                <reference role="vg0i.1068498886296.1068581517664" target="2260648088428461759" resolveInfo="descr" />
+            <node concept="vg0i.1197027756228" id="8264762413011054832" role="vg0i.1068581242878.1068581517676" info="nn">
+              <node concept="vg0i.1197027756228" id="2260648088428472365" role="vg0i.1197027756228.1197027771414" info="nn">
+                <node concept="vg0i.1068498886296" id="2260648088428472366" role="vg0i.1197027756228.1197027771414" info="nn">
+                  <reference role="vg0i.1068498886296.1068581517664" target="2260648088428461759" resolveInfo="descr" />
+                </node>
+                <node concept="4ia1.1138056282393" id="8264762413011052478" role="vg0i.1197027756228.1197027833540" info="nn">
+                  <reference role="4ia1.1138056282393.1138056546658" target="oubp.8264762413010642120" />
+                </node>
               </node>
-              <node concept="4ia1.1138056282393" id="2260648088428472367" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="4ia1.1138056282393.1138056546658" target="oubp.3751132065236767074" />
+              <node concept="4ia1.4693937538533521280" id="8264762413011067272" role="vg0i.1197027756228.1197027833540" info="ng">
+                <node concept="4ia1.1177026924588" id="8264762413011068152" role="4ia1.4693937538533521280.4693937538533538124" info="nn">
+                  <reference role="4ia1.1177026924588.1177026940964" target="oubp.3751132065236767079" resolveInfo="MethodDescriptor" />
+                </node>
               </node>
             </node>
           </node>

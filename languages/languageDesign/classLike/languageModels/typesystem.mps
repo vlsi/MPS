@@ -75,7 +75,7 @@
   <contents>
     <node concept="swut.1174643105530" id="3751132065236799722" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="typeof_DepType" />
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <node concept="vg0i.1068580123136" id="3751132065236799723" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="3751132065236799745" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="3751132065236799746" role="swut.1174660718586.1174660783414" info="ng">
@@ -114,7 +114,7 @@
     </node>
     <node concept="swut.1174643105530" id="2260648088428849750" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="typeof_DependentTypeInstance" />
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <node concept="vg0i.1068580123136" id="2260648088428850102" role="swut.1195213580585.1195213635060" info="sn">
         <node concept="swut.1174658326157" id="2260648088428850246" role="vg0i.1068580123136.1068581517665" info="nn">
           <node concept="swut.1185788614172" id="2260648088428850249" role="swut.1174660718586.1174660783413" info="ng">

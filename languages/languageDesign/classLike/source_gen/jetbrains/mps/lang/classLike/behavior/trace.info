@@ -8,11 +8,8 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root>
-    <file name="ClassLikeDescriptor_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_BehaviorDescriptor" />
-    </file>
-    <file name="ClassLikeAnnotation_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeAnnotation_BehaviorDescriptor" />
+    <file name="PlaceholderModifier_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.PlaceholderModifier_BehaviorDescriptor" />
     </file>
     <file name="DependentTypeInstance_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_BehaviorDescriptor" />
@@ -20,17 +17,38 @@
     <file name="RequiredModifier_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.RequiredModifier_BehaviorDescriptor" />
     </file>
-    <file name="MethodDescriptor_BehaviorDescriptor.java">
-      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptor_BehaviorDescriptor" />
+    <file name="StringPropertyDescriptor_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.classLike.behavior.StringPropertyDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="ClassLikeDescriptor_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="CustomMemberDeclaration_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.CustomMemberDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyDescriptor_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.PropertyDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="ClassLikeAnnotation_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeAnnotation_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,36,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,44,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BooleanPropertyDescriptor_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.classLike.behavior.BooleanPropertyDescriptor_BehaviorDescriptor" />
+    </file>
+    <file name="MethodDescriptor_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptor_BehaviorDescriptor" />
     </file>
     <file name="ClassLikeMethod_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeMethod_BehaviorDescriptor" />
     </file>
-    <file name="MethodDescriptorModifier_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptorModifier_BehaviorDescriptor" />
+    <file name="MemberModifier_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.classLike.behavior.MemberModifier_BehaviorDescriptor" />
+    </file>
+    <file name="ClassLikeMember_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeMember_BehaviorDescriptor" />
     </file>
     <file name="DependentTypeDeclaration_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_BehaviorDescriptor" />

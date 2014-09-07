@@ -148,7 +148,7 @@
   </imports>
   <contents>
     <node concept="am4u.1225194240794" id="3751132065236798249" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="am4u.1225194240794.1225194240799" target="oubp.3751132065236767068" resolveInfo="DependentTypeDeclaration" />
       <node concept="am4u.1225194472830" id="3751132065236798250" role="am4u.1225194240794.1225194240805" info="ng">
         <property role="asn4.1169194658468.1169194664001" value="getType" />
@@ -386,7 +386,7 @@
       </node>
     </node>
     <node concept="am4u.1225194240794" id="3402736933911993761" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="am4u.1225194240794.1225194240799" target="oubp.3751132065236767079" resolveInfo="MethodDescriptor" />
       <node concept="am4u.1225194472830" id="3402736933911994098" role="am4u.1225194240794.1225194240805" info="ng">
         <property role="asn4.1169194658468.1169194664001" value="isRequired" />

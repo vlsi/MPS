@@ -4,7 +4,7 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 
-public class RequiredModifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements MethodDescriptorModifier_BehaviorDescriptor {
+public class RequiredModifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements MemberModifier_BehaviorDescriptor {
   public RequiredModifier_BehaviorDescriptor() {
   }
   @Override

@@ -144,7 +144,7 @@
   </imports>
   <contents>
     <node concept="9wj7.1071666914219" id="3751132065236797304" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
       <node concept="9wj7.1074767920765" id="3751132065236797305" role="9wj7.1080736578640.1080736633877" info="ng">
         <node concept="9wj7.1176717996748" id="3751132065236797306" role="9wj7.1074767920765.1176718152741" info="ng">
@@ -179,7 +179,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3751132065236797327" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767068" resolveInfo="DependentTypeDeclaration" />
       <node concept="9wj7.1073389882823" id="3751132065236797328" role="9wj7.1071666914219.1078153129734" info="ng">
         <reference role="9wj7.1139848536355.1140103550593" target="oubp.3751132065236767069" />
@@ -192,7 +192,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3751132065236797330" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767079" resolveInfo="MethodDescriptor" />
       <node concept="9wj7.1073389446423" id="3402736933911318625" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1073390211982" id="3402736933911578111" role="9wj7.1073389446423.1073389446424" info="ng">
@@ -247,7 +247,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3751132065236797352" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767072" resolveInfo="ClassLikeDescriptor" />
       <node concept="9wj7.1073389446423" id="3751132065236797353" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1106270571710" id="3751132065236797354" role="9wj7.1073389446423.1106270802874" info="nn" />
@@ -262,14 +262,14 @@
             </node>
           </node>
           <node concept="9wj7.1073390211982" id="3751132065236797364" role="9wj7.1198489924438.1198489993734" info="ng">
-            <reference role="9wj7.1139848536355.1140103550593" target="oubp.3751132065236767074" />
+            <reference role="9wj7.1139848536355.1140103550593" target="oubp.8264762413010642120" />
             <node concept="9wj7.1239814640496" id="3402736933911564953" role="9wj7.1140524381322.1140524464360" info="nn" />
           </node>
         </node>
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3751132065236797366" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767076" resolveInfo="ParameterDescriptor" />
       <node concept="9wj7.1073389446423" id="3751132065236797367" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1106270549637" id="3751132065236797368" role="9wj7.1073389446423.1106270802874" info="nn" />
@@ -282,7 +282,7 @@
       </node>
     </node>
     <node concept="9wj7.1139535219966" id="3751132065236797379" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodInstances" />
+      <property role="asn4.1133920641626.1193676396447" value="methodInstance" />
       <property role="asn4.1169194658468.1169194664001" value="ConceptFunc_Actions" />
       <reference role="9wj7.1139535219966.1139535219968" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
       <node concept="9wj7.1139535280617" id="3751132065236797380" role="9wj7.1139535219966.1139535219969" info="ng">
@@ -300,7 +300,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3751132065236797387" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodInstances" />
+      <property role="asn4.1133920641626.1193676396447" value="methodInstance" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
       <node concept="9wj7.1073389446423" id="3751132065236797388" role="9wj7.1080736578640.1080736633877" info="nn">
         <property role="9wj7.1073389446423.1073389446425" value="false" />
@@ -409,7 +409,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3571587574961827989" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3571587574961713354" resolveInfo="ClassLikeAnnotation" />
       <node concept="9wj7.1073389446423" id="3571587574961827994" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1073389446423" id="3571587574961828151" role="9wj7.1073389446423.1073389446424" info="nn">
@@ -438,13 +438,42 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="3402736933911578137" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodDeclarations" />
+      <property role="asn4.1133920641626.1193676396447" value="member" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3402736933911578134" resolveInfo="RequiredModifier" />
       <node concept="9wj7.1073389446423" id="3402736933911578139" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1237303669825" id="3402736933911578140" role="9wj7.1073389446423.1106270802874" info="nn" />
         <node concept="9wj7.1078939183254" id="3402736933911666702" role="9wj7.1073389446423.1073389446424" info="ng">
           <reference role="9wj7.1078939183254.1078939183255" target="tpco.2900100530630621651" resolveInfo="alias" />
         </node>
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="8264762413010669701" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
+      <reference role="9wj7.1166049232041.1166049300910" target="oubp.8264762413010669353" resolveInfo="PlaceholderModifier" />
+      <node concept="9wj7.1073389446423" id="8264762413010672243" role="9wj7.1080736578640.1080736633877" info="nn">
+        <node concept="9wj7.1073389577006" id="8264762413010672245" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value="placeholder&lt;" />
+        </node>
+        <node concept="9wj7.1073389658414" id="8264762413010672261" role="9wj7.1073389446423.1073389446424" info="ng">
+          <reference role="9wj7.1139848536355.1140103550593" target="oubp.8264762413010669653" resolveInfo="caption" />
+        </node>
+        <node concept="9wj7.1073389577006" id="8264762413010672253" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value="&gt;" />
+        </node>
+        <node concept="9wj7.1237303669825" id="8264762413010672246" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="8264762413010672828" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member.propertyDeclaration" />
+      <reference role="9wj7.1166049232041.1166049300910" target="oubp.8264762413010631473" resolveInfo="PropertyDescriptor" />
+      <node concept="9wj7.1073389446423" id="8264762413010672834" role="9wj7.1080736578640.1080736633877" info="nn">
+        <node concept="9wj7.1078939183254" id="8264762413010672841" role="9wj7.1073389446423.1073389446424" info="ng">
+          <reference role="9wj7.1078939183254.1078939183255" target="tpco.2900100530630621651" resolveInfo="alias" />
+        </node>
+        <node concept="9wj7.1073389658414" id="8264762413010672850" role="9wj7.1073389446423.1073389446424" info="ng">
+          <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
+        </node>
+        <node concept="9wj7.1237303669825" id="8264762413010672837" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
   </contents>

@@ -6,11 +6,11 @@
     <lang id="d7706f63-9be2-479c-a3da-ae92af1e64d5" name="jetbrains.mps.lang.generator.generationContext" />
     <lang id="b401a680-8325-4110-8fd3-84331ff25bef" name="jetbrains.mps.lang.generator" />
     <lang id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" name="jetbrains.mps.lang.classLike" />
-    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
-    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="3a13115c-633c-4c5c-bbcc-75c4219e9555" name="jetbrains.mps.lang.quotation" />
+    <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <model ref="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)" name="jetbrains.mps.lang.classLike.structure" />
     <model ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" name="jetbrains.mps.baseLanguage.closures.structure" />
     <model ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" name="jetbrains.mps.lang.core.structure" />
@@ -73,6 +73,7 @@
     <concept id="b401a680-8325-4110-8fd3-84331ff25bef/1167514355419" name="Root_MappingRule" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="BaseConcept" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/1181808852946" name="isFinal" />
+    <property id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/1193676396447" name="virtualPackage" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1224848483129/1224848525476" name="isDeprecated" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1070475926800/1070475926801" name="value" />
     <property id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123132/4276006055363816570" name="isSynchronized" />
@@ -126,11 +127,11 @@
     <use id="d7706f63-9be2-479c-a3da-ae92af1e64d5" version="-1" index="o248" />
     <use id="b401a680-8325-4110-8fd3-84331ff25bef" version="-1" index="7gwc" />
     <use id="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67" version="-1" index="5whl" />
-    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
-    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="3a13115c-633c-4c5c-bbcc-75c4219e9555" version="0" implicit="true" index="le35" />
+    <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
@@ -146,6 +147,7 @@
   <contents>
     <node concept="7gwc.1095416546421" id="3751132065236752910" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="main" />
+      <property role="asn4.1133920641626.1193676396447" value="" />
       <node concept="7gwc.1167514355419" id="4878190447609630527" role="7gwc.1095416546421.1167514678247" info="ng">
         <reference role="7gwc.1167169308231.1167169349424" target="oubp.3751132065236767072" resolveInfo="ClassLikeDescriptor" />
         <reference role="7gwc.1167514355419.1167514355421" target="3751132065236919767" resolveInfo="Queries" />
@@ -153,6 +155,7 @@
     </node>
     <node concept="vg0i.1068390468198" id="3751132065236919767" info="ig">
       <property role="asn4.1169194658468.1169194664001" value="Queries" />
+      <property role="asn4.1133920641626.1193676396447" value="" />
       <node concept="vg0i.1081236700938" id="3751132065236919768" role="vg0i.1107461130800.5375687026011219971" info="igu">
         <property role="vg0i.1224848483129.1224848525476" value="false" />
         <property role="vg0i.1068580123132.1181808852946" value="false" />
