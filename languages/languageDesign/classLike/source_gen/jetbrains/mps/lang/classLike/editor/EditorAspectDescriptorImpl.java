@@ -21,18 +21,20 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 2:
         return Collections.<ConceptEditor>singletonList(new ClassLikeMethod_Editor());
       case 3:
-        return Collections.<ConceptEditor>singletonList(new DependentTypeDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new CustomMemberDeclaration_Editor());
       case 4:
-        return Collections.<ConceptEditor>singletonList(new DependentTypeInstance_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentTypeDeclaration_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new MethodDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new DependentTypeInstance_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new ParameterDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new MethodDescriptor_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new PlaceholderModifier_Editor());
+        return Collections.<ConceptEditor>singletonList(new ParameterDescriptor_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new PropertyDescriptor_Editor());
+        return Collections.<ConceptEditor>singletonList(new PlaceholderModifier_Editor());
       case 9:
+        return Collections.<ConceptEditor>singletonList(new PropertyDescriptor_Editor());
+      case 10:
         return Collections.<ConceptEditor>singletonList(new RequiredModifier_Editor());
       default:
     }
@@ -43,5 +45,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

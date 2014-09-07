@@ -195,10 +195,6 @@
       <property role="asn4.1133920641626.1193676396447" value="member.methodDeclaration" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.3751132065236767079" resolveInfo="MethodDescriptor" />
       <node concept="9wj7.1073389446423" id="3402736933911318625" role="9wj7.1080736578640.1080736633877" info="nn">
-        <node concept="9wj7.1073390211982" id="3402736933911578111" role="9wj7.1073389446423.1073389446424" info="ng">
-          <reference role="9wj7.1139848536355.1140103550593" target="oubp.3402736933911577960" />
-          <node concept="9wj7.1237303669825" id="3402736933911578113" role="9wj7.1140524381322.1140524464360" info="nn" />
-        </node>
         <node concept="9wj7.1073389577006" id="3402736933911318632" role="9wj7.1073389446423.1073389446424" info="nn">
           <property role="9wj7.1073389577006.1073389577007" value="method" />
         </node>
@@ -242,6 +238,18 @@
         <node concept="9wj7.1073389882823" id="3402736933911348386" role="9wj7.1073389446423.1073389446424" info="ng">
           <property role="9wj7.1139848536355.1139852716018" value="void" />
           <reference role="9wj7.1139848536355.1140103550593" target="oubp.3751132065236767081" />
+        </node>
+        <node concept="9wj7.1073389577006" id="330439066007402023" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value=";" />
+        </node>
+        <node concept="9wj7.1073390211982" id="3402736933911578111" role="9wj7.1073389446423.1073389446424" info="ng">
+          <property role="9wj7.1140524381322.1140524450557" value=";" />
+          <reference role="9wj7.1139848536355.1140103550593" target="oubp.3402736933911577960" />
+          <node concept="9wj7.1237303669825" id="3402736933911578113" role="9wj7.1140524381322.1140524464360" info="nn" />
+          <node concept="9wj7.1073389577006" id="330439066007402080" role="9wj7.1140524381322.1140524464359" info="nn">
+            <property role="9wj7.1073389577006.1073389577007" value="&lt;modifiers&gt;" />
+            <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
+          </node>
         </node>
         <node concept="9wj7.1237303669825" id="3402736933911318628" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
@@ -473,7 +481,50 @@
         <node concept="9wj7.1073389658414" id="8264762413010672850" role="9wj7.1073389446423.1073389446424" info="ng">
           <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
         </node>
+        <node concept="9wj7.1073389577006" id="330439066007797027" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value=";" />
+        </node>
+        <node concept="9wj7.1073390211982" id="330439066007797028" role="9wj7.1073389446423.1073389446424" info="ng">
+          <property role="9wj7.1140524381322.1140524450557" value=";" />
+          <reference role="9wj7.1139848536355.1140103550593" target="oubp.3402736933911577960" />
+          <node concept="9wj7.1237303669825" id="330439066007797029" role="9wj7.1140524381322.1140524464360" info="nn" />
+          <node concept="9wj7.1073389577006" id="330439066007797030" role="9wj7.1140524381322.1140524464359" info="nn">
+            <property role="9wj7.1073389577006.1073389577007" value="&lt;modifiers&gt;" />
+            <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
+          </node>
+        </node>
         <node concept="9wj7.1237303669825" id="8264762413010672837" role="9wj7.1073389446423.1106270802874" info="nn" />
+      </node>
+    </node>
+    <node concept="9wj7.1071666914219" id="330439066007797739" info="ng">
+      <property role="asn4.1133920641626.1193676396447" value="member.customMemberDeclaration" />
+      <reference role="9wj7.1166049232041.1166049300910" target="oubp.8264762413010673052" resolveInfo="CustomMemberDeclaration" />
+      <node concept="9wj7.1073389446423" id="330439066007797741" role="9wj7.1080736578640.1080736633877" info="nn">
+        <node concept="9wj7.1073389577006" id="330439066007797774" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value="custom member" />
+        </node>
+        <node concept="9wj7.1088013125922" id="330439066007797788" role="9wj7.1073389446423.1073389446424" info="ng">
+          <reference role="9wj7.1139848536355.1140103550593" target="oubp.8264762413010673055" />
+          <node concept="9wj7.1088185857835" id="330439066007797790" role="9wj7.1088013125922.1088186146602" info="ng">
+            <node concept="9wj7.1073389658414" id="330439066007797805" role="9wj7.1080736578640.1080736633877" info="ng">
+              <property role="9wj7.1139848536355.1140017977771" value="true" />
+              <reference role="9wj7.1139848536355.1140103550593" target="tpck.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+        <node concept="9wj7.1073389577006" id="330439066007797760" role="9wj7.1073389446423.1073389446424" info="nn">
+          <property role="9wj7.1073389577006.1073389577007" value=";" />
+        </node>
+        <node concept="9wj7.1073390211982" id="330439066007797761" role="9wj7.1073389446423.1073389446424" info="ng">
+          <property role="9wj7.1140524381322.1140524450557" value=";" />
+          <reference role="9wj7.1139848536355.1140103550593" target="oubp.3402736933911577960" />
+          <node concept="9wj7.1237303669825" id="330439066007797762" role="9wj7.1140524381322.1140524464360" info="nn" />
+          <node concept="9wj7.1073389577006" id="330439066007797763" role="9wj7.1140524381322.1140524464359" info="nn">
+            <property role="9wj7.1073389577006.1073389577007" value="&lt;modifiers&gt;" />
+            <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
+          </node>
+        </node>
+        <node concept="9wj7.1237303669825" id="330439066007797744" role="9wj7.1073389446423.1106270802874" info="nn" />
       </node>
     </node>
   </contents>

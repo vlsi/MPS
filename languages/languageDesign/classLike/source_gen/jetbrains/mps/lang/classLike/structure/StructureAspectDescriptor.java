@@ -19,7 +19,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"member"}, new boolean[]{true}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMember").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMember").interface_().children(new String[]{"modifier"}, new boolean[]{true}).create();
       case 4:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").create();
       case 5:
@@ -31,7 +31,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 8:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MemberModifier").interface_().create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MethodDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"modifier", "param", "retType"}, new boolean[]{true, true, false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MethodDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"param", "retType"}, new boolean[]{true, false}).alias("method", "").create();
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ParameterDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       case 11:
