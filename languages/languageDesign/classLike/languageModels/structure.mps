@@ -176,10 +176,10 @@
       <property role="4jta.1169125787135.4628067390765956807" value="false" />
       <property role="4jta.1169125787135.5092175715804935370" value="property" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
-      <node concept="4jta.1071489288298" id="6478870542308871175" role="4jta.1169125787135.1071489727083" info="ig">
-        <property role="4jta.1071489288298.1071599937831" value="aggregation" />
-        <property role="4jta.1071489288298.1071599893252" value="1" />
+      <node concept="4jta.1071489288298" id="5155329496663029311" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
         <property role="4jta.1071489288298.1071599776563" value="type" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpce.1083243159079" resolveInfo="PrimitiveDataTypeDeclaration" />
       </node>
       <node concept="4jta.1169127622168" id="8264762413010666173" role="4jta.1071489090640.1169129564478" info="ig">
@@ -202,6 +202,7 @@
     <node concept="4jta.1071489090640" id="8264762413010669353" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="member" />
       <property role="asn4.1169194658468.1169194664001" value="PlaceholderModifier" />
+      <property role="4jta.1169125787135.5092175715804935370" value="placeholder" />
       <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
       <node concept="4jta.1071489288299" id="8264762413010669653" role="4jta.1169125787135.1071489727084" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="caption" />

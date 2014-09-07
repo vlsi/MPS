@@ -45,9 +45,9 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 15:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ParameterDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
       case 16:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PlaceholderModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").properties("caption").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PlaceholderModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").properties("caption").alias("placeholder", "").create();
       case 17:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"type"}, new boolean[]{false}).alias("property", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").references("type").alias("property", "").create();
       case 18:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.RequiredModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").alias("required", "").create();
       default:

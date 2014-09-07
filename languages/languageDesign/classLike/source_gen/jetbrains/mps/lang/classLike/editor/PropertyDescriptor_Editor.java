@@ -12,7 +12,8 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -38,7 +39,7 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ram8ac_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ram8ac_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ram8ac_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_ram8ac_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_ram8ac_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ram8ac_e0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_ram8ac_f0(editorContext, node));
     return editorCell;
@@ -70,13 +71,15 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNode_ram8ac_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+  private EditorCell createRefCell_ram8ac_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("type");
     provider.setNoTargetText("<no type>");
     EditorCell editorCell;
+    provider.setAuxiliaryCellProvider(new PropertyDescriptor_Editor._Inline_ram8ac_a3a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
       editorCell.setRole("type");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -88,6 +91,35 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
+  }
+  public static class _Inline_ram8ac_a3a extends InlineCellProvider {
+    public _Inline_ram8ac_a3a() {
+      super();
+    }
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_ram8ac_a0d0(editorContext, node);
+    }
+    private EditorCell createProperty_ram8ac_a0d0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name_1");
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
   private EditorCell createConstant_ram8ac_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");

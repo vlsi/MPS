@@ -20,23 +20,23 @@ public class PropertyDescriptor_Behavior {
   public static void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
     if (ClassLikeMember_Behavior.call_isRequired_3402736933911994098(thisNode)) {
       SNode res;
-      if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(thisNode, "type", true))) {
+      if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(thisNode, "type", false))) {
         SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", null);
         SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
         SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0b0a0a(), true);
         res = node;
-      } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", true))) {
+      } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", false))) {
         SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", null);
         SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
         SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0a1a0a0(), true);
         res = node;
-      } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", true))) {
+      } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", false))) {
         SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", null);
         SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
         SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0b1a0a0(), true);
         res = node;
       } else {
-        throw new IllegalStateException(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "type", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+        throw new IllegalStateException(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "type", false), "virtual_getPresentation_1213877396640", new Object[]{}));
       }
       ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(res);
     } else if (Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "modifier", true), "jetbrains.mps.lang.classLike.structure.PlaceholderModifier")).isNotEmpty()) {
