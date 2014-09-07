@@ -41,7 +41,7 @@ public class MethodDescriptor_Behavior {
       }
     }));
 
-    SLinkOperations.setTarget(method, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "retType", true)), true);
+    SLinkOperations.setTarget(method, "returnType", (SLinkOperations.getTarget(thisNode, "retType", true) == null ? _quotation_createNode_9j0ugw_a0a5a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "retType", true))), true);
     return method;
   }
   private static SNode createParameterDeclaration_9j0ugw_a2a0a0a0a0d0b(Object p0, Object p1) {
@@ -57,5 +57,11 @@ public class MethodDescriptor_Behavior {
     n1.setProperty("name", String.valueOf(p0));
     n1.addChild("type", (SNode) p1);
     return n1;
+  }
+  private static SNode _quotation_createNode_9j0ugw_a0a5a1() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
+    return quotedNode_1;
   }
 }
