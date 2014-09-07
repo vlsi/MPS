@@ -20,10 +20,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.classLike.behavior.MethodDescriptor_Behavior;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.lang.classLike.actions.Util;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.ide.projectPane.NewRootNodeAction;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -83,14 +81,9 @@ public class NewClassLike_Action extends BaseAction {
       final SNode newClass = SModelOperations.createNewRootNode(((SModel) ((SModel) MapSequence.fromMap(_params).get("model"))), "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
       AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", null));
       SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", NewClassLike_Action.this.descr, false);
-      ListSequence.fromList(SLinkOperations.getTargets(NewClassLike_Action.this.descr, "method", true)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return MethodDescriptor_Behavior.call_isRequired_3402736933911994098(it);
-        }
-      }).visitAll(new IVisitor<SNode>() {
+      ListSequence.fromList(SLinkOperations.getTargets(NewClassLike_Action.this.descr, "member", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
-          SNode method = Util.createConceptFunctionForDescriptor(it);
-          ListSequence.fromList(SLinkOperations.getTargets(newClass, "member", true)).addElement(method);
+          BehaviorReflection.invokeVirtual(Void.class, it, "virtual_init_6478870542308635887", new Object[]{newClass});
         }
       });
       if (!(NewRootNodeAction.trySelectInCurrentPane(((Project) MapSequence.fromMap(_params).get("project")), newClass))) {

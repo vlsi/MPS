@@ -4,7 +4,7 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 
-public class ClassLikeMethod_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
+public class ClassLikeMethod_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements ClassLikeMemberIntance_BehaviorDescriptor {
   public ClassLikeMethod_BehaviorDescriptor() {
   }
   @Override

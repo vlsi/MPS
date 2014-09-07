@@ -13,38 +13,46 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.BooleanPropertyDescriptor").super_("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").parents("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").alias("boolean property", "").create();
-      case 1:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").references("descriptor").create();
+      case 1:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty").super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").properties("value").create();
       case 2:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"member"}, new boolean[]{true}).create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMember").interface_().children(new String[]{"modifier"}, new boolean[]{true}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty").super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").properties("value").create();
       case 4:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMember").interface_().children(new String[]{"modifier"}, new boolean[]{true}).create();
       case 5:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").references("cncpt").alias("custom member", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").interface_().create();
       case 6:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").children(new String[]{"getter"}, new boolean[]{false}).alias("deptype", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance", "jetbrains.mps.baseLanguage.structure.ClassifierMember").properties("caption").references("decl").create();
       case 7:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeInstance").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("decl").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MemberModifier").interface_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").abstract_().create();
       case 9:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MethodDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"param", "retType"}, new boolean[]{true, false}).alias("method", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty").super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").properties("value").create();
       case 10:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ParameterDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").references("cncpt").alias("custom member", "").create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PlaceholderModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").properties("caption").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").children(new String[]{"getter"}, new boolean[]{false}).alias("deptype", "").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeInstance").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").references("decl").create();
       case 13:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.RequiredModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").alias("required", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MemberModifier").interface_().create();
       case 14:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.StringPropertyDescriptor").super_("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").parents("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").alias("string property", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.MethodDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"param", "retType"}, new boolean[]{true, false}).alias("method", "").create();
+      case 15:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ParameterDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept").children(new String[]{"type"}, new boolean[]{false}).create();
+      case 16:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PlaceholderModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").properties("caption").create();
+      case 17:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.PropertyDescriptor").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").children(new String[]{"type"}, new boolean[]{false}).alias("property", "").create();
+      case 18:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.RequiredModifier").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.MemberModifier").alias("required", "").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.BooleanPropertyDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier", "jetbrains.mps.lang.classLike.structure.StringPropertyDescriptor"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMember", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.MemberModifier", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
 }

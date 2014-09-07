@@ -13,6 +13,9 @@ public class MethodDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
+  public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
+    MethodDescriptor_Behavior.virtual_init_6478870542308635887(thisNode, cls);
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.classLike.structure.MethodDescriptor";

@@ -70,7 +70,7 @@
   </imports>
   <contents>
     <node concept="qzws.1213093968558" id="3751132065236921451" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="methodInstance" />
+      <property role="asn4.1133920641626.1193676396447" value="instances" />
       <reference role="qzws.1213093968558.1213093996982" target="oubp.3751132065236767060" resolveInfo="ClassLikeMethod" />
       <node concept="qzws.1202989531578" id="3751132065236921452" role="qzws.1213093968558.1213106463729" info="nn">
         <node concept="vg0i.1068580123136" id="3751132065236921453" role="vg0i.1137021947720.1137022507850" info="sn">

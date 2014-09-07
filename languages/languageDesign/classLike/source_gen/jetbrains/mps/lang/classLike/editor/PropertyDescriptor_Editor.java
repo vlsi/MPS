@@ -12,6 +12,7 @@ import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -37,7 +38,9 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_ram8ac_a0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_ram8ac_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_ram8ac_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_ram8ac_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_ram8ac_d0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_ram8ac_e0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_ram8ac_f0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_ram8ac_a0(EditorContext editorContext, SNode node) {
@@ -62,20 +65,45 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
     return editorCell;
   }
   private EditorCell createConstant_ram8ac_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_ram8ac_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createRefNodeList_ram8ac_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new PropertyDescriptor_Editor.modifierListHandler_ram8ac_d0(node, "modifier", editorContext);
+  private EditorCell createRefNode_ram8ac_d0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("type");
+    provider.setNoTargetText("<no type>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setRole("type");
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+  private EditorCell createConstant_ram8ac_e0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
+    editorCell.setCellId("Constant_ram8ac_e0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+  private EditorCell createRefNodeList_ram8ac_f0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new PropertyDescriptor_Editor.modifierListHandler_ram8ac_f0(node, "modifier", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_modifier");
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class modifierListHandler_ram8ac_d0 extends RefNodeListHandler {
-    public modifierListHandler_ram8ac_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class modifierListHandler_ram8ac_f0 extends RefNodeListHandler {
+    public modifierListHandler_ram8ac_f0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {
@@ -94,7 +122,7 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
       return emptyCell;
     }
     public EditorCell createEmptyCell_internal(EditorContext editorContext, SNode node) {
-      return this.createConstant_ram8ac_a3a(editorContext, node);
+      return this.createConstant_ram8ac_a5a(editorContext, node);
     }
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
@@ -121,9 +149,9 @@ public class PropertyDescriptor_Editor extends DefaultNodeEditor {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(prevNode));
       return editorCell;
     }
-    private EditorCell createConstant_ram8ac_a3a(EditorContext editorContext, SNode node) {
+    private EditorCell createConstant_ram8ac_a5a(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<modifiers>");
-      editorCell.setCellId("Constant_ram8ac_a3a");
+      editorCell.setCellId("Constant_ram8ac_a5a");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Comment(style, editorCell);
       editorCell.getStyle().putAll(style);
