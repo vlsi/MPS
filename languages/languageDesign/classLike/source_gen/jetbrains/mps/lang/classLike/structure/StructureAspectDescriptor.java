@@ -29,7 +29,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 7:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeMethod").super_("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").create();
       case 8:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").super_("jetbrains.mps.baseLanguage.structure.FieldDeclaration").parents("jetbrains.mps.baseLanguage.structure.FieldDeclaration", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberIntance").references("decl").abstract_().create();
       case 9:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty").super_("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").parents("jetbrains.mps.lang.classLike.structure.ClassLikeProperty").properties("value").create();
       case 10:

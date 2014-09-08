@@ -267,6 +267,12 @@
       <property role="4jta.1169125787135.4628067390765956802" value="true" />
       <property role="4jta.1169125787135.4628067390765956807" value="false" />
       <reference role="4jta.1071489090640.1071489389519" target="tpee.1068390468200" resolveInfo="FieldDeclaration" />
+      <node concept="4jta.1071489288298" id="8585153554445465961" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="decl" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="8264762413010631473" resolveInfo="PropertyDescriptor" />
+      </node>
       <node concept="4jta.1169127622168" id="6478870542308708734" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberIntance" />
       </node>

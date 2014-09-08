@@ -3,8 +3,8 @@
   <persistence version="9" />
   <debugInfo>
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
@@ -135,8 +135,8 @@
   </debugInfo>
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
@@ -238,10 +238,17 @@
             <node concept="abtv.1177339225103" id="510971631002957899" role="abtv.1177337641126.1177339421668" info="nn">
               <node concept="vg0i.1068580123136" id="510971631002957900" role="vg0i.1137021947720.1137022507850" info="sn">
                 <node concept="vg0i.1068580123155" id="510971631002957901" role="vg0i.1068580123136.1068581517665" info="nn">
-                  <node concept="vg0i.1197027756228" id="510971631002957902" role="vg0i.1068580123155.1068580123156" info="nn">
-                    <node concept="abtv.1177337833147" id="510971631002957903" role="vg0i.1197027756228.1197027771414" info="nn" />
-                    <node concept="4ia1.1179409122411" id="510971631003025040" role="vg0i.1197027756228.1197027833540" info="nn">
-                      <reference role="vg0i.1204053956946.1068499141037" target="9nqt.8260330507834998478" resolveInfo="create" />
+                  <node concept="vg0i.1079359253375" id="8585153554445476715" role="vg0i.1068580123155.1068580123156" info="nn">
+                    <node concept="vg0i.1070534934090" id="8585153554445476716" role="vg0i.1079359253375.1079359253376" info="nn">
+                      <node concept="vg0i.1197027756228" id="8585153554445476712" role="vg0i.1070534934090.1070534934092" info="nn">
+                        <node concept="abtv.1177337833147" id="8585153554445476713" role="vg0i.1197027756228.1197027771414" info="nn" />
+                        <node concept="4ia1.1179409122411" id="8585153554445476714" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="vg0i.1204053956946.1068499141037" target="9nqt.8260330507834998478" resolveInfo="create" />
+                        </node>
+                      </node>
+                      <node concept="4ia1.1138055754698" id="8585153554445477304" role="vg0i.1070534934090.1070534934091" info="in">
+                        <reference role="4ia1.1138055754698.1138405853777" target="oubp.6478870542308708689" resolveInfo="ClassLikeProperty" />
+                      </node>
                     </node>
                   </node>
                 </node>

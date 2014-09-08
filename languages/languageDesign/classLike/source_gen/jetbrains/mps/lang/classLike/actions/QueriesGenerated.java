@@ -66,7 +66,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{});
+                return ((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), (item), "virtual_create_8260330507834998478", new Object[]{}));
               }
               public String getMatchingText(String pattern) {
                 return SPropertyOperations.getString((item), "name");

@@ -28,37 +28,38 @@ public class PropertyDescriptor_Behavior {
     SNode res;
     if (PrimitiveDataTypeDeclaration_Behavior.call_isString_1220268752134(SLinkOperations.getTarget(thisNode, "type", false))) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", null);
-      SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
-      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0b0b(), true);
+      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0b0b0b(), true);
       res = node;
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", false))) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", null);
-      SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
-      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0a1a1(), true);
+      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0b0a1a1(), true);
       res = node;
     } else if (PrimitiveDataTypeDeclaration_Behavior.call_isBoolean_1220268791641(SLinkOperations.getTarget(thisNode, "type", false))) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", null);
-      SPropertyOperations.set(node, "name", SPropertyOperations.getString(thisNode, "name"));
-      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0c0b1a1(), true);
+      SLinkOperations.setTarget(node, "type", _quotation_createNode_j9hr46_a0b0b1a1(), true);
       res = node;
     } else {
       throw new IllegalStateException(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "type", false), "virtual_getPresentation_1213877396640", new Object[]{}));
     }
+
+    SPropertyOperations.set(res, "name", SPropertyOperations.getString(thisNode, "name"));
+    SLinkOperations.setTarget(res, "decl", thisNode, false);
+
     return res;
   }
-  private static SNode _quotation_createNode_j9hr46_a0c0b0b() {
+  private static SNode _quotation_createNode_j9hr46_a0b0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_j9hr46_a0c0a1a1() {
+  private static SNode _quotation_createNode_j9hr46_a0b0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-  private static SNode _quotation_createNode_j9hr46_a0c0b1a1() {
+  private static SNode _quotation_createNode_j9hr46_a0b0b1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
