@@ -61,78 +61,6 @@
         </node>
         <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981739" nodeInfo="ng">
           <property name="tagName" nameId="iuxj.6666499814681415862" value="dict" />
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981748" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981752" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleName" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981749" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981756" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="MPS" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981797" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981798" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleGetInfoString" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981795" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981796" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="JetBrains MPS $version$" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981793" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981794" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleShortVersionString" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981791" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981792" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="$version$" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981789" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981790" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleVersion" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981787" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981788" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="$build$" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981785" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981786" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleExecutable" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981783" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981784" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="mps" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981781" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981782" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleIconFile" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981779" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981780" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="mps.icns" />
-            </node>
-          </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981777" nodeInfo="ng">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981778" nodeInfo="nn">
@@ -144,52 +72,6 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981776" nodeInfo="nn">
               <property name="value" nameId="iuxj.1622293396948953704" value="English" />
             </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981773" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981774" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleInfoDictionaryVersion" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981771" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981772" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="6.0" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981769" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981770" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundlePackageType" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981767" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981768" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="APPL" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981765" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981766" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleSignature" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981763" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981764" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="????" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5020084221291977889" nodeInfo="ng">
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
-            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="5020084221291977891" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="NSHighResolutionCapable" />
-            </node>
-          </node>
-          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5020084221291977893" nodeInfo="ng">
-            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
-            <property name="tagName" nameId="iuxj.6666499814681415862" value="true" />
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981761" nodeInfo="ng">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
@@ -253,6 +135,261 @@
                 </node>
               </node>
             </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980873682" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="dict" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980873702" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896890" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleTypeExtensions" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896896" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="array" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896900" nodeInfo="ng">
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                  <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896902" nodeInfo="nn">
+                    <property name="value" nameId="iuxj.1622293396948953704" value="*" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896911" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896918" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleTypeExtensions" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896929" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896938" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="All documents" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896951" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896962" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleTypeOSTypes" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896990" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="array" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896992" nodeInfo="ng">
+                  <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                  <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980896994" nodeInfo="nn">
+                    <property name="value" nameId="iuxj.1622293396948953704" value="****" />
+                  </node>
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897028" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897045" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleTypeOSTypes" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980896977" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897047" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="Editor" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897069" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897089" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="LSTypeIsPackage" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897113" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="false" />
+                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981785" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981786" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleExecutable" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981783" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981784" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="mps" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981781" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981782" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleIconFile" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981779" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981780" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="mps.icns" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981773" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981774" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleInfoDictionaryVersion" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981771" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981772" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="6.0" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981748" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981752" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleName" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981749" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981756" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="MPS" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981769" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981770" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundlePackageType" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981767" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981768" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="APPL" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1507956620830658437" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1507956620830661185" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleIdentifier" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1507956620830667970" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1507956620830669949" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="com.jetbrains.intellij" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981765" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981766" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleSignature" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981763" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981764" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="????" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981797" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981798" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleGetInfoString" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981795" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981796" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="JetBrains MPS $version$" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981793" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981794" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleShortVersionString" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981791" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981792" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="$version$" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981789" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981790" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="CFBundleVersion" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981787" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981788" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="$build$" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1507956620830671932" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1507956620830673913" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="LSApplicationCategoryType" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="1507956620830675898" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1507956620830677881" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="public.app-category.developer-tools" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="1507956620830664009" nodeInfo="nn" />
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5020084221291977889" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="5020084221291977891" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="NSHighResolutionCapable" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5020084221291977893" nodeInfo="ng">
+            <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="true" />
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980852328" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980854258" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="LSArchitecturePriority" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980856192" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="array" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980858124" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980858126" nodeInfo="nn">
+                <property name="value" nameId="iuxj.1622293396948953704" value="x86_64" />
+              </node>
+            </node>
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980858128" nodeInfo="ng">
+              <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980858132" nodeInfo="nn">
+                <property name="value" nameId="iuxj.1622293396948953704" value="i386" />
+              </node>
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980860071" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980862008" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="LSRequiresNativeExecution" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980863949" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980865888" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="YES" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980867831" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980869772" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="LSRequiresNativeExecution" />
+            </node>
+          </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980871717" nodeInfo="ng">
+            <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+            <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980873660" nodeInfo="nn">
+              <property name="value" nameId="iuxj.1622293396948953704" value="10.6" />
+            </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="544731568810834" nodeInfo="ng">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
@@ -299,10 +436,11 @@
               </node>
             </node>
           </node>
+          <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719981104800" nodeInfo="nn" />
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981890" nodeInfo="ng">
             <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981891" nodeInfo="nn">
-              <property name="value" nameId="iuxj.1622293396948953704" value="Java" />
+              <property name="value" nameId="iuxj.1622293396948953704" value="JVMOptions" />
             </node>
           </node>
           <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981893" nodeInfo="ng">
@@ -316,7 +454,7 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546981899" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546981900" nodeInfo="nn">
-                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/classpathitem:" />
+                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/Contents/classpathitem:" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8979762117546981952" nodeInfo="nn">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8979762117546981953" nodeInfo="nn">
@@ -335,7 +473,7 @@
                           <property name="name" nameId="tpck.1169194664001" value="prefix" />
                           <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="8979762117546981961" nodeInfo="in" />
                           <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8979762117546981962" nodeInfo="nn">
-                            <property name="value" nameId="tpee.1070475926801" value="$APP_PACKAGE/" />
+                            <property name="value" nameId="tpee.1070475926801" value="$APP_PACKAGE/Contents/" />
                           </node>
                         </node>
                       </node>
@@ -521,6 +659,44 @@
                   <property name="value" nameId="iuxj.1622293396948953704" value="false" />
                 </node>
               </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719981113631" nodeInfo="nn" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897156" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897167" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="idea.path.selector" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897182" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719981107352" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="MPS31" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719981113653" nodeInfo="nn" />
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897237" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897251" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="idea.java.redist" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897269" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897285" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="NoJavaDistribution" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897305" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897323" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="idea.home.path" />
+                </node>
+              </node>
+              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8307162719980897345" nodeInfo="ng">
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
+                <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8307162719980897365" nodeInfo="nn">
+                  <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/Contents" />
+                </node>
+              </node>
             </node>
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546982068" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="key" />
@@ -561,7 +737,7 @@
             <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="8979762117546982074" nodeInfo="ng">
               <property name="tagName" nameId="iuxj.6666499814681415862" value="string" />
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlText" typeId="iuxj.1622293396948952339" id="8979762117546982075" nodeInfo="nn">
-                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE" />
+                <property name="value" nameId="iuxj.1622293396948953704" value="$APP_PACKAGE/Contents" />
                 <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.PropertyMacro" typeId="tpf8.1087833241328" id="8979762117546982097" nodeInfo="nn">
                   <property name="propertyName" nameId="tpck.1757699476691236117" value="value" />
                   <node role="propertyValueFunction" roleId="tpf8.1167756362303" type="tpf8.PropertyMacro_GetPropertyValue" typeId="tpf8.1167756080639" id="8979762117546982098" nodeInfo="nn">

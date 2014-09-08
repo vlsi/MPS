@@ -11,43 +11,43 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
   }
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 32:
-        return new BuildMps_ModuleDependencyOnModule_BehaviorDescriptor();
-      case 35:
-        return new BuildMps_ModuleJavaSource_BehaviorDescriptor();
-      case 39:
-        return new BuildMps_Solution_BehaviorDescriptor();
-      case 27:
-        return new BuildMps_Language_BehaviorDescriptor();
-      case 33:
-        return new BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor();
-      case 31:
-        return new BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor();
-      case 37:
-        return new BuildMps_ModuleSolutionRuntime_BehaviorDescriptor();
-      case 28:
-        return new BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor();
       case 34:
-        return new BuildMps_ModuleJarRuntime_BehaviorDescriptor();
-      case 36:
-        return new BuildMps_ModuleModelRoot_BehaviorDescriptor();
+        return new BuildMps_ModuleDependencyOnModule_BehaviorDescriptor();
+      case 37:
+        return new BuildMps_ModuleJavaSource_BehaviorDescriptor();
+      case 41:
+        return new BuildMps_Solution_BehaviorDescriptor();
       case 29:
-        return new BuildMps_ModuleDependencyJar_BehaviorDescriptor();
-      case 13:
-        return new BuildMps_DevKit_BehaviorDescriptor();
-      case 16:
-        return new BuildMps_DevKitRef_BehaviorDescriptor();
-      case 14:
-        return new BuildMps_DevKitExportLanguage_BehaviorDescriptor();
-      case 15:
-        return new BuildMps_DevKitExportSolution_BehaviorDescriptor();
+        return new BuildMps_Language_BehaviorDescriptor();
+      case 35:
+        return new BuildMps_ModuleDependencyUseLanguage_BehaviorDescriptor();
+      case 33:
+        return new BuildMps_ModuleDependencyOnJavaModule_BehaviorDescriptor();
+      case 39:
+        return new BuildMps_ModuleSolutionRuntime_BehaviorDescriptor();
       case 30:
+        return new BuildMps_ModuleDependencyExtendLanguage_BehaviorDescriptor();
+      case 36:
+        return new BuildMps_ModuleJarRuntime_BehaviorDescriptor();
+      case 38:
+        return new BuildMps_ModuleModelRoot_BehaviorDescriptor();
+      case 31:
+        return new BuildMps_ModuleDependencyJar_BehaviorDescriptor();
+      case 15:
+        return new BuildMps_DevKit_BehaviorDescriptor();
+      case 18:
+        return new BuildMps_DevKitRef_BehaviorDescriptor();
+      case 16:
+        return new BuildMps_DevKitExportLanguage_BehaviorDescriptor();
+      case 17:
+        return new BuildMps_DevKitExportSolution_BehaviorDescriptor();
+      case 32:
         return new BuildMps_ModuleDependencyOnDevKit_BehaviorDescriptor();
-      case 20:
+      case 22:
         return new BuildMps_Group_BehaviorDescriptor();
       case 5:
         return new BuildMpsLayout_ModuleSources_BehaviorDescriptor();
-      case 17:
+      case 19:
         return new BuildMps_ExtractedModuleDependency_BehaviorDescriptor();
       case 3:
         return new BuildMpsLayout_FolderWithSources_BehaviorDescriptor();
@@ -61,45 +61,49 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BuildMpsLayout_ModuleXml_CustomJarLocation_BehaviorDescriptor();
       case 10:
         return new BuildMps_Branding_BehaviorDescriptor();
-      case 12:
+      case 14:
         return new BuildMps_BrandingUpdateSite_BehaviorDescriptor();
-      case 11:
+      case 12:
         return new BuildMps_BrandingHelp_BehaviorDescriptor();
       case 8:
         return new BuildMpsLayout_Plugin_BehaviorDescriptor();
-      case 21:
-        return new BuildMps_IdeaPlugin_BehaviorDescriptor();
-      case 22:
-        return new BuildMps_IdeaPluginDependency_BehaviorDescriptor();
-      case 25:
-        return new BuildMps_IdeaPluginModule_BehaviorDescriptor();
       case 23:
+        return new BuildMps_IdeaPlugin_BehaviorDescriptor();
+      case 24:
+        return new BuildMps_IdeaPluginDependency_BehaviorDescriptor();
+      case 27:
+        return new BuildMps_IdeaPluginModule_BehaviorDescriptor();
+      case 25:
         return new BuildMps_IdeaPluginGroup_BehaviorDescriptor();
       case 9:
         return new BuildMpsLayout_PluginDescriptor_BehaviorDescriptor();
-      case 24:
-        return new BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor();
       case 26:
+        return new BuildMps_IdeaPluginGroupCustomModule_BehaviorDescriptor();
+      case 28:
         return new BuildMps_IdeaPluginVendor_BehaviorDescriptor();
       case 2:
         return new BuildMpsAspect_BehaviorDescriptor();
-      case 41:
+      case 43:
         return new GeneratorInternal_BuildSourcePath_BehaviorDescriptor();
-      case 40:
-        return new GeneratorInternal_BuildMps_Module_BehaviorDescriptor();
       case 42:
+        return new GeneratorInternal_BuildMps_Module_BehaviorDescriptor();
+      case 44:
         return new GeneratorInternal_String_BehaviorDescriptor();
       case 0:
         return new BuildLayout_ToBinaryCopyProcessor_BehaviorDescriptor();
-      case 18:
+      case 20:
         return new BuildMps_Generator_BehaviorDescriptor();
-      case 38:
+      case 40:
         return new BuildMps_ModuleTestSource_BehaviorDescriptor();
-      case 19:
+      case 21:
         return new BuildMps_GeneratorOptions_BehaviorDescriptor();
+      case 13:
+        return new BuildMps_BrandingStats_BehaviorDescriptor();
+      case 11:
+        return new BuildMps_BrandingCompany_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.build.mps.structure.BuildLayout_ToBinaryCopyProcessor", "jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.mps.structure.BuildMpsLayout_FolderWithSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleJars", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleSources", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml", "jetbrains.mps.build.mps.structure.BuildMpsLayout_ModuleXml_CustomJarLocation", "jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", "jetbrains.mps.build.mps.structure.BuildMpsLayout_PluginDescriptor", "jetbrains.mps.build.mps.structure.BuildMps_Branding", "jetbrains.mps.build.mps.structure.BuildMps_BrandingCompany", "jetbrains.mps.build.mps.structure.BuildMps_BrandingHelp", "jetbrains.mps.build.mps.structure.BuildMps_BrandingStats", "jetbrains.mps.build.mps.structure.BuildMps_BrandingUpdateSite", "jetbrains.mps.build.mps.structure.BuildMps_DevKit", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", "jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", "jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", "jetbrains.mps.build.mps.structure.BuildMps_Generator", "jetbrains.mps.build.mps.structure.BuildMps_GeneratorOptions", "jetbrains.mps.build.mps.structure.BuildMps_Group", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPlugin", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginDependency", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroup", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginGroupCustomModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule", "jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginVendor", "jetbrains.mps.build.mps.structure.BuildMps_Language", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJarRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", "jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource", "jetbrains.mps.build.mps.structure.BuildMps_Solution", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildMps_Module", "jetbrains.mps.build.mps.structure.GeneratorInternal_BuildSourcePath", "jetbrains.mps.build.mps.structure.GeneratorInternal_String"};
 }
