@@ -15,7 +15,7 @@ public class ClassLikeDescriptor_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getPreferredConcept_1825613483881161085(SNode thisNode) {
-    return (SLinkOperations.getTarget(thisNode, "preferredConcept", false) == null ? SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") : ((SNode) SLinkOperations.getTarget(thisNode, "preferredConcept", false)));
+    return (SLinkOperations.getTarget(thisNode, "preferredConcept", false) == null ? SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") : SLinkOperations.getTarget(thisNode, "preferredConcept", false));
   }
   public static void call_initializeInstance_3384419124890469048(SNode thisNode, SNode classLike) {
     if (SLinkOperations.getTarget(thisNode, "initializer", true) == null) {
