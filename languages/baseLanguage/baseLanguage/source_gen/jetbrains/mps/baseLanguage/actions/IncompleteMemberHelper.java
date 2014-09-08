@@ -43,7 +43,7 @@ public class IncompleteMemberHelper {
   }
 
   /*package*/ static boolean canBeField(SNode member) {
-    return !(SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized"));
+    return !(SPropertyOperations.getBoolean(member, "abstract") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(member, "type", true), "jetbrains.mps.baseLanguage.structure.VoidType") || SPropertyOperations.getBoolean(member, "synchronized") || SPropertyOperations.getBoolean(member, "native"));
   }
 
   /*package*/ static boolean canBeMethod(SNode member) {

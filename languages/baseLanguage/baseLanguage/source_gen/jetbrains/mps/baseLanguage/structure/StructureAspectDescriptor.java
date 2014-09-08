@@ -302,7 +302,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 143:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").alias("(", "").create();
       case 144:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile", "transient").children(new String[]{"type"}, new boolean[]{false}).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").properties("static", "final", "abstract", "synchronized", "volatile", "transient", "native").children(new String[]{"type"}, new boolean[]{false}).create();
       case 145:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.IncompleteRightParen").super_("jetbrains.mps.lang.core.structure.NodeAttribute").parents("jetbrains.mps.lang.core.structure.NodeAttribute").alias(")", "").create();
       case 146:
@@ -366,7 +366,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 175:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.LowerBoundType").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.baseLanguage.structure.IGenericType").children(new String[]{"bound"}, new boolean[]{false}).alias("? super", "").staticScope(StaticScope.NONE).create();
       case 176:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.MethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo").abstract_().create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.MethodDeclaration").super_("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration").parents("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo").properties("isNative").abstract_().create();
       case 177:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.MinusAssignmentExpression").super_("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").parents("jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression").alias("-=", "").staticScope(StaticScope.NONE).create();
       case 178:

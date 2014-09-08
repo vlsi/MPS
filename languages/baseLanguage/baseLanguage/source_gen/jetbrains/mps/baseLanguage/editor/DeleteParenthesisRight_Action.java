@@ -36,7 +36,7 @@ public class DeleteParenthesisRight_Action {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
-      ParenthesisUtil.checkExpressionPriorities(replacing);
+      ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
       if (hasRightUnmatchedParen) {
@@ -61,7 +61,7 @@ public class DeleteParenthesisRight_Action {
       SNodeOperations.replaceWithAnother(node, replacing);
 
       SNode rightMostNode = EditorParenthesisUtil.findRightmostOrLeftmostLeafExpression(replacing, true);
-      ParenthesisUtil.checkExpressionPriorities(replacing);
+      ParenthesisUtil.checkWholeExpressionPriorities(replacing);
 
       ParenthesisUtil.createUnmatchedLeftParenthesis(leftMost);
       if (hasRightUnmatchedParen) {

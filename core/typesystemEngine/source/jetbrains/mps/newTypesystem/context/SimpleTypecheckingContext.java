@@ -45,6 +45,7 @@ public abstract class SimpleTypecheckingContext<
 
   private TCHECK myTypechecking;
   private STATE myState;
+  private boolean myCurrentlyChecking;
 
   public SimpleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
@@ -202,13 +203,21 @@ public abstract class SimpleTypecheckingContext<
   @Override
   public boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules) {
     synchronized (TYPECHECKING_LOCK) {
-      if (!isCheckedRoot(useNonTypesystemRules)) {
-        checkRoot();
-        if (useNonTypesystemRules) {
-          applyNonTypesystemRules();
+      // recursion guard
+      if (myCurrentlyChecking) return true;
+      try {
+        this.myCurrentlyChecking = true;
+        if (!isCheckedRoot(useNonTypesystemRules)) {
+          checkRoot();
+          if (useNonTypesystemRules) {
+            applyNonTypesystemRules();
+          }
         }
+        return true;
       }
-      return true;
+      finally {
+        this.myCurrentlyChecking = false;
+      }
     }
   }
 

@@ -39,6 +39,9 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isSynchronized")) {
       this.append("synchronized ");
     }
+    if (SPropertyOperations.getBoolean(node, "isNative")) {
+      this.append("native ");
+    }
     GenericDeclarationTextGen2.typeDeclarations(node, this);
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).isNotEmpty()) {
       this.append(" ");
@@ -71,7 +74,7 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
         }
       }
     }
-    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || SPropertyOperations.getBoolean(node, "isAbstract")) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface") || BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isAbstract_1232982539764", new Object[]{})) {
       this.append(";");
       this.appendNewLine();
     } else {

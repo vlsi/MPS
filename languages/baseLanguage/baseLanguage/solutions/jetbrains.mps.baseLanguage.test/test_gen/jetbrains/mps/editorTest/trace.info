@@ -1579,6 +1579,117 @@
       <unit id="1954244792706921825" at="10,0,34,0" name="jetbrains.mps.editorTest.UndoSustitutionOfExpressionWithIntContant_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899224187910">
+    <file name="SpaceCompletion1_Test.java">
+      <node id="197036899224187910" at="15,56,16,107" concept="2" />
+      <node id="197036899224187910" at="16,107,17,97" concept="2" />
+      <node id="197036899224187910" at="24,51,25,61" concept="2" />
+      <node id="197036899224187924" at="25,61,26,42" concept="2" />
+      <node id="197036899224187910" at="12,0,14,0" concept="1" trace="SpaceCompletion1_Test#()V" />
+      <node id="197036899224187910" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="197036899224187910" at="14,0,19,0" concept="5" trace="test_SpaceCompletion1#()V" />
+      <node id="197036899224187910" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899224187910" at="12,34,12,34" />
+      <scope id="197036899224187910" at="21,23,21,23" />
+      <scope id="197036899224187910" at="12,0,14,0" />
+      <scope id="197036899224187910" at="15,56,17,97" />
+      <scope id="197036899224187910" at="21,0,23,0" />
+      <scope id="197036899224187910" at="24,51,26,42" />
+      <scope id="197036899224187910" at="14,0,19,0" />
+      <scope id="197036899224187910" at="23,0,28,0" />
+      <unit id="197036899224187910" at="19,0,29,0" name="jetbrains.mps.editorTest.SpaceCompletion1_Test$TestBody" />
+      <unit id="197036899224187910" at="10,0,30,0" name="jetbrains.mps.editorTest.SpaceCompletion1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899224323931">
+    <file name="SpaceCompletion2_Test.java">
+      <node id="197036899224323931" at="15,56,16,107" concept="2" />
+      <node id="197036899224323931" at="16,107,17,97" concept="2" />
+      <node id="197036899224323931" at="24,51,25,61" concept="2" />
+      <node id="197036899224323944" at="25,61,26,51" concept="2" />
+      <node id="197036899224323931" at="12,0,14,0" concept="1" trace="SpaceCompletion2_Test#()V" />
+      <node id="197036899224323931" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="197036899224323931" at="14,0,19,0" concept="5" trace="test_SpaceCompletion2#()V" />
+      <node id="197036899224323931" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899224323931" at="12,34,12,34" />
+      <scope id="197036899224323931" at="21,23,21,23" />
+      <scope id="197036899224323931" at="12,0,14,0" />
+      <scope id="197036899224323931" at="15,56,17,97" />
+      <scope id="197036899224323931" at="21,0,23,0" />
+      <scope id="197036899224323931" at="24,51,26,51" />
+      <scope id="197036899224323931" at="14,0,19,0" />
+      <scope id="197036899224323931" at="23,0,28,0" />
+      <unit id="197036899224323931" at="19,0,29,0" name="jetbrains.mps.editorTest.SpaceCompletion2_Test$TestBody" />
+      <unit id="197036899224323931" at="10,0,30,0" name="jetbrains.mps.editorTest.SpaceCompletion2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899224325301">
+    <file name="SpaceCompletion3_Test.java">
+      <node id="197036899224325301" at="17,56,18,107" concept="2" />
+      <node id="197036899224325301" at="18,107,19,97" concept="2" />
+      <node id="197036899224325301" at="26,51,27,61" concept="2" />
+      <node id="197036899224325313" at="27,61,28,41" concept="2" />
+      <node id="197036899224326392" at="28,41,29,87" concept="2" />
+      <node id="197036899224325301" at="14,0,16,0" concept="1" trace="SpaceCompletion3_Test#()V" />
+      <node id="197036899224325301" at="23,0,25,0" concept="1" trace="TestBody#()V" />
+      <node id="197036899224325301" at="16,0,21,0" concept="5" trace="test_SpaceCompletion3#()V" />
+      <node id="197036899224325301" at="25,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899224325301" at="14,34,14,34" />
+      <scope id="197036899224325301" at="23,23,23,23" />
+      <scope id="197036899224325301" at="14,0,16,0" />
+      <scope id="197036899224325301" at="17,56,19,97" />
+      <scope id="197036899224325301" at="23,0,25,0" />
+      <scope id="197036899224325301" at="26,51,29,87" />
+      <scope id="197036899224325301" at="16,0,21,0" />
+      <scope id="197036899224325301" at="25,0,31,0" />
+      <unit id="197036899224325301" at="21,0,32,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test$TestBody" />
+      <unit id="197036899224325301" at="12,0,33,0" name="jetbrains.mps.editorTest.SpaceCompletion3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899227101535">
+    <file name="SpaceCompletionInInterface1_Test.java">
+      <node id="197036899227101535" at="15,67,16,107" concept="2" />
+      <node id="197036899227101535" at="16,107,17,108" concept="2" />
+      <node id="197036899227101535" at="24,51,25,61" concept="2" />
+      <node id="197036899227101537" at="25,61,26,42" concept="2" />
+      <node id="197036899227101535" at="12,0,14,0" concept="1" trace="SpaceCompletionInInterface1_Test#()V" />
+      <node id="197036899227101535" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="197036899227101535" at="14,0,19,0" concept="5" trace="test_SpaceCompletionInInterface1#()V" />
+      <node id="197036899227101535" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899227101535" at="12,45,12,45" />
+      <scope id="197036899227101535" at="21,23,21,23" />
+      <scope id="197036899227101535" at="12,0,14,0" />
+      <scope id="197036899227101535" at="15,67,17,108" />
+      <scope id="197036899227101535" at="21,0,23,0" />
+      <scope id="197036899227101535" at="24,51,26,42" />
+      <scope id="197036899227101535" at="14,0,19,0" />
+      <scope id="197036899227101535" at="23,0,28,0" />
+      <unit id="197036899227101535" at="19,0,29,0" name="jetbrains.mps.editorTest.SpaceCompletionInInterface1_Test$TestBody" />
+      <unit id="197036899227101535" at="10,0,30,0" name="jetbrains.mps.editorTest.SpaceCompletionInInterface1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/197036899236391053">
+    <file name="SpaceCompletionInInterface2_Test.java">
+      <node id="197036899236391053" at="15,67,16,107" concept="2" />
+      <node id="197036899236391053" at="16,107,17,108" concept="2" />
+      <node id="197036899236391053" at="24,51,25,61" concept="2" />
+      <node id="197036899236391055" at="25,61,26,54" concept="2" />
+      <node id="197036899236391053" at="12,0,14,0" concept="1" trace="SpaceCompletionInInterface2_Test#()V" />
+      <node id="197036899236391053" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="197036899236391053" at="14,0,19,0" concept="5" trace="test_SpaceCompletionInInterface2#()V" />
+      <node id="197036899236391053" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="197036899236391053" at="12,45,12,45" />
+      <scope id="197036899236391053" at="21,23,21,23" />
+      <scope id="197036899236391053" at="12,0,14,0" />
+      <scope id="197036899236391053" at="15,67,17,108" />
+      <scope id="197036899236391053" at="21,0,23,0" />
+      <scope id="197036899236391053" at="24,51,26,54" />
+      <scope id="197036899236391053" at="14,0,19,0" />
+      <scope id="197036899236391053" at="23,0,28,0" />
+      <unit id="197036899236391053" at="19,0,29,0" name="jetbrains.mps.editorTest.SpaceCompletionInInterface2_Test$TestBody" />
+      <unit id="197036899236391053" at="10,0,30,0" name="jetbrains.mps.editorTest.SpaceCompletionInInterface2_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/1989240834983537719">
     <file name="SurroundExpressionWithParenthesis_Test.java">
       <node id="1989240834983537719" at="17,73,18,107" concept="2" />
@@ -2417,21 +2528,20 @@
       <node id="3313213291230693523" at="16,107,17,97" concept="2" />
       <node id="3313213291230693523" at="24,51,25,63" concept="2" />
       <node id="3313213291230693552" at="25,63,26,27" concept="2" />
-      <node id="3313213291230693553" at="26,27,27,76" concept="2" />
       <node id="3313213291230693523" at="12,0,14,0" concept="1" trace="AddParensToCast5_Test#()V" />
       <node id="3313213291230693523" at="21,0,23,0" concept="1" trace="TestBody#()V" />
       <node id="3313213291230693523" at="14,0,19,0" concept="5" trace="test_AddParensToCast5#()V" />
-      <node id="3313213291230693523" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <node id="3313213291230693523" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="3313213291230693523" at="12,34,12,34" />
       <scope id="3313213291230693523" at="21,23,21,23" />
       <scope id="3313213291230693523" at="12,0,14,0" />
       <scope id="3313213291230693523" at="15,56,17,97" />
       <scope id="3313213291230693523" at="21,0,23,0" />
-      <scope id="3313213291230693523" at="24,51,27,76" />
+      <scope id="3313213291230693523" at="24,51,26,27" />
       <scope id="3313213291230693523" at="14,0,19,0" />
-      <scope id="3313213291230693523" at="23,0,29,0" />
-      <unit id="3313213291230693523" at="19,0,30,0" name="jetbrains.mps.editorTest.AddParensToCast5_Test$TestBody" />
-      <unit id="3313213291230693523" at="10,0,31,0" name="jetbrains.mps.editorTest.AddParensToCast5_Test" />
+      <scope id="3313213291230693523" at="23,0,28,0" />
+      <unit id="3313213291230693523" at="19,0,29,0" name="jetbrains.mps.editorTest.AddParensToCast5_Test$TestBody" />
+      <unit id="3313213291230693523" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToCast5_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/341917192548518608">
@@ -6178,14 +6288,14 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764080152360">
-    <file name="AddParensToAssignment1_Test.java">
+    <file name="AddParensToAssignment2_Test.java">
       <node id="6141629764080152360" at="15,62,16,107" concept="2" />
       <node id="6141629764080152360" at="16,107,17,103" concept="2" />
       <node id="6141629764080152360" at="24,51,25,63" concept="2" />
       <node id="6141629764080152382" at="25,63,26,27" concept="2" />
-      <node id="6141629764080152360" at="12,0,14,0" concept="1" trace="AddParensToAssignment1_Test#()V" />
+      <node id="6141629764080152360" at="12,0,14,0" concept="1" trace="AddParensToAssignment2_Test#()V" />
       <node id="6141629764080152360" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="6141629764080152360" at="14,0,19,0" concept="5" trace="test_AddParensToAssignment1#()V" />
+      <node id="6141629764080152360" at="14,0,19,0" concept="5" trace="test_AddParensToAssignment2#()V" />
       <node id="6141629764080152360" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
       <scope id="6141629764080152360" at="12,40,12,40" />
       <scope id="6141629764080152360" at="21,23,21,23" />
@@ -6195,8 +6305,8 @@
       <scope id="6141629764080152360" at="24,51,26,27" />
       <scope id="6141629764080152360" at="14,0,19,0" />
       <scope id="6141629764080152360" at="23,0,28,0" />
-      <unit id="6141629764080152360" at="19,0,29,0" name="jetbrains.mps.editorTest.AddParensToAssignment1_Test$TestBody" />
-      <unit id="6141629764080152360" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToAssignment1_Test" />
+      <unit id="6141629764080152360" at="19,0,29,0" name="jetbrains.mps.editorTest.AddParensToAssignment2_Test$TestBody" />
+      <unit id="6141629764080152360" at="10,0,30,0" name="jetbrains.mps.editorTest.AddParensToAssignment2_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6141629764081784027">
@@ -8658,6 +8768,313 @@
       <scope id="8221415467041384661" at="23,0,28,0" />
       <unit id="8221415467041384661" at="19,0,29,0" name="jetbrains.mps.editorTest.RT_toArray_Test$TestBody" />
       <unit id="8221415467041384661" at="10,0,30,0" name="jetbrains.mps.editorTest.RT_toArray_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235043427382">
+    <file name="AbstractNative_Test.java">
+      <node id="8347245235043427382" at="15,54,16,107" concept="2" />
+      <node id="8347245235043427382" at="16,107,17,95" concept="2" />
+      <node id="8347245235043427382" at="24,51,25,63" concept="2" />
+      <node id="8347245235043427391" at="25,63,26,42" concept="2" />
+      <node id="8347245235043427382" at="12,0,14,0" concept="1" trace="AbstractNative_Test#()V" />
+      <node id="8347245235043427382" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235043427382" at="14,0,19,0" concept="5" trace="test_AbstractNative#()V" />
+      <node id="8347245235043427382" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235043427382" at="12,32,12,32" />
+      <scope id="8347245235043427382" at="21,23,21,23" />
+      <scope id="8347245235043427382" at="12,0,14,0" />
+      <scope id="8347245235043427382" at="15,54,17,95" />
+      <scope id="8347245235043427382" at="21,0,23,0" />
+      <scope id="8347245235043427382" at="24,51,26,42" />
+      <scope id="8347245235043427382" at="14,0,19,0" />
+      <scope id="8347245235043427382" at="23,0,28,0" />
+      <unit id="8347245235043427382" at="19,0,29,0" name="jetbrains.mps.editorTest.AbstractNative_Test$TestBody" />
+      <unit id="8347245235043427382" at="10,0,30,0" name="jetbrains.mps.editorTest.AbstractNative_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235043448589">
+    <file name="NativeAbstract_Test.java">
+      <node id="8347245235043448589" at="15,54,16,107" concept="2" />
+      <node id="8347245235043448589" at="16,107,17,95" concept="2" />
+      <node id="8347245235043448589" at="24,51,25,63" concept="2" />
+      <node id="8347245235043448599" at="25,63,26,42" concept="2" />
+      <node id="8347245235043448589" at="12,0,14,0" concept="1" trace="NativeAbstract_Test#()V" />
+      <node id="8347245235043448589" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235043448589" at="14,0,19,0" concept="5" trace="test_NativeAbstract#()V" />
+      <node id="8347245235043448589" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235043448589" at="12,32,12,32" />
+      <scope id="8347245235043448589" at="21,23,21,23" />
+      <scope id="8347245235043448589" at="12,0,14,0" />
+      <scope id="8347245235043448589" at="15,54,17,95" />
+      <scope id="8347245235043448589" at="21,0,23,0" />
+      <scope id="8347245235043448589" at="24,51,26,42" />
+      <scope id="8347245235043448589" at="14,0,19,0" />
+      <scope id="8347245235043448589" at="23,0,28,0" />
+      <unit id="8347245235043448589" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeAbstract_Test$TestBody" />
+      <unit id="8347245235043448589" at="10,0,30,0" name="jetbrains.mps.editorTest.NativeAbstract_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044853845">
+    <file name="NativeField_Test.java">
+      <node id="8347245235044853845" at="15,51,16,107" concept="2" />
+      <node id="8347245235044853845" at="16,107,17,92" concept="2" />
+      <node id="8347245235044853845" at="24,51,25,63" concept="2" />
+      <node id="8347245235044853855" at="25,63,26,41" concept="2" />
+      <node id="8347245235044853845" at="12,0,14,0" concept="1" trace="NativeField_Test#()V" />
+      <node id="8347245235044853845" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044853845" at="14,0,19,0" concept="5" trace="test_NativeField#()V" />
+      <node id="8347245235044853845" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044853845" at="12,29,12,29" />
+      <scope id="8347245235044853845" at="21,23,21,23" />
+      <scope id="8347245235044853845" at="12,0,14,0" />
+      <scope id="8347245235044853845" at="15,51,17,92" />
+      <scope id="8347245235044853845" at="21,0,23,0" />
+      <scope id="8347245235044853845" at="24,51,26,41" />
+      <scope id="8347245235044853845" at="14,0,19,0" />
+      <scope id="8347245235044853845" at="23,0,28,0" />
+      <unit id="8347245235044853845" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeField_Test$TestBody" />
+      <unit id="8347245235044853845" at="10,0,30,0" name="jetbrains.mps.editorTest.NativeField_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044854667">
+    <file name="NativeMethod1_Test.java">
+      <node id="8347245235044854667" at="15,53,16,107" concept="2" />
+      <node id="8347245235044854667" at="16,107,17,94" concept="2" />
+      <node id="8347245235044854667" at="24,51,25,63" concept="2" />
+      <node id="8347245235044854677" at="25,63,26,49" concept="2" />
+      <node id="8347245235044855976" at="26,49,27,74" concept="2" />
+      <node id="8347245235044854667" at="12,0,14,0" concept="1" trace="NativeMethod1_Test#()V" />
+      <node id="8347245235044854667" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044854667" at="14,0,19,0" concept="5" trace="test_NativeMethod1#()V" />
+      <node id="8347245235044854667" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044854667" at="12,31,12,31" />
+      <scope id="8347245235044854667" at="21,23,21,23" />
+      <scope id="8347245235044854667" at="12,0,14,0" />
+      <scope id="8347245235044854667" at="15,53,17,94" />
+      <scope id="8347245235044854667" at="21,0,23,0" />
+      <scope id="8347245235044854667" at="24,51,27,74" />
+      <scope id="8347245235044854667" at="14,0,19,0" />
+      <scope id="8347245235044854667" at="23,0,29,0" />
+      <unit id="8347245235044854667" at="19,0,30,0" name="jetbrains.mps.editorTest.NativeMethod1_Test$TestBody" />
+      <unit id="8347245235044854667" at="10,0,31,0" name="jetbrains.mps.editorTest.NativeMethod1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044856932">
+    <file name="NativeMethod2_Test.java">
+      <node id="8347245235044856932" at="15,53,16,107" concept="2" />
+      <node id="8347245235044856932" at="16,107,17,94" concept="2" />
+      <node id="8347245235044856932" at="24,51,25,63" concept="2" />
+      <node id="8347245235044856944" at="25,63,26,50" concept="2" />
+      <node id="8347245235044856932" at="12,0,14,0" concept="1" trace="NativeMethod2_Test#()V" />
+      <node id="8347245235044856932" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044856932" at="14,0,19,0" concept="5" trace="test_NativeMethod2#()V" />
+      <node id="8347245235044856932" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044856932" at="12,31,12,31" />
+      <scope id="8347245235044856932" at="21,23,21,23" />
+      <scope id="8347245235044856932" at="12,0,14,0" />
+      <scope id="8347245235044856932" at="15,53,17,94" />
+      <scope id="8347245235044856932" at="21,0,23,0" />
+      <scope id="8347245235044856932" at="24,51,26,50" />
+      <scope id="8347245235044856932" at="14,0,19,0" />
+      <scope id="8347245235044856932" at="23,0,28,0" />
+      <unit id="8347245235044856932" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeMethod2_Test$TestBody" />
+      <unit id="8347245235044856932" at="10,0,30,0" name="jetbrains.mps.editorTest.NativeMethod2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044858825">
+    <file name="NativeMethod3_Test.java">
+      <node id="8347245235044858825" at="15,53,16,107" concept="2" />
+      <node id="8347245235044858825" at="16,107,17,94" concept="2" />
+      <node id="8347245235044858825" at="24,51,25,63" concept="2" />
+      <node id="8347245235044858838" at="25,63,26,49" concept="2" />
+      <node id="8347245235044858825" at="12,0,14,0" concept="1" trace="NativeMethod3_Test#()V" />
+      <node id="8347245235044858825" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044858825" at="14,0,19,0" concept="5" trace="test_NativeMethod3#()V" />
+      <node id="8347245235044858825" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044858825" at="12,31,12,31" />
+      <scope id="8347245235044858825" at="21,23,21,23" />
+      <scope id="8347245235044858825" at="12,0,14,0" />
+      <scope id="8347245235044858825" at="15,53,17,94" />
+      <scope id="8347245235044858825" at="21,0,23,0" />
+      <scope id="8347245235044858825" at="24,51,26,49" />
+      <scope id="8347245235044858825" at="14,0,19,0" />
+      <scope id="8347245235044858825" at="23,0,28,0" />
+      <unit id="8347245235044858825" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeMethod3_Test$TestBody" />
+      <unit id="8347245235044858825" at="10,0,30,0" name="jetbrains.mps.editorTest.NativeMethod3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044872507">
+    <file name="AddNative1_Test.java">
+      <node id="8347245235044872507" at="15,50,16,107" concept="2" />
+      <node id="8347245235044872507" at="16,107,17,91" concept="2" />
+      <node id="8347245235044872507" at="24,51,25,63" concept="2" />
+      <node id="8347245235044874725" at="25,63,26,32" concept="2" />
+      <node id="8347245235044872507" at="12,0,14,0" concept="1" trace="AddNative1_Test#()V" />
+      <node id="8347245235044872507" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044872507" at="14,0,19,0" concept="5" trace="test_AddNative1#()V" />
+      <node id="8347245235044872507" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044872507" at="12,28,12,28" />
+      <scope id="8347245235044872507" at="21,23,21,23" />
+      <scope id="8347245235044872507" at="12,0,14,0" />
+      <scope id="8347245235044872507" at="15,50,17,91" />
+      <scope id="8347245235044872507" at="21,0,23,0" />
+      <scope id="8347245235044872507" at="24,51,26,32" />
+      <scope id="8347245235044872507" at="14,0,19,0" />
+      <scope id="8347245235044872507" at="23,0,28,0" />
+      <unit id="8347245235044872507" at="19,0,29,0" name="jetbrains.mps.editorTest.AddNative1_Test$TestBody" />
+      <unit id="8347245235044872507" at="10,0,30,0" name="jetbrains.mps.editorTest.AddNative1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044874743">
+    <file name="RemoveNative1_Test.java">
+      <node id="8347245235044874743" at="15,53,16,107" concept="2" />
+      <node id="8347245235044874743" at="16,107,17,94" concept="2" />
+      <node id="8347245235044874743" at="24,51,25,63" concept="2" />
+      <node id="8347245235044875433" at="25,63,26,77" concept="2" />
+      <node id="8347245235044875442" at="26,77,27,77" concept="2" />
+      <node id="8347245235044875448" at="27,77,28,77" concept="2" />
+      <node id="8347245235044875456" at="28,77,29,77" concept="2" />
+      <node id="8347245235044875466" at="29,77,30,77" concept="2" />
+      <node id="8347245235044875478" at="30,77,31,77" concept="2" />
+      <node id="8347245235044875492" at="31,77,32,77" concept="2" />
+      <node id="8347245235044874743" at="12,0,14,0" concept="1" trace="RemoveNative1_Test#()V" />
+      <node id="8347245235044874743" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044874743" at="14,0,19,0" concept="5" trace="test_RemoveNative1#()V" />
+      <node id="8347245235044874743" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044874743" at="12,31,12,31" />
+      <scope id="8347245235044874743" at="21,23,21,23" />
+      <scope id="8347245235044874743" at="12,0,14,0" />
+      <scope id="8347245235044874743" at="15,53,17,94" />
+      <scope id="8347245235044874743" at="21,0,23,0" />
+      <scope id="8347245235044874743" at="14,0,19,0" />
+      <scope id="8347245235044874743" at="24,51,32,77" />
+      <scope id="8347245235044874743" at="23,0,34,0" />
+      <unit id="8347245235044874743" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveNative1_Test$TestBody" />
+      <unit id="8347245235044874743" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveNative1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044875538">
+    <file name="AddNative2_Test.java">
+      <node id="8347245235044875538" at="15,50,16,107" concept="2" />
+      <node id="8347245235044875538" at="16,107,17,91" concept="2" />
+      <node id="8347245235044875538" at="24,51,25,63" concept="2" />
+      <node id="8347245235044875557" at="25,63,26,32" concept="2" />
+      <node id="8347245235044875538" at="12,0,14,0" concept="1" trace="AddNative2_Test#()V" />
+      <node id="8347245235044875538" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044875538" at="14,0,19,0" concept="5" trace="test_AddNative2#()V" />
+      <node id="8347245235044875538" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044875538" at="12,28,12,28" />
+      <scope id="8347245235044875538" at="21,23,21,23" />
+      <scope id="8347245235044875538" at="12,0,14,0" />
+      <scope id="8347245235044875538" at="15,50,17,91" />
+      <scope id="8347245235044875538" at="21,0,23,0" />
+      <scope id="8347245235044875538" at="24,51,26,32" />
+      <scope id="8347245235044875538" at="14,0,19,0" />
+      <scope id="8347245235044875538" at="23,0,28,0" />
+      <unit id="8347245235044875538" at="19,0,29,0" name="jetbrains.mps.editorTest.AddNative2_Test$TestBody" />
+      <unit id="8347245235044875538" at="10,0,30,0" name="jetbrains.mps.editorTest.AddNative2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044886892">
+    <file name="RemoveNative2_Test.java">
+      <node id="8347245235044886892" at="15,53,16,107" concept="2" />
+      <node id="8347245235044886892" at="16,107,17,94" concept="2" />
+      <node id="8347245235044886892" at="24,51,25,63" concept="2" />
+      <node id="8347245235044886911" at="25,63,26,77" concept="2" />
+      <node id="8347245235044886913" at="26,77,27,77" concept="2" />
+      <node id="8347245235044886915" at="27,77,28,77" concept="2" />
+      <node id="8347245235044886917" at="28,77,29,77" concept="2" />
+      <node id="8347245235044886919" at="29,77,30,77" concept="2" />
+      <node id="8347245235044886921" at="30,77,31,77" concept="2" />
+      <node id="8347245235044886923" at="31,77,32,77" concept="2" />
+      <node id="8347245235044886892" at="12,0,14,0" concept="1" trace="RemoveNative2_Test#()V" />
+      <node id="8347245235044886892" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044886892" at="14,0,19,0" concept="5" trace="test_RemoveNative2#()V" />
+      <node id="8347245235044886892" at="23,0,34,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044886892" at="12,31,12,31" />
+      <scope id="8347245235044886892" at="21,23,21,23" />
+      <scope id="8347245235044886892" at="12,0,14,0" />
+      <scope id="8347245235044886892" at="15,53,17,94" />
+      <scope id="8347245235044886892" at="21,0,23,0" />
+      <scope id="8347245235044886892" at="14,0,19,0" />
+      <scope id="8347245235044886892" at="24,51,32,77" />
+      <scope id="8347245235044886892" at="23,0,34,0" />
+      <unit id="8347245235044886892" at="19,0,35,0" name="jetbrains.mps.editorTest.RemoveNative2_Test$TestBody" />
+      <unit id="8347245235044886892" at="10,0,36,0" name="jetbrains.mps.editorTest.RemoveNative2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044888101">
+    <file name="AbstractNative_Test.java">
+      <node id="8347245235044888101" at="15,54,16,107" concept="2" />
+      <node id="8347245235044888101" at="16,107,17,95" concept="2" />
+      <node id="8347245235044888101" at="24,51,25,63" concept="2" />
+      <node id="8347245235044888120" at="25,63,26,32" concept="2" />
+      <node id="8347245235044888101" at="12,0,14,0" concept="1" trace="AbstractNative_Test#()V" />
+      <node id="8347245235044888101" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044888101" at="14,0,19,0" concept="5" trace="test_AbstractNative#()V" />
+      <node id="8347245235044888101" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044888101" at="12,32,12,32" />
+      <scope id="8347245235044888101" at="21,23,21,23" />
+      <scope id="8347245235044888101" at="12,0,14,0" />
+      <scope id="8347245235044888101" at="15,54,17,95" />
+      <scope id="8347245235044888101" at="21,0,23,0" />
+      <scope id="8347245235044888101" at="24,51,26,32" />
+      <scope id="8347245235044888101" at="14,0,19,0" />
+      <scope id="8347245235044888101" at="23,0,28,0" />
+      <unit id="8347245235044888101" at="19,0,29,0" name="jetbrains.mps.editorTest.AbstractNative_Test$TestBody" />
+      <unit id="8347245235044888101" at="10,0,30,0" name="jetbrains.mps.editorTest.AbstractNative_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044888303">
+    <file name="NativeAbstract_Test.java">
+      <node id="8347245235044888303" at="15,54,16,107" concept="2" />
+      <node id="8347245235044888303" at="16,107,17,95" concept="2" />
+      <node id="8347245235044888303" at="24,51,25,63" concept="2" />
+      <node id="8347245235044888318" at="25,63,26,34" concept="2" />
+      <node id="8347245235044888303" at="12,0,14,0" concept="1" trace="NativeAbstract_Test#()V" />
+      <node id="8347245235044888303" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="8347245235044888303" at="14,0,19,0" concept="5" trace="test_NativeAbstract#()V" />
+      <node id="8347245235044888303" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="8347245235044888303" at="12,32,12,32" />
+      <scope id="8347245235044888303" at="21,23,21,23" />
+      <scope id="8347245235044888303" at="12,0,14,0" />
+      <scope id="8347245235044888303" at="15,54,17,95" />
+      <scope id="8347245235044888303" at="21,0,23,0" />
+      <scope id="8347245235044888303" at="24,51,26,34" />
+      <scope id="8347245235044888303" at="14,0,19,0" />
+      <scope id="8347245235044888303" at="23,0,28,0" />
+      <unit id="8347245235044888303" at="19,0,29,0" name="jetbrains.mps.editorTest.NativeAbstract_Test$TestBody" />
+      <unit id="8347245235044888303" at="10,0,30,0" name="jetbrains.mps.editorTest.NativeAbstract_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8347245235044888384">
+    <file name="AbstractNativeIllegal_Test.java">
+      <node id="8347245235044888384" at="16,73,17,114" concept="2" />
+      <node id="8347245235044888384" at="17,114,18,129" concept="2" />
+      <node id="8347245235044888384" at="21,77,22,114" concept="2" />
+      <node id="8347245235044888384" at="22,114,23,133" concept="2" />
+      <node id="8347245235044888384" at="27,75,28,146" concept="6" />
+      <node id="8347245235044888384" at="28,146,29,159" concept="2" />
+      <node id="8347245235044888384" at="31,79,32,146" concept="6" />
+      <node id="8347245235044888384" at="32,146,33,159" concept="2" />
+      <node id="8347245235044888384" at="27,0,31,0" concept="5" trace="test_NodeErrorCheck8347245235047186104#()V" />
+      <node id="8347245235044888384" at="31,0,35,0" concept="5" trace="test_ErrorMessagesCheck8347245235044889233#()V" />
+      <node id="8347245235044888384" at="15,0,20,0" concept="5" trace="test_NodeErrorCheck8347245235047186104#()V" />
+      <node id="8347245235044888384" at="20,0,25,0" concept="5" trace="test_ErrorMessagesCheck8347245235044889233#()V" />
+      <scope id="8347245235044888384" at="16,73,18,129" />
+      <scope id="8347245235044888384" at="21,77,23,133" />
+      <scope id="8347245235044888384" at="27,75,29,159">
+        <var name="operation" id="8347245235044888384" />
+      </scope>
+      <scope id="8347245235044888384" at="31,79,33,159">
+        <var name="operation" id="8347245235044888384" />
+      </scope>
+      <scope id="8347245235044888384" at="27,0,31,0" />
+      <scope id="8347245235044888384" at="31,0,35,0" />
+      <scope id="8347245235044888384" at="15,0,20,0" />
+      <scope id="8347245235044888384" at="20,0,25,0" />
+      <unit id="8347245235044888384" at="25,0,36,0" name="jetbrains.mps.editorTest.AbstractNativeIllegal_Test$TestBody" />
+      <unit id="8347245235044888384" at="13,0,37,0" name="jetbrains.mps.editorTest.AbstractNativeIllegal_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/8350369201053315001">

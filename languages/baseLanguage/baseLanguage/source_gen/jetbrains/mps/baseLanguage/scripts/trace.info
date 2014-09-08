@@ -2618,6 +2618,49 @@
       <unit id="818296778609449086" at="13,0,43,0" name="jetbrains.mps.baseLanguage.scripts.UpdateTernaryOperatorExpressionParens_MigrationScript" />
     </file>
   </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/8355037393080348187">
+    <file name="AddNativeFlagToAllMethods_MigrationScript.java">
+      <node id="8355037393080348187" at="12,88,13,44" concept="14" />
+      <node id="8355037393080352115" at="15,31,16,37" concept="9" />
+      <node id="8355037393080352115" at="18,41,19,37" concept="9" />
+      <node id="8355037393080352115" at="21,59,22,72" concept="9" />
+      <node id="5213562619755050041" at="24,59,25,52" concept="9" />
+      <node id="8355037393080368576" at="27,52,28,64" concept="3" />
+      <node id="8355037393080352115" at="30,42,31,21" concept="9" />
+      <node id="8355037393080352115" at="15,0,18,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="8355037393080352115" at="18,0,21,0" concept="7" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="8355037393080352115" at="21,0,24,0" concept="7" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="8355037393080352115" at="24,0,27,0" concept="7" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8355037393080352115" at="27,0,30,0" concept="7" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8355037393080352115" at="30,0,33,0" concept="7" trace="isShowAsIntention#()Z" />
+      <node id="8355037393080348187" at="13,44,33,7" concept="0" />
+      <node id="8355037393080352115" at="13,44,33,7" concept="3" />
+      <node id="8355037393080348187" at="12,0,35,0" concept="1" trace="AddNativeFlagToAllMethods_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="8355037393080352115" at="15,31,16,37" />
+      <scope id="8355037393080352115" at="18,41,19,37" />
+      <scope id="8355037393080352115" at="21,59,22,72" />
+      <scope id="5213562619755043767" at="24,59,25,52" />
+      <scope id="8355037393080352117" at="27,52,28,64" />
+      <scope id="8355037393080352115" at="30,42,31,21" />
+      <scope id="8355037393080352115" at="15,0,18,0" />
+      <scope id="8355037393080352115" at="18,0,21,0" />
+      <scope id="8355037393080352115" at="21,0,24,0" />
+      <scope id="8355037393080352115" at="24,0,27,0">
+        <var name="node" id="8355037393080352115" />
+      </scope>
+      <scope id="8355037393080352115" at="27,0,30,0">
+        <var name="node" id="8355037393080352115" />
+      </scope>
+      <scope id="8355037393080352115" at="30,0,33,0" />
+      <scope id="8355037393080352115" at="13,44,33,7" />
+      <scope id="8355037393080348187" at="12,88,33,7" />
+      <scope id="8355037393080348187" at="12,0,35,0">
+        <var name="operationContext" id="8355037393080348187" />
+      </scope>
+      <unit id="8355037393080352115" at="14,28,33,5" name="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript$1" />
+      <unit id="8355037393080348187" at="11,0,36,0" name="jetbrains.mps.baseLanguage.scripts.AddNativeFlagToAllMethods_MigrationScript" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902c9(jetbrains.mps.baseLanguage.scripts)/842610415962474204">
     <file name="SModelMethodMigration.java">
       <node id="842610415962474211" at="9,0,10,0" concept="4" trace="sourceConcept" />
