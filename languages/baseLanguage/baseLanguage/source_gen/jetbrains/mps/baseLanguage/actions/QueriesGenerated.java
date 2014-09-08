@@ -256,6 +256,10 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(_context.getNewNode(), "expression", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression"), true);
+      if (PrecedenceUtil.needsParensAroundNotExpression(_context.getNewNode())) {
+        SNode parens = SNodeFactoryOperations.replaceWithNewChild(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+        SLinkOperations.setTarget(parens, "expression", _context.getSampleNode(), true);
+      }
     }
   }
   public static void nodeFactory_NodeSetup_BitwiseNotExpression_1225896127901(final IOperationContext operationContext, final NodeSetupContext _context) {

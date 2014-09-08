@@ -802,6 +802,9 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4536253685758335383" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1742226163722651198" resolveInfo="IBinaryLike" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1081855346303" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="BreakStatement" />

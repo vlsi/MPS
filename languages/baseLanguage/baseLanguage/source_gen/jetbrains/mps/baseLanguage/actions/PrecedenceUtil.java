@@ -88,6 +88,11 @@ public class PrecedenceUtil {
 
   }
 
+  public static boolean needsParensAroundNotExpression(SNode notExpression) {
+    return !(((SLinkOperations.getTarget(notExpression, "expression", true) == null) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(notExpression, "expression", true), "virtual_isCompileTimeConstant_1238860258777", new Object[]{}) || (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(notExpression, "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) || PrecedenceUtil.isHigherPriority(SLinkOperations.getTarget(notExpression, "expression", true), notExpression)));
+
+  }
+
   public static SNode findDesiredInstanceOfExpressionRoot(SNode instanceOfExpression) {
 
     if ((SLinkOperations.getTarget(instanceOfExpression, "leftExpression", true) == null) || (SNodeOperations.getParent(instanceOfExpression) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) || !(SNodeOperations.hasRole(instanceOfExpression, "jetbrains.mps.baseLanguage.structure.BinaryOperation", "rightExpression")) || !(PrecedenceUtil.isHigherPriority(SNodeOperations.cast(SNodeOperations.getParent(instanceOfExpression), "jetbrains.mps.baseLanguage.structure.Expression"), instanceOfExpression))) {

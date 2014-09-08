@@ -95,6 +95,7 @@ public class ParenthesisUtil {
     }
 
     SNode created = createUnmatchedParenthesis(expressionToProcess, completingByRightParen);
+    checkWholeExpressionPriorities(myExpression);
     return (expressionToSetFocusOn != null ? expressionToSetFocusOn : created);
   }
 
@@ -158,10 +159,7 @@ public class ParenthesisUtil {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.IBinaryLike");
       }
     });
-    if (topExp == null) {
-      // No IBinaryLike ancestor of myExpression exists 
-      topExp = myExpression;
-    }
+
     List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
 
     int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
@@ -224,22 +222,18 @@ public class ParenthesisUtil {
     // Let's call them left and right parens from now, instead of 'my' and 'candidate' 
     SNode leftExpression = (completingByRightParen ? candidateExpression : myExpression);
     SNode rightExpression = (completingByRightParen ? myExpression : candidateExpression);
-    try {
-      // Find the turning points, if exist, otherwise just wrap in parens 
-      SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
-      SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
-      if (leftTurn != null || rightTurn != null) {
-        SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
-        clearIncompleteParens(candidateExpression, completingByRightParen, parens);
-        return parens;
-      } else {
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
-        clearIncompleteParens(candidateExpression, completingByRightParen, parens);
-        return parens;
-      }
-    } finally {
-      checkWholeExpressionPriorities(topExp);
+    // Find the turning points, if exist, otherwise just wrap in parens 
+    SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
+    SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
+    if (leftTurn != null || rightTurn != null) {
+      SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
+    } else {
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
     }
   }
 
@@ -586,6 +580,11 @@ public class ParenthesisUtil {
         SNodeOperations.replaceWithAnother(castExpr, node);
         SLinkOperations.setTarget(castExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
         SLinkOperations.setTarget(node, "leftExpression", castExpr, true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+        SNode notExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression");
+        SNodeOperations.replaceWithAnother(notExpr, node);
+        SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+        SLinkOperations.setTarget(node, "leftExpression", notExpr, true);
       } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.DotExpression", "operand")) {
         SNode dotExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
         SNodeOperations.replaceWithAnother(dotExpr, node);
