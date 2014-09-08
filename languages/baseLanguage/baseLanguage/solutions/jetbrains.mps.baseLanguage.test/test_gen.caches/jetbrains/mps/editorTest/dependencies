@@ -1231,7 +1231,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.AddUnmatchableParensToNot_Test" file="AddUnmatchableParensToNot_Test.java">
+  <dependency className="jetbrains.mps.editorTest.AddUnmatchableParensToTernary_Test" file="AddUnmatchableParensToTernary_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />
@@ -1240,7 +1240,7 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseEditorTestBody" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest" />
   </dependency>
-  <dependency className="jetbrains.mps.editorTest.AddUnmatchableParensToTernary_Test" file="AddUnmatchableParensToTernary_Test.java">
+  <dependency className="jetbrains.mps.editorTest.AddUnmatchedParensInsideNot_Test" file="AddUnmatchedParensInsideNot_Test.java">
     <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Throwable" />

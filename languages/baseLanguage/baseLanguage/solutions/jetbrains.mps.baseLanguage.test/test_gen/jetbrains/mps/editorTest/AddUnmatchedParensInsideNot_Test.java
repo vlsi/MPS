@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class AddUnmatchableParensToNot_Test extends BaseTransformationTest {
-  public AddUnmatchableParensToNot_Test() {
+public class AddUnmatchedParensInsideNot_Test extends BaseTransformationTest {
+  public AddUnmatchedParensInsideNot_Test() {
   }
   @Test
-  public void test_AddUnmatchableParensToNot() throws Throwable {
+  public void test_AddUnmatchedParensInsideNot() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddUnmatchableParensToNot_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.AddUnmatchedParensInsideNot_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
