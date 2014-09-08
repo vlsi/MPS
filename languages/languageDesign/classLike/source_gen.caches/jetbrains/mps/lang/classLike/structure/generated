@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5cuge3n5l50ek7s34aue7ya7zrgkomv">
+<dependencies version="2" modelHash="bap4yto0qbomxrkkgw4qjlqlhsbbry8">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-5cuge3n5l50ek7s34aue7ya7zrgkomv" dependsOnNodes="true">
+  <common hash="bap4yto0qbomxrkkgw4qjlqlhsbbry8" dependsOnNodes="true">
     <dep root="3402736933911578110" />
     <dep root="3402736933911578134" />
     <dep root="3571587574961713354" />
@@ -16,6 +16,7 @@
     <dep root="3751132065236767076" />
     <dep root="3751132065236767079" />
     <dep root="3751132065236767083" />
+    <dep root="5820409521797720671" />
     <dep root="6478870542308703666" />
     <dep root="6478870542308708689" />
     <dep root="6478870542308708729" />
@@ -53,5 +54,6 @@
   <source id="6478870542308871428" name="ClassLikeStringProperty" />
   <source id="6478870542308871875" name="ClassLikeBooleanProperty" />
   <source id="6478870542308871877" name="ClassLikeIntegerProperty" />
+  <source id="5820409521797720671" name="EmptyMember" />
 </dependencies>
 

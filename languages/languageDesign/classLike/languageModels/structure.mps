@@ -302,6 +302,15 @@
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983657062" resolveInfo="integer" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="5820409521797720671" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
+      <property role="asn4.1169194658468.1169194664001" value="EmptyMember" />
+      <property role="4jta.1169125787135.5092175715804935370" value="empty line" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1169127622168" id="5820409521797720726" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="8264762413010642119" resolveInfo="ClassLikeMember" />
+      </node>
+    </node>
   </contents>
 </model>
 

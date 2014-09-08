@@ -222,6 +222,7 @@
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.CustomMemberDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.DependentTypeDeclaration_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor" />
+    <classNode dependClassName="jetbrains.mps.lang.classLike.editor.EmptyMember_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.MethodDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.ParameterDescriptor_Editor" />
     <classNode dependClassName="jetbrains.mps.lang.classLike.editor.PlaceholderModifier_Editor" />
@@ -239,6 +240,13 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.classLike.editor.EmptyMember_Editor" file="EmptyMember_Editor.java">
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.cells.EditorCell" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.classLike.editor.MethodDescriptor_Editor" file="MethodDescriptor_Editor.java">
     <classNode dependClassName="java.lang.Class" />

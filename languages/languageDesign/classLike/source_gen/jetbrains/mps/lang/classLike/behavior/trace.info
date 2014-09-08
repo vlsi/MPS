@@ -24,6 +24,9 @@
     <file name="RequiredModifier_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.classLike.behavior.RequiredModifier_BehaviorDescriptor" />
     </file>
+    <file name="EmptyMember_BehaviorDescriptor.java">
+      <unit at="8,0,22,0" name="jetbrains.mps.lang.classLike.behavior.EmptyMember_BehaviorDescriptor" />
+    </file>
     <file name="ClassLikeStringProperty_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeStringProperty_BehaviorDescriptor" />
     </file>
@@ -46,7 +49,7 @@
       <unit at="10,0,27,0" name="jetbrains.mps.lang.classLike.behavior.MethodDescriptor_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,50,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,52,0" name="jetbrains.mps.lang.classLike.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="ClassLikeMemberIntance_BehaviorDescriptor.java">
       <unit at="6,0,8,0" name="jetbrains.mps.lang.classLike.behavior.ClassLikeMemberIntance_BehaviorDescriptor" />
@@ -166,6 +169,29 @@
         <var name="thisNode" id="3751132065236798249" />
       </scope>
       <unit id="3751132065236798249" at="13,0,34,0" name="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)/5820409521797722087">
+    <file name="EmptyMember_Behavior.java">
+      <node id="5820409521797722759" at="14,82,15,223" concept="1" />
+      <node id="5820409521797745114" at="17,74,18,108" concept="6" />
+      <node id="5820409521797722087" at="12,0,14,0" concept="8" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5820409521797722087" at="14,0,17,0" concept="8" trace="virtual_init_6478870542308635887#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5820409521797722087" at="17,0,20,0" concept="8" trace="virtual_create_8260330507834998478#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5820409521797722089" at="12,43,12,43" />
+      <scope id="5820409521797722734" at="14,82,15,223" />
+      <scope id="5820409521797722742" at="17,74,18,108" />
+      <scope id="5820409521797722087" at="12,0,14,0">
+        <var name="thisNode" id="5820409521797722087" />
+      </scope>
+      <scope id="5820409521797722087" at="14,0,17,0">
+        <var name="cls" id="5820409521797722735" />
+        <var name="thisNode" id="5820409521797722087" />
+      </scope>
+      <scope id="5820409521797722087" at="17,0,20,0">
+        <var name="thisNode" id="5820409521797722087" />
+      </scope>
+      <unit id="5820409521797722087" at="11,0,21,0" name="jetbrains.mps.lang.classLike.behavior.EmptyMember_Behavior" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:3d68296b-7ada-4491-8aa4-88e8ea6e4f67(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.behavior)/6478870542308635298">
