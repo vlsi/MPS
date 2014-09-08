@@ -69,7 +69,7 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_pj4dhh_a0a);
-      myPropertyCell_pj4dhh_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pj4dhh_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myPropertyCell_pj4dhh_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_pj4dhh_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       myPropertyCell_pj4dhh_a1a = new PropertyMapperCell<Boolean>(editorContext, node) {
         protected Boolean getModelPropertyValueImpl() {
           return SPropertyOperations.getBoolean(node, "myBooleanProperty");
@@ -79,7 +79,7 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_pj4dhh_a1a);
-      myPropertyCell_pj4dhh_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pj4dhh_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
+      myPropertyCell_pj4dhh_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_pj4dhh_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "myBooleanProperty"));
       myPropertyCell_pj4dhh_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
@@ -89,7 +89,7 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_pj4dhh_a2a);
-      myPropertyCell_pj4dhh_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pj4dhh_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_pj4dhh_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_pj4dhh_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_pj4dhh_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -99,7 +99,7 @@ public class Block_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_pj4dhh_a3a);
-      myPropertyCell_pj4dhh_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_pj4dhh_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_pj4dhh_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_pj4dhh_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       synchronize();
     }
     public void synchronize() {

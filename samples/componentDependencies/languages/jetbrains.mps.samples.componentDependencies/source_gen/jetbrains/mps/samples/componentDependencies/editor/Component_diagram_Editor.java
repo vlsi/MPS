@@ -73,7 +73,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a0a);
-      myPropertyCell_nwl53h_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "subsystem"));
+      myPropertyCell_nwl53h_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "subsystem"));
       myPropertyCell_nwl53h_a1a = new PropertyMapperCell<String>(editorContext, node) {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
@@ -83,7 +83,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a1a);
-      myPropertyCell_nwl53h_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myPropertyCell_nwl53h_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       myPropertyCell_nwl53h_a2a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "x");
@@ -93,7 +93,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a2a);
-      myPropertyCell_nwl53h_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_nwl53h_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_nwl53h_a3a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -103,7 +103,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a3a);
-      myPropertyCell_nwl53h_a3a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_nwl53h_a3a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a3a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_nwl53h_a4a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "heigh");
@@ -113,7 +113,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a4a);
-      myPropertyCell_nwl53h_a4a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "heigh"));
+      myPropertyCell_nwl53h_a4a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a4a, new Pair<SNodeReference, String>(new SNodePointer(node), "heigh"));
       myPropertyCell_nwl53h_a5a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "width");
@@ -123,7 +123,7 @@ public class Component_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_nwl53h_a5a);
-      myPropertyCell_nwl53h_a5a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_nwl53h_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
+      myPropertyCell_nwl53h_a5a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_nwl53h_a5a, new Pair<SNodeReference, String>(new SNodePointer(node), "width"));
       synchronize();
     }
     public void synchronize() {

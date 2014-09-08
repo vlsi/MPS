@@ -250,16 +250,16 @@
       <node id="5058522826399342677" at="58,55,59,59" concept="8" />
       <node id="5058522826399342677" at="61,65,62,59" concept="2" />
       <node id="5058522826399342677" at="64,8,65,47" concept="2" />
-      <node id="5058522826399342677" at="65,47,66,165" concept="2" />
+      <node id="5058522826399342677" at="65,47,66,206" concept="2" />
       <node id="5058522826399342677" at="68,55,69,59" concept="8" />
       <node id="5058522826399342677" at="71,65,72,59" concept="2" />
       <node id="5058522826399342677" at="74,8,75,47" concept="2" />
-      <node id="5058522826399342677" at="75,47,76,165" concept="2" />
+      <node id="5058522826399342677" at="75,47,76,206" concept="2" />
       <node id="5058522826399342677" at="78,54,79,61" concept="8" />
       <node id="5058522826399342677" at="81,64,82,55" concept="2" />
       <node id="5058522826399342677" at="84,8,85,47" concept="2" />
-      <node id="5058522826399342677" at="85,47,86,168" concept="2" />
-      <node id="5058522826399342677" at="86,168,87,20" concept="2" />
+      <node id="5058522826399342677" at="85,47,86,209" concept="2" />
+      <node id="5058522826399342677" at="86,209,87,20" concept="2" />
       <node id="5058522826399342677" at="89,31,90,39" concept="2" />
       <node id="5058522826399342677" at="90,39,91,46" concept="2" />
       <node id="5058522826399342677" at="91,46,92,46" concept="2" />
@@ -327,8 +327,8 @@
       <node id="5058522826399342677" at="44,0,51,0" concept="6" trace="createDiagramNode_pr685x_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="5058522826399342677" at="130,51,137,14" concept="2" />
       <node id="5058522826399342677" at="56,33,64,8" concept="2" />
-      <node id="5058522826399342677" at="66,165,74,8" concept="2" />
-      <node id="5058522826399342677" at="76,165,84,8" concept="2" />
+      <node id="5058522826399342677" at="66,206,74,8" concept="2" />
+      <node id="5058522826399342677" at="76,206,84,8" concept="2" />
       <node id="5058522826399342677" at="186,0,195,0" concept="6" trace="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
       <node id="5058522826399342677" at="139,49,149,15" concept="5" />
       <node id="5058522826399342677" at="153,0,163,0" concept="6" trace="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
@@ -1233,16 +1233,16 @@
       <node id="79242395703954207" at="58,55,59,59" concept="8" />
       <node id="79242395703954207" at="61,65,62,59" concept="2" />
       <node id="79242395703954207" at="64,8,65,47" concept="2" />
-      <node id="79242395703954207" at="65,47,66,165" concept="2" />
+      <node id="79242395703954207" at="65,47,66,206" concept="2" />
       <node id="79242395703954207" at="68,55,69,59" concept="8" />
       <node id="79242395703954207" at="71,65,72,59" concept="2" />
       <node id="79242395703954207" at="74,8,75,47" concept="2" />
-      <node id="79242395703954207" at="75,47,76,165" concept="2" />
+      <node id="79242395703954207" at="75,47,76,206" concept="2" />
       <node id="79242395703954207" at="78,54,79,61" concept="8" />
       <node id="79242395703954207" at="81,64,82,55" concept="2" />
       <node id="79242395703954207" at="84,8,85,47" concept="2" />
-      <node id="79242395703954207" at="85,47,86,168" concept="2" />
-      <node id="79242395703954207" at="86,168,87,20" concept="2" />
+      <node id="79242395703954207" at="85,47,86,209" concept="2" />
+      <node id="79242395703954207" at="86,209,87,20" concept="2" />
       <node id="79242395703954207" at="89,31,90,39" concept="2" />
       <node id="79242395703954207" at="90,39,91,46" concept="2" />
       <node id="79242395703954207" at="91,46,92,46" concept="2" />
@@ -1310,8 +1310,8 @@
       <node id="79242395703954207" at="44,0,51,0" concept="6" trace="createDiagramNode_a6gtrz_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="79242395703954207" at="130,51,137,14" concept="2" />
       <node id="79242395703954207" at="56,33,64,8" concept="2" />
-      <node id="79242395703954207" at="66,165,74,8" concept="2" />
-      <node id="79242395703954207" at="76,165,84,8" concept="2" />
+      <node id="79242395703954207" at="66,206,74,8" concept="2" />
+      <node id="79242395703954207" at="76,206,84,8" concept="2" />
       <node id="79242395703954207" at="186,0,195,0" concept="6" trace="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />
       <node id="79242395703954207" at="139,49,149,15" concept="5" />
       <node id="79242395703954207" at="153,0,163,0" concept="6" trace="set#(Ljetbrains/jetpad/geometry/Rectangle;)V" />

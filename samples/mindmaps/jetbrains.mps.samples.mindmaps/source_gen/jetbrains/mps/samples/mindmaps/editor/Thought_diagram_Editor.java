@@ -63,7 +63,7 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a0a);
-      myPropertyCell_a6gtrz_a0a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
+      myPropertyCell_a6gtrz_a0a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_a6gtrz_a0a, new Pair<SNodeReference, String>(new SNodePointer(node), "x"));
       myPropertyCell_a6gtrz_a1a = new PropertyMapperCell<Integer>(editorContext, node) {
         protected Integer getModelPropertyValueImpl() {
           return SPropertyOperations.getInteger(node, "y");
@@ -73,7 +73,7 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a1a);
-      myPropertyCell_a6gtrz_a1a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
+      myPropertyCell_a6gtrz_a1a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_a6gtrz_a1a, new Pair<SNodeReference, String>(new SNodePointer(node), "y"));
       myPropertyCell_a6gtrz_a2a = new PropertyMapperCell<String>(editorContext, node) {
         protected String getModelPropertyValueImpl() {
           return SPropertyOperations.getString(node, "name");
@@ -83,7 +83,7 @@ public class Thought_diagram_Editor extends DefaultNodeEditor {
         }
       };
       addEditorCell(myPropertyCell_a6gtrz_a2a);
-      myPropertyCell_a6gtrz_a2a.getEditor().addCellDependentOnNodeProperty(myPropertyCell_a6gtrz_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
+      myPropertyCell_a6gtrz_a2a.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(myPropertyCell_a6gtrz_a2a, new Pair<SNodeReference, String>(new SNodePointer(node), "name"));
       synchronize();
     }
     public void synchronize() {
