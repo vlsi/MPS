@@ -36,7 +36,7 @@ import java.util.List;
  * not thread-safe
  */
 public class BatchEventsProcessor {
-  private boolean myBatchStarted = false;
+  private volatile boolean myBatchStarted = false;
 
   private final List<SRepositoryEvent> myEvents = new LinkedList<SRepositoryEvent>();
 
@@ -46,6 +46,10 @@ public class BatchEventsProcessor {
 
   public BatchEventsProcessor(SRepository repository) {
     myRepository = repository;
+  }
+
+  public boolean isBatchStarted() {
+    return myBatchStarted;
   }
 
   public void startBatching() {
@@ -64,6 +68,7 @@ public class BatchEventsProcessor {
     List<SRepositoryEvent> result = new ArrayList<SRepositoryEvent>(myEvents);
     myRepository.removeRepositoryListener(mySRepositoryListener);
     myEvents.clear();
+    myBatchStarted = false;
     return result;
   }
 

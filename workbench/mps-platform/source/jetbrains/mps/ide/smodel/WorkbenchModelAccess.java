@@ -705,7 +705,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     @Override
     public void run() {
-      runWriteAction(new Runnable() {
+      ModelAccess.instance().runBatchWriteAction(new Runnable() {
         @Override
         public void run() {
           incCommandLevel();

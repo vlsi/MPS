@@ -60,20 +60,27 @@ public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListene
 
   @Override
   public void batchStarted() {
+    // not starting batching if there are no listeners
+    if (myListeners.isEmpty()) return;
     myBatchEventsProcessor.startBatching();
   }
 
   @Override
   public void batchFinished() {
+    if (myListeners.isEmpty()) return;
     List<SRepositoryEvent> batchedEvents = myBatchEventsProcessor.finishBatching();
     fireModuleEvents(batchedEvents);
   }
 
   public final void addRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
+    if (myBatchEventsProcessor.isBatchStarted())
+      throw new ListenersChangeDuringBatchAction("Cannot attach listeners within batch action");
     myListeners.add(listener);
   }
 
   public final void removeRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
+    if (myBatchEventsProcessor.isBatchStarted())
+      throw new ListenersChangeDuringBatchAction("Cannot detach listeners within batch action");
     myListeners.remove(listener);
   }
 
@@ -85,6 +92,12 @@ public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListene
       } catch (Throwable t) {
         LOG.error(t);
       }
+    }
+  }
+
+  private static class ListenersChangeDuringBatchAction extends RuntimeException {
+    public ListenersChangeDuringBatchAction(String message) {
+      super(message);
     }
   }
 }

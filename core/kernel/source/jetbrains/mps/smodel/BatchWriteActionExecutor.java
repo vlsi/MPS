@@ -30,26 +30,19 @@ public class BatchWriteActionExecutor {
 
   private final List<BatchWriteActionListener> myListeners = new CopyOnWriteArrayList<BatchWriteActionListener>();
 
-  private volatile boolean myInBatchCommand = false;
-
-  public boolean isInBatchCommand() {
-    return myInBatchCommand;
-  }
+  private volatile int myBatchCommandLevel = 0;
 
   public void run(final Runnable batchCommand) {
-    if (isInBatchCommand())
-      throw new IllegalStateException("Cannot start one batch command within another one");
-
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
+        if (myBatchCommandLevel == 0) onCommandStarted();
+        ++myBatchCommandLevel;
         try {
-          onCommandStarted();
-          myInBatchCommand = true;
           batchCommand.run();
         } finally {
-          myInBatchCommand = false;
-          onCommandFinished();
+          --myBatchCommandLevel;
+          if (myBatchCommandLevel == 0) onCommandFinished();
         }
       }
     });
@@ -60,7 +53,7 @@ public class BatchWriteActionExecutor {
       try {
         listener.batchStarted();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(t.getMessage(), t);
       }
     }
   }
@@ -70,18 +63,26 @@ public class BatchWriteActionExecutor {
       try {
         listener.batchFinished();
       } catch (Throwable t) {
-        LOG.error(t);
+        LOG.error(t.getMessage(), t);
       }
     }
   }
 
   public void addBatchCommandListener(BatchWriteActionListener listener) {
-    assert !myListeners.contains(listener);
+    if (myListeners.contains(listener))
+      throw new ListenersConsistenceException("Adding the same listener again");
     myListeners.add(listener);
   }
 
   public void removeBatchCommandListener(BatchWriteActionListener listener) {
-    assert myListeners.contains(listener);
+    if (!myListeners.contains(listener))
+      throw new ListenersConsistenceException("The listener you trying to remove does not exist");
     myListeners.remove(listener);
+  }
+
+  private static class ListenersConsistenceException extends RuntimeException {
+    public ListenersConsistenceException(String msg) {
+      super(msg);
+    }
   }
 }
