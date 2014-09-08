@@ -51,6 +51,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     }
     EditorCell_Property result = new EditorCell_Property(editorContext, modelAccessor, node);
     if (listener != null) {
+      // TODO: specify property name directly - we know it from PropertyAccessor
       addPropertyDependenciesToEditor(listener, result);
     }
     return result;
@@ -58,7 +59,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   private static void addPropertyDependenciesToEditor(NodeReadAccessInEditorListener listener, EditorCell_Property result) {
     for (Pair<SNodeReference, String> pair : listener.popCleanlyReadAccessedProperties()) {
-      result.getEditor().addCellDependentOnNodeProperty(result, pair);
+      result.getEditorComponent().getUpdater().getCurrentUpdateSession().registerCleanDependency(result, pair);
     }
   }
 
@@ -90,6 +91,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   /**
    * should be executed inside write action
+   *
    * @return true if new value was committed to model / false if nothing was changed
    */
   public boolean commit() {
@@ -181,6 +183,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   private ModelAccess getModelAccess() {
     return getContext().getRepository().getModelAccess();
   }
+
   public static interface SynchronizationListener {
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }
