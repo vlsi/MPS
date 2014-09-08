@@ -84,12 +84,12 @@ public class NewClassLike_Action extends BaseAction {
       ((SModel) MapSequence.fromMap(_params).get("model")).addRootNode(newClass);
       AttributeOperations.setAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation"), SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", null));
       SLinkOperations.setTarget(AttributeOperations.getAttribute(newClass, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation")), "descriptor", NewClassLike_Action.this.descr, false);
-      ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(NewClassLike_Action.this.descr, newClass);
       ListSequence.fromList(SLinkOperations.getTargets(NewClassLike_Action.this.descr, "member", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
           BehaviorReflection.invokeVirtual(Void.class, it, "virtual_init_6478870542308635887", new Object[]{newClass});
         }
       });
+      ClassLikeDescriptor_Behavior.call_initializeInstance_3384419124890469048(NewClassLike_Action.this.descr, newClass);
       if (!(NewRootNodeAction.trySelectInCurrentPane(((Project) MapSequence.fromMap(_params).get("project")), newClass))) {
         ProjectOperationContext context = new ProjectOperationContext(((MPSProject) MapSequence.fromMap(_params).get("mpsProject")));
         NavigationSupport.getInstance().selectInTree(context, newClass, false);
