@@ -1,25 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5get0pqs6os2b5l3c5ts0p0uikw0vbg">
+<dependencies version="2" modelHash="-15u5e4n3vqq77zggtzqjqvv343suciz">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="as3upz7xoys1dgfjg9x1rqqtqkc6fee" dependsOnNodes="true">
-    <dep root="1309355481571392446" />
-    <dep root="2009787284780407175" />
-    <dep root="3290421837437511158" />
-    <dep root="3735414794051308106" />
+  <common hash="-ajpreu65nqcv9ip1xj2y1sbwq1ojxgc" dependsOnNodes="true">
     <dep root="4436301628118948495" />
-    <dep root="4950161090496523748" />
     <dep root="4950161090496546961" />
-    <dep root="5512160570054200382" />
-    <dep root="5512160570054200384" />
-    <dep root="586712031919981082" />
-    <dep root="586712031919984868" />
-    <dep root="586712031919985984" />
-    <dep root="586712031919995751" />
+    <dep root="5820409521797704955" />
+    <dep root="8352104482584315555" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -28,18 +19,9 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="3735414794051308106" name="MigrationScriptBody" hash="-2ng5e3v4onc20i573j2hkozog7y1z3p" />
-  <source id="4436301628118948495" name="MigrationScript" hash="5jx3bln5syw5ul6gich6ncavo9xs7ps" />
-  <source id="3290421837437511158" name="MigrationScriptApplicable" hash="82r2gzbq8ese0fqen7h524esexnzyez" />
-  <source id="586712031919981082" name="MigrationScriptSerialize" hash="-55xkitud5rf9e9ttysuqgy0vuigebg0" />
-  <source id="586712031919984868" name="ConceptFunctionParameter_MigrationScriptData" hash="-d54lbcw7mdbg30zumnjpqh988boj79j" />
-  <source id="586712031919985984" name="MigrationScriptDeserialize" hash="-cwh30xs3wv0oddn8aw2halku603umca" />
-  <source id="586712031919995751" name="ConceptFunctionParameter_MigrationScriptPersistedData" hash="-2ozjw9s7natjg2rv5iqokep7syozi08" />
-  <source id="1309355481571392446" name="AbstractMigrationScript" hash="-948rd7ljsplvxwsuzx2usv1d2t28ucq" />
-  <source id="2009787284780407175" name="RequiredDataItem" hash="3795rfwr5337v6b17zs05gmi71telip" />
-  <source id="4950161090496523748" name="RequiredDataReference" hash="c5wyazrdjys6jmvzha09bwszs4dh9gw" />
-  <source id="4950161090496546961" name="MigrationScriptReference" hash="-5mub736npfzkoqwt9o63r89pi3bhkok" />
-  <source id="5512160570054200382" name="MigrationsPatternVariableReference" hash="bgg2ha1e9zj3ho065mbpxaa1bk9ekfx" />
-  <source id="5512160570054200384" name="PatternMigrationScript" hash="-ammhzaqjmsq2locg38zcoeb20qmruzc" />
+  <source id="4436301628118948495" name="RequiredDataDeclaration" hash="2n9drx1e6oyohjxjrxbq0pifiwlkwpz" />
+  <source id="4950161090496546961" name="DataDependency" hash="-9jcjtmpcjxyky3201actnn54d9yh54i" />
+  <source id="8352104482584315555" name="MigrationScript" hash="dwow4u7hvrt62l9v2rkyua5kaanto2d" />
+  <source id="5820409521797704955" name="ProducedDataDeclaration" hash="-4kj2sq13xvx0t1nw44arl4ihew6xtaw" />
 </dependencies>
 
