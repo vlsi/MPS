@@ -794,7 +794,7 @@
     <property name="name" nameId="tpck.1169194664001" value="NotExpression" />
     <property name="staticScope" nameId="tpce.5404671619616246344" value="none" />
     <property name="virtualPackage" nameId="tpck.1193676396447" value="expressions" />
-    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="!(expr)" />
+    <property name="conceptAlias" nameId="tpce.5092175715804935370" value="!" />
     <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1081516765348" nodeInfo="ig">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
