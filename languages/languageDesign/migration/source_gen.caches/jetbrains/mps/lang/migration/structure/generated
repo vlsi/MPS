@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-15u5e4n3vqq77zggtzqjqvv343suciz">
+<dependencies version="2" modelHash="-3f182uqdtc3sjz6d2d5qjdmwcg7se92">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
@@ -19,8 +19,8 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="4436301628118948495" name="RequiredDataDeclaration" hash="2n9drx1e6oyohjxjrxbq0pifiwlkwpz" />
-  <source id="4950161090496546961" name="DataDependency" hash="-9jcjtmpcjxyky3201actnn54d9yh54i" />
+  <source id="4436301628118948495" name="RequiredDataDeclaration" hash="-2t0lttae82cutsk37g4o5y7w04sqzt3" />
+  <source id="4950161090496546961" name="DataDependency" hash="8r9kha0ycnadbdjbt65901bq5ke7xq" />
   <source id="8352104482584315555" name="MigrationScript" hash="dwow4u7hvrt62l9v2rkyua5kaanto2d" />
   <source id="5820409521797704955" name="ProducedDataDeclaration" hash="-4kj2sq13xvx0t1nw44arl4ihew6xtaw" />
 </dependencies>

@@ -7,8 +7,8 @@
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
     <lang id="13744753-c81f-424a-9c1b-cf8943bf4e86" name="jetbrains.mps.lang.sharedConcepts" />
     <lang id="90746344-04fd-4286-97d5-b46ae6a81709" name="jetbrains.mps.lang.migration" />
-    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
+    <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
     <model ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" name="org.jetbrains.mps.openapi.module@java_stub" />
@@ -20,6 +20,7 @@
     <model ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" name="jetbrains.mps.lang.migration.structure" />
     <model ref="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)" name="jetbrains.mps.smodel.adapter" />
     <model ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" name="jetbrains.mps.migration.component.util" />
+    <model ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" name="jetbrains.mps.lang.migration.runtime.base" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056022639" name="SPropertyAccess" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138055754698" name="SNodeType" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1143234257716" name="Node_GetModelOperation" />
@@ -121,8 +122,8 @@
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
     <use id="13744753-c81f-424a-9c1b-cf8943bf4e86" version="-1" index="1v6e" />
     <use id="90746344-04fd-4286-97d5-b46ae6a81709" version="0" index="uf1d" />
-    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
+    <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
@@ -137,6 +138,7 @@
     <import index="53vh" ref="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" />
     <import index="43z9" ref="r:74a06cc2-db96-4e19-8301-ff85828f9c7b(jetbrains.mps.smodel.adapter)" />
     <import index="auc7" ref="r:22e3ec81-a192-41cd-83a2-488758bdeedc(jetbrains.mps.migration.component.util)" />
+    <import index="6f4m" ref="r:f69c3fa1-0e30-4980-84e2-190ae44e4c3d(jetbrains.mps.lang.migration.runtime.base)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
     <import index="tp2c" ref="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" implicit="true" />
@@ -190,8 +192,8 @@
         </node>
         <node concept="5whl.3751132065236767076" id="8352104482584212083" role="5whl.3751132065236767079.3751132065236767080" info="ng">
           <property role="asn4.1169194658468.1169194664001" value="c" />
-          <node concept="vg0i.1107535904670" id="8352104482584213619" role="5whl.3751132065236767076.3751132065236767078" info="in">
-            <reference role="vg0i.1107535904670.1107535924139" target="auc7.526334943871372816" resolveInfo="MigrationComponent" />
+          <node concept="vg0i.1107535904670" id="8585153554445742208" role="5whl.3751132065236767076.3751132065236767078" info="in">
+            <reference role="vg0i.1107535904670.1107535924139" target="6f4m.3309033097910028738" resolveInfo="DataCollector" />
           </node>
         </node>
         <node concept="5whl.3402736933911578134" id="5155329496662709032" role="5whl.8264762413010642119.3402736933911577960" info="ng" />
