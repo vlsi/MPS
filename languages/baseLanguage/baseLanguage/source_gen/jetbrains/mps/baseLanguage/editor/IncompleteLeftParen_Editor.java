@@ -7,7 +7,12 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
@@ -25,19 +30,34 @@ public class IncompleteLeftParen_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_tlxkur_a");
     editorCell.setBig(true);
-    editorCell.addEditorCell(this.createConstant_tlxkur_a0(editorContext, node));
+    editorCell.addEditorCell(this.createReadOnlyModelAccessor_tlxkur_a0(editorContext, node));
     editorCell.addEditorCell(this.createAttributedNodeCell_tlxkur_b0(editorContext, node));
     return editorCell;
   }
-  private EditorCell createConstant_tlxkur_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_tlxkur_a0");
+  private EditorCell createReadOnlyModelAccessor_tlxkur_a0(final EditorContext editorContext, final SNode node) {
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+      public String getText() {
+        StringBuffer buffer = new StringBuffer("(");
+        for (int i = 1; i < SPropertyOperations.getInteger(node, "count"); i++) {
+          buffer.append("(");
+        }
+        return buffer.toString();
+      }
+      public void setText(String s) {
+      }
+      public boolean isValidText(String s) {
+        return EqualUtil.equals(s, getText());
+      }
+    }, node);
+    editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
+    editorCell.setCellId("ReadOnlyModelAccessor_tlxkur_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.red));
+    style.set(StyleAttributes.EDITABLE, false);
     editorCell.getStyle().putAll(style);
     DeleteIncompleteLeftParen.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
     return editorCell;
   }
   private EditorCell createAttributedNodeCell_tlxkur_b0(EditorContext editorContext, SNode node) {
