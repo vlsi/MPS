@@ -2800,7 +2800,7 @@
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="hbb4.1230057984816" resolveInfo="InlineMethodInTest" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5225726827667098581" nodeInfo="ng">
-      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5225726827662826214" resolveInfo="AddUnmatchableParensToNot" />
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5225726827662826214" resolveInfo="AddUnmatchedParensInsideNot" />
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="5225726827667100160" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.5225726827662832411" resolveInfo="AddUnmatchableParensToTernary" />
@@ -2888,6 +2888,15 @@
     </node>
     <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4536253685793587008" nodeInfo="ng">
       <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="ryl9.4536253685787385331" resolveInfo="NotExpressionParens9" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4666906971796994178" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.8187342170692126565" resolveInfo="WildCardsInTheClassDefinition" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4666906971796995360" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.8187342170694467176" resolveInfo="WildCardsInAnonymousClassCreators" />
+    </node>
+    <node role="testRef" roleId="pop3.4504141816188599486" type="pop3.TestCaseRef" typeId="pop3.4504141816188599479" id="4666906971796995952" nodeInfo="ng">
+      <link role="testCase" roleId="pop3.4504141816188599488" targetNodeId="tpej.595838485955053993" resolveInfo="WildCardTypeIsAValidSubstituteForBoundedParameter" />
     </node>
   </root>
   <root type="pop3.ModuleSuite" typeId="pop3.4504141816188599477" id="7917427600705105663" nodeInfo="ng">
