@@ -9229,7 +9229,7 @@
   </root>
   <root type="tp5g.NodesTestCase" typeId="tp5g.1216913645126" id="8187342170692126565" nodeInfo="ng">
     <property name="virtualPackage" nameId="tpck.1193676396447" value="typeSystem" />
-    <property name="name" nameId="tpck.1169194664001" value="WildCardsInClassDefinition" />
+    <property name="name" nameId="tpck.1169194664001" value="WildCardsInTheClassDefinition" />
     <node role="nodesToCheck" roleId="tp5g.1217501822150" type="tp5g.TestNode" typeId="tp5g.1216989428737" id="8187342170692127760" nodeInfo="ng">
       <node role="nodeToCheck" roleId="tp5g.1216989461394" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="8187342170692127762" nodeInfo="ig">
         <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
