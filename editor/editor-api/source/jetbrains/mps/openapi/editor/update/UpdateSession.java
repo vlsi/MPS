@@ -16,6 +16,7 @@
 package jetbrains.mps.openapi.editor.update;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -120,11 +121,10 @@ public interface UpdateSession {
    * Can be called to execute creation code for reference target cell inside different
    * update context.
    *
-   * @param update     - runnable performing reference target cell creation
-   * @param node       - reference target node
-   * @param role       - reference role
-   * @param sourceNode - source node. Reference target cell will inserted into a tree of
-   *                   EditorCells representing this node within the editor
+   * @param update - Computable, will be executed to perform reference target cell creation
+   * @param node   - reference target node
+   * @param role   - reference role
+   * @return result od update computable execution
    */
-  void updateReferencedNodeCell(Runnable update, SNode node, String role, SNode sourceNode);
+  <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role);
 }

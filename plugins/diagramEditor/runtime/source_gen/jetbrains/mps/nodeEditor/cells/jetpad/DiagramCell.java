@@ -489,7 +489,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   }
   protected void syncDiagramElements(Iterable<SNode> elements, ListIterator<SNode> blocksIterator, Set<SNode> existingBlocks, ListIterator<SNode> connectorsIterator, Set<SNode> existingConnectors) {
     for (SNode nextElement : Sequence.fromIterable(elements)) {
-      EditorCell cell = getContext().createNodeCell(nextElement);
+      EditorCell cell = getContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(nextElement);
       if (!(cell instanceof BlockCell) && !(cell instanceof ConnectorCell)) {
         continue;
       }

@@ -70,7 +70,7 @@ public class InspectorEditorComponent extends EditorComponent {
       return new EditorCell_Constant(getEditorContext(), null, "<no inspect info>");
     }
     pushCellContext();
-    EditorCell inspectedCell = getEditorContext().createInspectedCell(getEditedNode(), events);
+    EditorCell inspectedCell = (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     popCellContext();
     return inspectedCell;
   }

@@ -249,7 +249,7 @@
       <node id="8514238689685500685" at="85,62,86,41" concept="10" />
       <node id="8514238689685500689" at="86,41,87,56" concept="10" />
       <node id="8514238689685500697" at="87,56,88,32" concept="10" />
-      <node id="8514238689685500702" at="89,30,90,60" concept="4" />
+      <node id="8514238689685500702" at="89,30,90,125" concept="4" />
       <node id="792303165832177551" at="93,64,94,50" concept="4" />
       <node id="534577049869051629" at="99,64,100,50" concept="4" />
       <node id="534577049869051638" at="105,64,106,54" concept="4" />
@@ -375,7 +375,7 @@
       <node id="899362601591216838" at="251,0,256,0" concept="9" trace="createEmptyRowCell#()Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
       <node id="4057456417884478684" at="286,0,291,0" concept="15" trace="createTable#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/lang/editor/table/runtime/TableModel;Ljava/lang/String;)Ljetbrains/mps/nodeEditor/cells/EditorCell_Collection;" />
       <node id="7541022036347910989" at="62,0,68,0" concept="9" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-      <node id="792303165832177537" at="90,60,96,15" concept="4" />
+      <node id="792303165832177537" at="90,125,96,15" concept="4" />
       <node id="792303165832192268" at="96,15,102,15" concept="4" />
       <node id="2450403718179289238" at="102,15,108,15" concept="4" />
       <node id="9102817927790201462" at="108,15,114,15" concept="4" />

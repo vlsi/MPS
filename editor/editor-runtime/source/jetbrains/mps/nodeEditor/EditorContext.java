@@ -179,14 +179,12 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
    */
   @Deprecated
   public EditorCell createReferentCell(final AbstractCellProvider inlineComponent, SNode sourceNode, SNode targetNode, String role) {
-    final EditorCell[] nodeCell = new EditorCell[1];
-    getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Runnable() {
+    return getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
       @Override
-      public void run() {
-        nodeCell[0] = inlineComponent.createEditorCell(EditorContext.this);
+      public EditorCell compute() {
+        return inlineComponent.createEditorCell(EditorContext.this);
       }
-    }, targetNode, role, sourceNode);
-    return nodeCell[0];
+    }, targetNode, role);
   }
 
   @Override

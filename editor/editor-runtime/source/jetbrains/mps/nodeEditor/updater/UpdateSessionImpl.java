@@ -23,6 +23,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.UpdateSession;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
@@ -166,10 +167,11 @@ public class UpdateSessionImpl implements UpdateSession {
   }
 
   @Override
-  public void updateReferencedNodeCell(Runnable update, SNode node, String role, SNode sourceNode) {
-    myContextStack.push(myContextStack.peek().contextWithOneMoreReference(node, sourceNode, role));
+  public <T> T updateReferencedNodeCell(Computable<T> update, SNode node, String role) {
+    ReferencedNodeContext currentContext = myContextStack.peek();
+    myContextStack.push(currentContext.contextWithOneMoreReference(node, currentContext.getNode(), role));
     try {
-      update.run();
+      return update.compute();
     } finally {
       myContextStack.pop();
     }

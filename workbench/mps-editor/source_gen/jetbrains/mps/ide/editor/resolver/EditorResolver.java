@@ -41,7 +41,7 @@ public class EditorResolver implements IResolver {
 
     @Override
     protected EditorCell createRootCell(List<SModelEvent> events) {
-      return getEditorContext().createRootCell(getEditedNode(), events);
+      return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
     }
 
     @Override

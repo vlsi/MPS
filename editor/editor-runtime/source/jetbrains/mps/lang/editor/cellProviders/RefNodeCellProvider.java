@@ -31,7 +31,7 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
     EditorCell editorCell;
     if (myIsAggregation) {
-      editorCell = context.createNodeCell(referencedNode);
+      editorCell = context.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(referencedNode);
     } else {
       editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
     }

@@ -50,7 +50,7 @@ public class UIEditorComponent extends EditorComponent {
     if (getEditedNode() == null) {
       return new EditorCell_Constant(getEditorContext(), null, "<NO NODE>");
     }
-    return getEditorContext().createRootCell(getEditedNode(), events);
+    return (EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
   }
 
   @Override

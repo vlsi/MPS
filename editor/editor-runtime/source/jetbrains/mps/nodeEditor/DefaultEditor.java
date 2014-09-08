@@ -34,7 +34,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.cells.*;
+import jetbrains.mps.openapi.editor.cells.CellActionType;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.project.dependency.VisibilityUtil;
@@ -42,11 +43,11 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 
-import java.lang.String;
 import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -216,7 +217,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     String myErrorText;
     if (reference != null) {
       referentNode = reference.getTargetNode();
-      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(),referentNode.getModel())) {
+      if (referentNode == null || referentNode.getModel() == null || !VisibilityUtil.isVisible(myEditorContext.getModel(), referentNode.getModel())) {
         String rinfo = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
         myErrorText = rinfo != null ? rinfo : "?" + role + "?";
         addErrorCell(myErrorText);
@@ -227,10 +228,15 @@ public class DefaultEditor extends DefaultNodeEditor {
       addLabel("<no target>");
       return;
     }
-    AbstractCellProvider inlineComponent = new MyAbstractCellProvider(role);
+    final AbstractCellProvider inlineComponent = new MyAbstractCellProvider(role);
     inlineComponent.setSNode(referentNode);
 
-    EditorCell cell = ((jetbrains.mps.nodeEditor.EditorContext) myEditorContext).createReferentCell(inlineComponent, mySNode, referentNode, role);
+    EditorCell cell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateReferencedNodeCell(new Computable<EditorCell>() {
+      @Override
+      public EditorCell compute() {
+        return inlineComponent.createEditorCell(myEditorContext);
+      }
+    }, referentNode, role);
     setSemanticNodeToCells(cell, mySNode);
     if (cell.getRole() == null) {
       cell.setRole(role);
@@ -262,7 +268,7 @@ public class DefaultEditor extends DefaultNodeEditor {
     }
     ((EditorCell_Basic) rootCell).setSNode(semanticNode);
     if (rootCell instanceof jetbrains.mps.openapi.editor.cells.EditorCell_Collection) {
-      for (EditorCell child: ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell)) {
+      for (EditorCell child : ((jetbrains.mps.openapi.editor.cells.EditorCell_Collection) rootCell)) {
         setSemanticNodeToCells(child, semanticNode);
       }
     }
@@ -377,7 +383,7 @@ public class DefaultEditor extends DefaultNodeEditor {
 
   private void addChildCellForNullConcept(String role) {
     for (SNode child : mySNode.getChildren(role)) {
-      EditorCell nodeCell = myEditorContext.createNodeCell(child);
+      EditorCell nodeCell = myEditorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(child);
       addCell(nodeCell);
       setIndent(nodeCell);
       addNewLine();

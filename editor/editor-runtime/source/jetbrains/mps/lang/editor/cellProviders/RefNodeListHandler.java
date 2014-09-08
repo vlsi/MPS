@@ -72,7 +72,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
 
   @Override
   public EditorCell createNodeCell(EditorContext editorContext, SNode node) {
-    return editorContext.createNodeCell(node);
+    return editorContext.getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(node);
   }
 
   @Override

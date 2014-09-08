@@ -1298,6 +1298,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return myRepository;
   }
 
+  /**
+   * @deprecated since MPS 3.2. Looks like not used.
+   */
+  @Deprecated
   public EditorCell createRootCell() {
     return createRootCell(null);
   }

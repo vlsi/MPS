@@ -32,7 +32,6 @@ import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class BaseVersionEditorComponent extends EditorComponent implements EditorMessageOwner {
@@ -96,10 +95,9 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
   @Override
   protected jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(List<SModelEvent> events) {
     if (getEditedNode() == null || getEditedNode().getModel() == null) {
-      EditorContext editorContext = getEditorContext();
-      return new EditorCell_Constant(editorContext, getEditedNode(), "");
+      return new EditorCell_Constant(getEditorContext(), getEditedNode(), "");
     }
-    return getEditorContext().createRootCell(getEditedNode(), events);
+    return (jetbrains.mps.nodeEditor.cells.EditorCell) getUpdater().updateRootCell(getEditedNode(), events);
   }
   @Override
   public void dispose() {

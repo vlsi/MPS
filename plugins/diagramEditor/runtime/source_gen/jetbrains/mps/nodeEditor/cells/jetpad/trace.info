@@ -591,7 +591,7 @@
       <node id="5204867329702778222" at="482,12,483,42" concept="5" />
       <node id="6981942132931139226" at="484,5,485,50" concept="5" />
       <node id="6981942132931433700" at="487,44,488,39" concept="5" />
-      <node id="1853186767781456928" at="491,63,492,65" concept="10" />
+      <node id="1853186767781456928" at="491,63,492,130" concept="10" />
       <node id="1853186767784201975" at="493,77,494,17" concept="4" />
       <node id="1853186767784210201" at="495,7,496,174" concept="5" />
       <node id="639949279721974691" at="500,68,501,20" concept="16" />
@@ -658,7 +658,7 @@
       <node id="6981942132928876494" at="464,0,467,0" concept="9" trace="hasConnectionDragFeedback#()Z" />
       <node id="5204867329723025782" at="476,83,479,5" concept="18" />
       <node id="6981942132929532931" at="487,0,490,0" concept="9" trace="hideConnectionDragFeedback#()V" />
-      <node id="1853186767784186524" at="492,65,495,7" concept="8" />
+      <node id="1853186767784186524" at="492,130,495,7" concept="8" />
       <node id="639949279721927429" at="500,0,503,0" concept="3" trace="DiagramSubstituteActionWraper#(Ljetbrains/mps/openapi/editor/cells/SubstituteAction;)V" />
       <node id="5204867329711456070" at="518,29,521,7" concept="8" />
       <node id="5204867329711456094" at="524,52,527,7" concept="8" />
@@ -1135,7 +1135,7 @@
       <node id="4046741574145165892" at="54,35,55,66" concept="10" />
       <node id="4046741574146737392" at="56,127,57,18" concept="11" />
       <node id="4046741574146918167" at="58,5,59,65" concept="11" />
-      <node id="1853186767782867362" at="62,57,63,66" concept="10" />
+      <node id="1853186767782867362" at="62,57,63,131" concept="10" />
       <node id="1853186767782870868" at="64,44,65,17" concept="4" />
       <node id="1853186767787877235" at="66,7,67,71" concept="5" />
       <node id="1853186767787392622" at="68,5,69,34" concept="5" />
@@ -1176,7 +1176,7 @@
       <node id="4046741574145286177" at="48,0,51,0" concept="9" trace="getContentViewMapperSource#()Ljava/lang/String;" />
       <node id="4046741574144138821" at="51,0,54,0" concept="9" trace="getBlockMapper#()Ljetbrains/jetpad/mapper/Mapper;" />
       <node id="4046741574146731364" at="55,66,58,5" concept="8" />
-      <node id="1853186767782869019" at="63,66,66,7" concept="8" />
+      <node id="1853186767782869019" at="63,131,66,7" concept="8" />
       <node id="615329258672919630" at="75,12,78,7" concept="1" />
       <node id="615329258671706629" at="87,48,90,7" concept="8" />
       <node id="5827780068508407670" at="110,0,113,0" concept="9" trace="invoke#()Ljava/lang/Boolean;" />

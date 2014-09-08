@@ -87,7 +87,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           SNode value = myModel.getValueAt(row, column);
           EditorCell editorCell;
           if (value != null) {
-            editorCell = getContext().createNodeCell(value);
+            editorCell = getContext().getEditorComponent().getUpdater().getCurrentUpdateSession().updateChildNodeCell(value);
             editorCell.setAction(CellActionType.DELETE, new AbstractCellAction() {
               @Override
               public void execute(EditorContext editorContext) {
