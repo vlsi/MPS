@@ -27,8 +27,6 @@ import org.jetbrains.mps.openapi.module.CommandListener;
  */
 public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.module.ModelAccess {
 
-  private BatchWriteActionExecutor myBatchWriteActionExecutor = new BatchWriteActionExecutor();
-
   @Override
   public boolean canRead() {
     return ModelAccess.instance().canRead();
@@ -66,7 +64,7 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
 
   @Override
   public void runBatchWriteAction(final Runnable r) {
-    myBatchWriteActionExecutor.run(this, r);
+    ModelAccess.instance().runBatchWriteAction(r);
   }
 
   @Override
@@ -84,11 +82,11 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
 
   @Override
   public void addBatchWriteActionListener(BatchWriteActionListener listener) {
-    myBatchWriteActionExecutor.addBatchCommandListener(listener);
+    ModelAccess.instance().addBatchWriteActionListener(listener);
   }
 
   @Override
   public void removeBatchWriteActionListener(BatchWriteActionListener listener) {
-    myBatchWriteActionExecutor.removeBatchCommandListener(listener);
+    ModelAccess.instance().removeBatchWriteActionListener(listener);
   }
 }

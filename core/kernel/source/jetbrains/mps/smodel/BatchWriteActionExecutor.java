@@ -17,9 +17,7 @@ package jetbrains.mps.smodel;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.*;
-import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -38,11 +36,11 @@ public class BatchWriteActionExecutor {
     return myInBatchCommand;
   }
 
-  public void run(@NotNull ModelAccess modelAccess, final Runnable batchCommand) {
+  public void run(final Runnable batchCommand) {
     if (isInBatchCommand())
       throw new IllegalStateException("Cannot start one batch command within another one");
 
-    modelAccess.runWriteAction(new Runnable() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
         try {

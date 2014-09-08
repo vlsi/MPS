@@ -22,6 +22,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -57,6 +58,8 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   };
 
   protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
+
+  private BatchWriteActionExecutor myBatchWriteActionExecutor = new BatchWriteActionExecutor();
 
   protected ModelAccess() {
 
@@ -208,6 +211,30 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   }
 
   public void dispose() {
+  }
+
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)}
+   */
+  @Deprecated
+  public void runBatchWriteAction(final Runnable r) {
+    myBatchWriteActionExecutor.run(r);
+  }
+
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#addBatchWriteActionListener}
+   */
+  @Deprecated
+  public void addBatchWriteActionListener(BatchWriteActionListener listener) {
+    myBatchWriteActionExecutor.addBatchCommandListener(listener);
+  }
+
+  /**
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeBatchWriteActionListener}
+   */
+  @Deprecated
+  public void removeBatchWriteActionListener(BatchWriteActionListener listener) {
+    myBatchWriteActionExecutor.removeBatchCommandListener(listener);
   }
 
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
