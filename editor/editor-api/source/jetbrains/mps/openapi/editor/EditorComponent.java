@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.cells.CellAction;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
+import jetbrains.mps.openapi.editor.update.Updater;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -78,4 +79,7 @@ public interface EditorComponent {
   CellAction getComponentAction(CellActionType type);
 
   SelectionManager getSelectionManager();
+
+  @NotNull
+  Updater getUpdater();
 }

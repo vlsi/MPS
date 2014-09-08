@@ -34,7 +34,6 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
-import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
@@ -88,23 +87,20 @@ public class EditorManager {
     return context.getComponent(EditorManager.class);
   }
 
-  EditorCell createRootEditorCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications) {
-    return createRootCell(context, node, modifications, false);
-  }
-
-  EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, boolean isInspectorCell) {
+  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  public EditorCell createRootCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext,
+      boolean isInspectorCell) {
     try {
       pushTask(context, "Creating " + (isInspectorCell ? "inspector" : "root") + " cell");
       EditorComponent nodeEditorComponent = getEditorComponent(context);
       EditorCell rootCell = nodeEditorComponent.getRootCell();
-      ReferencedNodeContext nodeRefContext = ReferencedNodeContext.createNodeContext(node);
       assert myContextToOldCellMap.isEmpty();
       myContextToOldCellMap.push(new HashMap<ReferencedNodeContext, EditorCell>());
       if (rootCell != null && modifications != null) {
         fillContextToCellMap(rootCell, myContextToOldCellMap.peek());
       }
       myCreatingInspectedCell = isInspectorCell;
-      return createEditorCell(context, modifications, nodeRefContext);
+      return createEditorCell(context, modifications, refContext);
     } finally {
       myContextToOldCellMap.pop();
       popTask(context);
@@ -181,7 +177,8 @@ public class EditorManager {
     return attributeCell;
   }
 
-  /*package*/ jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context,
+  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  public jetbrains.mps.openapi.editor.cells.EditorCell doCreateRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, EditorContext context,
       SNode roleAttribute, List<Pair<SNode, SNodeReference>> modifications) {
     Stack<EditorCell> stack = myAttributedClassesToAttributedCellStacksMap.get(attributeKind);
     if (stack == null) {
@@ -228,7 +225,8 @@ public class EditorManager {
     return !myCreatingInspectedCell;
   }
 
-  /*package*/ EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext) {
+  // TODO: make package-local, move to jetbrains.mps.nodeEditor.updater package ?
+  public EditorCell createEditorCell(EditorContext context, List<Pair<SNode, SNodeReference>> modifications, ReferencedNodeContext refContext) {
     pushTask(context, getMessage(context, refContext, "?"));
     try {
       SNode node = refContext.getNode();
@@ -550,10 +548,6 @@ public class EditorManager {
     EditorCell_STHint sideTransformHintCell =
         new EditorCell_STHint(nodeCell, anchorCell, side, sideTransformTag, getEditorComponent(nodeCell.getContext()).getRecentlySelectedCellInfo());
     return sideTransformHintCell.install();
-  }
-
-  EditorCell createInspectedCell(EditorContext context, SNode node, List<Pair<SNode, SNodeReference>> modifications) {
-    return createRootCell(context, node, modifications, true);
   }
 
   private EditorComponent getEditorComponent(EditorContext context) {

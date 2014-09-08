@@ -70,6 +70,7 @@ public interface EditorContext {
 
   void openInspector();
 
+  @NotNull
   EditorComponent getEditorComponent();
 
   IOperationContext getOperationContext();
@@ -90,10 +91,22 @@ public interface EditorContext {
 
   boolean setMemento(Object o);
 
+  /**
+   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateNodeCell()
+   */
+  @Deprecated
   EditorCell createNodeCell(SNode node);
 
+  /**
+   * @deprecated since MPS 3.2
+   */
+  @Deprecated
   EditorCell createReferentCell(SNode sourceNode, SNode targetNode, String role);
 
+  /**
+   * @deprecated since MPS 3.2 use getEditorComponent().getUpdater().getCurrentUpdateSession().updateRoleAttributeCell()
+   */
+  @Deprecated
   EditorCell createRoleAttributeCell(Class attributeKind, EditorCell cellWithRole, SNode roleAttribute);
 
   void runWithContextCell(EditorCell contextCell, Runnable r);
