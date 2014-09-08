@@ -16,21 +16,21 @@
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237308012275" name="IndentLayoutNewLineStyleClassItem" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1138056143562" name="SLinkAccess" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1176717841777" name="QueryFunction_ModelAccess_Getter" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="ForegroundColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139848536355" name="CellModel_WithRole" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1074767920765" name="CellModel_ModelAccess" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186404549998" name="ForegroundColorStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1186414860679" name="EditableStyleClassItem" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1088185857835" name="InlineEditorComponent" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389882823" name="CellModel_RefNode" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1140133623887" name="Node_DeleteOperation" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389882823" name="CellModel_RefNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/795210086017940429" name="ReadOnlyStyleClassItem" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946" name="IMethodCall" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1078939183254" name="CellModel_Component" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1237303669825" name="CellLayout_Indent" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1080736578640" name="BaseEditorComponent" />
+    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="CellActionMap_FunctionParm_selectedNode" />
     <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1179409122411" name="Node_ConceptMethodCall" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073389214265" name="EditorCellModel" />
-    <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1402906326895675325" name="CellActionMap_FunctionParm_selectedNode" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1219418625346" name="IStyleContainer" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1139535280617" name="CellActionMapItem" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242878" name="ReturnStatement" />
@@ -56,6 +56,7 @@
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1146644602865" name="PublicVisibility" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1073390211982" name="CellModel_RefNodeList" />
     <concept id="18bc6592-03a6-4e29-a83a-7ff23bde13ba/1214320119173" name="SideTransformAnchorTagStyleClassItem" />
+    <concept id="7866978e-a0f0-4cc7-81bc-4d213d9375e1/1172008320231" name="Node_IsNotNullOperation" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1178549954367" name="IVisible" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081236700937" name="StaticMethodCall" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1137021947720" name="ConceptFunction" />
@@ -313,16 +314,46 @@
             <node concept="9wj7.1186414928363" id="1825613483881472971" role="9wj7.1219418625346.1219418656006" info="nn">
               <property role="9wj7.1186414536763.1186414551515" value="false" />
             </node>
+            <node concept="9wj7.1073390211982" id="3751132065236797364" role="9wj7.1073389446423.1073389446424" info="ng">
+              <reference role="9wj7.1139848536355.1140103550593" target="oubp.8264762413010642120" />
+              <node concept="9wj7.1239814640496" id="3402736933911564953" role="9wj7.1140524381322.1140524464360" info="nn" />
+              <node concept="9wj7.1237308012275" id="3211321119092800472" role="9wj7.1219418625346.1219418656006" info="nn">
+                <property role="9wj7.1186414536763.1186414551515" value="true" />
+              </node>
+            </node>
+            <node concept="9wj7.1073389577006" id="3211321119092800498" role="9wj7.1073389446423.1073389446424" info="nn">
+              <node concept="9wj7.1237308012275" id="3211321119092800506" role="9wj7.1219418625346.1219418656006" info="nn">
+                <property role="9wj7.1186414536763.1186414551515" value="true" />
+              </node>
+            </node>
+            <node concept="9wj7.1073389577006" id="3211321119092800519" role="9wj7.1073389446423.1073389446424" info="nn">
+              <property role="9wj7.1073389577006.1073389577007" value="//---initializer---" />
+              <reference role="9wj7.1381004262292414836.1381004262292426837" target="tpen.1198594875276" resolveInfo="Comment" />
+              <node concept="9wj7.1237308012275" id="3211321119092800530" role="9wj7.1219418625346.1219418656006" info="nn">
+                <property role="9wj7.1186414536763.1186414551515" value="true" />
+              </node>
+              <node concept="9wj7.1142886221719" id="3211321119092890539" role="9wj7.1073389214265.1142887637401" info="nn">
+                <node concept="vg0i.1068580123136" id="3211321119092890540" role="vg0i.1137021947720.1137022507850" info="sn">
+                  <node concept="vg0i.1068580123155" id="3211321119092891211" role="vg0i.1068580123136.1068581517665" info="nn">
+                    <node concept="vg0i.1197027756228" id="3211321119092894732" role="vg0i.1068580123155.1068580123156" info="nn">
+                      <node concept="vg0i.1197027756228" id="3211321119092891506" role="vg0i.1197027756228.1197027771414" info="nn">
+                        <node concept="9wj7.1142886811589" id="3211321119092891210" role="vg0i.1197027756228.1197027771414" info="nn" />
+                        <node concept="4ia1.1138056143562" id="3211321119092893418" role="vg0i.1197027756228.1197027833540" info="nn">
+                          <reference role="4ia1.1138056143562.1138056516764" target="oubp.1825613483881472526" />
+                        </node>
+                      </node>
+                      <node concept="4ia1.1172008320231" id="3211321119092898557" role="vg0i.1197027756228.1197027833540" info="nn" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
             <node concept="9wj7.1073389882823" id="1825613483881473041" role="9wj7.1073389446423.1073389446424" info="ng">
               <property role="9wj7.1139848536355.1139852716018" value="&lt;no initializer&gt;" />
               <reference role="9wj7.1139848536355.1140103550593" target="oubp.1825613483881472526" />
               <node concept="9wj7.1237308012275" id="1825613483881473046" role="9wj7.1219418625346.1219418656006" info="nn">
                 <property role="9wj7.1186414536763.1186414551515" value="true" />
               </node>
-            </node>
-            <node concept="9wj7.1073390211982" id="3751132065236797364" role="9wj7.1073389446423.1073389446424" info="ng">
-              <reference role="9wj7.1139848536355.1140103550593" target="oubp.8264762413010642120" />
-              <node concept="9wj7.1239814640496" id="3402736933911564953" role="9wj7.1140524381322.1140524464360" info="nn" />
             </node>
             <node concept="9wj7.1237303669825" id="1825613483881472974" role="9wj7.1073389446423.1106270802874" info="nn" />
           </node>
