@@ -70,7 +70,7 @@ public class ReloadSession {
     monitor.start("Reloading ...", 2);
     fireReloadStarted();
     try {
-      ModelAccess.instance().runWriteAction(new Runnable() {
+      ModelAccess.instance().runBatchWriteAction(new Runnable() {
         public void run() {
           int work = 1;
           for (ReloadParticipant rp : getParticipants()) {
