@@ -92,11 +92,11 @@ public class LibraryInitializer implements CoreComponent {
     return LibraryInitializer.class.getClassLoader();
   }
 
-  public void update(boolean refreshFiles) {
+  public void update(final boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
-    Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
-    Set<SLibrary> toLoad = new HashSet<SLibrary>();
+    final Set<SLibrary> toUnload = new HashSet<SLibrary>(myLibraries);
+    final Set<SLibrary> toLoad = new HashSet<SLibrary>();
     myParentLoaders.clear();
     for (LibraryContributor lc : myContributors) {
       for (LibDescriptor s : lc.getLibraries()) {
@@ -114,19 +114,21 @@ public class LibraryInitializer implements CoreComponent {
     }
     myLibraries.removeAll(toUnload);
 
-    // unload
-    for (SLibrary unloadLib : toUnload) {
-      unloadLib.dispose();
-    }
+    ModelAccess.instance().runBatchWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        // unload
+        for (SLibrary unloadLib : toUnload) {
+          unloadLib.dispose();
+        }
 
-    //load new
-    for (SLibrary loadLib : toLoad) {
-      loadLib.attach(refreshFiles);
-    }
+        //load new
+        for (SLibrary loadLib : toLoad) {
+          loadLib.attach(refreshFiles);
+        }
+      }
+    });
 
-    if (toUnload.isEmpty() && toLoad.isEmpty()) return;
-
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     CleanupManager.getInstance().cleanup();
   }
 

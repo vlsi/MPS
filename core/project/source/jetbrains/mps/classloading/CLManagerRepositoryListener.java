@@ -74,6 +74,8 @@ class CLManagerRepositoryListener extends SRepositoryBatchAdapter {
   }
 
   private void unloadModules(Set<SModule> modules) {
+    if (modules.isEmpty())
+      return;
     myClassLoaderManager.unloadModules(modules, new EmptyProgressMonitor());
   }
 

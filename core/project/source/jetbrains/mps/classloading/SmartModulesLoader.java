@@ -40,13 +40,17 @@ public class SmartModulesLoader {
   }
 
   public void loadModules(Set<SModule> modules) {
+    if (modules.isEmpty())
+      return;
     reloadModulesWithDeps(modules);
   }
 
   private void reloadModulesWithDeps(Set<SModule> modules) {
     Set<SModule> backDependencies = collectBackDependencies(modules);
     Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
-    myClassLoaderManager.loadModules(unloadedModules, new EmptyProgressMonitor());
+    Set<SModule> modulesToLoad = new HashSet<SModule>(unloadedModules);
+    modulesToLoad.addAll(modules);
+    myClassLoaderManager.loadModules(modulesToLoad, new EmptyProgressMonitor());
   }
 
   private Set<SModule> collectBackDependencies(Set<SModule> modules) {
