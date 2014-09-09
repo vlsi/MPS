@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.Set;
 import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.textGen.TextGenBuffer;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
@@ -138,7 +139,8 @@ public abstract class BaseLanguageTextGen {
     }
   }
   public static void fileHeader(SNode cls, final SNodeTextGen textGen) {
-    if (jetbrains.mps.util.SNodeOperations.isRoot(cls)) {
+    boolean topClassifier = !(Classifier_Behavior.call_isInner_521412098689998677(cls));
+    if (topClassifier) {
       int wasPart = textGen.getBuffer().selectPart(TextGenBuffer.TOP);
       textGen.append("package " + BaseLanguageTextGen.getPackageName(cls, textGen) + ";");
       textGen.appendNewLine();
@@ -147,13 +149,11 @@ public abstract class BaseLanguageTextGen {
       textGen.appendNewLine();
       textGen.getBuffer().selectPart(wasPart);
     }
-    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).isNotEmpty()) {
-      for (SNode interface1 : SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)) {
-        BaseLanguageTextGen.extendedInterface(SNodeOperations.cast(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), textGen);
-      }
+    if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      BaseLanguageTextGen.registerExtendsRelation(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true), topClassifier, textGen);
     } else if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      BaseLanguageTextGen.implementedInterface(cls, textGen);
-      BaseLanguageTextGen.extendedClasses(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false), textGen);
+      BaseLanguageTextGen.registerExtendsRelation(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true), topClassifier, textGen);
+      BaseLanguageTextGen.registerExtendsRelation(Sequence.fromIterable(Sequence.<SNode>singleton(SLinkOperations.getTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true))).toListSequence(), topClassifier, textGen);
     }
   }
   public static void methodCall(SNode methodCall, final SNodeTextGen textGen) {
@@ -269,6 +269,14 @@ public abstract class BaseLanguageTextGen {
   }
   protected static void appendClassName(String packageName, String fqName, SNode contextNode, final SNodeTextGen textGen) {
     textGen.append(BaseLanguageTextGen.getClassName(packageName, fqName, contextNode, textGen));
+  }
+  protected static void registerExtendsRelation(List<SNode> classifiers, boolean isTopClassifier, final SNodeTextGen textGen) {
+    // if an inner class extends/implements outer classifier, we shall not record this dependency as 'extends' of a 
+    // top-level unit (see sample in MPS-17604). Perhaps, we shall not record this dependency at all? 
+    Set<String> dependencies = BaseLanguageTextGen.getUserObjects((isTopClassifier ? TextGen.EXTENDS : TextGen.DEPENDENCY), textGen);
+    for (SNode c : classifiers) {
+      SetSequence.fromSet(dependencies).addElement(NameUtil.nodeFQName(SLinkOperations.getTarget(c, "classifier", false)));
+    }
   }
   protected static Logger LOG = LogManager.getLogger(BaseLanguageTextGen.class);
 }
