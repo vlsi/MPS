@@ -86,11 +86,11 @@ public class Solution extends AbstractModule {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);
   }
 
-  public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+  public void setSolutionDescriptor(SolutionDescriptor newDescriptor) {
     assertCanChange();
 
     mySolutionDescriptor = newDescriptor;
@@ -109,9 +109,6 @@ public class Solution extends AbstractModule {
     reloadAfterDescriptorChange();
     fireChanged();
 
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
     dependenciesChanged();
   }
 

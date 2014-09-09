@@ -231,7 +231,7 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
   }
 
   //todo should be replaced with events
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
     throw new UnsupportedOperationException();
   }
 

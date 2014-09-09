@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
@@ -217,14 +218,15 @@ public class SModuleOperations {
   }
 
   /**
-   * Unload classes of module.
+   * Reads module from file and reloads its class loader
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();
 
     try {
       ModuleDescriptor descriptor = module.loadDescriptor();
-      module.setModuleDescriptor(descriptor, false);
+      module.setModuleDescriptor(descriptor);
+      ClassLoaderManager.getInstance().reloadModule(module);
     } catch (ModuleReadException e) {
       AbstractModule.handleReadProblem(module, e, false);
     }

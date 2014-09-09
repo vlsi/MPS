@@ -167,7 +167,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)"));
     generatorDescriptor.getUsedLanguages().add(PersistenceFacade.getInstance().createModuleReference("d7706f63-9be2-479c-a3da-ae92af1e64d5(jetbrains.mps.lang.generator.generationContext)"));
     languageDescriptor.getGenerators().add(generatorDescriptor);
-    language.setLanguageDescriptor(languageDescriptor, false);
+    language.setLanguageDescriptor(languageDescriptor);
     language.save();
 
     return (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());

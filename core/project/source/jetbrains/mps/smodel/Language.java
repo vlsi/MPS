@@ -196,11 +196,11 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   }
 
   @Override
-  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor, boolean reloadClasses) {
-    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor, reloadClasses);
+  public void setModuleDescriptor(ModuleDescriptor moduleDescriptor) {
+    setLanguageDescriptor((LanguageDescriptor) moduleDescriptor);
   }
 
-  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor, boolean reloadClasses) {
+  public void setLanguageDescriptor(final LanguageDescriptor newDescriptor) {
     assertCanChange();
 
     myLanguageDescriptor = newDescriptor;
@@ -212,11 +212,6 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     setChanged();
     reloadAfterDescriptorChange();
     fireChanged();
-
-    // move outside set_ block and just call ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    if (reloadClasses) {
-      ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-    }
 
     MPSModuleRepository.getInstance().invalidateCaches();
 
@@ -238,7 +233,7 @@ public class Language extends AbstractModule implements MPSModuleOwner {
   public void rename(String newNamespace) {
     LanguageDescriptor languageDescriptor = getModuleDescriptor();
     languageDescriptor.setNamespace(newNamespace);
-    setLanguageDescriptor(languageDescriptor, false);
+    setLanguageDescriptor(languageDescriptor);
   }
 
   public List<SNode> getConceptDeclarations() {
@@ -313,7 +308,8 @@ public class Language extends AbstractModule implements MPSModuleOwner {
         i.remove();
       }
     }
-    setLanguageDescriptor(myLanguageDescriptor, true);
+    setLanguageDescriptor(myLanguageDescriptor);
+    ClassLoaderManager.getInstance().reloadModule(this);
   }
 
   public String toString() {

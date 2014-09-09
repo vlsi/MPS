@@ -3501,7 +3501,7 @@
       <node id="3465865320786305551" at="105,27,106,40" concept="10" />
       <node id="3465865320786305554" at="106,40,107,54" concept="5" />
       <node id="3465865320786305560" at="107,54,108,54" concept="5" />
-      <node id="3465865320786305567" at="108,54,109,60" concept="5" />
+      <node id="3465865320786305567" at="108,54,109,53" concept="5" />
       <node id="3465865320786305581" at="110,105,111,336" concept="10" />
       <node id="3465865320786305601" at="112,48,113,84" concept="10" />
       <node id="3465865320786305608" at="113,84,114,81" concept="5" />
@@ -3529,7 +3529,7 @@
       <node id="3465865320786305599" at="111,336,115,13" concept="8" />
       <node id="3465865320786305485" at="38,0,43,0" concept="3" trace="AddAccessoryModel_Action#()V" />
       <node id="3465865320786305518" at="91,90,96,14" concept="5" />
-      <node id="3465865320786305579" at="109,60,116,11" concept="8" />
+      <node id="3465865320786305579" at="109,53,116,11" concept="8" />
       <node id="3465865320786305485" at="47,89,55,5" concept="17" />
       <node id="6352952732713663012" at="90,0,98,0" concept="9" trace="run#()V" />
       <node id="3465865320786305485" at="47,0,57,0" concept="9" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.util;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -84,7 +85,8 @@ public class DeleteGeneratorHelper {
   private void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
     languageDescriptor.getGenerators().remove(generatorDescriptor);
-    sourceLanguage.setLanguageDescriptor(languageDescriptor, true);
+    sourceLanguage.setLanguageDescriptor(languageDescriptor);
+    ClassLoaderManager.getInstance().reloadModule(sourceLanguage);
     sourceLanguage.save();
     if (myDeleteFiles) {
       LogManager.getLogger(DeleteGeneratorHelper.class).error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());

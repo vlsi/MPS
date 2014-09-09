@@ -146,7 +146,7 @@ public class RefactoringTest extends WorkbenchMpsTest {
   public static void updateLanguageClasspath(Language l, String classpath) {
     LanguageDescriptor languageDescriptor = l.getModuleDescriptor();
     languageDescriptor.getAdditionalJavaStubPaths().add(classpath);
-    l.setLanguageDescriptor(languageDescriptor, false);
+    l.setLanguageDescriptor(languageDescriptor);
   }
 
   @BeforeClass
