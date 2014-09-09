@@ -28,8 +28,6 @@ import java.util.List;
  * You have to run {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)} if this is your case.
  *
  * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)
- *
- * Created by Alex Pyshkin on 9/1/14.
  */
 public interface SRepositoryBatchListener {
   void batchEventsHappened(List<SRepositoryEvent> events);

@@ -74,24 +74,25 @@ public interface ModelAccess {
    *
    * @see SRepositoryBatchListener
    * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchListener
-   *
-   * @param r The command that the repository should invoke on its own behalf
    */
   void runBatchWriteAction(Runnable r);
 
   /**
-   * Write action executed with respect to platform undo mechanism.
+   * Represents a batch (!) write action executed with respect to platform undo mechanism.
    * This method shall be invoked from EDT thread only.
    * Unlike {@link #executeCommandInEDT(Runnable)}, this method executes synchronously
    */
   void executeCommand(Runnable r);
 
   /**
-   * Write action executed with respect to platform undo mechanism, runs asynchronously from EDT thread.
+   * Represents a batch (!) write action executed with respect to platform undo mechanism, runs asynchronously from EDT thread.
    * This method may be invoked from any thread.
    */
   void executeCommandInEDT(Runnable r);
 
+  /**
+   * FIXME
+   */
   void executeUndoTransparentCommand(Runnable r);
 
   /**

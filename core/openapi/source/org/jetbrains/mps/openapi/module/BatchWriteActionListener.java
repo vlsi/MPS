@@ -16,7 +16,8 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * Created by Alex Pyshkin on 9/2/14.
+ * Represents a listener to start/finish notifications of
+ * {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)}
  */
 public interface BatchWriteActionListener {
   public void batchStarted();
