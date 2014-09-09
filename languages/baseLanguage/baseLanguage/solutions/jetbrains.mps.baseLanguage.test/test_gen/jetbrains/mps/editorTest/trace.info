@@ -7714,6 +7714,35 @@
       <unit id="6615512484304909907" at="10,0,30,0" name="jetbrains.mps.editorTest.FinalField2_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6615512484320057805">
+    <file name="RemoveStaticInInterface_Test.java">
+      <node id="6615512484320057805" at="15,63,16,107" concept="2" />
+      <node id="6615512484320057805" at="16,107,17,104" concept="2" />
+      <node id="6615512484320057805" at="24,51,25,63" concept="2" />
+      <node id="6615512484320057824" at="25,63,26,77" concept="2" />
+      <node id="6615512484320057826" at="26,77,27,77" concept="2" />
+      <node id="6615512484320057828" at="27,77,28,77" concept="2" />
+      <node id="6615512484320057830" at="28,77,29,77" concept="2" />
+      <node id="6615512484320057832" at="29,77,30,77" concept="2" />
+      <node id="6615512484320057834" at="30,77,31,77" concept="2" />
+      <node id="6615512484320057836" at="31,77,32,77" concept="2" />
+      <node id="6615512484320071646" at="32,77,33,77" concept="2" />
+      <node id="6615512484320057805" at="12,0,14,0" concept="1" trace="RemoveStaticInInterface_Test#()V" />
+      <node id="6615512484320057805" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6615512484320057805" at="14,0,19,0" concept="5" trace="test_RemoveStaticInInterface#()V" />
+      <node id="6615512484320057805" at="23,0,35,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6615512484320057805" at="12,41,12,41" />
+      <scope id="6615512484320057805" at="21,23,21,23" />
+      <scope id="6615512484320057805" at="12,0,14,0" />
+      <scope id="6615512484320057805" at="15,63,17,104" />
+      <scope id="6615512484320057805" at="21,0,23,0" />
+      <scope id="6615512484320057805" at="14,0,19,0" />
+      <scope id="6615512484320057805" at="24,51,33,77" />
+      <scope id="6615512484320057805" at="23,0,35,0" />
+      <unit id="6615512484320057805" at="19,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInInterface_Test$TestBody" />
+      <unit id="6615512484320057805" at="10,0,37,0" name="jetbrains.mps.editorTest.RemoveStaticInInterface_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6736042903603947667">
     <file name="ReplaceBinaryWithAssignment_Test.java">
       <node id="6736042903603947667" at="15,67,16,107" concept="2" />
