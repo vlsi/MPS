@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3f182uqdtc3sjz6d2d5qjdmwcg7se92">
+<dependencies version="2" modelHash="57jz8xzn0pp3pg5yumy6g362njzprn3">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
@@ -7,6 +7,7 @@
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-ajpreu65nqcv9ip1xj2y1sbwq1ojxgc" dependsOnNodes="true">
+    <dep root="3211321119092784894" />
     <dep root="4436301628118948495" />
     <dep root="4950161090496546961" />
     <dep root="5820409521797704955" />
@@ -23,5 +24,6 @@
   <source id="4950161090496546961" name="DataDependency" hash="8r9kha0ycnadbdjbt65901bq5ke7xq" />
   <source id="8352104482584315555" name="MigrationScript" hash="dwow4u7hvrt62l9v2rkyua5kaanto2d" />
   <source id="5820409521797704955" name="ProducedDataDeclaration" hash="-4kj2sq13xvx0t1nw44arl4ihew6xtaw" />
+  <source id="3211321119092784894" name="StringData" hash="2ig2a11dndoikki2crv2neaa7eogv52" />
 </dependencies>
 

@@ -9,7 +9,10 @@
       <unit at="12,0,44,0" name="jetbrains.mps.lang.migration.behavior.RequiredDataDeclaration_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,30,0" name="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="StringData_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.migration.behavior.StringData_BehaviorDescriptor" />
     </file>
     <file name="DataDependency_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.migration.behavior.DataDependency_BehaviorDescriptor" />

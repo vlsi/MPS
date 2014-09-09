@@ -20,9 +20,11 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ProducedDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember").references("dataType").alias("produces data", "").create();
       case 3:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.RequiredDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dependencies"}, new boolean[]{true}).alias("requires data", "").create();
+      case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.StringData").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("data").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.StringData"};
 }
