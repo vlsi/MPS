@@ -294,7 +294,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   public void dispose() {
     FileSystem.getInstance().removeListener(this);
     super.dispose();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);

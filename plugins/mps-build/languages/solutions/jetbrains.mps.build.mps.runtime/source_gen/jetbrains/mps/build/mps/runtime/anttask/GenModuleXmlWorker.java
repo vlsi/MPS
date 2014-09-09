@@ -5,13 +5,14 @@ package jetbrains.mps.build.mps.runtime.anttask;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
@@ -41,8 +42,8 @@ public class GenModuleXmlWorker extends MpsWorker {
   @Override
   protected void showStatistic() {
   }
-  private void reloadAll() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+  private void reloadAll(@NotNull Project project) {
+    project.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
       }
@@ -52,7 +53,7 @@ public class GenModuleXmlWorker extends MpsWorker {
   public void work() {
     setupEnvironment();
     final Project project = createDummyProject();
-    reloadAll();
+    reloadAll(project);
     List<String> parameters = myWhatToDo.getParameters();
     for (String parameter : parameters) {
       processParameter(project, parameter);
