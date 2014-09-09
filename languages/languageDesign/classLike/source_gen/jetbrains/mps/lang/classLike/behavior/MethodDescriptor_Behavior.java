@@ -41,7 +41,7 @@ public class MethodDescriptor_Behavior {
         }
       }
     }));
-
+    SLinkOperations.setTarget(method, "decl", thisNode, false);
     SLinkOperations.setTarget(method, "returnType", (SLinkOperations.getTarget(thisNode, "retType", true) == null ? _quotation_createNode_9j0ugw_a0a5a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "retType", true))), true);
     return method;
   }

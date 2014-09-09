@@ -11,8 +11,8 @@
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464627964745" name="AttributeInfo_AttributedConcept" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468" name="INamedConcept" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/6054523464626862044" name="AttributeInfo_IsMultiple" />
-    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="LinkDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1169127622168" name="InterfaceConceptReference" />
+    <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288298" name="LinkDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/1071489288299" name="PropertyDeclaration" />
     <concept id="c72da2b9-7cce-4447-8389-f407dc1158b7/2992811758677295509" name="AttributeInfo" />
     <concept id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626" name="BaseConcept" />
@@ -57,6 +57,12 @@
       <property role="asn4.1133920641626.1193676396447" value="instances" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeMethod" />
       <reference role="4jta.1071489090640.1071489389519" target="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+      <node concept="4jta.1071489288298" id="19209059688387895" role="4jta.1169125787135.1071489727083" info="ig">
+        <property role="4jta.1071489288298.1071599937831" value="reference" />
+        <property role="4jta.1071489288298.1071599776563" value="decl" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
+        <reference role="4jta.1071489288298.1071599976176" target="3751132065236767079" resolveInfo="MethodDescriptor" />
+      </node>
       <node concept="4jta.1169127622168" id="6478870542308708732" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberIntance" />
       </node>
@@ -262,7 +268,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="6478870542308708689" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeProperty" />
       <property role="4jta.1169125787135.4628067390765956802" value="true" />
       <property role="4jta.1169125787135.4628067390765956807" value="false" />
@@ -282,7 +288,7 @@
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeMemberIntance" />
     </node>
     <node concept="4jta.1071489090640" id="6478870542308871428" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeStringProperty" />
       <reference role="4jta.1071489090640.1071489389519" target="6478870542308708689" resolveInfo="ClassLikeProperty" />
       <node concept="4jta.1071489288299" id="6478870542308871429" role="4jta.1169125787135.1071489727084" info="ig">
@@ -291,7 +297,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="6478870542308871875" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeBooleanProperty" />
       <reference role="4jta.1071489090640.1071489389519" target="6478870542308708689" resolveInfo="ClassLikeProperty" />
       <node concept="4jta.1071489288299" id="6478870542308871876" role="4jta.1169125787135.1071489727084" info="ig">
@@ -300,7 +306,7 @@
       </node>
     </node>
     <node concept="4jta.1071489090640" id="6478870542308871877" info="ig">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <property role="asn4.1169194658468.1169194664001" value="ClassLikeIntegerProperty" />
       <reference role="4jta.1071489090640.1071489389519" target="6478870542308708689" resolveInfo="ClassLikeProperty" />
       <node concept="4jta.1071489288299" id="6478870542308871878" role="4jta.1169125787135.1071489727084" info="ig">

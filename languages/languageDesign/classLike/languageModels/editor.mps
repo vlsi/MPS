@@ -642,7 +642,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="6478870542308871477" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.6478870542308871428" resolveInfo="ClassLikeStringProperty" />
       <node concept="9wj7.1073389446423" id="6478870542308871686" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1073389658414" id="6478870542308871693" role="9wj7.1073389446423.1073389446424" info="ng">
@@ -658,7 +658,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="6478870542308871959" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.6478870542308871877" resolveInfo="ClassLikeIntegerProperty" />
       <node concept="9wj7.1073389446423" id="6478870542308871976" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1073389658414" id="6478870542308871977" role="9wj7.1073389446423.1073389446424" info="ng">
@@ -674,7 +674,7 @@
       </node>
     </node>
     <node concept="9wj7.1071666914219" id="6478870542308872009" info="ng">
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
+      <property role="asn4.1133920641626.1193676396447" value="instances.property" />
       <reference role="9wj7.1166049232041.1166049300910" target="oubp.6478870542308871875" resolveInfo="ClassLikeBooleanProperty" />
       <node concept="9wj7.1073389446423" id="6478870542308872026" role="9wj7.1080736578640.1080736633877" info="nn">
         <node concept="9wj7.1073389658414" id="6478870542308872027" role="9wj7.1073389446423.1073389446424" info="ng">
