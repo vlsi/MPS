@@ -15,9 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module.event;
 
-/**
- * Created by Alex Pyshkin on 9/2/14.
- */
 public interface SModuleEventVisitor {
   void visit(SModuleAddedEvent event);
 

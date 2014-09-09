@@ -20,9 +20,6 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-/**
- * Created by Alex Pyshkin on 9/2/14.
- */
 public class SModuleRemovedEvent extends SRepositoryEvent {
   private SModuleReference myModuleReference;
 

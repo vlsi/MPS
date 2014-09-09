@@ -18,9 +18,6 @@ package org.jetbrains.mps.openapi.module.event;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
-/**
- * Created by Alex Pyshkin on 9/2/14.
- */
 public class SModuleAddedEvent extends SRepositoryModuleEvent {
 
   public SModuleAddedEvent(@NotNull SModule module) {

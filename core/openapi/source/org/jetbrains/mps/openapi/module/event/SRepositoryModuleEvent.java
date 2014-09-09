@@ -19,7 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 
 /**
- * Created by Alex Pyshkin on 9/2/14.
  * Parent of repository module events
  * (adding and removing the module from a repository)
  */

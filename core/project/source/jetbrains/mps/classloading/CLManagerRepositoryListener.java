@@ -16,74 +16,159 @@
 package jetbrains.mps.classloading;
 
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchAdapter;
+import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
+import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
+import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
+import org.jetbrains.mps.openapi.module.event.SModuleRemovedEvent;
+import org.jetbrains.mps.openapi.module.event.SModuleRemovingEvent;
+import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
-import java.util.Arrays;
-import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
  * @author Alex Pyshkin  3/7/14.
  */
-class CLManagerRepositoryListener extends SRepositoryAdapter {
-  private static final Logger LOG = LogManager.getLogger(CLManagerRepositoryListener.class);
+class CLManagerRepositoryListener extends SRepositoryBatchAdapter {
+  private ClassLoaderManager myClassLoaderManager;
+  private final SRepository myRepository;
+  private volatile boolean myBatchIsOn;
 
-  private final ClassLoaderManager myClassLoaderManager;
-
-  public CLManagerRepositoryListener(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
+  public CLManagerRepositoryListener(@NotNull SRepository repository) {
+    super(repository);
+    myRepository = repository;
   }
 
-  @Override
-  public void beforeModuleRemoved(@NotNull SModule module) {
-    LOG.debug("removing " + module);
-    final Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(Arrays.asList(module), new EmptyProgressMonitor());
-//    loadDeps(module, unloadedModules);
+  public void init(ClassLoaderManager classLoaderManager) {
+    myClassLoaderManager = classLoaderManager;
+    super.init();
   }
 
   @Override
   public void moduleAdded(@NotNull SModule module) {
-    LOG.debug("adding " + module);
-    if (!myClassLoaderManager.canLoad(module)) {
-      LOG.debug("cannot load module within mps " + module);
-      return;
+    loadModules(Collections.singleton(module));
+  }
+
+  @Override
+  public void beforeModuleRemoved(@NotNull SModule module) {
+    unloadModules(Collections.singleton(module));
+  }
+
+  private void loadModules(Set<SModule> modules) {
+    Set<SModule> filteredModules = new HashSet<SModule>();
+    for (SModule module : modules) {
+      if (myClassLoaderManager.canLoad(module)) {
+        filteredModules.add(module);
+      }
     }
-    reloadWithDeps(module);
-
-    LOG.debug("after adding " + module);
+    new SmartModulesLoader(myClassLoaderManager, myRepository).loadModules(filteredModules);
   }
 
-  private void loadDeps(SModule moduleRemoved, final Set<SModule> unloadedModules) {
-    Set<SModule> modulesToReload = new HashSet<SModule>();
-    modulesToReload.addAll(unloadedModules);
-    modulesToReload.remove(moduleRemoved);
-    myClassLoaderManager.loadModules(modulesToReload, new EmptyProgressMonitor());
+  private void unloadModules(Set<SModule> modules) {
+    myClassLoaderManager.unloadModules(modules, new EmptyProgressMonitor());
   }
 
-  private void reloadWithDeps(SModule module) {
-    Set<SModule> backDependencies = collectBackDependencies(module);
-    Set<SModule> unloadedModules = myClassLoaderManager.unloadModules(backDependencies, new EmptyProgressMonitor());
-    myClassLoaderManager.loadModules(unloadedModules, new EmptyProgressMonitor());
+  // batch part
+  @Override
+  public void batchEventsHappened(List<SRepositoryEvent> events) {
+    MyModuleEventVisitor visitor = new MyModuleEventVisitor();
+    for (SRepositoryEvent event : events)
+      event.accept(visitor);
+
+    unloadModules(visitor.getModulesToUnload());
+    loadModules(visitor.getModulesToLoad());
   }
 
-  private Set<SModule> collectBackDependencies(SModule module) {
-    Set<SModule> result = new HashSet<SModule>();
-    Iterable<SModule> allModules = MPSModuleRepository.getInstance().getModules();
-    for (SModule module1 : allModules) {
-      if (!myClassLoaderManager.canLoad(module1))
-        continue;
-      Collection<SModule> dependencies = new GlobalModuleDependenciesManager(module1).getModules(Deptype.COMPILE);
-      if (dependencies.contains(module))
-        result.add(module1);
+  @Override
+  public void batchStarted() {
+    if (myBatchIsOn)
+      throw new IllegalStateException("Batch write action is already started?");
+    myBatchIsOn = true;
+
+    myRepository.removeRepositoryListener(this);
+  }
+
+  @Override
+  public void batchFinished() {
+    if (!myBatchIsOn)
+      throw new IllegalStateException("Batch write action has not been started?");
+    myBatchIsOn = false;
+
+    myRepository.addRepositoryListener(this);
+  }
+
+  @Override
+  public void moduleRemoved(@NotNull SModuleReference module) {
+   // NOP
+  }
+
+  @Override
+  public void commandStarted(SRepository repository) {
+    // NOP
+  }
+
+  @Override
+  public void commandFinished(SRepository repository) {
+    // NOP
+  }
+
+  @Override
+  public void updateStarted(SRepository repository) {
+    // NOP
+  }
+
+  @Override
+  public void updateFinished(SRepository repository) {
+    // NOP
+  }
+
+  @Override
+  public void repositoryCommandStarted(SRepository repository) {
+    // NOP
+  }
+
+  @Override
+  public void repositoryCommandFinished(SRepository repository) {
+    // NOP
+  }
+
+  private class MyModuleEventVisitor implements SModuleEventVisitor {
+    private final Set<SModule> myModulesToLoad = new HashSet<SModule>();
+    private final Set<SModule> myModulesToUnload = new HashSet<SModule>();
+
+    @Override
+    public void visit(SModuleAddedEvent event) {
+      SModule module = event.getModule();
+      myModulesToLoad.add(module);
     }
-    return result;
+
+    @Override
+    public void visit(SModuleRemovedEvent event) {
+      // NOP
+    }
+
+    @Override
+    public void visit(SModuleRemovingEvent event) {
+      SModule module = event.getModule();
+      myModulesToLoad.remove(module);
+      myModulesToUnload.add(module);
+    }
+
+    public Set<SModule> getModulesToUnload() {
+      return myModulesToUnload;
+    }
+
+    public Set<SModule> getModulesToLoad() {
+      return myModulesToLoad;
+    }
   }
 }

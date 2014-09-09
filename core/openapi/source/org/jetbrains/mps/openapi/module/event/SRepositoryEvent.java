@@ -21,9 +21,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 /**
  * Events in {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
  * Using Visitor pattern to process a list of events in the
- * {@link }
- *
- * Created by Alex Pyshkin on 9/2/14.
+ * {@link org.jetbrains.mps.openapi.module.SRepositoryBatchListener#batchEventsHappened(java.util.List)}
  */
 public abstract class SRepositoryEvent {
   private SRepository myRepository;

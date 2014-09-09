@@ -70,13 +70,14 @@ public class ClassLoaderManager implements CoreComponent {
   private final ClassLoadingBroadCaster myBroadCaster;
 
   // listening for module adding/removing
-  private final SRepositoryListener myRepositoryListener = new CLManagerRepositoryListener(this);
+  private final CLManagerRepositoryListener myRepositoryListener;
 
   public ClassLoaderManager(@NotNull SRepository repository) {
     myRepository = repository;
     myBroadCaster = new ClassLoadingBroadCaster();
     myDependenciesWatcher = new ModuleDependenciesWatcher(this);
     myClassLoadingChecker = new ClassLoadingChecker(this);
+    myRepositoryListener = new CLManagerRepositoryListener(repository);
   }
 
   public ClassLoadingChecker getClassLoadingChecker() {
@@ -90,7 +91,7 @@ public class ClassLoaderManager implements CoreComponent {
     }
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
-    startListening();
+    myRepositoryListener.init(this);
     FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
       @Override
       public SModuleFacet create() {
@@ -101,13 +102,14 @@ public class ClassLoaderManager implements CoreComponent {
 
   @Override
   public void dispose() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myRepository.getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         unloadModules(myRepository.getModules(), new EmptyProgressMonitor());
       }
     });
-    stopListening();
+    removeClassesHandler(SModelRootClassesListener.INSTANCE);
+    myRepositoryListener.dispose();
     INSTANCE = null;
   }
 
@@ -217,6 +219,7 @@ public class ClassLoaderManager implements CoreComponent {
     if (modulesToLoad.isEmpty()) return modulesToLoad;
 
     for (SModule module : modulesToLoad) {
+      LOG.debug("Loading module " + module);
       createClassLoader(module);
     }
     monitor.start("Load classes...", 1);
@@ -316,14 +319,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   public Set<SModule> reloadModule(SModule module) {
     return reloadModules(Collections.singleton(module), new EmptyProgressMonitor());
-  }
-
-  private void stopListening() {
-    myRepository.removeRepositoryListener(myRepositoryListener);
-  }
-
-  private void startListening() {
-    myRepository.addRepositoryListener(myRepositoryListener);
   }
 
   //---------------deprecated part------------------

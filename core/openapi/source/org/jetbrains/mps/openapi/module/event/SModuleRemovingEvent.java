@@ -19,9 +19,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepository;
 
-/**
- * Created by Alex Pyshkin on 9/2/14.
- */
 public class SModuleRemovingEvent extends SRepositoryModuleEvent {
 
   public SModuleRemovingEvent(@NotNull SModule module) {
