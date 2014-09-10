@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 import org.jetbrains.mps.openapi.module.CommandListener;
 
 /**
@@ -62,10 +61,6 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
     ModelAccess.instance().runWriteAction(r);
   }
 
-  @Override
-  public void runBatchWriteAction(final Runnable r) {
-    ModelAccess.instance().runBatchWriteAction(r);
-  }
 
   @Override
   public void runWriteInEDT(Runnable r) {

@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
+import org.jetbrains.mps.openapi.module.CommandListener;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,21 +38,22 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * This class serves as a composite listener to events which come from multiple models during a Command.
- * Actually it listens to the batch write action start and finish events
+ * This class serves as a composite listener to events which come from multiple models during Command
  *
- * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)
  * @see org.jetbrains.mps.openapi.module.ModelAccess#executeCommand(Runnable)
  */
 public abstract class ModelsEventsCollector {
   private List<SModelEvent> myEvents = new ArrayList<SModelEvent>();
   private SModelListener myModelListener = new SModelDelegateListener();
   private Set<SModel> myModelsToListen = new LinkedHashSet<SModel>();
-  private BatchWriteActionListener myBatchWriteActionListener = new MyBatchWriteActionAdapter();
+  private CommandListener myCommandListener = new MyCommandAdapter();
   private volatile boolean myDisposed;
 
+  private boolean myIsInCommand;
+
   public ModelsEventsCollector() {
-    ModelAccess.instance().addBatchWriteActionListener(myBatchWriteActionListener);
+    ModelAccess.instance().addCommandListener(myCommandListener);
+    myIsInCommand = ModelAccess.instance().isInsideCommand();
   }
 
   public void startListeningToModel(@NotNull SModel sm) {
@@ -91,7 +92,7 @@ public abstract class ModelsEventsCollector {
     for (SModel sm : new LinkedHashSet<SModel>(myModelsToListen)) {
       stopListeningToModel(sm);
     }
-    ModelAccess.instance().removeBatchWriteActionListener(myBatchWriteActionListener);
+    ModelAccess.instance().removeCommandListener(myCommandListener);
     myDisposed = true;
   }
 
@@ -101,21 +102,23 @@ public abstract class ModelsEventsCollector {
     }
   }
 
-  private class MyBatchWriteActionAdapter implements BatchWriteActionListener {
+  private class MyCommandAdapter implements CommandListener {
     @Override
-    public void batchStarted() {
+    public void commandStarted() {
       if (myDisposed) {
         return;
       }
       myEvents.clear();
+      myIsInCommand = true;
     }
 
     @Override
-    public void batchFinished() {
+    public void commandFinished() {
       if (myDisposed) {
         return;
       }
       flush();
+      myIsInCommand = false;
     }
   }
 
@@ -236,6 +239,9 @@ public abstract class ModelsEventsCollector {
       checkNotDisposed();
 
       if (event != null) {
+        if (!myIsInCommand && !(event instanceof SModelFileChangedEvent)) {
+          throw new IllegalStateException("Event outside of a command");
+        }
         myEvents.add(event);
       }
     }

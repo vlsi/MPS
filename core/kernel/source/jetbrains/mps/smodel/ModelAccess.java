@@ -22,7 +22,6 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -214,7 +213,12 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   }
 
   /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)}
+   * Modifications to models can be performed from within a managed action, which holds the appropriate write lock
+   * The method obtains such a lock and executes the provided action similar to {@link #runWriteAction(Runnable)}.
+   * However in this case batch (group) repository notifications are sent at the end of the action {@param r}.
+   *
+   * @see SRepositoryBatchListener
+   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchListener
    */
   @Deprecated
   public void runBatchWriteAction(final Runnable r) {

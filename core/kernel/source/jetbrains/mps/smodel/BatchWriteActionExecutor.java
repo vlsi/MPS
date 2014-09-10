@@ -17,7 +17,6 @@ package jetbrains.mps.smodel;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.mps.openapi.module.*;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;

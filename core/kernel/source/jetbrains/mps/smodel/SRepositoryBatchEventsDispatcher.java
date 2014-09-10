@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.module;
+package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.module.BatchEventsProcessor;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.module.BatchWriteActionListener;
-import jetbrains.mps.smodel.ModelAccess;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;

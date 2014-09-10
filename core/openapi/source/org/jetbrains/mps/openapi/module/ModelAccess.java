@@ -15,6 +15,8 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+import jetbrains.mps.smodel.BatchWriteActionListener;
+
 /**
  * Grants access to objects in the repository (e.g., models)
  */
@@ -66,17 +68,6 @@ public interface ModelAccess {
    * Inside the action it is safe to touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
-
-  /**
-   * Modifications to models can be performed from within a managed action, which holds the appropriate write lock
-   * The method obtains such a lock and executes the provided action similar to {@link #runWriteAction(Runnable)}.
-   * However in this case batch (group) repository notifications are sent at the end of the action {@param r}.
-   *
-   * @see SRepositoryBatchListener
-   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchListener
-   */
-  void runBatchWriteAction(Runnable r);
-
   /**
    * Represents a batch (!) write action executed with respect to platform undo mechanism.
    * This method shall be invoked from EDT thread only.
