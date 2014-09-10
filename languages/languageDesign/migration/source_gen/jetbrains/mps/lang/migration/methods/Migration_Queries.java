@@ -15,6 +15,10 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Migration_Queries {
   public static void init(SNode c) {
@@ -39,5 +43,22 @@ public class Migration_Queries {
 
     m.addModelImport(SModelRepository.getInstance().getModelDescriptor("jetbrains.mps.smodel.adapter").getReference(), true);
     mod.addDependency(ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference("2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)")).getModuleReference(), false);
+  }
+  public static SNode execute_ret(SNode ti) {
+    SNode typeNode = Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(SNodeOperations.getAncestor(ti, "jetbrains.mps.lang.migration.structure.MigrationScript", false, false), "member", true), "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration")).first();
+    return (typeNode == null ? _quotation_createNode_9iwezb_a0b0a0f() : _quotation_createNode_9iwezb_a0b0a0f_0(SLinkOperations.getTarget(typeNode, "dataType", false)));
+  }
+  private static SNode _quotation_createNode_9iwezb_a0b0a0f() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, false);
+    return quotedNode_1;
+  }
+  private static SNode _quotation_createNode_9iwezb_a0b0a0f_0(Object parameter_1) {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }
