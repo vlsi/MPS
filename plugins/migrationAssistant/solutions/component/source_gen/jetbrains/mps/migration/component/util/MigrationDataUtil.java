@@ -5,9 +5,12 @@ package jetbrains.mps.migration.component.util;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.lang.migration.runtime.base.MigrationScriptReference;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vfs.IFile;
 import java.io.OutputStreamWriter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
@@ -15,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -22,15 +26,15 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.util.FileUtil;
 
 public class MigrationDataUtil {
-  public static void saveData(AbstractModule module, Iterable<Tuples._2<MigrationScriptReference, String>> data) {
+  public static void saveData(AbstractModule module, Iterable<Tuples._2<MigrationScriptReference, SNode>> data) {
     IFile file = getDataFile(module);
     OutputStreamWriter writer = null;
     try {
       writer = new OutputStreamWriter(file.openOutputStream());
-      for (Tuples._2<MigrationScriptReference, String> p : Sequence.fromIterable(data)) {
+      for (Tuples._2<MigrationScriptReference, SNode> p : Sequence.fromIterable(data)) {
         writer.write(p._0().serialize());
         writer.write(":");
-        writer.write(p._1());
+        writer.write(SPropertyOperations.getString(SNodeOperations.cast(p._1(), "jetbrains.mps.lang.migration.structure.StringData"), "data"));
         writer.write("\n");
       }
     } catch (IOException e) {
@@ -44,18 +48,20 @@ public class MigrationDataUtil {
       }
     }
   }
-  public static Iterable<Tuples._2<MigrationScriptReference, String>> loadData(AbstractModule module) {
+  public static Iterable<Tuples._2<MigrationScriptReference, SNode>> loadData(AbstractModule module) {
     IFile file = getDataFile(module);
     if (!(file.exists())) {
-      return Sequence.fromIterable(Collections.<Tuples._2<MigrationScriptReference, String>>emptyList());
+      return Sequence.fromIterable(Collections.<Tuples._2<MigrationScriptReference, SNode>>emptyList());
     }
-    List<Tuples._2<MigrationScriptReference, String>> result = ListSequence.fromList(new ArrayList<Tuples._2<MigrationScriptReference, String>>());
+    List<Tuples._2<MigrationScriptReference, SNode>> result = ListSequence.fromList(new ArrayList<Tuples._2<MigrationScriptReference, SNode>>());
     BufferedReader reader = null;
     try {
       reader = new BufferedReader(new InputStreamReader(file.openInputStream()));
       for (String line; (line = reader.readLine()) != null;) {
         int sepInd = line.indexOf(':');
-        ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,String>from(MigrationScriptReference.deserialize(line.substring(0, sepInd)), line.substring(sepInd + 1)));
+        SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.migration.structure.StringData", null);
+        SPropertyOperations.set(node, "data", line.substring(sepInd + 1));
+        ListSequence.fromList(result).addElement(MultiTuple.<MigrationScriptReference,SNode>from(MigrationScriptReference.deserialize(line.substring(0, sepInd)), node));
       }
     } catch (IOException e) {
       throw new RuntimeException(e);
@@ -69,18 +75,18 @@ public class MigrationDataUtil {
     }
     return result;
   }
-  public static void addData(SModule module, MigrationScriptReference script, String data) {
-    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
-    ListSequence.fromList(loadedData).addElement(MultiTuple.<MigrationScriptReference,String>from(script, data));
+  public static void addData(SModule module, MigrationScriptReference script, SNode data) {
+    List<Tuples._2<MigrationScriptReference, SNode>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
+    ListSequence.fromList(loadedData).addElement(MultiTuple.<MigrationScriptReference,SNode>from(script, data));
     saveData((AbstractModule) module, loadedData);
   }
-  public static String readData(SModule module, final MigrationScriptReference script) {
-    List<Tuples._2<MigrationScriptReference, String>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
+  public static SNode readData(SModule module, final MigrationScriptReference script) {
+    List<Tuples._2<MigrationScriptReference, SNode>> loadedData = Sequence.fromIterable(loadData((AbstractModule) module)).toListSequence();
     if (loadedData == null) {
       return null;
     }
-    Tuples._2<MigrationScriptReference, String> result = ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, String>>() {
-      public boolean accept(Tuples._2<MigrationScriptReference, String> it) {
+    Tuples._2<MigrationScriptReference, SNode> result = ListSequence.fromList(loadedData).where(new IWhereFilter<Tuples._2<MigrationScriptReference, SNode>>() {
+      public boolean accept(Tuples._2<MigrationScriptReference, SNode> it) {
         return eq_hzite5_a0a0a0a0a0a0c0d(it._0(), script);
       }
     }).first();
