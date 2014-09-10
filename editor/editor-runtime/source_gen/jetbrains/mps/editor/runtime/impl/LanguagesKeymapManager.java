@@ -119,7 +119,7 @@ public class LanguagesKeymapManager implements ApplicationComponent {
     private MyModuleRepositoryListener() {
     }
     @Override
-    public void beforeModuleRemoved(SModule module) {
+    public void beforeModuleRemoved(@NotNull SModule module) {
       if (module instanceof Language) {
         unregisterLanguageKeyMaps((Language) module);
       }
