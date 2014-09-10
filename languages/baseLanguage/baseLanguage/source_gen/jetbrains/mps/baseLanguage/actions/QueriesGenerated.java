@@ -2253,7 +2253,9 @@ public class QueriesGenerated {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode parens = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
             String intent = pattern.substring(1);
-            if (!(intent.equals(")"))) {
+            if (intent.equals("(")) {
+              SNodeFactoryOperations.setNewChild(parens, "expression", "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+            } else if (!(intent.equals(")"))) {
               SNode constant = SLinkOperations.setTarget(parens, "expression", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null), true);
               int value;
               try {
@@ -2271,7 +2273,7 @@ public class QueriesGenerated {
             return pattern.startsWith("(") && pattern.length() == 2;
           }
           public String getMatchingText(String pattern) {
-            return "(";
+            return pattern;
           }
           public String getVisibleMatchingText(String pattern) {
             return getMatchingText(pattern);
