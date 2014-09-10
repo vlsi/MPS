@@ -26,11 +26,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Reloads module classloader and the classloaders of its dependencies
+ * Reloads module class loader and the class loaders of its dependencies
  * Created by Alex Pyshkin on 9/9/14.
  */
 public class SmartModulesLoader {
-
   private final ClassLoaderManager myClassLoaderManager;
   private final SRepository myRepository;
 

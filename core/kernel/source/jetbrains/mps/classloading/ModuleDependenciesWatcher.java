@@ -32,8 +32,12 @@ import java.util.Set;
 public class ModuleDependenciesWatcher implements MPSClassesListener {
   private final Map<SModule, Set<SModule>> myBackRefs = new HashMap<SModule, Set<SModule>>();
 
-  public ModuleDependenciesWatcher(ClassLoaderManager manager) {
+  public void init(ClassLoaderManager manager) {
     manager.addClassesHandler(this);
+  }
+
+  public void dispose(ClassLoaderManager manager) {
+    manager.removeClassesHandler(this);
   }
 
   @Override
@@ -78,5 +82,4 @@ public class ModuleDependenciesWatcher implements MPSClassesListener {
     }
     return Collections.unmodifiableSet(modules);
   }
-
 }

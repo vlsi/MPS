@@ -5,9 +5,6 @@ package jetbrains.mps.build.mps.runtime.anttask;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.progress.EmptyProgressMonitor;
 import java.util.List;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -42,18 +39,10 @@ public class GenModuleXmlWorker extends MpsWorker {
   @Override
   protected void showStatistic() {
   }
-  private void reloadAll(@NotNull Project project) {
-    project.getModelAccess().runWriteAction(new Runnable() {
-      public void run() {
-        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-      }
-    });
-  }
   @Override
   public void work() {
     setupEnvironment();
     final Project project = createDummyProject();
-    reloadAll(project);
     List<String> parameters = myWhatToDo.getParameters();
     for (String parameter : parameters) {
       processParameter(project, parameter);

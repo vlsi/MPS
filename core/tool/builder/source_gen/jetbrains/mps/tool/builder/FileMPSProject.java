@@ -63,10 +63,9 @@ public class FileMPSProject extends Project {
   @Override
   public void dispose() {
     super.dispose();
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        ClassLoaderManager.getInstance().unloadAll(new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(FileMPSProject.this);
         CleanupManager.getInstance().cleanup();
       }
@@ -113,7 +112,7 @@ public class FileMPSProject extends Project {
       return;
     }
     assert !(isDisposed());
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    getModelAccess().runWriteAction(new Runnable() {
       @Override
       public void run() {
         readModules(myDescriptor);

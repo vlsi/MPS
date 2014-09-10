@@ -299,9 +299,6 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
       public void run() {
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
         CleanupManager.getInstance().cleanup();
-        if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
-        }
       }
     });
 

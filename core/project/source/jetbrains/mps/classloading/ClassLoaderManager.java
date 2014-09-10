@@ -61,22 +61,19 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final ModuleClassLoadersHolder myClassLoadersHolder = new ModuleClassLoadersHolder();
 
-  private final ModuleDependenciesWatcher myDependenciesWatcher;
+  private final ModuleDependenciesWatcher myDependenciesWatcher = new ModuleDependenciesWatcher();
 
-  private final ClassLoadingChecker myClassLoadingChecker;
+  private final ClassLoadingChecker myClassLoadingChecker = new ClassLoadingChecker();
+
+  private final ClassLoadingBroadCaster myBroadCaster = new ClassLoadingBroadCaster();
 
   private final SRepository myRepository;
-
-  private final ClassLoadingBroadCaster myBroadCaster;
 
   // listening for module adding/removing
   private final CLManagerRepositoryListener myRepositoryListener;
 
   public ClassLoaderManager(@NotNull SRepository repository) {
     myRepository = repository;
-    myBroadCaster = new ClassLoadingBroadCaster();
-    myDependenciesWatcher = new ModuleDependenciesWatcher(this);
-    myClassLoadingChecker = new ClassLoadingChecker(this);
     myRepositoryListener = new CLManagerRepositoryListener(repository);
   }
 
@@ -92,6 +89,8 @@ public class ClassLoaderManager implements CoreComponent {
     INSTANCE = this;
     addClassesHandler(SModelRootClassesListener.INSTANCE);
     myRepositoryListener.init(this);
+    myDependenciesWatcher.init(this);
+    myClassLoadingChecker.init(this);
     FacetsFacade.getInstance().addFactory(DumbIdeaPluginFacet.FACET_TYPE, new FacetFactory() {
       @Override
       public SModuleFacet create() {
@@ -109,12 +108,14 @@ public class ClassLoaderManager implements CoreComponent {
       }
     });
     removeClassesHandler(SModelRootClassesListener.INSTANCE);
+    myClassLoadingChecker.dispose(this);
+    myDependenciesWatcher.dispose(this);
     myRepositoryListener.dispose();
     INSTANCE = null;
   }
 
   /**
-   * main api
+   * Main api
    * should get true before calling {@link #getClass} method
    * returns "true" whenever the module's classes can be managed within the MPS class loading system
    * TODO: should be just MPS_FACET
@@ -195,14 +196,13 @@ public class ClassLoaderManager implements CoreComponent {
     return classLoader;
   }
 
-  // TODO: Conceal these two methods (should not be public)
   /**
    * Creates ModuleClassLoaders for all the {@code modules}.
    * The {@code modules} need to be all manageable within the MPS class loading system
    * (means {@link #canLoad} would return true for each of them)
    */
   @NotNull
-  public Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+  Set<SModule> loadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalWrite();
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
@@ -239,7 +239,7 @@ public class ClassLoaderManager implements CoreComponent {
    * That means we can unload everything we want.
    */
   @NotNull
-  public Set<SModule> unloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
+  Set<SModule> unloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalWrite();
     Set<SModule> modulesToUnload = new HashSet<SModule>();
     for (SModule module : modules) {
@@ -273,18 +273,6 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  // todo: review all usages
-  public Set<SModule> loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
-    Set<SModule> modulesToLoad = new HashSet<SModule>();
-    for (SModule module : myRepository.getModules()) {
-      if (!myClassLoadersHolder.isModuleLoaded(module) && canLoad(module)) {
-        modulesToLoad.add(module);
-      }
-    }
-    return loadModules(modulesToLoad, monitor);
-  }
-
-  //---------------reload handlers------------------
   public void addClassesHandler(MPSClassesListener handler) {
     myBroadCaster.addClassesHandler(handler);
   }
@@ -294,9 +282,9 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /**
+   * Main API of this class. Use it to invalidate modules (i.e., reload their class loaders)
    * Returns modules which were reloaded successfully
-   * AlexP: Suggesting that this method should be in the main api of this class. Eager to remove public access to loadModules/unloadModules
-   * methods, because it violates the inner organisation of class loading.
+   * There are also useful {@link #reloadModules(Iterable)} and {@link #reloadModule}.
    */
   public Set<SModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     try {
@@ -322,20 +310,14 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   //---------------deprecated part------------------
-  // TODO: there are many users of this method. It is excessive action in the most of the cases.
-  // Usually reloading only the "dirty" modules is enough. Review usages, replace the calls with the calls of reloadModules method.
-  @Deprecated
-  @ToRemove(version = 3.2)
+
+  /**
+   * Usually reloading only the "dirty" modules is enough.
+   * Please take a look at {@link #reloadModule} and {@link #reloadModules} methods.
+   */
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     LOG.info("Reloading all modules");
-    Set<SModule> sModules = reloadModules(myRepository.getModules(), monitor.subTask(10));
-    loadAllPossibleClasses(monitor.subTask(1));
+    Set<SModule> sModules = reloadModules(myRepository.getModules(), monitor);
     LOG.info("Reloaded " + sModules.size() + " modules");
-  }
-
-  @Deprecated
-  @ToRemove(version = 3.2)
-  public void unloadAll(@NotNull ProgressMonitor monitor) {
-    unloadModules(myRepository.getModules(), monitor);
   }
 }

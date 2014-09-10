@@ -37,8 +37,12 @@ public class ClassLoadingChecker implements MPSClassesListener {
   // this field for checking classes loading (double load from different modules)
   private final Map<String, SModuleReference> myLoadedClasses = new THashMap<String, SModuleReference>();
 
-  public ClassLoadingChecker(ClassLoaderManager classLoaderManager) {
-    classLoaderManager.addClassesHandler(this);
+  public void init(ClassLoaderManager manager) {
+    manager.addClassesHandler(this);
+  }
+
+  public void dispose(ClassLoaderManager manager) {
+    manager.removeClassesHandler(this);
   }
 
   @Override
