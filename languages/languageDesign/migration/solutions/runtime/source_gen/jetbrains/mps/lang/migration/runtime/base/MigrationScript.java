@@ -4,14 +4,13 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface MigrationScript {
   public String getCaption();
-  public MigrationScriptReference getReference();
-  public boolean applicableToModule(SModule module);
-  @Nullable
-  public String execute(SModule moduleToMigrate, DataCollector dataCollector);
+  public MigrationScriptReference getDescriptor();
   public Iterable<MigrationScriptReference> requiresData();
-  public String serializeData(Object data);
-  public Object deserializeData(String data);
+  public boolean isApplicable(SModule module);
+  @Nullable
+  public SNode execute(SModule moduleToMigrate, DataCollector dataCollector);
 }
