@@ -2282,7 +2282,7 @@ public class QueriesGenerated {
     return result;
   }
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1778214689153983416(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.Expression")) && eq_x583g4_a0a0a38(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"));
+    return eq_x583g4_a0a0fd(SNodeOperations.getConceptDeclaration(_context.getCurrentTargetNode()), SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression"));
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_4536253685790033222(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
@@ -6701,7 +6701,7 @@ __switch__:
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }
-  private static boolean eq_x583g4_a0a0a38(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0fd(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_x583g4_a0a0a3a0a0a0a0a1a521(Object a, Object b) {
