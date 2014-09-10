@@ -3919,25 +3919,26 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3543341247930363811">
-    <file name="AbstractNotAccepted_Test.java">
-      <node id="3543341247930363811" at="15,59,16,107" concept="2" />
-      <node id="3543341247930363811" at="16,107,17,100" concept="2" />
+    <file name="AbstractMethod1_Test.java">
+      <node id="3543341247930363811" at="15,55,16,107" concept="2" />
+      <node id="3543341247930363811" at="16,107,17,96" concept="2" />
       <node id="3543341247930363811" at="24,51,25,63" concept="2" />
-      <node id="3543341247930363820" at="25,63,26,34" concept="2" />
-      <node id="3543341247930363811" at="12,0,14,0" concept="1" trace="AbstractNotAccepted_Test#()V" />
+      <node id="3543341247930363820" at="25,63,26,42" concept="2" />
+      <node id="7915352553124193573" at="26,42,27,74" concept="2" />
+      <node id="3543341247930363811" at="12,0,14,0" concept="1" trace="AbstractMethod1_Test#()V" />
       <node id="3543341247930363811" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="3543341247930363811" at="14,0,19,0" concept="5" trace="test_AbstractNotAccepted#()V" />
-      <node id="3543341247930363811" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="3543341247930363811" at="12,37,12,37" />
+      <node id="3543341247930363811" at="14,0,19,0" concept="5" trace="test_AbstractMethod1#()V" />
+      <node id="3543341247930363811" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="3543341247930363811" at="12,33,12,33" />
       <scope id="3543341247930363811" at="21,23,21,23" />
       <scope id="3543341247930363811" at="12,0,14,0" />
-      <scope id="3543341247930363811" at="15,59,17,100" />
+      <scope id="3543341247930363811" at="15,55,17,96" />
       <scope id="3543341247930363811" at="21,0,23,0" />
-      <scope id="3543341247930363811" at="24,51,26,34" />
+      <scope id="3543341247930363811" at="24,51,27,74" />
       <scope id="3543341247930363811" at="14,0,19,0" />
-      <scope id="3543341247930363811" at="23,0,28,0" />
-      <unit id="3543341247930363811" at="19,0,29,0" name="jetbrains.mps.editorTest.AbstractNotAccepted_Test$TestBody" />
-      <unit id="3543341247930363811" at="10,0,30,0" name="jetbrains.mps.editorTest.AbstractNotAccepted_Test" />
+      <scope id="3543341247930363811" at="23,0,29,0" />
+      <unit id="3543341247930363811" at="19,0,30,0" name="jetbrains.mps.editorTest.AbstractMethod1_Test$TestBody" />
+      <unit id="3543341247930363811" at="10,0,31,0" name="jetbrains.mps.editorTest.AbstractMethod1_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/3543341247930400250">
@@ -5033,211 +5034,359 @@
       <unit id="4507831107788316822" at="12,0,35,0" name="jetbrains.mps.editorTest.LT_DotExpression_with_UnaryMinus_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685768127862">
-    <file name="NotExpressionParens1_Test.java">
-      <node id="4536253685768127862" at="15,60,16,107" concept="2" />
-      <node id="4536253685768127862" at="16,107,17,101" concept="2" />
-      <node id="4536253685768127862" at="24,51,25,63" concept="2" />
-      <node id="4536253685768143600" at="25,63,26,27" concept="2" />
-      <node id="4536253685774824862" at="26,27,27,77" concept="2" />
-      <node id="4536253685768127862" at="12,0,14,0" concept="1" trace="NotExpressionParens1_Test#()V" />
-      <node id="4536253685768127862" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685768127862" at="14,0,19,0" concept="5" trace="test_NotExpressionParens1#()V" />
-      <node id="4536253685768127862" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685768127862" at="12,38,12,38" />
-      <scope id="4536253685768127862" at="21,23,21,23" />
-      <scope id="4536253685768127862" at="12,0,14,0" />
-      <scope id="4536253685768127862" at="15,60,17,101" />
-      <scope id="4536253685768127862" at="21,0,23,0" />
-      <scope id="4536253685768127862" at="24,51,27,77" />
-      <scope id="4536253685768127862" at="14,0,19,0" />
-      <scope id="4536253685768127862" at="23,0,29,0" />
-      <unit id="4536253685768127862" at="19,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens1_Test$TestBody" />
-      <unit id="4536253685768127862" at="10,0,31,0" name="jetbrains.mps.editorTest.NotExpressionParens1_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842208210">
+    <file name="WhileLoopUnwrap1_Test.java">
+      <node id="4666906971842208210" at="15,56,16,107" concept="2" />
+      <node id="4666906971842208210" at="16,107,17,97" concept="2" />
+      <node id="4666906971842208210" at="24,51,25,63" concept="2" />
+      <node id="4666906971842243091" at="25,63,26,77" concept="2" />
+      <node id="4666906971842208210" at="12,0,14,0" concept="1" trace="WhileLoopUnwrap1_Test#()V" />
+      <node id="4666906971842208210" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842208210" at="14,0,19,0" concept="5" trace="test_WhileLoopUnwrap1#()V" />
+      <node id="4666906971842208210" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842208210" at="12,34,12,34" />
+      <scope id="4666906971842208210" at="21,23,21,23" />
+      <scope id="4666906971842208210" at="12,0,14,0" />
+      <scope id="4666906971842208210" at="15,56,17,97" />
+      <scope id="4666906971842208210" at="21,0,23,0" />
+      <scope id="4666906971842208210" at="24,51,26,77" />
+      <scope id="4666906971842208210" at="14,0,19,0" />
+      <scope id="4666906971842208210" at="23,0,28,0" />
+      <unit id="4666906971842208210" at="19,0,29,0" name="jetbrains.mps.editorTest.WhileLoopUnwrap1_Test$TestBody" />
+      <unit id="4666906971842208210" at="10,0,30,0" name="jetbrains.mps.editorTest.WhileLoopUnwrap1_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685768144502">
-    <file name="NotExpressionParens2_Test.java">
-      <node id="4536253685768144502" at="15,60,16,107" concept="2" />
-      <node id="4536253685768144502" at="16,107,17,101" concept="2" />
-      <node id="4536253685768144502" at="24,51,25,63" concept="2" />
-      <node id="4536253685768144520" at="25,63,26,77" concept="2" />
-      <node id="4536253685768144502" at="12,0,14,0" concept="1" trace="NotExpressionParens2_Test#()V" />
-      <node id="4536253685768144502" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685768144502" at="14,0,19,0" concept="5" trace="test_NotExpressionParens2#()V" />
-      <node id="4536253685768144502" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685768144502" at="12,38,12,38" />
-      <scope id="4536253685768144502" at="21,23,21,23" />
-      <scope id="4536253685768144502" at="12,0,14,0" />
-      <scope id="4536253685768144502" at="15,60,17,101" />
-      <scope id="4536253685768144502" at="21,0,23,0" />
-      <scope id="4536253685768144502" at="24,51,26,77" />
-      <scope id="4536253685768144502" at="14,0,19,0" />
-      <scope id="4536253685768144502" at="23,0,28,0" />
-      <unit id="4536253685768144502" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens2_Test$TestBody" />
-      <unit id="4536253685768144502" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens2_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842243400">
+    <file name="WhileLoopUnwrap2_Test.java">
+      <node id="4666906971842243400" at="15,56,16,107" concept="2" />
+      <node id="4666906971842243400" at="16,107,17,97" concept="2" />
+      <node id="4666906971842243400" at="24,51,25,63" concept="2" />
+      <node id="4666906971842243420" at="25,63,26,77" concept="2" />
+      <node id="4666906971842243400" at="12,0,14,0" concept="1" trace="WhileLoopUnwrap2_Test#()V" />
+      <node id="4666906971842243400" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842243400" at="14,0,19,0" concept="5" trace="test_WhileLoopUnwrap2#()V" />
+      <node id="4666906971842243400" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842243400" at="12,34,12,34" />
+      <scope id="4666906971842243400" at="21,23,21,23" />
+      <scope id="4666906971842243400" at="12,0,14,0" />
+      <scope id="4666906971842243400" at="15,56,17,97" />
+      <scope id="4666906971842243400" at="21,0,23,0" />
+      <scope id="4666906971842243400" at="24,51,26,77" />
+      <scope id="4666906971842243400" at="14,0,19,0" />
+      <scope id="4666906971842243400" at="23,0,28,0" />
+      <unit id="4666906971842243400" at="19,0,29,0" name="jetbrains.mps.editorTest.WhileLoopUnwrap2_Test$TestBody" />
+      <unit id="4666906971842243400" at="10,0,30,0" name="jetbrains.mps.editorTest.WhileLoopUnwrap2_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685776495387">
-    <file name="NotExpressionParens4_Test.java">
-      <node id="4536253685776495387" at="15,60,16,107" concept="2" />
-      <node id="4536253685776495387" at="16,107,17,101" concept="2" />
-      <node id="4536253685776495387" at="24,51,25,63" concept="2" />
-      <node id="4536253685776495403" at="25,63,26,27" concept="2" />
-      <node id="4536253685776495387" at="12,0,14,0" concept="1" trace="NotExpressionParens4_Test#()V" />
-      <node id="4536253685776495387" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685776495387" at="14,0,19,0" concept="5" trace="test_NotExpressionParens4#()V" />
-      <node id="4536253685776495387" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685776495387" at="12,38,12,38" />
-      <scope id="4536253685776495387" at="21,23,21,23" />
-      <scope id="4536253685776495387" at="12,0,14,0" />
-      <scope id="4536253685776495387" at="15,60,17,101" />
-      <scope id="4536253685776495387" at="21,0,23,0" />
-      <scope id="4536253685776495387" at="24,51,26,27" />
-      <scope id="4536253685776495387" at="14,0,19,0" />
-      <scope id="4536253685776495387" at="23,0,28,0" />
-      <unit id="4536253685776495387" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens4_Test$TestBody" />
-      <unit id="4536253685776495387" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens4_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842245117">
+    <file name="TryStatementUnwrap1_Test.java">
+      <node id="4666906971842245117" at="15,59,16,107" concept="2" />
+      <node id="4666906971842245117" at="16,107,17,100" concept="2" />
+      <node id="4666906971842245117" at="24,51,25,63" concept="2" />
+      <node id="4666906971842245137" at="25,63,26,77" concept="2" />
+      <node id="4666906971842245117" at="12,0,14,0" concept="1" trace="TryStatementUnwrap1_Test#()V" />
+      <node id="4666906971842245117" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842245117" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap1#()V" />
+      <node id="4666906971842245117" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842245117" at="12,37,12,37" />
+      <scope id="4666906971842245117" at="21,23,21,23" />
+      <scope id="4666906971842245117" at="12,0,14,0" />
+      <scope id="4666906971842245117" at="15,59,17,100" />
+      <scope id="4666906971842245117" at="21,0,23,0" />
+      <scope id="4666906971842245117" at="24,51,26,77" />
+      <scope id="4666906971842245117" at="14,0,19,0" />
+      <scope id="4666906971842245117" at="23,0,28,0" />
+      <unit id="4666906971842245117" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap1_Test$TestBody" />
+      <unit id="4666906971842245117" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap1_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685776496886">
-    <file name="NotExpressionParens5_Test.java">
-      <node id="4536253685776496886" at="15,60,16,107" concept="2" />
-      <node id="4536253685776496886" at="16,107,17,101" concept="2" />
-      <node id="4536253685776496886" at="24,51,25,63" concept="2" />
-      <node id="4536253685776498772" at="25,63,26,77" concept="2" />
-      <node id="4536253685776496886" at="12,0,14,0" concept="1" trace="NotExpressionParens5_Test#()V" />
-      <node id="4536253685776496886" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685776496886" at="14,0,19,0" concept="5" trace="test_NotExpressionParens5#()V" />
-      <node id="4536253685776496886" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685776496886" at="12,38,12,38" />
-      <scope id="4536253685776496886" at="21,23,21,23" />
-      <scope id="4536253685776496886" at="12,0,14,0" />
-      <scope id="4536253685776496886" at="15,60,17,101" />
-      <scope id="4536253685776496886" at="21,0,23,0" />
-      <scope id="4536253685776496886" at="24,51,26,77" />
-      <scope id="4536253685776496886" at="14,0,19,0" />
-      <scope id="4536253685776496886" at="23,0,28,0" />
-      <unit id="4536253685776496886" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens5_Test$TestBody" />
-      <unit id="4536253685776496886" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens5_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842249131">
+    <file name="TryStatementUnwrap2_Test.java">
+      <node id="4666906971842249131" at="15,59,16,107" concept="2" />
+      <node id="4666906971842249131" at="16,107,17,100" concept="2" />
+      <node id="4666906971842249131" at="24,51,25,63" concept="2" />
+      <node id="4666906971842249151" at="25,63,26,77" concept="2" />
+      <node id="4666906971842249131" at="12,0,14,0" concept="1" trace="TryStatementUnwrap2_Test#()V" />
+      <node id="4666906971842249131" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842249131" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap2#()V" />
+      <node id="4666906971842249131" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842249131" at="12,37,12,37" />
+      <scope id="4666906971842249131" at="21,23,21,23" />
+      <scope id="4666906971842249131" at="12,0,14,0" />
+      <scope id="4666906971842249131" at="15,59,17,100" />
+      <scope id="4666906971842249131" at="21,0,23,0" />
+      <scope id="4666906971842249131" at="24,51,26,77" />
+      <scope id="4666906971842249131" at="14,0,19,0" />
+      <scope id="4666906971842249131" at="23,0,28,0" />
+      <unit id="4666906971842249131" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap2_Test$TestBody" />
+      <unit id="4666906971842249131" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap2_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685776499071">
-    <file name="NotExpressionParens6_Test.java">
-      <node id="4536253685776499071" at="15,60,16,107" concept="2" />
-      <node id="4536253685776499071" at="16,107,17,101" concept="2" />
-      <node id="4536253685776499071" at="24,51,25,63" concept="2" />
-      <node id="4536253685776501450" at="25,63,26,27" concept="2" />
-      <node id="4536253685776499071" at="12,0,14,0" concept="1" trace="NotExpressionParens6_Test#()V" />
-      <node id="4536253685776499071" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685776499071" at="14,0,19,0" concept="5" trace="test_NotExpressionParens6#()V" />
-      <node id="4536253685776499071" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685776499071" at="12,38,12,38" />
-      <scope id="4536253685776499071" at="21,23,21,23" />
-      <scope id="4536253685776499071" at="12,0,14,0" />
-      <scope id="4536253685776499071" at="15,60,17,101" />
-      <scope id="4536253685776499071" at="21,0,23,0" />
-      <scope id="4536253685776499071" at="24,51,26,27" />
-      <scope id="4536253685776499071" at="14,0,19,0" />
-      <scope id="4536253685776499071" at="23,0,28,0" />
-      <unit id="4536253685776499071" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens6_Test$TestBody" />
-      <unit id="4536253685776499071" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens6_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842253258">
+    <file name="TryStatementUnwrap3_Test.java">
+      <node id="4666906971842253258" at="15,59,16,107" concept="2" />
+      <node id="4666906971842253258" at="16,107,17,100" concept="2" />
+      <node id="4666906971842253258" at="24,51,25,63" concept="2" />
+      <node id="4666906971842253278" at="25,63,26,77" concept="2" />
+      <node id="4666906971842253258" at="12,0,14,0" concept="1" trace="TryStatementUnwrap3_Test#()V" />
+      <node id="4666906971842253258" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842253258" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap3#()V" />
+      <node id="4666906971842253258" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842253258" at="12,37,12,37" />
+      <scope id="4666906971842253258" at="21,23,21,23" />
+      <scope id="4666906971842253258" at="12,0,14,0" />
+      <scope id="4666906971842253258" at="15,59,17,100" />
+      <scope id="4666906971842253258" at="21,0,23,0" />
+      <scope id="4666906971842253258" at="24,51,26,77" />
+      <scope id="4666906971842253258" at="14,0,19,0" />
+      <scope id="4666906971842253258" at="23,0,28,0" />
+      <unit id="4666906971842253258" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap3_Test$TestBody" />
+      <unit id="4666906971842253258" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap3_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685781578704">
-    <file name="NotExpressionParens3_Test.java">
-      <node id="4536253685781578704" at="15,60,16,107" concept="2" />
-      <node id="4536253685781578704" at="16,107,17,101" concept="2" />
-      <node id="4536253685781578704" at="24,51,25,63" concept="2" />
-      <node id="4536253685781579830" at="25,63,26,27" concept="2" />
-      <node id="4536253685781580507" at="26,27,27,77" concept="2" />
-      <node id="4536253685781578704" at="12,0,14,0" concept="1" trace="NotExpressionParens3_Test#()V" />
-      <node id="4536253685781578704" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685781578704" at="14,0,19,0" concept="5" trace="test_NotExpressionParens3#()V" />
-      <node id="4536253685781578704" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685781578704" at="12,38,12,38" />
-      <scope id="4536253685781578704" at="21,23,21,23" />
-      <scope id="4536253685781578704" at="12,0,14,0" />
-      <scope id="4536253685781578704" at="15,60,17,101" />
-      <scope id="4536253685781578704" at="21,0,23,0" />
-      <scope id="4536253685781578704" at="24,51,27,77" />
-      <scope id="4536253685781578704" at="14,0,19,0" />
-      <scope id="4536253685781578704" at="23,0,29,0" />
-      <unit id="4536253685781578704" at="19,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens3_Test$TestBody" />
-      <unit id="4536253685781578704" at="10,0,31,0" name="jetbrains.mps.editorTest.NotExpressionParens3_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842253933">
+    <file name="TryStatementUnwrap4_Test.java">
+      <node id="4666906971842253933" at="15,59,16,107" concept="2" />
+      <node id="4666906971842253933" at="16,107,17,100" concept="2" />
+      <node id="4666906971842253933" at="24,51,25,63" concept="2" />
+      <node id="4666906971842253953" at="25,63,26,77" concept="2" />
+      <node id="4666906971842253933" at="12,0,14,0" concept="1" trace="TryStatementUnwrap4_Test#()V" />
+      <node id="4666906971842253933" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842253933" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap4#()V" />
+      <node id="4666906971842253933" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842253933" at="12,37,12,37" />
+      <scope id="4666906971842253933" at="21,23,21,23" />
+      <scope id="4666906971842253933" at="12,0,14,0" />
+      <scope id="4666906971842253933" at="15,59,17,100" />
+      <scope id="4666906971842253933" at="21,0,23,0" />
+      <scope id="4666906971842253933" at="24,51,26,77" />
+      <scope id="4666906971842253933" at="14,0,19,0" />
+      <scope id="4666906971842253933" at="23,0,28,0" />
+      <unit id="4666906971842253933" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap4_Test$TestBody" />
+      <unit id="4666906971842253933" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap4_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685781580529">
-    <file name="NotExpressionParens7_Test.java">
-      <node id="4536253685781580529" at="15,60,16,107" concept="2" />
-      <node id="4536253685781580529" at="16,107,17,101" concept="2" />
-      <node id="4536253685781580529" at="24,51,25,63" concept="2" />
-      <node id="4536253685781580547" at="25,63,26,32" concept="2" />
-      <node id="4536253685781580529" at="12,0,14,0" concept="1" trace="NotExpressionParens7_Test#()V" />
-      <node id="4536253685781580529" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685781580529" at="14,0,19,0" concept="5" trace="test_NotExpressionParens7#()V" />
-      <node id="4536253685781580529" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685781580529" at="12,38,12,38" />
-      <scope id="4536253685781580529" at="21,23,21,23" />
-      <scope id="4536253685781580529" at="12,0,14,0" />
-      <scope id="4536253685781580529" at="15,60,17,101" />
-      <scope id="4536253685781580529" at="21,0,23,0" />
-      <scope id="4536253685781580529" at="24,51,26,32" />
-      <scope id="4536253685781580529" at="14,0,19,0" />
-      <scope id="4536253685781580529" at="23,0,28,0" />
-      <unit id="4536253685781580529" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens7_Test$TestBody" />
-      <unit id="4536253685781580529" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens7_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842256356">
+    <file name="TryStatementUnwrap5_Test.java">
+      <node id="4666906971842256356" at="15,59,16,107" concept="2" />
+      <node id="4666906971842256356" at="16,107,17,100" concept="2" />
+      <node id="4666906971842256356" at="24,51,25,63" concept="2" />
+      <node id="4666906971842256383" at="25,63,26,77" concept="2" />
+      <node id="4666906971842256356" at="12,0,14,0" concept="1" trace="TryStatementUnwrap5_Test#()V" />
+      <node id="4666906971842256356" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842256356" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap5#()V" />
+      <node id="4666906971842256356" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842256356" at="12,37,12,37" />
+      <scope id="4666906971842256356" at="21,23,21,23" />
+      <scope id="4666906971842256356" at="12,0,14,0" />
+      <scope id="4666906971842256356" at="15,59,17,100" />
+      <scope id="4666906971842256356" at="21,0,23,0" />
+      <scope id="4666906971842256356" at="24,51,26,77" />
+      <scope id="4666906971842256356" at="14,0,19,0" />
+      <scope id="4666906971842256356" at="23,0,28,0" />
+      <unit id="4666906971842256356" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap5_Test$TestBody" />
+      <unit id="4666906971842256356" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap5_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685784433958">
-    <file name="NotExpressionParens8_Test.java">
-      <node id="4536253685784433958" at="15,60,16,107" concept="2" />
-      <node id="4536253685784433958" at="16,107,17,101" concept="2" />
-      <node id="4536253685784433958" at="24,51,25,63" concept="2" />
-      <node id="4536253685784433976" at="25,63,26,29" concept="2" />
-      <node id="4536253685784447095" at="26,29,27,76" concept="2" />
-      <node id="4536253685784447105" at="27,76,28,76" concept="2" />
-      <node id="4536253685784447367" at="28,76,29,27" concept="2" />
-      <node id="4536253685784447879" at="29,27,30,77" concept="2" />
-      <node id="4536253685784447894" at="30,77,31,77" concept="2" />
-      <node id="4536253685785292337" at="31,77,32,77" concept="2" />
-      <node id="4536253685784448166" at="32,77,33,29" concept="2" />
-      <node id="4536253685784433958" at="12,0,14,0" concept="1" trace="NotExpressionParens8_Test#()V" />
-      <node id="4536253685784433958" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685784433958" at="14,0,19,0" concept="5" trace="test_NotExpressionParens8#()V" />
-      <node id="4536253685784433958" at="23,0,35,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685784433958" at="12,38,12,38" />
-      <scope id="4536253685784433958" at="21,23,21,23" />
-      <scope id="4536253685784433958" at="12,0,14,0" />
-      <scope id="4536253685784433958" at="15,60,17,101" />
-      <scope id="4536253685784433958" at="21,0,23,0" />
-      <scope id="4536253685784433958" at="14,0,19,0" />
-      <scope id="4536253685784433958" at="24,51,33,29" />
-      <scope id="4536253685784433958" at="23,0,35,0" />
-      <unit id="4536253685784433958" at="19,0,36,0" name="jetbrains.mps.editorTest.NotExpressionParens8_Test$TestBody" />
-      <unit id="4536253685784433958" at="10,0,37,0" name="jetbrains.mps.editorTest.NotExpressionParens8_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842257539">
+    <file name="TryStatementUnwrap6_Test.java">
+      <node id="4666906971842257539" at="15,59,16,107" concept="2" />
+      <node id="4666906971842257539" at="16,107,17,100" concept="2" />
+      <node id="4666906971842257539" at="24,51,25,63" concept="2" />
+      <node id="4666906971842257566" at="25,63,26,77" concept="2" />
+      <node id="4666906971842257539" at="12,0,14,0" concept="1" trace="TryStatementUnwrap6_Test#()V" />
+      <node id="4666906971842257539" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842257539" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap6#()V" />
+      <node id="4666906971842257539" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842257539" at="12,37,12,37" />
+      <scope id="4666906971842257539" at="21,23,21,23" />
+      <scope id="4666906971842257539" at="12,0,14,0" />
+      <scope id="4666906971842257539" at="15,59,17,100" />
+      <scope id="4666906971842257539" at="21,0,23,0" />
+      <scope id="4666906971842257539" at="24,51,26,77" />
+      <scope id="4666906971842257539" at="14,0,19,0" />
+      <scope id="4666906971842257539" at="23,0,28,0" />
+      <unit id="4666906971842257539" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap6_Test$TestBody" />
+      <unit id="4666906971842257539" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap6_Test" />
     </file>
   </root>
-  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4536253685787385331">
-    <file name="NotExpressionParens9_Test.java">
-      <node id="4536253685787385331" at="15,60,16,107" concept="2" />
-      <node id="4536253685787385331" at="16,107,17,101" concept="2" />
-      <node id="4536253685787385331" at="24,51,25,63" concept="2" />
-      <node id="4536253685787385352" at="25,63,26,32" concept="2" />
-      <node id="4536253685787385331" at="12,0,14,0" concept="1" trace="NotExpressionParens9_Test#()V" />
-      <node id="4536253685787385331" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="4536253685787385331" at="14,0,19,0" concept="5" trace="test_NotExpressionParens9#()V" />
-      <node id="4536253685787385331" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="4536253685787385331" at="12,38,12,38" />
-      <scope id="4536253685787385331" at="21,23,21,23" />
-      <scope id="4536253685787385331" at="12,0,14,0" />
-      <scope id="4536253685787385331" at="15,60,17,101" />
-      <scope id="4536253685787385331" at="21,0,23,0" />
-      <scope id="4536253685787385331" at="24,51,26,32" />
-      <scope id="4536253685787385331" at="14,0,19,0" />
-      <scope id="4536253685787385331" at="23,0,28,0" />
-      <unit id="4536253685787385331" at="19,0,29,0" name="jetbrains.mps.editorTest.NotExpressionParens9_Test$TestBody" />
-      <unit id="4536253685787385331" at="10,0,30,0" name="jetbrains.mps.editorTest.NotExpressionParens9_Test" />
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842261824">
+    <file name="TryStatementUnwrap7_Test.java">
+      <node id="4666906971842261824" at="15,59,16,107" concept="2" />
+      <node id="4666906971842261824" at="16,107,17,100" concept="2" />
+      <node id="4666906971842261824" at="24,51,25,63" concept="2" />
+      <node id="4666906971842261854" at="25,63,26,77" concept="2" />
+      <node id="4666906971842261824" at="12,0,14,0" concept="1" trace="TryStatementUnwrap7_Test#()V" />
+      <node id="4666906971842261824" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842261824" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap7#()V" />
+      <node id="4666906971842261824" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842261824" at="12,37,12,37" />
+      <scope id="4666906971842261824" at="21,23,21,23" />
+      <scope id="4666906971842261824" at="12,0,14,0" />
+      <scope id="4666906971842261824" at="15,59,17,100" />
+      <scope id="4666906971842261824" at="21,0,23,0" />
+      <scope id="4666906971842261824" at="24,51,26,77" />
+      <scope id="4666906971842261824" at="14,0,19,0" />
+      <scope id="4666906971842261824" at="23,0,28,0" />
+      <unit id="4666906971842261824" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap7_Test$TestBody" />
+      <unit id="4666906971842261824" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap7_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842265325">
+    <file name="TryStatementUnwrap8_Test.java">
+      <node id="4666906971842265325" at="15,59,16,107" concept="2" />
+      <node id="4666906971842265325" at="16,107,17,100" concept="2" />
+      <node id="4666906971842265325" at="24,51,25,63" concept="2" />
+      <node id="4666906971842265360" at="25,63,26,77" concept="2" />
+      <node id="4666906971842265325" at="12,0,14,0" concept="1" trace="TryStatementUnwrap8_Test#()V" />
+      <node id="4666906971842265325" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842265325" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap8#()V" />
+      <node id="4666906971842265325" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842265325" at="12,37,12,37" />
+      <scope id="4666906971842265325" at="21,23,21,23" />
+      <scope id="4666906971842265325" at="12,0,14,0" />
+      <scope id="4666906971842265325" at="15,59,17,100" />
+      <scope id="4666906971842265325" at="21,0,23,0" />
+      <scope id="4666906971842265325" at="24,51,26,77" />
+      <scope id="4666906971842265325" at="14,0,19,0" />
+      <scope id="4666906971842265325" at="23,0,28,0" />
+      <unit id="4666906971842265325" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap8_Test$TestBody" />
+      <unit id="4666906971842265325" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap8_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842269487">
+    <file name="TryStatementUnwrap9_Test.java">
+      <node id="4666906971842269487" at="15,59,16,107" concept="2" />
+      <node id="4666906971842269487" at="16,107,17,100" concept="2" />
+      <node id="4666906971842269487" at="24,51,25,63" concept="2" />
+      <node id="4666906971842269522" at="25,63,26,77" concept="2" />
+      <node id="4666906971842269487" at="12,0,14,0" concept="1" trace="TryStatementUnwrap9_Test#()V" />
+      <node id="4666906971842269487" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842269487" at="14,0,19,0" concept="5" trace="test_TryStatementUnwrap9#()V" />
+      <node id="4666906971842269487" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842269487" at="12,37,12,37" />
+      <scope id="4666906971842269487" at="21,23,21,23" />
+      <scope id="4666906971842269487" at="12,0,14,0" />
+      <scope id="4666906971842269487" at="15,59,17,100" />
+      <scope id="4666906971842269487" at="21,0,23,0" />
+      <scope id="4666906971842269487" at="24,51,26,77" />
+      <scope id="4666906971842269487" at="14,0,19,0" />
+      <scope id="4666906971842269487" at="23,0,28,0" />
+      <unit id="4666906971842269487" at="19,0,29,0" name="jetbrains.mps.editorTest.TryStatementUnwrap9_Test$TestBody" />
+      <unit id="4666906971842269487" at="10,0,30,0" name="jetbrains.mps.editorTest.TryStatementUnwrap9_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842273358">
+    <file name="TryCatchStatementUnwrap1_Test.java">
+      <node id="4666906971842273358" at="15,64,16,107" concept="2" />
+      <node id="4666906971842273358" at="16,107,17,105" concept="2" />
+      <node id="4666906971842273358" at="24,51,25,63" concept="2" />
+      <node id="4666906971842273378" at="25,63,26,77" concept="2" />
+      <node id="4666906971842273358" at="12,0,14,0" concept="1" trace="TryCatchStatementUnwrap1_Test#()V" />
+      <node id="4666906971842273358" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842273358" at="14,0,19,0" concept="5" trace="test_TryCatchStatementUnwrap1#()V" />
+      <node id="4666906971842273358" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842273358" at="12,42,12,42" />
+      <scope id="4666906971842273358" at="21,23,21,23" />
+      <scope id="4666906971842273358" at="12,0,14,0" />
+      <scope id="4666906971842273358" at="15,64,17,105" />
+      <scope id="4666906971842273358" at="21,0,23,0" />
+      <scope id="4666906971842273358" at="24,51,26,77" />
+      <scope id="4666906971842273358" at="14,0,19,0" />
+      <scope id="4666906971842273358" at="23,0,28,0" />
+      <unit id="4666906971842273358" at="19,0,29,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap1_Test$TestBody" />
+      <unit id="4666906971842273358" at="10,0,30,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842279662">
+    <file name="TryCatchStatementUnwrap2_Test.java">
+      <node id="4666906971842279662" at="15,64,16,107" concept="2" />
+      <node id="4666906971842279662" at="16,107,17,105" concept="2" />
+      <node id="4666906971842279662" at="24,51,25,63" concept="2" />
+      <node id="4666906971842279693" at="25,63,26,77" concept="2" />
+      <node id="4666906971842279662" at="12,0,14,0" concept="1" trace="TryCatchStatementUnwrap2_Test#()V" />
+      <node id="4666906971842279662" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842279662" at="14,0,19,0" concept="5" trace="test_TryCatchStatementUnwrap2#()V" />
+      <node id="4666906971842279662" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842279662" at="12,42,12,42" />
+      <scope id="4666906971842279662" at="21,23,21,23" />
+      <scope id="4666906971842279662" at="12,0,14,0" />
+      <scope id="4666906971842279662" at="15,64,17,105" />
+      <scope id="4666906971842279662" at="21,0,23,0" />
+      <scope id="4666906971842279662" at="24,51,26,77" />
+      <scope id="4666906971842279662" at="14,0,19,0" />
+      <scope id="4666906971842279662" at="23,0,28,0" />
+      <unit id="4666906971842279662" at="19,0,29,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap2_Test$TestBody" />
+      <unit id="4666906971842279662" at="10,0,30,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842282598">
+    <file name="TryCatchStatementUnwrap3_Test.java">
+      <node id="4666906971842282598" at="15,64,16,107" concept="2" />
+      <node id="4666906971842282598" at="16,107,17,105" concept="2" />
+      <node id="4666906971842282598" at="24,51,25,63" concept="2" />
+      <node id="4666906971842282639" at="25,63,26,77" concept="2" />
+      <node id="4666906971842282598" at="12,0,14,0" concept="1" trace="TryCatchStatementUnwrap3_Test#()V" />
+      <node id="4666906971842282598" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842282598" at="14,0,19,0" concept="5" trace="test_TryCatchStatementUnwrap3#()V" />
+      <node id="4666906971842282598" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842282598" at="12,42,12,42" />
+      <scope id="4666906971842282598" at="21,23,21,23" />
+      <scope id="4666906971842282598" at="12,0,14,0" />
+      <scope id="4666906971842282598" at="15,64,17,105" />
+      <scope id="4666906971842282598" at="21,0,23,0" />
+      <scope id="4666906971842282598" at="24,51,26,77" />
+      <scope id="4666906971842282598" at="14,0,19,0" />
+      <scope id="4666906971842282598" at="23,0,28,0" />
+      <unit id="4666906971842282598" at="19,0,29,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap3_Test$TestBody" />
+      <unit id="4666906971842282598" at="10,0,30,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap3_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842287799">
+    <file name="TryCatchStatementUnwrap4_Test.java">
+      <node id="4666906971842287799" at="15,64,16,107" concept="2" />
+      <node id="4666906971842287799" at="16,107,17,105" concept="2" />
+      <node id="4666906971842287799" at="24,51,25,63" concept="2" />
+      <node id="4666906971842287840" at="25,63,26,77" concept="2" />
+      <node id="4666906971842287799" at="12,0,14,0" concept="1" trace="TryCatchStatementUnwrap4_Test#()V" />
+      <node id="4666906971842287799" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842287799" at="14,0,19,0" concept="5" trace="test_TryCatchStatementUnwrap4#()V" />
+      <node id="4666906971842287799" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842287799" at="12,42,12,42" />
+      <scope id="4666906971842287799" at="21,23,21,23" />
+      <scope id="4666906971842287799" at="12,0,14,0" />
+      <scope id="4666906971842287799" at="15,64,17,105" />
+      <scope id="4666906971842287799" at="21,0,23,0" />
+      <scope id="4666906971842287799" at="24,51,26,77" />
+      <scope id="4666906971842287799" at="14,0,19,0" />
+      <scope id="4666906971842287799" at="23,0,28,0" />
+      <unit id="4666906971842287799" at="19,0,29,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap4_Test$TestBody" />
+      <unit id="4666906971842287799" at="10,0,30,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap4_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4666906971842292235">
+    <file name="TryCatchStatementUnwrap5_Test.java">
+      <node id="4666906971842292235" at="15,64,16,107" concept="2" />
+      <node id="4666906971842292235" at="16,107,17,105" concept="2" />
+      <node id="4666906971842292235" at="24,51,25,63" concept="2" />
+      <node id="4666906971842292276" at="25,63,26,77" concept="2" />
+      <node id="4666906971842295746" at="26,77,27,77" concept="2" />
+      <node id="4666906971842295752" at="27,77,28,77" concept="2" />
+      <node id="4666906971842295760" at="28,77,29,77" concept="2" />
+      <node id="4666906971842292235" at="12,0,14,0" concept="1" trace="TryCatchStatementUnwrap5_Test#()V" />
+      <node id="4666906971842292235" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="4666906971842292235" at="14,0,19,0" concept="5" trace="test_TryCatchStatementUnwrap5#()V" />
+      <node id="4666906971842292235" at="23,0,31,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="4666906971842292235" at="12,42,12,42" />
+      <scope id="4666906971842292235" at="21,23,21,23" />
+      <scope id="4666906971842292235" at="12,0,14,0" />
+      <scope id="4666906971842292235" at="15,64,17,105" />
+      <scope id="4666906971842292235" at="21,0,23,0" />
+      <scope id="4666906971842292235" at="14,0,19,0" />
+      <scope id="4666906971842292235" at="24,51,29,77" />
+      <scope id="4666906971842292235" at="23,0,31,0" />
+      <unit id="4666906971842292235" at="19,0,32,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap5_Test$TestBody" />
+      <unit id="4666906971842292235" at="10,0,33,0" name="jetbrains.mps.editorTest.TryCatchStatementUnwrap5_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/4710305425207405693">
@@ -5669,25 +5818,25 @@
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5225726827662826214">
-    <file name="AddUnmatchedParensInsideNot_Test.java">
-      <node id="5225726827662826214" at="15,67,16,107" concept="2" />
-      <node id="5225726827662826214" at="16,107,17,108" concept="2" />
+    <file name="AddUnmatchableParensToNot_Test.java">
+      <node id="5225726827662826214" at="15,65,16,107" concept="2" />
+      <node id="5225726827662826214" at="16,107,17,106" concept="2" />
       <node id="5225726827662826214" at="24,51,25,63" concept="2" />
       <node id="5225726827662826243" at="25,63,26,27" concept="2" />
-      <node id="5225726827662826214" at="12,0,14,0" concept="1" trace="AddUnmatchedParensInsideNot_Test#()V" />
+      <node id="5225726827662826214" at="12,0,14,0" concept="1" trace="AddUnmatchableParensToNot_Test#()V" />
       <node id="5225726827662826214" at="21,0,23,0" concept="1" trace="TestBody#()V" />
-      <node id="5225726827662826214" at="14,0,19,0" concept="5" trace="test_AddUnmatchedParensInsideNot#()V" />
+      <node id="5225726827662826214" at="14,0,19,0" concept="5" trace="test_AddUnmatchableParensToNot#()V" />
       <node id="5225726827662826214" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
-      <scope id="5225726827662826214" at="12,45,12,45" />
+      <scope id="5225726827662826214" at="12,43,12,43" />
       <scope id="5225726827662826214" at="21,23,21,23" />
       <scope id="5225726827662826214" at="12,0,14,0" />
-      <scope id="5225726827662826214" at="15,67,17,108" />
+      <scope id="5225726827662826214" at="15,65,17,106" />
       <scope id="5225726827662826214" at="21,0,23,0" />
       <scope id="5225726827662826214" at="24,51,26,27" />
       <scope id="5225726827662826214" at="14,0,19,0" />
       <scope id="5225726827662826214" at="23,0,28,0" />
-      <unit id="5225726827662826214" at="19,0,29,0" name="jetbrains.mps.editorTest.AddUnmatchedParensInsideNot_Test$TestBody" />
-      <unit id="5225726827662826214" at="10,0,30,0" name="jetbrains.mps.editorTest.AddUnmatchedParensInsideNot_Test" />
+      <unit id="5225726827662826214" at="19,0,29,0" name="jetbrains.mps.editorTest.AddUnmatchableParensToNot_Test$TestBody" />
+      <unit id="5225726827662826214" at="10,0,30,0" name="jetbrains.mps.editorTest.AddUnmatchableParensToNot_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/5225726827662832411">
@@ -7519,6 +7668,79 @@
       <scope id="6615429292103589151" at="23,0,30,0" />
       <unit id="6615429292103589151" at="19,0,31,0" name="jetbrains.mps.editorTest.RestoringSThintCell_Test$TestBody" />
       <unit id="6615429292103589151" at="10,0,32,0" name="jetbrains.mps.editorTest.RestoringSThintCell_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6615512484304749267">
+    <file name="FinalField1_Test.java">
+      <node id="6615512484304749267" at="15,51,16,107" concept="2" />
+      <node id="6615512484304749267" at="16,107,17,92" concept="2" />
+      <node id="6615512484304749267" at="24,51,25,63" concept="2" />
+      <node id="6615512484304749269" at="25,63,26,40" concept="2" />
+      <node id="6615512484304749267" at="12,0,14,0" concept="1" trace="FinalField1_Test#()V" />
+      <node id="6615512484304749267" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6615512484304749267" at="14,0,19,0" concept="5" trace="test_FinalField1#()V" />
+      <node id="6615512484304749267" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6615512484304749267" at="12,29,12,29" />
+      <scope id="6615512484304749267" at="21,23,21,23" />
+      <scope id="6615512484304749267" at="12,0,14,0" />
+      <scope id="6615512484304749267" at="15,51,17,92" />
+      <scope id="6615512484304749267" at="21,0,23,0" />
+      <scope id="6615512484304749267" at="24,51,26,40" />
+      <scope id="6615512484304749267" at="14,0,19,0" />
+      <scope id="6615512484304749267" at="23,0,28,0" />
+      <unit id="6615512484304749267" at="19,0,29,0" name="jetbrains.mps.editorTest.FinalField1_Test$TestBody" />
+      <unit id="6615512484304749267" at="10,0,30,0" name="jetbrains.mps.editorTest.FinalField1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6615512484304909907">
+    <file name="FinalField2_Test.java">
+      <node id="6615512484304909907" at="15,51,16,107" concept="2" />
+      <node id="6615512484304909907" at="16,107,17,92" concept="2" />
+      <node id="6615512484304909907" at="24,51,25,63" concept="2" />
+      <node id="6615512484304909909" at="25,63,26,56" concept="2" />
+      <node id="6615512484304909907" at="12,0,14,0" concept="1" trace="FinalField2_Test#()V" />
+      <node id="6615512484304909907" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6615512484304909907" at="14,0,19,0" concept="5" trace="test_FinalField2#()V" />
+      <node id="6615512484304909907" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6615512484304909907" at="12,29,12,29" />
+      <scope id="6615512484304909907" at="21,23,21,23" />
+      <scope id="6615512484304909907" at="12,0,14,0" />
+      <scope id="6615512484304909907" at="15,51,17,92" />
+      <scope id="6615512484304909907" at="21,0,23,0" />
+      <scope id="6615512484304909907" at="24,51,26,56" />
+      <scope id="6615512484304909907" at="14,0,19,0" />
+      <scope id="6615512484304909907" at="23,0,28,0" />
+      <unit id="6615512484304909907" at="19,0,29,0" name="jetbrains.mps.editorTest.FinalField2_Test$TestBody" />
+      <unit id="6615512484304909907" at="10,0,30,0" name="jetbrains.mps.editorTest.FinalField2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6615512484320057805">
+    <file name="RemoveStaticInInterface_Test.java">
+      <node id="6615512484320057805" at="15,63,16,107" concept="2" />
+      <node id="6615512484320057805" at="16,107,17,104" concept="2" />
+      <node id="6615512484320057805" at="24,51,25,63" concept="2" />
+      <node id="6615512484320057824" at="25,63,26,77" concept="2" />
+      <node id="6615512484320057826" at="26,77,27,77" concept="2" />
+      <node id="6615512484320057828" at="27,77,28,77" concept="2" />
+      <node id="6615512484320057830" at="28,77,29,77" concept="2" />
+      <node id="6615512484320057832" at="29,77,30,77" concept="2" />
+      <node id="6615512484320057834" at="30,77,31,77" concept="2" />
+      <node id="6615512484320057836" at="31,77,32,77" concept="2" />
+      <node id="6615512484320071646" at="32,77,33,77" concept="2" />
+      <node id="6615512484320057805" at="12,0,14,0" concept="1" trace="RemoveStaticInInterface_Test#()V" />
+      <node id="6615512484320057805" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="6615512484320057805" at="14,0,19,0" concept="5" trace="test_RemoveStaticInInterface#()V" />
+      <node id="6615512484320057805" at="23,0,35,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="6615512484320057805" at="12,41,12,41" />
+      <scope id="6615512484320057805" at="21,23,21,23" />
+      <scope id="6615512484320057805" at="12,0,14,0" />
+      <scope id="6615512484320057805" at="15,63,17,104" />
+      <scope id="6615512484320057805" at="21,0,23,0" />
+      <scope id="6615512484320057805" at="14,0,19,0" />
+      <scope id="6615512484320057805" at="24,51,33,77" />
+      <scope id="6615512484320057805" at="23,0,35,0" />
+      <unit id="6615512484320057805" at="19,0,36,0" name="jetbrains.mps.editorTest.RemoveStaticInInterface_Test$TestBody" />
+      <unit id="6615512484320057805" at="10,0,37,0" name="jetbrains.mps.editorTest.RemoveStaticInInterface_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/6736042903603947667">
@@ -9410,6 +9632,117 @@
       <scope id="7888701088961273972" at="23,0,28,0" />
       <unit id="7888701088961273972" at="19,0,29,0" name="jetbrains.mps.editorTest.AddMethodCaret_Test$TestBody" />
       <unit id="7888701088961273972" at="10,0,30,0" name="jetbrains.mps.editorTest.AddMethodCaret_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7915352553124193583">
+    <file name="AbstractMethod2_Test.java">
+      <node id="7915352553124193583" at="15,55,16,107" concept="2" />
+      <node id="7915352553124193583" at="16,107,17,96" concept="2" />
+      <node id="7915352553124193583" at="24,51,25,63" concept="2" />
+      <node id="7915352553124193585" at="25,63,26,49" concept="2" />
+      <node id="7915352553124193586" at="26,49,27,74" concept="2" />
+      <node id="7915352553124193583" at="12,0,14,0" concept="1" trace="AbstractMethod2_Test#()V" />
+      <node id="7915352553124193583" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7915352553124193583" at="14,0,19,0" concept="5" trace="test_AbstractMethod2#()V" />
+      <node id="7915352553124193583" at="23,0,29,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7915352553124193583" at="12,33,12,33" />
+      <scope id="7915352553124193583" at="21,23,21,23" />
+      <scope id="7915352553124193583" at="12,0,14,0" />
+      <scope id="7915352553124193583" at="15,55,17,96" />
+      <scope id="7915352553124193583" at="21,0,23,0" />
+      <scope id="7915352553124193583" at="24,51,27,74" />
+      <scope id="7915352553124193583" at="14,0,19,0" />
+      <scope id="7915352553124193583" at="23,0,29,0" />
+      <unit id="7915352553124193583" at="19,0,30,0" name="jetbrains.mps.editorTest.AbstractMethod2_Test$TestBody" />
+      <unit id="7915352553124193583" at="10,0,31,0" name="jetbrains.mps.editorTest.AbstractMethod2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7915352553124223823">
+    <file name="NonStaticField1_Test.java">
+      <node id="7915352553124223823" at="15,55,16,107" concept="2" />
+      <node id="7915352553124223823" at="16,107,17,96" concept="2" />
+      <node id="7915352553124223823" at="24,51,25,63" concept="2" />
+      <node id="7915352553124223825" at="25,63,26,34" concept="2" />
+      <node id="7915352553124223823" at="12,0,14,0" concept="1" trace="NonStaticField1_Test#()V" />
+      <node id="7915352553124223823" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7915352553124223823" at="14,0,19,0" concept="5" trace="test_NonStaticField1#()V" />
+      <node id="7915352553124223823" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7915352553124223823" at="12,33,12,33" />
+      <scope id="7915352553124223823" at="21,23,21,23" />
+      <scope id="7915352553124223823" at="12,0,14,0" />
+      <scope id="7915352553124223823" at="15,55,17,96" />
+      <scope id="7915352553124223823" at="21,0,23,0" />
+      <scope id="7915352553124223823" at="24,51,26,34" />
+      <scope id="7915352553124223823" at="14,0,19,0" />
+      <scope id="7915352553124223823" at="23,0,28,0" />
+      <unit id="7915352553124223823" at="19,0,29,0" name="jetbrains.mps.editorTest.NonStaticField1_Test$TestBody" />
+      <unit id="7915352553124223823" at="10,0,30,0" name="jetbrains.mps.editorTest.NonStaticField1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7915352553124237265">
+    <file name="NonStaticField2_Test.java">
+      <node id="7915352553124237265" at="15,55,16,107" concept="2" />
+      <node id="7915352553124237265" at="16,107,17,96" concept="2" />
+      <node id="7915352553124237265" at="24,51,25,63" concept="2" />
+      <node id="7915352553124237267" at="25,63,26,42" concept="2" />
+      <node id="7915352553124237265" at="12,0,14,0" concept="1" trace="NonStaticField2_Test#()V" />
+      <node id="7915352553124237265" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7915352553124237265" at="14,0,19,0" concept="5" trace="test_NonStaticField2#()V" />
+      <node id="7915352553124237265" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7915352553124237265" at="12,33,12,33" />
+      <scope id="7915352553124237265" at="21,23,21,23" />
+      <scope id="7915352553124237265" at="12,0,14,0" />
+      <scope id="7915352553124237265" at="15,55,17,96" />
+      <scope id="7915352553124237265" at="21,0,23,0" />
+      <scope id="7915352553124237265" at="24,51,26,42" />
+      <scope id="7915352553124237265" at="14,0,19,0" />
+      <scope id="7915352553124237265" at="23,0,28,0" />
+      <unit id="7915352553124237265" at="19,0,29,0" name="jetbrains.mps.editorTest.NonStaticField2_Test$TestBody" />
+      <unit id="7915352553124237265" at="10,0,30,0" name="jetbrains.mps.editorTest.NonStaticField2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7915352553124239105">
+    <file name="StaticMethod1_Test.java">
+      <node id="7915352553124239105" at="15,53,16,107" concept="2" />
+      <node id="7915352553124239105" at="16,107,17,94" concept="2" />
+      <node id="7915352553124239105" at="24,51,25,63" concept="2" />
+      <node id="7915352553124239107" at="25,63,26,42" concept="2" />
+      <node id="7915352553124239105" at="12,0,14,0" concept="1" trace="StaticMethod1_Test#()V" />
+      <node id="7915352553124239105" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7915352553124239105" at="14,0,19,0" concept="5" trace="test_StaticMethod1#()V" />
+      <node id="7915352553124239105" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7915352553124239105" at="12,31,12,31" />
+      <scope id="7915352553124239105" at="21,23,21,23" />
+      <scope id="7915352553124239105" at="12,0,14,0" />
+      <scope id="7915352553124239105" at="15,53,17,94" />
+      <scope id="7915352553124239105" at="21,0,23,0" />
+      <scope id="7915352553124239105" at="24,51,26,42" />
+      <scope id="7915352553124239105" at="14,0,19,0" />
+      <scope id="7915352553124239105" at="23,0,28,0" />
+      <unit id="7915352553124239105" at="19,0,29,0" name="jetbrains.mps.editorTest.StaticMethod1_Test$TestBody" />
+      <unit id="7915352553124239105" at="10,0,30,0" name="jetbrains.mps.editorTest.StaticMethod1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/7915352553125356670">
+    <file name="StaticMethod2_Test.java">
+      <node id="7915352553125356670" at="15,53,16,107" concept="2" />
+      <node id="7915352553125356670" at="16,107,17,94" concept="2" />
+      <node id="7915352553125356670" at="24,51,25,63" concept="2" />
+      <node id="7915352553125356672" at="25,63,26,49" concept="2" />
+      <node id="7915352553125356670" at="12,0,14,0" concept="1" trace="StaticMethod2_Test#()V" />
+      <node id="7915352553125356670" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="7915352553125356670" at="14,0,19,0" concept="5" trace="test_StaticMethod2#()V" />
+      <node id="7915352553125356670" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="7915352553125356670" at="12,31,12,31" />
+      <scope id="7915352553125356670" at="21,23,21,23" />
+      <scope id="7915352553125356670" at="12,0,14,0" />
+      <scope id="7915352553125356670" at="15,53,17,94" />
+      <scope id="7915352553125356670" at="21,0,23,0" />
+      <scope id="7915352553125356670" at="24,51,26,49" />
+      <scope id="7915352553125356670" at="14,0,19,0" />
+      <scope id="7915352553125356670" at="23,0,28,0" />
+      <unit id="7915352553125356670" at="19,0,29,0" name="jetbrains.mps.editorTest.StaticMethod2_Test$TestBody" />
+      <unit id="7915352553125356670" at="10,0,30,0" name="jetbrains.mps.editorTest.StaticMethod2_Test" />
     </file>
   </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/801169956439969290">

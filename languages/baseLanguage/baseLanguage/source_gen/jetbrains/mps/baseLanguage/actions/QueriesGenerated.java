@@ -2340,6 +2340,25 @@ public class QueriesGenerated {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", null);
+            SPropertyOperations.set(decl, "abstract", "" + (true));
+            return decl;
+          }
+          public String getMatchingText(String pattern) {
+            return "abstract";
+          }
+          public String getVisibleMatchingText(String pattern) {
+            return getMatchingText(pattern);
+          }
+        });
+      }
+    }
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter()) {
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode decl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration", null);
             SPropertyOperations.set(decl, "static", "" + (true));
             return decl;
           }
@@ -2438,7 +2457,7 @@ public class QueriesGenerated {
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (IncompleteMemberHelper.canBeMethod(curr) && !(SPropertyOperations.getBoolean(curr, "static")) && !(SPropertyOperations.getBoolean(curr, "final"))) {
+            if (IncompleteMemberHelper.canBeMethod(curr) && !(SPropertyOperations.getBoolean(curr, "final"))) {
               if ((pattern == null || pattern.length() == 0)) {
                 return !(strictly);
               }
@@ -2500,7 +2519,7 @@ public class QueriesGenerated {
           }
           public boolean canSubstitute_internal(String pattern, boolean strictly) {
             SNode curr = SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.IncompleteMemberDeclaration");
-            if (IncompleteMemberHelper.canBeField(curr) && SPropertyOperations.getBoolean(curr, "static")) {
+            if (IncompleteMemberHelper.canBeField(curr)) {
               if ((pattern == null || pattern.length() == 0)) {
                 return !(strictly);
               }
@@ -5380,7 +5399,7 @@ __switch__:
     return result;
   }
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_IncompleteMemberDeclaration_3731731823337580891(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return IncompleteMemberHelper.canBeMethod(_context.getSourceNode()) && SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "native") == false && IncompleteMemberDeclaration_Behavior.call_canBeMadeAbstract_6224545524881696659(_context.getSourceNode()) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return IncompleteMemberHelper.canBeMethod(_context.getSourceNode()) && SPropertyOperations.getBoolean(_context.getSourceNode(), "static") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "final") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "synchronized") == false && SPropertyOperations.getBoolean(_context.getSourceNode(), "native") == false && IncompleteMemberDeclaration_Behavior.call_canBeMadeAbstract_6224545524881696659(_context.getSourceNode());
   }
   public static List<SubstituteAction> sideTransform_ActionsFactory_IncompleteMemberDeclaration_8355037393080618621(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());
