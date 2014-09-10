@@ -7,15 +7,16 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior;
 import jetbrains.mps.lang.classLike.behavior.ClassLikeDescriptor_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -27,7 +28,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "initializer", true), "parameter", true)).first(), "name");
   }
   public static Object propertyMacro_GetPropertyValue_3751132065236919833(final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+    return DependentTypeDeclaration_Behavior.call_getGeneratedMethodName_2546325654728395319(_context.getNode());
   }
   public static Object propertyMacro_GetPropertyValue_3384419124890145159(final PropertyMacroContext _context) {
     return ClassLikeDescriptor_Behavior.call_getGeneratedClassName_3384419124890285894(_context.getNode());
@@ -42,10 +43,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "initializer", true), "body", true);
   }
   public static SNode sourceNodeQuery_3751132065236919771(final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), "getter", true), "body", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "getter", true), "body", true);
   }
   public static Iterable<SNode> sourceNodesQuery_3751132065236919787(final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), "getter", true), "parameter", true);
+    List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "getter", true), "parameter", true);
     return ListSequence.fromList(params).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         SNode res = SNodeOperations.copyNode(it);
@@ -55,11 +56,7 @@ public class QueriesGenerated {
     });
   }
   public static Iterable<SNode> sourceNodesQuery_3751132065236919840(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", false, new String[]{})).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.getAncestor(it, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false);
-      }
-    });
+    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", false, new String[]{});
   }
   private static SNode _quotation_createNode_x583g4_a0b0a0a1a8() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
