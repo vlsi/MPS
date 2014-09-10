@@ -80,6 +80,7 @@
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.codeStyle.CodeStyleSettingsComponent</implementation-class>
+      <loadForDefaultProject/>
     </component>
   </project-components>
 
