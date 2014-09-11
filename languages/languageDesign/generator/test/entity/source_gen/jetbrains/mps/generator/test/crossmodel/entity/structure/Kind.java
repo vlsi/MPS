@@ -11,26 +11,21 @@ public enum Kind {
   _2("TWO", 2);
 
   private String myName;
-
   public String getName() {
     return this.myName;
   }
-
   public String getValueAsString() {
     return "" + this.myValue;
   }
-
   public static List<Kind> getConstants() {
     List<Kind> list = ListSequence.fromList(new LinkedList<Kind>());
     ListSequence.fromList(list).addElement(Kind._1);
     ListSequence.fromList(list).addElement(Kind._2);
     return list;
   }
-
   public static Kind getDefault() {
     return Kind._1;
   }
-
   public static Kind parseValue(String value) {
     if (value == null) {
       return Kind.getDefault();
@@ -43,14 +38,11 @@ public enum Kind {
     }
     return Kind.getDefault();
   }
-
   private int myValue;
-
   Kind(String name, int value) {
     this.myName = name;
     this.myValue = value;
   }
-
   public int getValue() {
     return this.myValue;
   }

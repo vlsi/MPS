@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class InitOp_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public InitOp_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.generator.test.crossmodel.property.structure.InitOp";
