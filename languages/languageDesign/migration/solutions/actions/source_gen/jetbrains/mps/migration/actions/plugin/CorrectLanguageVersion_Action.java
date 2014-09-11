@@ -51,7 +51,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
       return false;
     }
 
-    List<SNode> migrations = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript");
+    List<SNode> migrations = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.MigrationScript");
     if (ListSequence.fromList(migrations).isEmpty() && lang.getLanguageVersion() != 0) {
       return true;
     }
@@ -94,7 +94,7 @@ public class CorrectLanguageVersion_Action extends BaseAction {
     try {
       final Language lang = ((Language) ((SModule) MapSequence.fromMap(_params).get("module")));
       SModel mig = LanguageAspect.MIGRATION.get(lang);
-      List<SNode> scripts = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.AbstractMigrationScript");
+      List<SNode> scripts = SModelOperations.getRoots(((SModel) mig), "jetbrains.mps.lang.migration.structure.MigrationScript");
       if (ListSequence.fromList(scripts).isNotEmpty()) {
         int maxFrom = SPropertyOperations.getInteger(ListSequence.fromList(scripts).sort(new ISelector<SNode, Integer>() {
           public Integer select(SNode it) {

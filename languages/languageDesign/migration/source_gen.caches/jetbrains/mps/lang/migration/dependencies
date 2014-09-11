@@ -10,6 +10,8 @@
     <classNode dependClassName="jetbrains.mps.lang.migration.behavior.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.migration.editor.EditorAspectDescriptorImpl" />
     <classNode dependClassName="jetbrains.mps.lang.migration.structure.StructureAspectDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.migration.typesystem.TypesystemDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.runtime.LanguageAspectDescriptor" />

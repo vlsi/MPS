@@ -87,7 +87,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6435164937170791878" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="scripts" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="6435164937170791879" nodeInfo="in">
-              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6435164937170791880" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6435164937170791881" nodeInfo="nn">
@@ -99,7 +99,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsOperation" typeId="tp25.1171315804604" id="6435164937170791885" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1171315804605" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+                <link role="concept" roleId="tp25.1171315804605" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
               </node>
             </node>
           </node>
@@ -124,8 +124,8 @@
                                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6435164937170791905" nodeInfo="nn">
                                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6435164937170791907" resolveInfo="it" />
                                 </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6435164937170791906" nodeInfo="nn">
-                                  <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
+                                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3334914821928512520" nodeInfo="nn">
+                                  <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.5820409521797704727" resolveInfo="fromVersion" />
                                 </node>
                               </node>
                             </node>
@@ -142,8 +142,8 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="6435164937170791910" nodeInfo="nn" />
                   </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="6435164937170791911" nodeInfo="nn">
-                    <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
+                  <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3334914821928516993" nodeInfo="nn">
+                    <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.5820409521797704727" resolveInfo="fromVersion" />
                   </node>
                 </node>
               </node>
@@ -507,7 +507,7 @@
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="6435164937171834129" nodeInfo="nr">
             <property name="name" nameId="tpck.1169194664001" value="migrations" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="6435164937171834112" nodeInfo="in">
-              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+              <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6435164937171834130" nodeInfo="nn">
               <node role="operand" roleId="tpee.1197027771414" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6435164937171834131" nodeInfo="nn">
@@ -519,7 +519,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.Model_RootsOperation" typeId="tp25.1171315804604" id="6435164937171834135" nodeInfo="nn">
-                <link role="concept" roleId="tp25.1171315804605" targetNodeId="53vh.1309355481571392446" resolveInfo="AbstractMigrationScript" />
+                <link role="concept" roleId="tp25.1171315804605" targetNodeId="53vh.8352104482584315555" resolveInfo="MigrationScript" />
               </node>
             </node>
           </node>
@@ -573,8 +573,8 @@
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="834555255520141658" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="834555255520141660" resolveInfo="it" />
                             </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="834555255520141659" nodeInfo="nn">
-                              <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3334914821928497145" nodeInfo="nn">
+                              <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.5820409521797704727" resolveInfo="fromVersion" />
                             </node>
                           </node>
                         </node>
@@ -591,8 +591,8 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="834555255520141663" nodeInfo="nn" />
               </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="834555255520141664" nodeInfo="nn">
-                <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.4436301628118948497" resolveInfo="fromVersion" />
+              <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3334914821928503837" nodeInfo="nn">
+                <link role="property" roleId="tp25.1138056395725" targetNodeId="53vh.5820409521797704727" resolveInfo="fromVersion" />
               </node>
             </node>
           </node>

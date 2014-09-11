@@ -4,6 +4,11 @@
   <debugInfo>
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
+    <model ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" name="org.jetbrains.mps.openapi.module@java_stub" />
+    <model ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" name="java.util@java_stub" />
+    <model ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" name="jetbrains.mps.smodel@java_stub" />
+    <model ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" name="org.jetbrains.mps.openapi.model@java_stub" />
+    <model ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" name="jetbrains.mps.lang.smodel.generator.smodelAdapter" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1083260308424" name="EnumConstantReference" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1144226303539" name="ForeachStatement" />
     <concept id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068581242863" name="LocalVariableDeclaration" />
@@ -128,14 +133,14 @@
     <devkit ref="fbc25dd2-5da4-483a-8b19-70928e1b62d7(jetbrains.mps.devkit.general-purpose)" />
   </languages>
   <imports>
+    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
+    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
+    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
+    <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <import index="tpck" ref="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" implicit="true" />
     <import index="e2lb" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" implicit="true" />
     <import index="tpee" ref="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" implicit="true" />
-    <import index="k7g3" ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065/f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" implicit="true" />
-    <import index="ec5l" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" implicit="true" />
-    <import index="cu2c" ref="6ed54515-acc8-4d1e-a16c-9fd6cfe951ea/f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" implicit="true" />
-    <import index="i8bi" ref="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" implicit="true" />
-    <import index="88zw" ref="8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" implicit="true" />
   </imports>
   <contents>
     <node concept="vg0i.1068390468198" id="4546754412408090435" info="ig">
@@ -168,7 +173,7 @@
             </node>
             <node concept="vg0i.1081516740877" id="4546754412408681994" role="vg0i.1068580123159.1068580123160" info="nn">
               <node concept="vg0i.1081256982272" id="4546754412408683875" role="vg0i.1081516740877.1081516765348" info="nn">
-                <node concept="vg0i.1107535904670" id="4546754412408683955" role="vg0i.1081256982272.1081256993305" info="in">
+                <node concept="vg0i.1107535904670" id="3334914821928834274" role="vg0i.1081256982272.1081256993305" info="in">
                   <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~Language" resolveInfo="Language" />
                 </node>
                 <node concept="vg0i.1068498886296" id="4546754412408683794" role="vg0i.1081256982272.1081256993304" info="nn">
@@ -181,7 +186,7 @@
             <node concept="vg0i.1068581242863" id="4546754412408103637" role="vg0i.1068581242864.1068581242865" info="nr">
               <property role="vg0i.1068431474542.1176718929932" value="false" />
               <property role="asn4.1169194658468.1169194664001" value="migModel" />
-              <node concept="vg0i.1107535904670" id="4546754412408230147" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+              <node concept="vg0i.1107535904670" id="2546325654731359301" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SModel" resolveInfo="SModel" />
               </node>
               <node concept="vg0i.1197027756228" id="4546754412408193243" role="vg0i.1068431474542.1068431790190" info="nn">
@@ -196,7 +201,7 @@
                       <node concept="vg0i.1068498886296" id="4546754412408685286" role="vg0i.1070534934090.1070534934092" info="nn">
                         <reference role="vg0i.1068498886296.1068581517664" target="4546754412408103631" resolveInfo="module" />
                       </node>
-                      <node concept="vg0i.1107535904670" id="4546754412408685280" role="vg0i.1070534934090.1070534934091" info="in">
+                      <node concept="vg0i.1107535904670" id="3334914821927286038" role="vg0i.1070534934090.1070534934091" info="in">
                         <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~Language" resolveInfo="Language" />
                       </node>
                     </node>
@@ -273,7 +278,7 @@
             <node concept="vg0i.1068581242863" id="4546754412408103690" role="vg0i.1144230876926.1144230900587" info="nr">
               <property role="vg0i.1068431474542.1176718929932" value="false" />
               <property role="asn4.1169194658468.1169194664001" value="root" />
-              <node concept="vg0i.1107535904670" id="4546754412408284344" role="vg0i.4972933694980447171.5680397130376446158" info="in">
+              <node concept="vg0i.1107535904670" id="2546325654731359933" role="vg0i.4972933694980447171.5680397130376446158" info="in">
                 <reference role="vg0i.1107535904670.1107535924139" target="ec5l.~SNode" resolveInfo="SNode" />
               </node>
             </node>
@@ -423,7 +428,7 @@
                     <node concept="vg0i.1068498886296" id="4546754412408685657" role="vg0i.1070534934090.1070534934092" info="nn">
                       <reference role="vg0i.1068498886296.1068581517664" target="4546754412408103631" resolveInfo="module" />
                     </node>
-                    <node concept="vg0i.1107535904670" id="4546754412408686499" role="vg0i.1070534934090.1070534934091" info="in">
+                    <node concept="vg0i.1107535904670" id="3334914821927276774" role="vg0i.1070534934090.1070534934091" info="in">
                       <reference role="vg0i.1107535904670.1107535924139" target="cu2c.~Language" resolveInfo="Language" />
                     </node>
                   </node>
