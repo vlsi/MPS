@@ -11,15 +11,12 @@ public class ExportLabelFunctions {
   public static void marshal_5925726056274334829(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getKeeper(), "string1", SPropertyOperations.getString(ctx.getOutput(), "name"));
   }
-
   public static void marshal_5925726056274457432(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getKeeper(), "string1", SPropertyOperations.getString(ctx.getOutput(), "name"));
   }
-
   public static void unmarshal_5925726056274334831(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getOutput(), "name", SPropertyOperations.getString(ctx.getKeeper(), "string1"));
   }
-
   public static void unmarshal_5925726056274457434(ExportLabelContext ctx) {
     SPropertyOperations.set(ctx.getOutput(), "name", SPropertyOperations.getString(ctx.getKeeper(), "string1"));
   }

@@ -88,6 +88,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1758784108619328000(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name_intern");
   }
+  public static Object propertyMacro_GetPropertyValue_6048126956897464754(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name_intern");
+  }
   public static Object referenceMacro_GetReferent_1216862267882(final ReferenceMacroContext _context) {
     // method parameter 
     return "_context";
@@ -285,5 +288,11 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1217894200331(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "userKey", true);
+  }
+  public static SNode sourceNodeQuery_9109410030987994845(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+  }
+  public static SNode sourceNodeQuery_6048126956897521731(final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "inputNode", true);
   }
 }

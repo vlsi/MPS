@@ -16,35 +16,27 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static boolean baseMappingRule_Condition_2500545923215242436(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "kind", "1", "1");
   }
-
   public static boolean baseMappingRule_Condition_2500545923215242447(final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "kind", "2", "1");
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833443850(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833543228(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").length();
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833750247(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Bean";
   }
-
   public static Object referenceMacro_GetReferent_5176577547833570998(final ReferenceMacroContext _context) {
     return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "use1", false), "EntryToBeanProperty");
   }
-
   public static Object referenceMacro_GetReferent_5176577547833821221(final ReferenceMacroContext _context) {
     return _context.getOutputNodeProxy(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "use1", false), "owner", false), "NodeToBean");
   }
-
   public static Iterable<SNode> sourceNodesQuery_5176577547833432907(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -52,7 +44,6 @@ public class QueriesGenerated {
       }
     });
   }
-
   public static Iterable<SNode> sourceNodesQuery_5176577547833431181(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "entries", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

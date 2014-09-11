@@ -13,39 +13,30 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
-
   public static Object propertyMacro_GetPropertyValue_4220080364835917954(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "Impl";
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833404374(final PropertyMacroContext _context) {
     return "get" + SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833393068(final PropertyMacroContext _context) {
     return "set_" + SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5176577547833410173(final PropertyMacroContext _context) {
     return "value" + SPropertyOperations.getString(_context.getNode(), "name");
   }
-
   public static Object propertyMacro_GetPropertyValue_5925726056274261651(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "value");
   }
-
   public static Object referenceMacro_GetReferent_5925726056274318832(final ReferenceMacroContext _context) {
     return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "bean", false), "BeanToClass");
   }
-
   public static Object referenceMacro_GetReferent_5925726056274316710(final ReferenceMacroContext _context) {
     return _context.getOutputNodeProxy(SLinkOperations.getTarget(_context.getNode(), "property", false), "PropertyToSetter");
   }
-
   public static Iterable<SNode> sourceNodesQuery_5176577547833330034(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "initializers", true);
   }
-
   public static Iterable<SNode> sourceNodesQuery_4220080364835967614(final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "properties", true);
   }

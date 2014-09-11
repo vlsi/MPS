@@ -64,7 +64,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,164,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,178,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
@@ -84,6 +84,9 @@
     <file name="ITemplateCall_BehaviorDescriptor.java">
       <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.ITemplateCall_BehaviorDescriptor" />
     </file>
+    <file name="ExportLabel_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.ExportLabel_BehaviorDescriptor" />
+    </file>
     <file name="TemplateQueryBase_BehaviorDescriptor.java">
       <unit at="9,0,23,0" name="jetbrains.mps.lang.generator.behavior.TemplateQueryBase_BehaviorDescriptor" />
     </file>
@@ -98,6 +101,9 @@
     </file>
     <file name="TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_templatePropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="ExportMacro_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.ExportMacro_BehaviorDescriptor" />
     </file>
     <file name="DropRootRule_Condition_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_Condition_BehaviorDescriptor" />
@@ -156,6 +162,9 @@
     <file name="MapSrcListMacro_BehaviorDescriptor.java">
       <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.behavior.MapSrcListMacro_BehaviorDescriptor" />
     </file>
+    <file name="ExportLabelParameter_keeper_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_keeper_BehaviorDescriptor" />
+    </file>
     <file name="GeneratorMessage_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.GeneratorMessage_BehaviorDescriptor" />
     </file>
@@ -198,11 +207,17 @@
     <file name="PatternReduction_MappingRule_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.PatternReduction_MappingRule_BehaviorDescriptor" />
     </file>
-    <file name="MapSrcNodeMacro_BehaviorDescriptor.java">
-      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
+    <file name="UnmarshalFunction_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_BehaviorDescriptor" />
     </file>
     <file name="ReferenceMacro_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_BehaviorDescriptor" />
+    </file>
+    <file name="MapSrcNodeMacro_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.MapSrcNodeMacro_BehaviorDescriptor" />
+    </file>
+    <file name="MarshalFunction_BehaviorDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" />
@@ -212,6 +227,9 @@
     </file>
     <file name="AbandonInput_RuleConsequence_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.AbandonInput_RuleConsequence_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_outputNode_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_outputNode_BehaviorDescriptor" />
     </file>
     <file name="MappingScriptReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.MappingScriptReference_BehaviorDescriptor" />
@@ -239,6 +257,9 @@
     </file>
     <file name="DropRootRule_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
+    </file>
+    <file name="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" />
     </file>
     <file name="RootTemplateAnnotation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
@@ -2473,6 +2494,50 @@
         <var name="thisNode" id="650531548511609558" />
       </scope>
       <unit id="650531548511609558" at="7,0,11,0" name="jetbrains.mps.lang.generator.behavior.IGeneratorParameter_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743014802">
+    <file name="MarshalFunction_Behavior.java">
+      <node id="7325101476743226941" at="16,125,17,69" concept="9" />
+      <node id="7325101476743055436" at="17,69,18,173" concept="4" />
+      <node id="7325101476743316120" at="18,173,19,160" concept="4" />
+      <node id="8915420221429815040" at="19,160,20,156" concept="4" />
+      <node id="7325101476743313957" at="20,156,21,16" concept="10" />
+      <node id="7325101476743014802" at="14,0,16,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7325101476743014802" at="16,0,23,0" concept="13" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="7325101476743014958" at="14,43,14,43" />
+      <scope id="7325101476743014802" at="14,0,16,0">
+        <var name="thisNode" id="7325101476743014802" />
+      </scope>
+      <scope id="7325101476743055430" at="16,125,21,16">
+        <var name="list" id="7325101476743226942" />
+      </scope>
+      <scope id="7325101476743014802" at="16,0,23,0">
+        <var name="thisConcept" id="7325101476743014802" />
+      </scope>
+      <unit id="7325101476743014802" at="13,0,24,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7325101476743439464">
+    <file name="UnmarshalFunction_Behavior.java">
+      <node id="7325101476743440215" at="15,125,16,69" concept="9" />
+      <node id="7325101476743499306" at="16,69,17,159" concept="4" />
+      <node id="8915420221429816300" at="17,159,18,156" concept="4" />
+      <node id="8915420221429816516" at="18,156,19,160" concept="4" />
+      <node id="7325101476743440288" at="19,160,20,16" concept="10" />
+      <node id="7325101476743439464" at="13,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7325101476743439464" at="15,0,22,0" concept="13" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="7325101476743439466" at="13,43,13,43" />
+      <scope id="7325101476743439464" at="13,0,15,0">
+        <var name="thisNode" id="7325101476743439464" />
+      </scope>
+      <scope id="7325101476743439488" at="15,125,20,16">
+        <var name="list" id="7325101476743440216" />
+      </scope>
+      <scope id="7325101476743439464" at="15,0,22,0">
+        <var name="thisConcept" id="7325101476743439464" />
+      </scope>
+      <unit id="7325101476743439464" at="12,0,23,0" name="jetbrains.mps.lang.generator.behavior.UnmarshalFunction_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/7933327286924650855">

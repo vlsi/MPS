@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<debug-info>
-  <root>
-    <file name="Language.java">
-      <unit at="17,0,55,0" name="jetbrains.mps.lang.generator.crossmodel.Language" />
-    </file>
-  </root>
-</debug-info>
-

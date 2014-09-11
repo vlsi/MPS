@@ -25,30 +25,32 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 4:
         return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetCopiedOutputByInput_Editor());
       case 5:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetExport_Editor());
       case 6:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOriginalCopiedInputByOutput_Editor());
       case 7:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabel_Editor());
       case 8:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInput_Editor());
       case 9:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_Editor());
       case 10:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetOutputListByLabelAndInput_Editor());
       case 11:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_GetPrevInputByLabel_Editor());
       case 12:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_NodePatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_LinkPatternRef_Editor());
       case 13:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ParameterRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_NodePatternRef_Editor());
       case 14:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ParameterRef_Editor());
       case 15:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_PropertyPatternRef_Editor());
       case 16:
-        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_ShowMessageBase_Editor());
       case 17:
+        return Collections.<ConceptEditor>singletonList(new GenerationContextOp_UserObjectAccessBase_Editor());
+      case 18:
         return Collections.<ConceptEditor>singletonList(new GenerationContextOp_VarRef_Editor());
       default:
     }
@@ -59,5 +61,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_Base", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_DirtyNode", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GenParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetCopiedOutputByInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetExport", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputListByLabelAndInput", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_NodePatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ParameterRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_PropertyPatternRef", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_VarRef"};
 }
