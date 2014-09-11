@@ -15,6 +15,7 @@
       </models>
       <external-templates />
       <dependencies>
+        <dependency reexport="false">4d14758c-3ecb-486d-b8c8-ea5beb8ae408(jetbrains.mps.generator.test.crossmodel.entity)</dependency>
         <dependency reexport="false">dc1cc948-6f43-4687-90cb-17dd5cb27219(jetbrains.mps.generator.test.crossmodel.property)</dependency>
       </dependencies>
       <usedLanguages>

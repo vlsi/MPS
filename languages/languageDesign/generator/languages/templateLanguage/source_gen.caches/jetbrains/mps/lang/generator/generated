@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8qxthajt2er3yctxs9jh47yi5ypc2tx">
+<dependencies version="2" modelHash="-1kyxhyfj07t1tonphj7yyzq8p9uwm5l">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
   <dep model="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" hash="7ygo7pea8gyzuxom6wi5t6ipchwud9v" />
   <dep model="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" hash="87lh3hk10ntjq2zyximlpw2lxdh62q5" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" hash="4u04o4bvknngiv2at8b8wasjo12c6od" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)" hash="-cupl9uqujuw3z06rslz8fyad12z814h" />
   <dep model="r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)" hash="uidfbh7oq557tx30nc94qghc2opxol" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="576reo1etzkc8u4ud1mc557zlzeunbp" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-6r79zerd5g4mkqvktwfk7i2ydwbhtup" />

@@ -42,13 +42,17 @@ public class SortUtil {
       String str = SModelStereotype.getStereotype(o);
       String str1 = SModelStereotype.getStereotype(o1);
       if ((o instanceof TransientSModelDescriptor) && (o1 instanceof TransientSModelDescriptor)) {
-        String[] part = str.split("_");
-        String[] part1 = str1.split("_");
-        for (int i = 0; i < part.length; i++) {
-          result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
-          if (result != 0) return result;
+        try {
+          String[] part = str.split("_");
+          String[] part1 = str1.split("_");
+          for (int i = 0; i < part.length; i++) {
+            result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
+            if (result != 0) return result;
+          }
+          return result;
+        } catch (NumberFormatException ex) {
+          return Comparing.compare(str, str1);
         }
-        return result;
       } else {
         return Comparing.compare(str, str1);
       }

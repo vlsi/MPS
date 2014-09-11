@@ -118,7 +118,7 @@ public class ExportsVault {
   public SNode instantiateOutputProxy(ExportEntry entry, SNode input) {
     SNode marshalFunction = entry.myExportLabel.getChildren("unmarshal").iterator().next();
     String functionName = "unmarshal_" + marshalFunction.getNodeId().toString();
-    // XXX perhaps, we shall record actual concept of outpuy node, and use it instead of outputKind, which
+    // XXX perhaps, we shall record actual concept of output node, and use it instead of outputKind, which
     // will be still there for label validation/code completion purposes
     SNode outputConcept = entry.myExportLabel.getReferenceTarget("outputKind");
     SNode outputProxy;
@@ -127,6 +127,9 @@ public class ExportsVault {
       if (proxyModel == null) {
         proxyModel = myContext.getModule().createTransientModel(entry.myModelReference);
         myTempModels.put(entry.myModelReference, proxyModel);
+        // with save transients == false, proxy model would be discarded the moment generation ends, and textgen would
+        // fail to resolve references to proxies (needs model to get package fqn for classes)
+        myContext.getModule().addModelToKeep(entry.myModelReference, true);
       }
       outputProxy = SModelUtil_new.instantiateConceptDeclaration(NameUtil.nodeFQName(outputConcept), proxyModel, entry.myOutputNodeId, false);
       if (outputProxy.getModel() == null) {
@@ -139,6 +142,11 @@ public class ExportsVault {
   }
 
   // FIXME or course, we won't keep exported values like this, it's prototype-only in-memory approach
+  // TODO: Shall keep: SNodeReference to export label (at least now expect ExportLabel to be accessible)
+  //                   SNode of Keeper object (now through myValue.getKeeper())
+  //                   SModelReference / model name for the proxy model
+  //                   identity of input node (concept and node id) to match
+  //                   identity of output node (concept, to instantiate, node id for proxy instance)
   public static class ExportEntry {
     final SNode/*node<ExportLabel>*/ myExportLabel;
     final ExportLabelContext myValue;
