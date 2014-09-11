@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
  * Events in the {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
- *
  */
 public abstract class SRepositoryEvent {
   private SRepository myRepository;

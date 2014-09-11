@@ -66,15 +66,16 @@ public interface ModelAccess {
    * Inside the action it is safe to touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
+
   /**
-   * Represents a batch (!) write action executed with respect to platform undo mechanism.
+   * Represents a write action executed with respect to platform undo mechanism.
    * This method shall be invoked from EDT thread only.
    * Unlike {@link #executeCommandInEDT(Runnable)}, this method executes synchronously
    */
   void executeCommand(Runnable r);
 
   /**
-   * Represents a batch (!) write action executed with respect to platform undo mechanism, runs asynchronously from EDT thread.
+   * Represents a write action executed with respect to platform undo mechanism, runs asynchronously from EDT thread.
    * This method may be invoked from any thread.
    */
   void executeCommandInEDT(Runnable r);
@@ -89,10 +90,22 @@ public interface ModelAccess {
    */
   boolean isCommandAction();
 
+  /**
+   * add/remove listeners to listen to the start/finish of command events
+   *
+   * @see #executeCommand(Runnable)
+   * @param listener listens to command
+   */
   public void addCommandListener(CommandListener listener);
 
   public void removeCommandListener(CommandListener listener);
 
+  /**
+   * add/remove listeners to listen to the start/finish of write action events
+   *
+   * @see #runWriteAction(Runnable)
+   * @param listener listens to write action
+   */
   public void addWriteActionListener(WriteActionListener listener);
 
   public void removeWriteActionListener(WriteActionListener listener);
