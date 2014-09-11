@@ -15,8 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import jetbrains.mps.smodel.BatchWriteActionListener;
-
 /**
  * Grants access to objects in the repository (e.g., models)
  */
@@ -95,7 +93,8 @@ public interface ModelAccess {
 
   public void removeCommandListener(CommandListener listener);
 
-  public void addBatchWriteActionListener(BatchWriteActionListener listener);
+  public void addWriteActionListener(WriteActionListener listener);
 
-  public void removeBatchWriteActionListener(BatchWriteActionListener listener);
+  public void removeWriteActionListener(WriteActionListener listener);
+
 }

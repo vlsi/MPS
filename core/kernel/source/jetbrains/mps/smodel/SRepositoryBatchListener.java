@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.module;
+package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
@@ -25,9 +25,9 @@ import java.util.List;
  * Use it if you're going to perform a major change to the repository
  * (e.g., adding a bunch of modules, removing a whole lot of modules)
  *
- * You have to run {@link org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)} if this is your case.
+ * You have to run {@link jetbrains.mps.smodel.ModelAccess#runBatchWriteAction(Runnable)} if this is your case.
  *
- * @see org.jetbrains.mps.openapi.module.ModelAccess#runBatchWriteAction(Runnable)
+ * @see jetbrains.mps.smodel.ModelAccess#runBatchWriteAction(Runnable)
  */
 public interface SRepositoryBatchListener {
   void batchEventsHappened(List<SRepositoryEvent> events);

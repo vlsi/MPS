@@ -22,6 +22,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.WriteActionListener;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
@@ -38,6 +39,8 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * @see org.jetbrains.mps.openapi.module.ModelAccess
  */
 public abstract class ModelAccess implements ModelCommandProjectExecutor {
+  protected final WriteActionDispatcher myWriteActionDispatcher = new WriteActionDispatcher();
+
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
   private static ModelAccess ourInstance;
@@ -57,8 +60,6 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   };
 
   protected final ConcurrentHashMap<String, ConcurrentMap<Object, Object>> myRepositoryStateCaches = new ConcurrentHashMap<String, ConcurrentMap<Object, Object>>();
-
-  private BatchWriteActionExecutor myBatchWriteActionExecutor = new BatchWriteActionExecutor();
 
   protected ModelAccess() {
 
@@ -213,32 +214,19 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
   }
 
   /**
-   * Modifications to models can be performed from within a managed action, which holds the appropriate write lock
-   * The method obtains such a lock and executes the provided action similar to {@link #runWriteAction(Runnable)}.
-   * However in this case batch (group) repository notifications are sent at the end of the action {@param r}.
-   *
-   * @see SRepositoryBatchListener
-   * @see org.jetbrains.mps.openapi.module.SRepository#addRepositoryBatchListener
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#addWriteActionListener}
    */
   @Deprecated
-  public void runBatchWriteAction(final Runnable r) {
-    myBatchWriteActionExecutor.run(r);
+  public void addWriteActionListener(WriteActionListener listener) {
+    myWriteActionDispatcher.addWriteActionListener(listener);
   }
 
   /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#addBatchWriteActionListener}
+   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeWriteActionListener}
    */
   @Deprecated
-  public void addBatchWriteActionListener(BatchWriteActionListener listener) {
-    myBatchWriteActionExecutor.addBatchCommandListener(listener);
-  }
-
-  /**
-   * @deprecated use {@link org.jetbrains.mps.openapi.module.ModelAccess#removeBatchWriteActionListener}
-   */
-  @Deprecated
-  public void removeBatchWriteActionListener(BatchWriteActionListener listener) {
-    myBatchWriteActionExecutor.removeBatchCommandListener(listener);
+  public void removeWriteActionListener(WriteActionListener listener) {
+    myWriteActionDispatcher.removeWriteActionListener(listener);
   }
 
   private static class ReentrantReadWriteLockEx extends ReentrantReadWriteLock {
@@ -251,4 +239,5 @@ public abstract class ModelAccess implements ModelCommandProjectExecutor {
       return !this.getQueuedWriterThreads().isEmpty();
     }
   }
+
 }

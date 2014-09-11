@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.module.WriteActionListener;
 
 /**
  * ModelAccess basic implementation: all non-command methods are implemented here.
@@ -76,12 +77,12 @@ public abstract class ModelAccessBase implements org.jetbrains.mps.openapi.modul
   }
 
   @Override
-  public void addBatchWriteActionListener(BatchWriteActionListener listener) {
-    ModelAccess.instance().addBatchWriteActionListener(listener);
+  public void addWriteActionListener(WriteActionListener listener) {
+    ModelAccess.instance().addWriteActionListener(listener);
   }
 
   @Override
-  public void removeBatchWriteActionListener(BatchWriteActionListener listener) {
-    ModelAccess.instance().removeBatchWriteActionListener(listener);
+  public void removeWriteActionListener(WriteActionListener listener) {
+    ModelAccess.instance().removeWriteActionListener(listener);
   }
 }

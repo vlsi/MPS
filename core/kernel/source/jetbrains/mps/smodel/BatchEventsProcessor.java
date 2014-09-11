@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.extapi.module;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.annotations.NotNull;

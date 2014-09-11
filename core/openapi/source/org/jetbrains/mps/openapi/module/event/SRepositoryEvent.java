@@ -19,9 +19,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
- * Events in {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
- * Using Visitor pattern to process a list of events in the
- * {@link org.jetbrains.mps.openapi.module.SRepositoryBatchListener#batchEventsHappened(java.util.List)}
+ * Events in the {@link org.jetbrains.mps.openapi.module.SRepositoryListener}
+ *
  */
 public abstract class SRepositoryEvent {
   private SRepository myRepository;

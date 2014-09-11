@@ -20,12 +20,12 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.CommandListener;
+import org.jetbrains.mps.openapi.module.WriteActionListener;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class DefaultModelAccess extends ModelAccess {
-
   public DefaultModelAccess() {
   }
 
@@ -53,7 +53,7 @@ public class DefaultModelAccess extends ModelAccess {
     getWriteLock().lock();
     try {
       clearRepositoryStateCaches();
-      r.run();
+      myWriteActionDispatcher.run(r);
     } finally {
       getWriteLock().unlock();
     }
@@ -86,7 +86,7 @@ public class DefaultModelAccess extends ModelAccess {
     getWriteLock().lock();
     try {
       clearRepositoryStateCaches();
-      return c.compute();
+      return myWriteActionDispatcher.compute(c);
     } finally {
       getWriteLock().unlock();
     }
@@ -180,7 +180,7 @@ public class DefaultModelAccess extends ModelAccess {
     if (getWriteLock().tryLock()) {
       try {
         clearRepositoryStateCaches();
-        r.run();
+        myWriteActionDispatcher.run(r);
       } finally {
         getWriteLock().unlock();
       }
@@ -195,7 +195,7 @@ public class DefaultModelAccess extends ModelAccess {
     if (getWriteLock().tryLock()) {
       try {
         clearRepositoryStateCaches();
-        return c.compute();
+        return myWriteActionDispatcher.compute(c);
       } finally {
         getWriteLock().unlock();
       }
@@ -236,11 +236,11 @@ public class DefaultModelAccess extends ModelAccess {
     return result;
   }
 
-
   @Override
   public boolean tryWriteInCommand(Runnable r, Project p) {
     return tryWrite(r);
   }
+
 
   @Override
   public <T> T tryWriteInCommand(Computable<T> r, Project p) {
@@ -306,10 +306,12 @@ public class DefaultModelAccess extends ModelAccess {
 
   @Override
   public void addCommandListener(CommandListener l) {
+    LOG.warn("Adding command listener to DefaultModelAccess: can't run commands and listen to them");
   }
 
   @Override
   public void removeCommandListener(CommandListener l) {
+    LOG.warn("Removing command listener from DefaultModelAccess: can't run commands and listen to them");
   }
 
   @Override

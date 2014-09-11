@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.extapi.module;
 
-import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
 /**

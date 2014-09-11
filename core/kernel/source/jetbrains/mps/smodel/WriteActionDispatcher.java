@@ -15,65 +15,65 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.module.WriteActionListener;
 
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/**
-* Created by Alex Pyshkin on 9/2/14.
-*/
-public class BatchWriteActionExecutor {
-  private static final Logger LOG = LogManager.getLogger(BatchWriteActionExecutor.class);
+public final class WriteActionDispatcher {
+  private static final Logger LOG = LogManager.getLogger(WriteActionDispatcher.class);
+  private final List<WriteActionListener> myListeners = new CopyOnWriteArrayList<WriteActionListener>();
 
-  private final List<BatchWriteActionListener> myListeners = new CopyOnWriteArrayList<BatchWriteActionListener>();
+  private volatile int myWriteActionLevel = 0;
 
-  private volatile int myBatchCommandLevel = 0;
-
-  public void run(final Runnable batchCommand) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        if (myBatchCommandLevel == 0) onCommandStarted();
-        ++myBatchCommandLevel;
-        try {
-          batchCommand.run();
-        } finally {
-          --myBatchCommandLevel;
-          if (myBatchCommandLevel == 0) onCommandFinished();
-        }
-      }
-    });
+  public void run(Runnable r) {
+    if (myWriteActionLevel == 0) onActionStarted();
+    ++myWriteActionLevel;
+    try {
+      r.run();
+    } finally {
+      --myWriteActionLevel;
+      if (myWriteActionLevel == 0) onActionFinished();
+    }
   }
 
-  private void onCommandStarted() {
-    for (BatchWriteActionListener listener : myListeners) {
+  public <T> T compute(Computable<T> c) {
+    ComputeRunnable<T> cr = new ComputeRunnable<T>(c);
+    run(cr);
+    return cr.getResult();
+  }
+
+  private void onActionStarted() {
+    for (WriteActionListener listener : myListeners) {
       try {
-        listener.batchStarted();
+        listener.actionStarted();
       } catch (Throwable t) {
         LOG.error(t.getMessage(), t);
       }
     }
   }
 
-  private void onCommandFinished() {
-    for (BatchWriteActionListener listener : myListeners) {
+  private void onActionFinished() {
+    for (WriteActionListener listener : myListeners) {
       try {
-        listener.batchFinished();
+        listener.actionFinished();
       } catch (Throwable t) {
         LOG.error(t.getMessage(), t);
       }
     }
   }
 
-  public void addBatchCommandListener(BatchWriteActionListener listener) {
+  public void addWriteActionListener(WriteActionListener listener) {
     if (myListeners.contains(listener))
       throw new ListenersConsistenceException("Adding the same listener again");
     myListeners.add(listener);
   }
 
-  public void removeBatchCommandListener(BatchWriteActionListener listener) {
+  public void removeWriteActionListener(WriteActionListener listener) {
     if (!myListeners.contains(listener))
       throw new ListenersConsistenceException("The listener you trying to remove does not exist");
     myListeners.remove(listener);

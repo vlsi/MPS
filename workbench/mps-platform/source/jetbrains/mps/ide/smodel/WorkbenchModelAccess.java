@@ -153,7 +153,7 @@ public class WorkbenchModelAccess extends ModelAccess {
         getWriteLock().lock();
         try {
           clearRepositoryStateCaches();
-          r.run();
+          myWriteActionDispatcher.run(r);
         } finally {
           getWriteLock().unlock();
         }
@@ -231,12 +231,17 @@ public class WorkbenchModelAccess extends ModelAccess {
             ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
               @Override
               public void run() {
-                ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                final ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
                 progressIndicator.pushState();
                 getWriteLock().lock();
                 try {
                   clearRepositoryStateCaches();
-                  process.run(new ProgressMonitorAdapter(progressIndicator));
+                  myWriteActionDispatcher.run(new Runnable() {
+                    @Override
+                    public void run() {
+                      process.run(new ProgressMonitorAdapter(progressIndicator));
+                    }
+                  });
                 } finally {
                   getWriteLock().unlock();
                   progressIndicator.popState();
@@ -390,7 +395,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               clearRepositoryStateCaches();
-              return c.compute();
+              return myWriteActionDispatcher.compute(c);
             } finally {
               getWriteLock().unlock();
             }
@@ -457,7 +462,7 @@ public class WorkbenchModelAccess extends ModelAccess {
           if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
             try {
               clearRepositoryStateCaches();
-              new CommandRunnable(r, project).run();
+              myWriteActionDispatcher.run(new CommandRunnable(r, project));
             } finally {
               getWriteLock().unlock();
             }
@@ -705,7 +710,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
     @Override
     public void run() {
-      ModelAccess.instance().runBatchWriteAction(new Runnable() {
+      ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
           incCommandLevel();
@@ -829,4 +834,5 @@ public class WorkbenchModelAccess extends ModelAccess {
       return (int) (this.alarmTimeMillis - ((DelayedInterrupt) that).alarmTimeMillis);
     }
   }
+
 }

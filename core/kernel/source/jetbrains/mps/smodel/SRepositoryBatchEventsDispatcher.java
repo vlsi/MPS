@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.extapi.module.BatchEventsProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.module.SRepositoryBatchListener;
+import org.jetbrains.mps.openapi.module.WriteActionListener;
 import org.jetbrains.mps.openapi.module.event.SRepositoryEvent;
 
 import java.util.List;
@@ -32,9 +31,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * moduleRemoved,
  * etc.,
  * and dispatching batch (group) events to listeners.
- * Created by Alex Pyshkin on 9/2/14.
  */
-public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListener {
+public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   private static final Logger LOG = LogManager.getLogger(SRepositoryBatchEventsDispatcher.class);
 
   private final BatchEventsProcessor myBatchEventsProcessor;
@@ -50,22 +48,22 @@ public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListene
   }
 
   public void init() {
-    myRepository.getModelAccess().addBatchWriteActionListener(this);
+    myRepository.getModelAccess().addWriteActionListener(this);
   }
 
   public void dispose() {
-    myRepository.getModelAccess().removeBatchWriteActionListener(this);
+    myRepository.getModelAccess().removeWriteActionListener(this);
   }
 
   @Override
-  public void batchStarted() {
+  public void actionStarted() {
     // not starting batching if there are no listeners
     if (myListeners.isEmpty()) return;
     myBatchEventsProcessor.startBatching();
   }
 
   @Override
-  public void batchFinished() {
+  public void actionFinished() {
     if (myListeners.isEmpty()) return;
     List<SRepositoryEvent> batchedEvents = myBatchEventsProcessor.finishBatching();
     fireModuleEvents(batchedEvents);
@@ -73,13 +71,13 @@ public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListene
 
   public final void addRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
     if (myBatchEventsProcessor.isBatchStarted())
-      throw new ListenersChangeDuringBatchAction("Cannot attach listeners within batch action");
+      throw new ListenersChangeDuringBatchException("Cannot attach listeners within batch action");
     myListeners.add(listener);
   }
 
   public final void removeRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
     if (myBatchEventsProcessor.isBatchStarted())
-      throw new ListenersChangeDuringBatchAction("Cannot detach listeners within batch action");
+      throw new ListenersChangeDuringBatchException("Cannot detach listeners within batch action");
     myListeners.remove(listener);
   }
 
@@ -91,12 +89,6 @@ public class SRepositoryBatchEventsDispatcher implements BatchWriteActionListene
       } catch (Throwable t) {
         LOG.error(t);
       }
-    }
-  }
-
-  private static class ListenersChangeDuringBatchAction extends RuntimeException {
-    public ListenersChangeDuringBatchAction(String message) {
-      super(message);
     }
   }
 }
