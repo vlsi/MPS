@@ -1949,7 +1949,7 @@
                         <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="1238774271186" nodeInfo="nn">
                           <node role="argument" roleId="tp2q.1160666822012" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6012793257438901474" nodeInfo="nn">
                             <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7hml.~ChildSubstituteActionsHelper" resolveInfo="ChildSubstituteActionsHelper" />
-                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~ChildSubstituteActionsHelper%dcreateDefaultSubstituteActions(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%daction%dIChildNodeSetter,jetbrains%dmps%dsmodel%dIOperationContext)%cjava%dutil%dList" resolveInfo="createDefaultSubstituteActions" />
+                            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~ChildSubstituteActionsHelper%dcreateDefaultSubstituteActions(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%daction%dIChildNodeSetter)%cjava%dutil%dList" resolveInfo="createDefaultSubstituteActions" />
                             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086108" nodeInfo="nn">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1177353851581" resolveInfo="item" />
                             </node>
@@ -1976,9 +1976,6 @@
                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6012793257438901486" nodeInfo="nn">
                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~NodeSubstituteActionsFactoryContext%dgetChildSetter()%cjetbrains%dmps%dsmodel%daction%dIChildNodeSetter" resolveInfo="getChildSetter" />
                               </node>
-                            </node>
-                            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151613119" nodeInfo="nn">
-                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1177340188430" resolveInfo="operationContext" />
                             </node>
                           </node>
                         </node>
@@ -5880,7 +5877,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tp2q.AddAllElementsOperation" typeId="tp2q.1160666733551" id="1238774271210" nodeInfo="nn">
               <node role="argument" roleId="tp2q.1160666822012" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6012793257439360681" nodeInfo="nn">
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7hml.~ChildSubstituteActionsHelper" resolveInfo="ChildSubstituteActionsHelper" />
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~ChildSubstituteActionsHelper%dcreateDefaultSubstituteActions(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%daction%dIChildNodeSetter,jetbrains%dmps%dsmodel%dIOperationContext)%cjava%dutil%dList" resolveInfo="createDefaultSubstituteActions" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~ChildSubstituteActionsHelper%dcreateDefaultSubstituteActions(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,jetbrains%dmps%dsmodel%daction%dIChildNodeSetter)%cjava%dutil%dList" resolveInfo="createDefaultSubstituteActions" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp25.ConceptRefExpression" typeId="tp25.1172424058054" id="1220273687563" nodeInfo="nn">
                   <link role="conceptDeclaration" roleId="tp25.1172424100906" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
                   <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.ReferenceMacro" typeId="tpf8.1088761943574" id="1220273696370" nodeInfo="nn">
@@ -5922,9 +5919,6 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6012793257439360691" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7hml.~NodeSubstituteActionsFactoryContext%dgetChildSetter()%cjetbrains%dmps%dsmodel%daction%dIChildNodeSetter" resolveInfo="getChildSetter" />
                   </node>
-                </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905151607643" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1180136156078" resolveInfo="operationContext" />
                 </node>
               </node>
             </node>
