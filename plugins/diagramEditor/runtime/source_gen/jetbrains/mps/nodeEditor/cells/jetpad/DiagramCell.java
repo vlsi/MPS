@@ -63,11 +63,6 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
-import javax.swing.Icon;
-import jetbrains.mps.smodel.SNodeUtil;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
 
 public abstract class DiagramCell extends AbstractJetpadCell implements EditorCell_WithComponent, MapperFactory<SNode, DiagramView> {
   private Mapper<SNode, ViewContainer> myRootMapper;
@@ -499,17 +494,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   /*package*/ static class DiagramSubstituteActionWraper extends NodeSubstituteActionWrapper {
     private DiagramSubstituteActionWraper(SubstituteAction action) {
       super(action);
-    }
-    @Override
-    public Icon getIconFor(String string) {
-      Icon icon;
-      SNode iconNode = getIconNode(string);
-      if (iconNode != null) {
-        icon = ((SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !((isReferentPresentation()))) ? IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode));
-      } else {
-        icon = IdeIcons.DEFAULT_ICON;
-      }
-      return icon;
     }
   }
 
