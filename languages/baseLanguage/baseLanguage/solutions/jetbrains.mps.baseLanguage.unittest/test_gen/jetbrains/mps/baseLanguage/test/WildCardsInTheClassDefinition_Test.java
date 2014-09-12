@@ -11,36 +11,36 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 @MPSLaunch
-public class WildcardsInClassDefinition_Test extends BaseTransformationTest {
+public class WildCardsInTheClassDefinition_Test extends BaseTransformationTest {
   @Test
   public void test_NodeSupertypeMayNotSpecifyCheck6923385624927497212() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624927497212", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624927497212", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170692700619() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692700619", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692700619", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170692700629() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692700629", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692700629", true);
   }
   @Test
   public void test_NodeSupertypeMayNotSpecifyCheck6923385624928818605() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624928818605", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_NodeSupertypeMayNotSpecifyCheck6923385624928818605", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170694398489() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170694398489", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170694398489", true);
   }
   @Test
   public void test_ErrorMessagesCheck8187342170692842210() throws Throwable {
     this.initTest("${mps_home}", "r:00000000-0000-4000-0000-011c895902c7(jetbrains.mps.baseLanguage.test@tests)", false);
-    this.runTest("jetbrains.mps.baseLanguage.test.WildcardsInClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692842210", true);
+    this.runTest("jetbrains.mps.baseLanguage.test.WildCardsInTheClassDefinition_Test$TestBody", "test_ErrorMessagesCheck8187342170692842210", true);
   }
   @MPSLaunch
   public static class TestBody extends BaseTestBody {

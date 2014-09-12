@@ -11,6 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class TryStatement_FinallyBlock_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -28,12 +31,20 @@ public class TryStatement_FinallyBlock_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, SNode node) {
+    public void execute_internal(EditorContext editorContext, final SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
         SLinkOperations.setTarget(tryCatchStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)));
+        SNodeOperations.deleteNode(node);
+      } else {
+        List<SNode> statements = SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true);
+        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SNodeOperations.insertPrevSiblingChild(node, it);
+          }
+        });
         SNodeOperations.deleteNode(node);
       }
     }
@@ -49,12 +60,20 @@ public class TryStatement_FinallyBlock_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-    public void execute_internal(EditorContext editorContext, SNode node) {
+    public void execute_internal(EditorContext editorContext, final SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
         SLinkOperations.setTarget(tryCatchStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
         ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)));
+        SNodeOperations.deleteNode(node);
+      } else {
+        List<SNode> statements = SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true);
+        ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SNodeOperations.insertPrevSiblingChild(node, it);
+          }
+        });
         SNodeOperations.deleteNode(node);
       }
     }

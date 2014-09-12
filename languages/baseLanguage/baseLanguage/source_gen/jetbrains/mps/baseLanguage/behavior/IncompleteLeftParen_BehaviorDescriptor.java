@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 
-public class IncompleteLeftParen_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
+public class IncompleteLeftParen_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements IIncompleteParen_BehaviorDescriptor {
   public IncompleteLeftParen_BehaviorDescriptor() {
   }
   @Override

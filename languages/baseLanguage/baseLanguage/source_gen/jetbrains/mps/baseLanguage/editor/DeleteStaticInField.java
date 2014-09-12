@@ -7,6 +7,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 
 public class DeleteStaticInField {
@@ -23,6 +24,10 @@ public class DeleteStaticInField {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) {
+        editorContext.flushEvents();
+        return;
+      }
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
   }
@@ -35,6 +40,10 @@ public class DeleteStaticInField {
       this.execute_internal(editorContext, this.myNode);
     }
     public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface")) {
+        editorContext.flushEvents();
+        return;
+      }
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
     }
   }

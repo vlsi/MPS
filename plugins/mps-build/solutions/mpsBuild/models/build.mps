@@ -5649,6 +5649,12 @@
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
           </node>
         </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5289004354307719572" nodeInfo="nn">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5289004354307719573" nodeInfo="ng">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="8939513996048536566" resolveInfo="jetbrains.mps.kernel" />
+          </node>
+        </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="7507666976388975178" nodeInfo="ng">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388975179" nodeInfo="nn">
@@ -5668,12 +5674,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5289004354307719572" nodeInfo="nn">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5289004354307719573" nodeInfo="ng">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="false" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="8939513996048536566" resolveInfo="jetbrains.mps.kernel" />
           </node>
         </node>
       </node>
@@ -22634,6 +22634,9 @@
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678846" nodeInfo="ng">
       <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx2048m -XX:MaxPermSize=350m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
     </node>
+    <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="4003168466685569175" nodeInfo="ng">
+      <property name="options" nameId="s7om.3885435385580582733" value="-Dide.mac.message.dialogs.as.sheets=false" />
+    </node>
     <node role="vmOptions64" roleId="s7om.2693344784283221851" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="2693344784284678847" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
       <property name="options" nameId="s7om.3885435385580582733" value="-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005" />
@@ -22667,6 +22670,9 @@
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903723" nodeInfo="ng">
       <property name="options" nameId="s7om.3885435385580582733" value="-client -Xss1024k -ea -Xmx950m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Xverify:none -Dfile.encoding=UTF-8 -Dapple.awt.graphics.UseQuartz=true -Didea.paths.selector=MPS32" />
+    </node>
+    <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="4003168466685582409" nodeInfo="ng">
+      <property name="options" nameId="s7om.3885435385580582733" value="-Dide.mac.message.dialogs.as.sheets=false" />
     </node>
     <node role="vmOptions" roleId="s7om.3885435385580627556" type="s7om.SimpleVmOptions" typeId="s7om.3885435385580582732" id="716066598061903724" nodeInfo="ng">
       <property name="commented" nameId="s7om.5842819808956906658" value="true" />
