@@ -12,6 +12,7 @@ import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_DataDependency_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -40,10 +41,14 @@ public class typeof_DataDependency_InferenceRule extends AbstractInferenceRule_R
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, false);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_1);
-    quotedNode_2.addChild("elementType", quotedNode_3);
+    SNode quotedNode_4 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", null, null, false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, facade.createModelReference("8865b7a8-5271-43d3-884c-6fd1d9cfdd34/f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)"), facade.createNodeId("~SModule")));
+    quotedNode_2.addChild("keyType", quotedNode_3);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "concept", (SNode) parameter_1);
+    quotedNode_2.addChild("valueType", quotedNode_4);
     return quotedNode_2;
   }
 }
