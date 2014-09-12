@@ -28352,12 +28352,14 @@
         <property name="isFinal" nameId="tpee.1176718929932" value="true" />
         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="197036899236393895" nodeInfo="nn" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="197036899236393892" nodeInfo="in" />
-        <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="197036899236407980" nodeInfo="ng">
-          <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
-          <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
-          <property name="selectionStart" nameId="tp5g.6268941039745498163" value="3" />
-          <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="3" />
-          <property name="cellId" nameId="tp5g.1229194968595" value="VDNCC_property_name" />
+        <node role="initializer" roleId="tpee.1068431790190" type="tpee.Expression" typeId="tpee.1068431790191" id="6467250624688189009" nodeInfo="nn">
+          <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6467250624688201991" nodeInfo="ng">
+            <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
+            <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
+            <property name="selectionStart" nameId="tp5g.6268941039745498163" value="0" />
+            <property name="selectionEnd" nameId="tp5g.6268941039745498165" value="0" />
+            <property name="cellId" nameId="tp5g.1229194968595" value="Custom_1ltshm_a0" />
+          </node>
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="197036899236391066" nodeInfo="nn" />

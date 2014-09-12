@@ -22,8 +22,8 @@ public class NativeAbstract_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8347245235044888304", "8347245235044888311");
-      this.typeString("abstract");
+      initEditor("8347245235043448590", "8347245235043448594");
+      this.typeString("native abstract ");
     }
   }
 }
