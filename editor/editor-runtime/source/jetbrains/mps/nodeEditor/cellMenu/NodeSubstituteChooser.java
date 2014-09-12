@@ -38,7 +38,6 @@ import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
@@ -454,7 +453,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void relayoutPopupMenu() {
-   if (myPopupActivated) {
+    if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
     }
@@ -738,19 +737,13 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       if (!myLightweightMode) {
         try {
-          Icon icon = null;
-          // Remove this if() after MPS 3.0
-          if (action instanceof INodeSubstituteAction) {
-            icon = ((INodeSubstituteAction) action).getIconFor(pattern);
-          }
-          if (icon == null) {
-            SNode iconNode = action.getIconNode(pattern);
-            if (iconNode != null) {
-              icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
-                  IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
-            } else {
-              icon = IdeIcons.DEFAULT_ICON;
-            }
+          Icon icon;
+          SNode iconNode = action.getIconNode(pattern);
+          if (iconNode != null) {
+            icon = (SNodeUtil.isInstanceOfConceptDeclaration(iconNode) && !(action.isReferentPresentation())) ?
+                IconManager.getIconForConceptFQName(NameUtil.nodeFQName(iconNode)) : IconManager.getIconFor(iconNode);
+          } else {
+            icon = IdeIcons.DEFAULT_ICON;
           }
           myLeft.setIcon(icon);
         } catch (Throwable t) {
@@ -811,6 +804,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       Dimension oldPreferredSize = myLeft.getPreferredSize();
       myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
     }
+
     private String colorToHtml(Color color) {
       String rgb = Integer.toHexString(color.getRGB());
       return rgb.substring(2, rgb.length());

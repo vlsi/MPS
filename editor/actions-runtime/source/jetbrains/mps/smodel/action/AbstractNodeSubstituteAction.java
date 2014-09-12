@@ -18,6 +18,7 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
 import org.apache.log4j.LogManager;
@@ -25,9 +26,7 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.Icon;
-
-public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
+public abstract class AbstractNodeSubstituteAction implements SubstituteAction {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
   private SNode mySourceNode;
   private Object myParameterObject;
@@ -84,11 +83,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   @Override
   public boolean isReferentPresentation() {
     return false;
-  }
-
-  @Override
-  public Icon getIconFor(String pattern) {
-    return null;
   }
 
   @Override

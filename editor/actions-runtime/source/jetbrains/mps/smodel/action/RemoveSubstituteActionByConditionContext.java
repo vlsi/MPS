@@ -34,16 +34,6 @@ public class RemoveSubstituteActionByConditionContext {
     myChildConcept = childConcept;
   }
 
-  /**
-   * Should be removed after MPS 3.0 release
-   *
-   * @deprecated since MPS 3.0
-   */
-  @Deprecated
-  public Iterator<INodeSubstituteAction> getActions() {
-    return (Iterator) myActions;
-  }
-
   public Iterator<SubstituteAction> getSubstituteActions() {
     return myActions;
   }

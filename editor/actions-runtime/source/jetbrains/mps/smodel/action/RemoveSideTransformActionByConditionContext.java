@@ -29,16 +29,6 @@ public class RemoveSideTransformActionByConditionContext {
     mySourceNode = sourceNode;
   }
 
-  /**
-   * Method should be removed after MPS 3.0
-   *
-   * @deprecated since MPS 3.0 use getSideTransformActions() instead
-   */
-  @Deprecated
-  public Iterator<INodeSubstituteAction> getActions() {
-    return (Iterator) myActions;
-  }
-
   public Iterator<SubstituteAction> getSideTransformActions() {
     return myActions;
   }
