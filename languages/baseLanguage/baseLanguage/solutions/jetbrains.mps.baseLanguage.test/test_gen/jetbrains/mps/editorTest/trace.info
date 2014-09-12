@@ -1714,6 +1714,72 @@
       <unit id="1989240834983537719" at="12,0,34,0" name="jetbrains.mps.editorTest.SurroundExpressionWithParenthesis_Test" />
     </file>
   </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2138084782796863470">
+    <file name="FieldInitializerRequired1_Test.java">
+      <node id="2138084782796863470" at="15,65,16,107" concept="2" />
+      <node id="2138084782796863470" at="16,107,17,106" concept="2" />
+      <node id="2138084782796863470" at="24,51,25,63" concept="2" />
+      <node id="2138084782796863472" at="25,63,26,40" concept="2" />
+      <node id="2138084782796863470" at="12,0,14,0" concept="1" trace="FieldInitializerRequired1_Test#()V" />
+      <node id="2138084782796863470" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2138084782796863470" at="14,0,19,0" concept="5" trace="test_FieldInitializerRequired1#()V" />
+      <node id="2138084782796863470" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2138084782796863470" at="12,43,12,43" />
+      <scope id="2138084782796863470" at="21,23,21,23" />
+      <scope id="2138084782796863470" at="12,0,14,0" />
+      <scope id="2138084782796863470" at="15,65,17,106" />
+      <scope id="2138084782796863470" at="21,0,23,0" />
+      <scope id="2138084782796863470" at="24,51,26,40" />
+      <scope id="2138084782796863470" at="14,0,19,0" />
+      <scope id="2138084782796863470" at="23,0,28,0" />
+      <unit id="2138084782796863470" at="19,0,29,0" name="jetbrains.mps.editorTest.FieldInitializerRequired1_Test$TestBody" />
+      <unit id="2138084782796863470" at="10,0,30,0" name="jetbrains.mps.editorTest.FieldInitializerRequired1_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2138084782798002745">
+    <file name="FieldInitializerRequired2_Test.java">
+      <node id="2138084782798002745" at="15,65,16,107" concept="2" />
+      <node id="2138084782798002745" at="16,107,17,106" concept="2" />
+      <node id="2138084782798002745" at="24,51,25,63" concept="2" />
+      <node id="2138084782798002747" at="25,63,26,40" concept="2" />
+      <node id="2138084782798002745" at="12,0,14,0" concept="1" trace="FieldInitializerRequired2_Test#()V" />
+      <node id="2138084782798002745" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2138084782798002745" at="14,0,19,0" concept="5" trace="test_FieldInitializerRequired2#()V" />
+      <node id="2138084782798002745" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2138084782798002745" at="12,43,12,43" />
+      <scope id="2138084782798002745" at="21,23,21,23" />
+      <scope id="2138084782798002745" at="12,0,14,0" />
+      <scope id="2138084782798002745" at="15,65,17,106" />
+      <scope id="2138084782798002745" at="21,0,23,0" />
+      <scope id="2138084782798002745" at="24,51,26,40" />
+      <scope id="2138084782798002745" at="14,0,19,0" />
+      <scope id="2138084782798002745" at="23,0,28,0" />
+      <unit id="2138084782798002745" at="19,0,29,0" name="jetbrains.mps.editorTest.FieldInitializerRequired2_Test$TestBody" />
+      <unit id="2138084782798002745" at="10,0,30,0" name="jetbrains.mps.editorTest.FieldInitializerRequired2_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/2138084782799130518">
+    <file name="FieldInitializerRequired3_Test.java">
+      <node id="2138084782799130518" at="15,65,16,107" concept="2" />
+      <node id="2138084782799130518" at="16,107,17,106" concept="2" />
+      <node id="2138084782799130518" at="24,51,25,63" concept="2" />
+      <node id="2138084782799130520" at="25,63,26,40" concept="2" />
+      <node id="2138084782799130518" at="12,0,14,0" concept="1" trace="FieldInitializerRequired3_Test#()V" />
+      <node id="2138084782799130518" at="21,0,23,0" concept="1" trace="TestBody#()V" />
+      <node id="2138084782799130518" at="14,0,19,0" concept="5" trace="test_FieldInitializerRequired3#()V" />
+      <node id="2138084782799130518" at="23,0,28,0" concept="5" trace="testMethodImpl#()V" />
+      <scope id="2138084782799130518" at="12,43,12,43" />
+      <scope id="2138084782799130518" at="21,23,21,23" />
+      <scope id="2138084782799130518" at="12,0,14,0" />
+      <scope id="2138084782799130518" at="15,65,17,106" />
+      <scope id="2138084782799130518" at="21,0,23,0" />
+      <scope id="2138084782799130518" at="24,51,26,40" />
+      <scope id="2138084782799130518" at="14,0,19,0" />
+      <scope id="2138084782799130518" at="23,0,28,0" />
+      <unit id="2138084782799130518" at="19,0,29,0" name="jetbrains.mps.editorTest.FieldInitializerRequired3_Test$TestBody" />
+      <unit id="2138084782799130518" at="10,0,30,0" name="jetbrains.mps.editorTest.FieldInitializerRequired3_Test" />
+    </file>
+  </root>
   <root nodeRef="r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)/222793074662091829">
     <file name="Post_ThisSavingClassConceptUnset_Test.java">
       <node id="222793074662091829" at="15,72,16,107" concept="2" />
