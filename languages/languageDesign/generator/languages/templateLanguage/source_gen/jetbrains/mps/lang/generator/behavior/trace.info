@@ -57,6 +57,9 @@
     <file name="TemplateParameterDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.TemplateParameterDeclaration_BehaviorDescriptor" />
     </file>
+    <file name="ExportEntry_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.ExportEntry_BehaviorDescriptor" />
+    </file>
     <file name="MappingLabelDeclaration_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.MappingLabelDeclaration_BehaviorDescriptor" />
     </file>
@@ -64,7 +67,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.MappingConfiguration_Condition_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,178,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,184,0" name="jetbrains.mps.lang.generator.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="TemplateFragment_ContextNodeQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_ContextNodeQuery_BehaviorDescriptor" />
@@ -77,6 +80,9 @@
     </file>
     <file name="TemplateDeclaration_BehaviorDescriptor.java">
       <unit at="13,0,36,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="TrivialNodeId_BehaviorDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_BehaviorDescriptor" />
     </file>
     <file name="Weaving_MappingRule_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.Weaving_MappingRule_BehaviorDescriptor" />
@@ -156,6 +162,9 @@
     <file name="LabelMacro_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" />
     </file>
+    <file name="TrivialModelId_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" />
+    </file>
     <file name="TemplateSwitchReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" />
     </file>
@@ -182,6 +191,9 @@
     </file>
     <file name="SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor" />
+    </file>
+    <file name="ModelIdentity_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
     </file>
     <file name="TemplateFragment_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
@@ -219,6 +231,9 @@
     <file name="MarshalFunction_BehaviorDescriptor.java">
       <unit at="10,0,21,0" name="jetbrains.mps.lang.generator.behavior.MarshalFunction_BehaviorDescriptor" />
     </file>
+    <file name="NodeIdentity_BehaviorDescriptor.java">
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.NodeIdentity_BehaviorDescriptor" />
+    </file>
     <file name="TemplateFunctionParameter_mainContextNode_BehaviorDescriptor.java">
       <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateFunctionParameter_mainContextNode_BehaviorDescriptor" />
     </file>
@@ -255,20 +270,20 @@
     <file name="TemplateCallMacro_BehaviorDescriptor.java">
       <unit at="8,0,25,0" name="jetbrains.mps.lang.generator.behavior.TemplateCallMacro_BehaviorDescriptor" />
     </file>
-    <file name="DropRootRule_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
-    </file>
     <file name="ExportLabelParameter_inputNode_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.ExportLabelParameter_inputNode_BehaviorDescriptor" />
+    </file>
+    <file name="DropRootRule_BehaviorDescriptor.java">
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.DropRootRule_BehaviorDescriptor" />
     </file>
     <file name="RootTemplateAnnotation_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.RootTemplateAnnotation_BehaviorDescriptor" />
     </file>
-    <file name="CreateRootRule_Condition_BehaviorDescriptor.java">
-      <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" />
-    </file>
     <file name="PropertyMacro_GetPropertyValue_BehaviorDescriptor.java">
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_GetPropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="CreateRootRule_Condition_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.CreateRootRule_Condition_BehaviorDescriptor" />
     </file>
     <file name="PropertyMacro_BehaviorDescriptor.java">
       <unit at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.PropertyMacro_BehaviorDescriptor" />
@@ -2668,6 +2683,71 @@
         <var name="thisNode" id="8952337903384729124" />
       </scope>
       <unit id="8952337903384729124" at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TemplateDeclaration_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546941555841">
+    <file name="NodeIdentity_Behavior.java">
+      <node id="9032177546941802637" at="14,108,15,115" concept="9" />
+      <node id="9032177546941705638" at="15,115,16,80" concept="4" />
+      <node id="9032177546941796492" at="16,80,17,68" concept="4" />
+      <node id="9032177546941802716" at="17,68,18,14" concept="10" />
+      <node id="9032177546941555841" at="12,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9032177546941555841" at="14,0,20,0" concept="13" trace="call_create_9032177546941796951#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="9032177546941555997" at="12,43,12,43" />
+      <scope id="9032177546941555841" at="12,0,14,0">
+        <var name="thisNode" id="9032177546941555841" />
+      </scope>
+      <scope id="9032177546941796954" at="14,108,18,14">
+        <var name="rv" id="9032177546941802638" />
+      </scope>
+      <scope id="9032177546941555841" at="14,0,20,0">
+        <var name="n" id="9032177546941797003" />
+        <var name="thisConcept" id="9032177546941555841" />
+        <var name="where" id="9032177546941801999" />
+      </scope>
+      <unit id="9032177546941555841" at="11,0,21,0" name="jetbrains.mps.lang.generator.behavior.NodeIdentity_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546941580698">
+    <file name="TrivialNodeId_Behavior.java">
+      <node id="9032177546941826181" at="13,93,14,105" concept="9" />
+      <node id="9032177546941825594" at="14,105,15,104" concept="10" />
+      <node id="9032177546941580698" at="11,0,13,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9032177546941580698" at="13,0,17,0" concept="13" trace="virtual_instantiate_9032177546941558391#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="9032177546941580700" at="11,43,11,43" />
+      <scope id="9032177546941580698" at="11,0,13,0">
+        <var name="thisNode" id="9032177546941580698" />
+      </scope>
+      <scope id="9032177546941620579" at="13,93,15,104">
+        <var name="c" id="9032177546941826184" />
+      </scope>
+      <scope id="9032177546941580698" at="13,0,17,0">
+        <var name="model" id="9032177546941620580" />
+        <var name="thisNode" id="9032177546941580698" />
+      </scope>
+      <unit id="9032177546941580698" at="10,0,18,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546942789355">
+    <file name="ModelIdentity_Behavior.java">
+      <node id="9032177546942793239" at="14,118,15,116" concept="9" />
+      <node id="9032177546942792603" at="15,116,16,88" concept="4" />
+      <node id="9032177546942799556" at="16,88,17,14" concept="10" />
+      <node id="9032177546942789355" at="12,0,14,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9032177546942789355" at="14,0,19,0" concept="13" trace="call_create_9032177546942789358#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="9032177546942789357" at="12,43,12,43" />
+      <scope id="9032177546942789355" at="12,0,14,0">
+        <var name="thisNode" id="9032177546942789355" />
+      </scope>
+      <scope id="9032177546942789361" at="14,118,17,14">
+        <var name="rv" id="9032177546942793240" />
+      </scope>
+      <scope id="9032177546942789355" at="14,0,19,0">
+        <var name="thisConcept" id="9032177546942789355" />
+        <var name="toIdentify" id="9032177546942789378" />
+        <var name="where" id="9032177546942789370" />
+      </scope>
+      <unit id="9032177546942789355" at="11,0,20,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/982871510068041617">
