@@ -28,9 +28,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by Alex Pyshkin on 6/4/14.
- */
 public class ClassLoadingChecker implements MPSClassesListener {
   private static final Logger LOG = LogManager.getLogger(ClassLoadingChecker.class);
 

@@ -31,6 +31,10 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * moduleRemoved,
  * etc.,
  * and dispatching batch (group) events to listeners.
+ * It listens the start and finish of write action. It starts batching events at the start of write action
+ * and yields the result at the end of write action.
+ *
+ * @see org.jetbrains.mps.openapi.module.ModelAccess#runWriteAction(Runnable)
  */
 public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   private static final Logger LOG = LogManager.getLogger(SRepositoryBatchEventsDispatcher.class);

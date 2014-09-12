@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SRepositoryBatchEventsDispatcher;
 import jetbrains.mps.smodel.SRepositoryBatchListener;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.event.SModuleAddedEvent;
 import org.jetbrains.mps.openapi.module.event.SModuleEventVisitor;
@@ -32,9 +31,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-/**
- * @author Alex Pyshkin  3/7/14.
- */
 class CLManagerRepositoryListener implements SRepositoryBatchListener {
   private ClassLoaderManager myClassLoaderManager;
   private final SRepository myRepository;

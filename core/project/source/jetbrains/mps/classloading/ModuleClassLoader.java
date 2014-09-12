@@ -50,7 +50,6 @@ public class ModuleClassLoader extends ClassLoader {
   private final Map<String, Class> myClasses = new ConcurrentHashMap<String, Class>();
   private final Set<String> myLoadedClasses = new ConcurrentHashSet<String>();
 
-  // this is for debug purposes (heap dumps)
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
