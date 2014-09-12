@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -20,18 +20,27 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isDataFlowChecked_1227714048980", new Object[]{}))) {
       return;
     }
-    boolean checkReturns = false;
+    if ((SLinkOperations.getTarget(nodeToCheck, "body", true) == null)) {
+      return;
+    }
+
     SNode parent = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface"))) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(nodeToCheck, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) && (SLinkOperations.getTarget(nodeToCheck, "body", true) != null) && ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isEmpty()) {
-        if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isAbstract_1232982539764", new Object[]{}))) {
-          checkReturns = true;
-        }
-      }
+    boolean checkReturns = true;
+    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.Interface")) {
+      checkReturns = false;
+    } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isAbstract_1232982539764", new Object[]{})) {
+      checkReturns = false;
+    } else if ((BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}) == null)) {
+      checkReturns = false;
+    } else if (SNodeOperations.isInstanceOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getExpectedRetType_1239354342632", new Object[]{}), "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      checkReturns = false;
+    } else if (BehaviorReflection.invokeVirtual(Boolean.TYPE, nodeToCheck, "virtual_isReturnsVoid_1234359555698", new Object[]{})) {
+      checkReturns = false;
+    } else if (ListSequence.fromList(SNodeOperations.getDescendants(nodeToCheck, "jetbrains.mps.baseLanguage.structure.ISkipsReturn", false, new String[]{})).isNotEmpty()) {
+      checkReturns = false;
     }
-    if ((SLinkOperations.getTarget(nodeToCheck, "body", true) != null)) {
-      DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true), checkReturns);
-    }
+
+    DataFlowUtil.checkDataFlow(typeCheckingContext, SLinkOperations.getTarget(nodeToCheck, "body", true), checkReturns);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
