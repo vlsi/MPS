@@ -1220,6 +1220,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     popupMenu.show(EditorComponent.this, x, y);
   }
 
+  /**
+   * @deprecated since MPS 3.2 looks like not used
+   */
+  @Deprecated
   public void executeIntention(final Intention intention, final SNode node, final jetbrains.mps.openapi.editor.EditorContext context) {
     context.executeCommand(new Runnable() {
       @Override
