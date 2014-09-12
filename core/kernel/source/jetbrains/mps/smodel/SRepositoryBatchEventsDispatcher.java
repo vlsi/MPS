@@ -57,14 +57,11 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
 
   @Override
   public void actionStarted() {
-    // not starting batching if there are no listeners
-    if (myListeners.isEmpty()) return;
     myBatchEventsProcessor.startBatching();
   }
 
   @Override
   public void actionFinished() {
-    if (myListeners.isEmpty()) return;
     List<SRepositoryEvent> batchedEvents;
     do {
       batchedEvents = myBatchEventsProcessor.tryFinishBatching();
@@ -73,14 +70,10 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
   }
 
   public final void addRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
-    if (myBatchEventsProcessor.isBatchStarted())
-      throw new ListenersChangeDuringBatchException("Cannot attach listeners within batch action");
     myListeners.add(listener);
   }
 
   public final void removeRepositoryBatchEventsListener(SRepositoryBatchListener listener) {
-    if (myBatchEventsProcessor.isBatchStarted())
-      throw new ListenersChangeDuringBatchException("Cannot detach listeners within batch action");
     myListeners.remove(listener);
   }
 
@@ -88,7 +81,7 @@ public class SRepositoryBatchEventsDispatcher implements WriteActionListener {
     ModelAccess.assertLegalWrite();
     for (SRepositoryBatchListener listener : myListeners) {
       try {
-        listener.batchEventsHappened(events);
+        listener.eventsHappened(events);
       } catch (Throwable t) {
         LOG.error(t);
       }

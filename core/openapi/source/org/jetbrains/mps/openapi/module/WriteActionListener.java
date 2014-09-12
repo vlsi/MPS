@@ -18,8 +18,16 @@ package org.jetbrains.mps.openapi.module;
 /**
  * Represents a listener to start/finish notifications of
  * {@link org.jetbrains.mps.openapi.module.ModelAccess#runWriteAction(Runnable)}
+ *
  * NB: clients are guaranteed that there is a write lock inside actionStarted and actionFinished.
- * If a write action is triggered inside a listener, no new events are fired
+ * If a write action is triggered inside a listener, no new events are fired.
+ *
+ * If a listener attached inside a write action then the {@link #actionStarted()} will be triggered automatically,
+ * again if a listener detached inside a write action then {@link #actionFinished()} will be triggered before the actual detach happens.
+ * Thus client can rely on the fact that there will be always preceding call of #actionStarted before the call of #actionFinished.
+ *
+ * @see org.jetbrains.mps.openapi.module.ModelAccess#addWriteActionListener(WriteActionListener)
+ * @see org.jetbrains.mps.openapi.module.ModelAccess#removeWriteActionListener(WriteActionListener)
  */
 public interface WriteActionListener {
   public void actionStarted();

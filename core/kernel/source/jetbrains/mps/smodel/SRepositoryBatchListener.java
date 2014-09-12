@@ -30,5 +30,5 @@ import java.util.List;
  * @see jetbrains.mps.smodel.ModelAccess#runBatchWriteAction(Runnable)
  */
 public interface SRepositoryBatchListener {
-  void batchEventsHappened(List<SRepositoryEvent> events);
+  void eventsHappened(List<SRepositoryEvent> events);
 }

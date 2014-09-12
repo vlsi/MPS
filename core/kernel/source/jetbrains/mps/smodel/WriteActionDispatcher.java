@@ -67,15 +67,23 @@ public final class WriteActionDispatcher {
     }
   }
 
+  private boolean inWriteAction() {
+    return myWriteActionLevel > 0;
+  }
+
   public void addWriteActionListener(WriteActionListener listener) {
     if (myListeners.contains(listener))
       throw new ListenersConsistenceException("Adding the same listener again");
+    if (inWriteAction())
+      listener.actionStarted();
     myListeners.add(listener);
   }
 
   public void removeWriteActionListener(WriteActionListener listener) {
     if (!myListeners.contains(listener))
       throw new ListenersConsistenceException("The listener you trying to remove does not exist");
+    if (inWriteAction())
+      listener.actionFinished();
     myListeners.remove(listener);
   }
 
