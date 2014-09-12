@@ -19,14 +19,17 @@ public class TryStatement_DataFlow extends DataFlowBuilder {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(c), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1207141005368");
     }
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
-    for (Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
+    for (final Instruction instruction : _context.getBuilder().getInstructionsFor(SLinkOperations.getTarget(_context.getNode(), "body", true))) {
       if (InstructionUtil.isRet(instruction) || InstructionUtil.isJump(instruction) || InstructionUtil.isNop(instruction)) {
         continue;
       }
-      for (SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
-        _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024568860");
+      for (final SNode catchClause : DataFlowTryCatchUtil.getPossibleCatches((SNode) InstructionUtil.getSource(instruction), SLinkOperations.getTargets(_context.getNode(), "catchClause", true))) {
+        _context.getBuilder().emitMayBeUnreachable(new Runnable() {
+          public void run() {
+            _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024568860");
+          }
+        });
       }
-      _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "afterCatches"), _context.getBuilder().insertAfter(instruction), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7597254041024771349");
     }
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {
