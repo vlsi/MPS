@@ -19,6 +19,7 @@ import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -66,7 +67,11 @@ public class QueriesGenerated {
     return MigrationScript_Behavior.call_getGeneratedClassName_8648538385393994830(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.migration.structure.MigrationScript"))));
   }
   public static Object propertyMacro_GetPropertyValue_5387853834547028838(final PropertyMacroContext _context) {
-    return _context.getNode().getModel().getModule().getModuleId().toString();
+    SModule module = _context.getNode().getModel().getModule();
+    if (module instanceof TransientModelsModule) {
+      module = _context.getOriginalInputModel().getModule();
+    }
+    return module.getModuleReference().toString();
   }
   public static Object propertyMacro_GetPropertyValue_5387853834547028855(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "fromVersion");
