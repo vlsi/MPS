@@ -247,18 +247,17 @@ public class UpdaterImpl implements Updater {
     private UpdaterRepositoryContentAdapter myContentAdapter;
     private Set<SModel> myListeningModels = Collections.emptySet();
 
-    ModelListenersController() {
-      myModelListener = new UpdaterModelListener(UpdaterImpl.this, myEditorComponent);
-      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener = new UpdaterRepositoryListener(myEditorComponent));
-      SRepositoryRegistry.getInstance().addGlobalListener(myContentAdapter = new UpdaterRepositoryContentAdapter(myEditorComponent));
-    }
-
     void attachListeners(SNode mainNode, Set<SNode> relatedNodes, Set<SNodeReference> relatedRefTargets) {
+      if (myModelListener == null) {
+        myModelListener = new UpdaterModelListener(UpdaterImpl.this, myEditorComponent);
+      }
       Set<SModel> modelsToListen = new HashSet<SModel>();
       if (relatedNodes != null) {
         for (SNode node : relatedNodes) {
           SModel model = node.getModel();
-          if (model == null) continue;
+          if (model == null) {
+            continue;
+          }
 
           // Getting modelDescriptor via SModelRepository because sometimes
           // node.getModel().getModelDescriptor() == null while reloading models from disk.
@@ -290,7 +289,14 @@ public class UpdaterImpl implements Updater {
       }
 
       myListeningModels = modelsToListen;
+      if (myRepositoryListener == null) {
+        SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener = new UpdaterRepositoryListener(myEditorComponent));
+      }
       myRepositoryListener.setUsedModels(modelsToListen);
+
+      if (myContentAdapter == null) {
+        SRepositoryRegistry.getInstance().addGlobalListener(myContentAdapter = new UpdaterRepositoryContentAdapter(myEditorComponent));
+      }
       myContentAdapter.setMainModel(mainNode.getModel());
 
       assertListenerAdded(mainNode);
@@ -316,13 +322,28 @@ public class UpdaterImpl implements Updater {
     }
 
     public void flush() {
-      myModelListener.flush();
+      if (myModelListener != null) {
+        myModelListener.flush();
+      }
     }
 
     public void dispose() {
-      SRepositoryRegistry.getInstance().removeGlobalListener(myContentAdapter);
-      SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
-      myModelListener.dispose();
+      if (myContentAdapter != null) {
+        // Read-action is here only for the compatibility with SRepositoryContentAdapter logic - it requires
+        // read-action inside stopListening(SModule module) method
+        getEditorContext().getRepository().getModelAccess().runReadAction(new Runnable() {
+          @Override
+          public void run() {
+            SRepositoryRegistry.getInstance().removeGlobalListener(myContentAdapter);
+          }
+        });
+      }
+      if (myRepositoryListener != null) {
+        SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+      }
+      if (myModelListener != null) {
+        myModelListener.dispose();
+      }
     }
   }
 }
