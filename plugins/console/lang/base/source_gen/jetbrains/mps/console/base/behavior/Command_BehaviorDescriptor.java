@@ -4,6 +4,9 @@ package jetbrains.mps.console.base.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.console.tool.ConsoleContext;
+import jetbrains.mps.console.tool.ConsoleStream;
 
 public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ConsoleHelpProvider_BehaviorDescriptor {
   public Command_BehaviorDescriptor() {
@@ -27,4 +30,5 @@ public abstract class Command_BehaviorDescriptor extends BaseConcept_BehaviorDes
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.Command";
   }
+  public abstract void virtual_execute_6854397602732226506(SNode thisNode, ConsoleContext c, ConsoleStream console, Runnable beforeCallback, Runnable afterCallback);
 }
