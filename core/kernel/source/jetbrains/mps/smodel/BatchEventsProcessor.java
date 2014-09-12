@@ -60,17 +60,26 @@ public class BatchEventsProcessor {
   }
 
   /**
-   * stops listening to SRepository, returns the accumulated result
+   * flushes all accumulated events
+   * stops listening to SRepository, if no new events are discovered
    * @return result of batching: a list of SRepositoryEvents
    */
-  public List<SRepositoryEvent> finishBatching() {
-    assert myBatchStarted;
+  public List<SRepositoryEvent> tryFinishBatching() {
+    if (!myBatchStarted)
+      throw new IllegalStateException("Batching has not been even started");
     List<SRepositoryEvent> result = new ArrayList<SRepositoryEvent>(myEvents);
-    myRepository.removeRepositoryListener(mySRepositoryListener);
     myEvents.clear();
-    myBatchStarted = false;
+    if (result.isEmpty()) {
+      finishBatching();
+    }
     return result;
   }
+
+  private void finishBatching() {
+    myBatchStarted = false;
+    myRepository.removeRepositoryListener(mySRepositoryListener);
+  }
+
 
   private class MySRepositoryListener extends SRepositoryAdapter {
     private void addEventToList(@NotNull SRepositoryEvent event) {
