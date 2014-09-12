@@ -2710,22 +2710,24 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546941580698">
     <file name="TrivialNodeId_Behavior.java">
-      <node id="9032177546941826181" at="13,93,14,105" concept="9" />
-      <node id="9032177546941825594" at="14,105,15,104" concept="10" />
-      <node id="9032177546941580698" at="11,0,13,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="9032177546941580698" at="13,0,17,0" concept="13" trace="virtual_instantiate_9032177546941558391#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="9032177546941580700" at="11,43,11,43" />
-      <scope id="9032177546941580698" at="11,0,13,0">
+      <node id="9032177546943378410" at="15,93,16,119" concept="9" />
+      <node id="9032177546943408509" at="16,119,17,106" concept="11" />
+      <node id="9032177546943411311" at="17,106,18,99" concept="11" />
+      <node id="9032177546943429038" at="18,99,19,134" concept="10" />
+      <node id="9032177546941580698" at="13,0,15,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9032177546941580698" at="15,0,21,0" concept="13" trace="virtual_instantiate_9032177546941558391#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="9032177546941580700" at="13,43,13,43" />
+      <scope id="9032177546941580698" at="13,0,15,0">
         <var name="thisNode" id="9032177546941580698" />
       </scope>
-      <scope id="9032177546941620579" at="13,93,15,104">
-        <var name="c" id="9032177546941826184" />
+      <scope id="9032177546941620579" at="15,93,19,134">
+        <var name="identity" id="9032177546943378411" />
       </scope>
-      <scope id="9032177546941580698" at="13,0,17,0">
+      <scope id="9032177546941580698" at="15,0,21,0">
         <var name="model" id="9032177546941620580" />
         <var name="thisNode" id="9032177546941580698" />
       </scope>
-      <unit id="9032177546941580698" at="10,0,18,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_Behavior" />
+      <unit id="9032177546941580698" at="12,0,22,0" name="jetbrains.mps.lang.generator.behavior.TrivialNodeId_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/9032177546942789355">

@@ -4,14 +4,18 @@ package jetbrains.mps.lang.generator.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class TrivialNodeId_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode virtual_instantiate_9032177546941558391(SNode thisNode, SModel model) {
-    SNode c = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    return SModelOperations.createNewNode(model, null, "jetbrains.mps.lang.core.structure.BaseConcept");
+    SNodeId identity = PersistenceFacade.getInstance().createNodeId(SPropertyOperations.getString(thisNode, "nodeId"));
+    // could use SModelOperations.createNewNode (which does Behavior.init() in addition to instantiation) 
+    // want to be minimalistic, yet not adding new API (#createNode(SConcept) is way too tempting) 
+    return SModelUtil_new.instantiateConceptDeclaration(SPropertyOperations.getString(thisNode, "conceptId"), model, identity, false);
   }
 }
