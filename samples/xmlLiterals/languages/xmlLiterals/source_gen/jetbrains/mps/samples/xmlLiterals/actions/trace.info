@@ -12,8 +12,8 @@
   <root nodeRef="r:5faf59d4-3434-4aef-b295-eb4e8aaf9953(jetbrains.mps.samples.xmlLiterals.actions)/5081393330032046427">
     <file name="QueriesGenerated.java">
       <node id="5081393330032046640" at="15,206,16,93" concept="1" />
-      <node id="5081393330032046640" at="16,93,17,334" concept="0" />
-      <node id="5081393330032046640" at="17,334,18,18" concept="2" />
+      <node id="5081393330032046640" at="16,93,17,316" concept="0" />
+      <node id="5081393330032046640" at="17,316,18,18" concept="2" />
       <node id="5081393330032046640" at="15,0,20,0" concept="3" trace="nodeSubstituteActionsBuilder_ActionsFactory_XmlText_5081393330032046640#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="5081393330032046640" at="15,206,18,18">
         <var name="result" id="5081393330032046640" />

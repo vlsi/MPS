@@ -22,7 +22,7 @@
       <node id="6587171674898963125" at="25,173,26,178" concept="5" />
       <node id="1240404639683" at="27,69,28,162" concept="1" />
       <node id="1240404639697" at="29,11,30,28" concept="6" />
-      <node id="1240404186104" at="34,40,35,246" concept="1" />
+      <node id="1240404186104" at="34,40,35,228" concept="1" />
       <node id="1240404186104" at="38,5,39,18" concept="6" />
       <node id="1240404639681" at="26,178,29,11" concept="3" />
       <node id="1240404186104" at="33,32,36,9" concept="2" />
@@ -33,7 +33,7 @@
       <node id="1240404186104" at="19,93,38,5" concept="0" />
       <node id="1240404186104" at="18,0,41,0" concept="7" trace="nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240404186104#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
       <scope id="1240404639682" at="27,69,28,162" />
-      <scope id="1240404186104" at="34,40,35,246" />
+      <scope id="1240404186104" at="34,40,35,228" />
       <scope id="1240404186104" at="33,32,36,9" />
       <scope id="1240404186104" at="33,32,36,9">
         <var name="item" id="1240404186104" />
