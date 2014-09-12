@@ -8,10 +8,15 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
+import jetbrains.mps.openapi.editor.style.Style;
+import jetbrains.mps.editor.runtime.style.StyleImpl;
+import jetbrains.mps.editor.runtime.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.MPSFonts;
 
 public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -20,7 +25,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_1x58an_a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(node), "virtual_getPresentation_1213877396640", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(node, "decl", false), node), "virtual_getPresentation_1213877396640", new Object[]{});
       }
       public void setText(String text) {
       }
@@ -33,6 +38,9 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
     editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_1x58an_a");
     editorCell.setBig(true);
+    Style style = new StyleImpl();
+    style.set(StyleAttributes.FONT_STYLE, MPSFonts.BOLD);
+    editorCell.getStyle().putAll(style);
     editorCell.setDefaultText("");
     return editorCell;
   }

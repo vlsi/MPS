@@ -71,7 +71,6 @@
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1174660718586/1174660783413" name="leftExpression" />
     <childRole id="7a5dda62-9140-4668-ab76-d5ed1746f2b2/1175517767210/1175517851849" name="errorString" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1081773326031/1081773367579" name="rightExpression" />
-    <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1204053956946/1068499141038" name="actualArgument" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1082485599095/1082485599096" name="statements" />
     <childRole id="f3061a53-9226-4cc5-a443-f952ceaf5816/1068580123159/1068580123161" name="ifTrue" />
     <childRole id="ceab5195-25ea-4f22-9b92-103b95ca8c0c/1133920641626/5169995583184591170" name="smodelAttribute" />
@@ -146,43 +145,6 @@
         <reference role="swut.1174642788531.1174642800329" target="oubp.3751132065236767068" resolveInfo="DependentTypeDeclaration" />
       </node>
     </node>
-    <node concept="swut.1174643105530" id="2260648088428849750" info="ng">
-      <property role="asn4.1169194658468.1169194664001" value="typeof_DependentTypeInstance" />
-      <property role="asn4.1133920641626.1193676396447" value="instances" />
-      <node concept="vg0i.1068580123136" id="2260648088428850102" role="swut.1195213580585.1195213635060" info="sn">
-        <node concept="swut.1174658326157" id="2260648088428850246" role="vg0i.1068580123136.1068581517665" info="nn">
-          <node concept="swut.1185788614172" id="2260648088428850249" role="swut.1174660718586.1174660783413" info="ng">
-            <node concept="swut.1174657487114" id="2260648088428850111" role="swut.1185788614172.1185788644032" info="nn">
-              <node concept="swut.1174650418652" id="2260648088428850150" role="swut.1174657487114.1174657509053" info="nn">
-                <reference role="swut.1174650418652.1174650432090" target="2260648088428850104" resolveInfo="dti" />
-              </node>
-            </node>
-          </node>
-          <node concept="swut.1185788614172" id="2260648088428919242" role="swut.1174660718586.1174660783414" info="ng">
-            <node concept="vg0i.1197027756228" id="2260648088428922517" role="swut.1185788614172.1185788644032" info="nn">
-              <node concept="vg0i.1197027756228" id="2260648088428919667" role="vg0i.1197027756228.1197027771414" info="nn">
-                <node concept="swut.1174650418652" id="2260648088428919240" role="vg0i.1197027756228.1197027771414" info="nn">
-                  <reference role="swut.1174650418652.1174650432090" target="2260648088428850104" resolveInfo="dti" />
-                </node>
-                <node concept="4ia1.1138056143562" id="2260648088428921581" role="vg0i.1197027756228.1197027833540" info="nn">
-                  <reference role="4ia1.1138056143562.1138056516764" target="oubp.3751132065236767084" />
-                </node>
-              </node>
-              <node concept="4ia1.1179409122411" id="2260648088428924386" role="vg0i.1197027756228.1197027833540" info="nn">
-                <reference role="vg0i.1204053956946.1068499141037" target="9nqt.3751132065236798250" resolveInfo="getType" />
-                <node concept="swut.1174650418652" id="2260648088428924526" role="vg0i.1204053956946.1068499141038" info="nn">
-                  <reference role="swut.1174650418652.1174650432090" target="2260648088428850104" resolveInfo="dti" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node concept="swut.1174642788531" id="2260648088428850104" role="swut.1174648085619.1174648101952" info="ig">
-        <property role="asn4.1169194658468.1169194664001" value="dti" />
-        <reference role="swut.1174642788531.1174642800329" target="oubp.3751132065236767083" resolveInfo="DependentTypeInstance" />
-      </node>
-    </node>
     <node concept="swut.1195214364922" id="330439066007798015" info="ng">
       <property role="asn4.1169194658468.1169194664001" value="check_CustomMemberDeclaration" />
       <property role="asn4.1133920641626.1193676396447" value="member.customMemberDeclaration" />
@@ -240,7 +202,7 @@
       </node>
       <node concept="swut.1174642788531" id="330439066007798018" role="swut.1174648085619.1174648101952" info="ig">
         <property role="asn4.1169194658468.1169194664001" value="customMemberDeclaration" />
-        <reference role="swut.1174642788531.1174642800329" target="oubp.8264762413010673052" resolveInfo="CustomMemberDeclaration" />
+        <reference role="swut.1174642788531.1174642800329" target="oubp.8264762413010673052" resolveInfo="CustomMemberDescriptor" />
       </node>
     </node>
     <node concept="swut.1174643105530" id="1825613483881473717" info="ng">
