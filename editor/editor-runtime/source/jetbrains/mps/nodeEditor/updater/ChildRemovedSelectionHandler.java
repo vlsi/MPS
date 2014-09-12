@@ -46,22 +46,31 @@ class ChildRemovedSelectionHandler extends ModelEventsSelectionHandler {
 
   private void doSetSelection(EditorComponent editorComponent) {
     SNode nodeToSelect = null;
+    boolean isNext = false;
     int index = 0;
-    for (SNode nextSibling : myParent.getChildren(myChildRole)) {
-      if (index >= myChildIndex) {
-        break;
+    for (SNode nextChild : myParent.getChildren()) {
+      if (myChildRole.equals(nextChild.getRoleInParent())) {
+        nodeToSelect = nextChild;
+        if (index >= myChildIndex) {
+          isNext = true;
+          break;
+        }
       }
-      nodeToSelect = nextSibling;
       index++;
     }
 
     if (nodeToSelect != null) {
       EditorCell cell = editorComponent.findNodeCell(nodeToSelect);
       if (cell != null) {
-        EditorCell lastLeaf = CellFinderUtil.findLastSelectableLeaf(cell, true);
-        if (lastLeaf != null) {
-          editorComponent.changeSelection(lastLeaf);
-          lastLeaf.end();
+        EditorCell selectableLeaf = isNext ? CellFinderUtil.findFirstSelectableLeaf(cell, true) : CellFinderUtil.findLastSelectableLeaf(cell, true);
+        if (selectableLeaf != null) {
+          editorComponent.changeSelection(selectableLeaf);
+          if (isNext) {
+            selectableLeaf.home();
+          } else {
+            selectableLeaf.end();
+          }
+
           return;
         }
       }
