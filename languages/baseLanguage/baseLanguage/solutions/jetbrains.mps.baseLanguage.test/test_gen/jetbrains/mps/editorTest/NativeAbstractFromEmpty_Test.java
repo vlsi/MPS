@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class NativeAbstract_Test extends BaseTransformationTest {
-  public NativeAbstract_Test() {
+public class NativeAbstractFromEmpty_Test extends BaseTransformationTest {
+  public NativeAbstractFromEmpty_Test() {
   }
   @Test
-  public void test_NativeAbstract() throws Throwable {
+  public void test_NativeAbstractFromEmpty() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.NativeAbstract_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.NativeAbstractFromEmpty_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class NativeAbstract_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("8347245235044888304", "8347245235044888311");
-      this.typeString("abstract");
+      initEditor("8347245235043448590", "8347245235043448594");
+      this.typeString("native abstract ");
     }
   }
 }
