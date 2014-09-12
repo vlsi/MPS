@@ -17,10 +17,12 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
       case 0:
         return Collections.<ConceptEditor>singletonList(new DataDependency_Editor());
       case 1:
-        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
+        return Collections.<ConceptEditor>singletonList(new DataDependencyReference_Editor());
       case 2:
-        return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
+        return Collections.<ConceptEditor>singletonList(new MigrationScript_Editor());
       case 3:
+        return Collections.<ConceptEditor>singletonList(new ProducedDataDeclaration_Editor());
+      case 4:
         return Collections.<ConceptEditor>singletonList(new RequiredDataDeclaration_Editor());
       default:
     }
@@ -31,5 +33,5 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
   }
 
 
-  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration"};
 }

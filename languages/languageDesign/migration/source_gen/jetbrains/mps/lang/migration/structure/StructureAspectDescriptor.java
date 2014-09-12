@@ -13,18 +13,20 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependency").super_("jetbrains.mps.baseLanguage.structure.VariableDeclaration").parents("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "jetbrains.mps.lang.core.structure.INamedConcept").references("script").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependency").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.IValidIdentifier", "jetbrains.mps.baseLanguage.structure.IVariableDeclaration", "jetbrains.mps.lang.core.structure.IResolveInfo", "jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").references("script").create();
       case 1:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept").properties("fromVersion").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.DataDependencyReference").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IVariableReference").references("dataDependency").create();
       case 2:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ProducedDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember").references("dataType").alias("produces data", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.MigrationScript").super_("jetbrains.mps.baseLanguage.structure.ClassConcept").parents("jetbrains.mps.baseLanguage.structure.ClassConcept").properties("fromVersion").create();
       case 3:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.RequiredDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dependencies"}, new boolean[]{true}).alias("requires data", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.ProducedDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.baseLanguage.structure.ClassifierMember").references("dataType").alias("produces data", "").create();
       case 4:
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.RequiredDataDeclaration").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.baseLanguage.structure.ClassifierMember", "jetbrains.mps.lang.core.structure.BaseConcept").children(new String[]{"dependencies"}, new boolean[]{true}).alias("requires data", "").create();
+      case 5:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.migration.structure.StringData").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept").properties("data").create();
       default:
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
-  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.StringData"};
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.migration.structure.DataDependency", "jetbrains.mps.lang.migration.structure.DataDependencyReference", "jetbrains.mps.lang.migration.structure.MigrationScript", "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration", "jetbrains.mps.lang.migration.structure.RequiredDataDeclaration", "jetbrains.mps.lang.migration.structure.StringData"};
 }

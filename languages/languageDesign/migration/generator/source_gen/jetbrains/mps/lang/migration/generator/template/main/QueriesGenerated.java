@@ -4,9 +4,10 @@ package jetbrains.mps.lang.migration.generator.template.main;
 
 import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -18,8 +19,8 @@ import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -30,6 +31,9 @@ import org.apache.log4j.LogManager;
 @Generated
 public class QueriesGenerated {
   public final boolean NEEDS_OPCONTEXT = false;
+  public static Object propertyMacro_GetPropertyValue_7153805464398904814(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "name");
+  }
   public static Object propertyMacro_GetPropertyValue_4850335266370449649(final PropertyMacroContext _context) {
     SNode d = MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode());
     return (d == null ? "" : SPropertyOperations.getString(d, "value"));
@@ -64,6 +68,9 @@ public class QueriesGenerated {
   }
   public static Object propertyMacro_GetPropertyValue_5387853834547028855(final PropertyMacroContext _context) {
     return SPropertyOperations.getInteger(_context.getNode(), "fromVersion");
+  }
+  public static Object referenceMacro_GetReferent_7153805464398888188(final ReferenceMacroContext _context) {
+    return MigrationScript_Behavior.call_getProducedData_8585153554445933384(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "script", false));
   }
   public static SNode sourceNodeQuery_5387853834547110633(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);

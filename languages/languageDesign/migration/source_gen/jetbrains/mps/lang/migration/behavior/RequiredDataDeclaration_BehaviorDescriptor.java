@@ -34,7 +34,7 @@ public class RequiredDataDeclaration_BehaviorDescriptor extends BaseConcept_Beha
     return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
   }
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
-    ClassifierMember_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
+    RequiredDataDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
   }
   @Override
   public String getConceptFqName() {
