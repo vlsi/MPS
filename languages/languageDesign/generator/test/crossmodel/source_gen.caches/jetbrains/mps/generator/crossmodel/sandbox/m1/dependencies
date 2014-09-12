@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.generator.crossmodel.sandbox.m1.FirstBeanImpl" file="FirstBeanImpl.java">
+    <classNode dependClassName="java.lang.Object" />
+  </dependency>
+  <dependency className="jetbrains.mps.generator.crossmodel.sandbox.m1.SecondBeanImpl" file="SecondBeanImpl.java">
+    <classNode dependClassName="jetbrains.mps.generator.crossmodel.sandbox.m1.FirstBeanImpl" />
+  </dependency>
+</dependenciesRoot>
+

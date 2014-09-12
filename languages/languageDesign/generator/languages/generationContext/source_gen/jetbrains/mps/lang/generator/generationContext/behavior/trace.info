@@ -50,7 +50,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,78,0" name="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,80,0" name="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor" />
@@ -72,6 +72,9 @@
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor.java">
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor" />
+    </file>
+    <file name="GenerationContextOp_GetExport_BehaviorDescriptor.java">
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetExport_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_LinkPatternRef_BehaviorDescriptor.java">
       <unit at="7,0,21,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
