@@ -30,6 +30,13 @@ public class MigrationScript_Behavior {
   public static SNode call_getProducedData_8585153554445933384(SNode thisNode) {
     return SLinkOperations.getTarget(Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "member", true), "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration")).first(), "dataType", false);
   }
+  public static SNode call_getMethod_7153805464403784143(SNode thisNode, final SNode md) {
+    return Sequence.fromIterable(SNodeOperations.ofConcept(SLinkOperations.getTargets(thisNode, "member", true), "jetbrains.mps.lang.classLike.structure.ClassLikeMethod")).findFirst(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SLinkOperations.getTarget(it, "decl", false) == md;
+      }
+    });
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return String.format("%03d", SPropertyOperations.getInteger(thisNode, "fromVersion")) + "_" + ((SPropertyOperations.getString(thisNode, "name") == null ? null : SPropertyOperations.getString(thisNode, "name")));
   }
