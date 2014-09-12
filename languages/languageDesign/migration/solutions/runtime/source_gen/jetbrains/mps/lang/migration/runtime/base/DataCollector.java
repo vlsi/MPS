@@ -4,7 +4,8 @@ package jetbrains.mps.lang.migration.runtime.base;
 
 import java.util.Map;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface DataCollector {
-  public <T> Map<SModule, T> collectData(SModule myModule, MigrationScriptReference scriptReference);
+  public Map<SModule, SNode> collectData(SModule myModule, MigrationScriptReference scriptReference);
 }

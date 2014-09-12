@@ -6,7 +6,6 @@ import jetbrains.mps.generator.runtime.Generated;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.migration.behavior.MigrationScript_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -22,6 +21,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import org.apache.log4j.Logger;
@@ -34,8 +35,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "name");
   }
   public static Object propertyMacro_GetPropertyValue_4850335266370449649(final PropertyMacroContext _context) {
-    SNode d = MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode());
-    return (d == null ? "" : SPropertyOperations.getString(d, "value"));
+    return SPropertyOperations.getString(MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()), "value");
   }
   public static Object propertyMacro_GetPropertyValue_7153805464403652403(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709030"), "param", true)).first(), "name");
@@ -74,8 +74,17 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_7153805464398888188(final ReferenceMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "dataDependency", false), "script", false));
   }
+  public static boolean ifMacro_Condition_7153805464405149961(final IfMacroContext _context) {
+    return (MigrationScript_Behavior.call_getDescription_8585153554445641526(_context.getNode()) != null);
+  }
   public static boolean ifMacro_Condition_7153805464404355802(final IfMacroContext _context) {
     return MigrationScript_Behavior.call_getProducedData_8585153554445933384(_context.getNode()) == null;
+  }
+  public static boolean ifMacro_Condition_7153805464405065594(final IfMacroContext _context) {
+    return (MigrationScript_Behavior.call_getMethod_7153805464403784143(_context.getNode(), SNodeOperations.getNode("90746344-04fd-4286-97d5-b46ae6a81709/r:52a3d974-bd4f-4651-ba6e-a2de5e336d95(jetbrains.mps.lang.migration/jetbrains.mps.lang.migration.methods)", "5155329496662709038")) != null);
+  }
+  public static boolean ifMacro_Condition_7153805464405182117(final IfMacroContext _context) {
+    return Sequence.fromIterable(MigrationScript_Behavior.call_getRequiredData_8585153554445862713(_context.getNode())).isNotEmpty();
   }
   public static SNode sourceNodeQuery_5387853834547110633(final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "script", false);
