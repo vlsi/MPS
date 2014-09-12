@@ -2495,9 +2495,7 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PublicVisibility", null), true);
             SPropertyOperations.set(result, "name", name);
             SLinkOperations.setTarget(result, "type", SLinkOperations.getTarget(current, "type", true), true);
-            if (pattern.endsWith("=")) {
-              SNodeFactoryOperations.setNewChild(result, "initializer", "jetbrains.mps.baseLanguage.structure.Expression");
-            }
+            SNodeFactoryOperations.setNewChild(result, "initializer", "jetbrains.mps.baseLanguage.structure.Expression");
             SPropertyOperations.set(result, "isFinal", "" + (SPropertyOperations.getBoolean(current, "final")));
             return result;
           }
