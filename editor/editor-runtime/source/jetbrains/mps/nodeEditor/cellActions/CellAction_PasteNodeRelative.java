@@ -21,10 +21,10 @@ import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.resolve.ResolverComponent;
@@ -87,7 +87,7 @@ public class CellAction_PasteNodeRelative extends AbstractCellAction {
     ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getRepository());
 
     // set selection
-    editorComponent.flushEvents();
+    editorComponent.getUpdater().flushModelEvents();
     EditorCell nodeCell = editorComponent.findNodeCell(pasteNodes.get(0));
     if (nodeCell == null) return; // after 'set reference'?
     EditorCell_Label labelCell = CellFinderUtil.findChildByClass(nodeCell, EditorCell_Label.class, true);

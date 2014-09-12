@@ -39,7 +39,6 @@ import jetbrains.mps.openapi.editor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.selection.SingularSelection;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -219,7 +218,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
             ResolverComponent.getInstance().resolveScopesOnly(requireResolveReferences, context.getRepository());
 
             // set selection
-            editorComponent.flushEvents();
+            editorComponent.getUpdater().flushModelEvents();
             SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
             editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
           }

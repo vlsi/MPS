@@ -189,7 +189,8 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
 
   @Override
   public void flushEvents() {
-    myNodeEditorComponent.flushEvents();
+    // TODO: replace all usages by updater.flushModelEvents() ?
+    myNodeEditorComponent.getUpdater().flushModelEvents();
   }
 
   @Override
@@ -270,7 +271,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
         }
       });
 
-      myNodeEditorComponent.flushEvents();
+      myNodeEditorComponent.getUpdater().flushModelEvents();
 
       return true;
     }

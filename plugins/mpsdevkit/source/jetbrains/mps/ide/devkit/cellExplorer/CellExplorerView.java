@@ -39,6 +39,8 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMap;
 import jetbrains.mps.openapi.editor.cells.KeyMap.ActionKey;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.openapi.editor.update.UpdaterListenerAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
@@ -79,7 +81,7 @@ public class CellExplorerView extends BaseProjectTool {
     }
   };
 
-  private EditorComponent.CellSynchronizationWithModelListener mySynchronizationListener = new EditorComponent.CellSynchronizationWithModelListener() {
+  private UpdaterListener mySynchronizationListener = new UpdaterListenerAdapter() {
     @Override
     public void cellSynchronizedWithModel(EditorCell cell) {
       if (cell == null) return;
@@ -114,7 +116,7 @@ public class CellExplorerView extends BaseProjectTool {
     removeListeners();
     if (myCurrentEditor != null) {
       myCurrentEditor.addRebuildListener(myRebuildListener);
-      myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
+      myCurrentEditor.getUpdater().addListener(mySynchronizationListener);
     }
     myTree.rebuildLater();
   }
@@ -122,7 +124,7 @@ public class CellExplorerView extends BaseProjectTool {
   private void removeListeners() {
     if (myCurrentEditor != null) {
       myCurrentEditor.removeRebuildListener(myRebuildListener);
-      myCurrentEditor.removeSynchronizationListener(mySynchronizationListener);
+      myCurrentEditor.getUpdater().removeListener(mySynchronizationListener);
     }
   }
 
@@ -258,7 +260,8 @@ public class CellExplorerView extends BaseProjectTool {
       }
 
       setAdditionalText(
-          "[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
+          "[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() +
+              ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
     }
 
     @Override

@@ -42,4 +42,23 @@ public interface Updater {
    * @return currently running update session or null if editor update was not executed
    */
   UpdateSession getCurrentUpdateSession();
+
+  /**
+   * Use this method force Updater to process all accumulated model events synchronously.
+   */
+  void flushModelEvents();
+
+  /**
+   * Attach one more updater listener to this Updater instance
+   *
+   * @param listener - listener to attach
+   */
+  void addListener(UpdaterListener listener);
+
+  /**
+   * Remove previously attached UpdaterListener
+   *
+   * @param listener - listener to remove
+   */
+  void removeListener(UpdaterListener listener);
 }

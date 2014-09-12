@@ -15,19 +15,27 @@
  */
 package jetbrains.mps.nodeEditor.updater;
 
-import jetbrains.mps.openapi.editor.EditorComponent;
+import jetbrains.mps.extapi.module.SRepositoryRegistry;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.update.Updater;
+import jetbrains.mps.openapi.editor.update.UpdaterListener;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -40,6 +48,8 @@ import java.util.WeakHashMap;
 public class UpdaterImpl implements Updater {
   private final EditorComponent myEditorComponent;
   private UpdateSessionImpl myUpdateSession;
+  private final ModelListenersController myModelListenersController;
+  private List<UpdaterListener> myListeners = new ArrayList<UpdaterListener>();
 
   private Map<SNode, WeakReference<EditorCell>> myBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
   private Map<EditorCell, Set<SNode>> myRelatedNodes = new WeakHashMap<EditorCell, Set<SNode>>();
@@ -53,20 +63,75 @@ public class UpdaterImpl implements Updater {
 
   public UpdaterImpl(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
+    myModelListenersController = new ModelListenersController();
+  }
+
+  /**
+   * This method should be used to perform incremental update of the associated editor
+   * content (tree of EditorCells) to reflect changes captured within passed list of
+   * model events.
+   * <p/>
+   * New UpdateSession instance will be created within this method and will be available
+   * via getCurrentUpdateSession() method until the end of update process, so it can be
+   * used from any code called as a sub-sequence of this method execution. E.g. the code
+   * generated from the editor aspect of any language.
+   * <p/>
+   * This method will setting new rootCell for the associated EditorComponent.
+   * <p/>
+   * Internal update process-specific information about the model will be collected during
+   * this method execution, so it is important to always use this method to update root
+   * cell of the associated EditorComponent.
+   * <p/>
+   * null can be passed as an events parameter to invoke complete editor cell tree rebuild
+   * process. It can be useful in the case of "unknown" model changes performed to rebuild
+   * editor content and in the same time let Updater track any future changed correctly.
+   *
+   * @param events - model events collected since last update session or null if editor
+   *               should be re-created completely
+   */
+  public void update(List<SModelEvent> events) {
+    if (events == null) {
+      clearCaches();
+    }
+    myEditorComponent.rebuildEditorContent(events);
   }
 
   public EditorCell updateRootCell(SNode node, List<SModelEvent> events) {
     myUpdateSession = createUpdateSession(node, events);
+    EditorCell result = null;
     try {
-      return myUpdateSession.performUpdate();
+      result = myUpdateSession.performUpdate();
     } finally {
       myUpdateSession = null;
     }
+    myModelListenersController.attachListeners(node, getRelatedNodes(result), getRelatedRefTargets(result));
+    return result;
   }
 
   @Override
   public UpdateSessionImpl getCurrentUpdateSession() {
     return myUpdateSession;
+  }
+
+  @Override
+  public void flushModelEvents() {
+    myModelListenersController.flush();
+  }
+
+  @Override
+  public void addListener(UpdaterListener listener) {
+    myListeners.add(listener);
+  }
+
+  @Override
+  public void removeListener(UpdaterListener listener) {
+    myListeners.remove(listener);
+  }
+
+  private void fireCellSynchronized(EditorCell cell) {
+    for (UpdaterListener nextListener : myListeners) {
+      nextListener.cellSynchronizedWithModel(cell);
+    }
   }
 
   protected UpdateSessionImpl createUpdateSession(SNode node, List<SModelEvent> events) {
@@ -78,8 +143,7 @@ public class UpdaterImpl implements Updater {
     return myEditorComponent.getEditorContext();
   }
 
-  // TODO: make private on moving here rebuildEditorContent() logic
-  public void clearCaches() {
+  private void clearCaches() {
     myBigCellsMap.clear();
     myRelatedNodes.clear();
     myRelatedRefTargets.clear();
@@ -89,6 +153,7 @@ public class UpdaterImpl implements Updater {
   }
 
   public void dispose() {
+    myModelListenersController.dispose();
     clearCaches();
   }
 
@@ -124,15 +189,140 @@ public class UpdaterImpl implements Updater {
     return refTargets != null && refTargets.contains(modification.o2);
   }
 
-  public Iterable<EditorCell> getCleanlyDependentCells(Pair<SNodeReference, String> pair) {
-    return myCleanDependentCells.get(pair);
+  /**
+   * Used by UpdaterModelListener. Indicates if editor update should in the response to the
+   * specified property change, or it's sufficient to trigger EditorCells synchronization.
+   * <p/>
+   * editor update should be triggered if:
+   * - specified property was accessed "dirtyly" while building this editor
+   * - specified property was added/removed and corresponding property existence was checked
+   * while building the editor
+   *
+   * @param propertyChange - pair of SNodeReference and property name modified
+   * @param addedRemoved   - indicates if property was newly added or removed from node
+   * @return true if incremental editor update should be triggered
+   */
+  boolean requiresUpdate(Pair<SNodeReference, String> propertyChange, boolean addedRemoved) {
+    return myDirtyDependentCells.containsKey(propertyChange) || myExistenceDependentCells.containsKey(propertyChange) && addedRemoved;
   }
 
-  public Iterable<EditorCell> getDirtilyDependentCells(Pair<SNodeReference, String> pair) {
-    return myDirtyDependentCells.get(pair);
+  /**
+   * Performs EditorCells synchronization as a response to specified property change.
+   * This method should be called only if requiresUpdate() returns false.
+   *
+   * @param propertyChange - pair of SNodeReference and property name modified
+   */
+  void synchronizeCells(Pair<SNodeReference, String> propertyChange) {
+    // TODO: do we need to synchronize myExistenceDependentCells cells at all?
+    Iterable<EditorCell> cellsToSynchronize = myExistenceDependentCells.get(propertyChange);
+    if (cellsToSynchronize != null) {
+      for (EditorCell cell : cellsToSynchronize) {
+        APICellAdapter.synchronizeViewWithModel(cell);
+        fireCellSynchronized(cell);
+      }
+    }
+
+    cellsToSynchronize = myCleanDependentCells.get(propertyChange);
+    if (cellsToSynchronize != null) {
+      for (EditorCell cell : cellsToSynchronize) {
+        APICellAdapter.synchronizeViewWithModel(cell);
+        fireCellSynchronized(cell);
+      }
+    }
+
+    /*
+     In the prev. version of the editor updater there was a code calling
+     APICellAdapter.synchronizeViewWithModel(cell) for all editorCells within the same BigCell.
+     This can be useful to revert any modifications performed by user, but not reflected within
+     the model (just changing visual cell state e.g. modifying editable constant cell).
+
+     I've removed this code because I did not find any reasons for this logic. If there will be
+     use cases where it will be useful, corresponding code can be returned here.
+    */
   }
 
-  public Iterable<EditorCell> getExistenceDependentCells(Pair<SNodeReference, String> pair) {
-    return myExistenceDependentCells.get(pair);
+  private class ModelListenersController {
+    private UpdaterModelListener myModelListener;
+    private UpdaterRepositoryListener myRepositoryListener;
+    private UpdaterRepositoryContentAdapter myContentAdapter;
+    private Set<SModel> myListeningModels = Collections.emptySet();
+
+    ModelListenersController() {
+      myModelListener = new UpdaterModelListener(UpdaterImpl.this, myEditorComponent);
+      SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener = new UpdaterRepositoryListener(myEditorComponent));
+      SRepositoryRegistry.getInstance().addGlobalListener(myContentAdapter = new UpdaterRepositoryContentAdapter(myEditorComponent));
+    }
+
+    void attachListeners(SNode mainNode, Set<SNode> relatedNodes, Set<SNodeReference> relatedRefTargets) {
+      Set<SModel> modelsToListen = new HashSet<SModel>();
+      if (relatedNodes != null) {
+        for (SNode node : relatedNodes) {
+          SModel model = node.getModel();
+          if (model == null) continue;
+
+          // Getting modelDescriptor via SModelRepository because sometimes
+          // node.getModel().getModelDescriptor() == null while reloading models from disk.
+          SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getReference());
+          if (modelDescriptor != null) {
+            modelsToListen.add(modelDescriptor);
+          }
+        }
+      }
+
+      if (relatedRefTargets != null) {
+        for (SNodeReference nodeProxy : relatedRefTargets) {
+          SModel model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
+          if (model != null) {
+            modelsToListen.add(model);
+          }
+        }
+      }
+
+      for (SModel nextModelToListen : modelsToListen) {
+        if (!myListeningModels.contains(nextModelToListen)) {
+          myModelListener.add(nextModelToListen);
+        }
+      }
+      for (SModel nextListeningModel : myListeningModels) {
+        if (!modelsToListen.contains(nextListeningModel)) {
+          myModelListener.remove(nextListeningModel);
+        }
+      }
+
+      myListeningModels = modelsToListen;
+      myRepositoryListener.setUsedModels(modelsToListen);
+      myContentAdapter.setMainModel(mainNode.getModel());
+
+      assertListenerAdded(mainNode);
+    }
+
+    private void assertListenerAdded(SNode editedNode) {
+      // Sometimes EditorComponent doesn't react on ModelReplaced notifications.
+      // Adding this assertion to ensure the reason is not in incorrectly removed listener (dependencies collection logic)
+      if (editedNode != null && SNodeUtil.isAccessible(editedNode, myEditorComponent.getEditorContext().getRepository()) &&
+          !isListeningModel(editedNode.getModel())) {
+        String message = "Listener was not added to a containing model of current node. Editor: " + myEditorComponent;
+        message += "\n modelId: " + editedNode.getModel().getModelId().toString();
+        message += "\n" + "models with listeners:";
+        for (SModel model : myListeningModels) {
+          message += "\n\t" + model.getModelId().toString();
+        }
+        assert false : message;
+      }
+    }
+
+    private boolean isListeningModel(SModel model) {
+      return myListeningModels.contains(model);
+    }
+
+    public void flush() {
+      myModelListener.flush();
+    }
+
+    public void dispose() {
+      SRepositoryRegistry.getInstance().removeGlobalListener(myContentAdapter);
+      SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
+      myModelListener.dispose();
+    }
   }
 }

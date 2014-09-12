@@ -29,8 +29,8 @@ import jetbrains.mps.util.EqualUtil;
 import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -102,7 +102,7 @@ class Memento {
     for (EditorCell cell : editor.getCellTracker().getErrorCells()) {
       if (cell instanceof EditorCell_Label && cell.getStyle().get(StyleAttributes.EDITABLE)) {
         EditorCell_Label label = (EditorCell_Label) cell;
-          myErrorTexts.put(label.getCellInfo(), label.getText());
+        myErrorTexts.put(label.getCellInfo(), label.getText());
       }
     }
   }
@@ -115,19 +115,19 @@ class Memento {
       SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
       if (newEditedNode != null) {
         editor.editNode(newEditedNode);
-        editor.flushEvents();
+        editor.getUpdater().flushModelEvents();
         editorRebuildRequired = false;
       }
     }
     if (editorRebuildRequired) {
       editor.rebuildEditorContent();
-      editor.flushEvents();
+      editor.getUpdater().flushModelEvents();
     }
 
     editor.clearFoldedCells();
     editor.clearBracesEnabledCells();
 
-    editor.flushEvents();
+    editor.getUpdater().flushModelEvents();
 
     // TODO: remove this variable and simply mark editor as "needsRelayout" from the top editor cell + relayout it on .. next paint?
     boolean needsRelayout = restoreErrors(editor);
