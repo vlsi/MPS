@@ -71,7 +71,7 @@ public class DailyPlanReference_Constraints extends BaseConstraintsDescriptor {
     return references;
   }
   private static boolean neq_y2k5og_a0a0a0a0a0a0a0a0a3a0a0a1a0b0a1a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNodePointer breakingNode_y2k5og_a0a2a0a0a1a0b0a1a1 = new SNodePointer("r:85427802-2815-4ede-beac-6d6b51b72018(jetbrains.mps.samples.heating.constraints)", "935069066463107223");
 }
