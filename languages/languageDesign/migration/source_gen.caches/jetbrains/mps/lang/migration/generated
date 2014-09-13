@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5j6vomyqsvnmdd5to5zevhiuz83c7r5">
+<dependencies version="2" modelHash="-5aahn6vys3rgcmmxjfehum0ubdy80ja">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:306236c1-379e-4cee-b600-470a90233e2f(jetbrains.mps.lang.migration.behavior)" hash="-9v450g2floaq185qf1r9zhgbdcw2nl4" />
-  <dep model="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)" hash="493g5dzg82yy91s9ctntjg1oh6cvxex" />
+  <dep model="r:47a77104-3b09-4998-a2bd-ada4655c0c77(jetbrains.mps.lang.migration.typesystem)" hash="4hqrw8p77q7mxygi7nhxo1zst5dj50c" />
   <dep model="r:53885008-7612-46ff-8b11-27f1d42c3adb(jetbrains.mps.lang.migration.structure)" hash="-5cr58he7e6wnipjasjmxo30g9c9m095" />
   <dep model="r:973d936b-3327-48c9-8c54-368bfb7ea31c(jetbrains.mps.lang.migration.constraints)" hash="-2xl0qceqwlk15ygn4y6mez69ihll9j" />
   <dep model="r:b37fdbd0-16ea-49c3-a711-9a930a47b589(jetbrains.mps.lang.migration.editor)" hash="dyo4xkn07el853ovgpokkj9pcn1orjc" />

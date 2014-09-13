@@ -38,6 +38,6 @@ public class ProducedDataDeclaration_BehaviorDescriptor extends BaseConcept_Beha
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.migration.structure.ProducedDataDeclaration";
+    return "ProducedDataDeclaration";
   }
 }

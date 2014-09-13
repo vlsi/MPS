@@ -9,6 +9,6 @@ public class StringData_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
   }
   @Override
   public String getConceptFqName() {
-    return "jetbrains.mps.lang.migration.structure.StringData";
+    return "StringData";
   }
 }
