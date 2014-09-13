@@ -20,14 +20,14 @@
       <node id="1218629864331" at="60,43,61,114" concept="5" />
       <node id="1218630221013" at="61,114,62,119" concept="5" />
       <node id="1218630224192" at="62,119,63,116" concept="5" />
-      <node id="1218630305876" at="63,116,64,49" concept="6" />
+      <node id="1218630305876" at="63,116,64,51" concept="6" />
       <node id="1217414480519" at="50,0,53,0" concept="7" trace="nodeSubstituteActionsBuilder_Precondition_Type_1217414480519#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstitutePreconditionContext;)Z" />
       <scope id="1217414480520" at="50,178,51,152" />
       <scope id="1217414480519" at="50,0,53,0">
         <var name="_context" id="1217414480519" />
         <var name="operationContext" id="1217414480519" />
       </scope>
-      <scope id="1217414474268" at="60,43,64,49">
+      <scope id="1217414474268" at="60,43,64,51">
         <var name="isModel" id="1218630224193" />
         <var name="isNList" id="1218630221014" />
         <var name="isNode" id="1218629864332" />

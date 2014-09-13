@@ -193,7 +193,7 @@ public class JUnit_Command {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_ifael_a0a0a0a0a0a0a2a0a0a0a6a31(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;

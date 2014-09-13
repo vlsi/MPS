@@ -21,7 +21,7 @@ public class AttributeAccess_Behavior {
     return true;
   }
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return !(AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
+    return !((AttributeDesignTimeOperations.isMultipleAttribute(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{})) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier")));
   }
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {
     return true;

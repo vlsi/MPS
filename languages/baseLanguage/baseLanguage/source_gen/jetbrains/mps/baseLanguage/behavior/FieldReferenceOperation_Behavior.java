@@ -59,7 +59,7 @@ public class FieldReferenceOperation_Behavior {
     }
     SNode classifier = ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), thisNode);
     SNode declarationClassifier = SNodeOperations.getAncestor(field, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+    if (!((classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier)))) {
       return false;
     }
     while (classifier != declarationClassifier) {

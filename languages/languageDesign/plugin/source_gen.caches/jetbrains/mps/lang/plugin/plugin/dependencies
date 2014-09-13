@@ -14,6 +14,7 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode dependClassName="jetbrains.mps.ide.ThreadUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
@@ -23,7 +24,9 @@
     <classNode dependClassName="jetbrains.mps.lang.plugin.plugin.CopyPluginXml_Facet.Target_copyPluginXml.Parameters" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
+    <classNode dependClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
+    <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
     <classNode dependClassName="jetbrains.mps.make.resources.IResource" />
     <classNode dependClassName="jetbrains.mps.make.script.IConfig" />
     <classNode dependClassName="jetbrains.mps.make.script.IFeedback" />
@@ -40,10 +43,7 @@
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
-    <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
-    <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
   </dependency>
   <dependency className="jetbrains.mps.lang.plugin.plugin.FacetAspectDescriptor" file="FacetAspectDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

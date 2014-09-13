@@ -176,9 +176,11 @@
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Action" />
+    <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JMenuItem" />
     <classNode dependClassName="javax.swing.JPopupMenu" />
     <classNode dependClassName="javax.swing.JScrollPane" />
+    <classNode dependClassName="javax.swing.Scrollable" />
     <classNode dependClassName="javax.swing.SwingUtilities" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.ControlFlowGraph" />
     <classNode dependClassName="jetbrains.mps.ide.dataFlow.presentation.IBlock" />
@@ -193,8 +195,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode extendsClassName="javax.swing.JComponent" />
-    <classNode extendsClassName="javax.swing.Scrollable" />
   </dependency>
   <dependency className="jetbrains.mps.ide.dataFlow.presentation.SimpleBlock" file="SimpleBlock.java">
     <classNode dependClassName="java.awt.Color" />

@@ -109,7 +109,7 @@ public class ReferenceableConceptsChecker extends SpecificChecker {
 
         if (SPropertyOperations.hasValue(decl, "staticScope", "none", null)) {
           SpecificChecker.addIssue(results, anchor, "Reference to a non-referenceable node found: " + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a non-referenceable node", null);
-        } else if (SPropertyOperations.hasValue(decl, "staticScope", "none", null) && !(SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode))) {
+        } else if (SPropertyOperations.hasValue(decl, "staticScope", "none", null) && !((SNodeOperations.getContainingRoot(node) == SNodeOperations.getContainingRoot(refNode)))) {
           SpecificChecker.addIssue(results, anchor, "Cross-root reference to a locally referenceable node found: " + SPropertyOperations.getString(decl, "name"), ModelChecker.SEVERITY_ERROR, "reference to a locally referenceable node", null);
         }
       }

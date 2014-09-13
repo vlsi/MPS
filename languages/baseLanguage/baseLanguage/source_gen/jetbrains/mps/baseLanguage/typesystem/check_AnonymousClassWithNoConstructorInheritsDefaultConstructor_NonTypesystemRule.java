@@ -47,6 +47,6 @@ public class check_AnonymousClassWithNoConstructorInheritsDefaultConstructor_Non
     return false;
   }
   private static boolean neq_1xjb9m_a0a0a1(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

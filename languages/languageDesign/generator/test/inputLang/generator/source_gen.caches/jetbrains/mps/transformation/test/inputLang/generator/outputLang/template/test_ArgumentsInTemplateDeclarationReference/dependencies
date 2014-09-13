@@ -8,6 +8,7 @@
     <classNode dependClassName="jetbrains.mps.generator.impl.DismissTopMappingRuleException" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.GenerationException" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateContext" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateCreateRootRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateDropRootRule" />
@@ -15,6 +16,8 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
@@ -30,10 +33,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.ReductionRuleBase" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRuleWithCondition" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_ArgumentsInTemplateDeclarationReference.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="java.lang.Iterable" />

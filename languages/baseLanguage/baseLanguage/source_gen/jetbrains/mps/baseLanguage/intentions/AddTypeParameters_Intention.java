@@ -46,7 +46,7 @@ public class AddTypeParameters_Intention implements IntentionFactory {
     return true;
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty() && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")));
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeArgument", true)).isEmpty() && !((SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall") && (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalMethodCall"), "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))));
   }
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "7992933469059517022");

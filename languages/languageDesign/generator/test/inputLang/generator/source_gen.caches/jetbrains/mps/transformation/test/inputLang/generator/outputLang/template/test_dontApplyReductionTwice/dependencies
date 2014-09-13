@@ -13,6 +13,7 @@
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateMappingScript" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateModel" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateReductionRule" />
+    <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateUtil" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.TemplateWeavingRule" />
     <classNode dependClassName="jetbrains.mps.generator.template.ITemplateGenerator" />
@@ -23,7 +24,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateMappingConfiguration" />
-    <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateRootMappingRule" />
   </dependency>
   <dependency className="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice.QueriesGenerated" file="QueriesGenerated.java">
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />

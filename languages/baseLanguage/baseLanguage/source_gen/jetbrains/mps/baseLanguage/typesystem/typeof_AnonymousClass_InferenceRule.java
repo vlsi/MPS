@@ -42,7 +42,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       return;
     }
 
-    if (!(ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count())) {
+    if (!((ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).isEmpty() || ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).count()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new ReferenceMessageTarget("classifier");

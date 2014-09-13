@@ -129,6 +129,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DepLink" />
     <classNode dependClassName="jetbrains.mps.ide.depanalyzer.DependencyUtil.Dependency" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -151,13 +152,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SDependency" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
   </dependency>
   <dependency className="jetbrains.mps.ide.depanalyzer.ModuleDependenciesView" file="ModuleDependenciesView.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionGroup" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionPlaces" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
+    <classNode dependClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Splitter" />
     <classNode dependClassName="com.intellij.ui.components.JBScrollPane" />
@@ -185,7 +186,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
-    <classNode extendsClassName="com.intellij.openapi.actionSystem.ToggleAction" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" file="ModuleDependencyNode.java">

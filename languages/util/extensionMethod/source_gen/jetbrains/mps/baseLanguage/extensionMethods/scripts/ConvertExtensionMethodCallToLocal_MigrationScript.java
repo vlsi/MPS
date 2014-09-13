@@ -38,7 +38,7 @@ public class ConvertExtensionMethodCallToLocal_MigrationScript extends BaseMigra
           return false;
         }
         SNode declarationClassifier = SNodeOperations.getAncestor(declaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-        if (!(classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier))) {
+        if (!((classifier == declarationClassifier || ListSequence.fromList(SNodeOperations.getAncestors(classifier, null, false)).contains(declarationClassifier)))) {
           return false;
         }
         while (classifier != declarationClassifier) {

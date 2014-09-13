@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.Debuggers" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.JavaDebugger" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationModule" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.model.EvaluationContext" />
@@ -85,7 +86,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.FindUsagesFacade" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModuleReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.BaseLanguagesImportHelper" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.EvaluationContainer" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.evaluation.model.StackFrameContext" file="StackFrameContext.java">

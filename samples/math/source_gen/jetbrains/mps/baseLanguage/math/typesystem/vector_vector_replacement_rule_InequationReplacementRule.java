@@ -28,7 +28,7 @@ public class vector_vector_replacement_rule_InequationReplacementRule extends Ab
       typeCheckingContext.createLessThanInequality((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, true, _info_12389875345);
     }
     if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "height") != 0) {
-      if (!(SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height"))) {
+      if (!((SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(equationInfo.getNodeWithError(), " invalid vector dimensions", "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275106420", null, errorTarget);
@@ -41,7 +41,7 @@ public class vector_vector_replacement_rule_InequationReplacementRule extends Ab
     boolean result_14532009 = true;
     result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);
     if (SPropertyOperations.getInteger(subtype, "height") != 0 && SPropertyOperations.getInteger(supertype, "height") != 0) {
-      if (!(SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height"))) {
+      if (!((SPropertyOperations.getInteger(subtype, "height") == SPropertyOperations.getInteger(supertype, "height")))) {
         result_14532009 = false;
       }
     }

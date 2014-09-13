@@ -24,7 +24,7 @@ public class check_ConceptSwitch_NonTypesystemRule extends AbstractNonTypesystem
       return;
     }
     SNode argType = TypeChecker.getInstance().getTypeOf(arg);
-    if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.lang.smodel.structure.SConceptType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
+    if (!((SNodeOperations.isInstanceOf(argType, "jetbrains.mps.lang.smodel.structure.SConceptType") || SNodeOperations.isInstanceOf(argType, "jetbrains.mps.lang.smodel.structure.SNodeType")))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Argument of concept switch should be concept<> or node<>", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5944356402132966789", null, errorTarget);

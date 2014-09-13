@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.build.mps.util.ArtifactsRelativePathHelper" file="ArtifactsRelativePathHelper.java">
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
@@ -19,7 +20,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.MPSModulesClosure" file="MPSModulesClosure.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
@@ -69,9 +69,9 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graph" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graphs" />
+    <classNode dependClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
     <classNode dependClassName="jetbrains.mps.util.GraphUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.ModuleChecker" file="ModuleChecker.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -190,17 +190,18 @@
     <classNode dependClassName="jetbrains.mps.project.persistence.SolutionDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.util.MacroHelper" />
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.util.MacroHelper" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.PathConverter" file="PathConverter.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.String" />
@@ -222,7 +223,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="java.lang.Exception" />
   </dependency>
   <dependency className="jetbrains.mps.build.mps.util.RequiredPlugins" file="RequiredPlugins.java">
     <classNode dependClassName="java.lang.Iterable" />

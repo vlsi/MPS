@@ -44,7 +44,7 @@ public class RelatedFacetReference_Constraints extends BaseConstraintsDescriptor
               }
             }).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return !(it == _context.getEnclosingNode());
+                return !((it == _context.getEnclosingNode()));
               }
             });
           }

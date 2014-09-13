@@ -8,7 +8,10 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.InlineSwitchCaseContext" />
@@ -27,10 +30,7 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
   </dependency>
 </dependenciesRoot>
 

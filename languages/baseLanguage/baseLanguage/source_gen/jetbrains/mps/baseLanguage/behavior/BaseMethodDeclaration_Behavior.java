@@ -322,6 +322,6 @@ public class BaseMethodDeclaration_Behavior {
     return quotedNode_3;
   }
   private static boolean neq_tq0gdw_a0a0r(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

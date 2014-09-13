@@ -91,15 +91,19 @@
     <classNode dependClassName="javax.swing.tree.TreePath" />
     <classNode dependClassName="jetbrains.mps.debug.api.programState.IWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.VariablesTree" />
+    <classNode dependClassName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.proxy.JavaValue" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.state.watchables.CalculatedWatchable" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.ui.Icons" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.evaluation.container.IEvaluationContainer" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.state.DebugSession" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationModelNode" />
+    <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationState" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" />
     <classNode dependClassName="jetbrains.mps.ide.actions.MPSCommonDataKeys" />
     <classNode dependClassName="jetbrains.mps.ide.messages.Icons" />
     <classNode dependClassName="jetbrains.mps.ide.ui.tree.MPSTreeNode" />
+    <classNode dependClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
@@ -109,11 +113,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.actionSystem.DataProvider" />
-    <classNode extendsClassName="jetbrains.mps.debugger.api.ui.tree.WatchableNode" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationModelNode" />
-    <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationState" />
     <classNode extendsClassName="jetbrains.mps.ide.ui.tree.MPSTree" />
-    <classNode extendsClassName="jetbrains.mps.ide.ui.tree.TextTreeNode" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi" file="EvaluationUi.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.DataKey" />
@@ -128,6 +128,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
+    <classNode dependClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.EvaluationException" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.Evaluator" />
     <classNode dependClassName="jetbrains.mps.debugger.java.api.evaluation.InvalidEvaluatedExpressionException" />
@@ -147,7 +148,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="javax.swing.JPanel" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.ui.evaluation.WatchesPanel" file="WatchesPanel.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionManager" />

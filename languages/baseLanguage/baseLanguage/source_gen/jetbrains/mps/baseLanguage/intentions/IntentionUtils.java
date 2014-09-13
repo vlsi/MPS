@@ -203,9 +203,9 @@ public class IntentionUtils {
     return notNode;
   }
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

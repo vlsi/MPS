@@ -142,6 +142,6 @@ public class ConnectorDecoratorView extends AbstractDecoratorView {
     }
   }
   private static boolean neq_2z6621_a0a0b0o(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

@@ -11,6 +11,7 @@
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
+    <classNode dependClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
@@ -23,7 +24,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.util.ProgressMonitor" />
     <classNode extendsClassName="jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder" />
-    <classNode extendsClassName="jetbrains.mps.ide.findusages.model.holders.IHolder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.findusages.findalgorithm.finders.specific.ConstantFinder" file="ConstantFinder.java">
     <classNode dependClassName="java.lang.Override" />

@@ -658,7 +658,7 @@ public class QueriesGenerated {
     return Sequence.fromIterable(((MPSModulesPartitioner) _context.getVariable("var:closure")).getExternal()).isNotEmpty();
   }
   public static boolean ifMacro_Condition_6886349771916699399(final IfMacroContext _context) {
-    return !(SPropertyOperations.getString(_context.getNode(), "name").equals("mpsBootstrapCore") && SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).equals("jetbrains.mps.ide.build"));
+    return !((SPropertyOperations.getString(_context.getNode(), "name").equals("mpsBootstrapCore") && SModelOperations.getModelName(SNodeOperations.getModel(_context.getNode())).equals("jetbrains.mps.ide.build")));
   }
   public static boolean ifMacro_Condition_1787667533297084982(final IfMacroContext _context) {
     SNode mpsAspect = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "aspects", true)).findFirst(new IWhereFilter<SNode>() {
@@ -1552,7 +1552,7 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
   private static boolean neq_x583g4_a0a0a631(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static SNode createGeneratorInternal_String_x583g4_a0a0a0a0xh(Object p0) {
     PersistenceFacade facade = PersistenceFacade.getInstance();

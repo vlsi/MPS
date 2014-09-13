@@ -36,10 +36,10 @@ public class RootCustom {
       e2 *= (i + 5);
       i = e2 * i;
 
-      if (!(e2 != 10 || i != 43)) {
+      if (!((!(e2 == 10) || !(i == 43)))) {
         boolean res = true;
         for (int qq = 0; qq < 10; qq++) {
-          res = !(!(res) || !((i - e2 > qq)));
+          res = !((!(res) || !((i - e2 > qq))));
         }
       }
       // Block 

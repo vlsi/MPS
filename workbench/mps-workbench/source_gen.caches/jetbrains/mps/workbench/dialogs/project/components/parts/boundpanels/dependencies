@@ -12,10 +12,10 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="org.jdesktop.swingbinding.SwingBindings" />
-    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction" />
-    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel" file="BoundTablePanel.java">
@@ -39,6 +39,8 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.IBindedDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.BaseValidatedAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableAddAction" />
+    <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.diffrowtable.DiffRowTable" />
     <classNode dependClassName="org.jdesktop.beansbinding.AutoBinding" />
     <classNode dependClassName="org.jdesktop.beansbinding.BeanProperty" />
@@ -46,8 +48,6 @@
     <classNode dependClassName="org.jdesktop.swingbinding.JTableBinding" />
     <classNode dependClassName="org.jdesktop.swingbinding.SwingBindings" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableAddAction" />
-    <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.actions.TableRemoveAction" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" file="ValidateableBoundPanel.java">
@@ -59,9 +59,11 @@
     <classNode dependClassName="com.intellij.ui.ScrollPaneFactory" />
     <classNode dependClassName="java.awt.BorderLayout" />
     <classNode dependClassName="java.awt.Color" />
+    <classNode dependClassName="java.awt.event.KeyAdapter" />
     <classNode dependClassName="java.awt.event.KeyEvent" />
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -82,8 +84,6 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.util.Condition" />
-    <classNode extendsClassName="java.awt.event.KeyAdapter" />
-    <classNode extendsClassName="java.lang.Runnable" />
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
 </dependenciesRoot>

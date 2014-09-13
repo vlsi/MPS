@@ -64,12 +64,13 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.SAXException" />
-    <classNode extendsClassName="org.xml.sax.helpers.DefaultHandler" />
+    <classNode dependClassName="org.xml.sax.helpers.DefaultHandler" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.JavaDependenciesMerger" file="JavaDependenciesMerger.java">
     <classNode dependClassName="java.io.ByteArrayOutputStream" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -86,7 +87,6 @@
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="java.lang.Exception" />
     <classNode extendsClassName="jetbrains.mps.vcs.core.mergedriver.AbstractContentMerger" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.core.mergedriver.MergeDriverMain" file="MergeDriverMain.java">

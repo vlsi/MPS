@@ -133,6 +133,7 @@
     <classNode dependClassName="javax.swing.border.TitledBorder" />
     <classNode dependClassName="jetbrains.mps.debug.api.AbstractDebugSession" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.BreakpointLocation" />
+    <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.BreakpointsIconCache" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.ExceptionBreakpoint" />
@@ -147,7 +148,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
-    <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.breakpoints.LineBreakpoint" file="LineBreakpoint.java">

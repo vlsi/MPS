@@ -61,6 +61,7 @@
     <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.InterruptedException" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.Thread" />
     <classNode dependClassName="java.util.HashMap" />
@@ -87,7 +88,6 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
-    <classNode extendsClassName="java.lang.Runnable" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.runtime.engine.events.UserContext" file="UserContext.java">
     <classNode dependClassName="com.sun.jdi.ThreadReference" />

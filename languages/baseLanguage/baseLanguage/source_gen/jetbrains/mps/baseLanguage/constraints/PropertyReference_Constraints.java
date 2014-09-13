@@ -104,7 +104,7 @@ public class PropertyReference_Constraints extends BaseConstraintsDescriptor {
     return true;
   }
   private static boolean neq_57atcm_a0a0a0a0a0a0a5a0a1a0a0a1a0b0a1a3(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_57atcm_a0a0b0e(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

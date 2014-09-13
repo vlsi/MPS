@@ -195,7 +195,7 @@ public class ExtractMethodRefactoringAnalyzer {
           SNode nextNode = (SNode) next.getSource();
           if (!(next instanceof EndInstruction)) {
             if (next.getSource() == null || !(this.isInside(nextNode))) {
-              if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(nextNode), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(nextNode), "jetbrains.mps.baseLanguage.structure.ConceptFunction"))) {
+              if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(nextNode), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") || SNodeOperations.isInstanceOf(SNodeOperations.getParent(nextNode), "jetbrains.mps.baseLanguage.structure.ConceptFunction")))) {
                 return false;
               }
             }

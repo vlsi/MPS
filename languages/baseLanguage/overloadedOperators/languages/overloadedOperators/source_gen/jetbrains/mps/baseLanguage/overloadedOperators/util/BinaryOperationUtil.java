@@ -71,7 +71,7 @@ public class BinaryOperationUtil {
     return result;
   }
   private static boolean isOverloading(SNode node, SNode leftType, SNode rightType, SNode operator) {
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, SLinkOperations.getTarget(operator, "leftType", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, SLinkOperations.getTarget(operator, "rightType", true)))) {
+    if (!((TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, SLinkOperations.getTarget(operator, "leftType", true)) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rightType, SLinkOperations.getTarget(operator, "rightType", true))))) {
       return false;
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(operator, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {

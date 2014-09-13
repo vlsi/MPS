@@ -45,6 +45,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FileDataSource" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadManager" />
     <classNode dependClassName="jetbrains.mps.ide.project.ProjectHelper" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
@@ -112,7 +113,6 @@
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.watching.ReloadListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.DummyFileEditor" file="DummyFileEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />

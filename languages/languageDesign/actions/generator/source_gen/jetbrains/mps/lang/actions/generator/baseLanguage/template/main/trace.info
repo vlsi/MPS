@@ -510,10 +510,10 @@
     <file name="QueriesGenerated.java">
       <node id="1235653009893" at="50,102,51,158" concept="5" />
       <node id="1235754927870" at="53,104,54,345" concept="5" />
-      <node id="1235754866579" at="56,104,57,348" concept="5" />
+      <node id="1235754866579" at="56,104,57,350" concept="5" />
       <scope id="1235652996917" at="50,102,51,158" />
       <scope id="1235754927541" at="53,104,54,345" />
-      <scope id="1235754864860" at="56,104,57,348" />
+      <scope id="1235754864860" at="56,104,57,350" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)/1235754613235">

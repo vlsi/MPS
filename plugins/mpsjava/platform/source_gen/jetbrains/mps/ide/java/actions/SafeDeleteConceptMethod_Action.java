@@ -82,7 +82,7 @@ public class SafeDeleteConceptMethod_Action extends BaseAction {
         @Override
         public void run() {
           SNode node = ((SNode) ((SNode) MapSequence.fromMap(_params).get("target")));
-          if (!(node.getModel() != null) || !(SNodeUtil.isAccessible(node, ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
+          if (!((node.getModel() != null)) || !(SNodeUtil.isAccessible(node, ((MPSProject) MapSequence.fromMap(_params).get("project")).getRepository()))) {
             return;
           }
           RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContextByName("jetbrains.mps.baseLanguage.refactorings.SafeDeleteConceptMethod", Arrays.asList(), Arrays.asList(), ((SNode) MapSequence.fromMap(_params).get("target")), ((MPSProject) MapSequence.fromMap(_params).get("project"))));

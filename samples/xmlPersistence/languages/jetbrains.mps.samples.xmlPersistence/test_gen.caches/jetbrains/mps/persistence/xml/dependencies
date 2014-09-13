@@ -22,10 +22,10 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSourceListener" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelSaveException" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
     <classNode dependClassName="org.junit.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.CoreMpsTest" />
-    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.StreamDataSource" />
   </dependency>
 </dependenciesRoot>
 
