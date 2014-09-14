@@ -17,4 +17,7 @@ public class ClassLikeMethod_Behavior {
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "virtual_getExpectedRetType_1239354342632", new Object[]{});
   }
+  public static SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return SLinkOperations.getTarget(thisNode, "decl", false);
+  }
 }

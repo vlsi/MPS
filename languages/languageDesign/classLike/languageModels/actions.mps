@@ -3,8 +3,8 @@
   <persistence version="9" />
   <debugInfo>
     <lang id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" name="jetbrains.mps.lang.actions" />
-    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="f3061a53-9226-4cc5-a443-f952ceaf5816" name="jetbrains.mps.baseLanguage" />
+    <lang id="fd392034-7849-419d-9071-12563d152375" name="jetbrains.mps.baseLanguage.closures" />
     <lang id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" name="jetbrains.mps.lang.smodel" />
     <lang id="83888646-71ce-4f1c-9c53-c54016f6ad4f" name="jetbrains.mps.baseLanguage.collections" />
     <lang id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" name="jetbrains.mps.lang.core" />
@@ -135,8 +135,8 @@
   </debugInfo>
   <languages>
     <use id="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" version="-1" index="abtv" />
-    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" implicit="true" index="vg0i" />
+    <use id="fd392034-7849-419d-9071-12563d152375" version="0" implicit="true" index="cakq" />
     <use id="7866978e-a0f0-4cc7-81bc-4d213d9375e1" version="0" implicit="true" index="4ia1" />
     <use id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" implicit="true" index="j0ph" />
     <use id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" implicit="true" index="asn4" />
@@ -258,7 +258,7 @@
               <node concept="vg0i.1068580123136" id="510971631002957906" role="vg0i.1137021947720.1137022507850" info="sn">
                 <node concept="vg0i.1068580123155" id="510971631002957907" role="vg0i.1068580123136.1068581517665" info="nn">
                   <node concept="vg0i.1070475926800" id="510971631002957908" role="vg0i.1068580123155.1068580123156" info="nn">
-                    <property role="vg0i.1070475926800.1070475926801" value="method" />
+                    <property role="vg0i.1070475926800.1070475926801" value="property" />
                   </node>
                 </node>
               </node>

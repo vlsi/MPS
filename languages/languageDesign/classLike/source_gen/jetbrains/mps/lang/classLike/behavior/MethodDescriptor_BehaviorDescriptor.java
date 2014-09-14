@@ -17,7 +17,7 @@ public class MethodDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDes
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
   public void virtual_init_6478870542308635887(SNode thisNode, SNode cls) {
-    MethodDescriptor_Behavior.virtual_init_6478870542308635887(thisNode, cls);
+    ClassLikeMember_Behavior.virtual_init_6478870542308635887(thisNode, cls);
   }
   @Override
   public String getConceptFqName() {

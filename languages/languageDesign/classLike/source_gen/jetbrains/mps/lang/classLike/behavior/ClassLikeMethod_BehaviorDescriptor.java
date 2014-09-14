@@ -5,8 +5,11 @@ package jetbrains.mps.lang.classLike.behavior;
 import jetbrains.mps.baseLanguage.behavior.InstanceMethodDeclaration_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 
-public class ClassLikeMethod_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements ClassLikeMemberIntance_BehaviorDescriptor {
+public class ClassLikeMethod_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor implements ClassLikeMemberInstance_BehaviorDescriptor {
   public ClassLikeMethod_BehaviorDescriptor() {
+  }
+  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return ClassLikeMethod_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
   }
   public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return ClassLikeMethod_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);

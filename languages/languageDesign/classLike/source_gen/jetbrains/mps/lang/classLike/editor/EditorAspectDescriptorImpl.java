@@ -51,9 +51,18 @@ public class EditorAspectDescriptorImpl implements EditorAspectDescriptor {
     return Collections.<ConceptEditor>emptyList();
   }
   public Collection<ConceptEditorComponent> getEditorComponents(ConceptDescriptor descriptor, String editorComponentId) {
+    switch (Arrays.binarySearch(stringSwitchCases_xbvbvu_a0a0c, descriptor.getConceptFqName())) {
+      case 0:
+        if ("jetbrains.mps.lang.classLike.editor.ClassLikeProperty_Name_EditorComponent".equals(editorComponentId)) {
+          return Collections.<ConceptEditorComponent>singletonList(new ClassLikeProperty_Name_EditorComponent());
+        }
+        break;
+      default:
+    }
     return Collections.<ConceptEditorComponent>emptyList();
   }
 
 
   private static String[] stringSwitchCases_xbvbvu_a0a0b = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeAnnotation", "jetbrains.mps.lang.classLike.structure.ClassLikeBooleanProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeDescriptor", "jetbrains.mps.lang.classLike.structure.ClassLikeIntegerProperty", "jetbrains.mps.lang.classLike.structure.ClassLikeMemberPlaceholder", "jetbrains.mps.lang.classLike.structure.ClassLikeMethod", "jetbrains.mps.lang.classLike.structure.ClassLikeStringProperty", "jetbrains.mps.lang.classLike.structure.CustomMemberDescriptor", "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration", "jetbrains.mps.lang.classLike.structure.DependentTypeInstance", "jetbrains.mps.lang.classLike.structure.EmptyMember", "jetbrains.mps.lang.classLike.structure.MethodDescriptor", "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", "jetbrains.mps.lang.classLike.structure.PlaceholderModifier", "jetbrains.mps.lang.classLike.structure.PropertyDescriptor", "jetbrains.mps.lang.classLike.structure.RequiredModifier"};
+  private static String[] stringSwitchCases_xbvbvu_a0a0c = new String[]{"jetbrains.mps.lang.classLike.structure.ClassLikeProperty"};
 }

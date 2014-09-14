@@ -64,7 +64,7 @@
         <reference role="4jta.1071489288298.1071599976176" target="3751132065236767079" resolveInfo="MethodDescriptor" />
       </node>
       <node concept="4jta.1169127622168" id="6478870542308708732" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberIntance" />
+        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="3751132065236767068" info="ig">
@@ -150,6 +150,9 @@
         <property role="4jta.1071489288298.1071599776563" value="decl" />
         <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="3751132065236767068" resolveInfo="DependentTypeDeclaration" />
+      </node>
+      <node concept="4jta.1169127622168" id="9097849371503075142" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
       </node>
     </node>
     <node concept="4jta.1071489090640" id="3571587574961713354" info="ig">
@@ -258,7 +261,7 @@
         <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
       </node>
       <node concept="4jta.1169127622168" id="6478870542308708730" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberIntance" />
+        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
       </node>
       <node concept="4jta.1169127622168" id="6478870542308777038" role="4jta.1071489090640.1169129564478" info="ig">
         <reference role="4jta.1169127622168.1169127628841" target="tpee.1178285077437" resolveInfo="ClassifierMember" />
@@ -280,12 +283,12 @@
         <reference role="4jta.1071489288298.1071599976176" target="8264762413010631473" resolveInfo="PropertyDescriptor" />
       </node>
       <node concept="4jta.1169127622168" id="6478870542308708734" role="4jta.1071489090640.1169129564478" info="ig">
-        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberIntance" />
+        <reference role="4jta.1169127622168.1169127628841" target="6478870542308708729" resolveInfo="ClassLikeMemberInstance" />
       </node>
     </node>
     <node concept="4jta.1169125989551" id="6478870542308708729" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="instances" />
-      <property role="asn4.1169194658468.1169194664001" value="ClassLikeMemberIntance" />
+      <property role="asn4.1169194658468.1169194664001" value="ClassLikeMemberInstance" />
     </node>
     <node concept="4jta.1071489090640" id="6478870542308871428" info="ig">
       <property role="asn4.1133920641626.1193676396447" value="instances.property" />

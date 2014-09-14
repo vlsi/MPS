@@ -10,11 +10,14 @@ import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
-public class ClassLikeMemberPlaceholder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMemberIntance_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
+public class ClassLikeMemberPlaceholder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ClassLikeMemberInstance_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public ClassLikeMemberPlaceholder_BehaviorDescriptor() {
   }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
+  }
+  public SNode virtual_getDeclaration_9097849371503884215(SNode thisNode) {
+    return ClassLikeMemberPlaceholder_Behavior.virtual_getDeclaration_9097849371503884215(thisNode);
   }
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);

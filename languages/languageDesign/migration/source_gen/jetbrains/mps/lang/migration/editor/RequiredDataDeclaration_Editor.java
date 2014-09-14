@@ -11,7 +11,6 @@ import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.editor.runtime.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -34,8 +33,7 @@ public class RequiredDataDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     editorCell.addEditorCell(this.createComponent_n7f8t_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_n7f8t_b0(editorContext, node));
-    editorCell.addEditorCell(this.createIndentCell_n7f8t_c0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNodeList_n7f8t_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNodeList_n7f8t_c0(editorContext, node));
     return editorCell;
   }
   private EditorCell createComponent_n7f8t_a0(EditorContext editorContext, SNode node) {
@@ -51,22 +49,19 @@ public class RequiredDataDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createIndentCell_n7f8t_c0(EditorContext editorContext, SNode node) {
-    EditorCell_Indent editorCell = new EditorCell_Indent(editorContext, node);
-    return editorCell;
-  }
-  private EditorCell createRefNodeList_n7f8t_d0(EditorContext editorContext, SNode node) {
-    AbstractCellListHandler handler = new RequiredDataDeclaration_Editor.dependenciesListHandler_n7f8t_d0(node, "dependencies", editorContext);
+  private EditorCell createRefNodeList_n7f8t_c0(EditorContext editorContext, SNode node) {
+    AbstractCellListHandler handler = new RequiredDataDeclaration_Editor.dependenciesListHandler_n7f8t_c0(node, "dependencies", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
     editorCell.setCellId("refNodeList_dependencies");
     Style style = new StyleImpl();
     style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
+    style.set(StyleAttributes.INDENT_LAYOUT_INDENT, true);
     editorCell.getStyle().putAll(style);
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-  private static class dependenciesListHandler_n7f8t_d0 extends RefNodeListHandler {
-    public dependenciesListHandler_n7f8t_d0(SNode ownerNode, String childRole, EditorContext context) {
+  private static class dependenciesListHandler_n7f8t_c0 extends RefNodeListHandler {
+    public dependenciesListHandler_n7f8t_c0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
     public SNode createNodeToInsert(EditorContext editorContext) {

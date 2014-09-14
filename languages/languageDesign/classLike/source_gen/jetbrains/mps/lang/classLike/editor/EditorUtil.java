@@ -6,9 +6,16 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.classLike.behavior.ClassLikeMember_Behavior;
+import jetbrains.mps.lang.classLike.behavior.PlaceholderModifier_Behavior;
 
 public class EditorUtil {
   public static void substitutePlaceholder(SNode ph) {
     SNodeOperations.replaceWithAnother(ph, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(ph, "decl", false), "virtual_create_8260330507834998478", new Object[]{}));
+  }
+  public static void restorePlaceholder(SNode mi) {
+    if ((ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{})) != null)) {
+      SNodeOperations.replaceWithAnother(mi, PlaceholderModifier_Behavior.call_create_9097849371503335421(ClassLikeMember_Behavior.call_getPlaceholder_9097849371503188814(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), mi, "virtual_getDeclaration_9097849371503884215", new Object[]{}))));
+    }
   }
 }

@@ -29,7 +29,6 @@
   </source>
   <source id="7153805464405087853" name="MigrationScriptBase">
     <dep root="3309033097910132680" />
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="MigrationScriptBase.java" />
   </source>
 </dependencies>
