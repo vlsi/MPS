@@ -13,7 +13,7 @@ public class ClassLikeMethod_Behavior {
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance")) {
       SNode dti = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "returnType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeInstance");
-      return DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(dti, "decl", false), dti);
+      return DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(dti);
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "virtual_getExpectedRetType_1239354342632", new Object[]{});
   }

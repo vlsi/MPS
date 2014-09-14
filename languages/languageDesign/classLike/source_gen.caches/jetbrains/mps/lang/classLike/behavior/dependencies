@@ -105,7 +105,7 @@
   <dependency className="jetbrains.mps.lang.classLike.behavior.ClassLikeMethod_Behavior" file="ClassLikeMethod_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -176,6 +176,11 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_Behavior" file="DependentTypeInstance_Behavior.java">
+    <classNode dependClassName="jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_BehaviorDescriptor" file="DependentTypeInstance_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

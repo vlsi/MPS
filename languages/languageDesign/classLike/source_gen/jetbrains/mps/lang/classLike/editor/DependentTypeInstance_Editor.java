@@ -8,8 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.classLike.behavior.DependentTypeDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.classLike.behavior.DependentTypeInstance_Behavior;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.editor.runtime.cells.EmptyCellAction;
@@ -25,7 +24,7 @@ public class DependentTypeInstance_Editor extends DefaultNodeEditor {
   private EditorCell createModelAccess_1x58an_a(final EditorContext editorContext, final SNode node) {
     ModelAccessor modelAccessor = new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtual(String.class, DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(node, "decl", false), node), "virtual_getPresentation_1213877396640", new Object[]{});
+        return BehaviorReflection.invokeVirtual(String.class, DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(node), "virtual_getPresentation_1213877396640", new Object[]{});
       }
       public void setText(String text) {
       }
