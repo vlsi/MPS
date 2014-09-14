@@ -33,6 +33,7 @@ import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SRepositoryAdapter;
 
+import javax.swing.SwingUtilities;
 import java.util.Map;
 
 public class DebugRegistryUtil implements CoreComponent {
@@ -212,9 +213,22 @@ public class DebugRegistryUtil implements CoreComponent {
   public void init() {
     myListener = new SRepositoryAdapter() {
       @Override
-      public void moduleAdded(SModule module) {
+      public void moduleAdded(final SModule module) {
+        if (!SwingUtilities.isEventDispatchThread()) {
+          assert false;
+        }
         if (initialized && module instanceof Language) {
-          fillDebugRegistryForLanguage((Language) module);
+          SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+              ModelAccess.instance().runWriteAction(new Runnable() {
+                @Override
+                public void run() {
+                  fillDebugRegistryForLanguage((Language) module);
+                }
+              });
+            }
+          });
         }
       }
     };
