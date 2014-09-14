@@ -24,9 +24,11 @@ public class MethodDescriptor_Behavior {
     ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "param", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
-          SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.DependentTypeInstance", null);
-          SLinkOperations.setTarget(node, "decl", SNodeOperations.cast(SLinkOperations.getTarget(it, "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), false);
-          return createParameterDeclaration_9j0ugw_a2a0a0a0a0d0a(SPropertyOperations.getString(it, "name"), SNodeOperations.cast(HUtil.copyIfNecessary(node), "jetbrains.mps.baseLanguage.structure.Type"));
+          SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.DependentTypeInstance", null);
+          SLinkOperations.setTarget(type, "decl", SNodeOperations.cast(SLinkOperations.getTarget(it, "type", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), false);
+          SNode result = createParameterDeclaration_9j0ugw_a0c0a0a0a0a3a0(SPropertyOperations.getString(it, "name"), SNodeOperations.cast(HUtil.copyIfNecessary(type), "jetbrains.mps.baseLanguage.structure.Type"));
+          SLinkOperations.setTarget(type, "point", result, false);
+          return result;
         } else {
           return createParameterDeclaration_9j0ugw_a0a0a0a0a0a3a0(SPropertyOperations.getString(it, "name"), SNodeOperations.cast(HUtil.copyIfNecessary(SLinkOperations.getTarget(it, "type", true)), "jetbrains.mps.baseLanguage.structure.Type"));
         }
@@ -37,6 +39,7 @@ public class MethodDescriptor_Behavior {
     } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration")) {
       SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.classLike.structure.DependentTypeInstance", null);
       SLinkOperations.setTarget(node, "decl", SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "retType", true), "jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration"), false);
+      SLinkOperations.setTarget(node, "point", method, false);
       SLinkOperations.setTarget(method, "returnType", node, true);
     } else {
       SLinkOperations.setTarget(method, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "retType", true)), true);
@@ -46,7 +49,7 @@ public class MethodDescriptor_Behavior {
 
     return method;
   }
-  private static SNode createParameterDeclaration_9j0ugw_a2a0a0a0a0d0a(Object p0, Object p1) {
+  private static SNode createParameterDeclaration_9j0ugw_a0c0a0a0a0a3a0(Object p0, Object p1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, false);
     n1.setProperty("name", String.valueOf(p0));

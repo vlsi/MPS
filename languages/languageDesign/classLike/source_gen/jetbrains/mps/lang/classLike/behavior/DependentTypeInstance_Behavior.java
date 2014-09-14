@@ -4,11 +4,15 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class DependentTypeInstance_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getMyType_9097849371504546165(SNode thisNode) {
-    return DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, "decl", false), thisNode);
+    return DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, "decl", false), SLinkOperations.getTarget(thisNode, "point", false));
+  }
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return BehaviorReflection.invokeVirtual(String.class, DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode), "virtual_getPresentation_1213877396640", new Object[]{});
   }
 }

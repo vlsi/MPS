@@ -24,7 +24,6 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import jetbrains.mps.smodel.SReference;
 
 public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_DependentTypeDeclaration_9097849371504700476(final IOperationContext operationContext, final NodeSetupContext _context) {
@@ -115,9 +114,8 @@ public class QueriesGenerated {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "name", "ti");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "point");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
-    quotedNode_2.setReference("concept", SReference.create("concept", quotedNode_2, facade.createModelReference("c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:7cc2086d-c7d0-49c7-811c-ebbaf40d9195(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.structure)"), facade.createNodeId("3751132065236767083")));
     quotedNode_1.addChild("type", quotedNode_2);
     return quotedNode_1;
   }

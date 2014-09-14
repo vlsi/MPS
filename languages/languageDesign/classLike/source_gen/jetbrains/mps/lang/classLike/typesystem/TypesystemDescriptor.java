@@ -5,6 +5,7 @@ package jetbrains.mps.lang.classLike.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -17,7 +18,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_VariableReference_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_LocalMethodCall_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -27,6 +28,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_CustomMemberDeclaration_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new DependentType_subtypeOfItsValue_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
     }
   }
 }

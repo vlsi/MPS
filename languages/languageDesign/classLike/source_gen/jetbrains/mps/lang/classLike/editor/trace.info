@@ -483,51 +483,48 @@
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.editor)/3751132065236797304">
     <file name="DependentTypeInstance_Editor.java">
-      <node id="3751132065236797304" at="21,79,22,64" concept="7" />
-      <node id="3751132065236797309" at="26,31,27,192" concept="7" />
-      <node id="3751132065236797325" at="31,47,32,20" concept="7" />
-      <node id="3751132065236797305" at="34,6,35,100" concept="6" />
-      <node id="3751132065236797305" at="35,100,36,79" concept="2" />
-      <node id="3751132065236797305" at="36,79,37,82" concept="2" />
-      <node id="3751132065236797305" at="37,82,38,49" concept="2" />
-      <node id="3751132065236797305" at="38,49,39,28" concept="2" />
-      <node id="3751132065236797305" at="39,28,40,34" concept="6" />
-      <node id="3751132065236797305" at="40,34,41,57" concept="2" />
-      <node id="3751132065236797305" at="41,57,42,40" concept="2" />
-      <node id="3751132065236797305" at="42,40,43,34" concept="2" />
-      <node id="3751132065236797305" at="43,34,44,22" concept="7" />
-      <node id="3751132065236797305" at="29,0,31,0" concept="5" trace="setText#(Ljava/lang/String;)V" />
+      <node id="3751132065236797304" at="21,79,22,74" concept="7" />
+      <node id="9097849371505345970" at="26,31,27,125" concept="7" />
+      <node id="9097849371505345223" at="31,44,32,46" concept="7" />
+      <node id="9097849371505345223" at="34,13,35,79" concept="2" />
+      <node id="9097849371505345223" at="35,79,36,82" concept="2" />
+      <node id="9097849371505345223" at="36,82,37,59" concept="2" />
+      <node id="9097849371505345223" at="37,59,38,28" concept="2" />
+      <node id="9097849371505345223" at="38,28,39,34" concept="6" />
+      <node id="9097849371505345223" at="39,34,40,57" concept="2" />
+      <node id="9097849371505345223" at="40,57,41,40" concept="2" />
+      <node id="9097849371505345223" at="41,40,42,22" concept="7" />
+      <node id="9097849371505345223" at="29,0,31,0" concept="5" trace="setText#(Ljava/lang/String;)V" />
       <node id="3751132065236797304" at="21,0,24,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <node id="3751132065236797305" at="26,0,29,0" concept="5" trace="getText#()Ljava/lang/String;" />
-      <node id="3751132065236797305" at="31,0,34,0" concept="5" trace="isValidText#(Ljava/lang/String;)Z" />
-      <node id="3751132065236797305" at="24,102,34,6" concept="6" />
-      <node id="3751132065236797305" at="24,0,46,0" concept="5" trace="createModelAccess_1x58an_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-      <scope id="3751132065236797322" at="29,40,29,40" />
-      <scope id="3751132065236797304" at="21,79,22,64" />
-      <scope id="3751132065236797308" at="26,31,27,192" />
-      <scope id="3751132065236797324" at="31,47,32,20" />
-      <scope id="3751132065236797305" at="29,0,31,0">
-        <var name="text" id="3751132065236797305" />
+      <node id="9097849371505345223" at="26,0,29,0" concept="5" trace="getText#()Ljava/lang/String;" />
+      <node id="9097849371505345223" at="31,0,34,0" concept="5" trace="isValidText#(Ljava/lang/String;)Z" />
+      <node id="9097849371505345223" at="24,112,34,13" concept="6" />
+      <node id="9097849371505345223" at="24,0,44,0" concept="5" trace="createReadOnlyModelAccessor_1x58an_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="9097849371505345223" at="29,37,29,37" />
+      <scope id="3751132065236797304" at="21,79,22,74" />
+      <scope id="9097849371505345271" at="26,31,27,125" />
+      <scope id="9097849371505345223" at="31,44,32,46" />
+      <scope id="9097849371505345223" at="29,0,31,0">
+        <var name="s" id="9097849371505345223" />
       </scope>
       <scope id="3751132065236797304" at="21,0,24,0">
         <var name="editorContext" id="3751132065236797304" />
         <var name="node" id="3751132065236797304" />
       </scope>
-      <scope id="3751132065236797305" at="26,0,29,0" />
-      <scope id="3751132065236797305" at="31,0,34,0">
-        <var name="text" id="3751132065236797305" />
+      <scope id="9097849371505345223" at="26,0,29,0" />
+      <scope id="9097849371505345223" at="31,0,34,0">
+        <var name="s" id="9097849371505345223" />
       </scope>
-      <scope id="3751132065236797305" at="24,102,44,22">
-        <var name="editorCell" id="3751132065236797305" />
-        <var name="modelAccessor" id="3751132065236797305" />
-        <var name="style" id="3751132065236797305" />
+      <scope id="9097849371505345223" at="24,112,42,22">
+        <var name="editorCell" id="9097849371505345223" />
+        <var name="style" id="9097849371505345223" />
       </scope>
-      <scope id="3751132065236797305" at="24,0,46,0">
-        <var name="editorContext" id="3751132065236797305" />
-        <var name="node" id="3751132065236797305" />
+      <scope id="9097849371505345223" at="24,0,44,0">
+        <var name="editorContext" id="9097849371505345223" />
+        <var name="node" id="9097849371505345223" />
       </scope>
-      <unit id="3751132065236797305" at="25,38,34,5" name="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor$1" />
-      <unit id="3751132065236797304" at="20,0,47,0" name="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor" />
+      <unit id="9097849371505345223" at="25,83,34,5" name="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor$1" />
+      <unit id="3751132065236797304" at="20,0,45,0" name="jetbrains.mps.lang.classLike.editor.DependentTypeInstance_Editor" />
     </file>
   </root>
   <root nodeRef="c7d5b9dd-a05f-4be2-bc73-f2e16994cc67/r:60fc5d65-00f5-411a-8513-c8d5fe6ffc51(jetbrains.mps.lang.classLike/jetbrains.mps.lang.classLike.editor)/3751132065236797327">

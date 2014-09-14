@@ -4,9 +4,13 @@ package jetbrains.mps.lang.classLike.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class DependentTypeInstance_BehaviorDescriptor extends Type_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public DependentTypeInstance_BehaviorDescriptor() {
+  }
+  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+    return DependentTypeInstance_Behavior.virtual_getPresentation_1213877396640(thisNode);
   }
   @Override
   public String getConceptFqName() {

@@ -37,7 +37,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 11:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeDeclaration").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type").children(new String[]{"getter"}, new boolean[]{false}).alias("deptype", "").create();
       case 12:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeInstance").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("decl").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.DependentTypeInstance").super_("jetbrains.mps.baseLanguage.structure.Type").parents("jetbrains.mps.baseLanguage.structure.Type", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault").references("decl", "point").create();
       case 13:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.classLike.structure.EmptyMember").super_("jetbrains.mps.lang.core.structure.BaseConcept").parents("jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.classLike.structure.ClassLikeMember").alias("empty line", "").create();
       case 14:

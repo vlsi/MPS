@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.lang.reflect.Method;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -20,7 +19,7 @@ public class DependentTypeDeclaration_Behavior {
       SModule classModule = thisNode.getModel().getModule();
       Method[] methods = ClassLoaderManager.getInstance().getClass(classModule, className).getMethods();
       for (Method m : methods) {
-        if (m.getName().equals(DependentTypeDeclaration_Behavior.call_getGeneratedMethodName_2546325654728395319(SLinkOperations.getTarget(node, "decl", false)))) {
+        if (m.getName().equals(DependentTypeDeclaration_Behavior.call_getGeneratedMethodName_2546325654728395319(thisNode))) {
           m.setAccessible(true);
           return ((SNode) m.invoke(null, node));
         }
@@ -32,7 +31,7 @@ public class DependentTypeDeclaration_Behavior {
     }
   }
   public static String call_getGeneratedMethodName_2546325654728395319(SNode thisNode) {
-    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration", false, false) != null)) {
+    if ((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false) != null)) {
       return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_" + SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.ParameterDescriptor", false, false), "name");
     } else {
       return SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.classLike.structure.MethodDescriptor", false, false), "name") + "_ret";
