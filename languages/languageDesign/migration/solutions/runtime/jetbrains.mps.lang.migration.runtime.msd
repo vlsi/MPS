@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.migration.runtime" uuid="528ff3b9-5fc4-40dd-931f-c6ce3650640e" compileInMPS="false">
+<solution name="jetbrains.mps.lang.migration.runtime" uuid="528ff3b9-5fc4-40dd-931f-c6ce3650640e" compileInMPS="true">
   <models>
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="models" />
     </modelRoot>
   </models>
-  <stubModelEntries>
-    <stubModelEntry path="${module}/classes" />
-  </stubModelEntries>
   <sourcePath />
   <dependencies>
     <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
@@ -26,8 +23,8 @@
     <language id="774bf8a0-62e5-41e1-af63-f4812e60e48b" version="0" />
     <language id="ceab5195-25ea-4f22-9b92-103b95ca8c0c" version="0" />
     <language id="9ded098b-ad6a-4657-bfd9-48636cfe8bc3" version="0" />
-    <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
     <language id="f3061a53-9226-4cc5-a443-f952ceaf5816" version="0" />
+    <language id="fd392034-7849-419d-9071-12563d152375" version="0" />
     <language id="83888646-71ce-4f1c-9c53-c54016f6ad4f" version="0" />
   </languageVersions>
 </solution>
