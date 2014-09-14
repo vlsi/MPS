@@ -75,7 +75,7 @@ public class QueriesGenerated {
                 return getMatchingText(pattern);
               }
               public String getDescriptionText(String pattern) {
-                return "method";
+                return "property";
               }
             });
           }
