@@ -214,9 +214,6 @@ public class DebugRegistryUtil implements CoreComponent {
     myListener = new SRepositoryAdapter() {
       @Override
       public void moduleAdded(final SModule module) {
-        if (!SwingUtilities.isEventDispatchThread()) {
-          assert false;
-        }
         if (initialized && module instanceof Language) {
           SwingUtilities.invokeLater(new Runnable() {
             @Override
