@@ -10,9 +10,14 @@ public class DependentTypeInstance_Behavior {
   public static void init(SNode thisNode) {
   }
   public static SNode call_getMyType_9097849371504546165(SNode thisNode) {
-    return DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, "decl", false), SLinkOperations.getTarget(thisNode, "point", false));
+    return (SLinkOperations.getTarget(thisNode, "decl", false) == null ? null : DependentTypeDeclaration_Behavior.call_getType_3751132065236798250(SLinkOperations.getTarget(thisNode, "decl", false), SLinkOperations.getTarget(thisNode, "point", false)));
   }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(String.class, DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode), "virtual_getPresentation_1213877396640", new Object[]{});
+    SNode myType = DependentTypeInstance_Behavior.call_getMyType_9097849371504546165(thisNode);
+    if ((myType != null)) {
+      return BehaviorReflection.invokeVirtual(String.class, myType, "virtual_getPresentation_1213877396640", new Object[]{});
+    } else {
+      return "DependentType";
+    }
   }
 }

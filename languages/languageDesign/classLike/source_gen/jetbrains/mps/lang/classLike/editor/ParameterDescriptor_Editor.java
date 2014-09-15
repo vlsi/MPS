@@ -18,7 +18,7 @@ public class ParameterDescriptor_Editor extends DefaultNodeEditor {
     return this.createCollection_v24tt6_a(editorContext, node);
   }
   private EditorCell createCollection_v24tt6_a(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_v24tt6_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createRefNode_v24tt6_a0(editorContext, node));
@@ -51,6 +51,7 @@ public class ParameterDescriptor_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    ParameterDescriptor_Actions.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
