@@ -114,6 +114,7 @@
       <node concept="4jta.1071489288298" id="3751132065236767078" role="4jta.1169125787135.1071489727083" info="ig">
         <property role="4jta.1071489288298.1071599937831" value="aggregation" />
         <property role="4jta.1071489288298.1071599776563" value="type" />
+        <property role="4jta.1071489288298.1071599893252" value="1" />
         <reference role="4jta.1071489288298.1071599976176" target="tpee.1068431790189" resolveInfo="Type" />
       </node>
     </node>
