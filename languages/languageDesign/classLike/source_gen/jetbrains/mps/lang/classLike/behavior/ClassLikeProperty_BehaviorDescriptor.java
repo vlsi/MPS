@@ -15,4 +15,5 @@ public abstract class ClassLikeProperty_BehaviorDescriptor extends FieldDeclarat
   public String getConceptFqName() {
     return "jetbrains.mps.lang.classLike.structure.ClassLikeProperty";
   }
+  public abstract SNode virtual_getValueExpression_3855110916777030624(SNode thisNode);
 }

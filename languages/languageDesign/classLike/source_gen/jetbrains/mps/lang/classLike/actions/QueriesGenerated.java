@@ -7,17 +7,18 @@ import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -30,6 +31,11 @@ public class QueriesGenerated {
     SLinkOperations.setTarget(_context.getNewNode(), "getter", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null), true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNewNode(), "getter", true), "parameter", true)).addElement(_quotation_createNode_6hmkle_a0a1a0a());
     SLinkOperations.setTarget(SLinkOperations.getTarget(_context.getNewNode(), "getter", true), "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
+  }
+  public static void nodeFactory_NodeSetup_GenerateModifier_3855110916776743543(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor")) {
+      SPropertyOperations.set(_context.getNewNode(), "name", NameUtil.getGetterName(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.classLike.structure.ClassLikeMember", true, false), "jetbrains.mps.lang.classLike.structure.PropertyDescriptor"), "name")));
+    }
   }
   public static List<SubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ClassLikeMethod_3751132065236797750(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<SubstituteAction> result = ListSequence.fromList(new ArrayList<SubstituteAction>());

@@ -333,6 +333,19 @@
         <reference role="4jta.1169127622168.1169127628841" target="8264762413010642119" resolveInfo="ClassLikeMember" />
       </node>
     </node>
+    <node concept="4jta.1071489090640" id="3682791316837141912" info="ig">
+      <property role="asn4.1133920641626.1193676396447" value="member" />
+      <property role="asn4.1169194658468.1169194664001" value="GenerateModifier" />
+      <property role="4jta.1169125787135.5092175715804935370" value="generate" />
+      <reference role="4jta.1071489090640.1071489389519" target="tpck.1133920641626" resolveInfo="BaseConcept" />
+      <node concept="4jta.1071489288299" id="3855110916776619768" role="4jta.1169125787135.1071489727084" info="ig">
+        <property role="asn4.1169194658468.1169194664001" value="name" />
+        <reference role="4jta.1071489288299.1082985295845" target="tpck.1082983041843" resolveInfo="string" />
+      </node>
+      <node concept="4jta.1169127622168" id="3682791316837141914" role="4jta.1071489090640.1169129564478" info="ig">
+        <reference role="4jta.1169127622168.1169127628841" target="3402736933911578110" resolveInfo="MemberModifier" />
+      </node>
+    </node>
   </contents>
 </model>
 
