@@ -175,7 +175,7 @@ public class GenerationController implements ITaskPoolProvider {
     try {
       generationSession.getLoggingHandler().register();
       if (!myGenerationHandler.canHandle(inputModel)) {
-        myLogger.error("Can't generate " + inputModel.getModelName());
+        myLogger.error("CCan't generate " + inputModel.getModelName());
         return true;
       }
 

@@ -16,25 +16,37 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.classloading.ClassLoaderManager;
+import jetbrains.mps.extapi.persistence.DataSourceBase;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.ModelExports;
 import jetbrains.mps.generator.crossmodel.ExportLabelContext;
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.persistence.DefaultModelPersistence;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.MultiMap;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.persistence.ModelFactory;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import org.jetbrains.mps.openapi.persistence.StreamDataSource;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,6 +59,7 @@ public class ExportsVault {
   private final GenerationSessionContext myContext;
   private final MultiMap<SNode/*ExportLabel*/, ExportEntry> myVault;
   private final Map<SModelReference, SModel> myTempModels;
+  private final SModel myExportsModel; // in fact, is myVault once we're over with persistence into model and won't need in-memory myVault
 
   @SuppressWarnings("unchecked")
   public ExportsVault(GenerationSessionContext context) {
@@ -54,13 +67,41 @@ public class ExportsVault {
     Object o = context.getSessionObject(ExportsVault.class);
     if (o instanceof MultiMap) {
       myVault = (MultiMap<SNode, ExportEntry>) o;
+      myExportsModel = (SModel) context.getSessionObject(ModelExports.class);
       myTempModels = (Map<SModelReference, SModel>) context.getSessionObject(ExportEntry.class);
     } else {
       myVault = new MultiMap<SNode, ExportEntry>();
       myTempModels = new HashMap<SModelReference, SModel>();
+      class FakeSource extends DataSourceBase implements StreamDataSource {
+        @Override
+        public InputStream openInputStream() throws IOException {
+          throw new IOException();
+        }
+
+        @Override
+        public OutputStream openOutputStream() throws IOException {
+          throw new IOException();
+        }
+      };
+      try {
+        myExportsModel = PersistenceRegistry.getInstance().getDefaultModelFactory().create(new FakeSource(),
+            Collections.singletonMap(ModelFactory.OPTION_MODELNAME, context.getOriginalInputModel().getModelName()));
+      } catch (IOException ex) {
+        // FIXME need better handling. Rather create model outside?
+        throw new IllegalStateException("Could not create model to keep cross-model exports", ex);
+      }
+      context.putSessionObject(ModelExports.class, myExportsModel);
       context.putSessionObject(ExportsVault.class, myVault);
       context.putSessionObject(ExportEntry.class, myTempModels);
     }
+  }
+
+  @Nullable
+  public ModelExports getModelExports() {
+    if (myExportsModel.getRootNodes().iterator().hasNext()) {
+      return new ModelExports(myExportsModel);
+    }
+    return null;
   }
 
   public void record(TemplateContext templateContext, SNode/*node<ExportLabel>*/ exportLabel, List<SNode> values) {
@@ -75,6 +116,12 @@ public class ExportsVault {
       final String modelName = SModelStereotype.withoutStereotype(outputModel.getModelName());
       SModelReference mr = PersistenceFacade.getInstance().createModelReference(null, SModelId.generate(), modelName + "@proxies");
       myVault.putValue(exportLabel, new ExportEntry(exportLabel, ctx, mr));
+      // do the same, in a model that would persist
+      final SNode/*node<ExportEntry>*/ exportEntry =
+          new CrossModelUtil().newEntry(ctx, exportLabel, myExportsModel, templateContext.getEnvironment().getOutputModel());
+      // FIXME likely CrossModelUtil would get some of these arguments right into constructor.
+      //       Just unsure at the moment which one, gonna decide once there are more uses.
+      myExportsModel.addRootNode(exportEntry);
     }
   }
 

@@ -246,6 +246,7 @@ class GenerationSession {
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
             myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
+        generationStatus.setModelExports(new ExportsVault(mySessionContext).getModelExports());
         success = generationStatus.isOk();
         return generationStatus;
       } catch (GenerationCanceledException gce) {
