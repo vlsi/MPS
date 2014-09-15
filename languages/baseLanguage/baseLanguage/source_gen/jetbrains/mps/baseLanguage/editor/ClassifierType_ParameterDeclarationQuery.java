@@ -25,7 +25,7 @@ public class ClassifierType_ParameterDeclarationQuery implements ParametersInfor
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     if (ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)).isNotEmpty()) {
       SNode argument = editorContext.getSelectedNode();
-      while (argument != null && !(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Type") && ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Type")))) {
+      while (argument != null && !((SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.Type") && ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).contains(SNodeOperations.cast(argument, "jetbrains.mps.baseLanguage.structure.Type"))))) {
         argument = SNodeOperations.getParent(argument);
       }
       for (SNode param : SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)) {

@@ -64,6 +64,6 @@ import com.intellij.openapi.ui.Messages;
     }
   }
   private static boolean neq_7mp2j8_a0a0a0b0a0a0d0d(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
 }

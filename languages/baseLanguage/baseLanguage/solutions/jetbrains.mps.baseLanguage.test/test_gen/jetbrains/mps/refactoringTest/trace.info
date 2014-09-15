@@ -2912,6 +2912,70 @@
       <unit id="7093131866560585771" at="19,0,41,0" name="jetbrains.mps.refactoringTest.InlineInClosureWithOutsideAssingment_Test" />
     </file>
   </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7475692990584612119">
+    <file name="ExtractWithFieldReference_Test.java">
+      <node id="7475692990584612119" at="23,61,24,119" concept="1" />
+      <node id="7475692990584612119" at="24,119,25,126" concept="1" />
+      <node id="7475692990584612196" at="29,63,30,46" concept="1" />
+      <node id="7475692990584612196" at="30,46,31,46" concept="1" />
+      <node id="7475692990584612196" at="31,46,32,46" concept="1" />
+      <node id="7475692990584612199" at="32,46,33,280" concept="5" />
+      <node id="7475692990584612209" at="33,280,34,28" concept="1" />
+      <node id="7475692990584612214" at="34,28,35,84" concept="5" />
+      <node id="7475692990584612219" at="35,84,36,23" concept="1" />
+      <node id="7475692990584612223" at="37,7,38,204" concept="5" />
+      <node id="7475692990584612223" at="38,204,39,203" concept="5" />
+      <node id="7475692990584612223" at="39,203,40,146" concept="1" />
+      <node id="7475692990584612119" at="22,0,27,0" concept="4" trace="test_extractFromStatements#()V" />
+      <node id="7475692990584612223" at="36,23,41,7" concept="0" />
+      <node id="7475692990584612196" at="29,0,43,0" concept="4" trace="test_extractFromStatements#()V" />
+      <scope id="7475692990584612119" at="23,61,25,126" />
+      <scope id="7475692990584612223" at="37,7,40,146">
+        <var name="nodesAfter" id="7475692990584612223" />
+        <var name="nodesBefore" id="7475692990584612223" />
+      </scope>
+      <scope id="7475692990584612119" at="22,0,27,0" />
+      <scope id="7475692990584612196" at="29,63,41,7">
+        <var name="params" id="7475692990584612200" />
+        <var name="ref" id="7475692990584612215" />
+      </scope>
+      <scope id="7475692990584612196" at="29,0,43,0" />
+      <unit id="7475692990584612119" at="27,0,44,0" name="jetbrains.mps.refactoringTest.ExtractWithFieldReference_Test$TestBody" />
+      <unit id="7475692990584612119" at="20,0,45,0" name="jetbrains.mps.refactoringTest.ExtractWithFieldReference_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7475692990584681432">
+    <file name="ExtractWithStaticFieldReference_Test.java">
+      <node id="7475692990584681432" at="23,61,24,119" concept="1" />
+      <node id="7475692990584681432" at="24,119,25,132" concept="1" />
+      <node id="7475692990584681479" at="29,63,30,46" concept="1" />
+      <node id="7475692990584681479" at="30,46,31,46" concept="1" />
+      <node id="7475692990584681479" at="31,46,32,46" concept="1" />
+      <node id="7475692990584681482" at="32,46,33,280" concept="5" />
+      <node id="7475692990584681490" at="33,280,34,28" concept="1" />
+      <node id="7475692990584681495" at="34,28,35,84" concept="5" />
+      <node id="7475692990584681500" at="35,84,36,23" concept="1" />
+      <node id="7475692990584681504" at="37,7,38,204" concept="5" />
+      <node id="7475692990584681504" at="38,204,39,203" concept="5" />
+      <node id="7475692990584681504" at="39,203,40,146" concept="1" />
+      <node id="7475692990584681432" at="22,0,27,0" concept="4" trace="test_extractFromStatements#()V" />
+      <node id="7475692990584681504" at="36,23,41,7" concept="0" />
+      <node id="7475692990584681479" at="29,0,43,0" concept="4" trace="test_extractFromStatements#()V" />
+      <scope id="7475692990584681432" at="23,61,25,132" />
+      <scope id="7475692990584681504" at="37,7,40,146">
+        <var name="nodesAfter" id="7475692990584681504" />
+        <var name="nodesBefore" id="7475692990584681504" />
+      </scope>
+      <scope id="7475692990584681432" at="22,0,27,0" />
+      <scope id="7475692990584681479" at="29,63,41,7">
+        <var name="params" id="7475692990584681483" />
+        <var name="ref" id="7475692990584681496" />
+      </scope>
+      <scope id="7475692990584681479" at="29,0,43,0" />
+      <unit id="7475692990584681432" at="27,0,44,0" name="jetbrains.mps.refactoringTest.ExtractWithStaticFieldReference_Test$TestBody" />
+      <unit id="7475692990584681432" at="20,0,45,0" name="jetbrains.mps.refactoringTest.ExtractWithStaticFieldReference_Test" />
+    </file>
+  </root>
   <root nodeRef="r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest@tests)/7568753874916167799">
     <file name="SimpleFindAndMoveForIntroduceLocalVar_Test.java">
       <node id="7568753874916167799" at="21,81,22,119" concept="1" />

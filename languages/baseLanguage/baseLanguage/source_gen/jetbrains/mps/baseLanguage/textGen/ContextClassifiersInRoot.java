@@ -72,7 +72,7 @@ public class ContextClassifiersInRoot {
         } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.Interface")) {
           processNestedClassifiers = !("extendedInterface".equals(sourceChildRole));
         } else if (SNodeOperations.isInstanceOf(current, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          processNestedClassifiers = !("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole));
+          processNestedClassifiers = !(("superclass".equals(sourceChildRole) || "implementedInterface".equals(sourceChildRole)));
         } else {
           if (LOG.isEnabledFor(Level.WARN)) {
             LOG.warn("Illegal classifier node in bl textgen: " + current);

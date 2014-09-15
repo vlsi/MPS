@@ -41,9 +41,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroup" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffEditor" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.MergeRootsPane" />
     <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.ButtonsPainter" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.FoldingAreaButton" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeConfirmation" file="MergeConfirmation.java">
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
@@ -123,7 +123,9 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.merge.MergeTemporaryModel" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.MetadataUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.ChangeColors" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelUtil" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.GoToByTree" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ui.merge.AcceptYoursTheirs" />
@@ -138,8 +140,6 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.DiffModelTree" />
-    <classNode extendsClassName="jetbrains.mps.vcs.diff.ui.common.GoToByTree" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.merge.MergeNonConflictingRoots" file="MergeNonConflictingRoots.java">
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />

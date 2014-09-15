@@ -87,6 +87,7 @@
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.FindUsagesParticipant" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.findusages.StubModelsIndexer" file="StubModelsIndexer.java">
+    <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdIndexEntry" />
     <classNode dependClassName="com.intellij.psi.impl.cache.impl.id.IdTableBuilding" />
     <classNode dependClassName="com.intellij.util.indexing.FileContent" />
@@ -108,7 +109,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer" />
   </dependency>
 </dependenciesRoot>
 

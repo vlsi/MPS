@@ -48,7 +48,7 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
   }
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode ruleNode = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.generator.structure.BaseMappingRule", false, false);
-    if (!(SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule"))) {
+    if (!((SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Root_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Weaving_MappingRule") || SNodeOperations.isInstanceOf(ruleNode, "jetbrains.mps.lang.generator.structure.Reduction_MappingRule")))) {
       return false;
     }
     return true;

@@ -95,6 +95,7 @@ public class ParenthesisUtil {
     }
 
     SNode created = createUnmatchedParenthesis(expressionToProcess, completingByRightParen);
+    checkWholeExpressionPriorities(myExpression);
     return (expressionToSetFocusOn != null ? expressionToSetFocusOn : created);
   }
 
@@ -143,6 +144,7 @@ public class ParenthesisUtil {
    */
   private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, boolean completingByRightParen) {
 
+    System.out.println("CCCc");
     if (!(completingByRightParen) && AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null) {
       IIncompleteParen_Behavior.call_increaseCount_1071364028373835874(AttributeOperations.getAttribute(myExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")));
       return myExpression;
@@ -162,6 +164,7 @@ public class ParenthesisUtil {
       // No IBinaryLike ancestor of myExpression exists 
       topExp = myExpression;
     }
+
     List<SNode> candidateParenthedNodes = descendInto(topExp, completingByRightParen);
 
     int index = ListSequence.fromList(candidateParenthedNodes).count() - 1;
@@ -172,7 +175,9 @@ public class ParenthesisUtil {
     // Find a matching parenthesis among candidates, going from the back of the list 
     while (index >= 0) {
       candidateExpression = ListSequence.fromList(candidateParenthedNodes).getElement(index);
-      if (eq_a65dpo_a0b0p0p(candidateExpression, myExpression)) {
+      System.out.println("AAAAAAA");
+      if (eq_a65dpo_a0c0r0p(candidateExpression, myExpression)) {
+        System.out.println("BBBBBBb");
         // they are both the same node 
         SNode parens = SNodeFactoryOperations.replaceWithNewChild(candidateExpression, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
         SLinkOperations.setTarget(parens, "expression", candidateExpression, true);
@@ -224,22 +229,18 @@ public class ParenthesisUtil {
     // Let's call them left and right parens from now, instead of 'my' and 'candidate' 
     SNode leftExpression = (completingByRightParen ? candidateExpression : myExpression);
     SNode rightExpression = (completingByRightParen ? myExpression : candidateExpression);
-    try {
-      // Find the turning points, if exist, otherwise just wrap in parens 
-      SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
-      SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
-      if (leftTurn != null || rightTurn != null) {
-        SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
-        clearIncompleteParens(candidateExpression, completingByRightParen, parens);
-        return parens;
-      } else {
-        SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
-        SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
-        clearIncompleteParens(candidateExpression, completingByRightParen, parens);
-        return parens;
-      }
-    } finally {
-      checkWholeExpressionPriorities(topExp);
+    // Find the turning points, if exist, otherwise just wrap in parens 
+    SNode leftTurn = ParenthesisUtil.findLeftTurn(leftExpression, firstCommonAncestor);
+    SNode rightTurn = ParenthesisUtil.findRightTurn(rightExpression, firstCommonAncestor);
+    if (leftTurn != null || rightTurn != null) {
+      SNode parens = ParenthesisUtil.rebalance(leftTurn, SNodeOperations.cast(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.IBinaryLike"), rightTurn);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
+    } else {
+      SNode parens = SNodeFactoryOperations.replaceWithNewChild(firstCommonAncestor, "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression");
+      SLinkOperations.setTarget(parens, "expression", firstCommonAncestor, true);
+      clearIncompleteParens(candidateExpression, completingByRightParen, parens);
+      return parens;
     }
   }
 
@@ -586,6 +587,11 @@ public class ParenthesisUtil {
         SNodeOperations.replaceWithAnother(castExpr, node);
         SLinkOperations.setTarget(castExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
         SLinkOperations.setTarget(node, "leftExpression", castExpr, true);
+      } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+        SNode notExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.NotExpression");
+        SNodeOperations.replaceWithAnother(notExpr, node);
+        SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "leftExpression", true), true);
+        SLinkOperations.setTarget(node, "leftExpression", notExpr, true);
       } else if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression") && SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.DotExpression", "operand")) {
         SNode dotExpr = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
         SNodeOperations.replaceWithAnother(dotExpr, node);
@@ -631,7 +637,7 @@ public class ParenthesisUtil {
   private static boolean eq_a65dpo_a0a0a8a5a7_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-  private static boolean eq_a65dpo_a0b0p0p(Object a, Object b) {
+  private static boolean eq_a65dpo_a0c0r0p(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean eq_a65dpo_a0a0a0e0r(Object a, Object b) {
@@ -641,16 +647,16 @@ public class ParenthesisUtil {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_a65dpo_a0a1a72(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_a65dpo_a0a1a5a1a72(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
   private static boolean neq_a65dpo_a0f0b0bb(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean neq_a65dpo_a0a2a53(Object a, Object b) {
-    return !((a != null ? a.equals(b) : a == b));
+    return !(((a != null ? a.equals(b) : a == b)));
   }
   private static boolean eq_a65dpo_a0a2a2a53(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);

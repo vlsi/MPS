@@ -39,6 +39,7 @@
   <dependency className="jetbrains.mps.project.io.StandardDescriptorIOProvider" file="StandardDescriptorIOProvider.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.UnsupportedOperationException" />
+    <classNode dependClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode dependClassName="jetbrains.mps.project.io.DescriptorIOException" />
     <classNode dependClassName="jetbrains.mps.project.persistence.DevkitDescriptorPersistence" />
     <classNode dependClassName="jetbrains.mps.project.persistence.LanguageDescriptorPersistence" />
@@ -51,7 +52,6 @@
     <classNode dependClassName="jetbrains.mps.util.MacrosFactory" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jdom.Element" />
-    <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIO" />
     <classNode extendsClassName="jetbrains.mps.project.io.DescriptorIOProvider" />
   </dependency>
 </dependenciesRoot>

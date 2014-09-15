@@ -267,7 +267,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
     }
   }
   public void checkValidSession(MakeSession session) {
-    if (!(this.getSession() == session)) {
+    if (!((this.getSession() == session))) {
       throw new IllegalStateException("invalid session");
     }
   }

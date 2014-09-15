@@ -157,13 +157,13 @@
     <classNode dependClassName="jetbrains.mps.smodel.action.DefaultChildNodeSetter" />
     <classNode dependClassName="jetbrains.mps.smodel.action.ModelActions" />
     <classNode dependClassName="jetbrains.mps.smodel.action.NodeFactoryManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.jetpad.mapper.MapperFactory" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.EditorCell_WithComponent" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.jetpad.AbstractJetpadCell" />
-    <classNode extendsClassName="jetbrains.mps.smodel.action.NodeSubstituteActionWrapper" />
   </dependency>
   <dependency className="jetbrains.mps.nodeEditor.cells.jetpad.EmptyCellLayout" file="EmptyCellLayout.java">
     <classNode dependClassName="java.lang.Iterable" />

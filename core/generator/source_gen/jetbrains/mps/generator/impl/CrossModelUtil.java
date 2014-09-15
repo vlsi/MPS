@@ -21,4 +21,10 @@ public final class CrossModelUtil {
     SLinkOperations.setTarget(rv, "label", exportLabel, false);
     return rv;
   }
+  public SModel newProxyModel(SNode exportEntry) {
+    return BehaviorReflection.invokeVirtual((Class<SModel>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, "outputModel", true), "virtual_create_9032177546944490023", new Object[]{});
+  }
+  public SNode newProxyNode(SNode exportEntry, SModel proxyModel) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(exportEntry, "outputNode", true), "virtual_instantiate_9032177546941558391", new Object[]{proxyModel});
+  }
 }

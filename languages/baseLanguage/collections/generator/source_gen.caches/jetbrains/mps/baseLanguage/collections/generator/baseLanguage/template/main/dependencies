@@ -17,7 +17,14 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values" />
     <classNode dependClassName="jetbrains.mps.generator.impl.GenerationFailureException" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.Base" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode dependClassName="jetbrains.mps.generator.impl.query.PropertyValueQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
+    <classNode dependClassName="jetbrains.mps.generator.impl.query.SourceNodesQuery" />
     <classNode dependClassName="jetbrains.mps.generator.runtime.Generated" />
     <classNode dependClassName="jetbrains.mps.generator.template.BaseMappingRuleContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.IfMacroContext" />
@@ -31,6 +38,8 @@
     <classNode dependClassName="jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext" />
     <classNode dependClassName="jetbrains.mps.generator.template.TemplateQueryContext" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
+    <classNode dependClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
     <classNode dependClassName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
@@ -50,16 +59,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.PersistenceFacade" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.Base" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.IfMacroCondition" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition" />
     <classNode extendsClassName="jetbrains.mps.generator.impl.query.QueryProviderBase" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.ReductionRuleCondition" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.ScriptCodeBlock" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodeQuery" />
-    <classNode extendsClassName="jetbrains.mps.generator.impl.query.SourceNodesQuery" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.GeneratedMatchingPattern" />
-    <classNode extendsClassName="jetbrains.mps.lang.pattern.IMatchingPattern" />
   </dependency>
 </dependenciesRoot>
 

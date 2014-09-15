@@ -68,7 +68,7 @@ public class ChangeEditorMessageFactory {
       int beginIndex = (beginId == null ? currentChildrenSize : SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(beginId))));
       int endIndex = (endId == null ? currentChildrenSize : SNodeOperations.getIndexInParent(((SNode) editedModel.getNode(endId))));
 
-      if (!(0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize)) {
+      if (!((0 <= beginIndex && beginIndex <= endIndex && endIndex <= currentChildrenSize))) {
         return null;
       }
       if (beginIndex == endIndex) {

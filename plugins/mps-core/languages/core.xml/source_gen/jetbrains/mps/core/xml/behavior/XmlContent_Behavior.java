@@ -24,7 +24,7 @@ public class XmlContent_Behavior {
       if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlWhitespace")) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlWhitespace"), "virtual_hasNewLineAfter_2133624044437631594", new Object[]{});
       }
-      return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isTextLike_2133624044437631604", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isOneLineBlock_2133624044437631438", new Object[]{}));
+      return !((BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isTextLike_2133624044437631604", new Object[]{}) || BehaviorReflection.invokeVirtual(Boolean.TYPE, left, "virtual_isOneLineBlock_2133624044437631438", new Object[]{})));
     }
     return true;
   }

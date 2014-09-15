@@ -52,7 +52,7 @@ public class QueriesGenerated {
     return (Language.getModelAspect(model) == LanguageAspect.TYPESYSTEM) && !(ListSequence.fromList(SModelOperations.getRoots(model, null)).isEmpty());
   }
   public static boolean baseMappingRule_Condition_1188901620278(final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.ComparisonRule") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule"));
+    return !((SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.ComparisonRule") || SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule")));
   }
   public static boolean baseMappingRule_Condition_1223379424268(final BaseMappingRuleContext _context) {
     /*
@@ -281,7 +281,7 @@ public class QueriesGenerated {
     return !(TypesystemGenUtil.isInCheckEquation(_context.getNode()));
   }
   public static boolean baseMappingRule_Condition_8090891477833305640(final BaseMappingRuleContext _context) {
-    return !(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode());
+    return !((SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode()));
   }
   public static boolean baseMappingRule_Condition_8090891477833305667(final BaseMappingRuleContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == _context.getNode();
@@ -2055,7 +2055,7 @@ public class QueriesGenerated {
       baseMethodDeclaration = oldBMD;
       if ((baseMethodDeclaration != null)) {
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");
-        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(dotExpression, "operand", true), getRTSupportExpression))) {
+        if (!((MatchingUtil.matchNodes(SLinkOperations.getTarget(dotExpression, "operand", true), getRTSupportExpression)))) {
           continue;
         }
 parametersLoop:

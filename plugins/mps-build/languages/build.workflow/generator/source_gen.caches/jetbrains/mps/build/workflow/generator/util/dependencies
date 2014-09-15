@@ -26,10 +26,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graph" />
     <classNode dependClassName="jetbrains.mps.make.dependencies.graph.Graphs" />
+    <classNode dependClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
     <classNode dependClassName="jetbrains.mps.smodel.CopyUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
-    <classNode extendsClassName="jetbrains.mps.make.dependencies.graph.IVertex" />
   </dependency>
   <dependency className="jetbrains.mps.build.workflow.generator.util.SubTaskOrderHelper" file="SubTaskOrderHelper.java">
     <classNode dependClassName="java.lang.Integer" />

@@ -46,7 +46,7 @@ public class PatternExpression_Behavior {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
-      if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.lang.pattern.structure.OrPattern") && SNodeOperations.getParent(var) != thisNode)) {
+      if (!((SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.lang.pattern.structure.OrPattern") && SNodeOperations.getParent(var) != thisNode))) {
         ListSequence.fromList(result).addElement(var);
       }
     }

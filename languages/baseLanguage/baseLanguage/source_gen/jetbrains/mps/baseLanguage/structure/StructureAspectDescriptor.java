@@ -386,7 +386,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 185:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.NotEqualsExpression").super_("jetbrains.mps.baseLanguage.structure.BinaryOperation").parents("jetbrains.mps.baseLanguage.structure.BinaryOperation").alias("!=", "not equals operation").staticScope(StaticScope.NONE).create();
       case 186:
-        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.NotExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").children(new String[]{"expression"}, new boolean[]{false}).alias("!(expr)", "not-expression").staticScope(StaticScope.NONE).create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.NotExpression").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.baseLanguage.structure.IBinaryLike").children(new String[]{"expression"}, new boolean[]{false}).alias("!", "not-expression").staticScope(StaticScope.NONE).create();
       case 187:
         return new ConceptDescriptorBuilder("jetbrains.mps.baseLanguage.structure.NullLiteral").super_("jetbrains.mps.baseLanguage.structure.Expression").parents("jetbrains.mps.baseLanguage.structure.Expression").alias("null", "").staticScope(StaticScope.NONE).create();
       case 188:

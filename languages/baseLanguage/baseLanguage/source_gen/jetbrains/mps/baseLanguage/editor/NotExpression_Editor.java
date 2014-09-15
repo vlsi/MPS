@@ -26,9 +26,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_us38sw_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_us38sw_a0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_us38sw_b0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_us38sw_c0(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_us38sw_d0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_us38sw_b0(editorContext, node));
     return editorCell;
   }
   private EditorCell createConstant_us38sw_a0(EditorContext editorContext, SNode node) {
@@ -42,17 +40,7 @@ public class NotExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-  private EditorCell createConstant_us38sw_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
-    editorCell.setCellId("Constant_us38sw_b0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_LeftParen(style, editorCell);
-    editorCell.getStyle().putAll(style);
-    NotExpression_Parens_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  private EditorCell createRefNode_us38sw_c0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_us38sw_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
     provider.setNoTargetText("<no expression>");
@@ -69,17 +57,6 @@ public class NotExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createNodeRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
-    return editorCell;
-  }
-  private EditorCell createConstant_us38sw_d0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
-    editorCell.setCellId("Constant_us38sw_d0");
-    Style style = new StyleImpl();
-    BaseLanguageStyle_StyleSheet.apply_RightParen(style, editorCell);
-    style.set(StyleAttributes.SELECTABLE, true);
-    editorCell.getStyle().putAll(style);
-    NotExpression_Parens_Actions.setCellActions(editorCell, node, editorContext);
-    editorCell.setDefaultText("");
     return editorCell;
   }
 }

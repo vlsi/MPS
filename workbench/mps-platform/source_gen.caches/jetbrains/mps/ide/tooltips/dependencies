@@ -32,6 +32,7 @@
     <classNode dependClassName="java.awt.Frame" />
     <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.awt.Window" />
     <classNode dependClassName="java.awt.event.FocusAdapter" />
     <classNode dependClassName="java.awt.event.FocusEvent" />
     <classNode dependClassName="java.awt.event.FocusListener" />
@@ -48,7 +49,6 @@
     <classNode dependClassName="javax.swing.border.LineBorder" />
     <classNode dependClassName="jetbrains.mps.ide.tooltips.ToolTipData" />
     <classNode dependClassName="jetbrains.mps.util.WindowsUtil" />
-    <classNode extendsClassName="java.awt.Window" />
   </dependency>
   <dependency className="jetbrains.mps.ide.tooltips.ToolTipData" file="ToolTipData.java">
     <classNode dependClassName="com.intellij.util.ui.UIUtil" />

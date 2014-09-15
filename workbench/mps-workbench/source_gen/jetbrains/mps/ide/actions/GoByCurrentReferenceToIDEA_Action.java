@@ -135,7 +135,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
     boolean isConstructor = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     boolean isMethod = jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
     boolean isField = (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(targetNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) && jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getParent(targetNode), "jetbrains.mps.baseLanguage.structure.Classifier");
-    if (!(isClassifier || isConstructor || isMethod || isField)) {
+    if (!((isClassifier || isConstructor || isMethod || isField))) {
       return false;
     }
     if (isClassifier) {

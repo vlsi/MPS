@@ -328,7 +328,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1196351887167(final IfMacroContext _context) {
     return ListSequence.fromList(SNodeOperations.getChildren(_context.getNode())).all(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ListAntiquotation"));
+        return !((SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")));
       }
     });
   }
@@ -607,7 +607,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"));
+        return !((SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.StringLiteral") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant")));
       }
     });
   }

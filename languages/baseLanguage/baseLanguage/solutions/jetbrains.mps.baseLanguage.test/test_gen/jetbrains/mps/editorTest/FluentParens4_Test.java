@@ -8,13 +8,13 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 
 @MPSLaunch
-public class AddUnmatchableParensToNot_Test extends BaseTransformationTest {
-  public AddUnmatchableParensToNot_Test() {
+public class FluentParens4_Test extends BaseTransformationTest {
+  public FluentParens4_Test() {
   }
   @Test
-  public void test_AddUnmatchableParensToNot() throws Throwable {
+  public void test_FluentParens4() throws Throwable {
     this.initTest("${mps_home}", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest@tests)");
-    this.runTest("jetbrains.mps.editorTest.AddUnmatchableParensToNot_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.FluentParens4_Test$TestBody", "testMethod", false);
   }
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
@@ -22,8 +22,8 @@ public class AddUnmatchableParensToNot_Test extends BaseTransformationTest {
     }
     @Override
     public void testMethodImpl() throws Exception {
-      initEditor("5225726827662826215", "5225726827662826229");
-      this.typeString(")");
+      initEditor("3682190017634654827", "3682190017634654834");
+      this.typeString("(((((12");
     }
   }
 }

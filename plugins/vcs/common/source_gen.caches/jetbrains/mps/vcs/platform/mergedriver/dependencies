@@ -148,6 +148,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="javax.swing.Action" />
+    <classNode dependClassName="javax.swing.JCheckBox" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="javax.swing.JPanel" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -161,7 +162,6 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode extendsClassName="javax.swing.JCheckBox" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.MergeDriverPacker" file="MergeDriverPacker.java">
     <classNode dependClassName="com.intellij.ide.plugins.IdeaPluginDescriptor" />

@@ -45,7 +45,7 @@ public class DeleteModules_Action extends BaseAction {
       return false;
     }
     for (SModule module : ListSequence.fromList(((List<SModule>) MapSequence.fromMap(_params).get("modules")))) {
-      if (!(module instanceof Solution || module instanceof Language || module instanceof DevKit)) {
+      if (!((module instanceof Solution || module instanceof Language || module instanceof DevKit))) {
         return false;
       }
     }

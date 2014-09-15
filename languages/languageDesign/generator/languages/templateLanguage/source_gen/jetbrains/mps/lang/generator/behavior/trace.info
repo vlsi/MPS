@@ -163,7 +163,7 @@
       <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.behavior.LabelMacro_BehaviorDescriptor" />
     </file>
     <file name="TrivialModelId_BehaviorDescriptor.java">
-      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_BehaviorDescriptor" />
     </file>
     <file name="TemplateSwitchReference_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateSwitchReference_BehaviorDescriptor" />
@@ -193,7 +193,7 @@
       <unit at="9,0,26,0" name="jetbrains.mps.lang.generator.behavior.SourceSubstituteMacro_SourceNodesQuery_BehaviorDescriptor" />
     </file>
     <file name="ModelIdentity_BehaviorDescriptor.java">
-      <unit at="6,0,8,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.generator.behavior.ModelIdentity_BehaviorDescriptor" />
     </file>
     <file name="TemplateFragment_BehaviorDescriptor.java">
       <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.behavior.TemplateFragment_BehaviorDescriptor" />
@@ -2499,6 +2499,23 @@
         <var name="thisNode" id="5580940619725340902" />
       </scope>
       <unit id="5580940619725340902" at="12,0,25,0" name="jetbrains.mps.lang.generator.behavior.ReferenceMacro_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/6255346656297357649">
+    <file name="TrivialModelId_Behavior.java">
+      <node id="6255346656297400341" at="11,75,12,13" concept="11" />
+      <node id="6255346656297400281" at="12,13,13,16" concept="10" />
+      <node id="6255346656297357649" at="9,0,11,0" concept="13" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6255346656297357649" at="11,0,15,0" concept="13" trace="virtual_create_9032177546944490023#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <scope id="6255346656297357805" at="9,43,9,43" />
+      <scope id="6255346656297357649" at="9,0,11,0">
+        <var name="thisNode" id="6255346656297357649" />
+      </scope>
+      <scope id="6255346656297360311" at="11,75,13,16" />
+      <scope id="6255346656297357649" at="11,0,15,0">
+        <var name="thisNode" id="6255346656297357649" />
+      </scope>
+      <unit id="6255346656297357649" at="8,0,16,0" name="jetbrains.mps.lang.generator.behavior.TrivialModelId_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)/650531548511609558">

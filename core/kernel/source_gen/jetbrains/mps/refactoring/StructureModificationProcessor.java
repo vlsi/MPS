@@ -44,7 +44,7 @@ public class StructureModificationProcessor {
   }
   public boolean updateModelOnLoad() {
     // should be called in loading state 
-    if (!(refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel.getReference().getModelName()))) {
+    if (!((refactoringsPlaybackEnabled() && SModelStereotype.isUserModel(myModel.getReference().getModelName())))) {
       return false;
     }
     boolean played = false;

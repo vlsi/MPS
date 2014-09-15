@@ -4,7 +4,9 @@
     <classNode dependClassName="com.intellij.openapi.module.Module" />
     <classNode dependClassName="com.intellij.openapi.project.DumbService" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.psi.search.GlobalSearchScope" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
+    <classNode dependClassName="com.intellij.util.indexing.ValueProcessor" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -39,15 +41,15 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SearchScope" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
-    <classNode extendsClassName="com.intellij.psi.search.GlobalSearchScope" />
-    <classNode extendsClassName="com.intellij.util.indexing.ValueProcessor" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.search.Finder" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" file="ClassifierSuccessorsIndexer.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.util.indexing.DataIndexer" />
     <classNode dependClassName="com.intellij.util.indexing.FileBasedIndex" />
     <classNode dependClassName="com.intellij.util.indexing.FileContent" />
     <classNode dependClassName="com.intellij.util.indexing.ID" />
+    <classNode dependClassName="com.intellij.util.indexing.InputFilter" />
     <classNode dependClassName="com.intellij.util.io.DataExternalizer" />
     <classNode dependClassName="com.intellij.util.io.KeyDescriptor" />
     <classNode dependClassName="java.lang.Override" />
@@ -71,9 +73,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SReference" />
-    <classNode extendsClassName="com.intellij.util.indexing.DataIndexer" />
     <classNode extendsClassName="com.intellij.util.indexing.FileBasedIndexExtension" />
-    <classNode extendsClassName="com.intellij.util.indexing.InputFilter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" file="GlobalSNodeId.java">
     <classNode dependClassName="java.lang.Object" />

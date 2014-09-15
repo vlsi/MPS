@@ -1,3 +1,362 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="5qojiwbo1ow12spv99k211r6fjurjje" />
+<dependencies version="2" modelHash="5qojiwbo1ow12spv99k211r6fjurjje">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-2sqpydigz7vryaerubh22j78l4l08jz" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-88dq2j910t3rwbhdmvczf6foy7a2l1t" />
+  <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="avfa9d1gi6elwdyk4j2v3gai0koenk9" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="327b05wvz8jqq4unqtz0kabu3a54bsw" />
+  <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" hash="9r9w1ututgvrbcdjfywdjhucjtzekdz" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="d987foka3qddszg3k3yjss0jaslj9i" />
+  <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-b5j65z7mcybbtesos0omxqxxxx2nv6e" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-5rqrfirf4r2pp81xqn3rqzv4zzrl3j4" dependsOnNodes="true">
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+  </common>
+  <source id="1702123884811135651" hash="-epsrmrwzokb2606v43x2xes8agl8gd7" />
+  <source id="1702123884811614561" name="RightTransformWithCustomItem_Simple" hash="bmx7k4xtahdoid14krmamy7tao1vtnl" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="RightTransformWithCustomItem_Simple_Test.java" />
+  </source>
+  <source id="4942308145798660281" name="RightTransformWithCustomItem_Simple_checkCanBeParent" hash="mxrllqbp0ryet522io6d6dfgv2t549" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="RightTransformWithCustomItem_Simple_checkCanBeParent_Test.java" />
+  </source>
+  <source id="3185679905989925287" name="RightTransformWithCustomItem_Simple_checkCanBeAncestor" hash="-5hzmsd9bu9khbld4ak1yxaqa788x9ph" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="RightTransformWithCustomItem_Simple_checkCanBeAncestor_Test.java" />
+  </source>
+  <source id="3185679905989954102" name="LeftTransformWithCustomItem_Simple" hash="d3599cskpd9k8opndk2kuyizm9rznio" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="LeftTransformWithCustomItem_Simple_Test.java" />
+  </source>
+  <source id="3185679905990188312" name="LeftTransformWithCustomItem_Simple_checkCanBeParent" hash="-1u5e8z5r97m9zonw7dxv3jt07uigzvw" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <file name="LeftTransformWithCustomItem_Simple_checkCanBeParent_Test.java" />
+  </source>
+  <source id="3185679905990189305" name="LeftTransformWithCustomItem_Simple_checkCanBeAncestor" hash="-ero1frd7son9b00woekmlhysxe44gq6" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="LeftTransformWithCustomItem_Simple_checkCanBeAncestor_Test.java" />
+  </source>
+  <source id="3185679905990915389" name="RightTransformWithCustomItems_Parameterized" hash="-4ev04v6t6v1i023dulcdj58wdkymack" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <file name="RightTransformWithCustomItems_Parameterized_Test.java" />
+  </source>
+  <source id="3185679905991685372" name="RightTransformWithCustomItems_Parameterized_checkCanBeParent" hash="dgx7lh1z0jmujb03jstn788f60tyxfg" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="RightTransformWithCustomItems_Parameterized_checkCanBeParent_Test.java" />
+  </source>
+  <source id="3185679905992058594" name="RightTransformWithCustomItems_Parameterized_checkCanBeAncestor" hash="-axh5jk71tw6vxg6yixueijq57x6tmg0" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="RightTransformWithCustomItems_Parameterized_checkCanBeAncestor_Test.java" />
+  </source>
+  <source id="3185679905992082137" name="LeftTransformWithCustomItems_Parameterized" hash="-ahr013ino7a2n134msg75idukvaj1gl" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <file name="LeftTransformWithCustomItems_Parameterized_Test.java" />
+  </source>
+  <source id="3185679905992082145" name="LeftTransformWithCustomItems_Parameterized_checkCanBeAncestor" hash="-5ya5tkt0g80ypmpv8ycpgee8dotrtej" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="LeftTransformWithCustomItems_Parameterized_checkCanBeAncestor_Test.java" />
+  </source>
+  <source id="3185679905992082178" name="LeftTransformWithCustomItems_Parameterized_checkCanBeParent" hash="-71vl9u1bf9y3hgxmr40qym029kxae0z" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="LeftTransformWithCustomItems_Parameterized_checkCanBeParent_Test.java" />
+  </source>
+  <source id="4886882084760491503" name="LeftTransformWithAddConcept" hash="-73mmx7odsm00tg0qtsvm5jefhcbm2rm" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <file name="LeftTransformWithAddConcept_Test.java" />
+  </source>
+  <source id="6500338114639041001" name="RightTransformWithAddConcept" hash="-6uvpy1io99gogqq5yyc2gfvvm940paz" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041774" />
+    <file name="RightTransformWithAddConcept_Test.java" />
+  </source>
+  <source id="6500338114639041774" name="LeftTransformWithAddConcept_checkCanBeAncestor" hash="-c1xefhjwxzb8pgjawd4qzrkga5vaxo8" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="3959984916895237523" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="LeftTransformWithAddConcept_checkCanBeAncestor_Test.java" />
+  </source>
+  <source id="3959984916895237523" name="RightTransformWithAddConcept_checkCanBeAncestor" hash="h9km3ofxosnzchzimtkm8fdnrvbem4" dependsOnNodes="true">
+    <dep root="1702123884811135651" />
+    <dep root="1702123884811614561" />
+    <dep root="3185679905989925287" />
+    <dep root="3185679905989954102" />
+    <dep root="3185679905990188312" />
+    <dep root="3185679905990189305" />
+    <dep root="3185679905990915389" />
+    <dep root="3185679905991685372" />
+    <dep root="3185679905992058594" />
+    <dep root="3185679905992082137" />
+    <dep root="3185679905992082145" />
+    <dep root="3185679905992082178" />
+    <dep root="4886882084760491503" />
+    <dep root="4942308145798660281" />
+    <dep root="6500338114639041001" />
+    <dep root="6500338114639041774" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" />
+    <file name="RightTransformWithAddConcept_checkCanBeAncestor_Test.java" />
+  </source>
+</dependencies>
 

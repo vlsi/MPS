@@ -9,6 +9,7 @@
     <classNode dependClassName="com.intellij.openapi.vcs.changes.VcsDirtyScopeManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.merge.MergeProvider" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileAdapter" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileEvent" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="java.lang.Override" />
@@ -16,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelFileTracker" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
-    <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFileAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.integration.GeneratedFilesExcludePolicy" file="GeneratedFilesExcludePolicy.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
